@@ -3,12 +3,12 @@ title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779335"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348413"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 
@@ -23,7 +23,7 @@ ms.locfileid: "52779335"
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
-[SlideCollection.add メソッドを使用してスライドを追加](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)します。 次に、プレゼンテーションの既定のスライド マスターを使用するスライドと、そのマスター の最初のレイアウトを追加する簡単な例を示します。 メソッドは、プレゼンテーションの最後に常に新しいスライドを追加します。 例を次に示します。
+[SlideCollection.add メソッドを使用してスライドを追加](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)します。 次に、プレゼンテーションの既定のスライド マスターを使用するスライドと、そのマスター の最初のレイアウトを追加する簡単な例を示します。 メソッドは、プレゼンテーションの最後に常に新しいスライドを追加します。 次に例を示します。
 
 ```javascript
 async function addSlide() {
@@ -37,7 +37,7 @@ async function addSlide() {
 
 ### <a name="selecting-which-slide-master-and-layout-to-use"></a>使用するスライド マスターとレイアウトの選択
 
-[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)パラメーターを使用して、新しいスライドに使用するスライド マスターと、マスター 内で使用するレイアウトを制御します。 次に例を示します。 このコードについては、次の点に注意してください。
+[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)パラメーターを使用して、新しいスライドに使用するスライド マスターと、マスター 内で使用するレイアウトを制御します。 次に例を示します。 このコードについては以下の点に注目してください。
 
 - オブジェクトのプロパティのどちらかまたは両方を含 `AddSlideOptions` めることができます。
 - 両方のプロパティを使用する場合は、指定したレイアウトが指定したマスターに属している必要があります。またはエラーがスローされます。
@@ -93,7 +93,7 @@ async function addSlide() {
     }
     ```
 
-2. スライドを追加するメイン関数[の PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_)内で新しい関数を呼び出します。 例を次に示します。
+2. スライドを追加するメイン関数[の PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_)内で新しい関数を呼び出します。 次に例を示します。
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -120,7 +120,7 @@ async function addSlide() {
 
 ## <a name="delete-slides"></a>スライドを削除する
 
-スライドを表す [Slide](/javascript/api/powerpoint/powerpoint.slide) オブジェクトへの参照を取得してスライドを削除し、メソッドを呼び出 `Slide.delete` します。 4 番目のスライドを削除する例を次に示します。
+スライドを表す [Slide](/javascript/api/powerpoint/powerpoint.slide) オブジェクトへの参照を取得してスライドを削除し、メソッドを呼び出 `Slide.delete` します。 次に、4 番目のスライドを削除する例を示します。
 
 ```javascript
 async function deleteSlide() {

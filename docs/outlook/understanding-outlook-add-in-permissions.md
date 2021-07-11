@@ -3,12 +3,12 @@ title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b0b481edc77170bb395d86f77688bc976f8e6e4
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 689c380f8c0bd1b158f3b95a92099ee2cb447b94
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292518"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348427"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 
@@ -27,40 +27,40 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - 閲覧フォームまたは新規作成フォームの現在のアイテムが特定のアイテムの種類であることを要求する [ItemIs アクティブ化ルール](activation-rules.md#itemis-rule)を指定、または、選択したアイテムでサポートされる既知のエンティティ (電話番号、アドレス、URL) の小さなサブセットに一致する [ItemHasKnownEntity ルール](match-strings-in-an-item-as-well-known-entities.md)を指定。
 
-- ユーザーまたはアイテムに関する特定の情報に関連**しない**プロパティとメソッドへのアクセス (これを実行するメンバーのリストは、次のセクションを参照)。
+- ユーザーまたはアイテムに関する特定の情報に関連 **しない** プロパティとメソッドへのアクセス (これを実行するメンバーのリストは、次のセクションを参照)。
 
 ### <a name="cant-do"></a>できないこと
 
-- 連絡先、電子メールアドレス、会議提案、またはタスク提案エンティティで [Itemhasknownentity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用します。
+- 連絡先、電子メール アドレス、会議の提案、またはタスク提案エンティティで [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用します。
 
 - [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) ルールまたは [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ルールを使用。
 
 - ユーザーまたはアイテムの情報に関連する次のリストに示すメンバーへのアクセス。このリストのメンバーにアクセスしようとすると、**null** が返され、Outlook がメール アドインにアクセス許可の引き上げを要求していることを伝えるエラー メッセージが表示されます。
 
-    - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-    - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
-    - [Body](/javascript/api/outlook/office.body) およびその子メンバーすべて
-    - [Location](/javascript/api/outlook/office.location) およびその子メンバーすべて
-    - [Recipients](/javascript/api/outlook/office.recipients) およびその子メンバーすべて
-    - [Subject](/javascript/api/outlook/office.subject) およびその子メンバーすべて
-    - [Time](/javascript/api/outlook/office.time) およびその子メンバーすべて
+  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+  - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
+  - [Body](/javascript/api/outlook/office.body) およびその子メンバーすべて
+  - [Location](/javascript/api/outlook/office.location) およびその子メンバーすべて
+  - [Recipients](/javascript/api/outlook/office.recipients) およびその子メンバーすべて
+  - [Subject](/javascript/api/outlook/office.subject) およびその子メンバーすべて
+  - [Time](/javascript/api/outlook/office.time) およびその子メンバーすべて
 
 ## <a name="readitem-permission"></a>ReadItem アクセス許可
 
@@ -76,8 +76,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - アイテムの件名または本文から、サブセットだけでなく、[存在する既知のエンティティをすべて取得する](match-strings-in-an-item-as-well-known-entities.md)。
 
-- 
-  [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](../reference/manifest/rule.md#itemhasknownentity-rule)、または [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule)をすべて使用します。次の例は、スキーマ v1.1 に従っています。選択されたメッセージの件名または本文に既知のエンティティが 1 つ以上ある場合にアクティブ化されるルールを示しています。
+- [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](../reference/manifest/rule.md#itemhasknownentity-rule)、または [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule)をすべて使用します。 次の例は、スキーマ v1.1 に従っています。 選択したメッセージの件名または本文に既知のエンティティが 1 つ以上見つかった場合にアドインをアクティブ化するルールが表示されます。
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -101,31 +100,31 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 ### <a name="cant-do"></a>できないこと
 
 - **mailbox.getCallbackTokenAsync** によって提供されるトークンを次の目的に使用すること。
-    - Outlook REST API を使用した現在のアイテムの更新または削除、またはユーザーのメールボックスにあるその他アイテムへのアクセス。
-    - Outlook REST API を使用した現在の予定表イベント アイテムの取得。
+  - Outlook REST API を使用した現在のアイテムの更新または削除、またはユーザーのメールボックスにあるその他アイテムへのアクセス。
+  - Outlook REST API を使用した現在の予定表イベント アイテムの取得。
 
-- 次のいずれかの API を使用すること。
-    - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-    - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.bcc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.bcc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-)
-    - [item.body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)
-    - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)
-    - [item.cc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.cc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.end.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
-    - [item.location.setAsync](/javascript/api/outlook/office.Location#setasync-location--options--callback-)
-    - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-    - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
-    - [item.start.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
-    - [item.subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)
-    - [item.to.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
-    - [item.to.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+- 次の API を使用します。
+  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.bcc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.bcc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-)
+  - [item.body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)
+  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)
+  - [item.cc.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.cc.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.end.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
+  - [item.location.setAsync](/javascript/api/outlook/office.Location#setasync-location--options--callback-)
+  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
+  - [item.start.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)
+  - [item.subject.setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)
+  - [item.to.addAsync](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)
+  - [item.to.setAsync](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)
 
 ## <a name="readwriteitem-permission"></a>ReadWriteItem アクセス許可
 
@@ -137,13 +136,13 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - そのアイテムで[添付ファイルを追加または削除](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- メールアドインに適用される Office JavaScript API の他のすべてのメンバー ( **makeEWSRequestAsync**を除く) を使用します。
+- **Mailbox.makeEWSRequestAsync** を除Officeメール アドインに適用可能な JavaScript API の他のすべてのメンバーを使用します。
 
 ### <a name="cant-do"></a>できないこと
 
 - **mailbox.getCallbackTokenAsync** によって提供されるトークンを次の目的に使用すること。
-    - Outlook REST API を使用した現在のアイテムの更新または削除、またはユーザーのメールボックスにあるその他アイテムへのアクセス。
-    - Outlook REST API を使用した現在の予定表イベント アイテムの取得。
+  - Outlook REST API を使用した現在のアイテムの更新または削除、またはユーザーのメールボックスにあるその他アイテムへのアクセス。
+  - Outlook REST API を使用した現在の予定表イベント アイテムの取得。
 
 - **Mailbox.makeEWSRequestAsync** の使用。
 
@@ -157,7 +156,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 - そのメール ボックスのフォルダーまたはアイテムの作成、読み取り、書き込み。
 - そのメール ボックスからのアイテムの送信。
 
-**mailbox.makeEWSRequestAsync** を使用して、次の EWS の操作にアクセスできます。
+**mailbox.makeEWSRequestAsync** を使用すると、次の EWS 操作にアクセスできます。
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

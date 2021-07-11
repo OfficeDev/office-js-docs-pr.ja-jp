@@ -1,25 +1,25 @@
 ---
 title: Excel アドインの共同編集機能
-description: OneDrive、OneDrive for Business、または SharePoint Online に格納されている Excel ブックの coauthor について説明します。
+description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
 ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 34ef6fbc32c686e49b9720c5249d5046d26a2952
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: d6500248c13f0cef85736b4ffbad0dc655afecd7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530444"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349687"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
 [共同編集機能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
 
 > [!IMPORTANT]
-> Microsoft 365 の Excel では、左上隅に [自動保存] があることがわかります。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
+> このExcel for Microsoft 365、左上隅に AutoSave が表示されます。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
 
 ## <a name="coauthoring-overview"></a>共同編集機能の概要
 
-ブックの内容に変更を加えると、その変更は Excel によってすべての共同編集者間で同期されます。 共同編集者はブックの内容を変更できますが、Excel アドイン内で実行するコードもブックの内容を変更できます。 たとえば、次に示す JavaScript のコードを Office アドイン内で実行すると、範囲の値が Contoso になります。
+ブックの内容に変更を加えると、その変更は Excel によってすべての共同編集者間で同期されます。 共同編集者はブックの内容を変更できますが、Excel アドイン内で実行するコードもブックの内容を変更できます。 たとえば、次の JavaScript コードがアドインで実行Office、範囲の値は Contoso に設定されます。
 
 ```js
 range.values = [['Contoso']];
@@ -33,7 +33,7 @@ range.values = [['Contoso']];
 
 Excel アドインはブックの内容を読み込んで (非表示のワークシートおよび設定オブジェクトからの読み込み)、その内容を変数などのデータ構造に保存できます。 そのようなデータ構造に元の値がコピーされた後でも、共同編集者は元のブックの内容を更新できます。 つまり、データ構造にコピーした値は、ブックの内容と同期されなくなっているということです。 独自のアドインを構築するときには、ブックの内容とデータ構造に保存された値に関して、このような分離があることを必ず考慮に入れてください。
 
-たとえば、カスタム視覚エフェクトを表示するコンテンツ アドインを作成するとします。 カスタム視覚エフェクトの状態は非表示のワークシートに保存することにします。 共同編集者が同じブックを使用するときに、次のシナリオが考えられます。
+たとえば、カスタム視覚エフェクトを表示するコンテンツ アドインを作成するとします。 カスタム視覚エフェクトの状態は非表示のワークシートに保存することにします。 共同編集者が同じブックを使用する場合、次のシナリオが発生する可能性があります。
 
 - ユーザー A がドキュメント開くと、カスタム視覚エフェクトがブックに表示されます。 カスタム視覚エフェクトは、非表示のワークシートからデータを読み込みます (たとえば、視覚エフェクトの色が青色に設定されているとします)。
 - ユーザー B が同じドキュメントを開いて、カスタム視覚エフェクトの変更を始めます。 ユーザー B は、カスタム視覚エフェクトの色を橙色に設定します。 橙色の設定が非表示のワークシートに保存されます。
@@ -46,16 +46,16 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 
 前述したように、シナリオによっては、すべての共同編集者に向けてイベントをトリガーすることで、ユーザー エクスペリエンスが向上します。 ただし、この動作がユーザー エクスペリエンスの低下を招くシナリオも存在することに注意してください。
 
-たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 イベントのイベントハンドラーに `BindingDataChanged` ui が表示されている場合、ユーザーには、ブック内で作業していた変更に関連しない ui が表示されるので、ユーザーの操作が低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
+たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 イベントのイベント ハンドラーに UI が表示される場合、ブックで作業していた変更とは無関係の UI が表示され、ユーザー エクスペリエンス `BindingDataChanged` が低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
 
-## <a name="avoiding-table-row-coauthoring-conflicts"></a>表の行の共同編集の競合を回避する
+## <a name="avoiding-table-row-coauthoring-conflicts"></a>テーブル行の共同編集の競合を回避する
 
-これは、API への呼び出しによって、共同編集の競合が発生する既知の問題です [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。 他のユーザーがアドインのブックを編集している間にアドインが実行されることを想定している場合 (特に、テーブルまたはテーブルの下の範囲を編集している場合) は、この API の使用はお勧めしません。 次のガイダンスは、メソッドに問題が発生しないようにするために役立ち `TableRowCollection.add` ます。また、ユーザーに更新を求める黄色のバーは表示されないようにします。
+API の呼び出しによって共同編集の競合が発生 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) する可能性がある既知の問題です。 他のユーザーがアドインのブックを編集している間にアドインが実行される可能性がある場合は、その API を使用することをお勧めしません (特に、テーブルまたはテーブルの下の任意の範囲を編集している場合)。 次のガイダンスは、メソッドの問題を回避するのに役立ちます (また、ユーザーに更新を求めるExcel黄色のバーをトリガー `TableRowCollection.add` しないようにします)。
 
-1. [`Range.values`](/javascript/api/excel/excel.range#values)の代わりにを使用 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) します。 テーブル `Range` のすぐ下に値を設定すると、テーブルが自動的に展開されます。 それ以外の場合は、api を使用してテーブルの行を追加すると、 `Table` coauth ユーザーのマージ競合が発生します。
-1. データの入力規則が列全体に適用されていない限り、テーブルの下のセルには、[データの入力](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)規則が適用されません。
-1. テーブルの下にデータがある場合、アドインは範囲値を設定する前に処理する必要があります。 を使用して [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) 空の行を挿入すると、データが移動され、拡張テーブルのスペースが作成されます。 それ以外の場合は、テーブルの下のセルを上書きするリスクがあります。
-1. を使用して、空の行をテーブルに追加することはできません `Range.values` 。 テーブルのすぐ下のセルにデータが存在する場合は、テーブルが自動的に展開されます。 空のテーブル行を追加する回避策として、一時データまたは非表示の列を使用します。
+1. の [`Range.values`](/javascript/api/excel/excel.range#values) 代わりに使用します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。 テーブルの `Range` 直下に値を設定すると、テーブルが自動的に展開されます。 それ以外の場合、API を使用してテーブル行を追加すると、共同認証ユーザー `Table` のマージ競合が発生します。
+1. データ検証が列 [全体に](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 適用されていない限り、テーブルの下のセルにデータ検証ルールが適用される必要はありません。
+1. テーブルの下にデータがある場合、アドインは範囲の値を設定する前に処理する必要があります。 空 [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) の行を挿入するために使用すると、データが移動され、展開テーブルの領域が作成されます。 それ以外の場合は、表の下のセルを上書きするリスクがあります。
+1. テーブルに空の行を追加することはできません `Range.values` 。 テーブルの直下のセルにデータが存在する場合にのみ、テーブルは自動的に展開されます。 空のテーブル行を追加するには、回避策として一時的なデータまたは非表示の列を使用します。
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,12 +3,12 @@ title: Angular で Office アドインを開発する
 description: このAngularを使用して、Office単一ページ アプリケーションとしてアドインを作成します。
 ms.date: 05/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1aba8f90cc70221a42b7bebb5e34775ed369f32e
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253341"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350086"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 

@@ -4,19 +4,19 @@ description: 共通 API 要件セットOffice詳細を確認します。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253348"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350205"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
 > [!TIP]
-> アプリケーション固有の API *要件* セットをお探しの場合 次の API 要件セットを参照してください。
+> アプリケーション固有の API *要件* セットをお探しの場合 以下の API 要件セットを参照してください。
 >
 > - [Excel JavaScript API 要件セット](excel-api-requirement-sets.md) (ExcelApi)
 > - [Word JavaScript API 要件セット](word-api-requirement-sets.md) (WordApi)
@@ -184,7 +184,7 @@ ms.locfileid: "52253348"
 
 ---
 
-### <a name="selection"></a>Selection
+### <a name="selection"></a>選択
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|

@@ -3,12 +3,12 @@ title: Office アドインに既存の COM アドインとの互換性をもた�
 description: アドインと同等の COM アドインOffice互換性を有効にする。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e2ab1bb1eda548ff8e0923b8fbccfa9e007a6a0c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076000"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349806"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインに既存の COM アドインとの互換性をもたせる
 

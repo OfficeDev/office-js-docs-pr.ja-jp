@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニュー コントロールを選択するときに実行するアクションを指定します。
-ms.date: 02/12/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505410"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348700"
 ---
 # <a name="action-element"></a>Action 要素
 
@@ -26,8 +26,8 @@ ms.locfileid: "50505410"
 |:-----|:-----|
 |  [FunctionName](#functionname) |    実行する関数の名前を指定します。 |
 |  [SourceLocation](#sourcelocation) |    この操作のソース ファイルの場所を指定します。 |
-|  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。|
-|  [Title](#title) | 作業ウィンドウのカスタム タイトルを指定します。|
+|  [TaskpaneId](#taskpaneid) | 作業ウィンドウ コンテナーの ID を指定します。 このアドインではOutlookサポートされていません。|
+|  [Title](#title) | 作業ウィンドウのカスタム タイトルを指定します。 このアドインではOutlookサポートされていません。|
 |  [SupportsPinning](#supportspinning) | 作業ウィンドウがピン留めをサポートすることを指定します。これにより、ユーザーが選択を変更したときも作業ウィンドウが開いたままになります。|
 
 ## <a name="xsitype"></a>xsi:type
@@ -106,6 +106,9 @@ ms.locfileid: "50505410"
 
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
 
+> [!NOTE]
+> この子要素は、アドインOutlookサポートされていません。
+
 次の例は、Title 要素を使用するアクション **を示** しています。 Title を文字列に **直接割り** 当てない点に注意してください。 代わりに、マニフェストの [リソース] セクションで定義されているリソース ID  (常駐) を割り当て、32 文字以内にできます。
 
 ```xml
@@ -134,10 +137,10 @@ ms.locfileid: "50505410"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
 
 > [!IMPORTANT]
-> 要素は `SupportsPinning` 要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在サポートされているのは、以下を使用する Microsoft 365 サブスクライバーのみです。
+> 要素は `SupportsPinning` 要件セット[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在サポートされているのは、次を使用Microsoft 365サブスクライバーのみです。
 >
-> - Windows 上の Outlook 2016 以降 (ビルド 7628.1000 以降)
-> - Mac 上の Outlook 2016 以降 (ビルド 16.13.503 以降)
+> - Outlook 2016以降 (Windows 7628.1000 以降のビルド)
+> - Outlook 2016以降の Mac (ビルド 16.13.503 以降)
 > - モダン Outlook on the web
 
 ```xml

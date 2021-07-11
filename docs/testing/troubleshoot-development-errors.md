@@ -3,12 +3,12 @@ title: アドインを使用したOfficeのトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 8f0ceaf13041fa27c4e9e279646e979f132913b3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961280"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349279"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>アドインを使用したOfficeのトラブルシューティング
 
@@ -29,11 +29,12 @@ ms.locfileid: "52961280"
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>iOS の場合: 
+
 アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>JavaScript、HTML、CSS などの静的ファイルへの変更は有効になりません
 
-ブラウザーがこれらのファイルをキャッシュしている可能性があります。 これを防ぐには、開発時にクライアント側のキャッシュをオフにします。 詳細は、使用しているサーバーの種類によって異なります。 ほとんどの場合、HTTP 応答に特定のヘッダーを追加する必要があります。 次の設定をお勧めします。
+ブラウザーがこれらのファイルをキャッシュしている可能性があります。 これを防ぐには、開発時にクライアント側のキャッシュをオフにします。 詳細は、使用しているサーバーの種類によって異なります。 ほとんどの場合、HTTP 応答に特定のヘッダーを追加する必要があります。 次のセットをお勧めします。
 
 - Cache Control: 「プライベート、キャッシュなし、ストアなし」
 - Pragma: 「no-cache」

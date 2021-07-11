@@ -3,12 +3,12 @@ title: アドインの状態および設定を保持する
 description: ブラウザー コントロールのステートレスOfficeで実行されているアドイン Web アプリケーションにデータを保持する方法について説明します。
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 47f1b9a5000660f13f8bba5e747d0f5ca5e9d6a0
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: a5a54a07abfeefda39d24e635773bfd808b59c25
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51651080"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349771"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -16,7 +16,7 @@ ms.locfileid: "51651080"
 
 Office アドインは、基本的にブラウザー コントロールのステートレス環境で動作する Web アプリケーションです。したがって、アドインでは、そのアドインを使用するセッション間で特定の操作または機能を継続して維持するためのデータを保持することが必要な場合があります。たとえば、アドインには、ユーザーの優先ビューや既定の場所など、アドインで保存しておき、アドインが次回初期化されたときにリロードする必要があるカスタム設定または他の値が含まれる場合があります。その場合は、次のようにします。
 
-- データを格納する javaScript API Officeメンバーを次のように使用します。
+- データを次のように格納Office JavaScript API のメンバーを使用します。
   - アドインの種類応じた場所に保存されるプロパティ バッグ内の名前と値の組。
   - ドキュメント内に保存されるカスタム XML。
 
@@ -26,21 +26,21 @@ Office アドインは、基本的にブラウザー コントロールのステ
 
 この記事では、JavaScript API Officeを使用して現在のドキュメントにアドインの状態を保持する方法について説明します。 開いているドキュメントのユーザー設定の追跡など、ドキュメント間で状態を保持する必要がある場合は、別の方法を使用する必要があります。 たとえば [、SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) を使用してユーザー ID を取得し、ユーザー ID とその設定をオンライン データベースに保存できます。
 
-## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>JavaScript API を使用してアドインの状態と設定Office保持する
+## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>JavaScript API を使用したアドインの状態とOffice保持する
 
-JavaScript API Officeには、次の[](/javascript/api/office/office.settings)表で説明するように、セッション間でアドインの状態を保存する Settings オブジェクト[、RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクト、[および CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトが提供されています。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
+JavaScript API Officeには、設定、RoamingSettings、CustomProperties[](/javascript/api/outlook/office.customproperties)オブジェクトが提供され、次の表に示すとおり、セッション間でアドインの状態を保存できます。 [](/javascript/api/office/office.settings) [](/javascript/api/outlook/office.roamingsettings) すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
 
 |**オブジェクト**|**アドインの種類のサポート**|**ストレージの場所**|**Officeサポート**|
 |:-----|:-----|:-----|:-----|
-|[Settings](/javascript/api/office/office.settings)|コンテンツおよび作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。 コンテンツおよび作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:****Settings** オブジェクトを使用して、パスワードおよびその他の機密の個人を特定できる情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されているため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word、Excel、または PowerPoint<br/><br/> **メモ:** Project 2013 の作業ウィンドウ アドインでは、アドインの状態または設定を保存するための **Settings** API をサポートしていません。 ただし、Project で実行されているアドイン (および他の Office クライアント アプリケーション) では、ブラウザー Cookie や Web ストレージなどの手法を使用できます。 こうした技術の詳細については、「[Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)」を参照してください。 |
+|[Settings](/javascript/api/office/office.settings)|コンテンツおよび作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。 コンテンツおよび作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:****Settings** オブジェクトを使用して、パスワードおよびその他の機密の個人を特定できる情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されているため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word、Excel、または PowerPoint<br/><br/> **メモ:** Project 2013 の作業ウィンドウ アドインでは、アドインの状態または設定を保存するための **Settings** API をサポートしていません。 ただし、Project (および他の Office クライアント アプリケーション) で実行されているアドインでは、ブラウザー Cookie や Web ストレージなどの手法を使用できます。 こうした技術の詳細については、「[Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)」を参照してください。 |
 |[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|アドインがインストールされている、ユーザーの Exchange サーバー メールボックス。 これらの設定はユーザーのサーバー メールボックスに格納されますので、ユーザーと一緒に "ローミング" し、サポートされている Office クライアント アプリケーションまたはブラウザーがユーザーのメールボックスにアクセスするコンテキストでアドインを実行している場合に使用できます。<br/><br/> Outlook アドインのローミング設定は、その設定を作成したアドインのみが利用でき、また、アドインがインストールされているメールボックスからのみ利用できます。|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|アドインが連携するメッセージ、予定、または会議出席依頼アイテム。 Outlook アドイン アイテムのカスタム プロパティは、そのプロパティを作成したアドインのみが利用でき、また、プロパティが保存されているアイテムからのみ利用できます。|Outlook|
-|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:** カスタム XML 部分には、パスワードなどの個人情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されるため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word (JavaScript 共通 API Office使用) Excel (アプリケーション固有の Excel JavaScript API を使用)|
+|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|作業ウィンドウ|アドインが連携しているドキュメント、スプレッドシート、またはプレゼンテーション。作業ウィンドウのアドイン設定は、その設定が保存されているドキュメントから、その設定を作成したアドインで使用できます。<br/><br/>**重要:** カスタム XML 部分には、パスワードなどの個人情報 (PII) を保存しないでください。保存されたデータはユーザーに対して表示されませんが、ドキュメントの一部として保存されるため、ドキュメントのファイル形式を直接読み取ることでアクセスできます。アドインによる PII の使用と、アドインが必要とするすべての PII の保存は、開発するアドインをユーザーのセキュリティが保護されるリソースとしてホストするサーバーのみで行うよう制限する必要があります。|Word (JavaScript Office API を使用) Excel (JavaScript API のアプリケーション固有のExcel使用)|
 
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>実行時のメモリ内での設定データの管理
 
 > [!NOTE]
-> この後の 2 つのセクションでは、Office 共通 JavaScript API のコンテキストでの設定について説明します。 アプリケーション固有の Excel JavaScript API では、カスタム設定にもアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の SettingCollection](/javascript/api/excel/excel.settingcollection) を参照してください。
+> この後の 2 つのセクションでは、Office 共通 JavaScript API のコンテキストでの設定について説明します。 JavaScript API のアプリケーション固有Excelカスタム設定へのアクセスも提供します。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の SettingCollection](/javascript/api/excel/excel.settingcollection) を参照してください。
 
 内部的には、 、 オブジェクトでアクセスされるプロパティ バッグ内のデータは、名前と値のペアを含むシリアル化 `Settings` `CustomProperties` された JavaScript オブジェクト表記 (JSON) オブジェクトとして `RoamingSettings` 格納されます。 各値の名前 (キー) は、 で、格納されている値は JavaScript 、関数である `string` `string` `number` `date` `object` **必要があります**。
 
@@ -54,7 +54,7 @@ JavaScript API Officeには、次の[](/javascript/api/office/office.settings)�
 }
 ```
 
-設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッション中、設定は、作成する設定の種類 `get` `set` (設定 `remove` **、CustomProperties、****または RoamingSettings)** に対応するオブジェクトのメソッドを使用して、メモリ内で完全に管理されます。
+設定プロパティ バッグは、前のアドイン セッション中に保存された後、アドインが初期化されるとき、またはその後はいつでも、アドインの現行セッション中は読み込むことができます。 セッション中、設定は、作成する設定の種類 `get` `set` `remove` **(設定、CustomProperties、****または RoamingSettings)** に対応するオブジェクトのメソッドを使用して、メモリ内で完全に管理されます。
 
 > [!IMPORTANT]
 > アドインの現在のセッション中に行われた追加、更新、または削除を保存場所に保持するには、その種類の設定を処理するために使用する対応するオブジェクトのメソッドを呼び出す必要があります `saveAsync` 。 、およびメソッドは、settings プロパティ バッグのメモリ内 `get` `set` `remove` コピーでのみ動作します。 アドインを呼び出さずに閉じた場合、そのセッション中に設定に加えた変更 `saveAsync` は失われます。
@@ -125,9 +125,9 @@ function write(message){
 ## <a name="how-to-save-custom-xml-to-the-document"></a>ドキュメントにカスタム XML を保存する方法
 
 > [!NOTE]
-> このセクションでは、Word でサポートされている Office 共通 JavaScript API のコンテキストでのカスタム XML 部分について説明します。 アプリケーション固有の Excel JavaScript API では、カスタム XML パーツにもアクセスできます。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の CustomXmlPart](/javascript/api/excel/excel.customxmlpart) を参照してください。
+> このセクションでは、Word でサポートされている Office 共通 JavaScript API のコンテキストでのカスタム XML 部分について説明します。 JavaScript API のアプリケーションExcelカスタム XML パーツへのアクセスも提供します。 Excel の API とプログラミング パターンには、わずかな違いがあります。 詳細については、[Excel の CustomXmlPart](/javascript/api/excel/excel.customxmlpart) を参照してください。
 
-ドキュメントの設定のサイズ制限を超える情報、または構造化文字を含む情報を格納する必要がある場合は、追加の記憶域オプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](/javascript/api/office/office.customxmlpart) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードでは、カスタム XML パーツを作成して、その ID とコンテンツをページの div に表示します。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
+ドキュメント のサイズ制限を超える情報、または構造化された文字を持つ設定追加の記憶域オプションがあります。 Word および Excel の作業ウィンドウ アドインには、カスタムの XML マークアップを保持できます (Excel については、このセクションの冒頭にあるノートを参照してください)。 Word の場合は、[CustomXmlPart](/javascript/api/office/office.customxmlpart) とそのメソッドを使用します (繰り返しになりますが、Excel の場合は上記のノートを参照してください)。 次のコードでは、カスタム XML パーツを作成して、その ID とコンテンツをページの div に表示します。 XML 文字列には `xmlns` 属性が必ず存在する点に注意してください。
 
 ```js
 function createCustomXmlPart() {
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-カスタム XML 部分を取得するには、[getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。 そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。 次のメソッドは、この方法を示してます  (ただし、カスタム設定の操作に関する詳細とベスト プラクティスについては、この記事の前半のセクションを参照してください)。
+カスタム XML 部分を取得するには、[getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。 そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。 次のメソッドは、この方法を示してます  (ただし、カスタム設定を操作する場合の詳細とベスト プラクティスについては、この記事の前のセクションを参照してください)。
 
  ```js
 function createCustomXmlPartAndStoreId() {
@@ -176,13 +176,13 @@ function getReviewers() {
 }
 ```
 
-## <a name="how-to-save-settings-in-an-outlook-add-in"></a>Outlook アドインに設定を保存する方法
+## <a name="how-to-save-settings-in-an-outlook-add-in"></a>アドインに設定をOutlookする方法
 
-Outlook アドインに設定を保存する方法については、「Outlook アドインの状態と設定の管理」 [を参照してください](../outlook/manage-state-and-settings-outlook.md)。
+カスタム アドインに設定を保存するOutlookについては、「Manage state and settings for an [Outlook」を参照してください](../outlook/manage-state-and-settings-outlook.md)。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
 - [Outlook アドイン](../outlook/outlook-add-ins-overview.md)
-- [Outlook アドインの状態と設定を管理する](../outlook/manage-state-and-settings-outlook.md)
+- [アドインの状態と設定Outlook管理する](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

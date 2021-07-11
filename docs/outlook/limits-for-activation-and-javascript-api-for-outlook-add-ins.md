@@ -3,12 +3,12 @@ title: Outlook アドインでのアクティブ化と API の使用の制限
 description: 特定のアクティブ化と API の使用方法のガイドラインを確認し、アドインをこれらの制限内で実装します。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: eacdc0232202fd74fdd46a835bed6af5a760e7b1
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 60fab066dadf5c71ab37e907dd749d38f9bb4dde
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007777"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348952"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook アドインのアクティブ化と JavaScript API の制限
 

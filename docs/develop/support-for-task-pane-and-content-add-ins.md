@@ -1,26 +1,26 @@
 ---
 title: Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
-description: Office JavaScript API を使用して、Office 2013 で作業ウィンドウを作成します。
+description: 2013 Office JavaScript API を使用して作業ウィンドウを作成Officeします。
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 35a8ff5c36d5a4bc5ce77a2aeb94d58054471086
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 02d2841337b4a8809b58e3c7b4a811684d65d11e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293143"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349708"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Office 2013 でのコンテンツ アドインと作業ウィンドウ アドインの Office JavaScript API のサポート
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office [JAVASCRIPT API](../reference/javascript-api-for-office.md) を使用して、office 2013 クライアントアプリケーション用の作業ウィンドウアドインまたはコンテンツアドインを作成することができます。 コンテンツと作業ウィンドウのアドインをサポートするオブジェクトとメソッドは、次のように分類されます。
+[JavaScript API](../reference/javascript-api-for-office.md)の Officeを使用して、2013 クライアント アプリケーション用の作業ウィンドウまたはコンテンツ アドインOffice作成できます。 コンテンツと作業ウィンドウのアドインをサポートするオブジェクトとメソッドは、次のように分類されます。
 
-1. **他の Office アドインと共有されている共通オブジェクト。** これらのオブジェクトには、 [Office](/javascript/api/office)、 [Context](/javascript/api/office/office.context)、および [AsyncResult](/javascript/api/office/office.asyncresult)があります。 `Office`オブジェクトは、Office JAVASCRIPT API のルートオブジェクトです。 オブジェクトは、 `Context` アドインのランタイム環境を表します。 `Office`および `Context` は、Office アドインの基本的なオブジェクトです。 オブジェクトは、 `AsyncResult` メソッドに返されるデータなど、非同期操作の結果を表します `getSelectedDataAsync` 。これは、ユーザーがドキュメント内で選択したものを読み取ります。
+1. **他のアドインと共有Office共通のオブジェクト。** これらのオブジェクトには [、Office、Context、](/javascript/api/office)[](/javascript/api/office/office.context)および [AsyncResult が含まれます](/javascript/api/office/office.asyncresult)。 オブジェクト `Office` は、JavaScript API のOfficeオブジェクトです。 オブジェクト `Context` は、アドインのランタイム環境を表します。 両方 `Office` とも `Context` 、任意のアドインの基本的Officeオブジェクトです。 オブジェクトは、メソッドに返されるデータなどの非同期操作の結果を表し、ユーザーがドキュメントで選択した値 `AsyncResult` `getSelectedDataAsync` を読み取ります。
 
-2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツアドインまたは作業ウィンドウアドインでは、 [Office.context.document](/javascript/api/office/office.context#document) プロパティを使用して **Document** オブジェクトにアクセスできます。また、このプロパティを使用して、ドキュメント内のデータを操作するための API のキーメンバー ( [バインディング](/javascript/api/office/office.bindings) 、 [Customxmlparts](/javascript/api/office/office.customxmlparts) オブジェクト、 [Getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)、 [setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)、および [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) メソッドなど) にアクセスできます。 オブジェクトには、 `Document` ドキュメントが読み取り専用であるか、編集モードであるかを決定する [mode](/javascript/api/office/office.document#mode) プロパティ、現在のドキュメントの url を取得するための [Url](/javascript/api/office/office.document#url) プロパティ、および [Settings](/javascript/api/office/office.settings) オブジェクトへのアクセスも用意されています。 オブジェクトでは、 `Document` [selectionchanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベントハンドラーの追加もサポートされているため、ユーザーが文書内の選択範囲を変更したときに検出できます。
+2. **Document オブジェクト。** コンテンツ アドインと作業ウィンドウ アドインで使用可能な API の大部分は、[Document](/javascript/api/office/office.document) オブジェクトのメソッド、プロパティ、およびイベントを通して公開されます。 コンテンツ アドインまたは作業ウィンドウ アドインは [、Office.context.document](/javascript/api/office/office.context#document)プロパティを使用して **Document** オブジェクトにアクセスし、それを介して [、Bindings](/javascript/api/office/office.bindings)オブジェクトや [CustomXmlParts](/javascript/api/office/office.customxmlparts)オブジェクト [、getSelectedDataAsync メソッド、setSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッド [、getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-)メソッドなどのドキュメント内のデータを操作するための API の主要メンバーにアクセスできます。 [](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) オブジェクトには、ドキュメントが読み取り専用か編集モードかを判断するための mode プロパティ、現在のドキュメントの URL を取得するための url プロパティ、および 設定 オブジェクトへのアクセスも `Document` [提供](/javascript/api/office/office.settings)されます。 [](/javascript/api/office/office.document#mode) [](/javascript/api/office/office.document#url) オブジェクトは SelectionChanged イベントのイベント ハンドラーの追加もサポートしています。そのため、ユーザーがドキュメント内で選択内容を変更した場合 `Document` を検出できます。 [](/javascript/api/office/office.documentselectionchangedeventargs)
 
-   コンテンツアドインまたは作業ウィンドウアドインは、 `Document` DOM とランタイム環境が読み込まれた後にのみ、オブジェクトにアクセスできます。通常は、 [Office.initialize](/javascript/api/office) イベントのイベントハンドラーにあります。 アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](loading-the-dom-and-runtime-environment.md)」を参照してください。
+   コンテンツアドインまたは作業ウィンドウ アドインは、DOM 環境とランタイム環境が読み込まれた後にのみオブジェクトにアクセスできます(通常は、Office.ini`Document` [ tialize](/javascript/api/office) イベントのイベント ハンドラーで)。 アドインが初期化されるときのイベント フローと、DOM とラインタイムが正常に読み込まれたかどうかの確認方法については、「[DOM とランタイム環境の読み込み](loading-the-dom-and-runtime-environment.md)」を参照してください。
 
 3. **特定の機能を操作するためのオブジェクト。** API の特定の機能を操作するには、次のオブジェクトとメソッドを使用します。
 
@@ -36,12 +36,12 @@ Office [JAVASCRIPT API](../reference/javascript-api-for-office.md) を使用し�
 > [!IMPORTANT]
 > API メンバーの一部は、コンテンツ アドインと作業ウィンドウ アドインをホスト可能なすべての Office アプリケーションでサポートされているわけではありません。サポートされているメンバーを特定するには、次のいずれかを参照してください。
 
-Office クライアントアプリケーション全体にわたる Office JavaScript API サポートの概要については、「 [Office JAVASCRIPT api につい](understanding-the-javascript-api-for-office.md)て」を参照してください。
+クライアント アプリケーション全体での JavaScript API Officeの概要Office [JavaScript API](understanding-the-javascript-api-for-office.md)についてを参照Office参照してください。
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>アクティブな選択範囲の読み取りと書き込み
 
-文書、スプレッドシート、またはプレゼンテーション内のユーザーの現在の選択範囲に対して読み書きをすることができます。 アドインの Office アプリケーションによっては、 [Document](/javascript/api/office/office.document)オブジェクトの[getselecteddataasync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッドと[setselecteddataasync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)メソッドで、パラメーターとして読み取りまたは書き込みを行うデータ構造の種類を指定できます。 たとえば、Word には任意のデータ タイプ (テキスト、HTML、表形式データ、または Office Open XML)、Excel にはテキストと表形式データ、および PowerPoint と Project にはテキストを指定できます。 ユーザーの選択範囲に対する変更を検出するためのイベント ハンドラーを作成することもできます。 次の例では、メソッドを使用して選択範囲からデータをテキストとして取得し `getSelectedDataAsync` ます。
+文書、スプレッドシート、またはプレゼンテーション内のユーザーの現在の選択範囲に対して読み書きをすることができます。 アドインの Office アプリケーションに応じて[、Document](/javascript/api/office/office.document)オブジェクトの[getSelectedDataAsync メソッドおよび setSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッドで、パラメーターとして読み[](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)取りまたは書き込みを行うデータ構造の種類を指定できます。 たとえば、Word には任意のデータ タイプ (テキスト、HTML、表形式データ、または Office Open XML)、Excel にはテキストと表形式データ、および PowerPoint と Project にはテキストを指定できます。 ユーザーの選択範囲に対する変更を検出するためのイベント ハンドラーを作成することもできます。 次の使用例は、メソッドを使用して選択範囲のデータをテキストとして取得 `getSelectedDataAsync` します。
 
 
 ```js
@@ -67,11 +67,11 @@ function write(message){
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>文書またはスプレッドシート内の領域へのバインド
 
-およびメソッドを使用する `getSelectedDataAsync` と、 `setSelectedDataAsync` ドキュメント、スプレッドシート、またはプレゼンテーションで、ユーザーの *現在* の選択範囲の読み取りや書き込みを行うことができます。 ただし、ユーザーに選択を要求せずにアドインの複数の実行セッションに渡って文書内の同じ領域にアクセスする場合は、最初にその領域をバインドする必要があります。 そのバインドした領域に対するデータおよび選択範囲変更イベントにサブスクライブすることもできます。
+and メソッドを使用すると、ドキュメント、スプレッドシート、プレゼンテーションでユーザーの現在の選択内容を読み取りまたは `getSelectedDataAsync` `setSelectedDataAsync` 書き込みできます。  ただし、ユーザーに選択を要求せずにアドインの複数の実行セッションに渡って文書内の同じ領域にアクセスする場合は、最初にその領域をバインドする必要があります。 そのバインドした領域に対するデータおよび選択範囲変更イベントにサブスクライブすることもできます。
 
 バインドは、[Bindings](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-) オブジェクトの [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-) メソッド、[addFromPromptAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) メソッド、または [addFromSelectionAsync](/javascript/api/office/office.bindings) メソッドを使用して追加できます。これらのメソッドは、バインド内のデータにアクセスするため、あるいは、データ変更または選択範囲変更イベントにサブスクライブするために使用可能な識別子を返します。
 
-次の例は、メソッドを使用して、ドキュメントで現在選択されているテキストにバインドを追加し `Bindings.addFromSelectionAsync` ます。
+次に、メソッドを使用して、ドキュメント内で現在選択されているテキストにバインドを追加する例を示 `Bindings.addFromSelectionAsync` します。
 
 
 
@@ -99,7 +99,7 @@ function write(message){
 
 作業ウィンドウ アドインが PowerPoint または Word で実行される場合は、[Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) メソッド、[File.getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) メソッド、および [File.closeAsync](/javascript/api/office/office.file#closeasync-callback-) メソッドを使用して、プレゼンテーションまたは文書全体を取得できます。
 
-を呼び出すと、 `Document.getFileAsync` [ファイル](/javascript/api/office/office.file) オブジェクトにドキュメントのコピーが取得されます。 オブジェクトは、 `File` [Slice](/javascript/api/office/office.slice) オブジェクトとして表される "チャンク" 内のドキュメントへのアクセスを提供します。 を呼び出すときに `getFileAsync` 、ファイルの種類 (テキストまたは圧縮された OFFICE XML 形式) と、スライスのサイズ (最大 4mb) を指定できます。 オブジェクトの内容にアクセスするために `File` 、を呼び出すと、 `File.getSliceAsync` [data](/javascript/api/office/office.slice#data) プロパティにある生のデータが返されます。 圧縮形式を指定した場合は、ファイル データがバイト配列で返されます。 ファイルを Web サービスに転送する場合は、圧縮生データを base64 エンコード文字列に変換してから送信できます。 最後に、ファイルのスライスの取得が終了したら、メソッドを使用して `File.closeAsync` ドキュメントを閉じます。
+呼び出し `Document.getFileAsync` 時に、File オブジェクト内のドキュメントのコピーを [取得](/javascript/api/office/office.file) します。 オブジェクト `File` は、Slice オブジェクトとして表される "チャンク" でドキュメントへの [アクセスを提供](/javascript/api/office/office.slice) します。 呼び出す場合は、ファイルの種類 (テキストまたは圧縮された Open Office XML 形式)、スライスのサイズ `getFileAsync` (最大 4 MB) を指定できます。 オブジェクトの内容にアクセスするには、Slice.data プロパティの生データを返す `File` `File.getSliceAsync` 呼 [び出](/javascript/api/office/office.slice#data) しを行います。 圧縮形式を指定した場合は、ファイル データがバイト配列で返されます。 ファイルを Web サービスに転送する場合は、圧縮生データを base64 エンコード文字列に変換してから送信できます。 最後に、ファイルのスライスの取得が完了したら、メソッドを使用して `File.closeAsync` ドキュメントを閉じます。
 
 詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する方法](../word/get-the-whole-document-from-an-add-in-for-word.md)」を参照してください。
 
@@ -112,7 +112,7 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 
 [CustomXmlParts.getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) メソッドを使用して、GUID でカスタム XML パーツにアクセスすることもできます。カスタム XML パーツを取得したら、[CustomXmlPart.getXmlAsync](/javascript/api/office/office.customxmlpart#getxmlasync-options--callback-) メソッドを使用して XML データを取得します。
 
-新しいカスタム XML 部分をドキュメントに追加するには、プロパティを使用して `Document.customXmlParts` ドキュメント内のカスタム xml 部分を取得し、 [customxmlparts](/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-) メソッドを呼び出します。
+新しいカスタム XML パーツをドキュメントに追加するには、このプロパティを使用して、ドキュメント内のカスタム XML パーツを取得し `Document.customXmlParts` [、CustomXmlParts.addAsync メソッドを呼び出](/javascript/api/office/office.customxmlparts#addasync-xml--options--callback-) します。
 
 作業ウィンドウ アドインでのカスタム XML パーツの操作方法の詳細については、「[Office Open XML を使用してより良い Word 用アドインを作成する](../word/create-better-add-ins-for-word-with-office-open-xml.md)」を参照してください。
 
@@ -120,9 +120,9 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 ## <a name="persisting-add-in-settings"></a>アドイン設定を保存する
 
 
-多くの場合、ユーザー設定やアドインの状態など、アドインのカスタム データを保存し、次回、アドインを開いたとき、そのデータにアクセスする必要があります。 一般的な Web プログラミング手法を利用し、ブラウザーの Cookie や HTML 5 Web ストレージなど、そのデータを保存できます。 あるいは、アドインを Excel、PowerPoint、Word で実行する場合、[Settings](/javascript/api/office/office.settings) オブジェクトのメソッドを使用できます。 オブジェクトを使用して作成されたデータは、アドインが挿入されてに保存された `Settings` スプレッドシート、プレゼンテーション、またはドキュメントに格納されます。 このデータは、それを作成したアドインでのみ利用できます。
+多くの場合、ユーザー設定やアドインの状態など、アドインのカスタム データを保存し、次回、アドインを開いたとき、そのデータにアクセスする必要があります。 一般的な Web プログラミング手法を利用し、ブラウザーの Cookie や HTML 5 Web ストレージなど、そのデータを保存できます。 あるいは、アドインを Excel、PowerPoint、Word で実行する場合、[Settings](/javascript/api/office/office.settings) オブジェクトのメソッドを使用できます。 オブジェクトで作成されたデータは、アドインが挿入され保存されたスプレッドシート、プレゼンテーション、またはドキュメント `Settings` に保存されます。 このデータは、それを作成したアドインでのみ利用できます。
 
-ドキュメントが格納されているサーバーへのラウンドトリップを回避するために、オブジェクトを使用して作成されたデータ `Settings` は実行時にメモリで管理されます。 過去に保存した設定データがアドインの初期化時にメモリに読み込まれ、そのデータに対する変更は [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出したときにのみ文書に保存されます。 内部的に、データはシリアル化された JSON オブジェクト内に名前と値のペアとして保存されます。 データのメモリ内コピーに対してアイテムの読み取り、書き込み、および削除を実行するには、[Settings](/javascript/api/office/office.settings#get-name-) オブジェクトの [get](/javascript/api/office/office.settings#set-name--value-) メソッド、[set](/javascript/api/office/office.settings#remove-name-) メソッド、および **remove** メソッドを使用します。 次のコード行は、`themeColor` という名前の設定を作成して、その値を 'green' に設定する方法を示しています。
+ドキュメントが格納されているサーバーへのラウンドトリップを回避するために、オブジェクトで作成されたデータは実行時に `Settings` メモリで管理されます。 過去に保存した設定データがアドインの初期化時にメモリに読み込まれ、そのデータに対する変更は [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出したときにのみ文書に保存されます。 内部的に、データはシリアル化された JSON オブジェクト内に名前と値のペアとして保存されます。 データのメモリ内コピーに対してアイテムの読み取り、書き込み、および削除を実行するには、[Settings](/javascript/api/office/office.settings#get-name-) オブジェクトの [get](/javascript/api/office/office.settings#set-name--value-) メソッド、[set](/javascript/api/office/office.settings#remove-name-) メソッド、および **remove** メソッドを使用します。 次のコード行は、`themeColor` という名前の設定を作成して、その値を 'green' に設定する方法を示しています。
 
 
 
@@ -131,21 +131,21 @@ Open Office XML ファイル形式とコンテンツ コントロールを使用
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-およびメソッドを使用して作成または削除された設定データは、 `set` `remove` データのメモリ内コピーに対して動作するので、 `saveAsync` 設定データへの変更をアドインが作業しているドキュメントに保持するために、を呼び出す必要があります。
+and メソッドを使用して作成または削除された設定データは、メモリ内のデータ コピーに対して動作しますので、アドインが操作しているドキュメントに設定データの変更を保持するために呼び出す必要があります。 `set` `remove` `saveAsync`
 
-オブジェクトのメソッドを使用したカスタムデータの使用の詳細について `Settings` は、「 [アドインの状態と設定を保持](persisting-add-in-state-and-settings.md)する」を参照してください。
+オブジェクトのメソッドを使用したカスタム データの操作の詳細については `Settings` [、「Persisting add-in state and settings」を参照してください](persisting-add-in-state-and-settings.md)。
 
 
 ## <a name="reading-properties-of-a-project-document"></a>プロジェクト文書のプロパティの読み取り
 
-作業ウィンドウ アドインが Project で動作する場合は、そのアドインでアクティブ プロジェクト内のプロジェクト フィールド、リソース、およびタスク フィールドの一部からデータを読み取ることができます。 そのためには、オブジェクトを拡張する [Projectdocument](/javascript/api/office/office.document) オブジェクトのメソッドとイベントを使用し `Document` ます。これにより、追加のプロジェクト固有の機能が提供されます。
+作業ウィンドウ アドインが Project で動作する場合は、そのアドインでアクティブ プロジェクト内のプロジェクト フィールド、リソース、およびタスク フィールドの一部からデータを読み取ることができます。 これを行うには[、ProjectDocument](/javascript/api/office/office.document)オブジェクトのメソッドとイベントを使用して、オブジェクトを拡張して、その他の機能Project `Document` 提供します。
 
 Project のデータの読み取り操作の例については、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」を参照してください。
 
 
 ## <a name="permissions-model-and-governance"></a>アクセス許可モデルとガバナンス
 
-アドインでは、マニフェスト内の要素を使用して、 `Permissions` Office JAVASCRIPT API から必要な機能のレベルにアクセスするためのアクセス許可を要求します。 たとえば、アドインでドキュメントに対する読み取り/書き込みアクセス権が必要な場合、そのマニフェストは、 `ReadWriteDocument` 要素のテキスト値として指定する必要があり `Permissions` ます。 アクセス許可はユーザーのプライバシーとセキュリティを保護するために存在しているので、ベスト プラクティスとしては、その機能に必要な最低限のアクセス許可を要求することをお勧めします。 次の例は、作業ウィンドウのマニフェストで **ReadDocument** アクセス許可を要求する方法を示しています。
+アドインは、マニフェスト内の要素を使用して、JavaScript API から必要な機能のレベルにアクセスするためのアクセス許可を要求Office `Permissions` します。 たとえば、アドインでドキュメントへの読み取り/書き込みアクセスが必要な場合、そのマニフェストは要素のテキスト値 `ReadWriteDocument` として指定する必要 `Permissions` があります。 アクセス許可はユーザーのプライバシーとセキュリティを保護するために存在しているので、ベスト プラクティスとしては、その機能に必要な最低限のアクセス許可を要求することをお勧めします。 次の例は、作業ウィンドウのマニフェストで **ReadDocument** アクセス許可を要求する方法を示しています。
 
 
 ```XML
@@ -160,7 +160,7 @@ Project のデータの読み取り操作の例については、「[テキス�
 
 ```
 
-詳細については、「 [アドインで API を使用するためのアクセス許可を要求](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)する」を参照してください。
+詳細については、「アドイン [で API を使用するためのアクセス許可の要求」を参照してください](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
 
 ## <a name="see-also"></a>関連項目

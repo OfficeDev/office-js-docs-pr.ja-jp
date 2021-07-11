@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076316"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349257"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -117,7 +117,7 @@ ms.locfileid: "53076316"
     });
     ```
 
-1. 2 番目の関数呼び出しを追加して、アクション `Office.actions.associate` `HIDETASKPANE` を[Office.addin.hide を](/javascript/api/office/office.addin#hide--)呼び出す関数にマップします。 例を次に示します。
+1. 2 番目の関数呼び出しを追加して、アクション `Office.actions.associate` `HIDETASKPANE` を[Office.addin.hide を](/javascript/api/office/office.addin#hide--)呼び出す関数にマップします。 次に例を示します。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -144,7 +144,7 @@ ms.locfileid: "53076316"
 - プロパティ `name` は、アクションを記述するユーザーフレンドリーな文字列である必要があります。 文字 A - Z、a - z、0 ~ 9、および句読点 "-"、"_"、および "+" の組み合わせである必要があります。
 - プロパティは省略可能です。 現在は `ExecuteFunction` 型のみサポートされています。
 
-例を次に示します。
+次に例を示します。
 
 ```json
     "actions": [
@@ -177,7 +177,7 @@ ms.locfileid: "53076316"
 - 標準キーボードで 2 つの文字が同じ物理キーにリンクされている場合は、プロパティ内の類義語になります。たとえば、Alt+a と Alt+A は同じショートカットなので `default` 、"-" と "_" は同じ物理キーなので、Ctrl + + と Ctrl+ も同じです。 \_
 - "+" 文字は、そのいずれかの側のキーが同時に押された状態を示します。
 
-例を次に示します。
+次に例を示します。
 
 ```json
     "shortcuts": [
@@ -262,7 +262,7 @@ Web でカスタム キーボード ショートカットを使用する場合�
 - Ctrl + W
 - Ctrl + PgUp/PgDn
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - キーボード ショートカット[Excelアドインの例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を参照してください。
 - 「マニフェストの拡張オーバーライドを処理する」の拡張オーバーライドの操作 [の概要を取得します](../develop/extended-overrides.md)。

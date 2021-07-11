@@ -3,12 +3,12 @@ title: Mac で Office アドインをデバッグする
 description: Mac を使用してアドインをデバッグするOffice説明します。
 ms.date: 10/16/2020
 localization_priority: Normal
-ms.openlocfilehash: b2164e3ed672b2911db6841fad24441b67882204
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 98473e7c37b9ef5ee34d35f91688ccef65ac7d78
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237946"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350135"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 
@@ -18,7 +18,7 @@ ms.locfileid: "50237946"
 
 作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
 
-Mac で Office アドインをデバッグするには、Mac OS High Sierra と Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 If you don't have an Office Mac build, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+Mac で Office アドインをデバッグするには、Mac OS High Sierra AND Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 Mac ビルドがない場合は、Office開発者プログラムに参加Microsoft 365[取得できます](https://developer.microsoft.com/office/dev-program)。
 
 最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
 
@@ -36,11 +36,12 @@ Mac で Office アドインをデバッグするには、Mac OS High Sierra と 
 次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。 このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
 
 > [!NOTE]
-> インスペクタとダイアログ フリッカーを使おうとしている場合は、Office を最新バージョンに更新してください。 それでも、ちらつきが解消しない場合は、次の回避策を試してください。
+> インスペクタとダイアログ フリッカーを使おうとしている場合は、Office を最新バージョンに更新してください。 ちらつきが解決しない場合は、次の回避策を試してください。
+>
 > 1. ダイアログのサイズを変更します。
-> 2. **[要素の検査]** を選択します (新しいウィンドウが開きます)。
-> 3. ダイアログを元のサイズに変更します。
-> 4. 必要に応じてインスペクタを使用します。
+> 1. **[要素の検査]** を選択します (新しいウィンドウが開きます)。
+> 1. ダイアログを元のサイズに変更します。
+> 1. 必要に応じてインスペクタを使用します。
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Mac 上の Office アプリケーションのキャッシュをクリアする
 

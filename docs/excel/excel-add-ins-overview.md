@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 37ce824817f07949435fd21fa4545a5c787e7105
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 18484c9f6745399b0fdf50da466004e80beca44e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075860"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349505"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -24,32 +24,32 @@ Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーな
 
 Office アドインのプラットフォームには、Excel アドインの作成と実行を可能にするフレームワークと Office.js JavaScript API が用意されています。Office アドインのプラットフォームを使用した Excel アドインの作成には、次の利点があります。
 
-* **クロスプラットフォーム サポート**: Excel アドインは、Office on the web、Windows、Mac、iPad で実行できます。
-* **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
-* **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
-* **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
+- **クロスプラットフォーム サポート**: Excel アドインは、Office on the web、Windows、Mac、iPad で実行できます。
+- **一元展開**: 管理者は、組織全体のユーザーに Excel アドインをすばやく簡単に展開できます。
+- **標準の Web テクノロジの使用**: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用する Excel アドインを作成します。
+- **AppSource を経由した配布**: Excel アドインを [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) に公開することで、幅広いユーザーと共有します。
 
 > [!NOTE]
 > Excel アドインは、Windows での Office でのみ実行する、以前の Office 統合ソリューションである COM アドインや VSTO アドインとは異なります。COM アドインとは異なり、Excel アドインではユーザーのデバイスや Excel 内にコードをインストールする必要はありません。
 
 ## <a name="components-of-an-excel-add-in"></a>Excel アドインのコンポーネント
 
-Excel アドインには 2 つの基本コンポーネントが含まれています。Web アプリケーションと、マニフェスト ファイルと呼ばれる構成ファイルです。 
+Excel アドインには 2 つの基本コンポーネントが含まれています。Web アプリケーションと、マニフェスト ファイルと呼ばれる構成ファイルです。
 
-Web アプリケーションは、[Office JavaScript API](../reference/javascript-api-for-office.md) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を簡単にすることもできます。 たとえば、アドインでは次の操作を実行できます。
+Web アプリケーションは、[Office JavaScript API](../reference/javascript-api-for-office.md) を使用して Excel のオブジェクトを操作します。また、オンライン リソースとの相互操作を容易にすることもできます。 たとえば、アドインでは次の操作を実行できます。
 
-* ブック内のデータ (ワークシート、範囲、表、グラフ、名前付きの項目など) を作成、読み込み、更新、および削除します。
-* 標準の OAuth 2.0 のフローを使用して、オンライン サービスでユーザー認証を実行します。
-* Microsoft Graph やその他の API に、API 要求を発行します。
+- ブック内のデータ (ワークシート、範囲、表、グラフ、名前付きの項目など) を作成、読み込み、更新、および削除します。
+- 標準の OAuth 2.0 のフローを使用して、オンライン サービスでユーザー認証を実行します。
+- Microsoft Graph やその他の API に、API 要求を発行します。
 
 Web アプリケーションは、任意の Web サーバー上でホストできます。また、クライアント側のフレームワーク (Angular、React、jQuery など) や、サーバー側のテクノロジ (ASP.NET、Node.js、PHP など) を使用して構築できます。
 
 [マニフェスト](../develop/add-in-manifests.md)は XML 構成ファイルであり、次のような設定と機能を指定することによって、アドインと Office クライアントを統合する方法を定義します。
 
-* アドインの Web アプリケーションの URL。
-* アドインの表示名、説明、ID、バージョン、および既定のロケール。
-* アドインと Excel を統合する方法。アドインが作成する任意のカスタム UI (リボンのボタン、コンテキスト メニューなど) の統合を含む。
-* ドキュメントの読み取り、書き込みなど、アドインに必要なアクセス許可。
+- アドインの Web アプリケーションの URL。
+- アドインの表示名、説明、ID、バージョン、および既定のロケール。
+- アドインと Excel を統合する方法。アドインが作成する任意のカスタム UI (リボンのボタン、コンテキスト メニューなど) の統合を含む。
+- ドキュメントの読み取り、書き込みなど、アドインに必要なアクセス許可。
 
 エンドユーザーが Excel アドインをインストールして使用できるようにするには、そのマニフェストを AppSource かアドイン カタログに公開する必要があります。 AppSource の発行の詳細について、「[AppSource と Office 内でソリューションを使用できるようにする](/office/dev/store/submit-to-appsource-via-partner-center)」を参照してください。
 
@@ -59,7 +59,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ### <a name="add-in-commands"></a>アドイン コマンド
 
-アドイン コマンドは、Excel UI を拡張する UI 要素であり、アドインのアクションを開始します。アドイン コマンドを使って、Excel のリボンにボタンを追加したり、コンテキスト メニューに項目を追加したりできます。ユーザーがアドイン コマンドを選択するときは、JavaScript コードの実行や、作業ウィンドウでのアドインのページの表示といったアクションを開始します。 
+アドイン コマンドは、Excel UI を拡張する UI 要素であり、アドインのアクションを開始します。アドイン コマンドを使って、Excel のリボンにボタンを追加したり、コンテキスト メニューに項目を追加したりできます。ユーザーがアドイン コマンドを選択するときは、JavaScript コードの実行や、作業ウィンドウでのアドインのページの表示といったアクションを開始します。
 
 **アドイン コマンド**
 
@@ -69,7 +69,7 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ### <a name="task-panes"></a>作業ウィンドウ
 
-作業ウィンドウは、通常 Excel 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行して Excel ドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。 
+作業ウィンドウは、通常 Excel 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行して Excel ドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 
 **作業ウィンドウ**
 
@@ -79,11 +79,11 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ### <a name="custom-functions"></a>カスタム関数
 
-開発者は、カスタム関数を使用して関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。 ユーザーは Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。 
+開発者は、カスタム関数を使用して関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。 ユーザーは Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。
 
 **カスタム関数**
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+![MYFUNCTION.SPHEREVOLUME カスタム関数を EXCEL ワークシートのセルへ挿入するエンド ユーザーを示すアニメーション画像。](../images/SphereVolumeNew.gif)
 
 カスタム関数の詳細については、「[Excel でカスタム関数を作成する](custom-functions-overview.md)」を参照してください。
 
@@ -111,9 +111,9 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 Excel アドインは、次の 2 つの JavaScript オブジェクト モデルを含む [Office JavaScript API](../reference/javascript-api-for-office.md) を使用して、Excel のオブジェクトを操作します。
 
-* **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。 
+- **Excel JavaScript API**:Office 2016 で導入された [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) には、ワークシート、範囲、表、グラフなどへのアクセスに使用できる、厳密に型指定された Excel オブジェクトが用意されています。
 
-* **共通 API**: Office 2013 で導入された共通 API を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
+- **共通 API**: Office 2013 で導入された共通 API を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。共通 API は Excel の操作に限られた機能を提供します。そのため、アドインを Excel 2013 で実行する必要がある場合に使用できます。
 
 ## <a name="next-steps"></a>次の手順
 

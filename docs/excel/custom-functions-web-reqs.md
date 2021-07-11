@@ -3,16 +3,16 @@ ms.date: 03/15/2021
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075881"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349601"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
-カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) などブック以外からのデータの受信です。 [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
+カスタム関数によって Excel の機能を強化する方法の一つは、ウェブやサーバー (WebSockets 経由) などブック以外からのデータの受信です。 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -104,7 +104,7 @@ async function getStarCount(userName: string, repoName: string) {
 - タグ `@streaming` 。
 - 呼 `CustomFunctions.StreamingInvocation` び出しパラメーター。
 
-以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
+以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては以下の点に注目してください。
 
 - Excel は、`setResult` メソッドを使用して自動的に新しい値を表示します。
 - 2 番目の入力パラメーター、起動は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。
@@ -133,7 +133,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="canceling-a-function"></a>関数をキャンセルする
 
-Excel では、次のような状況で関数の実行をキャンセルします。
+Excel場合は、関数の実行を取り消します。
 
 - ユーザーが、関数を参照するセルを編集または削除した場合。
 - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。

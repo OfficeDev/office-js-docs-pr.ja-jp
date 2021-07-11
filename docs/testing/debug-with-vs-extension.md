@@ -3,12 +3,12 @@ title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡�
 description: アドイン デバッガー Visual Studio Code拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 264a5d43a8b4f0faf7d6216664d30d7c8b64cccc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077121"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349288"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
@@ -31,60 +31,60 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 
 1. アドイン プロジェクトを作成する必要がある場合は[、Yo Officeを使用して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトをセットアップします。 ニーズに合わせて任意の言語または種類のプロジェクトを選択できます。
 
-> [!NOTE]
-> プロジェクトが既に存在する場合は、手順 1 をスキップして、手順 2 に進みます。
+    > [!NOTE]
+    > プロジェクトが既に存在する場合は、手順 1 をスキップして、手順 2 に進みます。
 
-2. 管理者としてコマンド プロンプトを開きます。
+1. 管理者としてコマンド プロンプトを開きます。
    ![コマンド プロンプト のオプション ([管理者として実行] を含む) Windows 10。](../images/run-as-administrator-vs-code.jpg)
 
-3. プロジェクト ディレクトリに移動します。
+1. プロジェクト ディレクトリに移動します。
 
-4. 次のコマンドを実行して、プロジェクトを管理者Visual Studio Code開きます。
+1. 次のコマンドを実行して、プロジェクトを管理者Visual Studio Code開きます。
 
-```command&nbsp;line
-code .
-```
+    ```command&nbsp;line
+    code .
+    ```
 
-ファイルVisual Studio Code開いた後、手動でプロジェクト フォルダーに移動します。
+  ファイルVisual Studio Code開いた後、手動でプロジェクト フォルダーに移動します。
 
-> [!TIP]
-> 管理者としてVisual Studio Codeを開く場合は、管理者として実行オプションを選択し、Visual Studio Codeで管理者を検索した後Windows。
+  > [!TIP]
+  > 管理者としてVisual Studio Codeを開く場合は、管理者として実行オプションを選択し、Visual Studio Codeで管理者を検索した後Windows。
 
-5. VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 "Microsoft Office アドイン デバッガー" 拡張機能を検索してインストールします。
+1. VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 "Microsoft Office アドイン デバッガー" 拡張機能を検索してインストールします。
 
-6. プロジェクトの .vscode フォルダーで、**launch.json** ファイルを開きます。 セクションに次のコードを追加 `configurations` します。
+1. プロジェクトの .vscode フォルダーで、**launch.json** ファイルを開きます。 セクションに次のコードを追加 `configurations` します。
 
-```JSON
-{
-  "type": "office-addin",
-  "request": "attach",
-  "name": "Attach to Office Add-ins",
-  "port": 9222,
-  "trace": "verbose",
-  "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
-  "webRoot": "${workspaceFolder}",
-  "timeout": 45000
-}
-```
+    ```JSON
+    {
+      "type": "office-addin",
+      "request": "attach",
+      "name": "Attach to Office Add-ins",
+      "port": 9222,
+      "trace": "verbose",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
+      "webRoot": "${workspaceFolder}",
+      "timeout": 45000
+    }
+    ```
 
-7. コピーした JSON のセクションで、"url" セクションを探します。 この URL では、大文字の HOST テキストを、アドインをホストしているアプリケーションに置き換Office必要があります。 たとえば、Office アドインが Excel 用の場合、URL 値は https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0" になります。
+1. コピーした JSON のセクションで、"url" セクションを探します。 この URL では、大文字の HOST テキストを、アドインをホストしているアプリケーションに置き換Office必要があります。 たとえば、Office アドインが Excel 用の場合、URL 値は https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0" になります。
 
-8. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがクライアントに読み込まれるOffice作業ウィンドウを開きます。
+1. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがクライアントに読み込まれるOffice作業ウィンドウを開きます。
 
-9. [デバッグ] **Visual Studio Codeし、[** デバッグの表示] を>、Ctrl + Shift **+ D** と入力してデバッグ ビューに切り替えます。
+1. [デバッグ] **Visual Studio Codeし、[** デバッグの表示] を>、Ctrl + Shift **+ D** と入力してデバッグ ビューに切り替えます。
 
-10. [デバッグ] オプションで、[**アドインに接続Office選択します**。**[F5]** を選択するか、メニューから **[デバッグ - >デバッグ** の開始] を選択してデバッグを開始します。
+1. [デバッグ] オプションで、[**アドインに接続Office選択します**。**[F5]** を選択するか、メニューから **[デバッグ - >デバッグ** の開始] を選択してデバッグを開始します。
 
-11. プロジェクトの作業ウィンドウ ファイルにブレークポイントを設定します。 コード行の横にホバー Visual Studio Code表示される赤い円を選択すると、ブレークポイントを設定できます。
+1. プロジェクトの作業ウィンドウ ファイルにブレークポイントを設定します。 コード行の横にホバー Visual Studio Code表示される赤い円を選択すると、ブレークポイントを設定できます。
 
-![赤い円は、次のコード行にVisual Studio Code。](../images/set-breakpoint.jpg)
+    ![赤い円は、次のコード行にVisual Studio Code。](../images/set-breakpoint.jpg)
 
-12. アドインを実行します。 ブレークポイントがヒットし、ローカル変数を検査できます。
+1. アドインを実行します。 ブレークポイントがヒットし、ローカル変数を検査できます。
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
+- [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 
-* [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする](debug-desktop-using-edge-chromium.md)
+- [Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする](debug-desktop-using-edge-chromium.md)

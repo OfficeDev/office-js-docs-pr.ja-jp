@@ -3,12 +3,12 @@ title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
 ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639957"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350023"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
@@ -34,7 +34,7 @@ autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-Autoopen 機能を使用するときには、次に示すベスト プラクティスを適用してください。
+自動開く機能を使用する場合は、次のベスト プラクティスを適用します。
 
 - Autoopen 機能は、アドイン ユーザーの作業効率の向上に役立つ場合に使用します。たとえば、次の場合に使用します。
   - 適切に機能するには、ドキュメントにアドインが必要になる場合。たとえば、アドインで最新の情報に定期的に更新される在庫の値が含まれているスプレッドシート。最新の値が維持されるように、アドインはスプレッドシートが開かれたときに自動的に開かれる必要があります。
@@ -118,7 +118,7 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
-|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、管理センターで集中展開を使用するアドインで使用Microsoft 365行です。|アドイン マニフェストでのバージョン。
+|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、一元展開を使用するアドインで使用する行Microsoft 365 管理センター。|アドイン マニフェストでのバージョン。
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
 > [!NOTE]
@@ -147,7 +147,7 @@ XML を記述する簡単な方法は、最初にアドインを実行し[](#tag
 
 ## <a name="test-and-verify-opening-task-panes"></a>作業ウィンドウ表示のテストと検証
 
-管理センターから集中展開を使用して作業ウィンドウを自動的に開くアドインのテスト バージョンMicrosoft 365できます。 次の例では、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示します。
+一元展開を使用して作業ウィンドウを自動的に開くテスト バージョンのアドインを展開Microsoft 365 管理センター。 次の例では、EXCatalog のストア版を使用して一元展開カタログからアドインを挿入する方法を示します。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

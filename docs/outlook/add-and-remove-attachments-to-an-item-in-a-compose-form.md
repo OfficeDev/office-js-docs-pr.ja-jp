@@ -1,32 +1,32 @@
 ---
 title: Outlook アドインで添付ファイルを追加および削除する
-description: さまざまな添付ファイル API を使用して、ユーザーが作成しているアイテムに添付されているファイルまたは Outlook アイテムを管理できます。
+description: さまざまな添付ファイル API を使用して、ユーザーが作成しているアイテムOutlookファイルまたはアイテムを管理できます。
 ms.date: 02/24/2021
 localization_priority: Normal
-ms.openlocfilehash: da426813e865f5607ec3e2c65252e8a406d889e2
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505501"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348588"
 ---
-# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Outlook の作成フォームでアイテムの添付ファイルを管理する
+# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>フォーム内の作成フォームでアイテムの添付ファイルを管理Outlook
 
 JavaScript API Officeには、ユーザーが作成するときにアイテムの添付ファイルを管理するために使用できるいくつかの API が提供されています。
 
-## <a name="attach-a-file-or-outlook-item"></a>ファイルまたは Outlook アイテムを添付する
+## <a name="attach-a-file-or-outlook-item"></a>ファイルまたはアイテムを添付Outlookする
 
-添付ファイルの種類に適したメソッドを使用して、ファイルまたは Outlook アイテムを作成フォームに添付できます。
+添付ファイルの種類に適したOutlookを使用して、ファイルまたはアイテムを作成フォームに添付できます。
 
 - [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): ファイルを添付する
 - [addFileAttachmentFromBase64Async : base64](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)文字列を使用してファイルを添付する
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): Outlook アイテムの添付
+- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): アイテムを添付Outlookする
 
 これらは非同期メソッドです。つまり、アクションが完了するのを待たずに実行を続けできます。 追加する添付ファイルの元の場所とサイズによっては、非同期呼び出しの完了に時間がかかる場合があります。
 
 アクションの完了に依存するようなタスクがある場合、それらのタスクはコールバック メソッドで実行する必要があります。 このコールバック メソッドはオプションで、添付ファイルのアップロードが完了すると呼び出されます。 コールバック メソッドは、状態、エラー、そして添付ファイル追加によって返される値を提供する出力パラメーターとして、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトを使用します。 コールバックがその他のパラメーターを必要とする場合、オプションの `options.asyncContext` パラメーターでそれを指定することができます。 `options.asyncContext` は、コールバック メソッドが予期する任意の種類となることができます。
 
-たとえば、`options.asyncContext` は 1 つ以上の「キーと値のペア」を含む JSON オブジェクトとして定義することができます。非同期メソッドにオプション パラメーターを渡すさらに多くの例は、「[Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)」の Office アドイン プラットフォームで見いだすことができます。以下の例は、コールバック メソッドに引数を 2 つ渡すための `asyncContext` パラメーターの使用法を示しています。
+たとえば、1 つ以上のキーと値のペア `options.asyncContext` を含む JSON オブジェクトとして定義できます。 Office アドイン の非同期メソッドにオプション パラメーターを渡す例については、「Office アドインの非同期プログラミング」を[参照してください](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)。次の例は、パラメーターを使用して `asyncContext` 2 つの引数をコールバック メソッドに渡す方法を示しています。
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -79,9 +79,9 @@ function write(message){
 }
 ```
 
-### <a name="attach-an-outlook-item"></a>Outlook アイテムを添付する
+### <a name="attach-an-outlook-item"></a>アイテムをOutlookする
 
-アイテムの Exchange Web Services (EWS) ID を指定し、メソッドを使用して、作成フォーム内のメッセージまたは予定に Outlook アイテム (電子メール、予定表、連絡先アイテムなど) を添付できます。 `addItemAttachmentAsync` [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)メソッドを使用して EWS 操作[FindItem](/exchange/client-developer/web-service-reference/finditem-operation)にアクセスすると、ユーザーのメールボックス内の電子メール、予定表、連絡先、またはタスク アイテムの EWS ID を取得できます。 閲覧フォームの既存のアイテムでは、 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティでも EWS ID が取得できます。
+Outlook アイテム (メール、予定表、連絡先アイテムなど) を作成フォームのメッセージまたは予定に添付するには、アイテムの Exchange Web サービス (EWS) ID を指定し、メソッドを使用します。 `addItemAttachmentAsync` [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)メソッドを使用して EWS 操作[FindItem](/exchange/client-developer/web-service-reference/finditem-operation)にアクセスすると、ユーザーのメールボックス内の電子メール、予定表、連絡先、またはタスク アイテムの EWS ID を取得できます。 閲覧フォームの既存のアイテムでは、 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティでも EWS ID が取得できます。
 
 次の JavaScript 関数は、上記の最初の例を拡張し、構成されている電子メールまたは予定に添付ファイルとしてアイテム `addItemAttachment` を追加します。 この関数は、添付するアイテムの EWS ID を引数として受け取ります。 接続が成功した場合は、同じセッションで添付ファイルを削除するなど、さらに処理するための添付ファイル ID を取得します。
 
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> 作成アドインを使用して、Outlook on the web またはモバイル デバイスで定期的な予定のインスタンスを添付できます。 ただし、サポートしている Outlook デスクトップ クライアントでは、インスタンスを接続しようとすると、定期的な系列 (親予定) が添付されます。
+> 作成アドインを使用して、定期的な予定のインスタンスをデバイスまたはモバイル Outlook on the web接続できます。 ただし、サポートしているデスクトップ Outlookでは、インスタンスを接続しようとすると、定期的な系列 (親予定) が添付されます。
 
 ## <a name="get-attachments"></a>添付ファイルを取得する
 

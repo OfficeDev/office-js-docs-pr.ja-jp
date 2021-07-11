@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b3600e56db138a45e1601eaf5073126e04b65c5
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961238"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349960"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -129,7 +129,7 @@ ms.locfileid: "52961238"
 
 1. コード エディターで複製プロジェクトの`\Begin`フォルダーを開きます。
 
-1. `.ENV`ファイルを開き、以前にコピーした値を使用します。 **CLIENT_ID** を **アプリケーション (クライアント) ID** に設定し、**CLIENT_SECRET** をクライアント シークレットに設定します。 値は引用符で囲ま **ない** でください。 完了すると、ファイルは以下のようになります。 
+1. `.ENV`ファイルを開き、以前にコピーした値を使用します。 **CLIENT_ID** を **アプリケーション (クライアント) ID** に設定し、**CLIENT_SECRET** をクライアント シークレットに設定します。 値は引用符で囲ま **ない** でください。 完了すると、ファイルは以下のようになります。
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -139,7 +139,7 @@ ms.locfileid: "52961238"
 
 1. `\public\javascripts\fallbackAuthDialog.js`ファイルを開きます。 `msalConfig`宣言では、プレースホルダー $application_GUID here$ はアドインの登録時にコピーしたアプリケーション ID に置き換えます。 値は引用符で囲む必要があります。
 
-1. アドイン マニフェスト ファイル "manifest\manifest_local.xml" を開き、ファイルの一番下までスクロールします。 `</VersionOverrides>`終了タグのすぐ上に、以下のマークアップがあります。
+1. アドイン マニフェスト ファイル "manifest\manifest_local.xml" を開き、ファイルの一番下までスクロールします。 終了タグ `</VersionOverrides>` の上に、次のマークアップがあります。
 
     ```xml
     <WebApplicationInfo>
@@ -166,7 +166,7 @@ ms.locfileid: "52961238"
     > [!NOTE]
     > 名前が示すように、ssoAuthES6.js は JavaScript ES6 構文を使用します。これは、これは、`async`と`await`の使用こそが SSO API の本質的なシンプルさを最もよく示すためです。 localhost サーバーが起動するとこのファイルは ES5 構文に変換され、サンプルが Internet Explorer 11 で実行されます。 
 
-1. Office.onReady メソッドの下に以下のコードを追加します。
+1. Office.onReady メソッドの下に次のコードを追加します。
 
     ```javascript
     async function getGraphData() {
@@ -235,7 +235,7 @@ ms.locfileid: "52961238"
     }
     ```
 
-1. `TODO 5`を以下のように置き換えます
+1. 次 `TODO 5` に置き換える:
 
     - `getAccessToken`の呼び出しからのエラーは、通常 13xxx の範囲のエラー番号を持つ`code`プロパティを持ちます。 `handleClientSideErrors`メソッドは後の手順で作成します。
     - `showMessage`メソッドは、タスク ウィンドウにテキストを表示します。
@@ -330,7 +330,7 @@ ms.locfileid: "52961238"
     }
     ```
 
-1. まれに Office がキャッシュしたブートストラップ トークンが Office の検証時に期限切れにならず、交換のために Azure AD に到達するまでの間に期限切れになることがあります。 Azure AD はエラー **AADSTS500133** で応答します。 この場合、アドインは単に`getGraphData`を再帰的に呼び出す必要があります。 キャッシュされたブートストラップ トークンの有効期限が切れているため、Office は Azure AD から新しいものを取得します。 そして、`TODO 8`を以下のように置き換えます。 
+1. まれに Office がキャッシュしたブートストラップ トークンが Office の検証時に期限切れにならず、交換のために Azure AD に到達するまでの間に期限切れになることがあります。 Azure AD はエラー **AADSTS500133** で応答します。 この場合、アドインは単に`getGraphData`を再帰的に呼び出す必要があります。 キャッシュされたブートストラップ トークンの有効期限が切れているため、Office は Azure AD から新しいものを取得します。 そのため、次 `TODO 8` の値に置き換える必要があります。
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -362,7 +362,7 @@ ms.locfileid: "52961238"
     }
     ```
 
-1. `TODO 9`を以下のように置き換えます。 
+1. 次 `TODO 9` に置き換える:
 
     ```javascript
     else {

@@ -1,25 +1,25 @@
 ---
 title: マニフェスト ファイルの Rule 要素
-description: Rule 要素は、このコンテキストメールアドインに対して評価する必要があるアクティブ化ルールを指定します。
+description: Rule 要素は、このコンテキスト メール アドインで評価するアクティブ化ルールを指定します。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 60882a5e36a63832cf81eab9320b113a420b84a3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641432"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348672"
 ---
 # <a name="rule-element"></a>Rule 要素
 
-このコンテキストメールアドインに対して評価する必要があるアクティブ化ルールを指定します。
+このコンテキスト メール アドインで評価する必要があるライセンス認証ルールを指定します。
 
 **アドインの種類:** メール (コンテキスト)
 
 ## <a name="contained-in"></a>含まれる場所
 
 - [OfficeApp](officeapp.md)
-- [Extensionpoint](extensionpoint.md) ([**custompane** (非推奨)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
+- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (非推奨)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)、 [**DetectedEntity**](extensionpoint.md#detectedentity))
 
 ## <a name="attributes"></a>属性
 
@@ -27,7 +27,7 @@ ms.locfileid: "46641432"
 |:-----|:-----|:-----|
 | **xsi:type** | はい | 定義されているルールの種類。 |
 
-ルールの種類は、次のいずれかになります。
+ルールの種類は、次のいずれかを指定できます。
 
 - [ItemIs](#itemis-rule)
 - [ItemHasAttachment](#itemhasattachment-rule)

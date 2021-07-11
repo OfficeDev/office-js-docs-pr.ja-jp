@@ -1,21 +1,21 @@
 ---
 title: Excel JavaScript API のパフォーマンスの最適化
-description: JavaScript API を使用して Excel アドインのパフォーマンスを最適化します。
+description: JavaScript API Excelを使用して、アドインのパフォーマンスを最適化します。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 42ab5f28717f0f7dcd06461840de692a5daf60ce
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408615"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349386"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
 Excel JavaScript API を使用して一般的なタスクを実行するには、複数の方法があります。 さまざまなアプローチの間でパフォーマンスは大きく異なります。 この記事には、Excel JavaScript API を使用して一般的なタスクを効率的に実行する方法を示すガイダンスとコード サンプルが記載されています。
 
 > [!IMPORTANT]
-> パフォーマンスに関する多くの問題は、と呼び出しの推奨される使用方法によって解決でき `load` `sync` ます。 アプリケーション固有の Api を効率的に処理するためのアドバイスについては、「 [リソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) 」の「アプリケーション固有の api を使用したパフォーマンスの向上」を参照してください。
+> 推奨される使用法と呼び出しによって、多くのパフォーマンスの問題 `load` に対処 `sync` できます。 アプリケーション固有の API を効率的に操作するためのアドバイスについては[、「Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis)アドインのリソース制限とパフォーマンスの最適化」の「アプリケーション固有 API によるパフォーマンスの向上」セクションを参照してください。
 
 ## <a name="suspend-excel-processes-temporarily"></a>Excel のプロセスを一時的に中断する
 
@@ -66,14 +66,14 @@ Excel.run(async function(ctx) {
 })
 ```
 
-数式の計算のみが中断されることに注意してください。 変更された参照はまだ再構築されています。 たとえば、ワークシートの名前を変更しても、そのワークシートへの数式の参照は更新されます。
+数式の計算だけが中断されます。 変更された参照は、まだ再作成されます。 たとえば、ワークシートの名前を変更すると、そのワークシートへの数式の参照が更新されます。
 
 ### <a name="suspend-screen-updating"></a>画面の更新を停止する
 
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
 
 > [!NOTE]
-> 繰り返し呼び出しない `suspendScreenUpdatingUntilNextSync` (ループの場合など)。 呼び出しが繰り返し行われると、Excel ウィンドウがちらつくようになります。
+> 繰り返し `suspendScreenUpdatingUntilNextSync` 呼び出す (ループ内など) は使用しない。 繰り返し呼び出しを行Excelウィンドウがちらつきます。
 
 ### <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
@@ -109,8 +109,8 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) メソッドを使用すると、Table オブジェクトを Range オブジェクトに簡単に変換できます。
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
-* [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+* [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 * [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)
 * [ワークシート関数のオブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

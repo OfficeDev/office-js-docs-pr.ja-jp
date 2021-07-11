@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076526"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349939"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -98,7 +98,7 @@ Excel、PowerPoint、または Word アドインのデバッグ時に使用す�
 > [!NOTE]
 > Outlook アドイン プロジェクトを開始すると、ログインの資格情報を求めるメッセージが表示されます。 サインインを繰り返し求める場合や、承認されていないというエラーが表示された場合は、Microsoft 365 テナントのアカウントに対して Basic Auth が無効になる場合があります。 この場合、代わりに Microsoft アカウントを使用してみます。 Outlook Web アドイン プロジェクトのプロパティ ダイアログで、[多要素認証を使用する] プロパティを True に設定する必要がある場合もあります。
 
-Visual Studio によってプロジェクトがビルドされると、次のタスクが実行されます。
+プロジェクトVisual Studio、次のタスクを実行します。
 
 1. XML マニフェスト ファイルのコピーを作成し、`_ProjectName_\bin\Debug\OfficeAppManifests` ディレクトリに追加します。 アドインOfficeホストするアプリケーションは、アドインのインストールとデバッグを開始Visual Studioこのコピーを使用します。
 

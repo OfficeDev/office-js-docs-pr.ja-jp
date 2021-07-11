@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Resources 要素
 description: Resources 要素には、VersionOverrides ノードのアイコン、文字列、URL が含まれます。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604618"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348294"
 ---
 # <a name="resources-element"></a>リソース要素
 
@@ -36,7 +36,7 @@ ms.locfileid: "51604618"
 - 32x32
 - 80x80
 
-上記の他に次のサイズもサポートされていますが、指定する必要はありません。
+次の追加サイズもサポートされますが、必須ではありません。
 
 - 20x20
 - 24x24

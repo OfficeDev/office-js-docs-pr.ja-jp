@@ -3,12 +3,12 @@ title: OneNote ページ コンテンツを使用する
 description: JavaScript API を使用してページ OneNoteを使用する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f506617bfdbc97e94f8fb16930dfc2a935385d5f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076820"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349050"
 ---
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
@@ -21,7 +21,7 @@ OneNote アドインの JavaScript API では、ページ コンテンツは次�
 - アウトライン オブジェクトには、Paragraph オブジェクトのコレクションが含まれています。
 - Paragraph オブジェクトには、RichText、Image、Table、Other のコンテンツ タイプが含まれています。
 
-空の OneNote ページを作成するには、次の方法のいずれかを使用します。
+空のページを作成OneNote、次のいずれかの方法を使用します。
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
@@ -36,7 +36,7 @@ OneNote ページのコンテンツと構造は、HTML で表されます。次�
 
 ## <a name="supported-html"></a>サポートされている HTML
 
-ページ コンテンツを作成して更新するために、OneNote アドインの JavaScript API では次の HTML がサポートされています。
+このOneNote JavaScript API では、ページ コンテンツを作成および更新するための次の HTML がサポートされています。
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

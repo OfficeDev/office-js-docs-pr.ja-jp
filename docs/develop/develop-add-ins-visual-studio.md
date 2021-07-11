@@ -3,12 +3,12 @@ title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5d7495709f729fb06a87ad5ca443b1712f6c3e49
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741107"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349932"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
@@ -43,7 +43,7 @@ Office アドインのテスト、デバッグ、およびトラブルシュー�
 
 ## <a name="publish-the-add-in"></a>アドインを発行する
 
-Office アドインは、Web アプリケーションとマニフェスト ファイルで構成されています。 Web アプリケーションはアドインのユーザー インターフェイスと機能を定義し、マニフェストは Web アプリケーションの場所を指定し、アドインの設定と機能を定義します。
+Office アドインは、Web アプリケーションとマニフェスト ファイルで構成されます。Web アプリケーションはアドインのユーザー インターフェイスと機能を定義しますが、マニフェストは Web アプリケーションの場所を指定し、アドインの設定と機能を定義します。
 
 Visual Studio で開発中のアドインは、ローカル Web サーバー上 (`localhost`) で実行されます。 アドインが正常に機能し、他のユーザーがアクセスできるように公開する準備ができた場合、次の手順を実行する必要があります。
 
@@ -57,4 +57,4 @@ Visual Studio で開発中のアドインは、ローカル Web サーバー上 
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
-- [Office アドインを発行する](../publish/publish.md)
+- [Office アドインの公開](../publish/publish.md)

@@ -3,12 +3,12 @@ ms.date: 04/12/2021
 description: 作業ウィンドウを使用しないExcel関数をデバッグする方法について説明します。
 title: UI レスのカスタム関数のデバッグ
 localization_priority: Normal
-ms.openlocfilehash: a692f376cb5c874fa4d510d3459469d803e643f7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e0e2b7bf49836a9b88de9ceaa21a66a454e6f05a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075937"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349645"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -142,15 +142,15 @@ Mac の場合:
 2. 2 番目のコマンド ライン ウィンドウを開きます (最初のウィンドウはウォッチの実行中にブロックされます)。
 
 3. デスクトップ バージョンのデスクトップ バージョンでアドインを起動する場合はExcelコマンドを実行します。
-    
+
     `npm run start:desktop`
-    
-    または、次のコマンドを実行するためにアドインExcel on the web開始する場合
-    
+
+    または、アドインを起動する場合は、Excel on the webコマンドを実行します。
+
     `npm run start:web`
-    
+
     このExcel on the webアドインをサイドロードする必要があります。 「アドインを [サイドロードする」の手順に従って](#sideload-your-add-in) 、アドインをサイドロードします。 次に、次のセクションに進み、デバッグを開始します。
-    
+
 4. ブラウザーで開発者ツールを開きます。 Chrome およびほとんどのブラウザーの場合、F12 は開発者ツールを開きます。
 5. 開発者ツールで、ソース コード スクリプト ファイル(functions.jsまたは **functions.ts) を開きます**。 カスタム関数コードは、ファイルの末尾近くに位置している可能性があります。
 6. カスタム関数のソース コードで、コード行を選択してブレークポイントを適用します。

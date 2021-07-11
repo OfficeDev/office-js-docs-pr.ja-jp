@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 06/08/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076792"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349015"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -28,13 +28,13 @@ ms.locfileid: "53076792"
 |---|---|---|
 |`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|1.10|
 |`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|1.10|
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|プレビュー|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|プレビュー|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|プレビュー|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|プレビュー|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|プレビュー|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|プレビュー|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|プレビュー|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|Preview|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|Preview|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|Preview|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|Preview|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|Preview|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|Preview|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|Preview|
 
 > [!IMPORTANT]
 > プレビュー中のイベントは、Microsoft 365のサブスクリプションとOutlook on the webでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
@@ -316,4 +316,6 @@ UI Office.js変更する API の一部は、イベント ベースのアドイ�
 
 - [Outlook アドインのマニフェスト](manifests.md)
 - [イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
-- PnP サンプル:[イベント Outlookアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+- PnP サンプル:
+  - [イベント Outlookアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [イベント ベースOutlookを使用して外部受信者にタグを付け](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

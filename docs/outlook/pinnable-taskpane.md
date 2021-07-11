@@ -3,12 +3,12 @@ title: Outlook アドインにピン留め可能な作業ウィンドウを実�
 description: アドイン コマンド用の作業ウィンドウ UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作に対応した UI を提供できようになります。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39af3a532d553835b02709301c998a78dc9958bb
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 57a17a90fe565adb3ffb9d23e3b169bc83be2735
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093869"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348882"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 
@@ -17,13 +17,15 @@ ms.locfileid: "45093869"
 ただし、既定では、ユーザーが新しいメッセージを選択すると、閲覧ウィンドウ内で開いていたメッセージのアドイン作業ウィンドウは自動的に閉じられます。頻繁に使用されるアドインの場合、ユーザーはそのウィンドウを開いたままにして、メッセージごとにアドインを有効化する手間がなくなることを望むでしょう。ピン留め可能な作業ウィンドウでは、これに該当するオプションをユーザーに提供できます。
 
 > [!NOTE]
-> Pinnable 作業ウィンドウ機能は[要件セット 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されていますが、現時点では、次のものを使用して Microsoft 365 サブスクライバーのみが利用できます。
-> - Outlook 2016 以降 (現在のまたは Office Insider チャネル内のユーザーのためにビルド7668.2000 以降) (段階的提供チャネルのユーザー用に7900以降をビルドする)
-> - Outlook 2016 以降 (バージョン16.13.503 以降)
+> ピン留め可能な作業ウィンドウ機能は要件セット[1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在は、次を使用して Microsoft 365 サブスクライバーだけが使用できます。
+>
+> - Outlook 2016 Windows 以降 (現在または Office Insider チャネルのユーザー用に 7668.2000 以降をビルドし、遅延チャネルのユーザー用に 7900.xxxx 以降をビルドする)
+> - Outlook 2016以降の Mac (バージョン 16.13.503 以降)
 > - モダン Outlook on the web
 
 > [!IMPORTANT]
-> 次の場合、ピン留め可能な作業ウィンドウは使用できません。
+> ピン留め可能な作業ウィンドウは、次の場合は使用できません。
+>
 > - 予定および会議
 > - Outlook.com
 
@@ -34,7 +36,7 @@ ms.locfileid: "45093869"
 `SupportsPinning` 要素は、VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 のどちらの場合も [VersionOverrides](../reference/manifest/versionoverrides.md) 要素を含める必要があります。
 
 > [!NOTE]
-> Outlook アドインを [AppSource](https://appsource.microsoft.com) に[発行](../publish/publish.md)する予定であれば、**SupportsPinning** 要素を使う場合、[AppSource 検証](/legal/marketplace/certification-policies)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
+> Outlook アドインを [AppSource](https://appsource.microsoft.com) に [発行](../publish/publish.md)する予定であれば、**SupportsPinning** 要素を使う場合、[AppSource 検証](/legal/marketplace/certification-policies)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
 
 ```xml
 <!-- Task pane button -->

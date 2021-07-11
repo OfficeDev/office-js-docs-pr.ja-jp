@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
 ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: e830ccbb6a4e325d6d70c3612492009b5e3d1570
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e7a5efb7bf49c96f4b31f4f811e4c2fd4720694a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077219"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348637"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -27,7 +27,7 @@ ms.locfileid: "53077219"
 
 1. [ファイル[Office on the web] を開きます](https://office.live.com/)。 [作成 **] オプション** を使用して、Excel、OneNote、PowerPoint、**または** Word **で** ドキュメントを作成 **します**。  この新しいドキュメントで、リボン **で [共有** ] を選択し、[リンクのコピー] **を** 選択して URL をコピーします。
 
-2. yo office プロジェクト ファイルのルート ディレクトリで、ファイルのpackage.js **開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
+1. yo office プロジェクト ファイルのルート ディレクトリで、ファイルのpackage.js **開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
 
     ```json
       "config": {
@@ -38,21 +38,21 @@ ms.locfileid: "53077219"
 
     > [!TIP]
     > Yeoman ジェネレーターを使用しないアドインを作成する場合は、次の項目を既存の URL に追加して、ドキュメントの URL にクエリ パラメーターを追加できます。
-
-    - など、開発サーバー ポート `&wdaddindevserverport=3000` 。
-    - マニフェスト ファイル名 ( `&wdaddinmanifestfile=manifest1.xml` など)。
-    - マニフェスト GUID など `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` 。
-
+    >
+    > - など、開発サーバー ポート `&wdaddindevserverport=3000` 。
+    > - マニフェスト ファイル名 ( `&wdaddinmanifestfile=manifest1.xml` など)。
+    > - マニフェスト GUID など `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` 。
+    >
     > Yeoman ジェネレーターを使用している場合は、Yeoman ツールによってこの情報が自動的に追加されるので、この情報を追加する必要はありません。
     > ただし、どちらの場合も、localhost からのみマニフェストを読み込み可能です。
 
-3. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します `npm run start:web` 。
+1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します `npm run start:web` 。
 
-4. このメソッドを初めて使用して、Web 上にアドインをサイドロードすると、開発者モードを有効にしてくださいというダイアログが表示されます。 [今すぐ開発者モードを **有効にする] のチェック ボックスをオンにして****、[OK] を選択します**。
+1. このメソッドを初めて使用して、Web 上にアドインをサイドロードすると、開発者モードを有効にしてくださいというダイアログが表示されます。 [今すぐ開発者モードを **有効にする] のチェック ボックスをオンにして****、[OK] を選択します**。
 
-5. 2 番目のダイアログ Office ボックスが表示されます。 [はい] を **選択する必要があります**。
+1. 2 番目のダイアログ Office ボックスが表示されます。 [はい] を **選択する必要があります**。
 
-6. アドインがインストールされています。 アドイン コマンドの場合は、リボンまたはコンテキスト メニューに表示されます。 作業ウィンドウ アドインの場合は、作業ウィンドウが表示されます。
+1. アドインがインストールされています。 アドイン コマンドの場合は、リボンまたはコンテキスト メニューに表示されます。 作業ウィンドウ アドインの場合は、作業ウィンドウが表示されます。
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手動でOfficeアドインをサイドOffice on the webする
 
@@ -77,9 +77,9 @@ ms.locfileid: "53077219"
 
 1. アカウントにサインインMicrosoft 365します。
 
-2. ツール バーの起動ツールで [App 起動ツール] を開き、[Excel]、[Word]、または **[PowerPoint]** を選択し、新しいドキュメントを作成します。 
+1. ツール バーの起動ツールで [App 起動ツール] を開き、[Excel]、[Word]、または **[PowerPoint]** を選択し、新しいドキュメントを作成します。 
 
-3. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
+1. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Visual Studio の使用時にアドインをサイドロードする
 
@@ -89,13 +89,13 @@ ms.locfileid: "53077219"
 > アドインは Visual Studio から Office on the web にサイドロードできますが、Visual Studio からはデバッグできません。 デバッグするには、ブラウザー デバッグ ツールを使用する必要があります。 詳細については、「[Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)」を参照してください。
 
 1. Visual Studio で、[**表示**]  >  [**プロパティ ウィンドウ**] の順に選択して [**プロパティ**] ウィンドウを表示させます。
-2. [**ソリューション エクスプローラー**] で Web プロジェクトを選択します。 プロジェクトのプロパティが [**プロパティ**] ウィンドウに表示されます。
-3. [プロパティ] ウィンドウで、[**SSL URL**] をコピーします。
-4. アドイン プロジェクトで、マニフェスト XML ファイルを開きます。 編集しているのがソース XML であることを確認します。 一部の種類のプロジェクトでは、Visual Studio は XML のビジュアル ビューを開きますが、これは次の手順で使用できません。
-5. **~remoteAppUrl/** のすべてのインスタンスを検索し、先ほどコピーした SSL URL と置き換えます。 プロジェクトの種類に応じていくつかの置換が表示され、新しい URL の表示は `https://localhost:44300/Home.html` に似たものになりま。
-6. XML ファイルを保存します。
-7. Web プロジェクトを右クリックして、[**デバッグ**]  >  [**新しいインスタンスを開始**] の順に選択します。 これにより、Office を起動することなく Web プロジェクトが実行されます。
-8. 前述の「[Office on the web で Office アドインをサイドロードする](#sideload-an-office-add-in-in-office-on-the-web)」で説明した手順を使用して、Office on the web からアドインをサイドロードします。
+1. [**ソリューション エクスプローラー**] で Web プロジェクトを選択します。 プロジェクトのプロパティが [**プロパティ**] ウィンドウに表示されます。
+1. [プロパティ] ウィンドウで、[**SSL URL**] をコピーします。
+1. アドイン プロジェクトで、マニフェスト XML ファイルを開きます。 編集しているのがソース XML であることを確認します。 一部の種類のプロジェクトでは、Visual Studio は XML のビジュアル ビューを開きますが、これは次の手順で使用できません。
+1. **~remoteAppUrl/** のすべてのインスタンスを検索し、先ほどコピーした SSL URL と置き換えます。 プロジェクトの種類に応じていくつかの置換が表示され、新しい URL の表示は `https://localhost:44300/Home.html` に似たものになりま。
+1. XML ファイルを保存します。
+1. Web プロジェクトを右クリックして、[**デバッグ**]  >  [**新しいインスタンスを開始**] の順に選択します。 これにより、Office を起動することなく Web プロジェクトが実行されます。
+1. 前述の「[Office on the web で Office アドインをサイドロードする](#sideload-an-office-add-in-in-office-on-the-web)」で説明した手順を使用して、Office on the web からアドインをサイドロードします。
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 

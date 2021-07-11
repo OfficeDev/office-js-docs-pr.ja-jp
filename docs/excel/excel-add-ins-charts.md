@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a7199aae31e917b0609a47cc69b5e52279d43b24
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075895"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349575"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
@@ -209,7 +209,7 @@ Excel.run(function (ctx) {
 getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
 ```
 
-これらのパラメーターにより、画像のサイズが決まります。 画像は常に同じ縦横比でスケーリングされます。 幅と高さのパラメーターにより、スケーリングされた画像の上端または下端が設定されます。 `ImageFittingMode` には 3 つの値があり、次のように動作します。
+これらのパラメーターにより、画像のサイズが決まります。 画像は常に同じ縦横比でスケーリングされます。 幅と高さのパラメーターにより、スケーリングされた画像の上端または下端が設定されます。 `ImageFittingMode` 次の動作を持つ 3 つの値があります。
 
 - `Fill`: イメージの最小の高さまたは幅は、指定された高さまたは幅です (イメージのスケーリング時に最初に到達した方)。 これは、自動調整モードが指定されていない場合の既定の動作です。
 - `Fit`: イメージの最大の高さまたは幅は、指定された高さまたは幅です (イメージのスケーリング時に最初に到達した方)。

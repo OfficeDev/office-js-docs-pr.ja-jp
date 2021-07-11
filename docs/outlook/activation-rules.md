@@ -3,12 +3,12 @@ title: Outlook アドインのアクティブ化ルール
 description: Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a5fc107c27feb5b0535727a42b4d56d21f7dcbc4
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076813"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349022"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Outlook コンテキスト アドインのアクティブ化ルール
 
@@ -22,16 +22,17 @@ Outlook では、ユーザーが読み取りや作成をしようとしている
 ## <a name="specify-activation-rules-in-a-manifest"></a>マニフェストでのアクティブ化ルールの指定
 
 
-特定のOutlookをアクティブ化するには、次のいずれかの要素を使用してアドイン マニフェストでアクティブ化ルールを指定 `Rule` します。
+特定のOutlookをアクティブ化するには、次のいずれかの要素を使用して、アドイン マニフェストでアクティブ化ルールを指定 `Rule` します。
 
 - [Rule 要素 (MailApp complexType)](../reference/manifest/rule.md) - 個別のルールを指定します。
 - [Rule 要素 (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - 論理演算子を使用して複数のルールを結合します。
-    
+
 
  > [!NOTE]
  > 個々 `Rule` のルールを指定するために使用する要素は、抽象 [Rule](../reference/manifest/rule.md) 複合型です。 次の各種類のルールは、この抽象複合型 `Rule` を拡張します。 したがって、マニフェストで個別のルールを指定するときは、[xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性を使用してルールの以下の型の 1 つをさらに定義する必要があります。
  > 
- > たとえば、次のルールは [ItemIs](../reference/manifest/rule.md#itemis-rule) ルールを定義します。`<Rule xsi:type="ItemIs" ItemType="Message" />`
+ > たとえば、次のルールは [ItemIs ルールを定義](../reference/manifest/rule.md#itemis-rule) します。
+ > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
  > 属性はマニフェスト v1.1 のアクティブ化ルールに適用されますが `FormType` `VersionOverrides` 、v1.0 では定義されていません。 したがって [、ItemIs](../reference/manifest/rule.md#itemis-rule) がノードで使用されている場合は使用 `VersionOverrides` できません。
 
@@ -57,8 +58,8 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
 
 |**値**|**説明**|
 |:-----|:-----|
-|**Appointment**|Outlook の予定表内のアイテムを指定します。このアイテムには、開催者と出席者を持つ応答済みの会議アイテムと、開催者と出席者を持たない、単なる予定表上のアイテムである予定が含まれます。これは Outlook の IPM.Appointment メッセージ クラスに対応します。|
-|**Message**|通常は受信トレイで受信される次のアイテムのいずれかを指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。Outlook の次のメッセージ クラスに対応します。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Appointment**|Outlook の予定表内のアイテムを指定します。 このアイテムには、開催者と出席者を持つ応答済みの会議アイテムと、開催者と出席者を持たない、単なる予定表上のアイテムである予定が含まれます。 これは Outlook の IPM.Appointment メッセージ クラスに対応します。|
+|**メッセージ**|通常受信トレイで受信される次のいずれかの項目を指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。 これは、次のメッセージ クラスに対応Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 この属性を使用して、アドインをアクティブにするモード (読み取りまたは作成 `FormType` ) を指定します。
 
@@ -72,7 +73,7 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
 
 メッセージ クラスの詳細については、「[Item Types and Message Classes](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes)」をご覧ください。
 
-次の例は、ユーザーがメッセージを読むときに Outlook のアドイン バーにアドインを表示する **ItemIs** ルールを示しています。
+次の例は、ユーザーがメッセージを読み取っているときに、アドイン バー Outlookアドインを表示できる **ItemIs** ルールです。
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -111,7 +112,7 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
 - PhoneNumber
 - TaskSuggestion
 - URL
-    
+
 必要に応じて、属性に正規表現を含め、現在の正規表現と一致するエンティティの場合にのみアドイン `RegularExpression` が表示されます。 ルールで指定された正規表現に一致する文字列を取得するには、現在選択されているアイテムアイテムに `ItemHasKnownEntity` `getRegExMatches` or `getFilteredEntitiesByName` メソッドOutlookできます。
 
 次の例は、指定された既知のエンティティの 1 つがメッセージに存在する場合にアドインを表示する要素の `Rule` コレクションを示しています。

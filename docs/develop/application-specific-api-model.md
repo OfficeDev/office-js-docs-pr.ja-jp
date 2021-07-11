@@ -3,12 +3,12 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
-ms.translationtype: HT
+ms.openlocfilehash: 5cf1d088dfa883e5df9eaba25e395857cfce9f5c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408601"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350065"
 ---
 # <a name="using-the-application-specific-api-model"></a>アプリケーション固有の API モデルの使用
 
@@ -169,7 +169,7 @@ someRange.load("format/font/name")
 パラメーターを指定せずにオブジェクト (またはコレクション) の `load()` メソッドを呼び出すと、オブジェクトのすべてのスカラー プロパティ (またはコレクション内のオブジェクト) が読み込まれます。 不要なデータを読み込むと、アドインの速度が低下します。 常に読み込むプロパティを明示的に指定する必要があります。
 
 > [!IMPORTANT]
-> パラメーターのない `load` ステートメントで返されるデータの量は、サービスのサイズ制限を超える場合があります。 古いアドインのリスクを軽減するために、明示的に要求しない限り `load` によって返されないプロパティがあります。 次のプロパティは、そのような読み込み操作で除外されます。
+> パラメーターのない `load` ステートメントで返されるデータの量は、サービスのサイズ制限を超える場合があります。 古いアドインのリスクを軽減するために、明示的に要求しない限り `load` によって返されないプロパティがあります。 次のプロパティは、このような読み込み操作から除外されます。
 >
 > * `Excel.Range.numberFormatCategories`
 

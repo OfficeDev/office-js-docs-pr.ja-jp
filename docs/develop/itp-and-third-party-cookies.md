@@ -1,27 +1,27 @@
 ---
-title: サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する
+title: サードパーティ cookie をOffice ITP で動作するアドインを開発する
 description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
 ms.date: 03/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 468147e923bb27638e45879104db75b99d014986
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: dbc23e4ead0abc94ffa173ffc22919342c4fca6d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917094"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349862"
 ---
-# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作する新しいアドインを開発する
+# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作するアドインを開発する
 
 カスタム アドインOfficeサード パーティ Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント 追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。 サードパーティの Cookie を使用してユーザーを認証したり、設定の保存などの他のシナリオで使用している場合があります。
 
 アドインとOfficeがサードパーティの Cookie に依存している必要のある場合は、次の手順を使用して ITP を使用します。
 
-1. OAuth [2.0 Authorization](https://tools.ietf.org/html/rfc6749)を設定して、認証ドメイン (Cookie を要求するサード パーティ) が承認トークンを Web サイト   に転送します。 トークンを使用して、サーバーセットの Secure Cookie と HttpOnly Cookie を使用してファースト パーティのログイン [セッションを確立します](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。
-2. サードパーティが[ファースト パーティ](https://webkit.org/blog/8124/introducing-storage-access-api/)の Cookie へのアクセスを取得するためのアクセス許可を要求できるよう、ストレージ アクセス   API を使用します。 Mac 上の現在Officeバージョンと web 上Office両方ともこの API をサポートしています。
+1. OAuth [2.0 Authorization](https://tools.ietf.org/html/rfc6749)を設定して、認証ドメイン (Cookie を要求するサード パーティ) が承認トークンを Web サイト   に転送します。 トークンを使用して、サーバーセットの Secure Cookie と HttpOnly Cookie を使用してファースト パーティのログイン [セッションを確立します](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。
+2. サードパーティが[ファーストStorage Cookie](https://webkit.org/blog/8124/introducing-storage-access-api/)へのアクセスを取得するためのアクセス許可を要求するには、Storage Access API   を使用します。 Mac 上の現在OfficeバージョンとOffice on the web API がサポートされています。
     > [!NOTE]
     > 認証以外の目的で Cookie を使用している場合は、シナリオでの使用 `localStorage` を検討してください。
 
-次のコード サンプルは、記憶域アクセス API を使用する方法を示しています。
+次のコード サンプルは、Access API のStorage示しています。
 
 ```javascript
 function displayLoginButton() {
@@ -63,4 +63,4 @@ Safari ブラウザーで、エンド ユーザーは、[基本設定のプラ�
 - [サードパーティの Cookie がブロックされている Safari や他のブラウザーで ITP を処理する](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [WebKit での追跡防止](https://webkit.org/tracking-prevention/)
 - [Chrome の "Privacy Sandbox"](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
-- [ストレージ アクセス API の導入](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)
+- [Access API Storage紹介](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

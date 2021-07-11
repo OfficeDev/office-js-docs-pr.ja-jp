@@ -4,12 +4,12 @@ description: JavaScript API を使用して重複Excelする方法について�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075769"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349484"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>JavaScript API を使用して重複Excel削除する
 
@@ -21,7 +21,7 @@ ms.locfileid: "53075769"
 
 `removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 このメソッドは、最初の行がヘッダーであるかどうかを指定するブール型パラメーターも取ります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 このメソッドは、削除された行の数と残りの一意の行数を指定する `removeDuplicates` `RemoveDuplicatesResult` オブジェクトを返します。
 
-範囲のメソッドを使用する場合 `removeDuplicates` は、次の注意が必要です。
+範囲のメソッドを使用する場合 `removeDuplicates` は、次の念に従います。
 
 - `removeDuplicates` は、関数の結果ではなくセルの値を考慮します。 2 つの異なる関数が同じ結果として評価される場合、セルの値は重複と見なしません。
 - 空のセルは、`removeDuplicates` に無視されることはありません。 空のセルの値は、その他の値と同様に扱われます。 つまり、範囲に含まれる空の行は `RemoveDuplicatesResult` に含まれることになります。

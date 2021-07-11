@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: a8a7da6ce01f8c0cc82c8ab9c764b032027f585c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290734"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349414"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -374,11 +374,11 @@ function formulaChangeHandler(event) {
 
 ![並べ替え前Excelテーブル データ。](../images/excel-sort-event-before.png)
 
-「**Q1**」(「**B**」の値) で上から下への並べ替えが実行される場合、次の強調表示された行が `WorksheetRowSortedEventArgs.address` によって返されます。
+**"Q1" ("B"** の値) に対して上から下への並べ替えを実行すると、次の強調表示された行がによって返されます `WorksheetRowSortedEventArgs.address` 。
 
 ![上から下への並べ替えの後の Excel のテーブル データ。 移動した行が強調表示されます。](../images/excel-sort-event-after-row.png)
 
-元のデータの「**Quinces**」(「**4**」の値) で左から右への並べ替えが実行される場合、次の強調表示された列が `WorksheetColumnsSortedEventArgs.address` によって返されます。
+元のデータの **"Quinces&quot;**(&quot;**4**") の値に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address` 。
 
 ![左から右への並べ替えの後の Excel のテーブル データ。 移動した列が強調表示されます。](../images/excel-sort-event-after-column.png)
 
@@ -435,7 +435,7 @@ Excel.run(function (context) {
 
 ## <a name="filter-data"></a>データをフィルター処理する
 
-[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメータを持つ `Worksheet.autoFilter.apply` で作成されます。
+[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次の `Worksheet.autoFilter.apply` パラメーターを持つ、で作成されます。
 
 - `range`: フィルターが適用される範囲を、`Range` オブジェクトまたは文字列の範囲として指定します。
 - `columnIndex`: フィルター条件が評価される 0 から始まる列インデックス。

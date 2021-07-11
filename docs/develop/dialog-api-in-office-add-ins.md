@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 878bdeaa6752e37f8d3c67f32b42e2a5a7b962cb
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076105"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349918"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -40,7 +40,7 @@ Office JavaScript API には、[Dialog](/javascript/api/office/office.dialog) �
 
 ダイアログ ボックスを開くには、コード (通常は作業ウィンドウ内のページ) で [displayDialogAsync](/javascript/api/office/office.ui) メソッドを呼び出して、開くリソースの URL を渡します。 このメソッドを呼び出すページは、「ホスト ページ」と呼ばれます。 たとえば、作業ウィンドウの index.html にあるスクリプトでこのメソッドを呼び出した場合は、index.html がメソッドが開いたダイアログ ボックスのホスト ページです。
 
-ダイアログ ボックスで開かれるリソースは通常ページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、またはその他のリソースの場合もあります。 この記事では、'ページ' または 'Web サイト' とは、ダイアログ ボックス内のリソースを意味します。 次のコードは簡単な例を示しています。
+ダイアログ ボックスで開かれるリソースは通常ページですが、MVC アプリケーションのコントローラー メソッド、ルート、Web サービス メソッド、またはその他のリソースの場合もあります。 この記事では、'ページ' または 'Web サイト' とは、ダイアログ ボックス内のリソースを意味します。 次のコードは簡単な例です。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -70,7 +70,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Office on the web のパフォーマンス オプションを利用する
 
-`displayInIframe` プロパティは、`displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。 このプロパティを `true` に設定し、Office on the web で開いたドキュメントでアドインを実行している場合、ダイアログ ボックスは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。 例を次に示します。
+`displayInIframe` プロパティは、`displayDialogAsync` に渡すことのできる構成オブジェクトの追加のプロパティです。 このプロパティを `true` に設定し、Office on the web で開いたドキュメントでアドインを実行している場合、ダイアログ ボックスは浮動の iframe で開き、独立したウィンドウでは開きません (この方が速く開きます)。 次に例を示します。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -88,7 +88,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 - ダイアログ ボックスの現在のページがホスト ページと同じドメインにある。
 - JavaScript API Officeがページに読み込まれます。 (JavaScript API ライブラリの Officeを使用するページと同様に、ページのスクリプトはプロパティにメソッドを割り当てる必要があります。ただし、空のメソッドを `Office.initialize` 指定できます。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。
 
-ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageparent-message-) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 例を次に示します。
+ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageparent-message-) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 次に例を示します。
 
 ```js
 if (loginSuccess) {
@@ -109,7 +109,7 @@ if (loginSuccess) {
 }
 ```
 
-ホスト ページは、メッセージを受信するように構成する必要があります。これを構成するには、`displayDialogAsync` の元の呼び出しにコールバック パラメーターを追加します。コールバックはハンドラーを `DialogMessageReceived` イベントに割り当てます。次に例を示します。
+ホスト ページは、メッセージを受信するように構成する必要があります。 これを構成するには、`displayDialogAsync` の元の呼び出しにコールバック パラメーターを追加します。 コールバックはハンドラーを `DialogMessageReceived` イベントに割り当てます。 次に例を示します。
 
 ```js
 var dialog;
@@ -170,7 +170,7 @@ function processMessage(arg) {
 
 ### <a name="conditional-messaging"></a>条件付きのメッセージング
 
-ダイアログ ボックスから複数の `messageParent` 呼び出しを送信できますが、`DialogMessageReceived` イベントのホスト ページにあるハンドラーは 1 つのみのため、ハンドラーは条件ロジックを使用してさまざまなメッセージを区別する必要があります。 たとえば、ダイアログ ボックスでユーザーに Microsoft アカウントや Google などの ID プロバイダーへのサインインを求めるメッセージが表示された場合、ユーザーのプロファイルがメッセージとして送信されます。 認証が失敗した場合、次の例のように、ダイアログ ボックスはホスト ページにエラー情報を送信します。
+ダイアログ ボックスから複数の `messageParent` 呼び出しを送信できますが、`DialogMessageReceived` イベントのホスト ページにあるハンドラーは 1 つのみのため、ハンドラーは条件ロジックを使用してさまざまなメッセージを区別する必要があります。 たとえば、ダイアログ ボックスでユーザーに Microsoft アカウントや Google などの ID プロバイダーへのサインインを求めるメッセージが表示された場合、ユーザーのプロファイルがメッセージとして送信されます。 認証に失敗した場合、次の例のように、ダイアログ ボックスはエラー情報をホスト ページに送信します。
 
 ```js
 if (loginSuccess) {
@@ -216,7 +216,7 @@ function processMessage(arg) {
 
 ### <a name="use-messagechild-from-the-host-page"></a>ホスト `messageChild()` ページから使用する
 
-ダイアログ ボックスを開Officeダイアログ API を呼び出す場合[、Dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープの大きい変数に割り当てる必要があります。 例を次に示します。
+ダイアログ ボックスを開Officeダイアログ API を呼び出す場合[、Dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープの大きい変数に割り当てる必要があります。 次に例を示します。
 
 ```javascript
 var dialog;

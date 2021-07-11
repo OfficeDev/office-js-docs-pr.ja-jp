@@ -1,35 +1,35 @@
 ---
 title: XLL ユーザー定義関数を使用してカスタム関数を拡張する
-description: カスタム関数と同等の機能を持つ Excel XLL ユーザー定義関数との互換性を有効にする
+description: カスタム関数と同等Excel機能を持つ XLL ユーザー定義関数との互換性を有効にする
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 32146e7eebb963e8d800b619ef052457e40f2ac6
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 33c7ee9309196d627520b37a02d5a1bca44cb767
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836817"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349393"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
-既存の Excel XLL がある場合は、Excel アドインで同等のカスタム関数を構築して、ソリューション機能をオンラインや Mac などの他のプラットフォームに拡張できます。 ただし、Excel アドインには、すべての機能が XLL で使用できるわけではありません。 ソリューションで使用する機能によっては、XLL は Excel on Windows の Excel アドイン カスタム関数よりも優れたエクスペリエンスを提供する場合があります。
+既存の Excel XLL がある場合は、Excel アドインで同等のカスタム関数を構築して、ソリューション機能をオンラインや Mac などの他のプラットフォームに拡張できます。 ただし、Excelアドインには、すべての機能が XLL で使用できるわけではありません。 ソリューションで使用する機能によっては、XLL は Excel アドインのカスタム関数 (Excel on Windows) よりも優れたエクスペリエンスを提供する場合があります。
 
 > [!NOTE]
-> COM アドインと XLL UDF の互換性は、Microsoft 365 サブスクリプションに接続されている場合、次のプラットフォームでサポートされます。
+> COM アドインと XLL UDF の互換性は、サブスクリプションに接続されている場合、次のプラットフォームMicrosoft 365されます。
 >
 > - Excel on the web
-> - Excel on Windows (バージョン 1904 以降)
-> - Excel on Mac (バージョン 13.329 以降)
+> - Excel (Windows 1904 以降)
+> - Excel (バージョン 13.329 以降)
 >
-> Web 上の Excel で COM アドインと XLL UDF の互換性を使用するには、Microsoft 365 サブスクリプションまたは Microsoft アカウントを使用して [ログインします](https://account.microsoft.com/account)。 Microsoft 365 サブスクリプションをまだ持ってない場合は [、Microsoft 365](https://developer.microsoft.com/office/dev-program)開発者プログラムに参加することで、90 日間の無料の更新可能な Microsoft 365 サブスクリプションを利用できます。
+> COM アドインと XLL UDF の互換性を Excel on the web内で使用するには、Microsoft 365 サブスクリプションまたは Microsoft アカウントを使用して[ログインします](https://account.microsoft.com/account)。 Microsoft 365 サブスクリプションをまだ持ってない場合は、Microsoft 365 開発者プログラムに参加することで、90 日間の無料のMicrosoft 365[サブスクリプションを利用できます](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>マニフェストで同等の XLL を指定する
 
-既存の XLL との互換性を有効にするには、Excel アドインのマニフェストで同等の XLL を特定します。 次に、Windows で実行する場合、Excel アドインのカスタム関数の代わりに XLL の関数が使用されます。
+既存の XLL との互換性を有効にするには、既存のアドインのマニフェストで同等の XLL をExcelします。 Excelで実行すると、アドインのカスタム関数ではなく XLL のExcelを使用Windows。
 
-カスタム関数に同等の XLL を設定するには `FileName` 、XLL の値を指定します。 ユーザーが XLL の関数を含むブックを開くと、Excel は関数を互換性のある関数に変換します。 次に、ブックは Windows 上の Excel で開かれたときに XLL を使用し、オンラインまたは Mac で開かれたときに Excel アドインのカスタム関数を使用します。
+カスタム関数に同等の XLL を設定するには `FileName` 、XLL の値を指定します。 ユーザーが XLL の関数を含むブックを開くと、Excel互換性のある関数に変換されます。 次に、ブックは Windows の Excel で開かれたときに XLL を使用し、オンラインまたは Mac で開いた場合は Excel アドインのカスタム関数を使用します。
 
-次の例は、COM アドインと XLL の両方を同等として指定する方法を示しています。 多くの場合、両方を指定します。 完全な場合、この例では両方のコンテキストを示します。 これらは、それぞれ、それぞれのユーザー `ProgId` によって `FileName` 識別されます。 要素 `EquivalentAddins` は、終了タグの直前に配置する必要 `VersionOverrides` があります。 COM アドインの互換性の詳細については、「Make your Office アドインを既存の COM アドインと互換性のあるものにする」 [を参照してください](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)。
+次の例は、COM アドインと XLL の両方を同等として指定する方法を示しています。 多くの場合、両方を指定します。 完全な場合、この例では両方のコンテキストを示します。 これらは、それぞれ、それぞれのユーザー `ProgId` によって `FileName` 識別されます。 要素 `EquivalentAddins` は、終了タグの直前に配置する必要 `VersionOverrides` があります。 COM アドインの互換性の詳細については、「Make your Office アドインを既存の COM アドインと互換性のあるものにする」[を参照してください](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)。
 
 ```xml
 <VersionOverrides>
@@ -55,18 +55,18 @@ ms.locfileid: "50836817"
 
 スプレッドシートを開き、同等のアドインが使用可能な場合、アドインの XLL 関数は XLL 互換のカスタム関数に変換されます。 次の保存では、XLL 関数は互換性のあるモードでファイルに書き込まれるので、XLL と Excel アドインの両方のカスタム関数 (他のプラットフォームの場合) で動作します。
 
-次の表は、XLL ユーザー定義関数、XLL 互換カスタム関数、および Excel アドイン カスタム関数の機能を比較しています。
+次の表は、XLL ユーザー定義関数、XLL 互換カスタム関数、およびアドイン カスタム関数Excel機能を比較します。
 
-|         |XLL ユーザー定義関数 |XLL 互換のカスタム関数 |Excel アドインのカスタム関数 |
+|         |XLL ユーザー定義関数 |XLL 互換のカスタム関数 |Excelアドインのカスタム関数 |
 |---------|---------|---------|---------|
-| **サポートされるプラットフォーム** | Windows | Windows、macOS、Web ブラウザー | Windows、macOS、Web ブラウザー |
+| **サポートされるプラットフォーム** | Windows | Windows macOS、Web ブラウザー | Windows macOS、Web ブラウザー |
 | **サポートされているファイル形式** | XLSX、XLSB、XLSM、XLS | XLSX、XLSB、XLSM | XLSX、XLSB、XLSM |
 | **数式のオートコンプリート** | いいえ | はい | はい |
 | **ストリーミング** | xlfRTD コールバックと XLL コールバックを使用して可能です。 | はい | はい |
 | **関数のローカライズ** | いいえ | いいえ。 Name と ID は、既存の XLL の関数と一致している必要があります。 | はい |
 | **揮発性関数** | はい | はい | はい |
 | **マルチスレッド再計算のサポート** | はい | はい | はい |
-| **計算動作** | UI なし。 Excel は、計算中に応答しなくなる可能性があります。 | ユーザーには、次の#BUSY! 結果が返されるまで。 | ユーザーには、次の#BUSY! 結果が返されるまで。 |
+| **計算動作** | UI なし。 Excelは、計算中に応答しなくなる可能性があります。 | ユーザーには、次の#BUSY! 結果が返されるまで。 | ユーザーには、次の#BUSY! 結果が返されるまで。 |
 | **要件セット** | 該当なし | CustomFunctions 1.1 以降 | CustomFunctions 1.1 以降 |
 
 ## <a name="see-also"></a>関連項目

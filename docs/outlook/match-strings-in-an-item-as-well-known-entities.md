@@ -3,12 +3,12 @@ title: Outlook アドインで既知のエンティティとして文字列を�
 description: JavaScript API Office使用すると、特定の既知のエンティティに一致する文字列を取得して、さらに処理できます。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 14faef13050572e8fb85cb8bae7226664bc65a7f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077079"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348497"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Outlook アイテム内の文字列を既知のエンティティとして照合する
 
@@ -54,7 +54,7 @@ Exchange Server は、ユーザーがメッセージや会議出席依頼アイ�
 
 JavaScript コードでエンティティを抽出したり、特定の既知のエンティティの存在に基づいてアドインをアクティブ化したりする場合は、アドイン マニフェストで適切なアクセス許可を要求しておきます。
 
-既定の制限付きアクセス許可を指定すると、アドインで `Address` 、 、または `MeetingSuggestion` エンティティを抽出 `TaskSuggestion` できます。 その他のエンティティを抽出するには、開封済みアイテム、読み取り/書き込みアイテム、またはメールボックスの読み取り/書き込み許可を指定します。 これをマニフェストで実行するには、次の例のように、[Permissions](../reference/manifest/permissions.md) 要素を使い、&mdash;**Restricted**、**ReadItem**、**ReadWriteItem**、または **ReadWriteMailbox**&mdash; の中から適切なアクセス許可を指定します。
+既定の制限付きアクセス許可を指定すると、アドインで `Address` 、 、または `MeetingSuggestion` エンティティを抽出 `TaskSuggestion` できます。 その他のエンティティを抽出するには、開封済みアイテム、読み取り/書き込みアイテム、またはメールボックスの読み取り/書き込み許可を指定します。 マニフェストでこれを行うには [、Permissions](../reference/manifest/permissions.md)要素を使用し、次の例のように、適切なアクセス許可 &mdash; Restricted、ReadItem、ReadWriteItem、**または ReadWriteMailbox** &mdash; を指定します。
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -132,7 +132,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>既知のエンティティを使用するためのヒント
 
-アドインで既知のエンティティを使用する場合に知っておくべきいくつかの事実と制限があります。 以下は、ルールを使用するかどうかに関係なく、ユーザーが既知のエンティティの一致を含むアイテムを読み取っているときにアドインがアクティブ化されている限り適用 `ItemHasKnownEntity` されます。
+アドインで既知のエンティティを使用する場合に知っておくべきいくつかの事実と制限があります。 ルールを使用するかどうかに関係なく、ユーザーが既知のエンティティの一致を含むアイテムを読み取っているときにアドインがアクティブ化されている限り、以下が適用 `ItemHasKnownEntity` されます。
 
 
 - 文字列が英語の場合にのみ、既知のエンティティである文字列を抽出できます。
@@ -147,7 +147,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
     
 - [送信済みアイテム] フォルダーのアイテムからエンティティを抽出することはできません。
     
-また、 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用する場合には以下の動作が適用され、本来 (すなわち、その動作が適用されなけば) アドインが有効化されるはずであるシナリオに影響する可能性があります。
+さらに [、ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールを使用する場合は、次のことが適用され、アドインがアクティブ化されると予想されるシナリオに影響を与える可能性があります。
 
 - ルールを使用する場合、マニフェストOutlook既定のロケールに関係なく、エンティティ文字列が英語でのみ一致する必要 `ItemHasKnownEntity` があります。
     

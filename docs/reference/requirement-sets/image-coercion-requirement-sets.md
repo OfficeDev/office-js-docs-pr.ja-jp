@@ -1,15 +1,15 @@
 ---
 title: 画像強制型変換要件セット
-description: Excel、PowerPoint、および Word Officeアドインを使用した Image Coercion 要件セットのサポート。
+description: 複数のアドインを使用した Image Coercion 要件セットOffice、Excel、Word PowerPointサポート。
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 52ce46a46580500f5a292bf898674d4798378319
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 29614718378fd51013360a2a922e11f89bca14b8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505529"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350219"
 ---
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 
@@ -19,12 +19,12 @@ ms.locfileid: "50505529"
 
 ImageCoercion 1.1 では、メソッドを使用してデータを書き込むときにイメージ ( `Office.CoercionType.Image` ) への変換が有効 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) です。 次のアプリケーションがサポートされています。
 
-- Windows 上の Excel 2013 以降
-- Mac での Excel 2016 以降
+- Excel 2013 以降のWindows
+- Excel 2016以降の Mac
 - Excel on iPad
 - OneNote on the web
-- Windows の PowerPoint 2013 以降
-- Mac の PowerPoint 2016 以降
+- PowerPoint 2013 以降のWindows
+- PowerPoint 2016以降の Mac
 - PowerPoint on the web
 - PowerPoint on iPad
 - Word on Windows (Word 2013 以降)
@@ -36,13 +36,13 @@ ImageCoercion 1.1 では、メソッドを使用してデータを書き込む�
 
 ImageCoercion 1.2 では、メソッドを使用してデータを書き込むときに SVG 形式 ( `Office.CoercionType.XmlSvg` ) に変換 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) できます。 次のアプリケーションがサポートされています。
 
-- Excel on Windows (Microsoft 365 サブスクリプションに接続)
-- Excel on Mac (Microsoft 365 サブスクリプションに接続)
-- PowerPoint on Windows (Microsoft 365 サブスクリプションに接続)
-- PowerPoint on Mac (Microsoft 365 サブスクリプションに接続)
+- ExcelオンWindows (サブスクリプションに接続Microsoft 365)
+- Excel Mac (サブスクリプションに接続Microsoft 365)
+- PowerPoint (WindowsサブスクリプションにMicrosoft 365)
+- PowerPoint (サブスクリプションにMicrosoft 365)
 - PowerPoint on the web
-- Word on Windows (Microsoft 365 サブスクリプションに接続)
-- Mac 上の Word (Microsoft 365 サブスクリプションに接続)
+- Word on Windows (サブスクリプションにMicrosoft 365)
+- Mac 上の Word (サブスクリプションに接続Microsoft 365)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 

@@ -4,12 +4,12 @@ description: JavaScript API を使用してブックまたはアプリケーシ�
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290755"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349428"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -314,7 +314,7 @@ Excel.run(async (context) => {
 
 ### <a name="set-calculation-mode"></a>計算モードを設定する
 
-既定では、Excel は、参照されているセルが変更されたときに数式の結果を再計算します。 この計算の動作を調整すると、アドインのパフォーマンス向上に役立つ場合があります。 Application オブジェクトには、`CalculationMode` 型のプロパティ `calculationMode` があります。 次のいずれかの値を設定できます。
+既定では、Excel は、参照されているセルが変更されたときに数式の結果を再計算します。 この計算の動作を調整すると、アドインのパフォーマンス向上に役立つ場合があります。 Application オブジェクトには、`CalculationMode` 型のプロパティ `calculationMode` があります。 次の値に設定できます。
 
 - `automatic`: 既定の再計算動作。関連するデータが変更されるたびに、Excel は新しい数式の結果を計算します。
 - `automaticExceptTables`: `automatic` と同様ですが、テーブル内の値に加えた変更は無視されます。
@@ -377,7 +377,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>ブックを保存する
 
-`Workbook.save` は、ブックを永続記憶装置に保存します。 `save` メソッドにはオプションの `saveBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
+`Workbook.save` は、ブックを永続記憶装置に保存します。 この `save` メソッドは、次のいずれかの値を指定 `saveBehavior` できる 1 つのオプション のパラメーターを受け取ります。
 
 - `Excel.SaveBehavior.save` (既定値): ファイル名や保存場所を指定するようにユーザーに促すダイアログは表示されず、そのままファイルが保存されます。 ファイルが以前に保存されていない場合は、既定の場所に保存されます。 ファイルが以前に保存されている場合は、同じ場所に保存されます。
 - `Excel.SaveBehavior.prompt`: ファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。 ファイルが以前に保存されている場合、ファイルは同じ場所に保存され、ダイアログは表示されません。
@@ -391,7 +391,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>ブックを閉じる
 
-`Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 `close` メソッドにはオプションの `closeBehavior` パラメーターを 1 つ指定できます。値は次のいずれかになります。
+`Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 この `close` メソッドは、次のいずれかの値を指定 `closeBehavior` できる 1 つのオプション のパラメーターを受け取ります。
 
 - `Excel.CloseBehavior.save` (既定値): ファイルは閉じる前に保存されます。 そのファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。
 - `Excel.CloseBehavior.skipSave`: ファイルはそのまま閉じられ、保存されません。 未保存の変更は失われます。

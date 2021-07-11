@@ -1,122 +1,129 @@
 ---
-title: Web ページから Excel を開き、新しいアドインOffice埋め込む
-description: Web ページから Excel を開き、アドインOffice埋め込む。
+title: Web Excelファイルを開き、アドインOffice埋め込む
+description: Web Excelを開き、アドインにOffice埋め込む。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 437174b2fe9d04e3b25d42159efe7b38f45eb90c
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 18f40b0030f4132a413a879e8b3419af49984b45
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237925"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349379"
 ---
-# <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Web ページから Excel を開き、新しいアドインOffice埋め込む
+# <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Web Excelファイルを開き、アドインOffice埋め込む
 
-:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="アドインが埋め込まれた新しい Excel ドキュメントを開き、自動開く Web ページ上の Excel ボタンの画像。":::
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="アドインを埋Excel自動開く新しいドキュメントを開く web ページExcelボタンのイメージ。":::
 
-SaaS Web アプリケーションを拡張して、顧客が Web ページから Microsoft Excel に直接データを開くことができる。 一般的なシナリオは、顧客が Web アプリケーションのデータを操作することです。 次に、データを Excel ドキュメントにコピーします。 たとえば、Excel を使用して追加の分析を実行できます。 通常、顧客はデータを .csv ファイルなどのファイルにエクスポートし、そのデータを Excel にインポートする必要があります。 また、ドキュメントにアドインOffice手動で追加する必要があります。
+SaaS Web アプリケーションを拡張して、顧客が Web ページからユーザーに直接データを開Microsoft Excel。 一般的なシナリオは、顧客が Web アプリケーションのデータを操作することです。 次に、データを別のドキュメントにExcelします。 たとえば、このツールを使用して追加の分析を実行Excel。 通常、顧客はデータをファイル (.csv ファイルなど) にエクスポートし、そのデータを Excel にインポートする必要があります。 また、ドキュメントにアドインOffice手動で追加する必要があります。
 
-Excel ドキュメントを生成して開く Web ページのボタンを 1 回クリックする手順の数を減らします。 ドキュメント内にアドインOffice埋め込み、ドキュメントが開くと表示できます。 これにより、顧客は引き続きアプリケーション機能にアクセスできます。 ドキュメントが開くと、顧客が選択したデータとOfficeアドインは、引き続き作業を続行できます。
+ドキュメントを生成して開く Web ページのボタンを 1 回クリックする手順の数Excelします。 また、ドキュメント内にOfficeアドインを埋め込み、ドキュメントが開くと表示できます。 これにより、顧客は引き続きアプリケーション機能にアクセスできます。 ドキュメントが開くと、顧客が選択したデータと、Officeアドインが既に使用して作業を続行できます。
 
 この記事では、このシナリオを独自の SaaS Web アプリケーションに実装するためのコードと手法について説明します。
 
-## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>新しい Excel ドキュメントを作成し、アドインOffice埋め込む
+## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>新しいドキュメントをExcelし、アドインOffice埋め込む
 
-最初に、Web ページから Excel ドキュメントを作成し、アドインをドキュメントに埋め込む方法について説明します。 次 [Office OOXML Embed アドイン](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) のコード サンプルは [、Script Lab](https://appsource.microsoft.com/product/office/wa104380862) アドインを新しいドキュメントに埋め込むOfficeしています。 このサンプルは、すべてのドキュメントOffice動作しますが、この記事では Excel スプレッドシートに焦点を当てるだけについて説明します。 次の手順を使用して、サンプルをビルドして実行します。
+最初に、Web ページから Excelドキュメントを作成し、アドインをドキュメントに埋め込む方法について説明します。 [次Office OOXML Embed アドイン](https://github.com/OfficeDev/Office-OOXML-EmbedAddin)のコード サンプルは、新[](https://appsource.microsoft.com/product/office/wa104380862)しいドキュメントにScript Labアドインを埋め込むOffice示しています。 このサンプルは、任意のドキュメントOffice機能しますが、この記事では、Excelスプレッドシートに焦点を当てる必要があります。 次の手順を使用して、サンプルをビルドして実行します。
 
 1. サンプル コードをコンピューター上  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip のフォルダーに抽出します。
-2. サンプルをビルドして実行するには、readme の「プロジェクトを使用するには」セクションの手順に従います。
-3. サンプルを実行すると、次のスクリーン ショットのような Web ページが表示されます。 Web ページを使用して、Script Lab を含む新しい Excel ドキュメントを作成します (開きます)。
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Excel ファイルを選択してスクリプト ラボ アドインを埋め込む目的で、埋め込みスクリプト ラボ サンプルに表示される Web ページのスクリーン ショット。":::
+2. サンプルをビルドして実行するには、readme の 「プロジェクトを使用するには **」セクションの** 手順に従います。
+3. サンプルを実行すると、次のスクリーンショットのような Web ページが表示されます。 Web ページを使用して、開Excelを含む新Script Labドキュメントを作成します。
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="埋め込みスクリプト ラボ サンプルが表示する web ページのスクリーン ショットで、Excel ファイルを選択し、スクリプト ラボ アドインを埋め込む。":::
 
-### <a name="how-the-sample-works"></a>サンプルのしくみ
+### <a name="how-the-sample-works"></a>サンプルの動作
 
-サンプル コードでは、OOXML SDK を使用して、選択した Excel ドキュメントに Script Lab アドインを埋め込む方法を示します。 次の情報は、readme ファイルの [ [**コード** について]](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) セクションから取得されます。
+サンプル コードでは、OOXML SDK を使用して、Script Labを選択したドキュメントExcel埋め込みします。 次の情報は、readme ファイルの [コード [**について** ]](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) セクションから取得されます。
 
-次の **ファイルHome.aspx.cs。**
+**Home.aspx.cs ファイル**:
 
 - ボタン イベント ハンドラーと基本的な UI 操作を提供します。
-- 標準的なASP.NETを使用して、ファイルをアップロードおよびダウンロードします。
-- アップロードしたファイルのファイル名の拡張子 (xlsx、docx、pptx) を使用して、ファイルの種類を特定します。 Open XML SDK には通常、ファイルの種類ごとに異なる API が含まれるため、最初にこれを行う必要があります。
-- **OOXMLHelper** を呼び出してファイルを検証し **、AddInEmbedder** を呼び出して Script Lab をファイルに埋め込み、自動的に開く設定を行います。
+- 標準の ASP.NET を使用して、ファイルをアップロードおよびダウンロードします。
+- アップロードされたファイルのファイル名の拡張子 (xlsx、docx、または pptx) を使用して、ファイルの種類を決定します。 Open XML SDK は通常、ファイルの種類ごとに異なる API を持つため、これは最初に行う必要があります。
+- **OOXMLHelper** を呼び出してファイルを検証し **、AddInEmbedder** を呼び出してファイルにScript Labを埋め込み、自動的に開く設定を行います。
 
-次の **ファイルAddInEmbedder.cs。**
+ファイル **AddInEmbedder.cs:**
 
-- 主要なビジネス ロジックを提供します。このサンプルでは、Script Lab を埋め込むメソッドです。
+- 主なビジネス ロジックを提供します。このサンプルでは、このロジックを埋め込むScript Lab。
 - ファイルの種類に基づいて OOXML ヘルパーを呼び出します。
 
-次の **ファイルOOXMLHelper.cs。**
+ファイル **OOXMLHelper.cs**:
 
 - すべての詳細な OOXML 操作を提供します。
-- ファイルに対して **Document.Open** メソッドを呼びOfficeファイルを検証するための標準的な手法を使用します。 ファイルが無効な場合、メソッドは例外をスローします。
-- 主に Open XML 2.5 SDK Productivity Tools によって生成されたコードが含まれています。このツールは [、Open XML 2.5 SDK](/office/open-xml/open-xml-sdk)のリンクから参照できます。
+- 標準の手法を使用して、Officeファイルを検証します。これは単に **Document.Open メソッドを呼** び出す方法です。 ファイルが無効な場合、メソッドは例外をスローします。
+- Open [XML 2.5 SDK](/office/open-xml/open-xml-sdk)のリンクで使用できる Open XML 2.5 SDK 生産性向上ツールによって生成されたコードが主に含まれています。
 
-OOXMLHelper.cs ファイルの **GenerateWebExtensionPart1Content** メソッドは、Microsoft AppSource の Script Lab の ID への参照を設定します。 
+**OOXMLHelper.cs** ファイルの **GenerateWebExtensionPart1Content** メソッドは、Microsoft AppSource の id Script Labを設定します。
 
 ```csharp
 We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "wa104380862", Version = "1.1.0.0", Store = "en-US", StoreType = "OMEX" };
 ```
 
-- StoreType **値** は、Microsoft AppSource のエイリアスである "OMEX" です。
-- Store **の** 値は、Script Lab の Microsoft AppSource カルチャ セクションにある "en-US" です。
-- Id **の** 値は、Script Lab の Microsoft AppSource アセット ID です。
+- **StoreType 値** は、Microsoft AppSource のエイリアスである "OMEX" です。
+- ストア **の** 値は、Microsoft AppSource カルチャ セクションにある "en-US" Script Lab。
+- Id **値** は、Microsoft AppSource アセット ID の値Script Lab。
 
-自動開き用にファイル共有カタログからアドインをセットアップする場合は、次の値を使用します。
+ファイル共有カタログから自動開き用にアドインを設定する場合は、次の異なる値を使用します。
 
-**StoreType の値** は "FileSystem" です。
+**StoreType 値** は "FileSystem" です。
 
-- ストア **値** は、ネットワーク共有の URL です。たとえば \\ \\ 、「MyComputer \\ MySharedFolder」とします。 これは、信頼できるセキュリティ センターで共有の信頼できるカタログ アドレスとして表示される正確な URL Office必要があります。
+- Store **の** 値は、ネットワーク共有の URL です。たとえば \\ \\ 、「MyComputer \\ MySharedFolder」などです。 これは、信頼センターで共有の信頼済みカタログ アドレスとして表示される正確な URL Office必要があります。
 - Id **値** は、アドイン マニフェストのアプリ ID です。
 > [!NOTE]
-> これらの属性の代替値の詳細については、「ドキュメントを含む作業ウィンドウを [自動的に開く」を参照してください](../develop/automatically-open-a-task-pane-with-a-document.md)。
+> これらの属性の代替値の詳細については、「ドキュメントを含む作業ウィンドウを自動的に [開く」を参照してください](../develop/automatically-open-a-task-pane-with-a-document.md)。
 
-## <a name="use-the-fluent-ui"></a>Fluent UI を使用する
+## <a name="use-the-fluent-ui"></a>UI のFluentする
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Word、Excel、PowerPoint の Fluent UI アイコン。":::
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="FluentWord、Excel、およびPowerPoint。":::
 
-ベスト プラクティスは、Fluent UI を使用して、ユーザーが Microsoft 製品間を移行する場合に役立ちます。 Web ページから起動するOfficeを示Officeアイコンを常に使用する必要があります。 サンプル コードを変更して Excel アイコンを使用し、Excel アプリケーションを起動します。
+ベスト プラクティスは、ユーザーが Microsoft 製品間で移行Fluent UI を使用する方法です。 Web ページから起動するアプリケーションOfficeを示Officeアイコンを常に使用する必要があります。 サンプル コードを変更して、Excelアイコンを使用して、アプリケーションを起動Excelします。
 
-1. サンプルを次のVisual Studio。
-1. **Home.aspx ページを開** きます。
+1. サンプルを [サンプル] で開Visual Studio。
+1. **[Home.aspx] ページを開** きます。
 1. フォームのダウンロード ボタンである次のコードを見つける。
+
     ```html
     <asp:Button ID="btnDownload" runat="server" Text="Download" OnClick="btnDownload_Click" /> 
     ```
-1. ボタンのコードを次のイメージ タグに置き換えます。
+
+1. ボタン コードを次のイメージ タグに置き換えます。
+
     ```html
     <asp:Image  src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/excel_48x1.svg" width="48" height="48" ID="btnDownload" runat="server" OnClick="btnDownload_Click" AlternateText="Open in Microsoft Excel" role="button" ImageUrl=""/>  
     ```
-1. **F5 キーを押** します (またはデバッグ **>開始します**)。 ホーム ページが読み込まれるとアイコンが表示されます。
 
-詳しくは、Fluent UI [開発者Officeの](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) ブランド アイコンに関するページをご覧ください。  
+1. **F5 キーを押** します (**または [デバッグ] >を開始します**)。 ホーム ページが読み込まれると、アイコンが表示されます。
 
-## <a name="upload-the-excel-document-to-microsoft-onedrive"></a>Excel ドキュメントを Microsoft OneDrive にアップロードする
+詳細については、「UI 開発者[ポータルOfficeブランド](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons)アイコンFluent参照してください。  
 
-顧客が OneDrive を使用している場合は、新しいドキュメントを OneDrive にアップロードすることをお勧めします。 これにより、ドキュメントの検索と作業が容易になります。 新しいコード サンプルを作成し、Microsoft Graph SDK を使用して新しい Excel ドキュメントを OneDrive にアップロードする方法を確認しましょう。
+## <a name="upload-the-excel-document-to-microsoft-onedrive"></a>アップロードドキュメントをExcelするMicrosoft OneDrive
+
+顧客がドキュメントを使用している場合は、OneDriveに新しいドキュメントをアップロードOneDrive。 これにより、ドキュメントの検索と作業が容易になります。 新しいコード サンプルを作成し、Microsoft Graph SDK を使用して新しいドキュメントをExcelする方法OneDrive。
 
 ### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>クイック スタートを使用して新しい Microsoft Graph Web アプリケーションを構築する
 
-1. 手順に従って、クイック スタート のコード サンプルを作成して開きます。このコード サンプルは、各サービスとOffice [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) します。
-1. 手順 **1: 言語またはプラットフォームを選択し、MVC** ASP.NET **します**。 この手順の手順では MVC オプションASP.NET使用しますが、この手順は任意の言語またはプラットフォームに適用されるパターンに従います。
-1. 手順 **2: アプリ ID とシークレットを取得** し、[アプリ ID とシークレットの **取得] を選択します**。
-1. Microsoft 365 アカウントにサインインします。  
-1. アプリ シークレット **Web ページで** 、アプリ シークレットを後で取得して使用できるファイルの場所に保存します。
-1. Choose **Got it, take me back to the quick start**.
-1. 手順 **2: 登録に成功しました。** 生成されたアプリ シークレットを入力します。
-1. 手順 **3: コーディングを開始し**、[SDK ベースのコード サンプルのダウンロード **] を選択します**。
+1. 手順に従って、クイック スタート コード サンプルを作成して開き、サービスを操作Office [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) します。
+1. 手順 **1: 言語またはプラットフォームを選択し、[MVC]** を ASP.NET **します**。 この手順の手順では、MVC ASP.NET を使用しますが、この手順は、任意の言語またはプラットフォームに適用されるパターンに従います。
+1. 手順 **2: アプリ ID とシークレットを取得** し、[アプリ ID **とシークレットを取得する] を選択します**。
+1. アカウントにサインインMicrosoft 365します。  
+1. [アプリ **シークレット Web ページを保存してください** ] で、アプリ シークレットを後で取得して使用できるファイルの場所に保存します。
+1. [Got **it] を選択し、クイック スタートに戻します**。
+1. 手順 **2: 登録が成功しました!** 生成されたアプリ シークレットを入力します。
+1. 手順 **3: コーディングを開始し****、[SDK ベースのコード サンプルをダウンロードする] を選択します**。
 1. ダウンロード zip フォルダーをローカル フォルダーに展開します。  
-1. Visual Studio 2019 で graph-tutorial.sln ファイルを開きます。
-1. ソリューションをビルドして実行し、正常に動作しているのを確認します。 予定表 Web ページを使用して Microsoft 365 の予定表を表示できる必要があります。
+1. 2019 年に graph-tutorial.sln ファイルを開Visual Studioします。
+1. ソリューションをビルドして実行し、正しく動作しているのを確認します。 予定表 Web ページを使用して、予定表を表示Microsoft 365があります。
 
-### <a name="upload-a-file-to-onedrive"></a>OneDrive にファイルをアップロードする
+### <a name="upload-a-file-to-onedrive"></a>アップロードを作成するOneDrive
 
-1. Visual Studio 2019 で **graph-tutorial.sln** ソリューションを開き、PrivateSettings.config **します。**
+1. 2019 年 2019 年に **graph-tutorial.sln** ソリューションを開きVisual Studioファイル **をPrivateSettings.config** します。
 1. 次のコードのように、新しいスコープ **Files.ReadWrite** を   **ida:AppScopes** キーに追加します。
+
     ```xml
     <add key="ida:AppScopes" value="User.Read Calendars.Read Files.ReadWrite " />
     ```
+
 1. **Index.cshtml ファイルを開** きます。
-1. 次の ActionLink コードを挿入して、ファイルを OneDrive にアップロードするボタンを作成します。
+1. 次の ActionLink コードを挿入して、ファイルをファイルにアップロードするボタンを作成OneDrive。
+
     ```razor
     @if (Request.IsAuthenticated)
     {
@@ -125,8 +132,10 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
         @Html.ActionLink("Click here to create a new file on OneDrive", "CreateOneDriveFile", "Home", new { area = "" }, new { @class = "btn btn-primary btn-large" })
     }
     ```
+
 1. **HomeController.cs** ファイルを開きます。
-1. アクション リンクからの要求を処理する次のコードを挿入します。
+1. アクション リンクからの要求を処理するには、次のコードを挿入します。
+
     ```csharp
     public void CreateOneDriveFile()
         {
@@ -136,8 +145,10 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
             }
         }
     ```
-1. ファイルを **GraphHelper.cs** します。
-1. 次のコードを挿入して Microsoft Graph API を呼び出し、OneDrive に新しいファイルを作成します。
+
+1. **GraphHelper.cs ファイルを開** きます。
+1. 次のコードを挿入して、Microsoft Graph API を呼び出して、新しいファイルを作成OneDrive。
+
     ```csharp
     public static async Task UploadFile(string fileName, System.IO.MemoryStream stream)
         {
@@ -152,47 +163,48 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
             return;
         }
     ```
-1. **F5 キーを押** します (またはデバッグ **>開始します**)。 Web アプリケーションが起動します。
-1. Choose **Click here to sign in,** and sign in.
-1. Choose **Click here to create a new file on OneDrive**.
-1. 新しいブラウザー タブを開き、OneDrive アカウントにサインインします。 ルート フォルダーにtest.txtが表示されます。
 
-OneDrive にファイルをアップロードする方法を学んだので、このコードを再利用して、作成した Excel ドキュメントをアップロードできます。
+1. **F5 キーを押** します (**または [デバッグ] >を開始します**)。 Web アプリケーションが起動します。
+1. [ **ここをクリックしてサインイン] を選択し**、サインインします。
+1. [**ここをクリックして新しいファイルを作成する] をOneDrive。**
+1. 新しいブラウザー タブを開き、アカウントにサインインOneDriveします。 ルート フォルダーにtest.txtファイルが表示されます。
+
+ファイルを OneDrive にアップロードする方法を学んだので、このコードを再利用して、作成Excelドキュメントをアップロードできます。
 
 ## <a name="additional-considerations-for-your-solution"></a>ソリューションに関するその他の考慮事項
 
-テクノロジとアプローチの点では、すべてのユーザーのソリューションが異なります。 次の考慮事項は、ソリューションを変更してドキュメントを開き、アドインを埋め込む方法Officeに役立ちます。
+すべてのユーザーのソリューションは、テクノロジとアプローチの点で異なります。 次の考慮事項は、ソリューションを変更してドキュメントを開き、アドインを埋め込むOfficeに役立ちます。
 
-### <a name="create-a-new-excel-spreadsheet-from-the-web-page"></a>Web ページから新しい Excel スプレッドシートを作成する
+### <a name="create-a-new-excel-spreadsheet-from-the-web-page"></a>Web ページからExcel新しいスプレッドシートを作成する
 
-このサンプルでは、既存の Excel ドキュメントを変更します。 より一般的なシナリオとして、Web ページから新しい Excel スプレッドシートを作成します。 新しいスプレッドシートを作成する方法の詳細については、「ファイル名を指定してスプレッドシート ドキュメントを作成する」を参照してください。 この記事では、ファイルをローカルに作成する方法について説明しますが、SpreadsheetDocument.Create メソッドのオーバーロードを使用して、ファイルをストリームで作成することもできます。
+このサンプルでは、既存のドキュメントをExcelします。 より一般的なシナリオは、Web ページから新しいExcel作成する場合です。 新しいスプレッドシートを作成する方法の詳細については、「ファイル名を指定してスプレッドシート ドキュメントを作成 **する」を** 参照してください。 この記事では、ファイルをローカルに作成する方法を示しますが、SpreadsheetDocument.Create メソッドでオーバーロードを使用して、ストリーム内にファイルを作成することもできます。
 
 ### <a name="read-custom-properties-when-your-add-in-starts"></a>アドインの起動時にカスタム プロパティを読み取る
 
-コード サンプルでは、OOXML SDK を使用して新しい Excel ドキュメントにスニペット ID を格納します。 Script Lab は、Excel ドキュメントからスニペット ID を読み取り、そのスニペット コードを開くと表示します。 カスタム プロパティを独自のアドイン (クエリ文字列、一時認証トークンなど) に送信する必要がある場合があります。アドイン **の起動時にカスタム プロパティを読み取** る方法の詳細については、「アドインの状態と設定を保持する」を参照してください。
+コード サンプルでは、OOXML SDK を使用して、新Excelドキュメントにスニペット ID を格納します。 Script Labドキュメントからスニペット ID を読みExcel、開くとそのスニペット コードが表示されます。 カスタム プロパティを独自のアドイン (クエリ文字列、一時的な認証トークンなど) に送信する必要がある場合があります。アドイン **の起動時にカスタム プロパティ** を読み取る方法の詳細については、「永続化アドインの状態と設定」を参照してください。
 
-### <a name="initialize-the-excel-document-with-data"></a>データを使用して Excel ドキュメントを初期化する
+### <a name="initialize-the-excel-document-with-data"></a>データを使用Excelドキュメントを初期化する
 
-通常、顧客が Web サイトから Excel ドキュメントを開くと、そのドキュメントには Web サイトのデータが含まれると予想されます。 ドキュメントにデータを書き込むには、いくつかの方法があります。
+通常、顧客が Web サイトから Excelドキュメントを開くと、そのドキュメントに Web サイトのデータが含まれると予想されます。 ドキュメントにデータを書き込むには、いくつかの方法があります。
 
-- **OOXML SDK を使用してデータを書き込む**。 SDK を使用して、任意のデータをドキュメントに直接書き込みできます。 この方法は、ドキュメントを開いた時点でデータを使用する場合に便利です。
-- **カスタム クエリ プロパティをアドインにOffice渡します**。 ドキュメントを生成するときに、必要なすべてのデータを取得するクエリ文字列を含む Office アドインのカスタム プロパティを埋め込む必要があります。 アドインが開くと、クエリを取得し、クエリを実行し、Office JS API を使用してクエリの結果をドキュメントに挿入します。
+- **OOXML SDK を使用してデータを書き込む**。 SDK を使用すると、ドキュメントに任意のデータを直接書き込みできます。 この方法は、ドキュメントを開いた瞬間にデータを使用できる場合に便利です。
+- **カスタム クエリ プロパティをアドインOffice渡します**。 ドキュメントを生成するときに、必要なすべてのデータを取得するクエリ文字列を含む Office アドインのカスタム プロパティを埋め込む必要があります。 アドインが開くと、クエリを取得し、クエリを実行し、Office JS API を使用してクエリの結果をドキュメントに挿入します。
 
 ### <a name="working-with-the-ooxml-sdk"></a>OOXML SDK の操作
 
-OOXML SDK は .NET に基づいて作成されています。 Web アプリケーションが .NET ではない場合は、OOXML を使用する別の方法を探す必要があります。
+OOXML SDK は .NET に基づいて作成されます。 Web アプリケーションが .NET を使用しない場合は、OOXML を使用する別の方法を探す必要があります。
 
-[Open XML SDK for JavaScript には、OOXML SDK の JavaScript バージョンが用意されています](https://archive.codeplex.com/?p=openxmlsdkjs)。
+Open XML SDK for JavaScript には、OOXML SDK の [JavaScript バージョンが用意されています](https://archive.codeplex.com/?p=openxmlsdkjs)。
 
-OOXML コードを Azure 関数に配置して、.NET コードを Web アプリケーションの他の部分から分離できます。 次に、Web アプリケーションから Azure 関数を呼び出します (Excel ドキュメントを生成します)。 Azure 関数について詳しくは、「Azure 関数 [の概要」をご覧ください](/azure/azure-functions/functions-overview)。
+OOXML コードを Azure 関数に配置して、.NET コードを他の Web アプリケーションから分離できます。 次に、Web アプリケーションから Azure 関数 (Excelドキュメントを生成する) を呼び出します。 Azure 関数の詳細については、「Azure [Functions の概要」を参照してください](/azure/azure-functions/functions-overview)。
 
-### <a name="use-single-sign-on"></a>シングル サインオンを使用する
+### <a name="use-single-sign-on"></a>シングル サインオンの使用
 
-認証を簡略化するために、アドインにシングル サインオンを実装することをお勧めします。 詳細については、「アドインのシングル サインオンを有効にする [Office参照してください。](../develop/sso-in-office-add-ins.md)
+認証を簡略化するために、アドインでシングル サインオンを実装することをお勧めします。 詳細については、「Enable [single sign-on for Office アドイン」を参照してください。](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>関連項目
 
-- [Welcome to the Open XML SDK 2.5 for Office](/office/open-xml/open-xml-sdk)
+- [Open XML SDK 2.5 for Office](/office/open-xml/open-xml-sdk)
 - [ドキュメントで作業ウィンドウを自動的に開く](../develop/automatically-open-a-task-pane-with-a-document.md)
 - [アドインの状態および設定を保持する](../develop/persisting-add-in-state-and-settings.md)
 - [ファイル名を指定してスプレッドシート ドキュメントを作成する](/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name)

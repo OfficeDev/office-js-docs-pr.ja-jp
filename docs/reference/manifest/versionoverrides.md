@@ -3,12 +3,12 @@ title: マニフェスト ファイルの VersionOverrides 要素
 description: アドイン マニフェスト (XML) ファイルOffice VersionOverrides 要素のリファレンス ドキュメント。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555151"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348658"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 
@@ -78,7 +78,7 @@ ms.locfileid: "52555151"
 
 複数のバージョンを実装するために、新しいバージョンの `VersionOverrides` 要素は、古いバージョンの `VersionOverrides` 要素の子にする必要があります。 子の `VersionOverrides` 要素は、どの値も親から継承しません。
 
-VersionOverrides v1.0 と v1.1 の両方のスキーマを実装するためのマニフェストは、次に示す例のようになります。
+VersionOverrides v1.0 スキーマと v1.1 スキーマの両方を実装するには、マニフェストは次の例のようになります。
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

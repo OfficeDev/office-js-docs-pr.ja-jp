@@ -1,24 +1,24 @@
 ---
 title: Office アドインのユーザビリティ テスト
-description: 実際のユーザーを使用してアドインの設計をテストする方法について説明します。
+description: 実際のユーザーと一緒にアドイン設計をテストする方法について学習します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: db9b3f235e8e795e58466a0a6ff992ac8eba2bd5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5de29a15a9e382b990985765eaad801b1b54f364
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609360"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349694"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
 ユーザーの動作を考慮してデザインされたアドインは優れています。デザインを決定する際には自分の先入感が影響を及ぼすので、実際のユーザーを用いてデザインをテストし、アドインが顧客にとって有用かどうかを確認するのは重要です。 
 
-ユーザビリティ テストは、さまざまな方法で実行できます。多くのアドインの開発者にとっては、リモートで、モデレートせずにユーザビリティを検討することが、時間とコストの点で最も効率的です。このことを簡単に行える、人気のテスト サービスがいくつかあります。次に、例を示します。 
+ユーザービリティ テストは、さまざまな方法で実行できます。 多くのアドイン開発者にとって、リモートでモダンな操作性の調査が最も時間とコスト効率に優れています。 いくつかの一般的なテスト サービスを使用すると、これを簡単に実行できます。いくつかの例を次に示します。
 
- - [UserTesting.com](https://www.UserTesting.com)
- - [Optimalworkshop.com](https://www.Optimalworkshop.com)
- - [Userzoom.com](https://www.Userzoom.com)
+- [UserTesting.com](https://www.UserTesting.com)
+- [Optimalworkshop.com](https://www.Optimalworkshop.com)
+- [Userzoom.com](https://www.Userzoom.com)
 
 これらのテスト サービスは、テスト計画の作成を効率化し、参加者を探したりテストをモデレートしたりする必要をなくすのに役立ちます。 
 
@@ -35,30 +35,30 @@ ms.locfileid: "44609360"
  
 調査での質問項目を設定することにより、調査の目的を定義し、テストの計画を導いていることになります。質問項目は、募集する参加者や実行するタスクを特定するのに役立ちます。調査での質問項目は、可能な限り具体的に設定してください。広範な質問に回答するように努めることもできます。
  
-次に、調査での質問項目の設定例をいくつか示します。
+以下に、研究に関する質問の例を示します。
   
 **具体的な質問**
 
- - ユーザーは、ランディング ページ上の "無料試用版" リンクに気が付きますか。
- - ユーザーがアドインから自分のドキュメントにコンテンツを挿入する際に、ドキュメント内の挿入場所がわかるでしょうか。
+- ユーザーは、ランディング ページ上の "無料試用版" リンクに気が付きますか。
+- ユーザーがアドインから自分のドキュメントにコンテンツを挿入する際に、ドキュメント内の挿入場所がわかるでしょうか。
 
 **広範な質問**
 
- - ユーザーにとってアドインの最大の懸案事項は何ですか。
- - ユーザーは、コマンド バー内のアイコンの意味を、クリックする前に理解していますか。
- - ユーザーは設定メニューを簡単に検索できますか。
+- ユーザーにとってアドインの最大の懸案事項は何ですか。
+- ユーザーは、コマンド バー内のアイコンの意味を、クリックする前に理解していますか。
+- ユーザーは設定メニューを簡単に検索できますか。
 
-アドインを見つけることからインストールして使用することに至るまで、ユーザー体験全体に関するデータを取得することは重要です。調査での質問項目が、アドイン ユーザー体験の次の側面に対応しているか検討してください。
+アドインを見つけることからインストールして使用することに至るまで、ユーザー体験全体に関するデータを取得することは重要です。 アドイン ユーザー エクスペリエンスの次の側面に対処する調査の質問を検討します。
 
- - AppSource 内でのアドインの検索
- - アドインのインストールの選択
- - 最初の実行エクスペリエンス
- - リボン コマンド
- - アドイン UI
- - アドインが Office アプリケーションのドキュメント領域と相互作用する方法
- - ユーザーがコンテンツ挿入フローを制御できる程度
+- AppSource 内でのアドインの検索
+- アドインのインストールの選択
+- 最初の実行エクスペリエンス
+- リボン コマンド
+- アドイン UI
+- アドインが Office アプリケーションのドキュメント領域と相互作用する方法
+- ユーザーがコンテンツ挿入フローを制御できる程度
 
-詳細については、「[Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/en-us/articles/115003378572-Writing-effective-questions)」 (実際の反応と主観的データを収集する) を参照してください。
+詳細については、「[Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/articles/115003378572-Writing-effective-questions)」 (実際の反応と主観的データを収集する) を参照してください。
 
 ## <a name="3-identify-participants-to-target"></a>3. ターゲットとする参加者を特定する
 
@@ -88,7 +88,7 @@ ms.locfileid: "44609360"
  a. はい *[必ず選択]*  
  b. いいえ *[拒否]*  
 
-詳細については、「[Screener Questions Best Practices](https://help.usertesting.com/hc/en-us/articles/115003370731-Screener-question-best-practices)」 (スクリーナーの質問のベスト プラクティス) を参照してください。
+詳細については、「[Screener Questions Best Practices](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices)」 (スクリーナーの質問のベスト プラクティス) を参照してください。
 
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. 参加者のタスクと質問を作成する
 
@@ -96,11 +96,11 @@ ms.locfileid: "44609360"
 
 可能な限り、参加者の動作について質問するのではなく観察するよう試みてください。動作について質問する必要がある場合、特定の状況で参加者が行うであろうと予想することではなく、参加者が過去に行ってきたことについて質問してください。その方が、信頼性の高い結果が得られる傾向があります。
 
-モデレートされていないテストの主な課題は、参加者がタスクとシナリオを確実に理解することです。指示は*明確で簡潔な*ものである必要があります。混乱する可能性がある場合には、必ず混乱する人がいます。
+モデレートされていないテストの主な課題は、参加者がタスクとシナリオを確実に理解することです。指示は *明確で簡潔な* ものである必要があります。混乱する可能性がある場合には、必ず混乱する人がいます。
 
 テスト中の特定の時点で、ユーザーは想定している画面上にいるとは限らないことに注意してください。次のタスクを開始するにはどの画面上にいる必要があるかユーザーに伝えることを検討してください。
 
-詳細については、「[Writing Great Tasks](https://help.usertesting.com/hc/en-us/articles/115003371651-Writing-great-tasks)」 (優れたタスクの作成) を参照してください。
+詳細については、「[Writing Great Tasks](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks)」 (優れたタスクの作成) を参照してください。
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. タスクや質問に対応するプロトタイプを作成する
  
@@ -108,7 +108,7 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 平均すると、ユーザーがアドインのインストール方法をひととおり実行するには約 5 分間かかります。明確で簡潔なインストール手順の例を次に示します。テストの仕様に基づいて手順を調整してください。
 
-**次の手順を使用して、PowerPoint の (ここにアドイン名を挿入する) アドインをインストールしてください。**
+**次の手順に従って、(ここにアドイン名を挿入する) アドインをインストールPowerPointインストールしてください。**
 
 1. Microsoft PowerPoint を開きます。
 1. **[新しいプレゼンテーション]** を選択します。
@@ -140,6 +140,6 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 ## <a name="see-also"></a>関連項目
 
- - [ユーザビリティ テストを実施する方法](https://whatpixel.com/howto-conduct-usability-testing/)  
- - [UserTesting のベスト プラクティス](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
- - [偏りを最小限に抑える](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+- [ユーザビリティ テストを実施する方法](https://whatpixel.com/howto-conduct-usability-testing/)
+- [UserTesting のベスト プラクティス](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
+- [偏りを最小限に抑える](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)

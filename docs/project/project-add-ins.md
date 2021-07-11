@@ -5,16 +5,16 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f0edd10495badd50da3fa8d4b8c9b4495df6252
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076953"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348378"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
-Project Standard 2013 と Project Professional 2013 (バージョン 15.1 以降) はいずれも、作業ウィンドウ アドインをサポートしています。ユーザーは Word または Excel 用に開発された一般の作業ウィンドウ アドインを実行できます。 Project で選択イベントを処理するカスタム アドインを開発し、プロジェクトのタスク、リソース、ビューおよびその他のセル レベルのデータを SharePoint リスト、SharePoint アドイン、Web パーツ、Web サービスおよびエンタープライズ アプリケーションに統合することも可能です。
+Project Standard 2013 と Project Professional 2013 (バージョン 15.1 以降) はどちらも作業ウィンドウ アドインに対応しています。Word または Excel 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project のセレクションのイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint のリスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
 
 > [!NOTE]
 > [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
@@ -54,7 +54,7 @@ Project アドイン の JavaScript ライブラリには、**Office** 名前空
 
 アドインを作成するには、基本的なテキスト エディターを使用して、HTML の Web ページと、関連する JavaScript ファイル、CSS ファイル、および REST クエリを作成します。アドインには、HTML ページや Web アプリケーションに加えて、構成用の XML マニフェスト ファイルも必要です。Project では、**type** 属性に **TaskPaneExtension** を指定したマニフェスト ファイルを使用できます。同じマニフェスト ファイルを複数の Office 2013 クライアント アプリケーションで使用することも、Project 2013 専用のマニフェスト ファイルを作成することもできます。詳細については、「_Office アドイン プラットフォームの概要_」の「[開発の基本](../overview/office-add-ins.md)」セクションを参照してください。
 
-Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが置かれます。
+Project 2013 SDK のダウンロード ファイルをインストールすると、`\Samples\Apps\` サブディレクトリに以下のサンプル アドインが含まれます。
 
 - **Bing Search:**??BingSearch.xml マニフェスト ファイルでは、モバイル デバイス用の Bing の検索ページが指定されています。Bing の Web アドインは既にインターネット上に存在するため、Bing Search アドインでは他のソース コード ファイルや Project 用のアドイン オブジェクト モデルは使用しません。
 

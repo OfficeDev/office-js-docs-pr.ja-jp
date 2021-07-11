@@ -3,12 +3,12 @@ title: 社内の Project Server OData サービスで REST を使用する Proje
 description: Project Professional 2013 の作業ウィンドウ アドインを作成し、アクティブなプロジェクトのコストと作業データと、現在の Project Web App インスタンスのすべてのプロジェクトの平均を比較する方法について学習します。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 318ef4fe45fdfbca5d47cb5d3d28b43fea61059b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c03cd580f9f5d4da654022de811d4a060a99e52d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076666"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348812"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -18,7 +18,7 @@ ms.locfileid: "53076666"
 
 ## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Project Server のレポート データを読み取る作業ウィンドウ アドインを作成するための前提条件
 
-Project Server 2013 のオンプレミス インストールで、Project Web App インスタンスの **ProjectData** サービスを読み取る Project 作業ウィンドウ アドインを作成するための前提条件を次に示します。
+Project Server 2013 のオンプレミス インストールで Project Web App インスタンスの **ProjectData** サービスを読み取る Project Project 作業ウィンドウ アドインを作成するための前提条件を次に示します。
 
 - 使用するローカルの開発用コンピューターに最新のサービス パックと Windows 更新プログラムをインストールしてあることを確認します。オペレーティング システムは、Windows 7、Windows 8、Windows Server 2008、Windows Server 2012 のいずれでもかまいません。
 
@@ -37,7 +37,7 @@ Project Server 2013 のオンプレミス インストールで、Project Web Ap
 
 1. ブラウザーで REST クエリからの XML データの直接表示を可能にするには、フィードの読み取りビューをオフにします。Internet Explorer でこれを行う方法については、「 [Project Server 2013 レポート データの OData フィードにクエリを実行する](/previous-versions/office/project-odata/jj163048(v=office.15))」の手順 1. のステップ 4. を参照してください。
 
-2. ブラウザーを **使用して、/ProjectServerName** **http://ServerName /_api/ProjectData を使用して ProjectData サービスにクエリを実行します**。 たとえば、Project Web App インスタンスが `http://MyServer/pwa` である場合、ブラウザーは次の結果を示します。
+2. ブラウザーを **使用して、/ProjectServerName** **http://ServerName /_api/ProjectData を使用して ProjectData サービスにクエリを実行します**。 たとえば、インスタンスのインスタンスが `http://MyServer/pwa` Project Web App、ブラウザーに次の結果が表示されます。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 1. 管理者Visual Studio 2015 を実行し、[スタート] ページで [新しい **Project]** を選択します。
 
-2. [新 **しい** Project] ダイアログ ボックスで、[テンプレート] **、Visual C#** ノード、および **Office/SharePoint** ノードを展開し、[** Office アドイン**] を選択します。 中央.NET Framework上部のターゲット フレームワーク ドロップダウン リストで **[4.5.2]** を選択し **、[Office** アドイン] を選択します (次のスクリーンショットを参照)。
+2. [新 **しいProject]** ダイアログ ボックスで、[テンプレート] **、Visual C#** ノード **、Office/SharePoint** ノードを展開し、[Office アドイン] を **選択します**。中央.NET Framework上部のターゲット フレームワーク ドロップダウン リストで **[4.5.2]** を選択し **、[Office** アドイン] を選択します (次のスクリーンショットを参照)。
 
 3. これらの Visual Studio プロジェクトを両方とも同じディレクトリに配置するには、[**ソリューションのディレクトリを作成**] を選択し、目的の場所を参照します。
 
@@ -115,13 +115,13 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 4. リボンの [**プロジェクト**] タブの [**Office アドイン**] ドロップダウン リストに表示するアイコンを追加します。 Visual Studio ソリューションにアイコン ファイルを追加することも、アイコンの URL を使用することもできます。 
 
-以下の手順は、Visual Studio ソリューションにアイコン ファイルを追加するための方法を示しています。
+次の手順は、アイコン ファイルをソリューションに追加するVisual Studioします。
 
 1. ソリューション **エクスプローラーで、Images** という名前のフォルダーに移動します。
 
 2. [アドイン] ドロップダウン リスト **Office** 表示するには、アイコンが 32 x 32 ピクセルである必要があります。 たとえば、Project 2013 SDK をインストールしてから、**[Images]** フォルダーを選択し、SDK から次のファイルを追加します。`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`。
 
-    または、独自の 32 x 32 アイコンを使用するか、NewIcon.png という名前のファイルに次の画像をコピーして、`HelloProjectODataWeb\Images` フォルダーにそのファイルを追加します。
+    または、独自の 32 x 32 アイコンを使用します。または、次のイメージを [NewIcon.png] という名前のファイルにコピーし、そのファイルをフォルダーに追加  `HelloProjectODataWeb\Images` します。
 
     ![HelloProjectOData アプリのアイコン。](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -180,7 +180,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
     **HelloProjectOData** アドインは、ポップアップ メッセージにSurfaceErrors.jsファイルも使用します。 テキスト エディターを使用して [Project 2013](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)の最初の作業ウィンドウ アドインを作成するの 「堅牢なプログラミング」セクションからコードをコピーし **、HelloProjectODataWeb** プロジェクトの **Scripts\Office** フォルダーに SurfaceErrors.js ファイルを追加できます。
 
-    head 要素の更新された HTML コードを次に **示します。** 次に示すのは、このファイルの追加行SurfaceErrors.jsです。
+    head 要素の更新された HTML コードを次に **示します。** その他の行は、SurfaceErrors.jsです。
 
     ```HTML
     <!DOCTYPE html>
@@ -192,7 +192,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
     <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-    <!-- Add your CSS styles to the following file -->
+    <!-- Add your CSS styles to the following file. -->
     <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
     <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -206,7 +206,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
     <script src="../Scripts/Office/1.0/Office.js"></script>
 
-    <!-- Add your JavaScript to the following files -->
+    <!-- Add your JavaScript to the following files. -->
     <script src="../Scripts/HelloProjectOData.js"></script>
     <script src="../Scripts/SurfaceErrors.js"></script>
     </head>
@@ -581,7 +581,7 @@ Visual Studio 2015 年 2015 年に **HelloProjectOData** アドインをテス�
 
 6. テキスト ボックス内の出力を調べます。 ajax と parseODataResult の呼び出しのドキュメント パス、REST クエリ、状態情報、JSON の結果 **を表示する必要があります**。  出力は、メソッド内のコードを理解、作成、デバッグするのに `parseODataResult` 役立ちます `projCost += Number(res.d.results[i].ProjectCost);` 。
 
-    次に示すのは、Project Web App インスタンスの 3 つのプロジェクトの出力例です。わかりやすくするためにテキストに改行と空白を追加してあります。
+    次に、1 つのインスタンス内の 3 つのプロジェクトについて、テキストに改行とスペースを追加した出力の例をProject Web Appします。
 
     ```json
     Document path: <>\WinProj test1
@@ -670,7 +670,7 @@ Visual Studio 2015 年 2015 年に **HelloProjectOData** アドインをテス�
 
         <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
 
-        <!-- Add your CSS styles to the following file -->
+        <!-- Add your CSS styles to the following file. -->
         <link rel="stylesheet" type="text/css" href="../Content/App.css" />
 
         <!-- Use the CDN reference to the mini-version of jQuery when deploying your add-in. -->
@@ -684,7 +684,7 @@ Visual Studio 2015 年 2015 年に **HelloProjectOData** アドインをテス�
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
         <script src="../Scripts/Office/1.0/Office.js"></script>
 
-        <!-- Add your JavaScript to the following files -->
+        <!-- Add your JavaScript to the following files. -->
         <script src="../Scripts/HelloProjectOData.js"></script>
         <script src="../Scripts/SurfaceErrors.js"></script>
     </head>

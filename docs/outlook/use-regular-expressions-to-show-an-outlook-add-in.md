@@ -3,16 +3,16 @@ title: 正規表現アクティブ化ルールを使用してアドインを表�
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292476"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348854"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
-メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは閲覧モードでのみアクティブになります。Outlook ではユーザーがアイテムを作成しているときにはコンテキスト アドインはアクティブになりません。 Outlook が、デジタル署名されたアイテムなどのアドインをアクティブにしないシナリオもあります。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
+メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは閲覧モードでのみアクティブになります。Outlook ではユーザーがアイテムを作成しているときにはコンテキスト アドインはアクティブになりません。 また、デジタル署名されたOutlookなど、アドインをアクティブ化しないシナリオも存在します。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
 
 アドイン XML マニフェストでは、[ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ルールまたは [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) ルールの一部として正規表現を指定することができます。 ルールは [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) 拡張点で指定されます。
 
@@ -53,7 +53,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 
 - アイテムの HTML 形式の本文は、Outlook リッチ クライアントと、Outlook on the web または Outlook モバイルとでは若干異なります。 正規表現を正確に定義する必要があります。
 
-- Outlook クライアント、デバイスの種類、または正規表現が適用されているプロパティによっては、正規表現をアクティブ化ルールとして設計する際に注意する必要がある、各クライアントに対して他のベストプラクティスと制限があります。詳細については [、「アクティブ化の制限」および「Outlook アドインの JAVASCRIPT API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 」を参照してください。
+- 正規表現が適用されている Outlook クライアント、デバイスの種類、またはプロパティに応じて、アクティブ化ルールとして正規表現を設計するときに注意する必要がある各クライアントの他のベスト プラクティスと制限があります。 詳細については、「 [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」を参照してください。
 
 ### <a name="examples"></a>例
 
@@ -97,7 +97,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 `ItemHasKnownEntity` ルールでは、選択したアイテムの件名または本文でのエンティティの存在に基づいてアドインをアクティブにします。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) タイプはサポートされるエンティティを定義します。 `ItemHasKnownEntity` ルールに正規表現を適用すると、アクティブ化がエンティティの値のサブセット (特定の URL セットまたは、特定の市外局番の電話番号など) に基づく点で、利便性が増します。
 
 > [!NOTE]
-> マニフェストに指定されている既定のロケールに関係なく、Outlook が抽出できるのは英語のエンティティ文字列だけです。 メッセージだけが `MeetingSuggestion` エンティティ タイプをサポートし、予定ではサポートしていません。 **送信済みアイテム** フォルダーのアイテムからはエンティティを抽出できません。また、`ItemHasKnownEntity` ルールを使用して**送信済みアイテム** フォルダーにあるアイテムのにアドインを有効にすることもできません。
+> マニフェストに指定されている既定のロケールに関係なく、Outlook が抽出できるのは英語のエンティティ文字列だけです。 メッセージだけが `MeetingSuggestion` エンティティ タイプをサポートし、予定ではサポートしていません。 **送信済みアイテム** フォルダーのアイテムからはエンティティを抽出できません。また、`ItemHasKnownEntity` ルールを使用して **送信済みアイテム** フォルダーにあるアイテムのにアドインを有効にすることもできません。
 
 `ItemHasKnownEntity` ルールでは、以下の表にある属性をサポートしています。 `ItemHasKnownEntity` ルールで正規表現の指定が任意の場合、エンティティ フィルターとして正規表現を使用するには、`RegExFilter` 属性と `FilterName` 属性の両方を指定する必要があります。
 
@@ -124,7 +124,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 
 ## <a name="using-regular-expression-results-in-code"></a>コードでの正規表現の結果の使用
 
-現在のアイテムで次のメソッドを使用して、正規表現に一致するものを取得できます。
+現在のアイテムに対して次のメソッドを使用して、正規表現に一致する文字列を取得できます。
 
 - [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) は、アドインの `ItemHasRegularExpressionMatch` ルールと `ItemHasKnownEntity` ルールで指定されているすべての正規表現について、現在のアイテムで一致するものを返します。
 

@@ -3,17 +3,17 @@ title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: d6e69b3adc8ddc9f5606e3ec522c56a621eb3664
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b679a61d1e326f0aed4018970d2dd77fc9cd4c25
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609127"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348518"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
 
-Office JavaScript API は、非同期メソッド ([getAsync](/javascript/api/outlook/office.Recipients#getasync-options--callback-)、 [recipients async](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-)、または[recipients](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)) を使用して、予定またはメッセージの新規作成フォームで受信者を取得、設定、または追加します。 これらの非同期メソッドは、アドインの作成のみに使用できます。これらのメソッドを使用するには、「新規[作成フォーム用の outlook アドインを作成](compose-scenario.md)する」で説明されているように、outlook が新規作成フォームでアドインをアクティブにするために、アドインマニフェストが適切にセットアップされていることを確認してください。
+Office JavaScript API には、予定またはメッセージの作成形式で受信者を取得、設定、または追加する非同期メソッド[(Recipients.getAsync、Recipients.setAsync、](/javascript/api/outlook/office.Recipients#getasync-options--callback-)[または Recipients.addAsync)](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)が用意されています。 [](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-) これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォームの[Outlook](compose-scenario.md)アドインの作成」で説明したように、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
 
 予定やメッセージ内の受信者を表すプロパティの一部は、新規作成フォームと閲覧フォームで読み取りアクセスで使用できます。この種のプロパティには、予定の [optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) と [requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、メッセージの [cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) と [to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) が含まれます。
 
@@ -23,7 +23,7 @@ Office JavaScript API は、非同期メソッド ([getAsync](/javascript/api/ou
 item.cc
 ```
 
-しかし、新規作成フォームでは、ユーザーとアドインの両方が同時に受信者を挿入または変更できるため、次の例に示すように、非同期メソッドを使用してこれらのプロパティを取得する必要があり `getAsync` ます。
+ただし、作成フォームでは、ユーザーとアドインの両方が同時に受信者を挿入または変更することができるため、次の例のように、非同期メソッドを使用してこれらのプロパティを取得する `getAsync` 必要があります。
 
 
 ```js
@@ -32,7 +32,7 @@ item.cc.getAsync
 
 これらのプロパティを書き込みアクセスに使用できるのは新規作成フォームに限られ、閲覧フォームでは使用できません。
 
-JavaScript API for Office のほとんどの非同期メソッドと同様に、、、 `getAsync` `setAsync` オプションの `addAsync` 入力パラメーターを取ります。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
+JavaScript API のほとんどの非同期メソッドと同様に、Office、およびオプションの入力 `getAsync` `setAsync` `addAsync` パラメーターを使用できます。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
 ## <a name="get-recipients"></a>受信者を取得する
@@ -48,11 +48,11 @@ JavaScript API for Office のほとんどの非同期メソッドと同様に、
 </Rule>
 ```
 
-Office JavaScript API では、予定の受信者を表すプロパティ ([必須**出席者**] および **[requiredat]**) は、メッセージ ([bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 **cc**、および**to**) とは別のものであるため、最初に[アイテムの itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)プロパティを使用して、作成されているアイテムが予定またはメッセージであるかどうかを識別します。 新規作成モードでは、予定およびメッセージのすべてのプロパティが[Recipients](/javascript/api/outlook/office.Recipients)オブジェクトであるため、非同期メソッドを適用して `Recipients.getAsync` 対応する受信者を取得できます。
+Office JavaScript API では、予定 (オプションの **Attendees** および **requiredAttendees)** の受信者を表すプロパティはメッセージ ([bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 **cc**、 to ) とは異なるために、まず [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)プロパティを使用して、構成するアイテムが予定またはメッセージであるかどうかを識別する必要があります。 作成モードでは、予定とメッセージのこれらのプロパティはすべて [Recipients](/javascript/api/outlook/office.Recipients) オブジェクトなので、非同期メソッドを適用して対応する受信者 `Recipients.getAsync` を取得できます。
 
-を使用し `getAsync` て、非同期呼び出しによって返された状態、結果、およびエラーを確認するコールバックメソッドを提供 `getAsync` します。 オプションの _asyncContext_ パラメーターを使用して、コールバック メソッドに引数を指定できます。 The callback method returns an _asyncResult_ output parameter. `status` `error` [AsyncResult](/javascript/api/office/office.asyncresult) parameter オブジェクトのプロパティとプロパティを使用して、非同期呼び出しの状態およびエラーメッセージを確認し、プロパティを使用して実際の受信者を取得することができ `value` ます。 受信者は、[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) オブジェクトの配列として表されます。
+コールバック メソッドを提供して、非同期呼び出しによって返される状態、結果、およびエラー `getAsync` を確認 `getAsync` するために使用します。 オプションの _asyncContext_ パラメーターを使用して、コールバック メソッドに引数を指定できます。 The callback method returns an _asyncResult_ output parameter. AsyncResult パラメーター オブジェクトのプロパティを使用して、非同期呼び出しの状態とエラー メッセージを確認し、プロパティを使用して実際の受信者 `status` `error` [](/javascript/api/office/office.asyncresult) `value` を取得できます。 受信者は、[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) オブジェクトの配列として表されます。
 
-`getAsync`このメソッドは非同期であるため、受信者を正常に取得することに依存する後続のアクションがある場合は、非同期呼び出しが正常に完了したときに、対応するコールバックメソッドでのみそのようなアクションを開始するようにコードを整理する必要があります。
+メソッドは非同期なので、受信者の取得に依存する後続のアクションがある場合は、非同期呼び出しが正常に完了した場合にのみ、対応するコールバック メソッドでこのようなアクションを開始するコードを整理する必要があります。 `getAsync`
 
 
 
@@ -150,18 +150,18 @@ function write(message){
 ## <a name="set-recipients"></a>受信者を設定する
 
 
-このセクションでは、ユーザーが新規作成する予定やメッセージの受信者を設定するコード例を示しています。 受信者を設定すると、既存の受信者が上書きされます。 この例では、前述の新規作成フォームで受信者を取得する例と同様に、アドインが予定とメッセージの新規作成フォームでアクティブ化されることを想定しています。 この例では、最初に、構成されたアイテムが予定またはメッセージかどうかを確認し、非同期メソッドを適用するために、 `Recipients.setAsync` 予定またはメッセージの受信者を表す適切なプロパティを使用します。
+このセクションでは、ユーザーが新規作成する予定やメッセージの受信者を設定するコード例を示しています。 受信者を設定すると、既存の受信者が上書きされます。 この例では、前述の新規作成フォームで受信者を取得する例と同様に、アドインが予定とメッセージの新規作成フォームでアクティブ化されることを想定しています。 次の使用例は、最初に、構成済みアイテムが予定またはメッセージであるのを確認し、非同期メソッドを、予定またはメッセージの受信者を表す適切なプロパティに `Recipients.setAsync` 適用します。
 
-を呼び出すときに、 `setAsync` 次のいずれかの形式で、 _recipients_パラメーターの入力引数として配列を指定します。
+呼び出 `setAsync` す場合は、次のいずれかの形式で  _、recipients_ パラメーターの入力引数として配列を指定します。
 
 
 - SMTP アドレスである文字列の配列。
     
 - 辞書の配列。次のコード例に示されているように、それぞれ表示名と電子メール アドレスが含まれています。
     
-- オブジェクトの配列 `EmailAddressDetails` 。メソッドによって返される配列に似て `getAsync` います。
+- メソッドによって `EmailAddressDetails` 返されるオブジェクトの配列に似 `getAsync` ています。
     
-必要に応じて、メソッドへの入力引数としてコールバックメソッドを指定して、 `setAsync` 受信者の設定に依存するコードが発生した場合にのみ実行するようにすることができます。 オプションの _asyncContext_ パラメーターを使用してコールバック メソッドの引数を提供することもできます。 コールバックメソッドを使用する場合は、 _asyncResult_出力パラメーターにアクセスして、parameter オブジェクトの**status**および**error**プロパティを使用して、 `AsyncResult` 非同期呼び出しの状態およびエラーメッセージを確認できます。
+必要に応じて、コールバック メソッドをメソッドの入力引数として指定して、受信者を正常に設定に依存するコードが実行されるのを確認 `setAsync` できます。 オプションの _asyncContext_ パラメーターを使用してコールバック メソッドの引数を提供することもできます。 コールバック メソッドを使用する場合は _、asyncResult_ 出力パラメーターにアクセスし、パラメーターオブジェクトの status プロパティと **error** プロパティを使用して、非同期呼び出しの状態とエラー メッセージを確認できます `AsyncResult` 。
 
 
 
@@ -276,7 +276,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>受信者を追加する
 
-予定またはメッセージ内の既存の受信者を上書きしない場合は、を使用する代わりに、 `Recipients.setAsync` `Recipients.addAsync` 非同期メソッドを使用して受信者を追加できます。 `addAsync`は、 `setAsync` _受信者_の入力引数を必要とするのと同じように動作します。 オプションで、コールバック メソッドを指定し、asyncContext パラメーターを使用してコールバックの引数を提供できます。 その後、 `addAsync` コールバックメソッドの_asyncResult_出力パラメーターを使用して、非同期呼び出しの状態、結果、およびエラーを確認できます。 次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
+予定またはメッセージ内の既存の受信者を上書きしない場合は、使用する代わりに、非同期メソッドを使用して受信者 `Recipients.setAsync` `Recipients.addAsync` を追加できます。 `addAsync` 受信者の入力 `setAsync` 引数が必要な場合と同様 _に_ 動作します。 オプションで、コールバック メソッドを指定し、asyncContext パラメーターを使用してコールバックの引数を提供できます。 その後、コールバック メソッドの asyncResult 出力パラメーターを使用して、非同期呼び出しの状態、結果、およびエラー `addAsync` を確認できます。  次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
 
 
 ```js

@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
-description: エンドユーザーが Office アドインを実行するために必要なクライアントおよびサーバーの要件について説明します。
+description: エンド ユーザーがアドインで実行する必要があるクライアント要件とサーバー要件Office説明します。
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3c4ed1116fa83de694f390cfc26fde9a01858460
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2aa5b2ffadffb86052ea55e06b1c0c49742543e6
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293010"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349134"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -16,7 +16,7 @@ ms.locfileid: "47293010"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-現在、Office アドインが現在サポートされている場所の概要については、「office [クライアントアプリケーションおよび Office アドインのプラットフォームの可用性](../overview/office-add-in-availability.md)」を参照してください。
+Office アドインが現在サポートされている場所の詳細なビューについては[、「Office](../overview/office-add-in-availability.md)クライアント アプリケーションとプラットフォームの可用性」を参照Officeしてください。
 
 ## <a name="server-requirements"></a>サーバーの要件
 
@@ -29,23 +29,22 @@ Office アドインをインストールおよび実行できるようにする�
 > [!TIP]
 > Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
-コンテンツアドインと作業ウィンドウアドインについては、サポートされている Office クライアントアプリケーション (Excel、PowerPoint、Project、または Word) で、SharePoint の [アプリカタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) を使用してアドインの XML マニフェストファイルをアップロードするか、 [一元展開](../publish/centralized-deployment.md)を使用してアドインを展開する必要があります。
+コンテンツ アドインと作業ウィンドウ アドインの場合、サポートされている Office クライアント アプリケーション (Excel、PowerPoint、Project、または Word) では、アドインの XML マニフェスト ファイル[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)をアップロードするために SharePoint のアプリ カタログも必要か、集中展開を使用してアドインを展開する必要があります。 [](../publish/centralized-deployment.md)
 
-Outlook アドインをテストして実行するには、ユーザーの Outlook メールアカウントが、Microsoft 365、Exchange Online、またはオンプレミスのインストールによって利用可能な Exchange 2013 以降に存在する必要があります。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
+Outlook アドインをテストして実行するには、ユーザーの Outlook 電子メール アカウントが Exchange 2013 以降に存在し、Microsoft 365、Exchange Online、またはオンプレミスインストールを通じて使用できる必要があります。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
 
 > [!NOTE]
 > Outlook の POP および IMAP 電子メール アカウントは、Office アドインをサポートしていません。
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
 
-Windows ベースのデスクトップ、ノート PC、または タブレット デバイス上で実行されるサポート対象の Office デスクトップ クライアントまたは Web クライアント向けの Office アドインを開発するには、以下のソフトウェアが必要です。
-
+Windows ベースのデスクトップ、ラップトップ、またはタブレット デバイスで実行されるサポートされている Office デスクトップ クライアントまたは Web クライアント用の Office アドインを開発するには、次のソフトウェアが必要です。
 
 - Windows x86 および x64 デスクトップおよび Surface Pro などのタブレット:
-    - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
-    - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
+  - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
+  - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
 
-  有効な Microsoft 365 サブスクリプションがあり、Office クライアントにアクセスできない場合は、 [最新バージョンの office をダウンロードしてインストール](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)することができます。
+  有効なサブスクリプションをMicrosoft 365、Office クライアントにアクセスできない場合は、最新バージョンの Office を[ダウンロードしてインストールできます](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
 
 - Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
 
@@ -57,7 +56,7 @@ Windows ベースのデスクトップ、ノート PC、または タブレッ�
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
-Microsoft 365 の一部として配布される outlook on Mac は、Outlook アドインをサポートします。 Mac 上の outlook アドインを実行すると、outlook For mac 自体と同じ要件があります。オペレーティングシステムは、少なくとも OS X v 10.10 "ヨーク Semite" である必要があります。 Mac 上の Outlook はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
+Outlookの一部として配布される Mac 上のMicrosoft 365は、Outlookアドインをサポートします。mac Outlook Outlook でアドインを実行する場合、Mac 自体で Outlook と同じ要件が必要です。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。 Mac 上の Outlook はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
 
 次は、Office アドインをサポートする Mac 上の Office の最小クライアント バージョンです。
 
@@ -77,9 +76,9 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 
 | Office アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|Microsoft 365 Apps for business または Exchange Online の最新の更新プログラム|Android 用のネイティブ アプリ、ブラウザーは適用外|
-|iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|Microsoft 365 Apps for business または Exchange Online の最新の更新プログラム|iOS 用のネイティブ アプリ、ブラウザーは適用外|
-|Outlook on the web|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|Microsoft 365、Exchange Online、または Exchange Server 2013 以降のオンプレミス|Safari|
+|Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|Android 用のネイティブ アプリ、ブラウザーは適用外|
+|iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|iOS 用のネイティブ アプリ、ブラウザーは適用外|
+|Outlook on the web|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|2013 Microsoft 365、Exchange Online、またはオンプレミスの 2013 以降Exchange Serverオン|Safari|
 
 > [!NOTE]
 > ネイティブ アプリの OWA for Android、OWA for iPad、および OWA for iPhone は[廃止](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b)され、Outlook アドインのテストには不要になり、利用もできなくなりました。
@@ -88,5 +87,5 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインの office クライアントアプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
 - [Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)

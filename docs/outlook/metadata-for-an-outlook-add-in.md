@@ -3,12 +3,12 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: a06936892d9f2cdb7d83bc0c5097dfd2bdea0156
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c438aa538d47b31aa60f47a1f871822e9c73a9c9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839783"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348910"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
@@ -44,7 +44,7 @@ ms.locfileid: "49839783"
 
 ### <a name="loading-roaming-settings"></a>ローミング設定の読み込み
 
-通常、メール アドインでは、[Office.initialize](/javascript/api/office#office-initialize-reason-) イベント ハンドラーでローミング設定を読み込みます。 次の JavaScript コードは、既存のローミング設定を読み込み、2 つの設定 **customerName** と **customerBalance** の値を取得する例を示しています。
+通常、メール アドインでは、[Office.initialize](/javascript/api/office#office-initialize-reason-) イベント ハンドラーでローミング設定を読み込みます。 次の JavaScript コード例は、既存のローミング設定を読み込み、customerName と **customerBalance** の 2 つの設定の値を取得する方法 **を示しています**。
 
 
 ```js
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 前の例の続きで、次の JavaScript 関数 `setAddInSetting` は、[RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、[RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。
 
-設定が存在しない場合、メソッドは設定を作成し、指定した値 `set` に設定を割り当てる。 このメソッド `saveAsync` は、ローミング設定を非同期的に保存します。 このコード サンプルでは、非同期呼び出しが終了すると `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` _、asyncResult_ という 1 つのパラメーターを使用して呼び出されるコールバック メソッドを渡します。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
+このメソッドは、設定が存在しない場合に設定を作成し、指定した値 `set` に設定を割り当てる。 この `saveAsync` メソッドは、ローミング設定を非同期的に保存します。 このコード サンプルでは、コールバック メソッドを 、非同期呼び出しが終了したら、1 つのパラメーター `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` _asyncResult_ を使用して呼び出されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
 
 ```js
 // Set a roaming setting.
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 ローミング設定と同様に、カスタム プロパティに対する変更は現在の Outlook セッションのプロパティのメモリ内コピーに格納されます。これらのカスタム プロパティが次のセッションで使用できるようにするには、[CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-)を使用します。
 
-これらのアドイン固有のアイテム固有のカスタム プロパティには、オブジェクトを使用する場合にのみアクセス `CustomProperties` できます。 これらのプロパティは、Outlook オブジェクト モデルのカスタム、MAPI ベースの [UserProperties、](/office/vba/api/Outlook.UserProperties) および Exchange Web サービス (EWS) の拡張プロパティとは異なります。 Outlook オブジェクト モデル `CustomProperties` 、EWS、または REST を使用して直接アクセスすることはできません。 EWS または REST を使用してアクセスする方法については `CustomProperties` [、「EWS](#get-custom-properties-using-ews-or-rest)または REST を使用してカスタム プロパティを取得する」を参照してください。
+これらのアドイン固有のアイテム固有のカスタム プロパティには、オブジェクトを使用してしかアクセス `CustomProperties` できます。 これらのプロパティは、Outlook オブジェクト モデルのカスタム、MAPI ベースの[UserProperties、](/office/vba/api/Outlook.UserProperties)および Exchange Web Services (EWS) の拡張プロパティとは異なります。 オブジェクト モデル `CustomProperties` 、EWS、または REST を使用Outlook直接アクセスすることはできません。 EWS または REST を使用してアクセスする方法については、「EWS または REST を使用してカスタム プロパティを取得する `CustomProperties` [」セクションを参照してください](#get-custom-properties-using-ews-or-rest)。
 
 ### <a name="using-custom-properties"></a>カスタム プロパティの使用
 
@@ -130,7 +130,7 @@ function removeAddInSetting()
 
 以下の例では、カスタム プロパティを使用する単純な Outlook アドインのメソッドのセットを示しています。この例を出発点として、カスタム プロパティを使用するアドインを作成できます。
 
-以下の例には、次のメソッドが含まれています。
+この例には、次のメソッドが含まれています。
 
 
 - [Office.initialize](/javascript/api/office#office-initialize-reason-) -- アドインを初期化し、Exchange Server からカスタム プロパティ バッグを読み込みます。
@@ -197,11 +197,11 @@ EWS または REST を使用して **CustomProperties** を取得する場合は
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>アイテムでのカスタム プロパティの格納方法
 
-アドインによって設定されたカスタム プロパティは、標準の MAPI ベースのプロパティとは異なります。 アドイン API は、すべてのアドインを JSON ペイロードとしてシリアル化し、名前 `CustomProperties` `cecp-<app-guid>` (アドインの `<app-guid>` ID) とプロパティ セット GUID が次の 1 つの MAPI ベースの拡張プロパティに保存します `{00020329-0000-0000-C000-000000000046}` 。 (このオブジェクトに関する詳細については、「[MS OXCEXT 2.2.5 メール アプリのカスタム プロパティ](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)」を参照してください。) その後、EWS または REST を使用してこの MAPI ベースのプロパティを取得できます。
+アドインによって設定されたカスタム プロパティは、標準の MAPI ベースのプロパティとは異なります。 アドイン API は、すべてのアドインを JSON ペイロードとしてシリアル化し、名前が (アドインの ID) で、プロパティ セット GUID が `CustomProperties` `cecp-<app-guid>` `<app-guid>` `{00020329-0000-0000-C000-000000000046}` 1 つの MAPI ベースの拡張プロパティに保存されます。 (このオブジェクトに関する詳細については、「[MS OXCEXT 2.2.5 メール アプリのカスタム プロパティ](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)」を参照してください。) その後、EWS または REST を使用してこの MAPI ベースのプロパティを取得できます。
 
 #### <a name="get-custom-properties-using-ews"></a>EWS を使用してカスタム プロパティを取得する
 
-メール アドインは、EWS GetItem 操作を使用して MAPI ベースの拡張プロパティ `CustomProperties` [を取得](/exchange/client-developer/web-service-reference/getitem-operation) できます。 コールバック `GetItem` トークンを使用して、または [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用したクライアント側でのサーバー側のアクセス。 要求で、前のセクションで説明した詳細を使用して、MAPI ベースのプロパティをプロパティ セットで指定します。カスタム プロパティをアイテムに格納 `GetItem` `CustomProperties` [する方法](#how-custom-properties-are-stored-on-an-item)。
+メール アドインは、EWS GetItem 操作を使用して MAPI ベースの拡張プロパティ `CustomProperties` [を取得](/exchange/client-developer/web-service-reference/getitem-operation) できます。 コールバック `GetItem` トークンを使用して、または [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用してクライアント側でサーバー側にアクセスします。 要求で、前のセクション「アイテムにカスタム プロパティを格納する方法」で説明した詳細を使用して、そのプロパティ セットで MAPI ベースのプロパティ `GetItem` `CustomProperties` [を指定します](#how-custom-properties-are-stored-on-an-item)。
 
 次の例では、アイテムとそれのカスタム プロパティを取得する方法を示します。
 

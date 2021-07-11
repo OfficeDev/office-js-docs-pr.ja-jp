@@ -3,12 +3,12 @@ title: Office アドインのローカライズ
 description: Office JavaScript API を使用して、ロケールを特定し、Office アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりします。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b49d64f2c9391539ac2d5929ebff2a4ecc08b630
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076007"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349827"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
@@ -307,7 +307,7 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
 
 1. **ソリューション エクスプローラー** で、**WorldReadyAddIn**、**WorldReadyAddInManifest** の順に展開し、**WorldReadyAddIn.xml** を選択します。
 
-2. WorldReadyAddInManifest.xml で、[DisplayName] 要素と [Description] 要素を次のコード ブロックに置き換えます。
+2. この [WorldReadyAddInManifest.xml、DisplayName] 要素と [Description] 要素を次のコード ブロックに置き換えます。
 
     > [!NOTE]
     > この例の [DisplayName] 要素および [Description] 要素で使用されているスペイン語にローカライズされた文字列を、別の言語にローカライズされた文字列で置き換えることができます。

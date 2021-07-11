@@ -4,12 +4,12 @@ description: Yeoman ジェネレーターを使用して作成した SSO 対応�
 ms.date: 02/01/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: af83571a5ed48b3e1261ea4ccebbe25f61e75d66
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076855"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348336"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -168,7 +168,7 @@ SSO クイック スタートで作成したアドインは、Microsoft Graph �
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>アドインに必要Excel変更 (JavaScript)
 
-アドインが JavaScript で作成Excelのアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行documentHelper.js。**
+アドインが JavaScript でExcelされたアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行います**。
 
 1. 関数を `writeDataToOfficeDocument` 見つけて、次の関数に置き換える。
 
@@ -235,7 +235,7 @@ SSO クイック スタートで作成したアドインは、Microsoft Graph �
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>アドインに必要Excel変更 (TypeScript)
 
-アドインが TypeScript で作成された Excel アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に `writeDataToOfficeDocument` 置き換える必要があります。
+アドインが TypeScript で作成された Excel アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に置き換える必要があります。 `writeDataToOfficeDocument`
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -271,7 +271,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>アドインに必要Outlook変更 (JavaScript)
 
-アドインが JavaScript で作成Outlookアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行います**。
+アドインが JavaScript でOutlookされたアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行います**。
 
 1. 関数を `writeDataToOfficeDocument` 見つけて、次の関数に置き換える。
 
@@ -333,7 +333,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>アドインに必要Outlook変更 (TypeScript)
 
-アドインが TypeScript で作成された Outlook アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に `writeDataToOfficeDocument` 置き換える必要があります。
+アドインが TypeScript で作成された Outlook アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に置き換える必要があります。 `writeDataToOfficeDocument`
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -364,7 +364,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>アドインに必要PowerPoint変更 (JavaScript)
 
-アドインが JavaScript でPowerPointされたアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行documentHelper.js。**
+アドインが JavaScript でPowerPointされたアドインである場合は **、./src/helpers/documentHelper.jsで次の変更を行います**。
 
 1. 関数を `writeDataToOfficeDocument` 見つけて、次の関数に置き換える。
 
@@ -432,7 +432,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>アドインに必要PowerPoint変更 (TypeScript)
 
-アドインが TypeScript で作成された PowerPoint アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数 `writeDataToOfficeDocument` に置き換える必要があります。
+アドインが TypeScript で作成された PowerPoint アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に置き換える必要があります。 `writeDataToOfficeDocument`
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -467,7 +467,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Word アドインに必要な変更 (JavaScript)
 
-アドインが JavaScript で作成された Word アドインの場合は **、./src/helpers/documentHelper.jsで次の変更を行documentHelper.js。**
+アドインが JavaScript で作成された Word アドインの場合は **、./src/helpers/documentHelper.jsで次の変更を行います**。
 
 1. 関数を `writeDataToOfficeDocument` 見つけて、次の関数に置き換える。
 
@@ -533,7 +533,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Word アドインに必要な変更 (TypeScript)
 
-アドインが TypeScript で作成された Word アドインである場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に `writeDataToOfficeDocument` 置き換える必要があります。
+アドインが TypeScript で作成された Word アドインの場合は **、./src/taskpane/taskpane.ts** を開き、関数を見つけて、次の関数に置き換える必要があります。 `writeDataToOfficeDocument`
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -592,7 +592,7 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 5. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![[承諾] ボタンが強調表示されたアクセス許可要求ダイアログを示すスクリーンショット。](../images/sso-permissions-request.png)
+    ![[承認] ボタンが強調表示された [アクセス許可] 要求ダイアログを示すスクリーンショット。](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。
@@ -620,13 +620,13 @@ Outlook アドインを試すには、次の手順を実行します。
 
 4. [メッセージ作成] ウィンドウで、リボンの [**作業ウィンドウの表示**] ボタンを選択して、アドインの作業ウィンドウを開きます。
 
-    ![メッセージの作成ウィンドウで強調表示されたアドイン リボン ボタンOutlookスクリーンショット。](../images/outlook-sso-ribbon-button.png)
+    ![Outlook の [メッセージの作成] ウィンドウの [強調表示されたアドイン] リボン ボタンを示すスクリーン ショット。](../images/outlook-sso-ribbon-button.png)
 
 5. 作業ウィンドウの下部にある [自分のファイルの読み取り] ボタン **OneDrive for Business** SSO プロセスを開始します。
 
 6. アドインの代わりにアクセス許可を要求するダイアログ ウィンドウが表示される場合は、SSO はシナリオでサポートされず、代わりにアドインが別のユーザー認証方法に戻っていることを意味します。 これは、アドインが Microsoft Graph にアクセスすることに対してテナント管理者が同意を与えていない場合、または、ユーザーが有効な Microsoft アカウント、Microsoft 365 Education または職場アカウントで Office にサインインしていない場合に発生することがあります。 ダイアログ ウィンドウで [**同意する**] ボタンを選択して続行します。
 
-    ![[承諾] ボタンが強調表示されたアクセス許可要求ダイアログのスクリーンショット。](../images/sso-permissions-request.png)
+    ![[承認] ボタンが強調表示された [アクセス許可] 要求ダイアログのスクリーンショット。](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > ユーザーがこのアクセス許可の要求を受け入れると、今後再びプロンプトが表示されることはありません。

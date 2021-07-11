@@ -3,12 +3,12 @@ title: Office アドインの色のガイドライン
 description: アドインの UI で色を使用するOfficeします。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 04d93010cfd4c3359e2c87ef224487b00a218318
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330067"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349197"
 ---
 # <a name="color"></a>色
 
@@ -21,10 +21,11 @@ ms.locfileid: "52330067"
 Office アプリケーションを使用すると、お客様は、Office UI テーマを適用することによって、インタ フェースをカスタマイズできます。 お客様は、4 つの UI テーマから選択でき、Word、PowerPoint、Excel、Office スイートに含まれる他のアプリの背景やボタンをさまざまなスタイルに変えることができます。 アドインをユーザー設定の自然な部分のように感じ、Officeに対応するには、Theming API を使用します。 たとえば、作業ウィンドウの背景色を、いくつかのテーマで濃い灰色に切り替えます。 テーマ API を使用すると、先例に倣い、[アクセシビリティ](../design/accessibility-guidelines.md)を確保するために前景色を調整することができます。
 
 > [!NOTE]
+>
 > - メール アドインと作業ウィンドウ アドインの場合は、[Context.officeTheme](/javascript/api/office/office.context) プロパティを使用して Office アプリケーションのテーマに合わせます。 この API は現在、2016 Office以降で使用できます。
 > - PowerPoint のコンテンツ アドインの場合は、「[PowerPoint アドインで Office テーマを使用する](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)」を参照してください。
 
-色について、次の一般的なガイドラインが適用されます。
+色については、次の一般的なガイドラインを適用します。
 
 - 色は、階層を示し、ブランドを明確するために、慎重に使用します。
 - 対話型要素と非対話型要素の両方に適用される単一のアクセント カラーの使いすぎは、混乱を招くことがあります。たとえば、ナビゲーション メニューで選択された項目と選択されていない項目について、同じ色を使用することは避けてください。

@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 16d20ca30f2860b8103257860a8619c1d51d8523
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853963"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348455"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -46,7 +46,7 @@ EWS SOAP 要求が完了すると、Outlookコールバック メソッドを 1 
 
 ## <a name="tips-for-parsing-ews-responses"></a>EWS 応答を解析するためのヒント
 
-SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存する以下の問題に注意してください。
+EWS 操作から SOAP 応答を解析する場合は、次のブラウザーに依存する問題に注意してください。
 
 
 - DOM メソッドを使用する場合は、タグ名のプレフィックスを指定して、タグ名のサポート `getElementsByTagName` Internet Explorer。
@@ -72,7 +72,7 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
             });
    ```
 
-   Internet Explorer では、以下に示すように、タグ名に接頭辞 `t:` を含める必要があります。
+   このInternet Explorer、次のようにタグ `t:` 名のプレフィックスを含める必要があります。
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -82,7 +82,7 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
             });
    ```
 
-- 以下に示すように、DOM プロパティを使用して EWS 応答のタグの内容 `textContent` を取得します。
+- DOM プロパティを使用 `textContent` して、EWS 応答のタグの内容を次のように取得します。
 
    ```js
       content = $.parseJSON(value.textContent);
@@ -95,11 +95,11 @@ SOAP 応答を EWS 操作から解析する場合、ブラウザーに依存す�
 
 次の例では `makeEwsRequestAsync` [、GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作を使用してアイテムの件名を取得する呼び出しを行います。 この例には、次の 3 つの関数が含まれています。
 
--  `getSubjectRequest`アイテム ID を入力として受け取り、指定したアイテムを呼び出す SOAP 要求の &ndash; XML `GetItem` を返します。
+- `getSubjectRequest`アイテム ID を入力として受け取り、指定したアイテムを呼び出す SOAP 要求の &ndash; XML `GetItem` を返します。
 
--  `sendRequest`選択したアイテムの SOAP 要求を取得するために呼び出しを行い、SOAP 要求とコールバック メソッドを渡して、指定したアイテムの件名 &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` を取得します。
+- `sendRequest`選択したアイテムの SOAP 要求を取得するために呼び出しを行い、SOAP 要求とコールバック メソッドを渡して、指定したアイテムの件名 &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` を取得します。
 
--  `callback` &ndash; 指定のアイテムの件名とその他の情報が含まれている SOAP 応答を処理します。
+- `callback` &ndash; 指定のアイテムの件名とその他の情報が含まれている SOAP 応答を処理します。
 
 
 ```js
@@ -154,13 +154,13 @@ Outlookアドインは、メソッドを介して EWS で使用できる操作�
 
 1. XML 内のアイテム ID および関係する EWS 操作属性を適切な値に置き換えます。
 
-2. の data パラメーターの引数として  _SOAP 要求を含_ める `makeEwsRequestAsync` 。
+1. の data パラメーターの引数として  _SOAP 要求を含_ める `makeEwsRequestAsync` 。
 
-3. コールバック メソッドを指定して呼び出します `makeEwsRequestAsync` 。
+1. コールバック メソッドを指定して呼び出します `makeEwsRequestAsync` 。
 
-4. コールバック メソッド内で、SOAP 応答内の操作の結果を検証します。
+1. コールバック メソッド内で、SOAP 応答内の操作の結果を検証します。
 
-5. 必要に応じて EWS 操作の結果を使用します。
+1. 必要に応じて EWS 操作の結果を使用します。
 
 次の表は、アドインがサポートしている EWS 操作を示しています。SOAP の要求と応答の例を表示するには、各操作のリンクを選択します。EWS 操作の詳細については、「 [Exchange での EWS の操作](/exchange/client-developer/web-service-reference/ews-operations-in-exchange)」を参照してください。
 
@@ -221,7 +221,7 @@ Outlookアドインは、メソッドを介して EWS で使用できる操作�
 - 
   [Exchange での Outlook 用メール アプリと EWS](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
 
-ASP.NET Web API を使用してアドイン用のバックエンド サービスを作成する場合は、以下の資料を参照してください。
+アドインを使用してアドインのバックエンド サービスを作成するには、以下を参照 ASP.NET Web API。
 
 - [ASP.NET Web API を使用して Office アドイン用 Web サービスを作成する](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [ASP.NET Web API を使用した HTTP サービスの構築に関する基本](https://dotnet.microsoft.com/apps/aspnet/apis)

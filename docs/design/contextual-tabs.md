@@ -3,12 +3,12 @@ title: カスタム コンテキスト タブを Officeアドインで作成す�
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d03ac2c01c03353f3e2d1b54ba20616d7b42d93f
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555207"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349232"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -63,7 +63,7 @@ ms.locfileid: "52555207"
 > [!NOTE]
 > JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](../reference/manifest/customtab.md) 要素とその子孫要素の構造と大まかに平行です。
 
-コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは、dynamic-ribbon.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して JSON のIntelliSense検証できます。 詳細については、「JSON スキーマと設定を使用Visual Studio Code JSON の編集[」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
+コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは、dynamic-ribbon.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して、JSON を取得IntelliSense検証できます。 詳細については、「JSON スキーマと設定を使用Visual Studio Code JSON の編集[」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
 
 1. まず、という名前の 2 つの配列プロパティを持つ JSON 文字列を作成 `actions` します `tabs` 。 配列 `actions` は、コンテキスト タブのコントロールで実行できるすべての関数の仕様です。配列 `tabs` は、最大 *20* までの 1 つ以上のコンテキスト タブを定義します。
@@ -380,7 +380,7 @@ function myContextChanges() {
 
 ## <a name="localizing-the-json-blob"></a>JSON BLOB のローカライズ
 
-渡される JSON BLOB は、カスタム コア タブのマニフェスト マークアップがローカライズされるのと同じ方法でローカライズされません (マニフェストからのローカライズの制御で `requestCreateControls` [説明します](../develop/localization.md#control-localization-from-the-manifest))。 代わりに、ローカライズは、ロケールごとに個別の JSON BLOB を使用して実行時に行う必要があります。 `switch` [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)プロパティをテストするステートメントを使用してください。 例を次に示します。
+渡される JSON BLOB は、カスタム コア タブのマニフェスト マークアップがローカライズされるのと同じ方法でローカライズされません (マニフェストからのローカライズの制御で `requestCreateControls` [説明します](../develop/localization.md#control-localization-from-the-manifest))。 代わりに、ローカライズは、ロケールごとに個別の JSON BLOB を使用して実行時に行う必要があります。 `switch` [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)プロパティをテストするステートメントを使用してください。 次に例を示します。
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {

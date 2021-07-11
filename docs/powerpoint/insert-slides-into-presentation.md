@@ -1,18 +1,18 @@
 ---
-title: PowerPoint プレゼンテーションにスライドを挿入する
+title: プレゼンテーションにスライドをPowerPointする
 description: プレゼンテーションから別のプレゼンテーションにスライドを挿入する方法について説明します。
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: 810a398c336c6715cac138840ed8524cff6c0dac
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 9b106e8940e7b0f19678e0467d8e900ffecd9438
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613914"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348784"
 ---
-# <a name="insert-slides-in-a-powerpoint-presentation"></a>PowerPoint プレゼンテーションにスライドを挿入する
+# <a name="insert-slides-in-a-powerpoint-presentation"></a>プレゼンテーションにスライドをPowerPointする
 
-PowerPoint アドインは、PowerPoint のアプリケーション固有の JavaScript ライブラリを使用して、1 つのプレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入されたスライドがソース プレゼンテーションの書式設定を保持するか、ターゲット プレゼンテーションの書式設定を保持するかどうかを制御できます。
+1 PowerPoint PowerPointアドインは、アプリケーション固有の JavaScript ライブラリを使用して、1 つのプレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入されたスライドがソース プレゼンテーションの書式設定を保持するか、ターゲット プレゼンテーションの書式設定を保持するかどうかを制御できます。
 
 スライド挿入 API は、主にプレゼンテーション テンプレートのシナリオで使用されます。既知のプレゼンテーションは、アドインによって挿入できるスライドのプールとして機能します。 このようなシナリオでは、ユーザーまたは顧客のどちらかが、スライドのタイトルや画像などの選択基準とスライドの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが任意のプレゼンテーションからスライドを挿入できるシナリオでも使用できますが、そのシナリオでは、ユーザーは実質的にソース プレゼンテーションからすべてのスライドを挿入する制限があります。 詳細 [については、「挿入するスライドの選択](#selecting-which-slides-to-insert) 」を参照してください。
 
@@ -25,7 +25,7 @@ PowerPoint アドインは、PowerPoint のアプリケーション固有の Jav
 
 ファイルを base64 に変換する方法は多数あります。 使用するプログラミング言語とライブラリ、およびアドインのサーバー側またはクライアント側で変換するかどうかは、シナリオによって決まります。 最も一般的には [、FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) オブジェクトを使用して、クライアント側の JavaScript で変換を行います。 次の例は、このプラクティスを示しています。
 
-1. まず、ソース PowerPoint ファイルへの参照を取得します。 この例では、種類のコントロールを `<input>` 使用 `file` して、ユーザーにファイルの選択を求めるメッセージを表示します。 アドイン ページに次のマークアップを追加します。
+1. まず、ソース ファイルへの参照を取得PowerPointします。 この例では、種類のコントロールを `<input>` 使用 `file` して、ユーザーにファイルの選択を求めるメッセージを表示します。 アドイン ページに次のマークアップを追加します。
 
     ```html
     <section>
@@ -38,10 +38,10 @@ PowerPoint アドインは、PowerPoint のアプリケーション固有の Jav
 
     このマークアップは、次のスクリーンショットの UI をページに追加します。
 
-    ![HTML ファイルの種類の入力コントロールの前に「スライドを挿入する PowerPoint プレゼンテーションを選択する」という命令文が表示されるスクリーンショット。 コントロールは、"ファイルの選択" というラベルの付いたボタンの後に"ファイルが選択されません" という文で構成されます。](../images/powerpoint-html-file-input-control.png)
+    ![HTML ファイルの種類の入力コントロールの前に「スライドを挿入するプレゼンテーションを選択する」というPowerPointを示すスクリーンショット。 コントロールは、"ファイルの選択" というラベルの付いたボタンの後に"ファイルが選択されません" という文で構成されます。](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > PowerPoint ファイルを取得するには、他にも多くの方法があります。 たとえば、ファイルが OneDrive または SharePoint に保存されている場合は、Microsoft Graph を使用してダウンロードできます。 詳細については [、「Microsoft Graph でのファイルの操作」および「Access Files](/graph/api/resources/onedrive) with [Microsoft Graph」を参照してください](/learn/modules/msgraph-access-file-data/)。
+    > ファイルを取得する方法は他にPowerPointがあります。 たとえば、ファイルがサーバーまたはサーバーに保存されているOneDrive SharePoint、Microsoft Graphを使用してダウンロードできます。 詳細については[、「Microsoft Graph](/graph/api/resources/onedrive)ファイルの操作」および「Access Files with [Microsoft Graph」を参照してください](/learn/modules/msgraph-access-file-data/)。
 
 2. 次のコードをアドインの JavaScript に追加して、入力コントロールのイベントに関数を割り当 `change` てる。 (次の手順 `storeFileAsBase64` で関数を作成します。
 
@@ -49,7 +49,7 @@ PowerPoint アドインは、PowerPoint のアプリケーション固有の Jav
     $("#file").change(storeFileAsBase64);
     ```
 
-3. 次のコードを追加します。 このコードについては、次の点に注意してください。
+3. 次のコードを追加します。 このコードについては以下の点に注目してください。
 
     - この `reader.readAsDataURL` メソッドは、ファイルを base64 に変換し、プロパティに格納 `reader.result` します。 メソッドが完了すると、イベント ハンドラーが `onload` トリガーされます。
     - イベント `onload` ハンドラーは、エンコードされたファイルのメタデータをトリミングし、エンコードされた文字列をグローバル変数に格納します。
@@ -75,7 +75,7 @@ PowerPoint アドインは、PowerPoint のアプリケーション固有の Jav
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>insertSlidesFromBase64 を使用してスライドを挿入する
 
-アドインは [、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) メソッドを使用して、別の PowerPoint プレゼンテーションのスライドを現在のプレゼンテーションに挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは `chosenFileBase64` 、PowerPoint プレゼンテーション ファイルの base64 エンコードバージョンを保持するグローバル変数です。
+アドインは[、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)メソッドを使用してPowerPointプレゼンテーションから現在のプレゼンテーションにスライドを挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは、base64 でエンコードされたバージョンのプレゼンテーション ファイルを保持する `chosenFileBase64` PowerPoint注意してください。
 
 ```javascript
 async function insertAllSlides() {
@@ -130,7 +130,7 @@ async function insertSlidesDestinationFormatting() {
     }
     ```
 
-1. main 関数の [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) 内で新しい関数を呼び出し、返される ID ("#" 記号と連結) をパラメーターのプロパティの値として渡 `targetSlideId` `InsertSlideOptions` します。 次に例を示します。
+1. main 関数の[PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_)内で新しい関数を呼び出し、返す ID ("#" 記号と連結) をパラメーターのプロパティの値として渡 `targetSlideId` `InsertSlideOptions` します。 次に例を示します。
 
     ```javascript
     async function insertAfterSelectedSlide() {

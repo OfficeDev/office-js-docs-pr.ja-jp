@@ -1,21 +1,21 @@
 ---
-title: ホストページからダイアログボックスにメッセージを渡す代替方法
-description: MessageChild メソッドがサポートされていない場合に使用する回避策について説明します。
+title: ホスト ページからダイアログ ボックスにメッセージを渡す別の方法
+description: messageChild メソッドがサポートされていない場合に使用する回避策について説明します。
 ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 8f44f7f5c145b58d13e7387d01e28fd349a512fc
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 8da6bc3e1231bc6296a16fa153dc0e4ba1bd102b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279483"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349778"
 ---
-# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>ホストページからダイアログボックスにメッセージを渡す代替方法
+# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>ホスト ページからダイアログ ボックスにメッセージを渡す別の方法
 
-親ページから子ダイアログボックスにデータおよびメッセージを渡す方法としては、 `messageChild` 「 [office アドインで OFFICE ダイアログ API を使用](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)する」で説明されている方法を使用することをお勧めします。Add-in [api 1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)をサポートしていないプラットフォームまたはホストでアドインが実行されている場合は、次の2つの方法で情報をダイアログボックスに渡すことができます。
+親ページから子ダイアログ ボックスにデータとメッセージを渡す推奨される方法は、「Office アドインで Office ダイアログ API を使用する」の説明に従ってメソッドを `messageChild` [使用](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)することです。[DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットをサポートしていないプラットフォームまたはホストでアドインが実行されている場合は、ダイアログ ボックスに情報を渡す方法が他に 2 つあります。
 
 - `displayDialogAsync` に渡される URL にクエリ パラメーターを追加します。
-- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2つのウィンドウは、共通のセッション記憶域 ( [Window. sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しませんが、 *同じドメイン* (ポート番号を含む) がある場合は、共通の [ローカル記憶域](https://www.w3schools.com/html/html5_webstorage.asp)を共有します。\*
+- ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2 つのウィンドウは共通のセッション ストレージ [(Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)プロパティ) を共有しないが、同じドメイン *(ポート* 番号がある場合はポート番号を含む) を持つ場合は、共通のローカル Storage を [共有します](https://www.w3schools.com/html/html5_webstorage.asp)。\*
 
 
 > [!NOTE]
@@ -23,13 +23,13 @@ ms.locfileid: "48279483"
 
 ## <a name="use-local-storage"></a>ローカル ストレージの使用
 
-ローカルストレージを使用するには、 `setItem` 次の `window.localStorage` `displayDialogAsync` 例に示すように、呼び出しの前に、ホストページでオブジェクトのメソッドを呼び出します。
+ローカル ストレージを使用するには、次の例のように、呼び出しの前にホスト ページ内のオブジェクトの `setItem` `window.localStorage` `displayDialogAsync` メソッドを呼び出します。
 
 ```js
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-ダイアログ ボックス内のコードは、次の例に示すように、必要に応じて項目を読み取ります。
+ダイアログ ボックスのコードは、次の例のように、必要なときにアイテムを読み取ります。
 
 ```js
 var clientID = localStorage.getItem("clientID");
@@ -39,7 +39,7 @@ var clientID = localStorage.getItem("clientID");
 
 ## <a name="use-query-parameters"></a>クエリ パラメーターの使用
 
-次の例では、クエリ パラメーターを使用してデータを渡す方法を示します。
+次の例は、クエリ パラメーターを使用してデータを渡す方法を示します。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
@@ -50,4 +50,4 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 ダイアログ ボックス内のコードは、URL を解析し、パラメーター値を読み取ることができます。
 
 > [!IMPORTANT]
-> Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 ダイアログ ボックスが移動する先の後続の URL には追加されません)。 Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。 ダイアログボックスのセッションストレージ ( [sessionstorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) に同じ値が追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
+> Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 ダイアログ ボックスが移動する先の後続の URL には追加されません)。 Microsoft は、将来、この値の内容を変更したり、完全に削除したりする可能性があるため、コードでこの値の内容を読み取らないでください。 同じ値がダイアログ ボックスのセッション ストレージ [(Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) に追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。

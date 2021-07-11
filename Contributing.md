@@ -15,8 +15,8 @@
 
 * 記事に小さな変更を加える方法については、「[GitHub を使用して投稿する](#contribute-using-github)」を参照してください。
 * 大きな変更やコードが関係する変更を加える方法については、「[Git を使用して投稿する](#contribute-using-git)」を参照してください。
-* ドキュメントのバグを報告するには、影響を受ける記事の下部にある [フィードバック] セクションに移動し、[このページ] を選択して GitHub の問題を作成します。 使用できない場合は、GitHub で直接新しい問題 [を作成します](https://github.com/OfficeDev/office-js-docs-pr/issues)。
-* GitHub の問題を [使用して新しいドキュメントを要求します](https://github.com/OfficeDev/office-js-docs-pr/issues)。
+* ドキュメントのバグを報告するには、影響を受ける記事の下部にある [フィードバック] セクションに移動し、[このページ] を選択して問題のGitHubします。 この問題が利用できない場合は、新しい問題を直接作成[GitHub。](https://github.com/OfficeDev/office-js-docs-pr/issues)
+* [問題] で新[しいGitHubを要求します](https://github.com/OfficeDev/office-js-docs-pr/issues)。
 
 ## <a name="contribute-using-github"></a>GitHub を使用して投稿する
 
@@ -24,7 +24,7 @@
 
 **注**: この方法では、一度に 1 つの記事に投稿できます。
 
-### <a name="to-contribute-using-github"></a>GitHub を使用して投稿するには
+### <a name="to-contribute-using-github"></a>アプリを使用してGitHub
 
 1. 投稿する記事を GitHub で検索します。
 2. GitHub で記事が表示されたら、GitHub にサインインします (無料アカウントを取得するには、「[Join GitHub](https://github.com/join)」 (GitHub に参加) にアクセスします)。
@@ -111,7 +111,7 @@ You navigate to the repository on your computer by using File Explorer. The repo
 
 ファイルを編集するには、好みのエディターで開いて変更します。新しいファイルを作成するには、好みのエディターを使用して、リポジトリのローカル コピー内の適切な場所に新しいファイルを保存します。作業中は、頻繁に作業内容を保存してください。
 
-The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. To commit a change to the local repository, type the following commands in GitBash:
+The files in `C:\Users\<yourusername>\<repo name>` are a working copy of the new branch that you created in your local repository. Changing anything in this folder doesn't affect the local repository until you commit a change. ローカル リポジトリに変更をコミットするには、GitBash に次のコマンドを入力します。
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
@@ -142,7 +142,7 @@ One of the site administrators will process your pull request. Your pull request
 
 分岐が正常にマージされた (つまり、プル リクエストが承諾された) 後は、ローカル分岐で作業を継続しないでください。別のプル リクエストを提出する場合にマージの競合が発生する可能性があります。別の更新を行うには、正常にマージされたアップストリーム分岐から新しいローカル分岐を作成した後、最初のローカル分岐を削除します。
 
-たとえば、ローカル分岐 X が正常に OfficeDev/microsoft-graph-docs マスター分岐にマージされた後、マージされた内容に追加の更新を行う場合を考えます。OfficeDev/microsoft-graph-docs マスター分岐から新しいローカル分岐 X2 を作成します。これを行うには、GitBash を開き、次のコマンドを実行します。
+たとえば、ローカル分岐 X が正常に OfficeDev/microsoft-graph-docs マスター分岐にマージされた後、マージされた内容に追加の更新を行う場合を考えます。 OfficeDev/microsoft-graph-docs マスター分岐から新しいローカル分岐 X2 を作成します。 これを行うには、GitBash を開き、次のコマンドを実行します。
 
     cd microsoft-graph-docs
     git pull upstream master:X2

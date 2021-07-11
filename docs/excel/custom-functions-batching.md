@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Normal
-ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53204998"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349652"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>独自のソリューションに`_makeRemoteRequest`を変更します。
 
-`_makeRemoteRequest`関数は、あとで表示されますが、リモート サービスを表すモックの`_fetchFromRemoteService`を呼び出します。 これにより、簡単に学習でき、この記事でコードを実行することができます。 ただし、実際のリモート サービスでこのコードを使用するときは、次の変更を行う必要があります:
+`_makeRemoteRequest`関数は、あとで表示されますが、リモート サービスを表すモックの`_fetchFromRemoteService`を呼び出します。 これにより、簡単に学習でき、この記事でコードを実行することができます。 ただし、実際のリモート サービスでこのコードを使用する場合は、次の変更を行う必要があります。
 
 - ネットワーク経由でバッチ処理をシリアル化する方法を決定します。 たとえば、JSON の本文に、配列を配置することがあります。
 - `_fetchFromRemoteService`を呼び出す代わりに、バッチ処理を渡すリモート サービスに実際にネットワークの呼び出しをする必要があります。
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>`_fetchFromRemoteService`をライブ リモート サービスに変更する
 
-ライブ リモート サービスで実行する`_fetchFromRemoteService`関数を変更するには、次の変更を行います:
+ライブ リモート サービス `_fetchFromRemoteService` で実行する関数を変更するには、次の変更を行います。
 
 - サーバー プラットフォーム (Node.js またはその他) のマップによっては、クライアント ネットワークがこの関数を呼び出します。 
 - モックの一部としてネットワークの遅延をシミュレートする`pause`関数を削除する。

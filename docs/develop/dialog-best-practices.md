@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOfficeダイアログ API のルールとベスト プラクティスを提供します。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 3424e9802484f1f2626257cb3e7eb105596d8638
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 99129636cf722f98cef36c272f2e00e8a9321ccf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076063"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349911"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 

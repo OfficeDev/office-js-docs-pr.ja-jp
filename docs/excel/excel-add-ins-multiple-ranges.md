@@ -1,14 +1,14 @@
 ---
 title: Excel アドインで複数の範囲を同時に操作する
-description: Excel JavaScript ライブラリを使用して、アドインが複数の範囲で同時に操作を実行し、プロパティを設定する方法について説明します。
+description: JavaScript ライブラリExcelを使用して、複数の範囲で操作を実行し、プロパティを設定する方法について説明します。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650892"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349498"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 
@@ -75,7 +75,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 ### <a name="rangearea-specific-properties-and-methods"></a>RangeArea 固有のプロパティとメソッド
 
-`RangeAreas` 型には、`Range` オブジェクトには存在しないプロパティとメソッドがいくつかあります。 次にいくつか選択したものを示します。
+`RangeAreas` 型には、`Range` オブジェクトには存在しないプロパティとメソッドがいくつかあります。 次に、選択した内容を示します。
 
 - `areas`: `RangeAreas` オブジェクトが表す全範囲を含む `RangeCollection` オブジェクト。 `RangeCollection` オブジェクトも新しいオブジェクトであり、他の Excel コレクション オブジェクトと類似しています。 これには、範囲を表す `Range` オブジェクトの配列である `items` プロパティがあります。
 - `areaCount`: `RangeAreas` で指定された範囲の合計数。
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>RangeAreas のプロパティの読み取り
 
-`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが *できる* 場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンクの RGB コード (`#FFC0CB`) と `true` がコンソールに記録されます。`RangeAreas`オブジェクト内の範囲のどちらも、塗りつぶし色がピンクであり、列全体であるためです。
+`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが *できる* 場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンク ( ) の RGB コードがコンソールに記録されます。オブジェクト内の範囲は両方ともピンク色の塗りつぶしを持ち、両方とも列全体のため `#FFC0CB` `true` `RangeAreas` です。
 
 ```js
 Excel.run(function (context) {
@@ -180,4 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](../reference/overview/excel-add-ins-reference-overview.md)
-- [Excel JavaScript API を使用して大きな範囲に対する読み取りまたは書き込み](excel-add-ins-ranges-large.md)
+- [JavaScript API を使用した大きな範囲の読み取りExcel書き込み](excel-add-ins-ranges-large.md)

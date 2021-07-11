@@ -3,12 +3,12 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 987ba7626acb95bd5090e2f2350f71ecc8701e59
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608944"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348973"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
@@ -205,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、 `_MyEntities` サポートされているエンティティのインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
+[Office.initialize](/javascript/api/office#office-initialize-reason-) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティ `_MyEntities` のインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -258,7 +258,7 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>連絡先情報の抽出
 
 
-ユーザーが **[Get Contact Information]** ボタンをクリックすると、`myGetContacts` イベント ハンドラーが `_MyEntities` オブジェクトの [contacts](/javascript/api/outlook/office.entities#contacts) プロパティから連絡先の配列をそれぞれの情報と共に取得します (連絡先が抽出されていた場合)。抽出された各連絡先は、[Contact](/javascript/api/outlook/office.contact) オブジェクトとして配列に格納されます。`myGetContacts` は、各連絡先に関する詳細なデータを取得します。Outlook がアイテムから連絡先を抽出できるかどうかはコンテキスト次第であることに注意してください。電子メール メッセージの末尾の署名、または少なくとも次のいくつかの情報が連絡先の周辺に存在している必要があります。
+ユーザーが [連絡先情報の **取得]** ボタンをクリックすると、イベント ハンドラーは、抽出された場合、オブジェクトの contacts プロパティから連絡先の配列と情報を `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` 取得します。 抽出された各連絡先は、配列に [Contact](/javascript/api/outlook/office.contact) オブジェクトとして格納されます。 `myGetContacts` 各連絡先に関するその他のデータを取得します。 コンテキストは、Outlook が電子メール メッセージの最後に署名をアイテムから抽出できるかどうか、または少なくとも次の情報の一部が連絡先の近くに存在する必要があるかどうかを決定します。 &mdash;
 
 
 - [Contact.personName](/javascript/api/outlook/office.contact#personname) プロパティから取得される連絡先の名前を表す文字列。
@@ -373,7 +373,7 @@ function myGetEmailAddresses() {
 
 
  > [!NOTE]
- > エンティティの種類をサポートしているのは、予定ではなくメッセージのみ `MeetingSuggestion` です。
+ > エンティティの種類は、メッセージのみサポートされますが、予定 `MeetingSuggestion` はサポートされません。
 
 抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
 

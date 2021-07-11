@@ -3,12 +3,12 @@ title: PowerPoint アドインでドキュメントのテーマを使用する
 description: プレゼンテーション、ドキュメント、ワークシート、電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 337e3e235b49944e36dc6e9cdabaa3f036d8c7e1
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 481056d60f0455d0b6f7c6ac477fce1bb323b5a2
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076988"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348434"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
@@ -153,7 +153,7 @@ Visual Studio でこの作業を行うには、次の手順に従ってくださ
 
 4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
-5. アドインの UI を実装する HTML ページ (既定のテンプレート内の Home.html など) で、OfficeThemes.css ファイルを参照する次の `<link>` タグを `<head>` タグに追加します。
+5. 既定のテンプレートの Home.html など、アドインの UI を実装する HTML ページで `<link>` 、OfficeThemes.css ファイルを参照するタグ内に次のタグを追加します。 `<head>`
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

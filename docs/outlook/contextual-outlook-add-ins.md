@@ -3,18 +3,18 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 7898f836e431ad4446952a0f34a24d3771e51d01
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076778"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348987"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
 コンテキスト アドインは、メッセージ内のテキストまたは予定に基づいてアクティブになる Outlook アドインです。コンテキスト アドインを使用すると、ユーザーはメッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 
-次に、コンテキスト アドインの例を示します。
+コンテキスト アドインの例を次に示します。
 
 - 住所を選択すると、その場所の地図が開きます。
 - 文字列をクリックすると、会議提案アドインが開きます。
@@ -30,7 +30,7 @@ ms.locfileid: "53076778"
 
 コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
 
-そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例では、検出された電話番号のエンティティを含むメッセージに対してアドインをアクティブにする方法を示します。
+そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例は、電話番号であるエンティティが検出されたメッセージでアドインをアクティブに設定する方法を示しています。
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -78,15 +78,15 @@ ms.locfileid: "53076778"
 
 **カードに表示されるアドインの例**
 
-![カードにコンテキスト アプリを表示します。](../images/outlook-detected-entity-card.png)
+![カード内のコンテキスト アプリを示す。](../images/outlook-detected-entity-card.png)
 
 カードを閉じてアドインを終了するには、カードの外側で任意の場所をクリックします。
 
 ## <a name="current-contextual-add-ins"></a>現在のコンテキスト アドイン
 
-以下のコンテキスト アドインが、Outlook アドインと一緒に既定でインストールされます。
+次のコンテキスト アドインは、既定で、アドインを使用しているユーザー Outlookインストールされます。
 
-- Bing 地図 
+- Bing 地図
 - 会議の候補
 
 ## <a name="see-also"></a>関連項目

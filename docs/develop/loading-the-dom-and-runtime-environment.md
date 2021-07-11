@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: DOM を読み込Officeアドインランタイム環境を使用します。
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: e66e6d5e30f5305dce35157280210a371ee3896f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0cfdcf3750d9c0a3dd21667729da59dbfedf61c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076014"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349841"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -20,7 +20,7 @@ ms.locfileid: "53076014"
 
 ![Flowまたは作業ウィンドウ アドインを開始する際のイベントの種類。](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
-コンテンツ アドインまたは作業ウィンドウ アドインが起動すると、次のイベントが発生します。
+次のイベントは、コンテンツ アドインまたは作業ウィンドウ アドインの開始時に発生します。
 
 1. ユーザーは、既にアドインが含まれているドキュメントを開くか、ドキュメントにアドインを挿入します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "53076014"
 
 ![Flowを開始する際Outlookイベントの種類。](../images/outlook15-loading-dom-agave-runtime.png)
 
-Outlook アドインが起動すると、次のイベントが発生します。
+次のイベントは、アドインのOutlook発生します。
 
 1. Outlook は起動時に、ユーザーの電子メール アカウント用にインストールされている Outlook アドインの XML マニフェストを読み取ります。
 

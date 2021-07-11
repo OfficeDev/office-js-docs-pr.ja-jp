@@ -3,12 +3,12 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6fcd1dd077dd6b3204d154e35e4c968ba9585a54
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076414"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348644"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
@@ -91,7 +91,7 @@ ms.locfileid: "53076414"
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-以下の例では、Word のランタイム ログを有効にし、それからログ ファイルを開きます。
+次の例では、Word のランタイム ログを有効にし、ログ ファイルを開きます。
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -107,7 +107,7 @@ open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-以下の例は、Word のランタイム ログをオフにします。
+次の例では、Word のランタイム ログを無効にします。
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile

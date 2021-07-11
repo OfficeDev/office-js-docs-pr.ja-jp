@@ -3,12 +3,12 @@ title: アドインで ID トークンを使用してユーザーを認証する
 description: サービスで SSO を実装するために、Outlook アドインが提供する ID トークンの使用方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 839c3db2658ac4f16b965ee399df391ddcfd0385
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961273"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348539"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Exchange の ID トークンを使用してユーザーを認証する
 
@@ -25,7 +25,7 @@ Exchange のユーザー ID トークンは、アドインがアドイン ユー
 
 バックエンドは、トークンを検証してから承諾する必要があります。 これは、トークンがユーザーの Exchange サーバーによって発行されたことを確認する重要な手順です。 Exchange のユーザー ID トークンの検証の詳細については、「[Exchange の ID トークンを検証する](validate-an-identity-token.md)」を参照してください。
 
-検証とデコードが完了すると、トークンのペイロードは次のようになります。
+検証およびデコードが完了すると、トークンのペイロードは次のようになります。
 
 ```json
 { 

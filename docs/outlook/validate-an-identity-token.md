@@ -3,18 +3,18 @@ title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094107"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348840"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。 Exchange のユーザー ID トークンは、JSON Web トークン (JWT) です。 JWT の検証に必要な手順は、「[RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt)」に記載されています。
 
-ID トークンの検証およびユーザーの一意識別子の取得は 4 つのステップで進めることをお勧めします。 まず、Base 64 URL 形式でエンコードされた文字列から、JSON Web トークン (JWT) を抽出します。 次に、トークンが整形式であること、使用する Outlook アドイン向けのトークンであること、有効期限が切れていないこと、および認証メタデータ ドキュメントの有効な URL を抽出できることを確認します。 その後、Exchange サーバーから認証メタデータ ドキュメントを取得し、ID トークンに添付されている署名を検証します。 最後に、ユーザーの Exchange ID と認証メタデータドキュメントの URL を連結することによって、ユーザーの一意の識別子を計算します。
+ID トークンの検証およびユーザーの一意識別子の取得は 4 つのステップで進めることをお勧めします。 まず、Base 64 URL 形式でエンコードされた文字列から、JSON Web トークン (JWT) を抽出します。 次に、トークンが整形式であること、使用する Outlook アドイン向けのトークンであること、有効期限が切れていないこと、および認証メタデータ ドキュメントの有効な URL を抽出できることを確認します。 その後、Exchange サーバーから認証メタデータ ドキュメントを取得し、ID トークンに添付されている署名を検証します。 最後に、ユーザーの ID と認証メタデータ ドキュメントの URL をExchangeして、ユーザーの一意の識別子を計算します。
 
 ## <a name="extract-the-json-web-token"></a>JSON Web トークンを抽出する
 
@@ -32,22 +32,22 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 
 ## <a name="validate-token-contents"></a>トークンの内容を検証する
 
-トークンの内容を検証するには、以下を確認する必要があります。
+トークンの内容を検証するには、次の内容を確認する必要があります。
 
-- ヘッダーを確認し、次の点を確認します。
-    - `typ`claim はに設定されて `JWT` います。
-    - `alg`claim はに設定されて `RS256` います。
-    - `x5t`claim が存在します。
+- ヘッダーを確認し、次の項目を確認します。
+  - `typ` claim は に設定されています `JWT` 。
+  - `alg` claim は に設定されています `RS256` 。
+  - `x5t` クレームが存在します。
 
-- ペイロードを確認し、次の点を確認します。
-    - `amurl`内のクレーム `appctx` は、承認済みのトークン署名キーマニフェストファイルの場所に設定されます。 たとえば、 `amurl` Microsoft 365 に必要な値はと https://outlook.office365.com:443/autodiscover/metadata/json/1 なります。 次のセクションを参照してください。詳細については、「[ドメイン」を](#verify-the-domain)参照してください。
-    - 現在の時刻は、およびクレームで指定された時間です `nbf` `exp` 。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
-    - `aud`claim は、アドインに必要な URL です。
-    - `version`クレーム内のクレーム `appctx` はに設定されてい `ExIdTok.V1` ます。
+- ペイロードを確認し、次の情報を確認します。
+  - `amurl` 内のクレーム `appctx` は、承認されたトークン署名キー マニフェスト ファイルの場所に設定されます。 たとえば、この値の期待 `amurl` 値は Microsoft 365です https://outlook.office365.com:443/autodiscover/metadata/json/1 。 詳細については、次のセクション [「ドメインを確認](#verify-the-domain) する」を参照してください。
+  - 現在の時刻は、クレームで指定された `nbf` 時刻 `exp` の間です。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
+  - `aud` claim はアドインの予想される URL です。
+  - `version` クレーム内の `appctx` クレームは に設定されます `ExIdTok.V1` 。
 
 ### <a name="verify-the-domain"></a>ドメインを確認する
 
-このセクションで前述した検証ロジックを実装する場合は、要求のドメインが `amurl` ユーザーの自動検出ドメインと一致することも要求する必要があります。 これを行うには、自動検出を使用または実装する必要があります。 詳細については、「 [Exchange の自動検出](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)を開始する」を参照してください。
+このセクションで前述した検証ロジックを実装する場合は、クレームのドメインがユーザーの自動検出ドメインと一致するように要求 `amurl` する必要があります。 これを行うには、自動検出を使用または実装する必要があります。 詳細については、「自動検出」を使用して開始[Exchange。](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)
 
 ## <a name="validate-the-identity-token-signature"></a>ID トークンの署名を検証する
 
@@ -102,14 +102,14 @@ JWT に必要なクレームが含まれていることを確認したら、ト�
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Exchange アカウントの一意 ID を計算する
 
-Exchange アカウントの一意の識別子を作成するには、認証メタデータドキュメントの URL とアカウントの Exchange 識別子を連結します。 この一意の ID を持っている場合は、その ID を使用して Outlook アドインの Web サービス用のシングル サインオン (SSO) システムを作成できます。 SSO の一意の ID の使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
+認証メタデータ ドキュメントの URL とアカウントExchange識別子を連結することで、Exchangeアカウントの一意の識別子を作成できます。 この一意の ID を持っている場合は、その ID を使用して Outlook アドインの Web サービス用のシングル サインオン (SSO) システムを作成できます。 SSO の一意の ID の使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
 
 ## <a name="use-a-library-to-validate-the-token"></a>ライブラリを使用してトークンを検証する
 
-一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft では、 `System.IdentityModel.Tokens.Jwt` Exchange のユーザー id トークンの検証に使用できるライブラリを提供しています。
+一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft は、 `System.IdentityModel.Tokens.Jwt` ユーザー ID トークンの検証に使用できるExchange提供しています。
 
 > [!IMPORTANT]
-> Exchange Web サービスマネージ Microsoft.Exchange.WebServices.Auth.dll API の使用は推奨されていません。ただし、現時点では使用可能になっているので、Microsoft.IdentityModel.Extensions.dll のようなサポートされていないライブラリに依存しています。
+> Microsoft.Exchange.WebServices.Auth.dll は使用できなくなったため、Exchange Web Services マネージ API は廃止され、Microsoft.IdentityModel.Extensions.dll のようなサポートされていないライブラリに依存しています。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

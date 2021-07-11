@@ -1,14 +1,14 @@
 ---
 title: Outlook コンテキスト アドインのアクティブ化のトラブルシューティング
-description: アドインが期待どおりにアクティブにならない場合は、考えられる理由について、次の点を調査してください。
+description: アドインが期待通りアクティブ化しない可能性がある理由。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076687"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348868"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
@@ -18,7 +18,7 @@ Outlookコンテキスト アドインのアクティブ化は、アドイン �
 
 まず、テストしているユーザーの電子メール アカウントが、Exchange 2013 以降のバージョンの Exchange Server 上にあることを確認します。Exchange 2013 より後にリリースされた特定の機能を使用する場合は、ユーザーのアカウントが Exchange の適切なバージョン上にあることを確認してください。
 
-Exchange 2013 のバージョンは、次の方法のいずれかを使用して確認できます。
+次のいずれかの方法を使用して、2013 Exchangeバージョンを確認できます。
 
 - Exchange Server 管理者に確認します。
 
@@ -26,7 +26,7 @@ Exchange 2013 のバージョンは、次の方法のいずれかを使用して
 
 - あるいは、[Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) プロパティを使用してバージョンを確認することもできます。Outlook on the web およびモバイル デバイス上で、このプロパティは Exchange Server のバージョンを返します。
 
-- Outlook 上でアドインをテストできる場合は、次に示す Outlook オブジェクト モデルと Visual Basic エディターを使用した簡単なデバッグ方法を使用できます。
+- Outlook でアドインをテストできる場合は、次の単純なデバッグ手法を使用して、Outlook オブジェクト モデルと Visual Basic エディターを使用できます。
 
     1. 最初に、Outlook でマクロが有効になっていることを確認します。**[ファイル]**、**[オプション]**、**[セキュリティ センター]**、**[セキュリティ センターの設定]**、**[マクロの設定]** の順に選択します。セキュリティ センターで、**[すべてのマクロの通知]** が選択されていることを確認します。Outlook の起動時に **[マクロを有効にする]** も選択している必要があります。
 
@@ -58,7 +58,7 @@ Exchange 2013 のバージョンは、次の方法のいずれかを使用して
 > [!NOTE]
 > リソース使用量を監視するのは Outlook リッチ クライアントだけですが、Outlook リッチ クライアントでアドインを無効化すると、Outlook on the web とモバイル デバイスでもアドインが無効化されます。
 
-次のどちらかの方法を使用して、アドインが無効化されているかどうかを確認します。
+アドインが無効になっているかどうかを確認するには、次のいずれかの方法を使用します。
 
 - Outlook on the web の場合、電子メール アカウントに直接サインインして、[設定] アイコンを選択し、**[アドインの管理]** を選択して、Exchange 管理センターにアクセスします。ここで、アドインが有効化されているかどうかを確認できます。
 
@@ -81,7 +81,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>アドイン マニフェストが適切にインストールされているか? また Outlook にキャッシュ コピーがあるか?
 
-このシナリオは Windows での Outlook にのみ適用されます。通常、メールボックスに Outlook アドインをインストールすると、Exchange Server は、アドイン マニフェストを指定の場所からその Exchange Server 上のメールボックスにコピーします。Outlook は起動するたびに、そのメールボックスにインストールされたすべてのマニフェストを、次の場所にある一時的なキャッシュに読み込みます。
+このシナリオは、ユーザーのOutlookにのみWindows。 通常、メールボックスに Outlook アドインをインストールすると、Exchange Server は、アドイン マニフェストを指定の場所からその Exchange Server 上のメールボックスにコピーします。 メールボックスがOutlook、そのメールボックスにインストールされているマニフェストを次の場所の一時的なキャッシュに読み込みます。
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -110,20 +110,20 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
 1. Outlook を再起動し、Outlook でアドインがアクティブになっているかどうかをテストします。
 
-1. アドインがアクティブ化されない場合は、アドインのマニフェストの適切なキャッシュ コピーが Outlook にあるかどうかを確認します。次のパスの下を探してください。
+1. アドインがアクティブ化されない場合は、アドインのマニフェストの適切なキャッシュ コピーが Outlook にあるかどうかを確認します。 次のパスの下を確認します。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    次のサブフォルダーでマニフェストを見つけることができます。
+    マニフェストは、次のサブフォルダーで確認できます。
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > ユーザー John のメールボックスにインストールされたマニフェストへのパスの例は次のとおりです。
+    > 次に、ユーザー John のメールボックス用にインストールされたマニフェストへのパスの例を示します。
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -139,7 +139,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
     1. イベント ID が 63 に等しい比較的最近のイベントを探します。これは、Outlook が Exchange Server からマニフェストをダウンロードしたことを表します。
 
-    1. Outlook によるマニフェストの読み取りが正常に行われた場合は、記録されたイベントに次の説明があります。
+    1. マニフェストOutlook正常に読み取れる場合、ログに記録されるイベントの説明は次のとおりです。
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -147,7 +147,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 
         このセクションの残りの部分をスキップして、このセクションの後で説明している、他に考えられる理由を検討します。
 
-1. イベントの成功を確認できない場合は、Outlook を閉じて、次のパスにあるすべてのマニフェストを削除します。
+1. 成功したイベントが表示されない場合は、Outlookを閉じて、次のパス内のすべてのマニフェストを削除します。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -189,7 +189,7 @@ Outlook リッチ クライアントでは、Outlook on the web とモバイル 
 
 ## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>ItemIs ルール、ItemHasAttachment ルール、または ItemHasRegularExpressionMatch ルールを使用する場合、関連するアイテム プロパティを確認しましたか。
 
-**ItemHasRegularExpressionMatch** アクティブ化ルールを使用する場合は、**PropertyName** 属性の値が、選択されているアイテムの予期する値かどうかを確認します。 対応するプロパティをデバッグするときのいくつかのヒントを次に示します。
+**ItemHasRegularExpressionMatch** アクティブ化ルールを使用する場合は、**PropertyName** 属性の値が、選択されているアイテムの予期する値かどうかを確認します。 対応するプロパティをデバッグするためのヒントを次に示します。
 
 - 選択されているアイテムがメッセージであり、**PropertyName** 属性に **BodyAsHTML** を指定する場合は、メッセージを開いて **[ソースの表示]** を選択し、そのアイテムの HTML 表現でのメッセージ本文を確認します。
 
@@ -238,7 +238,7 @@ Outlook リッチ クライアントでは、Outlook on the web とモバイル 
 
 ## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>すべてのOutlookをアイテム本文の部分に適用しますか。
 
-このセクションは、正規表現を使用するすべてのアクティブ化ルール (特にアイテム本文に適用されるアクティブ化ルール) に適用されます。サイズが大きく、一致の評価に時間がかかる場合があります。 アクティブ化ルールが依存する item プロパティに必要な値がある場合でも、Outlook は item プロパティの値全体ですべての正規表現を評価できない場合があります。 妥当なパフォーマンスを提供し、読み取りアドインによる過剰なリソース使用量を制御するために、Outlook は実行時にアクティブ化ルールで正規表現を処理する際に次の制限を遵守します。
+このセクションは、正規表現を使用するすべてのアクティブ化ルール (特にアイテム本文に適用されるアクティブ化ルール) に適用されます。サイズが大きく、一致の評価に時間がかかる場合があります。 アクティブ化ルールが依存する item プロパティに必要な値がある場合でも、Outlook は item プロパティの値全体ですべての正規表現を評価できない場合があります。 妥当なパフォーマンスを提供し、読み取りアドインによって過剰なリソース使用量を制御するために、Outlook は実行時にアクティブ化ルールで正規表現を処理する際に次の制限を遵守します。
 
 - 評価されるアイテム本文のサイズ -- 正規表現を評価するアイテム本文のOutlook制限があります。 これらの制限は、アイテムOutlookのクライアント、フォーム ファクター、および形式によって異なっています。 詳細については、「[Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」の表 2 を参照してください。
 

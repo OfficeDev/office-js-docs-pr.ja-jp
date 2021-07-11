@@ -3,12 +3,12 @@ title: JavaScript API を使用して図形Excelする
 description: 図形をExcel図面レイヤーに配置するオブジェクトとして定義する方法についてExcel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 936def11a5d597b68cc59a58b041c4f30ff46a38
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075762"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349449"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形Excelする
 
@@ -21,7 +21,7 @@ Excel図形は、図形の描画レイヤーに配置されるオブジェクト
 
 図形は、ワークシートの図形コレクション () を通じて作成され、格納されます `Worksheet.shapes` 。 `ShapeCollection` この目的 `.add*` のためにいくつかのメソッドがあります。 すべての図形には、コレクションに追加するときに名前と ID が生成されます。 これらは、それぞれ `name` プロパティ `id` とプロパティです。 `name` メソッドを使用して簡単に取得できるようアドインで設定 `ShapeCollection.getItem(name)` できます。
 
-関連付けられたメソッドを使用して、次の種類の図形が追加されます。
+次の種類の図形は、関連付けられたメソッドを使用して追加されます。
 
 | Shape | Tabs.Add メソッド (Outlook フォーム スクリプト) | 署名 |
 |-------|------------|-----------|

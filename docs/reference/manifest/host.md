@@ -3,19 +3,19 @@ title: マニフェスト ファイルの Host 要素
 description: アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 45d4ed42946038699be235ff3912c071a92ff226
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292287"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348329"
 ---
 # <a name="host-element"></a>Host 要素
 
 アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
 
 > [!IMPORTANT]
-> **Host** 要素の構文は、要素が[基本のマニフェスト](#basic-manifest)で定義されているか、[VersionOverrides](#versionoverrides-node) ノードで定義されているかによって異なります。 ただし、機能は変わりません。  
+> **Host** 要素の構文は、要素が [基本のマニフェスト](#basic-manifest)で定義されているか、[VersionOverrides](#versionoverrides-node) ノードで定義されているかによって異なります。 ただし、機能は変わりません。  
 
 ## <a name="basic-manifest"></a>基本のマニフェスト
 
@@ -25,11 +25,11 @@ ms.locfileid: "47292287"
 
 | 属性     | 型   | 必須 | 説明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [名前](#name) | string | 必須 | Office クライアントアプリケーションの種類の名前。 |
+| [名前](#name) | string | 必須 | クライアント アプリケーションの種類Officeします。 |
 
 ### <a name="name"></a>名前
 
-このアドインが対象にするホストの種類を指定します。 この値は、次のいずれかであることが必要です。
+このアドインが対象にするホストの種類を指定します。この値は、次のいずれかである必要があります。
 
 - `Document` (Word)
 - `Database` (Access)
@@ -59,19 +59,19 @@ ms.locfileid: "47292287"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  はい  | これらの設定を適用する Office アプリケーションについて説明します。|
+|  [xsi:type](#xsitype)  |  はい  | これらの設定が適用Officeアプリケーションについて説明します。|
 
 ### <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  はい   |  デスクトップ フォーム ファクターの設定を定義します。 |
-|  [MobileFormFactor](mobileformfactor.md)    |  いいえ   |  モバイルフォームファクターの設定を定義します。 **注:** この要素は、iOS および Android の Outlook でのみサポートされています。 |
+|  [MobileFormFactor](mobileformfactor.md)    |  いいえ   |  モバイル フォーム ファクターの設定を定義します。 **注:** この要素は、iOS Outlook Android でのみサポートされます。 |
 |  [AllFormFactors](allformfactors.md)    |  いいえ   |  すべてのフォーム ファクターの設定を定義します。 Excel のカスタム関数でのみ使用します。 |
 
 ### <a name="xsitype"></a>xsi:type
 
-含まれている設定が適用される Office アプリケーション (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。 この値は、次のいずれかである必要があります。
+含まれているOffice適用するアプリケーション (Word、Excel、PowerPoint、Outlook、OneNote) を制御します。 この値は、次のいずれかである必要があります。
 
 - `Document` (Word)
 - `MailHost` (Outlook)

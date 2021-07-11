@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: アドイン プラットフォームのプライバシーとセキュリティOfficeについて説明します。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076190"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349155"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -160,7 +160,7 @@ Office アドインのセキュリティ モデルをサポートするための
 
 この制限を克服する方法の 1 つは、JSON/P を使用する方法の 1 つで、別のドメインでホストされているスクリプトを示す **src** 属性を含むスクリプト タグを含めて、Web サービスのプロキシを提供します。  スクリプト タグをプログラムで作成し **、src** 属性をポイントする URL を動的に作成し、URI クエリ パラメーターを使用して URL にパラメーターを渡します。 Web サービス プロバイダーは、固有の URL で JavaScript コードを作成およびホストし、URI クエリ パラメーターに応じて異なるスクリプトを返します。 それらのスクリプトは挿入された場所で実行され、想定どおりに動作します。
 
-Outlook アドインでの JSON/P の例を次に示します。 
+Outlook アドインでの JSON/P の例を次に示します。
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -195,7 +195,7 @@ Exchange と SharePoint は、クロス ドメイン アクセスを可能にす
 - jQuery を使用している場合は、[.html()](https://api.jquery.com/text/) メソッドの代わりに [.text()](https://api.jquery.com/html/) メソッドを使用してください。
 
 - 
-  [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
+  [toStaticHTML](https://developer.mozilla.org/docs/Web/HTML/Reference) メソッドを使用して、ユーザーの入力から動的な HTML 要素と属性を削除したうえで、**innerHTML** に入力を渡してください。
 
 - 
   [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) または [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) 関数を使用して、参照元 URL またはユーザーの入力を含む URL として使用できるようにテキストをエンコードしてください。
