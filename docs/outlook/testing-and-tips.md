@@ -3,12 +3,12 @@ title: テスト用に Outlook アドインを展開してインストールす�
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 97841f7c8112b42cee2927f238b31fe985b2e101
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093862"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348875"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 
@@ -36,7 +36,7 @@ HTML と JavaScript を使用してアドインを作成できます。作成さ
 
 ### <a name="sideload-the-add-in"></a>アドインをサイドロードする
 
-メールボックスが Exchange Online、Exchange 2013 またはそれ以降のリリースのものである場合は、アドインをインストールできます。アドインをサイドロードするには、少なくとも Exchange Server の**自分のカスタム アプリ**の役割が必要です。アドイン マニフェストの URL またはファイル名を指定してアドインをテストしたり、一般的なアドインをインストールしたりする場合は、Exchange 管理者に連絡して、必要なアクセス許可を得る必要があります。
+メールボックスが Exchange Online、Exchange 2013 またはそれ以降のリリースのものである場合は、アドインをインストールできます。アドインをサイドロードするには、少なくとも Exchange Server の **自分のカスタム アプリ** の役割が必要です。アドイン マニフェストの URL またはファイル名を指定してアドインをテストしたり、一般的なアドインをインストールしたりする場合は、Exchange 管理者に連絡して、必要なアクセス許可を得る必要があります。
 
 Exchange 管理者は、次のような PowerShell コマンドレットを実行して、必要なアクセス許可を単一ユーザーに割り当てることができます。この例では、`wendyri` は、ユーザーの電子メール エイリアスです。
 
@@ -89,9 +89,9 @@ New-App -URL:"http://<fully-qualified URL">
 
 顧客および Microsoft 365 アカウントのユーザーは、Outlook on the web にアクセスすると最新の UI バージョンを表示し、廃止されたクラシック バージョンを表示しなくなります。 ただし、オンプレミスの Exchange サーバーは、従来の Outlook on the web を引き続きサポートします。 したがって、検証プロセス中に、提出物はアドインが従来の Outlook on the web と互換性がないという警告を受け取る場合があります。 その場合は、オンプレミスの Exchange 環境でアドインをテストすることを検討する必要があります。 この警告によって AppSource への送信がブロックされることはありませんが、顧客がオンプレミスの Exchange 環境で Outlook on the web を使用すると、次善のエクスペリエンスが発生する可能性があります。
 
-これを軽減するために、独自のプライベート オンプレミス Exchange 環境に接続された Outlook on the web でアドインをテストすることをお勧めします。 詳細については、[Exchange 2016 または Exchange 2019 テスト環境を確立する](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019#establish-an-exchange-2016-or-exchange-2019-test-environment)方法と、[Exchange Server で Outlook on the web](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019) を管理する方法に関するガイダンスを参照してください。
+これを軽減するために、独自のプライベート オンプレミス Exchange 環境に接続された Outlook on the web でアドインをテストすることをお勧めします。 詳細については、[Exchange 2016 または Exchange 2019 テスト環境を確立する](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019&preserve-view=true#establish-an-exchange-2016-or-exchange-2019-test-environment)方法と、[Exchange Server で Outlook on the web](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019&preserve-view=true) を管理する方法に関するガイダンスを参照してください。
 
-または、オンプレミスの Exchange サーバーをホストおよび管理するサービスの料金を支払い、使用することもできます。 いくつかのオプションがあります:
+または、オンプレミスの Exchange サーバーをホストおよび管理するサービスの料金を支払い、使用することもできます。いくつかのオプションは次のとおりです。
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)

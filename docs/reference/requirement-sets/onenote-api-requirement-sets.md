@@ -4,12 +4,12 @@ description: OneNote JavaScript API の要件セットについて説明しま�
 ms.date: 08/24/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: c8cadacac640cbe710c9894a65ee780267066afc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ecdb26edca54758540688ba03b1d9c1eec14e739
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293528"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350191"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
@@ -19,11 +19,11 @@ ms.locfileid: "47293528"
 
 |  要件セット  |  Office on the web |
 |:-----|:-----|
-| [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | 2016 年 9 月 |  
+| [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1&preserve-view=true)  | 2016 年 9 月 |  
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
-OneNote JavaScript API 1.1 は、API の最初のバージョンです。 API について詳しくは、「[OneNote の JavaScript API のプログラミングの概要](../../onenote/onenote-add-ins-programming-overview.md)」をご覧ください。
+OneNote JavaScript API 1.1 は、API の最初のバージョンです。API について詳しくは、「[OneNote の JavaScript API のプログラミングの概要](../../onenote/onenote-add-ins-programming-overview.md)」をご覧ください。
 
 ## <a name="runtime-requirement-support-check"></a>ランタイム要件のサポートのチェック
 
@@ -40,7 +40,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>マニフェストに基づく要件のサポートのチェック
 
-アドインで必須の、重要な要件セットまたは API メンバーを指定するには、アドインのマニフェストで `Requirements` 要素を使用します。 Office アプリケーションまたはプラットフォームが、`Requirements` 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのアプリケーションまたはプラットフォームでは実行されず、[個人用アドイン] にも表示されません。
+アドインで必須の、重要な要件セットまたは API メンバーを指定するには、アドインのマニフェストで `Requirements` 要素を使用します。Office アプリケーションまたはプラットフォームが、`Requirements` 要素で指定した要件セットまたは API メンバーをサポートしない場合、アドインはそのアプリケーションまたはプラットフォームでは実行されず、[個人用アドイン] にも表示されません。
 
 OneNoteApi 要件セット、バージョン 1.1 をサポートするすべての Office クライアント アプリケーションで読み込まれるアドインのコード例を以下に示します。
 
