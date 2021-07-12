@@ -3,12 +3,12 @@ title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9f671b4177d123b83ffeaaea7e1f05a4d0df5b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075958"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349736"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
 
@@ -44,8 +44,8 @@ SSO をアドインの唯一の認証方法と *しない* ようにする必要
 
 このセクションでは、SSO を使用する Office アドインの作成に関連するタスクについて説明します。 ここでは、これらのタスクについて、言語とフレームワークに依存しない方法で説明しています。 詳細なチュートリアルについては、次を参照してください。
 
-* [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
-* [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
+- [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
+- [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
 
 > [!NOTE]
 > SSO が有効な Node.js Office アドインの作成に Yeoman ジェネレーターを使用することができます。 Yeoman ジェネレーターは、Azure 内で SSO を構成するために必要な手順を自動化し、SSO を使用するために必要なコードを生成することで、SSO が有効なアドインの作成プロセスを簡素化します。 詳細については、「[シングル サインオン (SSO) のクイック スタート](../quickstarts/sso-quickstart.md)」を参照してください。
@@ -54,10 +54,10 @@ SSO をアドインの唯一の認証方法と *しない* ようにする必要
 
 Azure v2.0 エンドポイントの登録ポータルでアドインを登録します。このプロセスには、次に示すタスクを含めて 5 分から 10 分の時間がかかります。
 
-* アドインのクライアント ID とシークレットを取得します。
-* アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" と "openid" のアクセス許可は常に必要です。
-* Office クライアント アプリケーションにアドインへの信頼を付与します。
-* 既定のアクセス許可 *access_as_user* を使用して、Office クライアント アプリケーションのアドインへのアクセスを事前認証します。
+- アドインのクライアント ID とシークレットを取得します。
+- アドインが必要とする AAD v.2.0 エンドポイントへのアクセス許可を指定します  (必要に応じて Microsoft Graph へも指定します)。 "profile" と "openid" のアクセス許可は常に必要です。
+- Office クライアント アプリケーションにアドインへの信頼を付与します。
+- 既定のアクセス許可 *access_as_user* を使用して、Office クライアント アプリケーションのアドインへのアクセスを事前認証します。
 
 この手順の詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
 
@@ -65,11 +65,11 @@ Azure v2.0 エンドポイントの登録ポータルでアドインを登録し
 
 新しいマークアップをアドイン マニフェストに追加します。
 
-* **WebApplicationInfo** - 次の要素の親。
-* **Id** -このアドインのクライアント ID。これはアドインを登録する一貫として取得するアプリケーション ID です。 詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
-* **Resource** - アドインの URL。 これは、AAD にアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` のセクションの URL で使用されている任意のサブドメインを含むドメインと一致し、URI の末尾が `<Id>` 内のクライアント ID で終了している必要があります。
-* **Scopes** - 1 つ以上の **Scope** 要素の親。
-* **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` と `openID` のアクセス許可は常に必要です。ご利用のアドインが Microsoft Graph にアクセスしない場合、これは唯一必要なアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
+- **WebApplicationInfo** - 次の要素の親。
+- **Id** -このアドインのクライアント ID。これはアドインを登録する一貫として取得するアプリケーション ID です。 詳細については、「[Azure AD v2.0 のエンドポイントに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
+- **Resource** - アドインの URL。 これは、AAD にアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` のセクションの URL で使用されている任意のサブドメインを含むドメインと一致し、URI の末尾が `<Id>` 内のクライアント ID で終了している必要があります。
+- **Scopes** - 1 つ以上の **Scope** 要素の親。
+- **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` と `openID` のアクセス許可は常に必要です。ご利用のアドインが Microsoft Graph にアクセスしない場合、これは唯一必要なアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
 Outlook 以外の Office アプリケーションでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
@@ -87,6 +87,7 @@ Outlook 以外の Office アプリケーションでは、`<VersionOverrides ...
     </Scopes>
 </WebApplicationInfo>
 ```
+
 > [!NOTE]
 > SSO 用マニフェストのフォーマット要件に従わない場合、アドインはフォーマット要件を満たすまで AppSource から拒否されます。
 
@@ -94,9 +95,9 @@ Outlook 以外の Office アプリケーションでは、`<VersionOverrides ...
 
 アドインに次のために JavaScript を追加します。
 
-* [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。
 
-* アクセス トークンを解析するか、それをアドインのサーバー側コードに渡す。
+- アクセス トークンを解析するか、それをアドインのサーバー側コードに渡す。
 
 `getAccessToken` への呼び出しの単純な例を示します。
 
@@ -154,13 +155,13 @@ Office にログインしているユーザーがいないときにアドイン�
 
 ほとんどの場合、アドインがサーバー側に渡してそこで使用しない場合は、アクセス トークンを取得してもあまり意味はありません。アドインでは、次のいくつかのサーバー側のタスクを実行できます。
 
-* ホストされている使用しているデータベースのユーザー設定を検索するメソッドなど、トークンから抽出されるユーザーに関する情報を使用する 1 つ以上の Web API メソッドを作成します。 (以下の「**ID として SSO トークンを使用する**」を参照) 使用する言語とフレームワークによっては、記述する必要のあるコードを簡単に記述できるライブラリが使用できることがあります。
-* Microsoft Graph データを取得します。 サーバー側のコードでは、次に示す操作を実行する必要があります。
+- ホストされている使用しているデータベースのユーザー設定を検索するメソッドなど、トークンから抽出されるユーザーに関する情報を使用する 1 つ以上の Web API メソッドを作成します。 (以下の「**ID として SSO トークンを使用する**」を参照) 使用する言語とフレームワークによっては、記述する必要のあるコードを簡単に記述できるライブラリが使用できることがあります。
+- Microsoft Graph データを取得します。 サーバー側のコードでは、次に示す操作を実行する必要があります。
 
-    * Azure AD v2.0 エンドポイントを呼び出して、“代理” フローを開始します。これには、アクセス トークン、ユーザーに関するメタデータ、およびアドインの資格情報 (ID とシークレット) を含めます。このコンテキストでは、アクセス トークンはブートストラップ トークンと呼ばれます。
-    * 新しいトークンを使用して Microsoft Graph からデータを取得します。
-    * 必要に応じて、フローを開始する前に、アクセス トークンを検証します (以下の「**アクセス トークンを検証する**」を参照)。
-    * 必要に応じて、On-Behalf-Of フローの完了後に、フローから返される新しいアクセス トークンをキャッシュし、有効期限が切れるまで Microsoft Graph への他の呼び出しに再利用できるようにします。
+  - Azure AD v2.0 エンドポイントを呼び出して、“代理” フローを開始します。これには、アクセス トークン、ユーザーに関するメタデータ、およびアドインの資格情報 (ID とシークレット) を含めます。このコンテキストでは、アクセス トークンはブートストラップ トークンと呼ばれます。
+  - 新しいトークンを使用して Microsoft Graph からデータを取得します。
+  - 必要に応じて、フローを開始する前に、アクセス トークンを検証します (以下の「**アクセス トークンを検証する**」を参照)。
+  - 必要に応じて、On-Behalf-Of フローの完了後に、フローから返される新しいアクセス トークンをキャッシュし、有効期限が切れるまで Microsoft Graph への他の呼び出しに再利用できるようにします。
 
  ユーザーの Microsoft Graph のデータへのアクセス許可を取得するには、「[Microsoft Graph への認証](authorize-to-microsoft-graph.md)」を参照してください。
 
@@ -172,7 +173,7 @@ Web API でアクセス トークンを受信したら、そのアクセス ト�
 - トークンが意図した証明機関から発行されたことを確認する
 - トークンが Web API を対象にしていることを確認する
 
-トークンの検証時には、次のガイドラインに注意してください。
+トークンの検証時には、次のガイドラインに留意してください。
 
 - 有効な SSO トークンは Azure 証明機関 `https://login.microsoftonline.com` から発行されます。 トークン内の `iss` クレームは、この値で始まっている必要があります。
 - トークンの `aud` パラメーターは、アドインの登録のアプリケーション ID に設定します。

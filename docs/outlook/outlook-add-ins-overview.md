@@ -4,12 +4,12 @@ description: Outlook アドインとは、Microsoft の Web ベース プラッ�
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6a490e78b524e84d53461838b8a2d5a15be031bd
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076757"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348924"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 

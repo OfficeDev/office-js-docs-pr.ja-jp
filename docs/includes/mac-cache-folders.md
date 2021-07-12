@@ -10,7 +10,7 @@
 `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアすることもできます。
 
 > [!NOTE]
-> そのフォルダーが存在しない場合には次のフォルダーを確認し、見つかった場合はフォルダーの内容を削除します。
+> そのフォルダーが存在しない場合には次のフォルダーを確認し、見つかった場合はフォルダーのコンテンツを削除します。
 >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
 >    - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
 >    - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`

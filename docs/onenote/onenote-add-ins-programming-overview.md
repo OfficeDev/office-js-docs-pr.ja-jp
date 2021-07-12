@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077114"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348602"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -22,7 +22,7 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 アドインは、2 つの基本コンポーネントで構成されます。
 
-- Web ページと必要な任意の JavaScript、CSS、他のファイルで構成される **Web アプリケーション**。 これらのファイルは、Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされます。 OneNote on the web では、Web アプリケーションはブラウザー コントロールや iFrame で表示されます。
+- Web ページと必要な任意の JavaScript、CSS、他のファイルを含む **Web アプリケーション**。これらのファイルは、Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされます。OneNote on the web では、Web アプリケーションはブラウザー コントロールや iFrame で表示されます。
 
 - アドインの Web ページの URL とアドインの任意のアクセス要件、設定、機能を指定する **XML マニフェスト**。このファイルは、クライアントに保存されます。OneNote アドインは、他の Office アドインと同じ [マニフェスト](../develop/add-in-manifests.md)形式を使います。
 
@@ -130,7 +130,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 一般に、アプリケーション固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 <a name="om-diagram"></a>
-## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図 
+## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図
 次の図では、OneNote JavaScript API で現在使用可能なものが示されます。
 
   ![OneNote のオブジェクト モデル図。](../images/onenote-om.png)

@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 669eedd3439698a37bebe2a83b3c2a8381cdb4d6
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 85576c50c69332e16c0636586461392021b2e2a4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076232"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350051"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 

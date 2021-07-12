@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075993"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349785"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -21,7 +21,7 @@ Office にはプラットフォームやバージョンが異なるものが数�
 
 ## <a name="how-to-check-your-office-version"></a>Office のバージョンを確認する方法
 
-使用している Office のバージョンを特定するには、Office アプリケーション内で **[ファイル]** メニューを選択し、**[アカウント]** を選択します。 Office のバージョンは **[製品情報]** セクションに表示されます。 たとえば、次のスクリーン ショットは、Office のバージョンが 1802 (ビルド 9026.1000) であることを示しています。
+使用している Office のバージョンを特定するには、Office アプリケーション内で **[ファイル]** メニューを選択し、**[アカウント]** を選択します。Office のバージョンは **[製品情報]** セクションに表示されます。たとえば、次のスクリーン ショットは、Office のバージョンが 1802 (ビルド 9026.1000) であることを示しています。
 
 ![Office のバージョン確認。](../images/office-version.png)
 
@@ -33,7 +33,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 さらに、アドイン コマンド (リボン機能拡張) やダイアログ ボックスを起動する機能 (ダイアログ API) など、他の機能が共通 API に追加されました。 アドイン コマンドやダイアログ API の要件セットは、さまざまな Office アプリケーションで共有されている API セットの例です。
 
-アドインは、そのアドインが動作している Office アプリケーションのバージョンでサポートされている要件セットにある API のみを使用できます。 特定の Office アプリケーションのバージョンで使用できる要件セットを正確に確認するには、アプリケーション固有の要件セットに関する次の記事を参照してください。
+アドインは、そのアドインが動作している Office アプリケーションのバージョンでサポートされている要件セットにある API のみを使用できます。特定の Office アプリケーションのバージョンで使用できる要件セットを正確に確認するには、アプリケーション固有の要件セットに関する次の記事を参照してください。
 
 - [Excel JavaScript API 要件セット](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Word JavaScript API 要件セット](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -41,7 +41,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [PowerPoint JavaScript API 要件セット](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Outlook API 要件セットについて](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
-一部の要件セットには、どの Office アプリケーションでも使用できる API が含まれています。 それらの要件セットの詳細については、次の記事を参照してください。
+一部の要件セットには、どの Office アプリケーションでも使用できる API が含まれています。それらの要件セットの詳細については、次の記事を参照してください。
 
 - [Office の共通要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [アドイン コマンドの要件セット](../reference/requirement-sets/add-in-commands-requirement-sets.md)

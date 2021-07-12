@@ -3,12 +3,12 @@ title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076771"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348938"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
@@ -250,7 +250,7 @@ Outlook アドインは XML アドイン マニフェストと Web ページの 
 
 ## <a name="root-element"></a>ルート要素
 
-Outlook アドイン マニフェストのルート要素は **OfficeApp** です。この要素はまた、既定の名前空間、スキーマのバージョン、およびアドインの種類を宣言します。開始タグと終了タグの間にマニフェストのその他すべての要素を配置します。ルート要素の例を以下に示します。
+Outlook アドイン マニフェストのルート要素は **OfficeApp** です。この要素はまた、既定の名前空間、スキーマのバージョン、アドインの種類を宣言します。開始タグと終了タグの間にマニフェストのその他すべての要素を配置します。ルート要素の例を以下に示します。
 
 
 ```XML
@@ -282,7 +282,7 @@ Outlook アドイン マニフェストのルート要素は **OfficeApp** で�
 
 ## <a name="localization"></a>ローカライズ
 
-名前、説明、および読み込む URL など、アドインのいくつかの側面は、各種のロケール用にローカライズする必要があります。これらの要素は、既定値を指定してから、**VersionOverrides** 要素内の **Resources** 要素でロケールのオーバーライドを指定することによって簡単にローカライズできます。画像、URL、および文字列をオーバーライドする方法を次に示します。
+名前、説明、読み込む URL など、アドインのいくつかの側面は、各種のロケール用にローカライズする必要があります。これらの要素は、既定値を指定してから、**VersionOverrides** 要素内の **Resources** 要素でロケールのオーバーライドを指定することによって簡単にローカライズできます。画像、URL、文字列をオーバーライドする方法を次に示します。
 
 
 ```XML
@@ -360,7 +360,7 @@ Outlook アドインでは、次のように **Hosts** 要素を指定します�
 
 **SourceLocation** 要素に指定するアドインの開始ページのドメインは、そのアドインの既定のドメインです。**AppDomains** 要素と **AppDomain** 要素を使用しない場合は、アドインが別のドメインに移動しようとすると、ブラウザーがそのアドイン ウィンドウの外に新しいウィンドウを開きます。アドインがアドイン ウィンドウ内の別のドメインに移動できるようにするには、アドインのマニフェストに **AppDomains** 要素を追加し、その **AppDomain** サブ要素に各追加ドメインを含めます。
 
-次のサンプルでは、アドインがアドイン ウィンドウ内で移動できる 2 番目のドメインとして  `https://www.contoso2.com` を指定しています。
+次の例では、アドインがアドイン ウィンドウ内で移動できる 2 番目のドメインとして `https://www.contoso2.com` を指定しています。
 
 ```XML
 <OfficeApp>

@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076659"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348861"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -30,7 +30,7 @@ COM または VSTO アドインは、Windows の Office でのみ実行する以
 
 ![Office アドインを使用する理由: クロスプラットフォーム、一元化された展開、AppSource を介した簡単なアクセス、および標準の Web テクノロジに基づいた構築。](../images/why.png)
 
-Office アドインは、VBA、COM、または VSTO を使用して作成されたアドインと比較して、次のような利点があります。
+Office アドインは、VBA、COM、VSTO を使用して作成されたアドインと比較して、次のような利点があります。
 
 - クロスプラットフォーム サポート。Office アドインは、Office on the web、Windows、Mac、および iPad で実行できます。
 
@@ -64,19 +64,19 @@ Office アドインには、2 つの基本的なコンポーネントが含ま�
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Office クライアントの拡張と、Office クライアントとの対話
 
-Office アドインは、Office クライアント アプリケーション内で次を実行できます:
+Office アドインは、Office クライアント アプリケーション内で次を実行できます。
 
--  機能の拡張 (任意の Office アプリケーション)
+- 機能の拡張 (任意の Office アプリケーション)
 
--  新しいオブジェクトの作成 (Excel または PowerPoint)
+- 新しいオブジェクトの作成 (Excel または PowerPoint)
  
 ### <a name="extend-office-functionality"></a>Office 機能の拡張
 
 次の方法で、Office アプリケーションに新しい機能を追加できます。  
 
--  カスタム リボン ボタンとメニュー コマンド ("アドイン コマンド" と総称されます)
+- カスタム リボン ボタンとメニュー コマンド ("アドイン コマンド" と総称されます)
 
--  挿入可能な作業ウィンドウ
+- 挿入可能な作業ウィンドウ
 
 カスタムの UI と作業ウィンドウは、アドイン マニフェストで指定されます。  
 
@@ -98,7 +98,7 @@ Office アドインは、Office クライアント アプリケーション内�
 
 ### <a name="extend-outlook-functionality"></a>Outlook の機能を拡張する
 
-Outlook アプリ アドインは Office のリボンを拡張したり、コンテキストに応じて表示または作成時に Outlook アイテムの隣に表示したりすることもできます。ユーザーが受信した項目を表示するか、返信または新しい項目を作成している場合には、電子メールメッセージ、会議出席依頼、会議の返信、会議の取り消し、または予定を操作できます。 
+Outlook アプリ アドインは Office のリボンを拡張したり、コンテキストに応じて表示または作成時に Outlook アイテムの隣に表示したりすることもできます。ユーザーが受信した項目を表示するか、返信または新しい項目を作成している場合には、電子メールメッセージ、会議出席依頼、会議の返信、会議の取り消し、または予定を操作できます。
 
 Outlook アドインでは、アイテムのコンテキスト情報 (アドレスや追跡 ID など) にアクセスし、そのデータを使用してサーバー上または Web サービスの追加情報にアクセスして、魅力的なユーザー エクスペリエンスを作成できます。ほとんどの場合、Outlook アドインはデスクトップ、Web、タブレットおよびモバイル デバイスに変更なしでシームレスなエクスペリエンスを提供する Outlook アプリケーションで実行できます。
 

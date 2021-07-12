@@ -3,21 +3,21 @@ title: 新規作成フォーム用の Outlook アドインを作成する
 description: 新規作成フォーム用の Outlook アドインのシナリオと機能について説明します。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077100"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348532"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>新規作成フォーム用の Outlook アドインを作成する
 
-Office アドイン マニフェストのスキーマのバージョン 1.1 と office.js の v1.1 から、新規作成フォームでアクティブ化される Outlook アドインである、新規作成アドインを作成できるようになりました。閲覧アドイン (ユーザーがメッセージや予定を表示するとき閲覧モードでアクティブ化される Outlook アドイン) とは対照的に、新規作成アドインは以下のユーザー シナリオで使用できます。
+Office アドイン マニフェストのスキーマのバージョン 1.1 と Office.js の v1.1 から、新規作成フォームでアクティブ化される Outlook アドインである、新規作成アドインを作成できるようになりました。閲覧アドイン (ユーザーがメッセージや予定を表示するとき閲覧モードでアクティブ化される Outlook アドイン) とは対照的に、新規作成アドインは以下のユーザー シナリオで使用できます。
 
 - 新しいメッセージ、会議出席依頼または予定を新規作成フォームで作成している。
 
 - 既存の予定またはユーザーが開催者になっている会議アイテムを表示または編集している。
-    
+
    > [!NOTE]
    > ユーザーが Outlook 2013 および Exchange 2013 の RTM リリースを使用していて、ユーザー別の会議アイテムを表示している場合は、使用可能な閲覧アドインを検索できます。Office 2013 SP1 リリース以降では、同じシナリオにおいて作成アドインのみをアクティブ化して使用できるような変更が行われています。
 

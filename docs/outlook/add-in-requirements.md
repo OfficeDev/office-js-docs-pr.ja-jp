@@ -3,12 +3,12 @@ title: Outlook アドインの要件
 description: Outlook アドインが正しく読み込まれて機能するためには、サーバーとクライアントの両方に関していくつかの要件があります。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: dd7831ce8ebd1165f920fe24775f46cd8cd7f91c
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 6062073d44a412d67961f806677cd60701bbdb9b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234297"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348595"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook アドインの要件
 
@@ -16,15 +16,15 @@ Outlook アドインが正しく読み込まれて機能するためには、サ
 
 ## <a name="client-requirements"></a>クライアント要件
 
-- クライアントは、Outlook アドインをサポートするアプリケーションのいずれかでなければなりません。以下のクライアントがアドインをサポートしています:
+- クライアントは、Outlook アドインをサポートするアプリケーションのいずれかでなければなりません。以下のクライアントがアドインをサポートしています。
 
-   - Windows 用 Outlook 2013 以降
-   - Mac 用 Outlook 2016 以降
-   - Outlook on iOS
-   - Outlook on Android
-   - Outlook on the web (Exchange 2016 以降用)
-   - Exchange 2013 向け Outlook on the web
-   - Outlook.com
+  - Windows 用 Outlook 2013 以降
+  - Mac 用 Outlook 2016 以降
+  - Outlook on iOS
+  - Outlook on Android
+  - Outlook on the web (Exchange 2016 以降用)
+  - Exchange 2013 向け Outlook on the web
+  - Outlook.com
 
 - クライアントは、直接接続を使用して Exchange サーバーまたは Microsoft 365 に接続する必要があります。ユーザーはクライアントを構成するときに、アカウントの種類として **Exchange**、**Office**、**Outlook.com** のいずれかを選択する必要があります。POP3 または IMAP を使用して接続するようにクライアントが構成されている場合、アドインは読み込まれません。
 
