@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化Outlookアドインを�
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349015"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418707"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -311,6 +311,16 @@ UI Office.js変更する API の一部は、イベント ベースのアドイ�
 - [ `Office.context.ui` : ] の下
   - `displayDialogAsync`
   - `messageParent`
+
+### <a name="requesting-external-data"></a>外部データの要求
+
+外部データを要求するには [、Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) のような API を使用するか、サーバーを操作するための HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使用します。
+
+XmlHttpRequests を作成する場合は、追加のセキュリティ対策を使用する必要があります。同じオリジン ポリシーと単純な CORS[が](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)[必要です](https://www.w3.org/TR/cors/)。
+
+単純な CORS 実装では Cookie を使用できません。単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが 、 である場合は、単純な CORS でヘッダー `Content-Type` `application/x-www-form-urlencoded` `text/plain` を使用できます `multipart/form-data` 。
+
+CORS の完全なサポートは近日公開予定です。
 
 ## <a name="see-also"></a>関連項目
 

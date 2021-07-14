@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 要件セット 1.13
 description: ExcelApi 1.13 要件セットの詳細。
-ms.date: 07/02/2021
+ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bfd9c23beda64565b44f16845e046fa1a2358d41
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 422cc8da19ac901de68cdfa59d7ab9670858de6f
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290814"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418700"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel新機能
 
@@ -17,10 +17,10 @@ ExcelApi 1.13 では、Base64 エンコード文字列からブックにワー�
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
-| 数式の変更イベント | 変更の原因となるイベントのソースと種類を含む、数式の変更を追跡します。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| 数式の依存 | 数式の直接依存セルを見つける。 | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
-| ワークシートの挿入 | 別のブックのワークシートを現在のブックに Base64 エンコード文字列として挿入します。 | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
-| ピボットテーブル ピボットレイアウト | Alt テキストと空のセル管理の新しいサポートを含む、PivotLayout クラスの拡張。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| [数式の変更イベント](../../excel/excel-add-ins-worksheets.md#detect-formula-changes) | 変更の原因となるイベントのソースと種類を含む、数式の変更を追跡します。 | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
+| [数式の依存](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-direct-dependents-of-a-formula) | 数式の直接依存セルを見つける。 | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
+| [ワークシートの挿入](../../excel//excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one) | 別のブックのワークシートを現在のブックに Base64 エンコード文字列として挿入します。 | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
+| [ピボットテーブル ピボットレイアウト](../../excel/excel-add-ins-pivottables.md#other-pivotlayout-functions) | Alt テキストと空のセル管理の新しいサポートを含む、PivotLayout クラスの拡張。 | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
 
 ## <a name="api-list"></a>API リスト
 
