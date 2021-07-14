@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 11/09/2020
+ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 50855deac928f9610ebc80aa52858259106a109c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 56e8a31f8d33756ca1668e2fa1468d10d1ad4821
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076211"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418714"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -17,41 +17,41 @@ ms.locfileid: "53076211"
 
 このチュートリアルの内容:
 > [!div class="checklist"]
-> * [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。 
-> * あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。
-> * Web からデータを取得するカスタム関数を作成します。
-> * Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。
+> - [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。 
+> - あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。
+> - Web からデータを取得するカスタム関数を作成します。
+> - Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。
 
 ## <a name="prerequisites"></a>前提条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
+- Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
  まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。 Office アドインの [Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)は、試すことができるいくつかのカスタム関数を使ってプロジェクトをセットアップします。カスタム関数のクイック スタートをすでに実行し、プロジェクトを生成している場合は、そのプロジェクトを引き続き使用し、代わりに[この手順](#create-a-custom-function-that-requests-data-from-the-web) に進みます。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
-    
-    * **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
-    * **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
-    * **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
+
+    - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
+    - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
     ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。](../images/starcountPrompt.png)
-    
+
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-2. プロジェクトのルート フォルダーに移動します。
-    
+1. プロジェクトのルート フォルダーに移動します。
+
     ```command&nbsp;line
     cd starcount
     ```
 
-3. プロジェクトをビルドします。
-    
+1. プロジェクトをビルドします。
+
     ```command&nbsp;line
     npm run build
     ```
@@ -59,7 +59,7 @@ ms.locfileid: "53076211"
     > [!NOTE]
     > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
+1. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
 
 # <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
@@ -82,15 +82,15 @@ npm run start:web
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
    ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
-   
-2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
+1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+1. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
 
---- 
-    
+1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+
+---
+
 ## <a name="try-out-a-prebuilt-custom-function"></a>あらかじめ用意されているカスタム関数を試す
 
 作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**./src/functions/functions.js** ファイル内で定義されています。 **./manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。 Excel でカスタム関数にアクセスするには、CONTOSO 名前空間を使用します。
@@ -99,7 +99,7 @@ npm run start:web
 
 1. Excel で、任意のセルに移動し、`=CONTOSO` と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
-2. セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして数値 `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。
+1. セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして数値 `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。
 
 `ADD` カスタム関数によって、指定した 2 つの数字の合計が計算され、**210** という結果が返されます。
 
@@ -107,51 +107,51 @@ npm run start:web
 
 Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。 次に、特定の Github リポジトリが所有する星の数を示す `getStarCount` という名前のカスタム関数を作成します。
 
-1. **starcount** プロジェクトで **./src/functions/functions.js** ファイルを見つけ、それをコード エディターで開きます。 
+1. **starcount** プロジェクトで **./src/functions/functions.js** ファイルを見つけ、それをコード エディターで開きます。
 
-2. **function.js** で、次のコードを追加します。 
+1. **function.js** で、次のコードを追加します。
 
-```JS
-/**
-  * Gets the star count for a given Github repository.
-  * @customfunction 
-  * @param {string} userName string name of Github user or organization.
-  * @param {string} repoName string name of the Github repository.
-  * @return {number} number of stars given to a Github repository.
-  */
-  async function getStarCount(userName, repoName) {
-    try {
-      //You can change this URL to any web request you want to work with.
-      const url = "https://api.github.com/repos/" + userName + "/" + repoName;
-      const response = await fetch(url);
-      //Expect that status code is in 200-299 range
-      if (!response.ok) {
-        throw new Error(response.statusText)
+    ```JS
+    /**
+      * Gets the star count for a given Github repository.
+      * @customfunction 
+      * @param {string} userName string name of Github user or organization.
+      * @param {string} repoName string name of the Github repository.
+      * @return {number} number of stars given to a Github repository.
+      */
+      async function getStarCount(userName, repoName) {
+        try {
+          //You can change this URL to any web request you want to work with.
+          const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+          const response = await fetch(url);
+          //Expect that status code is in 200-299 range
+          if (!response.ok) {
+            throw new Error(response.statusText)
+          }
+            const jsonResponse = await response.json();
+            return jsonResponse.watchers_count;
+        }
+        catch (error) {
+          return error;
+        }
       }
-        const jsonResponse = await response.json();
-        return jsonResponse.watchers_count;
-    }
-    catch (error) {
-      return error;
-    }
-  }
-```
+    ```
 
-3. 次のコマンドを実行してプロジェクトを再構築します。
+1. 次のコマンドを実行してプロジェクトを再構築します。
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. Excel のアドインを再登録するには、次の手順を完了します (Web、Windows または Mac 上の Excel の場合)。 新しい関数を使用するには、次の手順を完了する必要があります。
+1. Excel のアドインを再登録するには、次の手順を完了します (Web、Windows または Mac 上の Excel の場合)。 新しい関数を使用するには、次の手順を完了する必要があります。
 
 ### <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
 1. Excel を閉じて再び開きます。
 
-2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
+1. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
 
-3. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
+1. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
     ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
 
 
@@ -159,11 +159,11 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
 
-2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
+1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
+1. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
 
-4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
 ---
 
@@ -173,11 +173,11 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>非同期でデータをストリーミングするカスタム関数を作成する
 
-`getStarCount` 関数は、ある時点でリポジトリに存在する星の数を返します。 カスタム関数は、継続的に変更されているデータも返すことができます。 これらの関数は、ストリーミング関数と呼ばれます。 関数が呼び出されたセルを参照する `invocation` パラメーターを含める必要があります。 `invocation` パラメーターは、セルの内容をいつでも更新するために使用します。  
+`getStarCount` 関数は、ある時点でリポジトリに存在する星の数を返します。 カスタム関数は、継続的に変更されているデータも返します。 これらの関数は、ストリーミング関数と呼ばれます。 関数を呼び出したセルを参照する `invocation` パラメーターを含める必要があります。 `invocation` パラメーターは、セルのコンテンツをいつでも更新するために使用します。  
 
-次のコード例では、`currentTime` と `clock` という 2 つの関数があることがわかります。 `currentTime` 関数は、ストリーミングを使わない静的な関数です。 日付を表す文字列を返します。 `clock` 関数は、`currentTime` 関数を使用して、Excel 内のセルに毎秒新しい時間を提します。 時間を Excel セルに配信するには `invocation.setResult` を使用し、関数がキャンセルされたときに発生する処理には `invocation.onCanceled` を使用します。
+次のコード例では、`currentTime` と `clock` という 2 つの関数があることがわかります。 `currentTime` 関数は、ストリーミングを使わない静的な関数です。 日付を表す文字列を返します。 `clock` 関数は、`currentTime` 関数を使用して、Excel 内のセルに毎秒新しい時間を提します。 `invocation.setResult`を使用して Excel セルに時間を配信し、関数のキャンセルを処理する`invocation.onCanceled`を使用します。 
 
-1. **starcount** プロジェクトで、次のコードを **./src/functions/functions.js** に追加し、ファイルを保存します。
+**starcount** プロジェクトには、**./src/functions/functions.js** ファイルに次の 2 つの関数が既に含まれています。
 
 ```JS
 /**
@@ -187,8 +187,8 @@ Web からデータを統合することは、カスタム関数を使用して 
 function currentTime() {
   return new Date().toLocaleTimeString();
 }
-
- /**
+    
+/**
  * Displays the current time once a second
  * @customfunction
  * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
@@ -198,45 +198,14 @@ function clock(invocation) {
     const time = currentTime();
     invocation.setResult(time);
   }, 1000);
-
+    
   invocation.onCanceled = () => {
     clearInterval(timer);
   };
 }
 ```
 
-2. 次のコマンドを実行してプロジェクトを再構築します。
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-3. Excel のアドインを再登録するには、次の手順を完了します (Web、Windows または Mac 上の Excel の場合)。 新しい関数を使用するには、次の手順を完了する必要があります。 
-
-# <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
-
-1. Excel を閉じて再び開きます。
-
-2. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
-
-3. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
-
-# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
-
-1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
-
-2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
-
-3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
-
-4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
-
---- 
-
-<ol start="4">
-<li>新しい関数をお試しください。 セル <strong>C1</strong> にテキスト <strong>=CONTOSO.CLOCK()</strong> を入力し、Enter キーを押します。 現在の日付が表示されます。この日付は 1 秒ごとにアップデートされます。 このクロックはループ上の単なるタイマーですが、リアルタイム データの Web 要求を行うより複雑な関数にタイマーを設定するという同じ考え方を使用できます。</li>
-</ol>
+関数を試すには、セル **C1** に、テキスト **=CONTOSO.CLOCK()** を入力して、Enter キーを押します。 現在の日付が表示されます。この日付は 1 秒ごとにアップデートされます。 このクロックはループ上の単なるタイマーですが、リアルタイム データの Web 要求を行うより複雑な関数にタイマーを設定するという同じ考え方を使用できます。
 
 ## <a name="next-steps"></a>次の手順
 
