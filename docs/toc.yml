@@ -1021,7 +1021,15 @@ items:
           - name: 送信時に追加
             href: outlook/append-on-send.md
           - name: イベントベースのライセンス認証
-            href: outlook/autolaunch.md
+            items:
+              - name: チュートリアル
+                href: outlook/autolaunch.md
+                displayName: event-based activation
+              - name: イベントベースのアクティブ化をデバッグする
+                href: outlook/debug-autolaunch.md
+              - name: AppSource オプション
+                href: outlook/autolaunch-store-options.md
+                displayName: event-based activation
           - name: ピン留め可能な作業ウィンドウ
             href: outlook/pinnable-taskpane.md
           - name: 共有フォルダーと共有メールボックス
