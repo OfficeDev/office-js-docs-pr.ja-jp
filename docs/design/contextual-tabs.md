@@ -1,18 +1,18 @@
 ---
 title: カスタム コンテキスト タブを Officeアドインで作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
-ms.date: 05/12/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
+ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349232"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53456230"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
-コンテキスト タブは、指定したイベントがドキュメント内で発生した場合にタブ行に表示Officeリボンの非表示のタブ コントロールOfficeです。 たとえば、テーブル **が選択されている** ときにリボンのExcel[テーブルのデザイン] タブが表示されます。 表示を変更するイベント ハンドラーを作成することで、Office アドインにカスタム コンテキスト タブを含め、表示または非表示の設定を指定できます。 (ただし、カスタム コンテキスト タブはフォーカスの変更に応答しない)。
+コンテキスト タブは、指定したイベントがドキュメント内で発生した場合にタブ行に表示Officeリボンの非表示のタブ コントロールOfficeです。 たとえば、テーブル **が選択されている** ときにリボンのExcel[テーブルのデザイン] タブが表示されます。 カスタム コンテキスト タブは、Officeアドインに含め、表示設定を変更するイベント ハンドラーを作成して、表示または非表示の状態を指定します。 (ただし、カスタム コンテキスト タブはフォーカスの変更に応答しない)。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
@@ -256,7 +256,7 @@ JSON BLOB の完全な例を次に示します。
 コンテキスト タブは[、Office.ribbon.requestCreateControls メソッドOffice呼](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)び出すことによって、ユーザーに登録されます。 これは通常、メソッドに割り当てられている関数またはメソッドで `Office.initialize` 行 `Office.onReady` われます。 これらのメソッドとアドインの初期化の詳細については、「Initialize [your Office アドイン」を参照してください](../develop/initialize-add-in.md)。 ただし、初期化後にいつでもメソッドを呼び出す場合があります。
 
 > [!IMPORTANT]
-> メソッド `requestCreateControls` は、アドインの特定のセッションで 1 回だけ呼び出されます。 再び呼び出された場合は、エラーがスローされます。
+> メソッド `requestCreateControls` は、アドインの特定のセッションで 1 回だけ呼び出される場合があります。 再び呼び出された場合は、エラーがスローされます。
 
 次に例を示します。 JSON 文字列を JavaScript 関数に渡す前に、メソッドを使用して `JSON.parse` JavaScript オブジェクトに変換する必要があります。
 
@@ -323,7 +323,7 @@ const showDataTab = async () => {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
 
-このメソッドは、カスタム コンテキスト タブまたはカスタム コア タブのカスタム ボタンの有効または無効の状態を切り替える `requestUpdate` 場合にも使用されます。この詳細については、「Enable [and Disable Add-in Commands」を参照してください](disable-add-in-commands.md)。 タブの表示とボタンの有効な状態の両方を同時に変更するシナリオが考えられます。 これは、1 回の呼び出しで行います `requestUpdate` 。 次に、コンテキスト タブを表示すると同時に、コア タブのボタンが有効になっている例を示します。
+このメソッドは、カスタム コンテキスト タブまたはカスタム コア タブのカスタム ボタンの有効または無効の状態を切り替える `requestUpdate` 場合にも使用されます。この詳細については、「Enable [and Disable Add-in Commands」を参照してください](disable-add-in-commands.md)。 タブの表示とボタンの有効な状態の両方を同時に変更するシナリオが考えられます。 これは、単一の呼び出しで行います `requestUpdate` 。 次に、コンテキスト タブを表示すると同時に、コア タブのボタンが有効になっている例を示します。
 
 ```javascript
 function myContextChanges() {
@@ -378,7 +378,99 @@ function myContextChanges() {
 }
 ```
 
-## <a name="localizing-the-json-blob"></a>JSON BLOB のローカライズ
+## <a name="open-a-task-pane-from-contextual-tabs"></a>コンテキスト タブから作業ウィンドウを開く
+
+カスタム コンテキスト タブのボタンから作業ウィンドウを開く場合は、JSON でアクションを作成 `type` します `ShowTaskpane` 。 次に、アクションのプロパティ `actionId` を設定したボタン `id` を定義します。 これにより、マニフェスト内の要素で指定された `<Runtime>` 既定の作業ウィンドウが開きます。
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+既定の作業ウィンドウではない作業ウィンドウを開く場合は、アクションの定義で `sourceLocation` プロパティを指定します。 次の例では、別のボタンから 2 番目の作業ウィンドウを開きます。
+
+> [!IMPORTANT]
+>
+> - アクションに `sourceLocation` a が指定されている場合、作業ウィンドウでは共有ランタイムは使用されません。 新しい JavaScript ランタイムで実行されます。
+> - 共有ランタイムを使用できる作業ウィンドウは 1 つ以下なので、プロパティを省略できるアクションは 1 つ `ShowTaskpane` 以下 `sourceLocation` です。
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    },
+    {
+      "id": "openTablesTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Tables",
+      "supportPinning": false
+      "sourceLocation": "https://MyDomain.com/myPage.html"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            },
+            {
+                "type": "Button",
+                "id": "CtxBt113",
+                "actionId": "openTablesTaskpane",
+                "enabled": false,
+                "label": "Open Tables Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+## <a name="localize-the-json-text"></a>JSON テキストをローカライズする
 
 渡される JSON BLOB は、カスタム コア タブのマニフェスト マークアップがローカライズされるのと同じ方法でローカライズされません (マニフェストからのローカライズの制御で `requestCreateControls` [説明します](../develop/localization.md#control-localization-from-the-manifest))。 代わりに、ローカライズは、ロケールごとに個別の JSON BLOB を使用して実行時に行う必要があります。 `switch` [Office.context.displayLanguage](/javascript/api/office/office.context#displayLanguage)プロパティをテストするステートメントを使用してください。 次に例を示します。
 

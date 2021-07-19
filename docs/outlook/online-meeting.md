@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダー Outlookモバイル アドインを作成する
 description: オンライン会議サービス プロバイダー Outlookモバイル アドインをセットアップする方法について説明します。
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 7f65ef7a1b87a989063b6cb23e6e608e6b3bbefc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f0f9b69c2b8b515df3829ca3ba0714393df79fd1
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077065"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455503"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー Outlookモバイル アドインを作成する
 
@@ -207,7 +207,7 @@ ms.locfileid: "53077065"
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 デバイス[、Outlook on the web、Windows](sideload-outlook-add-ins-for-testing.md) Mac でサイドローディングした後、Android Outlookデバイスで再起動します。 (Android は、現在サポートされている唯一のクライアントです)。次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
+アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 [Android、Outlook on the web、Windows](sideload-outlook-add-ins-for-testing.md) Mac でサイドローディングした後、Android Outlook iOS モバイル デバイスでデバイスを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI の作成
 
@@ -261,6 +261,7 @@ ms.locfileid: "53077065"
 - 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたは TeamsオプションSkypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進数コードまたは他の色形式で同等の値を使用してグレー `#919191` [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 - 予定オーガナイザー (作成) モードでは、1 つの UI レス コマンドだけがサポートされます。
+- アドインは、1 分のタイムアウト期間内に予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開いたアドインなどのダイアログ ボックスで費やされた時間は、タイムアウト期間から除外されます。
 
 ## <a name="see-also"></a>関連項目
 
