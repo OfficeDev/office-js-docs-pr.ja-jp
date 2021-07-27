@@ -3,12 +3,12 @@ title: カスタム コンテキスト タブを Officeアドインで作成す�
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
-ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
+ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53456230"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536004"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -18,6 +18,8 @@ ms.locfileid: "53456230"
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
 > - [アドイン コマンドの基本概念](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > カスタム コンテキスト タブは現在、次のプラットフォームExcelビルドでのみサポートされています。

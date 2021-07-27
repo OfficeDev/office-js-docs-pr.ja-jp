@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOfficeダイアログ API のルールとベスト プラクティスを提供します。
-ms.date: 02/09/2021
+ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 99129636cf722f98cef36c272f2e00e8a9321ccf
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349911"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535984"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -27,7 +27,7 @@ ms.locfileid: "53349911"
 - ダイアログ ボックスOffice 2 つの API のみを呼び出します。
   - [messageParent](/javascript/api/office/office.ui#messageparent-message-)関数。
   - `Office.context.requirements.isSetSupported`(詳細については、「アプリケーションと[API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。
-- [messageParent 関数](/javascript/api/office/office.ui#messageparent-message-)は、アドイン自体とまったく同じドメイン内のページからのみ呼び出されます。
+- [messageParent 関数](/javascript/api/office/office.ui#messageparent-message-)は、通常、アドイン自体とまったく同じドメイン内のページから呼び出す必要がありますが、これは必須ではありません。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -43,7 +43,7 @@ UI 要素を重ねて表示することはお勧めできないため、シナ�
 
 ブラウザーを使用している間にダイアログ Office on the webを表示しようとすると、ブラウザーのポップアップ ブロッカーがダイアログ ボックスをブロックする可能性があります。 Office on the webには、アドインのダイアログ ボックスがブラウザーのポップアップ ブロッカーの例外になる機能があります。 コードがメソッドを呼び `displayDialogAsync` 出す場合、Office on the web次のようなプロンプトが開きます。
 
-![ブラウザー内のポップアップ ブロックを回避するためにアドインが生成できる簡単な説明と [許可] ボタンと [無視] ボタンを含むプロンプトを示すスクリーンショット。](../images/dialog-prompt-before-open.png)
+![ブラウザー内ポップアップ ブロックを回避するためにアドインが生成できる簡単な説明と [許可] ボタンと [無視] ボタンを含むプロンプトを示すスクリーンショット](../images/dialog-prompt-before-open.png)
 
 ユーザーが [許可] を **選択すると**、[Office] ダイアログ ボックスが開きます。 ユーザーが [無視] を **選択** すると、プロンプトが閉じOfficeダイアログ ボックスが開かれません。 代わりに、メソッド `displayDialogAsync` はエラー 12009 を返します。 コードは、このエラーをキャッチし、ダイアログを必要としない代替エクスペリエンスを提供するか、アドインがダイアログを許可する必要があるというメッセージをユーザーに表示する必要があります。 (12009 の詳細については [、「displayDialogAsync からのエラー」を参照](dialog-handle-errors-events.md#errors-from-displaydialogasync)してください)。
 

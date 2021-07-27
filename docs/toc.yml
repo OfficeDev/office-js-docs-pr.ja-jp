@@ -335,6 +335,8 @@ items:
                 href: reference/requirement-sets/add-in-commands-requirement-sets.md
               - name: ダイアログ API の要件セット
                 href: reference/requirement-sets/dialog-api-requirement-sets.md
+              - name: ダイアログ配信元の要件セット
+                href: reference/requirement-sets/dialog-origin-requirement-sets.md
               - name: ID API の要件セット
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: 画像強制型変換要件セット

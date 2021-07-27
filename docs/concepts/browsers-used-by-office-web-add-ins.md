@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076183"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536026"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -38,10 +38,10 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 |Android|any|該当なし|Chrome|
 |Windows 7、8.1、10 | サブスクリプション以外のOffice 2013 以降|かまいません|Internet Explorer 11|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | なし| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| かまいません|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| かまいません|Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| いいえ |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| なし |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| はい<sup>4</sup>|  Microsoft Edge<sup>2</sup> with WebView2 (Chromiumベース) |
 
 <sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
@@ -70,7 +70,7 @@ Office元の WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)を使用
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>作業ウィンドウにスクロール バーが表示されない
 
-既定では、Microsoft Edge のスクロール バーはホバーするまで非表示になっています。 スクロールバーが常に表示されるようにするには、作業ウィンドウのページの`<body>`要素に適用される CSS スタイルに [-ms-overflow-style](https://developer.mozilla.org/docs/Archive/Web/CSS/-ms-overflow-style) プロパティを含め、`scrollbar`に設定する必要があります。
+既定では、Microsoft Edge のスクロール バーはホバーするまで非表示になっています。 スクロールバーが常に表示されるようにするには、作業ウィンドウのページの`<body>`要素に適用される CSS スタイルに [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) プロパティを含め、`scrollbar`に設定する必要があります。
 
 ### <a name="when-debugging-with-the-microsoft-edge-devtools-the-add-in-crashes-or-reloads"></a>Microsoft Edge DevTools を使用してデバッグすると、アドインがクラッシュまたは再読み込みされる
 

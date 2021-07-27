@@ -4,12 +4,12 @@ description: 共通 API 要件セットOffice詳細を確認します。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350205"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536047"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -77,6 +77,14 @@ ms.locfileid: "53350205"
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[ダイアログ API の要件セット](dialog-api-requirement-sets.md)」を参照してください。 | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### <a name="dialogorigin"></a>DialogOrigin
+
+|**Office アプリケーション**|**セット内のメソッド**|
+|:-----|:-----|
+| 「Dialog [Origin requirement sets」を参照してください](dialog-origin-requirement-sets.md)。 | 以下のクロスドメインサポート<br>UI.messageParent<br>UI。Dialog.messageChild |
 
 ---
 

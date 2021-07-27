@@ -1,15 +1,15 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 07/13/2021
+ms.date: 07/14/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c39928fd59379eac1552e80bbaccb54f460c8357
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 0d9dd51627cd797351e4e43957375b7a493b2b57
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418693"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455489"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -59,7 +59,7 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
 
 - .msg または .eml ファイルがファイル システムから開かれた場合。
 
-- 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス内\*、アーカイブ メールボックス内、パブリック フォルダー内。
+- 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス\*内、[アーカイブ メールボックス](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox)内、パブリック フォルダー内。
 
   > [!IMPORTANT]
   > \* [要件セット 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートをプレビューしています。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](delegate-access.md)」を参照してください。
