@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 要件セット 1.7
 description: Outlookメールボックス API 要件セット 1.7 バージョンの Item オブジェクト モデル。
-ms.date: 05/17/2021
+ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 7aa50979eb8bf070d71261cbd3b047ba79f96415
-ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
+ms.openlocfilehash: cb48375a68098503787642978d05f1383b011ae9
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2021
-ms.locfileid: "52893590"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661265"
 ---
 # <a name="item-mailbox-requirement-set-17"></a>item (メールボックス要件セット 1.7)
 
@@ -23,6 +23,9 @@ ms.locfileid: "52893590"
 |[メールボックスの最小要件セットのバージョン](../../requirement-sets/outlook-api-requirement-sets.md)|1.1|
 |[最小限のアクセス許可レベル](../../../outlook/understanding-outlook-add-in-permissions.md)|制限あり|
 |[適用可能な Outlook のモード](../../../outlook/outlook-add-ins-overview.md#extension-points)|予定の開催者、予定の出席者、<br>メッセージの作成、またはメッセージの読み取り|
+
+> [!IMPORTANT]
+> Android と iOS: アドインがアクティブ化される時間と使用可能な API には制限があります。 詳細については、「Add [mobile support to an Outlook」を参照してください](../../../outlook/add-mobile-support.md#compose-mode-and-appointments)。
 
 ## <a name="properties"></a>プロパティ
 

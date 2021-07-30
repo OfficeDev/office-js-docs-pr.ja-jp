@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 06/18/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536026"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661125"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -38,10 +38,10 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 |Android|any|該当なし|Chrome|
 |Windows 7、8.1、10 | サブスクリプション以外のOffice 2013 以降|かまいません|Internet Explorer 11|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | なし| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| かまいません|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| かまいません|Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| なし |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| いいえ |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| はい<sup>4</sup>|  Microsoft Edge<sup>2</sup> with WebView2 (Chromiumベース) |
 
 <sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
@@ -50,7 +50,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 
 <sup>3</sup>アドインにマニフェストに要素が含まれる場合、元の `<Runtimes>` WebView (EdgeHTML) Microsoft Edgeを使用しない。 WebView2 を使用するMicrosoft Edge (Chromiumベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、Internet Explorerバージョンに関係なく、Windows 11 Microsoft 365します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
-<sup>4</sup>埋め込み可能な WebView2 コントロールは、埋め込み可能な WebView2 Microsoft EdgeインストールOfficeインストールする必要があります。 インストールするには[、「WebView2/web コンテンツMicrosoft Edge埋め込む」を参照してください。を使用Microsoft Edge WebView2 を使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。
+<sup>4</sup>埋め込み可能な WebView2 コントロールをインストールして、Office埋め込み、Edge で自動的にインストールされない必要があります。 バージョン 2101 以降Microsoft 365バージョンと一緒にインストールされます。 以前のバージョンの webView2 Microsoft 365 WebView2 / Embed web content ..でコントロールをインストールする[手順Microsoft Edge使用します。を使用Microsoft Edge WebView2 を使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーに Internet Explorer 11 を使用するプラットフォームがある場合は、ECMAScript 2015 以降の構文と機能を使用するには、次の 2 つのオプションがあります。

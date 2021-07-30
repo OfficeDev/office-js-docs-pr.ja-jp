@@ -3,12 +3,12 @@ title: テスト用に Outlook アドインを展開してインストールす�
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
 ms.date: 05/20/2020
 localization_priority: Priority
-ms.openlocfilehash: 86fcf82ddbb9b7e786ae905ad0c0bd864e6fbc56
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348875"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661132"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 
@@ -94,7 +94,7 @@ New-App -URL:"http://<fully-qualified URL">
 または、オンプレミスの Exchange サーバーをホストおよび管理するサービスの料金を支払い、使用することもできます。いくつかのオプションは次のとおりです。
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
-- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+- [Hostway](https://hostway.com/microsoft-exchange/)
 
 さらに、オンプレミスの Exchange に接続しているユーザーがアドインを使用できないようにする場合は、アドイン マニフェストの[要件セット](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support)を 1.6 以上に設定できます。 このようなアドインは、従来の Outlook on the Web UI ではテストまたは検証されません。
 
