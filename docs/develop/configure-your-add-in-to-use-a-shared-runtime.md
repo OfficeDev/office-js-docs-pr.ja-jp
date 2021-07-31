@@ -1,15 +1,15 @@
 ---
-ms.date: 06/14/2021
+ms.date: 07/27/2021
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 localization_priority: Priority
-ms.openlocfilehash: 9874d0fef2dc4966f106d1d88e4e897469300c0b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076218"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661148"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -216,9 +216,9 @@ Windows または Mac で、アドインは、リボン ボタン、カスタム
   - カスタム関数で CORS がすべてサポートされます。
   - カスタム関数で、Office.js API を呼び出して、スプレッドシート ドキュメントのデータを読み取ることができます。
 
-Windows 版 Office の場合、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、共有ランタイムには Microsoft Internet Explorer 11 ブラウザー インスタンスが必要です。また、アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。Office アドインで使用されるブラウザーで説明されているように、 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内で実行される様子を示しています。
+Windows 上の Office の場合、共有ランタイムは、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、使用条件が満たされている場合、WebView2 (Chromium ベース) で Microsoft Edge を使用します。それ以外の場合は、Internet Explorer 11 を使用します。 また、アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内でどのように実行されるかを示しています。
 
-![Excel の共有 IE ブラウザー ランタイムで実行されているカスタム関数、作業ウィンドウ、およびリボン ボタンの図。](../images/custom-functions-in-browser-runtime.png)
+![Excel の共有ブラウザー ランタイムで実行されているカスタム関数、作業ウィンドウ、およびリボン ボタンの図。](../images/custom-functions-in-browser-runtime.png)
 
 ### <a name="debugging"></a>デバッグ
 
