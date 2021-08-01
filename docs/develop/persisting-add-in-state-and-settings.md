@@ -3,12 +3,12 @@ title: アドインの状態および設定を保持する
 description: ブラウザー コントロールのステートレスOfficeで実行されているアドイン Web アプリケーションにデータを保持する方法について説明します。
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: a5a54a07abfeefda39d24e635773bfd808b59c25
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349771"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671521"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -65,11 +65,11 @@ Word、Excel、または PowerPoint 用のコンテンツ アドインまたは�
 
 オブジェクトは Document オブジェクトの一部として自動的に読み込まれ、作業ウィンドウアドインまたはコンテンツ アドインがアクティブ化されると `Settings` 使用できます。 [](/javascript/api/office/office.document) オブジェクトを `Document` インスタンス化した後、オブジェクトの settings プロパティ `Settings` を[](/javascript/api/office/office.document#settings)使用してオブジェクトにアクセス `Document` できます。 セッションの有効期間中に、プロパティ バッグのメモリ内コピーから永続化された設定とアドインの状態を読み取り、書き込み、または削除するには、 およびメソッドを使用できます `Settings.get` `Settings.set` `Settings.remove` 。
 
-set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出す必要があります。
+set メソッドと remove メソッドは設定プロパティ バッグのメモリ内コピーに対してのみ動作するので、アドインが関連付けられているドキュメントに新しい設定を保存、または変更された設定を保存し直すには [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) メソッドを呼び出す必要があります。
 
 ### <a name="creating-or-updating-a-setting-value"></a>設定値の作成または更新
 
-次のコード例では、[Settings.set](/javascript/api/office/office.settings#set-name--value-) メソッドを使用して `'themeColor'` という名前の設定を作成し、値 `'green'` を指定する方法を説明します。set メソッドの最初のパラメーターは、設定するか作成する設定の _name_ (Id) であり、これは大文字と小文字が区別されます。2 番目のパラメーターは、設定の _value_ です。
+次のコード例では、[Settings.set](/javascript/api/office/office.settings#set_name__value_) メソッドを使用して `'themeColor'` という名前の設定を作成し、値 `'green'` を指定する方法を説明します。set メソッドの最初のパラメーターは、設定するか作成する設定の _name_ (Id) であり、これは大文字と小文字が区別されます。2 番目のパラメーターは、設定の _value_ です。
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -79,7 +79,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>設定値の取得
 
-次の例では、 [Settings.get](/javascript/api/office/office.settings#get-name-) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。 メソッドの唯一の `get` パラメーターは、設定の大文字と小文字を区別する名前です。
+次の例では、 [Settings.get](/javascript/api/office/office.settings#get_name_) メソッドを使用して "themeColor" という名前の設定値を取得する方法を示します。 メソッドの唯一の `get` パラメーターは、設定の大文字と小文字を区別する名前です。
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -94,7 +94,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>設定の削除
 
-次の例では、 [Settings.remove](/javascript/api/office/office.settings#remove-name-) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。 メソッドの唯一の `remove` パラメーターは、設定の大文字と小文字を区別する名前です。
+次の例では、 [Settings.remove](/javascript/api/office/office.settings#remove_name_) メソッドを使用して、"themeColor" という名前の設定を削除する方法を示します。 メソッドの唯一の `remove` パラメーターは、設定の大文字と小文字を区別する名前です。
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -104,7 +104,7 @@ Office.context.document.settings.remove('themeColor');
 
 ### <a name="saving-your-settings"></a>設定の保存
 
-現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 メソッドの唯一の `saveAsync` パラメーターは _、1_ つのパラメーターを持つコールバック関数であるコールバックです。
+現在のセッション中に、アドインがメモリ内の設定プロパティ バッグに対して行った追加、変更、または削除を保存するには、 [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) メソッドを呼び出してそれらの設定をドキュメントに保存する必要があります。 メソッドの唯一の `saveAsync` パラメーターは _、1_ つのパラメーターを持つコールバック関数であるコールバックです。
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-カスタム XML 部分を取得するには、[getByIdAsync](/javascript/api/office/office.customxmlparts#getbyidasync-id--options--callback-) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。 そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。 次のメソッドは、この方法を示してます  (ただし、カスタム設定を操作する場合の詳細とベスト プラクティスについては、この記事の前のセクションを参照してください)。
+カスタム XML 部分を取得するには、[getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_) メソッドを使用しますが、ID は XML 部分の作成時に生成された GUID になるため、コードの作成時に ID の内容を知ることはできません。 そのため、XML 部分を作成したら、その XML 部分の ID を設定としてすぐに保存して、覚えやすいキーを割り当てることがベスト プラクティスになります。 次のメソッドは、この方法を示してます  (ただし、カスタム設定を操作する場合の詳細とベスト プラクティスについては、この記事の前のセクションを参照してください)。
 
  ```js
 function createCustomXmlPartAndStoreId() {

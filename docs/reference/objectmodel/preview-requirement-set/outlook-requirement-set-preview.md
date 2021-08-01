@@ -3,12 +3,12 @@ title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007763"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671913"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -108,7 +108,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="office-theme"></a>Office テーマ
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 Office テーマを取得する機能が追加されました。
 
@@ -148,7 +148,7 @@ Office テーマを取得する機能が追加されました。
 
 ### <a name="shared-mailboxes"></a>共有メールボックス
 
-要件セット [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md)で、共有フォルダー (代理人アクセス) の機能サポートがリリースされました。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「共有フォルダーと共有 [メールボックスのシナリオを有効にする」を参照してください](../../../outlook/delegate-access.md)。
+要件セット [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md)で、共有フォルダー (代理人アクセス) の機能サポートがリリースされました。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](../../../outlook/delegate-access.md)」を参照してください。
 
 **で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 

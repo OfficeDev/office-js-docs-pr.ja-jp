@@ -3,12 +3,12 @@ title: アドインExcelトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするExcel説明します。
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cb622a1805be7bec61168ab37a41709a57075788
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349442"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671465"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>アドインExcelトラブルシューティング
 
@@ -44,7 +44,7 @@ ms.locfileid: "53349442"
 
 ## <a name="coauthoring"></a>共同編集
 
-共同[編集環境でイベントと](co-authoring-in-excel-add-ins.md)Excelするパターンについては、「Coauthoring in Excelアドイン」を参照してください。 この記事では、 などの特定の API を使用する場合の潜在的なマージ競合について説明します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。
+共同[編集環境でイベントと](co-authoring-in-excel-add-ins.md)Excelするパターンについては、「Coauthoring in Excelアドイン」を参照してください。 この記事では、 などの特定の API を使用する場合の潜在的なマージ競合について説明します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
 
 ## <a name="known-issues"></a>既知の問題
 

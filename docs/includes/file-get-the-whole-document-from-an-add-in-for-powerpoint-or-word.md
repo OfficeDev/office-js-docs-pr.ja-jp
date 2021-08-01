@@ -148,11 +148,11 @@ function updateStatus(message) {
 }
 ```
 
-UI で [ **送信** ] ボタンを選択すると、アドインは `sendFile` [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) メソッドの呼び出しを含む関数を呼び出します。 このメソッドは、JavaScript API の他のメソッドと同様に、非同期パターン `getFileAsync` を使用Office。 このメソッドには、_fileType_ という 1 つの必須パラメーターと、_options_ と _callback_ という 2 つの省略可能なパラメーターがあります。
+UI で [ **送信** ] ボタンを選択すると、アドインは `sendFile` [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) メソッドの呼び出しを含む関数を呼び出します。 このメソッドは、JavaScript API の他のメソッドと同様に、非同期パターン `getFileAsync` を使用Office。 このメソッドには、_fileType_ という 1 つの必須パラメーターと、_options_ と _callback_ という 2 つの省略可能なパラメーターがあります。
 
 _fileType パラメーターは_[、FileType](/javascript/api/office/office.filetype)列挙 `Office.FileType.Compressed` ("compressed")、Office.FileType.PDF("pdf")、または Office の 3 つの定数 **のいずれかを必要とします。FileType.Text** ("text")。 各プラットフォームの現在のファイルの種類のサポートは [、Document.getFileType の備考の下に一覧表示](/javascript/api/office/office.document#getFileAsync_fileType__callback_) されます。 _fileType_ パラメーターに対して **Compressed** を渡す場合、ローカル コンピューターにファイルの一時的なコピーを作成して、ドキュメントを PowerPoint 2013 プレゼンテーション ファイル (.pptx) または `getFileAsync` Word *2013* ドキュメント ファイル (.docx) として返します。
 
-この `getFileAsync` メソッドは、ファイルへの参照を File オブジェクトとして [返](/javascript/api/office/office.file) します。 オブジェクト `File` は[、size プロパティ、sliceCount](/javascript/api/office/office.file#size)プロパティ[](/javascript/api/office/office.file#slicecount)[、getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-)メソッド、[および closeAsync](/javascript/api/office/office.file#closeasync-callback-)メソッドの 4 つのメンバーを公開します。 この `size` プロパティは、ファイル内のバイト数を返します。 ファイル `sliceCount` 内の [Slice](/javascript/api/office/office.slice) オブジェクトの数 (この記事で後で説明します) を返します。
+この `getFileAsync` メソッドは、ファイルへの参照を File オブジェクトとして [返](/javascript/api/office/office.file) します。 オブジェクト `File` は[、size プロパティ、sliceCount](/javascript/api/office/office.file#size)プロパティ[](/javascript/api/office/office.file#sliceCount)[、getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_)メソッド、[および closeAsync](/javascript/api/office/office.file#closeAsync_callback_)メソッドの 4 つのメンバーを公開します。 この `size` プロパティは、ファイル内のバイト数を返します。 ファイル `sliceCount` 内の [Slice](/javascript/api/office/office.slice) オブジェクトの数 (この記事で後で説明します) を返します。
 
 次のコードを使用して、メソッドPowerPoint Word ドキュメントをオブジェクトとして取得し、ローカルで定義された関数 `File` `Document.getFileAsync` を呼び出 `getSlice` します。 オブジェクト、カウンター変数、およびファイル内のスライスの総数は、匿名オブジェクトの呼び出しで `File` `getSlice` 渡されます。
 

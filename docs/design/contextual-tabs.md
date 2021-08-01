@@ -3,12 +3,12 @@ title: カスタム コンテキスト タブを Officeアドインで作成す�
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536004"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671535"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -60,7 +60,7 @@ ms.locfileid: "53536004"
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>タブに表示されるグループとコントロールを定義する
 
-マニフェストで XML で定義されたカスタム コア タブとは異なり、カスタム コンテキスト タブは実行時に JSON BLOB を使用して定義されます。 コードは BLOB を JavaScript オブジェクトに解析し、オブジェクトを[Office.ribbon.requestCreateControls メソッドに渡](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-)します。 カスタム コンテキスト タブは、アドインが現在実行されているドキュメントにのみ表示されます。 これは、アドインのインストール時に Office アプリケーション リボンに追加されるカスタム コア タブとは異なります。また、別のドキュメントを開いた時点でも存在します。 また、 `requestCreateControls` メソッドはアドインのセッションで 1 回だけ実行できます。 再び呼び出された場合は、エラーがスローされます。
+マニフェストで XML で定義されたカスタム コア タブとは異なり、カスタム コンテキスト タブは実行時に JSON BLOB を使用して定義されます。 コードは BLOB を JavaScript オブジェクトに解析し、オブジェクトを[Office.ribbon.requestCreateControls メソッドに渡](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)します。 カスタム コンテキスト タブは、アドインが現在実行されているドキュメントにのみ表示されます。 これは、アドインのインストール時に Office アプリケーション リボンに追加されるカスタム コア タブとは異なります。また、別のドキュメントを開いた時点でも存在します。 また、 `requestCreateControls` メソッドはアドインのセッションで 1 回だけ実行できます。 再び呼び出された場合は、エラーがスローされます。
 
 > [!NOTE]
 > JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](../reference/manifest/customtab.md) 要素とその子孫要素の構造と大まかに平行です。
@@ -295,7 +295,7 @@ Office.onReady(async () => {
 
 次に、ハンドラーを定義します。 次に示すのは、単純な例ですが、関数のより堅牢なバージョンについては、この記事の後半の `showDataTab` [「HostRestartNeeded](#handle-the-hostrestartneeded-error) エラーの処理」を参照してください。 このコードについては、以下の点に注意してください。
 
-- Office では、リボンの状態を更新するタイミングが制御されます。 [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-)メソッドは、更新要求をキューに入れられます。 リボンが実際に更新される場合ではなく、要求をキューに入れ次第、メソッド `Promise` はオブジェクトを解決します。
+- Office では、リボンの状態を更新するタイミングが制御されます。 [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_)メソッドは、更新要求をキューに入れられます。 リボンが実際に更新される場合ではなく、要求をキューに入れ次第、メソッド `Promise` はオブジェクトを解決します。
 - メソッドのパラメーターは `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトで、(1) *は JSON* で指定されたとおりにタブを ID で指定し、(2) はタブの表示を指定します。
 - 同じコンテキストで表示するカスタム コンテキスト タブが複数ある場合は、配列に追加のタブ オブジェクトを追加 `tabs` します。
 

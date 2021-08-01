@@ -4,12 +4,12 @@ description: JavaScript API を使用して範囲を切り取り、コピー、�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a61ac967f267dfe3820e6972939d336e16ddd8b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075825"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671176"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 
@@ -19,7 +19,7 @@ ms.locfileid: "53075825"
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-[Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-)メソッドは、ユーザー UI の **コピー** と **貼** り付Excelします。 宛先は、 `Range` 呼び出 `copyFrom` されるオブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+[Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_)メソッドは、ユーザー UI の **コピー** と **貼** り付Excelします。 宛先は、 `Range` 呼び出 `copyFrom` されるオブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
 
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[Range.moveTo メソッドは](/javascript/api/excel/excel.range#moveto-destinationrange-)、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
+[Range.moveTo メソッドは](/javascript/api/excel/excel.range#moveTo_destinationRange_)、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
 
 次のコード サンプルでは、メソッドを使用して範囲を移動 `Range.moveTo` します。 移動先の範囲がソースより小さい場合は、ソース コンテンツを含む範囲に拡張されます。
 

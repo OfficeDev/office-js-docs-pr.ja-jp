@@ -3,12 +3,12 @@ title: Excel アドインの共同編集機能
 description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
 ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d6500248c13f0cef85736b4ffbad0dc655afecd7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349687"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671486"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
@@ -50,11 +50,11 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 
 ## <a name="avoiding-table-row-coauthoring-conflicts"></a>テーブル行の共同編集の競合を回避する
 
-API の呼び出しによって共同編集の競合が発生 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) する可能性がある既知の問題です。 他のユーザーがアドインのブックを編集している間にアドインが実行される可能性がある場合は、その API を使用することをお勧めしません (特に、テーブルまたはテーブルの下の任意の範囲を編集している場合)。 次のガイダンスは、メソッドの問題を回避するのに役立ちます (また、ユーザーに更新を求めるExcel黄色のバーをトリガー `TableRowCollection.add` しないようにします)。
+API の呼び出しによって共同編集の競合が発生 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) する可能性がある既知の問題です。 他のユーザーがアドインのブックを編集している間にアドインが実行される可能性がある場合は、その API を使用することをお勧めしません (特に、テーブルまたはテーブルの下の任意の範囲を編集している場合)。 次のガイダンスは、メソッドの問題を回避するのに役立ちます (また、ユーザーに更新を求めるExcel黄色のバーをトリガー `TableRowCollection.add` しないようにします)。
 
-1. の [`Range.values`](/javascript/api/excel/excel.range#values) 代わりに使用します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) 。 テーブルの `Range` 直下に値を設定すると、テーブルが自動的に展開されます。 それ以外の場合、API を使用してテーブル行を追加すると、共同認証ユーザー `Table` のマージ競合が発生します。
+1. の [`Range.values`](/javascript/api/excel/excel.range#values) 代わりに使用します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。 テーブルの `Range` 直下に値を設定すると、テーブルが自動的に展開されます。 それ以外の場合、API を使用してテーブル行を追加すると、共同認証ユーザー `Table` のマージ競合が発生します。
 1. データ検証が列 [全体に](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 適用されていない限り、テーブルの下のセルにデータ検証ルールが適用される必要はありません。
-1. テーブルの下にデータがある場合、アドインは範囲の値を設定する前に処理する必要があります。 空 [`Range.insert`](/javascript/api/excel/excel.range##insert-shift-) の行を挿入するために使用すると、データが移動され、展開テーブルの領域が作成されます。 それ以外の場合は、表の下のセルを上書きするリスクがあります。
+1. テーブルの下にデータがある場合、アドインは範囲の値を設定する前に処理する必要があります。 空 [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) の行を挿入するために使用すると、データが移動され、展開テーブルの領域が作成されます。 それ以外の場合は、表の下のセルを上書きするリスクがあります。
 1. テーブルに空の行を追加することはできません `Range.values` 。 テーブルの直下のセルにデータが存在する場合にのみ、テーブルは自動的に展開されます。 空のテーブル行を追加するには、回避策として一時的なデータまたは非表示の列を使用します。
 
 ## <a name="see-also"></a>関連項目

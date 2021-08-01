@@ -3,12 +3,12 @@ title: SSO を使用した Microsoft Graph への承認
 description: Microsoft アドインからデータをOfficeシングル サインオン (SSO) を使用する方法について説明Graph。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 054f58cf4b89d6c11cf6e7beb831eafc4a075bad
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076484"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671374"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph への承認
 
@@ -30,7 +30,7 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 ![SSO プロセスを示す図。](../images/sso-access-to-microsoft-graph.png)
 
-1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では **ブートストラップ アクセス トークン** と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 (これは処理の後半で 2 つ目のトークンと置換されるので、これ以降では **ブートストラップ アクセス トークン** と呼びます。 デコードされたブートストラップ アクセス トークンの例については、[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)に関するページを参照してください)。
 2. ユーザーがサインインしていない場合、Office クライアント アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 4. クライアント Officeアプリケーションは、現在のユーザーのazure AD v2.0 エンドポイントからブートストラップ アクセス トークンを要求します。

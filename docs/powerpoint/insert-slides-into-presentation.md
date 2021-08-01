@@ -3,12 +3,12 @@ title: プレゼンテーションにスライドをPowerPointする
 description: プレゼンテーションから別のプレゼンテーションにスライドを挿入する方法について説明します。
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: 9b106e8940e7b0f19678e0467d8e900ffecd9438
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348784"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671766"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>プレゼンテーションにスライドをPowerPointする
 
@@ -75,7 +75,7 @@ ms.locfileid: "53348784"
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>insertSlidesFromBase64 を使用してスライドを挿入する
 
-アドインは[、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)メソッドを使用してPowerPointプレゼンテーションから現在のプレゼンテーションにスライドを挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは、base64 でエンコードされたバージョンのプレゼンテーション ファイルを保持する `chosenFileBase64` PowerPoint注意してください。
+アドインは[、Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_)メソッドを使用してPowerPointプレゼンテーションから現在のプレゼンテーションにスライドを挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは、base64 でエンコードされたバージョンのプレゼンテーション ファイルを保持する `chosenFileBase64` PowerPoint注意してください。
 
 ```javascript
 async function insertAllSlides() {

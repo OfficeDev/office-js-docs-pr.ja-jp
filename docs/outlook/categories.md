@@ -1,32 +1,32 @@
 ---
 title: カテゴリの取得と設定
-description: '[方法] メールボックスとアイテムのカテゴリを管理する'
+description: メールボックスとアイテムのカテゴリを管理する方法
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d4589571de47218741308c01caec0166d72919d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608979"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671843"
 ---
 # <a name="get-and-set-categories"></a>カテゴリの取得と設定
 
-Outlook では、ユーザーはメールボックスのデータを整理する手段として、メッセージや予定に分類項目を適用することができます。 ユーザーは、自分のメールボックスの色分けされたカテゴリのマスターリストを定義し、そのうちの1つまたは複数のカテゴリを任意のメッセージアイテムまたは予定アイテムに適用することができます。 マスターリストの各[カテゴリ](/javascript/api/outlook/office.categorydetails)は、ユーザーが指定した名前と[色](/javascript/api/outlook/office.mailboxenums.categorycolor)で表されます。 Office JavaScript API を使用して、メールボックスのカテゴリマスターリストとアイテムに適用されるカテゴリを管理できます。
+このOutlookユーザーは、メールボックス データを整理する手段として、メッセージや予定にカテゴリを適用できます。 ユーザーは、自分のメールボックスの色分けされたカテゴリのマスター リストを定義し、それらのカテゴリの 1 つ以上を任意のメッセージまたは予定アイテムに適用できます。 マスター[リスト](/javascript/api/outlook/office.categorydetails)内の各カテゴリは、ユーザーが指定した[](/javascript/api/outlook/office.mailboxenums.categorycolor)名前と色で表されます。 JavaScript API のOfficeを使用して、メールボックスのカテゴリ マスター リストとアイテムに適用されるカテゴリを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
-## <a name="manage-categories-in-the-master-list"></a>マスターリストでカテゴリを管理する
+## <a name="manage-categories-in-the-master-list"></a>マスター リストのカテゴリを管理する
 
-メールボックスのマスターリストにあるカテゴリのみが、メッセージまたは予定に適用できます。 この API を使用して、マスターカテゴリの追加、取得、および削除を行うことができます。
+メッセージまたは予定に適用できるのは、メールボックスのマスター リスト内のカテゴリのみです。 API を使用して、マスター カテゴリを追加、取得、および削除できます。
 
 > [!IMPORTANT]
-> このアドインでカテゴリマスターリストを管理するには、マニフェスト内のノードをに設定する必要があり `Permissions` `ReadWriteMailbox` ます。
+> アドインがカテゴリ マスター リストを管理するには、マニフェストのノードをに `Permissions` 設定する必要があります `ReadWriteMailbox` 。
 
-### <a name="add-master-categories"></a>マスターカテゴリを追加する
+### <a name="add-master-categories"></a>マスター カテゴリの追加
 
-次の例は、"至急!" という名前の分類項目を追加する方法を示しています。 をマスターリストに追加するには、[メールボックス. masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)で[addasync](/javascript/api/outlook/office.mastercategories#addasync-categories--options--callback-)を呼び出します。
+次の例は、"Urgent! " という名前のカテゴリを追加する方法を示しています。 mailbox.masterCategories [で addAsync](/javascript/api/outlook/office.mastercategories#addAsync_categories__options__callback_) を呼び出して [マスター リストに移動します](/javascript/api/outlook/office.mailbox#masterCategories)。
 
 ```js
 var masterCategoriesToAdd = [
@@ -45,9 +45,9 @@ Office.context.mailbox.masterCategories.addAsync(masterCategoriesToAdd, function
 });
 ```
 
-### <a name="get-master-categories"></a>マスターカテゴリを取得する
+### <a name="get-master-categories"></a>マスター カテゴリの取得
 
-次の例は、 [getAsync](/javascript/api/outlook/office.mastercategories#getasync-options--callback-)の[メールボックス. mastercategories](/javascript/api/outlook/office.mailbox#mastercategories)で、カテゴリの一覧を取得する方法を示しています。
+次の例は[、mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories)で[getAsync](/javascript/api/outlook/office.mastercategories#getAsync_options__callback_)を呼び出してカテゴリの一覧を取得する方法を示しています。
 
 ```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
@@ -63,9 +63,9 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 });
 ```
 
-### <a name="remove-master-categories"></a>マスターシェイプカテゴリを削除する
+### <a name="remove-master-categories"></a>マスター カテゴリの削除
 
-次の例は、"至急!" という名前の分類項目を削除する方法を示しています。 マスターリストから、RemoveAsync[カテゴリ](/javascript/api/outlook/office.mailbox#mastercategories)で [ [removeAsync](/javascript/api/outlook/office.mastercategories#removeasync-categories--options--callback-) ] を呼び出します。
+次の例は、"Urgent! " という名前のカテゴリを削除する方法を示しています。 mailbox.masterCategories [で removeAsync](/javascript/api/outlook/office.mastercategories#removeAsync_categories__options__callback_) を呼び出して [マスター リストから取得します](/javascript/api/outlook/office.mailbox#masterCategories)。
 
 ```js
 var masterCategoriesToRemove = ["Urgent!"];
@@ -79,18 +79,18 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 });
 ```
 
-## <a name="manage-categories-on-a-message-or-appointment"></a>メッセージまたは予定の分類項目を管理する
+## <a name="manage-categories-on-a-message-or-appointment"></a>メッセージまたは予定のカテゴリを管理する
 
-API を使用して、メッセージアイテムまたは予定アイテムの分類項目の追加、取得、削除を行うことができます。
+API を使用して、メッセージまたは予定アイテムのカテゴリを追加、取得、および削除できます。
 
 > [!IMPORTANT]
-> メールボックスのマスターリストにあるカテゴリのみが、メッセージまたは予定に適用できます。 詳細については、前のセクション「[マスターリストでカテゴリを管理](#manage-categories-in-the-master-list)する」を参照してください。
+> メッセージまたは予定に適用できるのは、メールボックスのマスター リスト内のカテゴリのみです。 詳細については、前の [セクション「マスター リストのカテゴリを管理する](#manage-categories-in-the-master-list) 」を参照してください。
 >
-> Web 上の Outlook では、API を使用してメッセージのカテゴリを閲覧モードで管理することはできません。
+> このOutlook on the web、API を使用して、読み取りモードでメッセージのカテゴリを管理することはできません。
 
-### <a name="add-categories-to-an-item"></a>アイテムに分類項目を追加する
+### <a name="add-categories-to-an-item"></a>アイテムにカテゴリを追加する
 
-次の例は、"至急!" という名前の分類項目を適用する方法を示しています。 で[Addasync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-)を呼び出して、現在のアイテムに追加 `item.categories` します。
+次の例は、"Urgent! " という名前のカテゴリを適用する方法を示しています。 addAsync on を呼び [出して現在のアイテムに](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) アクセスします `item.categories` 。
 
 ```js
 var categoriesToAdd = ["Urgent!"];
@@ -106,7 +106,7 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 
 ### <a name="get-an-items-categories"></a>アイテムのカテゴリを取得する
 
-次の例は、 [getAsync](/javascript/api/outlook/office.categories#getasync-options--callback-) on を呼び出すことによって、現在のアイテムに適用されているカテゴリを取得する方法を示して `item.categories` います。
+次の例は、getAsync on を呼び出して、現在のアイテムに適用される [カテゴリを取得する方法を示](/javascript/api/outlook/office.categories#getAsync_options__callback_) しています `item.categories` 。
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
@@ -124,7 +124,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 
 ### <a name="remove-categories-from-an-item"></a>アイテムからカテゴリを削除する
 
-次の例は、"至急!" という名前の分類項目を削除する方法を示しています。 現在のアイテムから[removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-) on を呼び出し `item.categories` ます。
+次の例は、"Urgent! " という名前のカテゴリを削除する方法を示しています。 を呼び出して、現在の [アイテムから removeAsync を呼び出](/javascript/api/outlook/office.categories#removeAsync_categories__options__callback_) します `item.categories` 。
 
 ```js
 var categoriesToRemove = ["Urgent!"];
@@ -140,5 +140,5 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 
 ## <a name="see-also"></a>関連項目
 
-- [Outlook のアクセス許可](understanding-outlook-add-in-permissions.md)
+- [Outlookアクセス許可](understanding-outlook-add-in-permissions.md)
 - [マニフェストの Permissions 要素](../reference/manifest/permissions.md)

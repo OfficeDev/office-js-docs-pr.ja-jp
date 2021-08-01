@@ -4,12 +4,12 @@ description: JavaScript API を使用して範囲の行または列をグルー�
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 960a394a1467ec1fe55ff8dbf7b0a3f39fd355a5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 87cbe9293dd0f4a30bf0ac717d1c80a3cd514c3c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075720"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671141"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>JavaScript API を使用してアウトラインExcelグループ化する
 
@@ -17,9 +17,9 @@ ms.locfileid: "53075720"
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>アウトラインの範囲の行または列をグループ化する
 
-範囲の行または列をグループ化してアウトラインを作成 [できます](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 これらのグループを折りたたみ、展開して、対応するセルを非表示にし、表示できます。 これにより、トップライン データの迅速な分析が容易になります。 [Range.group を使用して](/javascript/api/excel/excel.range#group-groupoption-)、これらのアウトライン グループを作成します。
+範囲の行または列をグループ化してアウトラインを作成 [できます](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 これらのグループを折りたたみ、展開して、対応するセルを非表示にし、表示できます。 これにより、トップライン データの迅速な分析が容易になります。 [Range.group を使用して](/javascript/api/excel/excel.range#group_groupOption_)、これらのアウトライン グループを作成します。
 
-アウトラインには階層を含め、小さなグループは大きなグループの下に入れ子にできます。 これにより、アウトラインをさまざまなレベルで表示できます。 表示されるアウトライン レベルを変更するには [、Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) メソッドを使用してプログラムを使用します。 ただし、Excelは 8 つのレベルのアウトライン グループのみをサポートしています。
+アウトラインには階層を含め、小さなグループは大きなグループの下に入れ子にできます。 これにより、アウトラインをさまざまなレベルで表示できます。 表示されるアウトライン レベルを変更するには [、Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) メソッドを使用してプログラムを使用します。 ただし、Excelは 8 つのレベルのアウトライン グループのみをサポートしています。
 
 次のコード サンプルでは、行と列の両方に 2 つのレベルのグループを含むアウトラインを作成します。 次の図は、そのアウトラインのグループ化を示しています。 コード サンプルでは、グループ化されている範囲にアウトライン コントロールの行または列 (この例の "Totals") は含めされません。 グループは、コントロールの行または列ではなく、折りたたむものを定義します。
 
@@ -53,7 +53,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-grouping-from-rows-or-columns-of-a-range"></a>範囲の行または列からグループ化を削除する
 
-行または列グループのグループ化を解除するには [、Range.ungroup メソッドを使用](/javascript/api/excel/excel.range#ungroup-groupoption-) します。 これにより、アウトラインから最も外側のレベルが削除されます。 同じ行または列の種類の複数のグループが指定した範囲内で同じレベルにある場合、それらのグループはすべてグループ化解除されます。
+行または列グループのグループ化を解除するには [、Range.ungroup メソッドを使用](/javascript/api/excel/excel.range#ungroup_groupOption_) します。 これにより、アウトラインから最も外側のレベルが削除されます。 同じ行または列の種類の複数のグループが指定した範囲内で同じレベルにある場合、それらのグループはすべてグループ化解除されます。
 
 ## <a name="see-also"></a>関連項目
 

@@ -4,12 +4,12 @@ description: 複数のアドインを使用した Image Coercion 要件セット
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 29614718378fd51013360a2a922e11f89bca14b8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350219"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671619"
 ---
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "53350219"
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 では、メソッドを使用してデータを書き込むときにイメージ ( `Office.CoercionType.Image` ) への変換が有効 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) です。 次のアプリケーションがサポートされています。
+ImageCoercion 1.1 では、メソッドを使用してデータを書き込むときにイメージ ( `Office.CoercionType.Image` ) への変換が有効 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) です。 次のアプリケーションがサポートされています。
 
 - Excel 2013 以降のWindows
 - Excel 2016以降の Mac
@@ -34,7 +34,7 @@ ImageCoercion 1.1 では、メソッドを使用してデータを書き込む�
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1.2 では、メソッドを使用してデータを書き込むときに SVG 形式 ( `Office.CoercionType.XmlSvg` ) に変換 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) できます。 次のアプリケーションがサポートされています。
+ImageCoercion 1.2 では、メソッドを使用してデータを書き込むときに SVG 形式 ( `Office.CoercionType.XmlSvg` ) に変換 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) できます。 次のアプリケーションがサポートされています。
 
 - ExcelオンWindows (サブスクリプションに接続Microsoft 365)
 - Excel Mac (サブスクリプションに接続Microsoft 365)

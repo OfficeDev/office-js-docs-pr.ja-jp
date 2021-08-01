@@ -3,12 +3,12 @@ title: Office アドイン開発のベスト プラクティス
 description: 開発時にベスト プラクティスを適用して、Officeを作成します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330081"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671311"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -77,7 +77,7 @@ ms.locfileid: "52330081"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- [Context.touchEnabled](/javascript/api/office/office.context#touchenabled)プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
+- [Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -91,7 +91,7 @@ ms.locfileid: "52330081"
 - [サイドロード](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)を使用して、アドインを実際のデバイスでテストしてください。
 
 > [!NOTE]
-> デザイン要素に[Fluent UI](../design/using-office-ui-fabric-react.md) Reactを使用している場合、これらの要素の多くはデザイン システムに組み込まれています。
+> デザイン要素に UI Fluent[を](../design/using-office-ui-fabric-react.md)React場合、これらの要素の多くはデザイン システムに組み込まれています。
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>アドインのパフォーマンスを最適化して監視する

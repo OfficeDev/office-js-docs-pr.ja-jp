@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.8
 description: アドイン API の要件セット 1.8 Outlook 1.8。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 31ea7af1bc2ac33df5f3d25828df3f783aae0569
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590961"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670266"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -48,7 +48,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods) が追加されました: 保存済みの予定またはメッセージ アイテムの ID を取得する新しい方法を追加します。
 - [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods) が追加されました: 予定やメッセージ アイテムの sharedProperties を表すオブジェクトを取得する新しい方法を追加します。
 - [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいプロパティを追加します。 新規作成モードのみです。
-- [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-) が変更されました: 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション `options` パラメーターを追加します 。 この値は、イベントの実行をキャンセルするために使用されます。
+- [Event.completed](/javascript/api/office/office.addincommands.event#completed_options_) が変更されました: 1 つの有効な値 `allowEvent` を持つディクショナリである、新しいオプション `options` パラメーターを追加します 。 この値は、イベントの実行をキャンセルするために使用されます。
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true) が追加されました: 添付ファイルのコンテンツに適用される書式を特定する新しい列挙型を追加します。
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true) が追加されました: アイテムから添付ファイルが追加されたか、または削除されたかどうかを特定する新しい列挙型を追加します。
 - [Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true) が追加されました: カテゴリに関連付ける使用可能な色を指定する新しい列挙を追加します。

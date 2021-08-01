@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349257"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671402"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -103,7 +103,7 @@ ms.locfileid: "53349257"
     ```
 
 1. この例を続行するには、最初 `'SHOWTASKPANE'` のパラメーターとして使用します。
-1. 関数の本文では[、Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--)メソッドを使用してアドインの作業ウィンドウを開きます。 完了したら、コードは次のようになります。
+1. 関数の本文では[、Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)メソッドを使用してアドインの作業ウィンドウを開きます。 完了したら、コードは次のようになります。
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ ms.locfileid: "53349257"
     });
     ```
 
-1. 2 番目の関数呼び出しを追加して、アクション `Office.actions.associate` `HIDETASKPANE` を[Office.addin.hide を](/javascript/api/office/office.addin#hide--)呼び出す関数にマップします。 次に例を示します。
+1. 2 番目の関数呼び出しを追加して、アクション `Office.actions.associate` `HIDETASKPANE` を[Office.addin.hide を](/javascript/api/office/office.addin#hide__)呼び出す関数にマップします。 次に例を示します。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {

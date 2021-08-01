@@ -1,33 +1,33 @@
 ---
-title: マニフェストファイルの ExtendedPermission 要素
-description: アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。
+title: マニフェスト ファイルの ExtendedPermission 要素
+description: アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 37859350cfaffdc14ab91d5026d67aa0a736ac56
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626401"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671759"
 ---
-# <a name="extendedpermission-element"></a>`ExtendedPermission` 項目
+# <a name="extendedpermission-element"></a>`ExtendedPermission` 要素
 
-アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。 `ExtendedPermission`要素は、 [extendedpermissions](extendedpermissions.md)の子要素です。
+アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。 要素 `ExtendedPermission` は [ExtendedPermissions の子要素です](extendedpermissions.md)。
 
 > [!IMPORTANT]
-> この要素のサポートは、要件セット1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この要素のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
-## <a name="available-extended-permissions"></a>利用可能な拡張アクセス許可
+## <a name="available-extended-permissions"></a>使用可能な拡張アクセス許可
 
 使用可能な値は次のとおりです。
 
-|利用可能な値|説明|Hosts|
+|使用可能な値|説明|Hosts|
 |---|---|---|
-|`AppendOnSend`|アドインが [Office. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) API を使用していることを宣言します。|Outlook|
+|`AppendOnSend`|アドインがアプリケーション を使用[Office。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_) API。|Outlook|
 
 ## <a name="extendedpermission-example"></a>`ExtendedPermission` 例
 
-要素の例を次に示し `ExtendedPermission` ます。
+次に、要素の例を示 `ExtendedPermission` します。
 
 ```XML
 ...

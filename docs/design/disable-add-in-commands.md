@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: d11b5c188da971f18969ff0abe9787021fad6bf1
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1836d84a387afbef415dddd305adcb4eb7687552
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536012"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671409"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -79,7 +79,7 @@ ms.locfileid: "53536012"
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
 1. (1) コマンドとその親グループとタブをマニフェストで宣言された名前の ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。および (2) は、コマンドの有効または無効の状態を指定します。
-2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) メソッドに渡します。
+2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) メソッドに渡します。
 
 次に簡単な例を示します。 マニフェストから "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" がコピーされます。
 

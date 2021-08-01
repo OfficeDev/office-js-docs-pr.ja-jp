@@ -3,12 +3,12 @@ title: Office のホストと API の要件を指定する
 description: アドインが期待Office動作するアプリケーションと API 要件を指定する方法について説明します。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075965"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671183"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -135,7 +135,7 @@ ms.locfileid: "53075965"
 
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>JavaScript コードでランタイム チェックを使用する
 
-特定の要件セットがアプリケーションでサポートされている場合は、アドインに追加の機能を提供Officeがあります。 たとえば、アドインで Word 2016 を実行する場合、既存のアドインで Word JavaScript API を使用することがあります。 その場合、要件セットの名前を指定し、[isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) メソッドを使用します。 `isSetSupported`実行時に、アドインを実行Officeアプリケーションが要件セットをサポートするかどうかを判断します。 要件セットがサポートされている場合は、true を返し、その要件セットの API メンバーを使用する追加のコード `isSetSupported` を実行します。  アプリケーションがOfficeが要件セットをサポートしない場合 `isSetSupported` **、false** を返し、追加のコードは実行されません。 次のコードは `isSetSupported` と共に使用する構文を示しています。
+特定の要件セットがアプリケーションでサポートされている場合は、アドインに追加の機能を提供Officeがあります。 たとえば、アドインで Word 2016 を実行する場合、既存のアドインで Word JavaScript API を使用することがあります。 その場合、要件セットの名前を指定し、[isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) メソッドを使用します。 `isSetSupported`実行時に、アドインを実行Officeアプリケーションが要件セットをサポートするかどうかを判断します。 要件セットがサポートされている場合は、true を返し、その要件セットの API メンバーを使用する追加のコード `isSetSupported` を実行します。  アプリケーションがOfficeが要件セットをサポートしない場合 `isSetSupported` **、false** を返し、追加のコードは実行されません。 次のコードは `isSetSupported` と共に使用する構文を示しています。
 
 ```js
 if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))

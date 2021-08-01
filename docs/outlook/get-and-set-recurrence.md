@@ -3,19 +3,19 @@ title: Outlook アドインで定期的なアイテムを取得して設定す�
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 47f805dff855cec4e6a6cfd2792a86179fac48f9
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803745"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670315"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
-毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 Office JavaScript API を使用して、アドイン内の定期的な予定のパターンを管理することができます。
+毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 JavaScript API Officeを使用して、アドイン内の予定シリーズの定期的なパターンを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="available-recurrence-patterns"></a>使用可能な定期的なパターン
 
@@ -27,9 +27,9 @@ ms.locfileid: "46803745"
 |---|---|---|
 |`daily`|-&nbsp;[`interval`][interval link]|*interval* 日に一度、予定が発生する。 例: 予定が **_2 日_** おきに発生する。|
 |`weekday`|なし。|予定が平日に毎日発生する。|
-|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_ **か月に一度、**_5_ **日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
-|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が** _2_ **週間に一度、**_火曜日_と_木曜日_** に発生する。|
-|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の**_最初_** の**_木曜日_** に発生する。|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_** か月に一度、**_5_** 日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が **_2_** 週間に一度、**_火曜日_ と _木曜日_** に発生する。|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の **_最初_** の **_木曜日_** に発生する。|
 
 > [!NOTE]
 >  の定期的なパターンで [`firstDayOfWeek`][firstDayOfWeek link]`weekly` プロパティを使用することもできます。 指定された日は定期的なアイテムのダイアログに表示された日にちのリストを開始させます。
@@ -42,12 +42,12 @@ ms.locfileid: "46803745"
 
 |予定の状態|編集可能な定期的なアイテムですか。|表示可能な定期的なアイテムですか。|
 |---|---|---|
-|予定の開催者 - 定期的な予定を作成する|はい ([`setAsync`][setAsync link])|はい ([`getAsync`][getAsync link])|
-|予定の開催者 - インスタンスを作成する|いいえ (`setAsync` がエラーを返します)|はい ([`getAsync`][getAsync link])|
-|予定の出席者 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
-|予定の出席者 - インスタンスを読む|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
-|会議出席依頼 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
-|会議出席依頼 - インスタンスを確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
+|予定の開催者 - 定期的な予定を作成する|はい ( [`setAsync`][setAsync link] )|はい ( [`getAsync`][getAsync link] )|
+|予定の開催者 - インスタンスを作成する|いいえ (`setAsync` がエラーを返します)|はい ( [`getAsync`][getAsync link] )|
+|予定の出席者 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
+|予定の出席者 - インスタンスを読む|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
+|会議出席依頼 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
+|会議出席依頼 - インスタンスを確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
 
 ## <a name="set-recurrence-as-the-organizer"></a>定期的なアイテムを開催者として設定する
 
@@ -76,9 +76,9 @@ function callback(asyncResult)
 }
 ```
 
-## <a name="change-recurrence-as-the-organizer"></a>開催者として定期的なアイテムを変更する
+## <a name="change-recurrence-as-the-organizer"></a>開催者として定期的に変更する
 
-次の例では、作成モードでは、予定の開催者が一連の定期的な予定またはその系列のインスタンスを指定して、定期的な予定のオブジェクトを取得し、新しい定期的なアイテムの期間を設定します。
+次の例では、作成モードでは、予定オーガナイザーは、その系列またはその系列のインスタンスを指定して予定シリーズの定期的なオブジェクトを取得し、新しい定期的な期間を設定します。
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -200,16 +200,16 @@ var recurrenceType = recurrence.recurrenceType;
 
 [RecurrenceChanged イベント](/javascript/api/office/office.eventtype)
 
-[getAsync link]: /javascript/api/outlook/office.recurrence#getasync-options--callback-
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setasync-recurrencepattern--options--callback-
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayofmonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayofweek
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
 [days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstdayofweek
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
 [interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
 [month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weeknumber
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
 
 [SeriesTime link]: /javascript/api/outlook/office.seriestime

@@ -3,12 +3,12 @@ title: Office アドインのリソースの制限とパフォーマンスの最
 description: CPU とメモリを含む、Officeプラットフォームのリソース制限について説明します。
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: d19e171bb9dc84335631ed66d153541141ce3377
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349120"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671276"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -126,7 +126,7 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 メソッド `untrack()` は、メモリからオブジェクトを解放します。 このメソッドは、多くのアプリケーション固有の API プロキシ オブジェクトに実装されています。 オブジェクトを使用してアドインを実行した後に呼び出す場合は、多数のプロキシ オブジェクトを使用する場合に顕著なパフォーマンス上の利点 `untrack()` が得られる必要があります。
 
 > [!NOTE]
-> `Range.untrack()` は、[ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-) のショートカットです。 プロキシ オブジェクトは、コンテキスト内の追跡対象オブジェクト リストから削除することで追跡解除できます。
+> `Range.untrack()` は、[ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_) のショートカットです。 プロキシ オブジェクトは、コンテキスト内の追跡対象オブジェクト リストから削除することで追跡解除できます。
 
 次のExcelコード サンプルは、一度に 1 つのセルであるデータで選択した範囲を塗りつぶしします。 セルに値が追加されると、そのセルを表している範囲の追跡が解除されます。 10,000 から 20,000 個のセルの範囲を選択して、このコードを実行します。最初の実行では `cell.untrack()` の行を使用し、その後でこの行を削除して実行します。 `cell.untrack()` の行がないコードよりも、この行があるコードの方が高速になることがわかります。 また、クリーンアップの手順にかかる時間が短くなるため、その後の応答時間も速くなることがわかります。
 

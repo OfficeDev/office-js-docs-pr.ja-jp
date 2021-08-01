@@ -3,40 +3,40 @@ title: アドインで予定の場所を取得または設定する
 description: Outlook アドインで予定の場所を取得または設定する方法について説明します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 79cf5ebe029d2b95b1501b6f9066a2c8f9013ef3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609184"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671836"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
-Office JavaScript API には、ユーザーが作成している予定の場所を管理するためのプロパティとメソッドが用意されています。 現時点では、予定の場所を提供するプロパティは2つあります。
+JavaScript API Officeには、ユーザーが作成している予定の場所を管理するためのプロパティとメソッドが提供されています。 現在、予定の場所を提供する 2 つのプロパティがあります。
 
-- [アイテムの場所](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所の取得と設定を可能にする基本 API。
-- [enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる拡張 API。また、[場所の種類](/javascript/api/outlook/office.mailboxenums.locationtype)を指定することもできます。 この型は `LocationType.Custom` 、を使用して場所を設定する場合に使用し `item.location` ます。
+- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる基本 API。
+- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる拡張 API、および場所の種類の指定が [含まれます](/javascript/api/outlook/office.mailboxenums.locationtype)。 この型は、 `LocationType.Custom` を使用して場所を設定した場合です `item.location` 。
 
-次の表に、使用可能な場所の Api とモード (つまり、作成または読み取り) を示します。
+次の表に、場所 API と、使用可能なモード (新規作成または読み取り) の一覧を示します。
 
 | API | 適用可能な予定モード |
 |---|---|
-| [アイテムの場所](/javascript/api/outlook/office.appointmentread#location) | 出席者/閲覧 |
-| [getAsync](/javascript/api/outlook/office.location#getasync-options--callback-) | 開催者/新規作成 |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setasync-location--options--callback-) | 開催者/新規作成 |
-| [enhancedLocation。 getAsync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-) | 開催者/新規作成<br>出席者/閲覧 |
-| [enhancedLocation。 addAsync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-) | 開催者/新規作成 |
-| [enhancedLocation。 removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-) | 開催者/新規作成 |
+| [item.location](/javascript/api/outlook/office.appointmentread#location) | 出席者/読み取り |
+| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | オーガナイザー/作成 |
+| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | オーガナイザー/作成 |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | オーガナイザー/作成、<br>出席者/読み取り |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | オーガナイザー/作成 |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | オーガナイザー/作成 |
 
-アドインの作成にのみ使用できるメソッドを使用するには、アドインマニフェストを構成して、オーガナイザー/新規作成モードでアドインをアクティブにします。 詳細については、「[新規フォーム用の Outlook アドインを作成](compose-scenario.md)する」を参照してください。
+アドインの作成にのみ使用できるメソッドを使用するには、オーガナイザー/作成モードでアドインをアクティブ化するアドイン マニフェストを構成します。 詳細[についてはOutlook作成](compose-scenario.md)フォームのアドインを作成するを参照してください。
 
-## <a name="use-the-enhancedlocation-api"></a>API を使用する `enhancedLocation`
+## <a name="use-the-enhancedlocation-api"></a>API を使用 `enhancedLocation` する
 
-API を使用し `enhancedLocation` て、予定の場所を取得および設定できます。 Location フィールドには複数の場所がサポートされており、それぞれの場所について、表示名、種類、および会議室の電子メールアドレスを設定できます (該当する場合)。 サポートされる場所の種類については、 [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)を参照してください。
+API を使用して `enhancedLocation` 、予定の場所を取得および設定できます。 場所フィールドは複数の場所をサポートし、場所ごとに表示名、種類、および会議室の電子メール アドレスを設定できます (該当する場合)。 サポートされている [場所の種類については、「LocationType」](/javascript/api/outlook/office.mailboxenums.locationtype) を参照してください。
 
 ### <a name="add-location"></a>場所の追加
 
-次の例は、 [enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation)で[addasync](/javascript/api/outlook/office.enhancedlocation#addasync-locationidentifiers--options--callback-)を呼び出すことによって場所を追加する方法を示しています。
+次の例は、mailbox.item.enhancedLocation で [addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) を呼び出して場所 [を追加する方法を示しています](/javascript/api/outlook/office.appointmentcompose#enhancedLocation)。
 
 ```js
 var item;
@@ -60,7 +60,7 @@ Office.initialize = function () {
 
 ### <a name="get-location"></a>場所を取得する
 
-次の例は、 [enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedlocation)で[getAsync](/javascript/api/outlook/office.enhancedlocation#getasync-options--callback-)を呼び出すことによって場所を取得する方法を示しています。
+次の例は、mailbox.item.enhancedLocation で [getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) を呼び出して場所 [を取得する方法を示しています](/javascript/api/outlook/office.appointmentread#enhancedLocation)。
 
 ```js
 var item;
@@ -88,7 +88,7 @@ function callbackFunction(asyncResult) {
 
 ### <a name="remove-location"></a>場所を削除する
 
-次の例は、 [enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedlocation)で[removeAsync](/javascript/api/outlook/office.enhancedlocation#removeasync-locationidentifiers--options--callback-)を呼び出すことによって場所を削除する方法を示しています。
+次の例は [、mailbox.item.enhancedLocation で removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) を呼び出して場所 [を削除する方法を示しています](/javascript/api/outlook/office.appointmentcompose#enhancedLocation)。
 
 ```js
 var item;
@@ -111,15 +111,15 @@ function callbackFunction(asyncResult) {
 }
 ```
 
-## <a name="use-the-location-api"></a>API を使用する `location`
+## <a name="use-the-location-api"></a>API を使用 `location` する
 
-API を使用し `location` て、予定の場所を取得および設定できます。
+API を使用して `location` 、予定の場所を取得および設定できます。
 
 ### <a name="get-the-location"></a>場所を取得する
 
 ここでは、ユーザーが新規作成している予定の配置場所を取得し、それを表示するコード サンプルを示します。
 
-`item.location.getAsync` を使用するためには、非同期呼び出しの状態と結果を確認するコールバック メソッドを提供します。 オプション パラメーターである `asyncContext` を通して、コールバック メソッドに必要な引数を提供できます。 コールバックの出力パラメーターを使用して、状態、結果、およびエラーを取得でき `asyncResult` ます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティを使用して、配置場所を文字列として取得することができます。
+`item.location.getAsync` を使用するためには、非同期呼び出しの状態と結果を確認するコールバック メソッドを提供します。 オプション パラメーターである `asyncContext` を通して、コールバック メソッドに必要な引数を提供できます。 コールバックの出力パラメーターを使用して、状態、結果、およびエラー `asyncResult` を取得できます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティを使用して、配置場所を文字列として取得することができます。
 
 ```js
 var item;
@@ -158,10 +158,10 @@ function write(message){
 
 ここでは、ユーザーが新規作成している予定の配置場所を設定するコード サンプルを示します。
 
-`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 オプションとして、`asyncContext` パラメーターで、コールバック メソッドとそれに必要な引数を提供することができます。 コールバックの出力パラメーターで、状態、結果、およびエラーメッセージを確認する必要があり `asyncResult` ます。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
+`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 オプションとして、`asyncContext` パラメーターで、コールバック メソッドとそれに必要な引数を提供することができます。 コールバックの出力パラメーターで、状態、結果、および `asyncResult` エラー メッセージを確認する必要があります。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
 
 > [!NOTE]
-> 区切り文字としてセミコロンを使用して、複数の場所を設定できます (たとえば、「会議室 A;」など)。会議室 B ')。
+> 区切り記号としてセミコロンを使用して複数の場所を設定できます (例: '会議室 A;会議室 B')。
 
 ```js
 var item;
@@ -201,5 +201,5 @@ function write(message){
 
 ## <a name="see-also"></a>関連項目
 
-- [最初の Outlook アドインを作成する](../quickstarts/outlook-quickstart.md)
+- [最初のアドインOutlook作成する](../quickstarts/outlook-quickstart.md)
 - [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)

@@ -4,12 +4,12 @@ description: JavaScript API の Excelを使用して、数式の前例と依存�
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: f114cc274358216cffaa55015e09afa38fa4e959
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290776"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671479"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 
@@ -21,7 +21,7 @@ Excelは、多くの場合、他のセルを参照します。 これらのク�
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>数式の直接の前例を取得する
 
-[Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--)を使用して数式の直接の先行セルを検索します。 `Range.getDirectPrecedents` オブジェクトを返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての直接の前例のアドレスが含まれます。 このオブジェクトには、少なくとも 1 つの数式の前例を含 `RangeAreas` むワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「複数の範囲を同時に操作する」を参照Excel `RangeAreas` [アドインを参照してください](excel-add-ins-multiple-ranges.md)。
+[Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__)を使用して数式の直接の先行セルを検索します。 `Range.getDirectPrecedents` オブジェクトを返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての直接の前例のアドレスが含まれます。 このオブジェクトには、少なくとも 1 つの数式の前例を含 `RangeAreas` むワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「複数の範囲を同時に操作する」を参照Excel `RangeAreas` [アドインを参照してください](excel-add-ins-multiple-ranges.md)。
 
 次のスクリーンショットは、UI の [前例のトレース] ボタンを選択した結果Excel示しています。 このボタンは、前のセルから選択したセルに矢印を描画します。 選択したセル **E3** には数式 "=C3 * D3" が含まれているので **、C3** と **D3** の両方が先行セルです。 UI ボタンExcel異なり、 `getDirectPrecedents` メソッドは矢印を描画しない。
 

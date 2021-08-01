@@ -3,12 +3,12 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: 辞書作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2d79a40511d28cdf5d11c33435703009b1793dc2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077226"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671661"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -531,9 +531,9 @@ a:hover, a:active
 
 - アドイン [コンテキスト](/javascript/api/office) が初期化されると発生し、アドインが操作しているドキュメントを表す `Office` [Document](/javascript/api/office/office.document) オブジェクト インスタンスへのアクセスを提供するオブジェクトの initialize イベント。
     
-- オブジェクト [の addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) メソッドは、ユーザーの選択の変更をリッスンするドキュメントの `Document` `initialize` [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加するために関数で呼び出されます。
+- オブジェクト [の addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) メソッドは、ユーザーの選択の変更をリッスンするドキュメントの `Document` `initialize` [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加するために関数で呼び出されます。
     
-- オブジェクト[の getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-)メソッドは、イベント ハンドラーが発生してユーザーが選択した単語または語句を取得し、プレーン テキストに設定し、非同期コールバック関数を実行するときに呼び出されます。 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback`
+- オブジェクト[の getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)メソッドは、イベント ハンドラーが発生してユーザーが選択した単語または語句を取得し、プレーン テキストに設定し、非同期コールバック関数を実行するときに呼び出されます。 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback`
     
 - メソッドのコールバック引数として渡される非同期コールバック関数が実行される場合、コールバックが返されたときに選択したテキストの値 `selectTextCallback`  `getSelectedDataAsync` を取得します。 返されるオブジェクトの value プロパティを使用して、コールバックの _selectedText_ 引数 [(AsyncResult](/javascript/api/office/office.asyncresult)型) からその値を取得 [](/javascript/api/office/office.asyncresult#status) `AsyncResult` します。
     

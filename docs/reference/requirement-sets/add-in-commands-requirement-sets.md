@@ -1,15 +1,15 @@
 ---
 title: アドイン コマンドの要件セット
-description: Office アドインコマンドの要件セットの概要。
+description: アドイン コマンドOfficeセットの概要。
 ms.date: 11/01/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 08fcb5df0e614e9b9f3ec9479fc958cc79adf320
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087960"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671668"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
@@ -17,27 +17,27 @@ ms.locfileid: "49087960"
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。詳細については、「[Excel、Word および PowerPoint のアドイン コマンド](../../design/add-in-commands.md)」と「[Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
-アドインコマンドの最初のリリースには、対応する要件セットがありません (つまり、AddinCommands 1.0 の要件セットはありません)。 次の表に、最初のリリースバージョンをサポートする Office クライアントアプリケーションと、それらのアプリケーションのビルドバージョンまたはバージョン番号を示します。  
+アドイン コマンドの最初のリリースには、対応する要件セットが含まれています (つまり、AddinCommands 1.0 要件セットは存在しない)。 次の表に、Officeバージョンをサポートするクライアント アプリケーションと、それらのアプリケーションのビルド バージョンまたは番号を示します。  
 
 | リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | アドイン コマンド (初期リリース、要件設定なし) | N/A | 16.0.4678.1000 *Outlook でのみサポートされています* | バージョン 1809 (ビルド 10827.20150) 以降 |バージョン 1603 (ビルド 6769.0000) 以降 | 該当なし | 15.33 以降| 2016 年 1 月 |
 
-**1.1** のアドインコマンドの要件セットには、[ドキュメントを使用して作業ウィンドウを autoopen](../../develop/automatically-open-a-task-pane-with-a-document.md)にする機能が導入されています。
+アドイン コマンド **1.1 要件** セットでは、ドキュメントを含む作業ウィンドウを自動開く [機能が導入されています](../../develop/automatically-open-a-task-pane-with-a-document.md)。
 
-「アドインコマンド **1.3** の要件セット」では、アドインを使用して office リボンのカスタムタブの配置をカスタマイズしたり、組み込みの office リボンコントロールをカスタムコントロールグループに挿入したりするためのマニフェストマークアップについて説明します。
+アドイン コマンド **1.3** 要件セットでは、マニフェスト マークアップが導入され、アドインは Office リボン上のカスタム タブの配置をカスタマイズし、組み込みの Office リボン コントロールをカスタム コントロール グループに挿入できます。
 
-次の表に、アドインコマンドの要件セット、その要件セットをサポートする Office クライアントアプリケーション、Office アプリケーションのビルド番号またはバージョン番号を示します。
+次の表に、アドイン コマンドの要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
 |  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A | N/A  | N/A | 近日公開 | N/A | 近日公開 | 2020 年 11 月 |
+| AddinCommands 1.3  | 該当なし | 該当なし  | 該当なし | 近日公開 | 該当なし | 近日公開 | 2020 年 11 月 |
 | AddInCommands 1.1  | N/A | 16.0.4678.1000 *Outlook でのみサポートされています*  | バージョン 1809 (ビルド 10827.20150) 以降 | バージョン 1705 (ビルド 8121.1000) 以降 | N/A | 15.34 以降\*| 2017 年 5 月 |
 
->\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。
+>\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。
 
 > [!IMPORTANT]
-> AddinCommands 1.3 はプレビュー段階であり、 *web 上の PowerPoint でのみ使用でき* ます。 テストおよび開発環境でマークアップを試すことをお勧めします。 運用環境または業務上重要なドキュメント内では、プレビューマークアップを使用しないでください。
+> AddinCommands 1.3 はプレビュー中で、このページ *でのみPowerPoint on the web。* テスト環境と開発環境でのみマークアップを試することをお勧めします。 実稼働環境やビジネスクリティカルなドキュメント内でプレビュー マークアップを使用しない。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 

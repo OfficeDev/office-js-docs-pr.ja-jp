@@ -3,12 +3,12 @@ title: 共通 JavaScript API オブジェクト モデル
 description: JavaScript 共通 API Officeモデルの詳細
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 059bffe8743b14a305b0a72a3aa161f380098e95
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 513ee6070ab9b54f4ea31fc0efaea9b40bf153b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349799"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671204"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
@@ -24,7 +24,7 @@ OfficeJavaScript API を使用すると、クライアント アプリケーシ�
 
 たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/office/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトでは、contentLanguage プロパティと [displayLanguage](/javascript/api/office/office.context#displaylanguage)プロパティにアクセスして、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。 [](/javascript/api/office/office.context#contentlanguage) [roamingSettings](/javascript/api/office/office.context#roamingsettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingsettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトでは、contentLanguage プロパティと [displayLanguage](/javascript/api/office/office.context#displayLanguage)プロパティにアクセスして、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。 [](/javascript/api/office/office.context#contentLanguage) [roamingSettings](/javascript/api/office/office.context#roamingSettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingSettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 
 ## <a name="document-object"></a>Document オブジェクト
@@ -104,7 +104,7 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Bindings オブジェクトおよび Binding オブジェクトによるバインドの操作
 
 
-バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。 アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)、[addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)、または [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)) を呼び出すことによって、バインドを確立する必要があります。 バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。 バインドを作成すると、アドインに次の値が提供されます。
+バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。 アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)、[addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_)、または [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)) を呼び出すことによって、バインドを確立する必要があります。 バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。 バインドを作成すると、アドインに次の値が提供されます。
 
 
 - 表、範囲、またはテキスト (隣接する一連の文字) など、サポートされている Office アプリケーション全体に共通のデータ構造へのアクセスを許可します。
@@ -115,7 +115,7 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 
 また、バインドを確立すると、ドキュメントまたはスプレッドシートの特定の領域を範囲とする、データおよび選択範囲の変更イベントをサブスクライブできます。つまり、ドキュメントまたはスプレッドシート全体の全般的な変更ではなく、バインドされた領域内で発生する変更のみがアドインに通知されます。
 
-[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) メソッドまたは [Office.select](/javascript/api/office) メソッドを使用します。 `Bindings` [addFromSelectionAsync、addFromPromptAsync、addFromNamedItemAsync、](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-)[または releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-)[](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-)のいずれかのメソッドを使用して、新しいバインド[](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)を確立し、既存のバインドを削除できます。
+[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) メソッドまたは [Office.select](/javascript/api/office) メソッドを使用します。 `Bindings` [addFromSelectionAsync、addFromPromptAsync、addFromNamedItemAsync、](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)[または releaseByIdAsync](/javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_)[](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_)のいずれかのメソッドを使用して、新しいバインド[](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)を確立し、既存のバインドを削除できます。
 
 バインドを作成するときに  _bindingType_ パラメーターで指定するバインドには、次の `addFromSelectionAsync` 3 種類 `addFromPromptAsync` `addFromNamedItemAsync` があります。
 
@@ -129,7 +129,7 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 
 <br/>
 
-オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトのメソッド `Bindings` [(MatrixBinding、TableBinding、](/javascript/api/office/office.matrixbinding)[または TextBinding)](/javascript/api/office/office.textbinding)[](/javascript/api/office/office.tablebinding)を使用して、バインドのデータとプロパティを処理できます。 これら 3 つのオブジェクトはすべて、バインドされたデータを操作できるオブジェクトの [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) メソッドと [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) メソッド `Binding` を継承します。
+オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトのメソッド `Bindings` [(MatrixBinding、TableBinding、](/javascript/api/office/office.matrixbinding)[または TextBinding)](/javascript/api/office/office.textbinding)[](/javascript/api/office/office.tablebinding)を使用して、バインドのデータとプロパティを処理できます。 これら 3 つのオブジェクトはすべて、バインドされたデータを操作できるオブジェクトの [getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_) メソッドと [setDataAsync](/javascript/api/office/office.binding#setDataAsync_data__options__callback_) メソッド `Binding` を継承します。
 
 バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
@@ -147,7 +147,7 @@ API の [CustomXmlParts](/javascript/api/office/office.customxmlparts) オブジ
 
  **適用対象:** Word および PowerPoint の作業ウィンドウ アドイン
 
-[Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) メソッド、および [File](/javascript/api/office/office.file) オブジェクトと [Slice](/javascript/api/office/office.slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する](../word/get-the-whole-document-from-an-add-in-for-word.md)」を参照してください。
+[Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) メソッド、および [File](/javascript/api/office/office.file) オブジェクトと [Slice](/javascript/api/office/office.slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する](../word/get-the-whole-document-from-an-add-in-for-word.md)」を参照してください。
 
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト

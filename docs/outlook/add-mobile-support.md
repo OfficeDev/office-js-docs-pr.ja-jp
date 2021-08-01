@@ -3,12 +3,12 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661244"
+ms.locfileid: "53671850"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
@@ -80,7 +80,7 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 ### <a name="close-task-panes"></a>作業ウィンドウを閉じる
 
-Outlook Mobile では、作業ウィンドウが画面全体を占めるので、既定ではユーザーが作業ウィンドウを閉じてメッセージに戻る必要があります。シナリオが完成したら、[Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) メソッドを使用して作業ウィンドウを閉じることを検討してください。
+Outlook Mobile では、作業ウィンドウが画面全体を占めるので、既定ではユーザーが作業ウィンドウを閉じてメッセージに戻る必要があります。シナリオが完成したら、[Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) メソッドを使用して作業ウィンドウを閉じることを検討してください。
 
 ### <a name="compose-mode-and-appointments"></a>作成モードと予定
 

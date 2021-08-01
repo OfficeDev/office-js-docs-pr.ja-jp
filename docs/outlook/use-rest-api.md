@@ -3,12 +3,12 @@ title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 9f6642afcfae8efd54c4ade6165aa2a6823e3bd2
-ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2021
-ms.locfileid: "53315149"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671675"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
@@ -54,7 +54,7 @@ REST を経由して現在の項目を取得するには、REST 用に正しく�
 - その他の Outlook クライアントの場合、`Office.context.mailbox.item.itemId` によって返される値が EWS 用に設定された ID であり、[Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して変換する必要があります。
 - また、これを使用するには、Attachment ID を REST 用に形式設定された ID に変換する必要もあります。 ID を変換する必要がある理由は、EWS ID に URL セーフ以外の値が含まれている可能性があり、その場合は REST で問題が発生するためです。
 
-[Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostname) プロパティを確認することにより、アドインは読み込まれる Outlook クライアントを判別できます。
+[Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName) プロパティを確認することにより、アドインは読み込まれる Outlook クライアントを判別できます。
 
 ### <a name="example"></a>例
 

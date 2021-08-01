@@ -3,12 +3,12 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: c438aa538d47b31aa60f47a1f871822e9c73a9c9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ceed27cc5c0d479ac67a0497e78e971498365e6f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348910"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671773"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
@@ -44,7 +44,7 @@ ms.locfileid: "53348910"
 
 ### <a name="loading-roaming-settings"></a>ローミング設定の読み込み
 
-通常、メール アドインでは、[Office.initialize](/javascript/api/office#office-initialize-reason-) イベント ハンドラーでローミング設定を読み込みます。 次の JavaScript コード例は、既存のローミング設定を読み込み、customerName と **customerBalance** の 2 つの設定の値を取得する方法 **を示しています**。
+通常、メール アドインでは、[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベント ハンドラーでローミング設定を読み込みます。 次の JavaScript コード例は、既存のローミング設定を読み込み、customerName と **customerBalance** の 2 つの設定の値を取得する方法 **を示しています**。
 
 
 ```js
@@ -67,7 +67,7 @@ Office.initialize = function () {
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>ローミング設定の作成または割り当て
 
-前の例の続きで、次の JavaScript 関数 `setAddInSetting` は、[RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、[RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。
+前の例の続きで、次の JavaScript 関数 `setAddInSetting` は、[RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、[RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveAsync_callback_) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。
 
 このメソッドは、設定が存在しない場合に設定を作成し、指定した値 `set` に設定を割り当てる。 この `saveAsync` メソッドは、ローミング設定を非同期的に保存します。 このコード サンプルでは、コールバック メソッドを 、非同期呼び出しが終了したら、1 つのパラメーター `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` _asyncResult_ を使用して呼び出されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
 
@@ -92,7 +92,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>ローミング設定の削除
 
-さらに、前の例の続きで、次の JavaScript 関数  `removeAddInSetting` では、 [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove-name-) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に戻して保存する方法を示します。
+さらに、前の例の続きで、次の JavaScript 関数  `removeAddInSetting` では、 [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove_name_) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に戻して保存する方法を示します。
 
 
 ```js
@@ -112,13 +112,13 @@ function removeAddInSetting()
 
 [CustomProperties](/javascript/api/outlook/office.CustomProperties) オブジェクトを使用して、ユーザーのメールボックス内のアイテムに固有のデータを指定することもできます。たとえば、メール アドインで特定のメッセージを分類し、カスタム プロパティ `messageCategory` を使用してそのカテゴリのメモを付けることができます。または、メール アドインでメッセージ内の会議の提案から予定を作成した場合に、カスタム プロパティを使用してそれぞれの予定を追跡できます。これにより、ユーザーが再度そのメッセージを開いた場合に、メール アドインによってもう一度予定を作成するように提案されることはありません。
 
-ローミング設定と同様に、カスタム プロパティに対する変更は現在の Outlook セッションのプロパティのメモリ内コピーに格納されます。これらのカスタム プロパティが次のセッションで使用できるようにするには、[CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-)を使用します。
+ローミング設定と同様に、カスタム プロパティに対する変更は現在の Outlook セッションのプロパティのメモリ内コピーに格納されます。これらのカスタム プロパティが次のセッションで使用できるようにするには、[CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_)を使用します。
 
 これらのアドイン固有のアイテム固有のカスタム プロパティには、オブジェクトを使用してしかアクセス `CustomProperties` できます。 これらのプロパティは、Outlook オブジェクト モデルのカスタム、MAPI ベースの[UserProperties、](/office/vba/api/Outlook.UserProperties)および Exchange Web Services (EWS) の拡張プロパティとは異なります。 オブジェクト モデル `CustomProperties` 、EWS、または REST を使用Outlook直接アクセスすることはできません。 EWS または REST を使用してアクセスする方法については、「EWS または REST を使用してカスタム プロパティを取得する `CustomProperties` [」セクションを参照してください](#get-custom-properties-using-ews-or-rest)。
 
 ### <a name="using-custom-properties"></a>カスタム プロパティの使用
 
-カスタム プロパティを使用するには、まず [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出して読み込む必要があります方法です。 プロパティ バッグを作成したら、[set](/javascript/api/outlook/office.CustomProperties#set-name--value-) と [get](/javascript/api/outlook/office.CustomProperties) メソッドを使用してカスタム プロパティを追加し、取得できます。 プロパティ バッグで行った変更を保存するには、[saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-) メソッドを使用する必要があります。
+カスタム プロパティを使用するには、まず [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出して読み込む必要があります方法です。 プロパティ バッグを作成したら、[set](/javascript/api/outlook/office.customproperties#set_name__value_) と [get](/javascript/api/outlook/office.customproperties) メソッドを使用してカスタム プロパティを追加し、取得できます。 プロパティ バッグで行った変更を保存するには、[saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) メソッドを使用する必要があります。
 
 
  > [!NOTE]
@@ -133,7 +133,7 @@ function removeAddInSetting()
 この例には、次のメソッドが含まれています。
 
 
-- [Office.initialize](/javascript/api/office#office-initialize-reason-) -- アドインを初期化し、Exchange Server からカスタム プロパティ バッグを読み込みます。
+- [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- アドインを初期化し、Exchange Server からカスタム プロパティ バッグを読み込みます。
 
 - **customPropsCallback** -- サーバーから返されるカスタム プロパティ バッグを取得し、後で使用できるように保存します。
 

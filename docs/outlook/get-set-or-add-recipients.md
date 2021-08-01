@@ -3,17 +3,17 @@ title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: b679a61d1e326f0aed4018970d2dd77fc9cd4c25
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 23e523c773b90fc02ed68151ea3c0cc6641b94ee
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348518"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670252"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
 
-Office JavaScript API には、予定またはメッセージの作成形式で受信者を取得、設定、または追加する非同期メソッド[(Recipients.getAsync、Recipients.setAsync、](/javascript/api/outlook/office.Recipients#getasync-options--callback-)[または Recipients.addAsync)](/javascript/api/outlook/office.Recipients#addasync-recipients--options--callback-)が用意されています。 [](/javascript/api/outlook/office.Recipients#setasync-recipients--options--callback-) これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォームの[Outlook](compose-scenario.md)アドインの作成」で説明したように、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
+Office JavaScript API には、予定またはメッセージの作成形式で受信者を取得、設定、または追加する非同期メソッド[(Recipients.getAsync、Recipients.setAsync、](/javascript/api/outlook/office.recipients#getAsync_options__callback_)[または Recipients.addAsync)](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)が用意されています。 [](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_) これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォームの[Outlook](compose-scenario.md)アドインの作成」で説明したように、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
 
 予定やメッセージ内の受信者を表すプロパティの一部は、新規作成フォームと閲覧フォームで読み取りアクセスで使用できます。この種のプロパティには、予定の [optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) と [requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、メッセージの [cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) と [to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) が含まれます。
 

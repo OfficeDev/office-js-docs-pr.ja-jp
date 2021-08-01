@@ -3,12 +3,12 @@ title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f5fda91c4105d56dcf9d20d570e48851c8b6dfeb
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592057"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671262"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 
@@ -26,9 +26,9 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [LaunchEvent 拡張ポイントを追加しました](../../manifest/extensionpoint.md#launchevent): サポートされている新しい種類の ExtensionPoint を追加します。 イベント ベースのアクティブ化機能を構成します。
 - [LaunchEvents manifest 要素を追加](../../manifest/launchevents.md)しました: イベント ベースのアクティブ化機能の構成をサポートするマニフェスト要素を追加します。
 - 変更[されたランタイム マニフェスト要素](../../manifest/runtimes.md): サポートOutlook追加します。 イベント ベースのアクティブ化機能に必要な HTML ファイルと JavaScript ファイルを参照します。
-- [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setsignatureasync-data--options--callback-): オブジェクトに新しい関数を追加 `Body` しました。 作成モードでアイテム本文の署名を追加または置き換えます。
+- [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setSignatureAsync_data__options__callback_): オブジェクトに新しい関数を追加 `Body` しました。 作成モードでアイテム本文の署名を追加または置き換えます。
 - [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): 新規作成モードで送信側メールボックスのクライアント署名を無効にする新しい関数を追加しました。
-- [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getcomposetypeasync-options--callback-): 新規作成モードでメッセージの作成の種類を取得する新しい関数を追加しました。
+- [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): 新規作成モードでメッセージの作成の種類を取得する新しい関数を追加しました。
 - [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)を追加しました: 新規作成モードでアイテムでクライアント署名が有効になっているか確認する新しい関数を追加します。
 - 追加された[Office。MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype): 新しい列挙型を追加します。 通知メッセージのカスタム アクションの種類を表します。
 - [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): 新規作成モードで使用できる新しい列挙型を追加しました。

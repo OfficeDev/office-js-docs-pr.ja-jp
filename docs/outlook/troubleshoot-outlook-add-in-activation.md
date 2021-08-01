@@ -3,12 +3,12 @@ title: Outlook コンテキスト アドインのアクティブ化のトラブ�
 description: アドインが期待通りアクティブ化しない可能性がある理由。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348868"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671682"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
@@ -24,7 +24,7 @@ Outlookコンテキスト アドインのアクティブ化は、アドイン �
 
 - スクリプト デバッガー (たとえば、Internet Explorer に付属する JScript デバッガーなど) で Outlook on the web またはモバイル デバイス上のアドインをテストしている場合は、スクリプトの読み込み元を指定する **script** タグの **src** 属性を探します。このパスには、**owa/15.0.516.x/owa2/...** という部分文字列があります。この中の **15.0.516.x** が Exchange Server のバージョン (**15.0.516.2** など) を表します。
 
-- あるいは、[Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) プロパティを使用してバージョンを確認することもできます。Outlook on the web およびモバイル デバイス上で、このプロパティは Exchange Server のバージョンを返します。
+- あるいは、[Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) プロパティを使用してバージョンを確認することもできます。Outlook on the web およびモバイル デバイス上で、このプロパティは Exchange Server のバージョンを返します。
 
 - Outlook でアドインをテストできる場合は、次の単純なデバッグ手法を使用して、Outlook オブジェクト モデルと Visual Basic エディターを使用できます。
 

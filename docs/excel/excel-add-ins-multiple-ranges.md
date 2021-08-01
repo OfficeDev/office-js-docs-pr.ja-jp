@@ -3,12 +3,12 @@ title: Excel アドインで複数の範囲を同時に操作する
 description: JavaScript ライブラリExcelを使用して、複数の範囲で操作を実行し、プロパティを設定する方法について説明します。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349498"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671155"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 
@@ -79,7 +79,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 - `areas`: `RangeAreas` オブジェクトが表す全範囲を含む `RangeCollection` オブジェクト。 `RangeCollection` オブジェクトも新しいオブジェクトであり、他の Excel コレクション オブジェクトと類似しています。 これには、範囲を表す `Range` オブジェクトの配列である `items` プロパティがあります。
 - `areaCount`: `RangeAreas` で指定された範囲の合計数。
-- `getOffsetRangeAreas`: [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-) と同じように動作します。ただし、`RangeAreas` を返し、元の `RangeAreas` で指定された範囲の 1 つからの各オフセットである範囲を含みます。
+- `getOffsetRangeAreas`: [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_) と同じように動作します。ただし、`RangeAreas` を返し、元の `RangeAreas` で指定された範囲の 1 つからの各オフセットである範囲を含みます。
 
 ## <a name="create-rangeareas"></a>RangeAreas の作成
 

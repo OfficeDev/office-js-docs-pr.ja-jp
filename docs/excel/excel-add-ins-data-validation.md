@@ -3,12 +3,12 @@ title: Excel の範囲にデータの入力規則を追加する
 description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e1f5729e6e85ff8af92968c2ad65c19e655106e2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349526"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671162"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
@@ -210,7 +210,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-data-validation-from-a-range"></a>範囲からデータの入力規則を削除する
 
-範囲からデータの入力規則を削除するには、[Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--) メソッドを呼び出します。
+範囲からデータの入力規則を削除するには、[Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__) メソッドを呼び出します。
 
 ```js
 myrange.dataValidation.clear()

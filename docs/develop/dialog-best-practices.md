@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOfficeダイアログ API のルールとベスト プラクティスを提供します。
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 1f5162cd4071b2b37b973cdcd16614e9f448c208
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535984"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671218"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -25,9 +25,9 @@ ms.locfileid: "53535984"
 - [displayDialogAsync](/javascript/api/office/office.ui)メソッドに渡される URL は、アドイン自体とまったく同じドメインにある必要があります。 サブドメインにすることはできません。 ただし、そのページに渡されたページは、別のドメインのページにリダイレクトできます。
 - アドイン コマンドの作業ウィンドウまたは UI レス関数ファイルを使用[](../reference/manifest/functionfile.md)できるホスト ウィンドウでは、一度に開くことができるダイアログ ボックスは 1 つのみです。
 - ダイアログ ボックスOffice 2 つの API のみを呼び出します。
-  - [messageParent](/javascript/api/office/office.ui#messageparent-message-)関数。
+  - [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_)関数。
   - `Office.context.requirements.isSetSupported`(詳細については、「アプリケーションと[API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。
-- [messageParent 関数](/javascript/api/office/office.ui#messageparent-message-)は、通常、アドイン自体とまったく同じドメイン内のページから呼び出す必要がありますが、これは必須ではありません。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
+- [messageParent 関数](/javascript/api/office/office.ui#messageParent_message__messageOptions_)は、通常、アドイン自体とまったく同じドメイン内のページから呼び出す必要がありますが、これは必須ではありません。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 

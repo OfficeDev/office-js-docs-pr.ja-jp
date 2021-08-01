@@ -3,12 +3,12 @@ title: JavaScript API を使用して図形Excelする
 description: 図形をExcel図面レイヤーに配置するオブジェクトとして定義する方法についてExcel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: eeb6a1f76c839e4b550662b28b717bfd1bcca4e8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349449"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671472"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形Excelする
 
@@ -25,11 +25,11 @@ Excel図形は、図形の描画レイヤーに配置されるオブジェクト
 
 | Shape | Tabs.Add メソッド (Outlook フォーム スクリプト) | 署名 |
 |-------|------------|-----------|
-| ジオメトリック シェイプ | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| 画像 (JPEG または PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| Line | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
-| テキスト ボックス | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
+| ジオメトリック シェイプ | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addGeometricShape_geometricShapeType_) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| 画像 (JPEG または PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addImage_base64ImageString_) | `addImage(base64ImageString: string): Excel.Shape` |
+| Line | [addLine](/javascript/api/excel/excel.shapecollection#addLine_startLeft__startTop__endLeft__endTop__connectorType_) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addSvg_xml_) | `addSvg(xml: string): Excel.Shape` |
+| テキスト ボックス | [addTextBox](/javascript/api/excel/excel.shapecollection#addTextBox_text_) | `addTextBox(text?: string): Excel.Shape` |
 
 ### <a name="geometric-shapes"></a>幾何学的図形
 
@@ -214,7 +214,7 @@ Excel.run(function (context) {
 
 ## <a name="export-shapes-as-images"></a>図形をイメージとしてエクスポートする
 
-任意 `Shape` のオブジェクトをイメージに変換できます。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getasimage-format-) は base64 エンコードされた文字列を返します。 イメージの形式は、に渡される [PictureFormat](/javascript/api/excel/excel.pictureformat) 列挙型として指定されます `getAsImage` 。
+任意 `Shape` のオブジェクトをイメージに変換できます。 [Shape.getAsImage](/javascript/api/excel/excel.shape#getAsImage_format_) は base64 エンコードされた文字列を返します。 イメージの形式は、に渡される [PictureFormat](/javascript/api/excel/excel.pictureformat) 列挙型として指定されます `getAsImage` 。
 
 ```js
 Excel.run(function (context) {

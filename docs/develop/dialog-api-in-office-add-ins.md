@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: a8f3b6425dceaccbb50a56bfb7e05aafe061967d
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 46fa02281c9e13241496c617cad9738a71102370
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535977"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671353"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -89,7 +89,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - わかりやすくするために、このセクションでは、メッセージ ターゲットをホスト ページと呼び出しますが、厳密に言えば、メッセージは作業ウィンドウ (または関数ファイルをホストしている [ランタイム)](../reference/manifest/functionfile.md)の *JavaScript* ランタイムに移動します。 この違いは、クロスドメイン メッセージングの場合にのみ重要です。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](#cross-domain-messaging-to-the-host-runtime)。
 > - このダイアログ ボックスは、JavaScript API ライブラリがページに読み込まれOffice場合は、作業ウィンドウのホスト ページと通信できません。 (JavaScript API ライブラリOffice使用するページと同様に、ページのスクリプトはプロパティまたは呼び出しにメソッドを割り `Office.initialize` 当てる必要があります `Office.onReady` 。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。
 
-ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageparent-message-) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 次に例を示します。
+ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageParent_message__messageOptions_) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 次に例を示します。
 
 ```js
 if (loginSuccess) {
@@ -250,11 +250,11 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 
 ## <a name="pass-information-to-the-dialog-box"></a>情報をダイアログ ボックスに渡す
 
-アドインは、Dialog.messageChild[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)を使用して、ホスト ページからダイアログ ボックスに[メッセージを送信できます](/javascript/api/office/office.dialog#messagechild-message-)。
+アドインは、Dialog.messageChild[](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)を使用して、ホスト ページからダイアログ ボックスに[メッセージを送信できます](/javascript/api/office/office.dialog#messageChild_message__messageOptions_)。
 
 ### <a name="use-messagechild-from-the-host-page"></a>ホスト `messageChild()` ページから使用する
 
-ダイアログ ボックスを開Officeダイアログ API を呼び出す場合[、Dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) メソッドよりもスコープの大きい変数に割り当てる必要があります。 次に例を示します。
+ダイアログ ボックスを開Officeダイアログ API を呼び出す場合[、Dialog](/javascript/api/office/office.dialog)オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるので [、displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__callback_) メソッドよりもスコープの大きい変数に割り当てる必要があります。 次に例を示します。
 
 ```javascript
 var dialog;
@@ -273,7 +273,7 @@ function processMessage(arg) {
 }
 ```
 
-この `Dialog` オブジェクトには [messageChild メソッドが](/javascript/api/office/office.dialog#messagechild-message-) 含まれており、文字列化されたデータを含む任意の文字列をダイアログ ボックスに送信します。 これにより、ダイアログ ボックス `DialogParentMessageReceived` でイベントが発生します。 次のセクションに示すように、コードでこのイベントを処理する必要があります。
+この `Dialog` オブジェクトには [messageChild メソッドが](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) 含まれており、文字列化されたデータを含む任意の文字列をダイアログ ボックスに送信します。 これにより、ダイアログ ボックス `DialogParentMessageReceived` でイベントが発生します。 次のセクションに示すように、コードでこのイベントを処理する必要があります。
 
 ダイアログの UI が現在アクティブなワークシートに関連付け、他のワークシートを基準にしたワークシートの位置を示すシナリオを考えます。 次の例では、 `sheetPropertiesChanged` ワークシートExcelダイアログ ボックスに送信します。 この場合、現在のワークシートの名前は "My Sheet" で、ブックの 2 番目のシートです。 データはオブジェクトにカプセル化され、文字列化され、渡されます `messageChild` 。
 
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログ ボックスで DialogParentMessageReceived を処理する
 
-ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) します。 これは通常[、Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドで行われます。次に示すようにします。 (より堅牢な例を以下に示します。
+ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) します。 これは通常[、Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドで行われます。次に示すようにします。 (より堅牢な例を以下に示します。
 
 ```javascript
 Office.onReady()
