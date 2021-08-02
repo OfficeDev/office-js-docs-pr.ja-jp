@@ -5,24 +5,24 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740841"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671703"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
-PowerPoint アドインを使用して Windows、iPad、Mac、およびブラウザー上など、複数のプラットフォームでのユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。 次の 2 種類の PowerPoint アドインを作成できます。
+PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラットフォーム間、およびブラウザーで、ユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。次の 2 種類の PowerPoint アドインを作成できます。
 
-- **コンテンツ アドイン**を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/wa104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
+- **コンテンツ アドイン** を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/wa104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
-- **作業ウィンドウ アドイン**を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pexels - 無料ストックフォト](https://appsource.microsoft.com/product/office/wa104379997) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
+- **作業ウィンドウ アドイン** を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pexels - 無料ストックフォト](https://appsource.microsoft.com/product/office/wa104379997) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドインのシナリオ
 
-この記事で紹介するコード例では、PowerPoint のアドインの開発のための基本的なタスクをいくつか示します。 以下のことに注意してください。
+この記事で紹介するコード例では、PowerPoint のアドインの開発のための基本的なタスクをいくつか示します。次の点に注意してください。
 
 - 情報を表示するために、これらの例は `app.showNotification` 関数を使用します。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。 アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。
 
@@ -39,9 +39,9 @@ PowerPoint アドインを使用して Windows、iPad、Mac、およびブラウ
 
 コード サンプルは次のとおりです。
 
-- `getActiveFileView` 関数は [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) メソッドを呼び出します。
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) メソッドを呼び出します。
 
 
 ```js
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-次のコード サンプルでは、`getSelectedRange` 関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドを呼び出して、`asyncResult.value` によって返される JSON オブジェクトを取得します。このオブジェクトには、`slides` という名前の配列が含まれます。 `slides`slides 配列には、選択した範囲のスライド (複数のスライドが選択されていない場合は現在のスライド) の ID、タイトル、およびインデックスが含まれます。 また、選択範囲内の最初のスライド ID をグローバル変数に保存します。
+次のコード サンプルでは、`getSelectedRange` 関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) メソッドを呼び出して、`asyncResult.value` によって返される JSON オブジェクトを取得します。このオブジェクトには、`slides` という名前の配列が含まれます。 `slides`slides 配列には、選択した範囲のスライド (複数のスライドが選択されていない場合は現在のスライド) の ID、タイトル、およびインデックスが含まれます。 また、選択範囲内の最初のスライド ID をグローバル変数に保存します。
 
 ```js
 function getSelectedRange() {
@@ -109,7 +109,7 @@ function getSelectedRange() {
 }
 ```
 
-次のコード サンプルでは、`goToFirstSlide` 関数は [Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-) メソッドを呼び出して、前に示した `getSelectedRange` 関数で識別された最初のスライドに移動します。
+次のコード サンプルでは、`goToFirstSlide` 関数は [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) メソッドを呼び出して、前に示した `getSelectedRange` 関数で識別された最初のスライドに移動します。
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +148,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
-次のコード サンプルでは、`getFileUrl` 関数は [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+次のコード サンプルでは、`getFileUrl` 関数は [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
 ```js
 function getFileUrl() {

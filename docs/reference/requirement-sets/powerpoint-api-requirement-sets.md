@@ -4,12 +4,12 @@ description: PowerPoint JavaScript API の要件セットの詳細情報。
 ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 63f11f1810b38471a27766843f512da193394838
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 8ab5ad7067ed29b161935cfd2716a02ca261c55b
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840084"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671710"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API の要件セット
 
@@ -30,7 +30,7 @@ Office のバージョンとビルド番号の詳細については、次を参�
 
 ## <a name="powerpoint-javascript-api-11"></a>PowerPoint JavaScript API 1.1
 
-PowerPoint JavaScript API 1.1 には、[新しいプレゼンテーションを作成するための 1 つの API](/javascript/api/powerpoint#powerpoint-createpresentation-base64file-) が含まれます。 API の詳細については、「[プレゼンテーションを作成する](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)」を参照してください。
+PowerPoint JavaScript API 1.1 には、[新しいプレゼンテーションを作成するための 1 つの API](/javascript/api/powerpoint#PowerPoint_createPresentation_base64File_) が含まれます。 API の詳細については、「[プレゼンテーションを作成する](../../powerpoint/powerpoint-add-ins.md#create-a-presentation)」を参照してください。
 
 ## <a name="powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2
 
@@ -41,7 +41,7 @@ PowerPoint JavaScript API 1.2 では、別の PowerPoint プレゼンテーシ�
 > [!NOTE]
 > このセクションでは、[Office バージョンと要件セット](../../develop/office-versions-and-requirement-sets.md) の概要、および [Office アプリケーションと API 要件の指定](../../develop/specify-office-hosts-and-api-requirements.md) について理解していることを前提としています。
 
-要件セットは、API メンバーの名前付きグループです。 Office アドインはランタイム チェックを実行できます。または、マニフェストで指定されている要件セットを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを確認できます。
+要件セットは、API メンバーの名前付きグループです。 Office アドインは、Office アプリケーションがアドインの必要とする API をサポートしているかどうかを判断するために、ランタイム チェックを実施したり、マニフェストで指定されている要件セットを使用したりすることができます。
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>実行時に要件セットのサポートを確認する
 
@@ -57,7 +57,7 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](../manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、**[個人用アドイン]** に表示されるアドインの一覧に表示されません。アドインが完全に機能するためには特定の要件セットを必要とするが、その要件セットをサポートしていないプラットフォームのユーザーに対しても価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
+アドインのマニフェストで [Requirements 要素](../manifest/requirements.md)を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、**[個人用アドイン]** に表示されるアドインの一覧に表示されません。アドインが完全に機能するためには特定の要件セットを必要とするが、その要件セットをサポートしていないプラットフォームのユーザーに対しても価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
 
 次のコード サンプルは、アドインが PowerPointApi 要件セットのバージョン 1.1 以上をサポートする Office クライアント アプリケーションのすべてで読み込まれる必要があることを指定する、アドインのマニフェストの `Requirements` 要素を示しています。
 
