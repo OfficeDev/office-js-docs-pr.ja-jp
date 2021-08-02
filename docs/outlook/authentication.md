@@ -3,12 +3,12 @@ title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bbf8654654691fb7c62898d0d4521b3a11e15112
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077107"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671458"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
@@ -50,7 +50,7 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 - アドインが、ユーザーが制御する Microsoft 以外のサービスにアクセスする必要がある場合。
 - SSO をサポートしていないバージョンの Office でアドインが実行されている場合の代替認証として。
 
-アドインでは、[getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) を呼び出して Exchange のユーザー ID トークンを取得できます。 それらのトークンの使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
+アドインでは、[getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) を呼び出して Exchange のユーザー ID トークンを取得できます。 それらのトークンの使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>OAuth2 フローで取得されたアクセス トークン
 
@@ -58,7 +58,7 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 
 - ユーザーの制御外のサードパーティ サービスにアクセスする必要がある
 
-この方法を使用すると、アドインはユーザーに、[displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) メソッドを使用して OAuth2 フローを初期化するか、OAuth2 の暗黙のフローに [office-js-helpers ライブラリ](https://github.com/OfficeDev/office-js-helpers)を使用することでサービスにサインインするよう求めるダイアログを表示します。
+この方法を使用すると、アドインはユーザーに、[displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) メソッドを使用して OAuth2 フローを初期化するか、OAuth2 の暗黙のフローに [office-js-helpers ライブラリ](https://github.com/OfficeDev/office-js-helpers)を使用することでサービスにサインインするよう求めるダイアログを表示します。
 
 ## <a name="callback-tokens"></a>コールバック トークン
 

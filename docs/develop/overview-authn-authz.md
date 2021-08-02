@@ -3,12 +3,12 @@ title: Office アドインにおける認証と承認の概要
 description: Web アプリケーションおよび Office アドインでログインによる認証をユーザーに要求します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 2ed1678d347de5725752e22a00a1def6f8f7d66b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6759d35e9460c4e72bad8cca187b0b429c140487
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075986"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671197"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -37,7 +37,7 @@ Azure Active Directory (AAD) から Graph へのアクセス トークンを取�
 
 ## <a name="user-authentication-with-sso"></a>SSO を使用したユーザー認証
 
-SSO を使用してユーザーを認証するために、作業ウィンドウまたは関数ファイル内のコードが [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) メソッドを呼び出します。 ユーザーがサインインしていない場合、Office でダイアログ ボックスが開き、Azure Active Directory のログイン ページに移動します。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理** フロー内のブートストラップ トークンです。 (「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](#access-to-microsoft-graph-with-sso)」を参照してください。) ただし、このトークンには `preferred_username`、`name`、`sub`、および `oid` を含む、現在のユーザーに固有の複数の要求が含まれるため、ID トークンとしても使用できます。 最終的なユーザー ID として使用するプロパティに関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+SSO を使用してユーザーを認証するために、作業ウィンドウまたは関数ファイル内のコードが [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) メソッドを呼び出します。 ユーザーがサインインしていない場合、Office でダイアログ ボックスが開き、Azure Active Directory のログイン ページに移動します。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理** フロー内のブートストラップ トークンです。 (「[Access to Microsoft Graph without SSO (SSO を使用せずに Microsoft Graph にアクセスする)](#access-to-microsoft-graph-with-sso)」を参照してください。) ただし、このトークンには `preferred_username`、`name`、`sub`、および `oid` を含む、現在のユーザーに固有の複数の要求が含まれるため、ID トークンとしても使用できます。 最終的なユーザー ID として使用するプロパティに関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
 
 コードにより目的の要求がトークンから抽出されると、管理下のユーザー テーブルまたはユーザー データベース内でその値を使用してユーザーが検索されます。 ユーザー設定やユーザーのアカウントの状態などのユーザー関連情報を格納するには、データベースを使用します。 SSO を使用しているため、ユーザーは個別にアドインにサインインを行いません。このため、ユーザーのパスワードを保存する必要はありません。
 
@@ -50,7 +50,7 @@ SSO を使用するユーザー認証を実装する前に、「[Office アド�
 
 ## <a name="access-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph へのアクセス
 
-SSO を使用して Microsoft Graph にアクセスするために、作業ウィンドウまたは関数ファイル内のアドインが [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) メソッドを呼び出します。 ユーザーがサインインしていない場合、Office でダイアログ ボックスが開き、Azure Active Directory のログイン ページに移動します。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理** フロー内のブートストラップ トークンです。 特に、このトークンには 値 `access_as_user` を持つ `scope` 要求が含まれます。 トークンでの要求に関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+SSO を使用して Microsoft Graph にアクセスするために、作業ウィンドウまたは関数ファイル内のアドインが [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) メソッドを呼び出します。 ユーザーがサインインしていない場合、Office でダイアログ ボックスが開き、Azure Active Directory のログイン ページに移動します。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。 このトークンは、**代理** フロー内のブートストラップ トークンです。 特に、このトークンには 値 `access_as_user` を持つ `scope` 要求が含まれます。 トークンでの要求に関するガイダンスについては、「[Microsoft identity platform access tokens (Microsoft ID プラットフォームのアクセス トークン)](/azure/active-directory/develop/access-tokens#payload-claims)」を参照してください。 これらのトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
 
 コードがトークンを取得すると、コードは **代理** フロー内でこのトークンを使用して、2 つ目のトークンである Microsoft Graph へのアクセス トークンを取得します。
 

@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536054"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671381"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -25,7 +25,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
   - 作業ウィンドウと共有される実行環境はありません。
   - 作業ウィンドウと同じセッション ストレージ ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しません。
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
-- ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#messageparent-message-) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
+- ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 
 ダイアログ ボックスが iframe ではない (既定) 場合、ID プロバイダーのログイン ページを開くことができます。 次に示すように、Office ダイアログ ボックスの特性は、MSAL や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
 

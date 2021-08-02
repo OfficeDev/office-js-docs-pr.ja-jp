@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348602"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671591"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -96,7 +96,7 @@ OneNote JavaScript API の `load`/`sync` パターンとその他の一般的な
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
-`Document` オブジェクトを使って、[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) メソッドや [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) メソッドなどの共通 API にアクセスします。
+`Document` オブジェクトを使って、[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) メソッドや [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) メソッドなどの共通 API にアクセスします。
 
 次に例を示します。  
 
@@ -119,12 +119,12 @@ OneNote アドインは、次の共通 API のみをサポートします。
 
 | API | メモ |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Office.CoercionType.Text`Office.CoercionType.Text` と Office.CoercionType.Matrix`Office.CoercionType.Matrix` のみ |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | `Office.CoercionType.Text`、`Office.CoercionType.Image` と `Office.CoercionType.Html` のみ | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | Office.CoercionType.Text`Office.CoercionType.Text` と Office.CoercionType.Matrix`Office.CoercionType.Matrix` のみ |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | `Office.CoercionType.Text`、`Office.CoercionType.Image` と `Office.CoercionType.Html` のみ | 
 | 
-  [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get-name-) | 設定はコンテンツ アドインによってのみサポートされます | 
+  [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | 設定はコンテンツ アドインによってのみサポートされます | 
 | 
-  [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | 設定はコンテンツ アドインによってのみサポートされます | 
+  [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | 設定はコンテンツ アドインによってのみサポートされます | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 一般に、アプリケーション固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。

@@ -3,12 +3,12 @@ title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349736"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671500"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
 
@@ -31,7 +31,7 @@ SSO をアドインの唯一の認証方法と *しない* ようにする必要
 
 ![SSO プロセスを示す図。](../images/sso-overview-diagram.png)
 
-1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 「[アクセス トークンの例](#example-access-token)」を参照してください。
+1. アドインで、JavaScript は新しい Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) を呼び出します。 これにより、Office クライアント アプリケーションはアドインへのアクセス トークンを取得するように指示されます。 「[アクセス トークンの例](#example-access-token)」を参照してください。
 2. ユーザーがサインインしていない場合、Office クライアント アプリケーションはユーザーにサインインを求めるポップアップ ウィンドウを開きます。
 3. 現在のユーザーが初めてアドインを使用する場合は、そのユーザーに同意を求めるダイアログを表示します。
 4. Office クライアント アプリケーションは、Azure AD v2.0 エンドポイントから現在のユーザーの **アドイン トークン** を要求します。
@@ -95,7 +95,7 @@ Outlook 以外の Office アプリケーションでは、`<VersionOverrides ...
 
 アドインに次のために JavaScript を追加します。
 
-- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) を呼び出します。
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) を呼び出します。
 
 - アクセス トークンを解析するか、それをアドインのサーバー側コードに渡す。
 
