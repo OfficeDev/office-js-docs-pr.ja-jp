@@ -6,7 +6,7 @@ ms.custom: scenarios:getting-started
 localization_priority: Priority
 ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
 ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/24/2021
 ms.locfileid: "51177986"

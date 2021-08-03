@@ -6,7 +6,7 @@ ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: 80340b4990b56b2ba4d51f2a028480af3e267828
 ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2021
 ms.locfileid: "51650812"

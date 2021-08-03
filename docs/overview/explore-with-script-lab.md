@@ -7,14 +7,14 @@ ms.custom: scenarios:getting-started
 localization_priority: Priority
 ms.openlocfilehash: 7f4b67dd2369181e5d7b2b92496c8259ffd5c120
 ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/23/2021
 ms.locfileid: "53077009"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
-AppSource から無料で入手できる [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) および [Outlook 用 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) アドインを使用すると、Excel や Outlook などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、独自のアドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
+AppSource から無料で入手できる [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) および [Outlook 用 Script Lab](https://appsource.microsoft.com/product/office/WA200001603) アドインを使用すると、Excel や Outlook などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、独自のアドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
 
 ## <a name="what-is-script-lab"></a>Script Lab とは
 
