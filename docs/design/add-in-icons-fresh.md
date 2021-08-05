@@ -1,14 +1,14 @@
 ---
 title: アドインの新しいスタイル アイコンOfficeガイドライン
 description: 新しいスタイル アイコンをアドインで使用Officeガイドライン。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0c50adcea8091ae2f6fbc941d4b5359babd7274c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349316"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773238"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>アドインの新しいスタイル アイコンOfficeガイドライン
 
@@ -20,7 +20,7 @@ ms.locfileid: "53349316"
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-アイコンを作成するときは、以下のガイドラインに従ってください。
+アイコンを作成する場合は、次のガイドラインに従います。
 
 |するべきこと|してはいけないこと|
 |:---|:---|

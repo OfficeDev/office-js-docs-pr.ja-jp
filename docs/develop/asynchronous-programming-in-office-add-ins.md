@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける非同期プログラミング
 description: JavaScript ライブラリがOfficeアドインで非同期プログラミングを使用する方法Office説明します。
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1663f15d1b9f4191fc1f0c21f0532b5e23fdade6
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671388"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773945"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -26,7 +26,7 @@ API 内のすべての非同期メソッドの名前は、"Async" (、 、メソ
 
 リッチ クライアントと Web クライアントの両方でこの非同期設計をサポートすることは、Office アドイン開発モデルの "write once-run cross-platform (一度書けばどんなプラットフォームも実行できる)" 設計目的の一部です。たとえば、Excel 2013 と Excel Online の両方で実行されるシングル コード ベースのコンテンツ アドインまたは作業ウィンドウ アドインを作成できます。
 
-## <a name="writing-the-callback-function-for-an-async-method"></a>"Async" メソッドのコールバック関数を記述する
+## <a name="write-the-callback-function-for-an-async-method"></a>"Async" メソッドのコールバック関数を記述する
 
 コールバック引数として "Async" メソッドに渡すコールバック関数は、コールバック関数の実行時にアドイン ランタイムが[AsyncResult](/javascript/api/office/office.asyncresult)オブジェクトへのアクセスを提供するために使用する 1 つのパラメーターを宣言する必要があります。  次のように記述することができます。
 
@@ -36,7 +36,7 @@ API 内のすべての非同期メソッドの名前は、"Async" (、 、メソ
 
 匿名関数は、そのコードを一度だけ使用する場合に便利です。関数には名前がないため、コードの別の部分で参照できないためです。名前付き関数は、複数の "Async" メソッドにコールバック関数を再利用する場合に便利です。
 
-### <a name="writing-an-anonymous-callback-function"></a>匿名コールバック関数を記述する
+### <a name="write-an-anonymous-callback-function"></a>匿名コールバック関数を記述する
 
 次の匿名コールバック関数は、コールバックが返されたときに `result` [AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティからデータを取得するという名前の単一のパラメーターを宣言します。
 
@@ -69,7 +69,7 @@ function write(message){
 
 メソッドの使用の詳細については、「ドキュメントまたはスプレッドシート内のアクティブな選択範囲に対するデータの読み取りおよび書き `getSelectedDataAsync` [込み」を参照してください](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
-### <a name="writing-a-named-callback-function"></a>名前付き関数を記述する
+### <a name="write-a-named-callback-function"></a>名前付きコールバック関数を記述する
 
 または、名前付き関数を記述し、その名前を "Async" メソッドの _コールバック_ パラメーターに渡します。 たとえば、前の例は次のように `writeDataCallback` という名前の関数を _callback_ パラメーターとして渡すように書き換えることができます。
 
@@ -101,7 +101,7 @@ function write(message){
 
 ## <a name="asynchronous-programming-patterns"></a>非同期プログラミング パターン
 
-JavaScript API Officeは、次の 2 種類の非同期プログラミング パターンをサポートしています。
+JavaScript API Officeは、2 種類の非同期プログラミング パターンをサポートしています。
 
 - 入れ子のコールバックの使用
 - promise パターンの使用
@@ -142,7 +142,7 @@ function write(message){
 
 次のセクションでは、非同期メソッドの入れ子のコールバックで匿名関数または名前付き関数を使用する方法を示します。
 
-#### <a name="using-anonymous-functions-for-nested-callbacks"></a>入れ子のコールバックとして匿名関数を使用する
+#### <a name="use-anonymous-functions-for-nested-callbacks"></a>入れ子になったコールバックに匿名関数を使用する
 
 次の例では、2 つの匿名関数がインラインで宣言され、and メソッドに入れ子になった `getByIdAsync` `getDataAsync` コールバックとして渡されます。 関数は単純でインラインのため、実装の意図は明白です。
 
@@ -163,7 +163,7 @@ function write(message){
 }
 ```
 
-#### <a name="using-named-functions-for-nested-callbacks"></a>入れ子のコールバックとして名前付き関数を使用する
+#### <a name="use-named-functions-for-nested-callbacks"></a>入れ子になったコールバックに名前付き関数を使用する
 
 複雑な実装の場合、名前付き関数を使用すると、読みやすく、保守管理がしやすく、再利用しやすくなります。 次の例では、前のセクションの例の 2 つの匿名関数が、という名前の関数として書き換 `deleteAllData` えされています `showResult` 。 これらの名前付き関数は、名前によって `getByIdAsync` コールバックとして and `deleteAllDataValuesAsync` メソッドに渡されます。
 
@@ -194,7 +194,7 @@ function write(message){
 
 JavaScript API Officeは[、Office.select](/javascript/api/office#Office_select_expression__callback_)メソッドを使用して、既存のバインド オブジェクトを操作する約束パターンをサポートします。 メソッドに返される promise オブジェクトは、Binding オブジェクトから直接アクセスできる 4 つのメソッド `Office.select` [(getDataAsync、setDataAsync、addHandlerAsync、removeHandlerAsync)](/javascript/api/office/office.binding#getDataAsync_options__callback_)のみを[サポート](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_)[](/javascript/api/office/office.binding)[](/javascript/api/office/office.binding#setDataAsync_data__options__callback_)[](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)します。
 
-バインドと連携する promise パターンは次のような形式になります。
+バインドを操作する約束パターンは、この形式を使用します。
 
 **Office.select(**_selectorExpression_, _onError_**).**_BindingObjectAsyncMethod_
 
@@ -232,9 +232,9 @@ function addBindingDataChangedEventHandler() {
 > [!IMPORTANT]
 > メソッド `Binding` によって返されるオブジェクトの約束 `Office.select` は、オブジェクトの 4 つのメソッドにのみアクセス `Binding` できます。 オブジェクトの他のメンバーにアクセスする必要がある場合は、代わりにプロパティまたはメソッドを使用してオブジェクト `Binding` `Document.bindings` `Bindings.getByIdAsync` `Bindings.getAllAsync` を取得する必要 `Binding` があります。 たとえば、オブジェクトのプロパティ (、 、またはプロパティ) にアクセスする必要がある場合、 `Binding` `document` または `id` MatrixBinding オブジェクトまたは `type` [TableBinding](/javascript/api/office/office.matrixbinding)[](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` `Binding` オブジェクトのプロパティにアクセスする必要がある場合は、or メソッドを使用してオブジェクトを取得する必要があります。
 
-## <a name="passing-optional-parameters-to-asynchronous-methods"></a>オプションのパラメーターを非同期メソッドに渡す
+## <a name="pass-optional-parameters-to-asynchronous-methods"></a>省略可能なパラメーターを非同期メソッドに渡す
 
-すべての "Async" メソッドの一般的な構文は、次のパターンに従います。
+すべての "Async" メソッドの一般的な構文は、このパターンに従います。
 
  _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_`);`
 
@@ -242,7 +242,7 @@ function addBindingDataChangedEventHandler() {
 
 オプションのパラメーターをインラインで含む JSON オブジェクトを作成するか、オブジェクトを作成して options パラメーター `options` として渡します。 
 
-### <a name="passing-optional-parameters-inline"></a>オプションのパラメーターをインラインで渡す
+### <a name="pass-optional-parameters-inline"></a>オプション のパラメーターをインラインで渡す
 
 たとえば、オプションのパラメーターをインラインで指定して [Document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) メソッドを呼び出す場合の構文は、次のようになります。
 
@@ -273,7 +273,7 @@ function write(message){
 > [!NOTE]
 > オプションのパラメーターは、名前さえ正しければ、任意の順序で JSON オブジェクトに指定できます。
 
-### <a name="passing-optional-parameters-in-an-options-object"></a>オプションのパラメーターを options オブジェクトで渡す
+### <a name="pass-optional-parameters-in-an-options-object"></a>オプション のパラメーターを options オブジェクトに渡す
 
 または、省略可能なパラメーターをメソッド呼び出しとは別に指定するオブジェクトを作成し、options 引数としてオブジェクト `options` `options` を _渡_ します。
 

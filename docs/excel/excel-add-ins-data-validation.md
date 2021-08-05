@@ -3,12 +3,12 @@ title: Excel の範囲にデータの入力規則を追加する
 description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2579473800a20ba864b42b8a18b8023dff826c5e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671162"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774155"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
@@ -45,7 +45,7 @@ Excel の JavaScript ライブラリには、ブック内の表、列、行、�
 
 次に、入力規則を作成する例を示します。 このコードについては以下の点に注目してください。
 
-- `operator` は二項演算子 "GreaterThan" です。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値は左側のオペランドになり、`formula1` で指定された値は右側のオペランドになります。 そのため、この規則では、0 より大きい整数のみが有効になります。 
+- `operator` は二項演算子 "GreaterThan" です。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値は左側のオペランドになり、`formula1` で指定された値は右側のオペランドになります。 そのため、この規則では、0 より大きい整数のみが有効になります。
 - `formula1` はハードコーディングされた値です。 コーディングの時点でその正しい値がわからない場合は、その値に Excel の数式 (文字列) を使用することもできます。 たとえば、"=A3" や "=SUM(A4,B5)" を `formula1` の値にすることもできます。
 
 ```js
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 有限リストからの値のみを有効な値として指定するには、`DataValidationRule` オブジェクトの `list` プロパティを使用します。 次に例を示します。 このコードについては以下の点に注目してください。
 
 - "Names" という名前のワークシートがあり、"A1:A3" の範囲の値が名前になっていると仮定します。
-- `source` プロパティは有効な値のリストを指定します。 文字列引数は名前を含む範囲を参照します。 "Sue, Ricky, Liz" など、カンマで区切られたリストを割り当てることもできます。 
+- `source` プロパティは有効な値のリストを指定します。 文字列引数は名前を含む範囲を参照します。 "Sue, Ricky, Liz" など、カンマで区切られたリストを割り当てることもできます。
 - `inCellDropDown` プロパティは、ユーザーがセルを選択したときにセルにドロップダウン コントロールを表示するかどうかを指定します。 `true` に設定した場合、ドロップダウンには `source` からの値のリストが表示されます。
 
 ```js

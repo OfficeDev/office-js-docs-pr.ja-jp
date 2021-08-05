@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
-ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349601"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773357"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -51,8 +51,8 @@ function webRequest() {
 }
 ```
 
->[!NOTE]
->`Fetch`を使用すると、コールバックのネストが回避され、場合によっては XHR に適している場合があります。
+> [!NOTE]
+> `Fetch`を使用すると、コールバックのネストが回避され、場合によっては XHR に適している場合があります。
 
 ### <a name="xhr-example"></a>XHR の使用例
 
@@ -131,7 +131,7 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-## <a name="canceling-a-function"></a>関数をキャンセルする
+## <a name="cancel-a-function"></a>関数を取り消す
 
 Excel場合は、関数の実行を取り消します。
 
@@ -143,7 +143,7 @@ Excel場合は、関数の実行を取り消します。
 
 また、ストリーミング関数と関連の _ない_、キャンセル可能な関数と呼ばれる関数のカテゴリもあります。 1 つの値を返す非同期のカスタム関数だけが取り消し可能です。 キャンセル可能な関数を使用すると、Web 要求を要求中に終了させることができます。キャンセルするときの処理を決定するには、[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)を使用します。 タグ `@cancelable` を使用して、キャンセル可能な関数を宣言します。
 
-### <a name="using-an-invocation-parameter"></a>起動パラメーターの使用
+### <a name="use-an-invocation-parameter"></a>呼び出しパラメーターの使用
 
 `invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 この `invocation` パラメーターは、セルに関するコンテキスト (アドレスやコンテンツなど) を提供し、使用およびメソッド `setResult` を `onCanceled` 使用できます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
 

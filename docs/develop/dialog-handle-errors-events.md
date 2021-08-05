@@ -1,16 +1,16 @@
 ---
 title: Office ダイアログ ボックスでのエラーとイベントの処理
 description: '[エラー] ダイアログ ボックスを開いて使用するときにエラーをトラップして処理するOffice説明します。'
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: be1fb8bcd30b47ac6399657d928d3cad7f857f39
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349897"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774302"
 ---
-# <a name="handling-errors-and-events-in-the-office-dialog-box"></a>Office ダイアログ ボックスでのエラーとイベントの処理
+# <a name="handle-errors-and-events-in-the-office-dialog-box"></a>[エラーとイベントの処理] ダイアログ ボックスOffice処理する
 
 この記事では、ダイアログ ボックスを開く際にエラーをトラップして処理する方法と、ダイアログ ボックス内で発生するエラーについて説明します。
 
@@ -19,7 +19,7 @@ ms.locfileid: "53349897"
 > 
 > 詳細については、「[ベスト プラクティスとルール」を参照Office API を参照してください](dialog-best-practices.md)。
 
-コードでイベントの 2 つのカテゴリを処理する必要があります。
+コードは 2 つのカテゴリのイベントを処理する必要があります。
 
 - ダイアログ ボックスを作成できないために `displayDialogAsync` の呼び出しによって返されるエラー。
 - ダイアログ ボックスのエラー、その他のイベント。
@@ -33,7 +33,7 @@ ms.locfileid: "53349897"
 |12004|`displayDialogAsync` に渡される URL のドメインは信頼されていません。ドメインは、ホスト ページと同じドメインにある必要があります (プロトコルとポート番号を含む)。|
 |12005|`displayDialogAsync` に渡される URL には HTTP プロトコルを使用します。 HTTPS が必要です。 (一部のバージョンの Office 12005 で返されるエラー メッセージ テキストは、12004 で返されるのと同じです)。|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|ダイアログ ボックスは、このホスト ウィンドウで既に開いています。作業ウィンドウなどのホスト ウィンドウで一度に開けるダイアログ ボックスは 1 つだけです。|
-|12009|ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ユーザー Office on the webダイアログ ボックスの表示を許可しない場合がある場合に発生する可能性があります。 詳細については、「ポップアップ ブロック[を使用したポップアップ ブロックの処理」を参照Office on the web。](dialog-best-practices.md#handling-pop-up-blockers-with-office-on-the-web)|
+|12009|ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ユーザー Office on the webダイアログ ボックスの表示を許可しない場合がある場合に発生する可能性があります。 詳細については、「ポップアップ ブロック[を使用したポップアップ ブロックの処理」を参照Office on the web。](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web)|
 
 呼 `displayDialogAsync` び出された場合 [、AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトをコールバック関数に渡します。 呼び出しが成功すると、ダイアログ ボックスが開き、オブジェクトのプロパティ `value` `AsyncResult` が [Dialog](/javascript/api/office/office.dialog) オブジェクトになります。 この例については、「ダイアログ ボックスから [ホスト ページに情報を送信する」を参照してください](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page)。 呼び出しが失敗すると、ダイアログ ボックスは作成されません。オブジェクトのプロパティはに設定され、オブジェクトの `displayDialogAsync` `status` `AsyncResult` `Office.AsyncResultStatus.Failed` `error` プロパティが設定されます。 エラーが発生した場合は、常にテストし `status` 、応答するコールバックを指定する必要があります。 コード番号に関係なくエラー メッセージを報告する例については、次のコードを参照してください。 (この `showNotification` 記事で定義されていない関数は、エラーを表示またはログに記録します。 アドイン内でこの関数を実装する方法の例については、「Office ダイアログ API の例 」[を参照してください](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
@@ -91,5 +91,7 @@ function processDialogEvent(arg) {
     }
 }
 ```
+
+## <a name="see-also"></a>関連項目
 
 この方法でエラーを処理するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。

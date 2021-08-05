@@ -1,26 +1,24 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: アドインのユーザー エラーをトラブルシューティングOfficeする方法について説明します。
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: dc186e942d129d4a7ae1ce2a326d0e5a0e1629e1
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348630"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774309"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
-時折、ユーザーは開発した Office アドインの問題に遭遇することがあります。たとえば、アドインが読み込みに失敗したり、アクセスできないなどです。この記事の情報は、ユーザーが Office アドインを使用する際に遭遇する一般的な問題を解決するために用いることができます。 
+時折、ユーザーは開発した Office アドインの問題に遭遇することがあります。たとえば、アドインが読み込みに失敗したり、アクセスできないなどです。この記事の情報は、ユーザーが Office アドインを使用する際に遭遇する一般的な問題を解決するために用いることができます。
 
 また、[Fiddler](https://www.telerik.com/fiddler) を使用して、アドインの問題を特定してデバッグすることもできます。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>一般的なエラーとトラブルシューティングの手順
 
 次の表は、ユーザーが遭遇する可能性がある一般的なエラー メッセージとエラーを解決するためにユーザーが実行できる手順を示しています。
-
-
 
 |**エラー メッセージ**|**解決策**|
 |:-----|:-----|
@@ -40,20 +38,16 @@ ms.locfileid: "53348630"
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook アドインが正常に機能しない
 
-Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。 
-
+Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。
 
 - [インターネット オプションの詳細設定>**ツール] に**  >  **移動します**。
-
 - **[参照]** で、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオフにします。
 
 これらの設定は、問題のトラブルシューティングを行う場合にのみチェックボックスをオフにすることをお勧めします。チェックボックスをオフにしたままにすると、参照時にメッセージが表示されます。問題が解決したら、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオンにしてください。
 
-
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>Office 2013 でアドインがアクティブにならない
 
 ユーザーが次の手順を実行してもアドインがアクティブ化しない場合。
-
 
 1. Office 2013 で自分の Microsoft アカウントでサインインする。
 

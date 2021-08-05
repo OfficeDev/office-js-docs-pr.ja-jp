@@ -1,14 +1,14 @@
 ---
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: CPU とメモリを含む、Officeプラットフォームのリソース制限について説明します。
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 27c5acf98bb43d53b165ad268b3800373888d335
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671276"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773217"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -71,9 +71,9 @@ CPU コア、メモリ、および信頼性のルールに加えて、Outlookは
 - アドインを再起動します。
 - しきい値を超えたというそれ以降の警告をキャンセルします。理想的な対処としては、ユーザーはそのアドインをドキュメントから削除する必要があります。そのアドインの使用を続行すると、さらにパフォーマンスと安定性の問題が発生する可能性があります。  
 
-## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>テレメトリ ログでリソース使用量の問題を確認する
+## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>テレメトリ ログでリソースの使用状況の問題を確認する
 
-Office には、Office アドインでのリソースの使用に関する問題も含めて、ローカル コンピューター上で実行される Office ソリューションの一定のイベント (読み込む、開く、閉じる、およびエラー) の記録を保守するテレメトリ ログが用意されています。テレメトリ ログを設定してある場合は、Excel を使用して、ローカル ドライブ上の次の既定の場所にあるテレメトリ ログを開くことができます。
+Office には、Office アドインでのリソースの使用に関する問題も含めて、ローカル コンピューター上で実行される Office ソリューションの一定のイベント (読み込む、開く、閉じる、およびエラー) の記録を保守するテレメトリ ログが用意されています。 テレメトリ ログを設定している場合は、Excelを使用して、ローカル ドライブの次の既定の場所でテレメトリ ログを開きます。
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 

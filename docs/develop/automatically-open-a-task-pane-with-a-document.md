@@ -1,21 +1,20 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
-ms.date: 05/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350023"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773910"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
 アドインのアドイン コマンドを使用して、Officeリボンにボタンを追加Office UI を拡張Office アプリできます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
 いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 AddInCommands 1.1 要件セットに導入されている、作業ウィンドウの Autoopen 機能は、作業ウィンドウを自動的に開く必要があるシナリオで使用できます。
-
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
@@ -30,7 +29,6 @@ autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の
 |**製品**|**プラットフォーム**|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラットフォーム: <ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office on Mac。ビルド 15.34.17051500+</li><li>Office on the web</li></ul>|
-
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -48,9 +46,7 @@ autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の
 
 - この機能は、複数の作業ウィンドウを固定するために使用しないでください。1 つのドキュメントで自動的に開くアドインのウィンドウは 1 つのみ設定できます。  
 
-## <a name="implementation"></a>実装
-
-Autoopen 機能を実装するには: 
+## <a name="implement-the-autoopen-feature"></a>自動開く機能を実装する
 
 - 自動的に開く作業ウィンドウを指定します。
 - 作業ウィンドウを自動的に開くドキュメントにタグ設定します。
@@ -75,7 +71,6 @@ Autoopen 機能を実装するには:
 
 Autoopen 機能をトリガーするよう、2 つのうちどちらかの方法でドキュメントにタグを設定できます。 シナリオに最も適した方法を選択します。  
 
-
 #### <a name="tag-the-document-on-the-client-side"></a>クライアント側でドキュメントにタグを設定する
 
 Office.js の [settings.set](/javascript/api/office/office.settings) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。
@@ -91,7 +86,7 @@ Office.context.document.settings.saveAsync();
 
 Open XML を使用すると、Autoopen 機能をトリガーするために、ドキュメントを作成または変更して、適切な Open Office XML マークアップを追加できます。この方法を示すサンプルについては、「[Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin)」を参照してください。
 
-次に示す 2 つの Open XML パートをドキュメントに追加します。
+ドキュメントに 2 つの Open XML パーツを追加します。
 
 - `webextension` パート
 - `taskpane` パート

@@ -1,14 +1,14 @@
 ---
 title: Visual Studio で Office アドインをデバッグする
 description: Visual Studio を使用して、Windows 上の Office デスクトップ クライアントで Office アドインをデバッグする
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349939"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773819"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -31,7 +31,7 @@ Visual Studio が Windows 上の Office をデバッグする場合、アドイ�
 
 ### <a name="add-in-project-properties"></a>アドイン プロジェクトのプロパティ
 
-アドイン プロジェクトの [**プロパティ**] ウィンドウを開き、プロジェクト プロパティを確認します。
+アドイン プロジェクトの **[プロパティ** ] ウィンドウを開き、プロジェクトのプロパティを確認します。
 
 1. **ソリューション エクスプローラー** で、(Web アプリケーション プロジェクトでは *なく*) アドイン プロジェクトを選択します。
 
@@ -57,7 +57,7 @@ Visual Studio が Windows 上の Office をデバッグする場合、アドイ�
 
 ### <a name="web-application-project-properties"></a>Web アプリケーション プロジェクトのプロパティ
 
-Web アプリケーション プロジェクトの [**プロパティ**] ウィンドウを開き、次のプロジェクト プロパティを確認します。
+Web アプリケーション **プロジェクトの [** プロパティ] ウィンドウを開き、プロジェクトのプロパティを確認します。
 
 1. ソリューション **エクスプローラーで、Web** アプリケーション プロジェクトを選択します。
 

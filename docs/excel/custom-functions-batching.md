@@ -1,16 +1,16 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 localization_priority: Normal
-ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa02a88646ca373a463aefaa51076c35c3df08cf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349652"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774176"
 ---
-# <a name="batching-custom-function-calls-for-a-remote-service"></a>リモート サービスのためのバッチ処理カスタム関数の呼び出し
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスのバッチ カスタム関数呼び出し
 
 カスタム関数がリモート サービスを呼び出す場合は、リモート サービスへのネットワークの呼び出し数を減らすバッチ処理のパターンを使用できます。 バッチ処理をしたネットワーク ラウンド トリップのウェブ サービスへのすべての呼び出しを、1 回に減らします。 これは、ワークシートが再計算するときに最適な方法です。
 
@@ -216,6 +216,7 @@ function pause(ms: number) {
 - リモート サービスで、コードを配置します。
 
 ## <a name="next-steps"></a>次の手順
+
 カスタム関数で使用できる[さまざまなパラメーター](custom-functions-parameter-options.md)について確認してください。 または、[カスタム関数で Web 通話](custom-functions-web-reqs.md)を発信する際の基本事項を確認してください。
 
 ## <a name="see-also"></a>関連項目

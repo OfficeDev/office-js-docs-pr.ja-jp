@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 localization_priority: Normal
-ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178049"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774169"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -20,7 +20,7 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 関数パラメーターの型は、JavaScript の [@param](#param) タグを使用して指定するか、TypeScript の[関数の型](https://www.typescriptlang.org/docs/handbook/functions.html)から指定できます。 詳細については、「[@param](#param) タグ」セクションと「[型](#types)」セクションを参照してください。
 
-### <a name="adding-a-description-to-a-function"></a>関数に説明を追加する
+### <a name="add-a-description-to-a-function"></a>関数に説明を追加する
 
 説明は、カスタム関数の機能を理解するためのヘルプが必要な場合に、ヘルプ テキストとしてユーザーに表示されます。 説明に特定のタグは必要ありません。 JSDoc コメントに簡単な説明を入力するだけです。 一般に、説明は JSDoc コメント セクションの先頭に配置されますが、配置場所に関係なく機能します。
 
@@ -36,10 +36,9 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
  */
 ```
 
-
 ## <a name="jsdoc-tags"></a>JSDoc タグ
 
-Excel カスタム関数では、次の JSDoc タグがサポートされています。
+次の JSDoc タグは、カスタム関数Excelサポートされています。
 
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id 名
@@ -69,7 +68,7 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 
 構文: @customfunction _id_ _名_
 
-このタグは、JavaScript/TypeScript 関数が Excel カスタム関数を表します。 カスタム関数のメタデータを作成する必要があります。
+このタグは、JavaScript/TypeScript 関数がカスタム関数Excel示します。 カスタム関数のメタデータを作成する必要があります。
 
 次に、このタグの例を示します。
 
@@ -120,7 +119,7 @@ Excel カスタム関数では、次の JSDoc タグがサポートされてい�
 
 ### <a name="description"></a>説明
 
-関数を入力すると、Excel のユーザーに説明が表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
+説明は、関数の入力中Excelユーザーに表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
 
 次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
 
@@ -161,9 +160,7 @@ JavaScript 構文: @param {type} 名 _の説明_
 * `name` タグが適用されるパラメーター@param指定します。 必須です。
 * `description` は、Excel で表示される関数のパラメーターの説明を示します。 オプションです。
 
-カスタム関数内のパラメーターを省略可能と指定する方法:
-
-* パラメーター名を角かっこで囲みます。 例: `@param {string} [text] Optional text`。
+カスタム関数パラメーターを省略可能として指定するには、パラメーター名の周囲に角かっこを付けます。 たとえば、`@param {string} [text] Optional text` などです。
 
 > [!NOTE]
 > 省略可能なパラメーターの既定値は `null` です。

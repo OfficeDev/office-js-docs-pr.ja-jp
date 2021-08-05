@@ -1,14 +1,14 @@
 ---
 title: ドキュメントやスプレッドシート内の領域へのバインド
 description: バインドを使用して、識別子を使用してドキュメントまたはスプレッドシートの特定の領域または要素に一貫してアクセスする方法について説明します。
-ms.date: 06/20/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671367"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773903"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
@@ -24,7 +24,7 @@ ms.locfileid: "53671367"
 
 ## <a name="binding-types"></a>バインドの種類
 
-次の[3 種類の]バインド[Office。] [addFromSelectionAsync]メソッド[、addFromPromptAsync]メソッド、または[addFromNamedItemAsync]メソッドを使用してバインドを作成するときに bindingType パラメーターで指定する BindingType。 
+次の[3 種類の]バインド[Office。] [addFromSelectionAsync]メソッド[、addFromPromptAsync]メソッド、または[addFromNamedItemAsync]メソッドを使用してバインドを作成するときに bindingType パラメーターで指定する BindingType。
 
 1. **[テキスト バインド][TextBinding]** - テキストとして表現できるドキュメントの領域にバインドします。
 
@@ -243,7 +243,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > メソッド promise が Binding オブジェクトを正常に返す場合、そのオブジェクトは `select` [、getDataAsync、setDataAsync、addHandlerAsync、removeHandlerAsync][][][][]の 4 つのメソッドのみを公開します。 Promise が Binding オブジェクトを返できない場合、コールバックを使用して `onError` [asyncResult].error オブジェクトにアクセスして詳細を取得できます。メソッドによって返される Binding オブジェクトの約束によって公開される 4 つのメソッド以外の[]Binding オブジェクトのメンバーを呼び出す必要がある場合は `select` [、Document.bindings]プロパティと Bindings[][を使用して getByIdAsync メソッドを使用します。Binding オブジェクトを取得する getByIdAsync]メソッド。 []
 
@@ -285,7 +284,7 @@ function write(message){
 }
 ```
 
-`myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。代わりに、[Office.select] メソッドを使用して ID によってバインドにアクセスし、次のように [getDataAsync] メソッドの呼び出しを開始できます。 
+`myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。代わりに、[Office.select] メソッドを使用して ID によってバインドにアクセスし、次のように [getDataAsync] メソッドの呼び出しを開始できます。
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync

@@ -1,14 +1,14 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: TypeScript を使用するために、Officeアドイン プロジェクトをVisual Studioする方法について説明します。
-ms.date: 09/01/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349981"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773882"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
@@ -30,7 +30,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 - TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)
 
     > [!TIP]
-    > [Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 **TypeScript SDK** コンポーネントが選択されていない場合は、使用可能な最新バージョンの SDK を選択し、**[変更]** ボタンを選択して、[個々のコンポーネントをインストール](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)します。 
+    > [Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 **TypeScript SDK** コンポーネントが選択されていない場合は、利用可能な最新バージョンの SDK を選択し、[変更] を選択して個々のコンポーネント [をインストールします](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。
 
 - Excel 2016 以降
 
@@ -61,7 +61,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
     > [!NOTE]
     > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。
 
-6. **Home.ts** で、行 `Office.initialize = function (reason) {` を見つけて、それに続けて一行追加し、次に示されているようにグローバル `window.Promise` をポリフィルします。
+6. **Home.ts** で、行を見つけて、次に示すように、行の直後に行を追加してグローバル `Office.initialize = function (reason) {` `window.Promise` をポリフィルします。
 
     ```TypeScript
     Office.initialize = function (reason) {

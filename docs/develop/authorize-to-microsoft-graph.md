@@ -1,14 +1,14 @@
 ---
 title: SSO を使用した Microsoft Graph への承認
 description: Microsoft アドインからデータをOfficeシングル サインオン (SSO) を使用する方法について説明Graph。
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671374"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773924"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph への承認
 
@@ -67,7 +67,7 @@ Microsoft Graph にアクセスするアドインは、SSO を使用する他の
 
 ## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Microsoft AppSource での SSO 対応アドインの配布
 
-管理者Microsoft 365が[AppSource](https://appsource.microsoft.com)からアドインを取得すると、管理者は一元的な展開によってアドインを[](../publish/centralized-deployment.md)再配布し、Microsoft Graph スコープにアクセスするためのアドインに管理者の同意を与できます。 ただし、エンド ユーザーが AppSource から直接アドインを取得することもできます。その場合、ユーザーはアドインに同意する必要があります。 これにより、ソリューションを提供した潜在的なパフォーマンスの問題が発生する可能性があります。
+管理者Microsoft 365 [AppSource](https://appsource.microsoft.com)からアドインを取得すると、管理者は統合アプリを通じてアドインを再配布し[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)、Microsoft Graph スコープにアクセスするためのアドインに対する管理者の同意を付与できます。 ただし、エンド ユーザーが AppSource から直接アドインを取得することもできます。その場合、ユーザーはアドインに同意する必要があります。 これにより、ソリューションを提供した潜在的なパフォーマンスの問題が発生する可能性があります。
 
 コードが 、(など) の呼び出しでオプションを渡した場合 `allowConsentPrompt` `getAccessToken` `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` 、Azure AD がアドインにまだ同意が与えされていないことを Office に報告した場合、Office はユーザーに同意を求めるメッセージを表示できます。 ただし、セキュリティ上の理由から、Officeユーザーに対して Azure のスコープへの同意のみを求AD `profile` できます。 *Office、Microsoft* のスコープへの同意を求Graphを求め、それもできません `User.Read` 。 つまり、ユーザーがプロンプトに同意を与える場合、Officeブートストラップ トークンが返されます。 ただし、ブートストラップ トークンを Microsoft Graph へのアクセス トークンと交換しようとすると、エラー AADSTS65001 が失敗します。つまり、同意 (Microsoft Graph スコープへの) が付与されていないという意味です。
 

@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで添付ファイルを追加および削除する
 description: さまざまな添付ファイル API を使用して、ユーザーが作成しているアイテムOutlookファイルまたはアイテムを管理できます。
-ms.date: 02/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348588"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774456"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>フォーム内の作成フォームでアイテムの添付ファイルを管理Outlook
 
@@ -26,7 +26,7 @@ JavaScript API Officeには、ユーザーが作成するときにアイテム�
 
 アクションの完了に依存するようなタスクがある場合、それらのタスクはコールバック メソッドで実行する必要があります。 このコールバック メソッドはオプションで、添付ファイルのアップロードが完了すると呼び出されます。 コールバック メソッドは、状態、エラー、そして添付ファイル追加によって返される値を提供する出力パラメーターとして、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトを使用します。 コールバックがその他のパラメーターを必要とする場合、オプションの `options.asyncContext` パラメーターでそれを指定することができます。 `options.asyncContext` は、コールバック メソッドが予期する任意の種類となることができます。
 
-たとえば、1 つ以上のキーと値のペア `options.asyncContext` を含む JSON オブジェクトとして定義できます。 Office アドイン の非同期メソッドにオプション パラメーターを渡す例については、「Office アドインの非同期プログラミング」を[参照してください](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)。次の例は、パラメーターを使用して `asyncContext` 2 つの引数をコールバック メソッドに渡す方法を示しています。
+たとえば、1 つ以上のキーと値のペア `options.asyncContext` を含む JSON オブジェクトとして定義できます。 Office アドイン の非同期メソッドにオプション パラメーターを渡す例については、「Office アドインの非同期プログラミング」を[参照してください](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)。次の例は、パラメーターを使用して `asyncContext` 2 つの引数をコールバック メソッドに渡す方法を示しています。
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};

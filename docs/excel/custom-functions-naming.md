@@ -1,66 +1,67 @@
 ---
-ms.date: 11/06/2020
-description: Excel カスタム関数の名前の要件について説明し、一般的な名前付けの落とし穴を回避します。
-title: Excel のカスタム関数の名前付けガイドライン
+title: カスタム関数の名前付けExcel
+description: カスタム関数の名前に関する要件Excel、一般的な名前付けの落とし穴を回避します。
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: eefd703c63311934435657bf9e6159662f908a95
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071614"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773350"
 ---
-# <a name="custom-functions-naming-guidelines"></a>カスタム関数の名前付けガイドライン
+# <a name="custom-functions-naming-guidelines"></a>カスタム関数の名前付けのガイドライン
 
-カスタム関数は、 `id` `name` JSON メタデータファイルのおよびプロパティによって識別されます。
+カスタム関数は、JSON メタデータ ファイル `id` の and `name` プロパティによって識別されます。
 
-- この関数 `id` は、JavaScript コードのカスタム関数を一意に識別するために使用されます。
-- 関数 `name` は、Excel でユーザーに表示される表示名として使用されます。
+- この関数 `id` は、JavaScript コード内のカスタム関数を一意に識別するために使用されます。
+- この関数 `name` は、ユーザーに表示される表示名として使用Excel。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-関数は、 `name` ローカライズのためなど、関数とは異なる場合が `id` あります。 通常、関数は `name` 、 `id` それらを区別する理由がない場合は、と同じです。
+関数は `name` 、ローカライズの目的 `id` など、関数とは異なる場合があります。 一般に、関数が異なる理由がない場合と同じ `name` `id` にしてください。
 
-`name` `id` いくつかの一般的な要件を共有します。
+関数といくつかの共通 `name` `id` の要件を共有します。
 
-- 関数では `id` 、a ~ Z の文字を使用することはできません。数字 0 ~ 9、アンダースコア、ピリオド。
+- 関数では、文字 A から Z、数字 0 から 9、アンダースコア、およびピリオドのみを `id` 使用できます。
 
-- 関数では、 `name` Unicode のアルファベット文字、アンダースコア、ピリオドを使用できます。
+- 関数では、任意の Unicode アルファベット文字、アンダースコア、およびピリオド `name` を使用できます。
 
-- どちらの関数も、 `name` `id` 文字で始まる必要があり、最小で3文字の制限があります。
+- どちらの関数 `name` も `id` 、文字で始まる必要があります。最小制限は 3 文字です。
 
-Excel は、組み込み関数名 (など) に大文字を使用 `SUM` します。 カスタム関数の大文字を使用し `name` 、 `id` ベストプラクティスとして使用します。
+Excelは、組み込みの関数名 (など) に大文字を使用します `SUM` 。 カスタム関数の場合は大文字を使用し、 `name` `id` ベスト プラクティスとして使用します。
 
-関数は `name` 、次のようなものである必要があります。
+関数は、 `name` 次の関数と同じにすべきではありません。
 
-- A1 から XFD1048576 のセル、または R1C1 から R1048576C16384 までのセル。
+- A1 ~ XFD1048576 または R1C1 から R1048576C16384 の間の任意のセル。
 
-- 任意の Excel 4.0 マクロ関数 ( `RUN` 、など `ECHO` )。  これらの関数の完全な一覧については、「 [Excel マクロ関数リファレンスドキュメント](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)」を参照してください。
+- すべてのExcel 4.0 マクロ関数 (など `RUN` `ECHO` )  これらの関数の完全な一覧については、「[マクロ関数リファレンス」Excelを参照してください](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
 
 ## <a name="naming-conflicts"></a>名前付けの競合
 
-関数 `name` が `name` 既に存在するアドインの関数と同じ場合は、 **#REF!** エラーがブックに表示されます。
+関数が既に存在するアドインの関数と同じ場合は `name` `name` **、#REF!** エラーがブックに表示されます。
 
-名前付けの競合を修正するには、アドインでを変更して、関数を再度実行し `name` ます。 競合する名前を使用してアドインをアンインストールすることもできます。 または、別の環境でアドインをテストしている場合は、別の名前空間を使用して、関数を区別します (など `NAMESPACE_NAMEOFFUNCTION` )。
+名前付けの競合を修正するには、アドイン `name` の名前を変更して、もう一度関数を試してください。 また、競合する名前を持つアドインをアンインストールできます。 または、異なる環境でアドインをテストする場合は、別の名前空間を使用して関数 (など) を区別してみてください `NAMESPACE_NAMEOFFUNCTION` 。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-- 同じまたは似た名前を持つ複数の関数を作成するのではなく、複数の引数を関数に追加することを検討してください。
-- 関数名にあいまいな略語を含めないでください。 わかりやすくすることが重要です。 ではなく、という名前を選択し `=INCREASETIME` `=INC` ます。
-- 関数名は、関数のアクション (ZIPCODE ではなく = GETZIPCODE など) を示す必要があります。
-- 類似のアクションを実行する関数に対して同じ動詞を一貫して使用します。 たとえば、とで `=DELETEZIPCODE` はなくを使用し `=DELETEADDRESS` `=DELETEZIPCODE` `=REMOVEADDRESS` ます。
-- ストリーミング関数の名前を指定するときは、その効果にメモを追加するか、関数の `STREAM` 名前の末尾に追加することを検討してください。
+- 同じ名前または類似の名前を持つ複数の関数を作成するのではなく、複数の引数を関数に追加する方法を検討してください。
+- 関数名のあいまいな省略形を避ける。 明快さは、明快さよりも重要です。 ではなく、名前 `=INCREASETIME` を選択します `=INC` 。
+- 関数名は、ZIPCODE ではなく =GETZIPCODE など、関数の動作を示す必要があります。
+- 同様のアクションを実行する関数には、同じ動詞を一貫して使用します。 たとえば、and と `=DELETEZIPCODE` `=DELETEADDRESS` 、 ではなく 、 を `=DELETEZIPCODE` 使用します `=REMOVEADDRESS` 。
+- ストリーミング関数に名前を付ける場合は、関数の説明にメモを追加するか、関数の名前の末尾に追加します `STREAM` 。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="localizing-function-names"></a>関数名のローカライズ
 
-個別の JSON ファイルを使用し、アドインのマニフェストファイルで値をオーバーライドすることにより、異なる言語の関数名をローカライズできます。 `id`ローカライズされた関数と競合する可能性があるため、関数に、または `name` 別の言語の組み込みの Excel 関数を付与しないでください。
+個別の JSON ファイルを使用して、さまざまな言語の関数名をローカライズし、アドインのマニフェスト ファイルの値を上書きできます。 ローカライズされた関数と競合する可能性Excel、関数に別の言語で組み込みの関数を与 `id` `name` えることは避ける必要があります。
 
-ローカライズの詳細については、「[カスタム関数をローカライズ](custom-functions-localize.md)する」を参照してください。
+ローカライズの詳細については、「カスタム関数の [ローカライズ」を参照してください。](custom-functions-localize.md)
 
 ## <a name="next-steps"></a>次の手順
-[エラー処理のベストプラクティス](custom-functions-errors.md)について説明します。
+
+エラー処理 [のベスト プラクティスについて説明します](custom-functions-errors.md)。
 
 ## <a name="see-also"></a>関連項目
 

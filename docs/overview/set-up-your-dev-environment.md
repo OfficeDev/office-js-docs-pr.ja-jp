@@ -1,14 +1,14 @@
 ---
 title: 開発環境をセットアップする
 description: 開発者環境をセットアップして、Officeを構築します。
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 330b2d250cb3069eb09a3589a20e87421f387ed1
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348805"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774348"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 

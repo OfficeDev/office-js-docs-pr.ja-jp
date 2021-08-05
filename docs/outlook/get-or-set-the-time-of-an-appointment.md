@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
-ms.date: 10/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 883b2be75348b72ac3c6b11bf558f7ac27aa2b8d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eadce9b540a9b3b8a03186340fff4511d42dd35a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671332"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774349"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
@@ -38,7 +38,7 @@ item.start.getAsync
 item.end.getAsync
 ```
 
-JavaScript API のほとんどの非同期メソッドと同様Office **getAsync** および **setAsync** はオプションの入力パラメーターを受け取ります。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
+JavaScript API のほとんどの非同期メソッドと同様Office **getAsync** および **setAsync** はオプションの入力パラメーターを受け取ります。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
 ## <a name="get-the-start-or-end-time"></a>開始時刻または終了時刻を取得する

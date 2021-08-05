@@ -1,15 +1,15 @@
 ---
 title: JavaScript API を使用して範囲内の特別なセルExcel検索する
 description: JavaScript API の Excelを使用して、数式、エラー、数値を含むセルなどの特別なセルを検索する方法について説明します。
-ms.date: 04/02/2021
+ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671127"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773630"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲内の特別なセルExcel検索する
 

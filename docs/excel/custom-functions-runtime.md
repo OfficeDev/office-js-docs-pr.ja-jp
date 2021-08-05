@@ -1,14 +1,14 @@
 ---
-ms.date: 09/25/2020
+ms.date: 07/08/2021
 description: 作業Excel特定の JavaScript ランタイムを使用しないカスタム関数について説明します。
 title: UI レス のカスタム関数Excelランタイム
 localization_priority: Normal
-ms.openlocfilehash: aa2cf2632ddf9eb1ad1eb202b031ee2ca686af01
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349624"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774183"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>UI レス のカスタム関数Excelランタイム
 
@@ -20,7 +20,7 @@ ms.locfileid: "53349624"
 
 この JavaScript ランタイムは、UI レスのカスタム関数と作業ウィンドウでデータを格納するために使用できる名前空間内の `OfficeRuntime` API へのアクセスを提供します。
 
-## <a name="requesting-external-data"></a>外部データの要求
+## <a name="request-external-data"></a>外部データの要求
 
 UI レスのカスタム関数内では [、Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) のような API を使用するか、サーバーとやり取りするための HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使用して外部データを要求できます。
 
@@ -28,7 +28,7 @@ XMLHttpRequests を作成する場合は、UI レス関数で追加のセキュ�
 
 単純な CORS 実装では Cookie を使用できません。単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが 、 である場合は、単純な CORS でヘッダー `Content-Type` `application/x-www-form-urlencoded` `text/plain` を使用できます `multipart/form-data` 。
 
-## <a name="storing-and-accessing-data"></a>データの格納およびアクセス
+## <a name="store-and-access-data"></a>データの保存とアクセス
 
 UI レスのカスタム関数内では、オブジェクトを使用してデータを格納およびアクセス `OfficeRuntime.storage` できます。 `Storage` は、UI レスのカスタム関数では使用できない [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)の代替手段を提供する、暗号化されていない永続的なキー値ストレージ システムです。 `Storage` ドメインごとに 10 MB のデータを提供します。 ドメインは、複数のアドインで共有できます。
 
@@ -69,6 +69,7 @@ function StoreValue(key, value) {
 アドインで UI レスのカスタム関数のみを使用する場合は、UI レスのカスタム関数を使用してドキュメント オブジェクト モデル (DOM) にアクセスしたり、DOM に依存する jQuery のようなライブラリを使用したりすることはできません。
 
 ## <a name="next-steps"></a>次の手順
+
 UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
 
 ## <a name="see-also"></a>関連項目

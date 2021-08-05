@@ -1,14 +1,14 @@
 ---
 title: Office アドインの Fluent UI React
 description: アドインで UI FluentをReactするOfficeについて学習します。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a71c1a0de64d99a9e52c4ca2a7a948b9c33eb9ed
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076309"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773539"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインFluent UI ReactをOfficeする
 
@@ -36,9 +36,9 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Word`
 
-![コマンド ライン インターフェイスの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word-react.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word-react.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -133,7 +133,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 ## <a name="add-the-react-component-to-your-add-in"></a>React コンポーネントをアドインに追加
 
-**src\components\App.tsx** を開いて次の手順を完了することにより、アドインに `ButtonPrimaryExample` コンポーネントを追加します。
+`ButtonPrimaryExample` **src\components\App.tsx** を開き、次の手順を実行して、アドインにコンポーネントを追加します。
 
 1. **Button.tsx** の参照 `ButtonPrimaryExample` に次のインポート ステートメントを追加します。
 

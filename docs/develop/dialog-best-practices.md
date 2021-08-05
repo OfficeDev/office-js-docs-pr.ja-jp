@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOfficeダイアログ API のルールとベスト プラクティスを提供します。
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671218"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773763"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -35,13 +35,13 @@ ms.locfileid: "53671218"
 
 UI 要素を重ねて表示することはお勧めできないため、シナリオで必要な場合を除き、作業ウィンドウでダイアログ ボックスを開かないようにします。 作業ウィンドウの表示領域の使用方法を検討するときには、作業ウィンドウはタブ表示できることに注意してください。 タブ付き作業ウィンドウの例については、「Excel [JavaScript SalesTracker サンプル」を参照](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)してください。
 
-### <a name="designing-a-dialog-box-ui"></a>ダイアログ ボックス UI の設計
+### <a name="design-a-dialog-box-ui"></a>ダイアログ ボックスの UI を設計する
 
 ダイアログ ボックス設計のベスト プラクティスについては、「ダイアログ ボックス」を[参照Officeアドインを参照してください](../design/dialog-boxes.md)。
 
-### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Office on the web を使用したポップアップ ブロックの処理
+### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>ポップアップ ブロックを処理するには、次の操作をOffice on the web
 
-ブラウザーを使用している間にダイアログ Office on the webを表示しようとすると、ブラウザーのポップアップ ブロッカーがダイアログ ボックスをブロックする可能性があります。 Office on the webには、アドインのダイアログ ボックスがブラウザーのポップアップ ブロッカーの例外になる機能があります。 コードがメソッドを呼び `displayDialogAsync` 出す場合、Office on the web次のようなプロンプトが開きます。
+ブラウザーを使用している間にダイアログ Office on the webを表示しようとすると、ブラウザーのポップアップ ブロッカーがダイアログ ボックスをブロックする可能性があります。 この場合、次Office on the webのようなプロンプトが表示されます。
 
 ![ブラウザー内ポップアップ ブロックを回避するためにアドインが生成できる簡単な説明と [許可] ボタンと [無視] ボタンを含むプロンプトを示すスクリーンショット](../images/dialog-prompt-before-open.png)
 
@@ -53,7 +53,7 @@ UI 要素を重ねて表示することはお勧めできないため、シナ�
 
 Office は、`_host_info` に渡される URL に `displayDialogAsync` というクエリ パラメーターを自動的に追加します (カスタム クエリ パラメーターが存在する場合は、その後に追加されます。 カスタム クエリ パラメーターがある場合は、その後に追加されます。 ダイアログ ボックスが移動する後続の URL には追加されません。 Microsoft は、この値の内容を変更したり、完全に削除したりする場合があります。そのため、コードで読み取る必要はありません。 同じ値がダイアログ ボックスのセッション ストレージ [(Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) に追加されます。 この場合も、*コードではこの値に対する読み取りも書き込みも行わないでください*。
 
-### <a name="opening-another-dialog-immediately-after-closing-one"></a>1 つを閉じるとすぐに別のダイアログを開く
+### <a name="open-another-dialog-immediately-after-closing-one"></a>1 つを閉じるとすぐに別のダイアログを開く
 
 特定のホスト ページから複数のダイアログを開く必要はないので、別のダイアログを開く前に、開いているダイアログで [Dialog.close](/javascript/api/office/office.dialog#close__) を呼び `displayDialogAsync` 出す必要があります。 メソッド `close` は非同期です。 このため、呼び出しの直後に呼び出した場合、2 番目のダイアログを開Officeが完全に閉じない `displayDialogAsync` `close` 可能性があります。 この場合、Office [12007](dialog-handle-errors-events.md#12007)エラーが返されます。"このアドインには既にアクティブなダイアログが含まれるため、操作は失敗しました。
 

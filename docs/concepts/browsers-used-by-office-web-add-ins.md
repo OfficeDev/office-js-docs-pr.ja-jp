@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: e27cc608f1180c3e89a29480b11d777d744fdd55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661125"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773329"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -53,7 +53,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 <sup>4</sup>埋め込み可能な WebView2 コントロールをインストールして、Office埋め込み、Edge で自動的にインストールされない必要があります。 バージョン 2101 以降Microsoft 365バージョンと一緒にインストールされます。 以前のバージョンの webView2 Microsoft 365 WebView2 / Embed web content ..でコントロールをインストールする[手順Microsoft Edge使用します。を使用Microsoft Edge WebView2 を使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
-> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーに Internet Explorer 11 を使用するプラットフォームがある場合は、ECMAScript 2015 以降の構文と機能を使用するには、次の 2 つのオプションがあります。
+> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーに Internet Explorer 11 を使用するプラットフォームがある場合は、ECMAScript 2015 以降の構文と機能を使用するには、2 つのオプションがあります。
 >
 > - ECMAScript 2015 (ES6 とも呼ばれる) 以降の JavaScript または TypeScript でコードを記述し、バベルや[tsc](https://www.typescriptlang.org/index.html)などの[](https://babeljs.io/)コンパイラを使用してコードを ES5 JavaScript にコンパイルします。
 > - ECMAScript 2015 以降の JavaScript で記述します[](https://en.wikipedia.org/wiki/Polyfill_(programming))が、IE でコードを実行できる[core-js](https://github.com/zloirock/core-js)などのポリフィル ライブラリも読み込む必要があります。

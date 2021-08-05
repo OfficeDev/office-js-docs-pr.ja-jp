@@ -73,7 +73,7 @@ CLA への署名により、メイン リポジトリにコミットする権限
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Next, create a reference to the root repository by entering these commands:
+    次に、これらのコマンドを入力してルート リポジトリへの参照を作成します。
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git

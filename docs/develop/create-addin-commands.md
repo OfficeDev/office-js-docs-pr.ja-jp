@@ -1,14 +1,14 @@
 ---
 title: Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44d1ab5e650aedd416ed255b8c84d9d8c2551e65
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329955"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773896"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
@@ -18,7 +18,7 @@ ms.locfileid: "52329955"
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
 - それぞれがオプションのサブメニューを含む個々のメニュー項目を、特定のコンテキスト (ショートカット) メニューに追加します。
 - アドイン コマンドが選択されると、操作を実行します。次の操作を実行できます。
-  - ユーザーが操作する 1 つ以上の作業ウィンドウ アドインを表示します。 作業ウィンドウ アドイン内で、Fluent UI を使用してカスタム UI を作成する HTML を表示できます。
+  - ユーザーが操作する 1 つ以上の作業ウィンドウ アドインを表示します。 作業ウィンドウ アドイン内で、ユーザー設定 UI を使用Fluentカスタム UI を作成する HTML を表示できます。
 
      *または*
 
@@ -203,7 +203,7 @@ ms.locfileid: "52329955"
 
 ## <a name="step-6-add-extensionpoint-elements"></a>手順 6: ExtensionPoint 要素を追加する
 
-**ExtensionPoint** 要素は、Office UI のどこにアドイン コマンドを表示するかを定義します。以下の **xsi:type** 値を使用して、**ExtensionPoint** 要素を定義できます。
+**ExtensionPoint** 要素は、Office UI のどこにアドイン コマンドを表示するかを定義します。 これらの **xsi:type** 値を使用して **ExtensionPoint 要素を定義** できます。
 
 - **PrimaryCommandSurface**。Office のリボンを参照します。
 

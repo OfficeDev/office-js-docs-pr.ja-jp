@@ -3,12 +3,12 @@ title: アドインのモノOfficeアイコンのガイドライン
 description: アドインで Monoline スタイル アイコンを使用Officeガイドライン。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349344"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773280"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンのガイドライン
 
@@ -27,7 +27,7 @@ ms.locfileid: "53349344"
 - アイコンのスタイルWindowsにインスパイアされています。
 - すべてのユーザーがアクセスできます。
 
-#### <a name="conveying-meaning"></a>意味を伝える
+#### <a name="convey-meaning"></a>意味を伝える
 
 - ページなどの説明的な要素を使用して、文書や封筒を表してメールを表します。
 - 同じ要素を使用して同じ概念を表します。つまり、メールは常にスタンプではなく封筒で表されます。
@@ -132,7 +132,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ##### <a name="best-practices-for-fills"></a>塗りつぶしのベスト プラクティス
 
-###### <a name="dos"></a>Dos:
+###### <a name="dos"></a>すべきこと
 
 - 定義された境界を持ち、自然に塗りつぶしを持つ要素を塗りつぶします。
 - 背景塗りつぶしを作成するには、別の図形を使用します。
@@ -140,7 +140,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 - 重なり合う要素間のピクセルの分離を維持します。
 - 複数のオブジェクト間で塗りつぶしを行います。
 
-###### <a name="donts"></a>T'ts:
+###### <a name="donts"></a>してはいけないこと
 
 - 自然に塗りつぶされないオブジェクトを塗りつぶす必要があります。たとえば、ペーパークリップなどです。
 - 角かっこを埋めない。

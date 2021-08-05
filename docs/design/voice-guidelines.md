@@ -1,20 +1,18 @@
 ---
 title: Office アドインの音声ガイドライン
-description: Office アドインのユーザーヘルプやその他の文字列を記述するためのベストプラクティスについて説明します。
-ms.date: 03/19/2019
+description: ユーザー ヘルプや他の文字列を作成する場合のベスト プラクティスについて、Office説明します。
+ms.date: 07/08/2019
 localization_priority: Normal
-ms.openlocfilehash: a70bdf62c76f4b935f7a378b70f1584a6823106a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5bfc671d2462ef2c0b9eaba967744094b512965a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608454"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774057"
 ---
 # <a name="voice-guidelines"></a>音声のガイドライン
 
-Office アドインを設計する際は、UI のテキストと要素に使用するスタイルをよくご検討ください。Office UI のスタイルと一致させるように努めてください。Office UI のスタイルは、ユーザーにとって会話的で魅力的かつ理解しやすいものになっています。 
-
-テキストを Office のスタイルの原則に合わせるために、次の点を守るようにしてください。
+Office アドインを設計する際は、UI のテキストと要素に使用するスタイルをよくご検討ください。Office UI のスタイルと一致させるように努めてください。Office UI のスタイルは、ユーザーにとって会話的で魅力的かつ理解しやすいものになっています。
 
 - **自然なスタイルを使用します。** 話し言葉で記述します。専門用語や過度に技術的な単語やフレーズは避けます。ユーザーによく知られている用語を使用します。
 - **単純で、率直な表現を使用します。** テキストでは、短い単語や文、および能動態を使用します。

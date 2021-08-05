@@ -1,14 +1,14 @@
 ---
 title: Angular で Office アドインを開発する
 description: このAngularを使用して、Office単一ページ アプリケーションとしてアドインを作成します。
-ms.date: 05/03/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350086"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773504"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -76,7 +76,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Angular で Office Dialog API を使用する
+## <a name="use-the-office-dialog-api-with-angular"></a>このダイアログ ボックスOffice API を使用Angular
 
 Office のアドインの Dialog API を使えば、アドインでは、メイン ページと情報をやりとりできるセミモードレス ダイアログ ボックスで、ページを開けるようになります。通常、これは作業ウィンドウにあります。
 
@@ -102,19 +102,19 @@ export class MyComponent {
 }
 ```
 
-## <a name="using-observable"></a>Observable を使用する
+## <a name="use-observable"></a>監視可能な使用
 
 Angular は RxJS (JavaScript の事後対応型の拡張機能) を使用し、RxJS は `Observable` と `Observer` のオブジェクトを導入して非同期処理を実装します。このセクションでは、`Observables` の使い方についての概要を簡単に紹介しています。さらに詳細な情報については、[RxJS](https://rxjs-dev.firebaseapp.com/) の公式ドキュメントを参照してください。
 
 `Observable` は、ある意味で `Promise` オブジェクトに似ています。非同期の呼び出しからすぐに返されますが、すぐには解決されない可能性があります。しかし、`Promise` は、単一の値 (配列オブジェクトのことがあります) なのに対し、`Observable` は、オブジェクトの配列 (メンバーが 1 つだけの可能性あり) です。そのため、コードで `concat`、`map`、`filter` などの[配列メソッド](https://www.w3schools.com/jsref/jsref_obj_array.asp)を `Observable` オブジェクトで呼び出すことができます。
 
-### <a name="pushing-instead-of-pulling"></a>プルではなくプッシュ
+### <a name="push-instead-of-pull"></a>プルの代わりにプッシュする
 
 コードは `Promise` オブジェクトを変数に割り当てることによって "プル" しますが、`Observable` オブジェクトは、値を `Observable` に *登録* するオブジェクトに、"プッシュ" します。サブスクライバーは、`Observer` オブジェクトです。プッシュ アーキテクチャの利点は、時間の経過と共に新しいメンバーを `Observable` 配列に追加できることです。新しいメンバーが追加されると、`Observable` に登録されるすべての `Observer` オブジェクトは通知を受信します。
 
 `Observer` は、関数とともに新規の各オブジェクト ("next" オブジェクトと呼ばれる) を処理するように構成されます。(また、エラーと完了の通知に応答するようにも構成されます。例については、次のセクションを参照してください。)このため、`Observable` オブジェクトは、`Promise` オブジェクトよりも幅広いシナリオで使用できます。たとえば、AJAX 呼び出しから `Observable` を返すことに加えて、`Promise` を返し、`Observable` をテキスト ボックスの "変更" イベント ハンドラーなどのイベント ハンドラーから返すことができます。ユーザーがボックスにテキストを入力するたびに、登録されているすべての `Observer` オブジェクトが、最新のテキストや、アプリケーションの現在の状態を入力として使用することによって、すぐに対応します。
 
-### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>すべての非同期呼び出しが完了するまで待機する
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>すべての非同期呼び出しが完了するまで待ちます
 
 一連の `Promise` オブジェクトの各メンバーが解決されるときのみ確実にコールバックが実行されるようにしたい場合は、`Promise.all()` メソッドを使用します。
 

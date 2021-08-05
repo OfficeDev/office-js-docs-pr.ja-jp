@@ -1,16 +1,16 @@
 ---
 title: Office アドインの色のガイドライン
 description: アドインの UI で色を使用するOfficeします。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349197"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773224"
 ---
-# <a name="color"></a>色
+# <a name="color-guidelines-for-office-add-ins"></a>Office アドインの色のガイドライン
 
 色は、ブランドを強調し、視覚的な階層を明確にするためにしばしば使用されます。 インターフェイスを識別し、エクスペリエンスに従ってお客様をガイドするのに役立ちます。 Office 内で色は、同じ目的で使用されますが、意図的に適用され、最小限に抑えられます。 お客様のコンテンツを圧倒しないでください。 それぞれの Office アプリは、独自の主要な色を使用してブランド化されているとしても、慎重に使用します。
 

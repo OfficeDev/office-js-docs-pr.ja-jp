@@ -3,12 +3,12 @@ title: Outlook アドインで本文にデータを挿入する
 description: Outlook アドインで、メッセージまたは予定の本文にデータを挿入する方法について説明します。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671787"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773133"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
 
@@ -29,7 +29,7 @@ Outlook では、メッセージはテキスト形式、HTML 形式、または�
 
 2.  挿入するデータが HTML で **、getTypeAsync** がアイテムのテキスト型を返す場合は、データをテキストとして再編成し、データをテキスト形式で挿入 **Office。MailboxEnums.BodyType.Text** as _coercionType_. テキストの型を使用して HTML データを挿入するだけで、アプリケーションは HTML タグをテキストとして表示します。 l を _coercionType_ Office.MailboxEnums.BodyType.Htm **HTML** データを挿入しようとすると、エラーが発生します。
 
-_coercionType_ に加えて、Office JavaScript API のほとんどの非同期メソッドと同様に **、getTypeAsync、prependAsync、setSelectedDataAsync** は他のオプションの入力パラメーターを使用します。   これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
+_coercionType_ に加えて、Office JavaScript API のほとんどの非同期メソッドと同様に **、getTypeAsync、prependAsync、setSelectedDataAsync** は他のオプションの入力パラメーターを使用します。   これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>現在のカーソル位置にデータを挿入する

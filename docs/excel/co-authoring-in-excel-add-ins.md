@@ -1,14 +1,14 @@
 ---
 title: Excel アドインの共同編集機能
 description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
-ms.date: 07/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6923b003417e78432975fa78fb5423b055bd02bf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671486"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774162"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
@@ -48,7 +48,7 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 
 たとえば、データの入力規則のシナリオでは、一般に、イベントに呼応して UI を表示します。 前のセクションで説明した [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントは、ローカル ユーザーまたは共同編集者 (リモート) のどちらかがバインディングの範囲内でブックの内容を変更したときに実行されます。 イベントのイベント ハンドラーに UI が表示される場合、ブックで作業していた変更とは無関係の UI が表示され、ユーザー エクスペリエンス `BindingDataChanged` が低下します。 アドインでイベントを使用する場合は、UI の表示を避けるようにしてください。
 
-## <a name="avoiding-table-row-coauthoring-conflicts"></a>テーブル行の共同編集の競合を回避する
+## <a name="avoid-table-row-coauthoring-conflicts"></a>テーブル行の共同編集の競合を回避する
 
 API の呼び出しによって共同編集の競合が発生 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) する可能性がある既知の問題です。 他のユーザーがアドインのブックを編集している間にアドインが実行される可能性がある場合は、その API を使用することをお勧めしません (特に、テーブルまたはテーブルの下の任意の範囲を編集している場合)。 次のガイダンスは、メソッドの問題を回避するのに役立ちます (また、ユーザーに更新を求めるExcel黄色のバーをトリガー `TableRowCollection.add` しないようにします)。
 

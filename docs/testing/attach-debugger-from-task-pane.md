@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウからデバッガーをアタッチする
 description: 作業ウィンドウからデバッガーをアタッチする方法について学習する
-ms.date: 06/17/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f5a63e9912e2a7d8ac400fc9abba116abfedbbeb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077198"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774316"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>作業ウィンドウからデバッガーをアタッチする
 
@@ -17,19 +17,19 @@ Windows での Office 2016 のビルド 77xx.xxxx 以降では、作業ウィン
 **デバッガーのアタッチ** ツールを起動するのには、作業ウィンドウの右上隅を選択して **パーソナリティ** メニューを有効にします (以下の図の赤い円で示す通り)。
 
 > [!NOTE]
-> - 現在サポートされているデバッガー ツールは、[Update 3](https://www.visualstudio.com/downloads/) 以降を適用した [Visual Studio 2015](/previous-versions/mt752379(v=vs.140)) だけです。 インストールされていない場合Visual Studioデバッガーの接続オプションを選択しても、操作は実行されません。
+> - 現在、サポートされているデバッガー ツールは、更新プログラム[3](/previous-versions/mt752379(v=vs.140))以降Visual Studio [2015](https://www.visualstudio.com/downloads/)でサポートされています。 インストールされていない場合Visual Studioデバッガーの接続オプションを選択しても、操作は実行されません。
 > - **[デバッガーのアタッチ]** ツールでデバッグできるのは、クライアント側の JavaScript だけです。 Node.js サーバーなど、サーバー側のコードをデバッグするには、多くのオプションがあります。 Visual Studio Code でデバッグするための詳しい方法については、「[VS Code で Node.js をデバッグする](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)」を参照してください。 Visual Studio Code を使用していない場合は、「Node.js のデバッグ」または「{サーバー名} のデバッグ」で検索してください。
 
 ![[デバッガーのアタッチ] メニューのスクリーンショット。](../images/attach-debugger.png)
 
-**デバッガーのアタッチ** を選択するこれにより、次の図のように、**Visual Studio Just-in-Time デバッガー** ダイアログ ボックスが起動します。 
+**デバッガーのアタッチ** を選択するこれにより、次の図のように、**Visual Studio Just-in-Time デバッガー** ダイアログ ボックスが起動します。
 
 ![[JIT デバッガー Visual Studioのスクリーンショットです。](../images/visual-studio-debugger.png)
 
 Visual Studio では、**ソリューション エクスプローラー** 内にコード ファイルが表示されます。   Visual Studio でデバッグするコードの行にブレークポイントを設定することができます。
 
 > [!NOTE]
-> [パーソナリティ] メニューが表示されない場合は、Visual Studio を使用してアドインをデバッグできます。 Office で作業ウィンドウ アドインが開いていることを確認してから、次の手順を実行します。
+> [パーソナリティ] メニューが表示されない場合は、Visual Studio を使用してアドインをデバッグできます。 作業ウィンドウ アドインが [作業ウィンドウ] ウィンドウで開いているOffice、次の手順を実行します。
 >
 > 1. Visual Studio で、**[デバッグ]** > **[プロセスにアタッチ]** の順に選択します。
 > 2. **使用可能なプロセス** で、[アドインが Internet Explorer または Microsoft Edge のどちらを使用しているか](../concepts/browsers-used-by-office-web-add-ins.md)に応じて、使用可能なすべての `Iexplore.exe` プロセス *または* 使用可能なすべての `MicrosoftEdge*.exe` プロセスの *どちらか* を選択し、[**添付**] ボタンを選択します。

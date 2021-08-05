@@ -1,14 +1,14 @@
 ---
 title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
-ms.date: 09/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6fcd1dd077dd6b3204d154e35e4c968ba9585a54
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d191b2d7ac6135600bd6875ef7fbbced55caec8b
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348644"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774036"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
@@ -61,7 +61,6 @@ ms.locfileid: "53348644"
 2. `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` の下に `RuntimeLogging` レジストリ キーを追加します。
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
-
 
 3. **RuntimeLogging** キーの既定値にログを書き込むファイルの完全なパスを設定します。 例については、[EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip) を参照してください。
 

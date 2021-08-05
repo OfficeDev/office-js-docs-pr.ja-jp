@@ -3,12 +3,12 @@ title: カスタム コンテキスト タブを Officeアドインで作成す�
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5f8b2a6810a7457d3f9c44f236c42e5d24efa040
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671535"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774022"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "53671535"
 [!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
-> カスタム コンテキスト タブは現在、次のプラットフォームExcelビルドでのみサポートされています。
+> カスタム コンテキスト タブは現在、これらのプラットフォームExcelビルドでのみサポートされています。
 >
 > - Excel (Windows サブスクリプションMicrosoft 365): バージョン 2102 (ビルド 13801.20294) 以降。
 > - Excel on the web
@@ -66,7 +66,6 @@ ms.locfileid: "53671535"
 > JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](../reference/manifest/customtab.md) 要素とその子孫要素の構造と大まかに平行です。
 
 コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは、dynamic-ribbon.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して、JSON を取得IntelliSense検証できます。 詳細については、「JSON スキーマと設定を使用Visual Studio Code JSON の編集[」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
-
 
 1. まず、という名前の 2 つの配列プロパティを持つ JSON 文字列を作成 `actions` します `tabs` 。 配列 `actions` は、コンテキスト タブのコントロールで実行できるすべての関数の仕様です。配列 `tabs` は、最大 *20* までの 1 つ以上のコンテキスト タブを定義します。
 
@@ -163,12 +162,12 @@ ms.locfileid: "53671535"
 
     - を除くすべての `enabled` プロパティが必要です。
     - `type` コントロールの種類を指定します。 値には、"Button"、"Menu"、または "MobileButton" を指定できます。
-    - `id` 125 文字まで指定できます。 
+    - `id` 125 文字まで指定できます。
     - `actionId` は、配列で定義されているアクションの ID である必要 `actions` があります。 (このセクションの手順 1 を参照してください)。
     - `label` は、ボタンのラベルとして機能するユーザーフレンドリーな文字列です。
     - `superTip` は、豊富な形式のツール ヒントを表します。 プロパティと `title` プロパティ `description` の両方が必要です。
     - `icon` ボタンのアイコンを指定します。 グループ アイコンに関する前の説明もここでも適用されます。
-    - `enabled` (省略可能) は、コンテキスト タブが表示されたら、ボタンを有効にするかどうかを指定します。 存在しない場合の既定値は `true` です。 
+    - `enabled` (省略可能) は、コンテキスト タブが表示されたら、ボタンを有効にするかどうかを指定します。 存在しない場合の既定値は `true` です。
 
     ```json
     {
@@ -193,7 +192,7 @@ ms.locfileid: "53671535"
         ]
     }
     ```
- 
+
 JSON BLOB の完全な例を次に示します。
 
 ```json
@@ -532,7 +531,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>コンテキスト以外のタブまたはコントロールを使用する
 
-カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)があります。 
+カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)があります。
 
 この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、コンテキストに依存しないカスタム タブ) をマニフェストで定義する方法です。 ただし `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 、CustomTab の最初の子要素として [追加します](../reference/manifest/customtab.md)。 その効果は次のとおりです。
 

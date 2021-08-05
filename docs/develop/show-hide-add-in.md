@@ -1,14 +1,14 @@
 ---
 title: Office アドインの作業ウィンドウを表示または非表示にする
 description: 継続的に実行されている間に、アドインのユーザー インターフェイスをプログラムで非表示または表示する方法について説明します。
-ms.date: 12/28/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7df6301073531661ba87ddaaef711a131cf90fac
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b2f0efa95f4ce71fc73d9834cfc165cfdd85dc8f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671514"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773756"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Office アドインの作業ウィンドウを表示または非表示にする
 
@@ -77,7 +77,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-この関数は、ハンドラーを登録解除 *する別の関数を* 返します。 次に、単純ですが堅牢ではない例を示します。
+この関数は、ハンドラーを登録解除 *する別の関数を* 返します。 ここでは、単純ですが堅牢ではない例を示します。
 
 ```javascript
 var removeVisibilityModeHandler =

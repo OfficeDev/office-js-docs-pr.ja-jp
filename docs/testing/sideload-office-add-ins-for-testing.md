@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
-ms.date: 04/14/2021
+ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a5efb7bf49c96f4b31f4f811e4c2fd4720694a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348637"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773651"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -99,7 +99,7 @@ ms.locfileid: "53348637"
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-ブラウザーのキャッシュをクリアすると、以前にサイドロードされたアドインを削除できます。 アドインのマニフェストに変更を加えた場合 (たとえば、アイコンのファイル名やアドイン コマンドのテキストを更新する) 場合は[、Office](clear-cache.md)キャッシュをクリアしてから、更新されたマニフェストを使用してアドインを再読み込みする必要があります。 これを実行することにより、アドインは更新されたマニフェストの記載どおりに Office で表示されるようになります。
+ブラウザーのキャッシュをクリアすると、以前にサイドロードされたアドインを削除できます。 アドインのマニフェストに変更を加えた場合 (たとえば、アイコンのファイル名やアドイン コマンドのテキストを更新する) 場合は、ブラウザーのキャッシュをクリアしてから、更新されたマニフェストを使用してアドインを再読み込みする必要があります。 これにより、Office on the webマニフェストで説明されているとおりにアドインをレンダリングできます。
 
 ## <a name="see-also"></a>関連項目
 

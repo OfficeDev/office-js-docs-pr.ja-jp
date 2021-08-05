@@ -1,20 +1,20 @@
 ---
 title: サードパーティ cookie をOffice ITP で動作するアドインを開発する
 description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
-ms.date: 03/12/2021
+ms.date: 07/8/2021
 localization_priority: Normal
-ms.openlocfilehash: dbc23e4ead0abc94ffa173ffc22919342c4fca6d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349862"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773476"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作するアドインを開発する
 
 カスタム アドインOfficeサード パーティ Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント 追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。 サードパーティの Cookie を使用してユーザーを認証したり、設定の保存などの他のシナリオで使用している場合があります。
 
-アドインとOfficeがサードパーティの Cookie に依存している必要のある場合は、次の手順を使用して ITP を使用します。
+アドインとOfficeがサードパーティの Cookie に依存している必要がある場合は、次の手順を使用して ITP を使用します。
 
 1. OAuth [2.0 Authorization](https://tools.ietf.org/html/rfc6749)を設定して、認証ドメイン (Cookie を要求するサード パーティ) が承認トークンを Web サイト   に転送します。 トークンを使用して、サーバーセットの Secure Cookie と HttpOnly Cookie を使用してファースト パーティのログイン [セッションを確立します](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。
 2. サードパーティが[ファーストStorage Cookie](https://webkit.org/blog/8124/introducing-storage-access-api/)へのアクセスを取得するためのアクセス許可を要求するには、Storage Access API   を使用します。 Mac 上の現在OfficeバージョンとOffice on the web API がサポートされています。

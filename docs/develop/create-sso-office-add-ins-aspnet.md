@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: シングル サインオン (SSO) を使用する ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法の詳細なガイド。
-ms.date: 06/15/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349974"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773889"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
@@ -121,7 +121,7 @@ ms.locfileid: "53349974"
 
 1. ソリューション エクスプローラー **に戻り**、アドイン **ASPNET-SSO-WebAPI** プロジェクトOffice (右クリックしない) を選択します。 [**プロパティ**] ウィンドウを開きます。 [**SSL 有効**] が [**True**] であることを確認します。 [**SSL URL**] が `http://localhost:44355/` であることを確認します。
 
-1. 「Web.config」 で、以前にコピーした値を使用します。 [**ida:ClientID**] と [**ida:Audience**] の両方を [**アプリケーション (クライアント) ID**] に設定し、[**ida:Password**] をクライアント シークレットに設定します。 また **、ida:Domain を** `http://localhost:44355` (末尾にスラッシュ "/" なし) に設定します。 
+1. 「Web.config」 で、以前にコピーした値を使用します。 [**ida:ClientID**] と [**ida:Audience**] の両方を [**アプリケーション (クライアント) ID**] に設定し、[**ida:Password**] をクライアント シークレットに設定します。 また **、ida:Domain を** `http://localhost:44355` (末尾にスラッシュ "/" なし) に設定します。
 
     > [!NOTE]
     > アプリケーション **(クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
@@ -150,7 +150,7 @@ ms.locfileid: "53349974"
 
 ### <a name="setup-for-single-tenant"></a>シングルテナントのセットアップ
 
-アドインを登録したときに、**サポートされているアカウントの種類** で「この組織のディレクトリ内のアカウントのみ」を選択した場合は、これらの追加のセットアップ手順を実行する必要があります。
+アドインの登録時にサポートされるアカウントの種類に対して [この組織ディレクトリ内のアカウントのみ] を選択した場合は、次の追加セットアップ手順を実行する必要があります。
 
 1. Azure ポータルに戻り、アドインの登録の [**概要**] ブレードを開きます。 [**Directory (テナント) ID**] をコピーします。
 
@@ -160,7 +160,7 @@ ms.locfileid: "53349974"
 
 ## <a name="code-the-client-side"></a>クライアント側のコードの作成
 
-1. [**スクリプト**] フォルダー内の HomeES6.js ファイルを開きます。 これには、一部のコードが既に含まれています。
+1. [**スクリプト**] フォルダー内の HomeES6.js ファイルを開きます。 既にいくつかのコードが含されています。
 
     * Office が UI に Internet Explorer を使用しているときにアドインを実行できるように、Office.Promise オブジェクトをグローバル ウィンドウ オブジェクトに割り当てるポリフィル。 (詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。)
     * `Office.initialize` メソッドへの割り当てが、`getGraphAccessTokenButton` ボタン クリック イベントへのハンドラーの割り当てになります。
@@ -168,7 +168,8 @@ ms.locfileid: "53349974"
     * `logErrors` メソッドは、エンド ユーザーを対象としていないエラーをコンソールにログ出力するものです。
     * SSO がサポートされていない、または SSO がエラーになっているシナリオでアドインが使用するフォールバック認証システムを実装するコード。
 
-1. `Office.initialize` への割り当ての下に、次に示すコードを追加します。 このコードについては以下の点に注目してください。
+1. `Office.initialize` への割り当ての下に、次に示すコードを追加します。 このコードについては、以下の点に注意してください。
+
 
     * アドインのエラー処理により、アクセス トークンの取得が別のオプションのセットを使用して自動的に再試行されることがあります。 カウンター変数 `retryGetAccessToken` は、ユーザーがトークンを取得しようとしたときに繰り返し再試行されないように使用されます。
     * `getGraphData` 関数は、ES6 `async` キーワードで定義されます。 ES6 構文を使用すると、Office アドインの SSO API の使用が非常に簡単になります。 これは、ソリューション内の、Internet Explorer でサポートされていない構文を使用する唯一のファイルです。 ファイル名に「ES6」というリマインダーが設定されています。 このソリューションでは、tsc トランスパイラーを使用してこのファイルを ES5 にトランスパイルします。これにより、Office が UI に Internet Explorer を使用しているときにアドインが実行されます。 (プロジェクトのルートにある tsconfig.json ファイルを参照します。)
@@ -423,7 +424,7 @@ ms.locfileid: "53349974"
     }
     ```
 
-1. `TODO 1` を以下のように置き換えます。 このコードの注意点は次のとおりです。
+1. `TODO 1` を以下のように置き換えます。 このコードについては、以下の点に注意してください。
 
     * このコードは、OWIN に対して、Office アプリケーションから取得されるブートストラップ トークンで指定された対象ユーザーが、web.config で指定された値と一致するように指示します。
     * Microsoft アカウントには、組織のテナント GUID とは異なる発行者 GUID が含むので、両方の種類のアカウントをサポートするために、発行者を検証することはできません。
@@ -439,7 +440,7 @@ ms.locfileid: "53349974"
     };
     ```
 
-1. `TODO 2` を次のように置き換えます。このコードの注意点は次のとおりです。
+1. `TODO 2`を以下のように置き換えます。 このコードについては、以下の点に注意してください。
 
     * より一般的な `UseWindowsAzureActiveDirectoryBearerAuthentication` は Azure AD V2 エンドポイントに準拠していないため、その代わりとしてメソッド `UseOAuthBearerAuthentication` が呼び出されます。
     * メソッドに渡される URL は、OWIN ミドルウェアが、Office アプリケーションから受信したブートストラップ トークンの署名を確認するために必要なキーを取得する手順を取得します。 URL の権威セグメントは、web.config から取得されます。これは「common」という文字列か、シングルテナント アドインの場合は GUID です。

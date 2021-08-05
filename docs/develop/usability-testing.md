@@ -1,18 +1,18 @@
 ---
 title: Office アドインのユーザビリティ テスト
 description: 実際のユーザーと一緒にアドイン設計をテストする方法について学習します。
-ms.date: 03/19/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5de29a15a9e382b990985765eaad801b1b54f364
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f797033343fd20d814cba1fd67ad8eb21b246b3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349694"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773343"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
-ユーザーの動作を考慮してデザインされたアドインは優れています。デザインを決定する際には自分の先入感が影響を及ぼすので、実際のユーザーを用いてデザインをテストし、アドインが顧客にとって有用かどうかを確認するのは重要です。 
+ユーザーの動作を考慮してデザインされたアドインは優れています。デザインを決定する際には自分の先入感が影響を及ぼすので、実際のユーザーを用いてデザインをテストし、アドインが顧客にとって有用かどうかを確認するのは重要です。
 
 ユーザービリティ テストは、さまざまな方法で実行できます。 多くのアドイン開発者にとって、リモートでモダンな操作性の調査が最も時間とコスト効率に優れています。 いくつかの一般的なテスト サービスを使用すると、これを簡単に実行できます。いくつかの例を次に示します。
 
@@ -20,23 +20,23 @@ ms.locfileid: "53349694"
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
 - [Userzoom.com](https://www.Userzoom.com)
 
-これらのテスト サービスは、テスト計画の作成を効率化し、参加者を探したりテストをモデレートしたりする必要をなくすのに役立ちます。 
+これらのテスト サービスは、テスト計画の作成を効率化し、参加者を探したりテストをモデレートしたりする必要をなくすのに役立ちます。
 
 デザインに関するほとんどのユーザビリティの問題を見出すのに必要な参加者は 5 人だけです。製品がユーザー中心になっていることを確認するには、開発サイクル全体にわたって小規模なテストを定期的に組み込んでください。
 
 > [!NOTE]
 > 複数のプラットフォームにまたがってアドインのユーザビリティをテストすることをお勧めします。[AppSource](/office/dev/store/submit-to-appsource-via-partner-center) にアドインを公開するには、[定義したメソッドをサポートするプラットフォーム](../overview/office-add-in-availability.md)すべてでそのアドインが作動する必要があります。
 
-## <a name="1---sign-up-for-a-testing-service"></a>1. テスト サービスにサインアップする
+## <a name="1-sign-up-for-a-testing-service"></a>1. テスト サービスにサインアップする
 
 詳細については、「[Selecting an Online Tool for Unmoderated Remote User Testing](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)」 (モデレートされていないリモート ユーザー テスト用のオンライン ツールの選択) を参照してください。
 
 ## <a name="2-develop-your-research-questions"></a>2. 調査での質問項目を設定する
- 
+
 調査での質問項目を設定することにより、調査の目的を定義し、テストの計画を導いていることになります。質問項目は、募集する参加者や実行するタスクを特定するのに役立ちます。調査での質問項目は、可能な限り具体的に設定してください。広範な質問に回答するように努めることもできます。
- 
+
 以下に、研究に関する質問の例を示します。
-  
+
 **具体的な質問**
 
 - ユーザーは、ランディング ページ上の "無料試用版" リンクに気が付きますか。
@@ -103,7 +103,7 @@ ms.locfileid: "53349694"
 詳細については、「[Writing Great Tasks](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks)」 (優れたタスクの作成) を参照してください。
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. タスクや質問に対応するプロトタイプを作成する
- 
+
 Live アドインをテストするか、プロトタイプをテストすることができます。 Live アドインをテストする場合は、Office の最新バージョンがあり、アドインのインストールを予定しており、アカウントのサインアップを予定している (ログオン資格情報を提供しない場合) 参加者を選別する必要があることに注意してください。後で、アドインを正常にインストールしたかどうかを確認する必要があります。
 
 平均すると、ユーザーがアドインのインストール方法をひととおり実行するには約 5 分間かかります。明確で簡潔なインストール手順の例を次に示します。テストの仕様に基づいて手順を調整してください。
@@ -131,15 +131,14 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 ## <a name="9-analyze-results"></a>9.結果を分析する
 
-この時点で、収集したデータが意味のあるものになります。テストのビデオを見ている間に、ユーザーが直面した問題や成功についてメモを記録します。すべての結果を見終えるまで、データの意味を解釈しようとしないでください。 
+この時点で、収集したデータが意味のあるものになります。テストのビデオを見ている間に、ユーザーが直面した問題や成功についてメモを記録します。すべての結果を見終えるまで、データの意味を解釈しようとしないでください。
 
 ユーザビリティの問題を抱える参加者が 1 人では、デザインに変更を加える正当な理由としては十分ではありません。複数の参加者が同じ問題に直面している場合は、一般集団内の他のユーザーもその問題に直面するであろうことを示しています。
 
 一般に、データを使用して結論を出す方法については注意が必要です。特定のストーリーにデータを合わせようとする誤ちに注意してください。実際にデータが証明していること、反証していること、単に洞察を提供できないことについて公正に吟味してください。先入観を持たないでください。ユーザーの動作はデザイナーの期待に反することがよくあります。
 
-
 ## <a name="see-also"></a>関連項目
 
-- [ユーザビリティ テストを実施する方法](https://whatpixel.com/howto-conduct-usability-testing/)
-- [UserTesting のベスト プラクティス](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
-- [偏りを最小限に抑える](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
+- [ユーザビリティ テストを実施する方法](https://whatpixel.com/howto-conduct-usability-testing/)  
+- [UserTesting のベスト プラクティス](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [偏りを最小限に抑える](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

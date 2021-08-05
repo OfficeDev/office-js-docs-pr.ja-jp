@@ -1,14 +1,14 @@
 ---
 title: ホスト ページからダイアログ ボックスにメッセージを渡す別の方法
 description: messageChild メソッドがサポートされていない場合に使用する回避策について説明します。
-ms.date: 09/24/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8da6bc3e1231bc6296a16fa153dc0e4ba1bd102b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d664178a804b206e02634326cc27699fc6ceb0f7
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349778"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773385"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>ホスト ページからダイアログ ボックスにメッセージを渡す別の方法
 
@@ -16,7 +16,6 @@ ms.locfileid: "53349778"
 
 - `displayDialogAsync` に渡される URL にクエリ パラメーターを追加します。
 - ホスト ウィンドウとダイアログ ボックスの両方にアクセス可能な場所に情報を格納します。 2 つのウィンドウは共通のセッション ストレージ [(Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)プロパティ) を共有しないが、同じドメイン *(ポート* 番号がある場合はポート番号を含む) を持つ場合は、共通のローカル Storage を [共有します](https://www.w3schools.com/html/html5_webstorage.asp)。\*
-
 
 > [!NOTE]
 > \* トークン処理の戦略に影響を与えるバグがあります。 Safari または Microsoft Edge ブラウザーの **Office on the web** でアドインを実行している場合、ダイアログ ボックスとタスク ウィンドウは同じローカル ストレージを共有しないため、これらの間の通信に使用できません。

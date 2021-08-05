@@ -1,14 +1,14 @@
 ---
 title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348413"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774050"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 
@@ -17,7 +17,7 @@ ms.locfileid: "53348413"
 > [!IMPORTANT]
 > スライドを追加する API は [プレビュー中であり](../reference/requirement-sets/powerpoint-preview-apis.md) 、実稼働アドインでは使用できません。スライドを *削除するための* API がリリースされました。
 
-スライドを追加する API は、主に、プレゼンテーション内のスライド マスターとレイアウトの ID がコーディング時に知られているか、実行時にデータ ソースで見つかるシナリオで使用されます。 このようなシナリオでは、選択基準 (スライド マスターやレイアウトの名前やイメージなど) とスライド マスターおよびレイアウトの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが既定のスライド マスターとマスター の既定のレイアウトを使用するスライドを挿入できるシナリオや、ユーザーが既存のスライドを選択して、同じスライド マスターとレイアウト (ただし、同じコンテンツではない) を持つ新しいスライドを作成できるシナリオでも使用できます。 詳細 [については、「使用するスライド マスターとレイアウトの選択](#selecting-which-slide-master-and-layout-to-use) 」を参照してください。
+スライドを追加する API は、主に、プレゼンテーション内のスライド マスターとレイアウトの ID がコーディング時に知られているか、実行時にデータ ソースで見つかるシナリオで使用されます。 このようなシナリオでは、選択基準 (スライド マスターやレイアウトの名前やイメージなど) とスライド マスターおよびレイアウトの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが既定のスライド マスターとマスター の既定のレイアウトを使用するスライドを挿入できるシナリオや、ユーザーが既存のスライドを選択して、同じスライド マスターとレイアウト (ただし、同じコンテンツではない) を持つ新しいスライドを作成できるシナリオでも使用できます。 詳細 [については、「使用するスライド マスターとレイアウトの選択](#select-which-slide-master-and-layout-to-use) 」を参照してください。
 
 ## <a name="add-a-slide-with-slidecollectionadd-preview"></a>SlideCollection.add を使用してスライドを追加する (プレビュー)
 
@@ -35,9 +35,9 @@ async function addSlide() {
 }
 ```
 
-### <a name="selecting-which-slide-master-and-layout-to-use"></a>使用するスライド マスターとレイアウトの選択
+### <a name="select-which-slide-master-and-layout-to-use"></a>使用するスライド マスターとレイアウトを選択する
 
-[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)パラメーターを使用して、新しいスライドに使用するスライド マスターと、マスター 内で使用するレイアウトを制御します。 次に例を示します。 このコードについては以下の点に注目してください。
+[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)パラメーターを使用して、新しいスライドに使用するスライド マスターと、マスター 内で使用するレイアウトを制御します。 次に例を示します。 このコードについては、以下の点に注意してください。
 
 - オブジェクトのプロパティのどちらかまたは両方を含 `AddSlideOptions` めることができます。
 - 両方のプロパティを使用する場合は、指定したレイアウトが指定したマスターに属している必要があります。またはエラーがスローされます。
@@ -67,7 +67,7 @@ async function addSlide() {
 
 新しいスライドで既存のスライドで使用されるスライド マスターとレイアウトの同じ組み合わせを使用するシナリオでアドインを使用できる場合は、(1) ユーザーにスライドの選択を求めるプロンプトを表示し、(2) スライド マスターとレイアウトの ID を読み取る必要があります。 次の手順では、一致するマスターとレイアウトを持つスライドを読み取り、スライドを追加する方法を示します。
 
-1. 選択したスライドのインデックスを取得するメソッドを作成します。 次に例を示します。 このコードの注意点は次のとおりです。
+1. 選択したスライドのインデックスを取得するメソッドを作成します。 次に例を示します。 このコードについては、以下の点に注意してください。
 
     - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用します。
     - 呼び出 `getSelectedDataAsync` しは Promise 戻り関数に埋め込まれている。 これを行う理由と方法の詳細については [、「Promise-returning](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)関数で一般的な API をラップする」を参照してください。

@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: アドイン プラットフォームのプライバシーとセキュリティOfficeについて説明します。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349155"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773273"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -72,7 +72,7 @@ Office アドインは、AppSource で公開することで利用可能にでき
 
 ## <a name="optional-connected-experiences"></a>オプションの接続エクスペリエンス
 
-エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 アドインOffice、オプションの接続エクスペリエンスの設定を無効にした場合の影響は、ユーザーがこれらのクライアントを介してアドインまたは Office ストアにアクセスできなくなった場合です。 ただし、必須またはビジネスクリティカルと見なされる特定の Microsoft アドインと、組織の IT 管理者が集中展開を通じて展開する[](../publish/centralized-deployment.md)アドインは引き続き利用できます。 また、アドインとストアは、設定の状態に関係Outlook on the web、アプリ内で引き続き使用できます。
+エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 アドインOffice、オプションの接続エクスペリエンスの設定を無効にした場合の影響は、ユーザーがこれらのクライアントを介してアドインまたは Office ストアにアクセスできなくなった場合です。 ただし、必須またはビジネスクリティカルと見なされる特定の Microsoft アドインと、組織の IT 管理者が集中展開を通じて展開する[](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)アドインは引き続き利用できます。 また、アドインとストアは、設定の状態に関係Outlook on the web、アプリ内で引き続き使用できます。
 
 ユーザー固有の動作Outlook詳細については、「プライバシー、アクセス許可、セキュリティ」を参照Outlook[してください](../outlook/privacy-and-security.md#optional-connected-experiences)。
 

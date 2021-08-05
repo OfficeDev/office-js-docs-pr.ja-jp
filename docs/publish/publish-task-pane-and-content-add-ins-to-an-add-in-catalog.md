@@ -1,27 +1,28 @@
 ---
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 737448a498741ec0327939dc9e562fc04d78a8e5
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 7af7b951ebe6b2523ed0b8644cc7f115f0082889
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234178"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773063"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
 アプリ カタログは、Office アドインと SharePoint アドインのドキュメント ライブラリをホストする SharePoint Web アプリケーションまたは SharePoint Online テナンシーの専用サイト コレクションです。組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。管理者がアプリ カタログを信頼できるカタログとして登録すると、ユーザーは Office クライアント アプリケーションで挿入 UI からアドインを挿入できます。
 
 > [!IMPORTANT]
+>
 > - SharePoint のアプリ カタログでは、アドイン コマンドなど、[アドイン マニフェスト](../develop/add-in-manifests.md)の `VersionOverrides` ノードで実装されるアドイン機能がサポートされていません。
-> - クラウド環境またはハイブリッド環境をターゲットにしている場合は [、Microsoft 365](../publish/centralized-deployment.md) 管理センターから一元展開を使用してアドインを発行することをお勧めします。
+> - クラウド環境またはハイブリッド環境をターゲットにしている場合は、アドインを発行[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)するために、Microsoft 365 管理センター経由で統合アプリを使用することをお勧めします。
 > - SharePoint のアプリ カタログは Office on Mac ではサポートされていません。 Office アドインを Mac クライアントに展開するには、そのアドインを [AppSource](/office/dev/store/submit-to-the-office-store) に提出する必要があります。
 
 ## <a name="create-an-app-catalog"></a>アプリ カタログを作成する
 
-次のいずれかのセクションの手順を実行して、オンプレミスの SharePoint Server または Microsoft 365 でアプリ カタログを作成します。
+以下のいずれかのセクションの手順を実行して、オンプレミスのサーバーまたはサーバー上でアプリ カタログSharePoint作成Microsoft 365。
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>オンプレミス SharePoint サーバーでアプリ カタログを作成する
 
@@ -29,25 +30,25 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 
 アプリ カタログを作成したら [Office アドインを発行する](#publish-an-office-add-in) 手順に従います。
 
-### <a name="to-create-an-app-catalog-on-microsoft-365"></a>Microsoft 365 でアプリ カタログを作成するには
+### <a name="to-create-an-app-catalog-on-microsoft-365"></a>アプリ カタログを作成するには、Microsoft 365
 
-SharePoint アプリ カタログを作成するには、「アプリ カタログ サイト コレクションを作成 [する」の手順に従います](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 アプリ カタログを作成したら、次のセクションの手順に従って、新しいアドインOffice発行します。
+アプリ カタログをSharePointするには、「アプリ カタログ サイト コレクションの作成[」の手順に従います](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 アプリ カタログを作成したら、次のセクションの手順に従って、アドインにOffice発行します。
 
 ## <a name="publish-an-office-add-in"></a>Office アドインの発行
 
-Microsoft 365 またはオンプレミスの SharePoint Server のアプリ カタログに Office アドインを発行するには、次のいずれかのセクションの手順を実行します。
+次のいずれかのセクションの手順を実行して、Office またはオンプレミスの Microsoft 365 サーバー上のアプリ カタログにSharePointします。
 
-### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Microsoft 365 Office SharePoint アプリ カタログにアドインを発行するには
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>アプリ カタログにOfficeアドインを発行するには、SharePointアプリ カタログMicrosoft 365
 
 1. [新しい SharePoint 管理センターの [アクティブなサイト] ページ](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true)に移動し、組織の[管理者権限](/sharepoint/sharepoint-admin-role)が付与されているアカウントでサインインします。
 
     > [!NOTE]
-    > Microsoft 365 Germany を使用している場合は [、Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041)管理センターにサインインし、SharePoint 管理センターに移動して、[その他の機能] ページを開きます。 <br>21Vianet (中国) が運営する Microsoft 365 を使用している場合は [、Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627)管理センターにサインインし、SharePoint 管理センターに移動して、[その他の機能] ページを開きます。
+    > ドイツ語をMicrosoft 365場合は、Microsoft 365 管理センター[](https://go.microsoft.com/fwlink/p/?linkid=848041)にサインインし、SharePoint管理センターを参照し、[その他の機能] ページを開きます。 <br>21Vianet (中国Microsoft 365操作している場合は、Microsoft 365 管理センター にサインインし[、SharePoint](https://go.microsoft.com/fwlink/p/?linkid=850627)管理センターを参照し、[その他の機能] ページを開きます。
 
-1. URL 列で URL を選択して、アプリ カタログ サイトを開きます。
+1. [URL] 列で URL を選択して、アプリ カタログ サイトを開きます。
 
     > [!NOTE]
-    > 前のセクションでアプリ カタログ サイトを作成したばかりである場合、サイトのセットアップが完了するには数分かかる場合があります。
+    > 前のセクションでアプリ カタログ サイトを作成し終えたばかりの場合、サイトのセットアップが完了するには数分かかる場合があります。
 
 1. [**Office 用アプリを配信する**] を選択します。
 1. [**Office 用アプリ**] ページで、[**新規**] を選択します。
@@ -93,4 +94,4 @@ Microsoft 365 またはオンプレミスの SharePoint Server のアプリ カ�
 1. [Office アドイン] ダイアログの **[自分の所属組織]** タブを選択します。Office アドインのリストが表示されます。
 1. Office アドインを選択し、 **追加** を選択します。
 
-または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 関連するポリシー設定は [、Microsoft 365 Apps、Office 2019、および Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) の管理用テンプレート ファイル (ADMX/ADML) で使用できます。ユーザーの構成\ポリシー\管理用テンプレート **\Microsoft Office 2016\セキュリティ設定\セキュリティ センター\** 信頼済みカタログにあります。
+または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 関連するポリシー設定は [、Microsoft 365 Apps、Office 2019、および Office 2016](https://www.microsoft.com/download/details.aspx?id=49030)の管理用テンプレート ファイル (ADMX/ADML) で使用できます。「ユーザー構成\ポリシー\管理用テンプレート **\Microsoft Office 2016\Security 設定\Trust Center\Trusted Catalogs」** の下にあります。

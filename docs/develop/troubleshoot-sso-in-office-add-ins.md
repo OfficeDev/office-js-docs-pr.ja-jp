@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
-ms.date: 02/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 3d6f78802c51035664f7d12aa787c89aa62057d9
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: daddd5e1565fa870755b2368aba031b5768987a4
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590933"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773742"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
@@ -28,6 +28,7 @@ ms.locfileid: "52590933"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>getAccessToken からのエラーの原因と処理
 
 このセクションで説明するエラー処理の例については、次を参照してください。
+
 - [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
 - [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
@@ -81,8 +82,8 @@ ms.locfileid: "52590933"
 
 - 開発中にこのエラーが発生する場合は、アドインの登録とアドイン マニフェストで `profile` のアクセス許可および (MSAL.NET を使用している場合は) `openid` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 - 運用環境では、このエラーの原因として考えられることがいくつかあります。 その一部を次に示します。
-    - ユーザーは Microsoft アカウント ID を持っています。
-    - Microsoft 365 Education または作業用アカウントで他の 13xxx エラーの 1 つが発生する状況によっては、MSA を使用すると 13007 が発生します。
+  - ユーザーは Microsoft アカウント ID を持っています。
+  - Microsoft 365 Education または作業用アカウントで他の 13xxx エラーの 1 つが発生する状況によっては、MSA を使用すると 13007 が発生します。
 
   これらのすべてのケースでは、コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
 
@@ -96,7 +97,7 @@ ms.locfileid: "52590933"
 
 ### <a name="13012"></a>13012
 
-いくつかの原因が考えられます。
+考えられる原因は複数あります。
 
 - アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](../reference/requirement-sets/identity-api-requirement-sets.md)。
 - `getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡され、ユーザーが AppSource からアドインを取得しました。 このシナリオでは、アドインが必要とする Microsoft Graph スコープ (権限) について、テナント管理者はアドインに同意していません。 Office では、ユーザーに求めることができるのは AAD `profile` スコープへの同意のみであるため、`allowConsentPrompt` を使用して `getAccessToken` を取り消しても問題は解決できません。
@@ -118,6 +119,7 @@ ms.locfileid: "52590933"
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
 このセクションで説明するエラー処理の例については、次を参照してください。
+
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
 - [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 
@@ -125,7 +127,7 @@ ms.locfileid: "52590933"
 
 AAD および Microsoft 365 の ID の特定の構成では、Microsoft Graph でアクセスできる一部のリソースで、ユーザーの Microsoft 365 テナントが要求しない場合でも、多要素認証 (MFA) を必要とすることができます。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
 
-コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。 
+コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。
 
 アーキテクチャに関係なく、クレーム値が AAD から送信されている場合、コードはパラメーターでオプションを呼び出して `getAccessToken` `authChallenge: CLAIMS-STRING-HERE` 渡す必要 `options` があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインのデータ可視化のスタイル ガイドライン
 description: アドイン内のデータを視覚化する方法に関する優れたOfficeを取得します。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: aebd0ea8731d099615141e203cc03b2972128c9a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076351"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773637"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
@@ -24,7 +24,7 @@ ms.locfileid: "53076351"
 
 ### <a name="chart-titles"></a>グラフのタイトル
 
-グラフのタイトルに関する次のガイドラインに従います。
+グラフタイトルについては、次のガイドラインに従います。
 
 - グラフのタイトルを見やすくします。グラフの残りの部分との階層関係を視覚ではっきり示すように配置します。
 - 一般に、文頭だけを大文字にします (最初の単語の最初の文字を大文字にします)。コントラストを付けたり、階層を明確にしたりするには、すべて大文字を使用できますが、控えめに使用する必要があります。
@@ -69,7 +69,6 @@ ms.locfileid: "53076351"
 - 目盛または値の変化を示す
 
 凡例がデータ インクを引き立てるようにし、データ インクと競合しないようにしてください。次のように凡例を配置します。
-
 
 - 凡例項目がすべてグラフの上に収まる場合は、プロット エリアを既定で左揃えにします。
 - 一部の凡例項目がグラフの上に収まらない場合は、プロット エリアの右上に配置し、必要に応じてスクロール可能にします。

@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ ボックスを使用してビデオを再生する
 description: '[ビデオの再生] ダイアログ ボックスでビデオを開いて再生するOffice説明します。'
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2519b2f105503a0479eee07d885a1543f5455343
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349883"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773483"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>[ビデオをOffice]ダイアログ ボックスを使用してビデオを表示する
 

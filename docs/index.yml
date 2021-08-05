@@ -80,14 +80,14 @@ conceptualContent:
         - url: testing/troubleshoot-manifest.md
           itemType: architecture
           text: アドインのマニフェストを確認する
-    - title: 展開する
+    - title: 展開
       links:
         - url: publish/publish.md
           itemType: deploy
           text: 展開オプションの詳細
-        - url: publish/centralized-deployment.md
+        - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: 集中展開の詳細
+          text: 統合アプリ ポータルMicrosoft 365 Appsパートナーによるテストと展開
     - title: 公開
       links:
         - url: /office/dev/store

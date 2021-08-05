@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 46fa02281c9e13241496c617cad9738a71102370
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: cf806434fa5357fec554639f161fa0780b884e9a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671353"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773777"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -21,7 +21,7 @@ ms.locfileid: "53671353"
 
 作業ウィンドウ アドイン、コンテンツ アドイン、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開いて、次の操作を実行することを検討してください。
 
-- 作業ウィンドウに直接開くことができないサインイン ページを表示する。
+- 作業ウィンドウで直接開くことができませんサインイン ページを表示します。
 - アドインでの作業用に画面領域を広げる (あるいは全画面表示)。
 - ビデオが作業ウィンドウに限定されている場合に、小さすぎるビデオをホストする。
 
@@ -47,7 +47,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
-> 
 > - この URL には HTTP **S** プロトコルを使用します。これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページで必須です。
 > - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](../reference/manifest/functionfile.md)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
@@ -67,7 +66,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 全画面表示で効率的に操作するには、両方の値を 100% に設定します。(最大有効値は 99.5% であり、最大有効値にしても、ウィンドウは移動とサイズ変更が可能です。)
 
 > [!NOTE]
-> ホスト ウィンドウから開くことができるのは、1 つのダイアログ ボックスのみです。別のダイアログ ボックスを開こうとすると、エラーが発生します。たとえば、ユーザーが作業ウィンドウからダイアログ ボックスを開いた場合には、作業ウィンドウの別のページから 2 番目のダイアログ ボックスを開くことができません。ただし、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開く場合は、選択するたびにコマンドによって新しい (ただし非表示の) HTML ファイルが開かれます。これにより、新しい (非表示) ホスト ウィンドウが作成されるため、これらの各ウィンドウは独自のダイアログ ボックスを起動できます。詳細については、「[displayDialogAsync のエラー](dialog-handle-errors-events.md#errors-from-displaydialogasync)」を参照してください。
+> ホスト ウィンドウから開くことができるのは、1 つのダイアログ ボックスのみです。 別のダイアログ ボックスを開こうとすると、エラーが発生します。 たとえば、ユーザーが作業ウィンドウからダイアログ ボックスを開いた場合、作業ウィンドウ内の別のページから 2 番目のダイアログ ボックスを開くことができません。 ただし、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開く場合は、選択するたびにコマンドによって新しい (ただし非表示の) HTML ファイルが開かれます。 これにより、新しい (非表示) ホスト ウィンドウが作成されるため、これらの各ウィンドウは独自のダイアログ ボックスを起動できます。 詳細については、「[displayDialogAsync のエラー](dialog-handle-errors-events.md#errors-from-displaydialogasync)」を参照してください。
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Office on the web のパフォーマンス オプションを利用する
 
@@ -77,17 +76,17 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。 アドインが Office on the web で実行されていない場合、`displayInIframe` は無視されます。
+既定値は `false` です。これはプロパティを完全に省略した場合と同じ状態です。 アドインがアプリ内で実行されていない場合Office on the web無視 `displayInIframe` されます。
 
 > [!NOTE]
-> どの時点であれ、iframe で開けないページにダイアログ ボックスがリダイレクトされることになる場合は、`displayInIframe: true` を使用すべきでは **ありません**。 たとえば、Google や Microsoft アカウントなど、多くの一般的な Web サービスのサインイン ページを iframe で開くことができません。
+> ダイアログ ボックス **が** iframe で開くことができませんページにリダイレクトされる場合は、使用 `displayInIframe: true` する必要があります。 たとえば、Google や Microsoft アカウントなど、多くの一般的な Web サービスのサインイン ページを iframe で開くことができません。
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>ダイアログ ボックスからホスト ページに情報を送信する
 
 > [!NOTE]
 >
 > - わかりやすくするために、このセクションでは、メッセージ ターゲットをホスト ページと呼び出しますが、厳密に言えば、メッセージは作業ウィンドウ (または関数ファイルをホストしている [ランタイム)](../reference/manifest/functionfile.md)の *JavaScript* ランタイムに移動します。 この違いは、クロスドメイン メッセージングの場合にのみ重要です。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](#cross-domain-messaging-to-the-host-runtime)。
-> - このダイアログ ボックスは、JavaScript API ライブラリがページに読み込まれOffice場合は、作業ウィンドウのホスト ページと通信できません。 (JavaScript API ライブラリOffice使用するページと同様に、ページのスクリプトはプロパティまたは呼び出しにメソッドを割り `Office.initialize` 当てる必要があります `Office.onReady` 。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。
+> - JavaScript API ライブラリがページに読み込まれている場合をOffice、作業ウィンドウのホスト ページと通信できません。 (JavaScript API ライブラリのOfficeページと同様に、ページのスクリプトでアドインを初期化する必要があります。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。
 
 ダイアログ ボックスのコードでは [、messageParent 関数を使用](/javascript/api/office/office.ui#messageParent_message__messageOptions_) してホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできる文字列を指定できます。 次に例を示します。
 
@@ -98,7 +97,6 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
->
 > - この `messageParent` 関数は、ダイアログボックスでOfficeできる 2 つの JS API の 1 つのみです。
 > - ダイアログ ボックスで呼び出す他の JS API はです `Office.context.requirements.isSetSupported` 。 詳細については、「アプリケーションと[API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。 ただし、ダイアログ ボックスでは、この API は 1 回Outlook 2016 (MSI バージョン) ではサポートされていません。
 
@@ -141,7 +139,7 @@ function processMessage(arg) {
 > [!NOTE]
 >
 > - Office は `arg` オブジェクトをハンドラーに渡します。 プロパティ `message` は、ダイアログ ボックスの呼び出しによって送信 `messageParent` される文字列です。 この例では、Microsoft アカウントや Google などのサービスからユーザーのプロファイルを文字列で表すので、オブジェクトに逆シリアル化されます `JSON.parse` 。
-> - `showUserName` 実装は表示されません。作業ウィンドウ上に個人用のウェルカム メッセージが表示される場合があります。
+> - 実装 `showUserName` は表示されません。 作業ウィンドウ上に個人用のウェルカム メッセージが表示される場合があります。
 
 ダイアログ ボックスのユーザー操作が完了すると、次の例に示すようにメッセージ ハンドラーはダイアログ ボックスを閉じます。
 
@@ -213,11 +211,11 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> `showNotification`の実装は、この記事のサンプル コードでは表示されません。 アドインでこの関数を実装する方法の例は、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。
+> 実装 `showNotification` は、この記事で提供されるサンプル コードには表示されません。 アドインでこの関数を実装する方法の例は、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>ホスト ランタイムへのクロスドメイン メッセージング
 
-ダイアログは、アドインのドメインまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイム) から移動できます。ダイアログを開いた後、アドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードで親ランタイムのドメインを指定しない限り、呼び出し `messageParent` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageParent` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、ダイアログが現在ホストしているドメインと同じドメインである必要があります。
+ダイアログまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイムのいずれか) は、ダイアログを開いた後にアドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードで親ランタイムのドメインを指定しない限り、呼び出し `messageParent` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageParent` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、ダイアログが現在ホストしているドメインと同じドメインである必要があります。
 
 > [!NOTE]
 > クロス `messageParent` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。
@@ -225,11 +223,11 @@ function processMessage(arg) {
 次に、クロスドメイン メッセージを `messageParent` 送信する使用例を示します。
 
 ```js
-Office.context.ui.messageParent("Some message", { targetOrigin: "https://target.domain.com" });
+Office.context.ui.messageParent("Some message", { targetOrigin: "https://resource.contoso.com" });
 ```
 
 > [!NOTE]
-> この `DialogMessageOptions` パラメーターは、2021 年 7 月 19 日にリリースされました。 この日付から約 30 日後の Office on the web では、パラメーターなしで初めて呼び出され、親がダイアログとは別のドメインである場合、ユーザーはターゲット ドメインへのデータの送信を承認するように求めるメッセージが表示されます。 `messageParent` `DialogMessageOptions` ユーザーが承認した場合、ユーザーの回答は 24 時間キャッシュされます。 同じターゲット ドメインで呼び出されたこの期間中、ユーザーは再 `messageParent` び要求されません。
+> この `DialogMessageOptions` パラメーターは、2021 年 7 月 19 日にリリースされました。 この日付から約 30 日後の Office on the web では、パラメーターなしで初めて呼び出され、親がダイアログとは別のドメインである場合、ユーザーはターゲット ドメインへのデータの送信を承認するように求めるメッセージが表示されます。 `messageParent` `DialogMessageOptions` ユーザーが承認した場合、ユーザーの回答は 24 時間キャッシュされます。 同じターゲット ドメインで呼び出されたこの期間中、ユーザーは再び `messageParent` 要求されません。
 
 メッセージに機密データが含まれる場合は、任意のドメインに送信できる `targetOrigin` \* " に設定できます。 次に例を示します。
 
@@ -238,14 +236,14 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
 > [!TIP]
-> この `DialogMessageOptions` パラメーターは、2021 年半ばに必須パラメーターとしてメソッド `messageParent` に追加されました。 メソッドでクロスドメイン メッセージを送信する古いアドインは、新しいパラメーターを使用するために更新されるまで機能しなくなりました。 *一方、Windows* の Office でのみ、ユーザーとシステム管理者は、レジストリ設定を使用して信頼できるドメインを指定することで、これらのアドインの作業を続行できます。HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains。 **** これを行う最も簡単な方法は、拡張子を持つファイルを作成し、Windows コンピューターに保存してから、ダブルクリックして実行 `.reg` することです。 次に、このようなファイルの内容の例を示します。
+> この `DialogMessageOptions` パラメーターは、2021 年半ばに必須パラメーターとしてメソッド `messageParent` に追加されました。 メソッドでクロスドメイン メッセージを送信する古いアドインは、新しいパラメーターを使用するために更新されるまで機能しなくなりました。 アドインが更新されるまで *、Office* の Windows でのみ、ユーザーとシステム管理者は、レジストリ設定で信頼できるドメインを指定することで、これらのアドインの作業を続行できます。HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains。 **** これを行うには、拡張子を持つファイルを作成し、そのファイルを Windowsコンピューターに保存し、ダブルクリックして `.reg` 実行します。 次に、このようなファイルの内容の例を示します。
 >
 > ```
 > Windows Registry Editor Version 5.00
 > 
 > [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
-> "My trusted domain"="https://www.MyTrustedDomain.com"
-> "Another trusted domain"="https://another.trusted.domain.com"
+> "My trusted domain"="https://www.contoso.com"
+> "Another trusted domain"="https://fabrikam.com"
 > ```
 
 ## <a name="pass-information-to-the-dialog-box"></a>情報をダイアログ ボックスに渡す
@@ -336,11 +334,11 @@ function onRegisterMessageComplete(asyncResult) {
 > 場合によっては `messageChild` [、DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットの一部である API がサポートされない場合があります。 親からダイアログ ボックスへのメッセージングの代替方法については、「ホスト ページからダイアログ ボックスにメッセージを渡す別の方法 [」を参照してください](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> DialogApi [1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md) は、アドイン マニフェストのセクション `<Requirements>` では指定できません。 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)メソッドを使用して、実行時に DialogApi 1.2 のサポートを確認する必要があります。 マニフェスト要件のサポートは開発中です。
+> DialogApi [1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md) は、アドイン マニフェストのセクション `<Requirements>` では指定できない。 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)メソッドを使用して、実行時に DialogApi 1.2 のサポートを確認する必要があります。 マニフェスト要件のサポートは開発中です。
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>ダイアログ ランタイムへのクロスドメイン メッセージング
 
-ダイアログは、アドインのドメインまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイム) から移動できます。ダイアログを開いた後、アドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードでダイアログ ランタイムのドメインを指定しない限り、呼び出し `messageChild` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageChild` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、親ランタイムが現在ホストしているドメインと同じドメインである必要があります。 
+ダイアログまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイムのいずれか) は、ダイアログを開いた後にアドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードでダイアログ ランタイムのドメインを指定しない限り、呼び出し `messageChild` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageChild` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、親ランタイムが現在ホストしているドメインと同じドメインである必要があります。 
 
 > [!NOTE]
 > クロス `messageChild` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。
@@ -348,7 +346,7 @@ function onRegisterMessageComplete(asyncResult) {
 次に、クロスドメイン メッセージを `messageChild` 送信する使用例を示します。
 
 ```js
-dialog.messageChild(messageToDialog, { targetOrigin: "https://target.domain.com" });
+dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.com" });
 ```
 
 メッセージに機密データが含まれる場合は、任意のドメインに送信できる `targetOrigin` \* " に設定できます。 次に例を示します。
@@ -357,11 +355,11 @@ dialog.messageChild(messageToDialog, { targetOrigin: "https://target.domain.com"
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-ダイアログをホストしている JavaScript ランタイムは、マニフェストのセクションにアクセスして、メッセージが送信されるドメインが信頼されるのを確認できないので、別の方法 `<AppDomains>` が提供されています。  ハンドラーに渡されるオブジェクトには、ダイアログで現在ホストされているドメインがプロパティ `DialogParentMessageReceived` として含 `origin` まれる。 コードでは、ハンドラーを使用して、メッセージが信頼できるドメインから送信されるのを確認する必要があります。 次に例を示します。
+ダイアログをホストしている JavaScript ランタイムはマニフェストのセクションにアクセスできないので、メッセージが送信されるドメインが信頼されているかどうかを判断するため、ハンドラーを使用してこれを判断する必要があります。 `<AppDomains>`  `DialogParentMessageReceived` ハンドラーに渡されるオブジェクトには、親で現在ホストされているドメインがプロパティとして含 `origin` まれる。 プロパティの使い方の例を次に示します。
 
 ```javascript
 function onMessageFromParent(arg) {
-    if (arg.origin === "https://some.trusted.domain.com") {
+    if (arg.origin === "https://addin.fabrikam.com") {
         // process message
     } else {
         dialog.close();
@@ -373,9 +371,17 @@ function onMessageFromParent(arg) {
 たとえば、コードで[Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドを使用して、信頼できるドメインの配列をグローバル変数に格納できます。 その `arg.origin` 後、ハンドラー内のそのリストに対してプロパティをチェックできます。
 
 > [!TIP]
-> この `DialogMessageOptions` パラメーターは、2021 年半ばに必須パラメーターとしてメソッド `messageChild` に追加されました。 メソッドでクロスドメイン メッセージを送信する古いアドインは、新しいパラメーターを使用するために更新されるまで機能しなくなりました。 *一方、Windows* の Office でのみ、ユーザーとシステム管理者は、レジストリ設定で信頼できるドメインを指定することで、これらのアドインの作業を続行できます。 詳細については **、「ホスト** ランタイム [へのクロスドメイン メッセージング」のヒントを](#cross-domain-messaging-to-the-host-runtime) 参照してください。
+> この `DialogMessageOptions` パラメーターは、2021 年半ばに必須パラメーターとしてメソッド `messageChild` に追加されました。 メソッドでクロスドメイン メッセージを送信する古いアドインは、新しいパラメーターを使用するために更新されるまで機能しなくなりました。 アドインが更新されるまで *、Office* の Windows でのみ、ユーザーとシステム管理者は、レジストリ設定で信頼できるドメインを指定することで、これらのアドインの作業を続行できます。HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains。 **** これを行うには、拡張子を持つファイルを作成し、そのファイルを Windowsコンピューターに保存し、ダブルクリックして `.reg` 実行します。 次に、このようなファイルの内容の例を示します。
+>
+> ```
+> Windows Registry Editor Version 5.00
+> 
+> [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
+> "My trusted domain"="https://www.contoso.com"
+> "Another trusted domain"="https://fabrikam.com"
+> ```
 
-## <a name="closing-the-dialog-box"></a>ダイアログ ボックスを閉じる
+## <a name="close-the-dialog-box"></a>ダイアログ ボックスを閉じる
 
 ダイアログ ボックスを閉じるボタンをダイアログ ボックス内に実装できます。これを実行するには、ボタンのクリック イベント ハンドラーは `messageParent` を使用して、ボタンがクリックされたことをホスト ページに通知する必要があります。次に例を示します。
 
@@ -410,7 +416,7 @@ function processMessage(arg) {
 
 「[Office Dialog API を使用して認証する](auth-with-office-dialog-api.md)」を参照してください。
 
-### <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>単一ページ アプリケーションとクライアント側ルーティングで Office ダイアログ API を使用する
+### <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>単一ページ アプリケーションOfficeクライアント側ルーティングと一緒にダイアログ API を使用する
 
 Office ダイアログ API を使用する場合は、SPA およびクライアント側のルーティングを慎重に行う必要があります。 「[SPA で Office ダイアログ API を使用する場合のベスト プラクティス](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa)」を参照してください。
 
