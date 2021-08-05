@@ -1,29 +1,29 @@
 ---
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
-ms.date: 08/20/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf0deef6cf9ea7d4e29d8ab7c3c5a7e79f70d9ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293983"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774407"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Outlook アドインでシングルサインオントークンを使用してユーザーを認証する
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 
 シングル サインオン (SSO) は、アドインがユーザーを認証する (またオプションでアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出す) ための、シームレスな方法を提供します。
 
-この方法を使用すると、アドインはサーバーのバックエンド API にスコープされたアクセス トークンを取得できます。 アドインはこれを `Authorization` ヘッダーのベアラー トークンとして使用して、API へのコールバックを認証します。 オプションとして、サーバー側のコードも持つことができます。
+この方法を使用すると、アドインはサーバーのバックエンド API にスコープされたアクセス トークンを取得できます。 アドインはこれを `Authorization` ヘッダーのベアラー トークンとして使用して、API へのコールバックを認証します。 必要に応じて、サーバー側のコードを使用することもできます。
 
 - On-Behalf-Of フローを完了して、Microsoft Graph API にスコープ設定されたアクセス トークンを取得する
 - トークン内の ID 情報を使用して、独自のバックエンド サービスに対するユーザーの識別と認証を確立する
 
 Office アドインの SSO の概要については、[「Office アドインのシングル サインオンを有効化する」](../develop/sso-in-office-add-ins.md) および[「Office アドインの Microsoft Graph への承認」](../develop/authorize-to-microsoft-graph.md)を参照してください。
 
-## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Microsoft 365 テナントで先進認証を有効にする
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>テナントでモダン認証を有効Microsoft 365する
 
-Outlook アドインで SSO を使用するには、Microsoft 365 テナントの先進認証を有効にする必要があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+SSO をアドインと一緒Outlookするには、テナントのモダン認証を有効Microsoft 365があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="register-your-add-in"></a>アドインを登録する
 
@@ -31,7 +31,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>アドインのサイドロード時に同意する
 
-アドインを開発している場合は、事前に同意を得る必要があります。 詳細については、「 [アドインに管理者の同意を付与する](../develop/grant-admin-consent-to-an-add-in.md)」を参照してください。
+アドインを開発する場合は、事前に同意する必要があります。 詳細については、「管理者の [同意をアドインに付与する」を参照してください](../develop/grant-admin-consent-to-an-add-in.md)。
 
 ## <a name="update-the-add-in-manifest"></a>アドイン マニフェストを更新する
 
@@ -50,6 +50,6 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ## <a name="see-also"></a>関連項目
 
-- SSO トークンを使用して Microsoft Graph API にアクセスする Outlook アドインのサンプルについては、「 [Outlook アドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)」を参照してください。
+- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO」を[参照してください](https://github.com/OfficeDev/Outlook-Add-in-SSO)。
 - [SSO API リファレンス](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)

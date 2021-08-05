@@ -1,20 +1,21 @@
 ---
 title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ec3d99fc89b8b6ced25dfc00bd02e0238f75e0af
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349785"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773469"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
-Office にはプラットフォームやバージョンが異なるものが数多くあり、それらは Office JavaScript API (Office.js) に含まれる API をすべてサポートしているわけではありません。 ユーザーがインストールしている Office のバージョンを制御できない場合があります。このような状況に対処するため、Office アドインで必要な機能を Office アプリケーションがサポートしているかどうかを判別するのに役立つ要件セットと呼ばれるシステムが用意されています。 
+Office にはプラットフォームやバージョンが異なるものが数多くあり、それらは Office JavaScript API (Office.js) に含まれる API をすべてサポートしているわけではありません。 ユーザーがインストールしている Office のバージョンを制御できない場合があります。このような状況に対処するため、Office アドインで必要な機能を Office アプリケーションがサポートしているかどうかを判別するのに役立つ要件セットと呼ばれるシステムが用意されています。
 
 > [!NOTE]
+>
 > - Office は、Windows、ブラウザー、Mac、iPad などの複数のプラットフォームで実行されます。
 > - Office アプリケーションの例は、Excel、Word、PowerPoint、Outlook、OneNote などの Office 製品です。  
 > - 要件セットとは、`ExcelApi 1.5` や `WordApi 1.3` などの、API メンバーの名前付きグループです。  
@@ -49,7 +50,6 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [Identity API の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 `ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office アプリケーションを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office アプリケーション (Word、Outlook など) の要件セットにも対応していません。  Office アプリケーションの要件セットがリリースされる割合は、アプリケーションによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
-
 
 Office JavaScript API ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 `ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。 Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 

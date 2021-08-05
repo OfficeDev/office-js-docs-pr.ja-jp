@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
-ms.date: 04/07/2021
+ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: 1c8c5420593b31f403cf8f5fa28659fc130db402
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: cd0c793bb8a2cfbc4cef17e0cf717c35cb68794c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076995"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773119"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -61,7 +61,7 @@ ms.locfileid: "53076995"
 
 ## <a name="optional-connected-experiences"></a>オプションの接続エクスペリエンス
 
-エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 Outlook アドインの場合、**オプションの接続エクスペリエンス** 設定を無効にした場合の影響はクライアントによって異なりますが、通常、ユーザーがインストールしたアドインと Office ストアへのアクセスは許可されません。 [一元展開](../publish/centralized-deployment.md)を通じて組織の IT 管理者が展開したアドインは引き続き使用できます。
+エンド ユーザーと IT 管理者は、[Office のデスクトップ クライアントとモバイル クライアントでオプションの接続エクスペリエンスを](/deployoffice/privacy/optional-connected-experiences) オフにすることができます。 Outlook アドインの場合、**オプションの接続エクスペリエンス** 設定を無効にした場合の影響はクライアントによって異なりますが、通常、ユーザーがインストールしたアドインと Office ストアへのアクセスは許可されません。 [一元展開](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)を通じて組織の IT 管理者が展開したアドインは引き続き使用できます。
 
 - Windows\*、Mac: **[アドインの取得]** ボタンは表示されないため、ユーザーはアドインの管理や Office ストアへのアクセスができなくなります。
 - Android、iOS: **[アドインの取得]** ダイアログには、管理者が展開したアドインのみが表示されます。

@@ -1,15 +1,15 @@
 ---
 title: Node.js SSO が有効なアドインをカスタマイズする
 description: Yeoman ジェネレーターを使用して作成した SSO 対応アドインのカスタマイズについて学習します。
-ms.date: 02/01/2021
+ms.date: 08/04/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348336"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774421"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
