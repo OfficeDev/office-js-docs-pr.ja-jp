@@ -320,8 +320,6 @@ items:
             href: /office/dev/store/submit-to-the-office-store
           - name: AppSource の検証ポリシー
             href: /legal/marketplace/certification-policies
-          - name: 一元展開でアドインを発行する
-            href: publish/centralized-deployment.md
           - name: SharePoint アプリ カタログにアドインを発行する
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
       - name: Reference

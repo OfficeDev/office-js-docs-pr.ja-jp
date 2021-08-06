@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 1/19/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6f1ce6d14d1a9840011294028db3c7db5faa2e83
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076638"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774449"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -176,7 +176,7 @@ ms.locfileid: "53076638"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. **ソリューション エクスプローラー** で、**ExcelWebAddIn1** アドイン プロジェクトに移動し、**ExcelWebAddIn1Manifest** ディレクトリを開きます。 このディレクトリには、マニフェスト ファイル **ExcelWebAddIn1.xml** が含まれています。 XML マニフェスト ファイルは、アドインの設定と機能を定義します。 Visual Studio ソリューションによって作成された 2 つのプロジェクトの詳細については、前のセクション「[Visual Studioソリューションの探索](#explore-the-visual-studio-solution)」を参照してください。 
+1. **ソリューション エクスプローラー** で、**ExcelWebAddIn1** アドイン プロジェクトに移動し、**ExcelWebAddIn1Manifest** ディレクトリを開きます。 このディレクトリには、マニフェスト ファイル **ExcelWebAddIn1.xml** が含まれています。 XML マニフェスト ファイルは、アドインの設定と機能を定義します。 Visual Studio ソリューションによって作成された 2 つのプロジェクトの詳細については、前のセクション「[Visual Studioソリューションの探索](#explore-the-visual-studio-solution)」を参照してください。
 
 2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
@@ -220,8 +220,8 @@ ms.locfileid: "53076638"
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
-* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
+- [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
