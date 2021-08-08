@@ -3,12 +3,12 @@ title: Office JavaScript API ライブラリの参照
 description: アドインで JavaScript API ライブラリOfficeタイプ定義を参照する方法について説明します。
 ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 04f97412c07cb39f5b2f753c3ce14e56e87c3de5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5348e1acab35e01dc6c467d20a65721fb98722d47c729edeb65a2efe4a8c45f8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349757"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080259"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリの参照
 

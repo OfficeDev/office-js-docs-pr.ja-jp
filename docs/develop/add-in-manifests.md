@@ -1,14 +1,14 @@
 ---
 title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
-ms.date: 03/18/2020
+ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671395"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773518"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -18,7 +18,7 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 * ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
-* アドインのブランド化に使用するイメージと、Office アプリ リボンで[アドイン コマンド][]に使用する画像を指定する。
+* アドインのブランド化に使用するイメージと、Office アプリ リボンで [アドイン コマンド][] に使用する画像を指定する。
 
 * アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
 
@@ -38,7 +38,6 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 > [!NOTE]
 > 親要素内で要素を表示する順序も決まっています。 詳細については、[マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)を参照してください。
-
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office アドインの種類ごとの必要な要素
 
@@ -101,7 +100,7 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
-[アドイン コマンド][]などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
+[アドイン コマンド][] などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
 
 [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている** べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -496,7 +495,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 ## <a name="see-also"></a>関連項目
 
 * [マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)
-* [マニフェストでアドイン コマンドを作成する]、[アドイン コマンド]
+* [マニフェストでアドイン コマンドを作成する][create-addin-commands.md]
 * [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)
 * [Office アドインのローカライズ](localization.md)
 * [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
@@ -504,5 +503,3 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 * [同等な COM アドインを特定する](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [アドインでの API 使用についてアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)
-
-[アドイン コマンド]: create-addin-commands.md

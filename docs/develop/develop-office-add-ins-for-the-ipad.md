@@ -3,12 +3,12 @@ title: iPad アドインの特別な要件
 description: カスタム アドインで実行される Officeアドインを作成するための要件について説明iPad。
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 04ee1a4bea8b9f27189bf67368f883cd3b91ab3e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f494cfbb85b6e59b9f26a2b00917e07f44623f1d094656ca104fb85d0faeb2af
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671360"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080963"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>iPad アドインの特別な要件
 

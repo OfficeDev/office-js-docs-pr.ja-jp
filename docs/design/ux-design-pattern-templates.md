@@ -3,12 +3,12 @@ title: Office アドイン用 UX 設計パターン
 description: ナビゲーション、認証、初回実行、ブランド化のパターンなど、Officeアドインの UI デザイン パターンの概要を確認します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 2c7de48aef161a335fe67dcd4cc87cd32c6be10373f078baac77c9407ae1466b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330109"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081475"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Office アドイン用 UX 設計パターン
 
@@ -16,15 +16,15 @@ Office アドインのユーザー エクスペリエンスの設計では、Off
 
 この UX パターンはコンポーネントで構成されています。 コンポーネントは、お客様がソフトウェアやサービスの要素を操作するのに役立ちます。 ボタン、ナビゲーション、メニューは、整合性のあるスタイルと動作を持つことの多い、一般的なコンポーネントの例です。
 
-[Fluent UI Reactコンポーネントは](using-office-ui-fabric-react.md)、JS のフレームワークに依存しないコンポーネントと同様に、Office の一部のように見え、Office UI Fabric[動作します](fabric-core.md)。 いずれかのコンポーネント セットを利用して、複数のコンポーネントと統合Office。 または、アドインに独自の既存のコンポーネント言語がある場合は、その言語を破棄する必要があります。 Office と統合する際に、それを保持する機会を探します。 スタイル要素の入れ替え、競合の削除、ユーザーの混乱を取り除くためのスタイルと動作の採用を行う方法を検討してください。
+[Fluent UI](using-office-ui-fabric-react.md) Reactは[、JS](fabric-core.md)のフレームワークに依存しないコンポーネントと同様に、Office の一部のように見え、動作Office UI Fabricします。 いずれかのコンポーネント セットを利用して、複数のコンポーネントと統合Office。 または、アドインに独自の既存のコンポーネント言語がある場合は、その言語を破棄する必要があります。 Office と統合する際に、それを保持する機会を探します。 スタイル要素の入れ替え、競合の削除、ユーザーの混乱を取り除くためのスタイルと動作の採用を行う方法を検討してください。
 
-提供されるパターンは、一般的な顧客シナリオとユーザー エクスペリエンス調査に基づくベスト プラクティス ソリューションです。 これらは、アドインの設計と開発に関する簡単なエントリ ポイントと、Microsoft ブランド要素と独自のブランド要素のバランスを取るガイダンスの両方を提供することを目的としています。 Microsoft の Fluent UI デザイン言語とパートナーの固有のブランド ID のバランスを取る、クリーンでモダンなユーザー エクスペリエンスを提供することで、アドインのユーザー保持と導入が向上する可能性があります。
+提供されるパターンは、一般的な顧客シナリオとユーザー エクスペリエンス調査に基づくベスト プラクティス ソリューションです。 これらは、アドインの設計と開発に関する簡単なエントリ ポイントと、Microsoft ブランド要素と独自のブランド要素のバランスを取るガイダンスの両方を提供することを目的としています。 Microsoft の Fluent UI デザイン言語とパートナー固有のブランド ID とのバランスを取る、クリーンでモダンなユーザー エクスペリエンスを提供することで、ユーザーの保持とアドインの導入が向上する可能性があります。
 
 UX パターン テンプレートを使用して、次のことを行います。
 
 * よくある顧客のシナリオにソリューションとして適用する。
 * 設計のベスト プラクティスとして適用する。
-* [Fluent UI コンポーネントとスタイル](https://developer.microsoft.com/fluentui#/get-started)を組み込む。
+* UI [Fluentスタイル](https://developer.microsoft.com/fluentui#/get-started)を組み込む。
 * Office の既定の UI に視覚的に溶け込むアドインをビルドする。
 * UX を観念化および可視化する。
 
@@ -44,7 +44,7 @@ UX パターン テンプレートを使用して、次のことを行います�
 
 ## <a name="see-also"></a>関連項目
 
-* [デザイン ツール キット](design-toolkits.md)
+* [デザインのツール キット](design-toolkits.md)
 * [Fluent UI](https://developer.microsoft.com/fluentui#)
 * [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-* [Fluent UI ReactアドインOfficeに含む](using-office-ui-fabric-react.md)
+* [Office アドインの Fluent UI React](using-office-ui-fabric-react.md)

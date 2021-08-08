@@ -1,26 +1,26 @@
 ---
 ms.date: 05/11/2020
-description: Office Excel アドインで、カスタム関数から複数の結果を返します。
+description: アドイン内のカスタム関数から複数の結果Office Excel返します。
 title: カスタム関数から複数の結果を返す
 localization_priority: Normal
-ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ae808a7bc77d7dad2f7764d6b0065fa2aa91cd7eab27bd7c8697a3d87731153
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609651"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079687"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>カスタム関数から複数の結果を返す
 
-隣接するセルに返される、カスタム関数から複数の結果を返すことができます。 この動作は spilling と呼ばれます。 カスタム関数が結果の配列を返す場合は、動的配列数式と呼ばれます。 Excel の動的配列数式の詳細については、「動的配列」[および「こぼれた配列の動作](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)」を参照してください。
+カスタム関数から複数の結果を返し、隣接するセルに返されます。 この動作は、スピルと呼ばれる。 カスタム関数が結果の配列を返す場合は、動的配列式と呼ばれる。 動的配列の数式の詳細については、「Excel動的配列とスピル配列の[動作」を参照してください](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。
 
-次の図は、関数が隣接するセルにどのように分解されるかを示して `SORT` います。 カスタム関数は、次のような複数の結果を返すこともできます。
+次の図は、関数が `SORT` 隣接するセルにこぼれる方法を示しています。 カスタム関数は、このような複数の結果を返す場合があります。
 
-![複数のセルに複数の結果を表示する ' SORT ' 関数のスクリーンショット。](../images/dynamic-array-spill.png)
+![複数の結果を複数のセルに表示する 'SORT' 関数のスクリーン ショット。](../images/dynamic-array-spill.png)
 
-動的配列数式であるカスタム関数を作成するには、値の2次元配列を返す必要があります。 結果が、既に値を持つ隣接するセルにスピルされる場合、数式はエラーを表示し `#SPILL!` ます。
+動的配列数式であるカスタム関数を作成するには、値の 2 次元配列を返す必要があります。 結果が既に値を持つ隣接セルにこぼれる場合、数式にエラーが表示 `#SPILL!` されます。
 
-次の例は、分解した動的配列を返す方法を示しています。
+次の例は、流出する動的配列を返す方法を示しています。
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-次の例は、右に液体をこぼれた動的配列を返す方法を示しています。 
+次の例は、右にこぼれる動的配列を返す方法を示しています。 
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-次の例は、右下の配列を返す方法を示しています。
+次の例は、ダウンと右の両方をこぼす動的配列を返す方法を示しています。
 
 ```javascript
 /**
@@ -65,5 +65,5 @@ function spillRectangle() {
 
 ## <a name="see-also"></a>関連項目
 
-- [動的配列とこぼれた配列の動作](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
-- [Excel カスタム関数のオプション](custom-functions-parameter-options.md)
+- [動的配列とスピル配列の動作](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [カスタム関数Excelオプション](custom-functions-parameter-options.md)

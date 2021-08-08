@@ -1,14 +1,14 @@
 ---
 title: Office アドインにおける認証と承認の概要
 description: Web アプリケーションおよび Office アドインでログインによる認証をユーザーに要求します。
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6759d35e9460c4e72bad8cca187b0b429c140487
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8c1330b4739929f0c7d4a2b3fda16ea38ad76fd7
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671197"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774197"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -59,12 +59,12 @@ Office SSO の実装を開始する前に、次の 2 つの記事を十分に理
 - [Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)
 - [SSO を使用した Microsoft Graph への承認](authorize-to-microsoft-graph.md)
 
-また、ここに示すチュートリアル記事のうち少なくとも 1 つに目を通してください。 これらの手順を実行しない場合でも、これらの記事にはOffice SSO の実装方法および **代理** フローに関する重要な情報が含まれています。 
+また、ここに示すチュートリアル記事のうち少なくとも 1 つに目を通してください。 これらの手順を実行しない場合でも、これらの記事にはOffice SSO の実装方法および **代理** フローに関する重要な情報が含まれています。
 
 - [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
 - [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 
-次のサンプルにも目を通してください。
+また、次を参照してください。
 
 - [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)

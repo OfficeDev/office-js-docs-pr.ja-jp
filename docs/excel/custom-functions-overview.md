@@ -1,16 +1,16 @@
 ---
-ms.date: 01/08/2020
 description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
+ms.date: 07/08/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 804895f3e10cac849dc20b67625e4f30164eb41d
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237673"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774204"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -20,7 +20,7 @@ ms.locfileid: "50237673"
 
 次のアニメーション画像は、JavaScript または Typescript で作成した関数を呼び出すブックを示しています。 この例では、カスタム関数 `=MYFUNCTION.SPHEREVOLUME` は球の体積を計算します。
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+![MYFUNCTION.SPHEREVOLUME カスタム関数を Excel ワークシートのセルへ挿入するエンド ユーザーを示すアニメーション画像。](../images/SphereVolumeNew.gif)
 
 `=MYFUNCTION.SPHEREVOLUME` カスタム関数は次のコードにより定義されます。
 
@@ -72,7 +72,7 @@ function add(first, second){
 
 カスタム関数 (Yo Office ジェネレーターによって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
 
-- カスタム関数の名前空間を定義します。 ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
+- カスタム関数に名前空間を定義します。ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
 - カスタム関数に使用するランタイムを指定します。 別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。 共有ランタイムを使うことは、アドインが Microsoft Edge ではなく Internet Explorer 11 の使用を意味することに注意してください。
 
@@ -94,7 +94,8 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 
 独自のカスタム関数を試すもう 1 つの簡単な方法は[スクリプト ラボ](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)を使用し、アドインで Excel のカスタム関数を試してみることができます。 独自のカスタム関数を作成したり、提供されたサンプルを再生してみることができます。
 
-## <a name="see-also"></a>関連項目 
+## <a name="see-also"></a>関連項目
+
 * [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
 * [カスタム関数の要件セット](custom-functions-requirement-sets.md)
 * [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)

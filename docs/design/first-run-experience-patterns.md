@@ -3,12 +3,12 @@ title: Office アドインの最初の実行エクスペリエンス パター�
 description: アドインの初回実行エクスペリエンスを設計するためのベスト プラクティスOffice説明します。
 ms.date: 07/08/2018
 localization_priority: Normal
-ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e631611c11a36265bc997f12b8875056575f048ec3fecb6bfe9929abe4db1938
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774008"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081857"
 ---
 # <a name="first-run-experience-patterns"></a>最初の実行エクスペリエンス
 

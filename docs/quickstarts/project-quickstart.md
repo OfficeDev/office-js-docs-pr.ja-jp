@@ -1,15 +1,15 @@
 ---
 title: 最初の Project の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Project 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/07/2021
+ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 43ad1218324e0399a93fe120450ceb75dd0bac43
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076575"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773077"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -41,7 +41,7 @@ ms.locfileid: "53076575"
 
 Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。
 
-- プロジェクトのルートディレクトリにある **./ manifest.xml** ファイルは、アドインの設定と機能性を定義します。
+- プロジェクトのルート ディレクトリにある **./manifest.xml** ファイルで、アドインの機能と設定を定義します。
 - **./src/taskpane/taskpane.html** ファイルには、作業ペイン用のHTMLマークアップが含まれています。
 - **./src/taskpane/taskpane.css** ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
 - **./src/taskpane/taskpane.js** ファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
@@ -96,7 +96,13 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-2. ローカル Web サーバーを開始します。
+1. プロジェクトの依存関係をインストールします。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. ローカル Web サーバーを開始します。
 
     > [!NOTE]
     > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
@@ -107,13 +113,13 @@ Office.context.document.getSelectedTaskAsync(
     npm run dev-server
     ```
 
-3. Project で、簡素なプロジェクト計画を作成します。
+1. Project で、簡素なプロジェクト計画を作成します。
 
-4. [Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。
+1. [Windows に Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) の手順に従い、Project でアドインを読み込みます。
 
-5. プロジェクト内の単一のタスクを選択します。
+1. プロジェクト内の単一のタスクを選択します。
 
-6. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
+1. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
 
     ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット。](../images/project-quickstart-addin-1.png)
 

@@ -1,14 +1,14 @@
 ---
 title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: ae96e9dc14302fc245744d644f8b68e54ca066f6
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671381"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773511"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -27,19 +27,20 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
 - ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 
-ダイアログ ボックスが iframe ではない (既定) 場合、ID プロバイダーのログイン ページを開くことができます。 次に示すように、Office ダイアログ ボックスの特性は、MSAL や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
+
+既定では、ダイアログ ボックスは、iframe ではなく、まったく新しい Web ビュー コントロールで開きます。 これにより、ID プロバイダーのログイン ページを開くことができます。 この記事の後半で説明するように、Office ダイアログ ボックスの特性は、MSAL や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
 
 > [!NOTE]
-> 浮動 iframe で開くようにダイアログ ボックスを構成する方法があります。呼び出しの `displayInIframe: true` オプションを `displayDialogAsync` に渡すだけです。 ログインに Office ダイアログ API を使用している場合は、この方法を使用 *しない* でください。
+> 移動ウィンドウ iframe で開くようにダイアログ ボックスを構成するには、`displayDialogAsync` の呼び出しで `displayInIframe: true` オプションを渡します。 ログインに Office ダイアログ API を使用している場合は、この方法を使用 *しない* でください。
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>Office ダイアログ ボックスの認証フロー
 
-シンプルで標準的な認証フローを下に示します。 図の下に詳細の説明があります。
+標準的な認証フローを下に示します。
 
 ![作業ウィンドウとダイアログ ボックス ブラウザーのプロセス間の関係を示す図。](../images/taskpane-dialog-processes.gif)
 
-1. ダイアログ ボックスで開かれる最初のページは、アドインのドメイン (つまり作業ウィンドウと同じドメイン) でホストされているページ (または他のリソース) です。 このページには、"*プロバイダー名* にサインインできるページにリダイレクトしていますので、お待ちください。" という簡単な UI を含めることができます。 このページのコードは、ダイアログ ボックスに渡される情報 (「[情報をダイアログ ボックスに渡す](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)」で説明されています) またはアドインの構成ファイル (web.config ファイルなど) にハードコーディングされている情報を使用して ID プロバイダーのサインイン ページの URL を構築します。
-2. 次に、ダイアログ ボックス ウィンドウはサインイン ページにリダイレクトします。 URL には、ユーザーがサインインしたらダイアログ ボックス ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。 この記事では、このページを **redirectPage.html** と呼びます。 *これは、ホスト ウィンドウと同じドメイン内のページにすることをお勧めします*。 このページでは、サインイン試行の結果を、`messageParent`の呼び出しで作業ウィンドウに渡すことができます。
+1. ダイアログ ボックスで開かれる最初のページは、アドインのドメイン (つまり作業ウィンドウと同じドメイン) でホストされているページ (または他のリソース) です。 このページには、"*プロバイダー名* にサインインできるページにリダイレクトしていますので、お待ちください。" というだけの UI を含めることができます。 このページのコードは、ダイアログ ボックスに渡される情報 (「[情報をダイアログ ボックスに渡す](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)」で説明されています) またはアドインの構成ファイル (web.config ファイルなど) にハードコーディングされている情報を使用して ID プロバイダーのサインイン ページの URL を構築します。
+2. 次に、ダイアログ ボックス ウィンドウはサインイン ページにリダイレクトします。 URL には、ユーザーがサインインしたらダイアログ ボックス ウィンドウを特定のページにリダイレクトするように ID プロバイダーに指示するクエリ パラメーターが含まれています。 この記事では、このページを **redirectPage.html** と呼びます。 このページでは、サインイン試行の結果を、`messageParent`の呼び出しで作業ウィンドウに渡すことができます。 *これは、ホスト ウィンドウと同じドメイン内のページにすることをお勧めします*。
 3. ID プロバイダーのサービスは、ダイアログ ボックス ウィンドウから受信する GET 要求を処理します。 ユーザーが既にサインインしている場合は、ウィンドウが直ちに **redirectPage.html** にリダイレクトされ、クエリ パラメーターとしてユーザー データが含まれます。 ユーザーがまだサインインしていない場合は、プロバイダーのサインイン ページがウィンドウに表示されます。ユーザーはサインインします。 ほとんどのプロバイダーでは、ユーザーが正常にサインインできない場合、プロバイダーはダイアログ ボックス ウィンドウにエラー ページを表示して、**redirectPage.html** にはリダイレクトしません。 ユーザーは隅にある **X** を選択して、ウィンドウを閉じる必要があります。 ユーザーが正常にサインインした場合は、ダイアログ ボックス ウィンドウが **redirectPage.html** にリダイレクトされ、ユーザー データはクエリ パラメーターとして含まれます。
 4. **redirectPage.html** ページが開くと、成功または失敗を作業ウィンドウ ページに報告するために `messageParent` が呼び出され、ユーザー データまたはエラー データも必要に応じて報告されます。 その他のメッセージには、アクセス トークンの受け渡しや、トークンがストレージにあるという作業ウィンドウへの伝達が含まれます。
 5. `DialogMessageReceived` イベントが作業ウィンドウ ページで発生し、イベントのハンドラーによりダイアログ ボックス ウィンドウが閉じられ、メッセージはさらに処理される可能性があります。
@@ -97,7 +98,7 @@ Office ダイアログ ボックスと作業ウィンドウが異なるブラウ
 - [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): 上記のアドインと同様ですが、Office アプリケーションは Outlook です。
 - [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): サインインおよび Microsoft Graph データのアクセス トークンの取得に msal.js ライブラリと暗黙的フローを使用する、NodeJS ベースのアドイン (Excel、Word、PowerPoint) です。
 
+## <a name="see-also"></a>関連項目
 
-詳細については、以下を参照してください。
 - [Office アドインで外部サービスを承認する](auth-external-add-ins.md)
 - [Office アドインで Office ダイアログ API を使用する](dialog-api-in-office-add-ins.md)

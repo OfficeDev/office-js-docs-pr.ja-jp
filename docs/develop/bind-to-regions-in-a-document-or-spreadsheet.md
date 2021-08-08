@@ -3,12 +3,12 @@ title: ドキュメントやスプレッドシート内の領域へのバイン�
 description: バインドを使用して、識別子を使用してドキュメントまたはスプレッドシートの特定の領域または要素に一貫してアクセスする方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 611d7c28a75fc13464ae55f14f2784506b04882796ace8e73c831f75f2ef1a60
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773903"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081201"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 

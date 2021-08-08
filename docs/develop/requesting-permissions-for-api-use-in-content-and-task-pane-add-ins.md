@@ -3,12 +3,12 @@ title: アドインでの API 使用についてアクセス許可を要求す�
 description: コンテンツ アドインまたは作業ウィンドウ アドインのマニフェストで宣言するさまざまなアクセス許可レベルについて説明し、JavaScript API アクセスのレベルを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ecb9211431beb6671395f40526cc2340ee2a50a3
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: de84330396ba258db38a39dabf7e45f081247a865fef79c7ae4d254892918ddc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671507"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080223"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>アドインでの API 使用についてアクセス許可を要求する
 

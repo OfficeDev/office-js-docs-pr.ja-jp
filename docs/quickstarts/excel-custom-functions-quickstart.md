@@ -1,15 +1,15 @@
 ---
-ms.date: 11/09/2020
+ms.date: 08/04/2021
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0b0e42149e771978026db3eb84594bd172d09459
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b3c6df07fdbd4e23341bef26a96413263aa2de63
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076631"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773378"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -20,8 +20,8 @@ ms.locfileid: "53076631"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
-* Excel カスタム関数は (Microsoft 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
+- Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
+- Excel カスタム関数は (Microsoft 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
 
 >[!NOTE]
 >Excel カスタム関数は Office 2019 (1 回限りの購入) ではサポートされていません。
@@ -40,13 +40,19 @@ ms.locfileid: "53076631"
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
-2. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、引き続き指示に従います。プロジェクトのルート フォルダーに移動します。
+1. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、引き続き指示に従います。プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
     cd starcount
     ```
 
-3. プロジェクトをビルドします。 
+1. 依存関係をインストールします。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. プロジェクトをビルドします。
 
     ```command&nbsp;line
     npm run build
@@ -55,7 +61,7 @@ ms.locfileid: "53076631"
     > [!NOTE]
     > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-4. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは Web 版 Excel または Windows 版 Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
+1. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは Web 版 Excel または Windows 版 Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
 
 # <a name="excel-on-windows"></a>[Windows 版 Excel](#tab/excel-windows)
 
@@ -78,12 +84,12 @@ npm run start:web
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
    ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
-   
-2. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-3. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
+1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
-4. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+1. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
+
+1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
 ---
 
@@ -95,7 +101,7 @@ Excel ブックで次の手順を実行し、`ADD` カスタム関数を試し�
 
 1. セルを 1 つ選択し、「`=CONTOSO`」と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
-2. セル内に「`=CONTOSO.ADD(10,200)`」という値を入力して Enter キーを押し、入力パラメーターとして数値「`10`」 と「`200`」を指定して、`CONTOSO.ADD` 関数を実行します。
+1. セル内に「`=CONTOSO.ADD(10,200)`」という値を入力して Enter キーを押し、入力パラメーターとして数値「`10`」 と「`200`」を指定して、`CONTOSO.ADD` 関数を実行します。
 
 `ADD` カスタム関数によって、入力パラメーターとして指定した 2 つの数字の合計が計算されます。 「`=CONTOSO.ADD(10,200)`」と入力して Enter キーを押すと、**210** という結果が生成されるはずです。
 
@@ -104,11 +110,10 @@ Excel ブックで次の手順を実行し、`ADD` カスタム関数を試し�
 これで、カスタム関数が Excel アドイン内に正常に作成されました。 次は、ストリーミング データ機能を使用してより複雑なアドインを作成してください。 カスタム関数を使用した Excel アドインのチュートリアルの次の手順を確認するには、次のリンクをクリックしてください。
 
 > [!div class="nextstepaction"]
-> [Excel カスタム関数アドインのチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
-)
+> [Excel カスタム関数アドインのチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数の概要](../excel/custom-functions-overview.md)
-* [カスタム関数のメタデータ](../excel/custom-functions-json.md)
-* [Excel カスタム関数のランタイム](../excel/custom-functions-runtime.md)
+- [カスタム関数の概要](../excel/custom-functions-overview.md)
+- [カスタム関数のメタデータ](../excel/custom-functions-json.md)
+- [Excel カスタム関数のランタイム](../excel/custom-functions-runtime.md)

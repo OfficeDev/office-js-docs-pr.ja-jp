@@ -1,20 +1,23 @@
 ---
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
-ms.date: 05/22/2020
+ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 3ead54f3479fdc912f916705fe84645f16392784
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
-ms.translationtype: MT
+ms.openlocfilehash: 8ae2408b2dbf36a0e5ebbdd863b8ddb49717a144
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350198"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773070"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
 以前に Windows、Mac、または iOS にサイドロードしたアドインは、コンピューターで Office のキャッシュをクリアすることにより削除できます。
 
 また、アドインのマニフェストに変更を加えた場合は (アイコンのファイル名やアドイン コマンドのテキストを更新した場合など)、Office のキャッシュをクリアし、更新されたマニフェストを使用してアドインをサイドロードし直す必要があります。 これを実行することにより、アドインは更新されたマニフェストの記載どおりに Office で表示されるようになります。
+
+> [!NOTE]
+> Excel、OneNote、PowerPoint、または Word on the web からサイドロードされたアドインを削除するには、「[テストのために Office on the web に Office アドインをサイドロードする: サイドロードされたアドインを削除する](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in)」を参照してください。
 
 ## <a name="clear-the-office-cache-on-windows"></a>Windows で Office のキャッシュをクリアする
 

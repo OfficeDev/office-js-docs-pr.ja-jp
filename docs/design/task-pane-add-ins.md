@@ -3,12 +3,12 @@ title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cd8d9386fa9f154d611926add12e21f545e36351
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bea2bf43d5d10a39e36cee679bf03790ca683126d915609e6a746176ff18da6c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076305"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081737"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
 

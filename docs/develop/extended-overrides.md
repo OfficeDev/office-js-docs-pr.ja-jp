@@ -3,23 +3,23 @@ title: マニフェストの拡張オーバーライドを処理する
 description: マニフェストの拡張オーバーライドを使用して機能拡張機能を構成する方法について学習します。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 09ced571f4b7d72a3479984582a8f58a0cb440bb2a3e62afe3f90329f2cd1be3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505573"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080672"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>マニフェストの拡張オーバーライドを使用する
 
 Office アドインの一部の機能拡張機能は、アドインの XML マニフェストではなく、サーバーでホストされている JSON ファイルで構成されます。
 
 > [!NOTE]
-> この記事では、アドイン マニフェストOfficeアドインでの役割について理解している必要があります。最近Office [場合は、アドインの XML](add-in-manifests.md)マニフェストを参照してください。
+> この記事では、アドイン マニフェストOfficeアドインでの役割について理解している必要があります。最近Office[場合は、「アドイン XML](add-in-manifests.md)マニフェスト」を参照してください。
 
 次の表は、機能のドキュメントへのリンクと共に、拡張オーバーライドを必要とする機能拡張機能を指定します。
 
-| 機能 | 開発手順 |
+| 特徴 | 開発手順 |
 | :----- | :----- |
 | キーボード ショートカット | [カスタム キーボード ショートカットをアドインOffice追加する](../design/keyboard-shortcuts.md) |
 
@@ -63,7 +63,7 @@ JSON 形式を定義するスキーマは [、拡張マニフェスト スキー
 
 ## <a name="localize-the-extended-overrides-file"></a>拡張上書きファイルをローカライズする
 
-アドインが複数のロケールをサポートしている場合は、要素の属性を使用して、ローカライズされたリソースのOfficeを `ResourceUrl` `<ExtendedOverrides>` ポイントできます。 次に例を示します。
+アドインが複数のロケールをサポートしている場合は、要素の属性を使用して、ローカライズされたリソースOfficeを `ResourceUrl` `<ExtendedOverrides>` ポイントできます。 次に例を示します。
 
 ```xml
     ...

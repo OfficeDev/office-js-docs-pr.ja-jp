@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインを展開してインストールする
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
-ms.date: 05/20/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661132"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773091"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 
@@ -24,7 +24,7 @@ Outlook アドインを開発するプロセスの一環として、テスト用
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>アドイン用のマニフェスト ファイルを作成する
 
-各アドインは XML のマニフェストで記述されます。マニフェストは、アドインに関する情報をサーバーに提供し、ユーザーに向けたアドインについての説明的な情報を提供し、アドイン UI の HTML ファイルの場所を識別するドキュメントです。このマニフェストはローカル フォルダーにもサーバーにも保存できますが、その場所は、テストに使用するメールボックスの Exchange サーバーからアクセス可能な場所である必要があります。ここでの説明では、マニフェストがローカル フォルダーに保存されていることを想定しています。マニフェスト ファイルの作成方法については、「 [Outlook アドインのマニフェスト](manifests.md)」を参照してください。
+各アドインは、XML マニフェストによって記述されます。XML マニフェストは、サーバーに対してアドインに関する情報を提供し、ユーザーに対してアドインについて説明するドキュメントです。また、アドイン UI の HTML ファイルの場所も XML マニフェストで指定されます。 テストで使用するメールボックスの Exchange サーバーがアクセスできるローカル フォルダーまたはサーバーである限り、マニフェストはどの場所にでも格納できます。 ここでは、マニフェストをローカル フォルダーに格納することを前提とします。 マニフェスト ファイルを作成する方法については、「[Outlook アドインのマニフェスト](manifests.md)」をご覧ください。
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Web サーバーへのアドインを展開する
 
@@ -64,7 +64,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 完全修飾 URL は、アドイン用に準備したアドイン マニフェスト ファイルの場所です。
 
-さらに、次の PowerShell コマンドレットを使用すると、メールボックス用のアドインを管理できます。
+さらに、次の PowerShell コマンドレットを使用して、メールボックス用のアドインを管理します。
 
 - `Get-App` - メールボックスに対して有効になっているアドインを一覧表示します。
 - `Set-App` - メールボックスに対してアドインを有効または無効にします。
@@ -76,7 +76,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 - アドインを、個人用や組織のメンバー用に限って開発する場合は、自分の会社が使用している Outlook のバージョンをテストすることが重要です。一部のユーザーは Outlook on the web を使用する場合があるので、自分の会社で標準的に使用されているブラウザーのバージョンをテストすることも重要です。
 
-- [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[Commercial marketplace の認定ポリシー 1120.3](/legal/marketplace/certification-policies#11203-functionality) で指定されている必要なバージョンをテストする必要があります。これには次が含まれます。
+- [AppSource](https://appsource.microsoft.com) に一覧表示するアドインを開発する場合は、[Commercial marketplace の認定ポリシー 1120.3](/legal/marketplace/certification-policies#11203-functionality) で指定されている必要なバージョンをテストする必要があります。 これには、次のものが含まれます。
   - Windows 用 Outlook の最新バージョンと最新の直前のバージョン。
   - Mac 用 Outlook の最新バージョン。
   - iOS および Android 用の Outlook の最新バージョン (アドインが[モバイル フォーム ファクターをサポートしている](add-mobile-support.md)場合)。

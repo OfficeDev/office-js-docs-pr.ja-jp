@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOfficeダイアログ API のルールとベスト プラクティスを提供します。
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ace62bb3e023381f6cebc34c2226d33b6f84287beaf4ec7b5d5e77ddeabc3c9e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773763"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080815"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -27,7 +27,7 @@ ms.locfileid: "53773763"
 - ダイアログ ボックスOffice 2 つの API のみを呼び出します。
   - [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_)関数。
   - `Office.context.requirements.isSetSupported`(詳細については、「アプリケーションと[API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。
-- [messageParent 関数](/javascript/api/office/office.ui#messageParent_message__messageOptions_)は、通常、アドイン自体とまったく同じドメイン内のページから呼び出す必要がありますが、これは必須ではありません。 詳細については、「ホスト ランタイム [へのクロスドメイン メッセージング」を参照してください](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
+- [messageParent 関数](/javascript/api/office/office.ui#messageParent_message__messageOptions_)は、通常、アドイン自体とまったく同じドメイン内のページから呼び出す必要がありますが、これは必須ではありません。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 

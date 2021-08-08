@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用してセルを使用します。
-description: セルの Excel JavaScript API 定義について説明し、セルを使用する方法について説明します。
+title: JavaScript API を使用してセルExcel作業します。
+description: セルのExcel JavaScript API 定義について説明し、セルを使用する方法について説明します。
 ms.date: 04/16/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad8ca985b6bbdcf19920c36c371e690f61639f16
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: 444feecd4aafb0e884de05b2ff198a3ca1423a16644c537865bcfb6905684a40
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917101"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079347"
 ---
-# <a name="work-with-cells-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してセルを使用する
+# <a name="work-with-cells-using-the-excel-javascript-api"></a>JavaScript API を使用してセルExcelする
 
-Excel JavaScript API には、"Cell" オブジェクトまたはクラスがありません。 代わりに、すべての Excel セルはオブジェクト `Range` です。 Excel UI の個々のセルは、Excel JavaScript API の 1 つのセルを持つ `Range` オブジェクトに変換されます。
+Excel JavaScript API には、"Cell" オブジェクトまたはクラスがありません。 代わりに、すべてのセルExcelオブジェクト `Range` です。 Excel UI の個々のセルは、Excel JavaScript API の 1 つのセルを持つ `Range` オブジェクトに変換されます。
 
 オブジェクト `Range` には、複数の連続するセルを含め、複数のセルを含めできます。 連続するセルは、(単一の行または列を含む) 未結合の四角形を形成します。 連続していないセルの操作については、「RangeAreas オブジェクトを使用して不連続セルを操作する [」を参照してください](#work-with-discontiguous-cells-using-the-rangeareas-object)。
 
@@ -26,5 +26,5 @@ Excel JavaScript API には、"Cell" オブジェクトまたはクラスがあ�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用して範囲を取得する](excel-add-ins-ranges-get.md)
+- [JavaScript API を使用して範囲Excelする](excel-add-ins-ranges-get.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

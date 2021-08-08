@@ -3,12 +3,12 @@ title: Office アドインを初期化する
 description: アドインを初期化するOfficeについて学習します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0cddc4eaa99c9f1536be91d6fe2971c43344a149
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 23005b89e4633a2c88b7d17f76dd3be530246ac31a741935af1e018144abea55
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774295"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080593"
 ---
 # <a name="initialize-your-office-add-in"></a>Office アドインを初期化する
 

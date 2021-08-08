@@ -3,12 +3,12 @@ title: Excel アドインの共同編集機能
 description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6923b003417e78432975fa78fb5423b055bd02bf
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: f9df90a83e25095da1334a9d3e8d70338a991bebd160fc58e1bb53fa2bb5a13e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774162"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079797"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 

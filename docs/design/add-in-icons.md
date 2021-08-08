@@ -3,12 +3,12 @@ title: Office アドインのアイコン ガイドライン
 description: アドイン コマンドのアイコンと Fresh および Monoline デザイン スタイルを設計する方法の概要を説明します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 3073472332a31688676fba796dccd9920a49581d
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 3f1c2d4cbe748d2ac214f0dd0c10a988435eeb4c34bbfe9c7b157b911cd4eb09
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329969"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082356"
 ---
 # <a name="icons"></a>アイコン
 

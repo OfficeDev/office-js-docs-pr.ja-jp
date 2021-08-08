@@ -1,14 +1,14 @@
 ---
 title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
-ms.date: 10/14/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 5d7495709f729fb06a87ad5ca443b1712f6c3e49
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
-ms.translationtype: MT
+ms.openlocfilehash: bc837c0fe399cc6669cb0efcf2531e438f922dfe
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349932"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773791"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
@@ -30,12 +30,12 @@ Visual Studio では、OneNote または Project 用の Office アドインの�
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを開発する
 
-Visual Studio では、機能が制限された基本的なアドインが作成されます。 [マニフェスト](add-in-manifests.md)、HTML、JavaScript、および CSS の各ファイルを Visual Studio で編集することで、アドインをカスタマイズできます。 Visual Studio により作成されるアドイン プロジェクトのプロジェクト構造とファイルの概要については、アドインを作成するために実行したクイック スタート内の Visual Studio ガイダンスを参照してください。 
+Visual Studio では、機能が制限された基本的なアドインが作成されます。 [マニフェスト](add-in-manifests.md)、HTML、JavaScript、および CSS の各ファイルを Visual Studio で編集することで、アドインをカスタマイズできます。 Visual Studio により作成されるアドイン プロジェクトのプロジェクト構造とファイルの概要については、アドインを作成するために実行したクイック スタート内の Visual Studio ガイダンスを参照してください。
 
 > [!TIP]
 > Office アドインは Web アプリケーションであるため、アドインをカスタマイズするには、少なくとも Web 開発の基本的なスキルが必要です。 JavaScript を使い慣れていない場合は、[Mozilla の JavaScript チュートリアル](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction)をご覧になることをお勧めします。
 
-アドインをカスタマイズするには、このドキュメントの [「中心概念」 > 「開発」](develop-overview.md) 項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、アプリケーション固有の項目 (例: [Excel](../excel/index.yml)) で説明する概念を理解する必要があります。 
+アドインをカスタマイズするには、このドキュメントの [「中心概念」 > 「開発」](develop-overview.md) 項目で説明する概念の他、作成するるアドインに対応するドキュメント内の、アプリケーション固有の項目 (例: [Excel](../excel/index.yml)) で説明する概念を理解する必要があります。
 
 ## <a name="test-and-debug-the-add-in"></a>アドインのテストとデバッグ
 
@@ -48,7 +48,7 @@ Office アドインは、Web アプリケーションとマニフェスト フ�
 Visual Studio で開発中のアドインは、ローカル Web サーバー上 (`localhost`) で実行されます。 アドインが正常に機能し、他のユーザーがアクセスできるように公開する準備ができた場合、次の手順を実行する必要があります。
 
 1. Web アプリケーションを Web サーバーまたは Web ホスティング サービス (例: Microsoft Azure) に展開します。
-2. マニフェストを更新して、展開されたアプリケーションの URL を指定します。 
+2. マニフェストを更新して、展開されたアプリケーションの URL を指定します。
 3. [Office アドインを展開](../publish/publish.md)するために使用する方法を選択し、指示に従ってマニフェスト ファイルを公開します。
 
 ## <a name="see-also"></a>関連項目

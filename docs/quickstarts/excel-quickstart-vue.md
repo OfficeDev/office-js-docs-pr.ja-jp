@@ -1,17 +1,17 @@
 ---
-title: Vue を使用して Excel 作業ウィンドウ アドインを作成する
+title: Vue を使用して Excel 作業ウィンドウ アドインを構築する
 description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/16/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec216e84e9aa4bc7eabec4b20c7a2dd271ca1718
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1686f9d9537718eb5ba56fa9ea7f0b4ccb7d65ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076617"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774442"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-vue"></a>Vue を使用して Excel 作業ウィンドウ アドインを作成する
+# <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
 この記事では、Vue と Excel JavaScript API を使用して Excel 作業ウィンドウ アドインを構築するプロセスについて説明します。
 
@@ -20,7 +20,7 @@ ms.locfileid: "53076617"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Vue CLI](https://cli.vuejs.org/) をグローバルにインストールします。
+- [Vue CLI](https://cli.vuejs.org/) をグローバルにインストールします。 ターミナルから、次のコマンドを実行します。
 
   ```command&nbsp;line
   npm install -g @vue/cli
@@ -28,13 +28,13 @@ ms.locfileid: "53076617"
 
 ## <a name="generate-a-new-vue-app"></a>新しい Vue アプリの生成
 
-Vue CLI を使用して新しい Vue アプリを生成します。 端末から次のコマンドを実行します。
+新しい Vue アプリを生成するには、Vue CLI を使用します。
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-次に、「Vue 3」の `Default` プリセットを選択します (お好みで「Vue 2」を選択している場合があります)。
+次に、「Vue 3」の `Default` プリセットを選択します (お好みで「Vue 2」を選択します)。
 
 ## <a name="generate-the-manifest-file"></a>マニフェスト ファイルを生成する
 
@@ -46,7 +46,7 @@ vue create my-add-in
     cd my-add-in
     ```
 
-2. 以下のコマンドを実行し、Yeoman ジェネレーター使用してアドインのマニフェスト ファイルを生成します。
+1. Yeoman ジェネレーター使用して、アドインのマニフェスト ファイルを生成します。
 
     ```command&nbsp;line
     yo office
@@ -63,7 +63,7 @@ vue create my-add-in
 
     ![プロジェクトの種類がマニフェスト専用に設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット。](../images/yo-office-manifest-only-vue.png)
 
-ウィザードを完了すると、`My Office Add-in`フォルダーが`manifest.xml`ファイルを含んで作成されます。 マニフェストを使用して、クイック スタートの最後にアドインをサイドロードおよびテストします。
+完了後、ウィザードは **manifest.xml** ファイルを含む **個人用 Office アドイン** フォルダーを作成します。 マニフェストを使用して、アドインをサイドロードしてテストします。
 
 > [!TIP]
 > アドイン プロジェクトの作成後に Yeoman ジェネレーターが提供する *次の手順* ガイダンスは無視できます。 この記事中の詳しい手順は、このチュートリアルを完了するために必要なすべてのガイダンスを提供します。
@@ -72,7 +72,7 @@ vue create my-add-in
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. アプリで HTTPS を有効にするには、Vue プロジェクトのルート フォルダーに次の内容で `vue.config.js` ファイルを作成します。
+1. アプリの HTTPS を有効にします。 Vue プロジェクトのルート フォルダーに次の内容で **vue.config.js** ファイルを作成します。
 
     ```js
     var fs = require("fs");
@@ -90,21 +90,34 @@ vue create my-add-in
     }
     ```
 
-2. 端末から次のコマンドを実行して、アドインの証明書をインストールします。
+1. アドインの証明書をインストールします。
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
    ```
 
+## <a name="explore-the-project"></a>プロジェクトを探究する
+
+Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
+
+- プロジェクトのルート ディレクトリにある **manifest.xml** ファイルで、アドインの機能と設定を定義します。 **manifest.xml** ファイルの詳細については、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
+- **./src/App.vue** ファイルには、作業ウィンドウの HTML マークアップ、作業ウィンドウのコンテンツに適用される CSS、作業ウィンドウと Excel の間の対話操作を容易にする Office JavaScript API コードが含まれます。
+
 ## <a name="update-the-app"></a>アプリを更新する
 
-1. `public/index.html` ファイルを開き、`</head>` タグの直前に次の `<script>` タグを追加します。
+1. **./public/index.html** ファイルを開き、`</head>` タグの直前に次の `<script>` タグを追加します。
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. `src/main.js` を開き、内容を次のコードで置き換えます。
+1. **manifest.xml** を開き、`<Resources>` タグの中で `<bt:Urls>` タグを検索します。 ID `Taskpane.Url` を持つ `<bt:Url>` タグを検索し、その `DefaultValue` 属性を更新します。 新しい `DefaultValue` は `https://localhost:3000/index.html` です。 更新されたタグ全体が次の行と一致する必要があります。
+
+   ```html
+   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+   ```
+
+1. **./src/main.js** を開き、内容を次のコードで置き換えます。
 
    ```js
    import { createApp } from 'vue'
@@ -115,7 +128,7 @@ vue create my-add-in
    });
    ```
 
-3. `src/App.vue` を開き、ファイル内容を次のコードで置き換えます。
+1. **./src/App.vue** を開き、ファイル内容を次のコードで置き換えます。
 
    ```html
    <template>
@@ -186,29 +199,35 @@ vue create my-add-in
 
 ## <a name="start-the-dev-server"></a>開発用サーバーの起動
 
-1. ターミナルから、次のコマンドを実行してデベロッパー サーバーを起動します。
+1. 依存関係をインストールします。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. 開発用サーバーを起動します。
 
    ```command&nbsp;line
    npm run serve
    ```
 
-2. Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。 `https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。 Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。
+1. Web ブラウザーで `https://localhost:3000` (`https` に注意) に移動します。 `https://localhost:3000` のページが空白で、証明書エラーがない場合、それは機能していることを意味します。 Vue アプリは、Office の初期化後にマウントされるため、Excel 環境内のもののみを表示します。
 
 ## <a name="try-it-out"></a>試してみる
 
-1. アドインを実行して、Excel 内のアドインをサイドロードするのに使用するプラットフォームの手順に従います。
+1. アドインを実行して、Excel 内のアドインをサイドロードします。 使用するプラットフォームの手順に従います。
 
    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+1. Excel でアドイン作業ウィンドウを開きます。 **[ホーム]** タブで、**[作業ウィンドウの表示]** ボタンをクリックします。
 
    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューのスクリーンショット。](../images/excel-quickstart-addin-2a.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+1. ワークシート内で任意のセルの範囲を選択します。
 
-4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
+1. 選択範囲の色を緑に設定します。 アドインの作業ウィンドウで **[色の設定]** ボタンを選択します。
 
    ![アドイン作業ウィンドウを開いた状態の Excel のスクリーンショット。](../images/excel-quickstart-addin-2c.png)
 
@@ -221,8 +240,8 @@ vue create my-add-in
 
 ## <a name="see-also"></a>関連項目
 
-* [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-* [Office アドインを開発する](../develop/develop-overview.md)
-* [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
-* [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
+- [Office アドインを開発する](../develop/develop-overview.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
+- [Excel アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

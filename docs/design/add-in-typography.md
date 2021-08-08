@@ -3,12 +3,12 @@ title: Office アドインの文字体裁ガイドライン
 description: アドインで使用する書体とフォント サイズOfficeします。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 8cc17a25ed33fc34dd7a44622baacc620304402931de87eeadee903db5f135b0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330004"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082311"
 ---
 # <a name="typography"></a>文字体裁
 
