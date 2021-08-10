@@ -3,12 +3,12 @@ title: マニフェスト ファイル内の OverriddenByRibbonApi 要素
 description: カスタム タブ、グループ、コントロール、またはメニュー アイテムがカスタム コンテキスト タブの一部である場合に表示してはならないことを指定する方法について説明します。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 06d7ae47c7d9de9d48fe9c59493258efc1fa9cae
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 0f314761f686ca559caea4e04ec5d5a66fab9618ea21a221a6cf2affde897578
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671752"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092212"
 ---
 # <a name="overriddenbyribbonapi-element"></a>OverriddenByRibbonApi 要素
 

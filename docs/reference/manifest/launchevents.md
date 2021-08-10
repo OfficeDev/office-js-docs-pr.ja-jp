@@ -3,12 +3,12 @@ title: マニフェスト ファイルの LaunchEvents
 description: LaunchEvents 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 16d721ca6d9402d2bd5d19787707e146358044f0
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c6714c4f52bdc1ed9d7a75a42100df8d3fe046c504575295880ff614fe4a447f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590918"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089749"
 ---
 # <a name="launchevents-element"></a>LaunchEvents 要素
 
@@ -37,7 +37,7 @@ ms.locfileid: "52590918"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-| [LaunchEvent](launchevent.md) | 必要 |  サポートされているイベントを JavaScript ファイル内の関数にマップして、アドインのアクティブ化を行います。 |
+| [LaunchEvent](launchevent.md) | はい |  サポートされているイベントを JavaScript ファイル内の関数にマップして、アドインのアクティブ化を行います。 |
 
 ## <a name="see-also"></a>関連項目
 

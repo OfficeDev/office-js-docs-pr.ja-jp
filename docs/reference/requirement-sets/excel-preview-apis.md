@@ -4,12 +4,12 @@ description: JavaScript API のExcel詳細。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d90c5e8bb2c344cb3bb297a3cd793613f017e910ab99df6dfffc456c3f715d20
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671717"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092646"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -58,7 +58,7 @@ ms.locfileid: "53671717"
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|その ID で識別されるコメント返信を返します。|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|ID で識別される条件付き書式を返します。|
 |[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|タスクの完了率を指定します。|
-||[優先度](/javascript/api/excel/excel.documenttask#priority)|タスクの優先度を指定します。|
+||[priority](/javascript/api/excel/excel.documenttask#priority)|タスクの優先度を指定します。|
 ||[assignees](/javascript/api/excel/excel.documenttask#assignees)|タスクの割り当て人のコレクションを返します。|
 ||[変更点](/javascript/api/excel/excel.documenttask#changes)|タスクの変更レコードを取得します。|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|タスクに関連付けられたコメントを取得します。|
@@ -77,7 +77,7 @@ ms.locfileid: "53671717"
 ||[dueDateTime](/javascript/api/excel/excel.documenttaskchange#dueDateTime)|タスクの期日と時刻を UTC タイム ゾーンで表します。|
 ||[id](/javascript/api/excel/excel.documenttaskchange#id)|タスク変更レコードの ID。|
 ||[percentComplete](/javascript/api/excel/excel.documenttaskchange#percentComplete)|タスクの完了率を表します。|
-||[優先度](/javascript/api/excel/excel.documenttaskchange#priority)|タスクの優先度を表します。|
+||[priority](/javascript/api/excel/excel.documenttaskchange#priority)|タスクの優先度を表します。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskchange#startDateTime)|タスクの開始日時を UTC タイム ゾーンで表します。|
 ||[title](/javascript/api/excel/excel.documenttaskchange#title)|タスクのタイトルを表します。|
 ||[type](/javascript/api/excel/excel.documenttaskchange#type)|タスク変更レコードのアクションの種類を表します。|

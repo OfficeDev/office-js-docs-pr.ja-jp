@@ -1,26 +1,26 @@
 ---
-title: マニフェストファイルの承認要素
-description: アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
+title: マニフェスト ファイルの Authorizations 要素
+description: アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 675585f99fc6261a2145219d553f02b9f9abded3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 068e6753e2e8e947e5e6e3c0885e7cd006165660862a37346eea114abb81a9b8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608755"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092503"
 ---
-# <a name="authorizations-element"></a>承認要素
+# <a name="authorizations-element"></a>Authorizations 要素
 
-アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
+アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 
-**承認**は、マニフェスト内の[webapplicationinfo](webapplicationinfo.md)要素の子要素です。
+**承認は** 、マニフェスト内の [WebApplicationInfo](webapplicationinfo.md) 要素の子要素です。
 
 ## <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [Authorization](authorization.md)                |  はい     |   アドインの web アプリケーションが承認を必要とする外部リソースと、必要なスコープ (アクセス許可) を識別します。 |
+|  [Authorization](authorization.md)                |  必要     |   アドインの Web アプリケーションで承認が必要な外部リソースと、必要なスコープ (アクセス許可) を識別します。 |
 
 ## <a name="example"></a>例
 

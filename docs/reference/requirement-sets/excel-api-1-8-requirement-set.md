@@ -4,12 +4,12 @@ description: ExcelApi 1.8 要件セットの詳細。
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671423"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088952"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel新機能
 
@@ -254,7 +254,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getItemOrNullObject_name_)|名前に基づいて RowColumnPivotHierarchy を取得します。|
 ||[items](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[remove(rowColumnPivotHierarchy: Excel.RowColumnPivotHierarchy)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove_rowColumnPivotHierarchy_)|現在の軸からピボット階層を削除します。|
-|[Runtime](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableEvents)|現在の作業ウィンドウまたはコンテンツ アドインの JavaScript イベントを切り替えます。|
+|[ランタイム](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableEvents)|現在の作業ウィンドウまたはコンテンツ アドインの JavaScript イベントを切り替えます。|
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#baseField)|PivotField を使用して、型に応じて計算を基に計算を行います (該当する場合 `ShowAs` `ShowAsCalculation` は、それ以外 `null` の場合)。|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseItem)|型に応じて該当する場合は、計算の基に設定するアイテム `ShowAs` `ShowAsCalculation` 。それ以外の場合 `null` 。|
 ||[計算](/javascript/api/excel/excel.showasrule#calculation)|`ShowAs`PivotField に使用する計算。|

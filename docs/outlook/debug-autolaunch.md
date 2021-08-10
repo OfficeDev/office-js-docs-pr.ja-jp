@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化を実装Outlookアド�
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077093"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090817"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのアドインOutlookデバッグする (プレビュー)
 
@@ -123,7 +123,7 @@ ms.locfileid: "53077093"
 
     ![[デバッグ] ドロップダウンの構成オプションから [直接デバッグ] を選択Visual Studio Codeスクリーンショット。](../images/outlook-win-autolaunch-debug-vsc.png)
 
-## <a name="debug"></a>Debug
+## <a name="debug"></a>デバッグ
 
 1. デバッガーが接続されているのを確認した後、Outlook に戻り、[イベント ベースのハンドラーのデバッグ] ダイアログで **[OK] を選択します**。
 

@@ -4,12 +4,12 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1686f9d9537718eb5ba56fa9ea7f0b4ccb7d65ec
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: de074b9673db6a1637733b42d8984dc5d2aacb60f8b38de535fe5e9f323e2c0f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774442"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092742"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -96,9 +96,9 @@ vue create my-add-in
    npx office-addin-dev-certs install
    ```
 
-## <a name="explore-the-project"></a>プロジェクトを探究する
+## <a name="explore-the-project"></a>プロジェクトを確認する
 
-Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
+Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
 
 - プロジェクトのルート ディレクトリにある **manifest.xml** ファイルで、アドインの機能と設定を定義します。 **manifest.xml** ファイルの詳細については、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。
 - **./src/App.vue** ファイルには、作業ウィンドウの HTML マークアップ、作業ウィンドウのコンテンツに適用される CSS、作業ウィンドウと Excel の間の対話操作を容易にする Office JavaScript API コードが含まれます。

@@ -3,12 +3,12 @@ title: Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上�
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 3a79c9f02aba91d29b3af15a5a3c9113079bc197
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0fc2cee39553521fef490ab33e08c2b11c8ec9c37d4787e408647f72c30df3b7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773644"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090661"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Edge Chromium WebView2 を使用して Windows でアドインをデバッグする
 

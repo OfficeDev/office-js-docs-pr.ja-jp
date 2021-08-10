@@ -3,12 +3,12 @@ title: Office - プレビュー要件セット
 description: Office API プレビュー要件セットを使用Outlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 72e2300dd50ff01e26417efaca92906049358fc0
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c116eedc11614f772103b97f3cca37277ab9a753bea72f260df5c8e78b96dd75
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590884"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091370"
 ---
 # <a name="office-mailbox-preview-requirement-set"></a>Office (メールボックス プレビュー要件セット)
 
@@ -112,7 +112,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`AttachmentsChanged`| String | アイテムに添付ファイルが追加または削除されました。 | 1.8 |
 |`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
 |`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
-|`OfficeThemeChanged`| String | メールボックスOfficeテーマが変更されました。 | Preview |
+|`OfficeThemeChanged`| String | メールボックスOfficeテーマが変更されました。 | プレビュー |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
 |`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 

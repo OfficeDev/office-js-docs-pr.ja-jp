@@ -3,12 +3,12 @@ title: Office アドインのテストとデバッグ
 description: Office アドインのテストとデバッグを行う方法について説明します。
 ms.date: 05/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 5df42a6c22325528eaaf2dcde28fddbfd3a211fb
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: bf3fb2dc869b382212c607144b5c61728e393c24c0ec5397dd035c6906830ac3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349358"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094158"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 

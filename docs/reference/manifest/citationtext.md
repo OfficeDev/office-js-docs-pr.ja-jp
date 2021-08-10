@@ -3,12 +3,12 @@ title: マニフェスト ファイルの CitationText 要素
 description: この辞書の引用定型句を指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f29640f04d940d8ba7fc7f933f6f7884f1667e9e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 789462bb2754c9c50e9f8c27a34cc0b82e2f2d65c555eceeeba9243142d2a2dd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612327"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089351"
 ---
 # <a name="citationtext-element"></a>CitationText 要素
 

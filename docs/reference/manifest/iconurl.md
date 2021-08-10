@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの IconUrl 要素
-description: IconUrl 要素は、挿入 UX およびストア内Officeアドインを表すイメージの URL をOfficeします。
+description: IconUrl 要素は、挿入 UX とストア内のアドインOfficeを表すイメージの URL をOfficeします。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 68a449b40f6084d26140d59fec61967e163196df
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: c2dac7835dcdd856fb3e713f00b5bd0a3c87189cf36fda3186e51da2c95e1ab9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604640"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089813"
 ---
 # <a name="iconurl-element"></a>IconUrl 要素
 
@@ -34,7 +34,7 @@ ms.locfileid: "51604640"
 
 ## <a name="remarks"></a>注釈
 
-メール アドインの場合、アイコンが [ファイル管理]アドイン UI (Outlook) または [設定管理] アドイン  >    >  UI (Outlook on the web) に表示されます。 コンテンツ アドインまたは作業ウィンドウ アドインでは、アイコンは、**[挿入]** > **[アドイン]** UI に表示されます。 すべてのアドインの種類に対して、アドインを AppSource に発行する場合、アイコンは [AppSource](https://appsource.microsoft.com)でも使用されます。
+メール アドインの場合、アイコンは [ファイル管理]アドイン UI (Outlook) または 設定 [アドインの管理  >  ] UI (Outlook on the web)  >  に表示されます。 コンテンツ アドインまたは作業ウィンドウ アドインでは、アイコンは、**[挿入]** > **[アドイン]** UI に表示されます。 すべてのアドインの種類に対して、アドインを AppSource に発行する場合、アイコンは [AppSource](https://appsource.microsoft.com)でも使用されます。
 
 画像のファイル形式は GIF、JPG、PNG、EXIF、BMP、TIFF のいずれかにする必要があります。 コンテンツ アプリおよび作業ウィンドウ アプリの場合、指定する画像は 32 x 32 ピクセルにする必要があります。 メール アプリの場合、画像の解像度は 64 x 64 ピクセルである必要があります。 [HighResolutionIconUrl](highresolutioniconurl.md)要素を使用して、高 DPI Officeで実行されているクライアント アプリケーションで使用するアイコンも指定する必要があります。 詳細については、「[効果的な AppSource と Office 内の登録リストを作成する](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity)」の「_アプリに一貫性のあるビジュアル ID を作成する_」セクションを参照してください。
 

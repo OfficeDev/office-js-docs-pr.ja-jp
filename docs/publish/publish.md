@@ -3,12 +3,12 @@ title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 07/30/2021
 localization_priority: Priority
-ms.openlocfilehash: 3e57ef4944becfaaa40c6fe2b08764ff67800e12
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e702e5d16c986324b6f54a1927ca844852826aeb257d4958de37b8d1ed3c3174
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774029"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093341"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 

@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - プレビュー要件セット
 description: OutlookItem オブジェクト モデルのメールボックス API プレビュー要件セットのバージョン。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 1f3359eeccffee3fba5ec2aee50b5e2284a35712
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5a056325576e891cff36e2ffbb3081d16756b93057190e1078b92cd3d1543c9b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671304"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088861"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>item (メールボックス プレビュー要件セット)
 

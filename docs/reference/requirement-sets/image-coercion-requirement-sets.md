@@ -4,12 +4,12 @@ description: 複数のアドインを使用した Image Coercion 要件セット
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d605a8ac5d36825ffdfa9648578f7d252340325e1021c7663667778f4427ef6a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671619"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090649"
 ---
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 

@@ -1,20 +1,20 @@
 ---
 title: マニフェスト ファイルの MobileFormFactor 要素
-description: MobileFormFactor 要素は、アドインのモバイルフォームファクターの設定を指定します。
+description: MobileFormFactor 要素は、アドインのモバイル フォーム ファクター設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: f8854b2e6db6d19b1ba07276047b930436d1c9f91cb1b10345e1e332444ac897
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641474"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089706"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 要素
 
 モバイル フォーム ファクターについてアドインの設定を指定します。**Resources** ノードを除くモバイル フォーム ファクターのアドイン情報をすべて含みます。
 
-各**MobileFormFactor**定義には、 **functionfile**要素と1つ以上の**extensionpoint**要素が含まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
+各 **MobileFormFactor 定義には****、FunctionFile** 要素と 1 つ以上の **ExtensionPoint 要素が含** まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
 
 **MobileFormFactor** 要素は、VersionOverrides のスキーマ 1.1 で定義されています。これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
 

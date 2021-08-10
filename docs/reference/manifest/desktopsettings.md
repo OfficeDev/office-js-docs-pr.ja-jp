@@ -3,19 +3,19 @@ title: マニフェスト ファイルの DesktopSettings 要素
 description: メール アドインがデスクトップ コンピューターで使用されるときに適用されるソースの場所と制御の設定を指定します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d8f35a29e14337a849f81b0becb60f761116cb48fa420119228255bb1179bb35
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612277"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089853"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings 要素
 
 メール アドインがデスクトップ コンピューターで使用されるときに適用されるソースの場所と制御の設定を指定します。
 
 > [!IMPORTANT]
-> この `DesktopSettings` 要素は、web 上の従来の Outlook (社内 Exchange サーバーの古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。
+> この要素は、従来の Outlook on the web (通常はオンプレミスの Exchange サーバーの古いバージョンに接続されている) および Outlook `DesktopSettings` 2013 Windows。
 
 **アドインの種類:** メール
 

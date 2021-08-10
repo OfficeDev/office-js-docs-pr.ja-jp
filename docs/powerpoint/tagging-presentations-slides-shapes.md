@@ -1,16 +1,16 @@
 ---
-title: PowerPoint でプレゼンテーション、スライド、図形にカスタム タグを使用する
+title: プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 description: プレゼンテーション、スライド、図形に関するカスタム メタデータにタグを使用する方法について説明します。
 ms.date: 04/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
-ms.sourcegitcommit: 58d394fa49308ecf93cd53f7d3fb6e316ff56209
+ms.openlocfilehash: 9ae86906a2ac69cb79adac34fa4e923a9bc218a7dc8a7e5bdefd63300b589da5
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51876861"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093658"
 ---
-# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>PowerPoint でプレゼンテーション、スライド、図形にカスタム タグを使用する
+# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 
 アドインは、"tags" と呼ばれるキーと値のペアの形式で、スライド上のプレゼンテーション、特定のスライド、および特定の図形にカスタム メタデータを添付できます。
 
@@ -32,7 +32,7 @@ ms.locfileid: "51876861"
 
 - メソッドの最初のパラメーター `add` は、キーと値のペアのキーです。 
 - 2 番目のパラメーターは値です。
-- キーは大文字です。 これはメソッドでは厳密には必須ではありませんが、キーは常に PowerPoint によって大文字として格納され、タグ関連のメソッドによっては、キーを大文字で表す必要があります。そのため、タグ キーのコードでは常に大文字を使用することをお勧めします。 `add` 
+- キーは大文字です。 これはメソッドでは厳密に必須ではありませんが、キーは常に PowerPoint によって大文字として格納され、タグ関連のメソッドによってはキーを大文字で表す必要があります。そのため、タグ キーには常にコードで大文字を使用することをお勧めします。 `add` 
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -88,7 +88,7 @@ async function updateTag() {
     - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用します。
     - 呼び出 `getSelectedDataAsync` しは、promise-returning 関数に埋め込まれている。 これを行う理由と方法の詳細については [、「Promise-returning](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)関数で一般的な API をラップする」を参照してください。
     - `getSelectedDataAsync` 複数のスライドを選択できるので、配列を返します。 このシナリオでは、ユーザーが選択したスライドは 1 つだけなので、コードは最初の (0 番目) スライドを取得します。これが選択された唯一のスライドです。
-    - スライドの値は、ユーザーが PowerPoint UI サムネイル ウィンドウのスライドの横に表示する `index` 1 ベースの値です。
+    - スライドの値は、ユーザーが [UI サムネイル] ウィンドウのスライドの横に表示PowerPoint `index` 値です。
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -138,7 +138,7 @@ async function updateTag() {
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>プレゼンテーションでカスタム メタデータを設定する
 
-アドインは、プレゼンテーション全体にタグを適用することもできます。 これにより、Word での [CustomProperty](/javascript/api/word/word.customproperty)クラスの使用方法と同様に、ドキュメント レベルのメタデータにタグを使用できます。 ただし、Word クラス `CustomProperty` とは異なり、PowerPoint タグの値は型のみです `string` 。
+アドインは、プレゼンテーション全体にタグを適用することもできます。 これにより、Word での [CustomProperty](/javascript/api/word/word.customproperty)クラスの使用方法と同様に、ドキュメント レベルのメタデータにタグを使用できます。 ただし、Word クラス `CustomProperty` とは異なり、PowerPointの値は型のみです `string` 。
 
 次のコードは、プレゼンテーションにタグを追加する例です。 
 

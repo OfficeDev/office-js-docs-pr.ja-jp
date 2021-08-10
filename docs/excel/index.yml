@@ -8,34 +8,34 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 90b40568affbf7895bda15fb73345676be118f6f0830805dcedcbf3decccae83
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435313"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57088933"
 landingContent:
-- title: Excel アドインについて
+- title: アドインExcelについて
   linkLists:
   - linkListType: overview
     links:
-    - text: Excel アドインとは
+    - text: アドインExcelは何ですか?
       url: excel-add-ins-overview.md
   - linkListType: quickstart
     links:
     - text: 最初の Excel アドインをビルドする
       url: ../quickstarts/excel-quickstart-jquery.md
-    - text: スクリプト ラボで API を探索する
+    - text: Script Lab を使用して API を調べる
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Excel JavaScript API を使用してオブジェクトとブックのコンテンツを操作する
+    - text: JavaScript API Excelを使用して、オブジェクトとブックのコンテンツを操作する
       url: ../reference/overview/excel-add-ins-reference-overview.md
-    - text: Excel へのカスタム関数の追加
+    - text: カスタム関数をカスタム 関数にExcel
       url: custom-functions-overview.md
-    - text: Excel アドインのテストとデバッグ
+    - text: アドインをテストExcelデバッグする
       url: ../testing/test-debug-office-add-ins.md
-    - text: Excel アドインの展開と発行
+    - text: アドインを展開Excel発行する
       url: ../publish/publish.md
 - title: 主要Officeアドインの概念
   linkLists:

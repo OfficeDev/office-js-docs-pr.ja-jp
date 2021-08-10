@@ -3,12 +3,12 @@ title: 共有フォルダーと共有メールボックスのシナリオを、O
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290713"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092350"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
@@ -61,7 +61,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 |アクセス許可|値|説明|
 |---|---:|---|
-|読み取り|1 (000001)|アイテムを読み取り可能。|
+|Read|1 (000001)|アイテムを読み取り可能。|
 |書き込み|2 (000010)|アイテムを作成できます。|
 |DeleteOwn|4 (000100)|作成したアイテムのみを削除できます。|
 |DeleteAll|8 (001000)|任意のアイテムを削除できます。|

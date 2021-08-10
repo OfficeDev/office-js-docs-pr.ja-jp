@@ -3,12 +3,12 @@ title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡�
 description: アドイン デバッガー Visual Studio Code拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349288"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088469"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 

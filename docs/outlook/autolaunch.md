@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 07/08/2021
+ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: 904c7ce907b9fc31c898cbeaf89203e369e3155855ff86c7cb8af1cf6d956d64
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455531"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090985"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -28,13 +28,13 @@ ms.locfileid: "53455531"
 |---|---|---|
 |`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|1.10|
 |`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|1.10|
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|Preview|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|Preview|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|Preview|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|Preview|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|Preview|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|Preview|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|Preview|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|プレビュー|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|プレビュー|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|プレビュー|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|プレビュー|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|プレビュー|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|プレビュー|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|プレビュー|
 
 > [!IMPORTANT]
 > プレビュー中のイベントは、Microsoft 365のサブスクリプションとOutlook on the webでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
@@ -262,7 +262,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
     >
     > 1. Outlook を再起動します。
 
-## <a name="debug"></a>Debug
+## <a name="debug"></a>デバッグ
 
 アドインで起動イベント処理に変更を加える場合は、次の点に注意する必要があります。
 
@@ -279,10 +279,10 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
 ![カスタム アプリのアクションを含む、Microsoft 365 管理センター統合アプリ ページアップロードスクリーンショット。](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource ストアと inclient ストア: イベント ベースのアドインを展開したり、既存のアドインを更新してイベント ベースのアクティブ化機能を含める機能をすぐに利用できる必要があります。
+AppSource とアプリ内 Office ストア: イベント ベースのアドインを展開したり、イベント ベースのアクティブ化機能を含める既存のアドインを更新したりする機能は、すぐに利用できる必要があります。
 
 > [!IMPORTANT]
-> イベント ベースのアドインは、管理者が管理する展開にのみ制限されます。 今のところ、ユーザーは AppSource ストアまたは inclient ストアからイベント ベースのアドインを取得できます。
+> イベント ベースのアドインは、管理者が管理する展開にのみ制限されます。 今のところ、ユーザーは AppSource またはアプリ内アドインからイベント ベースのアドインを取得Officeできます。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限
 

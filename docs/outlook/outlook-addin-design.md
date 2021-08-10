@@ -3,12 +3,12 @@ title: Outlook アドインの設計
 description: Windows、Web、iOS、Mac、Android 上の Outlook にアプリを最適な方法で取り込むための魅力的なアドインを設計、作成するのに役立つガイドラインです。
 ms.date: 07/05/2021
 localization_priority: Priority
-ms.openlocfilehash: 35ff407fae14654b3b6aa3d543e30524d4a1a5d0
-ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
+ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2021
-ms.locfileid: "53315156"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090226"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook アドインの設計ガイドライン
 

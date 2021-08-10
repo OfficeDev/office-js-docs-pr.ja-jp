@@ -3,12 +3,12 @@ title: Outlook アドインでアイテム データを取得または設定す�
 description: アドインが閲覧フォームまたは新規作成フォームのどちらでアクティブ化されるかによって、アイテムでアドインが使用できるプロパティも異なります。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ef0b868ba83a6003c401e15b7d6dd9ee0f4f94b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d274d850c06178e1fdb31f95d921c5a8ae4ea0a399a5dbebd61de548c084ce5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609077"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093919"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>閲覧または新規作成フォームの Outlook アイテム データを取得および設定する
 
@@ -18,7 +18,7 @@ Office アドイン マニフェスト スキーマのバージョン 1.1 以降
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>新規作成フォームと閲覧フォームで使用できるアイテムのプロパティ
 
-表1は、メールアドインの各モード (読み取りおよび作成) で利用できる Office JavaScript API のアイテムレベルのプロパティを示しています。通常、閲覧フォームで使用可能なプロパティは読み取り専用であり、新規作成フォームで使用できるプロパティは読み取り/書き込み可能です。 [itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 [ConversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、および[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)プロパティは例外です。ただし、読み取り専用になります。
+表 1 は、メール アドインのOfficeモード (読み取りおよび作成) で使用できる JavaScript API のアイテム レベルのプロパティを示しています。通常、読み取りフォームで使用できるプロパティは読み取り専用であり、作成フォームで使用できるプロパティは読み取り/書き込みであり、itemId、conversationId、itemType プロパティは除き、常に読み取り専用です。 [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
 
 新規作成フォームで使用可能な残りのアイテムレベルのプロパティは、アドインとユーザーが同時に同じプロパティの読み取りまたは書き込みを行う可能性があるため、新規作成モードでこれらのプロパティの取得や設定を行うメソッドは非同期です。このため、これらのプロパティが返すオブジェクトの種類も、新規作成フォームと閲覧フォームとで異なることがあります。 新規作成フォームで非同期のメソッドを使用してアイテムレベルのプロパティを取得または設定することについて詳しくは、「[Outlook で新規作成フォームのアイテム データを取得および設定する](get-and-set-item-data-in-a-compose-form.md)」をご覧ください。
 
