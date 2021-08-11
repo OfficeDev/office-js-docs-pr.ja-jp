@@ -4,12 +4,12 @@ description: Office JS API と Angular を使用して単純な Excel 作業ウ�
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 433c78a00604b29b93c3a774b5f21416075f5ff1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 632d6014bc17f753133a46e126cd4044c65981aebee82714295384b28da51443
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774337"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094706"
 ---
 # <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>Angular を使用して Excel 作業ウィンドウ アドインを構築する
 

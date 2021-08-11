@@ -3,12 +3,12 @@ title: Office名前空間 - 要件セット 1.10
 description: Office API 要件セット 1.10 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: e7b7ab9127ebf8ce9b7394d348144fe63b47de6c
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 67dc1e72b2c7b84e8693753201e40c044df19ebd43bf887e43dcb0a1b55788e7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592060"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095537"
 ---
 # <a name="office-mailbox-requirement-set-110"></a>Office (メールボックス要件セット 1.10)
 

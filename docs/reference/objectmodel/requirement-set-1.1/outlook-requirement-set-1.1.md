@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.1
-description: Outlook アドインおよび Office JavaScript Api for the Mailbox API 1.1 の一部として導入された機能と Api。
+description: メールボックス API 1.1 のOutlook JavaScript API および Office JavaScript API 用に導入された機能と API。
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: f93b6d582043641903b362121c6e5eaf89c2ad1c
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 20105efd3d7e7e978f7c184c029d6482c0db8bd947166e91d9e9f5714e775d99
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431375"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098726"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook アドイン API 要件セット 1.1
 
-Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、およびイベントが含まれています。 Outlook JavaScript API 1.1 (メールボックス 1.1) は、API の最初のバージョンです。
+Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。 OutlookJavaScript API 1.1 (メールボックス 1.1) は、API の最初のバージョンです。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-11"></a>1.1 の新機能
 
-要件セット1.1 には、Outlook でサポートされているすべての [共通 API 要件セット](../../requirement-sets/office-add-in-requirement-sets.md) が含まれています。 アドインでメッセージと予定の本文にアクセスする機能、および現在のアイテムを変更する機能が追加されました。
+要件セット 1.1 には、すべての共通[API](../../requirement-sets/office-add-in-requirement-sets.md)要件セットが含まれています。Outlook。 アドインでメッセージと予定の本文にアクセスする機能、および現在のアイテムを変更する機能が追加されました。
 
 ### <a name="change-log"></a>変更ログ
 
@@ -32,7 +32,7 @@ Office JavaScript API の Outlook アドイン API サブセットには、Outlo
 - [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods) が追加されました。メッセージなどの Exchange アイテムを添付ファイルとして、メッセージまたは予定に追加します。
 - [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods) が追加されました。メッセージまたは予定から添付ファイルを削除します。
 - [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties) が追加されました。アイテムの本文を操作するメソッドを提供するオブジェクトを取得します。
-- メッセージの [bcc](office.context.mailbox.item.md#properties) 行を追加しました。
+- メッセージ[Office.context.mailbox.item.bcc 行に](office.context.mailbox.item.md#properties)追加されました。
 - [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1&preserve-view=true) が追加されました。予定の受信者の種類を指定します。
 
 ## <a name="see-also"></a>関連項目

@@ -3,25 +3,25 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 53466965281caa050f9264ea9460b6c7faa6c5b94be3596f4fdc45e622f71ba2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292385"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096845"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
-最も簡単な Office アドインは、XML マニフェストファイルと HTML ページで構成されています。XML マニフェストファイルには、アドインの名前、実行できる Office デスクトップクライアント、アドインの HTML ページの URL など、アドインの特性が記述されています。HTML ページは、ユーザーが Office クライアントアプリケーション内でアドインをインストールして実行するときに操作する web アプリに含まれています。Azure を含む任意の web ホスティングプラットフォームで Office アドインの web アプリをホストすることができます。
+最も簡単な Office アドインは XML マニフェスト ファイルと HTML ページからできています。 XML マニフェスト ファイルには、アドインの名前、実行できる Office デスクトップ クライアント、アドインの HTML ページの URL など、アドインの特性が記述されています。 HTML ページには、ユーザーが Office クライアント アプリケーションにアドインをインストールして実行したときに操作する、Web アプリが含まれています。 Office アドインの Web アプリは、Azure を含む、あらゆる Web ホスティング プラットフォームでホストできます。
 
 この記事では、アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのために[アドインをサイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)する方法について説明します。
 
 ## <a name="prerequisites"></a>前提条件 
 
-1. [Visual Studio 2019](https://www.visualstudio.com/downloads) をインストールし、**Azure 開発**ワークロードを含めるよう選択します。
+1. [Visual Studio 2019](https://www.visualstudio.com/downloads) をインストールし、**Azure 開発** ワークロードを含めるよう選択します。
 
     > [!NOTE]
-    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラーを使用](/visualstudio/install/modify-visual-studio)して、**Azure 開発**ワークロードがインストールされていることを確認してください。 
+    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラーを使用](/visualstudio/install/modify-visual-studio)して、**Azure 開発** ワークロードがインストールされていることを確認してください。 
 
 2. Office をインストールする。
 
@@ -82,15 +82,15 @@ Azure ポータルを使用して Web アプリケーションを作成するに
       
       - サイトの **[リソース グループ]** を選択します。新しいグループを作成する場合は、そのグループに名前を指定する必要もあります。
       
-      - サイトの一意の **[アプリ名]** を入力します。 Azure は、サイト名が azureweb apps.net ドメイン全体で一意であることを確認します。
+      - サイトの一意の **[アプリ名]** を入力します。Azure は、サイト名が azureweb apps.net ドメイン全体で一意であることを確認します。
 
       - コードを使用して発行するか、Docker コンテナを使用して発行するかを選択します。
 
-      - **ランタイム スタック**を指定します。
+      - **ランタイム スタック** を指定します。
 
       - サイトの **OS** を選択します。
 
-      - **地域**を選択します。
+      - **地域** を選択します。
 
       - このサイトの作成に使用する [**App Service プラン**] を選択します。
 
@@ -109,15 +109,15 @@ Azure ポータルを使用して Web アプリケーションを作成するに
 
 2. [**新規プロジェクトの作成**] を選択します。
 
-3. 検索ボックスを使用して、**アドイン**と入力します。
+3. 検索ボックスを使用して、**アドイン** と入力します。
 
-4. プロジェクト タイプとして **Word Web アドイン**を選択し、[**次へ**] を選択して規定の設定を使用します。
+4. プロジェクト タイプとして **Word Web アドイン** を選択し、[**次へ**] を選択して規定の設定を使用します。
 
-Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel などの別の Office アプリケーションのアドインを作成するには、手順を繰り返して、目的の Office アプリケーションでプロジェクトの種類を選択します。
+Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel など、別の Office アプリケーション用のアドインを作成するには、手順を繰り返し、目的の Office アプリケーションでプロジェクトの種類を選択します。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>手順 5: Azure に Office アドイン Web アプリを発行する
 
-1. アドイン プロジェクトを Visual Studio で開いた状態で、**ソリューション エクスプローラー**でソリューション ノードを展開し、**App Service** を選択します。
+1. アドイン プロジェクトを Visual Studio で開いた状態で、**ソリューション エクスプローラー** でソリューション ノードを展開し、**App Service** を選択します。
 
 2. Web プロジェクトを右クリックして、**[発行]** をクリックします。Web プロジェクトには Office アドイン Web アプリのファイルが含まれているため、このプロジェクトを Azure に発行することになります。
 

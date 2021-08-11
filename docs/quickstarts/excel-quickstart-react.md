@@ -4,12 +4,12 @@ description: Office JS API と React を使用して単純な Excel 作業ウィ
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 74a28f3914ddbc54188d3b8baa33fc1faa7a30fe
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 11f31d4145b83ad1efbef441cd78c4ad62410df3f371a991f9f7d94cd75db899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773400"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097517"
 ---
 # <a name="use-react-to-build-an-excel-task-pane-add-in"></a>React を使用して Excel 作業ウィンドウ アドインを構築する
 

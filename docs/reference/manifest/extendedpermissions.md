@@ -1,31 +1,31 @@
 ---
-title: マニフェストファイルの ExtendedPermissions 要素
-description: アドインが関連する Api または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。
+title: マニフェスト ファイルの ExtendedPermissions 要素
+description: アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: c3f021adfcc2f3a4ba7b7d7aeeb52f3213d92788d401130abbc92618930d09fe
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626443"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097897"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 要素
 
-アドインが関連する Api または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。 `ExtendedPermissions`要素は[versionoverrides](versionoverrides.md)の子要素です。
+アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。 要素 `ExtendedPermissions` は [VersionOverrides の子要素です](versionoverrides.md)。
 
 > [!IMPORTANT]
-> この要素のサポートは、要件セット1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この要素のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----:|:-----|
-|  [ExtendedPermission](extendedpermission.md)    |  いいえ   | アドインが関連する API または機能にアクセスするために必要な拡張アクセス許可を定義します。 |
+|  [ExtendedPermission](extendedpermission.md)    |  いいえ   | アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。 |
 
 ## <a name="extendedpermissions-example"></a>`ExtendedPermissions` 例
 
-要素の例を次に示し `ExtendedPermissions` ます。
+次に、要素の例を示 `ExtendedPermissions` します。
 
 ```XML
 ...

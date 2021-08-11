@@ -4,12 +4,12 @@ description: PowerPointApi 1.1 要件セットの詳細。
 ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 28b98927572ad50e6ae8ef7f6509913e50c7c568
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: cc85c40507e22dcc300892e7cf2f70e5119ddcf3ef216ff7bd732c46838da10d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671416"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094622"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-11"></a>JavaScript API 1.1 PowerPoint新機能
 

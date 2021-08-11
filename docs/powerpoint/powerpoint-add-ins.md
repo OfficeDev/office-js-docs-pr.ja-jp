@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 47bc41f9ffed538440d635a49a83ecd7ab11df6cd12ec5eee04bc7b524ed72cf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671703"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094742"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
@@ -18,13 +18,13 @@ PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラッ
 
 - **コンテンツ アドイン** を使うと、プレゼンテーションに HTML5 の動的コンテンツが追加されます。たとえば [PowerPoint のための LucidChart ダイアグラム](https://appsource.microsoft.com/product/office/wa104380117) アドインでは、これを使って LucidChart からデッキにインタラクティブな図を挿入することができます。
 
-- **作業ウィンドウ アドイン** を使えば、サービスを介して、参照情報を取り込んだり、プレゼンテーションにデータを挿入したりすることができます。 たとえば [Pexels - 無料ストックフォト](https://appsource.microsoft.com/product/office/wa104379997) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
+- **作業ウィンドウ アドイン** を使えば、サービスを介して、参照情報を取り込んだり、スライドにデータを挿入したりすることができます。たとえば [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) アドインでは、これを使ってプロの写真をプレゼンテーションに追加することができます。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint アドインのシナリオ
 
 この記事で紹介するコード例では、PowerPoint のアドインの開発のための基本的なタスクをいくつか示します。次の点に注意してください。
 
-- 情報を表示するために、これらの例は `app.showNotification` 関数を使用します。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。 アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。
+- 情報を表示するために、これらの例は `app.showNotification` 関数を使用しています。これは、Visual Studio の Office アドイン プロジェクト テンプレートに含まれています。アドインを開発するのに Visual Studio を使用していない場合は、`showNotification` 関数を独自のコードに置き換える必要があります。
 
 - これらの例のうちいくつかでは、これらの関数 `var Globals = {activeViewHandler:0, firstSlideId:0};` の範囲を超えて宣言されている `Globals` オブジェクトも使用しています。
 
@@ -35,7 +35,7 @@ PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラッ
 コンテンツ アドインをビルドする場合は、プレゼンテーションのアクティブ ビューを取得して、`Office.Initialize` ハンドラーの一部として、`ActiveViewChanged` イベントを処理する必要があります。
 
 > [!NOTE]
-> PowerPoint on the web では [Document.ActiveViewChanged](/javascript/api/office/office.document) イベントは、スライド ショー モードが新しいセッションとして扱われるようには起動しません。 この場合、次のコード サンプルに示すように、アドインで読み込むアクティブ ビューをフェッチする必要があります。
+> PowerPoint on the web では [Document.ActiveViewChanged](/javascript/api/office/office.document) イベントは、スライド ショー モードが新しいセッションとして扱われるので、起動しません。この場合、下のコードサンプルで示すように、アドインでアクティブ ビューを読み込むようにすることが必要です。
 
 コード サンプルは次のとおりです。
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-次のコード サンプルでは、`getSelectedRange` 関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) メソッドを呼び出して、`asyncResult.value` によって返される JSON オブジェクトを取得します。このオブジェクトには、`slides` という名前の配列が含まれます。 `slides`slides 配列には、選択した範囲のスライド (複数のスライドが選択されていない場合は現在のスライド) の ID、タイトル、およびインデックスが含まれます。 また、選択範囲内の最初のスライド ID をグローバル変数に保存します。
+次のコードサンプルでは、`getSelectedRange`関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) メソッドを呼び出して、`asyncResult.value`から返される JSON オブジェクトを取得します。そのオブジェクトには、`slides`という名前の配列が含まれています。`slides` の配列には、選択範囲のスライド (または複数のスライドが選択されていない場合は、現在のスライドのみ) の ID、タイトル、インデックスが含まれていいます。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
 ```js
 function getSelectedRange() {

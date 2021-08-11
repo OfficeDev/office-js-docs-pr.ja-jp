@@ -4,12 +4,12 @@ description: このチュートリアルでは、計算の実行、Web データ
 ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 56e8a31f8d33756ca1668e2fa1468d10d1ad4821
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 0067d0164c5bb126963f3ec1786f8428d3ea18a6503002af483e5495e916d688
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418714"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087186"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -26,7 +26,7 @@ ms.locfileid: "53418714"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
+* Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
@@ -95,7 +95,7 @@ npm run start:web
 
 作成したカスタム関数プロジェクトには、あらかじめ用意されているカスタム関数がいくつか含まれており、**./src/functions/functions.js** ファイル内で定義されています。 **./manifest.xml** ファイルによって、カスタム関数はすべて `CONTOSO` 名前空間に属することが指定されます。 Excel でカスタム関数にアクセスするには、CONTOSO 名前空間を使用します。
 
-その後、次の手順を実行し、`ADD` カスタム関数を試します。
+次に、以下の手順を実行し、`ADD` カスタム関数を試してみてください。
 
 1. Excel で、任意のセルに移動し、`=CONTOSO` と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
@@ -154,7 +154,6 @@ Web からデータを統合することは、カスタム関数を使用して 
 1. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
     ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
 
-
 # <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
 1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
@@ -165,11 +164,9 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
----
+5. 新しい関数をお試しください。 セル **B1** で、テキスト **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** を入力し、Enter キーを押します。 セル **B1** の結果は [Excel-Custom-Functions Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions) に与えられた現在の星の数です。
 
-<ol start="5">
-<li> 新しい関数をお試しください。 セル <strong>B1</strong> で、テキスト <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong> を入力し、Enter キーを押します。 セル <strong>B1</strong> の結果は [Excel-Custom-Functions Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions) に与えられた現在の星の数です。</li>
-</ol>
+---
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>非同期でデータをストリーミングするカスタム関数を作成する
 

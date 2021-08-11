@@ -1,21 +1,21 @@
 ---
 title: マニフェスト ファイルの AppDomain 要素
-description: アドインで使用される追加のドメインを指定します。 Office によって信頼される必要があります。
+description: アドインで使用され、ユーザーが信頼する必要がある追加のドメインをOffice。
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: be983418a09be8f808e6cde0b84bff7f99c25923e57baced85b915709668564c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778649"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098315"
 ---
 # <a name="appdomain-element"></a>AppDomain 要素
 
-[SourceLocation 要素](sourcelocation.md)で指定されているものに加えて、Office が信頼する必要がある追加のドメインを指定します。 ドメインの指定には、次のような影響があります。
+SourceLocation 要素で指定されたドメインOffice、信頼する必要がある追加のドメイン[を指定します](sourcelocation.md)。 ドメインを指定すると、次の効果があります。
 
-- これにより、ドメイン内のページ、ルート、またはその他のリソースを、デスクトップの Office プラットフォーム上のアドインのルート作業ウィンドウで直接開くことができます。 (Web 上の Office、または IFrame でリソースを開くために**AppDomain**でドメインを指定する必要はありません)。または、[ダイアログ API](../../develop/dialog-api-in-office-add-ins.md)で開いたダイアログでリソースを開く必要はありません。
-- これにより、ドメイン内のページは、アドイン内の Iframe から Office.js API 呼び出しを実行できるようになります。
+- これにより、ドメイン内のページ、ルート、または他のリソースを、デスクトップ プラットフォーム上のアドインのルート作業ウィンドウで直接開Officeできます。 **(AppDomain** でドメインを指定しても、Office on the web または IFrame でリソースを開く必要はありません。また [、Dialog API](../../develop/dialog-api-in-office-add-ins.md)で開いたダイアログでリソースを開く必要もありません。
+- これにより、ドメイン内のページがアドインOffice.js IFrames から API 呼び出しを実行できます。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 
@@ -27,11 +27,11 @@ ms.locfileid: "44778649"
 
 > [!IMPORTANT]
 > 1. **AppDomain** 要素の値には、プロトコル (例: `<AppDomain>https://myappdomain.com</AppDomain>`) が含まれている必要があります。
-> 2. ドメインの明示的なポートがある場合は、そのポートを含めます (例: `<AppDomain>https://myappdomain.com:9999</AppDomain>` )。
-> 3. サブドメインを信頼する必要がある場合は、それを含めます (例: `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>` )。 サブドメイン `mysubdomain.mydomain.com` と `mydomain.com` ドメインが異なる。 両方を信頼する必要がある場合は、どちらも別個の**AppDomain**要素にする必要があります。
-> 4. [SourceLocation 要素](sourcelocation.md)で指定されたドメインと同じドメインを一覧表示することはできません。誤解を招く可能性があります。 特に、を開発する場合は、 `localhost` 用の**AppDomain**要素を作成する必要はありません `localhost` 。
-> 5. ドメインを超える URL のセグメントは含めないでください。 たとえば、ページの完全な URL を含めないでください。
-> 6. 値には、末尾にスラッシュ "/" を付け*ない*でください。
+> 2. ドメインに明示的なポートがある場合は、それを含める (たとえば `<AppDomain>https://myappdomain.com:9999</AppDomain>` )。
+> 3. サブドメインを信頼する必要がある場合は、サブドメインを含める (例: `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>` )。 サブドメインであり `mysubdomain.mydomain.com` 、 `mydomain.com` 異なるドメインです。 両方を信頼する必要がある場合は、両方とも別々の **AppDomain 要素に含む必要** があります。
+> 4. [SourceLocation](sourcelocation.md)要素で指定されたドメインと同じドメインを一覧に表示すると、効果が得らなく、誤解を招く可能性があります。 特に、上で開発する場合 `localhost` は **、AppDomain** 要素を作成する必要があります `localhost` 。
+> 5. ドメインを越える URL のセグメントを含めない。 たとえば、ページの完全な URL を含めない。
+> 6. 値 *に* "/"というスラッシュを付け込む必要があります。
 
 ## <a name="contained-in"></a>含まれる場所
 

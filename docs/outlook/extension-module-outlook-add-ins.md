@@ -3,12 +3,12 @@ title: Outlook のモジュール拡張機能アドイン
 description: Outlook の内部で実行することで、ユーザーが Outlook から簡単にビジネスの情報や生産性ツールにアクセスできるようにするアプリケーションを作成します。
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3a02e93375f1c0872790d050382a14bc2c324cef
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1b84c6122b4ff4e912c18b818cdfb053fd876e9504e4229f362a64ebc9c57f7e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077086"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096857"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Outlook のモジュール拡張機能アドイン
 

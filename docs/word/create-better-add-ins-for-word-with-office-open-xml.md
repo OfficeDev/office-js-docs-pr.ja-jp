@@ -3,12 +3,12 @@ title: Office Open XML を使用してより良い Word 用アドインを作成
 description: Open XML を使用して Word アドインを改善するOffice概要。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c8fe7c181c8dc05f91b36042bdf2732177638add
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: d348f9ce1b435499896d89623fc739897693172e41de5f6ef32e421b2c35445f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774127"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094610"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 

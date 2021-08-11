@@ -3,12 +3,12 @@ title: Office.context.mailbox - 要件セット 1.5
 description: Outlookメールボックス API 要件セット 1.5 バージョンのメールボックス オブジェクト モデル。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: b46efc568ca1d8ac1b2aebe6f16a10d4005ceeb2
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: bc67ac73846a24aced8b23183a129712a4619b968d435e4dde36dbc8bbecaa0e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671246"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097861"
 ---
 # <a name="mailbox-requirement-set-15"></a>メールボックス (要件セット 1.5)
 

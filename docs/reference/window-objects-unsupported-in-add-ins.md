@@ -1,20 +1,20 @@
 ---
-title: Office アドインでサポートされていない Window オブジェクト
-description: この記事では、Office アドインでは動作しない window ランタイムオブジェクトの一部について説明します。
+title: アドインでサポートされていないウィンドウ Officeオブジェクト
+description: この記事では、アドインで動作しない一部のウィンドウ ランタイム オブジェクトOfficeします。
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d2560748841bd1e2a7708b25a8e51133563d1534
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 654e8e311069a616e2d8859a4f63b19d299609982fa68449b5529df489816cbf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45160506"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097385"
 ---
-# <a name="window-objects-that-are-unsupported-in-office-add-ins"></a>Office アドインでサポートされていない Window オブジェクト
+# <a name="window-objects-that-are-unsupported-in-office-add-ins"></a>アドインでサポートされていないウィンドウ Officeオブジェクト
 
-Windows および Office の一部のバージョンでは、アドインは Internet Explorer 11 ランタイムで実行されます。 (詳細については、「 [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください)。グローバルオブジェクトの一部のプロパティまたはサブプロパティは、 `window` Internet Explorer 11 ではサポートされていません。 アドインで使用されているブラウザーに関係なく、すべてのユーザーに一貫した機能を提供するために、これらのプロパティはアドインで無効になっています。 これは、AngularJS が適切に読み込まれるのにも役に立ちます。
+一部のバージョンの WindowsおよびOfficeアドインは、11 のランタイムInternet Explorer実行します。 (詳細については、「[アドインで使用Officeブラウザー」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。グローバル オブジェクトの一部のプロパティまたはサブプロパティは、11 ではInternet Explorer `window` されません。 これらのプロパティは、アドインで無効にされ、アドインが使用しているブラウザーに関係なく、アドインがすべてのユーザーに一貫したエクスペリエンスを提供します。 また、AngularJS が正しく読み込まれるのにも役立ちます。
 
-無効にされたプロパティの一覧を次に示します。 リストは処理中です。 アドインで機能しない他のプロパティが見つかった場合は、 `window` 次のフィードバックツールを使用してご確認ください。
+無効になっているプロパティの一覧を次に示します。 リストは進行中の作業です。 アドインで動作しないその他のプロパティが見つかった場合は、以下のフィードバック ツールを使用 `window` して説明してください。
 
 - `window.history.pushState`
 - `window.history.replaceState`

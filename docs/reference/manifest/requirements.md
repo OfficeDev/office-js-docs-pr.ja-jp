@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの Requirements 要素
-description: 要件要素は、Office アドインをアクティブにするために必要な最小要件セットとメソッドを指定します。
+description: Requirements 要素は、アクティブ化するためにアドインに必要Office最小要件セットとメソッドを指定します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3020037b48e3f759acf6a7e2758bb8c1fd2dd36429e0b21613e22fca33cacc1a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292273"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098107"
 ---
 # <a name="requirements-element"></a>Requirements 要素
 
-Office アドインをアクティブにするために必要な Office JavaScript API の要件の最小セット ([要件セット](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) またはメソッド、あるいはその両方) を指定します。
+アドインがアクティブ化する必要Office JavaScript API 要件 (要件[セット](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets)またはメソッド) の最小セットOffice指定します。
 
 **アドインの種類:** コンテンツ、作業ウィンドウ、メール
 

@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5890f24fba5828242702c78aec2c361b718db312a0de96e60f82e0047386c761
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671591"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089932"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -39,7 +39,7 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>*アプリケーション* オブジェクトを使ったアプリケーション固有の API へのアクセス
 
-`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ** などの OneNote オブジェクトにアクセスします。 アプリケーション固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。 基本的な流れは、以下のようになります。
+`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ** などの OneNote オブジェクトにアクセスします。アプリケーション固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。
 
 1. コンテキストからアプリケーション インスタンスを取得します。
 

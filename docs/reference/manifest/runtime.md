@@ -3,12 +3,12 @@ title: マニフェスト ファイル内のランタイム
 description: Runtime 要素は、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに共有 JavaScript ランタイムを使用するアドインを構成します。
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 10e008aa623aa81676ad3c219b31fdb77b6fa1c11f1a7b5cfff169ac7ce9de0b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590914"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098993"
 ---
 # <a name="runtime-element"></a>Runtime 要素
 
@@ -40,7 +40,7 @@ ms.locfileid: "52590914"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **resid**  |  必要  | アドインの HTML ページの URL の場所を指定します。 32 文字以内で、要素内の要素の属性と一致 `resid` `id` `Url` する必要 `Resources` があります。 |
+|  **resid**  |  はい  | アドインの HTML ページの URL の場所を指定します。 32 文字以内で、要素内の要素の属性と一致 `resid` `id` `Url` する必要 `Resources` があります。 |
 |  **有効期間**  |  いいえ  | 既定値は `lifetime` is `short` であり、指定する必要はない。 Outlookは値のみを使用 `short` します。 アドインで共有ランタイムを使用する場合Excelに値を明示的に設定します `long` 。 |
 
 ## <a name="see-also"></a>関連項目

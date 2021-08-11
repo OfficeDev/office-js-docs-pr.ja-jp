@@ -3,12 +3,12 @@ title: アドインと Azure を使用してアドインVisual Studio Code発行
 description: アドインを使用してアドインを発行するVisual Studio CodeおよびAzure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e8c81a57b49254103366c28092f30235cc525e12d9a446897d862af4fc189325
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076939"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097211"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Visual Studio Code で開発されたアドインを発行する
 
@@ -19,7 +19,7 @@ ms.locfileid: "53076939"
 
 ## <a name="publishing-an-add-in-for-other-users-to-access"></a>他のユーザーがアクセスできるようにアドインを発行する
 
-Office アドインは、Web アプリケーションとマニフェスト ファイルで構成されています。 Web アプリケーションはアドインのユーザー インターフェイスと機能を定義し、マニフェストは Web アプリケーションの場所を指定し、アドインの設定と機能を定義します。
+Office アドインは、Web アプリケーションとマニフェスト ファイルで構成されます。Web アプリケーションはアドインのユーザー インターフェイスと機能を定義しますが、マニフェストは Web アプリケーションの場所を指定し、アドインの設定と機能を定義します。
 
 開発中は、ローカル Web サーバー () でアドインを実行できます `localhost` 。 他のユーザーがアクセスするために発行する準備ができたら、Web アプリケーションを展開し、マニフェストを更新して、展開されたアプリケーションの URL を指定する必要があります。
 

@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
-ms.date: 08/13/2020
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 402534b55c1ff186dc5123407fc470c42ee2b253
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: de27ff675e8ef757e0b4b7c95a74a061e9cadee586ae6b7134b68c16184fdf9c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350226"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098546"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -21,7 +21,7 @@ ms.locfileid: "53350226"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。 次のコマンドを実行し、プロンプトに次の回答を入力します。
+Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。次のコマンドを実行し、プロンプトに次の回答を入力します。
 
 ```command line
 yo office
@@ -147,7 +147,7 @@ yo office
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>グローバル データを操作する作業ウィンドウのコントロールを作成する
 
 1. ファイル **src/taskpane/taskpane.html** を開きます。
-2. `</head>` 要素の前に、次のスクリプト要素を追加します。
+2. 次のスクリプト要素を追加してから、`</head>` 要素を閉じます。
 
    ```html
    <script src="functions.js"></script>
@@ -184,18 +184,19 @@ yo office
    </div>
    ```
 
-4. `<body>` 要素の前に、次のスクリプトを追加します。 このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
+4. `</body>` 要素を閉じる前に、次のスクリプトを追加します。 このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
 
    ```js
    <script>
    function storeSharedValue() {
-   let sharedValue = document.getElementById('storeBox').value;
-   window.sharedState = sharedValue;
+     let sharedValue = document.getElementById('storeBox').value;
+     window.sharedState = sharedValue;
    }
 
    function getSharedValue() {
-   document.getElementById('getBox').value = window.sharedState;
-   }</script>
+     document.getElementById('getBox').value = window.sharedState;
+   }
+   </script>
    ```
 
 5. ファイルを保存します。

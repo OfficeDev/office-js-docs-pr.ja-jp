@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 5d3cd3b68249ba7545645725926615214651f6c04defd43120629fdcb9fe8b27
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076869"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096833"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -57,7 +57,13 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
     cd "My Office Add-in"
     ```
 
-2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
+1. プロジェクトの依存関係をインストールします。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
     > [!NOTE]
     > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
@@ -83,11 +89,11 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
         アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
-3. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
+1. Word で、新規のドキュメントを開き、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションを示すスクリーンショット。](../images/word-quickstart-addin-2b.png)
 
-4. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" というテキストをドキュメントに追加します。
+1. 作業ウィンドウの下部にある [**実行**] リンクを選択して、青のフォントで "Hello World" というテキストをドキュメントに追加します。
 
     ![読み込まれた作業ウィンドウ アドインを用いた Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-1c.png)
 
@@ -321,5 +327,5 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [Word アドインの概要](../word/word-add-ins-programming-overview.md)
 - 
-  [Word アドインのコード サンプル](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Word アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Word JavaScript API リファレンス](../reference/overview/word-add-ins-reference-overview.md)

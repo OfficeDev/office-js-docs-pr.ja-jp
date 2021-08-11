@@ -3,12 +3,12 @@ title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: eadce9b540a9b3b8a03186340fff4511d42dd35a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 6af5bc6227a8a159946991beeb4bdfda85bf9c52fa880c523224c2ad3c67da3d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774349"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098969"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
