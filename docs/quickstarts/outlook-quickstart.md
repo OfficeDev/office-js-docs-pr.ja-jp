@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 045928e0202857f21825ceeddf0e7489ad6d9d0359b843353fefd532bbd4d48e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4459b403641a8d0502aa5e31ba4537f134656cf831b7d98c7eccf7ed59b32525
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094266"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845663"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -60,13 +60,7 @@ ms.locfileid: "57094266"
     cd "My Office Add-in&quot;
     ```
 
-1. プロジェクトの依存関係をインストールします。
-
-     ```command&nbsp;line
-    npm install
-    ```
-
-### <a name=&quot;explore-the-project&quot;></a>プロジェクトを確認する
+### <a name=&quot;explore-the-project&quot;></a>プロジェクトを探究する
 
 Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。
 

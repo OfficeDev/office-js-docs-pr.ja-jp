@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Project 作業ウィンド�
 ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 8cada7195d61b26867beeff87fc95ac2b2864c911b07a53540f1934fbaddc420
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e135a4df75d1da02fd542d004b939c750099528cd9f5a32f932f1295958cc8f0
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089430"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845635"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -94,12 +94,6 @@ Office.context.document.getSelectedTaskAsync(
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. プロジェクトの依存関係をインストールします。
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. ローカル Web サーバーを開始します。

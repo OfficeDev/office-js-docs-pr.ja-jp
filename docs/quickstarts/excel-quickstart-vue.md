@@ -4,12 +4,12 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: de074b9673db6a1637733b42d8984dc5d2aacb60f8b38de535fe5e9f323e2c0f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8cdcbc0ca30a3d68fff3ac102845fd747d160102e5cb1ceff40dea8cf819a60b
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092742"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845614"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -198,12 +198,6 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
    ```
 
 ## <a name="start-the-dev-server"></a>開発用サーバーの起動
-
-1. 依存関係をインストールします。
-
-     ```command&nbsp;line
-    npm install
-    ```
 
 1. 開発用サーバーを起動します。
 

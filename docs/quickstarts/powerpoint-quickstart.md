@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b64a1f9554513e1b301c7989ee57f89734131433efc1d886265427affd9d8e82
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7d4f77cf8e680d8846f8847c74df85e64f8ac85d1b3c4e92b4888361429f013
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095141"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845671"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 
@@ -66,12 +66,6 @@ ms.locfileid: "57095141"
     > ```command&nbsp;line
     > npm run dev-server
     > ```
-
-    - プロジェクトのルート ディレクトリにアドインの依存関係をインストールします。
-
-        ```command&nbsp;line
-        npm install
-        ```
 
     - PowerPoint でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた PowerPoint が開きます。
 

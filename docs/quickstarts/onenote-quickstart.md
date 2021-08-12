@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な OneNote 作業ウィンド�
 ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: d82ce959b7d9d1494c2f183c4e60ec633064a0dd33bcb40bc1ac5474dca923b0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a431b48eed7cedee75b7ef4121cec43d1777f5ecad06536752c1abedc92af725
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097271"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845656"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -76,12 +76,6 @@ try {
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. プロジェクトの依存関係をインストールします。
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. ローカル Web サーバーを起動し、アドインのサイドロードを行います。

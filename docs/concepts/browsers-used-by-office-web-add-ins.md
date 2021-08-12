@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 07/27/2021
+ms.date: 08/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c04502ab490d6b555ae4c581f120aeef260825a5dce00c437de086ccf20e03bc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2eb4fa20674b2b07ec73217a5542612d1cb94b9d40f9855b93ecfd60f67bbe8e
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083308"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845593"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -25,7 +25,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 > Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。プラットフォームと Office バージョンの組み合わせ (Office 2019 までのすべての 1 回限り購入バージョンを含む) は、この記事で説明したように、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
 >
 > - AppSource は、ブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
-> - 2021 [Script Lab](../overview/explore-with-script-lab.md)ツールは、2021 Internet Explorerで作業を停止します。
+> - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 

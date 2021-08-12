@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773518"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845600"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -18,7 +18,7 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 * ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
-* アドインのブランド化に使用するイメージと、Office アプリ リボンで [アドイン コマンド][] に使用する画像を指定する。
+* アドインのブランド化に使用するイメージと、Office アプリ リボンで[アドイン コマンド](create-addin-commands.md)に使用する画像を指定する。
 
 * アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
 
@@ -100,7 +100,7 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
-[アドイン コマンド][] などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
+[アドイン コマンド](create-addin-commands.md)などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
 
 [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている** べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
