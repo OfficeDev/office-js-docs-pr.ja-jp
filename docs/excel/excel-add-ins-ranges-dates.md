@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して日付を使用する
-description: 日付をMoment-MSDateには、Excel JavaScript API を使用してプラグインを使用します。
+title: JavaScript API を使用して日付Excelする
+description: 日付をMoment-MSDateするには、JavaScript API Excelプラグインを使用します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d3f59e5daad042541bd933fb4e644d40f27a6e5e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652934"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084733"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Excel JavaScript API とプラグインを使用して日付をMoment-MSDateする
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>JavaScript API と Excelプラグインを使用して日付Moment-MSDate作業する
 
-この記事では、Excel JavaScript API と [Moment-MSDate](https://www.npmjs.com/package/moment-msdate)プラグインを使用して日付を処理する方法を示すコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、Excel.Range クラスを参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API と[Moment-MSDate](https://www.npmjs.com/package/moment-msdate)プラグインを使用して日付Excelする方法を示すコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については、 `Range` 次の[Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -68,6 +68,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

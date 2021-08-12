@@ -4,12 +4,12 @@ description: JavaScript API を使用して範囲を切り取り、コピー、�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a61ac967f267dfe3820e6972939d336e16ddd8b1
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671176"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084105"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 

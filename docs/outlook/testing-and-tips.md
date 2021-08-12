@@ -3,12 +3,12 @@ title: テスト用に Outlook アドインを展開してインストールす�
 description: マニフェスト ファイルを作成し、Web サーバーにアドイン UI ファイルを展開して、ユーザーのメールボックスにアドインをインストールします。その後、アドインをテストします。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 7a8c6a22d053f58b38e6dbb432c2ad151c0fee94f3a512eea0611e28ab3595f6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773091"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086245"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインを展開してインストールする
 

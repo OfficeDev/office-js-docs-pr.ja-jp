@@ -1,27 +1,27 @@
 ---
-title: マニフェストファイルの Authorization 要素
-description: アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
+title: マニフェスト ファイルの承認要素
+description: アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294263"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087713"
 ---
 # <a name="authorization-element"></a>Authorization 要素
 
-アドインの web アプリケーションが承認を必要とする外部リソースと、必要なアクセス許可を指定します。
+アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 
-**承認** は、マニフェスト内の [承認](authorizations.md) 要素の子要素です。
+**承認** は、マニフェストの [Authorizations](authorizations.md) 要素の子要素です。
 
 ## <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **Resource**  |  はい   |  外部リソースの URL を指定します。|
-|  [Scope](scopes.md)                |  はい  |  アドインがリソースに対して必要とするアクセス許可を指定します。  |
+|  [Scope](scopes.md)                |  必要  |  アドインがリソースに必要とするアクセス許可を指定します。  |
 
 ## <a name="example"></a>例
 

@@ -1,26 +1,26 @@
 ---
 title: マニフェスト ファイルの Scopes 要素
-description: 範囲要素には、アドインが外部リソースに接続するために必要なアクセス許可が含まれています。
+description: Scopes 要素には、アドインが外部リソースに接続するために必要なアクセス許可が含まれる。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: be68033e86de736703d9d1593ad361918d5a147d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 05582ae05c13fae8e2272de3fe6111c5ff639f938a817fd0b50ad22e4234d033
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612242"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087258"
 ---
 # <a name="scopes-element"></a>Scopes 要素
 
-アドインが外部リソース (Microsoft Graph など) に対して必要とするアクセス許可が含まれます。 Microsoft Graph がリソースの場合、AppSource はスコープ要素を使用して同意ダイアログボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
+Microsoft などの外部リソースに対してアドインに必要なアクセス許可がGraph。 Microsoft Graphリソースである場合、AppSource は Scopes 要素を使用して同意ダイアログ ボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
 
-**スコープ**は、マニフェスト内の[Webapplicationinfo](webapplicationinfo.md)要素と[Authorization](authorization.md)要素の子要素です。
+**スコープは** 、マニフェスト内の [WebApplicationInfo](webapplicationinfo.md) 要素と [Authorization 要素の子](authorization.md) 要素です。
 
 ## <a name="child-elements"></a>子要素
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Scope**                |  はい     |   アクセス許可の名前。たとえば、[すべて] または [プロファイル] を参照します。 |
+|  **Scope**                |  はい     |   アクセス許可の名前。たとえば、Files.Read.All またはプロファイルです。 |
 
 ## <a name="example"></a>例
 

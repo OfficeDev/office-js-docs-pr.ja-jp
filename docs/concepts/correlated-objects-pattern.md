@@ -3,12 +3,12 @@ title: ループで context.sync メソッドを使用しないでください
 description: ループ内での context.sync の呼び出しを回避するために、分割ループと相関オブジェクト パターンを使用する方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 549713e4ea32b791acc10befe3f4ab86455434784f6ffc449258899cba2d9e21
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773252"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083253"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>ループで context.sync メソッドを使用しないでください
 
@@ -99,7 +99,7 @@ Word.run(async (context) => {
 });
 ```
 
-このシナリオでは、ループ内にループが含まれるのを避けるために、分割ループ パターンを呼び出 `context.sync` すパターン **を使用する必要** があります。 パターンの具体的な例を見てから、そのパターンの正式な説明を確認します。 前のコード スニペットに分割ループ パターンを適用する方法を次に示します。 このコードについては以下の点に注目してください。
+このシナリオでは、ループ内にループが含まれるのを避けるために、分割ループ パターンを呼び出 `context.sync` すパターン **を使用する必要** があります。 パターンの具体的な例を見てから、そのパターンの正式な説明を確認します。 前のコード スニペットに分割ループ パターンを適用する方法を次に示します。 このコードについては、次の点に注意してください。
 
 - 2 つのループが作成され、その間にループが生じ、どちらのループ `context.sync` `context.sync` も内部にありません。
 - 最初のループは、コレクション オブジェクト内のアイテムを反復処理し、元のループと同じ方法でプロパティを読み込むが、プロキシ オブジェクトのプロパティを設定する a が含まれるので、最初のループでは段落のテキストをログに記録できません。 `text` `context.sync` `text` `paragraph` 代わりに、オブジェクトを `paragraph` 配列に追加します。

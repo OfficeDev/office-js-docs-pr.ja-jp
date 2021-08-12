@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して範囲を取得する
-description: Excel JavaScript API を使用して範囲を取得する方法について説明します。
+title: JavaScript API を使用して範囲Excelする
+description: JavaScript API を使用して範囲を取得するExcel説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6aa9bb00bc9d24aeee5f1fef9e8d1531525e9d1f
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d48d69a45e964db2d5797e2f0927f776795bcca0365f0ccef245fcd3682a3a72
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652928"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084721"
 ---
-# <a name="get-a-range-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲を取得する
+# <a name="get-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲Excelする
 
-この記事では、Excel JavaScript API を使用してワークシート内の範囲を取得するさまざまな方法を示す例を示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用してワークシート内の範囲を取得するさまざまな方法Excel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -88,5 +88,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して範囲を挿入する](excel-add-ins-ranges-insert.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して範囲Excel挿入する](excel-add-ins-ranges-insert.md)

@@ -1,19 +1,19 @@
 ---
-title: Excel JavaScript API を使用して文字列を検索する
-description: Excel JavaScript API を使用して範囲内の文字列を検索する方法について説明します。
+title: JavaScript API を使用して文字列をExcelする
+description: JavaScript API を使用して範囲内の文字列を検索するExcel説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: efd2671781a8ce8d3e8aeda88f87abb3ad5058a35878f28f47f50305cff1b038
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652887"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087400"
 ---
-# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して範囲内の文字列を検索する
+# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲内の文字列をExcelする
 
-この記事では、Excel JavaScript API を使用して範囲内の文字列を検索するコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲内の文字列を検索するコード サンプルExcel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -47,5 +47,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して範囲内の特別なセルを検索する](excel-add-ins-ranges-special-cells.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用して範囲内の特別なセルExcel検索する](excel-add-ins-ranges-special-cells.md)

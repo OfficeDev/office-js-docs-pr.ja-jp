@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: dad3309239237ac48f3c7cccf13f67d78504da91cb5f43c24543da0851a58420
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774365"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085834"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -27,10 +27,10 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 | クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
-|Mac:<br>ビルド 16.47 以降|はい|はい|はい|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|必要|
+|Mac:<br>ビルド 16.47 以降|はい|はい|必要|
 |Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|必要|
 
 > [!NOTE]
 > オン送信機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在のサーバーと [クライアントのサポートを](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
@@ -292,7 +292,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |ポリシーの状態|結果|
 |---|---|
 |無効|送信時アドインの現在ダウンロードされているマニフェスト (必ずしも最新バージョンではない) は、送信されるメッセージまたは会議アイテムで実行されます。 これは既定の状態/動作です。|
-|有効|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
+|Enabled|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合、送信はブロックされます。|
 
 #### <a name="manage-the-on-send-policy"></a>送信時ポリシーを管理する
 

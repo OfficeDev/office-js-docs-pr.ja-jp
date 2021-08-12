@@ -3,12 +3,12 @@ title: Office.context - 要件セット 1.8
 description: Office。メールボックス API 要件セット 1.8 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 99573d9984c571c99461e90e8bdccdca35fe30b7
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 6ec648ed94e82adbbb185043325e3a04895ee6eab630df1fe14a56a6a5c4009e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590968"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085656"
 ---
 # <a name="context-mailbox-requirement-set-18"></a>context (メールボックス要件セット 1.8)
 
@@ -32,7 +32,7 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 | [displayLanguage](#displaylanguage-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | 作成<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | 作成<br>Read | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [プラットフォーム](#platform-platformtype) | 作成<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [platform](#platform-platformtype) | 作成<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [要件](#requirements-requirementsetsupport) | 作成<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | 作成<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [UI](#ui-ui) | 作成<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

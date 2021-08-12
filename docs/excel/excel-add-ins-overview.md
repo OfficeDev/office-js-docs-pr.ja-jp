@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 18484c9f6745399b0fdf50da466004e80beca44e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: afca81ad2a4ee3ed24221798f19bea2d1df8dc5f2fe6b97b4d0bcc5152df4783
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349505"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085961"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 

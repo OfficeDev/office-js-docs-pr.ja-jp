@@ -4,12 +4,12 @@ description: 動的リボン API Officeサポートするプラットフォー�
 ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a608eff12fb21d7a4a6beb195749141bd473aa1c
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 18b081da28991eb15875c6999ddfe06ccea13eade8dd8a4e1f2a4cc09ac5e922
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330186"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084925"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -32,7 +32,7 @@ RibbonApi 要件セットの 1.1 バージョンは、コンシューマー チ�
 
 |チャネル | バージョン | ビルド|
 |:-----|:-----|:-----|
-|最新チャネル | 2006 以上 | 20266.20266 以上|
+|現在のチャネル | 2006 以上 | 20266.20266 以上|
 |月次エンタープライズ チャネル | 2005 以上 | 12827.20538 以上|
 |月次エンタープライズ チャネル | 2004 | 12730.20602 以上|
 |半期エンタープライズ チャネル | 2002 以上 | 12527.20880 以上|

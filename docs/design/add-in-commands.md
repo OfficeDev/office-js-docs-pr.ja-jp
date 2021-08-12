@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: 4ee2e53a1d2a74a2663a372aeb080c5f32da1bde
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 285229c643f0e9ab9008905a07767c985b050ad2a46397aedd741a2b0ce9dfa5
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773210"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082710"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 

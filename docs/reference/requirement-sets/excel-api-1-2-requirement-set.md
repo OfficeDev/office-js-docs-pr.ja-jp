@@ -4,12 +4,12 @@ description: ExcelApi 1.2 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6d4a7b6aef56fb8d572e685df40c99c0c655e6db
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 3a58c6b612306b315165e9f70808359aa7d73505667cc598110e7349d1934e96
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53670279"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084951"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 

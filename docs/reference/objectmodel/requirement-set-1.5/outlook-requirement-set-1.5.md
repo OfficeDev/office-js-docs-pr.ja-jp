@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.5
 description: メールボックス API 1.5 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fa27cc89cbc5c1059525e862016f6c90adc48928
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 82bb1e451b4949a53a421ecbab8c463ecb61d5006d3c15052f45f8d10563f610
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671563"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085687"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook アドイン API 要件セット 1.5
 

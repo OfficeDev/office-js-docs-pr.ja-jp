@@ -3,12 +3,12 @@ title: Visual Studio を使用してアドインを発行する
 description: Visual Studio 2019 を使用して Web プロジェクトを展開し、アドインをパッケージ化する方法。
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 7ae9d3289f04d9f3ab969112e9371de51489997e5dc319d0726b94fd5a5e92cd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961245"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086233"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを発行する
 

@@ -3,12 +3,12 @@ title: 開発環境をセットアップする
 description: 開発者環境をセットアップして、Officeを構築します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: b396ad9774959e36ef34c8ca158eda26162c3b13794aa65a4eab0859c317c167
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774348"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087436"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -73,7 +73,7 @@ Office JavaScript API でどのような機能が提供されているかを把�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインを設計する](../design/add-in-design.md)
+- [Office アドインの設計](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

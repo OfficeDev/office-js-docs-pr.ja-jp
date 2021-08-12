@@ -1,21 +1,21 @@
 ---
 title: マニフェスト ファイルの PhoneSettings 要素
-description: Phone の Settings 要素は、メールアドインが電話で使用されるときに適用されるソースの場所と制御の設定を指定します。
+description: PhoneSettings 要素は、メール アドインが電話で使用される場合に適用されるソースの場所と制御設定を指定します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: d7957e23a77a0f837366e5cedc0e0f350b5635c8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 883242dc290384f9f0b72736338bdd78a2d23ffeee6cf3aee46d5acd970654ab
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611485"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085730"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 要素
 
 メール アドインが電話で使用されるときに適用されるソースの場所と制御の設定を指定します。
 
 > [!IMPORTANT]
-> この `PhoneSettings` 要素は、web 上の従来の Outlook (社内 Exchange サーバーの古いバージョンに接続されている) と Windows の outlook 2013 でのみ使用できます。 Android および iOS で Outlook をサポートするには、「 [Outlook Mobile 用のアドイン](../../outlook/outlook-mobile-addins.md)」を参照してください。
+> この要素は、従来の Outlook on the web (通常はオンプレミスの Exchange サーバーの古いバージョンに接続されている) および Outlook `PhoneSettings` 2013 Windows。 Android と iOS Outlookをサポートするには[、「Add-ins for Outlook Mobile 」を参照してください](../../outlook/outlook-mobile-addins.md)。
 
 **アドインの種類:** メール
 

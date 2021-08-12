@@ -3,12 +3,12 @@ title: Office アドインのシングル サインオンを有効化する
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオンを有効にする方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: f24cfb2bb9fa90f566a2730d7a289371084a2abc
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2e3951cd4e480de1fec563b68b3c5b4e2ff4cd293446a14c42c0cc7e50104e41
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773749"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080033"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Office アドインのシングル サインオンを有効化する
 

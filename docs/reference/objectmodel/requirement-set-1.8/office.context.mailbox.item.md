@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - 要件セット 1.8
 description: Outlookメールボックス API 要件セット 1.8 バージョンの Item オブジェクト モデル。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 9537f9f717caaefb9ec1ff406195ebe1e5832d6b
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d9c25a6eb60a03953c64f7b4c358f631f2b2069c86b4d200084e97439dc8809b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671892"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085699"
 ---
 # <a name="item-mailbox-requirement-set-18"></a>item (メールボックス要件セット 1.8)
 

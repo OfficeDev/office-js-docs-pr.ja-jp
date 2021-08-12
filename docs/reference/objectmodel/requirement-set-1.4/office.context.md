@@ -3,12 +3,12 @@ title: Office.context - 要件セット 1.4
 description: Office。メールボックス API 要件セット 1.4 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 6183715090cbbca008b0a750012c65da0ac21d7c
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c842c18777be1813beb6c5d94253c20c2224c0ee64f866438550414bf6e926b6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591031"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086701"
 ---
 # <a name="context-mailbox-requirement-set-14"></a>context (メールボックス要件セット 1.4)
 

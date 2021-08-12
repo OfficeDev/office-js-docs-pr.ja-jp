@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: e27cc608f1180c3e89a29480b11d777d744fdd55
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c04502ab490d6b555ae4c581f120aeef260825a5dce00c437de086ccf20e03bc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773329"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083308"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 

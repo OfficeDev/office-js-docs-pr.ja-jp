@@ -3,12 +3,12 @@ title: マニフェスト ファイルの EquivalentAddin 要素
 description: 同等の COM アドインまたは XLL の下位互換性を指定します。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 412a3ce7bd12d886b7b88b5b84938e28295aba5d
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 6404ad561a14a451e4685cc23be930b7ba612e85d1b37e78aa45f9366becf3bc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836838"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085763"
 ---
 # <a name="equivalentaddin-element"></a>EquivalentAddin 要素
 
@@ -37,7 +37,7 @@ ms.locfileid: "50836838"
 [ProgId](progid.md) 
 [FileName](filename.md)
 
-## <a name="remarks"></a>備考
+## <a name="remarks"></a>解説
 
 COM アドインを同等のアドインとして指定するには、要素と要素の両方を `ProgId` 指定 `Type` します。 XLL を同等のアドインとして指定するには、要素と要素の両方を `FileName` 指定 `Type` します。
 

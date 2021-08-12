@@ -4,12 +4,12 @@ description: JavaScript API の Excelを使用して、数式、エラー、数�
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 650cfba187771063fe3636fef2ed447d27c11d3e9099ec909bff38921409d8c5
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773630"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085215"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲内の特別なセルExcel検索する
 

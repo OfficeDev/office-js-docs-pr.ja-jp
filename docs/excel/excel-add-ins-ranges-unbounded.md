@@ -1,21 +1,21 @@
 ---
-title: Excel JavaScript API を使用して、非バウンド範囲に対する読み取りまたは書き込み
-description: Excel JavaScript API を使用して、非バウンド範囲への読み取りまたは書き込みを行う方法について説明します。
+title: JavaScript API を使用して、非バウンド範囲に対する読み取りExcel書き込み
+description: JavaScript API を使用して、Excel範囲の読み取りまたは書き込みを行う方法について説明します。
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: e9df563c9bac688e0806f5280139da8faa5b94870d4d32a852c919cd7fd03ad0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652886"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087653"
 ---
-# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して、非バウンド範囲に対する読み取りまたは書き込み
+# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>JavaScript API を使用して、非バウンド範囲に対する読み取りExcel書き込み
 
-この記事では、Excel JavaScript API を使用して、非バウンド範囲の読み取りおよび書き込みを行う方法について説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel.Range クラス」を参照してください](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して、非バウンド範囲に対する読み取りExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
 
-非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 次に例を示します。
+非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 例:
 
 - 列全体で構成される範囲アドレス:<ul><li>`C:C`</li><li>`A:F`</li></ul>
 - 行全体で構成される範囲アドレス:<ul><li>`2:2`</li><li>`1:4`</li></ul>
@@ -37,6 +37,6 @@ range.values = 'Due Date';
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
-- [Excel JavaScript API を使用して大きな範囲に対する読み取りまたは書き込み](excel-add-ins-ranges-large.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
+- [JavaScript API を使用した大きな範囲の読み取りExcel書き込み](excel-add-ins-ranges-large.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

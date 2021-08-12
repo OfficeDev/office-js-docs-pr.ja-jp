@@ -3,12 +3,12 @@ title: マニフェスト ファイルの GetStarted 要素
 description: Word、Excel、PowerPoint、およびアドインにアドインがインストールされている場合に表示される吹き出しでPowerPoint情報をOneNote。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 86a96ba0b448e518f48deefc7aceb5133904c9147ba39a28bf646d922c449af7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348686"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086665"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
@@ -20,7 +20,7 @@ Word、Excel、PowerPoint、およびアドインにアドインがインスト�
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Title](#title)               | はい      | アドインが機能を公開する場所を定義します。     |
 | [説明](#description)   | はい      | JavaScript 関数を含むファイルの URL。|
-| [LearnMoreUrl](#learnmoreurl) | はい       | アドインの詳細を説明するページの URL。   |
+| [LearnMoreUrl](#learnmoreurl) | 必要       | アドインの詳細を説明するページの URL。   |
 
 ### <a name="title"></a>タイトル 
 

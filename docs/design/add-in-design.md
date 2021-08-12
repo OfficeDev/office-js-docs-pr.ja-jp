@@ -3,12 +3,12 @@ title: Office アドインの UI をデザインする
 description: Office アドインのビジュアル デザインのベスト プラクティスについて説明します。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 7c43a491de9ae3204ca77db45c64cbdf6404969d
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: abf5f2c92d268bc7e0fa1f19bd1a2d02226986feb7070525d310122f484c5f5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773203"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082643"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>Office アドインの UI をデザインする
 

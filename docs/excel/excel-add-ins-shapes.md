@@ -3,12 +3,12 @@ title: JavaScript API を使用して図形Excelする
 description: 図形をExcel図面レイヤーに配置するオブジェクトとして定義する方法についてExcel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 01dd8949105be8a511aefc90c69eec13b18e3243e0fb201dc2f2eeb36e62b3bf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671472"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087863"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形Excelする
 

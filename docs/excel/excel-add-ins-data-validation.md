@@ -3,12 +3,12 @@ title: Excel の範囲にデータの入力規則を追加する
 description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 2579473800a20ba864b42b8a18b8023dff826c5e
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1d05db463da8586e39e6a8e172529d9da46a8cec11ca36f5231cb9c3f1c49033
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774155"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084297"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
@@ -43,7 +43,7 @@ Excel の JavaScript ライブラリには、ブック内の表、列、行、�
 - `decimal` &#8212; `BasicDataValidation` オブジェクトで指定された他の任意の入力規則と 10 進数が必要です。
 - `textLength` &#8212; `BasicDataValidation`オブジェクトの入力規則の詳細をセルの値の *長さ* に適用します。
 
-次に、入力規則を作成する例を示します。 このコードについては以下の点に注目してください。
+次に、入力規則を作成する例を示します。 このコードについては、次の点に注意してください。
 
 - `operator` は二項演算子 "GreaterThan" です。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値は左側のオペランドになり、`formula1` で指定された値は右側のオペランドになります。 そのため、この規則では、0 より大きい整数のみが有効になります。
 - `formula1` はハードコーディングされた値です。 コーディングの時点でその正しい値がわからない場合は、その値に Excel の数式 (文字列) を使用することもできます。 たとえば、"=A3" や "=SUM(A4,B5)" を `formula1` の値にすることもできます。
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 
 ### <a name="list-validation-rule-type"></a>リスト入力規則のタイプ
 
-有限リストからの値のみを有効な値として指定するには、`DataValidationRule` オブジェクトの `list` プロパティを使用します。 次に例を示します。 このコードについては以下の点に注目してください。
+有限リストからの値のみを有効な値として指定するには、`DataValidationRule` オブジェクトの `list` プロパティを使用します。 次に例を示します。 このコードについては、次の点に注意してください。
 
 - "Names" という名前のワークシートがあり、"A1:A3" の範囲の値が名前になっていると仮定します。
 - `source` プロパティは有効な値のリストを指定します。 文字列引数は名前を含む範囲を参照します。 "Sue, Ricky, Liz" など、カンマで区切られたリストを割り当てることもできます。
@@ -136,7 +136,7 @@ Excel.run(function (context) {
 
 ### <a name="custom-validation-rule-type"></a>カスタムの入力規則のタイプ
 
-カスタムの入力規則式を指定するには、`DataValidationRule` オブジェクトの `custom` プロパティを使用します。 次に例を示します。 このコードについては以下の点に注目してください。
+カスタムの入力規則式を指定するには、`DataValidationRule` オブジェクトの `custom` プロパティを使用します。 次に例を示します。 このコードについては、次の点に注意してください。
 
 - ワークシートの A 列と B 列に **Athlete Name** と **Comments** という列がある、2 列のテーブルがあると仮定します。
 - **Comments** 列の冗長性を軽減するために、アスリート名を含むデータを無効にします。
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 
 ## <a name="create-validation-error-alerts"></a>入力規則のエラー アラートを作成する
 
-ユーザーがセルに無効なデータを入力しようとした際に表示される、カスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては以下の点に注目してください。
+ユーザーがセルに無効なデータを入力しようとした際に表示される、カスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては、次の点に注意してください。
 
 - `style` プロパティは、ユーザーが情報アラート、警告、または "停止" アラートを取得するかどうかを決定します。 ユーザーによる無効なデータの追加を実際に防止するのは `Stop` のみです。 いずれにせよ、`Warning` と `Information` のポップアップには、ユーザーが無効なデータを入力できるオプションがあります。
 - `showAlert` プロパティの既定値は `true` です。 つまり、Excelメッセージ、タイトル、およびスタイルに設定または設定するカスタム アラートを作成しない限り、一般的なアラート (種類) が `Stop` `showAlert` `false` ポップアップします。 このコードでは、カスタムのメッセージとタイトルを設定します。

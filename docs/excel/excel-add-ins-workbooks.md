@@ -4,12 +4,12 @@ description: JavaScript API を使用してブックまたはアプリケーシ�
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b80ef801955b5d4dd229794a24ff1f97a1f38d4e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671120"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086173"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 

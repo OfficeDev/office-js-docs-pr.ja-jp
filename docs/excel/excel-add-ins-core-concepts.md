@@ -4,12 +4,12 @@ description: Excel JavaScript API の主要なオブジェクトの種類と、�
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7f5097e6556766556e35509b8fdd6c201b17c201f28aab950ff6493dcbf6056a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349561"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085299"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Office アドインの Excel JavaScript オブジェクト モデル
 

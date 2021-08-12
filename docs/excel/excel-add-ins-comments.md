@@ -1,32 +1,32 @@
 ---
-title: Excel JavaScript API を使用してコメントを操作する
-description: Api を使用してコメントおよびコメントスレッドを追加、削除、および編集する方法について説明します。
+title: JavaScript API を使用してコメントExcelする
+description: API を使用してコメントとコメント スレッドを追加、削除、および編集する方法について説明します。
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 5e292dab77b080906d77b1517a8de715bc0d2122f29e3de73b04f5b9d9276c85
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626422"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084323"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してコメントを操作する
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>JavaScript API を使用してコメントExcelする
 
-この記事では、Excel JavaScript API を使用してブック内のコメントを追加、読み取り、変更、および削除する方法について説明します。 コメント機能の詳細については、「 [Excel 記事のコメントとメモを挿入する」](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) を参照してください。
+この記事では、JavaScript API を使用してブック内のコメントを追加、読み取り、変更、削除するExcel説明します。 コメント機能の詳細については、「コメントとメモを挿入する」の記事[Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)できます。
 
-Excel JavaScript API では、コメントには単一の最初のコメントと接続されたスレッドのディスカッションの両方が含まれます。 個別のセルに関連付けられています。 十分な権限があるブックを表示するユーザーは、コメントに返信できます。 Comment オブジェクトは、これらの返信を[コメント](/javascript/api/excel/excel.comment)[返信](/javascript/api/excel/excel.commentreply)オブジェクトとして格納します。 コメントはスレッドと考えてください。スレッドには、開始点として特別なエントリが必要です。
+JavaScript API Excel、コメントには、1 つの初期コメントと接続されたスレッドディスカッションの両方が含まれます。 これは、個々のセルに関連付けされます。 十分なアクセス許可を持つブックを表示しているユーザーは、コメントに返信できます。 [Comment オブジェクト](/javascript/api/excel/excel.comment)は、これらの返信を[CommentReply オブジェクトとして格納](/javascript/api/excel/excel.commentreply)します。 コメントはスレッドであり、スレッドには開始点として特別なエントリが必要と考える必要があります。
 
-![「Comment」というラベルが付けられた、"comment" というラベルが付いた Excel コメント。「comment [0]」と「Comment [1]」。](../images/excel-comments.png)
+![コメントExcel"Comment" というラベルが付き、"Comment.replies[0]" と "Comment.replies[1]" というラベルが付けされています。](../images/excel-comments.png)
 
-ブック内のコメントはプロパティによって追跡され `Workbook.comments` ます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。 コメントには、 [ワークシート](/javascript/api/excel/excel.worksheet) レベルでアクセスすることもできます。 この記事のサンプルでは、ブックレベルでコメントを使用していますが、プロパティを使用するために簡単に変更することができ `Worksheet.comments` ます。
+ブック内のコメントは、プロパティによって追跡 `Workbook.comments` されます。 これには、ユーザーによって作成されたコメントだけでなく、アドインによって作成されたコメントも含まれます。 `Workbook.comments` プロパティは、[Comment](/javascript/api/excel/excel.comment) オブジェクトのコレクションを含む [CommentCollection](/javascript/api/excel/excel.commentcollection) オブジェクトです。 コメントはワークシート レベルでも [アクセス](/javascript/api/excel/excel.worksheet) できます。 この記事のサンプルは、ブック レベルのコメントを扱いますが、プロパティを使用するために簡単に変更 `Worksheet.comments` できます。
 
 ## <a name="add-comments"></a>コメントを追加する
 
-メソッドを使用して、 `CommentCollection.add` ブックにコメントを追加します。 このメソッドは、次の3つのパラメーターを取ります。
+ブックに `CommentCollection.add` コメントを追加するには、このメソッドを使用します。 このメソッドは、最大 3 つのパラメーターを受け取ります。
 
-- `cellAddress`: コメントが追加されるセルを指定します。 文字列または [Range](/javascript/api/excel/excel.range) オブジェクトのいずれかを指定できます。 範囲は1つのセルである必要があります。
-- `content`: コメントの内容。 テキスト形式のコメントには文字列を使用します。 [メンション](#mentions)付きのコメントには、 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用します。
-- `contentType`: コンテンツの種類を指定する [ContentType](/javascript/api/excel/excel.contenttype) 列挙。 既定値は `ContentType.plain` です。
+- `cellAddress`: コメントが追加されるセル。 文字列または Range オブジェクトを [指定](/javascript/api/excel/excel.range) できます。 範囲は 1 つのセルである必要があります。
+- `content`: コメントのコンテンツ。 テキスト形式のコメントには文字列を使用します。 メンション [付きコメントには CommentRichContent](/javascript/api/excel/excel.commentrichcontent) オブジェクト [を使用します](#mentions)。
+- `contentType`: コンテンツ [の種類を](/javascript/api/excel/excel.contenttype) 指定する ContentType 列挙。 既定値は `ContentType.plain` です。
 
 次のコード例は、コメントをセル **A2** に追加します。
 
@@ -42,11 +42,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> アドインによって追加されたコメントは、そのアドインの現在のユーザーによって作成されます。
+> アドインによって追加されたコメントは、そのアドインの現在のユーザーに属性付けされます。
 
-### <a name="add-comment-replies"></a>コメントの返信を追加する
+### <a name="add-comment-replies"></a>コメント返信の追加
 
-`Comment`オブジェクトは、0個以上の返信を含むコメントスレッドです。 `Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。 コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。 返信は、追加された順に表示されます。 また、アドインの現在のユーザーにも属性があります。
+オブジェクト `Comment` は、ゼロ以上の返信を含むコメント スレッドです。 `Comment` オブジェクトには `replies` プロパティがあり、これは [CommentReply](/javascript/api/excel/excel.commentreply) オブジェクトを含む [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) です。 コメントに返信を追加するには、`CommentReplyCollection.add` メソッドを使用して、返信のテキストを渡します。 返信は、追加された順に表示されます。 これらは、アドインの現在のユーザーにも属性付けされます。
 
 次のコード サンプルは、ブックの最初のコメントに返信を追加します。
 
@@ -72,9 +72,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="edit-comment-replies"></a>コメントの返信を編集する
+### <a name="edit-comment-replies"></a>コメント返信の編集
 
-コメントの返信を編集するには、そのプロパティを設定 `CommentReply.content` します。
+コメント返信を編集するには、そのプロパティを設定 `CommentReply.content` します。
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>コメントの削除
 
-コメントを削除するには、メソッドを使用し `Comment.delete` ます。 コメントを削除すると、そのコメントに関連付けられている返信も削除されます。
+コメントを削除するには、メソッドを `Comment.delete` 使用します。 コメントを削除すると、そのコメントに関連付けられた返信も削除されます。
 
 ```js
 Excel.run(function (context) {
@@ -100,7 +100,7 @@ Excel.run(function (context) {
 
 ### <a name="delete-comment-replies"></a>コメントの返信を削除する
 
-コメントの返信を削除するには、メソッドを使用し `CommentReply.delete` ます。
+コメントの返信を削除するには、メソッドを使用 `CommentReply.delete` します。
 
 ```js
 Excel.run(function (context) {
@@ -111,9 +111,9 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads"></a>コメントスレッドを解決する
+## <a name="resolve-comment-threads"></a>コメント スレッドの解決
 
-コメントスレッドには、解決可能かどうかを示す、構成可能なブール値があり `resolved` ます。 の値は、 `true` コメントスレッドが解決されたことを意味します。 の値は、 `false` コメントスレッドが新規または再オープンのいずれかであることを意味します。
+コメント スレッドには、解決されたかどうかを示す構成可能なブール `resolved` 値があります。 値は `true` 、コメント スレッドが解決された値を意味します。 値は、 `false` コメント スレッドが新規または再オープンされた値を意味します。
 
 ```js
 Excel.run(function (context) {
@@ -123,9 +123,9 @@ Excel.run(function (context) {
 });
 ```
 
-コメントの返信には、readonly プロパティがあり `resolved` ます。 この値は、常にスレッドの残りの部分と同じです。
+コメントの返信には readonly プロパティ `resolved` があります。 その値は、スレッドの残りの値と常に等しくなります。
 
-## <a name="comment-metadata"></a>コメントのメタデータ
+## <a name="comment-metadata"></a>コメント メタデータ
 
 各コメントには、作成者や作成日などの作成に関するメタデータが含まれています。 アドインによって作成されたコメントは、現在のユーザーによって作成されたものと見なされます。
 
@@ -144,11 +144,11 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="comment-reply-metadata"></a>コメントの返信メタデータ
+### <a name="comment-reply-metadata"></a>コメント返信メタデータ
 
-コメントの返信は、最初のコメントと同じ種類のメタデータを格納します。
+コメント返信には、最初のコメントと同じ種類のメタデータが格納されます。
 
-次の例は、作成者の電子メール、作成者の名前、および **A2**における最新のコメントの返信の作成日を表示する方法を示しています。
+次のサンプルは、作成者の電子メール、作成者の名前、および A2 での最新のコメント返信の作成日を表示する方法を **示しています**。
 
 ```js
 Excel.run(function (context) {
@@ -171,14 +171,14 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>メンション
 
-[メンション](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) は、コメント内の仕事仲間にタグ付けするために使用されます。 これにより、それらの通知がコメントの内容と共に送信されます。 アドインは、ユーザーの代わりにこれらのメンションを作成できます。
+[メンションは](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) 、コメント内の同僚にタグを付けするために使用されます。 これにより、コメントのコンテンツと一緒に通知が送信されます。 アドインは、ユーザーに代わってこれらのメンションを作成できます。
 
-[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)オブジェクトを使用して、メンションを含むコメントを作成する必要があります。 1つ以上のメンションを含むを呼び出し、 `CommentCollection.add` `CommentRichContent` `ContentType.mention` パラメーターとしてを指定し `contentType` ます。 `content`文字列をテキストに挿入するには、文字列を書式設定する必要もあります。 メンションの形式は、 `<at id="{replyIndex}">{mentionName}</at>` です。
+CommentRichContent オブジェクトを使用して、メンションを含むコメント [を作成する必要](/javascript/api/excel/excel.commentrichcontent) があります。 1 `CommentCollection.add` つ `CommentRichContent` 以上のメンションを含む呼び出しを実行し、パラメーター `ContentType.mention` として指定 `contentType` します。 また `content` 、テキストにメンションを挿入するには、文字列を書式設定する必要があります。 メンションの形式は次の形式です `<at id="{replyIndex}">{mentionName}</at>` 。
 
 > [!NOTE]
-> 現時点では、メンションリンクのテキストとして、メンションの正確な名前のみを使用できます。 名前の短縮バージョンのサポートは、後で追加されます。
+> 現在、メンションリンクのテキストとして使用できるのは、メンションの正確な名前のみです。 名前の短縮バージョンのサポートは、後で追加されます。
 
-次の例は、1つのメンション付きのコメントを示しています。
+次の例は、1 つのメンションを含むコメントを示しています。
 
 ```js
 Excel.run(function (context) {
@@ -202,21 +202,21 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="comment-events"></a>コメントイベント
+## <a name="comment-events"></a>コメント イベント
 
-アドインは、コメントの追加、変更、および削除を聞くことができます。 [Comment イベント](/javascript/api/excel/excel.commentcollection#event-details) は、オブジェクトに対して発生 `CommentCollection` します。 Comment イベントをリッスンするには、、、 `onAdded` `onChanged` またはの `onDeleted` コメントイベントハンドラーを登録します。 コメントイベントが検出されたときに、追加、変更、または削除されたコメントに関するデータを取得するには、このイベントハンドラーを使用します。 この `onChanged` イベントは、コメントの返信の追加、変更、および削除も処理します。 
+アドインは、コメントの追加、変更、削除をリッスンできます。 [コメント イベントは](/javascript/api/excel/excel.commentcollection#event-details) 、オブジェクトで発生 `CommentCollection` します。 コメント イベントをリッスンするには、、 `onAdded` `onChanged` 、、またはコメント イベント `onDeleted` ハンドラーを登録します。 コメント イベントが検出された場合は、このイベント ハンドラーを使用して、追加、変更、または削除されたコメントに関するデータを取得します。 イベント `onChanged` は、コメントの返信の追加、変更、および削除も処理します。 
 
-各 comment イベントは、同時に複数の追加、変更、または削除が実行された場合にのみトリガーされます。 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)、および[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)のすべてのオブジェクトには、イベントアクションをコメントのコレクションにマップするためのコメント id の配列が含まれています。
+各コメント イベントは、複数の追加、変更、または削除が同時に実行されると 1 回だけトリガーされます。 すべての [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)オブジェクト [、CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)オブジェクト、 [および CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) オブジェクトには、イベント アクションをコメント コレクションにマップするコメント ID の配列が含まれています。
 
-イベントハンドラーの登録、イベントの処理、イベントハンドラーの削除に関する追加情報については、「 [Excel JAVASCRIPT API を使用してイベント](excel-add-ins-events.md) を処理する」の記事を参照してください。 
+イベント ハンドラーの[Excel登録、イベントの処理、およびイベント ハンドラーの](excel-add-ins-events.md)削除の詳細については、「JavaScript API を使用したイベントの処理」の記事を参照してください。 
 
 ### <a name="comment-addition-events"></a>コメントの追加イベント 
-この `onAdded` イベントは、コメントのコレクションに1つまたは複数の新しいコメントが追加されると発生します。 このイベントは、コメントスレッドに返信が追加されたときには発生し *ません* (コメントの返信イベントについては、「 [コメント変更イベント](#comment-change-events) 」を参照してください)。
+イベント `onAdded` は、1 つ以上の新しいコメントがコメント コレクションに追加されるとトリガーされます。 このイベントは *、返信* がコメント スレッドに追加された場合にはトリガーされません ([](#comment-change-events)コメントの返信イベントについては、「コメント変更イベント」を参照してください)。
 
-次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して追加されたコメントの配列を取得する方法を示して `onAdded` `CommentAddedEventArgs` `commentDetails` います。
+次のサンプルは、イベント ハンドラーを登録し、オブジェクトを使用して追加されたコメントの配列 `onAdded` `CommentAddedEventArgs` `commentDetails` を取得する方法を示しています。
 
 > [!NOTE]
-> このサンプルは、1つのコメントが追加された場合にのみ機能します。 
+> このサンプルは、1 つのコメントが追加された場合にのみ機能します。 
 
 ```js
 Excel.run(function (context) {
@@ -247,19 +247,19 @@ function commentAdded() {
 ```
 
 ### <a name="comment-change-events"></a>コメント変更イベント 
-`onChanged`Comment イベントは、次のシナリオでトリガーされます。
+コメント `onChanged` イベントは、次のシナリオでトリガーされます。
 
-- コメントの内容が更新されます。
-- コメントスレッドが解決されます。
-- コメントスレッドが再度開かれています。
-- コメントスレッドに返信が追加されます。
-- コメントスレッド内の返信が更新されます。
-- コメントスレッド内の返信が削除されます。
+- コメントのコンテンツが更新されます。
+- コメント スレッドが解決されます。
+- コメント スレッドが再び開きます。
+- コメント スレッドに返信が追加されます。
+- コメント スレッドで返信が更新されます。
+- コメント スレッドで返信が削除されます。
 
-次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して、変更されたコメントの配列を取得する方法を示して `onChanged` `CommentChangedEventArgs` `commentDetails` います。
+次のサンプルは、イベント ハンドラーを登録し、オブジェクトを使用して変更されたコメントの `onChanged` `CommentChangedEventArgs` `commentDetails` 配列を取得する方法を示しています。
 
 > [!NOTE]
-> このサンプルは、1つのコメントが変更された場合にのみ機能します。 
+> このサンプルは、1 つのコメントが変更された場合にのみ機能します。 
 
 ```js
 Excel.run(function (context) {
@@ -290,12 +290,12 @@ function commentChanged() {
 ```
 
 ### <a name="comment-deletion-events"></a>コメント削除イベント
-コメントの `onDeleted` コレクションからコメントが削除されると、イベントがトリガーされます。 コメントが削除されると、そのメタデータは使用できなくなります。 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)オブジェクトは、アドインが個々のコメントを管理している場合に、コメント id を提供します。
+コメント `onDeleted` がコメント コレクションから削除されると、イベントがトリガーされます。 コメントが削除された後、そのメタデータは使用できなくなりました。 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)オブジェクトは、アドインが個々のコメントを管理している場合に備え、コメントの ID を提供します。
 
-次の例は、イベントハンドラーを登録し、そのオブジェクトを使用して、削除されたコメントの配列を取得する方法を示して `onDeleted` `CommentDeletedEventArgs` `commentDetails` います。
+次のサンプルは、イベント ハンドラーを登録し、オブジェクトを使用して削除されたコメントの配列 `onDeleted` `CommentDeletedEventArgs` `commentDetails` を取得する方法を示しています。
 
 > [!NOTE]
-> このサンプルは、1つのコメントが削除された場合にのみ機能します。 
+> このサンプルは、1 つのコメントが削除された場合にのみ機能します。 
 
 ```js
 Excel.run(function (context) {
@@ -318,7 +318,7 @@ function commentDeleted() {
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインでの Excel JavaScript オブジェクトモデル](excel-add-ins-core-concepts.md)
+- [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してブックを操作する](excel-add-ins-workbooks.md)
 - [Excel JavaScript API を使用してイベントを操作する](excel-add-ins-events.md)
-- [Excel でコメントやメモを挿入する](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [コメントとメモをページに挿入Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

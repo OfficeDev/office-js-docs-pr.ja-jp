@@ -1,27 +1,27 @@
 ---
 title: 共有ランタイム要件セット
-description: SharedRuntime API をサポートOfficeプラットフォームとアプリケーションを指定します。
+description: SharedRuntime API をサポートOfficeするプラットフォームとアプリケーションを指定します。
 ms.date: 04/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d5b931c5bda65f5907684c2f957e15c6fdacd1668d410dc3db96ca614f426892
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652224"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084901"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-作業ウィンドウ、アドイン コマンドから起動される関数ファイル、Excel カスタム関数など、JavaScript コードを実行する Office アドインの一部は、単一の JavaScript ランタイムを共有できます。 これにより、すべてのパーツで一連のグローバル変数を共有したり、読み込まれたライブラリのセットを共有したり、永続ストレージを介してメッセージを渡したりすることなく相互に通信することができます。 詳細については、「共有 JavaScript ランタイムを使用Officeアドインを構成する [」を参照してください](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+作業ウィンドウ、アドイン コマンドから起動される関数ファイル、Excel カスタム関数など、JavaScript コードを実行する Office アドインの一部は、単一の JavaScript ランタイムを共有できます。 これにより、すべてのパーツで一連のグローバル変数を共有したり、読み込まれたライブラリのセットを共有したり、永続ストレージを介してメッセージを渡したりすることなく相互に通信することができます。 詳細については、「共有 JavaScript ランタイムを使用Officeアドインを構成する[」を参照してください](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 次の表に、SharedRuntime 1.1 要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  |  Office 2013 (以降)<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | Office Online Server |
+|  要件セット  |  Office 2013 (以降) のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | 該当なし | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
+| SharedRuntime 1.1  | 該当なし | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020年2月 | 該当なし |
 
 > [!IMPORTANT]
 > 共有 JavaScript ランタイム要件セットは、次のプラットフォームでのみ使用できます。
