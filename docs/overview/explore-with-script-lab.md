@@ -1,20 +1,20 @@
 ---
 title: Script Lab を使用して Office JavaScript API を探索する
 description: Script Lab を使用して、Office JS API およびプロトタイプの機能を調べます。
-ms.date: 06/18/2021
+ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ba70a95444bcc7a8b5eda8aad0bb2d8e1b0d12affe9ce341e65ba9baa3107c58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c475870166415dc6142169dc1029b682477001e7f4bbbe35721ddcd1b82d5f07
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088873"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845621"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
-AppSource から無料で入手できる [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) および [Outlook 用 Script Lab](https://appsource.microsoft.com/product/office/WA200001603) アドインを使用すると、Excel や Outlook などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、独自のアドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
+AppSource から無料で入手できる [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) および [Outlook 用 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) アドインを使用すると、Excel や Outlook などの Office プログラムでの作業中に Office JavaScript API を調査できます。 Script Lab は、独自のアドインで必要な機能のプロトタイプを作成して検証するときに、開発ツールキットに追加する便利なツールです。
 
 ## <a name="what-is-script-lab"></a>Script Lab とは
 
@@ -70,11 +70,11 @@ Outlook 用 Script Lab は、次のクライアントで使用できます。
 Outlook 用 Script Lab の詳細については、関連する[ブログの投稿](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)を参照してください。
 
 > [!IMPORTANT]
-> Script Lab は、2021 年のある時点で、Internet Explorer を使ってアドインをホストするプラットフォームと Office バージョンの組み合わせでの動作を停止します。これには、Office 2019 までの 1 回限りの購入の Office と、Microsoft 365 (サブスクリプション) Office の一部の旧バージョンが含まれます。 (詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。) Script Lab で Office JavaScript Library API の調査およびテストを行うには、他のプラットフォームとバージョンの組み合わせが必要です。 ただし、これらの API の動作は Internet Explorer でも変わらないので、これは実際には Script Lab の短所とは言えません。 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) に送信する Office アドイン は、Internet Explorer を使用してアドインをホストするプラットフォームとバージョンの組み合わせに対応している必要があります。
+> Script Lab は、Internet Explorer を使ってアドインをホストするプラットフォームと Office バージョンの組み合わせで動作しなくなりました。これには、Office 2019 までの 1 回限りの購入の Office のバージョンが含まれます。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 
-Excel、Word、または PowerPoint で Script Lab を使用するには、AppSource から [Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)をインストールします。 
+Excel、Word、または PowerPoint で Script Lab を使用するには、AppSource から [Script Lab アドイン](https://appsource.microsoft.com/product/office/WA104380862)をインストールします。
 
 Outlook 用 Script Lab を使用するには、AppSource から [Outlook 用 Script Lab のアドイン](https://appsource.microsoft.com/product/office/wa200001603)をインストールします。
 
