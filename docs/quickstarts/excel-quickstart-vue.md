@@ -4,12 +4,12 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8cdcbc0ca30a3d68fff3ac102845fd747d160102e5cb1ceff40dea8cf819a60b
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: e27c2bb0b508ee919179bf4bcc49ed031d7f2b25
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845614"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232366"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -96,7 +96,7 @@ vue create my-add-in
    npx office-addin-dev-certs install
    ```
 
-## <a name="explore-the-project"></a>プロジェクトを確認する
+## <a name="explore-the-project"></a>プロジェクトを探究する
 
 Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
 

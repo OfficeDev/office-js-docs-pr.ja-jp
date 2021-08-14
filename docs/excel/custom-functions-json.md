@@ -1,14 +1,14 @@
 ---
-ms.date: 12/22/2020
-description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
 title: カスタム関数の JSON メタデータを手動で作成Excel
+description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
+ms.date: 08/06/2021
 localization_priority: Normal
-ms.openlocfilehash: c03238d46e8d861307ba0db3d03dafea81aeca51
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349631"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232214"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -56,6 +56,7 @@ ms.locfileid: "53349631"
 
 ```json
 {
+  "allowErrorForDataTypeAny": true,
   "functions": [
     {
       "id": "ADD",
@@ -137,6 +138,13 @@ ms.locfileid: "53349631"
 > 完全なサンプル JSON ファイルは、リポジトリのコミット履歴Excel [OfficeDev/GitHub-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)で使用できます。 プロジェクトが JSON を自動的に生成するために調整されたので、手書き JSON の完全なサンプルは、以前のバージョンのプロジェクトでのみ使用できます。
 
 ## <a name="metadata-reference"></a>メタデータ参照
+
+### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
+
+プロパティ `allowErrorForDataTypeAny` はブール型です。 値を設定すると、 `true` カスタム関数は入力値としてエラーを処理できます。 に設定されている場合、型を持つすべてのパラメーターまたは入力 `any` `any[][]` 値としてエラーを受 `allowErrorForDataTypeAny` け入れることができます `true` 。 既定値は `allowErrorForDataTypeAny` です `false` 。
+
+> [!NOTE]
+> 他の JSON メタデータ プロパティとは異なり、トップ レベルのプロパティ `allowErrorForDataTypeAny` であり、サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
 
 ### <a name="functions"></a>functions
 

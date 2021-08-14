@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な PowerPoint 作業ウィン�
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: e7d4f77cf8e680d8846f8847c74df85e64f8ac85d1b3c4e92b4888361429f013
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: 8025e5a36ea13c7b1eca94778ce33608a84ccc7e
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845671"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232277"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 

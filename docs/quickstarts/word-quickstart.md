@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5d3cd3b68249ba7545645725926615214651f6c04defd43120629fdcb9fe8b27
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: db71a0103f9bcb793d6f3d68f1b2f293c92a0983
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096833"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232409"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -55,12 +55,6 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. プロジェクトの依存関係をインストールします。
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。

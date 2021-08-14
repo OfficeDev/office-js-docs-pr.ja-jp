@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: c5734c38e243520f6c2fa75935fff945350abf44
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845600"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232198"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
