@@ -1,16 +1,16 @@
 ---
 description: Office アドインの Excel カスタム関数を作成します。
 title: Excel でカスタム関数を作成する
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774204"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232400"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -74,7 +74,7 @@ function add(first, second){
 
 - カスタム関数に名前空間を定義します。ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
-- カスタム関数に使用するランタイムを指定します。 別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。 共有ランタイムを使うことは、アドインが Microsoft Edge ではなく Internet Explorer 11 の使用を意味することに注意してください。
+- カスタム関数に使用するランタイムを指定します。別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。
 
 Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
 
@@ -84,7 +84,7 @@ Yo Office ジェネレーターを使用してファイルを作成する場合�
 
 ## <a name="coauthoring"></a>共同編集
 
-Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows 版の Excel では、Excel で共同編集を行うことができます。 ブックでカスタム関数を使用している場合、共同編集中の仕事仲間はカスタム関数のアドインを読み込むように要求されます。 双方がアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
+Excel on the web および Microsoft 365 サブスクリプションに接続されている Windows 版の Excel では、エンド ユーザーは Excel で共同編集を行うことができます。 エンド ユーザーのブックでカスタム関数を使用している場合、そのエンド ユーザーの共同編集の仕事仲間は、対応するカスタム関数のアドインを読み込むように求められます。 両方のユーザーがアドインを読み込むと、共同編集によりカスタム関数は結果を共有します。
 
 共同編集の詳細については、「[Excel での共同編集](/office/vba/excel/concepts/about-coauthoring-in-excel)」を参照してください。
 
