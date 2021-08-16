@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの設計
 description: Windows、Web、iOS、Mac、Android 上の Outlook にアプリを最適な方法で取り込むための魅力的なアドインを設計、作成するのに役立つガイドラインです。
-ms.date: 07/05/2021
+ms.date: 08/12/2021
 localization_priority: Priority
-ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090226"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232384"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook アドインの設計ガイドライン
 
@@ -30,7 +30,7 @@ ms.locfileid: "57090226"
 
    アドインは、Outlook を実行するプラットフォームにネイティブなパターンを使用して設計する必要があります。そのためには、各プラットフォームで定められている相互作用および視覚に関するガイドラインに従って実装してください。Outlook には独自のガイドラインがあり、それを考慮に入れることも重要です。独自のエクスペリエンス、プラットフォーム、Outlook の 3 つを適切に組み合わせたアドインが、適切に設計されたアドインと言えます。
 
-   これは、アドインを Outlook on iOS で実行するときと Outlook on Android で実行するときでは視覚的に異なっている必要があるということです。スタイルの一例として「[Fluent UI](https://developer.microsoft.com/fluentui#/)」をご覧になってみてください。
+   これは、アドインを Outlook の iOS 版と Android 版で実行するときでは視覚的に異なっている必要があるということです。 
 
 3. **楽しく使用できるようにし、詳細な点に気を配る**
 
