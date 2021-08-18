@@ -4,12 +4,12 @@ description: Excel ビルド用の Office アドイン要件セットの情報�
 ms.date: 05/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: 4ba1970f57bb08210878bc3e363598b37eea2265b773f7e533c48939edb6d9e3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266090"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095911"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -75,7 +75,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>マニフェストで要件セットのサポートを定義する
 
-アドインのマニフェストで [Requirements 要素](../manifest/requirements.md) を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。 Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、**[マイ アドイン]** に表示されるアドインのリストに表示されません。アドインが完全な機能のために特定の要件セットを必要とするが、要件セットをサポートしていないプラットフォームのユーザーにも価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
+アドインのマニフェストで [Requirements 要素](../manifest/requirements.md)を使用して、アドインをアクティブにするために必要な最小要件セットや API メソッド (またはその両方) を指定できます。Office アプリケーションまたはプラットフォームが、マニフェストの `Requirements` 要素で指定されている要件セットまたは API メソッドをサポートしていない場合、アドインはそのアプリケーションまたはプラットフォームで実行されず、[**個人用アドイン**] に表示されるアドインの一覧に表示されません。アドインが完全に機能するためには特定の要件セットを必要とするが、その要件セットをサポートしていないプラットフォームのユーザーに対しても価値を提供できる場合は、マニフェストの要件セットのサポートを定義する代わりに、上記のように実行時に要件サポートを確認することをお勧めします。
 
 次のコード サンプルは、アドインが ExcelApi 要件セットのバージョン 1.3 以上をサポートする Office クライアント アプリケーションのすべてで読み込まれる必要があることを指定する、アドインのマニフェストの `Requirements` 要素を示しています。
 

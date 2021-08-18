@@ -4,18 +4,18 @@ description: 熟練した VSTO アドイン開発者に向けた Office Web ア�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 653f90d610dbad7d1b00df777109d3d02bffc0598454c38b5945fa56542beb61
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238016"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089394"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO アドイン開発者向けガイド
 
 Windows で動作する Office アプリケーション用の VSTO アドインを作成しました。そしてここからは、Office を Windows、Mac、オンライン バージョンの Office スイートで動作するように拡張するための新しい方法である Office Web アドインについて説明します。
 
-Office Web アドインのオブジェクト モデルは Excel、Word、その他の Office アプリケーションのオブジェクト モデルと似たようなパターンをたどるので、それらのオブジェクト モデルへの理解が大きな助けとなるでしょう。 ただし、いくつか課題があります。
+Office Web アドインのオブジェクト モデルは Excel、Word、その他の Office アプリケーションのオブジェクト モデルと似たようなパターンをたどるので、それらのオブジェクト モデルへの理解が大きな助けとなるでしょう。ただし、いくつか課題があります。
 
 - C# や Visual Basic .NET ではなく、別の言語 (JavaScript または TypeScript のいずれか) を使用して作業することになります。 (後述するように、既存のコードの一部を Web アドインで再利用する方法もあります)。
 - Office Web アドインは、VSTO アドインとは別に展開されます。
