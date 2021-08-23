@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 08/05/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 2c914acdc695901a14eefa2d7619bfd3dc919f66
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
+ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232237"
+ms.lasthandoff: 08/19/2021
+ms.locfileid: "58407947"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -22,22 +22,22 @@ ms.locfileid: "58232237"
 
 ## <a name="supported-events"></a>サポートされるイベント
 
-現時点では、次のイベントは Web および web サイトWindows。
-
-|イベント|説明|最小値<br>要件セット|
-|---|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|1.10|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|1.10|
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|プレビュー|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|プレビュー|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|プレビュー|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|プレビュー|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|プレビュー|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|プレビュー|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|プレビュー|
+現時点では、次のイベントは Web および web サイトWindows。 また、イベントが発生すると、ハンドラーはイベントの種類に固有の詳細を含む可能性のある `event` オブジェクトを受け取ります。 次の表で、[ **イベント固有の JSON] 列** には、該当する関連オブジェクトへのリンクが含まれています。
 
 > [!IMPORTANT]
 > プレビュー中のイベントは、Microsoft 365のサブスクリプションとOutlook on the webでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
+
+|イベント|説明|イベント固有の JSON|最小要件セット|
+|---|---|---|---|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-preview&preserve-view=true)|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
 
 ### <a name="how-to-preview"></a>プレビューする方法
 
@@ -282,7 +282,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 AppSource とアプリ内 Office ストア: イベント ベースのアドインを展開したり、イベント ベースのアクティブ化機能を含める既存のアドインを更新したりする機能は、すぐに利用できる必要があります。
 
 > [!IMPORTANT]
-> イベント ベースのアドインは、管理者が管理する展開にのみ制限されます。 今のところ、ユーザーは AppSource またはアプリ内アドインからイベント ベースのアドインを取得Officeできます。
+> イベント ベースのアドインは、管理者が管理する展開にのみ制限されます。 今のところ、ユーザーは AppSource またはアプリ内アドインからイベント ベースのアドインを取得Officeできます。 詳細については、「AppSource リスト オプション」を参照して、イベント ベースのOutlook[を参照してください](autolaunch-store-options.md)。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限
 

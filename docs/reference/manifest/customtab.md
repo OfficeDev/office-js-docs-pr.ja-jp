@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの CustomTab 要素
 description: リボン上で、アドイン コマンドに使用するタブとグループを指定します。
-ms.date: 02/09/2021
+ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: de6233966abea4de423f255bda3c9e6e38ff5037c760c90cae7c8a1c7ca6ab2e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3656f68a722e5e0c224f18f80a0e0214fce47cfb
+ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085055"
+ms.lasthandoff: 08/18/2021
+ms.locfileid: "58382964"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
@@ -28,11 +28,11 @@ ms.locfileid: "57085055"
 |  [Group](group.md)      | いいえ |  コマンドのグループを定義します。  |
 |  [OfficeGroup](#officegroup)      | いいえ |  組み込みのコントロール グループOfficeします。 **重要**: このサイトではOutlook。 |
 |  [Label](#label-tab)      | はい |  CustomTab または Group のラベル。  |
-|  [InsertAfter](#insertafter)      | いいえ |  指定した組み込みタブの直後にカスタム タブOffice指定します。**重要**: Outlook。 |
-|  [InsertBefore](#insertbefore)      | いいえ |  指定した組み込みタブの直前にカスタム タブOffice指定します。**重要**: Outlook。 |
+|  [InsertAfter](#insertafter)      | いいえ |  カスタム タブを指定した組み込みタブの直後Office指定します。**重要**: PowerPoint でのみ使用できます。 |
+|  [InsertBefore](#insertbefore)      | いいえ |  カスタム タブを指定した組み込みタブの直前Office指定します。**重要**: PowerPoint でのみ使用できます。 |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにカスタム タブを表示するかどうかを指定します。 **重要**: このサイトではOutlook。 |
 
-### <a name="group"></a>グループ
+### <a name="group"></a>Group
 
 省略可能ですが、存在しない場合は、少なくとも 1 つの **OfficeGroup 要素が必要** です。 [Group 要素](group.md)を参照してください。 マニフェスト内 **のグループ** と **OfficeGroup** の順序は、カスタム タブに表示する順序である必要があります。複数の要素がある場合は、これらの要素を混同できますが、すべてが Label 要素の上にある **必要** があります。
 
@@ -45,21 +45,21 @@ ms.locfileid: "57085055"
 
 ### <a name="label-tab"></a>Label (タブ)
 
-必須です。 カスタム タブのラベル。**resid 属性** は 32 文字以内で、Resources 要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
+必須。 カスタム タブのラベル。**resid 属性** は 32 文字以内で、Resources 要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 ### <a name="insertafter"></a>InsertAfter
 
 省略可能。 指定した組み込みタブの直後にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
 
 > [!IMPORTANT]
-> 要素 `InsertAfter` は、このプロパティではOutlook。
+> 要素 `InsertAfter` は、次のPowerPoint。
 
 ### <a name="insertbefore"></a>InsertBefore
 
 省略可能。 指定した組み込みタブの直前にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。 存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
 
 > [!IMPORTANT]
-> 要素 `InsertBefore` は、このプロパティではOutlook。
+> 要素 `InsertBefore` は、次のPowerPoint。
 
 ### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
 
