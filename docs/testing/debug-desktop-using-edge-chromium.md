@@ -1,14 +1,14 @@
 ---
 title: Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
-ms.date: 07/08/2021
+ms.date: 08/18/2021
 localization_priority: Priority
-ms.openlocfilehash: 0fc2cee39553521fef490ab33e08c2b11c8ec9c37d4787e408647f72c30df3b7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bbb475071660415f19b9a9fe5aaee0a6d735e20c
+ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090661"
+ms.lasthandoff: 08/19/2021
+ms.locfileid: "58407940"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Edge Chromium WebView2 を使用して Windows でアドインをデバッグする
 
@@ -19,37 +19,22 @@ Windows 上で動作する Office アドインは、VS Code の拡張機能 Debu
 - [Visual Studio Code](https://code.visualstudio.com/) (管理者として実行する必要があります)
 - [Node.js (バージョン 10 以上)](https://nodejs.org/)
 - Windows 10
-- [Microsoft Edge Chromium は Windows Insider に提供しています](https://www.microsoftedgeinsider.com/)
+- [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、プラットフォームとOfficeアプリケーションの組み合わせが、WebView2 (Chromium ベース) で Microsoft Edge をサポートしています。Microsoft 365 のバージョンが 2101 より前の場合は、WebView2 をインストールする必要があります。 [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) でのインストール方法はこちらをご覧ください。
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する
 
 1. [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してプロジェクトを作成してください。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」などのクイック スタート ガイドのいずれかをご利用ください。
 
-> [!TIP]
-> Yeoman ジェネレーター ベースのアドインを使用していない場合は、レジストリ キーを調整する必要があります。 プロジェクトのルート フォルダーで、コマンド ラインを使用して以下を実行します。
- `office-add-in-debugging start <your manifest path>`
+    > [!TIP]
+    > Yeoman ジェネレーター ベースのアドインを使用していない場合は、レジストリ キーの調整を求められる場合があります。 プロジェクトのルート フォルダーで、コマンド ラインを使用して以下を実行します:`office-add-in-debugging start <your manifest path>`
 
 1. VS Code でプロジェクトを開きます。 VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 「Debugger for Microsoft Edge」で拡張機能を検索し、これをインストールします。
 
-1. プロジェクトの **.vscode** フォルダーで、**launch.json** ファイルを開きます。 構成セクションに以下のコードを追加します。
+1. 次に、**[表示]、[実行]** の順に選択するか、**Ctrl キー + Shift キー + D キー** を入力してデバッグ ビューに切り替えます。
 
-      ```JSON
-        {
-          "name": "Debug Office Add-in (Edge Chromium)",
-          "type": "edge",
-          "request": "attach",
-          "useWebView": "advanced",
-          "port": 9229,
-          "timeout": 600000,
-          "webRoot": "${workspaceRoot}",
-        },
-      ```
+1. **RUN AND DEBUG** オプションから、**Excel Desktop (Edge Chromium)** などのホスト アプリケーション用に Edge Chromium オプションを選択します。 **F5** キーを選択するか、メニューから **[実行]、[デバッグの開始]** の順に選択してデバッグを開始します。 この操作により、アドインをホストするローカル サーバーがノード ウィンドウで自動的に起動され、Excel や Word などのホスト アプリケーションが自動的に開きます。 これには数秒かかる場合があります。
 
-1. 次に、**[表示]、[デバッグ]** の順に選択するか、**Ctrl キー + Shift キー + D キー** を入力してデバッグ ビューに切り替えます。
-
-1. デバッグ オプションから、**Excel Desktop (Edge Chromium)** などのホスト アプリケーション用に Edge Chromium オプションを選択します。 **F5** キーを選択するか、メニューから **[デバッグ]、[デバッグの開始]** の順に選択してデバッグを開始します。
-
-1. これで、Excel などのホスト アプリケーションでアドインを使用する準備ができました。 **[作業ウィンドウの表示]** を選択するか、その他のアドイン コマンドを実行します。 ダイアログ ボックスが表示され、以下が表示されます。
+1. ホスト アプリケーションで、アドインを使用する準備ができました。 **[作業ウィンドウの表示]** を選択するか、その他のアドイン コマンドを実行します。 ダイアログ ボックスが表示され、以下が表示されます。
 
    > WebView は読み込み時に停止します。
    > WebView をデバッグするには、拡張機能 Microsoft Debugger for Edge を使用して VS Code を WebView のインスタンスにアタッチし、[OK] をクリックして続行します。 今後このダイアログが表示されないようにするには、[キャンセル] をクリックします。
@@ -60,6 +45,14 @@ Windows 上で動作する Office アドインは、VS Code の拡張機能 Debu
    > **[キャンセル]** を選択すると、このアドインのインスタンスの実行中はダイアログが表示されなくなります。 ただし、アドインを再起動すると、ダイアログはもう一度表示されます。
 
 1. これで、プロジェクトのコードにブレークポイントを設定し、デバッグを実行できるようになりました。
+
+   > [!NOTE]
+   > `Office.initialize` または `Office.onReady` の呼び出しのブレークポイントは無視されます。 これらのメソッドの詳細については、「 [Office アドインを初期化する](../develop/initialize-add-in.md)」 を参照してください。
+
+> [!IMPORTANT]
+> デバッグ セッションを停止する最善の方法は、**Shift キーを押しながら F5 キー** を押すか、メニューから **[実行] > [デバッグの停止]** を選択することです。 この操作では、ノード サーバー ウィンドウを閉じてホスト アプリケーションを閉じようとしますが、ドキュメントを保存するかどうかを確認するプロンプトがホスト アプリケーションに表示されます。 適切な選択を行い、ホスト アプリケーションを閉じます。 ノード ウィンドウまたはホスト アプリケーションを手動で閉じないようにします。 これを行うと、特にデバッグ セッションの停止と開始を繰り返している時に、バグが発生する可能性があります。
+>
+> デバッグが動作を停止する場合、たとえば、ブレークポイントが無視される場合などは、デバッグを停止します。 その後、必要に応じて、すべてのホスト アプリケーション ウィンドウとノード ウィンドウを閉じます。 最後に、Visual Studio Code を閉じて、もう一度開きます。
 
 ## <a name="see-also"></a>関連項目
 
