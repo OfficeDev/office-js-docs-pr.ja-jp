@@ -1,14 +1,14 @@
 ---
 title: Office アドインのリソースの制限とパフォーマンスの最適化
 description: CPU とメモリを含む、Officeプラットフォームのリソース制限について説明します。
-ms.date: 07/08/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 43902dcf3a7703a763e1268d5b5695c48c59e0fcacf3ae7d2740b54e31e3057e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082770"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505664"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
@@ -62,7 +62,7 @@ CPU コア、メモリ、および信頼性のルールに加えて、Outlookは
 
 ユーザー入力がこれらの制限を超えると予想される場合は、必ずデータを確認してから呼び出してください `context.sync()` 。 必要に応じて、操作を小さな部分に分割します。 これらの操作が再 `context.sync()` びバッチ処理されるのを避けるために、各サブ操作を必ず呼び出してください。
 
-通常、これらの制限は大きな範囲で超過します。 アドインで [RangeAreas](/javascript/api/excel/excel.rangeareas) を使用して、より大きな範囲内のセルを戦略的に更新できる場合があります。 詳細[については、「複数の範囲を同時にExcelする](../excel/excel-add-ins-multiple-ranges.md)」を参照してください。
+通常、これらの制限は大きな範囲で超過します。 アドインで [RangeAreas](/javascript/api/excel/excel.rangeareas) を使用して、より大きな範囲内のセルを戦略的に更新できる場合があります。 操作の詳細については、「複数の範囲を同時に操作する」を参照Excel `RangeAreas` [アドインを参照してください](../excel/excel-add-ins-multiple-ranges.md)。ペイロード サイズを最適化する方法の詳細については、「Excel制限のベスト プラクティス」[を参照してください](../excel/performance.md#payload-size-limit-best-practices)。
 
 ### <a name="task-pane-and-content-add-ins"></a>作業ウィンドウ アドインとコンテンツ アドイン
 
@@ -92,7 +92,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 |8 |アドインのマニフェストがダウンロードされませんでした|重大|アプリケーションOffice、アドインのマニフェスト ファイルを Office カタログ、企業カタログ、または AppSource から読み込むSharePointできなかった。|
 |9 |アドインのマークアップを解析できませんでした|重大|アプリケーションOfficeアドイン マニフェストOffice読み込みましたが、アプリの HTML マークアップを読み取る必要があります。|
 |10 |アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
-|15|アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
+|15 |アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
 |18 |アドインは正常に終了しました||アプリケーションOfficeアドインを正常に閉じOfficeに完了しました。|
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
 |20|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|

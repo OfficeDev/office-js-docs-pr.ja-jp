@@ -1,14 +1,14 @@
 ---
 title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 description: アドイン デバッガー Visual Studio Code拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
-ms.date: 02/01/2021
+ms.date: 08/18/2021
 localization_priority: Normal
-ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ba831cfabdefbf3829bb702bf21a70ddb499b972
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088469"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505671"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
@@ -29,7 +29,7 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する
 
-1. アドイン プロジェクトを作成する必要がある場合は[、Yo Officeを使用して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトをセットアップします。 ニーズに合わせて任意の言語または種類のプロジェクトを選択できます。
+1. アドイン プロジェクトを作成する必要がある場合は[、Yo Officeを使用して作成します](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 コマンド ライン内のプロンプトに従って、プロジェクトをセットアップします。 ニーズに合わせて任意の言語または種類のプロジェクトを選択できます。 このチュートリアルでは、Excel作業ウィンドウ アドインを使用します。
 
     > [!NOTE]
     > プロジェクトが既に存在する場合は、手順 1 をスキップして、手順 2 に進みます。
@@ -67,13 +67,13 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
     }
     ```
 
-1. コピーした JSON のセクションで、"url" セクションを探します。 この URL では、大文字の HOST テキストを、アドインをホストしているアプリケーションに置き換Office必要があります。 たとえば、Office アドインが Excel 用の場合、URL 値は https://localhost:3000/taskpane.html?_host_Info= <strong>"Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0" になります。
+1. コピーした JSON のセクションで、プロパティを探 `"url"` します。 この URL では、大文字の **HOST** テキストを、アドインをホストしているアプリケーションに置き換Office必要があります。 たとえば、アドインのOfficeを使用する場合Excel URL 値は `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` .
 
-1. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがクライアントに読み込まれるOffice作業ウィンドウを開きます。
+1. コマンド プロンプトを開き、プロジェクトのルート フォルダーに移動します。 コマンドを実行 `npm start` して開発サーバーを起動します。 アドインがアプリケーションに読み込まれるOffice作業ウィンドウを開きます。
 
-1. [デバッグ] **Visual Studio Codeし、[** デバッグの表示] を>、Ctrl + Shift **+ D** と入力してデバッグ ビューに切り替えます。
+1. [デバッグ] **Visual Studio Codeし、[** デバッグ] を>または Ctrl **+ Shift + D** と入力してデバッグ ビューに切り替えます。
 
-1. [デバッグ] オプションで、[**アドインに接続Office選択します**。**[F5]** を選択するか、メニューから **[デバッグ - >デバッグ** の開始] を選択してデバッグを開始します。
+1. [デバッグ] オプションで、[**アドインに接続Office選択します**。**[F5]** を選択するか、**メニュー> [** デバッグの開始] を選択してデバッグを開始します。
 
 1. プロジェクトの作業ウィンドウ ファイルにブレークポイントを設定します。 コード行の横にホバー Visual Studio Code表示される赤い円を選択すると、ブレークポイントを設定できます。
 
