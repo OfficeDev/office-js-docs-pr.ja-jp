@@ -1,14 +1,14 @@
 ---
 title: カスタムExcel JavaScript API を呼び出す
 description: カスタム関数Excel呼び出す JavaScript API について説明します。
-ms.date: 03/05/2021
+ms.date: 08/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d44f88dc11136bd0302453054cefe93c82b22136e2084baecac006834100a077
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079851"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863528"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタムExcel JavaScript API を呼び出す
 
@@ -38,7 +38,7 @@ async function getRangeValue(address) {
  
  // Use the context object to access the cell at the input address. 
  var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
- range.load();
+ range.load("values");
  await context.sync();
  
  // Return the value of the cell at the input address.

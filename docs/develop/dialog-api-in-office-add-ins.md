@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
-ms.date: 07/22/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 6108051b9fd229804bb8c6a3ac25bb036ab072f03bc649139338361d0cc2ba89
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080879"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863535"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -218,7 +218,7 @@ function processMessage(arg) {
 ダイアログまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイムのいずれか) は、ダイアログを開いた後にアドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードで親ランタイムのドメインを指定しない限り、呼び出し `messageParent` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageParent` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、ダイアログが現在ホストしているドメインと同じドメインである必要があります。
 
 > [!NOTE]
-> クロス `messageParent` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。
+> クロス `messageParent` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 このパラメーターは、要件セットをサポートしていない古いバージョンの Officeでは無視されます。そのため、メソッドを渡した場合、メソッドの動作は `DialogMessageOptions` 影響を受けません。
 
 次に、クロスドメイン メッセージを `messageParent` 送信する使用例を示します。
 
@@ -341,7 +341,7 @@ function onRegisterMessageComplete(asyncResult) {
 ダイアログまたは親 JavaScript ランタイム (作業ウィンドウまたは関数ファイルをホストする UI レス ランタイムのいずれか) は、ダイアログを開いた後にアドインのドメインから移動できます。 これらのいずれかのことが発生した場合、コードでダイアログ ランタイムのドメインを指定しない限り、呼び出し `messageChild` は失敗します。 これを行うには [、DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを呼び出しに追加します `messageChild` 。 このオブジェクトには、 `targetOrigin` メッセージを送信するドメインを指定するプロパティがあります。 パラメーターを使用しない場合、Officeは、親ランタイムが現在ホストしているドメインと同じドメインである必要があります。 
 
 > [!NOTE]
-> クロス `messageChild` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。
+> クロス `messageChild` ドメイン メッセージの送信に使用するには [、Dialog Origin 1.1 要件セットが必要です](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 このパラメーターは、要件セットをサポートしていない古いバージョンの Officeでは無視されます。そのため、メソッドを渡した場合、メソッドの動作は `DialogMessageOptions` 影響を受けません。
 
 次に、クロスドメイン メッセージを `messageChild` 送信する使用例を示します。
 

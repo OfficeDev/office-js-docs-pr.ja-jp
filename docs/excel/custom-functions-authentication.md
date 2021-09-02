@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 作業ウィンドウを使用しないExcelカスタム関数を使用してユーザーを認証します。
 title: UI レスカスタム関数の認証
 localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d39d31d2a54cafc6829482451dcbdb5c5b764b968dc1c0e03be77a72fe1e12f1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349701"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079785"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>UI レスカスタム関数の認証
 
