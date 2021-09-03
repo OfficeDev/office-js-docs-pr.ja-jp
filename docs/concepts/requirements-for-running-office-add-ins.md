@@ -3,12 +3,12 @@ title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインで実行する必要があるクライアント要件とサーバー要件Office説明します。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1cc591db443c1fb0e2ca934cd05f52ad41ed61cf977ef4053af70d536867a6db
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082990"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868401"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -44,7 +44,7 @@ Windows ベースのデスクトップ、ラップトップ、またはタブレ
   - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
   - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
 
-  有効なサブスクリプションをMicrosoft 365、Office クライアントにアクセスできない場合は、最新バージョンの Office を[ダウンロードしてインストールできます](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
+  有効なサブスクリプションをMicrosoft 365、Office クライアントにアクセスできない場合は、最新バージョンの Office を[ダウンロードしてインストールできます](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)。
 
 - Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
 
@@ -81,7 +81,7 @@ Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac
 |Outlook on the web|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|2013 Microsoft 365、Exchange Online、またはオンプレミスの 2013 以降Exchange Serverオン|Safari|
 
 > [!NOTE]
-> ネイティブ アプリの OWA for Android、OWA for iPad、および OWA for iPhone は[廃止](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b)され、Outlook アドインのテストには不要になり、利用もできなくなりました。
+> ネイティブ アプリの OWA for Android、OWA for iPad、および OWA for iPhone は[廃止](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)され、Outlook アドインのテストには不要になり、利用もできなくなりました。
 
 
 ## <a name="see-also"></a>関連項目

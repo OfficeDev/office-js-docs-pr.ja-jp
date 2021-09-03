@@ -3,12 +3,12 @@ title: 共有フォルダーと共有メールボックスのシナリオを、O
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092350"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868695"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
@@ -25,13 +25,13 @@ ms.locfileid: "57092350"
 
 #### <a name="shared-folders"></a>共有フォルダー
 
-メールボックスの所有者は、まず代理人 [へのアクセス権を提供する必要があります](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)。 代理人は、「他のユーザーのメールと予定表アイテムを管理する」の「自分のプロファイルに他のユーザーのメールボックスを追加する」セクションに記載されている手順に従う [必要があります](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5)。
+メールボックスの所有者は、まず代理人 [へのアクセス権を提供する必要があります](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)。 代理人は、「他のユーザーのメールと予定表アイテムを管理する」の「自分のプロファイルに他のユーザーのメールボックスを追加する」セクションに記載されている手順に従う [必要があります](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)。
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
 Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では[、Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-"自動Exchange Server" と呼ばれる機能が既定でオンになっています。つまり、Outlook が閉[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)じて再び開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「開く」の「Outlook に共有メールボックスを追加して、Outlook で共有メールボックスを使用する」に示されている手動の手順[に従う必要があります](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+"自動Exchange Server" と呼ばれる機能が既定でオンになっています。つまり、Outlook が閉[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)じて再び開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「開く」の「Outlook に共有メールボックスを追加して、Outlook で共有メールボックスを使用する」に示されている手動の手順[に従う必要があります](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 
 > [!WARNING]
 > パスワード **を** 使用して共有メールボックスにサインインしない。 この場合、機能 API は機能しません。
@@ -40,13 +40,13 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 #### <a name="shared-folders"></a>共有フォルダー
 
-メールボックスの所有者は、まずメールボックス フォルダー [のアクセス許可を](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 更新して代理人へのアクセスを提供する必要があります。 代理人は、記事「他のユーザーのメールボックスにアクセスする」の「Outlook Web App のフォルダー リストに他のユーザーのメールボックスを追加する」に記載されている手順に従う[必要があります](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081)。
+メールボックスの所有者は、まずメールボックス フォルダー [のアクセス許可を](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 更新して代理人へのアクセスを提供する必要があります。 代理人は、記事「他のユーザーのメールボックスにアクセスする」の「Outlook Web App のフォルダー リストに他のユーザーのメールボックスを追加する」に記載されている手順に従う[必要があります](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
 Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では[、Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-アクセスを受け取った後、共有メールボックス ユーザーは、「Open」の「共有メールボックスを追加してプライマリ メールボックスの下に表示する」セクションに示されている手順に従って、Outlook on the web で共有メールボックスを使用する[必要があります](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207)。
+アクセスを受け取った後、共有メールボックス ユーザーは、「Open」の「共有メールボックスを追加してプライマリ メールボックスの下に表示する」セクションに示されている手順に従って、Outlook on the web で共有メールボックスを使用する[必要があります](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
 
 > [!WARNING]
 > " **別の** メールボックスを開く" などの他のオプションを使用しない。 機能 API が正しく動作しない場合があります。
@@ -61,7 +61,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 |アクセス許可|値|説明|
 |---|---:|---|
-|Read|1 (000001)|アイテムを読み取り可能。|
+|読み取り|1 (000001)|アイテムを読み取り可能。|
 |書き込み|2 (000010)|アイテムを作成できます。|
 |DeleteOwn|4 (000100)|作成したアイテムのみを削除できます。|
 |DeleteAll|8 (001000)|任意のアイテムを削除できます。|
@@ -223,8 +223,8 @@ b. **共有メールボックス**
 
 ## <a name="see-also"></a>関連項目
 
-- [自分のメールと予定表の管理を他のユーザーに許可する](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
-- [カレンダーの共有Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [自分のメールと予定表の管理を他のユーザーに許可する](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [カレンダーの共有Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [共有メールボックスをユーザーに追加Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [マニフェスト要素を順序付けする方法](../develop/manifest-element-ordering.md)
 - [マスク (コンピューティング)](https://en.wikipedia.org/wiki/Mask_(computing))

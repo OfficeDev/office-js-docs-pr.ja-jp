@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 08/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ffd408e497cdb845497479f5f4cbed2cedcc39e
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: bda86e8bb7aacf72fbe26e86b7f062f362adbdd3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232191"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868394"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -31,7 +31,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 
 |OS|Office のバージョン
 |Edge WebView2 (Chromiumベース) がインストールされていますか?|ブラウザー|
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|:-----|:-----|:-----|:-----|
 |any|Office on the web|該当なし|Office が開かれているブラウザー。|
 |Mac|any|該当なし|Safari|
 |iOS|any|該当なし|Safari|
@@ -44,7 +44,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 |Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| いいえ |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| はい<sup>4</sup>|  Microsoft Edge<sup>2</sup> with WebView2 (Chromiumベース) |
 
-<sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
+<sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
 
 <sup>2</sup> Microsoft Edgeされている場合、Windows 10 ナレーター ("スクリーン リーダー" とも呼ばれる) は、作業ウィンドウで開くページ内のタグ `<title>` を読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 

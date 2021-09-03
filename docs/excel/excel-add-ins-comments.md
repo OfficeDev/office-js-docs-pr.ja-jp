@@ -3,16 +3,16 @@ title: JavaScript API を使用してコメントExcelする
 description: API を使用してコメントとコメント スレッドを追加、削除、および編集する方法について説明します。
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e292dab77b080906d77b1517a8de715bc0d2122f29e3de73b04f5b9d9276c85
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084323"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868653"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>JavaScript API を使用してコメントExcelする
 
-この記事では、JavaScript API を使用してブック内のコメントを追加、読み取り、変更、削除するExcel説明します。 コメント機能の詳細については、「コメントとメモを挿入する」の記事[Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)できます。
+この記事では、JavaScript API を使用してブック内のコメントを追加、読み取り、変更、削除するExcel説明します。 コメント機能の詳細については、「コメントとメモを挿入する」の記事[Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)できます。
 
 JavaScript API Excel、コメントには、1 つの初期コメントと接続されたスレッドディスカッションの両方が含まれます。 これは、個々のセルに関連付けされます。 十分なアクセス許可を持つブックを表示しているユーザーは、コメントに返信できます。 [Comment オブジェクト](/javascript/api/excel/excel.comment)は、これらの返信を[CommentReply オブジェクトとして格納](/javascript/api/excel/excel.commentreply)します。 コメントはスレッドであり、スレッドには開始点として特別なエントリが必要と考える必要があります。
 
@@ -171,7 +171,7 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>メンション
 
-[メンションは](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) 、コメント内の同僚にタグを付けするために使用されます。 これにより、コメントのコンテンツと一緒に通知が送信されます。 アドインは、ユーザーに代わってこれらのメンションを作成できます。
+[メンションは](https://support.microsoft.com/office/644bf689-31a0-4977-a4fb-afe01820c1fd) 、コメント内の同僚にタグを付けするために使用されます。 これにより、コメントのコンテンツと一緒に通知が送信されます。 アドインは、ユーザーに代わってこれらのメンションを作成できます。
 
 CommentRichContent オブジェクトを使用して、メンションを含むコメント [を作成する必要](/javascript/api/excel/excel.commentrichcontent) があります。 1 `CommentCollection.add` つ `CommentRichContent` 以上のメンションを含む呼び出しを実行し、パラメーター `ContentType.mention` として指定 `contentType` します。 また `content` 、テキストにメンションを挿入するには、文字列を書式設定する必要があります。 メンションの形式は次の形式です `<at id="{replyIndex}">{mentionName}</at>` 。
 
@@ -321,4 +321,4 @@ function commentDeleted() {
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API を使用してブックを操作する](excel-add-ins-workbooks.md)
 - [Excel JavaScript API を使用してイベントを操作する](excel-add-ins-events.md)
-- [コメントとメモをページに挿入Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [コメントとメモをページに挿入Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

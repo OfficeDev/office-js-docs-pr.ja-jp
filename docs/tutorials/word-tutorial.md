@@ -4,12 +4,12 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1400bd4f91522ec50afa90b932cc5aeaedb4342bace4c007d10c8293257f8e11
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 65eb220eedfe74b905bee4312c366166836a075a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098227"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868765"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -317,7 +317,7 @@ ms.locfileid: "57098227"
 
 1. ドキュメントに 3 つ以上の段落があることを確認してください。 [**段落の挿入**] ボタンを 3 回選択できます。 *ドキュメントの最後に空白の段落がないことを慎重にチェックしてください。空白の段落がある場合は、それを削除します。*
 
-1. Word で、"MyCustomStyle" という名前の[カスタム スタイル](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。このスタイルには、必要に応じて任意の書式を設定できます。
+1. Word で、"MyCustomStyle" という名前の[カスタム スタイル](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。このスタイルには、必要に応じて任意の書式を設定できます。
 
 1. 最初の段落は、組み込みのスタイルである **Intense Reference** でスタイル設定されます。
 

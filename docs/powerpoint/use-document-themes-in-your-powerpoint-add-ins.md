@@ -3,16 +3,16 @@ title: PowerPoint アドインでドキュメントのテーマを使用する
 description: プレゼンテーション、ドキュメント、ワークシート、電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4493517fbaf5307ae0c9e0195944397c2ab766f8154f26095f764e1499d1f218
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096095"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868702"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
-[Office テーマ](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)の一部は表示が調整されたフォントと色のセットで構成されており、このセットをプレゼンテーション、文書、ワークシート、電子メールに適用できます。PowerPoint でプレゼンテーションのテーマを適用したりカスタマイズしたりするには、リボンの **[デザイン]** タブの **[テーマ]** グループと **[バリエーション]** グループを使います。PowerPoint は既定の **Office テーマ** の新しい空白のプレゼンテーションを割り当てますが、**[デザイン]** タブ上の使用できる他のテーマを選択したり、Office.com から追加のテーマをダウンロードしたり、独自のテーマを作成してカスタマイズしたりできます。
+[Office テーマ](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6)の一部は表示が調整されたフォントと色のセットで構成されており、このセットをプレゼンテーション、文書、ワークシート、電子メールに適用できます。PowerPoint でプレゼンテーションのテーマを適用したりカスタマイズしたりするには、リボンの **[デザイン]** タブの **[テーマ]** グループと **[バリエーション]** グループを使います。PowerPoint は既定の **Office テーマ** の新しい空白のプレゼンテーションを割り当てますが、**[デザイン]** タブ上の使用できる他のテーマを選択したり、Office.com から追加のテーマをダウンロードしたり、独自のテーマを作成してカスタマイズしたりできます。
 
 OfficeThemes.css を使用して、2 つの方法でPowerPointアドインを設計します。
 

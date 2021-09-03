@@ -1,14 +1,14 @@
 ---
 ms.date: 03/30/2021
-description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
+description: カスタム関数に関する一般的なExcelトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 localization_priority: Normal
-ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506141"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868618"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -45,7 +45,7 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
-localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)の *オプション 2* を参照してください。
+localhost サーバーへの呼び出し中に[ランタイム ログ](custom-functions-troubleshooting.md#enable-runtime-logging)に「TypeError: Network request failed」というエラーが表示された場合は、ローカル ループバック例外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)の *オプション 2* を参照してください。
 
 ### <a name="ensure-promises-return"></a>promise の戻り値を確認する
 
@@ -80,7 +80,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>既知の問題
 
-既知の問題は、Excel カスタム関数 [GitHub リポジトリで追跡および報告されます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+既知の問題は、リポジトリのカスタム関数Excel[でGitHubされます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 

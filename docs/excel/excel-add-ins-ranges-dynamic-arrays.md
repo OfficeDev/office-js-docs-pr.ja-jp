@@ -4,12 +4,12 @@ description: JavaScript API を使用して動的配列と範囲のスピルを�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b44f00e58eb9688b8526d56064bb6d6902729635075fe80d64e47ebedb13a8f6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084081"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868688"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>JavaScript API を使用して動的配列とスピルExcel処理する
 
@@ -17,7 +17,7 @@ ms.locfileid: "57084081"
 
 ## <a name="dynamic-arrays"></a>動的配列
 
-一部Excelは動的配列[を返します](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。 数式の元のセルの外側にある複数のセルの値を入力します。 この値のオーバーフローは"スピル" と呼ばれます。 アドインは [、Range.getSpillingToRange](/javascript/api/excel/excel.range#getSpillingToRange__) メソッドを使用して流出に使用される範囲を検索できます。 [*OrNullObject バージョンも用意されています](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
+一部Excelは動的配列[を返します](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。 数式の元のセルの外側にある複数のセルの値を入力します。 この値のオーバーフローは"スピル" と呼ばれます。 アドインは [、Range.getSpillingToRange](/javascript/api/excel/excel.range#getSpillingToRange__) メソッドを使用して流出に使用される範囲を検索できます。 [*OrNullObject バージョンも用意されています](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
 
 次のサンプルは、セルに範囲の内容をコピーする基本的な数式を示しています。これは隣接するセルに流出します。 その後、アドインは流出を含む範囲をログに記録します。
 

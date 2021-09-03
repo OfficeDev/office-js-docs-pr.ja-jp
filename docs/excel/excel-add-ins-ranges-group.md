@@ -4,12 +4,12 @@ description: JavaScript API を使用して範囲の行または列をグルー�
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e5ba5e5d539d4391b65a792d05ae2f0d2ff49fc63725bc3681cb9015873bb45
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 41a5bad5013378257287602d5131f1ac07130cf7
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084057"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868415"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>JavaScript API を使用してアウトラインExcelグループ化する
 
@@ -17,7 +17,7 @@ ms.locfileid: "57084057"
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>アウトラインの範囲の行または列をグループ化する
 
-範囲の行または列をグループ化してアウトラインを作成 [できます](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF)。 これらのグループを折りたたみ、展開して、対応するセルを非表示にし、表示できます。 これにより、トップライン データの迅速な分析が容易になります。 [Range.group を使用して](/javascript/api/excel/excel.range#group_groupOption_)、これらのアウトライン グループを作成します。
+範囲の行または列をグループ化してアウトラインを作成 [できます](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff)。 これらのグループを折りたたみ、展開して、対応するセルを非表示にし、表示できます。 これにより、トップライン データの迅速な分析が容易になります。 [Range.group を使用して](/javascript/api/excel/excel.range#group_groupOption_)、これらのアウトライン グループを作成します。
 
 アウトラインには階層を含め、小さなグループは大きなグループの下に入れ子にできます。 これにより、アウトラインをさまざまなレベルで表示できます。 表示されるアウトライン レベルを変更するには [、Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) メソッドを使用してプログラムを使用します。 ただし、Excelは 8 つのレベルのアウトライン グループのみをサポートしています。
 

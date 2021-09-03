@@ -3,16 +3,16 @@ ms.date: 05/11/2020
 description: アドイン内のカスタム関数から複数の結果Office Excel返します。
 title: カスタム関数から複数の結果を返す
 localization_priority: Normal
-ms.openlocfilehash: 1ae808a7bc77d7dad2f7764d6b0065fa2aa91cd7eab27bd7c8697a3d87731153
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b7df6b2c5ca3dca24615a61e11277ac36b42c0df
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079687"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868450"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>カスタム関数から複数の結果を返す
 
-カスタム関数から複数の結果を返し、隣接するセルに返されます。 この動作は、スピルと呼ばれる。 カスタム関数が結果の配列を返す場合は、動的配列式と呼ばれる。 動的配列の数式の詳細については、「Excel動的配列とスピル配列の[動作」を参照してください](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。
+カスタム関数から複数の結果を返し、隣接するセルに返されます。 この動作は、スピルと呼ばれる。 カスタム関数が結果の配列を返す場合は、動的配列式と呼ばれる。 動的配列の数式の詳細については、「Excel動的配列とスピル配列の[動作」を参照してください](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。
 
 次の図は、関数が `SORT` 隣接するセルにこぼれる方法を示しています。 カスタム関数は、このような複数の結果を返す場合があります。
 

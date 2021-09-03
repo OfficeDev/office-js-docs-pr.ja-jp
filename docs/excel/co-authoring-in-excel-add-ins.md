@@ -3,16 +3,16 @@ title: Excel アドインの共同編集機能
 description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f9df90a83e25095da1334a9d3e8d70338a991bebd160fc58e1bb53fa2bb5a13e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f57fccea8b4f7315661d3b7ba596c74dc7427bf8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079797"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868429"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
-[共同編集機能](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
+[共同編集機能](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
 
 > [!IMPORTANT]
 > このExcel for Microsoft 365、左上隅に AutoSave が表示されます。 [自動保存] をオンにすると、共同編集者はリアルタイムで変更内容を確認できます。 Excel アドインの設計時には、この動作の影響を考慮に入れておいてください。 ユーザーは、Excel ウィンドウの左上隅にあるスイッチで [自動保存] をオフに切り替えることができます。
@@ -53,7 +53,7 @@ Excel アドインはブックの内容を読み込んで (非表示のワーク
 API の呼び出しによって共同編集の競合が発生 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) する可能性がある既知の問題です。 他のユーザーがアドインのブックを編集している間にアドインが実行される可能性がある場合は、その API を使用することをお勧めしません (特に、テーブルまたはテーブルの下の任意の範囲を編集している場合)。 次のガイダンスは、メソッドの問題を回避するのに役立ちます (また、ユーザーに更新を求めるExcel黄色のバーをトリガー `TableRowCollection.add` しないようにします)。
 
 1. の [`Range.values`](/javascript/api/excel/excel.range#values) 代わりに使用します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。 テーブルの `Range` 直下に値を設定すると、テーブルが自動的に展開されます。 それ以外の場合、API を使用してテーブル行を追加すると、共同認証ユーザー `Table` のマージ競合が発生します。
-1. データ検証が列 [全体に](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 適用されていない限り、テーブルの下のセルにデータ検証ルールが適用される必要はありません。
+1. データ検証が列 [全体に](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 適用されていない限り、テーブルの下のセルにデータ検証ルールが適用される必要はありません。
 1. テーブルの下にデータがある場合、アドインは範囲の値を設定する前に処理する必要があります。 空 [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_) の行を挿入するために使用すると、データが移動され、展開テーブルの領域が作成されます。 それ以外の場合は、表の下のセルを上書きするリスクがあります。
 1. テーブルに空の行を追加することはできません `Range.values` 。 テーブルの直下のセルにデータが存在する場合にのみ、テーブルは自動的に展開されます。 空のテーブル行を追加するには、回避策として一時的なデータまたは非表示の列を使用します。
 

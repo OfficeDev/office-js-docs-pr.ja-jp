@@ -3,19 +3,19 @@ title: JavaScript API を使用してピボットテーブルをExcelする
 description: JavaScript API Excel使用してピボットテーブルを作成し、それらのコンポーネントを操作します。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7be7fe8a4f7dcb2509943f7fd03fbb8739312e87874583bbe97b8139ab83c6b5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084249"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868639"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>JavaScript API を使用してピボットテーブルをExcelする
 
 PivotTables は、より大きなデータ セットを合理化します。 グループ化されたデータを簡単に操作できます。 JavaScript API Excelにより、アドインはピボットテーブルを作成し、それらのコンポーネントを操作できます。 この記事では、ピボットテーブルが JavaScript API の Officeされる方法について説明し、主要なシナリオのコード サンプルを提供します。
 
 ピボットテーブルの機能に慣れていない場合は、エンド ユーザーとして探索を検討してください。
-これらの [ツールの優れた入門については、「ピボットテーブル](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) を作成してワークシート データを分析する」を参照してください。
+これらの [ツールの優れた入門については、「ピボットテーブル](https://support.microsoft.com/office/ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=PivotTables) を作成してワークシート データを分析する」を参照してください。
 
 > [!IMPORTANT]
 > OLAP で作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
@@ -242,7 +242,7 @@ Excel.run(function (context) {
 
 既定では、ピボットテーブルは必要に応じて行と列のサイズを調整します。 これは、ピボットテーブルが更新された場合に実行されます。 `PivotLayout.autoFormat` その動作を指定します。 アドインによって行われた行または列のサイズの変更は、次の場合も保持 `autoFormat` されます `false` 。 さらに、ピボットテーブルの既定の設定では、ピボットテーブル内のカスタム書式 (塗りつぶしやフォントの変更など) が保持されます。 更新 `PivotLayout.preserveFormatting` 時 `false` に既定の形式を適用する場合に設定します。
 
-また `PivotLayout` 、ヘッダーと行の合計設定、空のデータ セルの表示方法、および代替テキスト オプション [も制御](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) します。 [PivotLayout 参照は](/javascript/api/excel/excel.pivotlayout)、これらの機能の完全な一覧を提供します。
+また `PivotLayout` 、ヘッダーと行の合計設定、空のデータ セルの表示方法、および代替テキスト オプション [も制御](https://support.microsoft.com/topic/44989b2a-903c-4d9a-b742-6a75b451c669) します。 [PivotLayout 参照は](/javascript/api/excel/excel.pivotlayout)、これらの機能の完全な一覧を提供します。
 
 次のコード サンプルでは、空のデータ セルに文字列を表示し、本文範囲を一貫性のある水平方向の配置に書式設定し、ピボットテーブルが更新された後も書式設定の変更が維持されます `"--"` 。
 
@@ -283,7 +283,7 @@ Excel.run(function (context) {
 
 [PivotFilters は](/javascript/api/excel/excel.pivotfilters) 、ピボットテーブルの 4 つの階層カテゴリ [(フィルター](#hierarchies) 、列、行、値) に基づいてデータをフィルター処理します。 PivotFilter には 4 つの種類があります。予定表の日付ベースのフィルター処理、文字列解析、数値比較、およびカスタム入力に基づくフィルター処理が可能です。
 
-[スライサー](/javascript/api/excel/excel.slicer)は、ピボットテーブルと通常のテーブルの両方Excelできます。 ピボットテーブルに適用すると、スライサーは [PivotManualFilter](#pivotmanualfilter) のように機能し、カスタム入力に基づいてフィルター処理を許可します。 PivotFilters とは異なり、スライサーには UI[コンポーネントExcelがあります](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)。 クラスを `Slicer` 使用して、この UI コンポーネントを作成し、フィルター処理を管理し、その外観を制御します。
+[スライサー](/javascript/api/excel/excel.slicer)は、ピボットテーブルと通常のテーブルの両方Excelできます。 ピボットテーブルに適用すると、スライサーは [PivotManualFilter](#pivotmanualfilter) のように機能し、カスタム入力に基づいてフィルター処理を許可します。 PivotFilters とは異なり、スライサーには UI[コンポーネントExcelがあります](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d)。 クラスを `Slicer` 使用して、この UI コンポーネントを作成し、フィルター処理を管理し、その外観を制御します。
 
 ### <a name="filter-with-pivotfilters"></a>PivotFilters を使用したフィルター
 
@@ -412,7 +412,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>スライサーを使用したフィルター
 
-[スライサー](/javascript/api/excel/excel.slicer)を使用すると、ピボットテーブルまたはテーブルExcelデータをフィルター処理できます。 スライサーは、指定した列または PivotField の値を使用して、対応する行をフィルター処理します。 これらの値は、 [に SlicerItem](/javascript/api/excel/excel.sliceritem) オブジェクトとして格納されます `Slicer` 。 アドインは、ユーザーと同様に、これらのフィルターを調整できます (ユーザーは、Excel[UI を使用します](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d))。 次のスクリーンショットに示すように、スライサーは図面レイヤーのワークシートの上に配置されます。
+[スライサー](/javascript/api/excel/excel.slicer)を使用すると、ピボットテーブルまたはテーブルExcelデータをフィルター処理できます。 スライサーは、指定した列または PivotField の値を使用して、対応する行をフィルター処理します。 これらの値は、 [に SlicerItem](/javascript/api/excel/excel.sliceritem) オブジェクトとして格納されます `Slicer` 。 アドインは、ユーザーと同様に、これらのフィルターを調整できます (ユーザーは、Excel[UI を使用します](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d))。 次のスクリーンショットに示すように、スライサーは図面レイヤーのワークシートの上に配置されます。
 
 ![ピボットテーブル上のデータをスライサー フィルター処理します。](../images/excel-slicer.png)
 

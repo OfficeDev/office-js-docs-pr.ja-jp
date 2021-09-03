@@ -4,12 +4,12 @@ description: 動的リボン API Officeサポートするプラットフォー�
 ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 18b081da28991eb15875c6999ddfe06ccea13eade8dd8a4e1f2a4cc09ac5e922
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084925"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868737"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -21,7 +21,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 |  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降のWindows<br>(1 回限りの購入)   | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonAPI 1.1  | 該当なし | 該当なし | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
+| RibbonApi 1.1  | 該当なし | 該当なし | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
 | RibbonApi 1.2  | 該当なし | 該当なし | 2102 (ビルド 13801.20294) | 該当なし | 近日公開 | 2021 年 5 月 | 該当なし|
 
 > **&#42;** リボン API は、サブスクリプションでのみサポートExcel、サブスクリプションをMicrosoft 365します。
@@ -32,7 +32,7 @@ RibbonApi 要件セットの 1.1 バージョンは、コンシューマー チ�
 
 |チャネル | バージョン | ビルド|
 |:-----|:-----|:-----|
-|現在のチャネル | 2006 以上 | 20266.20266 以上|
+|最新チャネル | 2006 以上 | 20266.20266 以上|
 |月次エンタープライズ チャネル | 2005 以上 | 12827.20538 以上|
 |月次エンタープライズ チャネル | 2004 | 12730.20602 以上|
 |半期エンタープライズ チャネル | 2002 以上 | 12527.20880 以上|
@@ -41,9 +41,9 @@ RibbonApi 要件セットの 1.1 バージョンは、コンシューマー チ�
 
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
-- [クライアントの更新チャネル リリースのバージョン番号とビルド番号Microsoft 365します。](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [クライアント アプリケーションのバージョンとビルド番号をMicrosoft 365場所](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [クライアントの更新チャネル リリースのバージョン番号とビルド番号Microsoft 365します。](/officeupdates/update-history-microsoft365-apps-by-date)
+- [使用している Office のバージョンを確認する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [クライアント アプリケーションのバージョンとビルド番号をMicrosoft 365場所](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット

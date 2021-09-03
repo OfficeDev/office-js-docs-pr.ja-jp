@@ -4,12 +4,12 @@ description: 日付をMoment-MSDateするには、JavaScript API Excelプラグ�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084733"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868667"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>JavaScript API と Excelプラグインを使用して日付Moment-MSDate作業する
 
@@ -19,7 +19,7 @@ ms.locfileid: "57084733"
 
 ## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>日付をMoment-MSDateするには、このプラグインを使用する
 
-[Moment JavaScript ライブラリ](https://momentjs.com/)により、日付とタイムスタンプが便利に使用できるようになります。 [Moment-MSDate プラグイン](https://www.npmjs.com/package/moment-msdate)は、日付と時刻の形式を Excel に適したものに変換します。 これは、[NOW 関数](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)から返される形式と同じです。
+[Moment JavaScript ライブラリ](https://momentjs.com/)により、日付とタイムスタンプが便利に使用できるようになります。 [Moment-MSDate プラグイン](https://www.npmjs.com/package/moment-msdate)は、日付と時刻の形式を Excel に適したものに変換します。 これは、[NOW 関数](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46)から返される形式と同じです。
 
 次のコードは **、B4** の範囲をモーメントのタイムスタンプに設定する方法を示しています。
 

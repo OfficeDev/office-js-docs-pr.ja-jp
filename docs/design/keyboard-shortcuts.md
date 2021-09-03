@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e622820dbf1c582188d038fc532236154b7ec7389a8e14b0ce0e982a6f67a8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081759"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868408"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -215,7 +215,7 @@ ms.locfileid: "57081759"
 最適なユーザー エクスペリエンスを得る場合は、これらの優れたプラクティスを使用して、Excelを最小限にすることをお勧めします。
 
 - キーボード ショートカットのみを使用して、次のパターンを使用します。 **Ctrl + Shift + Alt +* x***、x は他のキーです。 
-- さらにキーボード ショートカットが必要な場合は、[](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)キーボード ショートカットExcel一覧を確認し、アドインで使用しないようにします。
+- さらにキーボード ショートカットが必要な場合は、[](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)キーボード ショートカットExcel一覧を確認し、アドインで使用しないようにします。
 - キーボード フォーカスがアドイン UI 内にある場合 **、Ctrl + Spacebar** と **Ctrl + Shift + F10** は基本的なアクセシビリティ ショートカットとして機能しません。
 - Windows または Mac コンピューターで、検索メニューで [Office アドインのショートカット設定をリセットする] コマンドが使用できない場合は、コンテキスト メニューからリボンをカスタマイズしてリボンにコマンドを手動で追加できます。
 
@@ -261,7 +261,7 @@ Web でカスタム キーボード ショートカットを使用する場合�
 - Ctrl + W
 - Ctrl + PgUp/PgDn
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - キーボード ショートカット[Excelアドインの例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を参照してください。
 - 「マニフェストの拡張オーバーライドを処理する」の拡張オーバーライドの操作 [の概要を取得します](../develop/extended-overrides.md)。

@@ -1,14 +1,14 @@
 ---
 title: JavaScript API のExcel処理
 description: ランタイム エラーをExcel JavaScript API エラー処理ロジックについて説明します。
-ms.date: 08/26/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 8dde0a57ea79e87eed0f506ca7995b3ce1a1f964
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614616"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868632"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API のExcel処理
 
@@ -60,7 +60,7 @@ JavaScript API Excelが正常に実行できない場合、API は次のプロ�
 |`BadPassword`|指定したパスワードが正しくありません。|
 |`Conflict`|競合のため、要求を処理できませんでした。|
 |`ContentLengthRequired`|`Content-length`HTTP ヘッダーが見つからない。|
-|`FilteredRangeConflict`|- フィルター処理された範囲の上にテーブルを挿入することはできません。 <br>- フィルター処理された範囲の削除はサポートされていません。|
+|`FilteredRangeConflict`|試行された操作によって、フィルター処理された範囲との競合が発生します。|
 |`GeneralException`|要求の処理中に内部エラーが発生しました。|
 |`InactiveWorkbook`|複数のブックが開き、この API によって呼び出されるブックがフォーカスを失ったため、操作に失敗しました。|
 |`InsertDeleteConflict`|試行された挿入操作または削除操作で競合が発生しました。|
@@ -77,15 +77,15 @@ JavaScript API Excelが正常に実行できない場合、API は次のプロ�
 |`MergedRangeConflict`|操作を完了できません。 テーブルを別のテーブル、ピボットテーブル レポート、クエリ結果、結合セル、または XML マップと重ね合えすることはできません。|
 |`NonBlankCellOffSheet`|Microsoft Excelセルを挿入できないのは、空でないセルをワークシートの最後から押し出すためです。 空でないセルは空に表示されますが、空白の値、書式設定、または数式が含まれます。 挿入する行または列を十分に削除してから、もう一度やり直してください。|
 |`NotImplemented`|要求された機能は実装されていません。|
-|`PivotTableRangeConflict`|- ピボットテーブルの隣にテーブルを挿入することはできません。 <br>- ピボットテーブル内のセルを挿入または削除できません。 <br>- ピボットテーブル内のセルを変更できません。|
+|`PivotTableRangeConflict`|操作が試行された場合、ピボットテーブル範囲との競合が発生します。|
 |`RangeExceedsLimit`|範囲内のセル数がサポートされている最大数を超えました。 詳細については[、「リソースの制限](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)とパフォーマンスの最適化」Officeを参照してください。|
-|`RefreshWorkbookLinksBlocked`|ユーザーが外部ブックリンクを更新するアクセス許可を付与していないので、API 呼び出しはサポートされていません。|
+|`RefreshWorkbookLinksBlocked`|ユーザーが外部ブック リンクを更新するアクセス許可を付与しないので、操作に失敗しました。|
 |`RequestAborted`|実行時に要求が中止されました。|
 |`RequestPayloadSizeLimitExceeded`|要求ペイロードのサイズが制限を超えています。 詳細については[、「リソースの制限](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)とパフォーマンスの最適化」Officeを参照してください。 <br><br>このエラーは、このエラーが発生Excel on the web。|
 |`ResponsePayloadSizeLimitExceeded`|応答ペイロードのサイズが制限を超えています。 詳細については[、「リソースの制限](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)とパフォーマンスの最適化」Officeを参照してください。  <br><br>このエラーは、このエラーが発生Excel on the web。|
 |`ServiceNotAvailable`|サービスを利用できません。|
 |`Unauthenticated` |必要な認証情報が見つからないか、無効です。|
-|`UnsupportedFeature`|サポートされていない機能を持つ API 呼び出しは許可されません。|
+|`UnsupportedFeature`|ソース ワークシートにサポートされていない機能が 1 つ以上含まれているため、操作に失敗しました。|
 |`UnsupportedOperation`|試行中の操作はサポートされていません。|
 |`UnsupportedSheet`|このシートの種類はマクロ シートまたはグラフ シートで、この操作はサポートされていません。|
 

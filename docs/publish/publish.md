@@ -3,12 +3,12 @@ title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
 ms.date: 07/30/2021
 localization_priority: Priority
-ms.openlocfilehash: e702e5d16c986324b6f54a1927ca844852826aeb257d4958de37b8d1ed3c3174
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 28589d71d7b7e59640ce11fe231671ca2b3c65fb
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093341"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868716"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
@@ -50,7 +50,7 @@ ms.locfileid: "57093341"
 
 次からの各セクションでは、組織内のユーザーに運用環境の Office アドインを配布する際に最も一般的に使用される展開方法についての追加情報を示します。
 
-エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862)」を参照してください。
+エンド ユーザーがアドインを取得、挿入、実行する方法については、「[Office アドインの使用を開始する](https://support.microsoft.com/office/82e665c4-6700-4b56-a3f3-ef5441996862)」を参照してください。
 
 ### <a name="integrated-apps-via-the-microsoft-365-admin-center"></a>Microsoft 365 管理センターを使用した統合アプリ
 

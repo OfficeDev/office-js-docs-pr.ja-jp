@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲に条件付き書式を適用�
 description: JavaScript アドインのコンテキストでの条件付Excelについて説明します。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: f2470431e54a45b847461179c94a9621387f5a427aaf4fe48e4fe7125074d273
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7c8d40145e7e66407df4f39e8f96be394b24bb2e
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084781"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868471"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
@@ -16,8 +16,8 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 
 > [!NOTE]
 > この記事では、Excel の JavaScript のアドインのコンテキストにおける条件付き書式について説明します。次の記事では、Excel の完全な条件付き書式機能に関する詳細情報を提供しています。
-> -  [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-> -  [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [条件付き書式を追加、変更、またはクリアする](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+> -  [数式を使って条件付き書式を適用する](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件付き書式のプログラムによる制御
 
@@ -338,5 +338,5 @@ await context.sync();
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](../excel/excel-add-ins-core-concepts.md)
 - [ConditionalFormat オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
-- [条件付き書式を追加、変更、またはクリアする](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-- [数式を使って条件付き書式を適用する](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+- [条件付き書式を追加、変更、またはクリアする](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+- [数式を使って条件付き書式を適用する](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)

@@ -3,12 +3,12 @@ title: Internet Explorer 11 テスト
 description: 11 でOfficeアドインをテストInternet Explorerします。
 ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 098479942f2e2b5ed7b7cc219e5bbd591b88112a
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382957"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868625"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
@@ -55,7 +55,7 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
     ```
 
 > [!TIP]
-> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、および 10 とさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841)。
+> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、および 10 とさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)。
 
 ### <a name="command-options"></a>コマンド オプション
 

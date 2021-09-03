@@ -4,12 +4,12 @@ description: openBrowserWindow API Officeサポートするプラットフォー
 ms.date: 04/09/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6b2a2d94b2bddc4875bcf1edae66efd0cd28a3d6521da48d00a97e4a7f35f898
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8197228f1d428fd48c494825fec0e73cb85609f6
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087198"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868758"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 
@@ -32,8 +32,8 @@ Office アドインは Office の複数のバージョンで機能します。 �
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 
 - [更新プログラムの更新プログラム チャネル リリースのバージョン番号とビルド番号Microsoft 365 Apps](/officeupdates/update-history-microsoft365-apps-by-date)
-- [使用している Office のバージョンを確認する方法](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [クライアント アプリケーションのバージョンとビルド番号をOffice場所](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [使用している Office のバージョンを確認する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [クライアント アプリケーションのバージョンとビルド番号をOffice場所](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Office Online Server 概要](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット

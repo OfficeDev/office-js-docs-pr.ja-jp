@@ -4,12 +4,12 @@ description: JavaScript API を使用して範囲を切り取り、コピー、�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084105"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868681"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[Range.moveTo メソッドは](/javascript/api/excel/excel.range#moveTo_destinationRange_)、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
+[Range.moveTo メソッドは](/javascript/api/excel/excel.range#moveTo_destinationRange_)、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
 
 次のコード サンプルでは、メソッドを使用して範囲を移動 `Range.moveTo` します。 移動先の範囲がソースより小さい場合は、ソース コンテンツを含む範囲に拡張されます。
 

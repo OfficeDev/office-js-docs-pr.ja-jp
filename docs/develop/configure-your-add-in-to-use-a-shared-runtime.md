@@ -4,12 +4,12 @@ title: 共有 JavaScript ランタイムを使用するように Office アド�
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 localization_priority: Priority
-ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: f2c47f7c666c173480851b780311002eb4dbeac0
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661148"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863542"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -54,16 +54,20 @@ ms.locfileid: "53661148"
     <DefaultSettings>
     ```
 
-1. `<VersionOverrides>` セクションを見つけて、`<Host ...>` タグのすぐ内側に次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の ` <bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+1. `<VersionOverrides>` セクションを検索して次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の ` <bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+
+    > [!IMPORTANT]
+    > `<Runtimes>` セクションは、次の XML で示される正確な順序で `<Host>` 要素の後に入力する必要があります。
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
+       </Host>
    ```
 
 1. カスタム関数を使用して Excel アドインを生成した場合は、`<Page>` 要素を見つけます。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。

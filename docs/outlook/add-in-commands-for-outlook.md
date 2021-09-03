@@ -3,12 +3,12 @@ title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b99f793565163042821cc5c5bf3c7364858cd6fac37637359d90aec28ae3e1fc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8fc8f5c30f5a56ffe9c792f2347b915cf2f04051
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097548"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868744"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
@@ -19,10 +19,10 @@ Outlook アドイン コマンドを作成して、ボタンまたはドロッ�
 >
 > Outlook 2013 でのアドイン コマンドのサポートには、次の 3 つの更新プログラムが必要です。
 > - [2016 年 3 月 8 日にリリースされた Outlook 用セキュリティ更新プログラム](https://support.microsoft.com/kb/3114829)
-> - [2016 年 3 月 8 日にリリースされた Office 用セキュリティ更新プログラム (KB3114816)](https://support.microsoft.com/help/3114816/march-8,-2016,-update-for-office-2013-kb3114816)
-> - [2016 年 3 月 8 日にリリースされた Office 用セキュリティ更新プログラム (KB3114828)](https://support.microsoft.com/help/3114828/march-8,-2016,-update-for-office-2013-kb3114828)
+> - [2016 年 3 月 8 日にリリースされた Office 用セキュリティ更新プログラム (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
+> - [2016 年 3 月 8 日にリリースされた Office 用セキュリティ更新プログラム (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
 >
-> Exchange 2016 のアドイン コマンドのサポートでは、[累積的な更新プログラム 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016) が必要です。
+> Exchange 2016 のアドイン コマンドのサポートでは、[累積的な更新プログラム 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd) が必要です。
 
 アドイン コマンドは、アクティブ化するアイテムの種類を制限する [ItemHasAttachment、ItemHasKnownEntity、ItemHasRegularExpressionMatch ルール](activation-rules.md) を使用しないアドインに対してのみ使用できます。ただし、[コンテキスト アドイン](contextual-outlook-add-ins.md) は、現在選択されているアイテムがメッセージか予定かに応じて異なるコマンドを表示でき、閲覧シナリオまたは作成シナリオのどちらで表示するかを選択できます。可能な場合はアドイン コマンドを使用するのが [ベスト プラクティス](../concepts/add-in-development-best-practices.md) です。
 

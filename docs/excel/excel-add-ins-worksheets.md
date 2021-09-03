@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 27129feb603af52d53aa87e16227a946480c7bdf47954fc9db7398b42a795416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087030"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868751"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -498,7 +498,7 @@ Excel.run(function (context) {
 - `options`: 特定の編集制限を定義する [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) オブジェクト。
 - `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
 
-ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
+ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
 
 ## <a name="page-layout-and-print-settings"></a>ページ レイアウトと印刷の設定
 

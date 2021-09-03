@@ -4,12 +4,12 @@ description: JavaScript API を使用してブックまたはアプリケーシ�
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086173"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868723"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
@@ -140,11 +140,11 @@ Excel.run(function (context) {
 保護は、不必要なデータ編集をできないようにするため、ワークシート レベルで設定することもできます。 詳細については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md#data-protection)」の **データの保護** のセクションを参照してください。
 
 > [!NOTE]
-> Excel のブックの保護の詳細については、「[ブックを保護する](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)」を参照してください。
+> Excel のブックの保護の詳細については、「[ブックを保護する](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517)」を参照してください。
 
 ## <a name="access-document-properties"></a>ドキュメント プロパティへのアクセス
 
-Workbook オブジェクトは、[ドキュメント プロパティ](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)と呼ばれる Office ファイルのメタデータにアクセスできます。 Workbook オブジェクトの `properties` プロパティは、これらのメタデータ値を含む [DocumentProperties](/javascript/api/excel/excel.documentproperties) オブジェクトです。 次の例は、プロパティを設定する方法を示 `author` しています。
+Workbook オブジェクトは、[ドキュメント プロパティ](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75)と呼ばれる Office ファイルのメタデータにアクセスできます。 Workbook オブジェクトの `properties` プロパティは、これらのメタデータ値を含む [DocumentProperties](/javascript/api/excel/excel.documentproperties) オブジェクトです。 次の例は、プロパティを設定する方法を示 `author` しています。
 
 ```js
 Excel.run(function (context) {
@@ -234,7 +234,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo` システム カルチャ設定を [CultureInfo オブジェクトとして定義](/javascript/api/excel/excel.cultureinfo) します。 これには、数値の小数点記号や日付形式のような設定が含まれる。
 
-一部のカルチャ設定は[、UI を使用Excelできます](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
+一部のカルチャ設定は[、UI を使用Excelできます](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
 
 次のサンプルでは、数値文字列の小数点記号を ',' からシステム設定で使用される文字に変更します。
 
@@ -329,7 +329,7 @@ Excel.run(async (context) => {
 - `recalculate`: すべてのアクティブなブックで、最後に計算されてから変更された数式 (またはプログラムで再計算用にマークされている数式)、およびそれに依存する数式を再計算します。
 
 > [!NOTE]
-> 再計算の詳細については、「[数式の再計算、反復計算、または精度を変更する](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4)」を参照してください。
+> 再計算の詳細については、「[数式の再計算、反復計算、または精度を変更する](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4)」を参照してください。
 
 ### <a name="temporarily-suspend-calculations"></a>計算を一時的に中断する
 

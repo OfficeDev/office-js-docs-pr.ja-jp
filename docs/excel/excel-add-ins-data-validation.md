@@ -3,20 +3,20 @@ title: Excel の範囲にデータの入力規則を追加する
 description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1d05db463da8586e39e6a8e172529d9da46a8cec11ca36f5231cb9c3f1c49033
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084297"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868646"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
 Excel の JavaScript ライブラリには、ブック内の表、列、行、その他の範囲に自動のデータの入力規則をアドインで追加できる API が用意されています。 データ検証の概念と用語を理解するには、ユーザーが UI を使用してデータ検証を追加する方法に関する以下のExcelしてください。
 
-- [セルに対するデータの入力規則の適用](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [データの入力規則の詳細](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Excel でのデータの入力規則の説明と例](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
+- [セルに対するデータの入力規則の適用](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
+- [データの入力規則の詳細](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Excel でのデータの入力規則の説明と例](https://support.microsoft.com/help/211485)
 
 ## <a name="programmatic-control-of-data-validation"></a>データの入力規則のプログラムによる制御
 

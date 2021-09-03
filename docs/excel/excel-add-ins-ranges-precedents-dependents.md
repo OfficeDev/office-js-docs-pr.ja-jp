@@ -4,16 +4,16 @@ description: JavaScript API の Excelを使用して、数式の前例と依存�
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: daf0aab9bc3cd1f1821074a6e00a7d839eaa95978bf01cef2682096d36ee2ec0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084661"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868709"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 
-Excelは、多くの場合、他のセルを参照します。 これらのクロスセル参照は、"前例" および "依存" と呼ばれる。 前例は、数式にデータを提供するセルです。 従属とは、他のセルを参照する数式を含むセルです。 セル間のリレーションシップにExcelする機能の詳細については、「数式とセル間のリレーションシップを表示する[」を参照してください](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507)。
+Excelは、多くの場合、他のセルを参照します。 これらのクロスセル参照は、"前例" および "依存" と呼ばれる。 前例は、数式にデータを提供するセルです。 従属とは、他のセルを参照する数式を含むセルです。 セル間のリレーションシップにExcelする機能の詳細については、「数式とセル間のリレーションシップを表示する[」を参照してください](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507)。
 
 セルには前例のセルを含め、その前のセルには独自の前例セルを含めできます。 "直接の前例" は、親子関係の親の概念と同様に、このシーケンス内のセルの最初の前のグループです。 "直接依存" は、親子関係の子と同様に、シーケンス内のセルの最初の依存グループです。 ブック内の他のセルを参照するが、リレーションシップが親子関係ではないセルは、直接依存または直接の前例ではありません。
 
