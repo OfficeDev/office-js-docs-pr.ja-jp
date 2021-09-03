@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: 8d702d7820e8a85499c5a64355310844b456abbc
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232400"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863549"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
