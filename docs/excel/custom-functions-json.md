@@ -4,11 +4,11 @@ description: カスタム関数の JSON メタデータを定義し、Excel ID �
 ms.date: 08/06/2021
 localization_priority: Normal
 ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232214"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936468"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -272,7 +272,7 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 関数に[名前を付けるベスト](custom-functions-naming.md)プラクティスを説明するか[](custom-functions-localize.md)、前に説明した手書き JSON メソッドを使用して関数をローカライズする方法について説明します。
 

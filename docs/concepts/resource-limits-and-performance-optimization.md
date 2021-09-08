@@ -4,11 +4,11 @@ description: CPU とメモリを含む、Officeプラットフォームのリソ
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505664"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937925"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 

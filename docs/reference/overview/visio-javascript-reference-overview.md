@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 58eedf260a52fd2ffc321de6d1a389736a93b4e4e65f7dfa824286bcfa156f7b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098095"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937644"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -30,12 +30,12 @@ Visio JavaScript API を使用して、次のことを行えます。
 
 この記事では、Visio on the web で Visio JavaScript API を使用して SharePoint Online のソリューションをビルドする方法について説明します。また、`EmbeddedSession`EmbeddedSession`RequestContext`、`sync()`RequestContext`Visio.run()`、JavaScript プロキシ オブジェクトなどの API、および `load()`sync()、Visio.run()、load() のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
 
-## <a name="embeddedsession&quot;></a>EmbeddedSession
+## <a name="embeddedsession"></a>EmbeddedSession
 
 EmbeddedSession オブジェクトは、開発者のフレームとブラウザーの Visio フレーム間の通信を初期化します。
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });

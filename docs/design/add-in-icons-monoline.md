@@ -3,12 +3,12 @@ title: アドインのモノOfficeアイコンのガイドライン
 description: アドインで Monoline スタイル アイコンを使用Officeガイドライン。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 15077c9dd798b2cb633d7ce200a8cefc4e9605d312ebab48fe2ce814b7479c11
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082403"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936837"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンのガイドライン
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイル内のランタイム
 description: Runtimes 要素は、アドインのランタイムを指定します。
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: e5ec70449d3984671d507131ac8d4fc0f7617cdcda1ad8f99b4f4bf52773aded
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091630"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936916"
 ---
 # <a name="runtimes-element"></a>Runtimes 要素
 
@@ -37,7 +37,7 @@ ms.locfileid: "57091630"
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
-| [ランタイム](runtime.md) | 必要 |  アドインのランタイム。 **重要**: 現時点では、1 つの要素のみを定義 `<Runtime>` できます。 |
+| [ランタイム](runtime.md) | はい |  アドインのランタイム。 **重要**: 現時点では、1 つの要素のみを定義 `<Runtime>` できます。 |
 
 ## <a name="see-also"></a>関連項目
 

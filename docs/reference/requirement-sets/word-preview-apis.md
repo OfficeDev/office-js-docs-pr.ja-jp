@@ -4,12 +4,12 @@ description: 今後の Word JavaScript API の詳細
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 1a3871ca4445e595620112bb5176fe2b7ab39015228a1602c119c06730cc90ab
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097849"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937660"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 
@@ -53,7 +53,7 @@ ms.locfileid: "57097849"
 ||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|コレクションに含まれる項目が 1 つだけの場合、このメソッドはその項目を返します。|
 ||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|コレクションに含まれる項目が 1 つだけの場合、このメソッドはその項目を返します。|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|ブックマークが存在する場合は、ドキュメントから削除します。|
+|[ドキュメント](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|ブックマークが存在する場合は、ドキュメントから削除します。|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|ブックマークの範囲を取得します。|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|ブックマークの範囲を取得します。|
 ||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|ドキュメント内のカスタム XML パーツを取得します。|
@@ -80,7 +80,7 @@ ms.locfileid: "57097849"
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|キーによって設定オブジェクトを取得します。大文字と小文字が区別されます。|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|キーによって設定オブジェクトを取得します。大文字と小文字が区別されます。|
 ||[items](/javascript/api/word/word.settingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[表](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|最初のセルと最後のセルで結合されたセルを結合します。|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|最初のセルと最後のセルで結合されたセルを結合します。|
 |[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|セルを指定した数の行と列に分割します。|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|行にコンテンツ コントロールを挿入します。|
 ||[merge()](/javascript/api/word/word.tablerow#merge--)|行を 1 つのセルに結合します。|

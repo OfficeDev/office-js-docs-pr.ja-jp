@@ -4,12 +4,12 @@ description: ExcelApi 1.13 要件セットの詳細。
 ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 61ae65fc0692cdf05741e299e95460eb3167dc6ca3b759a49d655c3a8f1bc425
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092634"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936640"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel新機能
 
@@ -45,11 +45,11 @@ ExcelApi 1.13 では、Base64 エンコード文字列からブックにワー�
 ||[getExtendedRange(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|指定された方向に基づいて、現在の範囲と範囲の端までの範囲オブジェクトを返します。|
 ||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#getMergedAreasOrNullObject__)|この範囲内の結合領域を表す RangeAreas オブジェクトを返します。|
 ||[getRangeEdge(direction: Excel.KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)|指定された方向に対応するデータ領域のエッジ セルである範囲オブジェクトを返します。|
-|[表](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize_newRange_)|テーブルのサイズを新しい範囲に変更します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_)|指定したワークシートをソース ブックから現在のブックに挿入します。|
+|[Table](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize_newRange_)|テーブルのサイズを新しい範囲に変更します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_)|指定したワークシートをソース ブックから現在のブックに挿入します。|
 ||[onActivated](/javascript/api/excel/excel.workbook#onActivated)|ブックがアクティブ化されると発生します。|
 |[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[type](/javascript/api/excel/excel.workbookactivatedeventargs#type)|イベントの種類を取得します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|このワークシートで 1 つ以上の数式が変更された場合に発生します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|このワークシートで 1 つ以上の数式が変更された場合に発生します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onFormulaChanged](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged)|このコレクションのワークシートで 1 つ以上の数式が変更された場合に発生します。|
 |[WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs)|[formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)|変更された数式 `FormulaChangedEventDetail` の詳細を含むオブジェクトの配列を取得します。|
 ||[source](/javascript/api/excel/excel.worksheetformulachangedeventargs#source)|イベントのソース。|

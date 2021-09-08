@@ -3,12 +3,12 @@ title: Outlook アドインでアイテム データを取得または設定す�
 description: アドインが閲覧フォームまたは新規作成フォームのどちらでアクティブ化されるかによって、アイテムでアドインが使用できるプロパティも異なります。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: d274d850c06178e1fdb31f95d921c5a8ae4ea0a399a5dbebd61de548c084ce5d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0f7e2335420ee74765ec28bf7d33b339dc3fb6a5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093919"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936920"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>閲覧または新規作成フォームの Outlook アイテム データを取得および設定する
 
@@ -33,7 +33,7 @@ Office アドイン マニフェスト スキーマのバージョン 1.1 以降
 |予定とメッセージ|[dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|JavaScript **Date** オブジェクト|このプロパティは使用できません|
 |予定とメッセージ|[itemClass](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|このプロパティは使用できません|
 |予定とメッセージ|[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|このプロパティは使用できません|
-|予定とメッセージ|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 列挙型の文字列|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 列挙型の文字列 (読み取り専用)|
+|予定とメッセージ|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 列挙型の文字列|[ItemType 列挙の文字列](/javascript/api/outlook/office.mailboxenums.itemtype)(読み取り専用)|
 |予定とメッセージ|[attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|このプロパティは使用できません|
 |予定とメッセージ|[body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[本文](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |予定とメッセージ|[normalizedSubject](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|このプロパティは使用できません|

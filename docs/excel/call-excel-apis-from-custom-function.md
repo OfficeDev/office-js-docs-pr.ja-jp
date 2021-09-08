@@ -4,11 +4,11 @@ description: カスタム関数Excel呼び出す JavaScript API について説�
 ms.date: 08/30/2021
 localization_priority: Normal
 ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863528"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936231"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタムExcel JavaScript API を呼び出す
 
@@ -61,7 +61,7 @@ JavaScript API の環境Excel変更するカスタム関数から JavaScript API
 
 代わりに、リボン ボタンExcel作業ウィンドウのコンテキストから変更を加えます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [Excel JavaScript API を使用した基本的なプログラミングの概念](../reference/overview/excel-add-ins-reference-overview.md)
 

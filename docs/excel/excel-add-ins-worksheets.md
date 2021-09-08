@@ -4,11 +4,11 @@ description: JavaScript API を使用してワークシートで一般的なタ�
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868751"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936943"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 

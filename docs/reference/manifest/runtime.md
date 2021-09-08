@@ -3,12 +3,12 @@ title: マニフェスト ファイル内のランタイム
 description: Runtime 要素は、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに共有 JavaScript ランタイムを使用するアドインを構成します。
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 10e008aa623aa81676ad3c219b31fdb77b6fa1c11f1a7b5cfff169ac7ce9de0b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098993"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937335"
 ---
 # <a name="runtime-element"></a>Runtime 要素
 

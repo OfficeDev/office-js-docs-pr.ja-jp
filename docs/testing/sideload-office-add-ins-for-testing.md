@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3dbb6ade3089fa20dc7f5a13a5a87654cda8cafa4c4391386513b33169aa8a15
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098258"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936249"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -71,7 +71,7 @@ ms.locfileid: "57098258"
 1. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
 
 > [!NOTE]
-> 元の WebView Officeを使用Microsoft Edgeアドインをテストするには、追加の構成手順が必要です。 コマンド プロンプトWindows、次の行を実行します `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 この機能は、Officeベースのエッジ WebView2 をChromium場合は必要ありません。 詳細については、「アドインで使用Office[ブラウザー」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。
+> 元の WebView Officeを使用Microsoft Edgeアドインをテストするには、追加の構成手順が必要です。 コマンド プロンプトWindows、次の行を実行します `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 この機能は、Officeベースのエッジ WebView2 をChromium場合は必要ありません。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 ## <a name="sideload-an-office-add-in"></a>アドインをサイドOfficeする
 

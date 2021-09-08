@@ -4,12 +4,12 @@ description: ExcelApiOnline 要件セットの詳細。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 26d735903bf3981cdb65719a44ed0b37ac9c70f185f8fe99df1e5c3669e19d80
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093238"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936954"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API のオンライン専用要件セット
 
@@ -63,7 +63,7 @@ API がクロスプラットフォーム要件セットに入った後は、チ�
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|名前を使用してシート ビューを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|コレクション内のインデックスによってシート ビューを取得します。|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|ワークシートに存在するシート ビューのコレクションを返します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|ワークシートに存在するシート ビューのコレクションを返します。|
 
 ## <a name="see-also"></a>関連項目
 

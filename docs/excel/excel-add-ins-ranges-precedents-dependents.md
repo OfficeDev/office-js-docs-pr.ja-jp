@@ -5,11 +5,11 @@ ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868709"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937670"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 

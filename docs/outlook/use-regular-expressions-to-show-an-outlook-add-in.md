@@ -3,12 +3,12 @@ title: 正規表現アクティブ化ルールを使用してアドインを表�
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 722de040116e967f3baa97858480ad10e787794f766b334c9132cdb64451662b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085239"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936636"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 

@@ -3,12 +3,12 @@ title: Windows 10 で開発者ツールを使用してアドインをデバッ�
 description: Windows 10 で Microsoft Edge 開発者ツールを使用してアドインをデバッグする
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ab6f6a59d83f3fab472c85810524ab3e03e9a9655485862dc3e6f3aeb03db910
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090733"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937308"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Windows 10 で開発者ツールを使用してアドインをデバッグする
 

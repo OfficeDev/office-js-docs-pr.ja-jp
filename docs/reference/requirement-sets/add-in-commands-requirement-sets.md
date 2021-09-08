@@ -4,12 +4,12 @@ description: アドイン コマンドOfficeセットの概要。
 ms.date: 11/01/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 616e404c086a18fe80f700a918838364b8ef029da0b710a1cb647768e771dfae
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098957"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938160"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 

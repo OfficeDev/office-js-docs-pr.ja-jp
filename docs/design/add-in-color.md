@@ -3,12 +3,12 @@ title: Office アドインの色のガイドライン
 description: アドインの UI で色を使用するOfficeします。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fc22a2168a531d0f3fe50358f5d45e6052bfde6c3418f9ee13197bd48ed35101
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082734"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937882"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Office アドインの色のガイドライン
 

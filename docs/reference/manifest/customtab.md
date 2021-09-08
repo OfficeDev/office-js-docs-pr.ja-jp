@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの CustomTab 要素
 description: リボン上で、アドイン コマンドに使用するタブとグループを指定します。
-ms.date: 08/13/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3656f68a722e5e0c224f18f80a0e0214fce47cfb
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382964"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937839"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
@@ -30,9 +30,8 @@ ms.locfileid: "58382964"
 |  [Label](#label-tab)      | はい |  CustomTab または Group のラベル。  |
 |  [InsertAfter](#insertafter)      | いいえ |  カスタム タブを指定した組み込みタブの直後Office指定します。**重要**: PowerPoint でのみ使用できます。 |
 |  [InsertBefore](#insertbefore)      | いいえ |  カスタム タブを指定した組み込みタブの直前Office指定します。**重要**: PowerPoint でのみ使用できます。 |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにカスタム タブを表示するかどうかを指定します。 **重要**: このサイトではOutlook。 |
 
-### <a name="group"></a>Group
+### <a name="group"></a>グループ
 
 省略可能ですが、存在しない場合は、少なくとも 1 つの **OfficeGroup 要素が必要** です。 [Group 要素](group.md)を参照してください。 マニフェスト内 **のグループ** と **OfficeGroup** の順序は、カスタム タブに表示する順序である必要があります。複数の要素がある場合は、これらの要素を混同できますが、すべてが Label 要素の上にある **必要** があります。
 
@@ -45,11 +44,11 @@ ms.locfileid: "58382964"
 
 ### <a name="label-tab"></a>Label (タブ)
 
-必須。 カスタム タブのラベル。**resid 属性** は 32 文字以内で、Resources 要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
+必須です。 カスタム タブのラベル。**resid 属性** は 32 文字以内で、Resources 要素の **ShortStrings** 要素の **String** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 ### <a name="insertafter"></a>InsertAfter
 
-省略可能。 指定した組み込みタブの直後にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
+省略可能です。 指定した組み込みタブの直後にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
 
 > [!IMPORTANT]
 > 要素 `InsertAfter` は、次のPowerPoint。
@@ -60,25 +59,3 @@ ms.locfileid: "58382964"
 
 > [!IMPORTANT]
 > 要素 `InsertBefore` は、次のPowerPoint。
-
-### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
-
-省略可能 (ブール型)。 カスタム コンテキスト タブを実行時にリボンにインストールする API をサポートするアプリケーションとプラットフォームの組み合わせで **CustomTab** を非表示にするかどうかを指定します。 既定値 (存在しない場合) は、 です `false` 。 使用する場合 **、OverriddenByRibbonApi は** CustomTab の *最初* の子 **である必要があります**。 詳細については [、「OverriddenByRibbonApi」を参照してください](overriddenbyribbonapi.md)。
-
-> [!IMPORTANT]
-> 要素 `OverriddenByRibbonApi` は、このプロパティではOutlook。
-
-## <a name="customtab-example"></a>CustomTab の例
-
-```xml
-<ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-    <Group id="ContosoCustomTab.grp1">
-    </Group>
-    <OfficeGroup id="Paragraph" />
-    <Label resid="customTabLabel1"/>
-    <InsertAfter>TabReview</InsertAfter>
-  </CustomTab>
-</ExtensionPoint>
-```

@@ -4,12 +4,12 @@ description: ExcelApi 1.3 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d237455baa73aef8e70a6e4901cba6ee8b2b8f3475f6e915b93c437747478408
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d3606b74e8a1099cd58631cc047a783f27a09a19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095372"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937373"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
@@ -47,13 +47,13 @@ ExcelApi 1.3 では、データ バインドと基本的なピボットテーブ
 ||[values](/javascript/api/excel/excel.rangeview#values)|指定した範囲ビューの Raw 値を表します。|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getItemAt_index_)|インデックスを `RangeView` 使用して行を取得します。|
 ||[items](/javascript/api/excel/excel.rangeviewcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[表](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightFirstColumn)|最初の列に特別な書式が含まれている場合に指定します。|
+|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightFirstColumn)|最初の列に特別な書式が含まれている場合に指定します。|
 ||[highlightLastColumn](/javascript/api/excel/excel.table#highlightLastColumn)|最後の列に特別な書式が含まれている場合に指定します。|
 ||[showBandedColumns](/javascript/api/excel/excel.table#showBandedColumns)|テーブルの読み取りを容易にするために、奇数列が偶数列とは異なる方法で強調表示されるバンド書式を列に表示する場合に指定します。|
 ||[showBandedRows](/javascript/api/excel/excel.table#showBandedRows)|テーブルの読み取りを容易にするために、奇数行が偶数行とは異なる方法で強調表示されるバンド書式を行に表示する場合に指定します。|
 ||[showFilterButton](/javascript/api/excel/excel.table#showFilterButton)|フィルター ボタンが各列ヘッダーの上部に表示される場合に指定します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[ピボットテーブル](/javascript/api/excel/excel.workbook#pivotTables)|ブックに関連付けられているピボットテーブルのコレクションを表します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[ピボットテーブル](/javascript/api/excel/excel.worksheet#pivotTables)|ワークシートの一部になっているピボットテーブルのコレクション。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[ピボットテーブル](/javascript/api/excel/excel.workbook#pivotTables)|ブックに関連付けられているピボットテーブルのコレクションを表します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[ピボットテーブル](/javascript/api/excel/excel.worksheet#pivotTables)|ワークシートの一部になっているピボットテーブルのコレクション。|
 
 ## <a name="see-also"></a>関連項目
 

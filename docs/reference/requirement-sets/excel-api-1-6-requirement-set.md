@@ -4,12 +4,12 @@ description: ExcelApi 1.6 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 74fd184c4d65f30643266ba4799406cfe6f6e8e1e275af09eb6102e4bda986fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088983"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936418"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -145,7 +145,7 @@ ms.locfileid: "57088983"
 ||[ルール](/javascript/api/excel/excel.textconditionalformat#rule)|条件付き書式のルール。|
 |[TopBottomConditionalFormat](/javascript/api/excel/excel.topbottomconditionalformat)|[format](/javascript/api/excel/excel.topbottomconditionalformat#format)|条件付き書式のフォント、塗りつぶし、罫線、その他のプロパティをカプセル化する format オブジェクトを返します。|
 ||[ルール](/javascript/api/excel/excel.topbottomconditionalformat#rule)|上/下の条件付き書式の条件。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[calculate(markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate_markAllDirty_)|ワークシート上のすべてのセルを計算します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[calculate(markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate_markAllDirty_)|ワークシート上のすべてのセルを計算します。|
 
 ## <a name="see-also"></a>関連項目
 

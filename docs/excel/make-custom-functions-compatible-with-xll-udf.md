@@ -4,11 +4,11 @@ description: カスタム関数と同等Excel機能を持つ XLL ユーザー定
 ms.date: 08/24/2021
 localization_priority: Normal
 ms.openlocfilehash: 5611a8d7c22867146c0f0904d62bd113fe8d29d2
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614589"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937304"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
@@ -60,7 +60,7 @@ ms.locfileid: "58614589"
 | **サポートされているファイル形式** | XLSX、XLSB、XLSM、XLS | XLSX、XLSB、XLSM | XLSX、XLSB、XLSM |
 | **数式のオートコンプリート** | いいえ | はい | はい |
 | **ストリーミング** | xlfRTD コールバックと XLL コールバックを使用して可能です。 | はい | はい |
-| **関数のローカライズ** | いいえ | その必要はありません。 Name と ID は、既存の XLL の関数と一致している必要があります。 | はい |
+| **関数のローカライズ** | いいえ | いいえ。 Name と ID は、既存の XLL の関数と一致している必要があります。 | はい |
 | **揮発性関数** | はい | はい | はい |
 | **マルチスレッド再計算のサポート** | はい | はい | はい |
 | **計算動作** | UI なし。 Excelは、計算中に応答しなくなる可能性があります。 | ユーザーには、次の#BUSY! 結果が返されるまで。 | ユーザーには、次の#BUSY! 結果が返されるまで。 |

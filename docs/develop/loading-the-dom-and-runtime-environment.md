@@ -3,12 +3,12 @@ title: DOM とランタイム環境を読み込む
 description: DOM を読み込Officeアドインランタイム環境を使用します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d04d4dcfefdc234543dafe646826756b7ef631103793613c6396ff8c40d61d2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 26ff15eb009fbec2554fa74db3109c4fa4abd712
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080557"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936213"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 

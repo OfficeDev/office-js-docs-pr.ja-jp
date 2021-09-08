@@ -1,14 +1,14 @@
 ---
 title: カスタム コンテキスト タブを Officeアドインで作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
-ms.date: 07/15/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 8bb724c30d3bd3729b6f4e4879157f3cbebf3ff90ad1cc9d50194f91ea0cc481
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3efcc29ea78d7dd528734e2c67a14cd65e3c0875
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082160"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937996"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -533,36 +533,12 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)があります。
 
-この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、コンテキストに依存しないカスタム タブ) をマニフェストで定義する方法です。 ただし `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 、CustomTab の最初の子要素として [追加します](../reference/manifest/customtab.md)。 その効果は次のとおりです。
+この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、コンテキストに依存しないカスタム タブ) をマニフェストで定義する方法です。 ただし、重複するグループ、コントロール、およびメニュー要素の最初の子要素として、カスタム コア タブ `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` [](../reference/manifest/group.md)[](../reference/manifest/control.md) `<Item>` に追加します。 その効果は次のとおりです。
 
-- カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームでアドインが実行されている場合、カスタム コア タブはリボンに表示されません。 代わりに、アドインがメソッドを呼び出す際に、カスタム コンテキスト タブが作成 `requestCreateControls` されます。
-- アドインがサポートしていないアプリケーションまたはプラットフォームで実行されている場合は、カスタム コア タブが `requestCreateControls` リボンに表示されます。
+- カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームでアドインが実行されている場合、カスタム コア グループとコントロールはリボンに表示されません。 代わりに、アドインがメソッドを呼び出す際に、カスタム コンテキスト タブが作成 `requestCreateControls` されます。
+- アドインがサポートしないアプリケーションまたはプラットフォームで実行されている場合、要素はカスタム コア タブ `requestCreateControls` に表示されます。
 
-この簡単な戦略の例を次に示します。
-
-```xml
-<OfficeApp ...>
-  ...
-  <VersionOverrides ...>
-    ...
-    <Hosts>
-      <Host ...>
-        ...
-        <DesktopFormFactor>
-          <ExtensionPoint ...>
-            <CustomTab ...>
-              <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-              ...
-              <Group ...>
-                ...
-                <Control ... id="MyButton">
-                  ...
-                  <Action ...>
-...
-</OfficeApp>
-```
-
-この単純な戦略では、カスタム コンテキスト タブと子グループとコントロールをミラー化するカスタム コア タブを使用しますが、より複雑な戦略を使用できます。 要素は、Group 要素と Control 要素 (ボタンの種類とメニューの種類の両方) およびメニュー要素に (最初の) 子要素として `<OverriddenByRibbonApi>` 追加[](../reference/manifest/control.md#button-control)[](../reference/manifest/group.md)[](../reference/manifest/control.md)[](../reference/manifest/control.md#menu-dropdown-button-controls) `<Item>` することもできます。 この事実により、コンテキスト タブに表示されるグループとコントロールを、さまざまなカスタム コア タブのさまざまなグループ、ボタン、およびメニューに分散できます。 次に例を示します。 カスタム コンテキスト タブがサポートされていない場合にのみ、カスタム コア タブに "MyButton" が表示されます。 ただし、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親グループとカスタム コア タブが表示されます。
+次に例を示します。 カスタム コンテキスト タブがサポートされていない場合にのみ、カスタム コア タブに "MyButton" が表示されます。 ただし、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親グループとカスタム コア タブが表示されます。
 
 ```xml
 <OfficeApp ...>
@@ -588,10 +564,10 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 その他の例については [、「OverriddenByRibbonApi」を参照してください](../reference/manifest/overriddenbyribbonapi.md)。
 
-親タブ、グループ、またはメニューにマークが付いている場合、そのタブは表示されません。カスタム コンテキスト タブがサポートされていない場合、すべての子マークアップは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 無視されます。 したがって、これらの子要素に要素がある場合や、その値 `<OverriddenByRibbonApi>` が何かは関係ありません。 この意味は、メニュー項目、コントロール、またはグループをすべてのコンテキストで表示する必要がある場合、メニュー項目、コントロール、またはグループがマークされていない必要があるだけでなく、その親メニュー、グループ、およびタブもこの方法でマークする必要があるという意味です。 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 
+親グループまたはメニューにマークが付いている場合、そのグループは表示されません。カスタム コンテキスト タブがサポートされていない場合、すべての子マークアップは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 無視されます。 したがって、これらの子要素に要素がある場合や、その値 `<OverriddenByRibbonApi>` が何かは関係ありません。 この意味は、メニュー項目またはコントロールをすべてのコンテキストで表示する必要がある場合、メニュー項目またはコントロールがマークされていない必要があるだけでなく、その親メニューとグループもこの方法でマークしなけらなければならないという意味です `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 
 
 > [!IMPORTANT]
-> タブ、グループ *、またはメニュー* のすべての子要素にマークを付けない `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 前の段落で指定した理由で親要素がマークされている場合、これは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 意味をなします。 さらに、親タブを使用しない (またはに設定する) 場合は、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親が表示されますが、サポートされている場合は空になります `<OverriddenByRibbonApi>` `false` 。 したがって、カスタム コンテキスト タブがサポートされているときにすべての子要素が表示されない場合は、親にマークを付け、親のみを付け、 を指定します `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。
+> グループまたはメニュー *のすべての子* 要素にマークを付けない `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 前の段落で指定した理由で親要素がマークされている場合、これは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 意味をなします。 さらに、親タブを使用しない (またはに設定する) 場合は、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親が表示されますが、サポートされている場合は空になります `<OverriddenByRibbonApi>` `false` 。 したがって、カスタム コンテキスト タブがサポートされているときにすべての子要素が表示されない場合は、親にマークを付け、親のみを付け、 を指定します `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>指定したコンテキストで作業ウィンドウを表示または非表示にする API を使用する
 

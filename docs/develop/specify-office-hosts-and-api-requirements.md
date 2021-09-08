@@ -3,12 +3,12 @@ title: Office のホストと API の要件を指定する
 description: アドインが期待Office動作するアプリケーションと API 要件を指定する方法について説明します。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 8d8d4d8536cd118bd139c19541f9a9808e6eec442b1a828fa241222e282e8b8b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080100"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936845"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -88,7 +88,7 @@ ms.locfileid: "57080100"
 | Notebook      | OneNote on the web                             | 作業ウィンドウ、コンテンツ     |
 | Presentation  | PowerPoint on the web、Windows、Mac、iPad      | 作業ウィンドウ、コンテンツ     |
 | Project       | Windows での Project                             | 作業ウィンドウ              |
-| Workbook      | Excel on the web、Windows、Mac、iPad           | 作業ウィンドウ、コンテンツ     |
+| ブック      | Excel on the web、Windows、Mac、iPad           | 作業ウィンドウ、コンテンツ     |
 
 > [!NOTE]
 > この `Name` 属性は、アドインOffice実行できるクライアント アプリケーションの名前を指定します。 Officeアプリケーションは、さまざまなプラットフォームでサポートされ、デスクトップ、Web ブラウザー、タブレット、およびモバイル デバイスで実行されます。 アドインを実行するために使用するプラットフォームを指定することはできません。 たとえば、指定した場合 `Mailbox` は、Outlook on the webとWindowsアドインの実行に使用できます。

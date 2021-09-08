@@ -3,12 +3,12 @@ title: アドイン用のOfficeキットを設計する
 description: 一部のツールへのリンクを取得して、アドインの UI を設計Office役立ちます。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: b290b0f29d47c49b32cd4438c057d8fdec3db607e0a850366b1d7fa44e37379f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0f3f6c03019bec9f5e5f3bddce489ab952138d67
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082041"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938072"
 ---
 # <a name="design-tool-kits"></a>デザインのツール キット
 

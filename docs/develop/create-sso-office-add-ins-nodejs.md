@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ba3c0ab64ce82d68aab677baa48cdb34cce6f7e6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773868"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937266"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -37,7 +37,7 @@ ms.locfileid: "53773868"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-1. 「[Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso)」にあるリポジトリを複製するかダウンロードします。
+1. 「[Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)」にあるリポジトリを複製するかダウンロードします。
 
     > [!NOTE]
     > このサンプルには、次の 3 つのバージョンがあります。
@@ -188,7 +188,7 @@ ms.locfileid: "53773868"
         catch(exception) {
 
             // TODO 5: Respond to exceptions thrown by the
-            //         OfficeRuntime.auth.getAccessToken call.
+            //         Office.auth.getAccessToken call.
 
         }
     }
@@ -196,13 +196,13 @@ ms.locfileid: "53773868"
 
 1. `TODO 1` を次のコードに置き換えます。 このコードについて、次の点に注意してください。
 
-    - `OfficeRuntime.auth.getAccessToken`は、Azure AD からブートストラップ トークンを取得するよう Office に指示します。 ブートストラップ トークンは ID トークンに似ていますが、`scp` (スコープ) プロパティ (値`access-as-user`を持つ) を持っています。 この種のトークンは、Web アプリケーションによって Microsoft Graph へのアクセス トークンと交換できます。
+    - `Office.auth.getAccessToken`は、Azure AD からブートストラップ トークンを取得するよう Office に指示します。 ブートストラップ トークンは ID トークンに似ていますが、`scp` (スコープ) プロパティ (値`access-as-user`を持つ) を持っています。 この種のトークンは、Web アプリケーションによって Microsoft Graph へのアクセス トークンと交換できます。
     - オプションを true に設定すると、現在サインインしているユーザーが Officeない場合Officeポップアップ サインイン プロンプト `allowSignInPrompt` が開きます。
     - このオプションを true に設定すると、アドインがユーザーの AAD プロファイルにアクセスできると同意していない場合、Office は同意のプロンプト `allowConsentPrompt` を開きます。 (このプロンプトでは、ユーザーはユーザーの AAD プロファイルに同意することのみ可能で、Microsoft のスコープGraph許可しません)。
-    - オプションを true に設定すると、Office は、アドインがブートストラップ トークンを使用して、ID トークンとして使用するのではなく、Microsoft Graph へのアクセス トークンを取得する予定です。 `forMSGraphAccess` テナント管理者が Microsoft Graph へのアドインのアクセスに同意していない場合、`OfficeRuntime.auth.getAccessToken`はエラー **13012** を返します。 アドインは、Office が Microsoft Graph スコープではなく、ユーザーの Azure AD プロファイルへの同意のみを要求できるために必要となる承認の代替システムにフォールバックすることで応答できます。 フォールバック承認システムでは、ユーザーがもう一度サインインする必要があります。また、ユーザーは Microsoft のスコープに同意するように求Graphできます。 そのため`forMSGraphAccess`オプションは、同意の欠如により失敗するトークン交換をアドインが行わないことを保証します。 (前のステップで管理者の同意が与えられているため、このアドインにおいてはこのシナリオは発生しません。 ベスト プラクティスを示すことを目的として、このオプションはここに含まれています。)
+    - オプションを true に設定すると、Office は、アドインがブートストラップ トークンを使用して、ID トークンとして使用するのではなく、Microsoft Graph へのアクセス トークンを取得する予定です。 `forMSGraphAccess` テナント管理者が Microsoft Graph へのアドインのアクセスに同意していない場合、`Office.auth.getAccessToken`はエラー **13012** を返します。 アドインは、Office が Microsoft Graph スコープではなく、ユーザーの Azure AD プロファイルへの同意のみを要求できるために必要となる承認の代替システムにフォールバックすることで応答できます。 フォールバック承認システムでは、ユーザーがもう一度サインインする必要があります。また、ユーザーは Microsoft のスコープに同意するように求Graphできます。 そのため`forMSGraphAccess`オプションは、同意の欠如により失敗するトークン交換をアドインが行わないことを保証します。 (前のステップで管理者の同意が与えられているため、このアドインにおいてはこのシナリオは発生しません。 ベスト プラクティスを示すことを目的として、このオプションはここに含まれています。)
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. `TODO 2`を以下のコードに置き換えます。 `getGraphToken`メソッドは後の手順で作成します。
@@ -213,11 +213,11 @@ ms.locfileid: "53773868"
 
 1. `TODO 3`を以下のように置き換えます。 このコードについては、以下の点に注意してください。 
 
-    - テナントがMicrosoft 365認証を必要とするように構成されている場合、追加の必須要素に関する情報を含む `exchangeResponse` `claims` プロパティが含まれます。 その場合は`OfficeRuntime.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
+    - テナントがMicrosoft 365認証を必要とするように構成されている場合、追加の必須要素に関する情報を含む `exchangeResponse` `claims` プロパティが含まれます。 その場合は`Office.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
 
     ```javascript
     if (exchangeResponse.claims) {
-        let mfaBootstrapToken = await OfficeRuntime.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
+        let mfaBootstrapToken = await Office.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
         exchangeResponse = await getGraphToken(mfaBootstrapToken);
     }
     ```
@@ -290,7 +290,7 @@ ms.locfileid: "53773868"
         showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again.");  
         break;
     case 13002:
-        // OfficeRuntime.auth.getAccessToken was called with the allowConsentPrompt 
+        // Office.auth.getAccessToken was called with the allowConsentPrompt 
         // option set to true. But, the user aborted the consent prompt. 
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
@@ -299,7 +299,7 @@ ms.locfileid: "53773868"
         showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
-        // The OfficeRuntime.auth.getAccessToken method has already been called and 
+        // The Office.auth.getAccessToken method has already been called and 
         // that call has not completed yet. Only seen in Office on the web.
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
@@ -496,7 +496,7 @@ ms.locfileid: "53773868"
         try {
             const tokenResponse = await fetch(`${stsDomain}/${tenant}/${tokenURLSegment}`, {
                 method: 'POST',
-                body: form(formParams),
+                body: formurlencoded(formParams),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'

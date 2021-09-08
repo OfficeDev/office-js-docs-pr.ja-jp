@@ -3,12 +3,12 @@ title: マニフェスト ファイルの FileName 要素
 description: Web アドインのカスタム関数に相当する XLL のファイル名を指定します。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 7a16a26b63ccc4c1d7ffd9704a51d92f97253e2d468b992d3b2231bb92b40279
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b4909767a51355f21cd180d35f693ffce86224ec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087899"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936490"
 ---
 # <a name="filename-element"></a>FileName 要素
 

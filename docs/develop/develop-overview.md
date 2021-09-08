@@ -3,12 +3,12 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 4677f50d718234cb0751b192547fe99ec720d680725aeeed2be9caea904001be
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b2fa3e630fbcfb013f4458f7b8f9f564d0fed3f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080831"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937040"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 

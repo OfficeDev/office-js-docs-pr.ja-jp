@@ -3,12 +3,12 @@ title: マニフェストの拡張オーバーライドを処理する
 description: マニフェストの拡張オーバーライドを使用して機能拡張機能を構成する方法について学習します。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 09ced571f4b7d72a3479984582a8f58a0cb440bb2a3e62afe3f90329f2cd1be3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080672"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936891"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>マニフェストの拡張オーバーライドを使用する
 

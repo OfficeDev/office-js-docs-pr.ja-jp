@@ -3,12 +3,12 @@ title: Office アドインの認証設計ガイドライン
 ms.date: 02/09/2021
 description: アドインでサインオンまたはサインアップ ページを視覚的に設計するOffice説明します。
 localization_priority: Normal
-ms.openlocfilehash: 6550628555dcc2c7a11cccc17b00824169137d34df72ec51f8e0962f56c9a54e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bc047e6b001b7a491aa8117ba1b5901716ca1555
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082292"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937949"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 

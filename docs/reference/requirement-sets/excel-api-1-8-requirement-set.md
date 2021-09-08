@@ -4,12 +4,12 @@ description: ExcelApi 1.8 要件セットの詳細。
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088952"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937558"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel新機能
 
@@ -40,7 +40,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|演算子プロパティが GreaterThan などのバイナリ演算子に設定されている場合に、右側のオペランドを指定します (左側のオペランドは、ユーザーがセルに入力しようとする値です)。|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|3 項演算子 Between と NotBetween を使用して、上限オペランドを指定します。|
 ||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|データの検証に使用する演算子。|
-|[グラフ](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|ソース カテゴリ ラベルのレベルを参照して、グラフ カテゴリ ラベル レベル列挙定数を指定します。|
+|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|ソース カテゴリ ラベルのレベルを参照して、グラフ カテゴリ ラベル レベル列挙定数を指定します。|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayBlanksAs)|空白のセルをグラフにプロットする方法を指定します。|
 ||[plotBy](/javascript/api/excel/excel.chart#plotBy)|列や行がグラフのデータ系列として使用される方法を指定します。|
 ||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotVisibleOnly)|true の場合、可視セルだけがプロットされます。|
@@ -169,11 +169,11 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[type](/javascript/api/excel/excel.datavalidation#type)|データ検証の種類については、「詳細 `Excel.DataValidationType` 」を参照してください。|
 ||[有効](/javascript/api/excel/excel.datavalidation#valid)|すべてのセルの値がデータの入力規則に従っているかどうかを表します。|
 ||[ルール](/javascript/api/excel/excel.datavalidation#rule)|さまざまな種類のデータ検証条件を含むデータ検証ルール。|
-|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[message](/javascript/api/excel/excel.datavalidationerroralert#message)|エラー通知メッセージを表します。|
+|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[メッセージ](/javascript/api/excel/excel.datavalidationerroralert#message)|エラー通知メッセージを表します。|
 ||[showAlert](/javascript/api/excel/excel.datavalidationerroralert#showAlert)|ユーザーが無効なデータを入力した場合にエラー通知ダイアログを表示するかどうかを指定します。|
 ||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|データ検証アラートの種類については、「詳細」 `Excel.DataValidationAlertStyle` を参照してください。|
 ||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|エラー通知ダイアログのタイトルを表します。|
-|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[message](/javascript/api/excel/excel.datavalidationprompt#message)|プロンプトのメッセージを指定します。|
+|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[メッセージ](/javascript/api/excel/excel.datavalidationprompt#message)|プロンプトのメッセージを指定します。|
 ||[showPrompt](/javascript/api/excel/excel.datavalidationprompt#showPrompt)|ユーザーがデータ検証を使用してセルを選択するときにプロンプトを表示する場合に指定します。|
 ||[title](/javascript/api/excel/excel.datavalidationprompt#title)|プロンプトのタイトルを指定します。|
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[カスタム](/javascript/api/excel/excel.datavalidationrule#custom)|データ検証条件のカスタム数式。|
@@ -202,7 +202,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[source](/javascript/api/excel/excel.listdatavalidation#source)|データの入力規則のリストのソース。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[name](/javascript/api/excel/excel.pivotfield#name)|PivotField の名前。|
 ||[id](/javascript/api/excel/excel.pivotfield#id)|PivotField の ID。|
-||[items](/javascript/api/excel/excel.pivotfield#items)|PivotField に関連付けられているピボット フィールドを返します。|
+||[アイテム](/javascript/api/excel/excel.pivotfield#items)|PivotField に関連付けられているピボット フィールドを返します。|
 ||[showAllItems](/javascript/api/excel/excel.pivotfield#showAllItems)|PivotField のすべての項目を表示するかどうかを指定します。|
 ||[sortByLabels(sortBy: SortBy)](/javascript/api/excel/excel.pivotfield#sortByLabels_sortBy_)|PivotField を並べ替えます。|
 ||[subtotals](/javascript/api/excel/excel.pivotfield#subtotals)|PivotField の小計。|
@@ -272,12 +272,12 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[sum](/javascript/api/excel/excel.subtotals#sum)||
 ||[差異](/javascript/api/excel/excel.subtotals#variance)||
 ||[varianceP](/javascript/api/excel/excel.subtotals#varianceP)||
-|[表](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyId)|数値 ID を返します。|
+|[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyId)|数値 ID を返します。|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRange_ctx_)|特定のワークシートのテーブルの変更された領域を表す範囲を取得します。|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRangeOrNullObject_ctx_)|特定のワークシートのテーブルの変更された領域を表す範囲を取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|ブックが `true` 読み取り専用モードで開いている場合に返します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|ブックが `true` 読み取り専用モードで開いている場合に返します。|
 |[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|ワークシートの計算時に発生します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|ワークシートの計算時に発生します。|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showGridlines)|グリッド線がユーザーに表示される場合に指定します。|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showHeadings)|ユーザーに見出しを表示する場合に指定します。|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|イベントの種類を取得します。|

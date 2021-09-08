@@ -3,12 +3,12 @@ title: ドキュメントやスプレッドシート内のアクティブな選�
 description: Word ドキュメントまたはスプレッドシートでアクティブな選択範囲にデータを読み取り、書き込むExcelします。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 19cd1edad3835403355e07cdfcd4a43cb2aa9c9b7746823e2fd31aea319b9bf2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bf4d1256a41d4150d81cd33f876a14791e93e483
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080271"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937760"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの DisplayName 要素
 description: Office アドインの名前を最大 125 文字の文字列で指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a1181ff700acd852987ece09b9c87c01313a40404584dd292f7adb4364bdfcb4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 194af15d3ac68d87859304021b61cd975c9989b3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087333"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936544"
 ---
 # <a name="displayname-element"></a>DisplayName 要素
 

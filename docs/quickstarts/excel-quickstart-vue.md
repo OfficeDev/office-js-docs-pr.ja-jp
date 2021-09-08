@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: e27c2bb0b508ee919179bf4bcc49ed031d7f2b25
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232366"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937243"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 

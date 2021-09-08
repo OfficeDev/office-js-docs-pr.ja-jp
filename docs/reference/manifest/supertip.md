@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Supertip 要素
 description: Supertip 要素は、リッチ ヒント (タイトルと説明の両方) を定義します。
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 79120cc72aa4804eaaa2330d9298f6521a13552d325d9134814581402ace8210
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5e8b3850d99f6791726b1b2f0545c5fb4b52c554
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093262"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937210"
 ---
 # <a name="supertip"></a>Supertip
 

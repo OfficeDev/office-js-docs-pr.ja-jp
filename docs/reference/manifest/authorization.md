@@ -3,12 +3,12 @@ title: マニフェスト ファイルの承認要素
 description: アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087713"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937982"
 ---
 # <a name="authorization-element"></a>Authorization 要素
 
@@ -21,7 +21,7 @@ ms.locfileid: "57087713"
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **Resource**  |  はい   |  外部リソースの URL を指定します。|
-|  [Scope](scopes.md)                |  必要  |  アドインがリソースに必要とするアクセス許可を指定します。  |
+|  [Scope](scopes.md)                |  はい  |  アドインがリソースに必要とするアクセス許可を指定します。  |
 
 ## <a name="example"></a>例
 

@@ -4,12 +4,12 @@ description: ExcelApi 1.1 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: db8754e793d86fbc1c85bae85a1ce1f925504c649b1694659896ba567dc4e478
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7bc378c200d8aa7c200158d7fe50fdbd71b8251a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093823"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936570"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>ExcelJavaScript API 要件セット 1.1
 
@@ -32,7 +32,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 この�
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getItemAt_index_)|項目の配列内の位置に基づいて、バインド オブジェクトを取得します。|
 ||[count](/javascript/api/excel/excel.bindingcollection#count)|コレクション内にあるバインドの数を取得します。|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[グラフ](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete__)|グラフ オブジェクトを削除します。|
+|[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete__)|グラフ オブジェクトを削除します。|
 ||[height](/javascript/api/excel/excel.chart#height)|グラフ オブジェクトの高さをポイントで指定します。|
 ||[left](/javascript/api/excel/excel.chart#left)|グラフの左側からワークシートの原点までの距離 (ポイント単位)。|
 ||[name](/javascript/api/excel/excel.chart#name)|グラフ オブジェクトの名前を指定します。|
@@ -179,7 +179,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 この�
 ||[font](/javascript/api/excel/excel.rangeformat#font)|範囲全体に定義されたフォント オブジェクトを返します。|
 ||[verticalAlignment](/javascript/api/excel/excel.rangeformat#verticalAlignment)|指定したオブジェクトの垂直方向の配置を表します。|
 ||[wrapText](/javascript/api/excel/excel.rangeformat#wrapText)|オブジェクト内のExcelを折り返す値を指定します。|
-|[表](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete__)|テーブルを削除します。|
+|[Table](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete__)|テーブルを削除します。|
 ||[getDataBodyRange()](/javascript/api/excel/excel.table#getDataBodyRange__)|テーブルのデータ本体に関連付けられた範囲オブジェクトを取得します。|
 ||[getHeaderRowRange()](/javascript/api/excel/excel.table#getHeaderRowRange__)|表のヘッダー行に関連付けられた範囲オブジェクトを取得します。|
 ||[getRange()](/javascript/api/excel/excel.table#getRange__)|テーブル全体に関連付けられた範囲オブジェクトを取得します。|
@@ -218,13 +218,13 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 この�
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getItemAt_index_)|コレクション内の位置を基に行を取得します。|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|テーブルの行数を返します。|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getSelectedRange__)|ブックから現在選択されている 1 つの範囲を取得します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getSelectedRange__)|ブックから現在選択されている 1 つの範囲を取得します。|
 ||[application](/javascript/api/excel/excel.workbook#application)|このブックをExcelアプリケーション インスタンスを表します。|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|ブックの一部であるバインドのコレクションを表します。|
 ||[名前](/javascript/api/excel/excel.workbook#names)|ブックスコープの名前付きアイテム (名前付き範囲と定数) のコレクションを表します。|
 ||[テーブル](/javascript/api/excel/excel.workbook#tables)|ブックに関連付けられているテーブルのコレクションを表します。|
 ||[ワークシート](/javascript/api/excel/excel.workbook#worksheets)|ブックに関連付けられているワークシートのコレクションを表します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate__)|Excel UI でワークシートをアクティブにします。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate__)|Excel UI でワークシートをアクティブにします。|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete__)|ブックからワークシートを削除します。|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getCell_row__column_)|行番号 `Range` と列番号に基づいて 1 つのセルを含むオブジェクトを取得します。|
 ||[getRange(address?: string)](/javascript/api/excel/excel.worksheet#getRange_address_)|アドレスまたは名前で指定された 1 つの四角形のセル ブロックを表す `Range` オブジェクトを取得します。|
@@ -233,7 +233,7 @@ Excel JavaScript API 1.1 は、API の最初のバージョンです。 この�
 ||[グラフ](/javascript/api/excel/excel.worksheet#charts)|ワークシートの一部であるグラフのコレクションを返します。|
 ||[id](/javascript/api/excel/excel.worksheet#id)|指定されたブックのワークシートを一意に識別する値を返します。|
 ||[テーブル](/javascript/api/excel/excel.worksheet#tables)|ワークシートの一部になっているグラフのコレクション。|
-||[可視性](/javascript/api/excel/excel.worksheet#visibility)|ワークシートの可視性。|
+||[visibility](/javascript/api/excel/excel.worksheet#visibility)|ワークシートの可視性。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[add(name?: string)](/javascript/api/excel/excel.worksheetcollection#add_name_)|新しいワークシートをブックに追加します。|
 ||[getActiveWorksheet()](/javascript/api/excel/excel.worksheetcollection#getActiveWorksheet__)|ブックの、現在作業中のワークシートを取得します。|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcollection#getItem_key_)|名前または ID を使用して、ワークシート オブジェクトを取得します。|

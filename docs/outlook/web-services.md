@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 174f2bdfe63fbd4cef7cf2b6129a666ccea0135507d122570431306dae12d651
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092718"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936346"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 

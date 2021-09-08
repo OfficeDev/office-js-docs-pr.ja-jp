@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Metadata 要素
 description: Metadata 要素は、カスタム関数がカスタム 関数で使用するメタデータ設定を定義Excel。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d6b7af8988265baf8fbdea51e1414646f88868ede76ed7194c47db1eb874608d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 01be124b5526ce8328e0a20b8ff7d21ba6da96bc
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092491"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937692"
 ---
 # <a name="metadata-element"></a>MetaData 要素
 

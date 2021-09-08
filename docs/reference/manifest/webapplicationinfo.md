@@ -3,12 +3,12 @@ title: マニフェスト ファイルの WebApplicationInfo 要素
 description: アドイン マニフェスト (XML) ファイルOffice WebApplicationInfo 要素のリファレンス ドキュメント。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b14b62fa8b3dd87c650dbeaaeedb8d29c3995a77e0be8c8582da422cb480e67
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097885"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937298"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
@@ -29,7 +29,7 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 |  **Id**    |  はい   |  Azure Active Directory (Azure AD) v2.0 エンドポイントに登録された、アドインの関連サービスの **アプリケーション ID**。|
 |  **MsaId**    |  いいえ   |  MSA 用アドインの Web アプリケーションのクライアント ID を、msm.live.com。|
 |  **Resource**  |  はい   |  Azure Active Directory v2.0 エンドポイントに登録されたアドインの **アプリケーション ID URI** を指定します。|
-|  [Scope](scopes.md)                |  必要  |  Microsoft などのリソースに対してアドインに必要なアクセス許可をGraph。  |
+|  [Scope](scopes.md)                |  はい  |  Microsoft などのリソースに対してアドインに必要なアクセス許可をGraph。  |
 |  [Authorizations](authorizations.md)  |  いいえ   | アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo の例

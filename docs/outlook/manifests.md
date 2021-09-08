@@ -3,12 +3,12 @@ title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c5a31248f68e8f8b5b6ab4b2cf12c9bb969e062f0dccd68c8f5d7c3f5262452
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094194"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936890"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 

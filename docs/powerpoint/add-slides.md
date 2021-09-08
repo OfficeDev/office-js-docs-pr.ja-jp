@@ -3,12 +3,12 @@ title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c49496a6c2cfc2b591fc5ff9e003df455e33f4c9b1f18ee8b7049b16f12fd81d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090214"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937689"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 

@@ -3,12 +3,12 @@ title: マニフェスト ファイルの TabletSettings 要素
 description: TabletSettings 要素は、メール アドインをタブレットで使用するときに適用されるコントロール設定を指定します。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 3360a446396da058b5ced0127050d807f33e7bda007b1da88414b351782d0127
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b5a74db4f9fb43df10a08ab43b59507f6e0d7952
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094646"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936932"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings 要素
 

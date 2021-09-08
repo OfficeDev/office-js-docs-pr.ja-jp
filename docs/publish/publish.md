@@ -4,11 +4,11 @@ description: テスト目的またはユーザーに配布する目的で Office
 ms.date: 07/30/2021
 localization_priority: Priority
 ms.openlocfilehash: 28589d71d7b7e59640ce11fe231671ca2b3c65fb
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868716"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937465"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 

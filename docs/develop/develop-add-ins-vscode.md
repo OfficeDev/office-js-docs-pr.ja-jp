@@ -3,12 +3,12 @@ title: Visual Studio Code を使用して Office アドインを開発する
 description: Visual Studio Code を使用して Office アドインを開発する方法について説明します。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: de941cb6421be20a2aa0725a1780af4d67b940a0ed986a75ae57bce2a3f11242
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3f2a95e8ba08fa91b5f10707459ea87ab6c857e3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080927"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937876"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Visual Studio Code を使用して Office アドインを開発する
 
@@ -50,6 +50,6 @@ Office アドインのテスト、デバッグ、およびトラブルシュー�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)

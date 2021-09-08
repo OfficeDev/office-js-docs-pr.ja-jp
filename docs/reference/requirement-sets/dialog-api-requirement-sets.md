@@ -4,12 +4,12 @@ description: ダイアログ API 要件セットの詳細について説明し�
 ms.date: 07/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3c5aea3fecc6b48a830e48cf7739e93ef16dab6bacee1338b94774911a06ef5d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098945"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936859"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -30,7 +30,7 @@ DialogApi 1.2 要件セットは、コンシューマー チャネル バージ�
 
 |チャネル | バージョン | ビルド|
 |:-----|:-----|:-----|
-|現在のチャネル | 2005 以上 | 12827.20160 以上|
+|最新チャネル | 2005 以上 | 12827.20160 以上|
 |月次エンタープライズ チャネル | 2004 以上 | 12730.20430 以上|
 |半期エンタープライズ チャネル | 2002 以上 | 12527.20720 以上|
 

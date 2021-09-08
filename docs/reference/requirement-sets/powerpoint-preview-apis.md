@@ -4,12 +4,12 @@ description: JavaScript API のPowerPoint詳細。
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 5569a732dce2db1da5b6fb29169c87e65222afb50b55c7b1930a7c20e138c5c9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092622"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938100"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPointJavaScript プレビュー API
 
@@ -22,7 +22,7 @@ JavaScript api PowerPoint最初に "プレビュー" で導入され、後で十
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
 | スライドの管理 | スライドの追加とスライド レイアウトとスライド マスターの管理のサポートを追加します。 | [Slide](/javascript/api/powerpoint/powerpoint.slide)<br>[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)<br>[SlideMaster](/javascript/api/powerpoint/powerpoint.slidemaster)|
-| 図形 | スライド内の図形への参照を取得するサポートを追加します。 | [図形](/javascript/api/powerpoint/powerpoint.shape) |
+| 図形 | スライド内の図形への参照を取得するサポートを追加します。 | [Shape](/javascript/api/powerpoint/powerpoint.shape) |
 
 ## <a name="api-list"></a>API リスト
 
@@ -34,7 +34,7 @@ JavaScript api PowerPoint最初に "プレビュー" で導入され、後で十
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#slideMasterId)|新しいスライドに使用するスライド マスターの ID を指定します。|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#slideMasters)|プレゼンテーション内のオブジェクト `SlideMaster` のコレクションを返します。|
 ||[tags](/javascript/api/powerpoint/powerpoint.presentation#tags)|プレゼンテーションに添付されているタグのコレクションを返します。|
-|[図形](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|図形コレクションから図形を削除します。|
+|[Shape](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|図形コレクションから図形を削除します。|
 ||[id](/javascript/api/powerpoint/powerpoint.shape#id)|図形の一意の ID を取得します。|
 ||[tags](/javascript/api/powerpoint/powerpoint.shape#tags)|図形内のタグのコレクションを返します。|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#getCount__)|コレクション内の図形の数を取得します。|

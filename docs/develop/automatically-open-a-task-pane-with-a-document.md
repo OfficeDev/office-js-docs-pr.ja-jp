@@ -3,12 +3,12 @@ title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a9683f63b82232f8f5697007692b359ae06b7650e96866a2425e2d900ded4d8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081213"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938164"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 

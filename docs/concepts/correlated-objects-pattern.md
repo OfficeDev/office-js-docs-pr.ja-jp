@@ -3,12 +3,12 @@ title: ループで context.sync メソッドを使用しないでください
 description: ループ内での context.sync の呼び出しを回避するために、分割ループと相関オブジェクト パターンを使用する方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 549713e4ea32b791acc10befe3f4ab86455434784f6ffc449258899cba2d9e21
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083253"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937709"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>ループで context.sync メソッドを使用しないでください
 

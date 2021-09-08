@@ -4,12 +4,12 @@ description: 共通 API 要件セットOffice詳細を確認します。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d62f71905f892f6abd700fb78d21eb75c3fb4271f1370eb6b10a60326d52eafb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093250"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936728"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 

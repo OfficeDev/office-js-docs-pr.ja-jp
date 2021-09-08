@@ -3,12 +3,12 @@ title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fe870792a730404c4e90bf3eb1c3377b0f40c6f4b01a26a86deca56049868f16
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095525"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937001"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 

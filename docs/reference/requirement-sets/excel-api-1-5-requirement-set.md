@@ -4,12 +4,12 @@ description: ExcelApi 1.5 要件セットの詳細。
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1ce97ae8acbcd943027ea799e0c8183790ce3c733c73cc8ed0f39303957e5093
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 01a13a0f531eae9eea2c213ba0da764fbe51ee15
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084913"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936571"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 の新機能
 
@@ -54,8 +54,8 @@ ExcelApi 1.5 では、カスタム XML パーツが追加されます。 これ�
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ピボットテーブルの ID。|
 |[RequestContext](/javascript/api/excel/excel.requestcontext)|[runtime](/javascript/api/excel/excel.requestcontext#runtime)||
 |[ランタイム](/javascript/api/excel/excel.runtime)|||
-|[ブック](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customXmlParts)|このブックに含まれるカスタム XML パーツのコレクションを表します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNext_visibleOnly_)|このワークシートに続くワークシートを取得します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customXmlParts)|このブックに含まれるカスタム XML パーツのコレクションを表します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNext_visibleOnly_)|このワークシートに続くワークシートを取得します。|
 ||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNextOrNullObject_visibleOnly_)|このワークシートに続くワークシートを取得します。|
 ||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPrevious_visibleOnly_)|このワークシートの前のワークシートを取得します。|
 ||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPreviousOrNullObject_visibleOnly_)|このワークシートの前のワークシートを取得します。|

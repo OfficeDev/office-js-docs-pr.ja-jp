@@ -4,12 +4,12 @@ description: JavaScript API を使用して重複Excelする方法について�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 626676dae57854baf5e8fe195c669a0432eee832c8099715144c2b569ae1055a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 03ef1c15f214fcbd6a81d0b4f557e9816175d3b7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086137"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937556"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>JavaScript API を使用して重複Excel削除する
 

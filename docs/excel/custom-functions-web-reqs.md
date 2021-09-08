@@ -4,11 +4,11 @@ description: Excel でのカスタム関数を使って外部データを workbo
 title: カスタム関数でデータを受信して​​処理する
 localization_priority: Normal
 ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773357"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936676"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -104,7 +104,7 @@ async function getStarCount(userName: string, repoName: string) {
 - タグ `@streaming` 。
 - 呼 `CustomFunctions.StreamingInvocation` び出しパラメーター。
 
-以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては以下の点に注目してください。
+以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
 
 - Excel は、`setResult` メソッドを使用して自動的に新しい値を表示します。
 - 2 番目の入力パラメーター、起動は、[オートコンプリート] メニューから関数が選択された場合、Excel のエンドユーザーに表示されません。

@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: シングル サインオン (SSO) を使用する ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法の詳細なガイド。
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 685e482c3c714f6831ea827e4a65b2ac057bddec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773889"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937947"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "53773889"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-「[Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso)」にあるリポジトリを複製するかダウンロードします。
+「[Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)」にあるリポジトリを複製するかダウンロードします。
 
 > [!NOTE]
 > サンプルには 2 つのバージョンがあります。
@@ -185,7 +185,7 @@ ms.locfileid: "53773889"
 1. `getGraphData` 関数の下に、次の関数を追加します。 後の手順で `handleClientSideErrors` 関数を作成することに注意してください。
 
     ```javascript
-    async function getDataWithToken() {
+    async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
@@ -204,20 +204,19 @@ ms.locfileid: "53773889"
     }
     ```
 
-1. `TODO 1`を以下のように置き換えます。 このコードについては、以下の点に注意してください。
+1. 次 `TODO 1` のコードに置き換え、ホストからアクセス トークンOfficeします。 **options パラメーターには**、前の **getGraphData()** 関数から渡された次の設定が含まれます。
 
-    * `getAccessToken` は、Azure AD からブートストラップ トークンを取得し、アドインに戻るように Office に指示します。
-    * `allowSignInPrompt` は、ユーザーがまだ Office にサインインしていない場合、ユーザーにサインインするように求めるように Office に指示します。
-    * `allowConsentPrompt`同意Officeまだ許可されていない場合は、アドインがユーザーの AAD プロファイルにアクセスすることへの同意を求めるメッセージをユーザーに指示します。 (結果のプロンプトでは *、* ユーザーが Microsoft のスコープに同意Graphしません。
-    * `forMSGraphAccess` は、アドインが (ブートストラップ トークンをユーザー ID トークンとして使用するだけでなく) Microsoft Graph へのアクセス トークンのブートストラップ トークンを交換することを Office に通知します。 このオプションを設定すると、ユーザーのテナント管理者がアドインの同意を与えていない場合、Office はブートストラップ トークンの取得プロセスをキャンセルすることができます (そしてエラー コード 13012 が返されます)。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。 the が使用されていない場合に管理者が同意を得ていない場合、ブートストラップ トークンが返されますが、それを代理フローと交換しようとするとエラーが `forMSGraphAccess` 発生します。 したがって、`forMSGraphAccess` オプションを使用すると、アドインがフォールバック システムにすばやく分岐できます。
+    * `allowSignInPrompt` は true に設定されます。 これにより、Officeがサインインしていない場合にサインインするように求めるメッセージが表示Office。
+    * `allowConsentPrompt` は true に設定されます。 これにより、Officeがまだ許可されていない場合、アドインがユーザーの Microsoft Azure Active Directory プロファイルにアクセスすることへの同意を求めるメッセージが表示されます。 (結果のプロンプトでは *、* ユーザーが Microsoft のスコープに同意Graphしません。
+    * `forMSGraphAccess` は true に設定されます。 これにより、Officeまたは管理者がアドインの Graph スコープへの同意を許可していない場合、エラー (コード 13012) が返されます。 Microsoft にアクセスGraphアドインは、代理フローを介してアクセス トークンを新しいアクセス トークンと交換する必要があります。 `forMSGraphAccess`true に設定すると **、getAccessToken()** が成功したが、後で Microsoft サーバーの場合、代理フローが失敗するシナリオを回避Graph。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。
+
+    また、次のコードに注意してください。
+
     * 後の手順で `getData` 関数を作成します。
-    * `/api/values` パラメーターは、トークンを交換したり、Microsoft Graph を呼び出すためにアクセス トークンを使用したりする、サーバー側コントローラーの URL です。
+    * このパラメーターは、サーバー側コントローラーの URL で、On-behalf-of flow を使用して、Microsoft Graph を呼び出す新しいアクセス トークンのトークン `/api/values` を交換します。
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
-        allowSignInPrompt: true,
-        allowConsentPrompt: true,
-        forMSGraphAccess: true });
+    let bootstrapToken = await Office.auth.getAccessToken(options);
 
     getData("/api/values", bootstrapToken);
     ```

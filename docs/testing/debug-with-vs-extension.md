@@ -4,11 +4,11 @@ description: アドイン デバッガー Visual Studio Code拡張機能Microsof
 ms.date: 08/18/2021
 localization_priority: Normal
 ms.openlocfilehash: ba831cfabdefbf3829bb702bf21a70ddb499b972
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505671"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936367"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 

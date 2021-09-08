@@ -3,12 +3,12 @@ title: 開発環境をセットアップする
 description: 開発者環境をセットアップして、Officeを構築します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: b396ad9774959e36ef34c8ca158eda26162c3b13794aa65a4eab0859c317c167
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087436"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936771"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -57,7 +57,7 @@ Microsoft 365 アカウントをまだ持ってない場合は、Microsoft 365 �
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 独自のアドインを作成するか、Script Labを使用して組み込みのサンプルを試してみてください。
 
@@ -73,7 +73,7 @@ Office JavaScript API でどのような機能が提供されているかを把�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

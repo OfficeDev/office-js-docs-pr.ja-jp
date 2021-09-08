@@ -3,12 +3,12 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: b641a2492024f09aa7e24fb377f7866bfbf91eba4c6ee13522cfc1b3965dff5b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d191b2d7ac6135600bd6875ef7fbbced55caec8b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086593"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937097"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 

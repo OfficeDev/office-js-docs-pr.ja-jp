@@ -4,12 +4,12 @@ description: Excel アドインを構築します。このアドインでは、�
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2fd962f3729805805601af4379e83086059314151e880143443d65fbd8e80416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085644"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936475"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 

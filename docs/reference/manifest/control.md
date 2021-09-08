@@ -3,12 +3,12 @@ title: マニフェスト ファイルの Control 要素
 description: アクションを実行するか、作業ウィンドウを起動する JavaScript 関数を定義します。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 3ad26165e77305c69791aac9b128c5dfadf7f9beb97f85ae24a000876146c2cc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095960"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937793"
 ---
 # <a name="control-element"></a>Control 要素
 
@@ -36,7 +36,7 @@ ms.locfileid: "57095960"
 |  [Supertip](supertip.md)  | はい |  このボタンのヒントです。    |
 |  [Icon](icon.md)      | はい |  ボタンの画像です。         |
 |  [Action](action.md)    | はい |  実行するアクションを指定します。  |
-|  [Enabled](enabled.md)    | いいえ |  アドインの起動時にコントロールを有効にするかどうかを指定します。  |
+|  [Enabled (有効)](enabled.md)    | いいえ |  アドインの起動時にコントロールを有効にするかどうかを指定します。  |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | いいえ |  カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームの組み合わせにボタンを表示するかどうかを指定します。 使用する場合は、最初の子 *要素である* 必要があります。 |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction ボタンの例

@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
-ms.date: 01/14/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: b572893e93c747e155f643e99c0a3a67c323e5e6e12be9fa996adefc5de47780
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d525b6eb0e52c5c292f50e53451e648db1243215
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095179"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937828"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
@@ -421,4 +421,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - 
   [Exchange の EWS Managed API、EWS、および Web サービスについて学ぶ](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [EWS マネージ API クライアント アプリケーションの概要](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlookアドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlookアドイン SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)

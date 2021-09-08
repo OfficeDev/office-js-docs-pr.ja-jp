@@ -3,12 +3,12 @@ title: マニフェスト ファイルの AppDomain 要素
 description: アドインで使用され、ユーザーが信頼する必要がある追加のドメインをOffice。
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: be983418a09be8f808e6cde0b84bff7f99c25923e57baced85b915709668564c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098315"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938117"
 ---
 # <a name="appdomain-element"></a>AppDomain 要素
 

@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
-ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "58407947"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937311"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 

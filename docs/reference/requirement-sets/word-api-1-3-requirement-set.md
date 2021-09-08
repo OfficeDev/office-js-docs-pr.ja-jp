@@ -4,12 +4,12 @@ description: WordApi 1.3 要件セットの詳細。
 ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 4943eeb020e99f9a87d77996c59ea838e84ec6eecf705cb483930dc948d4e8c1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092164"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936808"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
@@ -61,7 +61,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 ||[getItem(key: string)](/javascript/api/word/word.custompropertycollection#getItem_key_)|キーを使用してカスタム プロパティ オブジェクトを取得します。大文字と小文字は区別されません。|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.custompropertycollection#getItemOrNullObject_key_)|キーを使用してカスタム プロパティ オブジェクトを取得します。大文字と小文字は区別されません。|
 ||[items](/javascript/api/word/word.custompropertycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Document](/javascript/api/word/word.document)|[プロパティ](/javascript/api/word/word.document#properties)|ドキュメントのプロパティを取得します。|
+|[ドキュメント](/javascript/api/word/word.document)|[プロパティ](/javascript/api/word/word.document#properties)|ドキュメントのプロパティを取得します。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[open()](/javascript/api/word/word.documentcreated#open__)|ドキュメントを開きます。|
 ||[body](/javascript/api/word/word.documentcreated#body)|ドキュメントの body オブジェクトを取得します。|
 ||[contentControls](/javascript/api/word/word.documentcreated#contentControls)|ドキュメント内のコンテンツ コントロール オブジェクトのコレクションを取得します。|
@@ -180,7 +180,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 ||[getNextOrNullObject()](/javascript/api/word/word.section#getNextOrNullObject__)|次のセクションを取得します。|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[getFirst()](/javascript/api/word/word.sectioncollection#getFirst__)|このコレクション内の最初のセクションを取得します。|
 ||[getFirstOrNullObject()](/javascript/api/word/word.sectioncollection#getFirstOrNullObject__)|このコレクション内の最初のセクションを取得します。|
-|[表](/javascript/api/word/word.table)|[addColumns(insertLocation: Word.InsertLocation, columnCount: number, values?: string[][])](/javascript/api/word/word.table#addColumns_insertLocation__columnCount__values_)|最初または最後の既存の列をテンプレートとして使用して、テーブルの最初または最後に列を追加します。|
+|[Table](/javascript/api/word/word.table)|[addColumns(insertLocation: Word.InsertLocation, columnCount: number, values?: string[][])](/javascript/api/word/word.table#addColumns_insertLocation__columnCount__values_)|最初または最後の既存の列をテンプレートとして使用して、テーブルの最初または最後に列を追加します。|
 ||[addRows(insertLocation: Word.InsertLocation, rowCount: number, values?: string[][])](/javascript/api/word/word.table#addRows_insertLocation__rowCount__values_)|最初または最後の既存の行をテンプレートとして使用して、テーブルの最初または最後に行を追加します。|
 ||[配置](/javascript/api/word/word.table#alignment)|ページ列に対するテーブルの配置を取得または設定します。|
 ||[autoFitWindow()](/javascript/api/word/word.table#autoFitWindow__)|テーブルの列をウィンドウの幅に合わせて自動調整します。|

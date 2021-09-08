@@ -4,12 +4,12 @@ description: ID API 要件は、アドインOffice情報を設定します。
 ms.date: 01/26/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ca583126eb70351fd7b9162cc6ee77a686e8b269219ba298a91f498f6a4b0a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 40f9154b06b0e373ac367b0dcc24cbfc05be4856
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079092"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936412"
 ---
 # <a name="identity-api-requirement-sets"></a>ID API の要件セット
 

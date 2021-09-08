@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
-ms.date: 08/27/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.openlocfilehash: 8b45aa0da3a92dd8387c316213698a5e040f05f5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863535"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936441"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -441,11 +441,11 @@ Office ダイアログ API に関するヒントとヘスと プラクティス�
 
 - [Officeアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Officeアドイン ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Officeアドイン ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Officeアドイン SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlookアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlookアドイン SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlookアドイン SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlookアドイン トークン ビューアー](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlookアドインのアクション可能なメッセージ](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlookアドインの共有OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)

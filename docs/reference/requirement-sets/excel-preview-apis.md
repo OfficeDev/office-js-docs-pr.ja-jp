@@ -4,12 +4,12 @@ description: JavaScript API のExcel詳細。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d90c5e8bb2c344cb3bb297a3cd793613f017e910ab99df6dfffc456c3f715d20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092646"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936219"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -37,7 +37,7 @@ ms.locfileid: "57092646"
 |:---|:---|:---|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|セルまたはセルが削除された場合に残りのセルが移動する方向 (上または左など) を表します。|
 ||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|新しいセルまたはセルを挿入するときに既存のセルが移動する方向 (下方向や右方向など) を表します。|
-|[グラフ](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|グラフのデータ テーブルを取得します。|
+|[Chart](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|グラフのデータ テーブルを取得します。|
 ||[getDataTableOrNullObject()](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|グラフのデータ テーブルを取得します。|
 |[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|塗りつぶし、フォント、罫線の形式を含むグラフ データ テーブルの形式を表します。|
 ||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showHorizontalBorder)|データ テーブルの水平方向の罫線を表示するかどうかを指定します。|
@@ -137,7 +137,7 @@ ms.locfileid: "57092646"
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|ピボットテーブルに適用されるスタイル。|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setStyle_style_)|ピボットテーブルに適用されるスタイルを設定します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|コレクション内の最初のピボットテーブルを取得します。|
-|[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|クエリが最後に更新された場合のクエリ エラー メッセージを取得します。|
+|[クエリ](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|クエリが最後に更新された場合のクエリ エラー メッセージを取得します。|
 ||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|オブジェクトの種類を '読み込まれた' クエリを取得します。|
 ||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|データ モデルに読み込まれたクエリを指定します。|
 ||[name](/javascript/api/excel/excel.query#name)|クエリの名前を取得します。|
@@ -157,7 +157,7 @@ ms.locfileid: "57092646"
 ||[source](/javascript/api/excel/excel.refreshrequestcompletedeventargs#source)|イベントのソースを取得します。|
 ||[type](/javascript/api/excel/excel.refreshrequestcompletedeventargs#type)|イベントの種類を取得します。|
 ||[警告](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|更新要求から生成された警告を含む配列。|
-|[図形](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|図形の表示名を取得します。|
+|[Shape](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|図形の表示名を取得します。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addSvg_xml_)|XML 文字列からスケーラブルなベクター グラフィックス (SVG) を作成し、それをワークシートに追加します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getItemOrNullObject_key_)|名前または ID を使用して図形を取得します。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|数式で使用するスライサーの名前を表します。|
@@ -175,7 +175,7 @@ ms.locfileid: "57092646"
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|テーブルから複数の行を削除します。|
 ||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|指定したインデックスから、指定した数の行をテーブルから削除します。|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getItemOrNullObject_key_)|名前または ID でテーブルを取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
 ||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|リンクされたブックのコレクションを返します。|
 ||[クエリ](/javascript/api/excel/excel.workbook#queries)|ブックの一部である Power Query クエリのコレクションを返します。|
 ||[タスク](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
