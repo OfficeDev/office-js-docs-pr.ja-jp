@@ -4,12 +4,12 @@ description: ExcelApi 1.4 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f1201b15c1f4e09e064afa7301d68d1f6ce54e05f2b202e3bec2dbb7179e2db1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: be71d1e0c063bd3902bf57ba8f2024ae5a78ff1d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089002"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938540"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -88,8 +88,8 @@ worksheet.getItemOrNullObject("itemName")
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getCount__)|表の列数を取得します。|
 ||[getItemOrNullObject(key: number \| string)](/javascript/api/excel/excel.tablecolumncollection#getItemOrNullObject_key_)|名前または ID によって、列オブジェクトを取得します。|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getCount__)|表の行数を取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[settings](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている設定のコレクションを表します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[settings](/javascript/api/excel/excel.workbook#settings)|ブックに関連付けられている設定のコレクションを表します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。|
 ||[名前](/javascript/api/excel/excel.worksheet#names)|現在のワークシートにスコープされている名前のコレクション。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getCount_visibleOnly_)|コレクションに含まれるワークシートの数を取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getItemOrNullObject_key_)|名前または ID を使用して、ワークシート オブジェクトを取得します。|

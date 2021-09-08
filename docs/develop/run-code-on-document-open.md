@@ -1,16 +1,16 @@
 ---
-title: ドキュメントが開Officeアドインでコードを実行する
-description: ドキュメントが開Officeアドインでコードを実行する方法について学習します。
+title: ドキュメントが開いたら、Office アドインでコードを実行する
+description: ドキュメントが開いたら、Officeアドインでコードを実行する方法について学習します。
 ms.date: 12/28/2020
 localization_priority: Normal
 ms.openlocfilehash: 1655c053a4fa6f92aae95f2155991fa4f7f7a5a7
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789245"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939087"
 ---
-# <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>ドキュメントが開Officeアドインでコードを実行する
+# <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>ドキュメントが開いたら、Office アドインでコードを実行する
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
@@ -20,7 +20,7 @@ ms.locfileid: "49789245"
 
 ## <a name="configure-your-add-in-to-load-when-the-document-opens"></a>ドキュメントが開くと読み込むアドインを構成する
 
-次のコードは、ドキュメントを開く際に読み込み、実行を開始するアドインを構成します。
+次のコードは、ドキュメントを開いたときに読み込み、実行を開始するアドインを構成します。
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
@@ -29,9 +29,9 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > メソッド `setStartupBehavior` は非同期です。
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>ドキュメントを開く場合の読み込み時の動作が発生しなか、アドインを構成する
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>ドキュメントを開く時に読み込み動作を行う必要がないアドインを構成する
 
-次のコードは、ドキュメントを開く際にアドインが起動しなく設定します。 代わりに、リボン ボタンを選択したり、作業ウィンドウを開くなど、何らかの方法でユーザーが操作を開始します。
+次のコードでは、ドキュメントを開いたときにアドインを起動しなく設定します。 代わりに、リボン ボタンの選択や作業ウィンドウの開きなど、ユーザーが何らかの方法で操作を開始します。
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
@@ -39,17 +39,17 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## <a name="get-the-current-load-behavior"></a>現在の読み込み動作を取得する
 
-現在のスタートアップ動作を確認するには、オブジェクトを返す次の関数を実行 `Office.StartupBehavior` します。
+現在の起動動作を確認するには、オブジェクトを返す次の関数を実行 `Office.StartupBehavior` します。
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
 ```
 
-## <a name="how-to-run-code-when-the-document-opens"></a>ドキュメントを開く際にコードを実行する方法
+## <a name="how-to-run-code-when-the-document-opens"></a>ドキュメントが開いたらコードを実行する方法
 
-ドキュメントを開く際に読み込むアドインが構成されている場合は、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラー `Office.initialize` に `Office.onReady` 配置します。
+ドキュメントが開いているときに読み込むアドインが構成されている場合、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラー `Office.initialize` に `Office.onReady` 配置します。
 
-次の Excel アドイン コードは、アクティブ ワークシートから変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成する場合、このコードはドキュメントを開く際にイベント ハンドラーを登録します。 作業ウィンドウを開く前に変更イベントを処理できます。
+次のExcelコードは、アクティブなワークシートから変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成すると、ドキュメントを開く際にイベント ハンドラーが登録されます。 作業ウィンドウを開く前に変更イベントを処理できます。
 
 ```JavaScript
 // This is called as soon as the document opens.
@@ -81,7 +81,7 @@ async function onChange(event) {
 }
 ```
 
-次の PowerPoint アドイン コードは、PowerPoint ドキュメントから選択変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成する場合、このコードはドキュメントを開く際にイベント ハンドラーを登録します。 作業ウィンドウを開く前に変更イベントを処理できます。
+次のPowerPointアドイン コードは、ドキュメントから選択変更イベントのイベント ハンドラーを登録するPowerPointします。 ドキュメントを開く際に読み込むアドインを構成すると、ドキュメントを開く際にイベント ハンドラーが登録されます。 作業ウィンドウを開く前に変更イベントを処理できます。
 
 ```JavaScript
 // This is called as soon as the document opens.
@@ -105,6 +105,6 @@ async function onChange(event) {
 
 ## <a name="see-also"></a>関連項目
 
-- [共有 JavaScript Office使用する新しいアドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md)
-- [Excel カスタム関数と作業ウィンドウのチュートリアルの間でデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Office アドインを構成して共有 JavaScript ランタイムを使用する](configure-your-add-in-to-use-a-shared-runtime.md)
+- [カスタム関数と作業ウィンドウのチュートリアルExcelデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Excel JavaScript API を使用してイベントを操作する](../excel/excel-add-ins-events.md)

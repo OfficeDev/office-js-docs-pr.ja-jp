@@ -5,11 +5,11 @@ ms.date: 04/09/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 8197228f1d428fd48c494825fec0e73cb85609f6
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868758"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939299"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 

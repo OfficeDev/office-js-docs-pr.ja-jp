@@ -4,12 +4,12 @@ description: ExcelApi 1.12 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9daee6dd70263af2654833f582e7ed6560ccbbd3c5e41e2c5e42bf94b568aa5a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 10587b84ba476b91cdd56d8472e551348b3a718b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090142"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938732"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel新機能
 
@@ -111,7 +111,7 @@ ExcelApi 1.12 では、動的配列を追跡し、数式の直接の前例を見
 ||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|A1 スタイルのアドレスの配列を返します。|
 ||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|オブジェクトを返 `RangeAreasCollection` します。|
 ||[範囲](/javascript/api/excel/excel.workbookrangeareas#ranges)|オブジェクト内のこのオブジェクトを構成する範囲を返 `RangeCollection` します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|ワークシート レベルのカスタム プロパティのコレクションを取得します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|ワークシート レベルのカスタム プロパティのコレクションを取得します。|
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|カスタム プロパティを削除します。|
 ||[key](/javascript/api/excel/excel.worksheetcustomproperty#key)|カスタム プロパティのキーを取得します。|
 ||[value](/javascript/api/excel/excel.worksheetcustomproperty#value)|カスタム プロパティの値を取得または設定します。|

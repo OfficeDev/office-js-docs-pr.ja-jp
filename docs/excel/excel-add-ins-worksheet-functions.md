@@ -4,11 +4,11 @@ description: JavaScript API などの組み込Excelワークシート関数を�
 ms.date: 12/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 5cf1478e7f76c0602b9c8f0d19031abfa8369888
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868730"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938992"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 

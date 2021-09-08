@@ -5,11 +5,11 @@ ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868737"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938890"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 

@@ -3,12 +3,12 @@ title: Outlook アドインで件名を取得または設定する
 description: Outlook アドインで、メッセージまたは予定の件名を取得または設定する方法について説明します。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: cfe2ad8010090e21606d2b9ec95ab2bed79d5ccf956a27e4cee303e09ca68349
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 048aa079adf3fda5d5f4a85bfcadd3b671ce865a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098327"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939293"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 

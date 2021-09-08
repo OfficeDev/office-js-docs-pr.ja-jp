@@ -4,11 +4,11 @@ description: カスタム関数の名前に関する要件Excel、一般的な�
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773350"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938342"
 ---
 # <a name="custom-functions-naming-guidelines"></a>カスタム関数の名前付けのガイドライン
 
@@ -59,7 +59,7 @@ Excelは、組み込みの関数名 (など) に大文字を使用します `SUM
 
 ローカライズの詳細については、「カスタム関数の [ローカライズ」を参照してください。](custom-functions-localize.md)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 エラー処理 [のベスト プラクティスについて説明します](custom-functions-errors.md)。
 

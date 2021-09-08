@@ -1,14 +1,14 @@
 ---
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
-ms.date: 01/29/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: e435add4b47984880ba4dc0d17f8a81c04af6ba7e9c2d499296a5679f15ef029
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 39d3e82162b1ed39390cff30b269417ef61d46f2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080430"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938216"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -209,7 +209,6 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
                             <OverriddenByRibbonApi>
                             <Label>

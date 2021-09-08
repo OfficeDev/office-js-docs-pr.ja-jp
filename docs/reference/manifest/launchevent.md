@@ -3,12 +3,12 @@ title: マニフェスト ファイルの LaunchEvent
 description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 763ee6b0776cce0118df35dbbad3488a54fd7599cc774de240d4f1130ed021cb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089769"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939033"
 ---
 # <a name="launchevent-element"></a>LaunchEvent 要素
 

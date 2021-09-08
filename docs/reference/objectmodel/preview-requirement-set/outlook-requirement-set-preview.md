@@ -4,11 +4,11 @@ description: 現在、アドインのプレビュー中Outlook API。
 ms.date: 08/27/2021
 localization_priority: Normal
 ms.openlocfilehash: ed37bdc872c045a071ee6217efa98eff5b5eea97
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868674"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938880"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 

@@ -3,12 +3,12 @@ title: Office.context - 要件セット 1.5
 description: Office。メールボックス API 要件セット 1.5 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 68df6c8a644fbc16e9eba546deaf8aa2636f05ffce6c15fb6a3e8f948fec50e8
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8aedd711665d902cf3cc733901df9e3a3cc86886
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085711"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938829"
 ---
 # <a name="context-mailbox-requirement-set-15"></a>context (メールボックス要件セット 1.5)
 
@@ -27,15 +27,15 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 
 | プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [診断](#diagnostics-contextinformation) | 作成<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | 作成<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [mailbox](office.context.mailbox.md) | 作成<br>Read | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [platform](#platform-platformtype) | 作成<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [要件](#requirements-requirementsetsupport) | 作成<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | 作成<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [UI](#ui-ui) | 作成<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [診断](#diagnostics-contextinformation) | 作成<br>読み取り | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | 作成<br>読み取り | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [mailbox](office.context.mailbox.md) | 作成<br>読み取り | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [platform](#platform-platformtype) | 作成<br>読み取り | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [要件](#requirements-requirementsetsupport) | 作成<br>読み取り | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | 作成<br>読み取り | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [UI](#ui-ui) | 作成<br>読み取り | [UI](/javascript/api/office/office.ui?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>プロパティの詳細
 

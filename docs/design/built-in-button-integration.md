@@ -3,12 +3,12 @@ title: 組み込みのコントロール Officeカスタム コントロール �
 description: カスタム コマンド グループとタブに組み込Officeボタンをリボンに含めるOfficeします。
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: a32b2831bdbd9a260acd7f2c09b6a6c2d8ff5789807ac6e6e1e1073a0953fc18
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d4e8f39313551d001669b948b146250114f3e06
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082148"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939265"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
 

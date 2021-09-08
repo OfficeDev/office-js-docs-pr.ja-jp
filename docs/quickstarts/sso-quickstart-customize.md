@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774421"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938576"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -635,7 +635,7 @@ Outlook アドインを試すには、次の手順を実行します。
 
     ![作成メッセージ ウィンドウOneDrive for Business情報をOutlookスクリーンショット。](../images/sso-onedrive-info-outlook.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 おめでとうございます、SSO クイック スタートで Yeoman ジェネレーターで作成した SSO 対応アドインの機能を正常に [カスタマイズしました](sso-quickstart.md)。 Yeoman ジェネレーターが自動的に完了した SSO の構成手順、および SSO プロセスを容易にするコードの詳細については、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」を参照してください。
 

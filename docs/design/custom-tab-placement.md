@@ -3,12 +3,12 @@ title: カスタム タブをリボンに配置する
 description: カスタム タブがリボンに表示される場所と、既定Officeフォーカスが設定されているかどうかを制御する方法について説明します。
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: 98b90ad6a8a89cf739dfdc0fff8068235a75e34d7304032c87011476620a483a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6718a69191d1d84d96512c01b2544094ce276ab6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082117"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939126"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>カスタム タブをリボンに配置する
 

@@ -5,11 +5,11 @@ ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
 ms.openlocfilehash: 65eb220eedfe74b905bee4312c366166836a075a
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868765"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938602"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 

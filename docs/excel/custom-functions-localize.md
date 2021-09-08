@@ -1,31 +1,31 @@
 ---
 ms.date: 11/06/2020
-description: Excel カスタム関数をローカライズします。
-title: カスタム関数をローカライズする
+description: カスタム関数Excelローカライズします。
+title: カスタム関数のローカライズ
 localization_priority: Normal
 ms.openlocfilehash: b393cbb76e4993eb77df8ddbe60247c8af74c580
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071656"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938300"
 ---
-# <a name="localize-custom-functions"></a>カスタム関数をローカライズする
+# <a name="localize-custom-functions"></a>カスタム関数のローカライズ
 
-アドインとカスタム関数名の両方をローカライズできます。 そのためには、ローカライズされた関数名を、XML マニフェストファイルの関数の JSON ファイルとロケール情報に提供します。
+アドインとカスタム関数名の両方をローカライズできます。 これを行うには、関数の JSON ファイルにローカライズされた関数名と、XML マニフェスト ファイル内のロケール情報を指定します。
 
 >[!IMPORTANT]
-> 自動生成されたメタデータはローカライズには使用できないため、JSON ファイルを手動で更新する必要があります。 これを行う方法については、「[カスタム関数の JSON メタデータを手動で作成](custom-functions-json.md)する」を参照してください。
+> 自動生成されたメタデータはローカライズでは機能しないので、JSON ファイルを手動で更新する必要があります。 これを行う方法については、「カスタム関数の [JSON メタデータを手動で作成する」を参照してください。](custom-functions-json.md)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="localize-function-names"></a>関数名をローカライズする
 
-カスタム関数をローカライズするには、言語ごとに新しい JSON メタデータファイルを作成します。 各言語 JSON ファイルで、 `name` `description` ターゲット言語でプロパティを作成します。 英語の既定のファイルの名前は **functions.jsに** なります。 追加の JSON ファイルごとに、ファイル名のロケールを使用して、それらを識別しやすくするために **functions-de.js** します。
+カスタム関数をローカライズするには、言語ごとに新しい JSON メタデータ ファイルを作成します。 各言語 JSON ファイルで、ターゲット `name` 言語 `description` でプロパティを作成します。 英語の既定のファイルの名前は on **functions.jsです**。 追加の JSON ファイルごとにファイル名のロケールを使用します (たとえば、functions-de.js **を** 識別するのに役立ちます。
 
-は `name` 、 `description` Excel に表示され、ローカライズされています。 ただし、 `id` 各関数のはローカライズされていません。 `id`このプロパティでは、Excel によって関数が一意であると識別されますが、設定された後に変更することはできません。
+と `name` に `description` 表示されExcelローカライズされます。 ただし、 `id` 各関数はローカライズされません。 プロパティは、関数Excel一意として識別する方法であり、設定後に変更 `id` する必要はありません。
 
-次の JSON は、"掛け算" というプロパティを持つ関数を定義する方法を示して `id` います。 `name` `description` 関数のおよびプロパティは、ドイツ語にローカライズされています。 各パラメーター `name` と `description` は、ドイツ語にローカライズされています。
+次の JSON は、プロパティ "MULTIPLY" を使用して関数 `id` を定義する方法を示しています。 関数 `name` の `description` and プロパティはドイツ語用にローカライズされています。 各パラメーター `name` は `description` ドイツ語にもローカライズされます。
 
 ```JSON
 {
@@ -52,7 +52,7 @@ ms.locfileid: "49071656"
 }
 ```
 
-前の JSON を次の JSON と比較して英語を比較します。
+英語の場合、前の JSON と次の JSON を比較します。
 
 ```JSON
 {
@@ -81,7 +81,7 @@ ms.locfileid: "49071656"
 
 ## <a name="localize-your-add-in"></a>アドインをローカライズする
 
-各言語の JSON ファイルを作成した後、各 JSON メタデータファイルの URL を指定する各ロケールの上書き値で XML マニフェストファイルを更新します。 次のマニフェスト XML は、 `en-us` (ドイツ) 用の JSON ファイルの上書き URL を含む既定のロケールを示して `de-de` います。 ファイル **のfunctions-de.js** には、ローカライズされたドイツ語の関数名と id が含まれています。
+言語ごとに JSON ファイルを作成した後、各 JSON メタデータ ファイルの URL を指定するロケールごとに上書き値を使用して XML マニフェスト ファイルを更新します。 次のマニフェスト XML は、(ドイツ) の JSON ファイル URL を上書きする既定の `en-us` `de-de` ロケールを示しています。 ファイル **functions-de.jsには** 、ローカライズされたドイツ語の関数名と id が含まれる。
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
@@ -96,10 +96,10 @@ ms.locfileid: "49071656"
 </Resources>
 ```
 
-アドインのローカライズプロセスの詳細については、「 [Office アドインのローカライズ](../develop/localization.md#control-localization-from-the-manifest)」を参照してください。
+アドインをローカライズするプロセスの詳細については、「ローカライズ for [Office」を参照してください](../develop/localization.md#control-localization-from-the-manifest)。
 
-## <a name="next-steps"></a>次の手順
-[カスタム関数の名前付け規則](custom-functions-naming.md)について、または[エラー処理のベストプラクティス](custom-functions-errors.md)を検出する方法について説明します。
+## <a name="next-steps"></a>次のステップ
+カスタム関数の [名前付け規則について、または](custom-functions-naming.md) エラー処理のベスト [プラクティスを確認する方法について説明します](custom-functions-errors.md)。
 
 ## <a name="see-also"></a>関連項目
 

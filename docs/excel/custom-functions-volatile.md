@@ -4,11 +4,11 @@ description: 揮発性およびオフラインのストリーミング カスタ
 title: 関数の揮発性の値
 localization_priority: Normal
 ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075888"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938337"
 ---
 # <a name="volatile-values-in-functions"></a>関数の揮発性の値
 
@@ -37,7 +37,7 @@ function roll6sided() {
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 * カスタム関数 [パラメーター オプションについて説明します](custom-functions-parameter-options.md)。
 
 ## <a name="see-also"></a>関連項目

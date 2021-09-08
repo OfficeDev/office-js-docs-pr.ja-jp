@@ -3,12 +3,12 @@ title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 53db46485fd49498357d77c4a9742b601175219d1f01c5e403a92a5088f488a9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9a98fbc78e98cbaaf99c60625dd7f6a725c57c0f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091406"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939097"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
@@ -274,7 +274,7 @@ function write(message){
 ```
 
 
-## <a name="add-recipients"></a>受信者を追加する
+## <a name="add-recipients"></a>受信者の追加
 
 予定またはメッセージ内の既存の受信者を上書きしない場合は、使用する代わりに、非同期メソッドを使用して受信者 `Recipients.setAsync` `Recipients.addAsync` を追加できます。 `addAsync` 受信者の入力 `setAsync` 引数が必要な場合と同様 _に_ 動作します。 オプションで、コールバック メソッドを指定し、asyncContext パラメーターを使用してコールバックの引数を提供できます。 その後、コールバック メソッドの asyncResult 出力パラメーターを使用して、非同期呼び出しの状態、結果、およびエラー `addAsync` を確認できます。  次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
 

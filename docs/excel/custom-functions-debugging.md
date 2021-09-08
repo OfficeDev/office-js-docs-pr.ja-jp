@@ -3,12 +3,12 @@ title: UI レスのカスタム関数のデバッグ
 description: 作業ウィンドウを使用しないExcel関数をデバッグする方法について説明します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 86c1cca9602bf56566609ed500b6ee41379fbc432ffd8e92e0a95b2adaa3709e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079735"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938712"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -174,7 +174,7 @@ Mac の場合:
 - `npm run start:web`: アドインExcel on the webを開始し、サイドロードします。
 - `npm run stop`: デバッグExcel停止します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 UI レス [のカスタム関数の認証方法について説明します](custom-functions-authentication.md)。
 

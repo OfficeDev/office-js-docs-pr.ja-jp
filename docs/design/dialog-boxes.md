@@ -3,12 +3,12 @@ title: Office アドインのダイアログ ボックス
 description: アドインのダイアログの視覚的な設計に関するベスト プラクティスOffice説明します。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 84af1bf7d5574ef87d66f801f7e1f7e74934601fcebcc9c273b9e9e40e8f4e38
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d674b747effa57b8a75b79f98f5ff78ccc8a92a4
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081965"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938568"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office アドインのダイアログ ボックス
 

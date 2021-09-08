@@ -1,16 +1,21 @@
 ---
 title: アドインを使用したOfficeのトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
-ms.date: 06/11/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: a750f8db6e58406403d8bd0ef89e60128c2e08523375b4b2fbe6a904bfbae2d4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093226"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938622"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>アドインを使用したOfficeのトラブルシューティング
+
+アドインの開発中に発生する可能性がある一般的な問題Office次に示します。
+
+> [!TIP]
+> 多くの場合、Officeキャッシュをクリアすると、古いコードに関連する問題が修正されます。 これにより、現在のファイル名、メニュー テキスト、その他のコマンド要素を使用して、最新のマニフェストがアップロードされます。 詳細については、「キャッシュをクリア[する」をOfficeしてください](clear-cache.md)。
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
@@ -18,19 +23,7 @@ ms.locfileid: "57093226"
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない
 
-リボン ボタンのアイコンのファイル名やメニュー アイテムのテキストなど、マニフェスト ファイルに変更を加えたときに、変更内容が反映されていないと思われる場合は、そのコンピューターで Office のキャッシュをクリアしてみてください。 
-
-#### <a name="for-windows"></a>Windows の場合:
-
-フォルダーの内容を削除し `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` 、フォルダーの内容が存在する場合は `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` 削除します。
-
-#### <a name="for-mac"></a>Mac の場合: 
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>iOS の場合: 
-
-アドイン内の JavaScript から `window.location.reload(true)` を呼び出して強制的に再読み込みします。または、Office を再インストールしてください。
+キャッシュをクリアすると、アドインのマニフェストの最新バージョンが使用されます。 キャッシュをクリアするにはOfficeキャッシュをクリアする[の手順に従Officeします](clear-cache.md)。 アプリを使用しているOffice on the web、ブラウザーの UI を使用してブラウザーのキャッシュをクリアします。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>JavaScript、HTML、CSS などの静的ファイルへの変更は有効になりません
 
@@ -40,7 +33,7 @@ ms.locfileid: "57093226"
 - Pragma: 「no-cache」
 - 有効期限: 「-1」
 
-Node.JS Express サーバーでこれを行う例については、「[この app.js ファイル](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js)について」を参照してください。 ASP.NET プロジェクトの例については、「[この cshtml ファイル](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)について」を参照してください。
+Node.JS Express サーバーでこれを行う例については、「[この app.js ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js)について」を参照してください。 ASP.NET プロジェクトの例については、「[この cshtml ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)について」を参照してください。
 
 アドインがインターネット インフォメーション サービス (IIS) にホストされている場合は、次を web.config に追加することもできます。
 
@@ -59,7 +52,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>プロパティ値に加えた変更は発生し、エラー メッセージはありません
 
-プロパティが読み取り専用である場合は、プロパティのリファレンス ドキュメントを確認してください。 また[、JS の TypeScript 定義Office、](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)読み取り専用のオブジェクト プロパティを指定します。 読み取り専用プロパティを設定しようとすると、書き込み操作はサイレント モードで失敗し、エラーはスローされます。 次の例では、読み取り専用プロパティを誤って設定 [Chart.id。](/javascript/api/excel/excel.chart#id)「一部 [のプロパティを直接設定できない」も参照してください](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+プロパティが読み取り専用である場合は、プロパティのリファレンス ドキュメントを参照してください。 また[、JS の TypeScript 定義Office、](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)読み取り専用のオブジェクト プロパティを指定します。 読み取り専用プロパティを設定しようとすると、書き込み操作はサイレント モードで失敗し、エラーはスローされます。 次の例では、読み取り専用プロパティを誤って設定 [Chart.id。](/javascript/api/excel/excel.chart#id)「一部 [のプロパティを直接設定できない」も参照してください](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -72,7 +65,7 @@ myChart.id = "5";
 
 - アプリケーションを使用しているVisual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉じるVisual Studio。 再起動してVisual Studio F5 キーを再度押してみてください。
 - アドインのマニフェストは、展開場所 (集中展開、SharePoint、ネットワーク共有など) から削除されています。
-- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のトレースOffice削除するには、キャッシュをクリアする必要があります。 この記事の [「リボン ボタンや](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) メニュー項目を含むアドイン コマンドの変更」セクションを参照してください。
+- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のトレースOffice削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
 - アドインのマニフェストには、マニフェストの `resid` [[リソース](../reference/manifest/resources.md)] セクションのどこにも定義されていないか、使用する場所とセクションで定義されている場所のスペルが一致しません。 `resid` `<Resources>`
 - マニフェストの `resid` どこかに 32 文字を超える属性があります。 属性 `resid` と、セクション内の対応するリソースの属性は `id` `<Resources>` 、32 文字を超えることはできません。
 - アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォームで実行しようとしている。 詳細については、「アドイン コマンド [の要件セット」を参照してください](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
@@ -119,3 +112,4 @@ myChart.id = "5";
 - [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
+- [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

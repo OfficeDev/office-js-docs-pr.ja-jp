@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 38f48c76482d2f3096aef0145598d510049a27bea6a349864f7c30c500f154b9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087522"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938357"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 
@@ -124,7 +124,7 @@ Office アドインの開発の詳細については、「[Office アドイン�
 
 - [Office アドインの中心概念](../overview/core-concepts-office-add-ins.md)
 - [Office アドインを開発する](../develop/develop-overview.md)
-- [Office アドインの設計](../design/add-in-design.md)
+- [Office アドインを設計する](../design/add-in-design.md)
 - [Office アドインのテストとデバッグ](../testing/test-debug-office-add-ins.md)
 - [Office アドインの公開](../publish/publish.md)
 - [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)

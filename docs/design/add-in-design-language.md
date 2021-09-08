@@ -3,12 +3,12 @@ title: Office アドインのデザイン言語
 description: アドインと視覚的に互換性Officeする方法について説明Office。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 45ef812c83b094d548b120493717f6af6e9fb2f36bf0d9c2144b6b1517e658e9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4374eaad1e660728a347d19a012d345b642755af
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082657"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939137"
 ---
 # <a name="office-add-in-design-language"></a>Office アドインのデザイン言語
 

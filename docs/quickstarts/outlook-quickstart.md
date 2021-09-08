@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
 ms.openlocfilehash: f72e84a71fd853f8a8f0c00d1b226b3b08548e1c
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232347"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938490"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -57,10 +57,10 @@ ms.locfileid: "58232347"
 1. Web アプリケーション プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd "My Office Add-in&quot;
+    cd "My Office Add-in"
     ```
 
-### <a name=&quot;explore-the-project&quot;></a>プロジェクトを探究する
+### <a name="explore-the-project"></a>プロジェクトを探究する
 
 Yeomanジェネレーターで作成したアドインプロジェクトには、原型となる作業ペインアドインのサンプルコードが含まれています。
 
@@ -69,16 +69,16 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 - **./src/taskpane/taskpane.css** ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
 - **./src/taskpane/taskpane.js** ファイルには、作業ペインとOutlookの間のやり取りを容易にするOffice JavaScript APIコードが含まれています。
 
-### <a name=&quot;update-the-code&quot;></a>コードを更新する
+### <a name="update-the-code"></a>コードを更新する
 
 1. コードエディタで、**./src/taskpane/taskpane.html** ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js** のスクリプトがデータを書き込む場所にラベルを追加します。
 
     ```html
-    <main id=&quot;app-body&quot; class=&quot;ms-welcome__main&quot; style=&quot;display: none;&quot;>
-        <h2 class=&quot;ms-font-xl&quot;> Discover what Office Add-ins can do for you today! </h2>
-        <p><label id=&quot;item-subject&quot;></label></p>
-        <div role=&quot;button&quot; id=&quot;run&quot; class=&quot;ms-welcome__action ms-Button ms-Button--hero ms-font-xl&quot;>
-            <span class=&quot;ms-Button-label&quot;>Run</span>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
+        <p><label id="item-subject"></label></p>
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Run</span>
         </div>
     </main>
     ```
@@ -90,7 +90,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     var item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
-    document.getElementById(&quot;item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
 ### <a name="try-it-out"></a>試してみる

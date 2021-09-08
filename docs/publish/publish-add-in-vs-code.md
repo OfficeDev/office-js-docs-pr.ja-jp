@@ -3,12 +3,12 @@ title: アドインと Azure を使用してアドインVisual Studio Code発行
 description: アドインを使用してアドインを発行するVisual Studio CodeおよびAzure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e8c81a57b49254103366c28092f30235cc525e12d9a446897d862af4fc189325
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097211"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939335"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Visual Studio Code で開発されたアドインを発行する
 

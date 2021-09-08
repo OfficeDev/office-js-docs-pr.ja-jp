@@ -3,12 +3,12 @@ title: 社内の Project Server OData サービスで REST を使用する Proje
 description: Project Professional 2013 の作業ウィンドウ アドインを作成し、アクティブなプロジェクトのコストと作業データと、現在の Project Web App インスタンスのすべてのプロジェクトの平均を比較する方法について学習します。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a9a6d8699720f63107c3f4ad0114fbb75cd7771c1e730dda71ee5c1df1b8730d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088055"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938814"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -105,11 +105,11 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 マニフェストについて詳しくは、「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」と「[Office アドインのマニフェスト向けのスキーマ リファレンス (v1.1)](../develop/add-in-manifests.md#see-also)」をご覧ください。
 
-### <a name="procedure-3-modify-the-add-in-manifest&quot;></a>手順 3. アドイン マニフェストを変更する
+### <a name="procedure-3-modify-the-add-in-manifest"></a>手順 3. アドイン マニフェストを変更する
 
 1. Visual Studio で、HelloProjectOData.xml ファイルを開きます。
 
-2. 既定の表示名は、Visual Studio プロジェクトの名前です (&quot;HelloProjectOData")。 たとえば **、DisplayName** 要素の既定値を "Hello ProjectData" に変更します。
+2. 既定の表示名は、Visual Studio プロジェクトの名前です ("HelloProjectOData")。 たとえば **、DisplayName** 要素の既定値を "Hello ProjectData" に変更します。
 
 3. 既定の説明も "HelloProjectOData" です。たとえば、Description 要素の既定値を "Test REST queries of the ProjectData service" に変更します。
 
@@ -1091,7 +1091,7 @@ Table styles
 
 SurfaceErrors.js ファイルのコードは、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」の「_堅牢なプログラミング_」セクションからコピーできます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 **HelloProjectOData** が AppSource で販売される実稼働アドインだった場合や、SharePoint アプリ カタログで配布する場合は、異なる方法で設計されます。 たとえば、テキスト ボックスのデバッグ出力や、**ProjectData** エンドポイントを取得するためのボタンはおそらくありません。 また、100 を超えるプロジェクトを持つProject Web Appを処理するために関数を書き `retireveOData` 換える必要があります。
 

@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f2a4b4b7ae44596bef101aeeba51ee6dffa8ba5e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079961"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938194"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
@@ -28,9 +28,8 @@ ms.locfileid: "57079961"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>getAccessToken からのエラーの原因と処理
 
 このセクションで説明するエラー処理の例については、次を参照してください。
-
-- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -108,7 +107,7 @@ ms.locfileid: "57079961"
 
 ### <a name="13013"></a>13013
 
-短い時間で何度も呼び出されたので、Officeの呼び `getAccessToken` 出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用されるのかHomeES6.js`retryGetAccessToken` を[](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)参照[ssoAuthES6.js。 ](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+短い時間で何度も呼び出されたので、Officeの呼び `getAccessToken` 出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用されるのかHomeES6.js`retryGetAccessToken` を[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)参照[ssoAuthES6.js。 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="50001"></a>50001
 
@@ -119,9 +118,8 @@ ms.locfileid: "57079961"
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
 このセクションで説明するエラー処理の例については、次を参照してください。
-
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件付きアクセスおよび多要素認証のエラー
 

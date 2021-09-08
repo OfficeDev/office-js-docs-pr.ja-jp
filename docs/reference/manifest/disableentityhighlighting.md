@@ -3,12 +3,12 @@ title: マニフェスト ファイルの DisableEntityHighlighting 要素
 description: メール アドインでエンティティの強調表示をオフにするかどうかを指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 4cf11da3496485ae3a37b5757129d65fb280d06ffdd2564a4694ca911a6d7166
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a2364bb0ec1d369be7a2f07f1a115bab92dacc48
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097445"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938943"
 ---
 # <a name="disableentityhighlighting-element"></a>DisableEntityHighlighting 要素
 

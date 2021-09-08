@@ -4,12 +4,12 @@ description: ExcelApi 1.11 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 67fb212813608ecb4e72ba5d63952f0228875211d0bf66978b7201fff58c5076
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1e347e0bb7b394676eccf422665c545b110b589d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092658"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938522"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel新機能
 
@@ -55,9 +55,9 @@ ExcelApi 1.11 では、コメントとブック レベルのコントロール (
 ||[numberGroupSeparator](/javascript/api/excel/excel.numberformatinfo#numberGroupSeparator)|数値の 10 進数の左側に数字のグループを区切る文字列を取得します。|
 |[Range](/javascript/api/excel/excel.range)|[moveTo(destinationRange: Range \| string)](/javascript/api/excel/excel.range#moveTo_destinationRange_)|セルの値、書式設定、および数式を現在の範囲から移動先の範囲に移動し、それらのセルの古い情報を置き換える。|
 |[範囲の形式](/javascript/api/excel/excel.rangeformat)|[adjustIndent(amount: number)](/javascript/api/excel/excel.rangeformat#adjustIndent_amount_)|範囲の書式設定のインデントを調整します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close_closeBehavior_)|現在のブックを閉じます。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close_closeBehavior_)|現在のブックを閉じます。|
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save_saveBehavior_)|現在のブックを保存します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)|特定のワークシートで 1 つ以上の行の非表示状態が変更された場合に発生します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)|特定のワークシートで 1 つ以上の行の非表示状態が変更された場合に発生します。|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[address](/javascript/api/excel/excel.worksheetcalculatedeventargs#address)|計算が完了した範囲のアドレス。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onRowHiddenChanged)|特定のワークシートで 1 つ以上の行の非表示状態が変更された場合に発生します。|
 |[WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs)|[address](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs#address)|特定のワークシートで変更されたエリアを表す範囲のアドレスを取得します。|

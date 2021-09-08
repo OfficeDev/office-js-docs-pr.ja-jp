@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化を実装Outlookアド�
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090817"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938206"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのアドインOutlookデバッグする (プレビュー)
 

@@ -4,12 +4,12 @@ description: ExcelApi 1.10 要件セットの詳細。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 34c21ad0e90593352ae4042c2be148e607c63164aac1845357e9f96371104f6f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087216"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938717"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>JavaScript API 1.10 Excel新機能
 
@@ -142,7 +142,7 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getItemOrNullObject_name_)|名前で `TimelineStyle` 取得します。|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setDefault_newDefaultStyle_)|親オブジェクトのスコープで使用する既定のタイムライン スタイルを設定します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|ブックで現在アクティブになっているスライサーを取得します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|ブックで現在アクティブになっているスライサーを取得します。|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getActiveSlicerOrNullObject__)|ブックで現在アクティブになっているスライサーを取得します。|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|ブックに関連付けられたコメントのコレクションを表します。|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivotTableStyles)|ブックに関連付けられている PivotTableStyle のコレクションを表します。|

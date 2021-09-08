@@ -3,12 +3,12 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: afd8c944a6524f4b5b532ed6136ef28c326d0d0c475b35d6254592c3a392aac3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089541"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938426"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 

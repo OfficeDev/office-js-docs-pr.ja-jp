@@ -3,12 +3,12 @@ title: Office名前空間 - 要件セット 1.2
 description: Office API 要件セット 1.2 を使用Outlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 0f27ffda734f6acc817fbf398403693338524cd0225841b4404fb65b97b23935
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4cd15d77d1c5d9b95152f038f3421c5838bfb84f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092670"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938404"
 ---
 # <a name="office-mailbox-requirement-set-12"></a>Office (メールボックス要件セット 1.2)
 
@@ -25,15 +25,15 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | プロパティ | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [context](office.context.md) | 作成<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 作成<br>読み取り | [Context](/javascript/api/office/office.context?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>列挙型
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>名前空間
 

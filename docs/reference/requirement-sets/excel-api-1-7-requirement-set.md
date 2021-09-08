@@ -4,12 +4,12 @@ description: ExcelApi 1.7 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1012efa0143710a6646c5288ef8c4adfd49a6006e62eb850f25d6d12e9028c51
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088964"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938744"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
@@ -69,7 +69,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
-|[グラフ](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|グラフの種類を指定します。|
+|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|グラフの種類を指定します。|
 ||[id](/javascript/api/excel/excel.chart#id)|グラフの一意の ID。|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showAllFieldButtons)|すべてのフィールド ボタンを 1 つのウィンドウに表示するかどうかをピボットグラフ。|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[border](/javascript/api/excel/excel.chartareaformat#border)|色、線のスタイル、太さなど、グラフ領域の罫線の形式を表します。|
@@ -239,7 +239,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[add(name: string)](/javascript/api/excel/excel.stylecollection#add_name_)|コレクションに新しいスタイルを追加します。|
 ||[getItem(name: string)](/javascript/api/excel/excel.stylecollection#getItem_name_)|名前で `Style` 取得します。|
 ||[items](/javascript/api/excel/excel.stylecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[表](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onChanged)|セル内のデータが特定のテーブルで変更された場合に発生します。|
+|[Table](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onChanged)|セル内のデータが特定のテーブルで変更された場合に発生します。|
 ||[onSelectionChanged](/javascript/api/excel/excel.table#onSelectionChanged)|特定のテーブルで選択範囲が変更された場合に発生します。|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[address](/javascript/api/excel/excel.tablechangedeventargs#address)|特定のワークシート上のテーブル内で変更されたエリアを表すアドレスを取得します。|
 ||[changeType](/javascript/api/excel/excel.tablechangedeventargs#changeType)|変更されたイベントのトリガー方法を表す変更の種類を取得します。|
@@ -253,7 +253,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableId)|選択範囲が変更されたテーブルの ID を取得します。|
 ||[type](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetId)|選択範囲が変更されたワークシートの ID を取得します。|
-|[ブック](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|ブックで現在アクティブなセルを取得します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|ブックで現在アクティブなセルを取得します。|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|ブック内のすべてのデータ接続を表します。|
 ||[name](/javascript/api/excel/excel.workbook#name)|ブックの名前を取得します。|
 ||[プロパティ](/javascript/api/excel/excel.workbook#properties)|ブックのプロパティを取得します。|
@@ -262,7 +262,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect(password?: string)](/javascript/api/excel/excel.workbookprotection#protect_password_)|ブックを保護します。|
 ||[保護](/javascript/api/excel/excel.workbookprotection#protected)|ブックが保護される場合に指定します。|
 ||[unprotect(password?: string)](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|ブックの保護を解除します。|
-|[ワークシート](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel.WorksheetPositionType、 relativeTo?: Excel。ワークシート)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|ワークシートをコピーし、指定した位置に配置します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel.WorksheetPositionType、 relativeTo?: Excel。ワークシート)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|ワークシートをコピーし、指定した位置に配置します。|
 ||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|特定の行インデックスと列インデックスから始まり、特定の数の行と列にまたがるオブジェクト `Range` を取得します。|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezePanes)|ワークシートの固定されたウィンドウを操作するために使用できるオブジェクトを取得します。|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onActivated)|ワークシートがアクティブ化されると発生します。|

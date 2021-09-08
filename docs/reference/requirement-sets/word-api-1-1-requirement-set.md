@@ -4,12 +4,12 @@ description: WordApi 1.1 要件セットの詳細
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: c7b1adfa1af76f9994ced793dfddcf457cf733858fd27ba0ef763a67c35611c2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 80914cd0804600e7987408ce3a3de8a94e6fec29
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092455"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939304"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 の新機能
 
@@ -88,13 +88,13 @@ WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 こ�
 ||[getByTitle(title: string)](/javascript/api/word/word.contentcontrolcollection#getByTitle_title_)|指定されたタイトルを含むコンテンツ コントロールを取得します。|
 ||[getItem(index: number)](/javascript/api/word/word.contentcontrolcollection#getItem_index_)|コレクション内のインデックスによってコンテンツ コントロールを取得します。|
 ||[items](/javascript/api/word/word.contentcontrolcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Document](/javascript/api/word/word.document)|[getSelection()](/javascript/api/word/word.document#getSelection__)|ドキュメントの現在の選択範囲を取得します。|
+|[ドキュメント](/javascript/api/word/word.document)|[getSelection()](/javascript/api/word/word.document#getSelection__)|ドキュメントの現在の選択範囲を取得します。|
 ||[body](/javascript/api/word/word.document#body)|ドキュメントの body オブジェクトを取得します。|
 ||[contentControls](/javascript/api/word/word.document#contentControls)|ドキュメント内のコンテンツ コントロール オブジェクトのコレクションを取得します。|
 ||[保存済み](/javascript/api/word/word.document#saved)|ドキュメント内の変更が保存されているかどうかを示します。|
 ||[sections](/javascript/api/word/word.document#sections)|ドキュメント内のセクション オブジェクトのコレクションを取得します。|
 ||[save()](/javascript/api/word/word.document#save__)|ドキュメントを保存します。|
-|[Font](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|フォントが太字かどうかを示す値を取得または設定します。|
+|[フォント](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|フォントが太字かどうかを示す値を取得または設定します。|
 ||[color](/javascript/api/word/word.font#color)|指定されたフォントの色を取得または設定します。|
 ||[doubleStrikeThrough](/javascript/api/word/word.font#doubleStrikeThrough)|フォントに二重取り消し線が設定されているかどうかを示す値を取得または設定します。|
 ||[highlightColor](/javascript/api/word/word.font#highlightColor)|強調表示の色を取得または設定します。|

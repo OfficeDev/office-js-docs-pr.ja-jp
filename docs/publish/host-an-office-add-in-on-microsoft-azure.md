@@ -3,12 +3,12 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 53466965281caa050f9264ea9460b6c7faa6c5b94be3596f4fdc45e622f71ba2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096845"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938951"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 

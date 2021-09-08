@@ -3,12 +3,12 @@ title: マニフェスト ファイルの MobileFormFactor 要素
 description: MobileFormFactor 要素は、アドインのモバイル フォーム ファクター設定を指定します。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f8854b2e6db6d19b1ba07276047b930436d1c9f91cb1b10345e1e332444ac897
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089706"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938257"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 要素
 
