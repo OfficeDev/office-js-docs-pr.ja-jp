@@ -1,20 +1,20 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
-description: Outlookモバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、Gmail アカウントにサポートが近日公開されます。
-ms.date: 05/27/2020
+description: Outlookモバイル アドインは、すべてのビジネス アカウントと Microsoft 365.com アカウントOutlookサポートされています。
+ms.date: 09/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.openlocfilehash: acde42dd9ada88d60a811edf53ca0247f98e5519
+ms.sourcegitcommit: 02ffcff39bf1726893651dcd9ef609b0492851d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937139"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "58971091"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
-Outlookモバイル アドインは、すべての Microsoft 365 ビジネス アカウント、Outlook.com アカウントでサポートされ、Gmail アカウントにサポートが近日公開されます。
+Outlookモバイル アドインは、すべてのビジネス アカウントと Microsoft 365.com アカウントOutlookサポートされています。 ただし、現在 Gmail アカウントではサポートを利用できません。
 
 **Outlook on iOS の作業ウィンドウの例**
 
