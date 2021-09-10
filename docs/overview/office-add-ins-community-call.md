@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 月次Microsoft Officeアドインのコミュニティ通話スケジュールとリソース。
-ms.date: 08/02/2021
+ms.date: 09/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44f97748bc24e2a95b3b89976b7d33d038fbb67e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.openlocfilehash: 4f08a4fba697a75140575866301ad5ddd06e5af7
+ms.sourcegitcommit: d563c473ebf82135baa733579f397aba35c2f917
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936391"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "58962077"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -16,6 +16,8 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
+- [Officeアドインのコミュニティ呼び出し – 2021 年 8 月 11 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
+- [Officeアドインのコミュニティ呼び出し – 2021 年 7 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
 - [Officeアドインのコミュニティ呼び出し – 2021 年 6 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
 - [Officeアドインのコミュニティ呼び出し – 2021 年 5 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Officeアドインのコミュニティ呼び出し – 2021 年 4 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)

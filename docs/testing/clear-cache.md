@@ -3,16 +3,16 @@ title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
 ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 93f6a851ffc0813cc3a6bc6acedddfb000accc36fc50c9cc11fba37faacc0e58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c08cb1c83657c685b069dc13b3bf1a7e6b7de09
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083634"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936659"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
-以前に Windows、Mac、または iOS にサイドロードしたアドインは、コンピューターで Office のキャッシュをクリアすることにより削除できます。
+以前に Windows、Mac、または iOS にサイドロードしたアドインを削除するには、コンピューターで Office のキャッシュをクリアする必要があります。
 
 また、アドインのマニフェストに変更を加えた場合は (アイコンのファイル名やアドイン コマンドのテキストを更新した場合など)、Office のキャッシュをクリアし、更新されたマニフェストを使用してアドインをサイドロードし直す必要があります。 これを実行することにより、アドインは更新されたマニフェストの記載どおりに Office で表示されるようになります。
 
@@ -53,11 +53,11 @@ Excel、Word、および PowerPoint からサイドロードされたすべて�
 
 5. アドイン名を選択して、アドインにデバッガーをアタッチします。 デバッガーがアドインにアタッチされると、新しい Microsoft Edge DevTools ウィンドウが開きます。
 
-6. 新しいウィンドウの [**ネットワーク**] タブで、[**キャッシュのクリア**] ボタンを選択します。
+6. 新しいウィンドウの [**ネットワーク**] タブで、[**キャッシュのクリア**] を選択します。
 
     ![[キャッシュのクリア] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット。](../images/edge-devtools-clear-cache.png)
 
-7. これらの手順を完了しても望む結果が得られない場合は、[**常にサーバーから更新する**] ボタンを選択することもできます。
+7. これらの手順を完了しても望む結果が得られない場合は、[**常にサーバーから更新する**] を選択してみてください。
 
     ![[常にサーバーから更新する] ボタンが強調表示された Microsoft Edge DevTools のスクリーンショット。](../images/edge-devtools-refresh-from-server.png)
 
@@ -67,10 +67,11 @@ Excel、Word、および PowerPoint からサイドロードされたすべて�
 
 ## <a name="clear-the-office-cache-on-ios"></a>iOS で Office のキャッシュをクリアする
 
-iOS で Office のキャッシュをクリアするには、アドイン内の JavaScript から `window.location.reload(true)` を呼び出し、強制的に再読み込みを行います。 別の方法として、Office を再インストールすることもできます。
+iOS で Office のキャッシュをクリアするには、アドイン内の JavaScript から `window.location.reload(true)` を呼び出し、強制的に再読み込みを行います。 または、Office を再インストールします。
 
 ## <a name="see-also"></a>関連項目
 
+- [Office アドインでの開発エラーのトラブルシューティング](troubleshoot-development-errors.md)
 - [Office アドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
