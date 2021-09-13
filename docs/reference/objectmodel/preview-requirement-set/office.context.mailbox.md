@@ -2,13 +2,13 @@
 title: Office.context.mailbox - プレビュー要件セット
 description: Outlookメールボックス API プレビュー要件セットのバージョンのメールボックス オブジェクト モデル。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 2765a782b33e6ffd3ef4d99b1ec70195498e6962
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ac7b051f700b219df1a9de7cb4e47b1b334af050
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937345"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154423"
 ---
 # <a name="mailbox-preview-requirement-set"></a>メールボックス (プレビュー要件セット)
 

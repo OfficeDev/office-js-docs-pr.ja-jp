@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの PhoneSettings 要素
 description: PhoneSettings 要素は、メール アドインが電話で使用される場合に適用されるソースの場所と制御設定を指定します。
 ms.date: 04/09/2020
-localization_priority: Normal
-ms.openlocfilehash: d7957e23a77a0f837366e5cedc0e0f350b5635c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1e52827a20ee95397541f7c1d54c732ff8f96ba5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936351"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154546"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 要素
 

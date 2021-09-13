@@ -3,13 +3,13 @@ title: Word JavaScript API 要件セット 1.2
 description: WordApi 1.2 要件セットの詳細
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: fd33b043a9205e793a248c35118ed86efcdf0036
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: de293cf67bbb452fe3c2b8c5de4896adf5cf7a43
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939309"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154822"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 の新機能
 

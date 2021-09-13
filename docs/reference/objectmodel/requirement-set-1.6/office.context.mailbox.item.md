@@ -2,13 +2,13 @@
 title: Office.context.mailbox.item - 要件セット 1.6
 description: Outlookメールボックス API 要件セット 1.6 バージョンの Item オブジェクト モデル。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 3a6c35d6e4ac22daf039aea44ab47fa1abc0b29b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 103891f2056bd8f85202d47913f3c511977b5bc0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938831"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154909"
 ---
 # <a name="item-mailbox-requirement-set-16"></a>item (メールボックス要件セット 1.6)
 

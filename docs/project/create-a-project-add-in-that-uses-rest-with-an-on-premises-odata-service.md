@@ -2,13 +2,13 @@
 title: 社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 description: Project Professional 2013 の作業ウィンドウ アドインを作成し、アクティブなプロジェクトのコストと作業データと、現在の Project Web App インスタンスのすべてのプロジェクトの平均を比較する方法について学習します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ad9eb10f057b0fcb0328dc0b4e87919681a20b09
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938814"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154609"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>社内の Project Server OData サービスで REST を使用する Project アドインを作成する
 
@@ -154,7 +154,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 **HelloProjectOData** アドインは、デバッグとエラー出力を含むサンプルです。これは、実稼働環境での使用を目的としたものではありません。 Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. 詳細については、「デザイン ガイドライン[for Officeアドイン」を参照してください](../design/add-in-design.md)。
 
-作業ウィンドウには、マニフェストの **DisplayName** 要素の値である上部にアドインの表示名が表示されます。 次 **のように** 、HelloProjectOData.html ファイルの body 要素には、他の UI 要素が含まれます。
+作業ウィンドウには、マニフェストの **DisplayName** 要素の値である上部にアドインの表示名が表示されます。 次 **のように** 、HelloProjectOData.htmlファイルの body 要素には、他の UI 要素が含まれます。
 
 - サブタイトルは、**ODATA REST QUERY** など、操作の一般的な機能または種類を表します。
 
@@ -171,7 +171,7 @@ Office Developer Tools for Visual Studio には、Project 2013 用の作業ウ�
 
 ### <a name="procedure-4-create-the-html-content"></a>手順 4. HTML コンテンツを作成する
 
-1. Home.htm l ファイルの head 要素で、アドインで使用する CSS ファイル用の追加のリンク要素を追加します。 Visual Studio プロジェクト テンプレートには、カスタム CSS スタイルに使用できる App.css ファイルのリンクが含まれています。
+1. Home.html **ファイル** の head 要素で、アドインで使用するCSS ファイルに追加のリンク要素を追加します。 Visual Studio プロジェクト テンプレートには、カスタム CSS スタイルに使用できる App.css ファイルのリンクが含まれています。
 
 2. アドインで **使用する** JavaScript ライブラリのスクリプト要素を追加します。 プロジェクト テンプレートには、スクリプト フォルダー内の jQuery- _[version]_.js、office.js、MicrosoftAjax.jsファイルのリンク **が含** まれています。
 
@@ -284,7 +284,7 @@ HelloProjectOData.js ファイルの残りの部分には、ユーザーが [す
 
 ### <a name="procedure-5-create-the-javascript-code"></a>手順 5. JavaScript コードを作成する
 
-1. 既定のファイル内のすべてのコードをHelloProjectOData.jsし、グローバル変数と `**` tialize' 関数Office.ini追加します。 すべて大文字の変数名は、それらが定数であることを示しており、それらは後で **_pwa** 変数と共に使用されて、この例の REST クエリが作成されます。
+1. 既定のファイル内のすべてのコードをHelloProjectOData.jsし、グローバル変数と `**` Office.initialize' 関数を追加します。 すべて大文字の変数名は、それらが定数であることを示しており、それらは後で **_pwa** 変数と共に使用されて、この例の REST クエリが作成されます。
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -1091,7 +1091,7 @@ Table styles
 
 SurfaceErrors.js ファイルのコードは、「[テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)」の「_堅牢なプログラミング_」セクションからコピーできます。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 **HelloProjectOData** が AppSource で販売される実稼働アドインだった場合や、SharePoint アプリ カタログで配布する場合は、異なる方法で設計されます。 たとえば、テキスト ボックスのデバッグ出力や、**ProjectData** エンドポイントを取得するためのボタンはおそらくありません。 また、100 を超えるプロジェクトを持つProject Web Appを処理するために関数を書き `retireveOData` 換える必要があります。
 

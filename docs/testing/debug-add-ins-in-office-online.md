@@ -2,13 +2,13 @@
 title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 255826f8925ea35d25cf228e80de6774c9917cea
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938624"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152993"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 

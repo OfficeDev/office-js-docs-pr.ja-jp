@@ -4,13 +4,13 @@ description: Excel アドインを使用すると、Windows、Mac、iPad、ブ�
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 18484c9f6745399b0fdf50da466004e80beca44e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 6b5f760f3ad13611dbf4b9960343a1348e45a28d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936270"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151423"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 

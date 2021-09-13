@@ -3,13 +3,13 @@ title: 最初の PowerPoint 作業ウィンドウ アドインをビルドする
 description: Office JS API を使用して単純な PowerPoint 作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 08/04/2021
 ms.prod: powerpoint
-localization_priority: Priority
-ms.openlocfilehash: 8025e5a36ea13c7b1eca94778ce33608a84ccc7e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b7a662848005ec23594825e465611489d9b15188
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938380"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152986"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>最初の PowerPoint 作業ウィンドウ アドインをビルドする
 

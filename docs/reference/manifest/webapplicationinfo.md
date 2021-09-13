@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの WebApplicationInfo 要素
 description: アドイン マニフェスト (XML) ファイルOffice WebApplicationInfo 要素のリファレンス ドキュメント。
 ms.date: 07/30/2020
-localization_priority: Normal
-ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937298"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154549"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 

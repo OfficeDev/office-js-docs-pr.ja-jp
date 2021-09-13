@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの HighResolutionIconUrl 要素
 description: 高 DPI 画面での挿入 UX と Office ストアで Office アドインを表すために使用されるイメージの URL を指定します。
 ms.date: 03/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 42a7ebf0e02eb365962b574821d5a7004a8b867f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83a86b4a27f2cdfea54b657f70400601207464d3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936708"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154783"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl 要素
 

@@ -3,13 +3,13 @@ title: PowerPointJavaScript API 要件セット 1.2
 description: PowerPointApi 1.2 要件セットの詳細。
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: fac472e9b88b78f52fe939f883d88cded8b1702c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b62bed8d28eb2bacff0450e749da8cf69c868e38
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938915"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154315"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>JavaScript API 1.2 PowerPoint新機能
 

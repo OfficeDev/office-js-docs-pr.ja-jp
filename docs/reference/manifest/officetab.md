@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの OfficeTab 要素
 description: OfficeTab 要素は、アドイン コマンドが表示されるリボン タブを定義します。
 ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 94af0e8744c496538a506fdc4626cd3f515129bb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938871"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152969"
 ---
 # <a name="officetab-element"></a>OfficeTab 要素
 

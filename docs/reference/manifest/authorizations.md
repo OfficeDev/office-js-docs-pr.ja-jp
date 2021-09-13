@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの Authorizations 要素
 description: アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。
 ms.date: 08/12/2019
-localization_priority: Normal
-ms.openlocfilehash: 675585f99fc6261a2145219d553f02b9f9abded3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4b13e26f13fae6fefd579868df8b67dd94cb35c4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937084"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152696"
 ---
 # <a name="authorizations-element"></a>Authorizations 要素
 

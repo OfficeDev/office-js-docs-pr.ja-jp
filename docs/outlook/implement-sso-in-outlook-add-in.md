@@ -2,13 +2,13 @@
 title: 'シナリオ: サービスにシングル サインオンを実装する'
 description: Outlook アドインが提供するシングル サインオン トークンと Exchange ID トークンを使用して、サービスに SSO を実装する方法について説明します。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: ab86e54ef4f71674904811581d1f2f176ce5b16a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 89b90444fbb467c6be1f713461f6cc66d21a8443
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937588"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154117"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>シナリオ: Outlook アドインでサービスにシングル サインオンを実装する
 

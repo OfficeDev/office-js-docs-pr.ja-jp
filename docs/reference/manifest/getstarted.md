@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの GetStarted 要素
 description: Word、Excel、PowerPoint、およびアドインにアドインがインストールされている場合に表示される吹き出しでPowerPoint情報をOneNote。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 355b72d4130f3a220e6a1257af51e371665d3cc3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937339"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154792"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 

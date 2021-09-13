@@ -3,13 +3,13 @@ title: Excel JavaScript プレビュー API
 description: JavaScript API のExcel詳細。
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8bb7139aadc35dcfe1ac3c977d9c98525b1d0b9f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936219"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154954"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -178,13 +178,13 @@ ms.locfileid: "58936219"
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
 ||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|リンクされたブックのコレクションを返します。|
 ||[クエリ](/javascript/api/excel/excel.workbook#queries)|ブックの一部である Power Query クエリのコレクションを返します。|
-||[タスク](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|ピボットテーブルのフィールド 一覧ウィンドウをブック レベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|特定のワークシートにフィルターが適用されると発生します。|
 ||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|ワークシートの保護状態が変更された場合に発生します。|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabId)|Open ファイルの XML で読み取り可能なこのワークシートを表すOfficeします。|
-||[タスク](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
+||[tasks](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|セルまたはセルを削除または挿入するときに、ワークシート内のセルが移動する方向への変更を表します。|
 ||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|イベントのトリガー ソースを表します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|あるブックの指定されたワークシートを現在のブックに挿入します。|

@@ -3,13 +3,13 @@ title: アドインに append-on-send をOutlookする
 description: アドインに追加送信機能を実装する方法についてOutlookします。
 ms.topic: article
 ms.date: 02/01/2021
-localization_priority: Normal
-ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ff3411ba2527e0b6c99e5e5674811ff76e240ccf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939059"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154237"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>アドインに append-on-send をOutlookする
 

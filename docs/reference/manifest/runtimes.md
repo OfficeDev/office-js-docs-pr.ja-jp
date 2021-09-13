@@ -2,13 +2,13 @@
 title: マニフェスト ファイル内のランタイム
 description: Runtimes 要素は、アドインのランタイムを指定します。
 ms.date: 05/14/2021
-localization_priority: Normal
-ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 955d09a4a5232aab929262f103bef69463a9de03
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936916"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154477"
 ---
 # <a name="runtimes-element"></a>Runtimes 要素
 

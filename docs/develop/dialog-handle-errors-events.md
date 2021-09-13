@@ -2,13 +2,13 @@
 title: Office ダイアログ ボックスでのエラーとイベントの処理
 description: '[エラー] ダイアログ ボックスを開いて使用するときにエラーをトラップして処理するOffice説明します。'
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 09f4d69d86591cc9f8053dddba7e8886fed9ed43
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936497"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151530"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>[エラーとイベントの処理] ダイアログ ボックスOffice処理する
 

@@ -3,13 +3,13 @@ title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な OneNote 作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 08/04/2021
 ms.prod: onenote
-localization_priority: Priority
-ms.openlocfilehash: 8341365fef2c29a5dd2680e1a9a768488654fc91
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 7fbe6037d9ea4f500eb8d690e088ba36b084e641
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938790"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154486"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 

@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
 title: カスタム関数でデータを受信して​​処理する
-localization_priority: Normal
-ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 5aee26cb3c22d43a11ee2b0f500d04f9c7e596e8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936676"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152740"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 

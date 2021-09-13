@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの Version 要素
 description: Version 要素は、アドイン Officeを指定します。
 ms.date: 02/05/2021
-localization_priority: Normal
-ms.openlocfilehash: 48a2be94d95ece597e47468bb18db2a7962a51e9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 34cefa22123ed4ee723d51a669e01e042efc2934
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937027"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154684"
 ---
 # <a name="version-element"></a>Version 要素
 

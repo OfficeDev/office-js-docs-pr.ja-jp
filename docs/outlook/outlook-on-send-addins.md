@@ -2,13 +2,13 @@
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 08/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9195128dff2bac178822764eda03588597b50d10
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938632"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151416"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -25,7 +25,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 次の表に、必要な最小累積更新プログラム (該当する場合) を含む、送信時機能でサポートされるクライアントとサーバーの組み合わせを示します。 除外された組み合わせはサポートされていません。
 
-| クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
+| Client | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
 |Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
 |Mac:<br>ビルド 16.47 以降|はい|はい|はい|

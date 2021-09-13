@@ -2,13 +2,13 @@
 title: Excel JavaScript API を使用して表を操作する
 description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936873"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152739"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 

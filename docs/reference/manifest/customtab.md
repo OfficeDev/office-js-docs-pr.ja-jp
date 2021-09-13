@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの CustomTab 要素
 description: リボン上で、アドイン コマンドに使用するタブとグループを指定します。
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f8cdcd2c1a1e567f36d9d146ed4806b13d400dfe
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937839"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151657"
 ---
 # <a name="customtab-element"></a>CustomTab 要素
 
@@ -48,7 +48,7 @@ ms.locfileid: "58937839"
 
 ### <a name="insertafter"></a>InsertAfter
 
-省略可能です。 指定した組み込みタブの直後にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
+省略可能。 指定した組み込みタブの直後にカスタム タブを指定Officeします。要素の値は、"TabHome" や "TabReview" などの組み込みタブの ID です。 (「 [コントロールとコントロール グループの ID を検索する」を参照](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)してください。存在する場合は、Label 要素の後に **指定する必要** があります。 **InsertAfter** と **InsertBefore の両方を使用することはできません**。
 
 > [!IMPORTANT]
 > 要素 `InsertAfter` は、次のPowerPoint。

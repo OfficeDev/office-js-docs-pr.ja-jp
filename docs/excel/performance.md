@@ -2,13 +2,13 @@
 title: Excel JavaScript API のパフォーマンスの最適化
 description: JavaScript API Excelを使用して、アドインのパフォーマンスを最適化します。
 ms.date: 08/24/2021
-localization_priority: Normal
-ms.openlocfilehash: f65db836d6e7e640672fa5b9e6642ef8122ed5a5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 07244b67d6721c74072a95a0f35db45245cb064b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938190"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152987"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 

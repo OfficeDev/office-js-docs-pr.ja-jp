@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの DesktopSettings 要素
 description: メール アドインがデスクトップ コンピューターで使用されるときに適用されるソースの場所と制御の設定を指定します。
 ms.date: 04/09/2020
-localization_priority: Normal
-ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9393871e56f686b710ffd0031f93e776f362a89d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938698"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151615"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings 要素
 

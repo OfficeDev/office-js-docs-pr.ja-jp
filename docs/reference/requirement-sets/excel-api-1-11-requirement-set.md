@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要件セット 1.11
 description: ExcelApi 1.11 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 1e347e0bb7b394676eccf422665c545b110b589d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938522"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154054"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel新機能
 

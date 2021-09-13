@@ -3,13 +3,13 @@ title: Word JavaScript プレビュー API
 description: 今後の Word JavaScript API の詳細
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937660"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154033"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 

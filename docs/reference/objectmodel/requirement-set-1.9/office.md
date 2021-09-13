@@ -2,13 +2,13 @@
 title: Office名前空間 - 要件セット 1.9
 description: Office API 要件セット 1.9 を使用Outlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 203b901c619e19a8e5b9255e36274e2f6e1d1658
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c06fa7bd604db0272939ae40590d9500a3a71eb1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937408"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152927"
 ---
 # <a name="office-mailbox-requirement-set-19"></a>Office (メールボックス要件セット 1.9)
 

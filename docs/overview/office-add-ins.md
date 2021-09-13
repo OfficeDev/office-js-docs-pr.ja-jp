@@ -4,13 +4,13 @@ description: HTML、CSS、JavaScript などの一般的な Web テクノロジ�
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: bc4406379320c27351bc73bf67e0f53e6c58b510
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938357"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154627"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 

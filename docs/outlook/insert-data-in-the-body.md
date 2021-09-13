@@ -2,13 +2,13 @@
 title: Outlook アドインで本文にデータを挿入する
 description: Outlook アドインで、メッセージまたは予定の本文にデータを挿入する方法について説明します。
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 377c278464038a2b04d8b0ca49de92530e3724d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936804"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154102"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
 
@@ -27,7 +27,7 @@ Outlook では、メッセージはテキスト形式、HTML 形式、または�
 
 1.  タブレットとスマートフォンでは **、getTypeAsync は** データを **Office。MailboxEnums.BodyType.Text** (オペレーティング システムまたはアプリケーションが HTML 形式で最初に作成されたアイテムの編集をサポートしていない場合)。
 
-2.  挿入するデータが HTML で **、getTypeAsync** がアイテムのテキスト型を返す場合は、データをテキストとして再編成し、データをテキスト形式で挿入 **Office。MailboxEnums.BodyType.Text** as _coercionType_. テキストの型を使用して HTML データを挿入するだけで、アプリケーションは HTML タグをテキストとして表示します。 l を _coercionType_ Office.MailboxEnums.BodyType.Htm **HTML** データを挿入しようとすると、エラーが発生します。
+2.  挿入するデータが HTML で **、getTypeAsync** がアイテムのテキスト型を返す場合は、データをテキストとして再編成し、データをテキスト形式で挿入 **Office。MailboxEnums.BodyType.Text** as _coercionType_. テキストの型を使用して HTML データを挿入するだけで、アプリケーションは HTML タグをテキストとして表示します。 コードを _coercionType_ として使用Office.MailboxEnums.BodyType.HtmlHTML データを挿入しようとすると、エラーが発生します。
 
 _coercionType_ に加えて、Office JavaScript API のほとんどの非同期メソッドと同様に **、getTypeAsync、prependAsync、setSelectedDataAsync** は他のオプションの入力パラメーターを使用します。   これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 

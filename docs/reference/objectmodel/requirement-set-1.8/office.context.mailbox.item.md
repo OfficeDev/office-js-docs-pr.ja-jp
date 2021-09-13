@@ -2,13 +2,13 @@
 title: Office.context.mailbox.item - 要件セット 1.8
 description: Outlookメールボックス API 要件セット 1.8 バージョンの Item オブジェクト モデル。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 9537f9f717caaefb9ec1ff406195ebe1e5832d6b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 098196de2b32a14ed726de7b3b3482f8334aea81
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938842"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151596"
 ---
 # <a name="item-mailbox-requirement-set-18"></a>item (メールボックス要件セット 1.8)
 
@@ -93,7 +93,7 @@ ms.locfileid: "58938842"
 | 開始 | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8&preserve-view=true#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8&preserve-view=true#start) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [既読メッセージ](/javascript/api/outlook/office.messageread?view=outlook-js-1.8&preserve-view=true#start)<br>(会議出席依頼) | 日付 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| subject | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8&preserve-view=true#subject) | [[件名]](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| subject | ReadItem | [予定の開催者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.8&preserve-view=true#subject) | [件名](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [予定の出席者](/javascript/api/outlook/office.appointmentread?view=outlook-js-1.8&preserve-view=true#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [メッセージ作成](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8&preserve-view=true#subject) | [件名](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [既読メッセージ](/javascript/api/outlook/office.messageread?view=outlook-js-1.8&preserve-view=true#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

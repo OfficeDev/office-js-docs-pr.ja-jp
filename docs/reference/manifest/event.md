@@ -2,13 +2,13 @@
 title: マニフェスト ファイル内のイベント要素
 description: アドインでイベント ハンドラーを定義します。
 ms.date: 05/15/2020
-localization_priority: Normal
-ms.openlocfilehash: 3d8e94c10bed214dd976b3048e11328f10f99325
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d5ccddc64ffecd9ebc06b28eb37c0aee46dcc2f4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939282"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153041"
 ---
 # <a name="event-element"></a>Event 要素
 

@@ -2,13 +2,13 @@
 title: アドインExcelトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするExcel説明します。
 ms.date: 02/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936283"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152926"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>アドインExcelトラブルシューティング
 
@@ -98,5 +98,5 @@ Range [getImage](/javascript/api/excel/excel.range#getImage__)メソッドは現
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインを使用したOfficeのトラブルシューティング](../testing/troubleshoot-development-errors.md)
+- [Office アドインでの開発エラーのトラブルシューティング](../testing/troubleshoot-development-errors.md)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)

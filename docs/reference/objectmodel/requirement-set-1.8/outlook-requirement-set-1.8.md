@@ -2,13 +2,13 @@
 title: Outlook アドイン API 要件セット 1.8
 description: アドイン API の要件セット 1.8 Outlook 1.8。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: b852d8948044cc853cc78e81dbce25a587736f77
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f5aa192d783fdd08155dfbe80a509de72ccd402f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936225"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151572"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
@@ -33,7 +33,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true) が追加されました: カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトを追加します。
 - [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true) が追加されました: 予定の場所のセットを表す新しいオブジェクトを追加します。
 - [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8&preserve-view=true) が追加されました: メッセージ アイテムのインターネット ヘッダーを表す新しいオブジェクトを追加します。 新規作成モードのみです。
-- [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所を表す新しいオブジェクトを追加します。 読み取り専用です。
+- [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所を表す新しいオブジェクトを追加します。 読み取り専用。
 - [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所の ID を表す新しいオブジェクトを追加します。
 - [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいオブジェクトを追加します。
 - [SharedProperties の追加](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): 共有フォルダー内の予定またはメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。

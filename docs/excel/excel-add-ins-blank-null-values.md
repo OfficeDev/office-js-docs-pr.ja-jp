@@ -2,13 +2,13 @@
 title: Excel アドインの空白値と null 値
 description: オブジェクト モデルのメソッドとプロパティで空白の null 値Excelする方法について説明します。
 ms.date: 09/03/2020
-localization_priority: Normal
-ms.openlocfilehash: 3f38569f7342bb88c52ce424db426bfa7939be5e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ca231e367219eb381ab33d159f8afc0ed3e1594a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937518"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151435"
 ---
 # <a name="blank-and-null-values-in-excel-add-ins"></a>Excel アドインの空白値と null 値
 

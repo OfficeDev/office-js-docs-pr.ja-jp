@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの Requirements 要素
 description: Requirements 要素は、アクティブ化するためにアドインに必要Office最小要件セットとメソッドを指定します。
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a5a393485094b5cc830b5120c3abd8c211eff1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937417"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154075"
 ---
 # <a name="requirements-element"></a>Requirements 要素
 

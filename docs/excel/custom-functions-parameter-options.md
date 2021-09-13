@@ -2,13 +2,13 @@
 ms.date: 03/08/2021
 description: カスタム関数内でさまざまなパラメーターを使用する方法 (Excelパラメーター、呼び出しコンテキストなど) について説明します。
 title: カスタム関数Excelオプション
-localization_priority: Normal
-ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 760e680441472d3089e9f6a986af60aac26a02f1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936955"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151513"
 ---
 # <a name="custom-functions-parameter-options"></a>カスタム関数パラメーター のオプション
 
@@ -289,7 +289,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 
 プロパティを呼び出すカスタム関数が実行されると、関数を呼び出したセルの形式に従ってパラメーター アドレス `parameterAddresses` `SheetName!RelativeCellAddress` が返されます。 たとえば、入力パラメーターがセル D8 の **Costs** というシートにある場合、返されるパラメーターのアドレス値は `Costs!D8` . カスタム関数に複数のパラメーターが含まれていますが、複数のパラメーター アドレスが返される場合、返されるアドレスは、関数を呼び出したセルから垂直方向に降順に、複数のセルにわたってこぼれ落ちします。 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 カスタム関数で揮発性値 [を使用する方法について説明します](custom-functions-volatile.md)。
 

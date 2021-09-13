@@ -2,13 +2,13 @@
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: a30d5671286f9a0afcff6fd07d4fcfcb4c830c36
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 41eddbcc1db05ca618506ce4810bf2bb795e59f7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938142"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154225"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 

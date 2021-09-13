@@ -2,13 +2,13 @@
 title: ネットワーク共有Officeテスト用にアドインをサイドロードする
 description: ネットワーク共有からテストするためにOfficeアドインをサイドロードする方法について学習する
 ms.date: 06/02/2020
-localization_priority: Normal
-ms.openlocfilehash: 9a44c14669bf0a8fa842e931fc1b12601f73043b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b9c1034bbd7df011501338209e7b5a83ce976dd9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936514"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154951"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有Officeテスト用にアドインをサイドロードする
 

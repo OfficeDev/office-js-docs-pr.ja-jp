@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの ExtendedOverrides 要素
 description: マニフェストの JSON 形式の拡張子の URL を指定します。
 ms.date: 02/23/2021
-localization_priority: Normal
-ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 062d62284d786e81f230b1d094c46a73208a6c2c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936542"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153034"
 ---
 # <a name="extendedoverrides-element"></a>ExtendedOverrides 要素
 

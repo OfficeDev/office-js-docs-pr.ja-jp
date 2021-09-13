@@ -3,13 +3,13 @@ title: リボン API の要件セット
 description: 動的リボン API Officeサポートするプラットフォームとビルドを指定します。
 ms.date: 05/12/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938890"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154654"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 

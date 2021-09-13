@@ -2,13 +2,13 @@
 title: プレゼンテーションにスライドをPowerPointする
 description: プレゼンテーションから別のプレゼンテーションにスライドを挿入する方法について説明します。
 ms.date: 03/07/2021
-localization_priority: Normal
-ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c7dde2d2d6b1b886816bbf12122319984f4c7138
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938912"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152735"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>プレゼンテーションにスライドをPowerPointする
 
@@ -108,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 もちろん、通常、ターゲット スライドの ID または作成 ID はコーディング時にはわかりません。 より一般的には、アドインはユーザーにターゲット スライドの選択を求める場合があります。 次の手順では、現在選択されているスライドの ***nnn*#** ID を取得し、それをターゲット スライドとして使用する方法を示します。
 
-1. 共通 JavaScript API のOffice.context.doc[ ument.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 呼び出しは Promise 戻り関数 `getSelectedDataAsync` に埋め込まれている点に注意してください。 これを行う理由と方法の詳細については [、「Promise-returning 関数でCommon-APIsラップ」を参照してください](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
+1. 共通 JavaScript API の[Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_)メソッドを使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 呼び出しは Promise 戻り関数 `getSelectedDataAsync` に埋め込まれている点に注意してください。 これを行う理由と方法の詳細については [、「Promise-returning 関数でCommon-APIsラップ」を参照してください](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
 
  
     ```javascript

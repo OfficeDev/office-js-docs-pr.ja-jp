@@ -3,13 +3,13 @@ title: ブラウザー ウィンドウの要件セットを開く
 description: openBrowserWindow API Officeサポートするプラットフォームとビルドを指定します。
 ms.date: 04/09/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 8197228f1d428fd48c494825fec0e73cb85609f6
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cfc1931afb9b20411ab7d37354fd173012389fd0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939299"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154042"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 

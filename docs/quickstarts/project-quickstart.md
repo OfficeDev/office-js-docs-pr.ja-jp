@@ -3,13 +3,13 @@ title: 最初の Project の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Project 作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 08/04/2021
 ms.prod: project
-localization_priority: Priority
-ms.openlocfilehash: 79a5dc33593eebbe8a0276638248bb78b9745524
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: cb291a76a97c6cf3c7d816c7c2019337132aecc8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937598"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152974"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 

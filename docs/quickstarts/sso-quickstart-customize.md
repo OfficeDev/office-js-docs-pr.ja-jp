@@ -3,13 +3,13 @@ title: Node.js SSO が有効なアドインをカスタマイズする
 description: Yeoman ジェネレーターを使用して作成した SSO 対応アドインのカスタマイズについて学習します。
 ms.date: 08/04/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8b66da764902fba1a0296c349f898a94ef9f9b33
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938576"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154555"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Node.js SSO が有効なアドインをカスタマイズする
 
@@ -119,7 +119,7 @@ SSO クイック スタートで作成したアドインは、Microsoft Graph �
     };
     ```
 
-4. **./src/taskpane/taskpane.html** で、要素を見つけてその要素内のテキストを更新して、アドインの新機能を `<section class="ms-firstrun-instructionstep__header">` 説明します。
+4. **./src/taskpane/taskpane.html** で、要素を見つけて、その要素内のテキストを更新して、アドインの新機能を `<section class="ms-firstrun-instructionstep__header">` 説明します。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ SSO クイック スタートで作成したアドインは、Microsoft Graph �
     </section>
     ```
 
-5. **./src/taskpane/taskpane.html** では、文字列の両方を検索して文字列 `Get My User Profile Information` に置き換える `Read my OneDrive for Business` 。
+5. **./src/taskpane/taskpane.html** で、文字列の両方を検索して文字列 `Get My User Profile Information` に置き換える `Read my OneDrive for Business` 。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ SSO クイック スタートで作成したアドインは、Microsoft Graph �
     </p>
     ```
 
-6. **./src/taskpane/taskpane.html で**、文字列を検索して文字列 `Your user profile information will be displayed in the document.` に置き換える `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
+6. **./src/taskpane/taskpane.html** で、文字列を検索して文字列 `Your user profile information will be displayed in the document.` に置き換える `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
 
     ```html
     <li class="ms-ListItem">
@@ -635,7 +635,7 @@ Outlook アドインを試すには、次の手順を実行します。
 
     ![作成メッセージ ウィンドウOneDrive for Business情報をOutlookスクリーンショット。](../images/sso-onedrive-info-outlook.png)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 おめでとうございます、SSO クイック スタートで Yeoman ジェネレーターで作成した SSO 対応アドインの機能を正常に [カスタマイズしました](sso-quickstart.md)。 Yeoman ジェネレーターが自動的に完了した SSO の構成手順、および SSO プロセスを容易にするコードの詳細については、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」を参照してください。
 

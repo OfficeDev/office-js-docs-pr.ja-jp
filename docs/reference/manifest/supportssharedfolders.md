@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの SupportsSharedFolders 要素
 description: SupportsSharedFolders 要素は、共有フォルダー Outlook共有メールボックス のシナリオで使用できるかどうかを定義します。
 ms.date: 06/15/2021
-localization_priority: Normal
-ms.openlocfilehash: 43f2c60664a6822b714023246cfa044e179e9a55
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f6a7cbe1c6549c8a93a6ecceab9e4bdaba07001f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938467"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154438"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 要素
 

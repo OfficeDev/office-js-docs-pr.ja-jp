@@ -3,13 +3,13 @@ title: Excel アドインのチュートリアル
 description: Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
 ms.date: 07/08/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936475"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151303"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 

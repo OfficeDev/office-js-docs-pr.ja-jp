@@ -2,13 +2,13 @@
 title: Outlook API 要件セット 1.9
 description: アドイン API の要件セット 1.9 Outlook 1.9。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 4448a7391e2d829fa95fa72392bf22867fafe7a7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8616cbd8f3f1e178caad698f98fe9a35804bb5b7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938844"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154657"
 ---
 # <a name="outlook-add-in-api-requirement-set-19"></a>Outlook API 要件セット 1.9
 

@@ -2,13 +2,13 @@
 title: マニフェスト ファイル内の Enabled 要素
 description: アドインの起動時にアドイン コマンドが無効になっていることを指定する方法について説明します。
 ms.date: 01/04/2021
-localization_priority: Normal
-ms.openlocfilehash: be18767638af6f2be6352cea46739f6a01b7dd45
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a14385f7114eb3d35845b5d9873bdd718b46c0e9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938200"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154003"
 ---
 # <a name="enabled-element"></a>Enabled 要素
 

@@ -3,13 +3,13 @@ title: JavaScript API を使用して範囲Excelする
 description: JavaScript API を使用して範囲を取得するExcel説明します。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 6aa9bb00bc9d24aeee5f1fef9e8d1531525e9d1f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e4e51305a822fc528e81a178c20545b11fb80bf2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937974"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152849"
 ---
 # <a name="get-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲Excelする
 

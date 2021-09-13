@@ -2,13 +2,13 @@
 title: Office アドインの Office クライアント アプリケーションとプラットフォームの可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project、Word のサポートされる要件セット。
 ms.date: 07/13/2021
-localization_priority: Priority
-ms.openlocfilehash: ed54f6c513da9ada85afcbdbdb30798acb7048f4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 564fc412ebf68ffc1fe835245294758890eab463
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937413"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154744"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office アドインの Office クライアント アプリケーションとプラットフォームの可用性
 

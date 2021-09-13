@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの EquivalentAddins 要素
 description: 同等の COM アドイン、XLL、または両方との下位互換性を指定します。
 ms.date: 03/09/2021
-localization_priority: Normal
-ms.openlocfilehash: cce316ceac2b6c79a0f7ea1378411b864923cada
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 99a1bad6149bdc1b14e658a0bae19742a11a12b2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937988"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153046"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 要素
 

@@ -3,13 +3,13 @@ ms.date: 08/04/2021
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 9a600d0e60be163399b25dcb4b5f606cce1fc8b2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f503948b8f468234221ee8713ea4654a7cc76c07
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937170"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154510"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 

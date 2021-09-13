@@ -2,13 +2,13 @@
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
 description: JavaScript API などの組み込Excelワークシート関数を呼び出して使用するExcel `VLOOKUP` `SUM` 説明します。
 ms.date: 12/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 5cf1478e7f76c0602b9c8f0d19031abfa8369888
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938992"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152819"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 

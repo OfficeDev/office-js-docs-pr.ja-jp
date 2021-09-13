@@ -3,13 +3,13 @@ title: Excel JavaScript API を使用してブックを操作する
 description: JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行するExcel説明します。
 ms.date: 06/07/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 50371c0670e8e66bf7a36c5c52c7a9753154f29d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936944"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152736"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 

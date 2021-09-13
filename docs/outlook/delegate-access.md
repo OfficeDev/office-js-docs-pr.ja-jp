@@ -2,13 +2,13 @@
 title: 共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936536"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154174"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 

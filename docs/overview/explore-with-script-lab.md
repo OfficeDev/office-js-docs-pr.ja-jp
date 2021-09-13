@@ -4,13 +4,13 @@ description: Script Lab を使用して、Office JS API およびプロトタイ
 ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: fc0d2e82c759635fbd846ea31fc86a7af79a8499
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 5ca2cf894cf1c25529f79c99326719427a1e4faf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938564"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152921"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 

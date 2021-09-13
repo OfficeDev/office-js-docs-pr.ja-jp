@@ -2,13 +2,13 @@
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: アドインのユーザー エラーをトラブルシューティングOfficeする方法について説明します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938435"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154891"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -89,4 +89,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>関連項目
 
-- [アドインを使用したOfficeのトラブルシューティング](troubleshoot-development-errors.md)
+- [Office アドインでの開発エラーのトラブルシューティング](troubleshoot-development-errors.md)

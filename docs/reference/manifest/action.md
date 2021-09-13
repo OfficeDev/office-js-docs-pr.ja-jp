@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニュー コントロールを選択するときに実行するアクションを指定します。
 ms.date: 06/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fb213d8d2938d2d2c0654c1b3a7bf4f177931321
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937741"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152727"
 ---
 # <a name="action-element"></a>Action 要素
 

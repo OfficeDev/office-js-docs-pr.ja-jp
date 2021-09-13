@@ -2,13 +2,13 @@
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 月次Microsoft Officeアドインのコミュニティ通話スケジュールとリソース。
 ms.date: 09/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 4f08a4fba697a75140575866301ad5ddd06e5af7
-ms.sourcegitcommit: d563c473ebf82135baa733579f397aba35c2f917
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "58962077"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154747"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 

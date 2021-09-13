@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの DefaultLocale 要素
 description: アドイン内の文字列で使用されるロケールの既定カルチャ名を指定します。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 72b07cb04f9ce2e7678c80c3ca2730300448a98a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fa3c48c3a49203a606fe385abe202fdaecff30b2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937460"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151633"
 ---
 # <a name="defaultlocale-element"></a>DefaultLocale 要素
 

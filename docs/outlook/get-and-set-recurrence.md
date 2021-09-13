@@ -2,13 +2,13 @@
 title: Outlook アドインで定期的なアイテムを取得して設定する
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
 ms.date: 08/18/2020
-localization_priority: Normal
-ms.openlocfilehash: 47f805dff855cec4e6a6cfd2792a86179fac48f9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0b211e72304e22874f847f2231e3a800efaceb4d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938089"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154135"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 

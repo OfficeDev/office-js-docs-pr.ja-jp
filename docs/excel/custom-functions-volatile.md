@@ -2,13 +2,13 @@
 ms.date: 01/14/2020
 description: 揮発性およびオフラインのストリーミング カスタム関数を実装する方法について説明します。
 title: 関数の揮発性の値
-localization_priority: Normal
-ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938337"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151507"
 ---
 # <a name="volatile-values-in-functions"></a>関数の揮発性の値
 
@@ -37,7 +37,7 @@ function roll6sided() {
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 * カスタム関数 [パラメーター オプションについて説明します](custom-functions-parameter-options.md)。
 
 ## <a name="see-also"></a>関連項目

@@ -2,13 +2,13 @@
 title: Office ダイアログ ボックスを使用してビデオを再生する
 description: '[ビデオの再生] ダイアログ ボックスでビデオを開いて再生するOffice説明します。'
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4765c9d549bfcc52315420342bf99ec88fdebf24
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936291"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151441"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>[ビデオをOffice]ダイアログ ボックスを使用してビデオを表示する
 
@@ -19,7 +19,7 @@ ms.locfileid: "58936291"
 
 ダイアログ API を使用してダイアログ ボックスでビデオを再生するにはOffice手順を実行します。
 
-1. iframe と他のコンテンツを含むページを作成します。 ページはホスト ページと同じドメインにある必要があります。 ホスト ページの種類を確認するには、「ホスト ページからダイアログ ボックスを開 [く」を参照してください](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 `src`iframe の属性で、オンライン ビデオの URL をポイントします。 ビデオの URL のプロトコルは HTTPS である必要があります。 この記事では、このページを "l" と呼video.dialogbox.htmします。 マークアップの例を次に示します。
+1. iframe と他のコンテンツを含むページを作成します。 ページはホスト ページと同じドメインにある必要があります。 ホスト ページの種類を確認するには、「ホスト ページからダイアログ ボックスを開 [く」を参照してください](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 `src`iframe の属性で、オンライン ビデオの URL をポイントします。 ビデオの URL のプロトコルは HTTPS である必要があります。 この記事では、このページを "video.dialogbox.html" と呼video.dialogbox.html。 マークアップの例を次に示します。
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"

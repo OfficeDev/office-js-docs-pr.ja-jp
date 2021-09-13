@@ -2,13 +2,13 @@
 title: テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 description: Project Standard アドイン用の Yeo Office man ジェネレーターを使用して、Project Professional 2013 以降のバージョンの作業ウィンドウ アドインを作成します。
 ms.date: 07/10/2020
-localization_priority: Normal
-ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a38599c1820b325eb89035c0d438ebf48b889ca
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937189"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154606"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -73,7 +73,7 @@ Project OM Test サンプル アドインは、タスクの GUID と、アプリ
 
    たとえば、`C:\Project\AppSource`ディレクトリで theJSOMCall.html ファイルを作成します。 単純なテキスト エディターを使用してソース ファイルを作成することもできますが、特定の種類のドキュメント (HTML や JavaScript など) で動作し、その他の編集補助機能を備え、Visual Studio Code などのツールを使用する方が簡単です。 「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」で説明されている Bing Search の例をまだ行っていない場合は、マニフェストが指定する `\\ServerName\AppSource` ファイル共有を作成する方法が手順 3 で示されています。　
 
-   JSOMCall.html ファイルは、AJAX 機能に共通の MicrosoftAjax.js ファイルを使用し、Office.js ファイルを 2013 アプリケーションのアドイン機能に使用Officeします。
+   JSOMCall.html ファイルは、AJAX 機能に共通の MicrosoftAjax.js ファイルを使用し、Office.js ファイルを Office 2013 アプリケーションで使用します。
 
     ```HTML
     <!DOCTYPE html>
@@ -808,7 +808,7 @@ Project OM Test サンプル アドインは、タスクの GUID と、アプリ
     - 記号の位置: `0`
     - Project Web App の URL: `http://servername/pwa`
   
-1. [コンテキスト値 **の** 取得] ボタンを選択すると、Office.Context.doc **ument** オブジェクトとオブジェクトのプロパティを取得して、アドインが実行されているドキュメントとアプリケーションのプロパティを取得 `Office.context.application` します。 For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
+1. [コンテキスト **値の取得**] ボタンを選択すると、アドインが実行されているドキュメントとアプリケーションのプロパティを取得し、アドインのプロパティを取得 **Office。Context.document** オブジェクトと `Office.context.application` オブジェクト。 For example, if the Project1.mpp file is on the local computer desktop, the document URL is `C:\Users\UserAlias\Desktop\Project1.mpp`. If the .mpp file is in a SharePoint library, the value is the URL of the document. If you use Project Professional 2013 to open a project named Project1 from Project Web App, the document URL is  `<>\Project1`.
 
     - ドキュメントの URL: `<>\Project1`
     - ドキュメント モード: `readWrite`
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-この関数を使用するには、JQuery ライブラリと SurfaceErrors.js スクリプトを JSOMCall.html ファイルに含め、他の JavaScript 関数 (など) に呼び出しを追加 `throwError` `throwError` します `logMethodError` 。
+この関数を使用するには、JQuery ライブラリと SurfaceErrors.js スクリプトを JSOMCall.html ファイルに含め、他の JavaScript 関数 (など) に呼び出しを `throwError` `throwError` 追加します `logMethodError` 。
 
 > [!NOTE]
 > アドインを展開する前に、office.js の参照と jQuery の参照をコンテンツ配信ネットワーク (CDN) の参照に変更してください。CDN の参照は最新のバージョンと高いパフォーマンスを提供します。

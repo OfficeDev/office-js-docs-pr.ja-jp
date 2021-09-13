@@ -3,13 +3,13 @@ title: ダイアログ API の要件セット
 description: ダイアログ API 要件セットの詳細について説明します。
 ms.date: 07/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7fdef827cf47903b0b7e2872110a5a6801735bf4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936859"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154354"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 

@@ -2,13 +2,13 @@
 title: プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 description: プレゼンテーション、スライド、図形に関するカスタム メタデータにタグを使用する方法について説明します。
 ms.date: 04/08/2021
-localization_priority: Normal
-ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: db9d31424ac4e08e6eaccca824ca5881d2ef617e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938094"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154618"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 
@@ -85,7 +85,7 @@ async function updateTag() {
 
 2. 次のコードでは、選択したスライドのインデックスを取得するメソッドを作成します。 このコードについては、以下の点に注意してください。
 
-    - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用します。
+    - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_)メソッドを使用します。
     - 呼び出 `getSelectedDataAsync` しは、promise-returning 関数に埋め込まれている。 これを行う理由と方法の詳細については [、「Promise-returning](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)関数で一般的な API をラップする」を参照してください。
     - `getSelectedDataAsync` 複数のスライドを選択できるので、配列を返します。 このシナリオでは、ユーザーが選択したスライドは 1 つだけなので、コードは最初の (0 番目) スライドを取得します。これが選択された唯一のスライドです。
     - スライドの値は、ユーザーが [UI サムネイル] ウィンドウのスライドの横に表示PowerPoint `index` 値です。

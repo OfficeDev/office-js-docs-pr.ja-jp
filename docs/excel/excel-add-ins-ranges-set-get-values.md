@@ -3,13 +3,13 @@ title: JavaScript API を使用して範囲の値、テキスト、または数�
 description: JavaScript API の Excelを使用して、範囲の値、テキスト、または数式を設定および取得する方法について説明します。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8db6e66c5f8eff106225d59fc4b82c9d092c8ee1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936320"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152831"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲の値、テキスト、または数式を設定Excel取得する
 

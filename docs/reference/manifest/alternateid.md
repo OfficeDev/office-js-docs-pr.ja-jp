@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの AlternateId 要素
 description: AppSource によって発行された、Officeアドインの代替 ID を指定します。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 122b18564d0473fee65412563ad48c98ce48544c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2db86ab02ec644599e6ccb294ac9d2698e0b3126
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936506"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152703"
 ---
 # <a name="alternateid-element"></a>AlternateId 要素
 

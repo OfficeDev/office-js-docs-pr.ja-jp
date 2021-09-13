@@ -3,13 +3,13 @@ title: ExcelJavaScript API のオンライン専用要件セット
 description: ExcelApiOnline 要件セットの詳細。
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 067bd3f033c415b0a6ac271aa1f132cfeb92730c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936954"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152787"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API のオンライン専用要件セット
 

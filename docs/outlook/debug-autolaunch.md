@@ -3,13 +3,13 @@ title: イベント ベースのアドインOutlookデバッグする (プレビ
 description: イベント ベースのアクティブ化を実装Outlookアドインをデバッグする方法について説明します。
 ms.topic: article
 ms.date: 05/14/2021
-localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ebf469ec15948ae2daf693bc7fda692367d70bec
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938206"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154177"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>イベント ベースのアドインOutlookデバッグする (プレビュー)
 
@@ -64,7 +64,7 @@ ms.locfileid: "58938206"
     code .
     ```
 
-1. このVisual Studio Code **./.vscode/launch.js** を開き、構成の一覧に次の抜粋を追加します。 変更内容を保存します。
+1. このVisual Studio Code **./.vscode/launch.json** ファイルを開き、構成の一覧に次の抜粋を追加します。 変更内容を保存します。
 
     ```json
     {
@@ -87,11 +87,11 @@ ms.locfileid: "58938206"
 
     ![アクティビティ バーの [デバッグ] アイコンのスクリーンショット。](../images/vs-code-debug.png)
 
-1. [ファイルに **対してlaunch.jsを作成する] リンクを選択** します。
+1. **launch.json ファイルの作成リンクを選択** します。
 
-    ![ページ内のファイルにlaunch.jsを作成するリンクVisual Studio Code。](../images/vs-code-create-launch.json.png)
+    ![ファイル内に launch.json ファイルを作成するリンクVisual Studio Code。](../images/vs-code-create-launch.json.png)
 
-1. [環境 **の選択] ドロップダウン** で、[ **エッジ:** 起動] を選択して、launch.jsを作成します。
+1. [環境 **の選択] ドロップダウン** で、[ **エッジ: 起動] を選択して** launch.json ファイルを作成します。
 1. 構成の一覧に次の抜粋を追加します。 変更内容を保存します。
 
     ```json

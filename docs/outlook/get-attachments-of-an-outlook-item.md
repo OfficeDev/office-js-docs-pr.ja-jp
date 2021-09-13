@@ -2,13 +2,13 @@
 title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: d525b6eb0e52c5c292f50e53451e648db1243215
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: de31ff257484379af1904ba530f94cb9ab5c3197
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937828"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154132"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 

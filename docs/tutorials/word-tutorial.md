@@ -3,13 +3,13 @@ title: Word アドインのチュートリアル
 description: このチュートリアルでは、テキスト範囲、段落、画像、HTML、テーブル、コンテンツ コントロールを挿入 (および置換) する Word アドインを作成します。 テキストに書式を設定する方法と、コンテンツ コントロールにコンテンツを挿入 (および置換) する方法についても説明します。
 ms.date: 07/08/2021
 ms.prod: word
-localization_priority: Priority
-ms.openlocfilehash: 65eb220eedfe74b905bee4312c366166836a075a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 3ffe77a2bf79c503389654cff3c0a213767a9f9a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938602"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59154306"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 

@@ -3,13 +3,13 @@ ms.date: 02/09/2021
 ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
-localization_priority: Priority
-ms.openlocfilehash: ed921a114ef204058a8c95e1d26bfb2bdbe51fd5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 087d35a6de6618a238ec7c2a30331abcdfdd44f2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938611"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151194"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
