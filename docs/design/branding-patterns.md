@@ -2,13 +2,13 @@
 title: Office アドインのブランド パターン設計ガイドライン
 description: ビジュアル デザインと互換性をOfficeしながら、アドインをブランド化する方法Office。
 ms.date: 06/26/2018
-localization_priority: Normal
-ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fb9a7bb186d5f65c5a372427b9a02bb002855541
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938925"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150180"
 ---
 # <a name="branding-patterns"></a>ブランド パターン
 

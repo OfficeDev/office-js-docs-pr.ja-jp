@@ -2,13 +2,13 @@
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 07/15/2021
-localization_priority: Normal
-ms.openlocfilehash: 958086793e423c8e8d0a12dcf38d5035063115e0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f69f293292eb3ce04e366f740cbd92ab9fe13617
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938413"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150126"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 

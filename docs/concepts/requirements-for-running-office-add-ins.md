@@ -2,13 +2,13 @@
 title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインで実行する必要があるクライアント要件とサーバー要件Office説明します。
 ms.date: 07/27/2021
-localization_priority: Normal
-ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937705"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149791"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 

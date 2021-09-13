@@ -2,13 +2,13 @@
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
 ms.date: 08/02/2021
-localization_priority: Normal
-ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936249"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151201"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -27,7 +27,7 @@ ms.locfileid: "58936249"
 
 1. [ファイル[Office on the web] を開きます](https://office.live.com/)。 [作成 **] オプション** を使用して、Excel、OneNote、PowerPoint、**または** Word **で** ドキュメントを作成 **します**。  この新しいドキュメントで、リボン **で [共有** ] を選択し、[リンクのコピー] **を** 選択して URL をコピーします。
 
-1. yo office プロジェクト ファイルのルート ディレクトリで、ファイルのpackage.js **開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
+1. yo office プロジェクト ファイルのルート ディレクトリで **、package.json ファイルを開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
 
     ```json
       "config": {

@@ -2,13 +2,13 @@
 title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 568494dc0b92f1a4f9c6556b169293e68ae0bce9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d7eaa51f6ac9255772e7dcd154e82dc28f39e848
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938124"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149747"
 ---
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 

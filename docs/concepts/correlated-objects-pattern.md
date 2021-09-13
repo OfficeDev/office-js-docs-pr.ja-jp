@@ -2,13 +2,13 @@
 title: ループで context.sync メソッドを使用しないでください
 description: ループ内での context.sync の呼び出しを回避するために、分割ループと相関オブジェクト パターンを使用する方法について説明します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a8e726eccb88e7df47d4a881bc9bb724c265bed
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937709"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149795"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>ループで context.sync メソッドを使用しないでください
 
@@ -220,7 +220,7 @@ Word.run(async (context) => {
 
 - ループを使用する Excel の非常に簡単な例については、このスタック オーバーフローの質問に対する受け入れ可能な回答を参照してください。context.sync の前に複数の `Array.forEach` [context.load](https://stackoverflow.com/questions/44459604/is-it-possible-to-queue-more-than-one-context-load-before-context-sync)をキューに入れられますか?
 - ループを使用し、構文を使用しない Word の簡単な例については、このスタック オーバーフローの質問に対する受け入れ可能な回答を参照してください `Array.forEach` `async` / `await` [。Office JavaScript API](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api)を使用してコンテンツ コントロールを使用してすべての段落を反復処理します。
-- TypeScript で記述されている Word の例については、サンプルの Word アドイン [Angular2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)スタイル チェッカー (特に [ ument.service.ts](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts)のファイルword.docを参照してください。 これは、ループの混合 `for` を `Array.forEach` 持っています。
+- TypeScript で記述されている Word の例については、サンプル Word アドイン [Angular2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)スタイル チェッカー 、特に [ファイル word.document.service.ts を参照してください](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts)。 これは、ループの混合 `for` を `Array.forEach` 持っています。
 - 高度な Word サンプルの場合は、この[gist](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab)を新しいツール[にScript Labします](../overview/explore-with-script-lab.md)。 gist を使用するコンテキストについては、テキストの置換後に同期されていないスタック オーバーフローの質問ドキュメントに対する受け入れ可能 [な回答を参照してください](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text)。 このサンプルでは、3 つのプロパティを持つカスタムの関連付けオブジェクトの種類を作成します。 合計 3 つのループを使用して相関オブジェクトの配列を作成し、さらに 2 つのループを使用して最終的な処理を実行します。 ループとループの混合 `for` `Array.forEach` があります。
 - 分割ループや相関オブジェクト パターンの厳密な例ではありませんが、セル値のセットを単一の通貨で他の通貨に変換する方法を示す高度な Excel サンプルがあります `context.sync` 。 このツールを試す場合は、Script Lab [ツールを](../overview/explore-with-script-lab.md)開き **、Currency Converter サンプルに移動** します。
 

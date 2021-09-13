@@ -1,9 +1,9 @@
-Office JavaScript API ライブラリには、`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` にある Office JS コンテンツ配信ネットワーク (CDN) を経由してアクセスできます。 アドインの Web ページで Office JavaScript API を使用するには、ページの `<head>` タグにある `<script>` タグに含まれている CDN を参照する必要があります。
+Office JavaScript API ライブラリには、`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` にある Office JS コンテンツ配信ネットワーク (CDN) を経由してアクセスできます。 アドインの Web ページで Office JavaScript API を使用するには、ページの `<head>` タグにある `<script>` タグに含まれている CDN を参照する必要があります。
 
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 

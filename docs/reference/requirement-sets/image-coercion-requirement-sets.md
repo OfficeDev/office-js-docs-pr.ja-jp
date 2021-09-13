@@ -3,13 +3,13 @@ title: 画像強制型変換要件セット
 description: 複数のアドインを使用した Image Coercion 要件セットOffice、Excel、Word PowerPointサポート。
 ms.date: 02/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937659"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149603"
 ---
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 

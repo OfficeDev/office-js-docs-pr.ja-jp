@@ -2,13 +2,13 @@
 title: Internet Explorer 11 をサポート
 description: アドインで 11 Internet Explorer ES5 Javascript をサポートする方法について説明します。
 ms.date: 08/13/2021
-localization_priority: Normal
-ms.openlocfilehash: dea458cbabb71e23432db8cb6eb3dfcddc6e1bac
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 963d5139a37393e9b09b0df40f1d76190b6526c7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936576"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149935"
 ---
 # <a name="support-internet-explorer-11"></a>Internet Explorer 11 をサポート
 

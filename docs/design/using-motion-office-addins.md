@@ -2,13 +2,13 @@
 title: Office アドインでモーションを使用する
 description: 移行、モーション、またはアニメーションをアドインで使用するためのベスト プラクティスOffice取得します。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 94b421a04d4dc91aa7ab97abd8569e0b590786ae
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3c0b9af5c11c6b2363b6198fc0ebeaf4cb524820
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939345"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150079"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 

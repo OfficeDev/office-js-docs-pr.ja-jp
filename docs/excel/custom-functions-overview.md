@@ -4,13 +4,13 @@ title: Excel でカスタム関数を作成する
 ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 8d702d7820e8a85499c5a64355310844b456abbc
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 619fd59a01d91127c0aa4e10af65edf5cbb400cf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938541"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151260"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 

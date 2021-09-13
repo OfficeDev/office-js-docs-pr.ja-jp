@@ -2,13 +2,13 @@
 ms.date: 05/11/2020
 description: アドイン内のカスタム関数から複数の結果Office Excel返します。
 title: カスタム関数から複数の結果を返す
-localization_priority: Normal
-ms.openlocfilehash: b7df6b2c5ca3dca24615a61e11277ac36b42c0df
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 63a9e74d311f26a618312a3ab7f81238cad69c21
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939156"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149875"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>カスタム関数から複数の結果を返す
 

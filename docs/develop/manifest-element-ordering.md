@@ -2,13 +2,13 @@
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 39d3e82162b1ed39390cff30b269417ef61d46f2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7e62da1c7236aa21fe2fd4fe451d6eec25118c9b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938216"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150012"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 

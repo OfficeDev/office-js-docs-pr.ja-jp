@@ -2,13 +2,13 @@
 title: 共通 JavaScript API オブジェクト モデル
 description: JavaScript 共通 API Officeモデルの詳細
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: dd30f5e5be70f58fec9eb4c84c0491397792950b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 23fb9a269948bb9ecd71acaa196af25a50ba00c0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938226"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150006"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 

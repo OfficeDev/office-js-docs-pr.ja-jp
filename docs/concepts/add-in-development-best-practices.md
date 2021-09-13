@@ -2,13 +2,13 @@
 title: Office アドイン開発のベスト プラクティス
 description: 開発時にベスト プラクティスを適用して、Officeを作成します。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937913"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149799"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 

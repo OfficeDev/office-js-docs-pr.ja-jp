@@ -2,13 +2,13 @@
 title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
-localization_priority: Normal
-ms.openlocfilehash: 8bb2995896624f4ef9db610d466000b35fa1d29c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1f0a9df52bc37652ef7d5b1981dabdc0a8aa30e4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937130"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149592"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 

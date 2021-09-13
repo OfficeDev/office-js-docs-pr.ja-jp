@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの VersionOverrides 要素
 description: アドイン マニフェスト (XML) ファイルOffice VersionOverrides 要素のリファレンス ドキュメント。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1951ad9a71723d5ca1e3971ef0cbde0704824c20
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936531"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151321"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 要素
 

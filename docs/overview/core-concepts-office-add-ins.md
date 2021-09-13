@@ -4,13 +4,13 @@ ms.topic: landing-page
 title: 開発ライフサイクルの概要
 description: ライフサイクル イベントの計画、開発、テスト、公開についての詳細情報。
 ms.date: 05/25/2021
-localization_priority: Priority
-ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 26450019026a81ab134ba623521e6dc2a34e77d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937561"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151374"
 ---
 # <a name="development-lifecycle-overview"></a>開発ライフサイクルの概要
 

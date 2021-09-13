@@ -2,13 +2,13 @@
 title: 開発環境をセットアップする
 description: 開発者環境をセットアップして、Officeを構築します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 71982a51e4941cb90a488f317cf6f771ccf5b005
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936771"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149828"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -57,7 +57,7 @@ Microsoft 365 アカウントをまだ持ってない場合は、Microsoft 365 �
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 独自のアドインを作成するか、Script Labを使用して組み込みのサンプルを試してみてください。
 

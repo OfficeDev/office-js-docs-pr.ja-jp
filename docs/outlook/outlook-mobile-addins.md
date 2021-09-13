@@ -2,13 +2,13 @@
 title: Outlook Mobile の Outlook のアドイン
 description: Outlookモバイル アドインは、すべてのビジネス アカウントと Microsoft 365.com アカウントOutlookサポートされています。
 ms.date: 09/08/2021
-localization_priority: Normal
-ms.openlocfilehash: acde42dd9ada88d60a811edf53ca0247f98e5519
-ms.sourcegitcommit: 02ffcff39bf1726893651dcd9ef609b0492851d7
+ms.localizationpriority: medium
+ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2021
-ms.locfileid: "58971091"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149604"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 

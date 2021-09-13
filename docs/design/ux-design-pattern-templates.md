@@ -2,13 +2,13 @@
 title: Office アドイン用 UX 設計パターン
 description: ナビゲーション、認証、初回実行、ブランド化のパターンなど、Officeアドインの UI デザイン パターンの概要を確認します。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3515a5bf915b711f79aa328ba2cc50a3b03670a4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937939"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149756"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Office アドイン用 UX 設計パターン
 

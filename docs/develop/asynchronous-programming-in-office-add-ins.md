@@ -2,13 +2,13 @@
 title: Office アドインにおける非同期プログラミング
 description: JavaScript ライブラリがOfficeアドインで非同期プログラミングを使用する方法Office説明します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ec5e714a617bdc637c34e5168e65aa11e950700a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936867"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149724"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 

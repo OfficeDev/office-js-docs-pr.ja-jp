@@ -2,13 +2,13 @@
 title: JavaScript API を使用してコメントExcelする
 description: API を使用してコメントとコメント スレッドを追加、削除、および編集する方法について説明します。
 ms.date: 10/09/2020
-localization_priority: Normal
-ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7714a1e83e2b9e191e95e9e8b1d997bfc3344d1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937144"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149667"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>JavaScript API を使用してコメントExcelする
 

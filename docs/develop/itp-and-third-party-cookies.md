@@ -2,13 +2,13 @@
 title: サードパーティ cookie をOffice ITP で動作するアドインを開発する
 description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
 ms.date: 07/8/2021
-localization_priority: Normal
-ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d8216e2945acf1b87306bb00b7fb868728a986bc
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939149"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150054"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作するアドインを開発する
 

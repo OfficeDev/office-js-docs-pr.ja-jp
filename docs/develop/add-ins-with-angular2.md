@@ -2,13 +2,13 @@
 title: Angular で Office アドインを開発する
 description: このAngularを使用して、Office単一ページ アプリケーションとしてアドインを作成します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936823"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149751"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>動的Internet Explorer読み込む場合のサポート Office.js
 
-アドインがWindowsしているOfficeデスクトップ クライアントに基づいて、アドインが 11 を使用Internet Explorer可能性があります。 (詳細については、「[アドインで使用Officeブラウザー」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。Angular API によって異なりますが、これらの API は、デスクトップ クライアントに埋め込まれた IE ランタイム `window.history` Windowsしません。 これらの API が機能しない場合、アドインが正しく動作しない場合があります。たとえば、空白の作業ウィンドウが読み込まれかねない場合があります。 これを軽減するために、Office.jsを無効にしてください。 ただし、動的に読み込む場合Office.js AngularJS が読み込Office.js。 その場合は、アドインの l ページに次のコードを追加して API `window.history` **をindex.htmする必要** があります。
+アドインがWindowsしているOfficeデスクトップ クライアントに基づいて、アドインが 11 を使用Internet Explorer可能性があります。 (詳細については、「[アドインで使用Officeブラウザー」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。Angular API によって異なりますが、これらの API は、デスクトップ クライアントに埋め込まれた IE ランタイム `window.history` Windowsしません。 これらの API が機能しない場合、アドインが正しく動作しない場合があります。たとえば、空白の作業ウィンドウが読み込まれかねない場合があります。 これを軽減するために、Office.jsを無効にしてください。 ただし、動的に読み込む場合Office.js AngularJS が読み込Office.js。 その場合は、アドインのページに次のコードを追加して API `window.history` **をindex.html** があります。
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

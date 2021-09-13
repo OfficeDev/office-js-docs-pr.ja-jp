@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの SupportUrl 要素
 description: SupportUrl 要素は、アドインのサポート情報を提供するページの URL を指定します。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: be516fe5848d775dacb0d424a92be02d59f85512
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2ea515aa61ed5bf9e22d6316a76fa4b5e51493f3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939263"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151242"
 ---
 # <a name="supporturl-element"></a>SupportUrl 要素
 

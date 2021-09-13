@@ -2,13 +2,13 @@
 title: Office アドインの Fluent UI React
 description: アドインで UI FluentをReactするOfficeについて学習します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937067"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149759"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインFluent UI ReactをOfficeする
 

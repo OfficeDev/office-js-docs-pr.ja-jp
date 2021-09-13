@@ -2,13 +2,13 @@
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: f2a4b4b7ae44596bef101aeeba51ee6dffa8ba5e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9740b62a0587b2453edbef17d0be51114d0c51f0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938194"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149934"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 

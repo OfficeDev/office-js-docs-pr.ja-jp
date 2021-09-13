@@ -2,13 +2,13 @@
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
 ms.date: 05/11/2021
-localization_priority: Normal
-ms.openlocfilehash: 8f84be1f2dcc43d795026fcd28dc3860c5e07a1e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c68df7bdaf1bf6aa93002e3120321f80d69724ab
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937098"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150241"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 

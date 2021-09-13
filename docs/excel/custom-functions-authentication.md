@@ -2,13 +2,13 @@
 ms.date: 05/17/2020
 description: 作業ウィンドウを使用しないExcelカスタム関数を使用してユーザーを認証します。
 title: UI レスカスタム関数の認証
-localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937486"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149886"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>UI レスカスタム関数の認証
 
@@ -141,7 +141,7 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
 
 ## <a name="see-also"></a>関連項目

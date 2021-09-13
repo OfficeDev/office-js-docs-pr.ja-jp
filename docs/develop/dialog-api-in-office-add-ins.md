@@ -2,13 +2,13 @@
 title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 8b45aa0da3a92dd8387c316213698a5e040f05f5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 02239437c12e44708e870540c95f1333e78351f9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936441"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150073"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -288,7 +288,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログ ボックスで DialogParentMessageReceived を処理する
 
-ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) します。 これは通常[、Office.onReady](initialize-add-in.md)メソッドまたは Office.initialize メソッドで行われます。次に示すようにします。 (より堅牢な例を以下に示します。
+ダイアログ ボックスの JavaScript で、イベントのハンドラーを `DialogParentMessageReceived` [UI.addHandlerAsync メソッドに登録](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) します。 これは通常、次に示すように[、Office.onReady メソッドまたは Office.initialize](initialize-add-in.md)メソッドで実行されます。 (より堅牢な例を以下に示します。
 
 ```javascript
 Office.onReady()

@@ -2,13 +2,13 @@
 title: SSO を使用せずに Microsoft Graph を承認する
 description: SSO を使用せずに Microsoft Graph を承認する方法
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: c16af84bf63ead9acb81cf92be0a14ab92a6def3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4f96c65fcc3c90a616f43189e1facebdbf8e9a8c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937665"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149719"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>SSO を使用せずに Microsoft Graph を承認する
 

@@ -2,13 +2,13 @@
 title: カスタム関数の名前付けExcel
 description: カスタム関数の名前に関する要件Excel、一般的な名前付けの落とし穴を回避します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 09216a2a98f6c37b17a413042804946bff4e6caa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938342"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151261"
 ---
 # <a name="custom-functions-naming-guidelines"></a>カスタム関数の名前付けのガイドライン
 
@@ -59,7 +59,7 @@ Excelは、組み込みの関数名 (など) に大文字を使用します `SUM
 
 ローカライズの詳細については、「カスタム関数の [ローカライズ」を参照してください。](custom-functions-localize.md)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 エラー処理 [のベスト プラクティスについて説明します](custom-functions-errors.md)。
 

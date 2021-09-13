@@ -2,13 +2,13 @@
 title: Office のホストと API の要件を指定する
 description: アドインが期待Office動作するアプリケーションと API 要件を指定する方法について説明します。
 ms.date: 05/04/2021
-localization_priority: Normal
-ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 701d52a7923f93533553807b0c169801c6ae86a7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936845"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149946"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 

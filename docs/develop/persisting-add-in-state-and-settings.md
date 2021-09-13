@@ -2,13 +2,13 @@
 title: アドインの状態および設定を保持する
 description: ブラウザー コントロールのステートレスOfficeで実行されているアドイン Web アプリケーションにデータを保持する方法について説明します。
 ms.date: 03/23/2021
-localization_priority: Normal
-ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937178"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149995"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 

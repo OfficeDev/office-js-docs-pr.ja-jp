@@ -2,13 +2,13 @@
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: シングル サインオン (SSO) を使用する ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法の詳細なガイド。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 685e482c3c714f6831ea827e4a65b2ac057bddec
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 99471b78100c2627186ceb8f1c93afce5a19d396
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937947"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149684"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 

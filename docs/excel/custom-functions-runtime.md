@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: 作業Excel特定の JavaScript ランタイムを使用しないカスタム関数について説明します。
 title: UI レス のカスタム関数Excelランタイム
-localization_priority: Normal
-ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938304"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149668"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>UI レス のカスタム関数Excelランタイム
 
@@ -68,7 +68,7 @@ function StoreValue(key, value) {
 
 アドインで UI レスのカスタム関数のみを使用する場合は、UI レスのカスタム関数を使用してドキュメント オブジェクト モデル (DOM) にアクセスしたり、DOM に依存する jQuery のようなライブラリを使用したりすることはできません。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
 

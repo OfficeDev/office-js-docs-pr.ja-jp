@@ -2,13 +2,13 @@
 title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938646"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150114"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -80,7 +80,7 @@ ms.locfileid: "58938646"
     }
     ```
 
-    JSON オブジェクトの詳細については、「アクション オブジェクトを作成 [する」および](#construct-the-action-objects) 「ショートカット オブジェクトを作成 [する」を参照してください](#construct-the-shortcut-objects)。 ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
+    JSON オブジェクトの詳細については、「アクション オブジェクトを作成 [する」および](#construct-the-action-objects) 「ショートカット オブジェクトを作成 [する」を参照してください](#construct-the-shortcut-objects)。 ショートカット JSON の完全なスキーマは [、extended-manifest.schema.json です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
     > [!NOTE]
     > この記事では、"Ctrl" の代りで "CONTROL" を使用できます。
@@ -136,7 +136,7 @@ ms.locfileid: "58938646"
 
 ### <a name="construct-the-action-objects"></a>アクション オブジェクトを作成する
 
-次のガイドラインを使用して、オブジェクトの配列内のオブジェクトを指定shortcuts.js`actions` します。
+shortcuts.json の配列でオブジェクトを指定する場合は、次 `actions` のガイドラインに従います。
 
 - プロパティ名 `id` と `name` 必須です。
 - この `id` プロパティは、キーボード ショートカットを使用して呼び出すアクションを一意に識別するために使用されます。
@@ -160,11 +160,11 @@ ms.locfileid: "58938646"
     ]
 ```
 
-ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
+ショートカット JSON の完全なスキーマは [、extended-manifest.schema.json です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 ### <a name="construct-the-shortcut-objects"></a>ショートカット オブジェクトを作成する
 
-次のガイドラインを使用して、オブジェクトの配列内のオブジェクトを指定shortcuts.js`shortcuts` します。
+shortcuts.json の配列でオブジェクトを指定する場合は、次 `shortcuts` のガイドラインに従います。
 
 - プロパティ名 `action` 、 `key` および `default` 必須です。
 - プロパティの値は `action` 文字列であり、action オブジェクトのプロパティの 1 `id` つと一致する必要があります。
@@ -195,7 +195,7 @@ ms.locfileid: "58938646"
     ]
 ```
 
-ショートカット JSON の完全なスキーマは、extended-manifest.schema.js[ です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
+ショートカット JSON の完全なスキーマは [、extended-manifest.schema.json です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
 > キーヒント (Excel ショートカットなどのシーケンシャル キー ショートカットとも呼ばれる) は、Office アドインではサポートされていません。

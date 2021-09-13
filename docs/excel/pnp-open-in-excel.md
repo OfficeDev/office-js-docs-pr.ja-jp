@@ -2,13 +2,13 @@
 title: Web Excelファイルを開き、アドインOffice埋め込む
 description: Web Excelを開き、アドインにOffice埋め込む。
 ms.date: 02/09/2021
-localization_priority: Normal
-ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0ac644de03c1f3a4c382dbe151c3224afffdbc81
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939367"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149643"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Web Excelファイルを開き、アドインOffice埋め込む
 

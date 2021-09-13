@@ -2,13 +2,13 @@
 title: Office アドインのパターンとプラクティス (PnP) の概要
 description: Office アドイン開発者向けのパターンとプラクティス (PnP) コンテンツの概要。
 ms.date: 01/22/2021
-localization_priority: Priority
-ms.openlocfilehash: 92539c917926658378bdfc074eeaa5bbc3f49213
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 442f750bfe043dcf60e85b52e1de0d2a1470cae6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938808"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149832"
 ---
 # <a name="overview-of-patterns-and-practices-pnp-for-office-add-ins"></a>Office アドインのパターンとプラクティス (PnP) の概要
 

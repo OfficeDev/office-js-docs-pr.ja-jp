@@ -2,13 +2,13 @@
 title: Office アドイン用の Office の UI 要素
 description: アドイン内のさまざまな種類の UI 要素のOffice取得します。
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9a3855c5b0f30ba795d1fd5d6becd1e8632927e3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939132"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150115"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office アドイン用の Office の UI 要素
 

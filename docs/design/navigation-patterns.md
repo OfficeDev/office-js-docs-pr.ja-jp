@@ -2,13 +2,13 @@
 title: Office アドインのナビゲーション パターン
 description: コマンド バー、タブ バー、および戻るボタンを使用して、アドインのナビゲーションを設計するためのベスト プラクティスOffice説明します。
 ms.date: 06/26/2018
-localization_priority: Normal
-ms.openlocfilehash: 3bb350ede78bef684899f26e4818eba440677541
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d6e725ac482245f18d65a5eda3bb8573a1a4f926
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938932"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150085"
 ---
 # <a name="navigation-patterns"></a>ナビゲーション パターン
 

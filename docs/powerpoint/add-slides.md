@@ -2,13 +2,13 @@
 title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937689"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151363"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 
@@ -69,7 +69,7 @@ async function addSlide() {
 
 1. 選択したスライドのインデックスを取得するメソッドを作成します。 次に例を示します。 このコードについては、以下の点に注意してください。
 
-    - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) メソッドを使用します。
+    - 共通 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_)メソッドを使用します。
     - 呼び出 `getSelectedDataAsync` しは Promise 戻り関数に埋め込まれている。 これを行う理由と方法の詳細については [、「Promise-returning](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)関数で一般的な API をラップする」を参照してください。
     - `getSelectedDataAsync` 複数のスライドを選択できるので、配列を返します。 このシナリオでは、ユーザーが選択したスライドは 1 つだけなので、コードは最初の (0 番目) スライドを取得します。これが選択された唯一のスライドです。
     - スライドの値は、ユーザーがサムネイル ウィンドウのスライドの横に表示する `index` 1 ベースの値です。

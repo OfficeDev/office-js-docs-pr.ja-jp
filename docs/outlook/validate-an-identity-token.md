@@ -2,13 +2,13 @@
 title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2b11cae1d773ea17b5e1dc06dcc57097d474162d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937664"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149835"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 

@@ -2,13 +2,13 @@
 title: マニフェスト ファイル内の Token 要素
 description: マニフェストの URL テンプレートで使用できるトークンまたはワイルドカードを指定します。
 ms.date: 11/06/2020
-localization_priority: Normal
-ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 69f626f5f6f57dd155756812bcd56267a1da3ffa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938434"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151206"
 ---
 # <a name="token-element"></a>Token 要素
 
