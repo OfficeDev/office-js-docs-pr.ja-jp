@@ -1,20 +1,20 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
-ms.date: 07/08/2021
+ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4858cc3bee0eb679b4345fe74af39a1db3833ae0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
+ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149715"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "59326766"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
 アドインのアドイン コマンドを使用して、Officeリボンにボタンを追加Office UI を拡張Office アプリできます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
-いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 AddInCommands 1.1 要件セットに導入されている、作業ウィンドウの Autoopen 機能は、作業ウィンドウを自動的に開く必要があるシナリオで使用できます。
+いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)要件セットで導入された自動開く作業ウィンドウ機能を使用すると、シナリオで必要なときに作業ウィンドウを自動的に開きます。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
@@ -24,9 +24,9 @@ Autoopen 機能では、特定のドキュメントに特定の作業ウィン�
 
 ## <a name="support-and-availability"></a>サポートと可用性
 
-autoopen 機能は現在 <!-- in **developer preview** and it is only --> 次の製品およびプラットフォームでサポートされています。
+自動開く機能は、現在、次の製品およびプラットフォームでサポートされています。
 
-|**製品**|**プラットフォーム**|
+|製品|プラットフォーム|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|すべての製品でサポートされているプラットフォーム: <ul><li>Windows デスクトップ版 Office。ビルド 16.0.8121.1000+</li><li>Office on Mac。ビルド 15.34.17051500+</li><li>Office on the web</li></ul>|
 
@@ -109,11 +109,12 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 
 また、`webextension` パートには、属性が `id`、`storeType`、`store`、および `version` のストアまたはカタログへの参照も含まれています。 Autoopen 機能に関連する `storeType` の値は、4 つのみです。 その他の 3 つの属性の値は、次の表に示すように、`storeType` の値に応じて決まります。
 
-| **`storeType` 値** | **`id` 値**    |**`store` 値** | **`version` 値**|
+|`storeType` 値|`id` value|`store` value|`version` 値|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|アドインの AppSource アセット ID (注を参照)|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)|
+|OMEX (AppSource)|アドインの AppSource アセット ID (「メモ」を参照)。|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (「メモ」を参照)。|
+|WOPICatalog (サードパーティ [の WOPI ホスト](/microsoft-365/cloud-storage-partner-program/online/) )| アドインの AppSource アセット ID (「メモ」を参照)。 | "wopicatalog" この値は、App Source で公開され、サードパーティの WOPI ホストにインストールされているアドインに使用します。 詳細については[、「Integrating with Office Online」を参照してください](/microsoft-365/cloud-storage-partner-program/online/overview)。 | アドイン マニフェストでのバージョン。|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
-|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、一元展開を使用するアドインで使用する行Microsoft 365 管理センター。|アドイン マニフェストでのバージョン。
+|EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、一元展開を使用するアドインで使用する行Microsoft 365 管理センター。|アドイン マニフェストでのバージョン。|
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
 
 > [!NOTE]
@@ -158,5 +159,5 @@ XML を記述する簡単な方法は、最初にアドインを実行し[](#tag
 
 ## <a name="see-also"></a>関連項目
 
-Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
-[開発者プログラムMicrosoft 365参加します](/office/developer-program/office-365-developer-program)。
+- Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
+- [開発者プログラムMicrosoft 365参加します。](/office/developer-program/office-365-developer-program)
