@@ -1,15 +1,15 @@
 ---
 title: アドイン コマンドの要件セット
 description: アドイン コマンドOfficeセットの概要。
-ms.date: 11/01/2020
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 73bedf79ff9698ed14ed0e17976a3c9e1602cc7e
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154357"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443532"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
@@ -31,7 +31,7 @@ ms.locfileid: "59154357"
 
 |  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | 該当なし | 該当なし  | 該当なし | 近日公開 | 該当なし | 近日公開 | 2020 年 11 月 |
+| AddinCommands 1.3  | 該当なし | 該当なし  | 該当なし | サポートされていません | N/A | サポートされていません | 2020 年 11 月 |
 | AddInCommands 1.1  | N/A | 16.0.4678.1000 *Outlook でのみサポートされています*  | バージョン 1809 (ビルド 10827.20150) 以降 | バージョン 1705 (ビルド 8121.1000) 以降 | N/A | 15.34 以降\*| 2017 年 5 月 |
 
 >\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。

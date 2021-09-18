@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 619fd59a01d91127c0aa4e10af65edf5cbb400cf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0cf4971d46ee80a64fe5ecd70778a333efef960b
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151260"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443518"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -97,7 +97,7 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 ## <a name="see-also"></a>関連項目
 
 * [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
-* [カスタム関数の要件セット](custom-functions-requirement-sets.md)
+* [カスタム関数の要件セット](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

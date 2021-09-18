@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 月次Microsoft Officeアドインのコミュニティ通話スケジュールとリソース。
-ms.date: 09/08/2021
+ms.date: 09/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154747"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443539"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -35,7 +35,8 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 ## <a name="see-also"></a>関連項目
 
 - [定期的な毎月のコミュニティ通話カレンダーの招待](https://aka.ms/officeaddinscommunitycall)
-- [すべての開発者Microsoft 365呼び出し](https://aka.ms/M365DevCalls)
 - [Communityトピックの要求と質問を呼び出す](https://aka.ms/officeaddinsform)
-- [Microsoft 365開発者向け YouTube チャネル](https://aka.ms/OfficeDevYouTube)
-- [Microsoft 365 のパターンとプラクティス](https://aka.ms/M365PnP)
+- [Microsoft 365開発者向け YouTube チャネル](https://aka.ms/m365devyoutube)
+- [Microsoft 365 YouTube チャンネル](https://aka.ms/m365pnp/videos )
+- [Microsoft 365PnP on Tech Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365PnP tech コミュニティ ブログ](https://aka.ms/m365pnp/community/blog)
