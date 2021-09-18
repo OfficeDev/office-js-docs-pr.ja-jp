@@ -1,15 +1,15 @@
 ---
 title: ブラウザー ウィンドウの要件セットを開く
 description: openBrowserWindow API Officeサポートするプラットフォームとビルドを指定します。
-ms.date: 04/09/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc1931afb9b20411ab7d37354fd173012389fd0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154042"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445825"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 
@@ -19,9 +19,9 @@ OpenBrowserWindow API セットを使用すると、アドインはブラウザ�
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、OpenBrowserWindow API 要件セット、その要件セットをサポートする Office ホスト アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  | Office 2013 on Windows以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| OpenBrowserWindowApi 1.1  | 該当なし | バージョン 1810 (ビルド 16.0.11001.20074) 以降 | 16.0.0.0 以降 | 16.0.0.0 以降 | 該当なし | 該当なし|
+|  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| OpenBrowserWindowApi 1.1  | バージョン 1810 (ビルド 16.0.11001.20074) 以降 | バージョン 1810 (ビルド 16.0.11001.20074) 以降 | 16.0.0.0 以降 | 16.0.0.0 以降 | 該当なし | 該当なし|
 
 > [!NOTE]
 > OpenBrowserWindowApi 要件セットは、次のようにのみ使用できます。

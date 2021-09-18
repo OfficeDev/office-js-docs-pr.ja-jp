@@ -1,15 +1,15 @@
 ---
 title: 共有ランタイム要件セット
 description: SharedRuntime API をサポートOfficeするプラットフォームとアプリケーションを指定します。
-ms.date: 04/08/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 25efc55c44242398bce684a9b56795d734d2a158
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154651"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445811"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 
@@ -19,9 +19,9 @@ ms.locfileid: "59154651"
 
 次の表に、SharedRuntime 1.1 要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  |  Office 2013 (以降) のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  | Office Online Server |
+| 要件セット | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) | Office on iPad<br>(Microsoft 365 サブスクリプションに接続) | Office on Mac<br>(Microsoft 365 サブスクリプションに接続) | Office on the web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | 該当なし | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
+| SharedRuntime 1.1  | バージョン 2002 (ビルド 12527.20092) 以降 | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
 
 > [!IMPORTANT]
 > 共有 JavaScript ランタイム要件セットは、次のプラットフォームでのみ使用できます。

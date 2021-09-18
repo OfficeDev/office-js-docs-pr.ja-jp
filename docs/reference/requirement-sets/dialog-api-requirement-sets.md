@@ -1,15 +1,15 @@
 ---
 title: ダイアログ API の要件セット
 description: ダイアログ API 要件セットの詳細について説明します。
-ms.date: 07/19/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdef827cf47903b0b7e2872110a5a6801735bf4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2c7c39c1bbe8d13a003710024a79af4f7699c2c7
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154354"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445734"
 ---
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
@@ -17,10 +17,10 @@ ms.locfileid: "59154354"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、Dialog API 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルドまたはバージョン番号をOfficeします。
 
-|  要件セット  | Windows 版 Office 2013\*<br>(1 回限りの購入) | Office 2016 以降のWindows\*<br>(1 回限りの購入)   | Windows での Office<br>(サブスクリプション) |  Office on iPad<br>(サブスクリプション)  |  Office on Mac<br>(サブスクリプション)  | Office on the web  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.2  | 該当なし | 該当なし | サポートを見る<br>下のセクション | 2.37 以降 | 16.37 以降 | 2020 年 6 月 | 該当なし |
-| DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降 | 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
+| 要件セット | Windows 版 Office 2013\*<br>(1 回限りの購入) | Windows 版 Office 2016\*<br>(1 回限りの購入) | Office 2021 以降のWindows\*<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション) | Office on iPad<br>(サブスクリプション) |  Office on Mac<br>(サブスクリプション) | Office on the web | Office Online Server |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| DialogApi 1.2  | 該当なし | 該当なし | 該当なし | サポートを見る<br>下のセクション | 2.37 以降 | 16.37 以降 | 2020 年 6 月 | 該当なし |
+| DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | ビルド 16.0.4390.1000 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降 | 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 
 >\*一度に購入したユーザーはOffice更新プログラムを受け入れてない可能性があります。 その場合、dialogApi をサポートするために更新された DLL がユーザーのコンピューターにインストールされていない場合でも、Office が UI でバージョンを報告するために使用する DLL は、ここに示されているバージョンよりも大きい場合があります。 必要なパッチがインストールされていることを確認するには、Office 更新リスト ([Office 2013 リストまたは Office 2016](/officeupdates/msp-files-office-2013)リスト) に移動し **、osfclient-x-none** を検索し、一覧に記載されている更新プログラムをインストールする必要があります。 [](/officeupdates/msp-files-office-2016)
 

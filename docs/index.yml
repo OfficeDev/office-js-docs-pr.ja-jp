@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 05/10/2021
+  ms.date: 09/09/2021
 highlightedContent:
   items:
     - itemType: overview
@@ -25,18 +25,18 @@ highlightedContent:
     - itemType: learn
       title: 'Microsoft Learn: Officeアドインを使用Officeクライアントを拡張する'
       url: /learn/paths/m365-office-add-in-associate
-    - itemType: whats-new
-      title: Microsoft 365開発者向けブログ
-      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
+    - itemType: sample
+      title: カスタム アドインOfficeサンプル
+      url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
       title: Officeアドイン の初心者向けガイド
       url: overview/learning-path-beginner.md
     - itemType: reference
       title: Office JavaScript API リファレンス ドキュメント
       url: /javascript/api/overview
-    - itemType: sample
-      title: 'GitHub: アドインのパターンOfficeプラクティス'
-      url: 'https://github.com/OfficeDev/PnP-OfficeAddins'
+    - itemType: whats-new
+      title: Microsoft 365開発者向けブログ
+      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
 conceptualContent:
   title: 開発者向けジャーニー
   summary: ''

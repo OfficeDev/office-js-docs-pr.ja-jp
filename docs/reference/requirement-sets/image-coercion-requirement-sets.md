@@ -1,15 +1,15 @@
 ---
 title: 画像強制型変換要件セット
 description: 複数のアドインを使用した Image Coercion 要件セットOffice、Excel、Word PowerPointサポート。
-ms.date: 02/19/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0f0b80c0af8213eaa9e3695373ddc037c2e60cc3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149603"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445804"
 ---
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 
@@ -36,13 +36,13 @@ ImageCoercion 1.1 では、メソッドを使用してデータを書き込む�
 
 ImageCoercion 1.2 では、メソッドを使用してデータを書き込むときに SVG 形式 ( `Office.CoercionType.XmlSvg` ) に変換 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) できます。 次のアプリケーションがサポートされています。
 
-- ExcelオンWindows (サブスクリプションに接続Microsoft 365)
-- Excel Mac (サブスクリプションに接続Microsoft 365)
-- PowerPoint (WindowsサブスクリプションにMicrosoft 365)
-- PowerPoint (サブスクリプションにMicrosoft 365)
+- Excel 2021 以降のWindows
+- Excel 2021 以降
+- PowerPoint 2021 以降のWindows
+- PowerPoint 2021 以降の Mac
 - PowerPoint on the web
-- Word on Windows (サブスクリプションにMicrosoft 365)
-- Mac 上の Word (サブスクリプションに接続Microsoft 365)
+- Word 2021 以降のWindows
+- Mac 上の Word 2021 以降
 
 ## <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 

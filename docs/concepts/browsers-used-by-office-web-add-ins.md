@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 08/09/2021
+ms.date: 09/10/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fe1cdcf0cfc9edcd182ca0c47e1dd200262da5bf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 77cf0b6888100eee6fa6d90f221dc680a9991a7e
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149796"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443525"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -36,17 +36,18 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 |Mac|any|該当なし|Safari|
 |iOS|any|該当なし|Safari|
 |Android|any|該当なし|Chrome|
-|Windows 7、8.1、10 | サブスクリプション以外のOffice 2013 以降|かまいません|Internet Explorer 11|
+|Windows 7、8.1、10 | サブスクリプション以外のOffice 2013 ~ Office 2019|かまいません|Internet Explorer 11|
+|Windows 10 | サブスクリプション以外のOffice 2021 以降|はい|Microsoft Edge<sup>1</sup>と WebView2 (Chromiumベース)|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
 |Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>1</sup>| かまいません|Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| かまいません|Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
-|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| いいえ |Microsoft Edge WebView (EdgeHTML) を使用した<sup>2、3</sup>の場合|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>1</sup>| はい<sup>4</sup>|  Microsoft Edge<sup>2</sup> with WebView2 (Chromiumベース) |
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>2</sup>| かまいません|Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.11629 &nbsp; _および_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>2</sup>| かまいません|Microsoft Edge WebView (EdgeHTML) を使用した<sup>1、3</sup>の場合|
+|Windows 10 ver. &nbsp; >= &nbsp;1903 | Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>2</sup>| いいえ |Microsoft Edge WebView (EdgeHTML) を使用した<sup>1、3</sup>の場合|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp;16.0.13530.20424<sup>2</sup>| はい<sup>4</sup>|  Microsoft Edge<sup>1</sup>と WebView2 (Chromiumベース) |
 
-<sup>1 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
+<sup>1</sup> Microsoft Edgeされている場合、Windows 10 ナレーター ("スクリーン リーダー" とも呼ばれる) は、作業ウィンドウで開くページ内のタグを `<title>` 読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
-<sup>2</sup> Microsoft Edgeされている場合、Windows 10 ナレーター ("スクリーン リーダー" とも呼ばれる) は、作業ウィンドウで開くページ内のタグ `<title>` を読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
+<sup>2 詳細</sup>については、「[更新履歴」](/officeupdates/update-history-office365-proplus-by-date)ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
 
 <sup>3</sup>アドインにマニフェストに要素が含まれる場合、元の `<Runtimes>` WebView (EdgeHTML) Microsoft Edgeを使用しない。 WebView2 を使用するMicrosoft Edge (Chromiumベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、Internet Explorerバージョンに関係なく、Windows 11 Microsoft 365します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 

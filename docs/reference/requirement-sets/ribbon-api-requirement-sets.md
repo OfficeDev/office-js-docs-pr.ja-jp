@@ -1,15 +1,15 @@
 ---
 title: リボン API の要件セット
 description: 動的リボン API Officeサポートするプラットフォームとビルドを指定します。
-ms.date: 05/12/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154654"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445713"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -19,12 +19,12 @@ ms.locfileid: "59154654"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、リボン API 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルド番号またはバージョン番号をOfficeします。
 
-|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Office 2016 以降のWindows<br>(1 回限りの購入)   | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | 該当なし | 該当なし | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
-| RibbonApi 1.2  | 該当なし | 該当なし | 2102 (ビルド 13801.20294) | 該当なし | 近日公開 | 2021 年 5 月 | 該当なし|
+|  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| RibbonApi 1.2  | 2102 (ビルド 13801.20294) | 2102 (ビルド 13801.20294) | N/A | サポートされていません | 2021 年 5 月 | 該当なし|
+| RibbonApi 1.1  | 2102 (ビルド 13801.20294) | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
 
-> **&#42;** リボン API は、サブスクリプションでのみサポートExcel、サブスクリプションをMicrosoft 365します。
+> **&#42;** リボン API は、リボン API でのみサポートExcel。
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>バージョン 1.1 on Office (サブスクリプション) Windowsサポート
 
