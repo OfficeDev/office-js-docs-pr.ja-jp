@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443546"
+ms.locfileid: "59445720"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>カスタム関数のエラーを処理して返す
 
