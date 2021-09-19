@@ -737,7 +737,7 @@ items:
             href: excel/custom-functions-overview.md
             displayName: 'Excel, Custom Functions'
           - name: CustomFunctionsRuntime API の要件セット
-            href: excel/custom-functions-requirement-sets.md
+            href: reference/requirement-sets/custom-functions-requirement-sets.md
             displayName: 'Excel, Custom Functions'
           - name: チュートリアル
             items:
@@ -1273,20 +1273,14 @@ items:
           - name: 検索オプションを使用して Word アドインでテキストを検索する
             href: word/search-option-guidance.md
             displayName: Word
-  - name: パターンとプラクティス
+  - name: サンプル
     items:
-      - name: 概要
-        href: overview/patterns-and-practices-overview.md
+      - name: サンプル リスト
+        href: overview/office-add-in-code-samples.md
+        displayName: PnP
       - name: Excel で開く
         href: excel/pnp-open-in-excel.md
         displayName: Excel
-      - name: カスタム関数のリモート呼び出しのバッチ処理
-        href: excel/custom-functions-batching.md
-        displayName: 'Excel, Custom Functions'
-      - name: 認証
-        href: develop/authentication-pnp.md
-      - name: Office ソリューションで高 DPI と DPI スケーリングを処理します
-        href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
       - name: Office アドイン コミュニティ コール
         href: overview/office-add-ins-community-call.md
   - name: VSTO および COM 移行リソース
