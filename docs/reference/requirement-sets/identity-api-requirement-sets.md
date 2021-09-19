@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448755"
+ms.locfileid: "59450801"
 ---
 # <a name="identity-api-requirement-sets"></a>ID API の要件セット
 

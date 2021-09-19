@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448747"
+ms.locfileid: "59450808"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
