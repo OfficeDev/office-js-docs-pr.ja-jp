@@ -8,8 +8,8 @@ ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445825"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448734"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 
