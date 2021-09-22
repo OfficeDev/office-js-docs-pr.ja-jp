@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの DesktopFormFactor 要素
 description: デスクトップ フォーム ファクターのアドインの設定を指定します。
-ms.date: 06/15/2021
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f89dff5626867258c8df93d5f047e3d08103e71b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f15840a7b6716cd8acabe9e061effa566d48930
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151621"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474330"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
@@ -22,7 +22,7 @@ ms.locfileid: "59151621"
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | はい      | アドインが機能を公開する場所を定義します。 |
 | [FunctionFile](functionfile.md)       | はい      | JavaScript 関数を含むファイルの URL。|
-| [GetStarted](getstarted.md)           | いいえ       | Word、Excel、またはアドインにアドインをインストールするときに表示される吹き出しをPowerPoint。 |
+| [GetStarted](getstarted.md)           | いいえ       | Word、Excel、またはアドインにアドインをインストールするときに表示される吹き出しをPowerPoint。 省略すると、吹き出しは [DisplayName](displayname.md) 要素と Description 要素の値 [を](description.md) 使用します。 |
 | [SupportsSharedFolders](supportssharedfolders.md) | いいえ | 共有メールボックス (プレビュー Outlook共有フォルダー (つまり、代理アクセス) のシナリオで、アドインを使用できるかどうかを定義します。 既定では *false に* 設定されます。 |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor の例

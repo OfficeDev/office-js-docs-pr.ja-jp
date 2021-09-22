@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの GetStarted 要素
 description: Word、Excel、PowerPoint、およびアドインにアドインがインストールされている場合に表示される吹き出しでPowerPoint情報をOneNote。
-ms.date: 10/09/2018
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 355b72d4130f3a220e6a1257af51e371665d3cc3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154792"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474344"
 ---
 # <a name="getstarted-element"></a>GetStarted 要素
 
-Word、Excel、PowerPoint、およびアドインにアドインがインストールされている場合に表示される吹き出しでPowerPoint情報をOneNote。 **GetStarted 要素** は [DesktopFormFactor の子要素です](desktopformfactor.md)。
+Word、Excel、PowerPoint、およびアドインにアドインがインストールされている場合に表示される吹き出しでPowerPoint情報をOneNote。 **GetStarted 要素** は [DesktopFormFactor の子要素です](desktopformfactor.md)。 **GetStarted 要素を省略** すると、代わりに [DisplayName](displayname.md)要素と Description 要素の値 [が](description.md)使用されます。
 
 ## <a name="child-elements"></a>子要素
 

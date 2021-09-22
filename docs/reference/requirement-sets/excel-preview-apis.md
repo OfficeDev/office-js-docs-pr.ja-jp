@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: JavaScript API のExcel詳細。
-ms.date: 07/23/2021
+ms.date: 09/16/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bb7139aadc35dcfe1ac3c977d9c98525b1d0b9f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bd36d9ba1be4e9e0caafdd49e63d8e7cdea01c59
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154954"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474351"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -22,12 +22,14 @@ ms.locfileid: "59154954"
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
 | グラフ データ テーブル | グラフ上のデータ テーブルの外観、書式設定、および表示を制御します。 | [Chart](/javascript/api/excel/excel.chart)、 [ChartDataTable](/javascript/api/excel/excel.chartdatatable)、 [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| カスタム データ型 | 書式付き番号と web Excelのサポートを含む、既存のデータ型の拡張。 | [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
+| カスタム データ型のエラー| カスタム データ型をサポートするエラー オブジェクト。 | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue , NumErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [RefErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue) [](/javascript/api/excel/excel.valueerrorcellvalue)|
 | ドキュメント タスク | コメントをユーザーに割り当てられたタスクに変換します。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | ID | 表示名や電子メール アドレスなど、ユーザー ID を管理します。 | [Identity](/javascript/api/excel/excel.identity)、 [IdentityCollection](/javascript/api/excel/excel.identitycollection)、 [IdentityEntity](/javascript/api/excel/excel.identityentity) |
 | リンクされたデータ型 | 外部ソースからデータに接続されたデータExcelサポートを追加します。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
-| リンクされたブック | ブック間のリンクを管理します。ブックリンクの更新と破損のサポートを含む。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)、 [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | テーブルのスタイル | フォント、罫線、塗りつぶしの色、および表のスタイルの他の側面のコントロールを提供します。 | [Table](/javascript/api/excel/excel.table)、 [PivotTable](/javascript/api/excel/excel.pivottable)、 [Slicer](/javascript/api/excel/excel.slicer) |
 | クエリ | 名前、更新日、クエリ数のようなクエリ属性を取得します。 | [Query](/javascript/api/excel/excel.query)、 [QueryCollection](/javascript/api/excel/excel.querycollection)|
+| ワークシートの保護 | 承認されていないユーザーがワークシート内で指定した範囲に変更を加えなかねない。 | [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection), [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [AllowEditRange](/javascript/api/excel/excel.alloweditrange), [AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection), [AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions) |
 
 ## <a name="api-list"></a>API リスト
 
@@ -35,6 +37,45 @@ ms.locfileid: "59154954"
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
+|[AllowEditRange](/javascript/api/excel/excel.alloweditrange)|[address](/javascript/api/excel/excel.alloweditrange#address)|オブジェクトに関連付けられている範囲を指定します。|
+||[delete()](/javascript/api/excel/excel.alloweditrange#delete__)|からこのオブジェクトを削除します `AllowEditRangeCollection` 。|
+||[pauseProtection(password?: string)](/javascript/api/excel/excel.alloweditrange#pauseProtection_password_)|特定のセッションのユーザーの特定 `AllowEditRange` のオブジェクトに対するワークシートの保護を一時停止します。|
+||[isPasswordProtected](/javascript/api/excel/excel.alloweditrange#isPasswordProtected)|is is password `AllowEditRange` protected を指定します。|
+||[setPassword(password?: string)](/javascript/api/excel/excel.alloweditrange#setPassword_password_)|に関連付けられているパスワードを変更 `AllowEditRange` します。|
+||[title](/javascript/api/excel/excel.alloweditrange#title)|オブジェクトのタイトルを指定します。|
+|[AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection)|[add(title: string, rangeAddress: string, options?: Excel.AllowEditRangeOptions)](/javascript/api/excel/excel.alloweditrangecollection#add_title__rangeAddress__options_)|コレクションに `AllowEditRange` オブジェクトを追加します。|
+||[getCount()](/javascript/api/excel/excel.alloweditrangecollection#getCount__)|コレクション内のオブジェクト `AllowEditRange` の数を返します。|
+||[getItem(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItem_key_)|タイトルによって `AllowEditRange` オブジェクトを取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.alloweditrangecollection#getItemAt_index_)|コレクション内の `AllowEditRange` インデックスによってオブジェクトを返します。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItemOrNullObject_key_)|タイトルによって `AllowEditRange` オブジェクトを取得します。|
+||[pauseProtection(password: string)](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|特定のセッションでユーザーに対して指定されたパスワードを持つコレクション内のすべてのオブジェクトに対するワークシート保護 `AllowEditRange` を一時停止します。|
+||[items](/javascript/api/excel/excel.alloweditrangecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions)|[password](/javascript/api/excel/excel.alloweditrangeoptions#password)|に関連付けられている `AllowEditRange` パスワード。|
+|[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|の種類を表します `BlockedErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.blockederrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.blockederrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.blockederrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.blockederrorcellvalue#type)|このセル値の種類を表します。|
+|[BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)|[プリミティブ](/javascript/api/excel/excel.booleancellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.booleancellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.booleancellvalue#type)|このセル値の種類を表します。|
+|[BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.busyerrorcellvalue#errorSubType)|の種類を表します `BusyErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.busyerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.busyerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.busyerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.busyerrorcellvalue#type)|このセル値の種類を表します。|
+|[CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|の種類を表します `CalcErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.calcerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.calcerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.calcerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.calcerrorcellvalue#type)|このセル値の種類を表します。|
+|[CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)|[licenseAddress](/javascript/api/excel/excel.cellvalueattributionattributes#licenseAddress)|このプロパティの使用方法を説明するライセンスまたはソースの URL を表します。|
+||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|このプロパティを管理するライセンスの名前を表します。|
+||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|ソースの URL を表します `CellValue` 。|
+||[sourceText](/javascript/api/excel/excel.cellvalueattributionattributes#sourceText)|のソースの名前を表します `CellValue` 。|
+|[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[説明](/javascript/api/excel/excel.cellvalueproviderattributes#description)|ロゴが指定されていない場合にカード ビューで使用されるプロバイダーの説明プロパティを表します。|
+||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoSourceAddress)|カード ビューでロゴとして使用される画像をダウンロードするために使用される URL を表します。|
+||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoTargetAddress)|ユーザーがカード ビューのロゴ要素をクリックした場合のナビゲーション ターゲットの URL を表します。|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|セルまたはセルが削除された場合に残りのセルが移動する方向 (上または左など) を表します。|
 ||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|新しいセルまたはセルを挿入するときに既存のセルが移動する方向 (下方向や右方向など) を表します。|
 |[Chart](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|グラフのデータ テーブルを取得します。|
@@ -45,7 +86,7 @@ ms.locfileid: "59154954"
 ||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showOutlineBorder)|データ テーブルの輪郭線を表示するかどうかを指定します。|
 ||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showVerticalBorder)|データ テーブルの垂直罫線を表示するかどうかを指定します。|
 ||[visible](/javascript/api/excel/excel.chartdatatable#visible)|グラフのデータ テーブルを表示するかどうかを指定します。|
-|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|グラフ データ テーブルの罫線の形式 (色、線のスタイル、太さ) を表します。|
+|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[罫線](/javascript/api/excel/excel.chartdatatableformat#border)|グラフ データ テーブルの罫線の形式 (色、線のスタイル、太さ) を表します。|
 ||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|背景の書式設定情報を含む、オブジェクトの塗りつぶしの書式を表します。|
 ||[font](/javascript/api/excel/excel.chartdatatableformat#font)|現在のオブジェクトのフォント属性 (フォント名、フォント サイズ、色など) を表します。|
 |[コメント](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assignTask_assignee_)|コメントに添付されたタスクを、割り当て先として指定されたユーザーに割り当てる。|
@@ -57,8 +98,17 @@ ms.locfileid: "59154954"
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|このコメント返信のスレッドに関連付けられているタスクを取得します。|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|その ID で識別されるコメント返信を返します。|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|ID で識別される条件付き書式を返します。|
+|[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|の種類を表します `ConnectErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.connecterrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.connecterrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.connecterrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.connecterrorcellvalue#type)|このセル値の種類を表します。|
+|[Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)|[errorType](/javascript/api/excel/excel.div0errorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.div0errorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.div0errorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.div0errorcellvalue#type)|このセル値の種類を表します。|
 |[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|タスクの完了率を指定します。|
-||[priority](/javascript/api/excel/excel.documenttask#priority)|タスクの優先度を指定します。|
+||[優先度](/javascript/api/excel/excel.documenttask#priority)|タスクの優先度を指定します。|
 ||[assignees](/javascript/api/excel/excel.documenttask#assignees)|タスクの割り当て人のコレクションを返します。|
 ||[変更点](/javascript/api/excel/excel.documenttask#changes)|タスクの変更レコードを取得します。|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|タスクに関連付けられたコメントを取得します。|
@@ -77,7 +127,7 @@ ms.locfileid: "59154954"
 ||[dueDateTime](/javascript/api/excel/excel.documenttaskchange#dueDateTime)|タスクの期日と時刻を UTC タイム ゾーンで表します。|
 ||[id](/javascript/api/excel/excel.documenttaskchange#id)|タスク変更レコードの ID。|
 ||[percentComplete](/javascript/api/excel/excel.documenttaskchange#percentComplete)|タスクの完了率を表します。|
-||[priority](/javascript/api/excel/excel.documenttaskchange#priority)|タスクの優先度を表します。|
+||[優先度](/javascript/api/excel/excel.documenttaskchange#priority)|タスクの優先度を表します。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskchange#startDateTime)|タスクの開始日時を UTC タイム ゾーンで表します。|
 ||[title](/javascript/api/excel/excel.documenttaskchange#title)|タスクのタイトルを表します。|
 ||[type](/javascript/api/excel/excel.documenttaskchange#type)|タスク変更レコードのアクションの種類を表します。|
@@ -92,6 +142,25 @@ ms.locfileid: "59154954"
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#dueDateTime)|タスクが期限の日時を取得します。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startDateTime)|タスクを開始する日付と時刻を取得します。|
+|[DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)|[プリミティブ](/javascript/api/excel/excel.doublecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.doublecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.doublecellvalue#type)|このセル値の種類を表します。|
+|[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[プリミティブ](/javascript/api/excel/excel.emptycellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.emptycellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.emptycellvalue#type)|このセル値の種類を表します。|
+|[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[errorSubType](/javascript/api/excel/excel.fielderrorcellvalue#errorSubType)|の種類を表します `FieldErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.fielderrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.fielderrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.fielderrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.fielderrorcellvalue#type)|このセル値の種類を表します。|
+|[FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)|[numberFormat](/javascript/api/excel/excel.formattednumbercellvalue#numberFormat)|この値の表示に使用される数値書式指定文字列を返します。|
+||[プリミティブ](/javascript/api/excel/excel.formattednumbercellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.formattednumbercellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.formattednumbercellvalue#type)|このセル値の種類を表します。|
+|[GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)|[errorType](/javascript/api/excel/excel.gettingdataerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.gettingdataerrorcellvalue#type)|このセル値の種類を表します。|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getItemOrNullObject_key_)|名前または ID を使用して図形を取得します。|
 |[ID](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|ユーザーの表示名を表します。|
 ||[email](/javascript/api/excel/excel.identity#email)|ユーザーの電子メール アドレスを表します。|
@@ -123,22 +192,29 @@ ms.locfileid: "59154954"
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|ID によってリンクされたデータ型を取得します。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|コレクション内のすべてのリンクされたデータ型を更新する要求を行います。|
-|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks()](/javascript/api/excel/excel.linkedworkbook#breakLinks__)|リンクされたブックを指すリンクを壊す要求を行います。|
-||[id](/javascript/api/excel/excel.linkedworkbook#id)|リンクされたブックを指す元の URL。|
-||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh__)|リンクされたブックから取得したデータを更新する要求を行います。|
-|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks()](/javascript/api/excel/excel.linkedworkbookcollection#breakAllLinks__)|リンクされたブックへのすべてのリンクを壊します。|
-||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItem_key_)|リンクされたブックに関する情報を URL で取得します。|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItemOrNullObject_key_)|リンクされたブックに関する情報を URL で取得します。|
-||[items](/javascript/api/excel/excel.linkedworkbookcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-||[refreshAll()](/javascript/api/excel/excel.linkedworkbookcollection#refreshAll__)|すべてのブック リンクを更新する要求を行います。|
-||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbookLinksRefreshMode)|ブック リンクの更新モードを表します。|
+|[NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)|[errorType](/javascript/api/excel/excel.naerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.naerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.naerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.naerrorcellvalue#type)|このセル値の種類を表します。|
+|[NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)|[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.nameerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.nameerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.nameerrorcellvalue#type)|このセル値の種類を表します。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|名前を使用してシート ビューを取得します。|
+|[NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)|[errorType](/javascript/api/excel/excel.nullerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.nullerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.nullerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.nullerrorcellvalue#type)|このセル値の種類を表します。|
+|[NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)|[errorType](/javascript/api/excel/excel.numerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.numerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.numerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.numerrorcellvalue#type)|このセル値の種類を表します。|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。 |
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|ピボットテーブルに適用されるスタイル。|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setStyle_style_)|ピボットテーブルに適用されるスタイルを設定します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|コレクション内の最初のピボットテーブルを取得します。|
 |[クエリ](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|クエリが最後に更新された場合のクエリ エラー メッセージを取得します。|
-||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|オブジェクトの種類を '読み込まれた' クエリを取得します。|
+||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|オブジェクトの種類に読み込まれたクエリを取得します。|
 ||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|データ モデルに読み込まれたクエリを指定します。|
 ||[name](/javascript/api/excel/excel.query#name)|クエリの名前を取得します。|
 ||[refreshDate](/javascript/api/excel/excel.query#refreshDate)|クエリが最後に更新された日時を取得します。|
@@ -148,6 +224,11 @@ ms.locfileid: "59154954"
 ||[items](/javascript/api/excel/excel.querycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|同じワークシートまたは複数のワークシート内のセルのすべての従属セルを含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
 ||[getPrecedents()](/javascript/api/excel/excel.range#getPrecedents__)|同じワークシートまたは複数のワークシート内のセルのすべての前例を含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
+|[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|の種類を表します `RefErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.referrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.referrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.referrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.referrorcellvalue#type)|このセル値の種類を表します。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshMode)|リンクされたデータ型の更新モード。|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceId)|更新モードが変更されたオブジェクトの一意の ID。|
 ||[source](/javascript/api/excel/excel.refreshmodechangedeventargs#source)|イベントのソースを取得します。|
@@ -163,6 +244,14 @@ ms.locfileid: "59154954"
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|数式で使用するスライサーの名前を表します。|
 ||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|スライサーに適用されるスタイル。|
 ||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setStyle_style_)|スライサーに適用されるスタイルを設定します。|
+|[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|の種類を表します `SpillErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|このセル値の種類を表します。|
+|[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[プリミティブ](/javascript/api/excel/excel.stringcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.stringcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.stringcellvalue#type)|このセル値の種類を表します。|
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getItemOrNullObject_name_)|名前に基づいてスタイルを取得します。|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|既定のテーブル スタイルを使用するようにテーブルを変更します。|
 ||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|特定のテーブルにフィルターが適用されると発生します。|
@@ -175,27 +264,74 @@ ms.locfileid: "59154954"
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|テーブルから複数の行を削除します。|
 ||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|指定したインデックスから、指定した数の行をテーブルから削除します。|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getItemOrNullObject_key_)|名前または ID でテーブルを取得します。|
+|[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|の種類を表します `ValueErrorCellValue` 。|
+||[errorType](/javascript/api/excel/excel.valueerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[プリミティブ](/javascript/api/excel/excel.valueerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.valueerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.valueerrorcellvalue#type)|このセル値の種類を表します。|
+|[ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)|[プリミティブ](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[type](/javascript/api/excel/excel.valuetypenotavailablecellvalue#type)|このセル値の種類を表します。|
+|[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)|[address](/javascript/api/excel/excel.webimagecellvalue#address)|イメージのダウンロード先 URL を表します。|
+||[altText](/javascript/api/excel/excel.webimagecellvalue#altText)|イメージが何を表すのかを説明するためにアクセシビリティ シナリオで使用できる代替テキストを表します。|
+||[属性](/javascript/api/excel/excel.webimagecellvalue#attribution)|この画像を使用するソース要件とライセンス要件を説明する属性情報を表します。|
+||[プリミティブ](/javascript/api/excel/excel.webimagecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[プリミティブ型](/javascript/api/excel/excel.webimagecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[プロバイダー](/javascript/api/excel/excel.webimagecellvalue#provider)|画像を提供したエンティティまたは個人を表す情報を表します。|
+||[relatedImagesAddress](/javascript/api/excel/excel.webimagecellvalue#relatedImagesAddress)|このページに関連すると見なされる画像を含む Web ページの URL を表します `WebImageCellValue` 。|
+||[type](/javascript/api/excel/excel.webimagecellvalue#type)|このセル値の種類を表します。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|ブックの一部であるリンクされたデータ型のコレクションを返します。|
-||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|リンクされたブックのコレクションを返します。|
 ||[クエリ](/javascript/api/excel/excel.workbook#queries)|ブックの一部である Power Query クエリのコレクションを返します。|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
+||[タスク](/javascript/api/excel/excel.workbook#tasks)|ブックに存在するタスクのコレクションを返します。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|ピボットテーブルのフィールド 一覧ウィンドウをブック レベルで表示するかどうかを指定します。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|ブックの日付を 1904 年から計算する場合、true となります。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|特定のワークシートにフィルターが適用されると発生します。|
+||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|ワークシート名が変更された場合に発生します。|
 ||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|ワークシートの保護状態が変更された場合に発生します。|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|ワークシートの表示設定が変更された場合に発生します。|
 ||[tabId](/javascript/api/excel/excel.worksheet#tabId)|Open ファイルの XML で読み取り可能なこのワークシートを表すOfficeします。|
-||[tasks](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
+||[タスク](/javascript/api/excel/excel.worksheet#tasks)|ワークシートに存在するタスクのコレクションを返します。|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|セルまたはセルを削除または挿入するときに、ワークシート内のセルが移動する方向への変更を表します。|
 ||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|イベントのトリガー ソースを表します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|あるブックの指定されたワークシートを現在のブックに挿入します。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onFiltered)|ブック内でワークシートのフィルターが適用されたときに発生します。|
+||[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|ワークシートがブック内のユーザーによって移動された場合に発生します。|
+||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|ワークシートコレクションでワークシート名が変更された場合に発生します。|
 ||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onProtectionChanged)|ワークシートの保護状態が変更された場合に発生します。|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|ワークシート コレクションでワークシートの表示設定が変更された場合に発生します。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetId)|フィルターが適用されるワークシートの ID を取得します。|
-|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isProtected)|ワークシートの現在の保護状態を取得します。|
+|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|移動後のワークシートの新しい位置を取得します。|
+||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|移動の前に、ワークシートの前の位置を取得します。|
+||[source](/javascript/api/excel/excel.worksheetmovedeventargs#source)|イベントのソース。|
+||[type](/javascript/api/excel/excel.worksheetmovedeventargs#type)|イベントの種類を取得します。|
+||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|移動したワークシートの ID を取得します。|
+|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|名前の変更後に、ワークシートの新しい名前を取得します。|
+||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|名前が変更される前に、ワークシートの前の名前を取得します。|
+||[source](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|イベントのソース。|
+||[type](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|イベントの種類を取得します。|
+||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|新しい名前を持つワークシートの ID を取得します。|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[checkPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#checkPassword_password_)|ワークシート保護のロック解除にパスワードを使用できる場合に指定します。|
+||[pauseProtection(password?: string)](/javascript/api/excel/excel.worksheetprotection#pauseProtection_password_)|特定のセッションのユーザーに対する、指定されたワークシート オブジェクトのワークシート保護を一時停止します。|
+||[allowEditRanges](/javascript/api/excel/excel.worksheetprotection#allowEditRanges)|このワークシートで `AllowEditRangeCollection` 見つかったファイルを指定します。|
+||[canPauseProtection](/javascript/api/excel/excel.worksheetprotection#canPauseProtection)|このワークシートの保護を一時停止できる場合に指定します。|
+||[isPasswordProtected](/javascript/api/excel/excel.worksheetprotection#isPasswordProtected)|シートがパスワードで保護される場合に指定します。|
+||[isPaused](/javascript/api/excel/excel.worksheetprotection#isPaused)|ワークシートの保護を一時停止する場合に指定します。|
+||[resumeProtection()](/javascript/api/excel/excel.worksheetprotection#resumeProtection__)|特定のセッションのユーザーに対する、指定されたワークシート オブジェクトのワークシート保護を再開します。|
+||[setPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#setPassword_password_)|オブジェクトに関連付けられているパスワードを変更 `WorksheetProtection` します。|
+||[updateOptions(options: Excel.WorksheetProtectionOptions)](/javascript/api/excel/excel.worksheetprotection#updateOptions_options_)|オブジェクトに関連付けられているワークシート保護オプションを変更 `WorksheetProtection` します。|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|オブジェクトが変更された `AllowEditRange` 場合に指定します。|
+||[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isProtected)|ワークシートの現在の保護状態を取得します。|
+||[protectionOptionsChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#protectionOptionsChanged)|変更された場合に `WorksheetProtectionOptions` 指定します。|
+||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|ワークシートのパスワードが変更された場合に指定します。|
 ||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|イベントのソース。|
 ||[type](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetId)|保護状態が変更されたワークシートの ID を取得します。|
+|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[source](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|イベントのソース。|
+||[type](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|イベントの種類を取得します。|
+||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|表示設定の変更後に、ワークシートの新しい表示設定を取得します。|
+||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|表示設定が変更される前に、ワークシートの以前の表示設定を取得します。|
+||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|表示が変更されたワークシートの ID を取得します。|
 
 ## <a name="see-also"></a>関連項目
 
