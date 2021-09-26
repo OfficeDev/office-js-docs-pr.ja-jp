@@ -535,9 +535,6 @@ items:
             href: reference/javascript-api-for-office-error-codes.md
           - name: サポートされていないウィンドウ オブジェクト
             href: reference/window-objects-unsupported-in-add-ins.md
-      - name: リソース
-        href: resources/resources-links-help.md
-        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
   - name: Excel
     items:
       - name: Excel アドイン ドキュメント
@@ -1281,14 +1278,19 @@ items:
       - name: Excel で開く
         href: excel/pnp-open-in-excel.md
         displayName: Excel
+  - name: リソース
+    items:
+      - name: 外部リソース
+        href: resources/resources-links-help.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
       - name: Office アドイン コミュニティ コール
         href: overview/office-add-ins-community-call.md
-  - name: VSTO および COM 移行リソース
-    items:
-      - name: VSTO アドイン開発者向けガイド
-        href: overview/learning-path-transition.md
-      - name: VSTO アドインから Office アドインにコードを共有する
-        href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-      - name: Office アドインに既存の COM アドインとの互換性をもたせる
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
+      - name: VSTO および COM 移行リソース
+        items:
+          - name: VSTO アドイン開発者向けガイド
+            href: overview/learning-path-transition.md
+          - name: VSTO アドインから Office アドインにコードを共有する
+            href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+          - name: Office アドインに既存の COM アドインとの互換性をもたせる
+            href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+            displayName: manifest
