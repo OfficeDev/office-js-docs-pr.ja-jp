@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
-ms.date: 09/03/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9740b62a0587b2453edbef17d0be51114d0c51f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149934"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990657"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
@@ -92,7 +92,7 @@ ms.locfileid: "59149934"
 
 ### <a name="13010"></a>13010
 
-ユーザーが Microsoft Edge または Internet Explorer で Office のアドインを実行しています。 ユーザーのドメインMicrosoft 365ドメインは、ブラウザーの設定で別の `login.microsoftonline.com` セキュリティ 領域に入っています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーがアドインを実行している場合は、OfficeでMicrosoft Edge。 ユーザーのドメインMicrosoft 365ドメインは、ブラウザーの設定で別の `login.microsoftonline.com` セキュリティ 領域に入っています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 

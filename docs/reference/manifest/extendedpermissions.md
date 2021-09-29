@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtendedPermissions 要素
 description: アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可のコレクションを定義します。
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 633609e43b9de656b5bc483fc59a5b4c24556254
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9c8316e045323b6b8c9c8ef140944b92c08f543c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154708"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990643"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 要素
 
@@ -16,6 +16,8 @@ ms.locfileid: "59154708"
 
 > [!IMPORTANT]
 > この要素のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+
+**アドインの種類:** メール
 
 ## <a name="child-elements"></a>子要素
 

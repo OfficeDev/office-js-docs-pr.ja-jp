@@ -1,14 +1,14 @@
 ---
 title: ドキュメントが開いたら、Office アドインでコードを実行する
 description: ドキュメントが開いたら、Officeアドインでコードを実行する方法について学習します。
-ms.date: 12/28/2020
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce550284a10a9410978402f087c2caf231a5917f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149952"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990552"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>ドキュメントが開いたら、Office アドインでコードを実行する
 
@@ -29,23 +29,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > メソッド `setStartupBehavior` は非同期です。
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>ドキュメントを開く時に読み込み動作を行う必要がないアドインを構成する
-
-次のコードでは、ドキュメントを開いたときにアドインを起動しなく設定します。 代わりに、リボン ボタンの選択や作業ウィンドウの開きなど、ユーザーが何らかの方法で操作を開始します。
-
-```JavaScript
-Office.addin.setStartupBehavior(Office.StartupBehavior.none);
-```
-
-## <a name="get-the-current-load-behavior"></a>現在の読み込み動作を取得する
-
-現在の起動動作を確認するには、オブジェクトを返す次の関数を実行 `Office.StartupBehavior` します。
-
-```JavaScript
-let behavior = await Office.addin.getStartupBehavior();
-```
-
-## <a name="how-to-run-code-when-the-document-opens"></a>ドキュメントが開いたらコードを実行する方法
+## <a name="place-startup-code-in-officeinitialize"></a>スタートアップ コードを Office.initialize に配置する
 
 ドキュメントが開いているときに読み込むアドインが構成されている場合、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラー `Office.initialize` に `Office.onReady` 配置します。
 
@@ -101,6 +85,22 @@ Office.onReady(info => {
 async function onChange(event) {
   console.log("Change type of event: " + event.type);
 }
+```
+
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>ドキュメントを開く時に読み込み動作を行う必要がないアドインを構成する
+
+次のコードでは、ドキュメントを開いたときにアドインを起動しなく設定します。 代わりに、リボン ボタンの選択や作業ウィンドウの開きなど、ユーザーが何らかの方法で操作を開始します。
+
+```JavaScript
+Office.addin.setStartupBehavior(Office.StartupBehavior.none);
+```
+
+## <a name="get-the-current-load-behavior"></a>現在の読み込み動作を取得する
+
+現在の起動動作を確認するには、オブジェクトを返す次の関数を実行 `Office.StartupBehavior` します。
+
+```JavaScript
+let behavior = await Office.addin.getStartupBehavior();
 ```
 
 ## <a name="see-also"></a>関連項目

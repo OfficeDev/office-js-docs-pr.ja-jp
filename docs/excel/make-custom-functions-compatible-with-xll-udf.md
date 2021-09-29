@@ -1,14 +1,14 @@
 ---
 title: XLL ユーザー定義関数を使用してカスタム関数を拡張する
 description: カスタム関数と同等Excel機能を持つ XLL ユーザー定義関数との互換性を有効にする
-ms.date: 08/24/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f920fb6c9a25907fc475cfd29b844ef00f9a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 82d1120e68a69bee74a6fe1911bbd8d3ccb3fb00
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152992"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990713"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>XLL ユーザー定義関数を使用してカスタム関数を拡張する
 
@@ -17,8 +17,7 @@ ms.locfileid: "59152992"
 
 既存の Excel XLL アドインがある場合は、Excel JavaScript API を使用して同等のカスタム関数アドインをビルドして、Excel on the web や Mac などの他のプラットフォームにソリューション機能を拡張できます。 ただし、Excel JavaScript API アドインには、XLL アドインで使用できるすべての機能が含められません。ソリューションで使用する機能に応じて、XLL アドインは、Excel JavaScript API アドイン (Excel Windows) よりも優れたエクスペリエンスを提供する場合があります。
 
-> [!IMPORTANT]
-> COM アドインと XLL ユーザー定義関数 (UDF) の互換性は、Excel (バージョン 1904 以降) Windowsでサポートされます。 COM アドインと XLL ユーザー定義関数 (UDF) の互換性は、アプリケーションまたは Mac ではExcel on the webサポートされていません。
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>マニフェストで同等の XLL を指定する
 

@@ -1,14 +1,14 @@
 ---
 title: Office アドインに既存の COM アドインとの互換性をもたせる
 description: アドインと同等の COM アドインOffice互換性を有効にする。
-ms.date: 08/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e84bce51e0233f7186b22e6571ec3968ea8d8ed5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f401e2ea15fde54401e329262dd783887f025af
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150018"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990578"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインに既存の COM アドインとの互換性をもたせる
 
@@ -16,14 +16,7 @@ ms.locfileid: "59150018"
 
 Office アドインを構成して、同等の COM アドインが既にユーザーのコンピューターにインストールされている場合、Windows の Office が Office アドインの代わりに COM アドインを実行します。 COM アドインは、Office がユーザーのコンピューターにインストールされているに従って、COM アドインと Office アドインの間でシームレスに切り替わるため、「同等」と呼ばれる。
 
-> [!NOTE]
-> この機能は、サブスクリプションに接続されている場合、次のプラットフォームとアプリケーションMicrosoft 365されます。 COM アドインは他のプラットフォームにインストールできないので、これらのプラットフォームでは、この記事で後で説明する manifest 要素 `EquivalentAddins` は無視されます。
->
-> - Excel、Word、および PowerPoint (Windows 1904 以降)
-> - Outlookサーバー Windowsバージョンに対して(バージョン 2102 以降) Exchangeオン
->   - Exchange Online
->   - Exchange 2019 累積的な更新プログラム 10 以降 ([KB5003612](https://support.microsoft.com/topic/b1434cad-3fbc-4dc3-844d-82568e8d4344))
->   - Exchange 2016 累積的な更新プログラム 21 以降 ([KB5003611](https://support.microsoft.com/topic/b7ba1656-abba-4a0b-9be9-dac45095d969))
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-an-equivalent-com-add-in"></a>同等の COM アドインを指定する
 

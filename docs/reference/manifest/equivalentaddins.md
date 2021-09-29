@@ -1,20 +1,22 @@
 ---
 title: マニフェスト ファイルの EquivalentAddins 要素
 description: 同等の COM アドイン、XLL、または両方との下位互換性を指定します。
-ms.date: 03/09/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 99a1bad6149bdc1b14e658a0bae19742a11a12b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d32f67f49d334a75433aec2d079b45a44a04121a
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153046"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990811"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 要素
 
 同等の COM アドイン、XLL、または両方との下位互換性を指定します。
 
-**アドインの種類:** 作業ウィンドウ、カスタム関数
+[!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
+
+**アドインの種類:** 作業ウィンドウ、メール、カスタム関数
 
 ## <a name="syntax"></a>構文
 

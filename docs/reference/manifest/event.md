@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイル内のイベント要素
 description: アドインでイベント ハンドラーを定義します。
-ms.date: 05/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ccddc64ffecd9ebc06b28eb37c0aee46dcc2f4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 095023a8f2d8cd5a01835e09cd50ae7289c98c01
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153041"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990664"
 ---
 # <a name="event-element"></a>Event 要素
 
@@ -16,6 +16,8 @@ ms.locfileid: "59153041"
 
 > [!NOTE]
 > サポートと使用方法の詳細については[、「On-send feature for Outlook」を参照してください](../../outlook/outlook-on-send-addins.md)。
+
+**アドインの種類:** メール
 
 ## <a name="attributes"></a>属性
 

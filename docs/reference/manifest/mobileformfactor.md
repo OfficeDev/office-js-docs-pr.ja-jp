@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの MobileFormFactor 要素
 description: MobileFormFactor 要素は、アドインのモバイル フォーム ファクター設定を指定します。
-ms.date: 10/09/2018
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 619e0465ccf0c4b327956ca166aaa6195744ebee
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c0b701064f3a8c0244dc62226899c4317b9075c4
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154924"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990678"
 ---
 # <a name="mobileformfactor-element"></a>MobileFormFactor 要素
 
@@ -17,6 +17,8 @@ ms.locfileid: "59154924"
 各 **MobileFormFactor 定義には****、FunctionFile** 要素と 1 つ以上の **ExtensionPoint 要素が含** まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
 
 **MobileFormFactor** 要素は、VersionOverrides のスキーマ 1.1 で定義されています。これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。
+
+**アドインの種類:** メール
 
 ## <a name="child-elements"></a>子要素
 

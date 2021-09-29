@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 09/10/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cf0b6888100eee6fa6d90f221dc680a9991a7e
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: bb44b2e689b4731f9017ad18e22dcf12b6fc918a
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443525"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990538"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -24,7 +24,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 >
 > Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。プラットフォームと Office バージョンの組み合わせ (Office 2019 までのすべての 1 回限り購入バージョンを含む) は、この記事で説明したように、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
 >
-> - AppSource は、ブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
+> - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーション を使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
 > - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
@@ -32,7 +32,7 @@ Officeアドインは、Office on the web で実行するときに iFrame を使
 |OS|Office のバージョン
 |Edge WebView2 (Chromiumベース) がインストールされていますか?|ブラウザー|
 |:-----|:-----|:-----|:-----|
-|any|Office on the web|該当なし|Office が開かれているブラウザー。|
+|any|Office on the web|該当なし|Office が開かれているブラウザー。<br>(ただし、Office on the webは開かInternet Explorer。<br>そうしようとすると、Edge でOffice on the webが開きます)。 |
 |Mac|any|該当なし|Safari|
 |iOS|any|該当なし|Safari|
 |Android|any|該当なし|Chrome|

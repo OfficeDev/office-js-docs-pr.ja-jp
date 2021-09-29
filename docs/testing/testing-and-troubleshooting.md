@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: アドインのユーザー エラーをトラブルシューティングOfficeする方法について説明します。
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154891"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990545"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -67,9 +67,9 @@ Office アドインを使用するとき、ユーザーは、ダイアログ ボ
 
 |**影響を受けるブラウザー**|**影響を受けるプラットフォーム**|
 |:--------------------|:---------------------|
-|Internet Explorer、Microsoft Edge|Office on the web|
+|Microsoft Edge|Office on the web|
 
-この問題を解決するために、エンド ユーザーまたは管理者は、Internet Explore の信頼済みサイトのリストにアドインのドメインを追加することができます。Internet Explorer または Microsoft Edge ブラウザーのどちらを使用していても、同じ手順を使用します。
+この問題を解決するために、エンド ユーザーまたは管理者は、アドインのドメインをブラウザー内の信頼済みサイトの一覧にMicrosoft Edgeできます。
 
 > [!IMPORTANT]
 > アドインを信頼しない場合は、信頼済みサイトのリストにアドインの URL を追加しないでください。

@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの開発エラーのトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
-ms.date: 09/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a2b36a0c8a89dd5f4087794e1901e72baca6244
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2a17a9eafd91cd174209b1974eea61715385c0ad
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152780"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990804"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -107,7 +107,7 @@ myChart.id = "5";
 
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
 - [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
+- [Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 - [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)

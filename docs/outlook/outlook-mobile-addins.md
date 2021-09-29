@@ -1,14 +1,14 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
 description: Outlookモバイル アドインは、すべてのビジネス アカウントと Microsoft 365.com アカウントOutlookサポートされています。
-ms.date: 09/08/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149604"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990818"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
@@ -65,7 +65,7 @@ Outlook Mobile に対して適切なシナリオの例を次に示します。
 
 ## <a name="testing-your-add-ins-on-mobile"></a>モバイル上でのアドインのテスト
 
-Outlook Mobile でアドインをテストするために、O365 や Outlook.com アカウントにアドインをサイドローディングできます。Outlook on the web で、設定ギアに移動し、[**統合の管理**] または [**アドインの管理**] を選択します。上部付近で、[**カスタム アドインを追加するには、ここをクリックします**] をクリックし、マニフェストをアップロードします。マニフェストの形式に `MobileFormFactor` が含まれていることを確認します。含まれていないと、読み込むことができません。
+Outlook Mobile でアドインをテストするには、まず、Web、Windows、または Mac の O365 または Outlook.com アカウントにアドインをサイドロードします。 [](sideload-outlook-add-ins-for-testing.md) マニフェストが適切に含まれる形式か、モバイルのクライアントに読み込 `MobileFormFactor` まれOutlook確認します。
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 

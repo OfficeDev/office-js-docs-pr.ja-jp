@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインで実行する必要があるクライアント要件とサーバー要件Office説明します。
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149791"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990559"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -66,7 +66,7 @@ Outlookの一部として配布される Mac 上のMicrosoft 365は、Outlookア
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>クライアントの要件: Office Web クライアントと SharePoint のブラウザー サポート
 
-Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンなど、ECMAScript 5.1、HTML5、CSS3 をサポートする任意のブラウザー。
+ecMAScript 5.1、HTML5、CSS3 をサポートするブラウザー (Microsoft Edge、Chrome、Firefox、Safari (Mac OS) など、Internet Explorer を除くすべてのブラウザー。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット

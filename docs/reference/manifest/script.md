@@ -1,18 +1,20 @@
 ---
 title: マニフェスト ファイルの Script 要素
 description: Script 要素は、カスタム関数がカスタム 関数で使用するスクリプト設定をExcel。
-ms.date: 10/09/2018
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c3c1946bbb45b2fd41e4f39b46f9429b17343e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 259976f752cf3fca72c5012bedd92b9bf021f6aa
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154474"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990671"
 ---
 # <a name="script-element"></a>Script 要素
 
 Excel でカスタム関数によって使用されるスクリプトの設定を定義します。
+
+**アドインの種類:** カスタム関数
 
 ## <a name="attributes"></a>属性
 

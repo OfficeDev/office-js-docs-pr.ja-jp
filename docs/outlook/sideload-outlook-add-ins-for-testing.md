@@ -1,18 +1,21 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 05/13/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151386"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990706"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
 サイドロードを使用すると、最初にアドイン カタログに置かなくても、テスト用に Outlook アドインをインストールすることができます。
+
+> [!IMPORTANT]
+> Outlook アドインがモバイルをサポートしている場合は、web、Windows、または Mac の Outlook クライアントに関するこの記事の指示に従ってマニフェストをサイドロードし[、「Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile)用アドイン」の「モバイルでアドインをテストする」の記事のガイダンスに従います。
 
 ## <a name="sideload-automatically"></a>サイドロードが自動的に実行される
 
@@ -128,3 +131,7 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 Outlook クライアントの[マイ アドイン] ダイアログ ボックスに移動するには、この記事の前のセクションで手動[](#sideload-manually)サイドローディングの最後の手順を使用します。
 
 サイドロードされたアドインを Outlook から削除するには、この記事で説明した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [カスタム アドイン] セクションでアドインを検索します。アドインの省略記号 ( ) を選択し、[削除] を選択して、その特定の `...` アドインを削除します。  ダイアログを閉じます。
+
+## <a name="see-also"></a>関連項目
+
+- [Outlook Mobile のアドイン](outlook-mobile-addins.md)

@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 をサポート
 description: アドインで 11 Internet Explorer ES5 Javascript をサポートする方法について説明します。
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 963d5139a37393e9b09b0df40f1d76190b6526c7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3edab25361b8ababf8a004f25e8012ca23a085ab
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149935"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990524"
 ---
 # <a name="support-internet-explorer-11"></a>Internet Explorer 11 をサポート
 
@@ -17,7 +17,7 @@ ms.locfileid: "59149935"
 >
 > Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。Office アドインで使用されるブラウザーで説明したように、プラットフォームと Office バージョンの一部の組み合わせ (Office 2019 までのすべての一時購入バージョンを含む) は、Internet Explorer 11 に付属する webview[](../concepts/browsers-used-by-office-web-add-ins.md)コントロールを引き続き使用してアドインをホストします。さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き[必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
 >
-> - AppSource は、ブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
+> - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーション を使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
 > - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
 
 Officeアドインは、Web アプリケーションで実行するときに IFrames 内に表示Office on the web。 Officeアドインは、Mac 上または Mac 上の Office または Windowsで実行Officeブラウザー コントロールを使用して表示されます。 埋め込みブラウザー コントロールは、オペレーティング システムまたはユーザーのコンピューターにインストールされているブラウザーによって提供されます。

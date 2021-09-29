@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 テスト
 description: 11 でOfficeアドインをテストInternet Explorerします。
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f5add8e61dc686e413cfb83b248185d40b2a624f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151554"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990776"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
@@ -17,7 +17,7 @@ ms.locfileid: "59151554"
 >
 > Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。Office アドインで使用されるブラウザーで説明したように、プラットフォームと Office バージョンの一部の組み合わせ (Office 2019 までのすべての一時購入バージョンを含む) は、Internet Explorer 11 に付属する webview[](../concepts/browsers-used-by-office-web-add-ins.md)コントロールを引き続き使用してアドインをホストします。さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き[必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
 >
-> - AppSource は、ブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
+> - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーション を使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
 > - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
 
 AppSource を使用してアドインを販売する予定がある場合、または以前のバージョンの Windows および Office をサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 コマンド ラインを使用して、アドインで使用される最新のランタイムから、このテスト用の Internet Explorer 11 ランタイムに切り替えます。 Windows および Office のバージョンで Internet Explorer 11 Web ビュー コントロールを使用する方法については、「Office アドインで使用されるブラウザー」を[参照](../concepts/browsers-used-by-office-web-add-ins.md)してください。
@@ -33,7 +33,7 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
 > また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
 
 > [!NOTE]
-> Internet Explorer 11 ブラウザーでアドインをテストするには、Office on the webでInternet Explorerを開き、アドインを[サイドロードします](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
+> Office on the web 11 で開くInternet Explorerできないので、Office on the web でアドインをテストInternet Explorer。
 
 ## <a name="prerequisites"></a>前提条件
 

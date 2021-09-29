@@ -3,12 +3,12 @@ title: マニフェスト ファイルの SupportsSharedFolders 要素
 description: SupportsSharedFolders 要素は、共有フォルダー Outlook共有メールボックス のシナリオで使用できるかどうかを定義します。
 ms.date: 06/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a7cbe1c6549c8a93a6ecceab9e4bdaba07001f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fed9d98fb993e8568e9ff27b3a3bd44d64efa279
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154438"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990510"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 要素
 
@@ -16,6 +16,8 @@ ms.locfileid: "59154438"
 
 > [!IMPORTANT]
 > この要素のサポートは、要件セット 1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+
+**アドインの種類:** メール
 
 **SupportsSharedFolders 要素の例を次に示** します。
 
