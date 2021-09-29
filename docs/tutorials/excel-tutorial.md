@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151303"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990825"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -843,7 +843,7 @@ ms.locfileid: "59151303"
     ```
 
 > [!NOTE]
-> **popup.html** ファイルと、そのファイルで読み込む **popup.js** ファイルは、アドインの作業ウィンドウとは完全に別な Microsoft Edge または Internet Explorer プロセスで実行されます。 **popup.js** が **app.js** ファイルと同じ **bundle.js** ファイルからトランスパイルされていた場合、アドインでは **bundle.js** の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 そのため、このアドインでは **popup.js** を一切トランスパイルしていません。
+> その **popup.html** ファイルと、そのファイルで読み込む **popup.js** ファイルは、アドインの作業ウィンドウとは完全に別な実行時のブラウザ プロセスで実行されます。 **popup.js** が **app.js** ファイルと同じ **bundle.js** ファイルからトランスパイルされていた場合、アドインでは **bundle.js** の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 そのため、このアドインでは **popup.js** を一切トランスパイルしていません。
 
 ### <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
 
