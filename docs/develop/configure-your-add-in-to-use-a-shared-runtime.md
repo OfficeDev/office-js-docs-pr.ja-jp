@@ -1,15 +1,15 @@
 ---
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: 6b0815b734b1fe9ad28f0662fdf84841349b0079
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149711"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990566"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -200,7 +200,7 @@ ms.locfileid: "59149711"
 ```
 
 > [!NOTE]
-> アドインにマニフェストの `Runtimes` 要素が含まれている場合 (共有ランタイムに必要)、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
+> アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 ## <a name="about-the-shared-javascript-runtime"></a>共有 JavaScript ランタイムについて
 
