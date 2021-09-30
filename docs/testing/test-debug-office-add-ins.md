@@ -1,14 +1,14 @@
 ---
 title: Office アドインのテストとデバッグ
 description: Office アドインのテストとデバッグを行う方法について説明します。
-ms.date: 05/19/2021
+ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e99d47783f7c613ad25f8b557cc81ee12d507a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fd7bcaf5fdc6ded1a2d6991a4ab5207e515fad16
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154312"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990790"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
@@ -24,7 +24,7 @@ Office アドインは主要なプラットフォームで実行されるため�
 > [!IMPORTANT]
 > AppSource を通じて販売されるアドインは、すべてのプラットフォームでのテストを含む検証プロセスを経ます。 さらに、アドインは、Microsoft Edge (Chromium ベースの WebView2)、Chrome、Safari など、すべての主要な最新のブラウザーで Office on the web 用にテストされています。 したがって、AppSource に送信する前に、これらのプラットフォームとブラウザーでテストする必要があります。 検証の詳細については、「[コマーシャル マーケットプレースの認定ポリシー](/legal/marketplace/certification-policies)」、特に[セクション 1120.3](/legal/marketplace/certification-policies#11203-functionality)、および [Office アドイン アプリケーションと可用性のページ](../overview/office-add-in-availability.md)を参照してください。
 >
-> AppSource は、Office on the web でアドインをテストするために、Internet Explorer または Microsoft Edge の以前のバージョン (WebView1) を使用しません。 ただし、かなりの数のユーザーがこれら 2 つのブラウザーを使用して Office on the web を開く場合は、それらのブラウザーでテストする必要があります。 詳細については、「[Internet Explorer 11 のサポート](../develop/support-ie-11.md)」および「[Microsoft Edge の問題のトラブルシューティング](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)」を参照してください。 Office は引き続きアドイン用にこれらのブラウザーをサポートしているため、アドインの実行時にバグが発生したと思われる場合は、[office-js](https://github.com/OfficeDev/office-js/issues/new/choose) リポジトリの問題を作成してください。
+> AppSource は、Office on the web でアドインをテストするために、Internet Explorer または Microsoft Edge の以前のバージョン (WebView1) を使用しません。 ただし、多数のユーザーが従来のエッジを使用して Office on the web を開く場合は、それを使用してテストする必要があります。 (Office on the web は Internet Explorer では開けませんが、テストする必要はありません。) 詳細については、「[Internet Explorer 11 のサポート](../develop/support-ie-11.md)」および「[Microsoft Edge の問題のトラブルシューティング](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)」を参照してください。 Office は引き続きアドイン ランタイム用にこれらのブラウザーをサポートしているため、アドインの実行時にバグが発生したと思われる場合は、[office-js](https://github.com/OfficeDev/office-js/issues/new/choose) リポジトリの問題を作成してください。
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>テスト用に Office アドインをサイドロードする
 
@@ -48,7 +48,7 @@ Office アドインをデバッグする手順も、プラットフォームに�
 
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
 
-- [iPad と Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
+- [Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
 
 - [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 
