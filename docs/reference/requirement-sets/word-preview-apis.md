@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript プレビュー API
-description: 今後の Word JavaScript API の詳細
+description: 今後の Word JavaScript API の詳細。
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0aedc0dac2c4af62bf1e21b1c46690a27cbcfc95
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154033"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138778"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 

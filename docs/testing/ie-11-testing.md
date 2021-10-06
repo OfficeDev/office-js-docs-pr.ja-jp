@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 テスト
 description: 11 でOfficeアドインをテストInternet Explorerします。
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 40a380d902de211f2dfcbe2e474553dfa1b02fcb
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990776"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138626"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
@@ -55,7 +55,7 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
     ```
 
 > [!TIP]
-> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、および 10 とさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)。
+> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、10、および 11 のさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)。
 
 ### <a name="command-options"></a>コマンド オプション
 
@@ -69,5 +69,5 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
 
 * [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 * [テスト用に Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [アプリの開発者ツールを使用してアドインをデバッグWindows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)

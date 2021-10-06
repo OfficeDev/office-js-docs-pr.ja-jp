@@ -268,7 +268,7 @@ items:
               - name: 作業ウィンドウからデバッガーをアタッチする
                 href: testing/attach-debugger-from-task-pane.md
               - name: 開発者ツールを使用したデバッグ
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
               - name: Edge Chromium WebView2 を使用してデバッグする
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'

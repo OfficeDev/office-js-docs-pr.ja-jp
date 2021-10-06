@@ -1,15 +1,15 @@
 ---
 title: 共有ランタイム要件セット
 description: SharedRuntime API をサポートOfficeするプラットフォームとアプリケーションを指定します。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450787"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138500"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 
@@ -21,10 +21,10 @@ ms.locfileid: "59450787"
 
 | 要件セット | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) | Office on iPad<br>(Microsoft 365 サブスクリプションに接続) | Office on Mac<br>(Microsoft 365 サブスクリプションに接続) | Office on the web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | バージョン 2002 (ビルド 12527.20092) 以降 | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
+| SharedRuntime 1.1  | ビルド 16.0.14326.20454 以降 | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
 
 > [!IMPORTANT]
-> 共有 JavaScript ランタイム要件セットは、次のプラットフォームでのみ使用できます。
+> 共有 JavaScript ランタイム要件セットは、次のアプリケーションおよびプラットフォームOfficeでのみ使用できます。
 >
 > - Excel on the web、Windows、および Mac。
 > - Windows 版の PowerPoint (ビルド 13218.10000 以降)。 PowerPoint の共有 JavaScript ランタイムは現在プレビュー中であり、変更される可能性があります。 運用環境での使用はサポートされません。 最新のビルドを入手するには、[Office Insider に参加する](https://insider.office.com/join)必要があります。 プレビュー機能を試す良い方法は、Microsoft 365 サブスクリプションを使用することです。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。

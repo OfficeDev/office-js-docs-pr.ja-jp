@@ -1,21 +1,32 @@
 ---
 title: 共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
-ms.date: 07/02/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 346d05db7bdfec6b3ea95d487780c7a146130b59
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154174"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138738"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
 この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼ばれる) と共有メールボックス (プレビュー[中)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)のシナリオ (Office JavaScript API がサポートするアクセス許可を含む) を有効にする方法について説明します。
 
+## <a name="supported-clients-and-platforms"></a>サポートされているクライアントとプラットフォーム
+
+次の表に、この機能でサポートされているクライアントとサーバーの組み合わせを示します。必要な最小累積的な更新プログラム (該当する場合)。 除外された組み合わせはサポートされていません。
+
+| Client | Exchange Online | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2013 オンプレミス |
+|---|:---:|:---:|:---:|:---:|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|いいえ|いいえ|いいえ|
+|Mac:<br>ビルド 16.47 以降|はい|はい|はい|はい|
+|Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|該当なし|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|いいえ|いいえ|いいえ|
+
 > [!IMPORTANT]
-> この機能のサポートは、要件セット [1.8 で導入されました](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) で導入されました (詳細については、クライアントとプラットフォーム [を参照してください](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients))。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
 
 ## <a name="supported-setups"></a>サポートされているセットアップ
 
@@ -50,6 +61,26 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 > [!WARNING]
 > " **別の** メールボックスを開く" などの他のオプションを使用しない。 機能 API が正しく動作しない場合があります。
+
+### <a name="mac"></a>[ Mac ](#tab/unix)
+
+#### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
+
+メールと予定表は、代理人または共有メールボックス ユーザーと共有されます。 アドインは、メッセージと予定の読み取りモードと作成モードで代理人またはユーザーが使用できます。
+
+#### <a name="shared-folders"></a>共有フォルダー
+
+受信トレイ **フォルダーが** 代理人と共有されている場合は、メッセージ読み取りモードで代理人がアドインを使用できます。
+
+下書 **きフォルダー** が代理人と共有されている場合、アドインは作成モードで使用できます。
+
+#### <a name="local-shared-calendar-new-model"></a>ローカル共有予定表 (新しいモデル)
+
+予定表の所有者が代理人 (メールボックス全体を共有できない場合があります) と予定表を明示的に共有した場合、アドインは予定の読み取りモードと作成モードで代理人が利用できます。
+
+#### <a name="remote-shared-calendar-previous-model"></a>リモート共有予定表 (前のモデル)
+
+予定表の所有者が予定表への広範なアクセスを許可した場合 (たとえば、特定の DL または組織全体で編集可能にした場合)、ユーザーは間接的または暗黙的なアクセス許可を持つ可能性があります。予定の読み取りモードと作成モードのユーザーはアドインを使用できます。
 
 ---
 

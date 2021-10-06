@@ -1,14 +1,14 @@
 ---
 title: Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 90c58352ef49a365cd80dd7699d23f40c800bbd6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149587"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138647"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Edge Chromium WebView2 を使用して Windows でアドインをデバッグする
 
@@ -18,7 +18,7 @@ Windows 上で動作する Office アドインは、VS Code の拡張機能 Debu
 
 - [Visual Studio Code](https://code.visualstudio.com/) (管理者として実行する必要があります)
 - [Node.js (バージョン 10 以上)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、プラットフォームとOfficeアプリケーションの組み合わせが、WebView2 (Chromium ベース) で Microsoft Edge をサポートしています。Microsoft 365 のバージョンが 2101 より前の場合は、WebView2 をインストールする必要があります。 [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) でのインストール方法はこちらをご覧ください。
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する

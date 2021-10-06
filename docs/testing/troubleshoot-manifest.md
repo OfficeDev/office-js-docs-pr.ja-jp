@@ -3,12 +3,12 @@ title: Office アドインのマニフェストを検証する
 description: XML スキーマおよび他のツールを使用して、Officeアドインのマニフェストを検証する方法について説明します。
 ms.date: 09/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 60151522906fc45c8d0d501c8263acd818612897
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b84461a8062ac0ca0300f869fcf4dba0019a6a9b
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152779"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138612"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -75,4 +75,4 @@ npm run validate
 - [Office のキャッシュをクリアする](clear-cache.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
-- [Office アドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Office アドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows.md)

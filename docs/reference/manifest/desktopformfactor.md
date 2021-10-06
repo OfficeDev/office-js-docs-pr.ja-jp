@@ -1,20 +1,30 @@
 ---
 title: マニフェスト ファイルの DesktopFormFactor 要素
 description: デスクトップ フォーム ファクターのアドインの設定を指定します。
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f15840a7b6716cd8acabe9e061effa566d48930
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 52c9a029e3f43e9b7d5416455eb99ef3de4dae7a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474330"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138731"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 要素
 
 デスクトップ フォーム ファクターのアドインの設定を指定します。 デスクトップ フォーム ファクターには、Office on the web、Windows Mac が含まれます。 Resources ノードを除く、デスクトップ フォーム ファクターのすべてのアドイン情報が **含** まれる。
 
 各 DesktopFormFactor 定義には **、FunctionFile** 要素と 1 つ以上の **ExtensionPoint 要素が含** まれています。 詳細については、「[FunctionFile 要素](functionfile.md)」と「[ExtensionPoint 要素](extensionpoint.md)」を参照してください。
+
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="child-elements"></a>子要素
 

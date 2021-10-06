@@ -1,20 +1,31 @@
 ---
 title: マニフェスト ファイル内のランタイム
 description: Runtime 要素は、リボン、作業ウィンドウ、カスタム関数など、さまざまなコンポーネントに共有 JavaScript ランタイムを使用するアドインを構成します。
-ms.date: 05/19/2021
+ms.date: 09/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: acdff8f7ffb1e9392c1671eadc36a79348ece5fa
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149600"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138444"
 ---
 # <a name="runtime-element"></a>Runtime 要素
 
 共有 JavaScript ランタイムを使用して、さまざまなコンポーネントすべてが同じランタイムで実行されるアドインを構成します。 要素の [`<Runtimes>`](runtimes.md) 子。
 
 **アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+ - 作業ウィンドウ 1.0
+ - メール 1.1
+
+詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [SharedRuntime 1.1](../requirement-sets/shared-runtime-requirement-sets.md) (作業ウィンドウ アドインで使用する場合のみ)。
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 

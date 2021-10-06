@@ -1,15 +1,15 @@
 ---
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990566"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138473"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -40,7 +40,7 @@ ms.locfileid: "59990566"
 
 1. Visual Studio Code を起動し、生成した Excel または PowerPoint アドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. Excel アドインを生成した場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](../reference/requirement-sets/shared-runtime-requirement-sets.md)を使用します。 XML は、次のようになります。
+1. Excel アドインを生成していた場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](../reference/requirement-sets/shared-runtime-requirement-sets.md)を使用します。次のように XML が表示されるはずです。
 
     ```xml
     <Hosts>
@@ -188,7 +188,7 @@ ms.locfileid: "59990566"
 
 ## <a name="runtime-lifetime"></a>ランタイムの有効期間
 
-`Runtime` 要素を追加するときに、有効期間も `long` または `short` の値で指定します。 この値を `long` に設定すると、ドキュメントを開くとアドインを起動したり、作業ウィンドウを閉じた後にコードを継続して実行したり、カスタム関数から CORS および DOM を使用したりできます。
+`Runtime` 要素を追加する場合は、`long` または `short` の値を使用して有効期間も指定します。この値を `long` に設定すると、ドキュメントが開いたときにアドインを起動したり、作業ウィンドウを閉じた後にコードを実行し続けたり、カスタム関数から CORS と DOM を使用したりするなどの機能を利用できます。
 
 > [!NOTE]
 > 既定の有効期間の値は `short` ですが、Excel アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときに Excel アドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
@@ -226,7 +226,7 @@ Windows 上の Office の場合、共有ランタイムは、「[Office アド�
 
 ### <a name="debugging"></a>デバッグ
 
-共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに開発者ツールを使用する必要があります。 さらに詳しい情報については、「[Windows 10 で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)」を参照してください。
+共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに開発者ツールを使用する必要があります。 さらに詳しい情報については、「[Windows で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)」を参照してください。
 
 ### <a name="multiple-task-panes"></a>複数の作業ウィンドウ
 
@@ -234,7 +234,7 @@ Windows 上の Office の場合、共有ランタイムは、「[Office アド�
 
 ## <a name="give-us-feedback"></a>ご意見ご感想をお寄せください
 
-この機能について、ご意見をお待ちしております。 バグや問題が発生したり、この機能について要求がございましたら、[office-js repo](https://github.com/OfficeDev/office-js) で GitHub に関する問題を作成してお知らせください。
+この機能に関するフィードバックをお寄せください。この機能に関するバグ、問題、ご要望がある場合は、[office-js リポジトリ](https://github.com/OfficeDev/office-js)で GitHub の問題を作成してお知らせください。
 
 ## <a name="see-also"></a>関連項目
 

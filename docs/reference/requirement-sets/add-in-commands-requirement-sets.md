@@ -1,15 +1,15 @@
 ---
 title: アドイン コマンドの要件セット
 description: アドイン コマンドOfficeセットの概要。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bedf79ff9698ed14ed0e17976a3c9e1602cc7e
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c290a739a59cd147d668acce8bea84adb1801104
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443532"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138467"
 ---
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
@@ -19,9 +19,9 @@ ms.locfileid: "59443532"
 
 アドイン コマンドの最初のリリースには、対応する要件セットが含まれています (つまり、AddinCommands 1.0 要件セットは存在しない)。 次の表に、Officeバージョンをサポートするクライアント アプリケーションと、それらのアプリケーションのビルド バージョンまたは番号を示します。  
 
-| リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| アドイン コマンド (初期リリース、要件設定なし) | N/A | 16.0.4678.1000 *Outlook でのみサポートされています* | バージョン 1809 (ビルド 10827.20150) 以降 |バージョン 1603 (ビルド 6769.0000) 以降 | 該当なし | 15.33 以降| 2016 年 1 月 |
+| リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| アドイン コマンド (初期リリース、要件設定なし) | N/A | 16.0.4678.1000 *Outlook でのみサポートされています* | バージョン 1809 (ビルド 10827.20150) 以降| 16.0.14326.20454 以降 |バージョン 1603 (ビルド 6769.0000) 以降 | 該当なし | 15.33 以降| 2016 年 1 月 |
 
 アドイン コマンド **1.1 要件** セットでは、ドキュメントを含む作業ウィンドウを自動開く [機能が導入されています](../../develop/automatically-open-a-task-pane-with-a-document.md)。
 
@@ -29,10 +29,10 @@ ms.locfileid: "59443532"
 
 次の表に、アドイン コマンドの要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | 該当なし | 該当なし  | 該当なし | サポートされていません | N/A | サポートされていません | 2020 年 11 月 |
-| AddInCommands 1.1  | N/A | 16.0.4678.1000 *Outlook でのみサポートされています*  | バージョン 1809 (ビルド 10827.20150) 以降 | バージョン 1705 (ビルド 8121.1000) 以降 | N/A | 15.34 以降\*| 2017 年 5 月 |
+|  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) |  Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| AddinCommands 1.3  | 該当なし | 該当なし | 該当なし | 該当なし | サポートされていません | N/A | サポートされていません | 2020 年 11 月 |
+| AddInCommands 1.1  | N/A | 16.0.4678.1000 *Outlook でのみサポートされています*  | バージョン 1809 (ビルド 10827.20150) 以降 | 16.0.14326.20454 以降 | バージョン 1705 (ビルド 8121.1000) 以降 | N/A | 15.34 以降\*| 2017 年 5 月 |
 
 >\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。
 

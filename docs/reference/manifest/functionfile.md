@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの FunctionFile 要素
 description: UI を表示する代わりに JavaScript 関数を実行するアドイン コマンドを介してアドインが公開する操作のソース コード ファイルを指定します。
-ms.date: 11/06/2020
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 443fde5cc5456508556962254ecceb6bd717e8a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8d65e8d8ba94dd63dc82c0519260157b1d22a62
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154798"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138759"
 ---
 # <a name="functionfile-element"></a>FunctionFile 要素
 
@@ -17,7 +17,22 @@ ms.locfileid: "59154798"
 * UI を表示する代わりに JavaScript 関数を実行するアドイン コマンド。
 * JavaScript 関数を実行するキーボード ショートカット。
 
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
 要素 `FunctionFile` は [、DesktopFormFactor](desktopformfactor.md) または [MobileFormFactor の子要素です](mobileformfactor.md)。 要素の属性は 32 文字以内で、Control 要素で定義されている UI レス アドイン コマンド ボタンで使用される `resid` `FunctionFile` `id` `Url` `Resources` JavaScript[](control.md)関数を含む HTML ファイルへの URL を含む要素の属性の値に設定されます。
+
+> [!NOTE]
+> 共有ランタイムを使用するようにアドインが構成されている場合[](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)、コード ファイル内の関数は、アドインの作業ウィンドウ内の JavaScript と同じ JavaScript ランタイム (および共通のグローバル名前空間を共有) で実行されます (その場合)。
+>
+> 要素と関連付けられたコード ファイルには、共有ランタイムが必要なカスタム キーボード ショートカットを使用する特別 `FunctionFile` な役割も持っています。 [](../../design/keyboard-shortcuts.md)
 
 次に、要素の例を示 `FunctionFile` します。
 

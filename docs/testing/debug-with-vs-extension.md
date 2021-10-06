@@ -1,14 +1,14 @@
 ---
 title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 description: アドイン デバッガー Visual Studio Code拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 256c7855f4757f49c23b4c633323cf2124bb6516
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151555"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138640"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
@@ -22,7 +22,7 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 
 - [Visual Studio Code](https://code.visualstudio.com/) (管理者として実行する必要があります)
 - [Node.js (バージョン 10 以上)](https://nodejs.org/)
-- Windows 10
+- Windows 10、11
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 これらの手順では、コマンド ラインの使用経験、基本的な JavaScript の理解、および Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成したと仮定します。 前にこれを行ったことがない場合は、次のようなチュートリアルの 1 つを参照Excel Office[検討してください](../tutorials/excel-tutorial.md)。
@@ -35,7 +35,7 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
     > プロジェクトが既に存在する場合は、手順 1 をスキップして、手順 2 に進みます。
 
 1. 管理者としてコマンド プロンプトを開きます。
-   ![コマンド プロンプト のオプション ([管理者として実行] を含む) Windows 10。](../images/run-as-administrator-vs-code.jpg)
+   ![コマンド プロンプト のオプション ([管理者として実行] と [11] のWindows 10を含む)。](../images/run-as-administrator-vs-code.jpg)
 
 1. プロジェクト ディレクトリに移動します。
 
@@ -85,6 +85,6 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 
 - [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 
-- [Windows 10 で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [アプリの開発者ツールを使用してアドインをデバッグWindows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする](debug-desktop-using-edge-chromium.md)

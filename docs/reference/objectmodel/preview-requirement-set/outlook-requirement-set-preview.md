@@ -1,14 +1,14 @@
 ---
 title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
-ms.date: 08/27/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3715741981f3d287adc85f3545d81fe9a7565bb2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a9d94956bc4adaa0910cdb54e6be406a84f594f3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151315"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138591"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -170,7 +170,7 @@ Office テーマを取得する機能が追加されました。
 
 要件セット [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md)で、共有フォルダー (代理人アクセス) の機能サポートがリリースされました。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](../../../outlook/delegate-access.md)」を参照してください。
 
-**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
+**で利用可能**: Outlook (Windows サブスクリプションに接続)、Microsoft 365 (Outlook on the web)、Mac Outlookで使用できます。
 
 ## <a name="see-also"></a>関連項目
 

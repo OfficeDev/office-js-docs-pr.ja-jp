@@ -1,15 +1,15 @@
 ---
 title: リボン API の要件セット
 description: 動的リボン API Officeサポートするプラットフォームとビルドを指定します。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445713"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138710"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -21,8 +21,8 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 |  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | 2102 (ビルド 13801.20294) | 2102 (ビルド 13801.20294) | N/A | サポートされていません | 2021 年 5 月 | 該当なし|
-| RibbonApi 1.1  | 2102 (ビルド 13801.20294) | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
+| RibbonApi 1.2  | ビルド 16.0.14326.20454 以降 | 2102 (ビルド 13801.20294) | N/A | サポートされていません | 2021 年 5 月 | 該当なし|
+| RibbonApi 1.1  | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
 
 > **&#42;** リボン API は、リボン API でのみサポートExcel。
 
