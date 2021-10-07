@@ -1,20 +1,20 @@
 ---
 title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
-ms.date: 07/08/2020
+ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: e948f3023613780af48bdad655230db03b740821
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149760"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138493"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
 Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
 
-このスキーマに基づいた XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。
+XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。
 
 * ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
@@ -146,6 +146,57 @@ Office on the web で実行している場合、作業ウィンドウは任意�
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## <a name="version-overrides-in-the-manifest"></a>マニフェストでのバージョンの上書き
+
+オプションの [VersionOverrides](../reference/manifest/versionoverrides.md) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
+
+ - Office リボンやメニューをカスタマイズします。
+ - アドインが実行される埋め込みブラウザー ランタイムでの Office の動作をカスタマイズします。
+ - アドインが Azure Active Directory やシングル サインオン用 Microsoft Graph と対話する方法を構成します。
+
+子要素 `VersionOverrides` の中には、親要素 `OfficeApp` の値を上書きする値があります。 たとえば、`VersionOverrides` 内の `Hosts` 要素は `OfficeApp` 内の `Hosts` 要素よりも優先されます。
+
+`VersionOverrides` 要素には独自のスキーマがあり、実際にはアドインの種類や使用する機能に応じて 4 つのスキーマがあります。 スキーマは以下のとおりです。
+
+- [作業ウィンドウ 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
+- [コンテンツ 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
+- [メール 1.0](/openspecs/office_file_formats/ms-owemxml/578d8214-2657-4e6a-8485-25899e772fac)
+- [メール 1.1](/openspecs/office_file_formats/ms-owemxml/8e722c85-eb78-438c-94a4-edac7e9c533a)
+
+`VersionOverrides` 要素を使用する場合、`OfficeApp` 要素には適切なスキーマを識別する `xmlns` 属性を含む必要があります。 この属性に設定できる値は以下のとおりです。
+
+- `http://schemas.microsoft.com/office/taskpaneappversionoverrides`
+- `http://schemas.microsoft.com/office/contentappversionoverrides`
+- `http://schemas.microsoft.com/office/mailappversionoverrides`
+
+`VersionOverrides` 要素自体にもスキーマを指定する `xmlns` 属性が必要です。 設定可能な値は、上記の 3 つと以下に示す値です。
+
+- `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`
+
+`VersionOverrides` 要素には、スキーマ バージョンを指定する `xsi:type` 属性も必要です。 指定できる値は以下のとおりです。
+
+- `VersionOverridesV1_0`
+- `VersionOverridesV1_1`
+
+作業ウィンドウ アドインとメール アドインにそれぞれ `VersionOverrides` を使用した例を以下に示します。 バージョン 1.1 のメール `VersionOverrides` を使用する場合は、タイプ 1.0 の親要素 `VersionOverrides` の最後の子要素である必要があることに注意してください。 内側の子要素 `VersionOverrides` の値は、親要素 `VersionOverrides` と祖父母要素 `OfficeApp` の同名要素の値を上書きします。
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <!-- child elements omitted -->
+</VersionOverrides>
+```
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <!-- other child elements omitted -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <!-- child elements omitted -->
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+`VersionOverrides` 要素を含むマニフェストの例については、「[マニフェスト v1.1 XML ファイルの例とスキーマ](#manifest-v11-xml-file-examples-and-schemas)」を参照してください。
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Office.js API 呼び出しが行われるドメインを指定する
 
