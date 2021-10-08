@@ -3,16 +3,16 @@ title: Office名前空間 - 要件セット 1.7
 description: Office API 要件セット 1.7 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f1c501ccc5f0bb7a66a9c1474026bddafe8f2403
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 96dffd8dac96a67746c1669c6672461552cb838e
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152804"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237624"
 ---
 # <a name="office-mailbox-requirement-set-17"></a>Office (メールボックス要件セット 1.7)
 
-Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
+Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office?view=outlook-js-1.7&preserve-view=true)」を参照してください。
 
 ##### <a name="requirements"></a>要件
 
@@ -111,7 +111,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`AppointmentTimeChanged`| String | 選択した予定または系列の日付または時刻が変更されました。 | 1.7 |
 |`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
+|`RecurrenceChanged`| 文字列 | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 

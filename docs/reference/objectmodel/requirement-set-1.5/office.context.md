@@ -3,12 +3,12 @@ title: Office.context - 要件セット 1.5
 description: Office。メールボックス API 要件セット 1.5 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 66acb50cf6897bf8676dd3b5664333d793a81800
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a9ee74e818c6dfb3b13f86e68f8ba4fb1e852252
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152939"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237337"
 ---
 # <a name="context-mailbox-requirement-set-15"></a>context (メールボックス要件セット 1.5)
 
@@ -29,7 +29,7 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 |---|---|---|:---:|
 | [contentLanguage](#contentlanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [診断](#diagnostics-contextinformation) | 作成<br>読み取り | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | 作成<br>読み取り | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | 作成<br>読み取り | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [プラットフォーム](#platform-platformtype) | 作成<br>読み取り | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
@@ -82,13 +82,13 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a>診断: [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>診断: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true)
 
 アドインが実行されている環境に関する情報を取得します。
 
 ##### <a name="type"></a>型
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -154,7 +154,7 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true)
 
 アドインをOfficeしているアプリケーションを取得します。
 
@@ -163,7 +163,7 @@ function write(message){
 
 ##### <a name="type"></a>型
 
-*   [HostType](/javascript/api/office/office.hosttype)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -183,7 +183,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtype"></a>プラットフォーム: [PlatformType](/javascript/api/office/office.platformtype)
+#### <a name="platform-platformtype"></a>プラットフォーム: [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true)
 
 アドインが実行されているプラットフォームを提供します。
 
@@ -192,7 +192,7 @@ console.log(JSON.stringify(Office.context.host));
 
 ##### <a name="type"></a>型
 
-*   [PlatformType](/javascript/api/office/office.platformtype)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -212,13 +212,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a>要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.5&preserve-view=true)
 
 現在のアプリケーションとプラットフォームでサポートされている要件セットを決定するメソッドを提供します。
 
 ##### <a name="type"></a>型
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -238,7 +238,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.5&preserve-view=true)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
@@ -246,7 +246,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ##### <a name="type"></a>型
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -261,13 +261,13 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="ui-ui"></a>ui: [UI](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>ui: [UI](/javascript/api/office/office.ui?view=outlook-js-1.5&preserve-view=true)
 
 ダイアログ ボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを、Office提供します。
 
 ##### <a name="type"></a>型
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.5&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 

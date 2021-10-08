@@ -3,12 +3,12 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcff058fe05229d13a378fcba9c1b165e84fdd51
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ac7915a7e9c0c34806052ff42e12acff60dcf2f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149631"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237742"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
@@ -21,7 +21,7 @@ ms.locfileid: "59149631"
 
 ## <a name="custom-data-per-mailbox-roaming-settings"></a>メールボックスごとのカスタム データ: ローミング設定
 
-[RoamingSettings](/javascript/api/outlook/office.RoamingSettings) オブジェクトを使用して、ユーザーの Exchange メールボックスに固有のデータを指定できます。このタイプのデータには、たとえばユーザーの個人データや基本設定があります。メール アドインは、その実行を許可されているデバイス (デスクトップ、タブレット、またはスマートフォン) でローミングするときにローミング設定にアクセスできます。
+[RoamingSettings](/javascript/api/outlook/office.roamingsettings) オブジェクトを使用して、ユーザーの Exchange メールボックスに固有のデータを指定できます。このタイプのデータには、たとえばユーザーの個人データや基本設定があります。メール アドインは、その実行を許可されているデバイス (デスクトップ、タブレット、またはスマートフォン) でローミングするときにローミング設定にアクセスできます。
 
 このデータへの変更は、現在の Outlook セッションの設定値のメモリ内コピーに格納されます。更新後にすべてのローミング設定値を明示的に保存して、ユーザーが次にアドインを同じデバイスで開いても、サポートされている他のデバイスで開いても、その設定値を使用できるようにしてください。
 

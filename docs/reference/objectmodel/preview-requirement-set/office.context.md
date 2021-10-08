@@ -3,12 +3,12 @@ title: Office.context - プレビュー要件セット
 description: Office。メールボックス API プレビュー要件セットをOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f09e84062bc12f3d69adbbbedd6d02679362a728
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c418c3acb4b02c11f56e87d3a27745111c3e968e
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151627"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237757"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>context (メールボックス プレビュー要件セット)
 
@@ -30,7 +30,7 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 | [auth](#auth-auth) | 作成<br>読み取り | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
 | [contentLanguage](#contentlanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [診断](#diagnostics-contextinformation) | 作成<br>読み取り | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | 作成<br>読み取り | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | 作成<br>読み取り | [メールボックス](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [officeTheme](#officetheme-officetheme) | 作成<br>読み取り | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true) | [プレビュー](../preview-requirement-set/outlook-requirement-set-preview.md) |
@@ -41,13 +41,13 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 
 ## <a name="property-details"></a>プロパティの詳細
 
-#### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth)
+#### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
 シングル[サインオン (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md)をサポートするには、Office アプリケーションがアドインの Web アプリケーションへのアクセス トークンを取得できるメソッドを提供します。 これにより、間接的に、サインインしたユーザーの Microsoft Graph データにアドインがアクセスできるようにもなります。ユーザーがもう一度サインインする必要はありません。
 
 ##### <a name="type"></a>型
 
-*   [Auth](/javascript/api/office/office.auth)
+*   [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -117,13 +117,13 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a>診断: [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>診断: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 アドインが実行されている環境に関する情報を取得します。
 
 ##### <a name="type"></a>型
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -189,7 +189,7 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 アドインをOfficeしているアプリケーションを取得します。
 
@@ -198,7 +198,7 @@ function write(message){
 
 ##### <a name="type"></a>型
 
-*   [HostType](/javascript/api/office/office.hosttype)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -218,7 +218,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="officetheme-officetheme"></a>officeTheme: [OfficeTheme](/javascript/api/office/office.officetheme)
+#### <a name="officetheme-officetheme"></a>officeTheme: [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 Office テーマの色のプロパティにアクセスできるようにします。
 
@@ -229,7 +229,7 @@ Office テーマの色を使用すると、すべての Office クライアン�
 
 ##### <a name="type"></a>型
 
-*   [OfficeTheme](/javascript/api/office/office.officetheme)
+*   [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="properties"></a>プロパティ
 
@@ -276,7 +276,7 @@ function applyOfficeTheme(){
 
 ##### <a name="type"></a>型
 
-*   [PlatformType](/javascript/api/office/office.platformtype)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -296,13 +296,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a>要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>要件: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
 現在のアプリケーションとプラットフォームでサポートされている要件セットを決定するメソッドを提供します。
 
 ##### <a name="type"></a>型
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -322,7 +322,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
@@ -330,7 +330,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ##### <a name="type"></a>型
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 
@@ -345,13 +345,13 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="ui-ui"></a>ui: [UI](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>ui: [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 ダイアログ ボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを、Office提供します。
 
 ##### <a name="type"></a>型
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要件
 

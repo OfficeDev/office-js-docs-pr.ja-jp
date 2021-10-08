@@ -3,12 +3,12 @@ title: Outlook アドイン API 要件セット 1.7
 description: アドイン API Outlook概要 (要件セット 1.7)
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f9e20391113cddb78750e5933d2dd4ad11ba2a3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 51cd018d5e4438daf76b53e00195671b63afd50f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154369"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237344"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook アドイン API 要件セット 1.7
 
@@ -43,7 +43,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true) が追加されました。定期的なアイテムに適用されるタイムゾーンを指定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true) が追加されました。定期的なアイテムの種類を指定する新しい列挙型が追加されました。
 - [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true) が追加されました。月の週を指定する新しい列挙型が追加されました。
-- [Office.EventType](/javascript/api/office/office.eventtype)が変更されました: `RecurrenceChanged`、 `RecipientsChanged`と `AppointmentTimeChanged`のイベントにサポートを追加しました。
+- [Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.7&preserve-view=true)が変更されました: `RecurrenceChanged`、 `RecipientsChanged`と `AppointmentTimeChanged`のイベントにサポートを追加しました。
 
 ## <a name="see-also"></a>関連項目
 

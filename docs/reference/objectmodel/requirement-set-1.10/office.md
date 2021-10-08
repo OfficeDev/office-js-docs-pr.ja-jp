@@ -3,16 +3,16 @@ title: Office名前空間 - 要件セット 1.10
 description: Office API 要件セット 1.10 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 725e01633c11e33b766cf3ad76d83d3d838b2182
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c87a57efd9ac37bf43bbd986d16c51000cc5681d
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154417"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237736"
 ---
 # <a name="office-mailbox-requirement-set-110"></a>Office (メールボックス要件セット 1.10)
 
-Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
+Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office?view=outlook-js-1.10&preserve-view=true)」を参照してください。
 
 ##### <a name="requirements"></a>要件
 

@@ -3,12 +3,12 @@ title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b54d327d37acd7b2c7fcff100cc7dbe7a39187c0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a94e829b1656d7c3a33ff51918834c7ea6913967
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154777"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237498"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 
@@ -30,11 +30,11 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): 新規作成モードで送信側メールボックスのクライアント署名を無効にする新しい関数を追加しました。
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): 新規作成モードでメッセージの作成の種類を取得する新しい関数を追加しました。
 - [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)を追加しました: 新規作成モードでアイテムでクライアント署名が有効になっているか確認する新しい関数を追加します。
-- 追加された[Office。MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype): 新しい列挙型を追加します。 通知メッセージのカスタム アクションの種類を表します。
+- 追加された[Office。MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true): 新しい列挙型を追加します。 通知メッセージのカスタム アクションの種類を表します。
 - [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): 新規作成モードで使用できる新しい列挙型を追加しました。
-- 追加された[Office。MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype): 列挙型に新しい型を追加 `ItemNotificationMessageType` します。 カスタム アクションを含む通知メッセージを表します。
-- 追加された[Office。NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction): 通知のカスタム アクションを定義できる新しいオブジェクトを追加 `InsightMessage` します。
-- 追加された[Office。NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): カスタム アクションで通知を追加できる新しい `InsightMessage` プロパティを追加します。
+- 追加された[Office。MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): 列挙型に新しい型を追加 `ItemNotificationMessageType` します。 カスタム アクションを含む通知メッセージを表します。
+- 追加された[Office。NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): 通知のカスタム アクションを定義できる新しいオブジェクトを追加 `InsightMessage` します。
+- 追加された[Office。NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): カスタム アクションで通知を追加できる新しい `InsightMessage` プロパティを追加します。
 
 ## <a name="see-also"></a>関連項目
 

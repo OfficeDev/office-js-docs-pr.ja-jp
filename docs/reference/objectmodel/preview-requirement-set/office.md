@@ -3,16 +3,16 @@ title: Office - プレビュー要件セット
 description: Office API プレビュー要件セットを使用Outlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 42686a6c7b1fedb205e01ef137c6f4a8fce1fd0b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 75f28eb2f6412aad714a5be2f744cd3fde303ad6
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151320"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237460"
 ---
 # <a name="office-mailbox-preview-requirement-set"></a>Office (メールボックス プレビュー要件セット)
 
-Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
+Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office?view=outlook-js-preview&preserve-view=true)」を参照してください。
 
 ##### <a name="requirements"></a>要件
 
@@ -114,7 +114,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
 |`OfficeThemeChanged`| String | メールボックスOfficeテーマが変更されました。 | Preview |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
+|`RecurrenceChanged`| 文字列 | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 

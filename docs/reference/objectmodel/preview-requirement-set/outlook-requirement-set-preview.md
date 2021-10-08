@@ -3,12 +3,12 @@ title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d94956bc4adaa0910cdb54e6be406a84f594f3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 7e377725bc61b33d8b67729cf041a12255e3dba5
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138591"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237190"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -88,7 +88,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 **で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
 
-#### <a name="officedelaydeliverytime"></a>[Office。DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+#### <a name="officedelaydeliverytime"></a>[Office。DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true)
 
 新規作成モードでメッセージの配信日時を管理できる新しいオブジェクトを追加しました。
 
@@ -128,13 +128,13 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="office-theme"></a>Office テーマ
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
 
 Office テーマを取得する機能が追加されました。
 
 **で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
 
-#### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
+#### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
@@ -148,7 +148,7 @@ Office テーマを取得する機能が追加されました。
 
 ### <a name="session-data"></a>セッション データ
 
-#### <a name="officesessiondata"></a>[Office。SessionData](/javascript/api/outlook/office.sessiondata)
+#### <a name="officesessiondata"></a>[Office。SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
 
 アイテムのセッション データを表す新しいオブジェクトを追加しました。
 

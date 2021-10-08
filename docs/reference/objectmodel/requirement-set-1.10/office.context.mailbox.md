@@ -3,12 +3,12 @@ title: Office.context.mailbox - 要件セット 1.10
 description: Outlookメールボックス API 要件セット 1.10 バージョンの Mailbox オブジェクト モデル。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 15abb64fb4a931471842c52d298b14dc919b2be1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 052598a1fc0d4797f75ed60ae8d48afcd7c367d6
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154837"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237505"
 ---
 # <a name="mailbox-requirement-set-110"></a>メールボックス (要件セット 1.10)
 
@@ -30,7 +30,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 |---|---|---|---|:---:|
 | [診断](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#diagnostics) | ReadItem | 作成<br>読み取り | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#ewsUrl) | ReadItem | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [アイテム](/javascript/api/outlook/office.item?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [item](office.context.mailbox.item.md) | Restricted | 作成<br>読み取り | [Item](/javascript/api/outlook/office.item?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#masterCategories) | ReadWriteMailbox | 作成<br>読み取り | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.10&preserve-view=true) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#restUrl) | ReadItem | 作成<br>読み取り | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#userProfile) | ReadItem | 作成<br>読み取り | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -58,13 +58,13 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 | [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#makeEwsRequestAsync_data__callback__userContext_) | ReadWriteMailbox | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removeHandlerAsync_eventType__options__callback_) | ReadItem | 作成<br>読み取り | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
-## <a name="events"></a>Events
+## <a name="events"></a>イベント
 
 [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#addHandlerAsync_eventType__handler__options__callback_)と[removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removeHandlerAsync_eventType__options__callback_)をそれぞれ使用して、次のイベントをサブスクライブおよびサブスクライブ解除します。
 
 > [!IMPORTANT]
 > イベントは、作業ウィンドウの実装でのみ使用できます。
 
-| [イベント](/javascript/api/office/office.eventtype) | 説明 | 最小値<br>要件セット |
+| [イベント](/javascript/api/office/office.eventtype?view=outlook-js-1.10&preserve-view=true) | 説明 | 最小値<br>要件セット |
 |---|---|:---:|
 |`ItemChanged`| 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

@@ -3,16 +3,16 @@ title: Office名前空間 - 要件セット 1.9
 description: Office API 要件セット 1.9 を使用Outlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c06fa7bd604db0272939ae40590d9500a3a71eb1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4c5b5d5b0ec5ec4ebf105bc5db1c2810492113a4
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152927"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237168"
 ---
 # <a name="office-mailbox-requirement-set-19"></a>Office (メールボックス要件セット 1.9)
 
-Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office)」を参照してください。
+Office 名前空間は、すべての Office アプリケーションのアドインで使用される共有インターフェイスを提供します。この一覧は、Outlook のアドインで使うインターフェイスのみを記載しています。Office 名前空間の完全な一覧については、「[共通 API](/javascript/api/office?view=outlook-js-1.9&preserve-view=true)」を参照してください。
 
 ##### <a name="requirements"></a>要件
 
@@ -113,7 +113,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`EnhancedLocationsChanged`| String | 選択した予定の場所が変更されました。 | 1.8 |
 |`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
-|`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
+|`RecurrenceChanged`| 文字列 | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 
@@ -139,7 +139,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 |名前| 型| 説明|
 |---|---|---|
-|`Body`| String|データのソースは、メッセージの本文です。|
+|`Body`| 文字列|データのソースは、メッセージの本文です。|
 |`Subject`| String|データのソースは、メッセージの件名です。|
 
 ##### <a name="requirements"></a>要件
