@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 786fbd24790a1b8205fc3b0e8a15ce591cf66ca4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 80a790ada4425b13880b9eeedfbd002dc818b927
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154561"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250512"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -94,4 +94,4 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 1. [Office アドイン] ダイアログの **[自分の所属組織]** タブを選択します。Office アドインのリストが表示されます。
 1. Office アドインを選択し、 **追加** を選択します。
 
-または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 関連するポリシー設定は [、Microsoft 365 Apps、Office 2019、および Office 2016](https://www.microsoft.com/download/details.aspx?id=49030)の管理用テンプレート ファイル (ADMX/ADML) で使用できます。「ユーザー構成\ポリシー\管理用テンプレート **\Microsoft Office 2016\Security 設定\Trust Center\Trusted Catalogs」** の下にあります。
+または、管理者はグループ ポリシーを使用して SharePoint のアプリ カタログを指定できます。 関連するポリシー設定は [、Microsoft 365 Apps、Office LTSC 2021、Office 2019、Office 2016](https://www.microsoft.com/download/details.aspx?id=49030)の管理用テンプレート ファイル (ADMX/ADML) で使用できます。[ユーザー構成\ポリシー\管理用テンプレート **\Microsoft Office 2016\Security 設定\Trust Center\Trusted Catalogs]** にあります。

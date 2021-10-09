@@ -1,18 +1,26 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
-description: 月次Microsoft Officeアドインのコミュニティ通話スケジュールとリソース。
-ms.date: 09/29/2021
+description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e22840b4a47354c698a20575a000f370ad8c0518
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 85d0f0d697c5c66145536acb8db88ffe66acf278
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138451"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250400"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
 Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、毎月第 2 水曜日の午前 8:00 PDT に発生します。 予定表の招待は 、でダウンロードできます [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+
+## <a name="agenda-for-october-13th-call"></a>10 月 13 日の通話の議題
+
+- Word API の更新
+- Mac 上のアプリOutlook API 更新プログラム
+- コード サンプル デモ: Hello world
+
+## <a name="previous-calls"></a>以前の呼び出し
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 

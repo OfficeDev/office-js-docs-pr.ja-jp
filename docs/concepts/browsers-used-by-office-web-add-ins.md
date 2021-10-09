@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593a86ec188364a0f5d14bbf6ac99081b8b5c81
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 4998b84da9bdddac258e0531f6ce431ea374627b
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138486"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250428"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -22,7 +22,7 @@ Officeアドインは、iFrame を使用して表示される Web アプリケ�
 > [!IMPORTANT]
 > **Internet ExplorerアドインOffice引き続き使用する**
 >
-> Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。プラットフォームと Office バージョンの組み合わせ (Office 2019 までのすべての 1 回限り購入バージョンを含む) は、この記事で説明したように、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
+> Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。この記事で説明したように、プラットフォームと Office バージョンの一部の組み合わせ (Office 2019 まで 1 回限り購入するバージョンを含む) は、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
 >
 > - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーション を使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
 > - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
@@ -32,12 +32,12 @@ Officeアドインは、iFrame を使用して表示される Web アプリケ�
 |OS|Office のバージョン
 |Edge WebView2 (Chromiumベース) がインストールされていますか?|ブラウザー|
 |:-----|:-----|:-----|:-----|
-|any|Office on the web|該当しない|Office が開かれているブラウザー。<br>(ただし、Office on the webは開かInternet Explorer。<br>そうしようとすると、Edge でOffice on the webが開きます)。 |
-|Mac|any|該当しない|Safari|
-|iOS|any|該当しない|Safari|
-|Android|any|該当しない|Chrome|
+|any|Office on the web|該当なし|Office が開かれているブラウザー。<br>(ただし、Office on the webは開かInternet Explorer。<br>そうしようとすると、Edge でOffice on the webが開きます)。 |
+|Mac|any|該当なし|Safari|
+|iOS|any|該当なし|Safari|
+|Android|any|該当なし|Chrome|
 |Windows 7、8.1、10、11 | サブスクリプション以外のOffice 2013 ~ Office 2019|かまいません|Internet Explorer 11|
-|Windows 10、11 | サブスクリプション以外のOffice 2021 以降|はい|Microsoft Edge<sup>1</sup>と WebView2 (Chromiumベース)|
+|Windows 10, 11 | サブスクリプション以外のOffice 2021 以降|はい|Microsoft Edge<sup>1</sup>と WebView2 (Chromiumベース)|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
 |Windows 8.1、<br>Windows 10 ver. &nbsp; < &nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp;1903,<br>Windows 11 | Microsoft 365 ver. &nbsp; < &nbsp;16.0.11629<sup>2</sup>| かまいません|Internet Explorer 11|

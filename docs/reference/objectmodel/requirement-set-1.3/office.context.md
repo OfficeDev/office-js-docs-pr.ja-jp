@@ -1,14 +1,14 @@
 ---
 title: Office.context - 要件セット 1.3
 description: Office。メールボックス API 要件セット 1.3 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
-ms.date: 12/02/2020
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2821e0a13b892279ec7e9977ad0e7a32e9e28fc0
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 96473c8406d82757b43965247af4567b05632dd9
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237211"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250393"
 ---
 # <a name="context-mailbox-requirement-set-13"></a>context (メールボックス要件セット 1.3)
 
@@ -84,7 +84,7 @@ function write(message){
 
 アドインが実行されている環境に関する情報を取得します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true)
 
@@ -156,7 +156,7 @@ function write(message){
 
 現在のアプリケーションとプラットフォームでサポートされている要件セットを決定するメソッドを提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true)
 
@@ -173,6 +173,9 @@ function write(message){
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
+> [!IMPORTANT]
+> 現在、2013 年のバージョンに対してエラー Outlook on the web `isSetSupported('mailbox', '1.3')` `true` がExchangeされています。 サポートされる要件セット、Exchange サーバー、および Outlook クライアントの組み合わせの詳細については、「Exchange サーバーと Outlook クライアントでサポートされる要件セット[」を参照](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)してください。
+
 <br>
 
 ---
@@ -184,7 +187,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインが使用できます。 `RoamingSettings`
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true)
 
@@ -205,7 +208,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ダイアログ ボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを、Office提供します。
 
-##### <a name="type"></a>型
+##### <a name="type"></a>種類
 
 *   [UI](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true)
 
