@@ -1,104 +1,158 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
-ms.date: 09/23/2021
+ms.date: 10/07/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990531"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250442"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
-共有ランタイムを使用するように Excel アドインを構成できます。 これにより、グローバル データを共有したり、作業ウィンドウとユーザー設定の関数の間でイベントを送信したりできます。
-
-ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。
-
-このチュートリアルでは、Yo Office ジェネレーターを使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
+グローバル データを共有し、共有ランタイムを使用して、Excel アドインの作業ウィンドウとカスタム関数の間でイベントを送信します。 ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。 このチュートリアルでは、Yo Office ジェネレーターを使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-Yeoman ジェネレーターを使用して、Excel アドイン プロジェクトを作成します。次のコマンドを実行し、プロンプトに次の回答を入力します。
+[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) を使用し、Excel アドイン プロジェクトを作成します。
 
-```command line
-yo office
-```
+- カスタム関数を使用して Excel アドインを生成するには、次のコマンドを実行します。
+    
+    ```command&nbsp;line
+    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
+    ```
 
-- プロジェクトの種類を選択する:  **Excel カスタム関数アドイン プロジェクト**
-- スクリプトの種類を選択する:  **JavaScript**
-- アドインの名前を何にしますか?  **個人用 Office アドイン**
-
-![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-excel-project.png)
-
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
+ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-1. Visual Studio Code を開始して [**個人用 Office アドイン**] プロジェクトを開きます。
-2. 
-            **manifest.xml** ファイルを開きます。
-3. `<VersionOverrides>` セクションを探し、次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもカスタム関数が引き続き機能するように、有効期間は **長く** する必要があります。
+次の手順に従ってアドイン プロジェクトを構成し、共有ランタイムを使用します。
 
-   ```xml
-   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-     <Hosts>
-       <Host xsi:type="Workbook">
-         <Runtimes>
-           <Runtime resid="ContosoAddin.Url" lifetime="long" />
-         </Runtimes>
-       <AllFormFactors>
-   ```
+1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
+1. **manifest.xml** ファイルを開きます。
+1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](../reference/requirement-sets/shared-runtime-requirement-sets.md) を要求します。
 
-> [!NOTE]
-> アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+    ```xml
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    ```
 
-4. `<Page>` 要素で、ソースの場所を **Functions.Page.Url** から **ContosoAddin.Url** に変更します。
+    更新後、マニフェスト XML は次の順序で表示されます。
+
+    ```xml
+    <Hosts>
+      <Host Name="..."/>
+    </Hosts>
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    <DefaultSettings>
+    ```
+
+1. `<VersionOverrides>` セクションを検索して次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の `<bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+    
+    ```xml
+    <Runtimes>
+      <Runtime resid="Taskpane.Url" lifetime="long" />
+    </Runtimes>
+    ```
+    
+    > [!IMPORTANT]
+    > `<Runtimes>` セクションは、次の XML で示される正確な順序で `<Host xsi:type="...">` 要素の後に入力する必要があります。
+
+    ```xml
+    <VersionOverrides ...>
+      <Hosts>
+        <Host xsi:type="...">
+          <Runtimes>
+            <Runtime resid="Taskpane.Url" lifetime="long" />
+          </Runtimes>
+        ...
+        </Host>
+    ```
+    
+    > [!NOTE]
+    > アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+
+1. `<Page>` 要素を検索します。次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="ContosoAddin.Url"/>
+     <SourceLocation resid="Taskpane.Url"/>
    </Page>
    ...
    ```
 
-5. `<DesktopFormFactor>` セクションで、**ContosoAddin.Url** を使用するように、**Command.Url** から **FunctionFile** を変更します。
+1. `<FunctionFile ...>` タグを見つけて、`resid` を **Commands.Url** から **Taskpane.Url** に変更します。
 
-   ```xml
-   <DesktopFormFactor>
-   <GetStarted>
-   ...
-   </GetStarted>
-   <FunctionFile resid="ContosoAddin.Url"/>
-   ```
+    ```xml
+    </GetStarted>
+    ...
+    <FunctionFile resid="Taskpane.Url"/>
+    ...
+    ```
 
-6. `<Action>` セクションで、ソースの場所を **Taskpane.Url** から **ContosoAddin.Url** に変更します。
+1. **manifest.xml** ファイルを保存します。
 
-   ```xml
-   <Action xsi:type="ShowTaskpane">
-   <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="ContosoAddin.Url"/>
-   </Action>
-   ```
+## <a name="configure-the-webpackconfigjs-file"></a>webpack.config.js ファイルを構成する
 
-7. **taskpane.html** を指す **ContosoAddin.Url** の新しい **Url ID** を追加します。
+**webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを介して共有 JavaScript ランタイムのみを読み込むように変更する必要があります。
 
-   ```xml
-   <bt:Urls>
-   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-   ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-   ...
-   ```
+1. **webpack.config.js** ファイルを開きます。
+1. `plugins:` セクションに移動します。
+1. セクションが存在する場合は、次の `functions.html` プラグインを削除します。
+    
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "functions.html",
+        template: "./src/functions/functions.html",
+        chunks: ["polyfill", "functions"]
+      })
+    ```
 
-8. 変更を保存してプロジェクトを再ビルドします。
+1. セクションが存在する場合は、次の `commands.html` プラグインを削除します。
 
-   ```command line
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      })
+    ```
+
+1. `functions` または `commands` プラグインを削除した場合は、`chunks` として追加します。 `functions` または `commands` プラグインを削除した場合は、次の JavaScript に更新されたエントリーが表示されます。
+    
+    ```javascript
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ["polyfill", "taskpane", "commands", "functions"]
+      })
+    ```
+    
+1. 変更を保存してプロジェクトを再ビルドします。
+
+   ```command&nbsp;line
    npm run build
+   ```
+    
+    > [!NOTE]
+    > **functions.html** ファイルと **commands.html** ファイルを削除することもできます。 **taskpane.html** は、先ほど行った webpack の更新を介して、**functions.js** および **commands.js** コードを共有 JavaScript ランタイムに読み込みます。
+    
+1. 変更を保存してプロジェクトを実行します。 エラー無しで読み込み、実行が行われるようにします。
+    
+   ```command&nbsp;line
+   npm run start
    ```
 
 ## <a name="share-state-between-custom-function-and-task-pane-code"></a>カスタム関数と作業ウィンドウのコードの間で状態を共有する
@@ -184,7 +238,7 @@ yo office
    </div>
    ```
 
-4. `</body>` 要素を閉じる前に、次のスクリプトを追加します。 このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
+4. `</body>` 要素を閉じる前に、次のスクリプトを追加します。このコードは、ユーザーがグローバル データを保存または取得するときにボタンのクリック イベントを処理します。
 
    ```js
    <script>
@@ -218,3 +272,7 @@ Excel が起動したら、作業ウィンドウのボタンを使用して共�
 
 > [!NOTE]
 > この記事で示すように、プロジェクトを構成すると、カスタム機能と作業ウィンドウのコンテキストが共有されます。 カスタム関数から一部の Office API を呼び出すことができます。 詳細については、「[カスタム関数からの Microsoft Excel API の呼び出しについて](../excel/call-excel-apis-from-custom-function.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

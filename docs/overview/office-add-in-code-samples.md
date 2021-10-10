@@ -1,14 +1,14 @@
 ---
 title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
-ms.date: 09/09/2021
+ms.date: 10/07/2021
 localization_priority: high
-ms.openlocfilehash: fb595273fa890c6eb16dbfe03fe102a2a3ee6a9a
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443803"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250484"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
@@ -26,6 +26,7 @@ ms.locfileid: "59443803"
 | 名前                | 説明         |
 |:--------------------|:--------------------|
 | [Teams で開く](/samples/officedev/pnp-officeaddins/office-excel-add-in-open-in-teams/) | Microsoft Teams で、定義したデータを含む新しい Excel スプレッドシートを作成します。|
+| [外部の Excel ファイルを挿入し、JSON データで設定する](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | 現在開いている Excel ブックに、外部の Excel ファイルの既存のテンプレートを挿入します。 次に、JSON Web サービスのデータをテンプレートに設定します。 |
 | [リボンのカスタム コンテキスト タブを作成する](/samples/officedev/pnp-officeaddins/office-add-in-contextual-tabs/) | Office UI のリボンでカスタム コンテクスト タブを作成します。 このサンプルでは、テーブルを作成し、ユーザーがテーブル内にフォーカスを移動させると、カスタム タブが表示されます。 ユーザーがテーブルの外に移動すると、カスタム タブは非表示になります。 |
 | [Office アドイン アクション用のキーボード ショートカットを使用する](/samples/officedev/pnp-officeaddins/office-add-in-keyboard-shortcuts) | キーボード ショートカットを利用する基本的な Excel アドイン プロジェクトを設定します。 |
 | [Web ワーカーを使用したカスタム関数のサンプル](/samples/officedev/pnp-officeaddins/excel-custom-function-web-worker-pattern/) | カスタム関数で Web ワーカーを使用して、お使いの Office アドインの UI をブロックしないようにします。 |
@@ -47,8 +48,8 @@ ms.locfileid: "59443803"
 | [Office アドインの Microsoft Graph と msal.js を使用して OneDrive データを取得する](/samples/officedev/pnp-officeaddins/office-add-in-auth-graph-react/) | バックエンドのないシングル ページ アプリケーション (SPA) として、Microsoft Graph に接続する Office アドインを作成し、OneDrive for Business に保存されているブックにアクセスして、スプレッドシートを更新します。  |
 | [Microsoft Graph への Office アドイン認証](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | Microsoft Graph に接続して OneDrive for Business に保存されているブックにアクセスし、スプレッドシートを更新する Microsoft Office アドインの作成方法について学習します。 |
 | [Microsoft Graph への Outlook アドイン認証](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/)。 | Microsoft Graph に接続して OneDrive for Business に保存されているブックにアクセスし、新しいメール メッセージを作成する Outlook アドインを作成します。 |
-| [ASP.NET を使用したシングル サインオン (SSO) Office アドイン](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。 このサンプルは ASP.NET で作成されています。 |
-| [Node.js を使用したシングル サインオン (SSO) Office アドイン](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。 このサンプルは Node.js で作成されています。|
+| [ASP.NET を使用したシングル サインオン (SSO) Office アドイン](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは ASP.NET で作成されています。 |
+| [Node.js を使用したシングル サインオン (SSO) Office アドイン](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは Node.js で作成されています。|
 
 ## <a name="additional-samples"></a>追加サンプル
 
@@ -60,7 +61,7 @@ ms.locfileid: "59443803"
 
 ## <a name="next-steps"></a>次の手順
 
-Microsoft 365 開発者プログラムに参加します。 Microsoft 365 プラットフォームのソリューションを構築するために必要な無料のサンドボックス、ツール、およびその他のリソースを入手してください。
+Microsoft 365 開発者プログラムに参加します。Microsoft 365 プラットフォームのソリューションを構築するために必要な無料のサンドボックス、ツール、およびその他のリソースを入手してください。
 
 - [無料の開発者サンドボックス](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) 90 日間の更新可能な無料の Microsoft 365 E5 開発者サブスクリプションを取得します。
 - [サンプル データ パック](https://developer.microsoft.com/microsoft-365/dev-program#Sample) ソリューションの構築に役立つユーザー データとコンテンツをインストールして、サンドボックスを自動的に構成します。
