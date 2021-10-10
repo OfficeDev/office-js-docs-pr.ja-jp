@@ -1,15 +1,15 @@
 ---
-ms.date: 08/04/2021
+ms.date: 10/08/2021
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f503948b8f468234221ee8713ea4654a7cc76c07
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154510"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250498"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -20,11 +20,8 @@ ms.locfileid: "59154510"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel (Microsoft 365 サブスクリプションに接続されている、バージョン 1904 以降) または Excel on the web
+- Windows 版 Excel (バージョン 1904 以降) または Excel on the web。
 - Excel カスタム関数は (Microsoft 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
-
->[!NOTE]
->Excel カスタム関数は Office 2019 (1 回限りの購入) ではサポートされていません。
 
 ## <a name="build-your-first-custom-functions-project"></a>カスタム関数プロジェクトを初めて作成する
 
@@ -96,7 +93,7 @@ Yeoman ジェネレーター使用して作成したカスタム関数プロジ�
 
 Excel ブックで次の手順を実行し、`ADD` カスタム関数を試してみてください。
 
-1. セルを 1 つ選択し、「`=CONTOSO`」と入力します。 `CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
+1. セルを選択して、`=CONTOSO` と入力します。`CONTOSO` 名前空間にあるすべての関数がオートコンプリート メニューに一覧表示されます。
 
 1. セル内に「`=CONTOSO.ADD(10,200)`」という値を入力して Enter キーを押し、入力パラメーターとして数値「`10`」 と「`200`」を指定して、`CONTOSO.ADD` 関数を実行します。
 

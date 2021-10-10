@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0ad18ca62014ac8b3f4c3710680cd5d97b476215
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149767"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250435"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -17,7 +17,7 @@ ms.locfileid: "59149767"
 機能の概要については、ビデオ「[Office アプリ リボンのアドイン コマンド](https://channel9.msdn.com/events/Build/2016/P551)」を参照してください。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしていません。 [統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使用してテスト用のアドイン コマンドを展開できます。
+> SharePoint カタログは、アドイン コマンドをサポートしません。[統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使用してテストのためのアドイン コマンドを展開できます。
 
 > [!IMPORTANT]
 > アドイン コマンドは、Outlook でもサポートされています。 詳細については、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
@@ -85,9 +85,9 @@ Excel でグラフが選択されている場合など、特定のコンテキ�
 現在アドイン コマンドは、以前に[コマンドの機能](#command-capabilities)のサブ セクションで指定された制限を除いて、次のプラットフォームでサポートされています。
 
 - Windows 上の Office (ビルド 16.0.6769 以降、Microsoft 365 サブスクリプションに接続済み)
-- Windows 版 Office 2019
+- Windows での Office 2019 以降
 - Mac 上の Office (ビルド 15.33 以降、Microsoft 365 サブスクリプションに接続済み)
-- Mac 上の Office 2019
+- Mac での Office 2019 以降
 - Office on the web
 
 > [!NOTE]

@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: Outlook JavaScript API の要件セットの詳細。
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: e88e7a028136f4c7c6551c2d4ee98fa3539315cf
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: d824889c1a0d3718ca4a36969b620840cb529d94
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237484"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250449"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -48,6 +48,9 @@ else {
   // Provide alternate flow/logic.
 }
 ```
+
+> [!IMPORTANT]
+> 現在、`isSetSupported('Mailbox', '1.3')` が Exchange 2013 に対して Outlook on the web で誤って `true` を返すバグがあります。 要件セット、Exchange サーバー、および Outlook クライアントのサポートされている組み合わせの詳細については、「[Exchange サーバーおよび Outlook クライアントでサポートされている要件セット](#requirement-sets-supported-by-exchange-servers-and-outlook-clients)」を参照してください。
 
 または、開発者は標準の JavaScript の技法を使用することで、新しい API の有無をチェックできます。
 
