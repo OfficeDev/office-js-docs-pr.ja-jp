@@ -1178,6 +1178,9 @@ items:
           - name: PowerPoint アドインでドキュメント テーマを使用する
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
             displayName: PowerPoint
+          - name: 図形を操作する
+            href: powerpoint/shapes.md
+            displayName: PowerPoint
   - name: Project
     items:
       - name: Project アドイン ドキュメント

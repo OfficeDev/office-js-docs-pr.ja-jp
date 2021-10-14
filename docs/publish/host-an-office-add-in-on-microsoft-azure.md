@@ -3,12 +3,12 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: af2079c4e6df38e64347ec0a67d441298758c41e
+ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154594"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "60356374"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -131,7 +131,7 @@ Visual Studio は、Web プロジェクトに変更を加えることなくそ�
 
 4. Visual Studio により、Office アドインの Web プロジェクトが Azure Web アプリに発行されます。Visual Studio による Web プロジェクトの発行が完了すると、ブラウザーが開いて、「App Service アプリが作成されました」というテキストを示す Web ページが表示されます。これは、Web アプリの現在の既定のページです。
 
-5. ルート URL (たとえば https://YourDomain.azurewebsites.net)) をコピーします。この URL は、アドイン マニフェスト ファイルの編集時に必要になります。これについては、この記事で説明します。
+5. ルート URL (例:) をコピーします。この記事の後半でアドイン マニフェスト ファイルを編集するときに必要 `https://YourDomain.azurewebsites.net` になります。
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>手順 6: アドインの XML マニフェスト ファイルを編集して展開する
 
@@ -139,7 +139,7 @@ Visual Studio は、Web プロジェクトに変更を加えることなくそ�
 
 2. Office アドイン プロジェクト (たとえば、WordWebAddIn) を展開し、マニフェスト フォルダーを右クリックして **[開く]** をクリックします。アドインの XML マニフェスト ファイルが開きます。
 
-3. XML マニフェスト ファイルで、"~remoteAppUrl" というインスタンスをすべて検索して、Azure のアドイン Web アプリのルート URL に置換します。この URL は、前の手順で Azure にアドイン Web アプリを発行した後にコピーしたものです (たとえば、https://YourDomain.azurewebsites.net)。 
+3. XML マニフェスト ファイルで、"~remoteAppUrl" というインスタンスをすべて検索して、Azure のアドイン Web アプリのルート URL に置換します。 これは、アドイン Web アプリを Azure に発行した後に以前にコピーした URL です (例: `https://YourDomain.azurewebsites.net` )。
 
 4. [**ファイル**] をクリックして、[**すべてを保存**] をクリックします。 次に、アドイン XML マニフェスト ファイル (WordWebAddIn.xml など) をコピーします。
 
