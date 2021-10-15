@@ -4,12 +4,12 @@ description: ExcelApi 1.3 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a0a3551662997984a5c999b62c651d81e243f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7c39a341f635e3355014f75e32c1501124f99d9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149811"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367461"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
@@ -26,20 +26,20 @@ ExcelApi 1.3 では、データ バインドと基本的なピボットテーブ
 ||[addFromNamedItem(name: string, bindingType: Excel.BindingType、 id: string)](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|ブック内の名前付きアイテムに基づいて新しいバインドを追加します。|
 ||[addFromSelection(bindingType: Excel.BindingType、 id: string)](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|現在の選択範囲に基づいて新しいバインドを追加します。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|ピボットテーブルの名前。|
-||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|現在のピボットテーブルを含んでいるワークシート。|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|ピボットテーブルを更新します。|
+||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|現在のピボットテーブルを含んでいるワークシート。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|名前に基づいてピボットテーブルを取得します。|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[refreshAll()](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|コレクション内のすべてのピボットテーブルを更新します。|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView()](/javascript/api/excel/excel.range#getVisibleView__)|現在の範囲の表示されている行を表します。|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|A1 スタイル表記の数式を表します。|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|のセル アドレスを表します `RangeView` 。|
+||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|表示される列の数。|
+||[formulas](/javascript/api/excel/excel.rangeview#formulas)|A1 スタイル表記の数式を表します。|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|ユーザーの言語と数値書式ロケールで、A1 スタイル表記の数式を表します。|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|R1C1 スタイル表記の数式を表します。|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getRange__)|現在の値に関連付けられている親範囲を取得します `RangeView` 。|
-||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|指定したセルの Excel の数値書式コードを表します。|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|のセル アドレスを表します `RangeView` 。|
-||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|表示される列の数。|
 ||[index](/javascript/api/excel/excel.rangeview#index)|のインデックスを表す値を返します `RangeView` 。|
+||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|指定したセルの Excel の数値書式コードを表します。|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|表示される行の数。|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|範囲に関連付けられている範囲ビューのコレクションを表します。|
 ||[text](/javascript/api/excel/excel.rangeview#text)|指定した範囲のテキスト値。|

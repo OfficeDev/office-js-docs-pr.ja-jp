@@ -4,12 +4,12 @@ description: ExcelApi 1.6 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e5d8cb39c7b4fc41c12625a70d16f47d01d81a5f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5460a678eb23aeee0be5795856790eb8cccd593e
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154045"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367426"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
@@ -59,11 +59,7 @@ ms.locfileid: "59154045"
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#gradientFill)|データ バーにグラデーションが設定されている場合に指定します。|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#formula)|必要に応じて、データ バー ルールを評価する数式。|
 ||[type](/javascript/api/excel/excel.conditionaldatabarrule#type)|データ バーのルールの種類。|
-|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|この条件付き書式を削除します。|
-||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|条件付き書式が適用された範囲を返す。|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|conditonal 形式が適用される範囲を返します。|
-||[priority](/javascript/api/excel/excel.conditionalformat#priority)|この条件付き書式が現在存在する条件付き書式コレクション内の優先度 (またはインデックス)。|
-||[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|現在の条件付き書式が型の場合、セル値の条件付き書式プロパティを返 `CellValue` します。|
+|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|現在の条件付き書式が型の場合、セル値の条件付き書式プロパティを返 `CellValue` します。|
 ||[cellValueOrNullObject](/javascript/api/excel/excel.conditionalformat#cellValueOrNullObject)|現在の条件付き書式が型の場合、セル値の条件付き書式プロパティを返 `CellValue` します。|
 ||[colorScale](/javascript/api/excel/excel.conditionalformat#colorScale)|現在の条件付き書式が型の場合は、色スケールの条件付き書式プロパティを返 `ColorScale` します。|
 ||[colorScaleOrNullObject](/javascript/api/excel/excel.conditionalformat#colorScaleOrNullObject)|現在の条件付き書式が型の場合は、色スケールの条件付き書式プロパティを返 `ColorScale` します。|
@@ -71,17 +67,21 @@ ms.locfileid: "59154045"
 ||[customOrNullObject](/javascript/api/excel/excel.conditionalformat#customOrNullObject)|現在の条件付き書式がカスタム型の場合は、カスタムの条件付き書式プロパティを返します。|
 ||[dataBar](/javascript/api/excel/excel.conditionalformat#dataBar)|現在の条件付き書式がデータ バーの場合は、データ バーのプロパティを返します。|
 ||[dataBarOrNullObject](/javascript/api/excel/excel.conditionalformat#dataBarOrNullObject)|現在の条件付き書式がデータ バーの場合は、データ バーのプロパティを返します。|
+||[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|この条件付き書式を削除します。|
+||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|条件付き書式が適用された範囲を返す。|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|conditonal 形式が適用される範囲を返します。|
 ||[iconSet](/javascript/api/excel/excel.conditionalformat#iconSet)|現在の条件付き書式が型の場合は、アイコン セットの条件付き書式プロパティを返 `IconSet` します。|
 ||[iconSetOrNullObject](/javascript/api/excel/excel.conditionalformat#iconSetOrNullObject)|現在の条件付き書式が型の場合は、アイコン セットの条件付き書式プロパティを返 `IconSet` します。|
 ||[id](/javascript/api/excel/excel.conditionalformat#id)|現在の条件付き書式の優先度 `ConditionalFormatCollection` です。|
 ||[preset](/javascript/api/excel/excel.conditionalformat#preset)|事前設定された条件の条件付き書式を返します。|
 ||[presetOrNullObject](/javascript/api/excel/excel.conditionalformat#presetOrNullObject)|事前設定された条件の条件付き書式を返します。|
+||[優先度](/javascript/api/excel/excel.conditionalformat#priority)|この条件付き書式が現在存在する条件付き書式コレクション内の優先度 (またはインデックス)。|
+||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|この条件付き書式の条件が満たされた場合、優先順位の低い書式はそのセルに影響を及ぼしません。|
 ||[textComparison](/javascript/api/excel/excel.conditionalformat#textComparison)|現在の条件付き書式がテキスト型の場合は、特定のテキスト条件付き書式プロパティを返します。|
 ||[textComparisonOrNullObject](/javascript/api/excel/excel.conditionalformat#textComparisonOrNullObject)|現在の条件付き書式がテキスト型の場合は、特定のテキスト条件付き書式プロパティを返します。|
 ||[topBottom](/javascript/api/excel/excel.conditionalformat#topBottom)|現在の条件付き書式が型の場合は、上/下の条件付き書式プロパティを返 `TopBottom` します。|
 ||[topBottomOrNullObject](/javascript/api/excel/excel.conditionalformat#topBottomOrNullObject)|現在の条件付き書式が型の場合は、上/下の条件付き書式プロパティを返 `TopBottom` します。|
 ||[type](/javascript/api/excel/excel.conditionalformat#type)|条件付き書式の種類。|
-||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|この条件付き書式の条件が満たされた場合、優先順位の低い書式はそのセルに影響を及ぼしません。|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[add(type: Excel.ConditionalFormatType)](/javascript/api/excel/excel.conditionalformatcollection#add_type_)|最初/最優先で新しい条件付き書式をコレクションに追加します。|
 ||[clearAll()](/javascript/api/excel/excel.conditionalformatcollection#clearAll__)|現在指定している範囲でアクティブなすべての条件付き書式をクリアする。|
 ||[getCount()](/javascript/api/excel/excel.conditionalformatcollection#getCount__)|ブック内の条件付き書式の数を返します。|
@@ -99,10 +99,10 @@ ms.locfileid: "59154045"
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|境界線の色を表す HTML カラー コード (#RRGGBB"FFA500" など) または名前の付いた HTML 色 ("オレンジ色" など) です。|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#sideIndex)|罫線の特定の辺を表す定数値。|
 ||[style](/javascript/api/excel/excel.conditionalrangeborder#style)|罫線の線スタイルを指定する、線スタイル定数のいずれか 1 つ。|
-|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[getItem(index: Excel.ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|オブジェクトの名前を使用して、境界線オブジェクトを取得します。|
-||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|
-||[bottom](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|下の罫線を取得します。|
+|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[bottom](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|下の罫線を取得します。|
 ||[count](/javascript/api/excel/excel.conditionalrangebordercollection#count)|コレクションに含まれる境界線オブジェクトの数。|
+||[getItem(index: Excel.ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|オブジェクトの名前を使用して、境界線オブジェクトを取得します。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|オブジェクトのインデックスを使用して、境界線オブジェクトを取得します。|
 ||[items](/javascript/api/excel/excel.conditionalrangebordercollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[left](/javascript/api/excel/excel.conditionalrangebordercollection#left)|左側の罫線を取得します。|
 ||[right](/javascript/api/excel/excel.conditionalrangebordercollection#right)|右の罫線を取得します。|
@@ -115,10 +115,10 @@ ms.locfileid: "59154045"
 ||[italic](/javascript/api/excel/excel.conditionalrangefont#italic)|フォントが italic の場合に指定します。|
 ||[strikethrough](/javascript/api/excel/excel.conditionalrangefont#strikethrough)|フォントの取り消し線の状態を指定します。|
 ||[underline](/javascript/api/excel/excel.conditionalrangefont#underline)|フォントに適用される下線の種類。|
-|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|指定したExcelの数値書式コードを表します。|
-||[borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|条件付き書式範囲全体に適用される罫線オブジェクトのコレクション。|
+|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|条件付き書式範囲全体に適用される罫線オブジェクトのコレクション。|
 ||[fill](/javascript/api/excel/excel.conditionalrangeformat#fill)|条件付き書式の範囲全体で定義されている fill オブジェクトを返します。|
 ||[font](/javascript/api/excel/excel.conditionalrangeformat#font)|条件付き書式の範囲全体で定義されているフォント オブジェクトを返します。|
+||[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|指定したExcelの数値書式コードを表します。|
 |[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[operator](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|テキストの条件付き書式の演算子。|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|条件付き書式のテキスト値。|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[rank](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|数値のランクに対する 1 から 1000、またはパーセントのランクに対する 1 から 100 のランク。|

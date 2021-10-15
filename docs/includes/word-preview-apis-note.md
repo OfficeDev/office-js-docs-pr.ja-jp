@@ -4,4 +4,4 @@
 > - Word on Windows
 > - Word on Mac
 >
-> Word プレビュー API は現在、サポートされていないiPad。 ただし、ブックマーク機能 API は、Word on the web およびコメント、文末脚注、脚注に関連する API でも使用できます。現在は、Word on the web でのみ使用できます。
+> Word プレビュー API は現在、サポートされていないiPad。 ただし、ブックマーク機能 API は、Word on the web。 Web でのみ使用可能な API Word on the web Web[専用 API リストを参照してください](#web-only-api-list)。

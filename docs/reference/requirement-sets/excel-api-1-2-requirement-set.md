@@ -4,12 +4,12 @@ description: ExcelApi 1.2 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a32bf523a355e58967518c9646c15fab6f6daf3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7ab12c56f1ef5693e0357f924f95ffb1c085449e
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154057"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367349"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 の新機能
 
@@ -498,10 +498,10 @@ ExcelApi 1.2 では、テーブル のフィルター処理と組み込みの関
 ||[getRowsAbove(count?: number)](/javascript/api/excel/excel.range#getRowsAbove_count_)|現在のオブジェクトの上にある特定の数の行を取得 `Range` します。|
 ||[getRowsBelow(count?: number)](/javascript/api/excel/excel.range#getRowsBelow_count_)|現在のオブジェクトの下の行の特定の数を取得 `Range` します。|
 ||[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.range#getUsedRange_valuesOnly_)|指定した範囲オブジェクトのうち使用されている範囲を返します。|
-||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|範囲内のセルをワークシートの 1 つの領域に結合します。|
 ||[hidden](/javascript/api/excel/excel.range#hidden)|現在の範囲内のすべてのセルが非表示の場合を表します。|
-||[並べ替え](/javascript/api/excel/excel.range#sort)|現在の範囲について、範囲の並べ替えを表します。|
+||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|範囲内のセルをワークシートの 1 つの領域に結合します。|
 ||[rowHidden](/javascript/api/excel/excel.range#rowHidden)|現在の範囲内のすべての行が非表示の場合を表します。|
+||[並べ替え](/javascript/api/excel/excel.range#sort)|現在の範囲について、範囲の並べ替えを表します。|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge__)|範囲内のセルを結合解除して別々のセルにします。|
 |[範囲の形式](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitColumns__)|現在の列のデータに基づいて、現在の範囲の列の幅を最適な幅に変更します。|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitRows__)|現在の行のデータに基づいて、現在の範囲の行の高さを最適な高さに変更します。|
@@ -519,9 +519,9 @@ ExcelApi 1.2 では、テーブル のフィルター処理と組み込みの関
 ||[sortOn](/javascript/api/excel/excel.sortfield#sortOn)|この条件の並べ替えの種類を指定します。|
 |[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearFilters__)|現在テーブルに適用されているすべてのフィルターをクリアします。|
 ||[convertToRange()](/javascript/api/excel/excel.table#convertToRange__)|テーブルを通常の範囲のセルに変換します。|
+||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|現在テーブルにあるすべてのフィルターを再適用します。|
 ||[並べ替え](/javascript/api/excel/excel.table#sort)|テーブル内の並べ替えを表します。|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|現在のテーブルを含んでいるワークシート。|
-||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|現在テーブルにあるすべてのフィルターを再適用します。|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|列に適用されたフィルターを取得します。|
 |[TableSort](/javascript/api/excel/excel.tablesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, method?: Excel.SortMethod)](/javascript/api/excel/excel.tablesort#apply_fields__matchCase__method_)|並べ替え操作を実行します。|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear__)|テーブルに現在設定されている並べ替えをクリアします。|
@@ -563,8 +563,8 @@ ExcelApi 1.2 では、テーブル のフィルター処理と組み込みの関
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onSelectionChanged)|ドキュメント内で選択が変更されるときに発生します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRange_valuesOnly_)|使用範囲とは、値または書式設定が割り当たっているすべてのセルを包含する最小の範囲です。|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|ワークシートのシート保護オブジェクトを返します。|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect(options?: Excel.WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|ワークシートを保護します。|
-||[options](/javascript/api/excel/excel.worksheetprotection#options)|ワークシートの保護オプションを指定します。|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[options](/javascript/api/excel/excel.worksheetprotection#options)|ワークシートの保護オプションを指定します。|
+||[protect(options?: Excel.WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|ワークシートを保護します。|
 ||[保護](/javascript/api/excel/excel.worksheetprotection#protected)|ワークシートが保護される場合に指定します。|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowAutoFilter)|オートフィルター機能の使用を許可するワークシート保護オプションを表します。|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowDeleteColumns)|列の削除を許可するワークシート保護オプションを表します。|

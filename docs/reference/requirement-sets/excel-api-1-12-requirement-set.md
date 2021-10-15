@@ -4,12 +4,12 @@ description: ExcelApi 1.12 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: f2780e188eeebc70d754d7c2ea26cde1b1974702
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 99447cb7a92f0431a04c10a767af91df3a56ee80
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152861"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367314"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel新機能
 
@@ -106,10 +106,10 @@ ExcelApi 1.12 では、動的配列を追跡し、数式の直接の前例を見
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getCount__)|このコレクション内の `RangeAreas` オブジェクトの数を取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getItemAt_index_)|コレクション内の `RangeAreas` 位置に基づいてオブジェクトを返します。|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|コレクション内の `RangeAreas` ワークシート ID または名前に基づいてオブジェクトを返します。|
-||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|コレクション内の `RangeAreas` ワークシート名または ID に基づいてオブジェクトを返します。|
-||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|A1 スタイルのアドレスの配列を返します。|
+|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|A1 スタイルのアドレスの配列を返します。|
 ||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|オブジェクトを返 `RangeAreasCollection` します。|
+||[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|コレクション内の `RangeAreas` ワークシート ID または名前に基づいてオブジェクトを返します。|
+||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|コレクション内の `RangeAreas` ワークシート名または ID に基づいてオブジェクトを返します。|
 ||[範囲](/javascript/api/excel/excel.workbookrangeareas#ranges)|オブジェクト内のこのオブジェクトを構成する範囲を返 `RangeCollection` します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|ワークシート レベルのカスタム プロパティのコレクションを取得します。|
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|カスタム プロパティを削除します。|

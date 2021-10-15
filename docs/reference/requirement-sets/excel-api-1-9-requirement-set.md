@@ -4,12 +4,12 @@ description: ExcelApi 1.9 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: dde36db799a7f0612439e934d50af4f3ab04077e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 44f1327edd702b86adabb1d138dc41597e54e073
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152788"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367454"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>JavaScript API 1.9 Excel新機能
 
@@ -38,11 +38,11 @@ ms.locfileid: "59152788"
 ||[iterativeCalculation](/javascript/api/excel/excel.application#iterativeCalculation)|反復計算の設定を返します。|
 ||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendScreenUpdatingUntilNextSync__)|次の呼び出しが呼び出されるまで、画面の `context.sync()` 更新を中断します。|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[apply(range: Range \| string, columnIndex?: number, criteria?: Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply_range__columnIndex__criteria_)|範囲にオートフィルターを適用します。|
-||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearCriteria__)|オートフィルターのフィルター条件がクリアされます。|
-||[getRange()](/javascript/api/excel/excel.autofilter#getRange__)|`Range`オートフィルターを適用する範囲を表すオブジェクトを返します。|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getRangeOrNullObject__)|`Range`オートフィルターを適用する範囲を表すオブジェクトを返します。|
+||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearCriteria__)|オートフィルターのフィルター条件と並べ替え状態をクリアします。|
 ||[criteria](/javascript/api/excel/excel.autofilter#criteria)|オートフィルターが適用された範囲のすべてのフィルター条件を保持する配列です。|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|オートフィルターが有効になっている場合に指定します。|
+||[getRange()](/javascript/api/excel/excel.autofilter#getRange__)|`Range`オートフィルターを適用する範囲を表すオブジェクトを返します。|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getRangeOrNullObject__)|`Range`オートフィルターを適用する範囲を表すオブジェクトを返します。|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isDataFiltered)|オートフィルターにフィルター条件がある場合に指定します。|
 ||[reapply()](/javascript/api/excel/excel.autofilter#reapply__)|その範囲で現在指定されている Autofilter オブジェクトを適用します。|
 ||[remove()](/javascript/api/excel/excel.autofilter#remove__)|範囲の AutoFilter を削除します。|
@@ -116,8 +116,8 @@ ms.locfileid: "59152788"
 |[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#linkNumberFormat)|セルに番号の書式をリンクする (セル内でラベルが変更された場合に数値の書式が変更される) 場合に指定します。|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linkNumberFormat)|数値の形式がセルにリンクされている場合に指定します。|
 |[ChartErrorBars](/javascript/api/excel/excel.charterrorbars)|[endStyleCap](/javascript/api/excel/excel.charterrorbars#endStyleCap)|エラー バーに終了スタイル の上限が設定されている場合に指定します。|
-||[include](/javascript/api/excel/excel.charterrorbars#include)|誤差範囲のどの部分を含めるかを指定します。|
 ||[format](/javascript/api/excel/excel.charterrorbars#format)|誤差範囲の書式の種類を指定します。|
+||[include](/javascript/api/excel/excel.charterrorbars#include)|誤差範囲のどの部分を含めるかを指定します。|
 ||[type](/javascript/api/excel/excel.charterrorbars#type)|誤差範囲でマークされている範囲の種類。|
 ||[visible](/javascript/api/excel/excel.charterrorbars#visible)|エラー バーを表示するかどうかを指定します。|
 |[ChartErrorBarsFormat](/javascript/api/excel/excel.charterrorbarsformat)|[line](/javascript/api/excel/excel.charterrorbarsformat#line)|グラフの線の書式設定を表します。|
@@ -128,7 +128,9 @@ ms.locfileid: "59152788"
 ||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showLegendFieldButtons)|凡例フィールド ボタンを凡例フィールド ボタンで表示するかどうかを指定ピボットグラフ。|
 ||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showReportFilterFieldButtons)|レポート にレポート フィルター フィールド ボタンを表示するかどうかを指定ピボットグラフ。|
 ||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showValueFieldButtons)|フィールドの [値の表示] ボタンを表示するかどうかを指定ピボットグラフ。|
-|[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubbleScale)|既定のサイズのパーセンテージを表す 0 (ゼロ) から 300 までの整数値とすることができます。|
+|[ChartSeries](/javascript/api/excel/excel.chartseries)|[binOptions](/javascript/api/excel/excel.chartseries#binOptions)|ヒストグラム図とパレート図のビンのオプションをカプセル化します。|
+||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskerOptions)|箱ひげ図グラフのオプションをカプセル化します。|
+||[bubbleScale](/javascript/api/excel/excel.chartseries#bubbleScale)|既定のサイズのパーセンテージを表す 0 (ゼロ) から 300 までの整数値とすることができます。|
 ||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientMaximumColor)|地域マップ グラフ系列の最大値の色を指定します。|
 ||[gradientMaximumType](/javascript/api/excel/excel.chartseries#gradientMaximumType)|地域マップ グラフ系列の最大値の種類を指定します。|
 ||[gradientMaximumValue](/javascript/api/excel/excel.chartseries#gradientMaximumValue)|地域マップ グラフ系列の最大値を指定します。|
@@ -140,15 +142,13 @@ ms.locfileid: "59152788"
 ||[gradientMinimumValue](/javascript/api/excel/excel.chartseries#gradientMinimumValue)|地域マップ グラフ系列の最小値を指定します。|
 ||[gradientStyle](/javascript/api/excel/excel.chartseries#gradientStyle)|地域マップ グラフの系列グラデーション スタイルを指定します。|
 ||[invertColor](/javascript/api/excel/excel.chartseries#invertColor)|系列内の負のデータ ポイントの塗りつぶしの色を指定します。|
-||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentLabelStrategy)|ツリーマップ グラフの系列の親ラベル戦略領域を指定します。|
-||[binOptions](/javascript/api/excel/excel.chartseries#binOptions)|ヒストグラム図とパレート図のビンのオプションをカプセル化します。|
-||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskerOptions)|箱ひげ図グラフのオプションをカプセル化します。|
 ||[mapOptions](/javascript/api/excel/excel.chartseries#mapOptions)|リージョン マップ グラフのオプションをカプセル化します。|
-||[xErrorBars](/javascript/api/excel/excel.chartseries#xErrorBars)|グラフ系列の誤差範囲オブジェクトを表します。|
-||[yErrorBars](/javascript/api/excel/excel.chartseries#yErrorBars)|グラフ系列の誤差範囲オブジェクトを表します。|
+||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentLabelStrategy)|ツリーマップ グラフの系列の親ラベル戦略領域を指定します。|
 ||[showConnectorLines](/javascript/api/excel/excel.chartseries#showConnectorLines)|ウォーターフォール グラフにコネクタ線を表示するかどうかを指定します。|
 ||[showLeaderLines](/javascript/api/excel/excel.chartseries#showLeaderLines)|系列内のデータ ラベルごとに引き出し線を表示するかどうかを指定します。|
 ||[splitValue](/javascript/api/excel/excel.chartseries#splitValue)|円グラフまたは棒グラフの 2 つのセクションを分割するしきい値を指定します。|
+||[xErrorBars](/javascript/api/excel/excel.chartseries#xErrorBars)|グラフ系列の誤差範囲オブジェクトを表します。|
+||[yErrorBars](/javascript/api/excel/excel.chartseries#yErrorBars)|グラフ系列の誤差範囲オブジェクトを表します。|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#linkNumberFormat)|セルに番号の書式をリンクする (セル内でラベルが変更された場合に数値の書式が変更される) 場合に指定します。|
 |[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#address)|`address` プロパティを表します。|
 ||[addressLocal](/javascript/api/excel/excel.columnproperties#addressLocal)|`addressLocal` プロパティを表します。|
@@ -185,6 +185,8 @@ ms.locfileid: "59152788"
 |[Line](/javascript/api/excel/excel.line)|[beginArrowheadLength](/javascript/api/excel/excel.line#beginArrowheadLength)|指定された線の始点の矢印の長さを表します。|
 ||[beginArrowheadStyle](/javascript/api/excel/excel.line#beginArrowheadStyle)|指定された線の始点の矢印のスタイルを表します。|
 ||[beginArrowheadWidth](/javascript/api/excel/excel.line#beginArrowheadWidth)|指定された線の始点の矢印の幅を表します。|
+||[beginConnectedShape](/javascript/api/excel/excel.line#beginConnectedShape)|指定された線の始点が接続されている図形を表します。|
+||[beginConnectedSite](/javascript/api/excel/excel.line#beginConnectedSite)|コネクタの始点が接続されている結合点を表します。|
 ||[connectBeginShape(shape: Excel.Shape, connectionSite: number)](/javascript/api/excel/excel.line#connectBeginShape_shape__connectionSite_)|指定されたコネクタの始点を指定された図形に接続します。|
 ||[connectEndShape(shape: Excel.Shape, connectionSite: number)](/javascript/api/excel/excel.line#connectEndShape_shape__connectionSite_)|指定されたコネクタの終点を指定された図形に接続します。|
 ||[connectorType](/javascript/api/excel/excel.line#connectorType)|線のコネクタの種類を表します。|
@@ -193,17 +195,15 @@ ms.locfileid: "59152788"
 ||[endArrowheadLength](/javascript/api/excel/excel.line#endArrowheadLength)|指定された線の終点の矢印の長さを表します。|
 ||[endArrowheadStyle](/javascript/api/excel/excel.line#endArrowheadStyle)|指定された線の終点の矢印のスタイルを表します。|
 ||[endArrowheadWidth](/javascript/api/excel/excel.line#endArrowheadWidth)|指定された線の終点の矢印の幅を表します。|
-||[beginConnectedShape](/javascript/api/excel/excel.line#beginConnectedShape)|指定された線の始点が接続されている図形を表します。|
-||[beginConnectedSite](/javascript/api/excel/excel.line#beginConnectedSite)|コネクタの始点が接続されている結合点を表します。|
 ||[endConnectedShape](/javascript/api/excel/excel.line#endConnectedShape)|指定された線の終点が接続されている図形を表します。|
 ||[endConnectedSite](/javascript/api/excel/excel.line#endConnectedSite)|コネクタの終点が接続されている結合点を表します。|
 ||[id](/javascript/api/excel/excel.line#id)|図形識別子を指定します。|
 ||[isBeginConnected](/javascript/api/excel/excel.line#isBeginConnected)|指定した線の先頭が図形に接続される場合に指定します。|
 ||[isEndConnected](/javascript/api/excel/excel.line#isEndConnected)|指定した線の端が図形に接続される場合に指定します。|
 ||[shape](/javascript/api/excel/excel.line#shape)|行に関連 `Shape` 付けられたオブジェクトを返します。|
-|[PageBreak](/javascript/api/excel/excel.pagebreak)|[delete()](/javascript/api/excel/excel.pagebreak#delete__)|改ページ オブジェクトを削除します。|
+|[PageBreak](/javascript/api/excel/excel.pagebreak)|[columnIndex](/javascript/api/excel/excel.pagebreak#columnIndex)|ページブレークの列インデックスを指定します。|
+||[delete()](/javascript/api/excel/excel.pagebreak#delete__)|改ページ オブジェクトを削除します。|
 ||[getCellAfterBreak()](/javascript/api/excel/excel.pagebreak#getCellAfterBreak__)|改ページの後の最初のセルを取得します。|
-||[columnIndex](/javascript/api/excel/excel.pagebreak#columnIndex)|ページブレークの列インデックスを指定します。|
 ||[rowIndex](/javascript/api/excel/excel.pagebreak#rowIndex)|ページブレークの行インデックスを指定します。|
 |[PageBreakCollection](/javascript/api/excel/excel.pagebreakcollection)|[add(pageBreakRange: Range \| string)](/javascript/api/excel/excel.pagebreakcollection#add_pageBreakRange_)|指定された範囲の左上セルの前に改ページを追加します。|
 ||[getCount()](/javascript/api/excel/excel.pagebreakcollection#getCount__)|コレクション内の改ページの数を取得します。|
@@ -224,6 +224,7 @@ ms.locfileid: "59152788"
 ||[getPrintTitleRows()](/javascript/api/excel/excel.pagelayout#getPrintTitleRows__)|タイトル行を表す範囲オブジェクトを取得します。|
 ||[getPrintTitleRowsOrNullObject()](/javascript/api/excel/excel.pagelayout#getPrintTitleRowsOrNullObject__)|タイトル行を表す範囲オブジェクトを取得します。|
 ||[headerMargin](/javascript/api/excel/excel.pagelayout#headerMargin)|印刷時に使用するワークシートのヘッダー余白をポイントで指定します。|
+||[headersFooters](/javascript/api/excel/excel.pagelayout#headersFooters)|ワークシートのヘッダーとフッターの構成。|
 ||[leftMargin](/javascript/api/excel/excel.pagelayout#leftMargin)|印刷時に使用するワークシートの左余白をポイントで指定します。|
 ||[orientation](/javascript/api/excel/excel.pagelayout#orientation)|ワークシートのページの向き。|
 ||[paperSize](/javascript/api/excel/excel.pagelayout#paperSize)|ワークシートのページの用紙サイズ。|
@@ -232,7 +233,6 @@ ms.locfileid: "59152788"
 ||[printGridlines](/javascript/api/excel/excel.pagelayout#printGridlines)|ワークシートの枠線を印刷する場合に指定します。|
 ||[printHeadings](/javascript/api/excel/excel.pagelayout#printHeadings)|ワークシートの見出しを印刷する場合に指定します。|
 ||[printOrder](/javascript/api/excel/excel.pagelayout#printOrder)|ワークシートのページ印刷順序オプション。|
-||[headersFooters](/javascript/api/excel/excel.pagelayout#headersFooters)|ワークシートのヘッダーとフッターの構成。|
 ||[rightMargin](/javascript/api/excel/excel.pagelayout#rightMargin)|印刷時に使用するワークシートの右余白をポイントで指定します。|
 ||[setPrintArea(printArea: Range \| RangeAreas \| string)](/javascript/api/excel/excel.pagelayout#setPrintArea_printArea_)|ワークシートの印刷範囲を設定します。|
 ||[setPrintMargins(unit: Excel.PrintMarginUnit, marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setPrintMargins_unit__marginOptions_)|ワークシートのページ余白を単位で設定します。|
@@ -277,11 +277,19 @@ ms.locfileid: "59152788"
 ||[setColumnProperties(columnPropertiesData: SettableColumnProperties[])](/javascript/api/excel/excel.range#setColumnProperties_columnPropertiesData_)|列プロパティの 1 次元配列に基づいて範囲を更新し、フォント、塗りつぶし、罫線、配置をカプセル化します。|
 ||[setDirty()](/javascript/api/excel/excel.range#setDirty__)|次の再計算が発生したときに再計算する範囲を設定します。|
 ||[setRowProperties(rowPropertiesData: SettableRowProperties[])](/javascript/api/excel/excel.range#setRowProperties_rowPropertiesData_)|行プロパティの 1 次元配列に基づいて範囲を更新し、フォント、塗りつぶし、罫線、配置をカプセル化します。|
-|[RangeAreas](/javascript/api/excel/excel.rangeareas)|[calculate()](/javascript/api/excel/excel.rangeareas#calculate__)|内のすべてのセルを計算します `RangeAreas` 。|
+|[RangeAreas](/javascript/api/excel/excel.rangeareas)|[address](/javascript/api/excel/excel.rangeareas#address)|`RangeAreas`A1 スタイルの参照を返します。|
+||[addressLocal](/javascript/api/excel/excel.rangeareas#addressLocal)|ユーザー ロケール内 `RangeAreas` の参照を返します。|
+||[areaCount](/javascript/api/excel/excel.rangeareas#areaCount)|このオブジェクトを構成する四角形の範囲の数を返 `RangeAreas` します。|
+||[areas](/javascript/api/excel/excel.rangeareas#areas)|このオブジェクトを構成する四角形の範囲のコレクションを返 `RangeAreas` します。|
+||[calculate()](/javascript/api/excel/excel.rangeareas#calculate__)|内のすべてのセルを計算します `RangeAreas` 。|
+||[cellCount](/javascript/api/excel/excel.rangeareas#cellCount)|オブジェクト内のセルの数を返し、個々の四角形のすべての範囲のセル数 `RangeAreas` を合計します。|
 ||[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.rangeareas#clear_applyTo_)|このオブジェクトを構成する各領域の値、書式、塗りつぶし、罫線、その他のプロパティをクリア `RangeAreas` します。|
+||[conditionalFormats](/javascript/api/excel/excel.rangeareas#conditionalFormats)|このオブジェクト内のセルと交差する条件付き書式のコレクションを返 `RangeAreas` します。|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.rangeareas#convertDataTypeToText__)|データ型を含むすべての `RangeAreas` セルをテキストに変換します。|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.rangeareas#convertToLinkedDataType_serviceID__languageCulture_)|リンクされたデータ型に、すべての `RangeAreas` セルを変換します。|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyFrom_sourceRange__copyType__skipBlanks__transpose_)|セル データまたは書式をソース範囲または現在の `RangeAreas` 範囲からコピーします `RangeAreas` 。|
+||[dataValidation](/javascript/api/excel/excel.rangeareas#dataValidation)|内のすべての範囲のデータ検証オブジェクトを返します `RangeAreas` 。|
+||[format](/javascript/api/excel/excel.rangeareas#format)|オブジェクト内のすべての範囲のフォント、塗りつぶし、罫線、配置、その他のプロパティをカプセル化するオブジェクト `RangeFormat` を返 `RangeAreas` します。|
 ||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#getEntireColumn__)|列全体を表すオブジェクトを返します (たとえば、カレントがセル `RangeAreas` `RangeAreas` `RangeAreas` "B4:E11, H2" を表す場合は、列 `RangeAreas` "B:E, H:H" を表す a を返します)。|
 ||[getEntireRow()](/javascript/api/excel/excel.rangeareas#getEntireRow__)|行全体を表すオブジェクトを返します (たとえば、カレントがセル "B4:E11" を表す場合は、行 `RangeAreas` `RangeAreas` `RangeAreas` `RangeAreas` "4:11" を表す a を返します)。|
 ||[getIntersection(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getIntersection_anotherRange_)|指定した範囲 `RangeAreas` の交差部分を表すオブジェクトを返します `RangeAreas` 。|
@@ -292,19 +300,11 @@ ms.locfileid: "59152788"
 ||[getTables(fullyContained?: boolean)](/javascript/api/excel/excel.rangeareas#getTables_fullyContained_)|このオブジェクト内の任意の範囲と重なるテーブルのスコープ付きコレクションを返 `RangeAreas` します。|
 ||[getUsedRangeAreas(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getUsedRangeAreas_valuesOnly_)|オブジェクト内の個々の四角形範囲のすべての使用領域を含む `RangeAreas` 使用される領域を返 `RangeAreas` します。|
 ||[getUsedRangeAreasOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.rangeareas#getUsedRangeAreasOrNullObject_valuesOnly_)|オブジェクト内の個々の四角形範囲のすべての使用領域を含む `RangeAreas` 使用される領域を返 `RangeAreas` します。|
-||[address](/javascript/api/excel/excel.rangeareas#address)|`RangeAreas`A1 スタイルの参照を返します。|
-||[addressLocal](/javascript/api/excel/excel.rangeareas#addressLocal)|ユーザー ロケール内 `RangeAreas` の参照を返します。|
-||[areaCount](/javascript/api/excel/excel.rangeareas#areaCount)|このオブジェクトを構成する四角形の範囲の数を返 `RangeAreas` します。|
-||[areas](/javascript/api/excel/excel.rangeareas#areas)|このオブジェクトを構成する四角形の範囲のコレクションを返 `RangeAreas` します。|
-||[cellCount](/javascript/api/excel/excel.rangeareas#cellCount)|オブジェクト内のセルの数を返し、個々の四角形のすべての範囲のセル数 `RangeAreas` を合計します。|
-||[conditionalFormats](/javascript/api/excel/excel.rangeareas#conditionalFormats)|このオブジェクト内のセルと交差する条件付き書式のコレクションを返 `RangeAreas` します。|
-||[dataValidation](/javascript/api/excel/excel.rangeareas#dataValidation)|内のすべての範囲のデータ検証オブジェクトを返します `RangeAreas` 。|
-||[format](/javascript/api/excel/excel.rangeareas#format)|オブジェクト内のすべての範囲のフォント、塗りつぶし、罫線、配置、その他のプロパティをカプセル化するオブジェクト `RangeFormat` を返 `RangeAreas` します。|
 ||[isEntireColumn](/javascript/api/excel/excel.rangeareas#isEntireColumn)|このオブジェクトのすべての範囲が列全体を表す `RangeAreas` ("A:C、Q:Z"など) を指定します。|
 ||[isEntireRow](/javascript/api/excel/excel.rangeareas#isEntireRow)|このオブジェクトのすべての範囲が行全体を表す (例: `RangeAreas` "1:3, 5:7") を指定します。|
-||[worksheet](/javascript/api/excel/excel.rangeareas#worksheet)|現在のワークシートを返します `RangeAreas` 。|
 ||[setDirty()](/javascript/api/excel/excel.rangeareas#setDirty__)|次の `RangeAreas` 再計算が行われるときに再計算されるように設定します。|
 ||[style](/javascript/api/excel/excel.rangeareas#style)|このオブジェクトのすべての範囲のスタイルを表 `RangeAreas` します。|
+||[worksheet](/javascript/api/excel/excel.rangeareas#worksheet)|現在のワークシートを返します `RangeAreas` 。|
 |[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#tintAndShade)|範囲の境界線の色を明るくまたは暗くする倍数を指定します。値は -1 (最も暗い) ~ 1 (最も明るい) で、元の色の場合は 0 です。|
 |[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[tintAndShade](/javascript/api/excel/excel.rangebordercollection#tintAndShade)|範囲の境界線の色を明るくまたは暗くする倍数を指定します。|
 |[RangeCollection](/javascript/api/excel/excel.rangecollection)|[getCount()](/javascript/api/excel/excel.rangecollection#getCount__)|内の範囲の数を返します `RangeCollection` 。|
@@ -337,46 +337,44 @@ ms.locfileid: "59152788"
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)|`style` プロパティを表します。|
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnHidden)|`columnHidden` プロパティを表します。|
 ||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnWidth)||
-||[format: Excel.CellPropertiesFormat & {
-            columnWidth?](/javascript/api/excel/excel.settablecolumnproperties#format)|`format` プロパティを表します。|
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat & {
-            rowHeight?](/javascript/api/excel/excel.settablerowproperties#format)|`format` プロパティを表します。|
+||[format: Excel。CellPropertiesFormat & { columnWidth?](/javascript/api/excel/excel.settablecolumnproperties#format)|`format` プロパティを表します。|
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel。CellPropertiesFormat & { rowHeight?](/javascript/api/excel/excel.settablerowproperties#format)|`format` プロパティを表します。|
 ||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowHeight)||
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowHidden)|`rowHidden` プロパティを表します。|
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#altTextDescription)|オブジェクトの代替説明テキストを指定 `Shape` します。|
 ||[altTextTitle](/javascript/api/excel/excel.shape#altTextTitle)|オブジェクトの代替タイトル テキストを指定 `Shape` します。|
+||[connectionSiteCount](/javascript/api/excel/excel.shape#connectionSiteCount)|この図形の結合点の数を返します。|
 ||[delete()](/javascript/api/excel/excel.shape#delete__)|ワークシートから図形を削除します。|
+||[fill](/javascript/api/excel/excel.shape#fill)|この図形の塗りつぶしの書式設定を返します。|
+||[geometricShape](/javascript/api/excel/excel.shape#geometricShape)|図形に関連付けられた幾何学的図形を返します。|
 ||[geometricShapeType](/javascript/api/excel/excel.shape#geometricShapeType)|この幾何学的な図形の幾何学的な図形の種類を指定します。|
 ||[getAsImage(format: Excel.PictureFormat)](/javascript/api/excel/excel.shape#getAsImage_format_)|図形を画像に変換し、base 64 でエンコードされた文字列として画像を返します。|
+||[group](/javascript/api/excel/excel.shape#group)|図形に関連付けられた図形グループを返します。|
 ||[height](/javascript/api/excel/excel.shape#height)|図形の高さをポイントで指定します。|
+||[id](/javascript/api/excel/excel.shape#id)|図形識別子を指定します。|
+||[image](/javascript/api/excel/excel.shape#image)|図形に関連付けられた画像を返します。|
 ||[incrementLeft(increment: number)](/javascript/api/excel/excel.shape#incrementLeft_increment_)|指定したポイント数だけ水平方向に図形を移動します。|
 ||[incrementRotation(increment: number)](/javascript/api/excel/excel.shape#incrementRotation_increment_)|z 軸を中心に、指定された度数だけ、図形を時計回りに回転します。|
 ||[incrementTop(increment: number)](/javascript/api/excel/excel.shape#incrementTop_increment_)|指定したポイント数だけ垂直方向に図形を移動します。|
 ||[left](/javascript/api/excel/excel.shape#left)|図形の左側からワークシートの左側までの距離 (ポイント数) です。|
-||[lockAspectRatio](/javascript/api/excel/excel.shape#lockAspectRatio)|この図形の縦横比をロックする場合に指定します。|
-||[name](/javascript/api/excel/excel.shape#name)|図形の名前を指定します。|
-||[connectionSiteCount](/javascript/api/excel/excel.shape#connectionSiteCount)|この図形の結合点の数を返します。|
-||[fill](/javascript/api/excel/excel.shape#fill)|この図形の塗りつぶしの書式設定を返します。|
-||[geometricShape](/javascript/api/excel/excel.shape#geometricShape)|図形に関連付けられた幾何学的図形を返します。|
-||[group](/javascript/api/excel/excel.shape#group)|図形に関連付けられた図形グループを返します。|
-||[id](/javascript/api/excel/excel.shape#id)|図形識別子を指定します。|
-||[image](/javascript/api/excel/excel.shape#image)|図形に関連付けられた画像を返します。|
 ||[level](/javascript/api/excel/excel.shape#level)|指定した図形のレベルを指定します。|
 ||[line](/javascript/api/excel/excel.shape#line)|図形に関連付けられた線を返します。|
 ||[lineFormat](/javascript/api/excel/excel.shape#lineFormat)|この図形の線の書式設定を返します。|
+||[lockAspectRatio](/javascript/api/excel/excel.shape#lockAspectRatio)|この図形の縦横比をロックする場合に指定します。|
+||[name](/javascript/api/excel/excel.shape#name)|図形の名前を指定します。|
 ||[onActivated](/javascript/api/excel/excel.shape#onActivated)|図形がアクティブになったときに発生します。|
 ||[onDeactivated](/javascript/api/excel/excel.shape#onDeactivated)|図形が非アクティブになると発生します。|
 ||[parentGroup](/javascript/api/excel/excel.shape#parentGroup)|この図形の親グループを指定します。|
-||[textFrame](/javascript/api/excel/excel.shape#textFrame)|この図形のテキスト フレーム オブジェクトを返します。|
-||[type](/javascript/api/excel/excel.shape#type)|この図形の種類を返します。|
-||[zOrderPosition](/javascript/api/excel/excel.shape#zOrderPosition)|指定された図形の z オーダーでの位置を返します。0 はオーダー スタックの一番下を表します。|
 ||[rotation](/javascript/api/excel/excel.shape#rotation)|図形の回転角度を度で指定します。|
 ||[scaleHeight(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleHeight_scaleFactor__scaleType__scaleFrom_)|指定した係数分だけ図形の高さを変更します。|
 ||[scaleWidth(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleWidth_scaleFactor__scaleType__scaleFrom_)|指定した係数分だけ図形の幅を変更します。|
 ||[setZOrder(position: Excel.ShapeZOrder)](/javascript/api/excel/excel.shape#setZOrder_position_)|指定された図形をコレクションの z オーダーで上または下に移動します。他の図形の手前または奥に移動します。|
+||[textFrame](/javascript/api/excel/excel.shape#textFrame)|この図形のテキスト フレーム オブジェクトを返します。|
 ||[top](/javascript/api/excel/excel.shape#top)|図形の上端からワークシートの上までのポイント単位の距離です。|
+||[type](/javascript/api/excel/excel.shape#type)|この図形の種類を返します。|
 ||[visible](/javascript/api/excel/excel.shape#visible)|図形が表示される場合に指定します。|
 ||[width](/javascript/api/excel/excel.shape#width)|図形の幅をポイント単位で指定します。|
+||[zOrderPosition](/javascript/api/excel/excel.shape#zOrderPosition)|指定された図形の z オーダーでの位置を返します。0 はオーダー スタックの一番下を表します。|
 |[ShapeActivatedEventArgs](/javascript/api/excel/excel.shapeactivatedeventargs)|[shapeId](/javascript/api/excel/excel.shapeactivatedeventargs#shapeId)|アクティブ化された図形の ID を取得します。|
 ||[type](/javascript/api/excel/excel.shapeactivatedeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.shapeactivatedeventargs#worksheetId)|図形をアクティブ化するワークシートの ID を取得します。|
@@ -394,9 +392,9 @@ ms.locfileid: "59152788"
 ||[worksheetId](/javascript/api/excel/excel.shapedeactivatedeventargs#worksheetId)|図形が非アクティブ化されているワークシートの ID を取得します。|
 |[ShapeFill](/javascript/api/excel/excel.shapefill)|[clear()](/javascript/api/excel/excel.shapefill#clear__)|この図形の塗りつぶしの書式設定をクリアします。|
 ||[foregroundColor](/javascript/api/excel/excel.shapefill#foregroundColor)|図形塗りつぶしの前景色を #RRGGBB HTML の色形式で表します ("FFA500"など) 形式で、または名前付き HTML 色 ("オレンジ色" など) として表します。|
-||[type](/javascript/api/excel/excel.shapefill#type)|図形の塗りつぶしの種類を返します。|
 ||[setSolidColor(color: string)](/javascript/api/excel/excel.shapefill#setSolidColor_color_)|図形の塗りつぶしの書式設定を均一な色に設定します。|
 ||[transparency](/javascript/api/excel/excel.shapefill#transparency)|塗りつぶしの透明度の割合を 0.0 (不透明) から 1.0 (クリア) の値として指定します。|
+||[type](/javascript/api/excel/excel.shapefill#type)|図形の塗りつぶしの種類を返します。|
 |[ShapeFont](/javascript/api/excel/excel.shapefont)|[bold](/javascript/api/excel/excel.shapefont#bold)|フォントの太字の状態を表します。|
 ||[color](/javascript/api/excel/excel.shapefont#color)|テキストの色の HTML カラー コード表現 (例: "#FF0000" は赤を表します)。|
 ||[italic](/javascript/api/excel/excel.shapefont#italic)|フォントの斜体の状態を表します。|
@@ -436,43 +434,43 @@ ms.locfileid: "59152788"
 |[TextFrame](/javascript/api/excel/excel.textframe)|[autoSizeSetting](/javascript/api/excel/excel.textframe#autoSizeSetting)|テキスト フレームの自動サイズ設定。|
 ||[bottomMargin](/javascript/api/excel/excel.textframe#bottomMargin)|テキスト フレームの下余白を表します (ポイント数)。|
 ||[deleteText()](/javascript/api/excel/excel.textframe#deleteText__)|テキスト フレーム内のテキストをすべて削除します。|
+||[hasText](/javascript/api/excel/excel.textframe#hasText)|テキスト フレームにテキストが含まれている場合に指定します。|
 ||[horizontalAlignment](/javascript/api/excel/excel.textframe#horizontalAlignment)|テキスト フレームの水平方向の配置を表します。|
 ||[horizontalOverflow](/javascript/api/excel/excel.textframe#horizontalOverflow)|テキスト フレームの水平方向のオーバーフローの動作を表します。|
 ||[leftMargin](/javascript/api/excel/excel.textframe#leftMargin)|テキスト フレームの左余白を表します (ポイント数)。|
 ||[orientation](/javascript/api/excel/excel.textframe#orientation)|テキスト フレームの方向を指定する角度を表します。|
 ||[readingOrder](/javascript/api/excel/excel.textframe#readingOrder)|テキスト フレームの読む方向を表します (左から右または右から左)。|
-||[hasText](/javascript/api/excel/excel.textframe#hasText)|テキスト フレームにテキストが含まれている場合に指定します。|
-||[textRange](/javascript/api/excel/excel.textframe#textRange)|テキスト フレーム内の図形にアタッチされているテキスト、およびテキストを操作するためのプロパティとメソッドを表します。|
 ||[rightMargin](/javascript/api/excel/excel.textframe#rightMargin)|テキスト フレームの右余白を表します (ポイント数)。|
+||[textRange](/javascript/api/excel/excel.textframe#textRange)|テキスト フレーム内の図形にアタッチされているテキスト、およびテキストを操作するためのプロパティとメソッドを表します。|
 ||[topMargin](/javascript/api/excel/excel.textframe#topMargin)|テキスト フレームの上余白を表します (ポイント数)。|
 ||[verticalAlignment](/javascript/api/excel/excel.textframe#verticalAlignment)|テキスト フレームの垂直方向の配置を表します。|
 ||[verticalOverflow](/javascript/api/excel/excel.textframe#verticalOverflow)|テキスト フレームの垂直方向のオーバーフローの動作を表します。|
-|[TextRange](/javascript/api/excel/excel.textrange)|[getSubstring(start: number, length?: number)](/javascript/api/excel/excel.textrange#getSubstring_start__length_)|指定された範囲の部分文字列に対する TextRange オブジェクトを返します。|
-||[font](/javascript/api/excel/excel.textrange#font)|テキスト範囲の `ShapeFont` フォント属性を表すオブジェクトを返します。|
+|[TextRange](/javascript/api/excel/excel.textrange)|[font](/javascript/api/excel/excel.textrange#font)|テキスト範囲の `ShapeFont` フォント属性を表すオブジェクトを返します。|
+||[getSubstring(start: number, length?: number)](/javascript/api/excel/excel.textrange#getSubstring_start__length_)|指定された範囲の部分文字列に対する TextRange オブジェクトを返します。|
 ||[text](/javascript/api/excel/excel.textrange#text)|テキスト範囲のプレーン テキスト コンテンツを表します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartDataPointTrack)|関連付けられている実際のデータ ポイントをブックの全グラフが追跡している場合、true となります。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[autoSave](/javascript/api/excel/excel.workbook#autoSave)|ブックが自動保存モードの場合に指定します。|
+||[calculationEngineVersion](/javascript/api/excel/excel.workbook#calculationEngineVersion)|Excel 計算エンジンのバージョンとして数字を返します。|
+||[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartDataPointTrack)|関連付けられている実際のデータ ポイントをブックの全グラフが追跡している場合、true となります。|
 ||[getActiveChart()](/javascript/api/excel/excel.workbook#getActiveChart__)|ブックで現在アクティブになっているグラフを取得します。|
 ||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getActiveChartOrNullObject__)|ブックで現在アクティブになっているグラフを取得します。|
 ||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|ブックが `true` 複数のユーザーによって編集されている場合 (共同編集による) 場合に返します。|
 ||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getSelectedRanges__)|ブックから現在選択されている 1 つまたは複数の範囲を取得します。|
 ||[isDirty](/javascript/api/excel/excel.workbook#isDirty)|ブックが最後に保存された後に変更が行われた場合に指定します。|
-||[autoSave](/javascript/api/excel/excel.workbook#autoSave)|ブックが自動保存モードの場合に指定します。|
-||[calculationEngineVersion](/javascript/api/excel/excel.workbook#calculationEngineVersion)|Excel 計算エンジンのバージョンとして数字を返します。|
 ||[onAutoSaveSettingChanged](/javascript/api/excel/excel.workbook#onAutoSaveSettingChanged)|ブックで AutoSave 設定が変更された場合に発生します。|
 ||[previouslySaved](/javascript/api/excel/excel.workbook#previouslySaved)|ブックがローカルまたはオンラインで保存された場合に指定します。|
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#usePrecisionAsDisplayed)|ブックを表示桁数でのみ計算する場合、true となります。|
 |[WorkbookAutoSaveSettingChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|イベントの種類を取得します。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enableCalculation)|必要に応Excelワークシートを再計算する必要があるかどうかを決定します。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[autoFilter](/javascript/api/excel/excel.worksheet#autoFilter)|ワークシートの `AutoFilter` オブジェクトを表します。|
+||[enableCalculation](/javascript/api/excel/excel.worksheet#enableCalculation)|必要に応Excelワークシートを再計算する必要があるかどうかを決定します。|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findAll_text__criteria_)|指定された条件に基づいて、指定された文字列のすべての出現を検索し、1 つ以上の四角形の範囲で構成されるオブジェクト `RangeAreas` として返します。|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findAllOrNullObject_text__criteria_)|指定された条件に基づいて、指定された文字列のすべての出現を検索し、1 つ以上の四角形の範囲で構成されるオブジェクト `RangeAreas` として返します。|
 ||[getRanges(address?: string)](/javascript/api/excel/excel.worksheet#getRanges_address_)|アドレスまたは名前で指定された、四角形の範囲の 1 つ以上のブロックを表す `RangeAreas` オブジェクトを取得します。|
-||[autoFilter](/javascript/api/excel/excel.worksheet#autoFilter)|ワークシートの `AutoFilter` オブジェクトを表します。|
 ||[horizontalPageBreaks](/javascript/api/excel/excel.worksheet#horizontalPageBreaks)|ワークシートの水平改ページをまとめて取得します。|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheet#onFormatChanged)|フォーマットが特定のワークシートで変更されたときに発生します。|
 ||[pageLayout](/javascript/api/excel/excel.worksheet#pageLayout)|ワークシートの `PageLayout` オブジェクトを取得します。|
+||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.worksheet#replaceAll_text__replacement__criteria_)|現在のワークシート内で、指定された条件に基づき、指定された文字列を検索し、置換します。|
 ||[shapes](/javascript/api/excel/excel.worksheet#shapes)|ワークシート上のすべての Shape オブジェクトをまとめて返します。|
 ||[verticalPageBreaks](/javascript/api/excel/excel.worksheet#verticalPageBreaks)|ワークシートの垂直改ページをまとめて取得します。|
-||[replaceAll(text: string, replacement: string, criteria: Excel.ReplaceCriteria)](/javascript/api/excel/excel.worksheet#replaceAll_text__replacement__criteria_)|現在のワークシート内で、指定された条件に基づき、指定された文字列を検索し、置換します。|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[details](/javascript/api/excel/excel.worksheetchangedeventargs#details)|変更の詳細に関する情報を表します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onChanged](/javascript/api/excel/excel.worksheetcollection#onChanged)|ブックのワークシートが変更されたときに発生します。|
 ||[onFormatChanged](/javascript/api/excel/excel.worksheetcollection#onFormatChanged)|ブック内のワークシートの形式が変更された場合に発生します。|

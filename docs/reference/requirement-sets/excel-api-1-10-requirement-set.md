@@ -4,12 +4,12 @@ description: ExcelApi 1.10 要件セットの詳細。
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 768902eaac53c67d3aabc35ddb8d96f297d798de
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 85535a0ac3291e9e227aa45e72e80333e4a666e9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150205"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367298"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>JavaScript API 1.10 Excel新機能
 
@@ -28,12 +28,12 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|コメントのコンテンツ。|
+|[Comment](/javascript/api/excel/excel.comment)|[authorEmail](/javascript/api/excel/excel.comment#authorEmail)|コメント作成者のメール アドレスを取得します。|
+||[authorName](/javascript/api/excel/excel.comment#authorName)|コメント作成者の名前を取得します。|
+||[content](/javascript/api/excel/excel.comment#content)|コメントのコンテンツ。|
+||[creationDate](/javascript/api/excel/excel.comment#creationDate)|コメントの作成日時を取得します。|
 ||[delete()](/javascript/api/excel/excel.comment#delete__)|コメントとすべての接続済み返信を削除します。|
 ||[getLocation()](/javascript/api/excel/excel.comment#getLocation__)|このコメントがあるセルを取得します。|
-||[authorEmail](/javascript/api/excel/excel.comment#authorEmail)|コメント作成者のメール アドレスを取得します。|
-||[authorName](/javascript/api/excel/excel.comment#authorName)|コメント作成者の名前を取得します。|
-||[creationDate](/javascript/api/excel/excel.comment#creationDate)|コメントの作成日時を取得します。|
 ||[id](/javascript/api/excel/excel.comment#id)|コメント識別子を指定します。|
 ||[replies](/javascript/api/excel/excel.comment#replies)|コメントに関連付けられている返信オブジェクトのコレクションを表します。|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|指定したセルで、指定した内容の新しいコメントを作成します。|
@@ -43,13 +43,13 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getItemByCell_cellAddress_)|指定したセルからコメントを取得します。|
 ||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getItemByReplyId_replyId_)|指定した返信が接続されているコメントを取得します。|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|コメント返信のコンテンツ。|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[authorEmail](/javascript/api/excel/excel.commentreply#authorEmail)|コメント返信作成者のメール アドレスを取得します。|
+||[authorName](/javascript/api/excel/excel.commentreply#authorName)|コメント返信作成者の名前を取得します。|
+||[content](/javascript/api/excel/excel.commentreply#content)|コメント返信のコンテンツ。|
+||[creationDate](/javascript/api/excel/excel.commentreply#creationDate)|コメント返信の作成日時を取得します。|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete__)|コメント返信を削除します。|
 ||[getLocation()](/javascript/api/excel/excel.commentreply#getLocation__)|このコメント返信があるセルを取得します。|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getParentComment__)|この返信の親コメントを取得します。|
-||[authorEmail](/javascript/api/excel/excel.commentreply#authorEmail)|コメント返信作成者のメール アドレスを取得します。|
-||[authorName](/javascript/api/excel/excel.commentreply#authorName)|コメント返信作成者の名前を取得します。|
-||[creationDate](/javascript/api/excel/excel.commentreply#creationDate)|コメント返信の作成日時を取得します。|
 ||[id](/javascript/api/excel/excel.commentreply#id)|コメント返信識別子を指定します。|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add_content__contentType_)|コメントのコメント返信を作成します。|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getCount__)|コレクションのコメント返信数を取得します。|
@@ -69,13 +69,13 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setDefault_newDefaultStyle_)|親オブジェクトのスコープで使用する既定のピボットテーブル スタイルを設定します。|
 |[Range](/javascript/api/excel/excel.range)|[group(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#group_groupOption_)|アウトラインの列と行をグループ分けします。|
-||[hideGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|行または列グループの詳細を非表示にします。|
 ||[height](/javascript/api/excel/excel.range#height)|範囲の上端から範囲の下端までの 100% ズームの距離をポイントで返します。|
+||[hideGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|行または列グループの詳細を非表示にします。|
 ||[left](/javascript/api/excel/excel.range#left)|ワークシートの左側から範囲の左端までの距離をポイントで返します。100% ズームの場合。|
-||[top](/javascript/api/excel/excel.range#top)|ワークシートの上端から範囲の上端までの 100% ズームの距離をポイントで返します。|
-||[width](/javascript/api/excel/excel.range#width)|範囲の左端から範囲の右端までの距離をポイントで返します。100% ズームの場合。|
 ||[showGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#showGroupDetails_groupOption_)|行または列グループの詳細を表示します。|
+||[top](/javascript/api/excel/excel.range#top)|ワークシートの上端から範囲の上端までの 100% ズームの距離をポイントで返します。|
 ||[ungroup(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#ungroup_groupOption_)|アウトラインの列と行のグループを解除します。|
+||[width](/javascript/api/excel/excel.range#width)|範囲の左端から範囲の右端までの距離をポイントで返します。100% ズームの場合。|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyTo_destinationSheet_)|オブジェクトをコピーして貼り付 `Shape` けます。|
 ||[placement](/javascript/api/excel/excel.shape#placement)|オブジェクトがその下のセルに接続されている方法を表します。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|スライサーのキャプションを表します。|
@@ -83,25 +83,25 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[delete()](/javascript/api/excel/excel.slicer#delete__)|スライサーを削除します。|
 ||[getSelectedItems()](/javascript/api/excel/excel.slicer#getSelectedItems__)|選択されたアイテムのキーの配列を返します。|
 ||[height](/javascript/api/excel/excel.slicer#height)|スライサーの高さ (ポイント数) を表します。|
-||[left](/javascript/api/excel/excel.slicer#left)|スライサーの左側からワークシートの左までの距離を表します (ポイント数)。|
-||[name](/javascript/api/excel/excel.slicer#name)|スライサーの名前を表します。|
 ||[id](/javascript/api/excel/excel.slicer#id)|スライサーの一意の ID を表します。|
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isFilterCleared)|値は `true` 、スライサーに現在適用されているフィルターすべてがクリアされている場合です。|
-||[slicerItems](/javascript/api/excel/excel.slicer#slicerItems)|スライサーの一部であるスライサー アイテムのコレクションを表します。|
-||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|スライサーを含んでいるワークシートを表します。|
+||[left](/javascript/api/excel/excel.slicer#left)|スライサーの左側からワークシートの左までの距離を表します (ポイント数)。|
+||[name](/javascript/api/excel/excel.slicer#name)|スライサーの名前を表します。|
 ||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectItems_items_)|キーに基づいてスライサー アイテムを選択します。|
+||[slicerItems](/javascript/api/excel/excel.slicer#slicerItems)|スライサーの一部であるスライサー アイテムのコレクションを表します。|
 ||[sortBy](/javascript/api/excel/excel.slicer#sortBy)|スライサーに含まれるアイテムの並べ替え順序を表します。|
 ||[style](/javascript/api/excel/excel.slicer#style)|スライサー スタイルを表す定数値。|
 ||[top](/javascript/api/excel/excel.slicer#top)|スライサーの上端からワークシートの上端までの距離を表します (ポイント数)。|
 ||[width](/javascript/api/excel/excel.slicer#width)|スライサーの幅 (ポイント数) を表します。|
+||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|スライサーを含んでいるワークシートを表します。|
 |[SlicerCollection](/javascript/api/excel/excel.slicercollection)|[add(slicerSource: string \| PivotTable \| Table, sourceField: string \| PivotField \| number \| TableColumn, slicerDestination?: string \| Worksheet)](/javascript/api/excel/excel.slicercollection#add_slicerSource__sourceField__slicerDestination_)|ブックに新しいスライサーを追加します。|
 ||[getCount()](/javascript/api/excel/excel.slicercollection#getCount__)|コレクションに含まれるスライサーの数を返します。|
 ||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getItem_key_)|名前または ID を使用してスライサー オブジェクトを取得します。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getItemAt_index_)|コレクション内の位置に基づいてスライサーを取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getItemOrNullObject_key_)|名前または ID を使用してスライサーを取得します。|
 ||[items](/javascript/api/excel/excel.slicercollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isSelected)|値は `true` 、スライサー アイテムが選択されている場合です。|
-||[hasData](/javascript/api/excel/excel.sliceritem#hasData)|値は `true` 、スライサー アイテムにデータがある場合です。|
+|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[hasData](/javascript/api/excel/excel.sliceritem#hasData)|値は `true` 、スライサー アイテムにデータがある場合です。|
+||[isSelected](/javascript/api/excel/excel.sliceritem#isSelected)|値は `true` 、スライサー アイテムが選択されている場合です。|
 ||[key](/javascript/api/excel/excel.sliceritem#key)|スライサー アイテムを表す一意の値を表します。|
 ||[name](/javascript/api/excel/excel.sliceritem#name)|ユーザー UI に表示されるタイトルExcelします。|
 |[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getCount__)|スライサーのスライサー アイテム数を返します。|
@@ -142,9 +142,9 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getItemOrNullObject_name_)|名前で `TimelineStyle` 取得します。|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setDefault_newDefaultStyle_)|親オブジェクトのスコープで使用する既定のタイムライン スタイルを設定します。|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|ブックで現在アクティブになっているスライサーを取得します。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[comments](/javascript/api/excel/excel.workbook#comments)|ブックに関連付けられたコメントのコレクションを表します。|
+||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|ブックで現在アクティブになっているスライサーを取得します。|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getActiveSlicerOrNullObject__)|ブックで現在アクティブになっているスライサーを取得します。|
-||[comments](/javascript/api/excel/excel.workbook#comments)|ブックに関連付けられたコメントのコレクションを表します。|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivotTableStyles)|ブックに関連付けられている PivotTableStyle のコレクションを表します。|
 ||[slicerStyles](/javascript/api/excel/excel.workbook#slicerStyles)|ブックに関連付けられている SlicerStyle のコレクションを表します。|
 ||[slicers](/javascript/api/excel/excel.workbook#slicers)|ブックに関連付けられたスライサーのコレクションを表します。|
@@ -154,8 +154,8 @@ ExcelApi 1.10 では、コメント、アウトライン、スライサーなど
 ||[onColumnSorted](/javascript/api/excel/excel.worksheet#onColumnSorted)|1 つ以上の列を並べ替えたときに発生します。|
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onRowSorted)|1 つ以上の行を並べ替えたときに発生します。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onSingleClicked)|ワークシートで左クリック/タップ操作が行われると発生します。|
-||[slicers](/javascript/api/excel/excel.worksheet#slicers)|ワークシートの一部であるスライサーのコレクションを返します。|
 ||[showOutlineLevels(rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_)|行または列のグループをアウトライン レベルで表示します。|
+||[slicers](/javascript/api/excel/excel.worksheet#slicers)|ワークシートの一部であるスライサーのコレクションを返します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#onColumnSorted)|1 つ以上の列を並べ替えたときに発生します。|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onRowSorted)|1 つ以上の行を並べ替えたときに発生します。|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onSingleClicked)|ワークシート コレクションで左クリック/タップ操作が実行された場合に発生します。|

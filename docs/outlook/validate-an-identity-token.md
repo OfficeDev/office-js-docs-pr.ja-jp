@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
-ms.date: 07/07/2020
+ms.date: 10/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11cae1d773ea17b5e1dc06dcc57097d474162d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c22c174e6783a53e856e11e4338d0168cb974a20
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149835"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367482"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
@@ -47,7 +47,15 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 
 ### <a name="verify-the-domain"></a>ドメインを確認する
 
-このセクションで前述した検証ロジックを実装する場合は、クレームのドメインがユーザーの自動検出ドメインと一致するように要求 `amurl` する必要があります。 これを行うには、自動検出を使用または実装する必要があります。 詳細については、「自動検出」を使用して開始[Exchange。](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)
+前のセクションで説明した検証ロジックを実装する場合は、クレームのドメインがユーザーの自動検出ドメインと一致するように要求 `amurl` する必要があります。 これを行うには、自動検出を使用または実装する必要[Exchange。](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)
+
+- たとえばExchange Online、既知のドメイン (、または地域固有または特殊なクラウド ( Office 365 URL と IP アドレス範囲) に `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1) 属しているか[確認します](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)。
+
+- アドイン サービスにユーザーのテナントを持つ既存の構成がある場合は、これが信頼される場合に `amurl` 確立できます。
+
+- ハイブリッド展開[Exchange、OAuth](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)ベースの自動検出を使用して、ユーザーに必要なドメインを確認します。 ただし、ユーザーは自動検出フローの一部として認証する必要がある一方で、アドインはユーザーの資格情報を収集して基本認証を行う必要があります。
+
+アドインでこれらのオプションの使用を確認できない場合は、アドインのワークフローに認証が必要な場合は、ユーザーに適切な通知を受け取ってアドインを正常にシャットダウンできます。 `amurl`
 
 ## <a name="validate-the-identity-token-signature"></a>ID トークンの署名を検証する
 
@@ -102,7 +110,7 @@ JWT に必要なクレームが含まれていることを確認したら、ト�
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Exchange アカウントの一意 ID を計算する
 
-認証メタデータ ドキュメントの URL とアカウントExchange識別子を連結することで、Exchangeアカウントの一意の識別子を作成できます。 この一意の ID を持っている場合は、その ID を使用して Outlook アドインの Web サービス用のシングル サインオン (SSO) システムを作成できます。 SSO の一意の ID の使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
+認証メタデータ ドキュメント URL とアカウントExchange識別子を連結して、Exchangeアカウントの一意の識別子を作成します。 この一意の識別子を使用して、アドイン Web サービス用のシングル サインオン (SSO) システムOutlook作成します。 SSO の一意の ID の使用の詳細については、「[Exchange の ID トークンを使用してユーザーを認証する](authenticate-a-user-with-an-identity-token.md)」を参照してください。
 
 ## <a name="use-a-library-to-validate-the-token"></a>ライブラリを使用してトークンを検証する
 

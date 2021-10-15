@@ -4,12 +4,12 @@ description: ExcelApi 1.11 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f340a7f69cfbbb0c87e937e7d9d1043929a94c9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154054"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367447"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel新機能
 
@@ -35,8 +35,8 @@ ExcelApi 1.11 では、コメントとブック レベルのコントロール (
 ||[ThousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|数値の 10 進数の左側に数字のグループを区切る文字列を取得します。|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|ユーザーのシステム区切り記号が有効Excel指定します。|
 |[コメント](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|コメントに記載されているエンティティ (人など) を取得します。|
-||[richContent](/javascript/api/excel/excel.comment#richContent)|リッチ コメント コンテンツ (コメントのメンションなど) を取得します。|
 ||[解決済み](/javascript/api/excel/excel.comment#resolved)|コメント スレッドの状態。|
+||[richContent](/javascript/api/excel/excel.comment#richContent)|リッチ コメント コンテンツ (コメントのメンションなど) を取得します。|
 ||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|特別に書式設定された文字列とメンションの一覧を使用してコメント コンテンツを更新します。|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: CommentRichContent \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|指定したセルで、指定した内容の新しいコメントを作成します。|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|コメントに記載されているエンティティの電子メール アドレス。|
