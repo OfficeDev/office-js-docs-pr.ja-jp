@@ -1,2 +1,2 @@
 > [!NOTE]
-> `console.log` の出力を表示するには、JavaScript コンソール用の開発者ツール セットを別途用意する必要があります。 F12 ツールと Microsoft Edge DevTools の詳細については、「[Windows で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)」を参照してください。
+> `console.log` の出力を表示するには、JavaScript コンソール用の開発者ツール セットを別途用意する必要があります。 F12 ツールと Microsoft Edge DevTools の詳細については、「[Internet Explorer 用の開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-tools-ie.md)」を参照するか、「[Edge Legacy 用の開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-devtools-edge-legacy.md)」を参照してください。
