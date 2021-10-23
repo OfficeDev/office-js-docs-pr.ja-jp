@@ -3,12 +3,12 @@ title: Internet Explorer 11 テスト
 description: 11 でOfficeアドインをテストInternet Explorerします。
 ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa6a35565fdca28eab9734ccde9fc8fbb2e8270
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: e64ce43b4b105b54ed5fcf3fa260ef7f81a04520
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250519"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537633"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
@@ -69,5 +69,5 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
 
 * [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 * [テスト用に Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [アプリの開発者ツールを使用してアドインをデバッグWindows](debug-add-ins-using-f12-developer-tools-on-windows.md)
+* [開発者向けツールを使用してアドインをデバッグInternet Explorer](debug-add-ins-using-f12-tools-ie.md)
 * [作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)

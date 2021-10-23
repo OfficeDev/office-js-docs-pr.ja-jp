@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API のオンライン専用要件セット
 description: ExcelApiOnline 要件セットの詳細。
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367328"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537591"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API のオンライン専用要件セット
 
@@ -29,6 +29,7 @@ ms.locfileid: "60367328"
 |:--- |:--- |:--- |
 | リンクされたブック | ブック間のリンクを管理します。ブックリンクの更新と破損のサポートを含む。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)、 [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | 名前付きシート ビュー | ユーザーごとのワークシート ビューをプログラムで制御できます。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview)、 [NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
+| ワークシートの移動イベント | コレクション内でワークシートを移動する場合、ワークシートの位置、変更元を検出します。 | [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection), [WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs) |
 
 ## <a name="recommended-usage"></a>推奨される使用法
 

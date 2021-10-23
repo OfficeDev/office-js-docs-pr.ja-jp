@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 09/22/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 43007ece67d85f584a682b7503f1b59e0d19ad5b
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990706"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537507"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -19,9 +19,9 @@ ms.locfileid: "59990706"
 
 ## <a name="sideload-automatically"></a>サイドロードが自動的に実行される
 
-Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)ジェネレーターを使用して Outlook アドインを作成した場合は、コマンド ラインを使用してサイドローディングを行うのが最適です。 これにより、1 つのコマンドでサポートされているすべてのデバイスでツールとサイドロードを利用できます。
+Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)ジェネレーターを使用して Outlook アドインを作成した場合は、サイドローディングは Windows のコマンド ラインを通じて行うのが最善です。 これにより、1 つのコマンドでサポートされているすべてのデバイスでツールとサイドロードを利用できます。
 
-1. コマンド ラインを使用して、Yeoman が生成したアドイン プロジェクトのルート ディレクトリに移動します。 コマンド`npm start`を実行します。
+1. このWindowsコマンド プロンプトを開き、Yeoman が生成したアドイン プロジェクトのルート ディレクトリに移動します。 コマンド`npm start`を実行します。
 
 1. ユーザー Outlookは、デスクトップ コンピューター上のOutlookに自動的にサイドロードされます。 アドインをサイドロードしようとして、マニフェスト ファイルの名前と場所を一覧に表示するダイアログが表示されます。 **[OK]** を選択し、マニフェストを登録します。
 
@@ -89,7 +89,7 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 ### <a name="outlook-on-the-desktop"></a>Outlookの設定
 
-#### <a name="outlook-2016-or-later"></a>Outlook 2016以降
+### <a name="outlook-2016-or-later"></a>Outlook 2016以降
 
 1. [Outlook 2016または Mac で、Windows以降を開きます。
 
@@ -116,7 +116,7 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
-#### <a name="outlook-2013"></a>Outlook 2013
+### <a name="outlook-2013"></a>Outlook 2013
 
 1. 2013 Outlook 2013 を開Windows。
 

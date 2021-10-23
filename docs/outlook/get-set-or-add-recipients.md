@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
-ms.date: 12/10/2019
+ms.date: 10/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4ad1af913362965fd4e3bfe95918a6a9b10989
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c85a49ea3c409b64e0bd62f3eae3aa79dd614568
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154114"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537458"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
@@ -54,8 +54,9 @@ Office JavaScript API では、予定 (オプションの **Attendees** およ�
 
 メソッドは非同期なので、受信者の取得に依存する後続のアクションがある場合は、非同期呼び出しが正常に完了した場合にのみ、対応するコールバック メソッドでこのようなアクションを開始するコードを整理する必要があります。 `getAsync`
 
-
-
+> [!IMPORTANT]
+> Outlook on the web、連絡先またはプロファイル カードから連絡先の電子メール アドレス リンクをアクティブ化して新しいメッセージを作成した場合、アドインの呼び出しは現在、関連付けられたオブジェクトのプロパティの値を返す必要があります。 `Recipients.getAsync` `displayName` `EmailAddressDetails`
+> 詳細については、関連する問題[を参照GitHubしてください](https://github.com/OfficeDev/office-js-docs-pr/issues/2962)。
 
 ```js
 var item;

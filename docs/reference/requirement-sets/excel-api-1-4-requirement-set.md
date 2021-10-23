@@ -4,12 +4,12 @@ description: ExcelApi 1.4 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 297f0d2a9c892800a5f26ecd29be0c7587bc52fc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8a38d45a73560cade580cf5f2f9a0892790b38d
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153004"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537479"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 の新機能
 
@@ -76,7 +76,7 @@ worksheet.getItemOrNullObject("itemName")
 |[設定](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|設定を削除します。|
 ||[key](/javascript/api/excel/excel.setting#key)|設定の ID を表すキー。|
 ||[value](/javascript/api/excel/excel.setting#value)|この設定に格納されている値を表します。|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number boolean Date Array \| \| \| <any> \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|指定した設定をブックに設定または追加します。|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number boolean Date Array \| \| \| \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|指定した設定をブックに設定または追加します。|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getCount__)|コレクション内の設定の数を取得します。|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getItem_key_)|キーを使用して設定エントリを取得します。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getItemOrNullObject_key_)|キーを使用して設定エントリを取得します。|
