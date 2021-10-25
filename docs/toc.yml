@@ -267,8 +267,10 @@ items:
                 href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
               - name: 作業ウィンドウからデバッガーをアタッチする
                 href: testing/attach-debugger-from-task-pane.md
-              - name: 開発者ツールを使用したデバッグ
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
+              - name: Internet Explorer の開発者ツールを使用してデバッグする
+                href: testing/debug-add-ins-using-f12-tools-ie.md
+              - name: Edge レガシー用の開発者ツールを使用してデバッグする
+                href: testing/debug-add-ins-using-devtools-edge-legacy.md
               - name: Edge Chromium WebView2 を使用してデバッグする
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
@@ -576,6 +578,8 @@ items:
               - name: ExcelApi オンラインのみの要件セット
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: ExcelApi 1.14 要件セット
+                href: reference/requirement-sets/excel-api-1-14-requirement-set.md
               - name: ExcelApi 1.13 要件セット
                 href: reference/requirement-sets/excel-api-1-13-requirement-set.md
                 displayName: Excel

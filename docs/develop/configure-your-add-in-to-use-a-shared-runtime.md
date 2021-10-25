@@ -4,12 +4,12 @@ title: 共有 JavaScript ランタイムを使用するように Office アド�
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1c80247346c6303c552558894357db71669a9376
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138473"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537465"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -224,9 +224,9 @@ Windows 上の Office の場合、共有ランタイムは、「[Office アド�
 
 ![Excel の共有ブラウザー ランタイムで実行されているカスタム関数、作業ウィンドウ、およびリボン ボタンの図。](../images/custom-functions-in-browser-runtime.png)
 
-### <a name="debugging"></a>デバッグ
+### <a name="debug"></a>デバッグ
 
-共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに開発者ツールを使用する必要があります。 さらに詳しい情報については、「[Windows で開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)」を参照してください。
+共有ランタイムを使用している場合、この時点では、Windows の Excel でカスタム関数をデバッグするために Visual Studio Code を使用することはできません。 代わりに開発者ツールを使用する必要があります。 詳細については、「[Internet Explorer 用の開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-f12-tools-ie.md)」を参照するか、「[Edge レガシー用の開発者ツールを使用してアドインをデバッグする](../testing/debug-add-ins-using-devtools-edge-legacy.md)」を参照してください。
 
 ### <a name="multiple-task-panes"></a>複数の作業ウィンドウ
 

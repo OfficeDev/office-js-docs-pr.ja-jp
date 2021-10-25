@@ -3,12 +3,12 @@ title: Office アドインのテストとデバッグ
 description: Office アドインのテストとデバッグを行う方法について説明します。
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 1a47c9e5b4d45dc2a20f7fd5dd04a384eea5cba3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 77f1fcf47689d9a31611e48d6235f5c8893dcfe7
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138598"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537549"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Office アドインのテストとデバッグ
 
@@ -43,13 +43,10 @@ Office アドインは主要なプラットフォームで実行されるため�
 Office アドインをデバッグする手順も、プラットフォームによって異なります。次のそれぞれの記事では、特定のプラットフォームで Office アドインをデバッグする方法について説明します。
 
 - [(Windows で) 作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)
-
-- [Windows 10 で F12 開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-developer-tools-on-windows.md)
-
+- [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
+- [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
-
 - [Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)
-
 - [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 
 ## <a name="validate-an-office-add-in-manifest"></a>Office アドイン マニフェストの検証

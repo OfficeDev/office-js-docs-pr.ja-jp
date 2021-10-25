@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250540"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537584"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -27,7 +27,7 @@ Excel アドインは、Windows 上の Office 2016 以降の Office や Micrsoft
 |  要件セット  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](excel-preview-apis.md)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://insider.office.com)に参加する必要があります)。 |
-| [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | N/A | 該当なし | 最新 ([要件セットのページ](excel-api-online-requirement-set.md)を参照) |
+| [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | 該当なし | 該当なし | 最新 ([要件セットのページ](excel-api-online-requirement-set.md)を参照) |
 | [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | バージョン 2102 (ビルド 13801.20738) 以降 | 16.50 以降 | 16.50 以降 | 2021 年 6 月 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | バージョン 2008 (ビルド 13127.20408) 以降 | 16.40 以降 | 16.40 以降 | 2020 年 9 月 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | バージョン 2002 (ビルド 12527.20470) 以降 | 16.35 以降 | 16.33 以降 | 2020 年 5 月 |
@@ -45,7 +45,7 @@ Excel アドインは、Windows 上の Office 2016 以降の Office や Micrsoft
 > [!NOTE]
 > サブスクリプション版以外の Office でサポートされる要件セットは次のとおりです。
 >
-> - Office 2021 では ExcelApi 1.13 以前がサポートされています。
+> - Office 2021 では ExcelApi 1.14 以前がサポートされています。
 > - Office 2019 では ExcelApi 1.8 以前がサポートされています。
 > - Office 2016 では ExcelApi 1.1 要求セットのみがサポートされています。
 
