@@ -1,18 +1,21 @@
 ---
 title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
-ms.date: 05/17/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a94e829b1656d7c3a33ff51918834c7ea6913967
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 57814ab7da8faec3cc60f943ef13db12de01dc17
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237498"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681098"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 
 Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+
+> [!NOTE]
+> このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-110"></a>1.10 の新機能
 

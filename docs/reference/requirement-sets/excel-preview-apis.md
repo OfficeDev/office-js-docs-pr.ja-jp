@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: JavaScript API のExcel詳細。
-ms.date: 10/14/2021
+ms.date: 11/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: a7f1c81f75243619f562d901cb78e16bcba676d2
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: f62b71532f323ad17f541979d3956f217ab5d07d
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537563"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60683785"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -21,8 +21,8 @@ ms.locfileid: "60537563"
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
-| カスタム データ型 | 書式付き番号と web Excelのサポートを含む、既存のデータ型の拡張。 | [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
-| カスタム データ型のエラー | カスタム データ型をサポートするエラー オブジェクト。 | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue , NumErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [RefErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue) [](/javascript/api/excel/excel.valueerrorcellvalue)|
+| [データ型](../../excel/excel-data-types-overview.md) | 書式付き番号と web Excelのサポートを含む、既存のデータ型の拡張。 | [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue), [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
+| [データ型のエラー](../../excel/excel-data-types-concepts.md#improved-error-support) | 拡張データ型をサポートするエラー オブジェクト。 | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue , NumErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [refErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue) [](/javascript/api/excel/excel.spillerrorcellvalue)|
 | ドキュメント タスク | コメントをユーザーに割り当てられたタスクに変換します。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | ID | 表示名や電子メール アドレスなど、ユーザー ID を管理します。 | [Identity](/javascript/api/excel/excel.identity)、 [IdentityCollection](/javascript/api/excel/excel.identitycollection)、 [IdentityEntity](/javascript/api/excel/excel.identityentity) |
 | リンクされたデータ型 | 外部ソースからデータに接続されたデータExcelサポートを追加します。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype), [LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs), [LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection) |
@@ -49,28 +49,39 @@ ms.locfileid: "60537563"
 ||[items](/javascript/api/excel/excel.alloweditrangecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[pauseProtection(password: string)](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|特定のセッションでユーザーに対して指定されたパスワードを持つコレクション内のすべてのオブジェクトに対するワークシート保護 `AllowEditRange` を一時停止します。|
 |[AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions)|[password](/javascript/api/excel/excel.alloweditrangeoptions#password)|に関連付けられている `AllowEditRange` パスワード。|
-|[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|の種類を表します `BlockedErrorCellValue` 。|
+|[ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)|[basicType](/javascript/api/excel/excel.arraycellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.arraycellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[要素](/javascript/api/excel/excel.arraycellvalue#elements)|配列の要素を表します。|
+||[type](/javascript/api/excel/excel.arraycellvalue#type)|このセル値の種類を表します。|
+|[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[basicType](/javascript/api/excel/excel.blockederrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.blockederrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|の種類を表します `BlockedErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.blockederrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.blockederrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.blockederrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.blockederrorcellvalue#type)|このセル値の種類を表します。|
-|[BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)|[プリミティブ](/javascript/api/excel/excel.booleancellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.booleancellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)|[basicType](/javascript/api/excel/excel.booleancellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.booleancellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.booleancellvalue#type)|このセル値の種類を表します。|
-|[BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.busyerrorcellvalue#errorSubType)|の種類を表します `BusyErrorCellValue` 。|
+|[BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)|[basicType](/javascript/api/excel/excel.busyerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.busyerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.busyerrorcellvalue#errorSubType)|の種類を表します `BusyErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.busyerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.busyerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.busyerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.busyerrorcellvalue#type)|このセル値の種類を表します。|
-|[CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|の種類を表します `CalcErrorCellValue` 。|
+|[CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)|[basicType](/javascript/api/excel/excel.calcerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.calcerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|の種類を表します `CalcErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.calcerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.calcerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.calcerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.calcerrorcellvalue#type)|このセル値の種類を表します。|
 |[CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)|[licenseAddress](/javascript/api/excel/excel.cellvalueattributionattributes#licenseAddress)|このプロパティの使用方法を説明するライセンスまたはソースの URL を表します。|
 ||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|このプロパティを管理するライセンスの名前を表します。|
 ||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|ソースの URL を表します `CellValue` 。|
 ||[sourceText](/javascript/api/excel/excel.cellvalueattributionattributes#sourceText)|のソースの名前を表します `CellValue` 。|
+|[CellValuePropertyMetadata](/javascript/api/excel/excel.cellvaluepropertymetadata)|[属性](/javascript/api/excel/excel.cellvaluepropertymetadata#attribution)|このプロパティを使用するソース要件とライセンス要件を説明する属性情報を表します。|
+||[excludeFrom](/javascript/api/excel/excel.cellvaluepropertymetadata#excludeFrom)|このプロパティが除外される機能を表します。|
+||[サブラベル](/javascript/api/excel/excel.cellvaluepropertymetadata#sublabel)|カード ビューに表示されるこのプロパティのサブラベルを表します。|
+|[CellValuePropertyMetadataExclusions](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions)|[autoComplete](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#autoComplete)|True は、プロパティがオートコンプリートによって表示されるプロパティから除外されます。|
+||[calcCompare](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#calcCompare)|True は、プロパティが再計算時にセルの値を比較するために使用されるプロパティから除外されます。|
+||[cardView](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#cardView)|True は、プロパティがカード ビューで表示されるプロパティから除外されます。|
+||[dotNotation](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#dotNotation)|True は、プロパティが FIELDVALUE 関数を介してアクセスできるプロパティから除外されます。|
 |[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[description](/javascript/api/excel/excel.cellvalueproviderattributes#description)|ロゴが指定されていない場合にカード ビューで使用されるプロバイダーの説明プロパティを表します。|
 ||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoSourceAddress)|カード ビューでロゴとして使用される画像をダウンロードするために使用される URL を表します。|
 ||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoTargetAddress)|ユーザーがカード ビューのロゴ要素をクリックした場合のナビゲーション ターゲットの URL を表します。|
@@ -80,14 +91,14 @@ ms.locfileid: "60537563"
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assignTask_assignee_)|コメントに添付されたタスクを、特定のユーザーに唯一の割り当て先として割り当てる。|
 ||[getTask()](/javascript/api/excel/excel.commentreply#getTask__)|このコメント返信のスレッドに関連付けられているタスクを取得します。|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|このコメント返信のスレッドに関連付けられているタスクを取得します。|
-|[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|の種類を表します `ConnectErrorCellValue` 。|
+|[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[basicType](/javascript/api/excel/excel.connecterrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.connecterrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|の種類を表します `ConnectErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.connecterrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.connecterrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.connecterrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.connecterrorcellvalue#type)|このセル値の種類を表します。|
-|[Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)|[errorType](/javascript/api/excel/excel.div0errorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.div0errorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.div0errorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)|[basicType](/javascript/api/excel/excel.div0errorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.div0errorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.div0errorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.div0errorcellvalue#type)|このセル値の種類を表します。|
 |[DocumentTask](/javascript/api/excel/excel.documenttask)|[assignees](/javascript/api/excel/excel.documenttask#assignees)|タスクの割り当て人のコレクションを返します。|
 ||[変更点](/javascript/api/excel/excel.documenttask#changes)|タスクの変更レコードを取得します。|
@@ -124,24 +135,30 @@ ms.locfileid: "60537563"
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#dueDateTime)|タスクが期限の日時を取得します。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startDateTime)|タスクを開始する日付と時刻を取得します。|
-|[DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)|[プリミティブ](/javascript/api/excel/excel.doublecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.doublecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)|[basicType](/javascript/api/excel/excel.doublecellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.doublecellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.doublecellvalue#type)|このセル値の種類を表します。|
-|[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[プリミティブ](/javascript/api/excel/excel.emptycellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.emptycellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[basicType](/javascript/api/excel/excel.emptycellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.emptycellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.emptycellvalue#type)|このセル値の種類を表します。|
-|[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[errorSubType](/javascript/api/excel/excel.fielderrorcellvalue#errorSubType)|の種類を表します `FieldErrorCellValue` 。|
+|[EntityCellValue](/javascript/api/excel/excel.entitycellvalue)|[basicType](/javascript/api/excel/excel.entitycellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.entitycellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[properties: { [key: string]: CellValue & { propertyMetadata](/javascript/api/excel/excel.entitycellvalue#properties)|このエンティティのプロパティとそのメタデータを表します。|
+||[propertyMetadata](/javascript/api/excel/excel.entitycellvalue#propertyMetadata)||
+||[text](/javascript/api/excel/excel.entitycellvalue#text)|この値を持つセルがレンダリングされる場合に表示されるテキストを表します。|
+||[type](/javascript/api/excel/excel.entitycellvalue#type)|このセル値の種類を表します。|
+|[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[basicType](/javascript/api/excel/excel.fielderrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.fielderrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.fielderrorcellvalue#errorSubType)|の種類を表します `FieldErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.fielderrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.fielderrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.fielderrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.fielderrorcellvalue#type)|このセル値の種類を表します。|
-|[FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)|[numberFormat](/javascript/api/excel/excel.formattednumbercellvalue#numberFormat)|この値の表示に使用される数値書式指定文字列を返します。|
-||[プリミティブ](/javascript/api/excel/excel.formattednumbercellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.formattednumbercellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)|[basicType](/javascript/api/excel/excel.formattednumbercellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.formattednumbercellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[numberFormat](/javascript/api/excel/excel.formattednumbercellvalue#numberFormat)|この値の表示に使用される数値書式指定文字列を返します。|
 ||[type](/javascript/api/excel/excel.formattednumbercellvalue#type)|このセル値の種類を表します。|
-|[GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)|[errorType](/javascript/api/excel/excel.gettingdataerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)|[basicType](/javascript/api/excel/excel.gettingdataerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.gettingdataerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.gettingdataerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.gettingdataerrorcellvalue#type)|このセル値の種類を表します。|
 |[ID](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|ユーザーの表示名を表します。|
 ||[email](/javascript/api/excel/excel.identity#email)|ユーザーの電子メール アドレスを表します。|
@@ -173,22 +190,22 @@ ms.locfileid: "60537563"
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|ID によってリンクされたデータ型を取得します。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 ||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|コレクション内のすべてのリンクされたデータ型を更新する要求を行います。|
-|[NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)|[errorType](/javascript/api/excel/excel.naerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.naerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.naerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
-||[type](/javascript/api/excel/excel.naerrorcellvalue#type)|このセル値の種類を表します。|
-|[NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)|[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.nameerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.nameerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)|[basicType](/javascript/api/excel/excel.nameerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.nameerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.nameerrorcellvalue#type)|このセル値の種類を表します。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|名前を使用してシート ビューを取得します。|
-|[NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)|[errorType](/javascript/api/excel/excel.nullerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.nullerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.nullerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)|[basicType](/javascript/api/excel/excel.notavailableerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.notavailableerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.notavailableerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
+||[type](/javascript/api/excel/excel.notavailableerrorcellvalue#type)|このセル値の種類を表します。|
+|[NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)|[basicType](/javascript/api/excel/excel.nullerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.nullerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.nullerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.nullerrorcellvalue#type)|このセル値の種類を表します。|
-|[NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)|[errorType](/javascript/api/excel/excel.numerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.numerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.numerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)|[basicType](/javascript/api/excel/excel.numerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.numerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorType](/javascript/api/excel/excel.numerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.numerrorcellvalue#type)|このセル値の種類を表します。|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|データ階層と、それぞれの階層の行および列の項目に基づいて、ピボットテーブル内の一意のセルを取得します。 |
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|ピボットテーブルに適用されるスタイル。|
@@ -197,10 +214,10 @@ ms.locfileid: "60537563"
 ||[getDataSourceType()](/javascript/api/excel/excel.pivottable#getDataSourceType__)|ピボットテーブルのデータ ソースの種類を取得します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|コレクション内の最初のピボットテーブルを取得します。|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|同じワークシートまたは複数のワークシート内のセルのすべての従属セルを含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
-|[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|の種類を表します `RefErrorCellValue` 。|
+|[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[basicType](/javascript/api/excel/excel.referrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.referrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|の種類を表します `RefErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.referrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.referrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.referrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.referrorcellvalue#type)|このセル値の種類を表します。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshMode)|リンクされたデータ型の更新モード。|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceId)|更新モードが変更されたオブジェクトの一意の ID。|
@@ -216,15 +233,15 @@ ms.locfileid: "60537563"
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|数式で使用するスライサーの名前を表します。|
 ||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setStyle_style_)|スライサーに適用されるスタイルを設定します。|
 ||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|スライサーに適用されるスタイル。|
-|[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|の種類を表します `SpillErrorCellValue` 。|
+|[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[basicType](/javascript/api/excel/excel.spillerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.spillerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|の種類を表します `SpillErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|データが表示された場合に流出する列の数を#SPILL! エラーを返します。|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|データが表示された場合に流出する行の数を表#SPILL! エラーを返します。|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|このセル値の種類を表します。|
-|[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[プリミティブ](/javascript/api/excel/excel.stringcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.stringcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[basicType](/javascript/api/excel/excel.stringcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.stringcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.stringcellvalue#type)|このセル値の種類を表します。|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|既定のテーブル スタイルを使用するようにテーブルを変更します。|
 ||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|特定のテーブルにフィルターが適用されると発生します。|
@@ -234,19 +251,19 @@ ms.locfileid: "60537563"
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|フィルターが適用されるテーブルの ID を取得します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|テーブルを含むワークシートの ID を取得します。|
-|[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|の種類を表します `ValueErrorCellValue` 。|
+|[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[basicType](/javascript/api/excel/excel.valueerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.valueerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
+||[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|の種類を表します `ValueErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.valueerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
-||[プリミティブ](/javascript/api/excel/excel.valueerrorcellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.valueerrorcellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[type](/javascript/api/excel/excel.valueerrorcellvalue#type)|このセル値の種類を表します。|
-|[ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)|[プリミティブ](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+|[ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)|[basicType](/javascript/api/excel/excel.valuetypenotavailablecellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.valuetypenotavailablecellvalue#type)|このセル値の種類を表します。|
 |[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)|[address](/javascript/api/excel/excel.webimagecellvalue#address)|イメージのダウンロード先 URL を表します。|
 ||[altText](/javascript/api/excel/excel.webimagecellvalue#altText)|イメージが何を表すのかを説明するためにアクセシビリティ シナリオで使用できる代替テキストを表します。|
 ||[属性](/javascript/api/excel/excel.webimagecellvalue#attribution)|この画像を使用するソース要件とライセンス要件を説明する属性情報を表します。|
-||[プリミティブ](/javascript/api/excel/excel.webimagecellvalue#primitive)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[プリミティブ型](/javascript/api/excel/excel.webimagecellvalue#primitiveType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicType](/javascript/api/excel/excel.webimagecellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
+||[basicValue](/javascript/api/excel/excel.webimagecellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[プロバイダー](/javascript/api/excel/excel.webimagecellvalue#provider)|画像を提供したエンティティまたは個人を表す情報を表します。|
 ||[relatedImagesAddress](/javascript/api/excel/excel.webimagecellvalue#relatedImagesAddress)|このページに関連すると見なされる画像を含む Web ページの URL を表します `WebImageCellValue` 。|
 ||[type](/javascript/api/excel/excel.webimagecellvalue#type)|このセル値の種類を表します。|

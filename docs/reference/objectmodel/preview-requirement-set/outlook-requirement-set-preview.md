@@ -1,14 +1,14 @@
 ---
 title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e377725bc61b33d8b67729cf041a12255e3dba5
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 2d1efa2b2dca5a88a56fb5f54a84b790e08745ec
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237190"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681649"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
@@ -24,7 +24,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 >
 > その他の機能については、このフォームを入力して送信することで、Outlook on the web アカウントを使用Microsoft 365プレビュー ビットへのアクセスを[要求できる場合があります](https://aka.ms/OWAPreview)。 "要求プレビュー アクセス" は、これらの機能に関して示されています。
 
-プレビュー要件セットには、要件セット [1.10 のすべての機能が含まれています](../requirement-set-1.10/outlook-requirement-set-1.10.md)。
+プレビュー要件セットには、要件セット [1.11 のすべての機能が含まれています](../requirement-set-1.11/outlook-requirement-set-1.11.md)。
 
 ## <a name="features-in-preview"></a>プレビューの機能
 
@@ -104,7 +104,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 この機能は、要件セット [1.10 でリリースされました](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 ただし、追加のイベントはプレビューで利用できます。 詳細については、「サポートされているイベント [」を参照してください](../../../outlook/autolaunch.md#supported-events)。
 
-**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
+**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 <br>
 
@@ -139,26 +139,6 @@ Office テーマを取得する機能が追加されました。
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
 **で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
-
-<br>
-
----
-
----
-
-### <a name="session-data"></a>セッション データ
-
-#### <a name="officesessiondata"></a>[Office。SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
-
-アイテムのセッション データを表す新しいオブジェクトを追加しました。
-
-**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
-
-#### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
-
-新規作成モードでアイテムのセッション データを管理するための新しいプロパティを追加しました。
-
-**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
 
 <br>
 

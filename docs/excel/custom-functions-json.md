@@ -1,14 +1,14 @@
 ---
 title: カスタム関数の JSON メタデータを手動で作成Excel
 description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
-ms.date: 08/06/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f88506cd26edf130ac5d9e06351d4fb0d711806
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 517fd8f8eb0338f32b58f0b61f1810b3c7ac26a4
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151267"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681232"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -56,6 +56,7 @@ ms.locfileid: "59151267"
 
 ```json
 {
+  "allowCustomDataForDataTypeAny": true, // This property is currently only available in public preview.
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -138,6 +139,17 @@ ms.locfileid: "59151267"
 > 完全なサンプル JSON ファイルは、リポジトリのコミット履歴Excel [OfficeDev/GitHub-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)で使用できます。 プロジェクトが JSON を自動的に生成するために調整されたので、手書き JSON の完全なサンプルは、以前のバージョンのプロジェクトでのみ使用できます。
 
 ## <a name="metadata-reference"></a>メタデータ参照
+
+### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (プレビュー)
+
+> [!NOTE]
+> プロパティ `allowCustomDataForDataTypeAny` は現在パブリック プレビューで使用できます。このプロパティは、OfficeとWindows。 プレビュー機能は変更される可能性があります。また、実稼働環境での使用を意図した機能ではありません。 試用はテスト環境と開発環境に限定することをお勧めします。 実稼働環境やビジネスクリティカルなドキュメント内でプレビュー機能を使用しない。
+>
+> Windows の Office でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、Insider Program Office [ベータ](https://insider.office.com/)チャネル Insider レベルを選択 **する** 必要があります。 詳細については、「Insider [Program に参加する」をOfficeしてください](https://insider.office.com/join/windows)。
+
+プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると `true` 、カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「Custom functions and data types core [concepts」を参照してください](/custom-functions-data-types-concepts.md)。
+
+他のほとんどの JSON メタデータ プロパティとは異なり、トップ レベルのプロパティであり、 `allowCustomDataForDataTypeAny` サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 

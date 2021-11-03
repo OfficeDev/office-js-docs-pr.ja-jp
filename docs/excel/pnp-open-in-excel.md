@@ -1,14 +1,14 @@
 ---
 title: Web Excelファイルを開き、アドインOffice埋め込む
 description: Web Excelを開き、アドインにOffice埋め込む。
-ms.date: 02/09/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac644de03c1f3a4c382dbe151c3224afffdbc81
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8d22291c5e4e781535105c22e137097b255cd1d2
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149643"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681543"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Web Excelファイルを開き、アドインOffice埋め込む
 
@@ -194,8 +194,6 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 ### <a name="working-with-the-ooxml-sdk"></a>OOXML SDK の操作
 
 OOXML SDK は .NET に基づいて作成されます。 Web アプリケーションが .NET を使用しない場合は、OOXML を使用する別の方法を探す必要があります。
-
-Open XML SDK for JavaScript には、OOXML SDK の [JavaScript バージョンが用意されています](https://archive.codeplex.com/?p=openxmlsdkjs)。
 
 OOXML コードを Azure 関数に配置して、.NET コードを他の Web アプリケーションから分離できます。 次に、Web アプリケーションから Azure 関数 (Excelドキュメントを生成する) を呼び出します。 Azure 関数の詳細については、「Azure [Functions の概要」を参照してください](/azure/azure-functions/functions-overview)。
 

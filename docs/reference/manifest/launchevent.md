@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの LaunchEvent
 description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
-ms.date: 05/12/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 23615424e194917a15b20ea4afbf7d9c5b8017e9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a8ab75633d87284e02e9db9b1a71f7a8436f7daf
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152878"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681710"
 ---
 # <a name="launchevent-element"></a>LaunchEvent 要素
 
@@ -37,9 +37,21 @@ ms.locfileid: "59152878"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **Type**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている一連の種類については、「イベント ベースのライセンス認証Outlookアドインを構成する[」を参照してください](../../outlook/autolaunch.md#supported-events)。 |
+|  **種類**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている一連の種類については、「イベント ベースのライセンス認証Outlookアドインを構成する[」を参照してください](../../outlook/autolaunch.md#supported-events)。 |
 |  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定 `Type` します。 |
+|  **SendMode** (プレビュー) |  いいえ  | 必須と `OnMessageSend` イベント `OnAppointmentSend` 。 アドインがアイテムの送信を停止する場合にユーザーが使用できるオプションを指定します。 使用可能なオプションについては、「使用可能な [SendMode オプション」を参照してください](#available-sendmode-options-preview)。 |
+
+## <a name="available-sendmode-options-preview"></a>使用可能な SendMode オプション (プレビュー)
+
+マニフェストにイベントを `OnMessageSend` 含 `OnAppointmentSend` める場合は **、SendMode プロパティも設定する必要** があります。 使用可能なオプションを次に示します。 アドインが探している条件に基づいて、ユーザーは、アドインが送信されるアイテムに問題を見つけた場合に警告を受け取る。
+
+| SendMode オプション | 説明 |
+|---|---|
+|`PromptUser`|アラートで、ユーザーは [任意の方法で送信 **]** を選択するか、問題に対処してから、アイテムの再送信を試みます。|
+|`SoftBlock`|ユーザーは、アイテムを再送信する前に問題を解決する必要があります。|
 
 ## <a name="see-also"></a>関連項目
 
 - [LaunchEvents](launchevents.md)
+- [イベント ベースのOutlook用にアドインを構成する](../../outlook/autolaunch.md#supported-events)
+- [スマート アラートと OnMessageSend イベントをアドインOutlook使用する](../../outlook/smart-alerts-onmessagesend-walkthrough.md)

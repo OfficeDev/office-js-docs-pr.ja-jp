@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
 description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
-ms.date: 07/02/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f5ea4e12b4662c890259e29c52b98f1b16b9e5f6
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152739"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681161"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
@@ -60,9 +60,6 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > `index`TableRow オブジェクト[のプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト `TableRow` には、行を識別するための一意のキーとして使用できる `id` プロパティが含まれている必要があります。
-
-> [!WARNING]
-> コンテンツ アドインからテーブルに行を追加すると、メモリ リークが発生します。 現在[のGitHubおよび#1415](https://github.com/OfficeDev/office-js/issues/1415)については、「Issue issue #1415」を参照してください。 
 
 ```js
 Excel.run(function (context) {

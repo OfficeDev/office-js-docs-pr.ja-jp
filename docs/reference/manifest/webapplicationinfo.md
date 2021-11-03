@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの WebApplicationInfo 要素
 description: アドイン マニフェスト (XML) ファイルOffice WebApplicationInfo 要素のリファレンス ドキュメント。
-ms.date: 07/30/2020
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154549"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681550"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 要素
 
@@ -27,10 +27,8 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  **Id**    |  はい   |  Azure Active Directory (Azure AD) v2.0 エンドポイントに登録された、アドインの関連サービスの **アプリケーション ID**。|
-|  **MsaId**    |  いいえ   |  MSA 用アドインの Web アプリケーションのクライアント ID を、msm.live.com。|
 |  **Resource**  |  はい   |  Azure Active Directory v2.0 エンドポイントに登録されたアドインの **アプリケーション ID URI** を指定します。|
 |  [Scope](scopes.md)                |  はい  |  Microsoft などのリソースに対してアドインに必要なアクセス許可をGraph。  |
-|  [Authorizations](authorizations.md)  |  いいえ   | アドインの Web アプリケーションで承認が必要な外部リソースと、必要なアクセス許可を指定します。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo の例
 
@@ -41,21 +39,13 @@ Office アドインでシングル サインオン (SSO) をサポートしま�
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
         <Scope>profile</Scope>
       </Scopes>
-      <Authorizations>
-        <Authorization>
-          <Resource>https://api.contoso.com</Resource>
-            <Scopes>
-              <Scope>profile</Scope>
-          </Scopes>
-        </Authorization>
-      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

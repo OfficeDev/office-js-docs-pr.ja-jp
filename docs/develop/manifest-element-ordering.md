@@ -1,14 +1,14 @@
 ---
 title: マニフェスト要素の正しい順序を確認する方法
 description: 親要素内で子要素を配置するための正しい順序を確認する方法について説明します。
-ms.date: 09/02/2021
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e62da1c7236aa21fe2fd4fe451d6eec25118c9b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f3cd43cbdc58a7b43cf4712e198198a808dcf93a
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150012"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681119"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>マニフェスト要素の正しい順序を確認する方法
 
@@ -283,15 +283,9 @@ Office アドインのマニフェストの XML 要素は適切な親要素の�
                     <Override>
         <WebApplicationInfo>
             <Id>
-            <MsaId>
             <Resource>
             <Scopes>
                 <Scope>
-            <Authorizations>
-                <Authorization>
-                    <Resource>
-                    <Scopes>
-                        <Scope>
         <EquivalentAddins>
             <EquivalentAddin>
                 <ProgId>

@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 要件セット 1.14
 description: ExcelApi 1.14 要件セットの詳細。
-ms.date: 10/13/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b968cf40fa35921df1be0aca508041e72cddf23
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 9cdf22d35125607237b724c88da2083ae78a9940
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537717"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681508"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel新機能
 
@@ -28,6 +28,7 @@ ExcelApi 1.14 には、グラフのデータ テーブル機能を制御する�
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|オートフィルターの列フィルター条件をクリアします。|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|セルまたはセルが削除された場合に残りのセルが移動する方向 (上または左など) を表します。|
 ||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|新しいセルまたはセルを挿入するときに既存のセルが移動する方向 (下方向や右方向など) を表します。|
 |[Chart](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|グラフのデータ テーブルを取得します。|

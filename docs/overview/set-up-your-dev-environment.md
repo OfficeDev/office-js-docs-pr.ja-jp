@@ -1,14 +1,14 @@
 ---
 title: 開発環境をセットアップする
 description: 開発者環境をセットアップして、Officeを構築します。
-ms.date: 07/08/2021
+ms.date: 10/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 71982a51e4941cb90a488f317cf6f771ccf5b005
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9dbe2a994dd8da028ecd1ae4a31b2c7847a062b1
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149828"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681175"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
@@ -18,6 +18,7 @@ ms.locfileid: "59149828"
 - npm
 - サブスクリプション Microsoft 365のサブスクリプション バージョンを含むアカウントOffice
 - 選択したコード エディター
+- JavaScript Officeインター
 
 このガイドでは、コマンド ライン ツールの使い方を知っている必要があります。
 
@@ -56,6 +57,48 @@ Microsoft 365 アカウントをまだ持ってない場合は、Microsoft 365 �
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
+
+## <a name="install-and-use-the-office-javascript-linter"></a>JavaScript linter をインストールOffice使用する
+
+Microsoft では、JavaScript ライブラリを使用するときに一般的なエラーをキャッチするのに役立つ JavaScript Office提供されています。 linter をインストールするには、次の 2 つのコマンドを実行します (Node.js[npm](#install-npm)をインストール[した](#install-nodejs)後)。
+
+```command&nbsp;line
+npm install office-addin-lint --save-dev
+npm install eslint-plugin-office-addins --save-dev
+```
+
+Yo ツールを使用Officeアドイン プロジェクトをOffice場合は、セットアップの残りの部分が実行されます。 次のコマンドを使用して、エディターのターミナル (コマンド プロンプトなど) で linter をVisual Studio Codeコマンド プロンプトで実行します。 linter で見つかった問題は、ターミナルまたはプロンプトに表示され、Visual Studio Code などの linter メッセージをサポートするエディターを使用している場合にも、コードに直接表示されます。 (Yo Office ツールのインストールの詳細については、Office アドインのクイック スタート (Excel アドイン用など)[を参照](../quickstarts/excel-quickstart-jquery.md)してください。
+
+```command&nbsp;line
+npm run lint
+```
+
+アドイン プロジェクトが別の方法で作成された場合は、次の手順を実行します。
+
+1. プロジェクトのルートで **、.eslintrc.json** という名前のテキスト ファイルを作成します (まだ存在しない場合)。 配列型のプロパティと `plugins` 、両方の `extends` 型配列を持つ必要があります。 配列 `plugins` は含める必要があります `"office-addins"` 。配列 `extends` には `"plugin:office-addins/recommended"` . 次に簡単な例を示します。 **.eslintrc.json** ファイルには、2 つの配列の追加のプロパティと追加のメンバーが含まれます。
+
+   ```json
+   {
+     "plugins": [
+       "office-addins"
+     ],
+     "extends": [
+       "plugin:office-addins/recommended"
+     ]
+   }
+   ```
+
+1. プロジェクトのルートで **package.json** ファイルを開き、配列に次の `scripts` メンバーが含まれています。
+
+   ```json
+   "lint": "office-addin-lint check",
+   ```
+
+1. 次のコマンドを使用して、エディターのターミナル (コマンド プロンプトなど) で linter をVisual Studio Codeコマンド プロンプトで実行します。 linter で見つかった問題は、ターミナルまたはプロンプトに表示され、Visual Studio Code などの linter メッセージをサポートするエディターを使用している場合にも、コードに直接表示されます。
+
+   ```command&nbsp;line
+   npm run lint
+   ```
 
 ## <a name="next-steps"></a>次の手順
 

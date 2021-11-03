@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 10/08/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4998b84da9bdddac258e0531f6ce431ea374627b
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: e2660b51b0c25b15df5d957733631391401121ca
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250428"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681140"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -51,7 +51,7 @@ Officeアドインは、iFrame を使用して表示される Web アプリケ�
 
 <sup>3</sup>アドインにマニフェストに要素が含まれる場合、元の `<Runtimes>` WebView (EdgeHTML) Microsoft Edgeを使用しない。 WebView2 を使用するMicrosoft Edge (Chromiumベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、Internet Explorerバージョンに関係なく、Windows 11 Microsoft 365します。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」を参照してください。
 
-<sup>4</sup> Windows 11 よりWindows前のバージョンでは、WebView2 コントロールをインストールして、Office埋め込む必要があります。 バージョン 2101 以降Microsoft 365インストールされますが、Edge では自動的にはインストールされません。 以前のバージョンの webView2 Microsoft 365 WebView2 / Embed web content ..でコントロールをインストールする[手順Microsoft Edge使用します。を使用Microsoft Edge WebView2 を使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。
+<sup>4</sup> Windows 11 よりWindows前のバージョンでは、WebView2 コントロールをインストールして、Office埋め込む必要があります。 バージョン 2101 以降Microsoft 365 2021 以降の 1 回Officeインストールされます。ただし、このファイルは自動的にインストールMicrosoft Edge。 以前のバージョンの Microsoft 365 または 1 回の購入 Office がある場合は、Microsoft Edge [WebView2 / Embed Web content ..でコントロールをインストールする手順を使用します。を使用Microsoft Edge WebView2 を使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。 Microsoft 365 16.0.14326.xxxxx より前のビルドでは、レジストリ キーHKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2を作成し、**その** 値をに設定する必要があります `dword:00000001` 。
 
 > [!IMPORTANT]
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーに Internet Explorer 11 を使用するプラットフォームがある場合は、ECMAScript 2015 以降の構文と機能を使用するには、2 つのオプションがあります。
@@ -61,7 +61,7 @@ Officeアドインは、iFrame を使用して表示される Web アプリケ�
 >
 > これらのオプションの詳細については [、「Support Internet Explorer 11」を参照してください](../develop/support-ie-11.md)。
 >
-> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「アドインが実行中かどうかを実行時に確認する」を参照[Internet Explorer。](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>問題Microsoft Edgeトラブルシューティング
 

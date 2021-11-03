@@ -1,14 +1,14 @@
 ---
 title: Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138647"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681267"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Edge Chromium WebView2 を使用して Windows でアドインをデバッグする
 
@@ -25,8 +25,12 @@ Windows 上で動作する Office アドインは、VS Code の拡張機能 Debu
 
 1. [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してプロジェクトを作成してください。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」などのクイック スタート ガイドのいずれかをご利用ください。
 
-    > [!TIP]
-    > Yeoman ジェネレーター ベースのアドインを使用していない場合は、レジストリ キーの調整を求められる場合があります。 プロジェクトのルート フォルダーで、コマンド ラインを使用して以下を実行します:`office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > Yeoman ジェネレーター ベースのアドインを使用していない場合は、レジストリ キーの調整を求められる場合があります。 プロジェクトのルート フォルダーで、コマンド ラインを使用して以下を実行します。
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. VS Code でプロジェクトを開きます。 VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 「Debugger for Microsoft Edge」で拡張機能を検索し、これをインストールします。
 

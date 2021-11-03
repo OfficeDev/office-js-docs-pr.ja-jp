@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Icon 要素
 description: ボタン または メニュー コントロールの Image 要素を定義します。
-ms.date: 03/30/2021
+ms.date: 10/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f47f35f18995b3d9e0af1115668b43a506e830d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152812"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681727"
 ---
 # <a name="icon-element"></a>Icon 要素
 
@@ -43,7 +43,7 @@ ms.locfileid: "59152812"
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>モバイル フォーム ファクターの追加要件
 
-親 **Icon** 要素が、[MobileFormFactor](mobileformfactor.md) 要素の子孫である場合は、必要な最小サイズが若干異なります。マニフェストで、最小サイズを 25、32、および 48 ピクセルに指定する必要があります。指定するサイズは、`1`、`2` または `3` に設定された `scale` 属性で必ずそれぞれ 3 回ずつ表示されます。
+親 **Icon** 要素が、[MobileFormFactor](mobileformfactor.md) 要素の子孫である場合は、必要な最小サイズが若干異なります。 マニフェストで、最小サイズを 25、32、および 48 ピクセルに指定する必要があります。 指定するサイズは、`scale`、`1` または `2` に設定された `3` 属性で必ずそれぞれ 3 回ずつ表示されます。 この属性は `UIScreen.scale` 、iOS デバイスのプロパティを指定します。 詳細については、「scale」を [参照してください](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale)。
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">
