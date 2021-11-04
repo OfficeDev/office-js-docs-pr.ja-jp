@@ -1,16 +1,16 @@
 ---
 title: カスタム関数とデータ型のコア概念
 description: カスタム関数でデータ型を使用するExcel概念について説明します。
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
-ms.openlocfilehash: 65cc8e04006c999237d44f1c4698a6e82e5f459d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 3b7e735f78ca7b6dcdffa3bd5e8ba9c9d3093766
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681806"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749407"
 ---
 # <a name="custom-functions-and-data-types-core-concepts-preview"></a>カスタム関数とデータ型のコア概念 (プレビュー)
 
@@ -18,14 +18,14 @@ ms.locfileid: "60681806"
 
 データ型は、Excel 4 (文字列、数値、ブール値、エラー) を超えるデータ型のサポートを拡張することで、JavaScript API の機能を強化します。 データ型には、書式設定された数値、Web イメージ、エンティティ値、エンティティ値内の配列のサポートが含まれます。 カスタム関数は、入力値と出力値の両方としてデータ型を受け入れ、カスタム関数の計算力を拡張します。
 
-アドインでデータ型を使用する方法Excel詳細については、「Excelデータ型のコア[概念」を参照してください](/excel-data-types-concepts.md)。
+アドインでデータ型を使用する方法Excel詳細については、「Excelデータ型のコア[概念」を参照してください](excel-data-types-concepts.md)。
 
 ## <a name="how-custom-functions-handle-data-types"></a>カスタム関数がデータ型を処理する方法
 
 カスタム関数は、データ型を認識し、パラメーター値として受け入れることができます。 カスタム関数は、戻り値の新しいデータ型を作成できます。 カスタム関数は、JavaScript API のデータ型と同じ JSON スキーマをExcel、この JSON スキーマはカスタム関数の計算および評価として維持されます。
 
 > [!NOTE]
-> カスタム関数は、データ型によって提供される拡張エラー オブジェクトの完全な機能をサポートしません。 カスタム関数は、データ型エラー オブジェクトを受け入れできますが、計算中は保持されません。 現時点では、カスタム関数は [CustomFunctions.Error](/custom-functions-errors.md)オブジェクトに含まれるエラーのみをサポートします。
+> カスタム関数は、データ型によって提供される拡張エラー オブジェクトの完全な機能をサポートしません。 カスタム関数は、データ型エラー オブジェクトを受け入れできますが、計算中は保持されません。 現時点では、カスタム関数は [CustomFunctions.Error](custom-functions-errors.md)オブジェクトに含まれるエラーのみをサポートします。
 
 ## <a name="enable-data-types-for-custom-functions"></a>カスタム関数のデータ型を有効にする
 
@@ -95,7 +95,7 @@ function getEntityAttribute(value, attribute) {
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数とデータ型の概要](/custom-functions-data-types-overview.md)
-* [アドイン内のExcelの概要](/excel-data-types-overview.md)
-* [Excelデータ型のコア概念](/excel-data-types-concepts.md)
+* [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)
+* [Excel アドインのデータ型の概要](excel-data-types-overview.md)
+* [Excelデータ型のコア概念](excel-data-types-concepts.md)
 * [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

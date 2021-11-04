@@ -1,14 +1,14 @@
 ---
 title: カスタム関数の JSON メタデータを手動で作成Excel
 description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 517fd8f8eb0338f32b58f0b61f1810b3c7ac26a4
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 28be374a88890d20294311599b06b16942edd9b7
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681232"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749400"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -147,7 +147,7 @@ ms.locfileid: "60681232"
 >
 > Windows の Office でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、Insider Program Office [ベータ](https://insider.office.com/)チャネル Insider レベルを選択 **する** 必要があります。 詳細については、「Insider [Program に参加する」をOfficeしてください](https://insider.office.com/join/windows)。
 
-プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると `true` 、カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「Custom functions and data types core [concepts」を参照してください](/custom-functions-data-types-concepts.md)。
+プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると `true` 、カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「Custom functions and data types core [concepts」を参照してください](custom-functions-data-types-concepts.md)。
 
 他のほとんどの JSON メタデータ プロパティとは異なり、トップ レベルのプロパティであり、 `allowCustomDataForDataTypeAny` サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
 

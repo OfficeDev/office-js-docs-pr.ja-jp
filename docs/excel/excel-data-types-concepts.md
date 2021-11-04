@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cb5a1e13ced03116d10c7d7a09f822485b41ff6a
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681831"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749386"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -109,6 +109,6 @@ const myImage = {
 
 ## <a name="see-also"></a>関連項目
 
-- [Excel アドインのデータ型の概要](/excel-data-types-overview.md)
+- [Excel アドインのデータ型の概要](excel-data-types-overview.md)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
-- [カスタム関数とデータ型の概要](/custom-functions-data-types-overview.md)
+- [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)
