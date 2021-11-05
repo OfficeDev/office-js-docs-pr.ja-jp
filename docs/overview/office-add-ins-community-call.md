@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 10/18/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ce768bd6b03f3103efae0e9b679a6221e3e7927
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537599"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793597"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -16,19 +16,22 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 ## <a name="agenda-for-november-10th-call"></a>11 月 10 日の通話の議題
 
-- 議題は 11 月 5 日金曜日に投稿する予定です。
+- Community CodeTwo によるプレゼンテーション。 イベント ベースのアクティブ化と署名Outlook統合。
+- JS API を操作するOfficeコードを単体テストする新しい Office-Addin-Mock ライブラリOfficeデモンストレーション。
+- Microsoft 365サンドボックス。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
-- [Officeアドインのコミュニティ呼び出し – 2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 8 月 11 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 7 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 6 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 5 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 4 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
-- [Officeアドインのコミュニティ呼び出し – 2021 年 3 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
+- [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
+- [2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
+- [2021 年 8 月 11 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
+- [2021 年 7 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
+- [2021 年 6 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
+- [2021 年 5 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
+- [2021 年 4 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
+- [2021 年 3 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
 - [アーカイブ済Officeアドインコミュニティ通話 – 2020 年 6 月 10 日 ~ 2021 年 2 月 10 日](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>関連項目

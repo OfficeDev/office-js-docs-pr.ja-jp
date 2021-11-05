@@ -1,14 +1,14 @@
 ---
 title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
-ms.date: 07/08/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537619"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793588"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
@@ -23,6 +23,8 @@ ms.locfileid: "60537619"
 ## <a name="use-runtime-logging-from-the-command-line"></a>コマンド ラインからランタイム ログを使用する
 
 コマンド ラインからランタイム ログを有効にするのが、このログ ツールを使用する最も簡単な方法です。 これは、npm@5.2.0+ の一部として既定で提供される npx を使用します。 以前のバージョンの [npm](https://www.npmjs.com/) を使用している場合は、[Windows でのランタイム ログ](#runtime-logging-on-windows)の手順か [Mac でのランタイム ログ](#runtime-logging-on-mac)の手順、または [npx のインストール](https://www.npmjs.com/package/npx)をお試しください。
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - ランタイムのログを有効にするには、以下を実行します。
 
@@ -141,5 +143,5 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)
 - [Office のキャッシュをクリアする](clear-cache.md)
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
-- [開発者向けツールを使用してアドインをデバッグInternet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [エッジ レガシの開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
+- [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
+- [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
