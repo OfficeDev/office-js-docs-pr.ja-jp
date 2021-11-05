@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 10/18/2021
+ms.date: 11/02/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8770f91531b74442561d93d76daf57492d4c13f5
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537584"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60683792"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -28,6 +28,7 @@ Excel アドインは、Windows 上の Office 2016 以降の Office や Micrsoft
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [プレビュー](excel-preview-apis.md)  | プレビュー API を試すには、最新版 Office を使用してください (場合によっては、[Office Insider プログラム](https://insider.office.com)に参加する必要があります)。 |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | 該当なし | 該当なし | 該当なし | 最新 ([要件セットのページ](excel-api-online-requirement-set.md)を参照) |
+| [ExcelApi 1.14](excel-api-1-14-requirement-set.md) | バージョン 2108 (ビルド 14326.20508) 以降 | 16.53 以降 | 16.52 以降 | 2021 年 10 月 |
 | [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | バージョン 2102 (ビルド 13801.20738) 以降 | 16.50 以降 | 16.50 以降 | 2021 年 6 月 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | バージョン 2008 (ビルド 13127.20408) 以降 | 16.40 以降 | 16.40 以降 | 2020 年 9 月 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | バージョン 2002 (ビルド 12527.20470) 以降 | 16.35 以降 | 16.33 以降 | 2020 年 5 月 |
