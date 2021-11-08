@@ -1,14 +1,14 @@
 ---
 title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
-ms.date: 11/01/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 57814ab7da8faec3cc60f943ef13db12de01dc17
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 76cdf267a707a7f7d3481fcf6e50265fca061ff0
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681098"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809057"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 
@@ -22,6 +22,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 要件セット 1.10 には、要件セット [1.9 のすべての機能が含まれています](../requirement-set-1.9/outlook-requirement-set-1.9.md)。 次の機能が追加されました。
 
 - イベント ベースのアクティブ化機能と [メール署名機能用の新](../../../outlook/autolaunch.md) しい API が追加されました。
+- イベント ベースのアクティブ化機能を[Storage OfficeRuntime.Storage](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true)オブジェクトのサポートが追加されました。
 - 通知メッセージにカスタム アクションを含める機能が追加されました。
 
 ### <a name="change-log"></a>変更ログ
@@ -38,6 +39,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - 追加された[Office。MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): 列挙型に新しい型を追加 `ItemNotificationMessageType` します。 カスタム アクションを含む通知メッセージを表します。
 - 追加された[Office。NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): 通知のカスタム アクションを定義できる新しいオブジェクトを追加 `InsightMessage` します。
 - 追加された[Office。NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): カスタム アクションで通知を追加できる新しい `InsightMessage` プロパティを追加します。
+- 変更[された OfficeRuntime.Storage:](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true)イベント ベースOutlookライセンス認証機能でのみサポートを追加します。
 
 ## <a name="see-also"></a>関連項目
 

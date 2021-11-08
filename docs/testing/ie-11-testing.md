@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 テスト
 description: 11 でOfficeアドインをテストInternet Explorerします。
-ms.date: 10/08/2021
+ms.date: 11/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e64ce43b4b105b54ed5fcf3fa260ef7f81a04520
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8932545aa692073babeddb6ab22a213466a7c2ba
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537633"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60809040"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
 
@@ -30,44 +30,33 @@ AppSource を使用してアドインを販売する予定がある場合、ま�
 >
 > これらのオプションの詳細については [、「Support Internet Explorer 11」を参照してください](../develop/support-ie-11.md)。
 >
-> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「アドインが実行中かどうかを実行時に確認する」を参照[Internet Explorer。](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)
 
 > [!NOTE]
 > Office on the web 11 で開くInternet Explorerできないので、Office on the web でアドインをテストInternet Explorer。
 
-## <a name="prerequisites"></a>前提条件
-
-- [Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
-
-これらの手順では、以前に Yo ジェネレーター プロジェクトをOffice前提とします。 前にこれを行ったことがない場合は、クイック スタート (アドイン用など) を読[Excel検討してください](../quickstarts/excel-quickstart-jquery.md)。
-
-## <a name="switching-to-the-internet-explorer-11-webview"></a>11 webview Internet Explorer切り替える
-
-1. Yo ジェネレーター プロジェクトOffice作成します。 選択するプロジェクトの種類は関係ありませんが、このツールは、すべてのプロジェクトの種類で動作します。
-
-    > [!NOTE]
-    > 既存のプロジェクトを持ち、新しいプロジェクトを作成せずにこのツールを追加する場合は、この手順をスキップして次の手順に進みます。 
-
-1. プロジェクトのルート フォルダーで、コマンド ラインで次のコマンドを実行します。 この例では、プロジェクトのマニフェスト ファイルがルートにあると仮定します。 指定されていない場合は、マニフェスト ファイルへの相対パスを指定します。 コマンド ラインに、Web ビューの種類が IE に設定されているというメッセージが表示されます。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings webview manifest.xml ie
-    ```
+## <a name="switch-to-the-internet-explorer-11-webview"></a>11 webview Internet Explorerに切り替える
 
 > [!TIP]
-> このコマンドを使用する必要はありません。ただし、11 ランタイムに関連する問題の大部分をデバッグInternet Explorer必要があります。 完全な堅牢性を得る場合は、Windows 7、8.1、10、および 11 のさまざまなバージョンの Office のさまざまな組み合わせのコンピューターを使用してテストする必要があります。 詳細については、「Office アドインで使用されるブラウザー」および「How to revert [to](../concepts/browsers-used-by-office-web-add-ins.md) earlier version of Office」 を[参照してください](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)。
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="command-options"></a>コマンド オプション
+Webview に切り替える方法は 2 Internet Explorerがあります。 コマンド プロンプトで簡単なコマンドを実行するか、既定でコマンド を使用OfficeバージョンInternet Explorerインストールできます。 最初の方法をお勧めします。 ただし、次のシナリオでは 2 つ目を使用する必要があります。
 
-この `office-addin-dev-settings webview` コマンドは、引数として多数のランタイムを受け取る場合があります。
+- プロジェクトは、プロジェクトと IIS Visual Studio開発されました。 この機能は、node.jsに基づいて行う必要があります。
+- テストで絶対に堅牢になる必要があります。
+- 何らかの理由でコマンド ライン ツールが機能しない場合。
 
-- すなわち
-- エッジ
-- default
+### <a name="switch-via-the-command-line"></a>コマンド ライン経由で切り替える
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### <a name="install-a-version-of-office-that-uses-internet-explorer"></a>アプリケーションを使用するOfficeバージョンをインストールInternet Explorer
+
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 ## <a name="see-also"></a>関連項目
 
 * [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
 * [テスト用に Office アドインをサイドロードする](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [開発者向けツールを使用してアドインをデバッグInternet Explorer](debug-add-ins-using-f12-tools-ie.md)
+* [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 * [作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)

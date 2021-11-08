@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 11/04/2021
+ms.date: 11/07/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793597"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809071"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -16,7 +16,7 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 ## <a name="agenda-for-november-10th-call"></a>11 月 10 日の通話の議題
 
-- Community CodeTwo によるプレゼンテーション。 イベント ベースのアクティブ化と署名Outlook統合。
+- [CodeTwo](https://www.codetwo.com/email-signatures/): 電子メールOutlookに基づいて自動署名を設定します。
 - JS API を操作するOfficeコードを単体テストする新しい Office-Addin-Mock ライブラリOfficeデモンストレーション。
 - Microsoft 365サンドボックス。
 
