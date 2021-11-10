@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: 6155805245b14d3c3365d759bcd647419266f499
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749386"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889980"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -97,7 +97,7 @@ const myImage = {
 - [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)
 - [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)
 - [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)
-- [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)
+- [NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)
 - [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)
 - [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)
 - [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)

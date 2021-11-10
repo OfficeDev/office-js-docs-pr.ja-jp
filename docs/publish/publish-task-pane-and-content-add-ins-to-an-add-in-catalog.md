@@ -1,14 +1,14 @@
 ---
 title: 作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 description: 組織内のユーザーが Office アドインにアクセスできるようにするために、管理者は組織のアプリ カタログに Office アドインのマニフェスト ファイルをアップロードできます。
-ms.date: 10/08/2021
+ms.date: 11/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a790ada4425b13880b9eeedfbd002dc818b927
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: b545d81c8e728a5d6c9129bfa166e23a76ce2b04
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250512"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889994"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>作業ウィンドウ アドインとコンテンツ アドインを SharePoint アプリ カタログに発行する
 
@@ -43,7 +43,7 @@ SharePoint アプリ カタログを作成するには、[web アプリケーシ
 1. [新しい SharePoint 管理センターの [アクティブなサイト] ページ](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true)に移動し、組織の[管理者権限](/sharepoint/sharepoint-admin-role)が付与されているアカウントでサインインします。
 
     > [!NOTE]
-    > ドイツ語をMicrosoft 365場合は、Microsoft 365 管理センター[](https://go.microsoft.com/fwlink/p/?linkid=848041)にサインインし、SharePoint管理センターを参照し、[その他の機能] ページを開きます。 <br>21Vianet (中国Microsoft 365操作している場合は、Microsoft 365 管理センター にサインインし[、SharePoint](https://go.microsoft.com/fwlink/p/?linkid=850627)管理センターを参照し、[その他の機能] ページを開きます。
+    > 21Vianet (中国Microsoft 365操作している場合は、Microsoft 365 管理センター にサインインし[、SharePoint](https://go.microsoft.com/fwlink/p/?linkid=850627)管理センターを参照し、[その他の機能] ページを開きます。
 
 1. [URL] 列で URL を選択して、アプリ カタログ サイトを開きます。
 
