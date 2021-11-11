@@ -1,18 +1,21 @@
 ---
-title: Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする
+title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
-ms.date: 11/01/2021
+ms.date: 11/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681267"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889987"
 ---
-# <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Edge Chromium WebView2 を使用して Windows でアドインをデバッグする
+# <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
-Windows 上で動作する Office アドインは、VS Code の拡張機能 Debugger for Microsoft Edge を使用することで、Edge Chromium WebView2 ランタイムに対してデバッグを行うことができます。
+Windows 上で動作する Office アドインは、Visual Studio Code の Debugger for Microsoft Edge の拡張機能を使用することで、Edge Chromium WebView2 ランタイムに対してデバッグを行うことができます。 
+
+> [!TIP]
+> Visual Studio Code に組み込まれているツールを使用してデバッグできない場合、またはデバッグしたくない場合、またはアドインが Visual Studio Code の外部で実行されている場合にのみ問題が発生した場合は、「[Microsoft Edge WebView2 用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)」の説明に従って、Edge (Chromium ベース) 開発者ツールを使用して Edge Chromium WebView2 ランタイムをデバッグできます。
 
 ## <a name="prerequisites"></a>前提条件
 
