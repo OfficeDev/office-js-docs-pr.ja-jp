@@ -271,7 +271,9 @@ items:
                 href: testing/debug-add-ins-using-f12-tools-ie.md
               - name: Edge レガシー用の開発者ツールを使用してデバッグする
                 href: testing/debug-add-ins-using-devtools-edge-legacy.md
-              - name: Edge Chromium WebView2 を使用してデバッグする
+              - name: Edge Chromium WebView2 用の開発者ツールを使用してデバッグする
+                href: testing/debug-add-ins-using-devtools-edge-chromium.md
+              - name: Visual Studio Code と Edge Chromium WebView2 を使用してデバッグする
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
               - name: Internet Explorer 11 でテストする

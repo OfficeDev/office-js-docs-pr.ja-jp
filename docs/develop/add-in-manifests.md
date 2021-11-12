@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
+ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138493"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "60923567"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -546,7 +546,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 ## <a name="see-also"></a>関連項目
 
 * [マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)
-* [マニフェストでアドイン コマンドを作成する][create-addin-commands.md]
+* [マニフェストでアドイン コマンドを作成する](create-addin-commands.md)
 * [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)
 * [Office アドインのローカライズ](localization.md)
 * [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
