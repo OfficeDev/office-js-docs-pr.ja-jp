@@ -1136,6 +1136,8 @@ items:
                 href: outlook/authentication.md
               - name: SSO トークンを使用して認証する
                 href: outlook/authenticate-a-user-with-an-sso-token.md
+              - name: イベント ベースのアクティブ化での SSO
+                href: outlook/use-sso-in-event-based-activation.md
               - name: ID トークンを使用して認証する
                 href: outlook/authenticate-a-user-with-an-identity-token.md
               - name: ID トークンを検証する

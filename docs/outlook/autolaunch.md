@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1311359dcf164e77aa259a324827e176ccc1fab2
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 4875018d2c457fe26eaed0d86f549d44f7932d52
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681597"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064667"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -29,8 +29,8 @@ ms.locfileid: "60681597"
 
 |イベント|説明|イベント固有の JSON|最小要件セット|サポートされるクライアント|
 |---|---|---|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当しない|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当しない|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
 |`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
@@ -38,8 +38,8 @@ ms.locfileid: "60681597"
 |`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
-|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当しない|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当しない|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
 
 ### <a name="how-to-preview"></a>プレビューする方法
 
@@ -300,11 +300,11 @@ JavaScript ファイルでは、イベント ベースのアクティブ化の�
 
 UI Office.js変更する API の一部は、イベント ベースのアドインでは使用できない場合があります。ブロックされている API を次に示します。
 
-- [ `OfficeRuntime.auth` : ] の下
-  - `getAccessToken`(Windowsのみ)
 - [ `Office.context.auth` : ] の下
   - `getAccessToken`
   - `getAccessTokenAsync`
+    > [!NOTE]
+    > `OfficeRuntime.auth` がサポートされています。 詳細については、「イベント ベースのライセンス認証を使用する Outlookでシングル サインオン[(SSO) を有効にする」を参照してください](use-sso-in-event-based-activation.md)。
 - [ `Office.context.mailbox` : ] の下
   - `displayAppointmentForm`
   - `displayMessageForm`

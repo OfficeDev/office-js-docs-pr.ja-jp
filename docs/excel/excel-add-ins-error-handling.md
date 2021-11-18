@@ -1,14 +1,14 @@
 ---
 title: JavaScript API のExcel処理
 description: ランタイム エラーをExcel JavaScript API エラー処理ロジックについて説明します。
-ms.date: 09/20/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 24daaa8dcd5256be997c8742016a9ec80b3294df
-ms.sourcegitcommit: 43f20d0933d0159dd390da052187b315222b185f
+ms.openlocfilehash: 5dcc6991e762f8d3defca50df406952ee7f1385b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2021
-ms.locfileid: "59502732"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064681"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API のExcel処理
 
@@ -60,6 +60,7 @@ JavaScript API Excelが正常に実行できない場合、API は次のプロ�
 |`BadPassword`|指定したパスワードが正しくありません。| |
 |`Conflict`|競合のため、要求を処理できませんでした。| |
 |`ContentLengthRequired`|`Content-length`HTTP ヘッダーが見つからない。| |
+|`EmptyChartSeries`|グラフの系列が空のため、試行された操作は失敗しました。| |
 |`FilteredRangeConflict`|試行された操作によって、フィルター処理された範囲との競合が発生します。| |
 |`FormulaLengthExceedsLimit`|適用される数式のバイトコードが最大長制限を超えています。 32 Officeの場合、バイトコードの長さの制限は 16384 文字です。 64 ビット コンピューターでは、バイトコードの長さの制限は 32768 文字です。| このエラーは、デスクトップとExcel on the web両方で発生します。|
 |`GeneralException`|要求の処理中に内部エラーが発生しました。| |
