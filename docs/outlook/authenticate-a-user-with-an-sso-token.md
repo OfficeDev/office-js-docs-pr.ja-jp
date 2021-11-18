@@ -7,8 +7,8 @@ ms.openlocfilehash: 7e2667e7f465749f708bf35cf00b0806306a618a
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064695"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066710"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 

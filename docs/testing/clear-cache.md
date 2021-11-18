@@ -7,8 +7,8 @@ ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064674"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066668"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
