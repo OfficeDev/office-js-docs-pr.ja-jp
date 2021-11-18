@@ -1,14 +1,14 @@
 ---
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
-ms.date: 08/02/2021
+ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537647"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064674"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -21,7 +21,25 @@ ms.locfileid: "60537647"
 
 ## <a name="clear-the-office-cache-on-windows"></a>Windows で Office のキャッシュをクリアする
 
-Excel、Word、および PowerPoint からサイドロードされたすべてのアドインを削除するには、次のフォルダーのコンテンツを削除します。
+Windows コンピューターの Office キャッシュをクリアするには、自動、手動、およびMicrosoft Edge開発者ツールの使用という 3 つの方法があります。 メソッドについては、次のサブセクションで説明します。
+
+### <a name="automatically"></a>自動的に
+
+この方法は、アドイン開発用コンピューターに推奨されます。 Office on Windows バージョンが 2108 以降の場合、次の手順では、Office が再度開くたびに Office キャッシュが自動的にクリアされるように構成します。
+
+> [!NOTE]
+> 自動的な方法は Outlook ではサポートされていません。
+
+1. Outlook を除く任意の Office ホストのリボンから、**ファイル** > **オプション** > **信頼できるセキュリティ センター** > **セキュリティ センターの設定** > **信頼できるアドイン カタログ** に移動します。
+1. 次回の Office の起動時にチェック ボックス **を選択し、以前に起動したすべての Web アドイン キャッシュ** をクリアします。
+
+### <a name="manually"></a>手動
+
+Excel、Word、PowerPoint の手動の方法は Outlook とは異なります。
+
+#### <a name="manually-clear-the-cache-in-excel-word-and-powerpoint"></a>Excel、Word、PowerPoint でキャッシュを手動でクリアする
+
+Excel、Word、PowerPoint からサイドロードされたすべてのアドインを削除するには、次のフォルダーの内容を削除します。
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -33,9 +51,13 @@ Excel、Word、および PowerPoint からサイドロードされたすべて�
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
+#### <a name="manually-clear-the-cache-in-outlook"></a>Outlook でキャッシュを手動でクリアする
+
 サイドロードされたアドインを Outlook から削除するには、「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順を使用して、インストールされているアドインが一覧表示されたダイアログ ボックスの「**カスタム アドイン**」セクションでアドインを検索します。アドインの省略記号 (`...`) を選択し、[**削除**] を選択して、そのアドインを削除します。このアドインの削除が機能しない場合は、前述したとおり Excel、Word、PowerPoint で `Wef` フォルダの内容を削除します。
 
-また、アドインが Microsoft Edge で実行されているときに Windows 10 で Office のキャッシュをクリアするには、Microsoft Edge DevTools を使用します。
+### <a name="using-the-microsoft-edge-developer-tools"></a>Microsoft Edge開発者ツールの使用
+
+アドインが Microsoft Edge で実行されているときにWindows 10の Office キャッシュをクリアするには、Microsoft Edge DevTools を使用できます。
 
 > [!TIP]
 > サイドロードされたアドインに HTML や JavaScript のソース ファイルへの最近の変更を反映させたいだけの場合は、キャッシュをクリアする必要はありません。 代わりに、アドインの作業ウィンドウにフォーカスを置き (タスク ウィンドウ内の任意の場所をクリック)、**Ctrl + F5** を押してアドインをリロードします。
