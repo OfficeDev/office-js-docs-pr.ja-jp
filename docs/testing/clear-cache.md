@@ -3,12 +3,12 @@ title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
 ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: 36f3de58eb5089f6c638510cb33879cb36c7330c
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066668"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081408"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -96,6 +96,7 @@ iOS で Office のキャッシュをクリアするには、アドイン内の J
 - [Office アドインでの開発エラーのトラブルシューティング](troubleshoot-development-errors.md)
 - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
+- [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)
 - [ランタイム ログを使用してアドインをデバッグする](runtime-logging.md)
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [Office アドインの XML マニフェスト](../develop/add-in-manifests.md)

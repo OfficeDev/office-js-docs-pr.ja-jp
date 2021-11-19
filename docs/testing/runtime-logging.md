@@ -3,12 +3,12 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793588"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081443"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
@@ -145,3 +145,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
+- [アドインの開発者ツールを使用してアドインをデバッグする (Microsoft EdgeベースChromium)](debug-add-ins-using-devtools-edge-chromium.md) 

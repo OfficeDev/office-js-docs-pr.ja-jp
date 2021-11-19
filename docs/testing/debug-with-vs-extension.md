@@ -3,12 +3,12 @@ title: Visual Studio Code 用 Microsoft Office アドイン デバッガー拡�
 description: アドイン デバッガー Visual Studio Code拡張機能Microsoft Office使用して、アドインのOfficeデバッグします。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 56dee52f71bfb460abbadafb0cdfd82f8f7cb548
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: edc780108cb304b6bfa15ba3d7850f394b863875
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537640"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081401"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
@@ -16,7 +16,7 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 
 このデバッグ モードは動的で、コードの実行中にブレークポイントを設定できます。 デバッガーが接続されている間、コード内の変更をすぐに確認できます。すべてデバッグ セッションを失う必要はありません。 コードの変更も保持されます。そのため、コードに対する複数の変更の結果を確認できます。 次の図は、この拡張機能の動作を示しています。
 
-![Officeアドイン デバッガー拡張機能は、アドインのセクションExcelデバッグします。](../images/vs-debugger-extension-for-office-addins.jpg)
+![Officeアドインのセクションをデバッグするアドイン デバッガー拡張機能Excelデバッグします。](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -84,6 +84,6 @@ Visual Studio Code の Microsoft Office アドイン デバッガー拡張機能
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
-- [開発者向けツールを使用してアドインをデバッグInternet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [エッジ レガシの開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
-- [Microsoft Edge WebView2 (Chromium ベース) を使用した Windows 上のアドインをデバッグする](debug-desktop-using-edge-chromium.md)
+- [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
+- [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
+- [アドインの開発者ツールを使用してアドインをデバッグする (Microsoft EdgeベースChromium)](debug-add-ins-using-devtools-edge-chromium.md)
