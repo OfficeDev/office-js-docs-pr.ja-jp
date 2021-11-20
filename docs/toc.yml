@@ -307,6 +307,8 @@ items:
             href: testing/testing-and-troubleshooting.md
           - name: 開発エラーのトラブルシューティング
             href: testing/troubleshoot-development-errors.md
+          - name: 単体テスト
+            href: testing/unit-testing.md
           - name: ユーザビリティ テスト
             href: develop/usability-testing.md
           - name: アドインのマニフェストを検証する
