@@ -1,14 +1,14 @@
 ---
 title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
-ms.date: 07/08/2021
-ms.localizationpriority: medium
-ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.date: 11/22/2021
+localization_priority: Normal
+ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150114"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153497"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -102,7 +102,7 @@ ms.locfileid: "59150114"
     ```
 
 1. この例を続行するには、最初 `'SHOWTASKPANE'` のパラメーターとして使用します。
-1. 関数の本文では[、Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)メソッドを使用してアドインの作業ウィンドウを開きます。 完了したら、コードは次のようになります。
+1. 関数の本文では[、Office.addin.showAsTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)メソッドを使用してアドインの作業ウィンドウを開きます。 完了したら、コードは次のようになります。
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -204,7 +204,7 @@ shortcuts.json の配列でオブジェクトを指定する場合は、次 `sho
 
 ユーザーが既に使用しているキーボード ショートカットは多数Office。 既に使用されているアドインのキーボード ショートカットを登録しないようにしますが、既存のキーボード ショートカットを上書きしたり、同じキーボード ショートカットを登録した複数のアドイン間の競合を処理する必要がある場合があります。
 
-競合が発生した場合、ユーザーが最初に競合するキーボード ショートカットを使用しようとすると、ダイアログ ボックスが表示されます。このダイアログに表示されるアクション名は、ファイル内のアクション オブジェクトのプロパティです。 `name` `shortcuts.json`
+競合が発生した場合、ユーザーが最初に競合するキーボード ショートカットを使用しようとすると、ダイアログ ボックスが表示されます。 このダイアログに表示されるアドイン オプションのテキストは、ファイル内の action オブジェクトの `name` プロパティから取得されます `shortcuts.json` 。
 
 ![1 つのショートカットに対して 2 つの異なるアクションを持つ競合モーダルを示す図。](../images/add-in-shortcut-conflict-modal.png)
 
@@ -248,7 +248,7 @@ shortcuts.json の配列でオブジェクトを指定する場合は、次 `sho
 
 ## <a name="localize-the-keyboard-shortcuts-json"></a>キーボード ショートカット JSON をローカライズする
 
-アドインが複数のローカライズをサポートしている場合は、アクション オブジェクトのプロパティをローカライズ `name` する必要があります。 また、アドインがサポートするローカライズの中にアルファベットや異なる書き込みシステムがある場合、キーボードが異なる場合は、ショートカットのローカライズも必要な場合があります。 キーボード ショートカット JSON をローカライズする方法については、「拡張オーバーライドをローカライズする [」を参照してください](../develop/localization.md#localize-extended-overrides)。
+アドインが複数のローカライズをサポートしている場合は、アクション オブジェクトのプロパティをローカライズ `name` する必要があります。 また、アドインがサポートするローカライズの中に、アルファベットや書き込みシステムが異なっている場合、キーボードが異なる場合は、ショートカットのローカライズも必要な場合があります。 キーボード ショートカット JSON をローカライズする方法については、「拡張オーバーライドをローカライズする [」を参照してください](../develop/localization.md#localize-extended-overrides)。
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>オーバーライドできないブラウザー のショートカット
 
@@ -260,6 +260,67 @@ Web でカスタム キーボード ショートカットを使用する場合�
 - Ctrl + Shift + T
 - Ctrl + W
 - Ctrl + PgUp/PgDn
+
+## <a name="enable-custom-keyboard-shortcuts-for-specific-users-preview"></a>特定のユーザーのカスタム キーボード ショートカットを有効にする (プレビュー)
+
+アドインを使用すると、ユーザーはアドインのアクションを代替キーボードの組み合わせに再割り当てできます。
+
+> [!IMPORTANT]
+> このセクションで説明する機能は現在プレビュー中で、変更される可能性があります。 これらを運用環境で使用することは現在サポートされていません。 プレビュー機能を試すには、Insider Program に参加[Office必要があります](https://insider.office.com/join)。
+> プレビュー機能を試す良い方法は、Microsoft 365 サブスクリプションを使用することです。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。
+
+> [!NOTE]
+> このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 必要です。
+
+ユーザーのカスタム キーボードの組み合わせをアドイン アクションに割り当てるには[、Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)メソッドを使用します。 メソッドは、アドインの拡張マニフェスト JSON で定義されているアクションの ID のサブセットである型のパラメーターを `{[actionId:string]: string}` `actionId` 受け取ります。 値は、ユーザーの優先キーの組み合わせです。 ユーザーがログインしている場合Officeの組み合わせは、ユーザーのローミング設定に保存されます。 ユーザーがログインしていない場合、カスタマイズはアドインの現在のセッションでのみ続きます。
+
+```javascript
+const userCustomShortcuts = {
+    SHOWTASKPANE:"CTRL+SHIFT+1", 
+    HIDETASKPANE:"CTRL+SHIFT+2"
+};
+Office.actions.replaceShortcuts(userCustomShortcuts)
+    .then(function () {
+        console.log("Successfully registered.");
+    })
+    .catch(function (ex) {
+        if (ex.code == "InvalidOperation") {
+            console.log("ActionId does not exist or shortcut combination is invalid.");
+        }
+    });
+```
+
+ユーザーに対して既に使用されているショートカットを確認するには[、Office.actions.getShortcuts メソッドを呼び出](/javascript/api/office/office.actions#getShortcuts)します。 このメソッドは、s の型 `[actionId:string]:string|null}` のオブジェクトを `actionId` 返します。
+
+- アドインの拡張マニフェスト JSON で定義されているすべてのアクションの ID。
+- ユーザーのローミング設定でユーザーに登録されているカスタマイズされたショートカットすべて。 値は、現在アクションに割り当てられているキーの組み合わせです。 
+
+次に例を示します。
+
+```javascript
+Office.actions.getShortcuts()
+    .then(function (userShortcuts) {
+       for (const action in userShortcuts) {
+           let shortcut = userShortcuts[action];
+           console.log(action + ": " + shortcut);
+       }
+    });
+
+```
+
+「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は[、Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}` 。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、 `inUse` プロパティは に設定されます `true` 。 たとえば、`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` などです。 次のコード スニペットは、例です。
+
+```javascript
+const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then(function (inUseArray) {
+        const availableShortcuts = inUseArray.filter(function (shortcut) { return !shortcut.inUse; });
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter(function (shortcut) { return shortcut.inUse; });
+        console.log(usedShortcuts);
+    });
+
+```
 
 ## <a name="next-steps"></a>次の手順
 

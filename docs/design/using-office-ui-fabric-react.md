@@ -1,18 +1,18 @@
 ---
 title: Office アドインの Fluent UI React
 description: アドインで UI FluentをReactするOfficeについて学習します。
-ms.date: 07/08/2021
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149759"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153464"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインFluent UI ReactをOfficeする
 
-FluentUI Reactは、Microsoft 製品の幅広い範囲 (Office を含む) にシームレスに適合するエクスペリエンスを構築するように設計された、公式のオープン ソース JavaScript フロントエンド フレームワークOffice。 CSS-in-JS を使用して、高度にカスタマイズ可能かつ堅牢で最新のアクセス可能な React ベースのコンポーネントを提供します。
+Fluent UI Reactは、Office を含む幅広い Microsoft 製品にシームレスに適合するエクスペリエンスを構築するように設計された、公式のオープン ソース JavaScript フロントエンド フレームワークです。 CSS-in-JS を使用して、高度にカスタマイズ可能かつ堅牢で最新のアクセス可能な React ベースのコンポーネントを提供します。
 
 > [!NOTE]
 > この記事では、アドインのコンテキストFluent UI Reactの使用Office説明します。ただし、さまざまなアプリや拡張機能でもMicrosoft 365使用されます。 詳細については[、「UI](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) web Fluent UI Reactおよびオープン ソースの repo Fluent[を参照してください](https://github.com/microsoft/fluentui)。
@@ -38,7 +38,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 ![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word-react.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -90,8 +90,8 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/components/Button';
+import { Label } from '@fluentui/react/lib/components/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
@@ -141,11 +141,9 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. 次の 2 つのインポート ステートメントを削除します。
+2. 次のインポート ステートメントを削除します。
 
     ```typescript
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-    ...
     import Progress from './Progress';
     ```
 

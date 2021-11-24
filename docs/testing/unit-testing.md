@@ -1,14 +1,14 @@
 ---
 title: アドインでの単体Officeテスト
 description: JavaScript API を呼び出すテスト コードを単体Officeする方法について説明します。
-ms.date: 11/14/2021
+ms.date: 11/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3daf47a6221d5c9dbc0ad9fe1c357264d0a2f622
-ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
+ms.openlocfilehash: 32f0cefeeeaa2ab78a45069711d537303af26a24
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61124837"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153478"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>アドインでの単体Officeテスト
 
@@ -31,7 +31,7 @@ ms.locfileid: "61124837"
 この記事では、テスト ファイルの作成と実行方法など、単体テストとモックの基本的な概念に精通し、単体テスト フレームワークの経験を持っている必要があります。
 
 > [!TIP]
-> Visual Studio を使用している場合は、Visual Studio での JavaScript 単体テストに関する基本的な情報については、Visual Studio の「JavaScript と[TypeScript](/visualstudio/javascript/unit-testing-javascript-with-visual-studio.md)の単体テスト」の記事を読んでから、この記事に戻することをお勧めします。
+> Visual Studio を使用している場合は、Visual Studio での JavaScript 単体テストに関する基本的な情報については、Visual Studio の「JavaScript と[TypeScript](/visualstudio/javascript/unit-testing-javascript-with-visual-studio)の単体テスト」の記事を読んでから、この記事に戻することをお勧めします。
 
 ## <a name="install-the-tool"></a>ツールのインストール
 
@@ -179,7 +179,7 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 
 ### <a name="mocking-the-outlook-apis"></a>API のOutlookする
 
-厳密に言えば、Outlook API は共通 API モデルの一部ですが[、Mailbox](/javascript/api/office/office.mailbox)オブジェクトを中心に構築された特別なアーキテクチャを備え、Outlook の明確な例を示しました。 この例では、ファイルOutlook機能の 1 つを持つオブジェクトを想定しています `my-outlook-add-in-feature.js` 。 ファイルの内容を次に示します。 この `addHelloWorldText` 関数は、テキスト "Hello World! を、メッセージ作成ウィンドウで現在選択されているものに設定します。
+厳密に言えば、Outlook API は共通 API モデルの一部ですが[、Mailbox](/javascript/api/outlook/office.mailbox)オブジェクトを中心に構築された特別なアーキテクチャを備え、Outlook の明確な例を示しました。 この例では、ファイルOutlook機能の 1 つを持つオブジェクトを想定しています `my-outlook-add-in-feature.js` 。 ファイルの内容を次に示します。 この `addHelloWorldText` 関数は、テキスト "Hello World! を、メッセージ作成ウィンドウで現在選択されているものに設定します。
 
 ```javascript
 const myOutlookAddinFeature = {

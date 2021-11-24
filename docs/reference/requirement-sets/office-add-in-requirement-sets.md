@@ -1,15 +1,15 @@
 ---
 title: Office 共通 API の要件セット
 description: 共通 API 要件セットOffice詳細を確認します。
-ms.date: 11/08/2021
+ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60890008"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153471"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -125,6 +125,14 @@ ms.locfileid: "60890008"
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
 | 「[画像強制型変換要件セット](image-coercion-requirement-sets.md)」を参照してください。 | Document.setSelectedDataAsync メソッド|
+
+---
+
+### <a name="keyboardshortcuts"></a>KeyboardShortcuts
+
+|**Office アプリケーション**|**セット内のメソッド**|
+|:-----|:-----|
+| 「 [キーボード ショートカットの要件セット」を参照してください](keyboard-shortcuts-requirement-sets.md)。 | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
 
 ---
 
