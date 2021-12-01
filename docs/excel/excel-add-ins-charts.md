@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
 description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
-ms.date: 07/17/2019
+ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b3cb04ff3bd8b1b0c050741a7238b1e9d6bd498f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151440"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242078"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
@@ -187,6 +187,46 @@ Excel.run(function (context) {
 **線形の近似曲線が記入されたグラフ**
 
 ![グラフに線形の傾向線Excel。](../images/excel-charts-trendline-linear.png)
+
+## <a name="add-and-format-a-chart-data-table"></a>グラフ データ テーブルの追加と書式設定
+
+メソッドを使用して、グラフのデータ テーブル要素にアクセス [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) できます。 このメソッドは、オブジェクトを返 [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) します。 オブジェクト `ChartDataTable` には、、、、などのブール型の書式設定 `visible` `showLegendKey` プロパティがあります `showHorizontalBorder` 。
+
+プロパティ `ChartDataTable.format` はオブジェクトを返 [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) します。これにより、データ テーブルの書式とスタイルを設定できます。 オブジェクト `ChartDataTableFormat` は、、 `border` プロパティ `fill` を提供 `font` します。
+
+次のコード サンプルは、グラフにデータ テーブルを追加し、and オブジェクトを使用してそのデータ テーブルの書式を設定する方法 `ChartDataTable` を示 `ChartDataTableFormat` しています。
+
+```js
+// This code sample adds a data table to a chart that already exists on the worksheet, 
+// and then adjusts the display and format of that data table.
+Excel.run(function (context) {
+    // Retrieve the chart on the "Sample" worksheet.
+    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+
+    // Get the chart data table object and load its properties.
+    var chartDataTable = chart.getDataTableOrNullObject();
+    chartDataTable.load();
+
+    // Set the display properties of the chart data table.
+    chartDataTable.visible = true;
+    chartDataTable.showLegendKey = true;
+    chartDataTable.showHorizontalBorder = false;
+    chartDataTable.showVerticalBorder = true;
+    chartDataTable.showOutlineBorder = true;
+
+    // Retrieve the chart data table format object and set font and border properties. 
+    var chartDataTableFormat = chartDataTable.format;
+    chartDataTableFormat.font.color = "#B76E79";
+    chartDataTableFormat.font.name = "Comic Sans";
+    chartDataTableFormat.border.color = "blue";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+次のスクリーンショットは、前のコード サンプルが作成するデータ テーブルを示しています。
+
+![データ テーブルを含むグラフで、データ テーブルのカスタム書式を表示します。](../images/excel-charts-data-table.png)
 
 ## <a name="export-a-chart-as-an-image"></a>グラフを画像としてエクスポートする
 

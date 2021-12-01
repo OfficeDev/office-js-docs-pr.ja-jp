@@ -1,28 +1,31 @@
 ---
 title: リボン API の要件セット
 description: 動的リボン API Officeサポートするプラットフォームとビルドを指定します。
-ms.date: 10/05/2021
+ms.date: 11/29/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1801d95da8dd0b2b707e1237498db71ca81474b5
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138710"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242048"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-リボン API セットは、カスタム アドイン コマンド (カスタム リボン ボタンとメニュー項目) が有効または無効になっている場合のプログラムによる制御をサポートします。
+リボン API セットは、カスタム アドイン コマンド (カスタム リボン ボタンとメニューアイテム) の有効化と無効化、およびリボンにコンテキスト タブが表示される場合のプログラムによる制御をサポートします。
+
+> [!NOTE]
+> RibbonApi 要件セットは、作業ウィンドウ アドインでのみサポートされます。
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、リボン API 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルド番号またはバージョン番号をOfficeします。
 
 |  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office\*<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac\*<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | ビルド 16.0.14326.20454 以降 | 2102 (ビルド 13801.20294) | N/A | サポートされていません | 2021 年 5 月 | 該当なし|
-| RibbonApi 1.1  | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
+| RibbonApi 1.2  | ビルド 16.0.14326.20454 以降 | 2102 (ビルド 13801.20294) | N/A | サポートされていません | 2021 年 5 月 | N/A|
+| RibbonApi 1.1  | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | N/A | 16.38 | 2020 年 11 月 | 該当なし|
 
 > **&#42;** リボン API は、リボン API でのみサポートExcel。
 
@@ -37,7 +40,7 @@ RibbonApi 要件セットの 1.1 バージョンは、コンシューマー チ�
 |月次エンタープライズ チャネル | 2004 | 12730.20602 以上|
 |半期エンタープライズ チャネル | 2002 以上 | 12527.20880 以上|
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 バージョン、ビルド番号、Office Online Server の詳細については以下を参照してください。
 

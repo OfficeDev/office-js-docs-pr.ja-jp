@@ -1,14 +1,14 @@
 ---
 title: アドインでの単体Officeテスト
 description: JavaScript API を呼び出すテスト コードを単体Officeする方法について説明します。
-ms.date: 11/23/2021
+ms.date: 11/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f0cefeeeaa2ab78a45069711d537303af26a24
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 8824b8e759e3c1acecf30683f2b89bb41bd558f3
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153478"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242041"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>アドインでの単体Officeテスト
 
@@ -21,7 +21,6 @@ ms.locfileid: "61153478"
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [ストーリーブック](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [ジャスミン](https://jasmine.github.io/)
 
 この記事の例では、Jest フレームワークを使用します。 Mocha フレームワークを使用する例は[、Office-Addin-Mock のホーム ページに表示されます](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples)。
@@ -109,9 +108,6 @@ npm install office-addin-mock --save-dev
 ## <a name="examples"></a>例
 
 このセクションの例では、既定の設定で Jest を使用します。 これらの設定は、CommonJS モジュールをサポートします。 Jest および node.js ECMAScript モジュールをサポートし、TypeScript をサポートする方法については [、Jest](https://jestjs.io/docs/getting-started) のドキュメントを参照してください。 これらの例を実行するには、次の手順を実行します。
-
-> [!NOTE]
-> 
 
 1. 適切なOfficeホスト アプリケーション (たとえば、Officeまたは Word) 用のExcel作成します。 これを迅速に行う方法の 1 つは、Yo ツールを使用[Officeです](https://github.com/OfficeDev/generator-office)。
 1. プロジェクトのルートに [Jest をインストールします](https://jestjs.io/docs/getting-started)。
@@ -420,6 +416,4 @@ describe("Insert blue paragraph at end tests", () => {
 - オープンソースの repo は[Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock)です。
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [ストーリーブック](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [ジャスミン](https://jasmine.github.io/)
- 

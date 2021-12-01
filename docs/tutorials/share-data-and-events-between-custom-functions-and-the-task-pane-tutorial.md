@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
-ms.date: 10/07/2021
+ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 69dbb7c2b57d09f3d71397db0b1d56babf7c64a6
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250442"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242055"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -204,7 +204,7 @@ ms.locfileid: "60250442"
 2. 次のスクリプト要素を追加してから、`</head>` 要素を閉じます。
 
    ```html
-   <script src="functions.js"></script>
+   <script src="../functions/functions.js"></script>
    ```
 
 3. 終了 `</main>` 要素の後に、次の HTML を追加します。 HTML は、グローバル データの取得または保存に使用される 2 つのテキスト ボックスとボタンを作成します。
@@ -216,8 +216,7 @@ ms.locfileid: "60250442"
        <strong>Store</strong>.
      </li>
      <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong>strong> into a cell to retrieve
-       it.
+       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
      </li>
      <li>
        To send data to the task pane, in a cell, enter
@@ -225,6 +224,7 @@ ms.locfileid: "60250442"
      </li>
      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
    </ol>
+
    <p>Store new value to shared state</p>
    <div>
      <input type="text" id="storeBox" />
