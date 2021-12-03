@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153497"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61285007"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -272,7 +272,9 @@ Web でカスタム キーボード ショートカットを使用する場合�
 > [!NOTE]
 > このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 必要です。
 
-ユーザーのカスタム キーボードの組み合わせをアドイン アクションに割り当てるには[、Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)メソッドを使用します。 メソッドは、アドインの拡張マニフェスト JSON で定義されているアクションの ID のサブセットである型のパラメーターを `{[actionId:string]: string}` `actionId` 受け取ります。 値は、ユーザーの優先キーの組み合わせです。 ユーザーがログインしている場合Officeの組み合わせは、ユーザーのローミング設定に保存されます。 ユーザーがログインしていない場合、カスタマイズはアドインの現在のセッションでのみ続きます。
+ユーザーのカスタム キーボードの組み合わせをアドイン アクションに割り当てるには[、Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)メソッドを使用します。 メソッドは、アドインの拡張マニフェスト JSON で定義する必要があるアクションの ID のサブセットである型のパラメーターを `{[actionId:string]: string|null}` `actionId` 受け取ります。 値は、ユーザーの優先キーの組み合わせです。 また、この値を使用すると、カスタマイズが削除され、アドインの拡張マニフェスト JSON で定義されている既定のキーボードの組み合わせ `null` `actionId` に戻されます。
+
+ユーザーがアカウントにログインOffice、ユーザーのローミング設定にプラットフォームごとに保存されます。 現在、匿名ユーザーのショートカットのカスタマイズはサポートされていません。
 
 ```javascript
 const userCustomShortcuts = {
@@ -290,10 +292,11 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-ユーザーに対して既に使用されているショートカットを確認するには[、Office.actions.getShortcuts メソッドを呼び出](/javascript/api/office/office.actions#getShortcuts)します。 このメソッドは、s の型 `[actionId:string]:string|null}` のオブジェクトを `actionId` 返します。
+ユーザーに対して既に使用されているショートカットを確認するには[、Office.actions.getShortcuts メソッドを呼び出](/javascript/api/office/office.actions#getShortcuts)します。 このメソッドは、ユーザーが指定したアクションを呼び出す場合に使用する必要がある現在のキーボードの組み合わせを表す、型のオブジェクト `[actionId:string]:string|null}` を返します。 値は、次の 3 つの異なるソースから取得できます。
 
-- アドインの拡張マニフェスト JSON で定義されているすべてのアクションの ID。
-- ユーザーのローミング設定でユーザーに登録されているカスタマイズされたショートカットすべて。 値は、現在アクションに割り当てられているキーの組み合わせです。 
+- ショートカットとの競合が発生し、ユーザーがキーボードの組み合わせに対して別のアクション (ネイティブアドインまたは別のアドイン) を使用する場合、ショートカットが上書きされ、ユーザーが現在そのアドイン アクションを呼び出すキーボードの組み合わせがない場合に返される値になります。 `null`
+- ショートカットが[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)メソッドを使用してカスタマイズされている場合、返される値はカスタマイズされたキーボードの組み合わせになります。
+- ショートカットがオーバーライドまたはカスタマイズされていない場合は、アドインの拡張マニフェスト JSON から値が返されます。
 
 次に例を示します。
 

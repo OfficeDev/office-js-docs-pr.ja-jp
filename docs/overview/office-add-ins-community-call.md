@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 11/15/2021
+ms.date: 12/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dd96efb632b065e15d80a73f6bc54a4424e24d49
-ms.sourcegitcommit: 4cd94f6b365ea7813f19d4a06e6de2a1308b5aee
+ms.openlocfilehash: da85ba3cafec7c7eb86a4c6a617273747802b8e8
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "60963438"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61284993"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -16,12 +16,14 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 ## <a name="agenda-for-december-8th-call"></a>12 月 8 日の通話の議題
 
-12 月の議題は、通話の約 1 週間前に投稿されます。
+- Outlook: Ignite アナウンスの要約
+- Outlookサンプル: イベント ベースのライセンス認証を使用して添付ファイルを暗号化する
 
 ## <a name="previous-calls"></a>以前の呼び出し
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
+- [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
 - [2021 年 8 月 11 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)

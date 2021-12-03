@@ -1,15 +1,15 @@
 ---
-title: ExcelJavaScript API 要件セット 1.14
+title: Excel JavaScript API 要件セット 1.14
 description: ExcelApi 1.14 要件セットの詳細。
-ms.date: 10/29/2021
+ms.date: 12/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdf22d35125607237b724c88da2083ae78a9940
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 97c221bb8530d32fbfe42ae82519c942c6499928
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681508"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61285000"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel新機能
 
@@ -17,8 +17,8 @@ ExcelApi 1.14 には、グラフのデータ テーブル機能を制御する�
 
 | 機能領域 | 説明 | 関連オブジェクト |
 |:--- |:--- |:--- |
-| グラフ データ テーブル | グラフ上のデータ テーブルの外観、書式設定、および表示を制御します。 | [Chart](/javascript/api/excel/excel.chart)、 [ChartDataTable](/javascript/api/excel/excel.chartdatatable)、 [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
-| 数式の前例 | 数式のすべての前のセルを返します。 | [Range](/javascript/api/excel/excel.range) |
+| [グラフ データ テーブル](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | グラフ上のデータ テーブルの外観、書式設定、および表示を制御します。 | [Chart](/javascript/api/excel/excel.chart)、 [ChartDataTable](/javascript/api/excel/excel.chartdatatable)、 [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| [数式の前例](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | 数式のすべての前のセルを返します。 | [Range](/javascript/api/excel/excel.range) |
 | クエリ | 名前、更新日、クエリ数など、Power Query 属性を取得します。 | [Query](/javascript/api/excel/excel.query)、 [QueryCollection](/javascript/api/excel/excel.querycollection)|
 | ワークシート保護イベント | ワークシートの保護状態に対する変更と、それらの変更のソースを追跡します。 | [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [Worksheet](/javascript/api/excel/excel.worksheet), [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
