@@ -1,14 +1,14 @@
 ---
 title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
-ms.date: 07/30/2021
+ms.date: 12/07/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 52612a9f3ab1844098dd7ae5b7a674c8db9e33b4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154558"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331079"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
@@ -81,7 +81,7 @@ Outlook アドインの展開には以下が必要です。
 - Microsoft 365、Exchange Online、または Exchange Server 2013 以降
 - Outlook 2013 以降
 
-アドインをテナントに割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL から直接マニフェストをアップロードするか、または AppSource からアドインを追加します。アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。詳細については、TechNet の「[組織の Outlook アドインをインストールまたは削除する](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/install-or-remove-outlook-add-ins)」を参照してください。
+テナントにアドインを割り当てるには、Exchange 管理センターを使用して、ファイルまたは URL からマニフェストを直接アップロードするか、AppSource からアドインを追加します。 アドインを個々のユーザーに割り当てるには、Exchange PowerShell を使用する必要があります。 詳細については、「 [Exchange Serverの Outlook 用アドイン](/exchange/add-ins-for-outlook-2013-help)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

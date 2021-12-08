@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
-ms.date: 07/02/2021
+ms.date: 12/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bd443c6ec6921247aa8adb98932599594aa55f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3ab27032c8d80d8cd01c3a0239ba23e6bbd7e14f
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151255"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331065"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -378,7 +378,7 @@ function formulaChangeHandler(event) {
 
 ![上から下への並べ替えの後の Excel のテーブル データ。 移動した行が強調表示されます。](../images/excel-sort-event-after-row.png)
 
-元のデータの **"Quinces&quot;**(&quot;**4**") の値に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address` 。
+元のデータの **"Quinces"**("**4**") の値に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address` 。
 
 ![左から右への並べ替えの後の Excel のテーブル データ。 移動した列が強調表示されます。](../images/excel-sort-event-after-column.png)
 
@@ -499,6 +499,41 @@ Excel.run(function (context) {
 - `password`: ユーザーが保護をバイパスしてワークシートを編集するために必要なパスワードを表す文字列。
 
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
+
+### <a name="detect-changes-to-the-worksheet-protection-state"></a>ワークシートの保護状態の変更を検出する
+
+ワークシートの保護状態は、アドインまたは UI を使用してExcelできます。 保護状態の変更を検出するには [、ワークシートのイベント](excel-add-ins-events.md#register-an-event-handler) のイベント [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) ハンドラーを登録します。 イベントのイベント ハンドラーは `onProtectionChanged` 、イベントが発生 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) するとオブジェクトを受け取る。
+
+次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用してイベントの `onProtectionChanged` `WorksheetProtectionChangedEventArgs` 、 、およびプロパティを `isProtected` `worksheetId` `source` 取得する方法を示しています。
+
+```js
+// This method registers an event handler for the onProtectionChanged event of a worksheet.
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the onProtectionChanged event handler.
+    sheet.onProtectionChanged.add(checkProtection);
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+// This method is an event handler that returns the protection state of a worksheet 
+// and information about the changed worksheet.
+function checkProtection(event) {
+    Excel.run(function (context) {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
+        var protectionStatus = event.isProtected;
+        var worksheetId = event.worksheetId;
+        var source = event.source;
+
+        // Print the event properties to the console.
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
+    });
+}
+```
 
 ## <a name="page-layout-and-print-settings"></a>ページ レイアウトと印刷の設定
 
