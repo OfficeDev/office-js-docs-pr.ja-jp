@@ -1,31 +1,35 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 11/08/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6155805245b14d3c3365d759bcd647419266f499
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 37fe1b90065dd8a784fc7cfc191ccb9cdc3ce5b9
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889980"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406621"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
 > [!NOTE]
-> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
-
-> [!IMPORTANT]
-> `Range.valuesAsJSON`のような、この記事で説明するデータ型の概念の一部は、アクティブな開発中であり、パブリック プレビューではまだ利用できません。 この記事は、概念的な紹介を目的としています。 この記事で説明されている、パブリック プレビューにはまだ含まれていない概念は、間もなくプレビューにリリースされる予定です。
+> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
+>
+> プレビュー API を使用するには:
+>
+> - CDN (**の** ベータhttps://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ライブラリを参照する必要があります。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。 詳細については、[@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM パッケージ readme を参照してください。
+> - 最新の Office ビルドにアクセスするには、[Office Insider プログラム](https://insider.office.com)に参加する必要がある場合もあります。
+>
+> Windows 版 Office でデータ型を試すには、16.0.14626.10000 以上の Excel ビルド番号が必要です。 Office on Mac でデータ型を試すには、16.55.21102600 以上の Excel ビルド番号が必要です。
 
 この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用してデータ型を操作する方法について説明します。 ここでは、データ型の開発の基本となる主要な概念を紹介します。
 
 ## <a name="core-concepts"></a>中心概念
 
-データ型の値を操作するには、`Range.valuesAsJSON` プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#values) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJSON`4 つの基本型に関する拡張情報を返すことができます。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#values) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson`4 つの基本型に関する拡張情報を返すことができます。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
 
 ### <a name="json-schema"></a>JSON スキーマ
 

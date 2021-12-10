@@ -1,25 +1,29 @@
 ---
 title: Excel アドインのデータ型の概要
 description: Excel JavaScript API のデータ型を使用すると、Office アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値、エンティティ値内の配列、および拡張エラーをデータ型として操作できます。
-ms.date: 11/03/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ff0d5a055c74eeff096d45ddb6c417615775431
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749393"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406670"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel アドインのデータ型の概要 (プレビュー)
 
 > [!NOTE]
-> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
-
-> [!IMPORTANT]
-> `Range.valuesAsJSON` などの一部のデータ型 API は、アクティブな開発中であり、パブリック プレビューではまだ利用できません。 この記事は、概念的な紹介を目的としています。 この記事で説明されている、パブリック プレビューにはまだ含まれていない概念は、間もなくプレビューにリリースされる予定です。
+> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
+>
+> プレビュー API を使用するには:
+>
+> - CDN (**の** ベータhttps://appsforoffice.microsoft.com/lib/beta/hosted/office.js) ライブラリを参照する必要があります。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。 詳細については、[@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM パッケージ readme を参照してください。
+> - 最新の Office ビルドにアクセスするには、[Office Insider プログラム](https://insider.office.com)に参加する必要がある場合もあります。
+>
+> Windows 版 Office でデータ型を試すには、16.0.14626.10000 以上の Excel ビルド番号が必要です。 Office on Mac でデータ型を試すには、16.55.21102600 以上の Excel ビルド番号が必要です。
 
 Excel JavaScript API のデータ型を使用すると、アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値などのオブジェクトとして複雑なデータ構造を整理できます。
 
@@ -35,6 +39,6 @@ Excel JavaScript API のデータ型を使用すると、アドイン開発者�
 
 ## <a name="see-also"></a>関連項目
 
-* [Excel データ型の主要概念](excel-data-types-concepts.md)
-* [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
-* [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)
+- [Excel データ型の主要概念](excel-data-types-concepts.md)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
+- [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)

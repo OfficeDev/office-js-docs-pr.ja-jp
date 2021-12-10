@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: Outlook JavaScript API の要件セットの詳細。
-ms.date: 11/01/2021
+ms.date: 11/18/2021
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 07e3f8da6c9d5af1d06f1bb388588dcd109b137e
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: f94f76edfd7ba9fcb5d45fc426f5d8579aefe863
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681501"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406658"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
@@ -72,7 +72,7 @@ if (item.somePropertyOrFunction !== undefined) {
 このセクションでは、Exchange サーバーと Outlook クライアントでサポートされる一連の要件セットについて説明します。 Outlook アドインを実行するためのサーバーおよびクライアントの要件の詳細については、「[Outlook アドインの要件](../../outlook/add-in-requirements.md)」を参照してください。
 
 > [!IMPORTANT]
-> ターゲットとなる Exchange サーバーと Outlook クライアントが異なる要件セットをサポートしている場合、低い要件セットの範囲に制限されます。 たとえば、アドインが Exchange 2013 (最高要件セット: 1.1) に対して Mac 上の Outlook 2016 (最高要件セット: 1.6) で実行されている場合、アドインは要件セット 1.1 に制限されます。
+> ターゲットとなる Exchange サーバーと Outlook クライアントが異なる要件セットをサポートしている場合、低い方の要件セットの範囲に制限されます。 たとえば、アドインが Exchange 2013 (最高要件セット: 1.1) に対して Mac 上の Outlook 2016 (最高要件セット: 1.6) で実行されている場合、アドインは要件セット 1.1 に制限されます。
 
 ### <a name="exchange-server-support"></a>Exchange server サポート
 
@@ -86,7 +86,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 2013 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 > [!NOTE]
-> \* アドイン コードで Identity API セット 1.3 を要求するには、`isSetSupported('IdentityAPI', '1.3')` を呼び出してサポートされているかどうかを確認します。 アドイン マニフェストでの宣言はサポートされていません。 `undefined` ではないことを確認することで、API がサポートされているかどうかを判断することもできます。 詳細については、「[後続の要件セットからの API の使用](#using-apis-from-later-requirement-sets)」を参照してください。
+> \* [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 
 ### <a name="outlook-client-support"></a>Outlook クライアント サポート
 
@@ -113,7 +113,7 @@ if (item.somePropertyOrFunction !== undefined) {
 > [!NOTE]
 > <sup>1</sup> Microsoft 365 サブスクリプションまたは製品版の 1 回限りの購入による Outlook on Windows での **1.8** のサポートは、バージョン 1910 (ビルド 12130.20272) から利用できます。 Microsoft 365 サブスクリプションを使用した Windows 用 Outlook での **1.9** のサポートは、バージョン 2008 (ビルド 13127.20296) から入手できます。 Microsoft 365 サブスクリプションを使用した Windows 用 Outlook での **1.10** のサポートは、バージョン 2104 (ビルド 13929.20296) から入手できます。 Microsoft 365 サブスクリプションを使用した Outlook Windows での **1.11** サポートは、バージョン 2110 (ビルド 14527.20226) から利用できます。 バージョンに応じた詳細については、[Office 2019](/officeupdates/update-history-office-2019) または [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) の更新履歴ページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
 >
-> <sup>2</sup> アドイン コードで Identity API セット 1.3 を要求するには、`isSetSupported('IdentityAPI', '1.3')` を呼び出してサポートされているかどうかを確認します。 アドイン マニフェストでの宣言はサポートされていません。 `undefined` ではないことを確認することで、API がサポートされているかどうかを判断することもできます。 詳細については、「[後続の要件セットからの API の使用](#using-apis-from-later-requirement-sets)」を参照してください。
+> <sup>2</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 >
 > <sup>3</sup> Outlook 2013 での 1.3 のサポートは、「[2015 年 12 月 8 日付、Outlook 2013 用更新プログラム (KB3114349)](https://support.microsoft.com/kb/3114349)」の一部として追加されました。 Outlook 2013 での 1.4 のサポートは、「[MS16-107: Outlook 2013 セキュリティ更新プログラムについて 2016 年 9 月 13 日](https://support.microsoft.com/help/3118280)」の一部として追加されました。 Outlook 2016 (1 回限りの購入) での 1.4 のサポートは、「[2018 年 7 月 3 日更新プログラム Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223)」の一部として追加されました。
 >

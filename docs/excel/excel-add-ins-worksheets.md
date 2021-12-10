@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
 description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
-ms.date: 12/06/2021
+ms.date: 12/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ab27032c8d80d8cd01c3a0239ba23e6bbd7e14f
-ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
+ms.openlocfilehash: 55234d7c7c4d13fcfc3663e6d5454bf04b75b830
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "61331065"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406635"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -444,6 +444,8 @@ Excel.run(function (context) {
 最初のコード サンプルは、ワークシートの使用範囲にフィルターを追加する方法を示しています。 このフィルタは、列 **3** の値に基づいて、上位 25% にないエントリを非表示にします。
 
 ```js
+// This method adds a custom AutoFilter to the active worksheet
+// and applies the filter to a column of the used range.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var farmData = sheet.getUsedRange();
@@ -457,6 +459,7 @@ Excel.run(function (context) {
 次のコード サンプルでは、`reapply` メソッドを使用してオート フィルターを更新する方法を示します。 これは、範囲内のデータが変更されたときに実行する必要があります。
 
 ```js
+// This method refreshes the AutoFilter to ensure that changes are captured.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
@@ -464,9 +467,24 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+次のコード サンプルは、メソッドを使用して、他の列でアクティブなフィルターを残しながら、1 つの列から自動フィルターをクリアする方法 `clearColumnCriteria` を示しています。
+
+```js
+// This method clears the AutoFilter setting from one column.
+Excel.run(function (context) {
+    // Retrieve the active worksheet.
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Clear the filter from only column 3.
+    sheet.autoFilter.clearColumnCriteria(3);
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
 最後のオート フィルター コード サンプルでは、`remove` メソッドを使用してワークシートからオート フィルターを削除する方法を示します。
 
 ```js
+// This method removes all AutoFilters from the active worksheet.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();

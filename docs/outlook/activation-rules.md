@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインのアクティブ化ルール
 description: Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。
-ms.date: 09/22/2020
+ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e0cac8a2f0153d85e5b6d2600f1dbc7f4c03c398
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 836e66a6e7eb49cb745861fe47946cfdbd18ea77
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154267"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406663"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Outlook コンテキスト アドインのアクティブ化ルール
 
@@ -59,7 +59,7 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
 |**値**|**説明**|
 |:-----|:-----|
 |**Appointment**|Outlook の予定表内のアイテムを指定します。 このアイテムには、開催者と出席者を持つ応答済みの会議アイテムと、開催者と出席者を持たない、単なる予定表上のアイテムである予定が含まれます。 これは Outlook の IPM.Appointment メッセージ クラスに対応します。|
-|**Message**|通常受信トレイで受信される次のいずれかの項目を指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。 これは、次のメッセージ クラスに対応Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**メッセージ**|通常受信トレイで受信される次のいずれかの項目を指定します。 <ul><li><p>電子メール メッセージ。これは Outlook の IPM.Note メッセージ クラスに対応します。</p></li><li><p>会議出席依頼、返信、または取り消し。 これは、次のメッセージ クラスに対応Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 この属性を使用して、アドインをアクティブにするモード (読み取りまたは作成 `FormType` ) を指定します。
 
@@ -192,7 +192,7 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
 |マニフェストのサイズ|256 KB 未満。|
 |ルール|15 ルール未満。|
 |ItemHasKnownEntity|Outlook リッチ クライアントでは、本文の最初の 1 MB にルールを適用し、残りの部分には適用しません。|
-|正規表現|すべてのアプリケーションの ItemHasKnownEntity ルールまたは ItemHasRegularExpressionMatch ルールOutlookします。<br><ul><li>Outlook アドインのアクティブ化ルールで指定する正規表現は 5 個までにしてください。その制約数を超えるアドインをインストールすることはできません。</li><li>予期される結果が <b>getRegExMatches</b> メソッド呼び出しによって返されて、それらが最初の 50 件以内に収まるように、正規表現を指定します。 </li><li>正規表現で先読みアサーションは指定しますが、後読み `(?<=text)` および否定の後読み `(?<!text)` アサーションは指定しません。</li><li>一致数が次の表の制限を超えない正規表現を指定します。<br/><br/><table><tr><th>正規表現の長さ制限</th><th>Outlook リッチ クライアント</th><th>iOS および Android 用の Outlook</th></tr><tr><td>アイテムの本文がテキスト形式の場合</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>アイテムの本文が HTML の場合</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|正規表現|すべてのアプリケーションの ItemHasKnownEntity ルールまたは ItemHasRegularExpressionMatch ルールOutlookします。<br><ul><li>Outlook アドインのアクティブ化ルールで指定する正規表現は 5 個までにしてください。その制約数を超えるアドインをインストールすることはできません。</li><li>予期される結果が <b>getRegExMatches</b> メソッド呼び出しによって返されて、それらが最初の 50 件以内に収まるように、正規表現を指定します。 </li><li>**重要**: 正規表現に一致した文字列に基づいてテキストが強調表示されます。 ただし、強調表示されたオカレンスは、負の先取り、後ろ向き、負の後ろ向きなど、実際の正規表現アサーションの結果と正確には一致 `(?!text)` `(?<=text)` しない場合があります `(?<!text)` 。 たとえば、"Like under, under score, and アンダースコア" で正規表現を使用すると、最初の 2 つの文字列ではなく、すべてのオカレンスに対して文字列 `under(?!score)` "under" が強調表示されます。</li><li>次の表で、一致する制限を超えない正規表現を指定します。<br/><br/><table><tr><th>正規表現の長さ制限</th><th>Outlook リッチ クライアント</th><th>iOS および Android 用の Outlook</th></tr><tr><td>アイテムの本文がテキスト形式の場合</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>アイテムの本文が HTML の場合</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## <a name="see-also"></a>関連項目
 

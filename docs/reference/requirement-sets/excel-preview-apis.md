@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript プレビュー API
 description: JavaScript API のExcel詳細。
-ms.date: 11/02/2021
+ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: f62b71532f323ad17f541979d3956f217ab5d07d
-ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
+ms.openlocfilehash: 32a2f5d355086c51cbf165dd7ed335e96c96647a
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "60683785"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406642"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
@@ -71,6 +71,17 @@ ms.locfileid: "60683785"
 ||[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|の種類を表します `CalcErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.calcerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.calcerrorcellvalue#type)|このセル値の種類を表します。|
+|[CardLayoutListSection](/javascript/api/excel/excel.cardlayoutlistsection)|[レイアウト](/javascript/api/excel/excel.cardlayoutlistsection#layout)|このセクションのレイアウトの種類を表します。|
+|[CardLayoutPropertyReference](/javascript/api/excel/excel.cardlayoutpropertyreference)|[property](/javascript/api/excel/excel.cardlayoutpropertyreference#property)|カード レイアウトによって参照されるプロパティの名前。|
+|[CardLayoutSectionStandardProperties](/javascript/api/excel/excel.cardlayoutsectionstandardproperties)|[折りたたむ](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#collapsed)|カードのこのセクションが最初に折りたたまれるかどうかを表します。|
+||[折りたたみ可能](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#collapsible)|カードのこのセクションが折りたたみ可能かどうかを表します。|
+||[プロパティ](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#properties)|このセクションのプロパティの名前を表します。|
+||[title](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#title)|カードのこのセクションのタイトルを表します。|
+|[CardLayoutStandardProperties](/javascript/api/excel/excel.cardlayoutstandardproperties)|[mainImage](/javascript/api/excel/excel.cardlayoutstandardproperties#mainImage)|カードのメイン イメージとして使用するプロパティを指定します。|
+||[sections](/javascript/api/excel/excel.cardlayoutstandardproperties#sections)|カードのセクションを表します。|
+||[subTitle](/javascript/api/excel/excel.cardlayoutstandardproperties#subTitle)|カードのサブタイトルを含むプロパティの仕様を表します。|
+||[title](/javascript/api/excel/excel.cardlayoutstandardproperties#title)|カードのタイトル、またはカードのタイトルを含むプロパティの仕様を表します。|
+|[CardLayoutTableSection](/javascript/api/excel/excel.cardlayouttablesection)|[レイアウト](/javascript/api/excel/excel.cardlayouttablesection#layout)|このセクションのレイアウトの種類を表します。|
 |[CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)|[licenseAddress](/javascript/api/excel/excel.cellvalueattributionattributes#licenseAddress)|このプロパティの使用方法を説明するライセンスまたはソースの URL を表します。|
 ||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|このプロパティを管理するライセンスの名前を表します。|
 ||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|ソースの URL を表します `CellValue` 。|
@@ -141,10 +152,11 @@ ms.locfileid: "60683785"
 |[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[basicType](/javascript/api/excel/excel.emptycellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[basicValue](/javascript/api/excel/excel.emptycellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[type](/javascript/api/excel/excel.emptycellvalue#type)|このセル値の種類を表します。|
+|[EntityCardLayout](/javascript/api/excel/excel.entitycardlayout)|[レイアウト](/javascript/api/excel/excel.entitycardlayout#layout)|このレイアウトの種類を表します。|
 |[EntityCellValue](/javascript/api/excel/excel.entitycellvalue)|[basicType](/javascript/api/excel/excel.entitycellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[basicValue](/javascript/api/excel/excel.entitycellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
-||[properties: { [key: string]: CellValue & { propertyMetadata](/javascript/api/excel/excel.entitycellvalue#properties)|このエンティティのプロパティとそのメタデータを表します。|
-||[propertyMetadata](/javascript/api/excel/excel.entitycellvalue#propertyMetadata)||
+||[cardLayout](/javascript/api/excel/excel.entitycellvalue#cardLayout)|カード ビューでこのエンティティのレイアウトを表します。|
+||[properties: { [key: string]](/javascript/api/excel/excel.entitycellvalue#properties)|このエンティティのプロパティとそのメタデータを表します。|
 ||[text](/javascript/api/excel/excel.entitycellvalue#text)|この値を持つセルがレンダリングされる場合に表示されるテキストを表します。|
 ||[type](/javascript/api/excel/excel.entitycellvalue#type)|このセル値の種類を表します。|
 |[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[basicType](/javascript/api/excel/excel.fielderrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
@@ -194,6 +206,8 @@ ms.locfileid: "60683785"
 ||[basicValue](/javascript/api/excel/excel.nameerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|の種類を表します `ErrorCellValue` 。|
 ||[type](/javascript/api/excel/excel.nameerrorcellvalue#type)|このセル値の種類を表します。|
+|[NamedItem](/javascript/api/excel/excel.nameditem)|[valueAsJson](/javascript/api/excel/excel.nameditem#valueAsJson)|この名前付きアイテムの値の JSON 表記。|
+|[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[valuesAsJson](/javascript/api/excel/excel.nameditemarrayvalues#valuesAsJson)|この範囲内のセル内の値の JSON 表記。|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|名前を使用してシート ビューを取得します。|
 |[NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)|[basicType](/javascript/api/excel/excel.notavailableerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[basicValue](/javascript/api/excel/excel.notavailableerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
@@ -214,6 +228,8 @@ ms.locfileid: "60683785"
 ||[getDataSourceType()](/javascript/api/excel/excel.pivottable#getDataSourceType__)|ピボットテーブルのデータ ソースの種類を取得します。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|コレクション内の最初のピボットテーブルを取得します。|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|同じワークシートまたは複数のワークシート内のセルのすべての従属セルを含む範囲を表すオブジェクト `WorkbookRangeAreas` を返します。|
+||[valuesAsJson](/javascript/api/excel/excel.range#valuesAsJson)|この範囲内のセル内の値の JSON 表記。|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[valuesAsJson](/javascript/api/excel/excel.rangeview#valuesAsJson)|この範囲内のセル内の値の JSON 表記。|
 |[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[basicType](/javascript/api/excel/excel.referrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[basicValue](/javascript/api/excel/excel.referrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|の種類を表します `RefErrorCellValue` 。|
@@ -248,9 +264,11 @@ ms.locfileid: "60683785"
 ||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setStyle_style_)|テーブルに適用されるスタイルを設定します。|
 ||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|テーブルに適用されるスタイル。|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onFiltered)|ブックまたはワークシート内の任意のテーブルにフィルターが適用されると発生します。|
+|[TableColumn](/javascript/api/excel/excel.tablecolumn)|[valuesAsJson](/javascript/api/excel/excel.tablecolumn#valuesAsJson)|このテーブル列のセル内の値の JSON 表記。|
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|フィルターが適用されるテーブルの ID を取得します。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|テーブルを含むワークシートの ID を取得します。|
+|[TableRow](/javascript/api/excel/excel.tablerow)|[valuesAsJson](/javascript/api/excel/excel.tablerow#valuesAsJson)|この表の行のセル内の値の JSON 表記。|
 |[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[basicType](/javascript/api/excel/excel.valueerrorcellvalue#basicType)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|
 ||[basicValue](/javascript/api/excel/excel.valueerrorcellvalue#basicValue)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|の種類を表します `ValueErrorCellValue` 。|
