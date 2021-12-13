@@ -4,12 +4,12 @@ description: 今後の Word JavaScript API の詳細。
 ms.date: 10/13/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: ba33c6c53dd62aa0adc37b90963d35988165fa96
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
+ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367440"
+ms.lasthandoff: 12/13/2021
+ms.locfileid: "61420244"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 
@@ -65,7 +65,7 @@ ms.locfileid: "60367440"
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|コンテンツ コントロールが追加された場合に発生します。|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|文書全体の範囲で指定された SearchOptions を使用して検索を実行します。|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|文書全体の範囲で指定された SearchOptions を使用して検索を実行します。|
 ||[settings](/javascript/api/word/word.document#settings)|ドキュメント内のアドインの設定を取得します。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|ドキュメント内のカスタム XML パーツを取得します。|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|ブックマークが存在する場合は、ドキュメントから削除します。|
