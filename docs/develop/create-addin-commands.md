@@ -1,14 +1,14 @@
 ---
 title: Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 07/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e71a73c6f253587968affb5e04d28cc95649b8c5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149707"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514083"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
@@ -33,9 +33,9 @@ ms.locfileid: "59149707"
 
 ![マニフェスト内のアドイン コマンド要素の概要。 ここでのトップ ノードは、子ホストとリソースを持つ VersionOverrides です。 [ホスト] の下に [ホスト] と [DesktopFormFactor] が表示されます。 DesktopFormFactor の下には FunctionFile と ExtensionPoint があります。 [ExtensionPoint] の下には CustomTab または OfficeTab と Officeがあります。 [CustomTab] または [Office] タブが [グループ] 、[コントロール] 、[アクション] の順に選択します。 [コントロール] Office[コントロール] [アクション] の順に選択します。 [リソース] (VersionOverrides の子) には、イメージ、Url、ShortStrings、および LongStrings があります。](../images/version-overrides.png)
 
-## <a name="step-1-start-from-a-sample"></a>手順 1: サンプルから始める
+## <a name="step-1-create-the-project"></a>手順 1: プロジェクトを作成する
 
-「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample)」にあるサンプルのいずれかから始めることを強くお勧めします。必要に応じて、このガイドの手順に従って独自のマニフェストを作成できます。「Office-Add-in-Commands-Samples」サイト内で XSD ファイルを使用してご使用のマニフェストを検証できます。アドイン コマンドを使用する前に、「[Excel、Word、および PowerPoint のアドイン コマンド](../design/add-in-commands.md)」をお読みください。
+[作業ウィンドウ アドインの作成] などのクイック スタートの 1 つを実行して[、Excelを作成することをお勧めします](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word、および PowerPointの各クイック スタートは、作業ウィンドウを表示するアドイン コマンド (ボタン) が既に含まれているプロジェクトを生成します。 アドイン コマンドを使用[](../design/add-in-commands.md)する前に、Excel、Word、PowerPointのアドイン コマンドを読み取っている必要があります。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>手順 2: 作業ウィンドウ アドインを作成する
 
@@ -442,3 +442,6 @@ Excel および Word で、既定の Office UI タブを使用することで、
 ## <a name="see-also"></a>関連項目
 
 - [Excel、PowerPoint、Word のアドイン コマンド](../design/add-in-commands.md)
+- [サンプル: コマンド ボタンExcelアドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
+- [サンプル: コマンド ボタンを使用して Word アドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
+- [サンプル: コマンド ボタンPowerPointアドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)

@@ -2,14 +2,15 @@
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
 ms.date: 07/16/2021
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 9785effec3ba71128aacdbfc4f521fef9a433dba
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: cfda46d5006b8ff351fcd339c601ef3e22613519
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149628"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514139"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 

@@ -1,18 +1,27 @@
 ---
 title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
-ms.date: 10/07/2021
+ms.date: 11/18/2021
 localization_priority: high
-ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 62bce4c5c6a01895db5d183e0526e0af820156ea
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250484"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514014"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
 これらのコード サンプルは、Office アドインを開発する場合のさまざまな機能の使用方法を学ぶサポートのために書かれています。
+
+## <a name="getting-started"></a>はじめに
+
+次のサンプルは、マニフェスト、HTML Web ページ、ロゴのみを使用して最も単純な Office アドインを構築する方法を示しています。 これらのコンポーネントは、Office アドインの基本的な部分です。 その他の開始情報については、[クイック スタート](../quickstarts/excel-quickstart-jquery.md)と[チュートリアル](/search/?terms=tutorial&scope=Office%20Add-ins)を参照してください。
+
+* [Excel "Hello world" アドイン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
+* [Outlook "Hello world" アドイン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
+* [PowerPoint "Hello world" アドイン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Word "Hello world" アドイン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
 
 ## <a name="outlook"></a>Outlook
 

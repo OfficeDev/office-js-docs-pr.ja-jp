@@ -1,21 +1,18 @@
 ---
 title: プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 description: プレゼンテーション、スライド、図形に関するカスタム メタデータにタグを使用する方法について説明します。
-ms.date: 04/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db9d31424ac4e08e6eaccca824ca5881d2ef617e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 03f1656919ed16b801e97623f7f69c9f4adfaac8
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154618"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514210"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 
 アドインは、"tags" と呼ばれるキーと値のペアの形式で、スライド上のプレゼンテーション、特定のスライド、および特定の図形にカスタム メタデータを添付できます。
-
-> [!IMPORTANT]
-> タグの API はプレビュー中です。 開発環境またはテスト環境で実験してくださいが、実稼働アドインには追加しません。
 
 タグの使用には、主に次の 2 つのシナリオがあります。
 
@@ -30,7 +27,7 @@ ms.locfileid: "59154618"
 
 タグをオブジェクトに追加するには、親オブジェクトのプロパティ [の TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) メソッドを呼び出 `tags` します。 次のコードでは、プレゼンテーションの最初のスライドに 2 つのタグを追加します。 このコードについては、以下の点に注意してください。
 
-- メソッドの最初のパラメーター `add` は、キーと値のペアのキーです。 
+- メソッドの最初のパラメーター `add` は、キーと値のペアのキーです。
 - 2 番目のパラメーターは値です。
 - キーは大文字です。 これはメソッドでは厳密に必須ではありませんが、キーは常に PowerPoint によって大文字として格納され、タグ関連のメソッドによってはキーを大文字で表す必要があります。そのため、タグ キーには常にコードで大文字を使用することをお勧めします。 `add` 
 

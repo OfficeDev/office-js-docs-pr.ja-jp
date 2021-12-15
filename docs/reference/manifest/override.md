@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、指定した条件に応じて設定の値を指定できます。
-ms.date: 05/19/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0f4d8877ba2228d5bfc2053f53b2a8e1ab7b29
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dda8f6ca5aee1492c51960fc637d96e4d82796cb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154867"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61513999"
 ---
 # <a name="override-element"></a>Override 要素
 
@@ -60,7 +60,7 @@ ms.locfileid: "59154867"
 
 ### <a name="attributes"></a>属性
 
-|属性|型|必須|説明|
+|属性|種類|必須|説明|
 |:-----|:-----|:-----|:-----|
 |Locale|string|必須|`"en-US"` などの BCP 47 言語タグの書式で、この上書きのロケールのカルチャ名を指定します。|
 |Value|string|必須|指定のロケールに対して表される設定の値を指定します。|
@@ -149,7 +149,7 @@ ms.locfileid: "59154867"
 
 ### <a name="attributes"></a>属性
 
-|属性|型|必須|説明|
+|属性|種類|必須|説明|
 |:-----|:-----|:-----|:-----|
 |値|string|必須|条件が満たされた場合の祖父母トークンの値。|
 
@@ -200,7 +200,7 @@ ms.locfileid: "59154867"
 > [!IMPORTANT]
 > この要素のサポートは、イベント ベースのアクティブ化機能を備えたメールボックス要件 [セット 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) [で導入されました](../../outlook/autolaunch.md)。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が RuntimeOverride 型の場合、属性は条件であり、属性 `<Override>`  `type` `resid` は結果です。 たとえば、「型が 'javascript'の場合は `resid` 、'JSRuntime.Url'です」と読み取ります。Outlookデスクトップでは、LaunchEvent 拡張ポイント[ハンドラーに対してこの要素が](../../reference/manifest/extensionpoint.md#launchevent)必要です。
+要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が RuntimeOverride 型の場合、属性は条件であり、属性 `<Override>`  `type` `resid` は結果です。 たとえば、「型が 'javascript'の場合は `resid` 、'JSRuntime.Url'です」と読み取ります。Outlookデスクトップでは、LaunchEvent 拡張ポイント ハンドラー[に対してこの要素が](../../reference/manifest/extensionpoint.md#launchevent)必要です。
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
@@ -218,11 +218,11 @@ ms.locfileid: "59154867"
 
 ### <a name="contained-in"></a>含まれる場所
 
-- [ランタイム](runtime.md)
+- [Runtime](runtime.md)
 
 ### <a name="attributes"></a>属性
 
-|属性|型|必須|説明|
+|属性|種類|必須|説明|
 |:-----|:-----|:-----|:-----|
 |**type**|string|はい|このオーバーライドの言語を指定します。 現時点では、 `"javascript"` サポートされている唯一のオプションです。|
 |**resid**|文字列|はい|親 [ランタイム](runtime.md) 要素で定義されている既定の HTML の URL の場所を上書きする JavaScript ファイルの URL の場所を指定します `resid` 。 32 文字以内で、要素内の要素の属性と一致 `resid` `id` `Url` する必要 `Resources` があります。|
@@ -233,7 +233,7 @@ ms.locfileid: "59154867"
 <!-- Event-based activation happens in a lightweight runtime.-->
 <Runtimes>
   <!-- HTML file including reference to or inline JavaScript event handlers.
-  This is used by Outlook on the web. -->
+  This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
   <Runtime resid="WebViewRuntime.Url">
     <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
     <Override type="javascript" resid="JSRuntime.Url"/>
@@ -243,5 +243,5 @@ ms.locfileid: "59154867"
 
 ### <a name="see-also"></a>関連項目
 
-- [ランタイム](runtime.md)
+- [Runtime](runtime.md)
 - [イベント ベースのOutlook用にアドインを構成する](../../outlook/autolaunch.md)

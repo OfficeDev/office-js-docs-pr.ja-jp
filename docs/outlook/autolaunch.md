@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4875018d2c457fe26eaed0d86f549d44f7932d52
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: 9dc0d75d9bf0f32d4df2de1a88bc4d175c291c2a
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066724"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514231"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -22,15 +22,15 @@ ms.locfileid: "61066724"
 
 ## <a name="supported-events"></a>サポートされるイベント
 
-次の表に、現在サポートされているイベントの一覧を示します。 イベントが発生すると、ハンドラーはイベントの種類に固有の詳細を含む可能性がある `event` オブジェクトを受け取ります。 イベント **固有の JSON 列** には、該当する場合は関連オブジェクトへのリンクが含まれます。 この表では、各イベントでサポートされているクライアントもメモします。
+次の表に、現在利用可能なイベントと、各イベントでサポートされているクライアントの一覧を示します。 イベントが発生すると、ハンドラーはイベントの種類に固有の詳細を含む可能性がある `event` オブジェクトを受け取ります。 イベント **固有の JSON 列** には、該当する場合は関連オブジェクトへのリンクが含まれます。
 
 > [!IMPORTANT]
-> プレビュー中のイベントは、Microsoft 365サブスクリプションとOutlook on the webでのみWindows。 詳細については、「この記事 [でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
+> プレビュー中のイベントは、Microsoft 365 サブスクリプションと、次の表に示す限られた一連のサポートされているクライアントでのみ使用できます。 クライアント構成の詳細については、「 [この記事でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
 
 |イベント|説明|イベント固有の JSON|最小要件セット|サポートされるクライアント|
 |---|---|---|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当しない|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当しない|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows Web ブラウザー|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows、Web ブラウザー、新しい Mac UI プレビュー|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows、Web ブラウザー、新しい Mac UI プレビュー|
 |`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
@@ -38,18 +38,18 @@ ms.locfileid: "61066724"
 |`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
 |`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当しない|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
-|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当しない|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
 
 ### <a name="how-to-preview"></a>プレビューする方法
 
 プレビューで今すぐイベントを試してみてください。 このページの最後にある「フィードバック」セクションをGitHubフィードバックを提供することで、お客様のシナリオと改善方法をお知らせします。
 
-これらのイベントをプレビューするには、次の手順を実行します。
+使用可能な場合にこれらのイベントをプレビューするには、次の手順を実行します。
 
-- 次のOutlook on the web。
+- 新Outlook on the webのOutlook Mac UI プレビューの詳細と設定については、次の操作を行います。
   - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript[のコンパイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)と定義の種類定義ファイルは、IntelliSenseと[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)にあるCDNです。 これらの種類は、 を使用してインストールできます `npm install --save-dev @types/office-js-preview` 。
+  - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14511.10000 です。 ベータ版[ビルドOfficeアクセスするには、Insider](https://insider.office.com)プログラムOffice参加します。
   - レジストリを構成します。 Outlookから読み込む代わりに、製品版とベータ版Office.jsのローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
@@ -85,7 +85,7 @@ ms.locfileid: "61066724"
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -181,7 +181,7 @@ ms.locfileid: "61066724"
 </VersionOverrides>
 ```
 
-OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the web同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイル `Resources` への参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所 `Runtime` `Override` を指定します。
+OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the web および新しい Mac UI プレビューでは、同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイル `Resources` への参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所 `Runtime` `Override` を指定します。
 
 > [!TIP]
 > アドインのマニフェストのOutlook詳細については、「Outlook[マニフェスト」を参照してください](manifests.md)。
@@ -248,6 +248,8 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 1. Outlook on the web で新しいメッセージを作成します。
 
     ![作成時に件名が設定されているOutlook on the webウィンドウのスクリーンショット。](../images/outlook-web-autolaunch-1.png)
+
+1. 新Outlook Mac UI プレビューで、新しいメッセージを作成します。
 
 1. [Outlook] でWindows新しいメッセージを作成します。
 

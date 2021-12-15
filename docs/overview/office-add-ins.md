@@ -1,16 +1,16 @@
 ---
-title: Office アドイン プラットフォームの概要 | Microsoft Docs
+title: Office アドイン プラットフォームの概要
 description: HTML、CSS、JavaScript などの一般的な Web テクノロジを使用し、Word、Excel、PowerPoint、OneNote、Project、Outlook を拡張および対話操作できます。
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: bc4406379320c27351bc73bf67e0f53e6c58b510
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 237650f1ee3b2577a51bb4e6625b96be54a11838
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154627"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514104"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office アドイン プラットフォームの概要
 

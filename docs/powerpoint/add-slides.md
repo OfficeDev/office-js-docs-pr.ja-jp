@@ -1,27 +1,22 @@
 ---
 title: スライドの追加と削除を行PowerPoint
 description: スライドを追加および削除し、新しいスライドのマスターとレイアウトを指定する方法について学習します。
-ms.date: 07/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 915409c83e4eee2028a02f921e87065ee824bd7d
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151363"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514111"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>スライドの追加と削除を行PowerPoint
 
 新PowerPointアドインは、プレゼンテーションにスライドを追加し、必要に応じて、どのスライド マスター、およびマスター マスターのレイアウトを新しいスライドに使用するを指定できます。 アドインはスライドも削除できます。
 
-> [!IMPORTANT]
-> スライドを追加する API は [プレビュー中であり](../reference/requirement-sets/powerpoint-preview-apis.md) 、実稼働アドインでは使用できません。スライドを *削除するための* API がリリースされました。
-
 スライドを追加する API は、主に、プレゼンテーション内のスライド マスターとレイアウトの ID がコーディング時に知られているか、実行時にデータ ソースで見つかるシナリオで使用されます。 このようなシナリオでは、選択基準 (スライド マスターやレイアウトの名前やイメージなど) とスライド マスターおよびレイアウトの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが既定のスライド マスターとマスター の既定のレイアウトを使用するスライドを挿入できるシナリオや、ユーザーが既存のスライドを選択して、同じスライド マスターとレイアウト (ただし、同じコンテンツではない) を持つ新しいスライドを作成できるシナリオでも使用できます。 詳細 [については、「使用するスライド マスターとレイアウトの選択](#select-which-slide-master-and-layout-to-use) 」を参照してください。
 
-## <a name="add-a-slide-with-slidecollectionadd-preview"></a>SlideCollection.add を使用してスライドを追加する (プレビュー)
-
-[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
+## <a name="add-a-slide-with-slidecollectionadd"></a>SlideCollection.add を使用してスライドを追加する
 
 [SlideCollection.add メソッドを使用してスライドを追加](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)します。 次に、プレゼンテーションの既定のスライド マスターを使用するスライドと、そのマスター の最初のレイアウトを追加する簡単な例を示します。 メソッドは、プレゼンテーションの最後に常に新しいスライドを追加します。 次に例を示します。
 

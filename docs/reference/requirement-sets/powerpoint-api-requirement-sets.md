@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API の要件セット
 description: PowerPoint JavaScript API の要件セットの詳細情報。
-ms.date: 01/08/2021
+ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 8cb557ed46490e52da3f372ae48848b7305cdd17
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2381252ef0d0a4e5b757b38534a826c77108a380
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154660"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514006"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API の要件セット
 
@@ -19,6 +19,7 @@ ms.locfileid: "59154660"
 
 |  要件セット  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [PowerPointApi 1.3](powerpoint-api-1-3-requirement-set.md)  | バージョン 2111 (ビルド 14701.20060) 以降| まだサポート<br>されていません | 16.55 以降 | 2021 年 12 月 |
 | [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | バージョン 2011 (ビルド 13426.20184) 以降| まだサポート<br>されていません | 16.43 以降 | 2020 年 10 月 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | バージョン 1810 (ビルド 11001.20074) 以降 | 2.17 以降 | 16.19 以降 | 2018 年 10 月 |
 
@@ -35,6 +36,10 @@ PowerPoint JavaScript API 1.1 には、[新しいプレゼンテーションを�
 ## <a name="powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2
 
 PowerPoint JavaScript API 1.2 では、別の PowerPoint プレゼンテーションのスライドを現在のプレゼンテーションに挿入したり、スライドを削除したりするためのサポートを追加します。 API の詳細については、「[PowerPoint プレゼンテーションのスライドの挿入と削除](../../powerpoint/insert-slides-into-presentation.md)」を参照してください。
+
+## <a name="powerpoint-javascript-api-13"></a>PowerPoint JavaScript API 1.3
+
+PowerPoint JavaScript API 1.3 は、スライドの追加と削除のサポートを追加します。 また、アドインでカスタム メタデータ タグを適用することもできます。 API の詳細については、「[PowerPoint でのスライドの追加と削除](../../powerpoint/add-slides.md)」および「[PowerPoint でのプレゼンテーション、スライド、図形のカスタム タグの使用](../../powerpoint/tagging-presentations-slides-shapes.md)」を参照してください。
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>実行時およびマニフェストで PowerPoint 要件セットを使用する方法
 
