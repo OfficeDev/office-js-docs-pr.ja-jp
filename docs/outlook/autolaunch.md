@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 12/14/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc0d75d9bf0f32d4df2de1a88bc4d175c291c2a
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: b97faa9b294b597aea7085209e9ab2dae7be4d8e
+ms.sourcegitcommit: 9ca8259b17566b8d73169de7f98bd4e16764bcdc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514231"
+ms.lasthandoff: 12/16/2021
+ms.locfileid: "61537884"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -51,7 +51,7 @@ ms.locfileid: "61514231"
   - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
 - [OutlookのWindows:
-  - 必要な最小ビルドは 16.0.14511.10000 です。 ベータ版[ビルドOfficeアクセスするには、Insider](https://insider.office.com)プログラムOffice参加します。
+  - 必要な最小ビルドは 16.0.14511.10000 です。 Insider プログラムOffice[参加](https://insider.office.com/join/windows)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
   - レジストリを構成します。 Outlookから読み込む代わりに、製品版とベータ版Office.jsのローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
     1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. という名前のエントリを `EnableBetaAPIsInJavaScript` 追加し、値をに設定します `1` 。 レジストリは次の図のようになります。
