@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript プレビュー API
 description: 今後の Word JavaScript API の詳細。
-ms.date: 10/13/2021
+ms.date: 12/14/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
-ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
+ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
+ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "61420244"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "61565365"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 
@@ -65,7 +65,7 @@ ms.locfileid: "61420244"
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|コンテンツ コントロールが追加された場合に発生します。|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|文書全体の範囲で指定された SearchOptions を使用して検索を実行します。|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|文書全体の範囲で指定された検索オプションを使用して検索を実行します。|
 ||[settings](/javascript/api/word/word.document#settings)|ドキュメント内のアドインの設定を取得します。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|ドキュメント内のカスタム XML パーツを取得します。|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|ブックマークが存在する場合は、ドキュメントから削除します。|
@@ -102,6 +102,7 @@ ms.locfileid: "61420244"
 |[Body](/javascript/api/word/word.body)|[endnotes](/javascript/api/word/word.body#endnotes)|本文の文末脚注のコレクションを取得します。|
 ||[footnotes](/javascript/api/word/word.body#footnotes)|本文の脚注のコレクションを取得します。|
 ||[getComments()](/javascript/api/word/word.body#getComments__)|本文に関連付けられたコメントを取得します。|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.body#getReviewedText_changeTrackingVersion_)|ChangeTrackingVersion の選択に基づいて確認されたテキストを取得します。|
 ||[type](/javascript/api/word/word.body#type)|本文の種類を取得します。|
 |[コメント](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|コメント作成者のメール アドレスを取得します。|
 ||[authorName](/javascript/api/word/word.comment#authorName)|コメント作成者の名前を取得します。|
@@ -131,23 +132,27 @@ ms.locfileid: "61420244"
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|コンテンツ コントロール内の文末脚注のコレクションを取得します。|
 ||[footnotes](/javascript/api/word/word.contentcontrol#footnotes)|コンテンツ コントロール内の脚注のコレクションを取得します。|
 ||[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|本文に関連付けられたコメントを取得します。|
-|[ドキュメント](/javascript/api/word/word.document)|[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|ドキュメントの文末脚注の本文を取得します。|
-||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|ドキュメントの脚注の本文を取得します。|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.contentcontrol#getReviewedText_changeTrackingVersion_)|ChangeTrackingVersion の選択に基づいて確認されたテキストを取得します。|
+|[ドキュメント](/javascript/api/word/word.document)|[changeTrackingMode](/javascript/api/word/word.document#changeTrackingMode)|ChangeTracking モードを取得または設定します。|
+||[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|1 つの本文でドキュメントの文末脚注を取得します。|
+||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|1 つの本文でドキュメントの脚注を取得します。|
 |[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|メモ アイテムの body オブジェクトを表します。|
 ||[delete()](/javascript/api/word/word.noteitem#delete__)|メモ アイテムを削除します。|
 ||[getNext()](/javascript/api/word/word.noteitem#getNext__)|同じ種類の次のノート アイテムを取得します。|
 ||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|同じ種類の次のノート アイテムを取得します。|
-||[reference](/javascript/api/word/word.noteitem#reference)|メイン ドキュメントの脚注/文末脚注参照を表します。|
-||[type](/javascript/api/word/word.noteitem#type)|メモアイテムの種類 (脚注または文末脚注) を表します。|
+||[reference](/javascript/api/word/word.noteitem#reference)|メイン ドキュメントの脚注または文末脚注参照を表します。|
+||[type](/javascript/api/word/word.noteitem#type)|メモ アイテムの種類である脚注または文末脚注を表します。|
 |[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|このコレクションの最初のノート アイテムを取得します。|
 ||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|このコレクションの最初のノート アイテムを取得します。|
 ||[items](/javascript/api/word/word.noteitemcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
-|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|Paragraph の文末脚注のコレクションを取得します。|
-||[footnotes](/javascript/api/word/word.paragraph#footnotes)|Paragraph の脚注のコレクションを取得します。|
+|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|段落内の文末脚注のコレクションを取得します。|
+||[footnotes](/javascript/api/word/word.paragraph#footnotes)|段落内の脚注のコレクションを取得します。|
 ||[getComments()](/javascript/api/word/word.paragraph#getComments__)|段落に関連付けられたコメントを取得します。|
-|[Range](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|Range の文末脚注のコレクションを取得します。|
-||[footnotes](/javascript/api/word/word.range#footnotes)|Range の脚注のコレクションを取得します。|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.paragraph#getReviewedText_changeTrackingVersion_)|ChangeTrackingVersion の選択に基づいて確認されたテキストを取得します。|
+|[Range](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|範囲内の文末脚注のコレクションを取得します。|
+||[footnotes](/javascript/api/word/word.range#footnotes)|範囲内の脚注のコレクションを取得します。|
 ||[getComments()](/javascript/api/word/word.range#getComments__)|範囲に関連付けられたコメントを取得します。|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.range#getReviewedText_changeTrackingVersion_)|ChangeTrackingVersion の選択に基づいて確認されたテキストを取得します。|
 ||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|範囲にコメントを挿入します。|
 ||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|文末脚注を挿入します。|
 ||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|脚注を挿入します。|
