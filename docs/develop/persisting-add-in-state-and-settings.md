@@ -1,14 +1,14 @@
 ---
 title: アドインの状態および設定を保持する
 description: ブラウザー コントロールのステートレスOfficeで実行されているアドイン Web アプリケーションにデータを保持する方法について説明します。
-ms.date: 03/23/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc99285aaaedfe5aa8385709fc5512f7cedfb2a6
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149995"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583799"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>アドインの状態および設定を保持する
 
@@ -22,7 +22,7 @@ Office アドインは、基本的にブラウザー コントロールのステ
 
 - 基になるブラウザー コントロールによって提供される技術である、ブラウザーの Cookie、または HTML5 Web ストレージ ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) または [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) を使用します。
     > [!NOTE]
-    > ユーザーは、選択した設定に応じて、ブラウザー ベースのストレージ手法をブロックできます。
+    > 一部のブラウザーやユーザーのブラウザー設定によって、ブラウザー ベースの記憶域の手法がブロックされる場合があります。 「Web サービス API の使用」に記載されている可用性Storage[があります](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)。
 
 この記事では、JavaScript API Officeを使用して現在のドキュメントにアドインの状態を保持する方法について説明します。 開いているドキュメントのユーザー設定の追跡など、ドキュメント間で状態を保持する必要がある場合は、別の方法を使用する必要があります。 たとえば [、SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) を使用してユーザー ID を取得し、ユーザー ID とその設定をオンライン データベースに保存できます。
 

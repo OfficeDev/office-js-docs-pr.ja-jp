@@ -1,28 +1,28 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 12/01/2021
+ms.date: 12/21/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: da85ba3cafec7c7eb86a4c6a617273747802b8e8
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: c0c3edeb05e327fd676a1d4d94c74bf18e22682d
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61284993"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583792"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
 Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、毎月第 2 水曜日の午前 8:00 PDT に発生します。 予定表の招待は 、でダウンロードできます [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
 
-## <a name="agenda-for-december-8th-call"></a>12 月 8 日の通話の議題
+## <a name="agenda-for-january-12th-call"></a>1 月 12 日の通話の議題
 
-- Outlook: Ignite アナウンスの要約
-- Outlookサンプル: イベント ベースのライセンス認証を使用して添付ファイルを暗号化する
+1 月の議題は、通話の約 1 週間前に投稿されます。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
+- [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)

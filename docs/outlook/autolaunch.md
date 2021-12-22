@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 12/16/2021
+ms.date: 12/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb758db993052614bd479cc6c8e62525a0bf02d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565372"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583810"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -252,6 +252,8 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
     ![作成時に件名が設定されているOutlook on the webウィンドウのスクリーンショット。](../images/outlook-web-autolaunch-1.png)
 
 1. 新Outlook Mac UI プレビューで、新しいメッセージを作成します。
+
+    ![新規作成時に件名が設定された新Outlook Mac UI プレビューのメッセージ ウィンドウのスクリーンショット。](../images/outlook-mac-autolaunch.png)
 
 1. [Outlook] でWindows新しいメッセージを作成します。
 
