@@ -2,14 +2,14 @@
 title: スマート アラートと OnMessageSend イベントを Outlookで使用する (プレビュー)
 description: イベント ベースのライセンス認証を使用して、Outlookで送信メッセージ イベントを処理する方法について学習します。
 ms.topic: article
-ms.date: 12/13/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d0745ac0f91fbda7866f52cba431369e45e2a1fe
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514076"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598380"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>スマート アラートと OnMessageSend イベントを Outlookで使用する (プレビュー)
 
@@ -232,10 +232,16 @@ ms.locfileid: "61514076"
 >
 > 1. Outlook を終了します。
 > 1. タスク マネージャー **を開** き、タスク **msoadfsb.exeが** 実行されていないか確認します。
-> 1. 次のコマンドを実行します。
+> 1. (マニフェストの既定のバージョン `https://localhost` ) を使用している場合は、次のコマンドを実行します。
 >
 >    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+>    ```
+>
+> 1. 使用している場合は、 `http://localhost` 次のコマンドを実行します。
+>
+>    ```command&nbsp;line
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
 >    ```
 >
 > 1. Outlook を再起動します。

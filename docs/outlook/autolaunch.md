@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 12/17/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583810"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598366"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -264,10 +264,16 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
     >
     > 1. Outlook を終了します。
     > 1. タスク マネージャー **を開** き、タスク **msoadfsb.exeが** 実行されていないか確認します。
-    > 1. 次のコマンドを実行します。
+    > 1. (マニフェストの既定のバージョン `https://localhost` ) を使用している場合は、次のコマンドを実行します。
     >
     >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+    >    ```
+    >
+    > 1. 使用している場合は、 `http://localhost` 次のコマンドを実行します。
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
     > 1. Outlook を再起動します。
