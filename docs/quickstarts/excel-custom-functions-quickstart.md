@@ -1,15 +1,15 @@
 ---
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250498"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61648006"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -105,6 +105,12 @@ Excel ブックで次の手順を実行し、`ADD` カスタム関数を試し�
 
 > [!div class="nextstepaction"]
 > [Excel カスタム関数アドインのチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+クイック スタートを複数回実行すると、問題が発生する場合があります。 Office キャッシュに同じ名前を持つ関数のインスタンスが既に存在する場合、アドインのサイドロード時にエラーが発生します。 `npm run start` を実行する前に [Office キャッシュをクリアする](../testing/clear-cache.md)ことにより、これを防ぐことができます。
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="Excelで '関数のインストール中にエラーが発生しました' というタイトルのエラー メッセージが表示されます。これには、'同じ名前を持つカスタム関数が既に存在するため、このアドインはインストールされませんでした' というテキストが含まれます。":::
 
 ## <a name="see-also"></a>関連項目
 
