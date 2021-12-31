@@ -1,14 +1,14 @@
 ---
 title: カスタム関数の JSON メタデータを手動で作成Excel
 description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
-ms.date: 11/03/2021
+ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 28be374a88890d20294311599b06b16942edd9b7
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: cf87ef5ae2a41748cd256c73b1a971e7689bf2bf
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749400"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647966"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -143,11 +143,11 @@ ms.locfileid: "60749400"
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (プレビュー)
 
 > [!NOTE]
-> プロパティ `allowCustomDataForDataTypeAny` は現在パブリック プレビューで使用できます。このプロパティは、OfficeとWindows。 プレビュー機能は変更される可能性があります。また、実稼働環境での使用を意図した機能ではありません。 試用はテスト環境と開発環境に限定することをお勧めします。 実稼働環境やビジネスクリティカルなドキュメント内でプレビュー機能を使用しない。
+> プロパティ `allowCustomDataForDataTypeAny` は現在パブリック プレビューで使用できます。このプロパティは、OfficeとWindows。 プレビュー機能は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー機能を使用しないでください。
 >
-> Windows の Office でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、Insider Program Office [ベータ](https://insider.office.com/)チャネル Insider レベルを選択 **する** 必要があります。 詳細については、「Insider [Program に参加する」をOfficeしてください](https://insider.office.com/join/windows)。
+> Windows の Office でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、[Office Insider プログラム](https://insider.office.com/)に参加して、**ベータ チャネル** Insider レベルを選択する必要があります。 詳細については、「[Office Insider プログラムに参加する](https://insider.office.com/join/windows)」を参照してください。
 
-プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると `true` 、カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「Custom functions and data types core [concepts」を参照してください](custom-functions-data-types-concepts.md)。
+プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると `true` 、カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「カスタム関数 [とデータ型」を参照してください](custom-functions-data-types-concepts.md)。
 
 他のほとんどの JSON メタデータ プロパティとは異なり、トップ レベルのプロパティであり、 `allowCustomDataForDataTypeAny` サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
 

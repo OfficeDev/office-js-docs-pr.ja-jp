@@ -773,10 +773,7 @@ items:
           - name: JSON メタデータの自動生成
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: データ型とカスタム関数の概要 (プレビュー)
-            href: excel/custom-functions-data-types-overview.md
-            displayName: 'Excel, Custom Functions'
-          - name: データ型とカスタム関数の概念 (プレビュー)
+          - name: データ型 (プレビュー)
             href: excel/custom-functions-data-types-concepts.md
             displayName: 'Excel, Custom Functions'
           - name: Excel JavaScript API を呼び出す
