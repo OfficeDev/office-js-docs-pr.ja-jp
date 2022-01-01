@@ -1,17 +1,17 @@
 ---
 title: Excel アドインのデータ型の概要
 description: Excel JavaScript API のデータ型を使用すると、Office アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値、エンティティ値内の配列、および拡張エラーをデータ型として操作できます。
-ms.date: 12/08/2021
+ms.date: 12/27/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
-ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
+ms.openlocfilehash: 06a10051b1b243689f9d46d22c38cbdbfb155e4d
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "61406670"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647952"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel アドインのデータ型の概要 (プレビュー)
 
@@ -35,10 +35,10 @@ Excel JavaScript API のデータ型を使用すると、アドイン開発者�
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-データ型は、カスタム関数の機能を強化します。 カスタム関数は、カスタム関数への入力とカスタム関数の出力の両方としてデータ型を受け取り、カスタム関数は Excel JavaScript API と同じ JSON スキーマをデータ型に使用します。 このデータ型の JSON スキーマは、カスタム関数により計算および評価がされるときに維持されます。 データ型とカスタム関数の統合の詳細については、「[カスタム関数とデータ型の主要概念](custom-functions-data-types-concepts.md)」を参照してください。
+データ型は、カスタム関数の機能を強化します。 カスタム関数は、カスタム関数への入力とカスタム関数の出力の両方としてデータ型を受け取り、カスタム関数は Excel JavaScript API と同じ JSON スキーマをデータ型に使用します。 このデータ型の JSON スキーマは、カスタム関数により計算および評価がされるときに維持されます。 データ型とカスタム関数の統合の詳細については、「[カスタム関数とデータ型](custom-functions-data-types-concepts.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [Excel データ型の主要概念](excel-data-types-concepts.md)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
-- [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)
+- [カスタム関数とデータ型](custom-functions-data-types-concepts.md)

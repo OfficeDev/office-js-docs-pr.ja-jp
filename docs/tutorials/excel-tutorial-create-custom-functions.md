@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250456"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647973"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -17,7 +17,7 @@ ms.locfileid: "60250456"
 
 このチュートリアルの内容:
 > [!div class="checklist"]
-> - [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。 
+> - [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。
 > - あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。
 > - Web からデータを取得するカスタム関数を作成します。
 > - Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。
@@ -31,6 +31,9 @@ ms.locfileid: "60250456"
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
  まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。[Office アドインの Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)は、試すことができるいくつかのカスタム関数を使ってプロジェクトをセットアップします。カスタム関数のクイック スタートを既に実行し、プロジェクトを生成している場合は、そのプロジェクトを引き続き使用し、代わりに[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進みます。
+
+> [!NOTE]
+> yo Office Project を再作成すると、Office キャッシュに同じ名前の関数のインスタンスが既に含まれているため、エラーが発生する可能性があります。 `npm run start` を実行する前に [Office キャッシュをクリアする](../testing/clear-cache.md)ことにより、これを防ぐことができます。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 

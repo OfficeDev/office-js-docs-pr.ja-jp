@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 12/08/2021
+ms.date: 12/28/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 37fe1b90065dd8a784fc7cfc191ccb9cdc3ce5b9
-ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
+ms.openlocfilehash: 7b14182c188900cd472b623dc2204bd74584e082
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "61406621"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647945"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -33,20 +33,23 @@ ms.locfileid: "61406621"
 
 ### <a name="json-schema"></a>JSON スキーマ
 
-データ型は、データの [CellValueType](/javascript/api/excel/excel.cellvaluetype) と、 `basicValue`、 `numberFormat`、 `address`などの追加情報を定義する一貫性のある JSON スキーマを使用します。 各`CellValueType`は、その型によって使用可能なプロパティがあります。 たとえば、 `webImage` の種類には、[altText](/javascript/api/excel/excel.webimagecellvalue#altText) と [属性](/javascript/api/excel/excel.webimagecellvalue#attribution) プロパティが含まれます。 次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
+各データ型は、その型用に設計された JSON メタデータ スキーマを使用します。 これは、データの [CellValueType](/javascript/api/excel/excel.cellvaluetype) と `basicValue`、`numberFormat`、`address` などのセルに関する追加情報を定義します。 各`CellValueType`は、その型によって使用可能なプロパティがあります。 たとえば、 `webImage` の種類には、[altText](/javascript/api/excel/excel.webimagecellvalue#altText) と [属性](/javascript/api/excel/excel.webimagecellvalue#attribution) プロパティが含まれます。 次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
+
+各データ型の JSON メタデータ スキーマには、データ型機能の最小ビルド数要件を満たしていないバージョンの Excel など、計算で互換性のないシナリオが発生した場合に使用される 1 つ以上の読み取り専用プロパティも含まれます。 プロパティ `basicType` は、すべてのデータ型の JSON メタデータの一部であり、常に読み取り専用プロパティです。 `basicType` プロパティは、データ型がサポートされていないか、正しくフォーマットされていない場合のフォールバックとして使用されます。
 
 ## <a name="formatted-number-values"></a>書式設定された数値
 
 [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) オブジェクトを使用すると、Excel アドインで値用の`numberFormat`プロパティを定義できます。 割り当てられると、この数値形式は値を使用して計算を通過し、関数から返すことができます。
 
-次の JSON コード サンプルは、書式設定された数値を示しています。 コード サンプルの `myDate`書式設定された数値は、Excel UI で **1/16/1990** と表示されます。
+次の JSON コード サンプルは、フォーマットされた数値の完全なスキーマを示しています。 コード サンプルの `myDate`書式設定された数値は、Excel UI で **1/16/1990** と表示されます。 データ型機能の最小互換性要件が満たされていない場合、計算では、フォーマットされた数値の代わりに `basicValue` が使用されます。
 
 ```json
-// This is an example of the JSON of a formatted number value.
+// This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
+    basicType: Excel.CellValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -55,10 +58,12 @@ const myDate = {
 
 エンティティ値は、オブジェクト指向プログラミングのオブジェクトと同様に、データ型のコンテナーです。 エンティティは、エンティティ値のプロパティとして配列もサポートします。 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) オブジェクトを使用すると、アドインは `type`、`text`、`properties`などのプロパティを定義できます。 `properties` プロパティを使用すると、エンティティ値で追加のデータ型を定義および格納できます。
 
-次の JSON コード サンプルは、テキスト、画像、日付、および追加のテキスト値を含むエンティティ値を示しています。
+`basicType` プロパティと `basicValue` プロパティは、データ型を使用するための最小互換性要件が満たされていない場合に、計算がこのエンティティ データ型を読み取る方法を定義します。 そのシナリオでは、このエンティティ データ型は **#VALUE!** として表示されます。 Excel UI のエラー。
+
+次の JSON コード サンプルは、テキスト、画像、日付、および追加のテキスト値を含むエンティティ値の完全なスキーマを示しています。
 
 ```json
-// This is an example of the JSON for an entity value.
+// This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity = {
     type: Excel.CellValueType.entity,
@@ -70,7 +75,9 @@ const myEntity = {
             type: Excel.CellValueType.string,
             basicValue: "I love llamas."
         }
-    }
+    }, 
+    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -78,13 +85,17 @@ const myEntity = {
 
 [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) オブジェクトは、[エンティティ](#entity-values)の一部として、または範囲内の独立した値として画像を格納する機能を作成します。 このオブジェクトには、`address`、`altText`、 `relatedImagesAddress` など、多くのプロパティが用意されています。
 
-次の JSON コード サンプルは、Web イメージを表す方法を示しています。
+`basicType` および `basicValue` プロパティは、データ型機能を使用するための最小互換性要件が満たされていない場合に、計算が Web 画像データ型を読み取る方法を定義します。 そのシナリオでは、この Web 画像データ型は **#VALUE!** として表示されます。 Excel UI のエラー。
+
+次の JSON コード サンプルは、Web イメージの完全なスキーマを示しています。
 
 ```json
-// This is an example of the JSON for a web image.
+// This is an example of the complete JSON for a web image.
 const myImage = {
     type: Excel.CellValueType.webImage,
-    address: "https://bit.ly/2YGOwtw"
+    address: "https://bit.ly/2YGOwtw", 
+    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -115,4 +126,4 @@ const myImage = {
 
 - [Excel アドインのデータ型の概要](excel-data-types-overview.md)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
-- [カスタム関数とデータ型の概要](custom-functions-data-types-overview.md)
+- [カスタム関数とデータ型](custom-functions-data-types-concepts.md)
