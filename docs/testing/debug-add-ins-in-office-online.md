@@ -1,14 +1,14 @@
 ---
 title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
-ms.date: 07/07/2020
+ms.date: 12/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 255826f8925ea35d25cf228e80de6774c9917cea
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152993"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765907"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
@@ -47,7 +47,7 @@ Word on the web を使用してアドインをデバッグするには:
 
 5. [挿入] タブで、**[個人用アドイン]** または **[Office アドイン]** をクリックし、アプリにアドインを挿入してテストします。
 
-6. お気に入りのブラウザーのツール デバッガーを使用してアドインをデバッグします。
+6. ブラウザーのデバッグ ツールを使用してアドインをデバッグします。 通常は F12 キーを押して開きます。
 
 ## <a name="potential-issues"></a>潜在的な問題
 

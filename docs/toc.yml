@@ -258,9 +258,12 @@ items:
             href: develop/develop-office-add-ins-for-the-ipad.md
       - name: テストとデバッグ
         items:
-          - name: Office アドインのテストとデバッグ
+          - name: Office アドインをテストする
             href: testing/test-debug-office-add-ins.md
             displayName: 'test, debug'
+          - name: Office アドインをデバッグする
+            href: testing/debug-add-ins-overview.md
+            displayName: debug
           - name: Windows
             items:
               - name: Windows で Office アドインをネットワーク共有からサイドロードする

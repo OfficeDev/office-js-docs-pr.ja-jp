@@ -5,12 +5,12 @@ ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca2cf894cf1c25529f79c99326719427a1e4faf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2a8d7f94eab26bc1cb831f95a30442e8e08afe70
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152921"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765935"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -22,7 +22,7 @@ Script Lab は、Excel、Outlook、Word、PowerPoint で Office JavaScript API �
 
 いかがでしたか? この 1 分間のビデオを見て、Script Lab の動作を確認します。
 
-[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ。')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するプレビュー ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>主な機能
 

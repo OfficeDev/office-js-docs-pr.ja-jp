@@ -1,14 +1,14 @@
 ---
 title: UI レスのカスタム関数のデバッグ
 description: 作業ウィンドウを使用しないExcel関数をデバッグする方法について説明します。
-ms.date: 07/08/2021
+ms.date: 01/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 112374758aab8f7fb493cb8bbe1c214765edd5a5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 28f597d7a4dd6befac7b2df6d1d6c7f8bfc3033f
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149880"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765949"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -20,7 +20,7 @@ ms.locfileid: "59149880"
 
 オンWindows:
 
-- [ExcelデスクトップおよびVisual Studio Code (VS Code) デバッガー](#use-the-vs-code-debugger-for-excel-desktop)
+- [Excel デスクトップとVisual Studio Code (VS Code) デバッガー](#use-the-vs-code-debugger-for-excel-desktop)
 - [Excel on the webとVS Codeデバッガー](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
 - [Excel on the webブラウザー ツール](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [コマンド ライン](#use-the-command-line-tools-to-debug)
@@ -68,7 +68,7 @@ Mac の場合:
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>アプリケーション内のVS CodeデバッガーをExcel使用Microsoft Edge
 
-このコマンドを使用VS Code、UI レスのカスタム関数を、Excelブラウザー Microsoft Edgeできます。 この機能をVS CodeするにはMicrosoft Edge拡張機能用の[デバッガーをインストールMicrosoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)があります。
+このコマンドを使用VS Code、UI レスのカスタム関数を、Excelブラウザー Microsoft Edgeできます。 アプリケーションでVS CodeをMicrosoft Edgeするには、開発者向け[DevTools Microsoft Edgeをインストールする必要Visual Studio Code。](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)
 
 ### <a name="run-your-add-in-from-vs-code"></a>アドインを実行するには、次のVS Code
 

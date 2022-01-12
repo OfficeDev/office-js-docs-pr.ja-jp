@@ -1,18 +1,18 @@
 ---
 title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 description: VS Code で拡張機能 Debugger for Microsoft Edge を使用し、Microsoft Edge WebView2 (Chromium ベース) を使用した Office アドインをデバッグする方法について説明します。
-ms.date: 11/09/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 370aee798b40631000310f65b7ace931d0c2ae3e
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889987"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765900"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
-Windows 上で動作する Office アドインは、Visual Studio Code の Debugger for Microsoft Edge の拡張機能を使用することで、Edge Chromium WebView2 ランタイムに対してデバッグを行うことができます。 
+Windows 上で動作する Office アドインは、Visual Studio Code の Debugger for Microsoft Edge の拡張機能を使用することで、Edge Chromium WebView2 ランタイムに対してデバッグを行うことができます。
 
 > [!TIP]
 > Visual Studio Code に組み込まれているツールを使用してデバッグできない場合、またはデバッグしたくない場合、またはアドインが Visual Studio Code の外部で実行されている場合にのみ問題が発生した場合は、「[Microsoft Edge WebView2 用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)」の説明に従って、Edge (Chromium ベース) 開発者ツールを使用して Edge Chromium WebView2 ランタイムをデバッグできます。
@@ -35,7 +35,7 @@ Windows 上で動作する Office アドインは、Visual Studio Code の Debug
    > npx office-addin-debugging start <your manifest path>
    > ```
 
-1. VS Code でプロジェクトを開きます。 VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 「Debugger for Microsoft Edge」で拡張機能を検索し、これをインストールします。
+1. VS Code でプロジェクトを開きます。 VS Code で **Ctrl キー + Shift キー + X キー** を選択して、拡張機能バーを開きます。 「[Microsoft Edge DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)」で拡張機能を検索し、これをインストールします。
 
 1. 次に、**[表示]、[実行]** の順に選択するか、**Ctrl キー + Shift キー + D キー** を入力してデバッグ ビューに切り替えます。
 

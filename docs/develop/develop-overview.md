@@ -3,12 +3,12 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 03e04fa7b1b5df751c161aec01d2d3f29eed6db9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149672"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765942"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -87,7 +87,7 @@ Script Lab は、Excel や Word などの Office プログラムでの作業中�
 
 次の 1 分間のビデオで、Script Lab の実際の動作をご覧ください。
 
-[![Excel、Word、PowerPoint での Script Lab の実行を紹介するショート ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ。')](https://aka.ms/scriptlabvideo)
+[![Excel、Word、PowerPoint での Script Lab の実行を紹介するショート ビデオ。](../images/screenshot-wide-youtube.png 'Script Lab のプレビュー ビデオ')](https://aka.ms/scriptlabvideo)
 
 Script Lab の詳細については、「[Script Lab を使用して Office JavaScript API を調べる](../overview/explore-with-script-lab.md)」を参照してください。
 
