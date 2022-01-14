@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの EquivalentAddins 要素
 description: 同等の COM アドイン、XLL、または両方との下位互換性を指定します。
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d32f67f49d334a75433aec2d079b45a44a04121a
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 48f3ef86f71ad3d4f0c759df4583af4cd95e5c5a
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990811"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042155"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 要素
 
@@ -17,6 +17,13 @@ ms.locfileid: "59990811"
 [!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
 
 **アドインの種類:** 作業ウィンドウ、メール、カスタム関数
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.1
+
+詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="syntax"></a>構文
 

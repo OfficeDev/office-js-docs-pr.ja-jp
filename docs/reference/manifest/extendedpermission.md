@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtendedPermission 要素
 description: アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 127ad4ea1df0d069a12f642e8fafdfcad006d715
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 5ed3745da87c2fa04839a8fbd1c677f62ad771dc
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990783"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042141"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 要素
 
@@ -18,6 +18,16 @@ ms.locfileid: "59990783"
 > この要素のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 **アドインの種類:** メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- メール 1.1
+
+詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [Mailbox 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
 ## <a name="available-extended-permissions"></a>使用可能な拡張アクセス許可
 
