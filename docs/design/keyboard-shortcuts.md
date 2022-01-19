@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: 1ea44b9a6ab38d0d167b04ba806e0f7e40ca8f99
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61285007"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074197"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -17,7 +17,7 @@ ms.locfileid: "61285007"
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> キーボード ショートカットが既に有効になっているアドインの作業バージョンから開始するには、キーボード ショートカットのサンプルを複製Excel[実行します](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。 キーボード ショートカットを独自のアドインに追加する準備ができたら、この記事に進む。
+> キーボード ショートカットが既に有効になっているアドインの作業バージョンから開始するには、キーボード ショートカットのサンプルを複製Excel[実行します](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 キーボード ショートカットを独自のアドインに追加する準備ができたら、この記事に進む。
 
 アドインにキーボード ショートカットを追加するには、3 つの手順があります。
 
@@ -130,7 +130,7 @@ ms.locfileid: "61285007"
     });
     ```
 
-前の手順に従うと **、Ctrl** + Alt + Up キーと Ctrl + Alt + Down キーを押して、作業ウィンドウの表示を切り替 **えます**。 同じ動作は、Excelアドイン[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)PnP repo の Officeキーボード ショートカット のサンプルにGitHub。
+前の手順に従うと **、Ctrl** + Alt + Up キーと Ctrl + Alt + Down キーを押して、作業ウィンドウの表示を切り替 **えます**。 同じ動作は、Excelアドイン[](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)PnP repo の Officeキーボード ショートカット のサンプルにGitHub。
 
 ## <a name="details-and-restrictions"></a>詳細と制限
 
@@ -311,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は[、Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}` 。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、 `inUse` プロパティは に設定されます `true` 。 たとえば、`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` などです。 次のコード スニペットは、例です。
+「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は[、Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}` 。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、 `inUse` プロパティは に設定されます `true` 。 たとえば、「 `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` 」のように入力します。 次のコード スニペットは、例です。
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
@@ -327,5 +327,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## <a name="next-steps"></a>次の手順
 
-- キーボード ショートカット[Excelアドインの例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)を参照してください。
+- キーボード ショートカット[Excelアドインの例](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)を参照してください。
 - 「マニフェストの拡張オーバーライドを処理する」の拡張オーバーライドの操作 [の概要を取得します](../develop/extended-overrides.md)。

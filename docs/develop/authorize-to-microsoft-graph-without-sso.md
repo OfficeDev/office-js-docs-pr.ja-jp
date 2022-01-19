@@ -3,18 +3,18 @@ title: SSO を使用せずに Microsoft Graph を承認する
 description: SSO を使用せずに Microsoft Graph を承認する方法
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f96c65fcc3c90a616f43189e1facebdbf8e9a8c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4f9555067b6fac9c55f07623daf5872cecf3c2ba
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149719"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074176"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>SSO を使用せずに Microsoft Graph を承認する
 
-アドインは、Microsoft Graph へのアクセス トークンを Graph (Azure AD) から取得することで、Microsoft Azure Active Directory データに対する承認を取得AD。 承認コード フローまたは暗黙的フローは、他の Web アプリケーションと同様に使用しますが、1 つの例外を除き、Azure AD ではサインイン ページを iframe で開くことができません。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 つまり、Azure AD API で開いたダイアログ ボックスで Azure Office開く必要があります。 これは、認証と承認ヘルパー ライブラリの使用方法に影響します。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
+アドインは、Microsoft Graph へのアクセス トークンを microsoft Graph (Azure Active Directory) からAzure AD。 承認コード フローまたは暗黙的フローは、他の Web アプリケーションと同様に使用しますが、Azure AD ではサインイン ページを iframe で開くことができません。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 つまり、ダイアログ API で開いたダイアログ ボックスAzure ADログイン画面を開くOffice必要があります。 これは、認証と承認ヘルパー ライブラリの使用方法に影響します。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
 
-Azure AD でのプログラミング認証の詳細については[、Microsoft ID プラットフォーム (v2.0)](/azure/active-directory/develop/v2-overview)の概要から始まり、そのドキュメント セットのチュートリアルとガイド、および関連するサンプルへのリンクを参照してください。 繰り返しますが、Office ダイアログ ボックスで実行するようにサンプルのコードを調整して、Office ダイアログ ボックスが作業ウィンドウとは別のプロセスで実行されるという事実を説明する必要がある場合があります。
+Azure AD を使用したプログラミング認証の詳細については[、Microsoft ID プラットフォーム (v2.0)](/azure/active-directory/develop/v2-overview)の概要から始まり、そのドキュメント セットのチュートリアルとガイド、および関連するサンプルへのリンクを参照してください。 繰り返しますが、Office ダイアログ ボックスで実行するようにサンプルのコードを調整して、Office ダイアログ ボックスが作業ウィンドウとは別のプロセスで実行されるという事実を説明する必要がある場合があります。
 
 コードが Microsoft Graph へのアクセス トークンを取得した後、アクセス トークンをダイアログ ボックスから作業ウィンドウに渡すか、またはトークンをデータベースに格納し、トークンが使用可能な作業ウィンドウにシグナルを送信します。 (詳細[については、「Office API を使用した認証」](auth-with-office-dialog-api.md)を参照してください)。作業ウィンドウ内のコードは、Microsoft Graphデータを要求し、それらの要求にトークンを含む。 Microsoft Graph SDK と Microsoft Graphの呼び出しの詳細については[、「Microsoft Graph」を参照してください](/graph/)。
 
@@ -30,6 +30,6 @@ Microsoft ID プラットフォーム (以前は AAD v.2.0) を使用するた�
 
 次のサンプルでは、Microsoft GraphアドインからデータOffice取得します。
 
-- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)

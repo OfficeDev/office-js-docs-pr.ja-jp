@@ -1,14 +1,14 @@
 ---
 title: UI レスのカスタム関数のデバッグ
 description: 作業ウィンドウを使用しないExcel関数をデバッグする方法について説明します。
-ms.date: 01/07/2022
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f597d7a4dd6befac7b2df6d1d6c7f8bfc3033f
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: a4ec54bc731ab37335070c01eae2f9700327e360
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765949"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074225"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>UI レスのカスタム関数のデバッグ
 
@@ -149,9 +149,9 @@ Mac の場合:
   
     または、アドインを次のコマンドで起動する場合Excel on the web実行します。
   
-    `npm run start:web`
+    `npm run start:web -- --document {url}`(場所 `{url}` は、ファイルまたはExcel上OneDriveファイルSharePoint)
   
-    このExcel on the webアドインをサイドロードする必要があります。 「アドインを [サイドロードする」の手順に従って](#sideload-your-add-in) 、アドインをサイドロードします。 次に、次のセクションに進み、デバッグを開始します。
+    アドインがドキュメントにサイドロードされない場合は、「 [サイド](#sideload-your-add-in) ロード」の手順に従ってアドインをサイドロードします。 次に、次のセクションに進み、デバッグを開始します。
   
 4. ブラウザーで開発者ツールを開きます。 Chrome およびほとんどのブラウザーの場合、F12 は開発者ツールを開きます。
 5. 開発者ツールで、ソース コード スクリプト ファイル(functions.jsまたは **functions.ts) を開きます**。 カスタム関数コードは、ファイルの末尾近くに位置している可能性があります。
@@ -171,7 +171,7 @@ Mac の場合:
 次のタスクを使用して、デスクトップまたはオンラインでデバッグを開始できます。
 
 - `npm run start:desktop`: デスクトップExcelを開始し、アドインをサイドロードします。
-- `npm run start:web`: アドインExcel on the webを開始し、サイドロードします。
+- `npm run start:web -- --document {url}`(場所は、Excel または OneDrive の OneDrive ファイルSharePoint): Excel on the webを開始し、アドインを `{url}` サイドロードします。
 - `npm run stop`: デバッグExcel停止します。
 
 ## <a name="next-steps"></a>次の手順

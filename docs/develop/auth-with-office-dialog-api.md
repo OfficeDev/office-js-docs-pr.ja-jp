@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 07/22/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 1ce7f4a366fbf2f7831c4944d9c21d7c0b1b3446
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: aa4ce5b74752623e10b61082d6f9becc1a26b713
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149723"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074190"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -88,15 +88,15 @@ Office ダイアログ ボックスと作業ウィンドウが異なるブラウ
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Office ダイアログ API でライブラリを使用する方法
 
-ほとんどのライブラリでは、モノリシックの "認証コンテキスト" オブジェクトに加えてまたはその代わりとして、モノリシックの度合いがより低いヘルパー オブジェクトをコードが作成するできるようにする、抽象化レベルの低い API が提供されています。 たとえば、[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) バージョン  3.x.x には、ログイン URL を構築する API と、コードがアクセスできるプロパティ内のアクセス トークンを格納する AuthResult オブジェクトを構築するための別の API が含まれています。 Office アドインでの MSAL.NET の例については、「[Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)」および「[Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)」を参照してください。 アドインで [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) を使用する例については、「[Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)」を参照してください。
+ほとんどのライブラリでは、モノリシックの "認証コンテキスト" オブジェクトに加えてまたはその代わりとして、モノリシックの度合いがより低いヘルパー オブジェクトをコードが作成するできるようにする、抽象化レベルの低い API が提供されています。 たとえば、[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) バージョン  3.x.x には、ログイン URL を構築する API と、コードがアクセスできるプロパティ内のアクセス トークンを格納する AuthResult オブジェクトを構築するための別の API が含まれています。 Office アドインでの MSAL.NET の例については、「[Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)」および「[Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)」を参照してください。 アドインで [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) を使用する例については、「[Office アドイン Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)」を参照してください。
 
 認証ライブラリおよび承認ライブラリの詳細については、「[Microsoft Graph: 推奨されるライブラリ](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples)」および「[その他の外部サービス: ライブラリ](auth-external-add-ins.md#libraries)」を参照してください。
 
 ## <a name="samples"></a>サンプル
 
-- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): MSAL.NET ライブラリと認証コード フローを使用してサインインし、Microsoft Graph データのアクセス トークンを取得する、ASP.NET ベースのアドイン (Excel、Word、または PowerPoint) です。
-- [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): 上記のアドインと同様ですが、Office アプリケーションは Outlook です。
-- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): サインインおよび Microsoft Graph データのアクセス トークンの取得に msal.js ライブラリと暗黙的フローを使用する、NodeJS ベースのアドイン (Excel、Word、PowerPoint) です。
+- [Office アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): MSAL.NET ライブラリと認証コード フローを使用してサインインし、Microsoft Graph データのアクセス トークンを取得する、ASP.NET ベースのアドイン (Excel、Word、または PowerPoint) です。
+- [Outlook アドイン Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): 上記のアドインと同様ですが、Office アプリケーションは Outlook です。
+- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React): サインインおよび Microsoft Graph データのアクセス トークンの取得に msal.js ライブラリと暗黙的フローを使用する、NodeJS ベースのアドイン (Excel、Word、PowerPoint) です。
 
 ## <a name="see-also"></a>関連項目
 

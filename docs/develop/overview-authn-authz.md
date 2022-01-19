@@ -3,12 +3,12 @@ title: Office アドインにおける認証と承認の概要
 description: Web アプリケーションおよび Office アドインでログインによる認証をユーザーに要求します。
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: fb3d541a2d98c97d925dd870a2f9ff8649e2aec1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: aa1a6c19a52f22271cbe1b6ec0bc54bcf15dd75e
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150001"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073319"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -43,8 +43,8 @@ SSO を使用してユーザーを認証するために、作業ウィンドウ�
 
 SSO を使用するユーザー認証を実装する前に、「[Office アドインのシングル サインオンを有効化する](sso-in-office-add-ins.md)」の記事を十分に理解しておく必要があります。次のサンプルも確認しておいてください。
 
-- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)、特に [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js) ファイル。
-- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)。
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)、特に [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js) ファイル。
+- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)。
 
 ただし、これらの例では、トークンは ID トークンとしては使用されません。 ここでは、トークンは、**On-Behalf-Of** フローを使用して Microsoft Graph にアクセスするために使用されます。
 
@@ -66,8 +66,8 @@ Office SSO の実装を開始する前に、次の 2 つの記事を十分に理
 
 また、次を参照してください。
 
-- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office アドイン ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 
 ## <a name="access-to-non-microsoft-data-sources"></a>Microsoft 以外のデータ ソースへのアクセス
 

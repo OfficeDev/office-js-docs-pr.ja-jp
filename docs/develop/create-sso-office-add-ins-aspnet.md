@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: シングル サインオン (SSO) を使用する ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法の詳細なガイド。
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 99471b78100c2627186ceb8f1c93afce5a19d396
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fd586656d0b584c7fb394e7c53bdb869584accd0
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149684"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073368"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "59149684"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-「[Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)」にあるリポジトリを複製するかダウンロードします。
+「[Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)」にあるリポジトリを複製するかダウンロードします。
 
 > [!NOTE]
 > サンプルには 2 つのバージョンがあります。
@@ -630,4 +630,4 @@ ms.locfileid: "59149684"
 
 すべての Web Officeと同様に、ステージング サーバーまたは運用サーバーに移動する準備ができたら、マニフェスト内のドメインを新しいドメインで `localhost:44355` 更新する必要があります。 同様に、ドメイン ファイル内のドメインを更新web.configがあります。
 
-ドメインは AAD 登録に表示されますので、その登録を更新して、新しいドメインが表示される場所に代って `localhost:44355` 使用する必要があります。
+ドメインはドメイン登録に表示AAD、その登録を更新して、新しいドメインが表示される場所に代って `localhost:44355` 使用する必要があります。

@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f1a517d113488be7320e0f5c81858fa976672c34
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 44509ab9188d812cf85c9ffa25534444f4d66fe5
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514097"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074218"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -78,7 +78,7 @@ function add(first, second){
 
 Yo Office ジェネレーターを使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
 
-サンプル アドインからフル機能マニフェストを確認する方法については、「[この Github リポジトリ](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml)」を参照してください。
+サンプル アドインからフル機能マニフェストを確認する方法については、「[この Github リポジトリ](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml)」を参照してください。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 

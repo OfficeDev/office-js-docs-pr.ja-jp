@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 02239437c12e44708e870540c95f1333e78351f9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150073"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073354"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -439,22 +439,22 @@ Office ダイアログ API に関するヒントとヘスと プラクティス�
 
 **より複雑なサンプル:**
 
-- [Officeアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
-- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [Officeアドイン ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Officeアドイン SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
-- [Outlookアドイン Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlookアドイン SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
-- [Outlookアドイン トークン ビューアー](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlookアドインのアクション可能なメッセージ](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
-- [Outlookアドインの共有OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
-- [PowerPointアドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Excel共有ランタイム シナリオ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
-- [Excelアドイン ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Office アドイン の Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Office アドイン Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [Office アドイン NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office SAAS 収益化のサンプル](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlook アドインの Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook アドイン SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook アドイン トークン ビューアー](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
+- [Outlook アドインのアクション可能なメッセージ](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlookへのアドインの共有OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [PowerPoint アドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Excel共有ランタイム シナリオ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
+- [Excel ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 - [Word アドイン JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
 - [Word アドイン JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
 - [Word アドイン AngularJS クライアント OAuth](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
 - [Office アドイン Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Officeアドイン の OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-- [Officeアドイン UX デザイン パターン コード](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Office アドイン の OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Office UX デザイン パターン コード](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

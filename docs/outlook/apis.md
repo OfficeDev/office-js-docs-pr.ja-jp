@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
-ms.date: 02/21/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7346882a11b81321c65730390dc213d76879773
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154240"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074295"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -16,13 +16,14 @@ Outlook アドインで API を使用するには、Office.js ライブラリの
 
 ## <a name="officejs-library"></a>Office.js ライブラリ
 
-Outlook アドイン API と対話操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリ用の CDN は `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` です。 AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
+Outlook アドイン API と対話操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリのコンテンツ配信ネットワーク (CDN) はです `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 。 AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
 
 アドインの UI を実行する Web ページ (.html、.aspx、.php のファイル) の `<head>` タグの中の `<script>` タグの中で CDN を参照します。
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
+
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
 > [!IMPORTANT]

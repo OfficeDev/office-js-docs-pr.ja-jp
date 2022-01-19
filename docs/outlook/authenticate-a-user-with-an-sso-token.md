@@ -3,12 +3,12 @@ title: シングル サインオン トークンを使用してユーザーを�
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
 ms.date: 11/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e2667e7f465749f708bf35cf00b0806306a618a
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: 3f920ce4465256004ab0a286feca8f889c38a4f3
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066710"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074288"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 
@@ -54,7 +54,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ## <a name="see-also"></a>関連項目
 
-- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO」を[参照してください](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO」を[参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 - [SSO API リファレンス](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)
 - [イベント ベースのライセンス認証を使用するOutlookでシングル サインオン (SSO) を有効にする](use-sso-in-event-based-activation.md)

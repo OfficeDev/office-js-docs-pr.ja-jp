@@ -3,12 +3,12 @@ title: Internet Explorer 11 をサポート
 description: アドインで 11 Internet Explorer ES5 Javascript をサポートする方法について説明します。
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a6f762231face1b69a3354b584ca0bbea1742050
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 755bcde8748b3cc0ce2f5de92a6ba5f04f6d263c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681133"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074260"
 ---
 # <a name="support-internet-explorer-11"></a>Internet Explorer 11 をサポート
 
@@ -20,7 +20,7 @@ ms.locfileid: "60681133"
 > - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーション を使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合Office *使用* するデスクトップ バージョンの組み合わせをテストInternet Explorer。
 > - この[Script Labは](../overview/explore-with-script-lab.md)サポートされなくなりましたInternet Explorer。
 
-Officeアドインは、Web アプリケーションで実行するときに IFrames 内に表示Office on the web。 Officeアドインは、Mac 上または Mac 上の Office または Windowsで実行Officeブラウザー コントロールを使用して表示されます。 埋め込みブラウザー コントロールは、オペレーティング システムまたはユーザーのコンピューターにインストールされているブラウザーによって提供されます。
+Officeアドインは、Web アプリケーションで実行するときに IFrame 内に表示Office on the web。 Officeアドインは、Mac 上または Mac 上の Office または Office Windowsで実行するときに、埋め込みブラウザー コントロールを使用して表示されます。 埋め込みブラウザー コントロールは、オペレーティング システムまたはユーザーのコンピューターにインストールされているブラウザーによって提供されます。
 
 AppSource を使用してアドインを販売する予定がある場合、または以前のバージョンの Windows および Office をサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 IE11 ベースのブラウザー コントロールをWindowsとOfficeするブラウザーの組み合わせについては、「Office アドインで使用されるブラウザー」を[参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。
 
@@ -40,7 +40,7 @@ Internet Explorer 11 では、ES5 以降の JavaScript バージョンはサポ�
 - [babel](https://babeljs.io/)
 - [tsc](https://www.typescriptlang.org/index.html)
 
-アドイン プロジェクトでのトランスピラーのインストールと構成の詳細については、どちらかのドキュメントを参照してください。 Grunt や[WebPack](https://webpack.js.org/)などのタスク[](https://gruntjs.com/)ランナーを使用して、トランスピレーションを自動化することをお勧めします。 tsc を使用するサンプル アドインについては、「microsoft Office アドイン」を[参照Graph React。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/auth/Office-Add-in-Microsoft-Graph-React) babel を使用するサンプルについては[、「Offline Storage アドイン」を参照してください](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/Excel.OfflineStorageAddin)。
+アドイン プロジェクトでのトランスピラーのインストールと構成の詳細については、どちらかのドキュメントを参照してください。 Grunt や[WebPack](https://webpack.js.org/)などのタスク[](https://gruntjs.com/)ランナーを使用して、トランスピレーションを自動化することをお勧めします。 tsc を使用するサンプル アドインについては、「microsoft Office アドイン」を[参照Graph React。](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React) babel を使用するサンプルについては[、「Offline Storage アドイン」を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin)。
 
 > [!NOTE]
 > ユーザーが (Visual Studio Visual Studio Code) tsc を使用する場合は、おそらく最も簡単です。 nuget パッケージを使用してサポートをインストールできます。 詳細については[、「JavaScript と TypeScript in Visual Studio 2019」を参照してください](/visualstudio/javascript/javascript-in-vs-2019)。 Visual Studio で babel を使用するには、ビルド スクリプトを作成するか、Visual Studio でタスク ランナー エクスプローラーを使用して[、WebPack](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner)タスク ランナーや NPM タスク ランナーのようなツールを[使用します](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)。

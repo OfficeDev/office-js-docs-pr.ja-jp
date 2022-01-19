@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 ms.localizationpriority: high
-ms.openlocfilehash: 087d35a6de6618a238ec7c2a30331abcdfdd44f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ddf1e22141cee516bcd7808fd37b789f6943e093
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151194"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073140"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -55,12 +55,12 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>セル アナライザー VSTO アドイン
 
-このチュートリアルには、[Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP ソリューションを使用します。 **/start** フォルダーには、移行する VSTO アドイン ソリューションが収納されています。 目標は、できるだけ多くのコードを共有するようにして VSTO アドインを最新の Office アドインに移行することです。
+このチュートリアルには、[Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP ソリューションを使用します。 **/start** フォルダーには、移行する VSTO アドイン ソリューションが収納されています。 目標は、できるだけ多くのコードを共有するようにして VSTO アドインを最新の Office アドインに移行することです。
 
 > [!NOTE]
 > この例では C# を使用していますが、このチュートリアルに示す手法は、あらゆる .NET 言語で記述した VSTO アドインに適用できます。
 
-1. [Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP ソリューションを自分のコンピューターの作業フォルダーにダウンロードします。
+1. [Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP ソリューションを自分のコンピューターの作業フォルダーにダウンロードします。
 1. Visual Studio 2019 を起動して、**/start/Cell-Analyzer.sln** ソリューションを開きます。
 1. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。
 1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** プロジェクトを右クリックして **[プロパティ]** を選択します。

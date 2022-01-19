@@ -2,14 +2,14 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 12/22/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
-ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
+ms.openlocfilehash: 5e4287c127135b01213a3f888c09613eba5c0543
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2021
-ms.locfileid: "61598366"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073326"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
@@ -54,7 +54,7 @@ ms.locfileid: "61598366"
   - 最小必要なビルドは 16.54 (21101001)。 Insider プログラムOffice[参加](https://insider.office.com/join/Mac)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14511.10000 です。 Insider プログラムOffice[参加](https://insider.office.com/join/windows)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
-  - レジストリを構成します。 Outlookから読み込む代わりに、製品版とベータ版Office.jsのローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
+  - レジストリを構成します。 Outlookコンテンツ配信ネットワーク (CDN) から読み込む代わりに、Office.js の製品版とベータ版のローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
     1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. という名前のエントリを `EnableBetaAPIsInJavaScript` 追加し、値をに設定します `1` 。 レジストリは次の図のようになります。
 
@@ -345,5 +345,5 @@ CORS の完全なサポートは近日公開予定です。
 - [イベント ベースのアドインの AppSource Outlookオプション](autolaunch-store-options.md)
 - [スマート アラートと OnMessageSend のチュートリアル](smart-alerts-onmessagesend-walkthrough.md)
 - PnP サンプル:
-  - [Outlook イベントベースのアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
-  - [イベント ベースOutlookを使用して外部受信者にタグを付け](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
+  - [Outlook イベントベースのアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+  - [イベント ベースOutlookを使用して外部受信者にタグを付け](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

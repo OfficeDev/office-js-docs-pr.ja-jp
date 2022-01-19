@@ -3,12 +3,12 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
 ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: a4777ebeb9b2ca005f58010e0f8e0b7daf5a8d94
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990657"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074253"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
@@ -28,8 +28,8 @@ ms.locfileid: "59990657"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>getAccessToken からのエラーの原因と処理
 
 このセクションで説明するエラー処理の例については、次を参照してください。
-- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+- [Office-Add-in-ASPNET-SSO の HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [Office-Add-in-NodeJS-SSO の ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -107,7 +107,7 @@ ms.locfileid: "59990657"
 
 ### <a name="13013"></a>13013
 
-短い時間で何度も呼び出されたので、Officeの呼び `getAccessToken` 出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用されるのかHomeES6.js`retryGetAccessToken` を[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)参照[ssoAuthES6.js。 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+短い時間で何度も呼び出されたので、Officeの呼び `getAccessToken` 出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用されるのかHomeES6.js`retryGetAccessToken` を[](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)参照[ssoAuthES6.js。 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="50001"></a>50001
 
@@ -118,12 +118,12 @@ ms.locfileid: "59990657"
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory からのサーバー側のエラー
 
 このセクションで説明するエラー処理の例については、次を参照してください。
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件付きアクセスおよび多要素認証のエラー
 
-AAD および Microsoft 365 の ID の特定の構成では、Microsoft Graph でアクセスできる一部のリソースで、ユーザーの Microsoft 365 テナントが要求しない場合でも、多要素認証 (MFA) を必要とすることができます。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
+AAD および Microsoft 365 の ID の特定の構成では、Microsoft Graph でアクセスできる一部のリソースでは、ユーザーの Microsoft 365 テナンシーが要求しない場合でも、多要素認証 (MFA) を必要とすることができます。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
 
 コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。
 

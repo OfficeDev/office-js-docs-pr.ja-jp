@@ -3,12 +3,12 @@ title: Excel、PowerPoint、Word のマニフェストにアドイン コマン�
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514083"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073382"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
@@ -442,6 +442,6 @@ Excel および Word で、既定の Office UI タブを使用することで、
 ## <a name="see-also"></a>関連項目
 
 - [Excel、PowerPoint、Word のアドイン コマンド](../design/add-in-commands.md)
-- [サンプル: コマンド ボタンExcelアドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
-- [サンプル: コマンド ボタンを使用して Word アドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
-- [サンプル: コマンド ボタンPowerPointアドインを作成する](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
+- [サンプル: コマンド ボタンExcelアドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [サンプル: コマンド ボタンを使用して Word アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [サンプル: コマンド ボタンPowerPointアドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
 description: 開発時にベスト プラクティスを適用して、Officeを作成します。
-ms.date: 05/12/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149799"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073340"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -93,7 +93,6 @@ ms.locfileid: "59149799"
 > [!NOTE]
 > デザイン要素に UI Fluent[を](../design/using-office-ui-fabric-react.md)React場合、これらの要素の多くはデザイン システムに組み込まれています。
 
-
 ## <a name="optimize-and-monitor-add-in-performance"></a>アドインのパフォーマンスを最適化して監視する
 
 - UI が素早く応答する感覚を与えるようにします。アドインが 500 ミリ秒以内で読み込まれるようにする必要があります。
@@ -102,7 +101,7 @@ ms.locfileid: "59149799"
 
 - 長時間実行する操作には、読み込みインジケーターを提供します。
 
-- 画像、リソース、および一般的なライブラリを CDN を使用してホストします。可能な限り多くのものを 1 つの場所から読み込みます。
+- コンテンツ配信ネットワーク (CDN) を使用して、イメージ、リソース、および共通ライブラリをホストします。 可能な限り多くのものを 1 つの場所から読み込みます。
 
 - Web ページを最適化するには、標準的な Web の慣習に従います。運用環境では、ライブラリの縮小バージョンのみを使用します。必要なリソースのみを読み込み、リソースが読み込まれる方法を最適化します。
 

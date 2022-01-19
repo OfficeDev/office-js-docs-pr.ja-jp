@@ -3,12 +3,12 @@ title: Office Open XML を使用してより良い Word 用アドインを作成
 description: Open XML を使用して Word アドインを改善するOffice概要。
 ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b54690bc2de601ffddffce46eb76ef4f8c69258e
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 9ba15487a964d13edb659374bd8cd6c7e135228e
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153457"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074344"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
@@ -24,7 +24,7 @@ Office Open XML は、Word 文書 (.docx、.dotx など) が記述される言�
 > Office Open XML は PowerPoint と Excel (ならびに、Office 2013 以降、Visio) ドキュメントの言語です。ただし、現在のところは、Word 用に作成された Office アドインでのみ、Office Open XML としてコンテンツを型強制できます。完全な言語リファレンス ドキュメントなど、Office Open XML に関する詳細は、「[その他の技術情報](#see-also)」を参照してください。
 
 まず、Open XML の設定を使用して挿入できるコンテンツ タイプのOfficeします。
-次の例[を Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)に挿入するために必要な Office Open XML マークアップと Office.js コードを含む、Word アドインで Open XML の読み込みと書き込みのコード サンプルをダウンロードします。
+次の例[を Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)に挿入するために必要な Office Open XML マークアップと Office.js コードを含む、Word アドインで Open XML の読み込みと書き込みのコード サンプルをダウンロードします。
 
 > [!NOTE]
 > この記事では、コンテンツ **タイプと** リッチコンテンツという用語は、Word ドキュメントに挿入できるリッチ コンテンツの種類を参照します。
@@ -197,7 +197,7 @@ Office Open XML マークアップを初めて見る多くのアドイン開発�
 この関数では、最後の行を含むすべてが、関数の最後の [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) メソッド呼び出しで使用するために保存されたマークアップを取得するために使用されます。 `setSelectedDataASync` 挿入するコンテンツと coercion の種類を指定する必要があります。
 
 > [!NOTE]
-> _yourXMLfilename_ をソリューションに保存した XML ファイルの名前とパスで置き換えます。 ソリューションに XML ファイルを含める場所やコード内で XML ファイルを参照する方法が不明な場合は [、Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) アドイン コード サンプルの Open XML の読み込みと書き込みを参照してください。その例と、ここに示すマークアップと JavaScript の実際の例を参照してください。
+> _yourXMLfilename_ をソリューションに保存した XML ファイルの名前とパスで置き換えます。 ソリューションに XML ファイルを含める場所やコード内で XML ファイルを参照する方法が不明な場合は [、Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) アドイン コード サンプルの Open XML の読み込みと書き込みを参照してください。その例と、ここに示すマークアップと JavaScript の実際の例を参照してください。
 
 ```js
 function writeContent() {
@@ -325,7 +325,7 @@ Word の共同作成機能 (他の人と同時にドキュメントを編集す�
 
 一部のタイプのリッチ コンテンツでは、前の例で見たような、コンテンツ コントロール、Office 描画図形、テキスト ボックス、表 (スタイルが表に適用されない限り) など、.rels および document.xml コンポーネントのみが必要です。実際は、編集済みの同じパッケージ パーツを再利用したり、document.xml の **body** コンテンツを自分のコンテンツのマークアップと交換したりします。
 
-図 5 ~ 8 で前に示した各コンテンツ タイプの例については、Office Open XML マークアップを参照するには、「概要」セクションで参照されている Word アドイン コード サンプルの Open [XML](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)の読み込みと書き込みを参照してください。
+図 5 ~ 8 で前に示した各コンテンツ タイプの例については、Office Open XML マークアップを参照するには、「概要」セクションで参照されている Word アドイン コード サンプルの Open [XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)の読み込みと書き込みを参照してください。
 
 次に進む前に、これらのコンテンツ タイプの 2 つの相違点と、必要な部分を交換する方法について説明します。
 
@@ -335,7 +335,7 @@ Word の共同作成機能 (他の人と同時にドキュメントを編集す�
 
 そのため、Office Open XML 書式の Word ドキュメントを Word 2007 で開いたときにその図形とテキスト ボックスをサポートするために、図形 (テキスト ボックスを含む) にはフォールバック VML マークアップが必要です。
 
-通常 [、Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) アドイン コード サンプルの Open XML の読み込みと書き込みに含まれる図形とテキスト ボックスの例を参照すると、フォールバック マークアップを削除できます。 文書の保存時に、不足しているフォールバック マークアップが図形に自動的に追加されます。 ただし、すべてのユーザー シナリオが確実にサポートされるようにフォールバック マークアップをそのままにしておいても、まったく問題はありません。
+通常 [、Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) アドイン コード サンプルの Open XML の読み込みと書き込みに含まれる図形とテキスト ボックスの例を参照すると、フォールバック マークアップを削除できます。 文書の保存時に、不足しているフォールバック マークアップが図形に自動的に追加されます。 ただし、すべてのユーザー シナリオが確実にサポートされるようにフォールバック マークアップをそのままにしておいても、まったく問題はありません。
 
 コンテンツに含まれる描画オブジェクトをグループ化している場合、追加の (明らかに繰り返しである) マークアップが表示されますが、これはそのままにしておく必要があります。オブジェクトがグループに追加されると、描画図形のマークアップの部分が重複します。
 
@@ -344,7 +344,7 @@ Word の共同作成機能 (他の人と同時にドキュメントを編集す�
 
 #### <a name="about-graphic-positioning"></a>グラフィックの位置に関する注記
 
-コード サンプル [Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) アドインと [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)の Open XML の読み込みと書き込みでは、テキスト ボックスと図形は、さまざまな種類のテキストの折り返しと配置設定を使用してセットアップされます。 (また、これらのコード サンプルのイメージ例は、テキストの書式設定に沿ってセットアップされ、グラフィック オブジェクトがテキスト ベースラインに配置されます)。
+コード サンプル [Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) アドインと [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)の Open XML の読み込みと書き込みでは、テキスト ボックスと図形は、さまざまな種類のテキストの折り返しと配置設定を使用してセットアップされます。 (また、これらのコード サンプルのイメージ例は、テキストの書式設定に沿ってセットアップされ、グラフィック オブジェクトがテキスト ベースラインに配置されます)。
 
 これらのコード サンプルの図形は右と下のページ余白との関連で位置付けられます。相対的位置付けにより、簡単にユーザーの不明なドキュメント設定を調整でき (ユーザーの余白に合わせて調整されるため)、紙のサイズ、方向、余白の設定によってぎこちなく見えることもなくなります。グラフィック オブジェクトを挿入するときに相対的位置付け設定を維持するには、位置付け (Word のアンカー) が保存される段落マーク (w:p) を維持する必要があります。独自の段落マークを追加するのではなく、既存の段落マークにコンテンツを挿入する場合、同じ初期ビジュアルを維持できても、ユーザーのレイアウトに合わせて自動的に調整する位置付けを有効にする多くのタイプの相対参照が失われる可能性があります。
 
@@ -533,7 +533,7 @@ function populateBinding(filename) {
 
 - グラフ (図 11 のようなグラフなど) では、独自のリレーションシップ (.rels) パーツを含む、複数の追加パーツが必要です。
 
-これらのすべてのコンテンツ タイプのマークアップの編集例は、Word アドインの読み込みと書き込みの Open XML サンプルで [確認できます](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)。 バインディングを使用して現在の選択範囲にコンテンツを挿入したり、指定した場所にコンテンツを書き込んだりする場合は、前に表示した (および参照したコード サンプルで提供された) ものと同じ JavaScript コードを使用してこれらのコンテンツ タイプをすべて挿入できます。
+これらのすべてのコンテンツ タイプのマークアップの編集例は、Word アドインの読み込みと書き込みの Open XML サンプルで [確認できます](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)。 バインディングを使用して現在の選択範囲にコンテンツを挿入したり、指定した場所にコンテンツを書き込んだりする場合は、前に表示した (および参照したコード サンプルで提供された) ものと同じ JavaScript コードを使用してこれらのコンテンツ タイプをすべて挿入できます。
 
 サンプルを確認する前に、これらの各コンテンツ タイプを操作するためのヒントを確認してください。
 
@@ -631,7 +631,7 @@ function populateBinding(filename) {
 
 画像のマークアップには、画像を表現するバイナリ データを含む、少なくとも 1 つのパーツへの参照が含まれます。複雑な画像の場合は、マークアップだけで数百ページに及ぶ可能性があり、編集するのは不可能です。バイナリ パーツに触れる必要がないのであれば、Visual Studio などの構造化エディターを使用する場合、折りたたんでおけます。そうすれば、パッケージの残りの部分のレビューと編集が簡単になります。
 
-前の図 3 で示した単純な画像のマークアップ例を参照した場合は [、Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)アドインで Open XML の読み込みと書き込みを行います。document.xml の画像のマークアップには、サイズと位置情報、およびバイナリ イメージ データを含むパーツへのリレーションシップ参照が含まれています。 その参照は、次のように、 **a:blip** タグに含まれています。
+前の図 3 で示した単純な画像のマークアップ例を参照した場合は [、Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)アドインで Open XML の読み込みと書き込みを行います。document.xml の画像のマークアップには、サイズと位置情報、およびバイナリ イメージ データを含むパーツへのリレーションシップ参照が含まれています。 その参照は、次のように、 **a:blip** タグに含まれています。
 
 ```XML
 <a:blip r:embed="rId4" cstate="print">
@@ -650,11 +650,11 @@ function populateBinding(filename) {
 <a14:imgLayer r:embed="rId5">
 ```
 
-Word アドイン コード サンプルの [Open XML](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) の読み込みと書き込みで、図 4 に示す書式設定された画像に必要なマークアップ (レイヤー効果を使用) を参照してください。
+Word アドイン コード サンプルの [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) の読み込みと書き込みで、図 4 に示す書式設定された画像に必要なマークアップ (レイヤー効果を使用) を参照してください。
 
 ### <a name="work-with-smartart-diagrams"></a>SmartArt ダイアグラムを使用する
 
-SmartArt 図には 4 つの関連パーツがありますが、常に必要なのは 2 つだけです。 SmartArt マークアップの例は、Word アドイン コード サンプルの Open XML の読み込みと書 [き込みで](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) 確認できます。 最初に、各パーツの簡単な説明とそれが必要な理由と必要でない理由を確認しましょう。
+SmartArt 図には 4 つの関連パーツがありますが、常に必要なのは 2 つだけです。 SmartArt マークアップの例は、Word アドイン コード サンプルの Open XML の読み込みと書 [き込みで](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 確認できます。 最初に、各パーツの簡単な説明とそれが必要な理由と必要でない理由を確認しましょう。
 
 > [!NOTE]
 > コンテンツに複数の図が含まれる場合、連続した番号が付けられます。ここに挙げるファイル名の "1" の部分がその番号で置換されます。
@@ -691,7 +691,7 @@ Word でネイティブで作成し、編集できるグラフは Excel グラ�
 
 ただし、SmartArt と同様に、色およびスタイル パーツを削除できます。利用できるグラフ スタイルと色スタイルを使用し、グラフの書式を設定した場合、グラフがターゲット ドキュメントに挿入されたときに、該当する書式設定を自動的に取得します。
 
-Word アドイン コード サンプルの Open XML の読み込みと書き込みの図 11 に示すグラフの例については、編集された [マークアップを](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) 参照してください。
+Word アドイン コード サンプルの Open XML の読み込みと書き込みの図 11 に示すグラフの例については、編集された [マークアップを](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 参照してください。
 
 ## <a name="edit-the-office-open-xml-for-use-in-your-task-pane-add-in"></a>作業ウィンドウ Officeで使用する Open XML のプロパティを編集する
 

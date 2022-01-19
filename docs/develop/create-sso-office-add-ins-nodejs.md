@@ -3,12 +3,12 @@ title: シングル サインオンを使用する Node.js Office アドイン�
 description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d9abb65351a0c3d4a26f06462f2a425c6a104a4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 92b0c43137c9bf09bbd374cc80dc193c80ab1030
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149683"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073361"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -37,7 +37,7 @@ ms.locfileid: "59149683"
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
-1. 「[Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)」にあるリポジトリを複製するかダウンロードします。
+1. 「[Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)」にあるリポジトリを複製するかダウンロードします。
 
     > [!NOTE]
     > このサンプルには、次の 3 つのバージョンがあります。
@@ -198,7 +198,7 @@ ms.locfileid: "59149683"
 
     - `Office.auth.getAccessToken`は、Azure AD からブートストラップ トークンを取得するよう Office に指示します。 ブートストラップ トークンは ID トークンに似ていますが、`scp` (スコープ) プロパティ (値`access-as-user`を持つ) を持っています。 この種のトークンは、Web アプリケーションによって Microsoft Graph へのアクセス トークンと交換できます。
     - オプションを true に設定すると、現在サインインしているユーザーが Officeない場合Officeポップアップ サインイン プロンプト `allowSignInPrompt` が開きます。
-    - このオプションを true に設定すると、アドインがユーザーの AAD プロファイルにアクセスできると同意していない場合、Office は同意のプロンプト `allowConsentPrompt` を開きます。 (このプロンプトでは、ユーザーはユーザーの AAD プロファイルに同意することのみ可能で、Microsoft のスコープGraph許可しません)。
+    - オプションを true に設定すると、ユーザーがアドインがユーザーの AAD プロファイルにアクセスする同意を得ていない場合、Office は同意のプロンプトを `allowConsentPrompt` 開きます。 (このプロンプトでは、ユーザーはユーザーのプロファイルに同意することAAD、Microsoft のスコープGraphしません)。
     - オプションを true に設定すると、Office は、アドインがブートストラップ トークンを使用して、ID トークンとして使用するのではなく、Microsoft Graph へのアクセス トークンを取得する予定です。 `forMSGraphAccess` テナント管理者が Microsoft Graph へのアドインのアクセスに同意していない場合、`Office.auth.getAccessToken`はエラー **13012** を返します。 アドインは、Office が Microsoft Graph スコープではなく、ユーザーの Azure AD プロファイルへの同意のみを要求できるために必要となる承認の代替システムにフォールバックすることで応答できます。 フォールバック承認システムでは、ユーザーがもう一度サインインする必要があります。また、ユーザーは Microsoft のスコープに同意するように求Graphできます。 そのため`forMSGraphAccess`オプションは、同意の欠如により失敗するトークン交換をアドインが行わないことを保証します。 (前のステップで管理者の同意が与えられているため、このアドインにおいてはこのシナリオは発生しません。 ベスト プラクティスを示すことを目的として、このオプションはここに含まれています。)
 
     ```javascript
@@ -250,7 +250,7 @@ ms.locfileid: "59149683"
     }
     ```
 
-1. `getGraphData`メソッドの下に、以下の関数を追加します。 これはサーバー側の Express ルートで、ブートストラップ トークンを Azure AD Microsoft サーバーへのアクセス トークンと `/auth` 交換Graph。
+1. `getGraphData`メソッドの下に、以下の関数を追加します。 サーバー側の Express ルートで、ブートストラップ トークンと microsoft Azure AD アクセス トークンを交換 `/auth` Graph。
 
     ```javascript
     async function getGraphToken(bootstrapToken) {

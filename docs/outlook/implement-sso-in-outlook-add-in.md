@@ -3,18 +3,18 @@ title: 'シナリオ: サービスにシングル サインオンを実装する
 description: Outlook アドインが提供するシングル サインオン トークンと Exchange ID トークンを使用して、サービスに SSO を実装する方法について説明します。
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b90444fbb467c6be1f713461f6cc66d21a8443
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4a2d73439e7db8cdaf8274bd6b9ad54366c24770
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154117"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073305"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>シナリオ: Outlook アドインでサービスにシングル サインオンを実装する
 
 この記事では、独自のバックエンド サービスにシングル サインオンの実装を提供するために、[シングル サインオン アクセス トークン](authenticate-a-user-with-an-sso-token.md)と [Exchange ID トークン](authenticate-a-user-with-an-identity-token.md)を同時に使用する推奨の方法について説明します。 両方のトークンを同時に使用することで、SSO アクセス トークンが使用できる場合はその利点を活用し、そのトークンが使用できない場合でもアドインが確実に動作するようにします。SSO アクセス トークンは、ユーザーがそのトークンをサポートしていないクライアントに切り替えたときや、ユーザーのメールボックスがオンプレミスの Exchange サーバーにある場合などは使用できません。
 
-この記事のアイデアを実装するサンプル アドインについては、「Outlook [SSO」を参照してください](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+この記事のアイデアを実装するサンプル アドインについては、「Outlook [SSO」を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 
 
 > [!NOTE]
@@ -83,7 +83,7 @@ Microsoft Graph API と Contoso Data API を呼び出すバックエンド Web A
 1. アドインは、API の使用を承認する必要があることをユーザーに通知して、そのプロセスを開始するためにリンクまたはボタンをクリックするように求めます。
 
     > [!NOTE]
-    > [Outlook アドイン SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)のアドインの例は、ダイアログ API と[office-js-helpers](https://github.com/OfficeDev/office-js-helpers)ライブラリをオプションとして使用して[、API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)の[OAuth2 承認](/azure/active-directory/develop/active-directory-protocols-oauth-code)コード フローを開始する方法を示しています。
+    > [Outlook アドイン SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)のアドインの例は、ダイアログ API と[office-js-helpers](https://github.com/OfficeDev/office-js-helpers)ライブラリをオプションとして使用して[、API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)の[OAuth2 承認](/azure/active-directory/develop/active-directory-protocols-oauth-code)コード フローを開始する方法を示しています。
 
 1. このフローが完了すると、アドインは更新トークンをバックエンド Web API に送信し、SSO トークン (使用可能な場合) または Exchange ID トークンを含めます。
 

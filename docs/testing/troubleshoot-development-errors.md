@@ -3,12 +3,12 @@ title: Office アドインでの開発エラーのトラブルシューティン
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a17a9eafd91cd174209b1974eea61715385c0ad
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 5c8c17077295313b4f10874a851c4d9d6dbef62b
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990804"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074316"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -33,7 +33,7 @@ ms.locfileid: "59990804"
 - Pragma: 「no-cache」
 - 有効期限: 「-1」
 
-Node.JS Express サーバーでこれを行う例については、「[この app.js ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js)について」を参照してください。 ASP.NET プロジェクトの例については、「[この cshtml ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)について」を参照してください。
+Node.JS Express サーバーでこれを行う例については、「[この app.js ファイル](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js)について」を参照してください。 ASP.NET プロジェクトの例については、「[この cshtml ファイル](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml)について」を参照してください。
 
 アドインがインターネット インフォメーション サービス (IIS) にホストされている場合は、次を web.config に追加することもできます。
 

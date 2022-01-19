@@ -1,14 +1,14 @@
 ---
 title: Office アドインの Fabric Core
 description: このアドインで Fabric Core および Fabric UI コンポーネントを使用する方法のOffice説明します。
-ms.date: 07/08/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cd534809bb443134e2df06de478e8283a3452aac
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d10cc5d8f33c8dd66f4f988fdd5a082580b1aca
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150120"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074204"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Office アドインの Fabric Core
 
@@ -21,7 +21,7 @@ Fabric Core は、CSS クラスと SASS mixins のオープンソース コレ�
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>Fabric Core を使用する: アイコン、フォント、色
 
-1. ページの HTML に CDN 参照を追加します。  
+1. コンテンツ配信ネットワーク (CDN) 参照をページの HTML に追加します。
 
     ```html
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
@@ -51,14 +51,14 @@ Fabric Core は、CSS クラスと SASS mixins のオープンソース コレ�
 
 次のサンプル アドインでは、Fabric Core または JS コンポーネントOffice UI Fabric使用します。 これらのリポジトリの一部はアーカイブ済みであり、バグやセキュリティ修正プログラムで更新されなくなりましたが、それらを使用して Fabric Core および Fabric UI コンポーネントの使い方を学習できます。
 
-- [Excelアドイン JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
-- [Excelアドイン SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads)
-- [Excelアドイン WoodGrove 経費の傾向](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)
-- [Excelコンテンツ アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)
-- [Officeアドイン ファブリック UI のサンプル](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
+- [Excel アドイン JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
+- [Excel アドイン SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads)
+- [Excel アドイン WoodGrove 経費の傾向](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends)
+- [Excel アドイン Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)
+- [Office ファブリック UI のサンプル](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Outlookアドイン GifMe](https://github.com/OfficeDev/Outlook-Add-in-GifMe)
-- [PowerPointアドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Outlook GifMe](https://github.com/OfficeDev/Outlook-Add-in-GifMe)
+- [PowerPoint アドイン Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
 - [Word アドイン Angular2 StyleChecker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)
 - [Word アドイン JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
 - [Word アドイン MarkdownConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion)

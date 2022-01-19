@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 作業ウィンドウを使用しないExcelカスタム関数を使用してユーザーを認証します。
 title: UI レスカスタム関数の認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 57a003dbcf3c36842c2b5c98aba7844c9e53e012
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149886"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074239"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>UI レスカスタム関数の認証
 
@@ -45,7 +45,7 @@ UI レスのカスタム関数から認証する必要がある場合は、ア�
 
 ## <a name="storing-the-token"></a>トークンの格納
 
-次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage)したコードサンプルです。 UI レスのカスタム関数と作業ウィンドウ間でデータを共有する完全な例については、このコード サンプルを参照してください。
+次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage)したコードサンプルです。 UI レスのカスタム関数と作業ウィンドウ間でデータを共有する完全な例については、このコード サンプルを参照してください。
 
 UI レスのカスタム関数が認証された場合、アクセス トークンを受け取り、そのトークンを格納する必要があります `storage` 。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 この関数は UI レスのカスタム関数で、たとえばユーザーの値 `storeValue` を格納します。 必要なトークン値を格納するように変更できます。
 

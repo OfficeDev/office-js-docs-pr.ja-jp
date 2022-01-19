@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cc6d33cfd5c88aff88ee92f173bf504b1c7df3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0cf1a1df922a08f63af80498da2e357d285775e9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149881"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074232"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスのバッチ カスタム関数呼び出し
 
@@ -22,7 +22,7 @@ ms.locfileid: "59149881"
 
 この記事を参考にして、自分のプロジェクトにコードの例を貼り付けることができます。 たとえば、[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して TypeScript 用の新しいカスタム関数プロジェクトを作成し、この記事のすべてのコードをそのプロジェクトに追加することができます。 その後、コードを実行して試してください。
 
-[カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/PnP-OfficeAddins/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
+[カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>この記事内でバッチ処理パターンを作成する
 

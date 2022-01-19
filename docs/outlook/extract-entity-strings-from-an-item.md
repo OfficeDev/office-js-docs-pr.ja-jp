@@ -3,12 +3,12 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154153"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074281"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
@@ -99,7 +99,7 @@ xsi:type="MailApp">
 
 エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。
 
-すべての Outlook アドインに office.js を含める必要があります。以下の HTML ファイルには、CDN に office.js のバージョン 1.1 が含まれます。 
+すべての Outlook アドインに office.js を含める必要があります。 次の HTML ファイルには、コンテンツ配信ネットワーク (office.js) のバージョン 1.1 が含CDN。
 
 ```html
 <!DOCTYPE html>
