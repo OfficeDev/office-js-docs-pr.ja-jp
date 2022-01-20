@@ -1,16 +1,16 @@
 ---
 title: Script Lab を使用して Office JavaScript API を探索する
 description: Script Lab を使用して、Office JS API およびプロトタイプの機能を調べます。
-ms.date: 08/05/2021
+ms.date: 01/14/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2a8d7f94eab26bc1cb831f95a30442e8e08afe70
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 75b4b5f1e30549628ba9327957e6d0b39c308da9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765935"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074274"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -39,7 +39,7 @@ API を使用してタスクを完了する方法を示す組み込みのサン�
 Office JS API を呼び出す JavaScript または TypeScript コードに加えて、各スニペットには、作業ウィンドウのコンテンツを定義する HTML マークアップと、作業ウィンドウの外観を定義する CSS も含まれています。 HTML マークアップと CSS をカスタマイズして、独自のアドインの作業ウィンドウ デザインのプロトタイプを作成する際に、要素の配置とスタイル設定を試すことができます。
 
 > [!TIP]
-> スニペット内でプレビュー API を呼び出すには、スニペットのライブラリを更新して、ベータ CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) とプレビューの種類の定義 `@types/office-js-preview` を使用する必要があります。 また、一部のプレビュー API は、[Office Insider プログラム](https://insider.office.com)にサインアップして、Insider ビルドの Office を実行している場合にのみアクセスできます。
+> スニペット内でプレビュー API を呼び出すには、スニペットのライブラリを更新して、ベータ コンテンツ ネットワーク (CDN) (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) とプレビューの種類の定義 `@types/office-js-preview` を使用する必要があります。 また、一部のプレビュー API は、[Office Insider プログラム](https://insider.office.com)にサインアップして、Insider ビルドの Office を実行している場合にのみアクセスできます。
 
 ### <a name="save-and-share-snippets"></a>スニペットの保存と共有
 

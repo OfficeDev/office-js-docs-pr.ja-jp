@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API の要件セット
 description: Word ビルド用の Office アドイン要件セットの情報。
-ms.date: 10/08/2021
+ms.date: 01/14/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 6838ed66b6a91f522e7ae78aeeee3d545b6bbf2c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250533"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074323"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API の要件セット
 
@@ -20,7 +20,7 @@ ms.locfileid: "60250533"
 Word アドインは、Windows の Office 2016 以降、Office on the web、iPad、および Mac など、複数のバージョンの Office で機能します。次の表は、Word の要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびそれらのアプリケーションのビルド番号またはバージョン番号の一覧です。
 
 > [!NOTE]
-> 番号付きの要件セットで API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で **実稼働** ライブラリを参照してください。
+> 番号付きの要件セットで API を使用するには、[Office.js コンテンツ配信ネットワーク (CDN)](https://appsforoffice.microsoft.com/lib/1/hosted/office.js) で **生産** ライブラリを参照してください。
 >
 > プレビューの API の使用に関する詳細については、記事「[Word JavaScript プレビュー API](word-preview-apis.md)」を参照してください。
 

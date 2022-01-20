@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API の要件セット
 description: Excel ビルド用の Office アドイン要件セットの情報。
-ms.date: 11/02/2021
+ms.date: 01/14/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8770f91531b74442561d93d76daf57492d4c13f5
-ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
+ms.openlocfilehash: 6ddab3218b313fff244cdd83d8464e8953921f4b
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "60683792"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074337"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 
@@ -20,7 +20,7 @@ ms.locfileid: "60683792"
 Excel アドインは、Windows 上の Office 2016 以降の Office や Micrsoft Offie on the web など複数のバージョンの Office で機能します。次の表は、Excel の要件セット、その要件セットをサポートする Office ホスト アプリケーション、それらのアプリケーションのビルド バージョンまたはビルド番号の一覧です。
 
 > [!NOTE]
-> 番号付きの要件セットまたは `ExcelApiOnline` で API を使用するには、CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js で **実稼働** ライブラリを参照してください。
+> 番号付きの要件セットまたは `ExcelApiOnline` のいずれかで API を使用するには、[Office.js コンテンツ配信ネットワーク (CDN)](https://appsforoffice.microsoft.com/lib/1/hosted/office.js.) で **生産** ライブラリを参照してください。
 >
 > プレビューの API の使用に関する詳細については、記事「[Excel JavaScript プレビュー API](excel-preview-apis.md)」を参照してください。
 
