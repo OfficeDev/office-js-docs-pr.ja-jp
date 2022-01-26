@@ -1,14 +1,14 @@
 ---
 title: Office アドインの Fluent UI React
 description: アドインで UI FluentをReactするOfficeについて学習します。
-ms.date: 11/19/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153464"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222242"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインFluent UI ReactをOfficeする
 
@@ -52,8 +52,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 2. 以下の手順を実行し、ローカル Web サーバーを起動してアドインのサイドロードを行います。
 
-    > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のいずれかのコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
@@ -62,19 +61,15 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
     > npm run dev-server
     > ```
 
-    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインが読み込まれた Word が開きます。
+    - Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 これにより、ローカル Web サーバーが起動し、アドインが読み込まれた Word が開きます。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します (まだ実行されていない場合)。
+    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持つ OneDriveまたは SharePoint ライブラリの Word ドキュメントの URL に置き換える。
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        アドインを使用するには、Word on the web で新しいドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 3. アドイン作業ウィンドウを開く場合は、[ホーム] **タブで** [タスクウィンドウの表示] **ボタンを選択** します。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、UI コンポーネントから UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンをFluent React。
 

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Override 要素
 description: Override 要素を使用すると、指定した条件に応じて設定の値を指定できます。
-ms.date: 12/13/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dda8f6ca5aee1492c51960fc637d96e4d82796cb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: e4e2ccd9936eec12fd7adb4eca8e46a5f391785f
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61513999"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222263"
 ---
 # <a name="override-element"></a>Override 要素
 
@@ -18,15 +18,15 @@ ms.locfileid: "61513999"
 - RequirementTokenOverride と呼ばれる既定のパターンとは異なる、要件セット `RequirementToken` **のサポートのパターン** です。
 - ソースは `Runtime` 、RuntimeOverride と呼ばれる既定 **のソースとは異なります**。
 
-要素 `<Override>` の内部にある要素は `<Runtime>` **、RuntimeOverride 型である必要があります**。
+**Runtime 要素の** 内部にある Override 要素は **、RuntimeOverride** 型 **である必要があります**。
 
-要素の `overrideType` 属性 `<Override>` はありません。 違いは、親要素と親要素の型によって決まります。 要素 `<Override>` の内部にある要素は `<Token>` `xsi:type` `RequirementToken` **、RequirementTokenOverride 型である必要があります**。 他 `<Override>` の親要素内の要素、または型の要素内の要素は `<Override>` `LocaleToken` **、LocaleTokenOverride 型である必要があります**。 要素の子である場合のこの要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」 `<Token>` [を参照してください](../../develop/extended-overrides.md)。
+Override 要素 `overrideType` の属性はありません。 違いは、親要素と親要素の型によって決まります。 **Token 要素の** 内部にある Override 要素は `xsi:type` `RequirementToken` **、RequirementTokenOverride 型である必要があります**。 他 **の親** 要素内、または型の **Override** 要素内の Override 要素は `LocaleToken` **、LocaleTokenOverride 型である必要があります**。 **Token** 要素の子である場合のこの要素の使用の詳細については、「マニフェストの拡張オーバーライドを処理する」[を参照してください](../../develop/extended-overrides.md)。
 
 各種類については、この記事で後述する個別のセクションで説明します。
 
 ## <a name="override-element-for-localetoken"></a>Override 要素 `LocaleToken`
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **LocaleTokenOverride** 型の場合、属性は条件であり、その `Locale` `Value` 結果属性になります。 たとえば、次の例では、「ロケールOffice fr-fr の場合、表示名は 'Lecteur vidéo'です。
+**Override 要素** は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 Override 要素が **LocaleTokenOverride** 型の場合、属性は条件であり、その結果 `Locale` `Value` 属性になります。 たとえば、次の例では、「ロケールOffice fr-fr の場合、表示名は 'Lecteur vidéo'です。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -60,7 +60,7 @@ ms.locfileid: "61513999"
 
 ### <a name="attributes"></a>属性
 
-|属性|種類|必須|説明|
+|属性|型|必須|説明|
 |:-----|:-----|:-----|:-----|
 |Locale|string|必須|`"en-US"` などの BCP 47 言語タグの書式で、この上書きのロケールのカルチャ名を指定します。|
 |Value|string|必須|指定のロケールに対して表される設定の値を指定します。|
@@ -99,7 +99,7 @@ ms.locfileid: "61513999"
 
 ## <a name="override-element-for-requirementtoken"></a>Override 要素 `RequirementToken`
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が `<Override>` **RequirementTokenOverride** 型の場合、子要素は条件を表し、属性 `<Requirements>` `Value` はその結果です。 たとえば、次の 1 つ目は、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は、(既定の文字列 'upgrade' ではなく) 祖父母の URL のトークンの代わりに文字列 `<Override>` 'oldAddinVersion' を使用します。 `${token.requirements}` `<ExtendedOverrides>`
+**Override 要素** は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 Override 要素が **RequirementTokenOverride** 型の場合、子 **Requirements** 要素は条件を表し、属性 `Value` はその結果です。 たとえば、次の最初のオーバーライドは、「現在のプラットフォームが FeatureOne バージョン 1.7 をサポートしている場合は、(既定の文字列 `${token.requirements}` 'upgrade' ではなく) 祖父母の URL のトークンの代わりに文字列 'oldAddinVersion' を使用します。 `<ExtendedOverrides>`
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -192,7 +192,7 @@ ms.locfileid: "61513999"
 ### <a name="see-also"></a>関連項目
 
 - [Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)
-- [マニフェストで Requirements 要素を設定する](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)
+- [アドインをOfficeできるバージョンとプラットフォームを指定する](../../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)
 - [SharePoint のキーボード ショートカット](../../design/keyboard-shortcuts.md)
 
 ## <a name="override-element-for-runtime"></a>Override 要素 `Runtime`
@@ -200,7 +200,7 @@ ms.locfileid: "61513999"
 > [!IMPORTANT]
 > この要素のサポートは、イベント ベースのアクティブ化機能を備えたメールボックス要件 [セット 1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) [で導入されました](../../outlook/autolaunch.md)。 この要件セットをサポートする [クライアントおよびプラットフォーム](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
-要素 `<Override>` は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 要素が RuntimeOverride 型の場合、属性は条件であり、属性 `<Override>`  `type` `resid` は結果です。 たとえば、「型が 'javascript'の場合は `resid` 、'JSRuntime.Url'です」と読み取ります。Outlookデスクトップでは、LaunchEvent 拡張ポイント ハンドラー[に対してこの要素が](../../reference/manifest/extensionpoint.md#launchevent)必要です。
+**Override 要素** は条件付きを表し、"If .." として読み取り可能です。その後 ..."。ステートメント。 Override 要素が **RuntimeOverride** 型の場合、属性は条件であり、属性 `type` `resid` は結果です。 たとえば、「型が 'javascript'の場合は `resid` 、'JSRuntime.Url'です」と読み取ります。Outlookデスクトップでは、LaunchEvent 拡張ポイント ハンドラー[に対してこの要素が](../../reference/manifest/extensionpoint.md#launchevent)必要です。
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">

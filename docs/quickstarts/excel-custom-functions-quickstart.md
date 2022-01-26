@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61648006"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222305"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -59,19 +59,15 @@ ms.locfileid: "61648006"
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run start`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # <a name="excel-on-the-web"></a>[Web 版 Excel](#tab/excel-online)
 
-アドインを Web 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+アドインを Web 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の Excel ドキュメントの URL に置き換えます。
 
-```command&nbsp;line
-npm run start:web
-```
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-> [!NOTE]
-> Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run start`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 カスタム関数アドインを使用するには、ブラウザー上の Excel で新しいブックを開きます。 このブックで次の手順を実行してアドインをサイドロードします。
 

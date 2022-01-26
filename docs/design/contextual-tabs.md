@@ -1,14 +1,14 @@
 ---
 title: カスタム コンテキスト タブを Officeアドインで作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
-ms.date: 09/09/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fd89d2e7dd90f00e027187fe662d220cde760aae
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7a2c6c93c009b42e1017bd52272ff0cb8a60085e
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074211"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222137"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
@@ -33,7 +33,7 @@ ms.locfileid: "62074211"
 > - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 >
-> コードのランタイム チェックを使用して、ユーザーのホストとプラットフォームの組み合わせがこれらの要件セットをサポートするかどうかをテストできます(「アプリケーションと[API](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)の要件を指定Officeを指定する」を参照してください。 (マニフェストで要件セットを指定する方法は、この記事でも説明しますが、現在 RibbonApi 1.2 では機能しません)。または、カスタム コンテキスト タブがサポートされていない場合に、別の [UI エクスペリエンスを実装することもできます](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
+> コード内のランタイム チェックを使用して、ユーザーのホストとプラットフォームの組み合わせがこれらの要件セットをサポートするかどうかをテスト[](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)できます(「メソッドと要件セットのサポートのランタイム チェック」を参照)。 (マニフェストで要件セットを指定する方法は、この記事でも説明しますが、現在 RibbonApi 1.2 では機能しません)。または、カスタム コンテキスト タブがサポートされていない場合に、別の [UI エクスペリエンスを実装することもできます](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>カスタム コンテキスト タブの動作
 
@@ -117,7 +117,7 @@ ms.locfileid: "62074211"
 1. 単純な進行中の例では、コンテキスト タブには 1 つのグループのみがあります。 配列の唯一のメンバーとして次を追加 `groups` します。 このマークアップについて、次の点に注意してください。
 
     - すべてのプロパティが必要です。
-    - プロパティ `id` は、タブ内のすべてのグループ間で一意である必要があります。簡潔でわかりやすい ID を使用します。
+    - プロパティ `id` は、マニフェスト内のすべてのグループ間で一意である必要があります。 最大 125 文字の簡潔でわかりやすい ID を使用します。
     - グループ `label` のラベルとして使用するユーザーフレンドリーな文字列です。
     - プロパティの値は、リボンのサイズとアプリケーション ウィンドウのサイズに応じて、グループがリボンに表示するアイコンをOffice `icon` 配列です。
     - プロパティ `controls` の値は、グループ内のボタンとメニューを指定するオブジェクトの配列です。 少なくとも 1 つが必要です。
@@ -381,7 +381,7 @@ function myContextChanges() {
 
 ## <a name="open-a-task-pane-from-contextual-tabs"></a>コンテキスト タブから作業ウィンドウを開く
 
-カスタム コンテキスト タブのボタンから作業ウィンドウを開く場合は、JSON でアクションを作成 `type` します `ShowTaskpane` 。 次に、アクションのプロパティ `actionId` を設定したボタン `id` を定義します。 これにより、マニフェスト内の要素で指定された `<Runtime>` 既定の作業ウィンドウが開きます。
+カスタム コンテキスト タブのボタンから作業ウィンドウを開く場合は、JSON でアクションを作成 `type` します `ShowTaskpane` 。 次に、アクションのプロパティ `actionId` を設定したボタン `id` を定義します。 これにより、マニフェストの Runtime 要素で **指定された既定** の作業ウィンドウが開きます。
 
 ```json
 `{
@@ -533,7 +533,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)があります。
 
-この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、コンテキストに依存しないカスタム タブ) をマニフェストで定義する方法です。 ただし、重複するグループ、コントロール、およびメニュー要素の最初の子要素として、カスタム コア タブ `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` [](../reference/manifest/group.md)[](../reference/manifest/control.md) `<Item>` に追加します。 その効果は次のとおりです。
+この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、非コンテキスト カスタム タブ) をマニフェストで定義する方法です。 ただし、重複するグループ、コントロール、およびメニュー Item 要素の最初の子要素として、カスタム コア `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` タブに追加します。 [](../reference/manifest/group.md) [](../reference/manifest/control.md)  その効果は次のとおりです。
 
 - カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームでアドインが実行されている場合、カスタム コア グループとコントロールはリボンに表示されません。 代わりに、アドインがメソッドを呼び出す際に、カスタム コンテキスト タブが作成 `requestCreateControls` されます。
 - アドインがサポートしないアプリケーションまたはプラットフォームで実行されている場合、要素はカスタム コア タブ `requestCreateControls` に表示されます。
@@ -554,7 +554,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
               ...
               <Group ...>
                 ...
-                <Control ... id="MyButton">
+                <Control ... id="Contoso.MyButton1">
                   <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
                   ...
                   <Action ...>
@@ -564,14 +564,14 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 その他の例については [、「OverriddenByRibbonApi」を参照してください](../reference/manifest/overriddenbyribbonapi.md)。
 
-親グループまたはメニューにマークが付いている場合、そのグループは表示されません。カスタム コンテキスト タブがサポートされていない場合、すべての子マークアップは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 無視されます。 したがって、これらの子要素に要素がある場合や、その値 `<OverriddenByRibbonApi>` が何かは関係ありません。 この意味は、メニュー項目またはコントロールをすべてのコンテキストで表示する必要がある場合、メニュー項目またはコントロールがマークされていない必要があるだけでなく、その親メニューとグループもこの方法でマークしなけらなければならないという意味です `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 
+親グループまたはメニューにマークが付いている場合、そのグループは表示されません。カスタム コンテキスト タブがサポートされていない場合、すべての子マークアップは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 無視されます。 したがって、これらの子要素の中に **OverriddenByRibbonApi** 要素がある場合や、その値が何かは関係ありません。 この意味は、メニュー項目またはコントロールをすべてのコンテキストで表示する必要がある場合、メニュー項目またはコントロールがマークされていない必要があるだけでなく、その親メニューとグループもこの方法でマークしなけらなければならないという意味です `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 
 
 > [!IMPORTANT]
-> グループまたはメニュー *のすべての子* 要素にマークを付けない `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 前の段落で指定した理由で親要素がマークされている場合、これは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 意味をなします。 さらに、親タブを使用しない (またはに設定する) 場合は、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親が表示されますが、サポートされている場合は空になります `<OverriddenByRibbonApi>` `false` 。 したがって、カスタム コンテキスト タブがサポートされているときにすべての子要素が表示されない場合は、親にマークを付け、親のみを付け、 を指定します `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。
+> グループまたはメニュー *のすべての子* 要素にマークを付けない `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。 前の段落で指定した理由で親要素がマークされている場合、これは `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 意味をなします。 さらに、親の **OverriddenByRibbonApi** を削除 (またはに設定) すると、カスタム コンテキスト タブがサポートされているかどうかに関係なく、親が表示されますが、サポートされている場合は空になります `false` 。 したがって、カスタム コンテキスト タブがサポートされているときにすべての子要素が表示されない場合は、親にマークを付け、 を指定します `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 。
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>指定したコンテキストで作業ウィンドウを表示または非表示にする API を使用する
 
-代わりに、アドインは、カスタム コンテキスト タブ上のコントロールの機能を複製する UI コントロールを含む作業ウィンドウ `<OverriddenByRibbonApi>` を定義できます。[次に、Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__)メソッドと[Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__)メソッドを使用して、サポートされている場合にのみコンテキスト タブが表示される場合にのみ作業ウィンドウを表示します。 これらのメソッドの使い方の詳細については、「アドインの作業ウィンドウを表示または非表示にするOffice[を参照してください](../develop/show-hide-add-in.md)。
+**OverriddenByRibbonApi** の代わりに、アドインは、カスタム コンテキスト タブ上のコントロールの機能を複製する UI コントロールを使用して作業ウィンドウを定義できます。次に [、Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__)メソッドと [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__)メソッドを使用して、コンテキスト タブがサポートされている場合に表示される作業ウィンドウを表示します。 これらのメソッドの使い方の詳細については、「アドインの作業ウィンドウを表示または非表示にするOffice[を参照してください](../develop/show-hide-add-in.md)。
 
 ### <a name="handle-the-hostrestartneeded-error"></a>HostRestartNeeded エラーの処理
 

@@ -1,14 +1,14 @@
 ---
 title: 組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
 description: カスタム コマンド グループとタブに組み込Officeボタンをリボンに含めるOfficeします。
-ms.date: 02/25/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 078619a616a06610f12a0bebf36d6159eec1e0e2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 81765f470d95a43e597e06f976ad2bfa2a7b66c8
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150175"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222130"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
 
@@ -24,14 +24,14 @@ ms.locfileid: "59150175"
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>組み込みのコントロール グループをカスタム タブに挿入する
 
-組み込みのコントロール グループOfficeタブに挿入するには、親要素に子要素として[OfficeGroup](../reference/manifest/customtab.md#officegroup)要素を追加 `<CustomTab>` します。 要素 `id` の属性は `<OfficeGroup>` 、組み込みグループの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
+組み込みのコントロール グループOfficeタブに挿入するには、[親 CustomTab](../reference/manifest/customtab.md#officegroup)要素に子要素として **OfficeGroup 要素を追加** します。 `id` **OfficeGroup** 要素の属性は、組み込みグループの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
 
 次のマークアップ例は、Office段落コントロール グループをカスタム タブに追加し、カスタム グループの直後に表示する位置を設定します。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
-  <CustomTab id="TabCustom1">
-    <Group id="myCustomTab.group1">
+  <CustomTab id="Contoso.TabCustom1">
+    <Group id="Contoso.myCustomTab.group1">
        <!-- additional markup omitted -->
     </Group>
     <OfficeGroup id="Paragraph" />
@@ -42,21 +42,21 @@ ms.locfileid: "59150175"
 
 ## <a name="insert-a-built-in-control-into-a-custom-group"></a>組み込みのコントロールをカスタム グループに挿入する
 
-カスタム グループに組み込Officeコントロールを挿入するには、親要素に子要素として[OfficeControl](../reference/manifest/group.md#officecontrol)要素を追加 `<Group>` します。 要素 `id` の属性 `<OfficeControl>` は、組み込みコントロールの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
+カスタム グループに組み込Officeコントロールを挿入するには、親 Group 要素に子要素として [OfficeControl](../reference/manifest/group.md#officecontrol)要素を **追加** します。 `id` **OfficeControl** 要素の属性は、組み込みコントロールの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
 
 次のマークアップ例は、superscript コントロールOfficeカスタム グループに追加し、カスタム ボタンの直後に表示する位置を設定します。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
-  <CustomTab id="TabCustom1">
-    <Group id="myCustomTab.grp1">
+  <CustomTab id="Contoso.TabCustom2">
+    <Group id="Contoso.TabCustom2.group1">
         <Label resid="residCustomTabGroupLabel"/>
         <Icon>
             <bt:Image size="16" resid="blue-icon-16" />
             <bt:Image size="32" resid="blue-icon-32" />
             <bt:Image size="80" resid="blue-icon-80" />
         </Icon>
-        <Control xsi:type="Button" id="Button2">
+        <Control xsi:type="Button" id="Contoso.Button1">
             <!-- information on the control omitted -->
         </Control>
         <OfficeControl id="Superscript" />
@@ -76,4 +76,4 @@ ms.locfileid: "59150175"
 
 ## <a name="behavior-on-unsupported-platforms"></a>サポートされていないプラットフォームでの動作
 
-アドインが要件セット[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)をサポートしていないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストのセクションで要件セットへの参照 `<Requirements>` を追加します。 手順については [、「Set the Requirements element in the manifest」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。 または [、「JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)コードでランタイム チェックを使用する」の説明に従って、アドインを設計して **、AddinCommands 1.3** がサポートされていない場合に別のエクスペリエンスを提供するように設計することもできます。 たとえば、組み込みボタンがカスタム グループにあると仮定する手順がアドインに含まれている場合は、組み込みボタンが通常の場所にのみ含まれていると仮定する別のバージョンを使用できます。
+アドインが要件セット[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)をサポートしていないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンス用のデザイン」で説明するように、アドインを設計して **AddinCommands 1.3** がサポートされていない場合にエクスペリエンス [を提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、組み込みのボタンがカスタム グループ内にあると仮定する手順がアドインに含まれている場合は、組み込みボタンが通常の場所にのみ含まれると想定するバージョンを設計できます。

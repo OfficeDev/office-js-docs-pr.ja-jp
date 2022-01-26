@@ -3,12 +3,12 @@ title: アドインでの単体Officeテスト
 description: JavaScript API を呼び出すテスト コードを単体Officeする方法について説明します。
 ms.date: 11/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8824b8e759e3c1acecf30683f2b89bb41bd558f3
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: b93bee764b0019f7095eef203cc8916375cf7223
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242041"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222158"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>アドインでの単体Officeテスト
 
@@ -370,42 +370,6 @@ describe("Insert blue paragraph at end tests", () => {
   });
 })
 ```
-
-## <a name="adding-mock-objects-properties-and-methods-dynamically-when-testing"></a>テスト時にモック オブジェクト、プロパティ、およびメソッドを動的に追加する
-
-一部のシナリオでは、効率的なテストでは、実行時にモック オブジェクトを作成または変更する必要があります。つまり、テストの実行中です。 次に、例を示します。
-
-- テスト中の関数は、2 回目の呼び出し時の動作が異なります。 最初に 1 つのモック オブジェクトで関数をテストしてから、このモック オブジェクトを変更し、変更されたモック オブジェクトで関数を再度テストする必要があります。
-- 複数の類似したが同一ではないモック オブジェクトに対して関数をテストする必要があります。 たとえば、color プロパティを持つモック オブジェクトを使用して関数をテストし、テキスト プロパティを持つモック オブジェクトを使用して関数を再度テストする必要がありますが、それ以外の場合は元のモック オブジェクトと同じです。
-
-これらの `OfficeMockObject` シナリオで役立つ 3 つの方法があります。
-
-- `OfficeMockObject.setMock` オブジェクトにプロパティと値を追加 `OfficeMockObject` します。 次の使用例は、プロパティを追加 `address` します。
-
-    ```javascript
-    rangeMock.setMock("address", "G6:K9");
-    ```
-
-- `OfficeMockObject.addMockFunction` 次の例に示すように `OfficeMockObject` 、オブジェクトにモック関数を追加します。
-
-    ```javascript
-    workbookMock.addMockFunction("getSelectedRange", function () { 
-      const range = {
-        address: "B2:G5",
-      };
-      return range;
-    });
-    ```
-
-    > [!NOTE]
-    > function パラメーターは省略可能です。 存在しない場合は、空の関数が作成されます。
-
-- `OfficeMockObject.addMock` 新しいオブジェクト `OfficeMockObject` をプロパティとして既存のオブジェクトに追加し、名前を付けます。 これは、すべてのメンバーが持つ最小メンバー (など) `OfficeMockObject` `load` を持つ `sync` 必要があります。 and メソッドを使用して、追加のメンバー `setMock` を `addMockFunction` 追加できます。 次に、モック オブジェクトをプロパティとしてモック ブックに追加 `Excel.WorkbookProtection` `protection` する例を示します。 次に、新 `protected` しいモック オブジェクトにプロパティを追加します。
-
-    ```javascript
-    workbookMock.addMock("protection");
-    workbookMock.protection.setMock("protected", true);
-    ```
 
 > [!NOTE]
 > この型の完全なリファレンス `OfficeMockObject` ドキュメントは[、Office-Addin-Mock にある](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference)です。

@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 07/15/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f69f293292eb3ce04e366f740cbd92ab9fe13617
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c1af8c641e949a3d86df9d7edf807a2dd7bef379
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150126"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222151"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -34,19 +34,19 @@ ms.locfileid: "59150126"
 有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属します。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストのセクションで指定 `<Requirements>` することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが返* された場合にのみ、 `true` コードは有効/無効 API を呼び出す可能性があります。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム アドイン `false` コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮に入れて、実稼働アドインとアプリ内命令を設計する必要があります。 使用の詳細と例については、「アプリケーションと API Officeを指定する、特に JavaScript コードでランタイム チェックを使用する」 `isSetSupported` [を参照してください](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md) (この記事 [のマニフェストで Requirements 要素](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) を設定するセクションは、リボン 1.1 には適用されません)。
+> RibbonApi **1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが返* された場合にのみ、 `true` コードは有効/無効 API を呼び出す可能性があります。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム アドイン `false` コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例については、「アプリケーションと API Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」 `isSetSupported` [を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 [](../develop/specify-office-hosts-and-api-requirements.md) (セクション[「その記事Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)ホストできるバージョンとプラットフォームを指定する」は、リボン 1.1 には適用されません。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
 この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順を実行します。
 
-1. マニフェストの [Runtimes](../reference/manifest/runtimes.md) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに `<Runtimes>` 要素がまだない場合は、`VersionOverrides` セクションの `<Host>` 要素の下に最初の子要素として作成します。)
+1. マニフェストの [Runtimes](../reference/manifest/runtimes.md) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は **、VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
 2. マニフェストの [Resources.Urls](../reference/manifest/resources.md) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。
 3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順の 1 つ以上を実行する必要があります。
 
-    - アドインに作業ウィンドウが含まれている場合は、[Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) 要素の `resid` 属性を、手順 1 で `<Runtime>` 要素の `resid` に使用したのとまったく同じ文字列に設定します。たとえば、`Contoso.SharedRuntime.Url` のようにします。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインに Excel カスタム関数が含まれている場合は、[Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) 要素の `resid` 属性を、手順 1 で`<Runtime>` 要素の `resid` に使用したのとまったく同じ文字列に設定します。たとえば、`Contoso.SharedRuntime.Url` のようにします。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインに関数ファイルが含まれている場合は、[FunctionFile](../reference/manifest/functionfile.md) 要素の `resid` 属性を、手順 1 で `<Runtime>` 要素の `resid` に使用したのとまったく同じ文字列に設定します。たとえば、`Contoso.SharedRuntime.Url` のようにします。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに作業ウィンドウが含まれている場合は、Action の `resid` 属性を設定[します](../reference/manifest/action.md)。[SourceLocation](../reference/manifest/sourcelocation.md)要素は、手順 1 の Runtime 要素で使用した文字列とまったく同じ文字列を指定します。たとえば `resid` 、 `Contoso.SharedRuntime.Url` です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインにカスタム関数が含まれているExcel Page の `resid` 属性を設定[します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md)要素は、手順 1 の Runtime 要素で使用した文字列とまったく同じです。たとえば `resid` 、 `Contoso.SharedRuntime.Url` です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに関数ファイルが含まれている場合は、手順 1 の Runtime 要素で使用した文字列とまったく同じ文字列に FunctionFile 要素の属性を設定します。たとえば、 を指定します `resid` [](../reference/manifest/functionfile.md) `resid`  `Contoso.SharedRuntime.Url` 。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
 
@@ -66,7 +66,7 @@ ms.locfileid: "59150126"
               ...
               <Group ...>
                 ...
-                <Control ... id="MyButton">
+                <Control ... id="Contoso.MyButton3">
                   ...
                   <Action ...>
                   <Enabled>false</Enabled>

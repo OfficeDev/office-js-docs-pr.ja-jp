@@ -1,14 +1,14 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
-ms.date: 11/04/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2067bc4de24c3e9cfecdf957af4b57856d8ee7b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: f09dad4c959082be985ef2076def3bee4d105402
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793611"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222035"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -46,7 +46,9 @@ ms.locfileid: "60793611"
     > Yeoman ジェネレーターを使用している場合は、Yeoman ツールによってこの情報が自動的に追加されるので、この情報を追加する必要はありません。
     > ただし、どちらの場合も、localhost からのみマニフェストを読み込み可能です。
 
-1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します `npm run start:web` 。
+1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します。 "{url}" を、Office 上の OneDrive またはアクセス許可を持つ SharePoint ライブラリの URL に置き換える。
+
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. このメソッドを初めて使用して、Web 上にアドインをサイドロードすると、開発者モードを有効にしてくださいというダイアログが表示されます。 [今すぐ開発者モードを **有効にする] のチェック ボックスをオンにして****、[OK] を選択します**。
 

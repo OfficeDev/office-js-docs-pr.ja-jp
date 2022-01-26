@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
 description: アドインでダイアログ ボックスを作成する基本Office説明します。
-ms.date: 09/03/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a105ff917816d24dd412be200fc84181610a09a6
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073354"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222172"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -334,7 +334,7 @@ function onRegisterMessageComplete(asyncResult) {
 > 場合によっては `messageChild` [、DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要件セットの一部である API がサポートされない場合があります。 親からダイアログ ボックスへのメッセージングの代替方法については、「ホスト ページからダイアログ ボックスにメッセージを渡す別の方法 [」を参照してください](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> DialogApi [1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md) は、アドイン マニフェストのセクション `<Requirements>` では指定できない。 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)メソッドを使用して、実行時に DialogApi 1.2 のサポートを確認する必要があります。 マニフェスト要件のサポートは開発中です。
+> DialogApi [1.2 要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md) は、アドイン マニフェストの **[** 要件] セクションで指定できない。 実行時に DialogApi 1.2 のサポートを確認する必要があります。メソッドと要件セットのサポートのランタイム チェックで説明されているメソッドを `isSetSupported` [使用します](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 マニフェスト要件のサポートは開発中です。
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>ダイアログ ランタイムへのクロスドメイン メッセージング
 
@@ -355,7 +355,7 @@ dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.c
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-ダイアログをホストしている JavaScript ランタイムはマニフェストのセクションにアクセスできないので、メッセージが送信されるドメインが信頼されているかどうかを判断するため、ハンドラーを使用してこれを判断する必要があります。 `<AppDomains>`  `DialogParentMessageReceived` ハンドラーに渡されるオブジェクトには、親で現在ホストされているドメインがプロパティとして含 `origin` まれる。 プロパティの使い方の例を次に示します。
+ダイアログをホストしている JavaScript ランタイムはマニフェストの **AppDomains** セクションにアクセスできないので、メッセージが送信されるドメインが信頼されているかどうかを判断するには、ハンドラーを使用して決定する必要があります。 `DialogParentMessageReceived` ハンドラーに渡されるオブジェクトには、親で現在ホストされているドメインがプロパティとして含 `origin` まれる。 プロパティの使い方の例を次に示します。
 
 ```javascript
 function onMessageFromParent(arg) {

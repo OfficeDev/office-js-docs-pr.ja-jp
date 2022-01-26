@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647973"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222256"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -74,23 +74,9 @@ npm run start:desktop
 
 # <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
-ブラウザーの Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。
+ブラウザーの Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の Excel ドキュメントの URL に置き換えます。
 
-```command&nbsp;line
-npm run start:web
-```
-
-カスタム関数アドインを使用するには、Excel on the web で新しいブックを開きます。 このブックでアドインをサイドロードするには、次の手順を完了します。
-
-1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
-
-   ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
-
-1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
-
-1. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
-
-1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 ---
 
