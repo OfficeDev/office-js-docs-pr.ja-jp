@@ -1,18 +1,18 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 01/14/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b0be6e0fe2196cf0ff80970cd9035ed8e66b5e
-ms.sourcegitcommit: 015e0839c4acca0f4dc5ec5df08489314fb509ca
+ms.openlocfilehash: 94f86ef910d032069fe3e537ae5bf5e63bb4ffb0
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "62055059"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263003"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
-Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、毎月第 2 水曜日の午前 8:00 PDT に発生します。 予定表の招待は 、でダウンロードできます [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、太平洋時間午前 8:00 に毎月第 2 水曜日に発生します。 予定表の招待は 、でダウンロードできます https://aka.ms/officeaddinscommunitycall 。
 
 ## <a name="agenda-for-february-9th-call"></a>2 月 9 日の呼び出しの議題
 
@@ -22,6 +22,7 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
+- [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)

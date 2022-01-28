@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: アドインが期待Office動作するアプリケーションと API 要件を指定する方法について説明します。
-ms.date: 01/22/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ac1792c74b80de0d3dcb188e1f9d2425eb2d3267
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: e0cf0a99706861a5446512542b28f3b27db54d8d
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222228"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263052"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -155,7 +155,7 @@ Office アプリケーションまたはプラットフォームが **Requiremen
 
 ### <a name="runtime-checks-for-method-and-requirement-set-support"></a>ランタイムがメソッドと要件セットのサポートをチェックする 
 
-ランタイムをテストして[、isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_)メソッドOfficeをサポートするかどうかを確認します。 要件セットの名前と最小バージョンをパラメーターとして渡します。 要件セットがサポートされている場合は `isSetSupported` 、true を返 **します**。 次のコードは一例です。
+実行時にテストを行い[、isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_)メソッドOffice要件セットをサポートするかどうかを確認します。 要件セットの名前と最小バージョンをパラメーターとして渡します。 要件セットがサポートされている場合は `isSetSupported` 、true を返 **します**。 次のコードは一例です。
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -245,7 +245,7 @@ if (Office.context.document.setSelectedDataAsync)
 ```
 
 > [!WARNING]
-> **VersionOverrides** で **Requirements** 要素を使用する前に、要件をサポートしないプラットフォームとバージョンの組み合わせでは、要件を必要としない機能を呼び出すアドイン コマンドもインストールされません。 たとえば、2 つのカスタム リボン ボタンを持つアドインを検討します。 そのうちの 1 つはOffice **ExcelApi 1.4** (以降) で使用できる JavaScript API を呼び出します。 その他の呼び出し API は **、ExcelApi 1.9** (以降) でのみ使用できます。 **VersionOverrides** に **ExcelApi 1.9** の要件を設定すると、どちらのボタンもリボンに表示されません。 このシナリオのより良い戦略は、「ランタイム チェックでメソッドと要件セットのサポートをチェックする」で説明されている [手法を使用する方法です](#runtime-checks-for-method-and-requirement-set-support)。 2 番目のボタンによって呼び出されるコードは、 `isSetSupported` **まず ExcelApi 1.9** のサポートを確認するために使用します。 サポートされていない場合、このコードは、アドインのこの機能がバージョンのアドインで使用できないというメッセージをユーザーにOffice。 
+> **VersionOverrides** で **Requirements** 要素を使用する前に、要件をサポートしないプラットフォームとバージョンの組み合わせでは、要件を必要としない機能を呼び出すアドインコマンドもインストールされません。 たとえば、2 つのカスタム リボン ボタンを持つアドインを検討します。 そのうちの 1 つはOffice **ExcelApi 1.4** (以降) で使用できる JavaScript API を呼び出します。 その他の呼び出し API は **、ExcelApi 1.9** (以降) でのみ使用できます。 **VersionOverrides** に **ExcelApi 1.9** の要件を設定すると、1.9 がサポートされていない場合、どちらのボタンもリボンに表示されません。 このシナリオのより良い戦略は、「ランタイム チェックでメソッドと要件セットのサポートをチェックする」で説明されている [手法を使用する方法です](#runtime-checks-for-method-and-requirement-set-support)。 2 番目のボタンによって呼び出されるコードは、 `isSetSupported` **まず ExcelApi 1.9** のサポートを確認するために使用します。 サポートされていない場合、このコードは、アドインのこの機能がバージョンのアドインで使用できないというメッセージをユーザーにOffice。 
 
 > [!TIP]
 > 基本マニフェストに既に表示されている **VersionOverrides** で Requirement 要素を繰り返す意味はありません。  基本マニフェストで要件が指定されている場合、アドインは要件がサポートされていない場所にインストールできないので、Office は **VersionOverrides** 要素を解析する必要さえも持てない。 

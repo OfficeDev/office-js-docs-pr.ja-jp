@@ -1,21 +1,21 @@
 ---
 title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
-ms.date: 07/08/2021
+ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 169e0d553ba5fbaee506cd3745b95b4dde5ddbaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149679"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263045"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
 この記事では、Visual Studio を使用して Office アドインを開発する方法について説明します。 アドインの作成が既に完了している場合は、「[Visual Studio を使用して アドインを開発する](#develop-the-add-in-using-visual-studio)」セクションに進んでください。
 
 > [!NOTE]
-> Visual Studio を使用する代わりに、Office アドイン用の Yeoman ジェネレーターと VS コードを使用して Office アドインを作成することもできます。 この選択肢の詳細については、「[Office アドインの作成 ](../develop/develop-overview.md)」#creating-an-office-add-in)を参照してください。
+> Visual Studio を使用する代わりに、Office アドイン用の Yeoman ジェネレーターと VS コードを使用して Office アドインを作成することもできます。 この選択肢の詳細については、「[Office アドインの作成 ](../develop/develop-overview.md#create-an-office-add-in)」を参照してください。
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Visual Studio を使用してアドイン プロジェクトを作成する
 
