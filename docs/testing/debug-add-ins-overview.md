@@ -1,14 +1,14 @@
 ---
 title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける
-ms.date: 12/02/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa98bda4de1786f58b730b2375e5586d2cb8b0ad
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61766101"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263059"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -78,3 +78,7 @@ Office for Linux のデスクトップ バージョンはないため、テス�
 
 > [!NOTE]
 > Linux コンピューターで Office アドインを開発することはお勧めしません。ただし、すべてのアドインのユーザーが Linux コンピューターから Web 上の Office を介してアドインにアクセスすることが確実な場合を除きます。
+
+## <a name="debug-add-ins-in-staging-or-production"></a>ステージングまたは運用でのアドインのデバッグ
+
+既にステージングまたは運用にあるアドインをデバッグするには、アドインの UI からデバッガーをアタッチします。 手順については、「[作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)」を参照してください。
