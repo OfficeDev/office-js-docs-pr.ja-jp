@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン トークンを使用してユーザーを認証する
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
-ms.date: 11/11/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f920ce4465256004ab0a286feca8f889c38a4f3
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 5769c6bbd639fab1ce5399b3d7a414ae54d35269
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074288"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320285"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 
@@ -43,18 +43,19 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 
 ## <a name="use-the-sso-token-at-the-back-end"></a>バックエンドで SSO トークンを使用する
 
-ほとんどの場合、アドインがサーバー側に渡してそこで使用しない場合は、アクセス トークンを取得してもあまり意味はありません。 サーバー側で可能となること、また必要な対応に関する詳細は、[「サーバー側のコードを追加する」](../develop/sso-in-office-add-ins.md#add-server-side-code)を参照してください。
+ほとんどの場合、アドインがサーバー側に渡してそこで使用しない場合は、アクセス トークンを取得してもあまり意味はありません。 サーバー側で可能となること、また必要な対応に関する詳細は、[「サーバー側のコードを追加する」](../develop/sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code)を参照してください。
 
 > [!IMPORTANT]
 > ID として SSO トークンを *Outlook* アドインで使用するときには、代替の ID として [Exchange の ID トークンも使用](authenticate-a-user-with-an-identity-token.md)することをお勧めします。 アドインのユーザーは、複数のクライアントを使用することがあり、一部のクライアントは SSO トークンの提示をサポートしていないことがあります。 代わりに Exchange の ID トークン使用すると、そうしたユーザーに資格情報の入力を求めるダイアログを複数回表示しないようにできます。 詳細については、「[シナリオ: Outlook アドインでサービスにシングル サインオンを実装する](implement-sso-in-outlook-add-in.md)」を参照してください。
 
 ## <a name="sso-for-event-based-activation"></a>イベント ベースのライセンス認証の SSO
 
-アドインでイベント ベースのライセンス認証を使用する場合は、追加の手順を実行します。 詳細については、「イベント ベースのライセンス認証を使用する Outlookでシングル サインオン[(SSO) を有効にする」を参照してください](use-sso-in-event-based-activation.md)。
+アドインでイベント ベースのライセンス認証を使用する場合は、追加の手順を実行します。 詳細については、「イベント ベースのライセンス認証を使用する Outlookでシングル サインオン [(SSO) を有効にする」を参照してください](use-sso-in-event-based-activation.md)。
 
 ## <a name="see-also"></a>関連項目
 
-- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO」を[参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
-- [SSO API リファレンス](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)
+- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO[」を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+- [SSO API リファレンス](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)
 - [イベント ベースのライセンス認証を使用するOutlookでシングル サインオン (SSO) を有効にする](use-sso-in-event-based-activation.md)

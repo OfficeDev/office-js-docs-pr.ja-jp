@@ -1,14 +1,14 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
-ms.date: 09/23/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4777ebeb9b2ca005f58010e0f8e0b7daf5a8d94
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 83b6f72ec43a3d9d654206ab895cd5e4eb98bf7e
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074253"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320222"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
@@ -33,7 +33,7 @@ ms.locfileid: "62074253"
 
 ### <a name="13000"></a>13000
 
-[getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API は、このアドインまたは Office バージョンではサポートされていません。
+[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) API は、このアドインまたは Office バージョンではサポートされていません。
 
 - この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Microsoft 365チャネルでサブスクリプションに追加されます。
 - アドインのマニフェストに適切な [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) セクションがありません。
@@ -67,7 +67,7 @@ ms.locfileid: "62074253"
 
 ### <a name="13005"></a>13005
 
-無効な許可です。 このエラーは、通常、Office がアドインの Web サービスに対して事前に承認されていないことを意味します。 詳細については、「[サービス アプリケーションを作成する](sso-in-office-add-ins.md#create-the-service-application)」および「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。 このエラーは、ユーザーが自分の `profile` に対するアクセス許可をサービス アプリケーションに与えていない場合、または同意を取り消した場合にも発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
+無効な許可です。 このエラーは、通常、Office がアドインの Web サービスに対して事前に承認されていないことを意味します。 詳細については、「[サービス アプリケーションを作成する](sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform)」および「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。 このエラーは、ユーザーが自分の `profile` に対するアクセス許可をサービス アプリケーションに与えていない場合、または同意を取り消した場合にも発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
 
 開発中の場合、別の原因として、アドインを使用する Internet Explorer およびユーザーが自己署名証明書を使用していることが考えられます。 (アドインによって使用されているブラウザーを特定するには、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください)。
 
@@ -92,7 +92,7 @@ ms.locfileid: "62074253"
 
 ### <a name="13010"></a>13010
 
-ユーザーがアドインを実行している場合は、OfficeでMicrosoft Edge。 ユーザーのドメインMicrosoft 365ドメインは、ブラウザーの設定で別の `login.microsoftonline.com` セキュリティ 領域に入っています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーがアドインを実行している場合は、OfficeでMicrosoft Edge。 ユーザーのドメインMicrosoft 365ドメイン`login.microsoftonline.com`は、ブラウザーの設定で別のセキュリティ 領域に入っています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 
@@ -107,7 +107,7 @@ ms.locfileid: "62074253"
 
 ### <a name="13013"></a>13013
 
-短い時間で何度も呼び出されたので、Officeの呼び `getAccessToken` 出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用されるのかHomeES6.js`retryGetAccessToken` を[](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)参照[ssoAuthES6.js。 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+短`getAccessToken`い時間で何度も呼び出されたので、Officeの呼び出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用`retryGetAccessToken`されるのか[HomeES6.jsまたはssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [ 。 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="50001"></a>50001
 
@@ -127,7 +127,7 @@ AAD および Microsoft 365 の ID の特定の構成では、Microsoft Graph �
 
 コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。
 
-アーキテクチャに関係なく、クレーム値が AAD から送信されている場合、コードはパラメーターでオプションを呼び出して `getAccessToken` `authChallenge: CLAIMS-STRING-HERE` 渡す必要 `options` があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
+アーキテクチャに関係なく、`getAccessToken``authChallenge: CLAIMS-STRING-HERE`クレーム値が AAD から送信されている場合、コードはパラメーターでオプションを呼び出して渡す必要`options`があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
 
 ### <a name="consent-missing-errors"></a>同意なしエラー
 
@@ -142,6 +142,6 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送り、そのエラーのログをコンソールで作成するか、ログに記録する必要があります。
 - アドイン マニフェストの[範囲](../reference/manifest/scopes.md)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 
-### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>(ブートストラップ トークンではなく) アクセス トークンでの無効な対象ユーザーのエラー
+### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft サーバーのアクセス トークンで対象ユーザーエラーがGraph
 
 サーバー側のコードは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示しなければなりません。場合によっては、エラーについて、コンソールでログを作成するか、ログに記録する必要もあります。

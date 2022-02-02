@@ -1,21 +1,18 @@
 ---
-title: Office アドインで外部サービスを承認する
-description: OAuth 2.0 認証コード フローおよび暗黙的フローを使用して、Google、Facebook、LinkedIn、SalesForce、および GitHub などの Microsoft 以外のデータソースに対する承認を取得します。
-ms.date: 07/08/2021
+title: Microsoft 以外の ID プロバイダーでの承認
+description: OAuth 2.0、承認コード、暗黙的フローを使用して、Microsoft 以外のデータ ソースへの承認を取得します。
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b633fa5cf41603d77454c23390f40f4a33201b8a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151153"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320431"
 ---
-# <a name="authorize-external-services-in-your-office-add-in"></a>Office アドインで外部サービスを承認する
+# <a name="authorization-with-non-microsoft-identity-providers"></a>Microsoft 以外の ID プロバイダーでの承認
 
-Microsoft 365、Google、Facebook、LinkedIn、SalesForce、GitHub などの一般的なオンライン サービスを使用すると、開発者は他のアプリケーションのアカウントにアクセスできます。 これにより、開発者はこれらのサービスを Office アドインに含めることができます。
-
-> [!NOTE]
-> この記事の残りの部分では、Microsoft 以外のサービスへのアクセスについて説明します。 Microsoft Graph (Microsoft 365 を含む) へのアクセスの詳細については[、「Access to Microsoft Graph with SSO」および「Access](overview-authn-authz.md#access-to-microsoft-graph-with-sso) to Microsoft Graph sso 」を参照[してください](overview-authn-authz.md#access-to-microsoft-graph-without-sso)。
+アドインで使用できるサービスには、Microsoft ID プラットフォームに加えて、多くの一般的な ID 提供サービスがあります。 ユーザーは、ユーザーやアプリケーション (Officeアドインなど) に、他のアプリケーションのユーザーのアカウントにアクセスできます。
 
 Web アプリケーションからオンライン サービスへのアクセスを可能にするための業界標準のフレームワークは **OAuth 2.0** です。ほとんどの場合、このフレームワークをアドインで使用するために、その動作のしくみを詳しく知る必要はありません。開発者は、この詳細を簡略化している多数のライブラリを使用できます。
 
@@ -47,8 +44,6 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 
 各種の言語とプラットフォームで暗黙的フローと認証コード フローを実装するために利用できるライブラリが多数あります。 ライブラリには汎用のものや、特定のオンライン サービス向けのものがあります。
 
-**Google**:[GitHub.com/Google](https://github.com/google) で "auth" または目的の言語の名前を検索します。最も関連のあるリポジトリには、`google-auth-library-[name of language]` という名前が付いています。
-
 **Facebook**:[Facebook for Developers](https://developers.facebook.com) で "library" または "sdk" を検索します。
 
 **汎用の OAuth 2.0**:数十の言語に対応したライブラリへのリンクが、「[OAuth Code](https://oauth.net/code/)」のページに掲載されています。このページは、IETF OAuth 作業部会によって維持されています。これらのライブラリの一部は、OAuth 準拠のサービスを実装するためのものです。アドイン開発者にとって重要なライブラリは、このページに記載された *クライアント* と呼ばれるライブラリです。これは、目的の Web サーバーが OAuth 準拠のサービスのクライアントになるためです。
@@ -62,3 +57,7 @@ OAuth フローの目的は、アプリケーションの ID と承認の安全�
 ## <a name="what-is-cors"></a>CORS とは
 
 CORS は [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS) の略です。アドイン内で CORS を使用する方法の詳細については、「[Office アドインにおける同一生成元ポリシーの制限への対処](addressing-same-origin-policy-limitations.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [アドインでの認証と承認Office概要](overview-authn-authz.md)。

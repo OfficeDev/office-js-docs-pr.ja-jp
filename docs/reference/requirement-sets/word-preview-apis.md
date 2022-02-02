@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript プレビュー API
 description: 今後の Word JavaScript API の詳細。
-ms.date: 12/14/2021
+ms.date: 02/01/2022
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: 4ef8bd9897689b354fa7c19ba0d7be7f8fb92be9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565365"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320159"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript プレビュー API
 
@@ -20,7 +20,7 @@ ms.locfileid: "61565365"
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、現在プレビュー中の Word JavaScript API の一覧を示します。ただし、現在プレビュー中の Api は、現在のバージョン[でのみ使用Word on the web。](#web-only-api-list) すべての Word JavaScript API (プレビュー API と以前にリリースされた API を含む) の完全な一覧を表示するには、 [すべての Word JavaScript API を参照してください](/javascript/api/word?view=word-js-preview&preserve-view=true)。
+次の表に、現在プレビュー中の Word JavaScript API の一覧を示します。ただし、この API は、現在のバージョン[でのみWord on the web](#web-only-api-list)。 すべての Word JavaScript API (プレビュー API と以前にリリースされた API を含む) の完全な一覧を表示するには、 [すべての Word JavaScript API を参照してください](/javascript/api/word?view=word-js-preview&preserve-view=true)。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|
@@ -65,7 +65,7 @@ ms.locfileid: "61565365"
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|コンテンツ コントロールが追加された場合に発生します。|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|文書全体の範囲で指定された検索オプションを使用して検索を実行します。|
+||[search(searchText: string, searchOptions?: Word.SearchOptions { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean matchWildcards \| ?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|文書全体の範囲で指定された検索オプションを使用して検索を実行します。|
 ||[settings](/javascript/api/word/word.document#settings)|ドキュメント内のアドインの設定を取得します。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|ドキュメント内のカスタム XML パーツを取得します。|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|ブックマークが存在する場合は、ドキュメントから削除します。|
@@ -107,6 +107,7 @@ ms.locfileid: "61565365"
 |[コメント](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|コメント作成者のメール アドレスを取得します。|
 ||[authorName](/javascript/api/word/word.comment#authorName)|コメント作成者の名前を取得します。|
 ||[content](/javascript/api/word/word.comment#content)|コメントのコンテンツをプレーン テキストとして取得または設定します。|
+||[contentRange](/javascript/api/word/word.comment#contentRange)|コメント スレッドの状態を取得または設定します。|
 ||[creationDate](/javascript/api/word/word.comment#creationDate)|コメントの作成日を取得します。|
 ||[delete()](/javascript/api/word/word.comment#delete__)|コメントとその返信を削除します。|
 ||[getRange()](/javascript/api/word/word.comment#getRange__)|コメントがオンのメイン ドキュメント内の範囲を取得します。|
@@ -115,18 +116,27 @@ ms.locfileid: "61565365"
 ||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|コメント スレッドの末尾に新しい返信を追加します。|
 ||[解決済み](/javascript/api/word/word.comment#resolved)|コメント スレッドの状態を取得または設定します。|
 |[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|コレクション内の最初のコメントを取得します。|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|コレクション内の最初のコメントまたは null オブジェクトを取得します。|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|コレクション内の最初のコメントを取得します。|
 ||[getItem(index: number)](/javascript/api/word/word.commentcollection#getItem_index_)|コレクション内のインデックスによってコメント オブジェクトを取得します。|
 ||[items](/javascript/api/word/word.commentcollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
+|[CommentContentRange](/javascript/api/word/word.commentcontentrange)|[bold](/javascript/api/word/word.commentcontentrange#bold)|コメント テキストが太字かどうかを示す値を取得または設定します。|
+||[hyperlink](/javascript/api/word/word.commentcontentrange#hyperlink)|範囲内の最初のハイパーリンクを取得するか、または範囲にハイパーリンクを設定します。|
+||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.commentcontentrange#insertText_text__insertLocation_)|指定した場所にテキストを挿入します。|
+||[isEmpty](/javascript/api/word/word.commentcontentrange#isEmpty)|範囲の長さが 0 であるかどうかを確認します。|
+||[italic](/javascript/api/word/word.commentcontentrange#italic)|コメント テキストがイタル化されているかどうかを示す値を取得または設定します。|
+||[strikeThrough](/javascript/api/word/word.commentcontentrange#strikeThrough)|コメント テキストに取り消し線が設定されているかどうかを示す値を取得または設定します。|
+||[text](/javascript/api/word/word.commentcontentrange#text)|コメント範囲のテキストを取得します。|
+||[underline](/javascript/api/word/word.commentcontentrange#underline)|コメント テキストの下線の種類を示す値を取得または設定します。|
 |[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|コメント返信作成者のメール アドレスを取得します。|
 ||[authorName](/javascript/api/word/word.commentreply#authorName)|コメント返信作成者の名前を取得します。|
 ||[content](/javascript/api/word/word.commentreply#content)|コメント返信の内容を取得または設定します。|
+||[contentRange](/javascript/api/word/word.commentreply#contentRange)|commentReply のコンテンツ範囲を取得または設定します。|
 ||[creationDate](/javascript/api/word/word.commentreply#creationDate)|コメント返信の作成日を取得します。|
 ||[delete()](/javascript/api/word/word.commentreply#delete__)|コメント返信を削除します。|
 ||[id](/javascript/api/word/word.commentreply#id)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#parentComment)|この返信の親コメントを取得します。|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|コレクション内の最初のコメント返信を取得します。|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|コレクション内の最初のコメント返信または null オブジェクトを取得します。|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|コレクション内の最初のコメント返信を取得します。|
 ||[getItem(index: number)](/javascript/api/word/word.commentreplycollection#getItem_index_)|コレクション内のインデックスによってコメント返信オブジェクトを取得します。|
 ||[items](/javascript/api/word/word.commentreplycollection#items)|このコレクション内に読み込まれた子アイテムを取得します。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|コンテンツ コントロール内の文末脚注のコレクションを取得します。|

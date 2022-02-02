@@ -1,26 +1,25 @@
 ---
 title: シングル サインオンを使用する ASP.NET Office アドインを作成する
 description: シングル サインオン (SSO) を使用する ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法の詳細なガイド。
-ms.date: 09/03/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fd586656d0b584c7fb394e7c53bdb869584accd0
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a8d2cd20e9ad47e18ff6ee84cbd45c27f89d537c
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073368"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320257"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
 ユーザーが Office にサインインしたとき、アドインは同じ資格情報を使用し、再度のサインインを要求することなく、複数のアプリケーションへのアクセスを許可することができます。 概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
 この記事では、シングル サインオン (SSO) を使用してビルドされたアドインでシングル サインオン (SSO) を有効にするプロセス ASP.NET。
 
-> [!NOTE]
-> Node.js ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)」を参照してください。
-
 ## <a name="prerequisites"></a>前提条件
 
 * Visual Studio 2019 以降。
+
+* Visual studio **をOffice場合SharePoint開発** ワークロードを管理する必要があります。
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
@@ -28,7 +27,7 @@ ms.locfileid: "62073368"
 
 * サブスクリプションに保存されているファイルとフォルダー OneDrive for Business少なくともMicrosoft 365です。
 
-* Microsoft Azure サブスクリプション。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
+* アクティブなサブスクリプションを持つ Azure アカウント - [無料でアカウントを作成します](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -40,78 +39,89 @@ ms.locfileid: "62073368"
 > * **[Before]** フォルダーはスタート プロジェクトです。SSO や承認に直接関連しない UI などの側面は、既に完了しています。この記事で後述する各セクションでは、これを完成させるための手順を順に説明します。
 > * このサンプルの **[Complete]** バージョンは、この記事の手順を完了したときに得られるアドインと同様のものですが、完成済みのプロジェクトには、この記事のテキストと重複するコード コメントが含まれています。 完成済みのバージョンを使用する場合は、この記事の手順をそのまま実行しますが、[Before] を [Complete] に置き換えて、「**クライアント側のコードを作成する**」と「**サーバー側のコードを作成する**」のセクションを省略してください。
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Azure AD v2.0 エンドポイントにアドインを登録する
+## <a name="register-the-add-in-through-an-app-registration"></a>アプリ登録を通じてアドインを登録する
 
-1. [Azure ポータル - アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908)ページに移動してアプリを登録します。
+最初に、「[クイック スタート:](/azure/active-directory/develop/quickstart-register-app) アプリケーションをアプリケーションに登録する」の手順をMicrosoft ID プラットフォームアドインを登録します。
 
-1. 管理者資格情報を ***使用してテナント*** にサインインMicrosoft 365します。 たとえば、MyName@contoso.onmicrosoft.com です。
+アプリの登録には、次の設定を使用します。
 
-1. **[新規登録]** を選択します。 **[アプリケーションを登録]** ページで、次のように値を設定します。
-
-    * `Office-Add-in-ASPNET-SSO` に **[名前]** を設定します。
-    * [**サポートされているアカウントの種類**] を [**任意の組織のディレクトリ内のアカウント (任意の Azure AD ディレクトリ - マルチテナント) と個人用の Microsoft アカウント (例: Skype、 Xbox)**] に設定します。 (登録しているテナントのユーザーだけがアドインを使用できるようにする場合は、代わりに [**この組織ディレクトリのアカウントのみ...**] を選択します。ただし、追加セットアップ手順を実行する必要があります。 詳細については、「**シングルテナントのセットアップ**」を参照してください。
-    * [**リダイレクト URI**] セクションで、ドロップダウンで [**Web**] が選択されていることを確認し、URI を [` https://localhost:44355/AzureADAuth/Authorize`] に設定します。
-    * **[登録]** を選択します。
-
-1. **[Office-Add-in-ASPNET-SSO]** ページで、アプリケーション (クライアント) ID の値 **をコピーして保存します**。 後の手順で必要になります。
+* 名前: `Office-Add-in-ASPNET-SSO`
+* サポートされているアカウントの種類: 任意の組織ディレクトリ内のアカウント **(Azure AD ディレクトリ - マルチテナント) と個人用 Microsoft アカウント (Skype、Xbox など)**
 
     > [!NOTE]
-    > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認アクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
+    >  アドインを登録するテナント内のユーザーだけがアドインを使用できる場合は、この組織ディレクトリの [アカウント] のみを選択できます **。** 代わりに、追加のセットアップ手順を実行する必要があります。 この記事 **の後半の「シングル テナントのセットアップ** 」を参照してください。
 
-1. [**管理**] で [**証明書とシークレット**] を選択します。 [**新しいクライアント シークレット**] ボタンを選択します。 [**説明**] に値を入力してから、[**有効期限**] の適切なオプションを選択し、[**追加**] を選択します。 *クライアント シークレット値 (シークレット ID ではなく)* をすぐにコピーし、アプリケーション ID で保存してから、後の手順で必要になります。
+* プラットフォーム: **Web**
+* リダイレクト URI: **https://localhost:44355/AzureADAuth/Authorize**
+* クライアント シークレット: `*********` (作成後にこの値を記録する - 1 回だけ表示されます)
 
-1. [**管理**] で [**API の公開**] を選択します。 **[設定]** リンクを選択して、"api://$App ID GUID$" の形式でアプリケーション ID URI を生成します。$App ID GUID$ は **アプリケーション (クライアント) ID** です。 `//` の後と GUID の前に、`localhost:44355/` を挿入します (末尾に追加されたスラッシュ「/」に注意します)。 ID 全体の形式は `api://localhost:44355/$App ID GUID$` でなければなりません (例: `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`)。
+### <a name="expose-a-web-api"></a>Web API を公開する
 
-1. ダイアログで [**保存**] を選択します。
+1. 作成したアプリ登録で、[API を公開 **する] を選択し、[>を追加する] を選択します**。
+   まだ構成していない場合は、 **アプリケーション ID URI** を設定するように求めるメッセージが表示されます。
 
-1. **[Scope の追加]** ボタンをクリックします。 開いたパネルで、`access_as_user`を **[スコープ名]** として入力します。
+    アプリ ID URI は、API のコードで参照するスコープのプレフィックスとして機能し、グローバルに一意である必要があります。 フォームを使用します`api://localhost:44355/[application-id-guid]`。`api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`
 
-1. **[同意できるのはだれですか?]** を **[管理者とユーザー]** に設定します。
+1. スコープの属性を [スコープの追加 **] ウィンドウで指定** します。
 
-1. 管理者とユーザーの同意のプロンプトを構成するためのフィールドに、Office クライアント アプリケーションが現在のユーザーと同じ権限でアドインの Web API を使用できる範囲に適した値を入力します。 `access_as_user` 提案:
+    |フィールド          |値  |
+    |---------------|---------|
+    |**スコープ名** | `access_as_user`|
+    |**Who同意できる** | **管理者とユーザー**|
+    |**管理者の同意表示名** | Officeユーザーとして機能できます。|
+    |**管理者の同意の説明** | 現在Officeと同じ権限を持つアドインの Web API を呼び出す方法を有効にしてください。|
+    |**ユーザーの同意表示名** | Officeは、自分として機能できます。|
+    |**ユーザーの同意の説明** | ユーザー Office同じ権限を持つアドインの Web API を呼び出す方法を有効にしてください。|
 
-    * **管理者の同意表示名**: Officeユーザーとして機能することができます。
-    * **管理者の同意の説明**: 現在のユーザーと同じ権限で Office がアドインの Web API を呼び出すことを可能にします。
-    * **ユーザーの同意表示名**: Officeユーザーとして機能する場合があります。
-    * **ユーザーの同意の** 説明: Officeと同じ権限を持つアドインの Web API を呼び出す方法を有効にしてください。
-
-1. **[状態]** が **[有効]** に設定されていることを確認してください。
-
-1. **[スコープの追加]** を選択します。
+1. [状態] **を [****有効] に設定** し、[スコープの追加] **を選択します**。
 
     > [!NOTE]
     > テキストフィールドのすぐ下に表示される **[スコープ名]** のドメイン部分は、以前に設定したアプリケーション ID URI に自動的に一致し、末尾に`/access_as_user`が追加されます。たとえば、`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`です。
 
 1. **[承認済みのクライアント アプリケーション]** セクションで、アドインの Web アプリケーションに対して承認するアプリケーションを特定します。 次のそれぞれの ID を事前承認する必要があります。
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+    |クライアント ID                              |アプリケーション  |
+    |---------------------------------------|-----------------|
+    |`d3590ed6-52b3-4102-aeff-aad2292ab01c` |Microsoft Office |
+    |`ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` |Microsoft Office |
+    |`93d53678-613d-4013-afc1-62e9e444a0a5` |Office on the web |
+    |`57fb890c-0dab-4253-a5e0-7188c88b2bb4` |Office on the web |
+    |`08e18876-6177-487e-b8b5-cf950c1e598c` |Office on the web |
+    |`bc59ab01-8403-45c6-8796-ac3ef710b3e3` |Outlook on the web |
 
-    ID ごとに、次の手順を実行します。
+    > [!NOTE]
+    > ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e には、リストされている他のすべての ID が含まれています。Office アドイン SSO フローでサービスで使用する Office ホスト エンドポイントのすべてを事前承認するために、単独で使用できます。
 
-    a.  **[クライアント アプリケーションの追加]** ボタンを選択し、表示されたパネルで [クライアント ID] をそれぞれの GUID に設定して、`api://localhost:44355/$App ID GUID$/access_as_user`のチェック ボックスをオンにします。
+    クライアント ID ごとに、次の手順を実行します。
 
-    b.  **[アプリケーションの追加]** を選択します。
+    a. **[クライアント アプリケーションの追加]** を選択します。 開くパネルで、クライアント ID をそれぞれの GUID に設定し、 のチェック ボックスをオンにします `api://localhost:44355/[application-id-guid]/access_as_user`。
 
-1. [**管理**] で [**API のアクセス許可**]、[**アクセス許可の追加**] の順に選択します。 開いたパネルで、**[Microsoft Graph]** を選択してから **[委任されたアクセス許可]** を選択します。
+    b. **[アプリケーションの追加]** を選択します。
 
-1. アドインに必要な権限を検索するには、**[アクセス許可を選択]** の検索ボックスを使用します。 以下を選択します。 最初のアドインだけが実際にアドイン自体で必要になります。ただし、アドイン Web アプリケーションOfficeトークンを取得するには、アクセス許可 `profile` が必要です。
+### <a name="configure-microsoft-graph-permissions"></a>Microsoft のアクセス許可Graph構成する
 
-    * Files.Read.All
-    * profile
+1. [**API アクセス許可] > Microsoft のアクセス許可を追加>を選択** Graph。
+
+1. [**委任されたアクセス許可**] を選択します。 Microsoft Graphは多数のアクセス許可を公開します。最も一般的に使用されるアクセス許可は一覧の上部に表示されます。
+
+1. [ **アクセス許可の選択] で**、次のアクセス許可を選択します。
+
+    |アクセス許可     |説明  |
+    |---------------|-------------|
+    |Files.Read.All |ユーザーがアクセスできるすべてのファイルを読み取る。 |
+    |profile        |ユーザーの基本的なプロファイルを表示します。 アドイン Web アプリケーションOfficeトークンを取得するには、アプリケーションが必要です。 |
 
     > [!NOTE]
     > `User.Read` アクセス許可は既定でリストされています。 必要でないアクセス許可は依頼しない方がよいため、アドインが実際に必要でない場合は、このアクセス許可のボックスのチェックをオフにしておくことをお勧めします。
 
-1. 表示される各アクセス許可のチェック ボックスをオンにします。 アドインに必要なアクセス許可を選択したら、パネルの下部にある **[アクセス許可を追加する]** ボタンをクリックします。
+1. [アクセス **許可の追加] を** 選択して、プロセスを完了します。
+
+アクセス許可を構成するたびに、アプリのユーザーがサインイン時に、アプリが自分の代わりにリソース API にアクセスするための同意を求めるメッセージが表示されます。 管理者は、すべてのユーザーに代わって同意を与え、ユーザーが同意を求めないので、同意を許可できます。
 
 1. 同じページで、[**[テナント名] に管理者の同意を与える**] ボタンを選択し、表示される確認に対して [**同意する**] を選択します。
 
     > [!NOTE]
-    > [**[テナント名] に管理者の同意を与える**] を選択すると、同意プロンプトを作成できるように、数分後に再試行を求めるバナー メッセージが表示される場合があります。 その場合は、次のセクションで作業を開始できますが、ポータルに戻ってこのボタン **_を押すのを忘れないでください_**。
+    > [**[テナント名] に管理者の同意を与える**] を選択すると、同意プロンプトを作成できるように、数分後に再試行を求めるバナー メッセージが表示される場合があります。 その場合は、次のセクションで作業を開始できますが、ポータルに戻ってこのボタン **_を押してください_**。
 
 ## <a name="configure-the-solution"></a>ソリューションを構成する
 
@@ -121,14 +131,14 @@ ms.locfileid: "62073368"
 
 1. ソリューション エクスプローラー **に戻り**、アドイン **ASPNET-SSO-WebAPI** プロジェクトOffice (右クリックしない) を選択します。 [**プロパティ**] ウィンドウを開きます。 [**SSL 有効**] が [**True**] であることを確認します。 [**SSL URL**] が `http://localhost:44355/` であることを確認します。
 
-1. 「Web.config」 で、以前にコピーした値を使用します。 [**ida:ClientID**] と [**ida:Audience**] の両方を [**アプリケーション (クライアント) ID**] に設定し、[**ida:Password**] をクライアント シークレットに設定します。 また **、ida:Domain を** `http://localhost:44355` (末尾にスラッシュ "/" なし) に設定します。
+1. 「Web.config」 で、以前にコピーした値を使用します。 [**ida:ClientID**] と [**ida:Audience**] の両方を [**アプリケーション (クライアント) ID**] に設定し、[**ida:Password**] をクライアント シークレットに設定します。 また、 **ida:Domain を** `http://localhost:44355` (末尾にスラッシュ "/" なし) に設定します。
 
     > [!NOTE]
-    > アプリケーション **(クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
+    > アプリケーション **(クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認アクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
 
 1. アドインを登録したときに、**サポートされているアカウントの種類** で「この組織のディレクトリ内のアカウントのみ」を選択しなかった場合は、web.config を保存して閉じます。 それ以外の場合は、保存して、開いたままにします。
 
-1. ソリューション **エクスプローラーで****、Office-Add-in-ASPNET-SSO** プロジェクトを選択し、アドイン マニフェスト ファイル "Office-Add-in-ASPNET-SSO.xml" を開き、ファイルの下部までスクロールします。 終了タグの上 `</VersionOverrides>` に、次のマークアップがあります。
+1. ソリューション **エクスプローラーで**、**Office-Add-in-ASPNET-SSO** プロジェクトを選択し、アドイン マニフェスト ファイル "Office-Add-in-ASPNET-SSO.xml" を開き、ファイルの下部までスクロールします。 終了タグの上 `</VersionOverrides>` に、次のマークアップがあります。
 
     ```xml
     <WebApplicationInfo>
@@ -166,7 +176,7 @@ ms.locfileid: "62073368"
     * `Office.initialize` メソッドへの割り当てが、`getGraphAccessTokenButton` ボタン クリック イベントへのハンドラーの割り当てになります。
     * `showResult` メソッドは、作業ウィンドウの下側に Microsoft Graph から返されたデータ (またはエラー メッセージ) を表示するものです。
     * `logErrors` メソッドは、エンド ユーザーを対象としていないエラーをコンソールにログ出力するものです。
-    * SSO がサポートされていない、または SSO がエラーになっているシナリオでアドインが使用するフォールバック認証システムを実装するコード。
+    * SSO がサポートされていないシナリオやエラーが発生したシナリオでアドインが使用するフォールバック承認システムを実装するコード。
 
 1. `Office.initialize` への割り当ての下に、次に示すコードを追加します。 このコードについては、以下の点に注意してください。
 
@@ -184,12 +194,15 @@ ms.locfileid: "62073368"
 
 1. `getGraphData` 関数の下に、次の関数を追加します。 後の手順で `handleClientSideErrors` 関数を作成することに注意してください。
 
+    > [!NOTE]
+    > この記事で使用する 2 つのアクセス トークンを区別するために、getAccessToken() から返されるトークンはブートストラップ トークンと呼ばれます。 後で、On-Behalf-Of フローを通じて、Microsoft サービスへのアクセス権を持つ新しいトークンGraph。
+
     ```javascript
     async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graph and then get the data
+            //         for a new access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -204,16 +217,17 @@ ms.locfileid: "62073368"
     }
     ```
 
-1. 次 `TODO 1` のコードに置き換え、ホストからアクセス トークンOfficeします。 **options パラメーターには**、前の **getGraphData()** 関数から渡された次の設定が含まれます。
+
+1. 次`TODO 1`のコードに置き換え、ホストからアクセス トークンOfficeします。 **options パラメーターには**、前の **getGraphData()** 関数から渡された次の設定が含まれます。
 
     * `allowSignInPrompt` は true に設定されます。 これにより、Officeがサインインしていない場合にサインインするように求めるメッセージが表示Office。
-    * `allowConsentPrompt` は true に設定されます。 これにより、Officeがまだ許可されていない場合、アドインがユーザーの Microsoft Azure Active Directory プロファイルにアクセスすることへの同意を求めるメッセージが表示されます。 (結果のプロンプトでは *、* ユーザーが Microsoft のスコープに同意Graphしません。
-    * `forMSGraphAccess` は true に設定されます。 これにより、Officeまたは管理者がアドインの Graph スコープへの同意を許可していない場合、エラー (コード 13012) が返されます。 Microsoft にアクセスGraphアドインは、代理フローを介してアクセス トークンを新しいアクセス トークンと交換する必要があります。 `forMSGraphAccess`true に設定すると **、getAccessToken()** が成功したが、後で Microsoft サーバーの場合、代理フローが失敗するシナリオを回避Graph。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。
+    * `allowConsentPrompt` は true に設定されます。 これにより、Officeがまだ許可されていない場合、アドインがユーザーの Microsoft Azure Active Directory プロファイルにアクセスすることへの同意を求めるメッセージが表示されます。 (結果のプロンプトでは *、* ユーザーが Microsoft のスコープに同意Graphしません)。
+    * `forMSGraphAccess` は true に設定されます。 これにより、Officeまたは管理者がアドインの Graph スコープへの同意を許可していない場合、エラー (コード 13012) が返されます。 Microsoft にアクセスGraphアドインは、代理フローを介してアクセス トークンを新しいアクセス トークンと交換する必要があります。 true `forMSGraphAccess` に設定すると、**getAccessToken()** が成功したが、後で Microsoft サーバーの場合、代理フローが失敗するシナリオを回避Graph。 アドインのクライアント側コードが 13012 に返信するには、フォールバック認証システムに分岐します。
 
     また、次のコードに注意してください。
 
     * 後の手順で `getData` 関数を作成します。
-    * このパラメーターは、サーバー側コントローラーの URL で、On-behalf-of flow を使用して、Microsoft Graph を呼び出す新しいアクセス トークンのトークン `/api/values` を交換します。
+    * この`/api/values`パラメーターは、サーバー側コントローラーの URL で、On-behalf-of flow を使用して、Microsoft Graph を呼び出す新しいアクセス トークンのトークンを交換します。
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -298,7 +312,7 @@ ms.locfileid: "62073368"
         break;
     ```
 
-1. `TODO 3`を以下のコードに置き換えます。 その他のエラーが発生した場合、アドインはフォールバック認証システムに分岐します。 これらのエラーの詳細については、「トラブルシューティング[SSO in Officeアドイン」を参照してください](troubleshoot-sso-in-office-add-ins.md)。このアドインでは、フォールバック システムによってダイアログが開き、ユーザーが既にサインインしている場合でも、ユーザーがサインインする必要があります。
+1. `TODO 3`を以下のコードに置き換えます。 その他のエラーが発生した場合、アドインはフォールバック認証システムに分岐します。 これらのエラーの詳細については、「[トラブルシューティング SSO in Officeアドイン」を参照してください](troubleshoot-sso-in-office-add-ins.md)。このアドインでは、フォールバック システムによってダイアログが開き、ユーザーが既にサインインしている場合でも、ユーザーがサインインする必要があります。
 
     ```javascript
     default:
@@ -427,7 +441,7 @@ ms.locfileid: "62073368"
 
     * このコードは、OWIN に対して、Office アプリケーションから取得されるブートストラップ トークンで指定された対象ユーザーが、web.config で指定された値と一致するように指示します。
     * Microsoft アカウントには、組織のテナント GUID とは異なる発行者 GUID が含むので、両方の種類のアカウントをサポートするために、発行者を検証することはできません。
-    * OWIN がアプリケーションから未加工のブートストラップ トークンを保存 `SaveSigninToken` `true` Officeします。 これは、アドインが代理フローで Microsoft Graph へのアクセス トークンを取得するために必要になります。
+    * OWIN `SaveSigninToken` が`true`アプリケーションから未加工のブートストラップ トークンを保存Officeします。 これは、アドインが代理フローで Microsoft Graph へのアクセス トークンを取得するために必要になります。
     * OWIN ミドルウェアでは、スコープは検証されません。 `access_as_user` が含まれている必要があるブートストラップ トークンのスコープは、コントローラーで検証されます。
 
     ```csharp
@@ -489,9 +503,9 @@ ms.locfileid: "62073368"
         // TODO 2: Assemble all the information that is needed to get a
         //         token for Microsoft Graph using the on-behalf-of flow.
 
-        // TODO 3: Get the access token for Microsoft Graph.
+        // TODO 3: Get a new access token for Microsoft Graph.
 
-        // TODO 4: Use the token to call Microsoft Graph.
+        // TODO 4: Use the new access token to call Microsoft Graph.
     }
     ```
 
@@ -511,7 +525,7 @@ ms.locfileid: "62073368"
     * アドインが、アプリケーションとユーザーがアクセスする必要があるリソース (または対象ユーザー) の役割Office果たしていなくなりました。 この時点で、それ自体が Microsoft Graph にアクセスする必要があるクライアントになります。 は MSAL の「クライアント コンテキスト」オブジェクトになります。
     * MSAL.NET 3.x.x からは、`bootstrapContext` は単なるブートストラップ トークンです。
     * 権威は、web.config から取得されます。これは「common」という文字列か、シングルテナント アドインの場合は GUID です。
-    * MSAL は、Office クライアント アプリケーションがアドインの Web アプリケーションにトークンを取得するときにのみ使用される、コード要求の場合にエラーを `profile` スローします。 そのため、`Files.Read.All` のみが明示的に要求されます。
+    * MSAL は、`profile`Office クライアント アプリケーションがアドインの Web アプリケーションにトークンを取得するときにのみ使用される、コード要求の場合にエラーをスローします。 そのため、`Files.Read.All` のみが明示的に要求されます。
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -552,7 +566,7 @@ ms.locfileid: "62073368"
 1. `TODO 3a` を次のコードに置き換えます。このコードの注意点は次のとおりです。
 
     * Microsoft Graph リソースが多要素認証を必要としているときに、その認証をユーザーがまだ指定していない場合、Azure AD はエラー `AADSTS50076` と **Claims** プロパティを含む「400 要求が正しくありません」を返します。 MSAL は、この情報と共に **MsalUiRequiredException** (**MsalServiceException** から継承) をスローします。
-    * Claims **プロパティ** の値はクライアントに渡す必要があります。この値は Office アプリケーションに渡され、新しいブートストラップ トークンの要求に含まれます。 Azure AD は、認証のすべての要求されたフォームをユーザーに示します。
+    * **Claims プロパティ** の値は、Office アプリケーションに渡す必要があるクライアントに渡す必要があります。この値は、新しいブートストラップ トークンの要求に含まれます。 Azure AD は、認証のすべての要求されたフォームをユーザーに示します。
     * 例外から HTTP 応答を作成する API は、**Claims** プロパティを認識しないため、このプロパティを応答オブジェクトに含めません。 これが含まれたメッセージを手動で作成する必要があります。 ただし、カスタムの **Message** プロパティは **ExceptionMessage** プロパティの作成を妨げるため、クライアントがエラー ID `AADSTS50076` を取得するには、その ID をカスタムの **Message** に追加する以外に方法はありません。 クライアントの JavaScript では、応答に **Message** または **ExceptionMessage** が含まれているかどうかを検出する必要があるため、どちらを読み取るかを認識します。
     * カスタム メッセージは、JSON として書式設定されているため、クライアント側の JavaScript は既知の JavaScript `JSON` オブジェクトのメソッドでメッセージを解析できます。
 
@@ -612,7 +626,7 @@ ms.locfileid: "62073368"
 
 フォールバック承認パスをテストするには、次の手順で SSO パスを強制的に失敗します。
 
-1. 次のコードを、メソッド ファイルのメソッドの一番上 `getDataWithToken` にHomeES6.jsします。
+1. 次のコードを、メソッド ファイルのメソッドの `getDataWithToken` 一番上にHomeES6.jsします。
 
     ```javascript
     function MockSSOError(code) {
@@ -620,7 +634,7 @@ ms.locfileid: "62073368"
     }
     ```
 
-1. 次に、同じメソッドのブロックの上部に、呼び出しの上に次の行 `try` を追加します `getAccessToken` 。
+1. 次に、同じメソッドの `try` ブロックの上部に、呼び出しの上に次の行を追加します `getAccessToken`。
 
     ```javascript
     throw new MockSSOError("13003");
@@ -628,6 +642,6 @@ ms.locfileid: "62073368"
 
 ## <a name="updating-the-add-in-when-you-go-to-staging-and-production"></a>ステージングと運用に移動するときにアドインを更新する
 
-すべての Web Officeと同様に、ステージング サーバーまたは運用サーバーに移動する準備ができたら、マニフェスト内のドメインを新しいドメインで `localhost:44355` 更新する必要があります。 同様に、ドメイン ファイル内のドメインを更新web.configがあります。
+すべての Web Officeと`localhost:44355`同様に、ステージング サーバーまたは運用サーバーに移動する準備ができたら、マニフェスト内のドメインを新しいドメインで更新する必要があります。 同様に、ドメイン ファイル内のドメインを更新web.configがあります。
 
-ドメインはドメイン登録に表示AAD、その登録を更新して、新しいドメインが表示される場所に代って `localhost:44355` 使用する必要があります。
+ドメインはドメイン登録に表示AAD、`localhost:44355`その登録を更新して、新しいドメインが表示される場所に代って使用する必要があります。
