@@ -1,18 +1,15 @@
 ---
 title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
-ms.date: 07/22/2021
+ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa4ce5b74752623e10b61082d6f9becc1a26b713
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074190"
 ---
+
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
-Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログイン ページが iframe で開かれないようになっています。 これらには、Google、Facebook、および Microsoft アカウント、Microsoft 365 Education または職場アカウント、その他の一般的なアカウントなど、Microsoft ID プラットフォーム (以前の Azure AD V 2.0) で保護されたサービスが含まれます。 アドインが **Office on the web** で実行される場合は、作業ウィンドウは iframe になるため、Office アドインに問題が発生します。 完全に異なるブラウザー インスタンスを開くことがアドインで可能な場合は、アドインのユーザーがログインできるのはこれらのサービスのうち 1 つのみです。 Office で[Office ダイアログ API](dialog-api-in-office-add-ins.md)、特に [displayDialogAsync](/javascript/api/office/office.ui) メソッドが提供されているのはこの理由からです。
+常に Office ダイアログ API を使用して、Office アドインでユーザーを認証および承認します。 シングル サインオン (SSO) を使用できないときにフォールバック認証を実装している場合は、Office ダイアログ API も使用する必要があります。
+
+Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログイン ページが iframe で開かれないようになっています。 これらには、Google、Facebook、および Microsoft アカウント、Microsoft 365 Education または職場アカウント、その他の一般的なアカウントなど、Microsoft ID プラットフォーム (以前の Azure AD V 2.0) で保護されたサービスが含まれます。 アドインが **Office on the web** で実行される場合は、作業ウィンドウは iframe になるため、Office アドインに問題が発生します。 完全に異なるブラウザー インスタンスを開くことがアドインで可能な場合は、アドインのユーザーがサインインできるのはこれらのサービスのうち 1 つのみです。 Office で[Office ダイアログ API](dialog-api-in-office-add-ins.md)、特に [displayDialogAsync](/javascript/api/office/office.ui) メソッドが提供されているのはこの理由からです。
 
 > [!NOTE]
 > この記事は、[Office アドインでの Office ダイアログ API の使用](dialog-api-in-office-add-ins.md)に精通していることを前提としています。
@@ -27,11 +24,10 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
 - ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 
-
-既定では、ダイアログ ボックスは、iframe ではなく、まったく新しい Web ビュー コントロールで開きます。 これにより、ID プロバイダーのログイン ページを開くことができます。 この記事の後半で説明するように、Office ダイアログ ボックスの特性は、MSAL や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
+既定では、ダイアログ ボックスは、iframe ではなく、新しい Web ビュー コントロールで開きます。 これにより、ID プロバイダーのサインイン ページを開くことができます。 この記事の後半で説明するように、Office ダイアログ ボックスの特性は、Microsoft 認証ライブラリ (MSAL) や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
 
 > [!NOTE]
-> 移動ウィンドウ iframe で開くようにダイアログ ボックスを構成するには、`displayDialogAsync` の呼び出しで `displayInIframe: true` オプションを渡します。 ログインに Office ダイアログ API を使用している場合は、この方法を使用 *しない* でください。
+> 移動ウィンドウ iframe で開くようにダイアログ ボックスを構成するには、`displayInIframe: true` の呼び出しで `displayDialogAsync` オプションを渡します。 サインインに Office ダイアログ API を使用している場合は、この方法を使用 *しない* でください。
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>Office ダイアログ ボックスの認証フロー
 
@@ -61,13 +57,13 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 ユーザーのサインイン用に示されているフローと類似したフローを使用すると、Office ダイアログ API を使用してこのプロセスを管理できます。違いは次の点のみです。
 
 - アプリケーションが必要とするアクセス許可を、ユーザーがアプリケーションに付与したことがない場合、ユーザーがサインインすると、これを実行するよう求めるメッセージがダイアログ ボックスに表示されます。
-- ダイアログ ボックス ウィンドウは、`messageParent` を使用して文字列に変換されたアクセス トークンを送信するか、またはホスト ウィンドウがアクセス トークンを取得できる場所にアクセス トークンを格納 (し、トークンが使用可能であることを `messageParent` を使用してホスト ウィンドウに伝達 )することで、アクセス トークンをホスト ウィンドウに送信します。 トークンには制限時間がありますが、制限時間内であれば追加のメッセージを表示することなく、ホスト ウィンドウはトークンを使用して、ユーザーのリソースに直接アクセスできます。
+- ダイアログ ボックス ウィンドウのコードは、`messageParent` を使用して文字列に変換されたアクセス トークンを送信するか、またはホスト ウィンドウがアクセス トークンを取得できる場所にアクセス トークンを格納 (し、トークンが使用可能であることを `messageParent` を使用してホスト ウィンドウに伝達 )することで、アクセス トークンをホスト ウィンドウに送信します。 トークンには制限時間がありますが、制限時間内であれば追加のメッセージを表示することなく、ホスト ウィンドウはトークンを使用して、ユーザーのリソースに直接アクセスできます。
 
 この目的のために Office ダイアログ API を使用するサンプル認証アドインが「[サンプル](#samples)」にいくつか記載されています。
 
-## <a name="using-authentication-libraries-with-the-dialog-box"></a>ダイアログ ボックスでの認証ライブラリの使用
+## <a name="use-authentication-libraries-with-the-dialog-box"></a>ダイアログ ボックスでの認証ライブラリを使用する
 
-Office ダイアログ ボックスと作業ウィンドウが異なるブラウザー、JavaScript ランタイム、およびインスタンスで実行されるということは、認証と承認が同じウィンドウで行われる場合の使用方法とは異なる方法で、多くの認証ライブラリまたは承認ライブラリを使用する必要があることを意味します。 次のセクションでは、通常はこれらのライブラリを使用できない主な方法と、これらのライブラリを使用 *できる* 方法について説明します。
+Office ダイアログ ボックスと作業ウィンドウは異なるブラウザと JavaScript ランタイム インスタンスで実行されるため、認証と承認が同じウィンドウで行われる場合の使用方法とは異なる方法で認証 / 承認ライブラリを使用する必要があります。 次のセクションでは、これらのライブラリを使用できる方法と使用できない方法について説明します。
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>多くの場合、トークンを格納するのにライブラリの内部キャッシュは使用できません。
 
