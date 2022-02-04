@@ -1,17 +1,12 @@
 ---
-title: Yeoman ジェネレーターを使用して、SSO を使用する Office アドインを作成する
+title: シングル サインオン (SSO) のクイック スタート
 description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する。
-ms.date: 11/03/2020
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 5153c1ed3987f619b180dd22ba90f2eb4c760d09
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154726"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Yeoman ジェネレーターを使用して、シングル サインオンを使用する Office アドインを作成する
+
+# <a name="single-sign-on-sso-quick-start"></a>シングル サインオン (SSO) のクイック スタート
 
 この記事では、可能な場合シングル サインオン (SSO) を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する Excel、Outlook、Word、または PowerPoint 用の Office アドインを作成するプロセスを説明します。
 
@@ -94,8 +89,7 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 1. SSO の構成プロセスが完了したら、次のコマンドを実行してプロジェクトを構築し、ローカル Web サーバーを起動して以前に選択した Office クライアント アプリケーションにアドインをサイドロードします。
 
-    > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -126,8 +120,7 @@ Outlook アドインを試すには、次の手順を実行します。
 
 1. SSO 構成プロセスが完了したら、次のコマンドを実行してプロジェクトを構築し、ローカル Web サーバーを起動します。
 
-    > [!NOTE]
-    > 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start

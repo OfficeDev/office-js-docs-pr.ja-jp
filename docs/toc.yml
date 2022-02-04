@@ -107,42 +107,46 @@ items:
               - name: API とマニフェストのバージョンを更新する
                 href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
                 displayName: manifest
-          - name: プライバシー、セキュリティ、認証
+          - name: プライバシーとセキュリティ
             items:
               - name: アドインのプライバシーとセキュリティの概要
                 href: concepts/privacy-and-security.md
-              - name: 認証と権限の付与の概要
+              - name: アドインでの API 使用についてアクセス許可を要求する
+                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: ITP とサード パーティの Cookie
+                href: develop/itp-and-third-party-cookies.md
+          - name: 認証と承認
+            items:
+              - name: 概要
                 href: develop/overview-authn-authz.md
-              - name: Office ダイアログ API を使用して認証および承認する
-                href: develop/auth-with-office-dialog-api.md
-              - name: 外部サービスを承認する
-                href: develop/auth-external-add-ins.md
-              - name: SSO を使用せずに Microsoft Graph を承認する
-                href: develop/authorize-to-microsoft-graph-without-sso.md
-              - name: アドインで SSO を有効にする
+              - name: シングル サインオン (SSO)
                 items:
-                  - name: シングル サインオンを有効にする
+                  - name: Office アドインで SSO を有効にする
                     href: develop/sso-in-office-add-ins.md
-                  - name: SSO のクイック スタート
+                  - name: クイック スタート
                     href: quickstarts/sso-quickstart.md
-                  - name: SSO が有効なアドインをカスタマイズする
+                  - name: クイック スタートをカスタマイズする
                     href: quickstarts/sso-quickstart-customize.md
-                  - name: SSO を使用した Microsoft Graph への承認
+                  - name: Microsoft ID プラットフォームに登録する
+                    href: develop/register-sso-add-in-aad-v2.md
+                  - name: 管理者の同意を付与する
+                    href: develop/grant-admin-consent-to-an-add-in.md
+                  - name: ID トークンを取得する
+                    href: develop/use-sso-to-get-office-signed-in-user-token.md
+                  - name: Microsoft Graph を承認する
                     href: develop/authorize-to-microsoft-graph.md
                   - name: ASP.NET を使用して SSO アドインを作成する
                     href: develop/create-sso-office-add-ins-aspnet.md
                   - name: Node.js を使用して SSO アドインを作成する
                     href: develop/create-sso-office-add-ins-nodejs.md
-                  - name: Azure AD v2.0 に SSO を使用する Office アドインを登録する
-                    href: develop/register-sso-add-in-aad-v2.md
-                  - name: アドインに管理者の同意を許可する
-                    href: develop/grant-admin-consent-to-an-add-in.md
-                  - name: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
+                  - name: エラー メッセージのトラブルシューティング
                     href: develop/troubleshoot-sso-in-office-add-ins.md
-              - name: アドインでの API 使用についてアクセス許可を要求する
-                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              - name: ITP とサード パーティの Cookie
-                href: develop/itp-and-third-party-cookies.md
+              - name: Office ダイアログ API
+                href: develop/auth-with-office-dialog-api.md
+              - name: ID プロバイダー
+                href: develop/auth-external-add-ins.md
+              - name: Microsoft Graph にアクセスする
+                href: develop/authorize-to-microsoft-graph-without-sso.md
           - name: UI と UX
             items:
               - name: 概要
