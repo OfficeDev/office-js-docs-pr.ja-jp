@@ -3,13 +3,8 @@ title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
 ms.date: 07/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fd34e40a35d7a0cc190265587fec6bf8dd60593c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149588"
 ---
+
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
 [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
@@ -17,7 +12,7 @@ ms.locfileid: "59149588"
 > [!IMPORTANT]
 > **REST api Outlookは非推奨です**
 >
-> REST Outlookは、2022 年 11 月に完全に使用停止されます (詳細については[、2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)年 11 月の発表を参照してください)。 Microsoft アドインを使用するには、既存のアドインを[移行Graph。](/outlook/rest#outlook-rest-api-via-microsoft-graph) また[、REST API エンドポイントGraphとOutlook比較してください](/outlook/rest/compare-graph)。
+> REST Outlookは 2022 年 11 月に完全に使用停止されます (詳細については、[2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 年 11 月の発表を参照してください)。 Microsoft アドインを使用するには、既存のアドインを[移行Graph。](/outlook/rest#outlook-rest-api-via-microsoft-graph) また、[REST API エンドポイントGraphとOutlook比較します](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>アクセス トークンを取得する
 
@@ -54,7 +49,7 @@ REST を経由して現在の項目を取得するには、REST 用に正しく�
 - その他の Outlook クライアントの場合、`Office.context.mailbox.item.itemId` によって返される値が EWS 用に設定された ID であり、[Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して変換する必要があります。
 - また、これを使用するには、Attachment ID を REST 用に形式設定された ID に変換する必要もあります。 ID を変換する必要がある理由は、EWS ID に URL セーフ以外の値が含まれている可能性があり、その場合は REST で問題が発生するためです。
 
-[Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName) プロパティを確認することにより、アドインは読み込まれる Outlook クライアントを判別できます。
+[Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member) プロパティを確認することにより、アドインは読み込まれる Outlook クライアントを判別できます。
 
 ### <a name="example"></a>例
 

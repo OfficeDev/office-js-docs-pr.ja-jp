@@ -1,22 +1,17 @@
 ---
 title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインで実行する必要があるクライアント要件とサーバー要件Office説明します。
-ms.date: 09/23/2021
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990559"
 ---
+
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
 この記事では、Office アドインを実行するためのソフトウェアとデバイスの要件について説明します。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Office アドインが現在サポートされている場所の詳細なビューについては[、「Office](../overview/office-add-in-availability.md)クライアント アプリケーションとプラットフォームの可用性」を参照Officeしてください。
+Office アドインが現在サポートされている場所の詳細なビューについては、「Office クライアント アプリケーションと Office アドイン[の](../overview/office-add-in-availability.md)プラットフォームの可用性」を参照してください。
 
 ## <a name="server-requirements"></a>サーバーの要件
 
@@ -29,7 +24,7 @@ Office アドインをインストールおよび実行できるようにする�
 > [!TIP]
 > Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
-コンテンツ アドインと作業ウィンドウ アドインの場合、サポートされている Office クライアント アプリケーション (Excel、PowerPoint、Project、または Word) では、アドインの XML マニフェスト ファイルを[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)アップロードするために SharePoint のアプリ カタログも必要か、統合アプリを使用してアドインを展開する必要があります。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+コンテンツ アドインと作業ウィンドウ アドインの場合、サポートされている Office クライアント アプリケーション (Excel、PowerPoint、Project、または Word) では、アドインの XML マニフェスト ファイルをアップロードするために SharePoint のアプリ カタログも必要か、統合アプリを[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)使用してアドインを展開する必要があります。[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 Outlook アドインをテストして実行するには、ユーザーの Outlook 電子メール アカウントが Exchange 2013 以降に存在し、Microsoft 365、Exchange Online、またはオンプレミスインストールを通じて使用できる必要があります。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
 
@@ -71,18 +66,19 @@ ecMAScript 5.1、HTML5、CSS3 をサポートするブラウザー (Microsoft Ed
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアントの要件: Windows 以外のスマートフォンおよびタブレット
 
-特に、スマートフォンや Windows 以外のタブレット デバイス上のブラウザーで動作する Outlook の場合、Outlook アドインをテストおよび実行するのに以下のソフトウェアが必要です。
-
+特に、Outlookおよび非タブレット デバイスで実行Windows、アドインのテストと実行には、次のソフトウェアOutlook必要です。
 
 | Office アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|Android 用のネイティブ アプリ、ブラウザーは適用外|
-|iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|iOS 用のネイティブ アプリ、ブラウザーは適用外|
+|Android 上の Outlook|Android のタブレットとスマートフォン|Android 4.4 KitKat 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|Android 用ネイティブ アプリ。ブラウザーが該当しない|
+|iOS 上の Outlook|iPad のタブレット、iPhone のスマート フォン|iOS 11 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|iOS 用ネイティブ アプリ。ブラウザーが該当しない|
 |Outlook on the web|iPhone 4 以降、iPad 2 以降、iPod Touch 4 以降|iOS 5 以降|2013 Microsoft 365、Exchange Online、またはオンプレミスの 2013 以降Exchange Serverオン|Safari|
 
-> [!NOTE]
-> ネイティブ アプリの OWA for Android、OWA for iPad、および OWA for iPhone は[廃止](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)され、Outlook アドインのテストには不要になり、利用もできなくなりました。
-
+> [!IMPORTANT]
+> 次の項目は、アドインのテストに必要Outlook使用できなくなりました。
+>
+> - Android 上の Web ブラウザー。
+> - Android 用のネイティブ アプリ OWA、iPad OWA、および iPhone OWA - 非[推奨です](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)。
 
 ## <a name="see-also"></a>関連項目
 

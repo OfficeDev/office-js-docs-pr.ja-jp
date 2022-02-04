@@ -4,20 +4,15 @@ description: JavaScript API を使用して動的配列と範囲のスピルを�
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4601cd6a901243cadab0e7c5ead6061e28806377
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151483"
 ---
+
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>JavaScript API を使用して動的配列とスピルExcel処理する
 
-この記事では、JavaScript API を使用して動的配列と範囲のスピルを処理するコード サンプルExcel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して動的配列と範囲のスピルを処理するコード サンプルExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="dynamic-arrays"></a>動的配列
 
-一部Excelは動的配列[を返します](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。 数式の元のセルの外側にある複数のセルの値を入力します。 この値のオーバーフローは"スピル" と呼ばれます。 アドインは [、Range.getSpillingToRange](/javascript/api/excel/excel.range#getSpillingToRange__) メソッドを使用して流出に使用される範囲を検索できます。 [*OrNullObject バージョンも用意されています](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
+一部Excelは動的配列[を返します](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。 数式の元のセルの外側にある複数のセルの値を入力します。 この値のオーバーフローは"スピル" と呼ばれます。 アドインは、 [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) メソッドを使用して流出に使用される範囲を検索できます。 *[OrNullObject バージョンがあります](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)`Range.getSpillingToRangeOrNullObject`。
 
 次のサンプルは、セルに範囲の内容をコピーする基本的な数式を示しています。これは隣接するセルに流出します。 その後、アドインは流出を含む範囲をログに記録します。
 
@@ -43,7 +38,7 @@ Excel.run(function (context) {
 
 ## <a name="range-spilling"></a>範囲の流出
 
-[Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__)メソッドを使用して、特定のセルにこぼれるセルを検索します。 range オブジェクト `getSpillParent` が 1 つのセルの場合にのみ機能します。 複数 `getSpillParent` のセルを含む範囲を呼び出す場合、エラーがスローされます (または null の範囲が返されます `Range.getSpillParentOrNullObject` )。
+[Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) メソッドを使用して、特定のセルにこぼれるセルを検索します。 range オブジェクトが `getSpillParent` 1 つのセルの場合にのみ機能します。 複数 `getSpillParent` のセルを含む範囲を呼び出す場合、エラーがスローされます (または null の範囲が返されます `Range.getSpillParentOrNullObject`)。
 
 ## <a name="see-also"></a>関連項目
 

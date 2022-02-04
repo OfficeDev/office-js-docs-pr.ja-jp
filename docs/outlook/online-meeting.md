@@ -4,16 +4,11 @@ description: オンライン会議サービス プロバイダー Outlookモバ�
 ms.topic: article
 ms.date: 07/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 339763294e2e3609a1a503cd59d74eb4af4fefb3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149632"
 ---
+
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー Outlookモバイル アドインを作成する
 
-オンライン会議のセットアップは、Outlook ユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlookです。](/microsoftteams/teams-add-in-for-outlook) ただし、Microsoft 以外のサービスを使用Outlookオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを合理化できます。
+オンライン会議のセットアップは、Outlookユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlook](/microsoftteams/teams-add-in-for-outlook)です。 ただし、Microsoft 以外のサービスを使用Outlookオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを合理化できます。
 
 > [!IMPORTANT]
 > この機能は、Android と iOS でのみサポートされ、サブスクリプションMicrosoft 365されます。
@@ -26,13 +21,13 @@ ms.locfileid: "59149632"
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成するには、親要素の下のマニフェストで [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) 拡張ポイントを構成する必要があります `MobileFormFactor` 。 他のフォーム ファクターはサポートされていません。
+ユーザーがアドインを使用してオンライン会議を作成するには、親要素の下のマニフェストで [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) 拡張ポイントを構成する必要があります `MobileFormFactor`。 他のフォーム ファクターはサポートされていません。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
 1. プロジェクトの **manifest.xml** にあるファイルを開きます。
 
-1. ノード全体 (開 `<VersionOverrides>` くタグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
+1. ノード全体 (開く `<VersionOverrides>` タグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -122,7 +117,7 @@ ms.locfileid: "59149632"
 ```
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については[、「Outlook](manifests.md)アドイン マニフェスト」および「Outlook Mobile 用アドイン コマンドのサポート[の追加」を参照してください](add-mobile-support.md)。
+> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」および「[Outlook](manifests.md) Mobile 用アドイン コマンドのサポート[の追加」を参照してください](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
@@ -207,7 +202,7 @@ ms.locfileid: "59149632"
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 [Android、Outlook on the web、Windows](sideload-outlook-add-ins-for-testing.md) Mac でサイドローディングした後、Android Outlook iOS モバイル デバイスでデバイスを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
+アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 Android[、Outlook on the web](sideload-outlook-add-ins-for-testing.md)、Windows Mac でサイドローディングした後、Android Outlook iOS モバイル デバイスでデバイスを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI の作成
 
@@ -230,8 +225,8 @@ ms.locfileid: "59149632"
 
 1. この記事の **最後** にある [フィードバック] セクションに移動します。
 1. [このページ **] リンクを押** します。
-1. 新しい **問題のタイトル** を "my-service のオンライン会議テンプレートを登録する" に設定し、サービス名 `my-service` に置き換える。
-1. 問題本文で、文字列 "[Enter feedback here]" を、この記事の「オンライン会議の詳細の追加を実装する」セクションの類似の変数で設定した文字列に `newBody` 置き換える必要があります。 [](#implement-adding-online-meeting-details)
+1. 新しい **問題のタイトル** を "my-service のオンライン会議テンプレートを登録する" `my-service` に設定し、サービス名に置き換える。
+1. 問題本文で、文字列 "[Enter feedback here]" `newBody` を、この記事の「オンライン会議の詳細の追加を実装する[](#implement-adding-online-meeting-details)」セクションの類似の変数で設定した文字列に置き換える必要があります。
 1. [新 **しい問題の送信] をクリックします**。
 
 ![Contoso のサンプル コンテンツGitHub新しい問題の画面のスクリーンショット。](../images/outlook-request-to-register-online-meeting-template.png)
@@ -241,14 +236,14 @@ ms.locfileid: "59149632"
 この機能では、次の API を使用できます。
 
 - 予定オーガナイザー API
-  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getAsync_coercionType__options__callback_), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setAsync_data__options__callback_))
-  - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#end) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location) ([Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1)))
+  - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) ([場所](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
   - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
 - 認証フローの処理
   - [ダイアログ API](../develop/dialog-api-in-office-add-ins.md)
@@ -259,7 +254,7 @@ ms.locfileid: "59149632"
 
 - オンライン会議サービス プロバイダーにのみ適用されます。
 - 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたは TeamsオプションSkypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
-- アドイン アイコンは、16 進数コードまたは他の色形式で同等の値を使用してグレー `#919191` [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
+- アドイン アイコンは、16 進数コード `#919191` または他の色形式で同等のコードを使用してグレー [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 - 予定オーガナイザー (作成) モードでは、1 つの UI レス コマンドだけがサポートされます。
 - アドインは、1 分のタイムアウト期間内に予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開いたアドインなどのダイアログ ボックスで費やされた時間は、タイムアウト期間から除外されます。
 

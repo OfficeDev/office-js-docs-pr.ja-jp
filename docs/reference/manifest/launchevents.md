@@ -1,20 +1,21 @@
 ---
 title: マニフェスト ファイルの LaunchEvents
 description: LaunchEvents 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
-ms.date: 05/11/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e0b21d65733492a783ffb099caf9e76225e53f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151248"
 ---
+
 # <a name="launchevents-element"></a>LaunchEvents 要素
 
-サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の [`<ExtensionPoint>`](extensionpoint.md) 子。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
+サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の子 [`<ExtensionPoint>`](extensionpoint.md) 。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="syntax"></a>構文
 

@@ -3,16 +3,11 @@ title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4016923a883a259a3c9c478639ae288b1ebdf7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154120"
 ---
+
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
-JavaScript API Officeには、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定する非同期メソッド[(Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_)および[Time.setAsync)](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)が提供されています。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォームの[Outlook](compose-scenario.md)アドインの作成」で説明したように、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
+JavaScript API Officeには、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定する非同期メソッド ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) および [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) が提供されています。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「create [Outlook](compose-scenario.md) アドイン for compose forms」の説明に従って、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
 
 [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティおよび [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティは、新規作成フォームと閲覧フォームの両方の予定で利用できます。閲覧フォームでは親オブジェクトから直接プロパティにアクセスでき、それには次を使用します。
 
@@ -51,7 +46,7 @@ JavaScript API のほとんどの非同期メソッドと同様Office **getAsync
 
 ```
 
-**item.start.getAsync** または **item.end.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、**AsyncResult.value** プロパティを使用して開始時刻を UTC 形式の [Date](/javascript/api/office/office.asyncresult#value) オブジェクトとして取得できます。
+**item.start.getAsync** または **item.end.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、**AsyncResult.value** プロパティを使用して開始時刻を UTC 形式の [Date](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) オブジェクトとして取得できます。
 
 
 ```js

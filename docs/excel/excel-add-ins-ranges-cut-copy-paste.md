@@ -4,22 +4,17 @@ description: JavaScript API を使用して範囲を切り取り、コピー、�
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8d7842eb9b35b293f1ae56c4d444834d1cf672
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149848"
 ---
+
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 
-この記事では、JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-[Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_)メソッドは、ユーザー UI の **コピー** と **貼** り付Excelします。 宛先は、 `Range` 呼び出 `copyFrom` されるオブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
+[Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) メソッドは、ユーザー UI の **コピー** と **貼** り付Excelします。 宛先は、呼 `Range` び出される `copyFrom` オブジェクトです。 コピーされるソースは、範囲または範囲を表す文字列のアドレスとして渡されます。
 
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
@@ -80,7 +75,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
-[Range.moveTo メソッドは](/javascript/api/excel/excel.range#moveTo_destinationRange_)、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
+[Range.moveTo メソッドは](/javascript/api/excel/excel.range#excel-excel-range-moveto-member(1))、ブック内の新しい場所にセルを移動します。 このセルの移動動作は、セルを移動するときに、範囲 [](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)の境界線をドラッグするか、切り取りおよび貼り付けアクションを実行する場合 **と****同じように動作** します。 範囲の書式設定と値の両方が、パラメーターとして指定された場所に移動 `destinationRange` されます。
 
 次のコード サンプルでは、メソッドを使用して範囲を移動 `Range.moveTo` します。 移動先の範囲がソースより小さい場合は、ソース コンテンツを含む範囲に拡張されます。
 

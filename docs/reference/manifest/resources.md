@@ -1,24 +1,29 @@
 ---
 title: マニフェスト ファイルの Resources 要素
 description: Resources 要素には、VersionOverrides ノードのアイコン、文字列、URL が含まれます。
-ms.date: 03/30/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 874c89a504fa32d7fc7b21324a08d21681d5a11a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154063"
 ---
+
 # <a name="resources-element"></a>リソース要素
 
 [VersionOverrides](versionoverrides.md) ノードのアイコン、文字列、および URL が含まれます。 マニフェスト要素によりリソースが指定されます。リソースの **id** を使用します。 それにより、特にリソースにさまざまなロケールのバージョンがあるとき、マニフェストのサイズが管理できる大きさに抑えられます。 **id** はマニフェスト内で一意にする必要があり、最大 32 文字を使用できます。
+
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 各リソースは、特定のロケールに異なるリソースを定義する 1 つ以上の **Override** 子要素を持つことができます。
 
 ## <a name="child-elements"></a>子要素
 
-|  要素 |  型  |  説明  |
+|  要素 |  種類  |  説明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  アイコンの画像への HTTPS URL を指定します。 |
 |  **Urls**                |  url     |  HTTPS URL の場所を指定します。 URL の長さは最大で 2048 文字です。 |
@@ -30,7 +35,7 @@ ms.locfileid: "59154063"
 
 ### <a name="images"></a>画像
 
-各アイコンには、3 つの必須サイズごとに 1 つの **3** つの Images 要素が必要です。
+各アイコンには、3 つの **必須** サイズごとに 1 つの 3 つの Images 要素が必要です。
 
 - 16x16
 - 32x32
@@ -46,8 +51,8 @@ ms.locfileid: "59154063"
 
 > [!IMPORTANT]
 >
-> - この画像がアドインの代表的なアイコンである場合は、「Create effective listings in [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office サイズと他の要件」を参照してください。
-> - Outlook では、パフォーマンス向上のために画像リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加することはできません。 これは、Outlook が汎用の画像や既定の画像を自動的に代用する原因になります。
+> - この画像がアドインの代表的なアイコンである場合は、「Create effective [listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office サイズと他の要件」を参照してください。
+> - Officeアドインでは、パフォーマンス上の目的でイメージ リソースをキャッシュする機能が必要です。 このため、画像リソースをホストするサーバーは、どんな CACHE-CONTROL ディレクティブも応答ヘッダーに追加してはいけません。 これらのディレクティブを使用すると、Officeまたは既定のイメージが自動的に置換されます。 開発用コンピューターで新しいアイコンを強制的に使用するには、[キャッシュのOfficeします](../../testing/clear-cache.md)。 エンド ユーザーのコンピューターで新しいアイコンを強制的に使用するには、新しいアイコンに古いアイコンとは異なる URL を指定する必要があります。
 
 ## <a name="resources-examples"></a>リソースの例
 

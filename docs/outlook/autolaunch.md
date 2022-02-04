@@ -2,15 +2,10 @@
 title: イベント ベースのOutlook用にアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 01/14/2022
+ms.date: 02/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e4287c127135b01213a3f888c09613eba5c0543
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073326"
 ---
+
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
 
 イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、特定のイベントに基づいて、特にすべてのアイテムに適用される操作に基づいてタスクを実行できます。 作業ウィンドウや UI レス機能と統合することもできます。
@@ -22,24 +17,24 @@ ms.locfileid: "62073326"
 
 ## <a name="supported-events"></a>サポートされるイベント
 
-次の表に、現在利用可能なイベントと、各イベントでサポートされているクライアントの一覧を示します。 イベントが発生すると、ハンドラーはイベントの種類に固有の詳細を含む可能性がある `event` オブジェクトを受け取ります。 イベント **固有の JSON 列** には、該当する場合は関連オブジェクトへのリンクが含まれます。
+次の表に、現在利用可能なイベントと、各イベントでサポートされているクライアントの一覧を示します。 イベントが発生すると、ハンドラーはイベントの種類に `event` 固有の詳細を含む可能性があるオブジェクトを受け取ります。 [ **説明]** 列には、該当する関連オブジェクトへのリンクが含まれます。
 
 > [!IMPORTANT]
 > プレビュー中のイベントは、Microsoft 365 サブスクリプションと、次の表に示す限られた一連のサポートされているクライアントでのみ使用できます。 クライアント構成の詳細については、「 [この記事でプレビューする方法」](#how-to-preview) を参照してください。 プレビュー イベントは、実稼働アドインでは使用できません。
 
-|イベント|説明|イベント固有の JSON|最小要件セット|サポートされるクライアント|
-|---|---|---|---|---|
-|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows、Web ブラウザー、新しい Mac UI プレビュー|
-|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|該当なし|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows、Web ブラウザー、新しい Mac UI プレビュー|
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、 `OnAppointmentTimeChanged` イベントも発生します。|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows Web ブラウザー|
-|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
-|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」の [チュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|該当なし|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|イベント|説明|最小要件セットとサポートされているクライアント|
+|---|---|---|
+|`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、すべて返信、転送を含む) が、下書きなど編集時には作成されません。|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Web ブラウザー<br>- 新しい Mac UI プレビュー|
+|`OnNewAppointmentOrganizer`|既存の予定の編集ではなく、新しい予定を作成する場合。|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Web ブラウザー<br>- 新しい Mac UI プレビュー|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に定期的な詳細を追加、変更、または削除する場合。 日付/時刻が変更された場合、イベント `OnAppointmentTimeChanged` も発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を却下する場合。 通知を追加したアドインだけが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web ブラウザー|
+|`OnMessageSend`|メッセージ アイテムの送信時。 詳細については、「スマート アラート」 [のチュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
+|`OnAppointmentSend`|予定アイテムの送信時。 詳細については、「スマート アラート」 [のチュートリアルを参照してください](smart-alerts-onmessagesend-walkthrough.md)。|[プレビュー](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
 
 ### <a name="how-to-preview"></a>プレビューする方法
 
@@ -48,15 +43,15 @@ ms.locfileid: "62073326"
 使用可能な場合にこれらのイベントをプレビューするには、次の手順を実行します。
 
 - 次のOutlook on the web。
-  - [ターゲット リリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - ()**の** ベータ ライブラリを参照 https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
+  - [対象のリリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+  - () **の** ベータ ライブラリを参照CDN。https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
 - 新Outlook Mac UI プレビューの詳細については、次の操作を行います。
   - 最小必要なビルドは 16.54 (21101001)。 Insider プログラムOffice[参加](https://insider.office.com/join/Mac)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14511.10000 です。 Insider プログラムOffice[参加](https://insider.office.com/join/windows)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
   - レジストリを構成します。 Outlookコンテンツ配信ネットワーク (CDN) から読み込む代わりに、Office.js の製品版とベータ版のローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
-    1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
-    1. という名前のエントリを `EnableBetaAPIsInJavaScript` 追加し、値をに設定します `1` 。 レジストリは次の図のようになります。
+    1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`。
+    1. という名前のエントリを追加 `EnableBetaAPIsInJavaScript` し、値をに設定します `1`。 レジストリは次の図のようになります。
 
         ![EnableBetaAPIsInJavaScript レジストリ キー値を持つレジストリ エディターのスクリーンショット。](../images/outlook-beta-registry-key.png)
 
@@ -66,13 +61,13 @@ ms.locfileid: "62073326"
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインのイベント ベースのアクティブ化を有効にするには、マニフェストのノードで [Runtimes](../reference/manifest/runtimes.md) 要素と [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) 拡張ポイント `VersionOverridesV1_1` を構成する必要があります。 今のところ、 `DesktopFormFactor` サポートされている唯一のフォーム ファクターです。
+アドインのイベント ベースのアクティブ化を有効にするには、マニフェストのノードで [Runtimes](../reference/manifest/runtimes.md) 要素と [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) `VersionOverridesV1_1` 拡張ポイントを構成する必要があります。 今のところ、 `DesktopFormFactor` サポートされている唯一のフォーム ファクターです。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
 1. プロジェクトの **manifest.xml** にあるファイルを開きます。
 
-1. ノード全体 (開くタグと閉じるタグを含む) を選択し、次の XML に置き換え `<VersionOverrides>` 、変更を保存します。
+1. ノード全体 (開く `<VersionOverrides>` タグと閉じるタグを含む) を選択し、次の XML に置き換え、変更を保存します。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -183,7 +178,7 @@ ms.locfileid: "62073326"
 </VersionOverrides>
 ```
 
-OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the web および新しい Mac UI プレビューでは、同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイル `Resources` への参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所 `Runtime` `Override` を指定します。
+OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the web および新しい Mac UI プレビューでは、同じ JavaScript ファイルを参照できる HTML ファイルを使用します。 `Resources` Outlook プラットフォームは最終的に、Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するために、マニフェストのノードでこれらの両方のファイルへの参照を提供する必要があります。 そのため、イベント処理を構成するには、要素内の HTML `Runtime` `Override` の場所を指定し、その子要素で HTML によってインライン化または参照される JavaScript ファイルの場所を指定します。
 
 > [!TIP]
 > アドインのマニフェストのOutlook詳細については、「Outlook[マニフェスト」を参照してください](manifests.md)。
@@ -196,7 +191,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
 1. 同じクイック スタート プロジェクトで、コード エディター **で ./src/commands/commands.js** ファイルを開きます。
 
-1. 関数の `action` 後に、次の JavaScript 関数を挿入します。
+1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
 
     ```js
     function onMessageComposeHandler(event) {
@@ -245,7 +240,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
     ```
 
     > [!NOTE]
-    > アドインが自動的にサイドロードされていない場合は、サイドロード[Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)アドインの手順に従ってテストを行い、Outlook でアドインを手動でサイドロードします。
+    > アドインが自動的にサイドロードされていない場合は、[サイドロード Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) アドインの手順に従って、Outlook でアドインを手動でサイドロードするテストを行います。
 
 1. Outlook on the web で新しいメッセージを作成します。
 
@@ -260,17 +255,17 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
     ![作成時に件名が設定されているOutlookのWindowsウィンドウのスクリーンショット。](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > localhost からアドインを実行している場合は、"申し訳ありませんが *、{your-add-in-name-here}* にアクセスできませんでした。 ネットワーク接続が確立されている必要があります。 問題が解決しない場合は、後でもう一度お試しください。ループバックの除外を有効にする必要がある場合があります。
+    > localhost からアドインを実行している場合は、「申し訳ありませんが、{ *your-add-in-name-here}* にアクセスできませんでした。」というエラーが表示されます。 ネットワーク接続が確立されている必要があります。 問題が解決しない場合は、後でもう一度お試しください。ループバックの除外を有効にする必要がある場合があります。
     >
     > 1. Outlook を終了します。
-    > 1. タスク マネージャー **を開** き、タスク **msoadfsb.exeが** 実行されていないか確認します。
-    > 1. (マニフェストの既定のバージョン `https://localhost` ) を使用している場合は、次のコマンドを実行します。
+    > 1. タスク マネージャー **を開** き、 **タスクmsoadfsb.exeが** 実行されていないか確認します。
+    > 1. (マニフェストの既定の `https://localhost` バージョン) を使用している場合は、次のコマンドを実行します。
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
-    > 1. 使用している場合は、 `http://localhost` 次のコマンドを実行します。
+    > 1. 使用している場合は、次 `http://localhost`のコマンドを実行します。
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
@@ -285,13 +280,13 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 - マニフェストを更新した場合は、 [アドインを](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 削除してから、もう一度サイドロードします。
 - マニフェスト以外のファイルに変更を加えた場合は、OutlookでWindowsを閉じて再び開Outlook on the web。
 
-独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「Debug [your event-based Outlook アドイン」を参照してください](debug-autolaunch.md)。
+独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「Debug [your event-based Outlookアドイン」を参照してください](debug-autolaunch.md)。
 
 ランタイム ログは、この機能に対して、Windows。 詳細については、「ランタイム ログを [使用してアドインをデバッグする」を参照してください](../testing/runtime-logging.md#runtime-logging-on-windows)。
 
 ## <a name="deploy-to-users"></a>ユーザーへの展開
 
-イベント ベースのアドインを展開するには、イベント ベースのアドインを使用してマニフェストをアップロードMicrosoft 365 管理センター。 管理ポータルで、ナビゲーション ウィンドウで [設定] セクションを展開し、[統合アプリ]**を選択します**。 [統合アプリ **] ページで**、[カスタム アプリ] アップロード **を選択** します。
+イベント ベースのアドインを展開するには、イベント ベースのアドインを使用してマニフェストをアップロードMicrosoft 365 管理センター。 管理ポータルで、ナビゲーション ウィンドウで [**設定] セクション** を展開し、[統合アプリ **] を選択します**。 [統合アプリ **] ページで**、[カスタム アプリ] アップロード **を選択** します。
 
 ![カスタム アプリのアクションを含む、Microsoft 365 管理センター統合アプリ ページアップロードスクリーンショット。](../images/outlook-deploy-event-based-add-ins.png)
 
@@ -302,7 +297,7 @@ AppSource とアプリ内 Office ストア: イベント ベースのアドイ�
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限
 
-アドイン起動イベント ハンドラーは、実行時間が短く、軽量で、可能な限り非インバシブである必要があります。 アクティブ化後、アドインはイベント ベースのアドインを実行できる最大時間である約 300 秒以内にタイム アウトします。アドインが起動イベントの処理を完了したというメッセージを表示するには、関連付けられたハンドラーにメソッドを呼び出す必要 `event.completed` があります。 (ステートメントの後に含まれる `event.completed` コードは、実行が保証されない点に注意してください)。アドインが処理するイベントがトリガーされるごとに、アドインが再アクティブ化され、関連付けられたイベント ハンドラーが実行され、タイムアウト ウィンドウがリセットされます。 アドインは、タイム アウト後に終了するか、ユーザーが作成ウィンドウを閉じるか、アイテムを送信します。
+アドイン起動イベント ハンドラーは、実行時間が短く、軽量で、可能な限り非インバシブである必要があります。 アクティブ化後、アドインはイベント ベースのアドインを実行できる最大時間である約 300 秒以内にタイム アウトします。アドインが起動イベントの処理を完了したというメッセージを表示するには、関連付けられたハンドラーにメソッドを呼び出 `event.completed` す必要があります。 (ステートメントの後に含まれる `event.completed` コードは、実行が保証されない点に注意してください)。アドインが処理するイベントがトリガーされるごとに、アドインが再アクティブ化され、関連付けられたイベント ハンドラーが実行され、タイムアウト ウィンドウがリセットされます。 アドインは、タイム アウト後に終了するか、ユーザーが作成ウィンドウを閉じるか、アイテムを送信します。
 
 ユーザーが同じイベントにサブスクライブしている複数のアドインがある場合、Outlook プラットフォームは特定の順序でアドインを起動します。 現在、アクティブに実行できるイベント ベースのアドインは 5 つのみです。
 
@@ -312,29 +307,29 @@ JavaScript ファイルでは、イベント ベースのアクティブ化の�
 
 UI Office.js変更する API の一部は、イベント ベースのアドインでは使用できない場合があります。ブロックされている API を次に示します。
 
-- [ `Office.context.auth` : ] の下
+- [ : ] の下`Office.context.auth`
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` がサポートされています。 詳細については、「イベント ベースのライセンス認証を使用する Outlookでシングル サインオン[(SSO) を有効にする」を参照してください](use-sso-in-event-based-activation.md)。
-- [ `Office.context.mailbox` : ] の下
+    > `OfficeRuntime.auth` がサポートされています。 詳細については、「イベント ベースのライセンス認証を使用する Outlookでシングル サインオン [(SSO) を有効にする」を参照してください](use-sso-in-event-based-activation.md)。
+- [ : ] の下`Office.context.mailbox`
   - `displayAppointmentForm`
   - `displayMessageForm`
   - `displayNewAppointmentForm`
   - `displayNewMessageForm`
-- [ `Office.context.mailbox.item` : ] の下
+- [ : ] の下`Office.context.mailbox.item`
   - `close`
-- [ `Office.context.ui` : ] の下
+- [ : ] の下`Office.context.ui`
   - `displayDialogAsync`
   - `messageParent`
 
 ### <a name="requesting-external-data"></a>外部データの要求
 
-外部データを要求するには [、Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) のような API を使用するか、サーバーを操作するための HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使用します。
+外部データを要求するには、 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) のような API を使用するか、サーバーとやり取りするための HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) を使用します。
 
-XmlHttpRequests を作成する場合は、追加のセキュリティ対策を使用する必要があります。同じオリジン ポリシーと単純な CORS[が](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)[必要です](https://www.w3.org/TR/cors/)。
+XmlHttpRequests を作成する場合は、追加のセキュリティ対策を使用する必要があります[](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)。同じオリジン ポリシーと単純な [CORS が必要です](https://www.w3.org/TR/cors/)。
 
-単純な CORS 実装では Cookie を使用できません。単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが 、 である場合は、単純な CORS でヘッダー `Content-Type` `application/x-www-form-urlencoded` `text/plain` を使用できます `multipart/form-data` 。
+単純な CORS 実装では Cookie を使用できません。単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが 、 `Content-Type` である場合は、単純な CORS `application/x-www-form-urlencoded`でヘッダーを `text/plain`使用できます `multipart/form-data`。
 
 CORS の完全なサポートは近日公開予定です。
 

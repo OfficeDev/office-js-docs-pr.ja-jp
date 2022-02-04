@@ -4,20 +4,15 @@ description: JavaScript API の Excelを使用して、数式、エラー、数�
 ms.date: 07/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ddd60f3cd87f528616fe376003b9eb7d3374f4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152824"
 ---
+
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲内の特別なセルExcel検索する
 
-この記事では、JavaScript API を使用して範囲内の特殊なセルを検索するExcel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲内の特殊なセルを検索するExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="find-ranges-with-special-cells"></a>特殊なセルを含む範囲を検索する
 
-[Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_)メソッドと[Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_)メソッドは、セルの特性とセルの値の種類に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
+[Range.getSpecialCells](/javascript/api/excel/excel.range#excel-excel-range-getspecialcells-member(1)) メソッドと [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#excel-excel-range-getspecialcellsornullobject-member(1)) メソッドは、セルの特性とセルの値の種類に基づいて範囲を検索します。 これらのメソッドでは両方とも、`RangeAreas` オブジェクトが返されます。 次に示すのは、TypeScript データ型ファイルの、このメソッドのシグネチャです。
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -27,7 +22,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-次のコード サンプルでは、メソッド `getSpecialCells` を使用して数式を含むすべてのセルを検索します。 このコードの注意点は次のとおりです。
+次のコード サンプルでは、メソッドを `getSpecialCells` 使用して数式を含むすべてのセルを検索します。 このコードの注意点は次のとおりです。
 
 - 検索が必要なシートの部分を制限するために、まず `Worksheet.getUsedRange` を呼び出し、その範囲に関してのみ `getSpecialCells` を呼び出します。
 - `getSpecialCells` メソッドは `RangeAreas` オブジェクトを返すため、数式を含むセルはすべて、連続していないセルであっても、ピンク色になります。
@@ -43,12 +38,12 @@ Excel.run(function (context) {
 })
 ```
 
-対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 ブロックが見当たらない `catch` 場合は、メソッドが停止します。
+対象の特性を含むセルが範囲内に存在しない場合、`getSpecialCells` によって **ItemNotFound** エラーがスローされます。 この場合、制御のフローが `catch` ブロックに移ります (存在する場合)。 ブロックが見当たらない場合 `catch` は、メソッドが停止します。
 
 対象の特性を含むセルが常に存在するはずである場合、そうしたセルが存在しないなら、コードを使ってエラーをスローする必要があるかもしれません。 一致するセルがないということが有効なシナリオでは、コードでこのような可能性があるかどうかを確認し、あれば、エラーをスローせずに適切に処理するようにしておく必要があります。 `getSpecialCellsOrNullObject` メソッドと、返された `isNullObject` プロパティを使用して、この動作を実現できます。 次のコード サンプルでは、このパターンを使用します。 このコードについては、以下の点に注意してください。
 
-- メソッド `getSpecialCellsOrNullObject` は常にプロキシ オブジェクトを返すので、通常の `null` JavaScript の意味では返す必要がありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
-- `isNullObject` プロパティをテストする *前* に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、プロパティを明示的に *読み込む* 必要 `isNullObject` はありません。 オブジェクトで呼び出されない場合 `context.sync` でも `load` 、自動的に読み込まれます。 詳細については[ \* 、「OrNullObject メソッドとプロパティ」を参照してください](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)。
+- メソッド `getSpecialCellsOrNullObject` は常にプロキシ オブジェクトを返すの `null` で、通常の JavaScript の意味では返す必要がありません。 ただし一致するセルが見つからなかった場合、オブジェクトの `isNullObject` プロパティは `true` に設定されます。
+- `isNullObject` プロパティをテストする *前* に、`context.sync` を呼び出します。 これは、すべての `*OrNullObject` メソッドとプロパティの必要条件です。プロパティを読み取るためには常に、そのプロパティをロードして同期する必要があるためです。 ただし、プロパティを明示的に *読み込む* 必要 `isNullObject` はありません。 オブジェクトで呼び出されない場合 `context.sync` でも `load` 、自動的に読み込まれます。 詳細については、「 [\*OrNullObject メソッドとプロパティ」を参照してください](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)。
 - このコードをテストするには、最初に数式を含まないセルの範囲を選択してからコードを実行します。 次に、少なくとも 1 つのセルが数式を含む範囲を選択してからコードを再実行します。
 
 ```js
@@ -68,7 +63,7 @@ Excel.run(function (context) {
 })
 ```
 
-わかりやすくするために、この記事の他のすべてのコード サンプルでは、 `getSpecialCells` の代わりにメソッドを使用します  `getSpecialCellsOrNullObject` 。
+わかりやすくするために、この記事の他のすべてのコード サンプルでは `getSpecialCells` 、 の代わりにメソッドを使用します  `getSpecialCellsOrNullObject`。
 
 ## <a name="narrow-the-target-cells-with-cell-value-types"></a>セルの値の型に応じて対象のセルを絞り込む
 

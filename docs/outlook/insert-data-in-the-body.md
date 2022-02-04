@@ -3,18 +3,13 @@ title: Outlook アドインで本文にデータを挿入する
 description: Outlook アドインで、メッセージまたは予定の本文にデータを挿入する方法について説明します。
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 377c278464038a2b04d8b0ca49de92530e3724d9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154102"
 ---
+
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
 
-非同期メソッド ([Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_)、[Body.getTypeAsync](/javascript/api/outlook/office.body#getTypeAsync_options__callback_)、[Body.prependAsync](/javascript/api/outlook/office.body#prependAsync_data__options__callback_)、[Body.setAsync](/javascript/api/outlook/office.body#setAsync_data__options__callback_) および [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#setSelectedDataAsync_data__options__callback_)) を使用して、本文の種類を取得し、ユーザーが作成している予定またはメッセージのアイテムの本文にデータを挿入することができます。これらの非同期メソッドは新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、Outlook が新規作成フォーム内でアドインをアクティブ化できるようにアドイン マニフェストが適切にセットアップされていることを確認してください。この手順については、「[新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)」を参照してください。
+非同期メソッド ([Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))、[Body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1))、[Body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))、[Body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1)) および [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))) を使用して、本文の種類を取得し、ユーザーが作成している予定またはメッセージのアイテムの本文にデータを挿入することができます。これらの非同期メソッドは新規作成アドインでのみ使用できます。これらのメソッドを使用する場合は、Outlook が新規作成フォーム内でアドインをアクティブ化できるようにアドイン マニフェストが適切にセットアップされていることを確認してください。この手順については、「[新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)」を参照してください。
 
-Outlook では、メッセージはテキスト形式、HTML 形式、またはリッチ テキスト形式 (RTF) で作成でき、予定は HTML 形式で作成できます。 挿入する前に、追加の手順を実行する必要がある場合があります。 **必ず getTypeAsync** を呼び出して、サポートされているアイテムの形式を確認する必要があります。 **getTypeAsync** が返す値は、元のアイテム形式、および HTML 形式での編集に対するデバイス オペレーティング システムとアプリケーションのサポート (1) によって異なります。 次に、次の表に示すように **、prependAsync** または **setSelectedDataAsync** (2) の _coercionType_ パラメーターを設定して、データを挿入します。 引数を指定しない場合、 **prependAsync** および **setSelectedDataAsync** は挿入するデータがテキスト形式であると想定します。
+Outlook では、メッセージはテキスト形式、HTML 形式、またはリッチ テキスト形式 (RTF) で作成でき、予定は HTML 形式で作成できます。 挿入する前に、追加の手順を実行する必要がある場合があります。 **必ず getTypeAsync** を呼び出して、サポートされているアイテムの形式を確認する必要があります。 **getTypeAsync** が返す値は、元のアイテム形式、および HTML 形式での編集に対するデバイス オペレーティング システムとアプリケーションのサポート (1) によって異なります。 次に、次の表に示すように、**prependAsync** または **setSelectedDataAsync** (2) の _coercionType_ パラメーターを設定して、データを挿入します。 引数を指定しない場合、 **prependAsync** および **setSelectedDataAsync** は挿入するデータがテキスト形式であると想定します。
 
 <br/>
 
@@ -25,11 +20,11 @@ Outlook では、メッセージはテキスト形式、HTML 形式、または�
 |テキスト|HTML|テキスト/HTML|
 |HTML|HTML |HTML|
 
-1.  タブレットとスマートフォンでは **、getTypeAsync は** データを **Office。MailboxEnums.BodyType.Text** (オペレーティング システムまたはアプリケーションが HTML 形式で最初に作成されたアイテムの編集をサポートしていない場合)。
+1.  タブレットとスマートフォンでは、**getTypeAsync は** データをOffice **。MailboxEnums.BodyType.Text** (オペレーティング システムまたはアプリケーションが HTML 形式で最初に作成されたアイテムの編集をサポートしていない場合)。
 
-2.  挿入するデータが HTML で **、getTypeAsync** がアイテムのテキスト型を返す場合は、データをテキストとして再編成し、データをテキスト形式で挿入 **Office。MailboxEnums.BodyType.Text** as _coercionType_. テキストの型を使用して HTML データを挿入するだけで、アプリケーションは HTML タグをテキストとして表示します。 コードを _coercionType_ として使用Office.MailboxEnums.BodyType.HtmlHTML データを挿入しようとすると、エラーが発生します。
+2.  挿入するデータが HTML で **、getTypeAsync** がアイテムのテキスト型を返す場合は、データをテキストとして再編成し、データをテキスト形式でOffice **。MailboxEnums.BodyType.Text** as _coercionType_. テキストの型を使用して HTML データを挿入するだけで、アプリケーションは HTML タグをテキストとして表示します。 コードを _coercionType_ として使用Office.MailboxEnums.BodyType.HtmlHTML データを挿入しようとすると、エラーが発生します。
 
-_coercionType_ に加えて、Office JavaScript API のほとんどの非同期メソッドと同様に **、getTypeAsync、prependAsync、setSelectedDataAsync** は他のオプションの入力パラメーターを使用します。   これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
+_coercionType_ に加えて、Office JavaScript API のほとんどの非同期メソッドと同様に、**getTypeAsync**、**prependAsync**、**setSelectedDataAsync** は他のオプションの入力パラメーターを使用します。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>現在のカーソル位置にデータを挿入する
@@ -37,7 +32,7 @@ _coercionType_ に加えて、Office JavaScript API のほとんどの非同期�
 
 ここでは、作成中のアイテムの本文タイプを **getTypeAsync** を使用して検査してから、**setSelectedDataAsync** を使用して現在のカーソル位置にデータを挿入するサンプル コードを示します。
 
-コールバック メソッドとオプションの入力パラメーターを **getTypeAsync** に渡し、ステータスと結果を _asyncResult_ 出力パラメーターで受け取ることができます。メソッドが成功した場合、アイテム本文のタイプを [AsyncResult.value](/javascript/api/office/office.asyncresult#value) プロパティで受け取ることができます。その値は、"text" または "html" です。
+コールバック メソッドとオプションの入力パラメーターを **getTypeAsync** に渡し、ステータスと結果を _asyncResult_ 出力パラメーターで受け取ることができます。メソッドが成功した場合、アイテム本文のタイプを [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティで受け取ることができます。その値は、"text" または "html" です。
 
 **setSelectedDataAsync** への入力パラメーターとして、データ文字列を渡す必要があります。アイテム本文のタイプに応じて、このデータ文字列はテキスト形式または HTML 形式で指定できます。前述したように、挿入するデータのタイプを _coercionType_ パラメーターで指定できます。また、コールバック メソッドとそのパラメーターをオプションの入力パラメーターとして指定できます。
 

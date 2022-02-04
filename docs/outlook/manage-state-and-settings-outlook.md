@@ -3,19 +3,14 @@ title: アドインの状態と設定Outlook管理する
 description: アドインの状態と設定を保持する方法について、Outlookします。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dee9d49c50df610957cb009c73451c58507adbc5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149639"
 ---
+
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>アドインの状態と設定Outlook管理する
 
 > [!NOTE]
-> この記事 [を読む](../develop/persisting-add-in-state-and-settings.md) 前に、このドキュメントの **「Core concepts」** セクションの「永続化アドインの状態と設定」を参照してください。
+> この記事 [を読む](../develop/persisting-add-in-state-and-settings.md) 前に、このドキュメントの「 **Core concepts」** セクションの「永続化アドインの状態と設定」を参照してください。
 
-Outlookアドインの場合、Office JavaScript API は、次の表に示すとおり、セッション間でアドインの状態を保存する[RoamingSettings](/javascript/api/outlook/office.roamingsettings)オブジェクトと[CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
+Outlookアドインの場合、Office JavaScript API は、次の表で説明するように、セッション間でアドインの状態を保存する [RoamingSettings](/javascript/api/outlook/office.roamingsettings) オブジェクトと [CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトを提供します。 すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
 
 |**オブジェクト**|**ストレージの場所**|
 |:-----|:-----|
@@ -36,7 +31,7 @@ var _settings = Office.context.roamingSettings;
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>ローミング設定の作成または割り当て
 
-前の例に続けて、次の  `setAppSetting` 関数では、 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set_name__value_) メソッドを使用して、 `cookie` という名前の設定項目に今日の日付を設定、または今日の日付で更新する方法を示しています。次に、 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveAsync_callback_) メソッドを使用して Exchange Server にすべてのローミング設定を保存し直しています。
+前の例に続けて、次の  `setAppSetting` 関数では、 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-set-member(1)) メソッドを使用して、 `cookie` という名前の設定項目に今日の日付を設定、または今日の日付で更新する方法を示しています。次に、 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) メソッドを使用して Exchange Server にすべてのローミング設定を保存し直しています。
 
 ```js
 // Set an add-in setting.
@@ -57,7 +52,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>ローミング設定の削除
 
-また、次の  `removeAppSetting` 関数は、前の例をさらに拡張するものです。この例では、 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove_name_) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に保存し直す方法を示しています。
+また、次の  `removeAppSetting` 関数は、前の例をさらに拡張するものです。この例では、 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) メソッドを使用して `cookie` 設定を削除し、すべてのローミング設定を Exchange Server に保存し直す方法を示しています。
 
 ```js
 // Remove an application setting.
@@ -72,7 +67,7 @@ function removeAppSetting()
 
 カスタム プロパティを使用すると、Outlook アドインは処理しているアイテムに関する情報を保存できます。たとえば、Outlook アドインを使用して、メッセージ内の会議の提案から予定を作成する場合は、カスタム プロパティを使用して、会議が作成されたという事実を保存できます。これにより、メッセージを再び開いたときに、Outlook アドインが再び予定の作成を行うことはありません。
 
-メッセージ、予定、または会議出席依頼の特定のアイテムに対してカスタム プロパティを使用するには、その前に、 [Item](/javascript/api/outlook/office.mailbox) オブジェクトの **loadCustomPropertiesAsync** メソッドを呼び出して、プロパティをメモリに読み込む必要があります。現在のアイテムに対してカスタム プロパティが既に設定されている場合は、この時点で Exchange サーバーから読み込まれます。プロパティを読み込んだ後、 [CustomProperties](/javascript/api/outlook/office.customproperties#set_name__value_) オブジェクトの [set](/javascript/api/outlook/office.roamingsettings) メソッドおよび **get** メソッドを使用して、メモリ内のプロパティの追加、更新、および取得を実行できます。アイテムのカスタム プロパティに対して行った変更を保存するには、 [saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) メソッドを使用して、アイテムに加えた変更を Exchange サーバー上で保持する必要があります。
+メッセージ、予定、または会議出席依頼の特定のアイテムに対してカスタム プロパティを使用するには、その前に、 [Item](/javascript/api/outlook/office.mailbox) オブジェクトの **loadCustomPropertiesAsync** メソッドを呼び出して、プロパティをメモリに読み込む必要があります。現在のアイテムに対してカスタム プロパティが既に設定されている場合は、この時点で Exchange サーバーから読み込まれます。プロパティを読み込んだ後、 [CustomProperties](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) オブジェクトの [set](/javascript/api/outlook/office.roamingsettings) メソッドおよび **get** メソッドを使用して、メモリ内のプロパティの追加、更新、および取得を実行できます。アイテムのカスタム プロパティに対して行った変更を保存するには、 [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) メソッドを使用して、アイテムに加えた変更を Exchange サーバー上で保持する必要があります。
 
 ### <a name="custom-properties-example"></a>カスタム プロパティの例
 
@@ -152,7 +147,7 @@ function saveCallback(asyncResult) {
 
 1. アドインの初期化時に既存のプロパティを確認し、それらを保持するか、必要に応じてオフにしてください。
 1. カスタム プロパティを設定する場合は、メッセージの読み取り中またはアドインの読み取りモードでカスタム プロパティが追加されたかどうかを示す追加のプロパティを含める必要があります。 これは、プロパティが作成中に作成されたのか、親から継承されたのかを区別するのに役立ちます。
-1. ユーザーが電子メールまたは返信を転送していることを確認するには [、item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (要件セット 1.10 から利用できます) を使用できます。
+1. ユーザーが電子メールまたは返信を転送していることを確認するには、 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (要件セット 1.10 から利用できます) を使用できます。
 
 ## <a name="see-also"></a>関連項目
 

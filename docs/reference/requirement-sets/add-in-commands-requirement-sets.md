@@ -4,13 +4,8 @@ description: アドイン コマンドOfficeセットの概要。
 ms.date: 01/20/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: b61c3dc98c4d8df83db543ad64d869a5f0143c64
-ms.sourcegitcommit: 63e9ef5e210e353700a3d27cfbd5ed838ce55d01
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2022
-ms.locfileid: "62177723"
 ---
+
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
@@ -18,7 +13,7 @@ ms.locfileid: "62177723"
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。詳細については、「[Excel、Word および PowerPoint のアドイン コマンド](../../design/add-in-commands.md)」と「[Outlook のアドイン コマンド](../../outlook/add-in-commands-for-outlook.md)」を参照してください。
 
 > [!NOTE]
-> Outlookアドインはアドイン コマンドをサポートしていますが、Outlook でアドイン コマンドを有効にする API とマニフェスト要素はメールボックス[1.3 要件](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)セットに含まれています。 AddinCommands 要件セットは、この要件セットOutlook。
+> Outlookアドインはアドイン コマンドをサポートしていますが、Outlook でアドイン コマンドを有効にする API とマニフェスト要素はメールボックス [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) 要件セットに含まれています。 AddinCommands 要件セットは、この要件セットOutlook。
 
 アドイン コマンドの最初のリリースには、対応する要件セットが含まれています (つまり、AddinCommands 1.0 要件セットは存在しない)。 次の表に、Officeバージョンをサポートするクライアント アプリケーションと、それらのアプリケーションのビルド バージョンまたは番号を示します。  
 
@@ -26,9 +21,9 @@ ms.locfileid: "62177723"
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | アドイン コマンド (初期リリース、要件設定なし) | N/A | 該当なし | バージョン 1809 (ビルド 10827.20150) 以降| 16.0.14326.20454 以降 |バージョン 1603 (ビルド 6769.0000) 以降 | 該当なし | 15.33 以降| 2016 年 1 月 |
 
-アドイン コマンド **1.1 要件** セットでは、ドキュメントを含む作業ウィンドウを自動開く [機能が導入されています](../../develop/automatically-open-a-task-pane-with-a-document.md)。
+アドイン コマンド **1.1 要件** セットでは、ドキュメントを含む作業ウィンドウを自動開 [く機能が導入されています](../../develop/automatically-open-a-task-pane-with-a-document.md)。
 
-アドイン コマンド **1.3** 要件セットでは、マニフェスト マークアップが導入され、アドインは Office リボン上のカスタム タブの配置をカスタマイズし、組み込みの Office リボン コントロールをカスタム コントロール グループに挿入できます。
+アドイン コマンド **1.3** 要件セットでは、マニフェスト マークアップが導入され、アドインは Office リボンのカスタム タブの配置をカスタマイズし、組み込みの Office リボン コントロールをカスタム コントロール グループに挿入できます。
 
 次の表に、アドイン コマンドの要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
@@ -37,12 +32,12 @@ ms.locfileid: "62177723"
 | AddinCommands 1.3  | 該当なし | 該当なし | 該当なし | 該当なし | サポートされていません | N/A | サポートされていません | 2020 年 11 月 |
 | AddInCommands 1.1  | N/A | 該当なし  | バージョン 1809 (ビルド 10827.20150) 以降&dagger; | 16.0.14326.20454 以降&dagger; | バージョン 1705 (ビルド 8121.1000) 以降&dagger; | 該当なし | 15.34 以降&dagger;\*| 2017 年 5 月 |
 
-\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。
+\* [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) メソッドはバージョン 16.9 &ndash; 16.14 (バージョン 16.9、16.14 も含む) で `false` を返しますが、これは間違っており、要件セットはこれらのバージョンでサポートされて *います*。
 
 &dagger;OneNoteは、一部のユーザーでのみOffice on the web。
 
 > [!IMPORTANT]
-> AddinCommands 1.3 はプレビュー中で、このページ *でのみPowerPoint on the web。* テスト環境と開発環境でのみマークアップを試することをお勧めします。 実稼働環境やビジネスクリティカルなドキュメント内でプレビュー マークアップを使用しない。
+> AddinCommands 1.3 はプレビュー中で、このページ *でのみPowerPoint on the web*。 テスト環境と開発環境でのみマークアップを試することをお勧めします。 実稼働環境やビジネスクリティカルなドキュメント内でプレビュー マークアップを使用しない。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 

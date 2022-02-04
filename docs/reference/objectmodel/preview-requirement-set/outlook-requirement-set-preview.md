@@ -3,13 +3,8 @@ title: Outlook API プレビュー要件セット
 description: 現在、アドインのプレビュー中Outlook API。
 ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d1efa2b2dca5a88a56fb5f54a84b790e08745ec
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681649"
 ---
+
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook API プレビュー要件セット
 
 Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
@@ -22,7 +17,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 > [!TIP]
 > ターゲット リリースを構成することで、Outlook on the webの機能をプレビューできる場合[Microsoft 365があります](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 該当する機能については、このページに「プレビュー アクセスを構成する」と表示されます。
 >
-> その他の機能については、このフォームを入力して送信することで、Outlook on the web アカウントを使用Microsoft 365プレビュー ビットへのアクセスを[要求できる場合があります](https://aka.ms/OWAPreview)。 "要求プレビュー アクセス" は、これらの機能に関して示されています。
+> その他の機能については、このフォームを入力して送信することで、Outlook on the web アカウントをMicrosoft 365プレビュー ビットへのアクセスを[要求できる場合があります](https://aka.ms/OWAPreview)。 "要求プレビュー アクセス" は、これらの機能に関して示されています。
 
 プレビュー要件セットには、要件セット [1.11 のすべての機能が含まれています](../requirement-set-1.11/outlook-requirement-set-1.11.md)。
 
@@ -32,9 +27,9 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Information Rights Management (IRM) によって保護されたアイテムに対するアドインのアクティブ化
 
-アドインは IRM で保護されたアイテムでアクティブ化できます。 この機能を有効にするには、テナント管理者が[プログラムによるアクセスを許可する] カスタム ポリシー オプションを設定して、使用権を有効にする `OBJMODEL` 必要Office。  詳細 [については、「利用状況の権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
+アドインは IRM で保護されたアイテムでアクティブ化できます。 この機能を有効にするには、`OBJMODEL`テナント管理者が[プログラムによるアクセスを許可する] カスタム  ポリシー オプションを [ユーザー設定] に設定して、使用権を有効にする必要Office。 詳細 [については、「利用状況の権限と説明](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 」を参照してください。
 
-**で利用可能**: Outlook Windows ビルド 13229.10000 から (Microsoft 365 サブスクリプションに接続)
+**で利用可能**: Outlook Windowsビルド 13229.10000 から (Microsoft 365 サブスクリプションに接続)
 
 <br>
 
@@ -48,31 +43,31 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 作成モードで予定の全日イベント プロパティを表す新しいオブジェクトを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)
 
 作成モードでの予定の感度を表す新しいオブジェクトを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="officecontextmailboxitemisalldayevent"></a>[Office.context.mailbox.item.isAllDayEvent](office.context.mailbox.item.md#properties)
 
 予定が一日のイベントである場合を表す新しいプロパティを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="officecontextmailboxitemsensitivity"></a>[Office.context.mailbox.item.sensitivity](office.context.mailbox.item.md#properties)
 
 予定の感度を表す新しいプロパティを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office。MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
-予定で使用できる `AppointmentSensitivityType` 感度オプションを表す新しい列挙型を追加しました。
+予定で使用できる感度 `AppointmentSensitivityType` オプションを表す新しい列挙型を追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 <br>
 
@@ -86,13 +81,13 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 新規作成モードでメッセージの配信日時を管理できるオブジェクトを返す新しいプロパティを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="officedelaydeliverytime"></a>[Office。DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true)
 
 新規作成モードでメッセージの配信日時を管理できる新しいオブジェクトを追加しました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 <br>
 
@@ -102,9 +97,9 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="event-based-activation"></a>イベントベースのライセンス認証
 
-この機能は、要件セット [1.10 でリリースされました](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 ただし、追加のイベントはプレビューで利用できます。 詳細については、「サポートされているイベント [」を参照してください](../../../outlook/autolaunch.md#supported-events)。
+この機能は、要件セット [1.10 でリリースされました](../requirement-set-1.10/outlook-requirement-set-1.10.md)。 ただし、追加のイベントはプレビューで利用できます。 詳細については、「サポートされるイベント [」を参照してください](../../../outlook/autolaunch.md#supported-events)。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 <br>
 
@@ -118,7 +113,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 アドインが[操作可能メッセージによってアクティブ化](/outlook/actionable-messages/invoke-add-in-from-actionable-message)されるときに渡される初期化データを返す新しい関数が追加されました。
 
-**で利用可能**: Outlook (Windowsサブスクリプションに接続) 、Microsoft 365 (Outlook on the web)
+**利用可能な** 場所: Outlook (Windowsサブスクリプションに接続されている)、Microsoft 365 (Outlook on the web)
 
 <br>
 
@@ -128,17 +123,17 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="office-theme"></a>Office テーマ
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)
 
 Office テーマを取得する機能が追加されました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true)
 
 `OfficeThemeChanged` イベントが `Mailbox` に追加されました。
 
-**で利用可能**: Outlook (WindowsサブスクリプションにMicrosoft 365)
+**利用可能:** Outlook (WindowsサブスクリプションにMicrosoft 365)
 
 <br>
 
@@ -148,9 +143,9 @@ Office テーマを取得する機能が追加されました。
 
 ### <a name="shared-mailboxes"></a>共有メールボックス
 
-要件セット [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md)で、共有フォルダー (代理人アクセス) の機能サポートがリリースされました。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](../../../outlook/delegate-access.md)」を参照してください。
+要件セット 1.8 では、共有フォルダー (つまり、代理人アクセス) の機能サポート [がリリースされました](../requirement-set-1.8/outlook-requirement-set-1.8.md)。 ただし、共有メールボックスのサポートはプレビューで利用できます。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](../../../outlook/delegate-access.md)」を参照してください。
 
-**で利用可能**: Outlook (Windows サブスクリプションに接続)、Microsoft 365 (Outlook on the web)、Mac Outlookで使用できます。
+**使用可能な** 場所: Outlook (Windows サブスクリプションにMicrosoft 365)、Outlook on the web (モダン)、Mac Outlookを使用できます。
 
 ## <a name="see-also"></a>関連項目
 

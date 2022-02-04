@@ -4,16 +4,11 @@ description: JavaScript API を使用してブックまたはアプリケーシ�
 ms.date: 06/07/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 50371c0670e8e66bf7a36c5c52c7a9753154f29d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152736"
 ---
+
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
-この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Workbook` [、「Workbook オブジェクト (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.workbook)。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
+この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッド`Workbook`の完全な一覧については、「[Workbook Object (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.workbook)。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
 
 Workbook オブジェクトは、Excel を操作するアドインのエントリ ポイントです。 このオブジェクトは、Excel データのアクセスや変更に使用するワークシート、テーブル、ピボットテーブル、その他のコレクションを保持します。 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) オブジェクトは、個々のワークシートを使用して、ブックのすべてのデータにアドインからアクセスできるようにします。 具体的には、アドインからワークシートの追加、ワークシート間の移動、ワークシート イベントへのハンドラーの割り当てができます。 ワークシートへのアクセスと編集の方法については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md)」を参照してください。
 
@@ -52,7 +47,7 @@ Excel.createWorkbook();
 
 `createWorkbook` メソッドは既存のブックのコピーの作成もできます。 このメソッドは、オプションのパラメーターとして .xlsx ファイルの base64 エンコード文字列表現を受け取ります。 文字列の引数は有効な .xlsx ファイルと見なされ、作成されるブックはそのファイルのコピーになります。
 
-ファイルスライスを使用すると、アドインの現在のブックを base64 エンコード文字列 [として取得できます](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_)。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
+ファイルスライスを使用すると、アドインの現在のブックを base64 エンコード文字列 [として取得できます](/javascript/api/office/office.document#office-office-document-getfileasync-member(1))。 次の例に示すように、[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) クラスを使用して、ファイルを必要な base64 エンコード文字列に変換できます。
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -76,16 +71,16 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>既存のブックのコピーを現在のブックに挿入する
 
-前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット ブックのワークシートのコピーを自体に `insertWorksheetsFromBase64` 挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。 
+前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット `insertWorksheetsFromBase64` ブックのワークシートのコピーを自体に挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。 
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> この `insertWorksheetsFromBase64` メソッドは、Excel Mac、Windows Web 上でサポートされています。 iOS ではサポートされていません。 さらに、このExcel on the webピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされていません。 これらのオブジェクトが存在する場合、 `insertWorksheetsFromBase64` メソッドはエラーを返 `UnsupportedFeature` Excel on the web。 
+> この`insertWorksheetsFromBase64`メソッドは、Excel Mac、Windows Web 上でサポートされています。 iOS ではサポートされていません。 さらに、このExcel on the webピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされていません。 これらのオブジェクトが存在する場合、メソッド`insertWorksheetsFromBase64`はエラーを`UnsupportedFeature`返Excel on the web。 
 
-次のコード サンプルは、別のブックから現在のブックにワークシートを挿入する方法を示しています。 このコード サンプルでは、まずオブジェクトを使用してブック ファイルを処理し、base64 エンコードされた文字列を抽出し、次にこの base64 エンコードされた文字列を現在のブック [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) に挿入します。 新しいワークシートは、Sheet1 という名前のワークシートの後 **に挿入されます**。 `[]` [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert)プロパティのパラメーターとして渡されます。 つまり、ターゲット ブックのすべてのワークシートが現在のブックに挿入されます。
+次のコード サンプルは、別のブックから現在のブックにワークシートを挿入する方法を示しています。 このコード サンプルでは、 [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) まずオブジェクトを使用してブック ファイルを処理し、base64 エンコードされた文字列を抽出し、次にこの base64 エンコードされた文字列を現在のブックに挿入します。 新しいワークシートは、Sheet1 という名前のワークシートの後 **に挿入されます**。 `[]` [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) プロパティのパラメーターとして渡されます。 つまり、ターゲット ブックのすべてのワークシートが現在のブックに挿入されます。
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -181,7 +176,7 @@ Excel.run(function (context) {
 
 #### <a name="worksheet-level-custom-properties"></a>ワークシート レベルのカスタム プロパティ
 
-カスタム プロパティは、ワークシート レベルで設定することもできます。 これらはドキュメント レベルのカスタム プロパティに似ていますが、異なるワークシートで同じキーを繰り返す場合があります。 次の例は、現在のワークシートに値 **"Alpha"** を指定して WorksheetGroup という名前のカスタム プロパティを作成し、それを取得する方法を示しています。
+カスタム プロパティは、ワークシート レベルで設定することもできます。 これらはドキュメント レベルのカスタム プロパティに似ていますが、異なるワークシートで同じキーを繰り返す場合があります。 次の例は、現在のワークシートに値 "Alpha" を指定して **WorksheetGroup** という名前のカスタム プロパティを作成し、それを取得する方法を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -234,7 +229,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo` システム カルチャ設定を [CultureInfo オブジェクトとして定義](/javascript/api/excel/excel.cultureinfo) します。 これには、数値の小数点記号や日付形式のような設定が含まれる。
 
-一部のカルチャ設定は[、UI を使用Excelできます](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、アプリケーション レベル [の](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator` 。
+一部のカルチャ設定は[、UI を使用Excelできます](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)。 システム設定はオブジェクトに保持 `CultureInfo` されます。 ローカルの変更は、 [アプリケーション レベルの](/javascript/api/excel/excel.application)プロパティ (など) として保持されます `Application.decimalSeparator`。
 
 次のサンプルでは、数値文字列の小数点記号を ',' からシステム設定で使用される文字に変更します。
 
@@ -343,12 +338,12 @@ context.application.suspendApiCalculationUntilNextSync();
 
 アドインは、ブックがアクティブ化された場合に検出できます。 ユーザーが別 *のブック、* 別のアプリケーション、または (Excel on the web) Web ブラウザーの別のタブにフォーカスを切り替え、ブックが非アクティブになります。 ブックは、 *ユーザーが* ブックにフォーカスを返すときにアクティブ化されます。 ブックのアクティブ化によって、ブック データの更新など、アドイン内のコールバック関数をトリガーできます。
 
-ブックがアクティブ化された場合を検出[](excel-add-ins-events.md#register-an-event-handler)するには、ブックの[onActivated イベントのイベント ハンドラー](/javascript/api/excel/excel.workbook#onActivated)を登録します。 イベントのイベント ハンドラーは `onActivated` 、イベントが発生すると [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) オブジェクトを受け取る。
+ブックがアクティブ化された場合を検出[](excel-add-ins-events.md#register-an-event-handler)するには、ブックの [onActivated イベントのイベント ハンドラー](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member)を登録します。 イベントのイベント ハンドラーは、 `onActivated` イベントが発生すると [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) オブジェクトを受け取る。
 
 > [!IMPORTANT]
 > ブック `onActivated` を開いた場合、イベントは検出されません。 このイベントは、ユーザーがフォーカスを既に開いているブックに戻す場合にのみ検出されます。
 
-次のコード サンプルは、イベント ハンドラーを登録し、 `onActivated` コールバック関数を設定する方法を示しています。
+次のコード サンプルは、イベント ハンドラーを登録し `onActivated` 、コールバック関数を設定する方法を示しています。
 
 ```js
 Excel.run(function (context) {
@@ -377,7 +372,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>ブックを保存する
 
-`Workbook.save` は、ブックを永続記憶装置に保存します。 この `save` メソッドは、次のいずれかの値を指定 `saveBehavior` できる 1 つのオプション のパラメーターを受け取ります。
+`Workbook.save` は、ブックを永続記憶装置に保存します。 この `save` メソッドは、次のいずれかの値を `saveBehavior` 指定できる 1 つのオプション のパラメーターを受け取ります。
 
 - `Excel.SaveBehavior.save` (既定値): ファイル名や保存場所を指定するようにユーザーに促すダイアログは表示されず、そのままファイルが保存されます。 ファイルが以前に保存されていない場合は、既定の場所に保存されます。 ファイルが以前に保存されている場合は、同じ場所に保存されます。
 - `Excel.SaveBehavior.prompt`: ファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。 ファイルが以前に保存されている場合、ファイルは同じ場所に保存され、ダイアログは表示されません。
@@ -391,7 +386,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>ブックを閉じる
 
-`Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 この `close` メソッドは、次のいずれかの値を指定 `closeBehavior` できる 1 つのオプション のパラメーターを受け取ります。
+`Workbook.close` は、ブックとそのブックに関連付けられているアドインを終了します (Excel アプリケーションは開いたまま)。 この `close` メソッドは、次のいずれかの値を `closeBehavior` 指定できる 1 つのオプション のパラメーターを受け取ります。
 
 - `Excel.CloseBehavior.save` (既定値): ファイルは閉じる前に保存されます。 そのファイルが以前に保存されていない場合は、ファイル名や保存場所を指定するようにユーザーに促すダイアログが表示されます。
 - `Excel.CloseBehavior.skipSave`: ファイルはそのまま閉じられ、保存されません。 未保存の変更は失われます。

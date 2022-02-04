@@ -3,15 +3,10 @@ title: PowerPoint アドイン
 description: PowerPoint アドインを使用して Windows、iPad、Mac、ブラウザー上など、複数のプラットフォームでプレゼンテーション用の魅力的なソリューションを構築する方法を説明します。
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 2b44b17b14f49e386c44d1581cf2d638005a9a5c
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514217"
 ---
+
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
 PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラットフォーム間、およびブラウザーで、ユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。次の 2 種類の PowerPoint アドインを作成できます。
@@ -39,9 +34,9 @@ PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラッ
 
 コード サンプルは次のとおりです。
 
-- `getActiveFileView` 関数は [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
+- `getActiveFileView` 関数は [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) メソッドを呼び出して、プレゼンテーションの現在のビューが "編集" ビュー (**[標準]** や **[アウトライン表示]** などの、スライドを編集できるビュー) なのか "読み取り" ビュー (**[スライド ショー]** や **[閲覧表示]**) なのかを返します。
 
-- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) メソッドを呼び出します。
+- `registerActiveViewChanged` 関数は、[Document.ActiveViewChanged](/javascript/api/office/office.document) イベントのハンドラーを登録するための [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) メソッドを呼び出します。
 
 
 ```js
@@ -90,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>プレゼンテーションの特定のスライドに移動する
 
-次のコードサンプルでは、`getSelectedRange`関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) メソッドを呼び出して、`asyncResult.value`から返される JSON オブジェクトを取得します。そのオブジェクトには、`slides`という名前の配列が含まれています。`slides` の配列には、選択範囲のスライド (または複数のスライドが選択されていない場合は、現在のスライドのみ) の ID、タイトル、インデックスが含まれていいます。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
+次のコードサンプルでは、`getSelectedRange`関数は [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッドを呼び出して、`asyncResult.value`から返される JSON オブジェクトを取得します。そのオブジェクトには、`slides`という名前の配列が含まれています。`slides` の配列には、選択範囲のスライド (または複数のスライドが選択されていない場合は、現在のスライドのみ) の ID、タイトル、インデックスが含まれていいます。この関数はまた、選択範囲の最初のスライドの ID をグローバル変数に保存します。
 
 ```js
 function getSelectedRange() {
@@ -109,7 +104,7 @@ function getSelectedRange() {
 }
 ```
 
-次のコード サンプルでは、`goToFirstSlide` 関数は [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) メソッドを呼び出して、前に示した `getSelectedRange` 関数で識別された最初のスライドに移動します。
+次のコード サンプルでは、`goToFirstSlide` 関数は [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1)) メソッドを呼び出して、前に示した `getSelectedRange` 関数で識別された最初のスライドに移動します。
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>プレゼンテーションの URL を取得する
 
-次のコード サンプルでは、`getFileUrl` 関数は [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
+次のコード サンプルでは、`getFileUrl` 関数は [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) メソッドを呼び出して、プレゼンテーション ファイルの URL を取得します。
 
 ```js
 function getFileUrl() {

@@ -27,7 +27,7 @@ Office アドインでは、既定で匿名アクセスが許可されますが�
 
 多くの場合、アドインではユーザーの ID のみが必要です。 たとえば、アドインをカスタマイズして、ユーザーの名前を作業ウィンドウに表示するだけという場合があります。 または、データベース内のデータにユーザーを関連付けるために一意の ID が必要な場合があります。 これは、Office からユーザーのアクセス トークンを取得するだけで実現できます。
 
-SSO を使用してユーザーの ID を取得するには、[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) メソッドを呼び出します。 このメソッドは、`preferred_username`、`name`、`sub`、`oid` などの、現在サインインしているユーザーに固有のいくつかの要求を含む ID トークンでもあるアクセス トークンを返します。 これらのプロパティの詳細については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens)」を参照してください。 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) によって返されるトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
+SSO を使用してユーザーの ID を取得するには、[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) メソッドを呼び出します。 このメソッドは、`preferred_username`、`name`、`sub`、`oid` などの、現在サインインしているユーザーに固有のいくつかの要求を含む ID トークンでもあるアクセス トークンを返します。 これらのプロパティの詳細については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens)」を参照してください。 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) によって返されるトークンの例については、「[アクセス トークンの例](sso-in-office-add-ins.md#example-access-token)」を参照してください。
 
 ユーザーがサインインしていない場合、Office はダイアログ ボックスを開き、Microsoft ID プラットフォームを介してユーザーにサインインを要求します。 その後、メソッドによってアクセス トークンが返されるか、ユーザーをサインインできない場合はエラーがスローされます。
 
@@ -37,7 +37,7 @@ SSO を使用するユーザー認証を実装する前に、「[Office アド�
 
 ### <a name="access-your-web-apis-through-sso"></a>SSO を使用して Web API にアクセスする
 
-アドインに、承認されたユーザーを必要とするサーバー側 API がある場合は、[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) メソッドを呼び出してアクセス トークンを取得します。 アクセス トークンは、独自の Web サーバーへのアクセスを提供します ([Microsoft Azure アプリ登録](register-sso-add-in-aad-v2.md)を使用して構成されます)。Web サーバーで API を呼び出すときは、アクセス トークンも渡してユーザーを承認します。
+アドインに、承認されたユーザーを必要とするサーバー側 API がある場合は、[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) メソッドを呼び出してアクセス トークンを取得します。 アクセス トークンは、独自の Web サーバーへのアクセスを提供します ([Microsoft Azure アプリ登録](register-sso-add-in-aad-v2.md)を使用して構成されます)。Web サーバーで API を呼び出すときは、アクセス トークンも渡してユーザーを承認します。
 
 次のコードは、アドインの Web サーバー API に対して HTTPS GET 要求を作成してデータを取得する方法を示しています。 このコードは、作業ウィンドウなどで、クライアント側で実行されます。 最初に `getAccessToken` を呼び出してアクセス トークンを取得します。 次に、サーバー API の正しい承認ヘッダーと URL を使用して AJAX 呼び出しを作成します。
 
@@ -72,7 +72,7 @@ function getOneDriveFileNames() {
 
 一部のシナリオでは、ユーザーの ID が必要なだけでなく、ユーザーの代わりに [Microsoft Graph](/graph) リソースにアクセスする必要がある場合があります。 たとえば、ユーザーの代わりにメールを送信したり、Teams でチャットを作成したりする必要がある場合があります。 これらのアクションは、Microsoft Graph を通じて実行できます。 次の手順に従う必要があります。
 
-1. [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) を呼び出して、SSO を使用して現在のユーザーのアクセス トークンを取得します。 ユーザーがサインインしていない場合、Office はダイアログ ボックスを開き、Microsoft ID プラットフォームを使用してユーザーをサインインします。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。
+1. [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) を呼び出して、SSO を使用して現在のユーザーのアクセス トークンを取得します。 ユーザーがサインインしていない場合、Office はダイアログ ボックスを開き、Microsoft ID プラットフォームを使用してユーザーをサインインします。 ユーザーがサインインする、またはユーザーが既にサインインしている場合、メソッドによりアクセス トークンが返されます。
 1. アクセス トークンをサーバー側のコードに渡します。
 1. サーバー側で [OAuth 2.0 On-Behalf-Of フロー](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)を使用して、アクセス トークンを、Microsoft Graph を呼び出すために必要な委任されたユーザーの ID とアクセス許可を含む新しいアクセス トークンに交換します。
 

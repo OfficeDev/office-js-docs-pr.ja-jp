@@ -3,13 +3,8 @@ title: Outlook アドイン API 要件セット 1.3
 description: メールボックス API 1.3 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a8688d5d63cd658084bd0ba4601ed85a631bf8d8
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237770"
 ---
+
 # <a name="outlook-add-in-api-requirement-set-13"></a>Outlook アドイン API 要件セット 1.3
 
 Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
@@ -29,8 +24,8 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="change-log"></a>変更ログ
 
-- [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_) が追加されました。現在の本文を指定された形式で返します。
-- [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_) が追加されました。本文全体を指定されたテキストに置換します。
+- [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#outlook-office-body-getasync-member(1)) が追加されました。現在の本文を指定された形式で返します。
+- [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#outlook-office-body-setasync-member(1)) が追加されました。本文全体を指定されたテキストに置換します。
 - [Event](/javascript/api/office/office.addincommands.event?view=outlook-js-1.3&preserve-view=true) オブジェクトが追加されました。パラメーターとして、Outlook アドインの UI を使用しないコマンド関数に渡されます。処理の完了を通知するために使用されます。
 - [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods) が追加されました。作成中の現在のアイテムを閉じます。
 - [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods) が追加されました。アイテムを非同期的に保存します。

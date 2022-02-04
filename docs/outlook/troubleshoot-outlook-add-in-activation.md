@@ -3,13 +3,8 @@ title: Outlook コンテキスト アドインのアクティブ化のトラブ�
 description: アドインが期待通りアクティブ化しない可能性がある理由。
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c1656df532943a8958494a2ad3734fea97d597a5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149599"
 ---
+
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
 Outlookコンテキスト アドインのアクティブ化は、アドイン マニフェストのアクティブ化ルールに基づいて行います。 現在選択されているアイテムの条件がアドインのアクティブ化ルールを満たす場合、アプリケーションは Outlook UI (新規作成アドインのアドイン選択ウィンドウ、読み取りアドインのアドイン バー) でアドイン ボタンをアクティブ化して表示します。 しかし、アドインが想定どおりにアクティブ化されない場合、考えられる理由を探るために次のような点を調べる必要があります。
@@ -24,7 +19,7 @@ Outlookコンテキスト アドインのアクティブ化は、アドイン �
 
 - スクリプト デバッガー (たとえば、Internet Explorer に付属する JScript デバッガーなど) で Outlook on the web またはモバイル デバイス上のアドインをテストしている場合は、スクリプトの読み込み元を指定する **script** タグの **src** 属性を探します。このパスには、**owa/15.0.516.x/owa2/...** という部分文字列があります。この中の **15.0.516.x** が Exchange Server のバージョン (**15.0.516.2** など) を表します。
 
-- あるいは、[Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) プロパティを使用してバージョンを確認することもできます。Outlook on the web およびモバイル デバイス上で、このプロパティは Exchange Server のバージョンを返します。
+- あるいは、[Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) プロパティを使用してバージョンを確認することもできます。Outlook on the web およびモバイル デバイス上で、このプロパティは Exchange Server のバージョンを返します。
 
 - Outlook でアドインをテストできる場合は、次の単純なデバッグ手法を使用して、Outlook オブジェクト モデルと Visual Basic エディターを使用できます。
 
@@ -77,7 +72,7 @@ Outlook アドインが閲覧アドインであり、ユーザーがメッセー
 アドインが新規作成アドインであり、ユーザーがメッセージや会議出席依頼を作成するときにアクティブ化されるものである場合、そのアイテムが IRM によって保護されていないことを確認してください。 ただし、いくつかの例外があります。
 
 1. アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
-1. Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、「Information [Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)で保護されたアイテムに対するアドインのアクティブ化」を参照してください。
+1. Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、「 [Information Rights Management (IRM](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm))で保護されたアイテムに対するアドインのアクティブ化」を参照してください。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>アドイン マニフェストが適切にインストールされているか? また Outlook にキャッシュ コピーがあるか?
 

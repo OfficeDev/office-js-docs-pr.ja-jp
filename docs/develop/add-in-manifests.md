@@ -3,13 +3,8 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
-ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "60923567"
 ---
+
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
 Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
@@ -122,7 +117,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 > この動作に対する例外は 2 つあります。
 >
 > - これは、アドインのルート ウィンドウに対してのみ適用されます。アドイン ページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
-> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
+> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
 
 次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](../reference/manifest/appdomain.md) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップであっても、そのページはアドイン ウィンドウで開きます。
 

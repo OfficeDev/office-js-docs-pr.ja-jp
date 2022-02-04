@@ -3,13 +3,8 @@ title: Office アドイン開発のベスト プラクティス
 description: 開発時にベスト プラクティスを適用して、Officeを作成します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073340"
 ---
+
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
 効果的なアドインは、目で見て分かる方法で Office アプリケーションを拡張する、ユニークで頼もしい機能を提供します。優れたアドインを作成するには、魅力的な初回エクスペリエンスをユーザーに提供して、最高の UI エクスペリエンスを設計し、アドインのパフォーマンスを最適化します。この記事で説明するベスト プラクティスを適用して、ユーザーが迅速かつ効率的に仕事を遂行するための助けになるアドインを作成してください。
@@ -77,7 +72,7 @@ ms.locfileid: "62073340"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- [Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
+- [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -120,7 +115,7 @@ ms.locfileid: "62073340"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
-- アドインとドキュメント間のデータ交換を最小限Officeします。 詳細については [、「context.sync メソッドをループで使用しないようにする」を参照してください](correlated-objects-pattern.md)。
+- アドインとドキュメント間のデータ交換を最小限Officeします。 詳細については、「 [context.sync メソッドをループで使用しないようにする」を参照してください](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 

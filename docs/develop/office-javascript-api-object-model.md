@@ -3,18 +3,13 @@ title: 共通 JavaScript API オブジェクト モデル
 description: JavaScript 共通 API Officeモデルの詳細
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 23fb9a269948bb9ecd71acaa196af25a50ba00c0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150006"
 ---
+
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-OfficeJavaScript API を使用すると、クライアント アプリケーションOffice基になる機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox オブジェクト](#mailbox-object)は、Outlook、予定、およびユーザー プロファイルへのアクセス権を提供します。 これらの高レベル オブジェクト間の関係を理解すると、アドインのOffice基礎になります。
+Office JavaScript API を使用すると、クライアント アプリケーションOffice基になる機能にアクセスできます。 このアクセスの大部分はいくつかの重要なオブジェクトを通過します。 [Context](#context-object) オブジェクトによって、初期化した後、ランタイム環境にアクセスできるようになります。 [Document](#document-object) オブジェクトによって、Excel、PowerPoint、Word ドキュメントを操作する許可が与えられます。 [Mailbox オブジェクト](#mailbox-object)は、Outlook、予定、およびユーザー プロファイルへのアクセス権を提供します。 これらの高レベル オブジェクト間の関係を理解すると、アドインのOffice基礎になります。
 
 ## <a name="context-object"></a>Context オブジェクト
 
@@ -22,15 +17,15 @@ OfficeJavaScript API を使用すると、クライアント アプリケーシ�
 
 アドインが[初期化](initialize-add-in.md)されると、ランタイム環境でやり取りできるさまざまなオブジェクトが多数あります。 アドインのランタイム コンテキストは [Context](/javascript/api/office/office.context) オブジェクトによって API で反映されます。 **Context** は、[Document](/javascript/api/office/office.document) オブジェクトや [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトなど、API の最重要オブジェクトにアクセスできるメイン オブジェクトです。最重要オブジェクトはさらにドキュメントやメールボックスのコンテンツにアクセスできます。
 
-たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#document) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/office/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
+たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#office-office-context-document-member) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/office/office.context#office-office-context-mailbox-member) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトでは、contentLanguage プロパティと [displayLanguage](/javascript/api/office/office.context#displayLanguage)プロパティにアクセスして、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。 [](/javascript/api/office/office.context#contentLanguage) [roamingSettings](/javascript/api/office/office.context#roamingSettings) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#roamingSettings) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#ui) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトは、[contentLanguage プロパティと displayLanguage](/javascript/api/office/office.context#office-office-context-contentlanguage-member) プロパティにアクセスし、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。[](/javascript/api/office/office.context#office-office-context-displaylanguage-member) [roamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#office-office-context-ui-member) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 ## <a name="document-object"></a>Document オブジェクト
 
 **適用対象:** コンテンツ アドインおよび作業ウィンドウ アドインの種類
 
-Excel、PowerPoint、および Word のドキュメント データを操作するために、API には [Document](/javascript/api/office/office.document) オブジェクトが用意されています。 オブジェクト メンバーを `Document` 使用すると、次の方法でデータにアクセスできます。
+Excel、PowerPoint、および Word のドキュメント データを操作するために、API には [Document](/javascript/api/office/office.document) オブジェクトが用意されています。 オブジェクト メンバーを使用 `Document` すると、次の方法でデータにアクセスできます。
 
 - テキスト、隣接するセル (マトリックス)、またはテーブルの形式のアクティブな選択範囲への読み取りと書き込み。
 
@@ -42,13 +37,13 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
 - ドキュメント上のアドインごとに保持する設定またはアドインの状態。
 
-オブジェクトを使用して `Document` 、ドキュメント内のデータをProjectできます。 API の Project 固有の機能については、[ProjectDocument](/javascript/api/office/office.document) 抽象クラスのメンバー内に説明文があります。 Project 用の作業ウィンドウ アドインの作成の詳細については、「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」を参照してください。
+オブジェクトを使用して、`Document`ドキュメント内のデータをProjectできます。 API の Project 固有の機能については、[ProjectDocument](/javascript/api/office/office.document) 抽象クラスのメンバー内に説明文があります。 Project 用の作業ウィンドウ アドインの作成の詳細については、「[Project 用の作業ウィンドウ アドイン](../project/project-add-ins.md)」を参照してください。
 
 これらのデータ アクセスのすべての形式は、抽象オブジェクトのインスタンスから始 `Document` まる。
 
-オブジェクトの document プロパティを使用して、作業ウィンドウアドインまたはコンテンツ アドインを初期化するときに、オブジェクト `Document` のインスタンスに[](/javascript/api/office/office.context#document)アクセス `Context` できます。 オブジェクトは、Word ドキュメントとドキュメント間で共有される一般的なデータ アクセスExcel定義し、Word ドキュメントのオブジェクトへのアクセス `Document` `CustomXmlParts` も提供します。
+オブジェクトの document プロパティを `Document` 使用して、作業ウィンドウアドインまたはコンテンツ アドインを初期化するときに、 [オブジェクトのインスタンス](/javascript/api/office/office.context#office-office-context-document-member) にアクセス `Context` できます。 オブジェクト`Document`は、Word ドキュメントとドキュメント間で共有される一般的なデータ アクセスExcel`CustomXmlParts`定義し、Word ドキュメントのオブジェクトへのアクセスも提供します。
 
-この `Document` オブジェクトは、開発者がドキュメントコンテンツにアクセスするための 4 つの方法をサポートしています。
+このオブジェクト `Document` は、開発者がドキュメントコンテンツにアクセスするための 4 つの方法をサポートしています。
 
 - 選択範囲ベースのアクセス
 
@@ -74,26 +69,26 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 |:-----|:-----|:-----|
 |テキスト|選択範囲またはバインド内のデータの文字列表現を提供します。|Excel 2013、Project 2013、および PowerPoint 2013 は、プレーンテキストのみがサポートされます。Word 2013 では、3 つのテキスト形式 (プレーン テキスト、HTML、および Office Open XML (OOXML)) がサポートされます。Excel のセル内でテキストが選択されていると (セル内でテキストの一部のみが選択されている場合でも)、選択範囲ベースのメソッドは、セルのコンテンツ全体の読み取りおよび書き込みを行います。Word および PowerPoint でテキストが選択されていると、選択範囲ベースのメソッドは、選択されている文字の並びのみの読み取りおよび書き込みを行います。Project 2013 および PowerPoint 2013 は、選択範囲ベースのデータ アクセスのみをサポートします。|
 |マトリックス|選択範囲またはバインドに含まれるデータを 2 次元の **Array** として提供します (JavaScript で配列の配列として実装されているものです)。たとえば、2 つの列にある 2 つ行の **string** 値は ` [['a', 'b'], ['c', 'd']]` になり、3 つの行を持つ 1 つの列は `[['a'], ['b'], ['c']]` になります。|マトリックス データ アクセスは Excel 2013 および Word 2013 でのみサポートされています。|
-|テーブル|選択範囲またはバインド内のデータを [TableData](/javascript/api/office/office.tabledata) オブジェクトとして提供します。 オブジェクト `TableData` は、and プロパティを使用してデータ `headers` を `rows` 公開します。|テーブル データ アクセスは Excel 2013 および Word 2013 でのみサポートされています。|
+|テーブル|選択範囲またはバインド内のデータを [TableData](/javascript/api/office/office.tabledata) オブジェクトとして提供します。 オブジェクト `TableData` は、and プロパティを使用してデータを `headers` 公開 `rows` します。|テーブル データ アクセスは Excel 2013 および Word 2013 でのみサポートされています。|
 
 #### <a name="data-type-coercion"></a>データ型の強制型変換
 
-and Binding オブジェクトのデータ アクセス メソッドでは、これらのメソッドの `Document` _coercionType_ パラメーターと対応する [](/javascript/api/office/office.binding)[CoercionType](/javascript/api/office/office.coerciontype)列挙値を使用して、目的のデータ型を指定できます。 バインドの実際の形状にかかわらず、さまざまな Office アプリケーションでは、要求されるデータ型にデータを強制的に型変換することによって、共通のデータ型をサポートします。 たとえば、Word の表または段落が選択されている場合、開発者はそれをプレーン テキスト、HTML、Office Open XML、または表として読み取ることを指定でき、API 実装によって必要な変換やデータ変換が行われます。
+`Document` and [Binding](/javascript/api/office/office.binding) オブジェクトのデータ アクセス メソッドでは、これらのメソッドの _coercionType_ パラメーターと対応する [CoercionType](/javascript/api/office/office.coerciontype) 列挙値を使用して、目的のデータ型を指定できます。 バインドの実際の形状にかかわらず、さまざまな Office アプリケーションでは、要求されるデータ型にデータを強制的に型変換することによって、共通のデータ型をサポートします。 たとえば、Word の表または段落が選択されている場合、開発者はそれをプレーン テキスト、HTML、Office Open XML、または表として読み取ることを指定でき、API 実装によって必要な変換やデータ変換が行われます。
 
 > [!TIP]
-> **データ アクセスにマトリックスを使用する場合と、テーブルの coercionType を使用する場合。** 行と列を追加するときに表形式のデータを動的に拡大する必要がある場合に、テーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用する必要があります (またはオブジェクト データ アクセスメソッドの _coercionType_ パラメーターを指定します)。 `Document` `Binding` `"table"` `Office.CoercionType.Table` データ構造内の行と列の追加は、テーブルとマトリックス データの両方でサポートされますが、行と列の追加はテーブル データでのみサポートされます。 行と列の追加を計画していない場合に、データにヘッダー機能が必要ない場合は、データ アクセス メソッドの _coercionType_ パラメーターを指定して、データを操作するより簡単なモデルを提供するマトリックス データ型を使用する必要があります。 `"matrix"` `Office.CoercionType.Matrix`
+> **データ アクセスにマトリックスを使用する場合と、テーブルの coercionType を使用する場合。** 行と列を追加するときに表形式のデータを動的に拡大する必要がある場合に、テーブル ヘッダーを使用する必要がある場合は、テーブル データ型を使用する必要があります (またはオブジェクト データ アクセスメソッドの _coercionType_ `Document` `Binding` `"table"` `Office.CoercionType.Table`パラメーターを指定します)。 データ構造内の行と列の追加は、テーブルとマトリックス データの両方でサポートされますが、行と列の追加はテーブル データでのみサポートされます。 行と列の追加を計画していない場合に、データにヘッダー機能が必要ない場合は、データ アクセス メソッドの  _coercionType_ `"matrix"` `Office.CoercionType.Matrix`パラメーターを指定して、データを操作するより簡単なモデルを提供するマトリックス データ型を使用する必要があります。
 
-指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](/javascript/api/office/office.asyncresult#status) プロパティが `"failed"` を返すため、[AsyncResult.error](/javascript/api/office/office.asyncresult#error) プロパティを使用して [Error](/javascript/api/office/office.error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
+指定された型にデータを強制的に型変換できない場合は、コールバック内の [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) プロパティが `"failed"` を返すため、[AsyncResult.error](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) プロパティを使用して [Error](/javascript/api/office/office.error) オブジェクトにアクセスし、メソッド呼び出しが失敗した理由を確認できます。
 
 ## <a name="work-with-selections-using-the-document-object"></a>Document オブジェクトを使用して選択範囲を使用する
 
-オブジェクトは、ユーザーの現在の選択範囲に対する読み取りおよび書き込みを "get and set" 方式で行うメソッド `Document` を公開します。 これを行うには、 `Document` オブジェクトは and メソッド `getSelectedDataAsync` を `setSelectedDataAsync` 提供します。
+オブジェクト `Document` は、ユーザーの現在の選択範囲に対する読み取りおよび書き込みを "get and set" 方式で行うメソッドを公開します。 これを行うには、オブジェクト `Document` は and メソッド `getSelectedDataAsync` を `setSelectedDataAsync` 提供します。
 
 選択範囲に関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)」を参照してください。
 
 ## <a name="work-with-bindings-using-the-bindings-and-binding-objects"></a>Bindings オブジェクトと Binding オブジェクトを使用したバインドの操作
 
-バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。 アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)、[addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_)、または [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)) を呼び出すことによって、バインドを確立する必要があります。 バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。 バインドを作成すると、アドインに次の値が提供されます。
+バインドベースのデータ アクセスを使用すると、コンテンツ アドインおよび作業ウィンドウ アドインで、バインドに関連付けられた識別子を介して、ドキュメントまたはスプレッドシートの特定の領域に一貫性のあるアクセスが可能になります。 アドインは、最初に、ドキュメントの部分と一意の ID を関連付けるメソッドのいずれか ([addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))、[addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、または [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1))) を呼び出すことによって、バインドを確立する必要があります。 バインドが確立されると、アドインは提供された ID を使用して、ドキュメントまたはスプレッドシート内の関連付けられた領域に含まれるデータにアクセスできます。 バインドを作成すると、アドインに次の値が提供されます。
 
 - 表、範囲、またはテキスト (隣接する一連の文字) など、サポートされている Office アプリケーション全体に共通のデータ構造へのアクセスを許可します。
 
@@ -103,9 +98,9 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 
 また、バインドを確立すると、ドキュメントまたはスプレッドシートの特定の領域を範囲とする、データおよび選択範囲の変更イベントをサブスクライブできます。つまり、ドキュメントまたはスプレッドシート全体の全般的な変更ではなく、バインドされた領域内で発生する変更のみがアドインに通知されます。
 
-[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) メソッドまたは [Office.select](/javascript/api/office) メソッドを使用します。 `Bindings` [addFromSelectionAsync、addFromPromptAsync、addFromNamedItemAsync、](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_)[または releaseByIdAsync](/javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_)[](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_)のいずれかのメソッドを使用して、新しいバインド[](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)を確立し、既存のバインドを削除できます。
+[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) メソッドまたは [Office.select](/javascript/api/office) メソッドを使用します。 `Bindings` [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、[addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))、[addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1))、[または releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)) のいずれかのメソッドを使用して、新しいバインドを確立し、既存のバインドを削除できます。
 
-バインドを作成するときに  _bindingType_ パラメーターを使用して指定するバインドには、3 つの異なる `addFromSelectionAsync` 種類 `addFromPromptAsync` `addFromNamedItemAsync` があります。
+バインドを作成するときに  _bindingType_ `addFromSelectionAsync`パラメーターを使用して指定するバインドには、3 つの異なる種類 `addFromPromptAsync` `addFromNamedItemAsync` があります。
 
 |**バインドの種類**|**説明**|**ホスト アプリケーションのサポート**|
 |:-----|:-----|:-----|
@@ -115,7 +110,7 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 
 <br/>
 
-オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトのメソッド `Bindings` [(MatrixBinding、TableBinding、](/javascript/api/office/office.matrixbinding)[または TextBinding)](/javascript/api/office/office.textbinding)[](/javascript/api/office/office.tablebinding)を使用して、バインドのデータとプロパティを処理できます。 これら 3 つのオブジェクトはすべて、バインドされたデータを操作できるオブジェクトの [getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_) メソッドと [setDataAsync](/javascript/api/office/office.binding#setDataAsync_data__options__callback_) メソッド `Binding` を継承します。
+オブジェクトの 3 つの "add" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトの[メソッド (MatrixBinding](/javascript/api/office/office.matrixbinding)、[TableBinding](/javascript/api/office/office.tablebinding)、[または TextBinding](/javascript/api/office/office.textbinding)) `Bindings` を使用して、バインドのデータとプロパティを処理できます。 これら 3 つのオブジェクトはすべて、バインドされたデータを操作できるオブジェクトの [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)) メソッドと [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)) `Binding` メソッドを継承します。
 
 バインドに関する操作の実行方法を示すコード例については、「[ドキュメントまたはスプレッドシート内の領域へのバインド](bind-to-regions-in-a-document-or-spreadsheet.md)」を参照してください。
 
@@ -123,19 +118,19 @@ and Binding オブジェクトのデータ アクセス メソッドでは、こ
 
  **適用対象:** Word の作業ウィンドウ アドイン
 
-API の [CustomXmlParts](/javascript/api/office/office.customxmlparts) オブジェクトと [CustomXmlPart](/javascript/api/office/office.customxmlpart) オブジェクトを使用すると、Word 文書内のカスタム XML パーツにアクセスできます。これにより、文書のコンテンツに対する XML 主導の操作が可能になります。 and オブジェクトの操作のデモンストレーション `CustomXmlParts` については `CustomXmlPart` [、Word-add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) コード サンプルを参照してください。
+API の [CustomXmlParts](/javascript/api/office/office.customxmlparts) オブジェクトと [CustomXmlPart](/javascript/api/office/office.customxmlpart) オブジェクトを使用すると、Word 文書内のカスタム XML パーツにアクセスできます。これにより、文書のコンテンツに対する XML 主導の操作が可能になります。 and オブジェクトの操作のデモンストレーション`CustomXmlParts``CustomXmlPart`については、[Word-add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) コード サンプルを参照してください。
 
 ## <a name="work-with-the-entire-document-using-the-getfileasync-method"></a>getFileAsync メソッドを使用してドキュメント全体を操作する
 
  **適用対象:** Word および PowerPoint の作業ウィンドウ アドイン
 
-[Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) メソッド、および [File](/javascript/api/office/office.file) オブジェクトと [Slice](/javascript/api/office/office.slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する](../word/get-the-whole-document-from-an-add-in-for-word.md)」を参照してください。
+[Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) メソッド、および [File](/javascript/api/office/office.file) オブジェクトと [Slice](/javascript/api/office/office.slice) オブジェクトのメンバーは、一度に最大で 4 MB ずつのスライス (チャンク) に分割して Word および PowerPoint ドキュメント ファイル全体を取得する機能を提供します。詳細については、「[PowerPoint または Word 用アドインからドキュメント全体を取得する](../word/get-the-whole-document-from-an-add-in-for-word.md)」を参照してください。
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
 
 **適用対象:** Outlook アドイン
 
-Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/office.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/office/office.context#mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/outlook/office.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/office/office.context#office-office-context-mailbox-member) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
 
 ```js
 // Access the Item object.

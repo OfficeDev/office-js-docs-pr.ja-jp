@@ -3,16 +3,11 @@ title: 共有フォルダーと共有メールボックスのシナリオを、O
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 346d05db7bdfec6b3ea95d487780c7a146130b59
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138738"
 ---
+
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
-この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼ばれる) と共有メールボックス (プレビュー[中)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)のシナリオ (Office JavaScript API がサポートするアクセス許可を含む) を有効にする方法について説明します。
+この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼[ばれる) と](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)共有メールボックス (プレビュー中) のシナリオを有効にする方法について説明します。これには、Office JavaScript API がサポートするアクセス許可が含まれます。
 
 ## <a name="supported-clients-and-platforms"></a>サポートされているクライアントとプラットフォーム
 
@@ -20,10 +15,10 @@ ms.locfileid: "60138738"
 
 | Client | Exchange Online | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2013 オンプレミス |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|いいえ|いいえ|いいえ|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|不要|不要|不要|
 |Mac:<br>ビルド 16.47 以降|はい|はい|はい|はい|
 |Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|いいえ|いいえ|いいえ|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|不要|不要|不要|
 
 > [!IMPORTANT]
 > この機能のサポートは、要件セット [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) で導入されました (詳細については、クライアントとプラットフォーム [を参照してください](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients))。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
@@ -36,13 +31,13 @@ ms.locfileid: "60138738"
 
 #### <a name="shared-folders"></a>共有フォルダー
 
-メールボックスの所有者は、まず代理人 [へのアクセス権を提供する必要があります](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)。 代理人は、「他のユーザーのメールと予定表アイテムを管理する」の「自分のプロファイルに他のユーザーのメールボックスを追加する」セクションに記載されている手順に従う [必要があります](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)。
+メールボックスの所有者は、最初に [代理人へのアクセスを提供する必要があります](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)。 代理人は、「他のユーザーのメールと予定表アイテムを管理する」の「自分のプロファイルに他のユーザーのメールボックスを追加する」セクションに記載されている指示に従う [必要があります](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)。
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
-Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では[、Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
+Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では、[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-"自動Exchange Server" と呼ばれる機能が既定でオンになっています。つまり、Outlook が閉[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)じて再び開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「開く」の「Outlook に共有メールボックスを追加して、Outlook で共有メールボックスを使用する」に示されている手動の手順[に従う必要があります](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+"自動Exchange Server" と呼ばれる機能が既定でオンになっています。つまり、Outlook が閉じて再び[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「Open」の「Outlook に共有メールボックスを追加して、Outlook で共有メールボックスを使用する」に示されている手動の手順に従[う必要があります](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 
 > [!WARNING]
 > パスワード **を** 使用して共有メールボックスにサインインしない。 この場合、機能 API は機能しません。
@@ -55,14 +50,14 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
-Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では[、Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
+Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では、[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-アクセスを受け取った後、共有メールボックス ユーザーは、「Open」の「共有メールボックスを追加してプライマリ メールボックスの下に表示する」セクションに示されている手順に従って、Outlook on the web で共有メールボックスを使用する[必要があります](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
+アクセスを受け取った後、共有メールボックス ユーザーは、記事「Open and use a shared mailbox in Outlook on the web」の「プライマリ メールボックスの下に表示される共有メールボックスを追加する」に示されている手順[に従う必要があります](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
 
 > [!WARNING]
 > " **別の** メールボックスを開く" などの他のオプションを使用しない。 機能 API が正しく動作しない場合があります。
 
-### <a name="mac"></a>[ Mac ](#tab/unix)
+### <a name="mac"></a>[Mac](#tab/unix)
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
@@ -84,7 +79,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 ---
 
-アドインが一般的にアクティブ化する場所とアクティブ化しない場所の詳細については、「Outlook[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)アドインの概要」ページの「アドインで使用可能なメールボックス アイテム」セクションを参照してください。
+アドインが一般にアクティブ化する場所とアクティブ化しない場所の詳細については、「Outlook アドイン[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)の概要」ページの「アドインで使用可能なメールボックス アイテム」セクションを参照してください。
 
 ## <a name="supported-permissions"></a>サポートされているアクセス許可
 
@@ -102,24 +97,24 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 > [!NOTE]
 > 現在、API は既存のアクセス許可の取得をサポートしていますが、アクセス許可を設定することはできません。
 
-[DelegatePermissions オブジェクト](/javascript/api/outlook/office.mailboxenums.delegatepermissions)は、アクセス許可を示すためにビットマスクを使用して実装されます。 ビットマスク内の各位置は、特定のアクセス許可を表し、それが設定されている場合、 `1` ユーザーはそれぞれのアクセス許可を持っています。 たとえば、右側の 2 番目のビットが次の場合 `1` 、ユーザーは書き込みアクセス **許可を持** つ。 特定のアクセス許可を確認する方法の例については、後の「[](#perform-an-operation-as-delegate-or-shared-mailbox-user)代理人または共有メールボックス ユーザーとして操作を実行する」セクションを参照してください。
+[DelegatePermissions オブジェクト](/javascript/api/outlook/office.mailboxenums.delegatepermissions)は、アクセス許可を示すためにビットマスクを使用して実装されます。 ビットマスク内の各位置は、特定のアクセス許可を `1` 表し、それが設定されている場合、ユーザーはそれぞれのアクセス許可を持っています。 たとえば、右側の 2 番目の `1`ビットが次の場合、ユーザーは書き込みアクセス **許可を持** つ。 特定のアクセス許可を確認する方法の例については、後の「[](#perform-an-operation-as-delegate-or-shared-mailbox-user)代理人または共有メールボックス ユーザーとして操作を実行する」セクションを参照してください。
 
 ## <a name="sync-across-shared-folder-clients"></a>共有フォルダー クライアント間の同期
 
 所有者のメールボックスに対する代理人の更新は、通常、すぐにメールボックス間で同期されます。
 
-ただし、REST または Exchange Web サービス (EWS) 操作を使用してアイテムに拡張プロパティを設定した場合、このような変更は同期に数時間かかる可能性があります。このような遅延を回避するには[、CustomProperties](/javascript/api/outlook/office.customproperties)オブジェクトと関連する API を使用することをお勧めします。 詳細については、「Get [and](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) set metadata in the Outlook」の記事を参照してください。
+ただし、REST または Exchange Web サービス (EWS) 操作を使用してアイテムに拡張プロパティを設定した場合、このような変更は同期に数時間かかる可能性があります。このような遅延を回避するには、[CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトと関連する API を使用することをお勧めします。 詳細については、「[Get and set](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) metadata in the Outlook」の記事を参照してください。
 
 > [!IMPORTANT]
 > 代理人シナリオでは、API によって現在提供されているトークンで EWS をoffice.jsできません。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、親要素の下のマニフェストで [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) 要素を設定 `true` する必要があります `DesktopFormFactor` 。 現時点では、他のフォーム ファクターはサポートされていません。
+アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、親要素の下のマニフェストで [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 要素を設定する必要があります `DesktopFormFactor`。 現時点では、他のフォーム ファクターはサポートされていません。
 
-代理人からの REST 呼び出しをサポートするには、マニフェストの [Permissions](../reference/manifest/permissions.md) ノードをに設定します `ReadWriteMailbox` 。
+代理人からの REST 呼び出しをサポートするには、マニフェストの [Permissions](../reference/manifest/permissions.md) ノードをに設定します `ReadWriteMailbox`。
 
-次の例は、 `SupportsSharedFolders` マニフェストのセクションに `true` 設定された要素を示しています。
+次の例は、マニフェスト `SupportsSharedFolders` のセクションに設定 `true` された要素を示しています。
 
 ```XML
 ...
@@ -148,7 +143,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>代理人または共有メールボックス ユーザーとして操作を実行する
 
-[item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)メソッドを呼び出すことによって、作成モードまたは読み取りモードでアイテムの共有プロパティを取得できます。 これにより、現在ユーザーのアクセス許可、所有者の電子メール アドレス、REST API の基本 URL、およびターゲット メールボックスを提供する [SharedProperties](/javascript/api/outlook/office.sharedproperties) オブジェクトが返されます。
+[item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出すことによって、作成モードまたは読み取りモードでアイテムの共有プロパティを取得できます。 これにより、現在ユーザーのアクセス許可、所有者の電子メール アドレス、REST API の基本 URL、およびターゲット メールボックスを提供する [SharedProperties](/javascript/api/outlook/office.sharedproperties) オブジェクトが返されます。
 
 次の例は、メッセージまたは予定の共有プロパティを取得し、代理人または共有メールボックス ユーザーが **書** き込みアクセス許可を持つか確認し、REST 呼び出しを行う方法を示しています。
 
@@ -202,11 +197,11 @@ function performOperation() {
 ```
 
 > [!TIP]
-> 代理人として REST を使用して、アイテムまたはグループの投稿にOutlookメッセージのOutlook[を取得できます](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+> 代理人として REST を使用すると、アイテムまたはグループの投稿にOutlookメッセージのOutlook[を取得できます](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>共有アイテムと非共有アイテムの REST の呼び出しを処理する
 
-アイテムに対して REST 操作を呼び出す場合は、アイテムが共有されるかどうかに関して、API を使用してアイテムが共有 `getSharedPropertiesAsync` されているかどうかを判断できます。 その後、適切なオブジェクトを使用して操作の REST URL を作成できます。
+アイテムに対して REST `getSharedPropertiesAsync` 操作を呼び出す場合は、アイテムが共有されるかどうかに関して、API を使用してアイテムが共有されているかどうかを判断できます。 その後、適切なオブジェクトを使用して操作の REST URL を作成できます。
 
 ```js
 if (item.getSharedPropertiesAsync) {
@@ -228,7 +223,7 @@ if (item.getSharedPropertiesAsync) {
 
 ### <a name="message-compose-mode"></a>メッセージ作成モード
 
-メッセージ作成モードでは、次の条件を満たしていない限り、Outlook on the web または Windows で[getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_)はサポートされません。
+メッセージ作成モードでは、次の条件を満たしていない限り、Outlook on the web または Windows で [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) はサポートされません。
 
 a. **アクセス/共有フォルダーの委任**
 
@@ -246,11 +241,11 @@ b. **共有メールボックス**
 
 ### <a name="rest-and-ews"></a>REST と EWS
 
-アドインは REST を使用できます。また、アドインのアクセス許可を設定して、所有者のメールボックスまたは共有メールボックスへの REST アクセスを有効にする必要 `ReadWriteMailbox` があります。 EWS はサポートされていません。
+アドインは REST `ReadWriteMailbox` を使用できます。また、アドインのアクセス許可を設定して、所有者のメールボックスまたは共有メールボックスへの REST アクセスを有効にする必要があります。 EWS はサポートされていません。
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>アドレス一覧から非表示のユーザーまたは共有メールボックス
 
-管理者がグローバル アドレス一覧 (GAL) などのアドレス一覧からユーザーまたは共有メールボックス のアドレスを非表示にした場合、メールボックス レポートで開いた影響を受けるメール アイテムは `Office.context.mailbox.item` null として開きます。 たとえば、ユーザーが GAL から非表示の共有メールボックスでメール アイテムを開くと、そのメール アイテムは `Office.context.mailbox.item` null になります。
+管理者がグローバル アドレス一覧 (GAL `Office.context.mailbox.item` ) などのアドレス一覧からユーザーまたは共有メールボックス のアドレスを非表示にした場合、メールボックス レポートで開いた影響を受けるメール アイテムは null として開きます。 たとえば、ユーザーが `Office.context.mailbox.item` GAL から非表示の共有メールボックスでメール アイテムを開くと、そのメール アイテムは null になります。
 
 ## <a name="see-also"></a>関連項目
 

@@ -3,19 +3,14 @@ title: Excel JavaScript API のパフォーマンスの最適化
 description: JavaScript API Excelを使用して、アドインのパフォーマンスを最適化します。
 ms.date: 08/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ade2ac02f22c93d920174f54e6fc2efed349e3d5
-ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "60809064"
 ---
+
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Excel の JavaScript API を使用した、パフォーマンスの最適化
 
 Excel JavaScript API を使用して一般的なタスクを実行するには、複数の方法があります。 さまざまなアプローチの間でパフォーマンスは大きく異なります。 この記事には、Excel JavaScript API を使用して一般的なタスクを効率的に実行する方法を示すガイダンスとコード サンプルが記載されています。
 
 > [!IMPORTANT]
-> 推奨される使用法と呼び出しによって、多くのパフォーマンスの問題 `load` に対処 `sync` できます。 アプリケーション固有の API を効率的に操作するためのアドバイスについては[、「Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis)アドインのリソース制限とパフォーマンスの最適化」の「アプリケーション固有 API によるパフォーマンスの向上」セクションを参照してください。
+> 推奨される使用法と呼び出しによって、多くのパフォーマンスの問題に `load` 対処 `sync` できます。 アプリケーション固有の API を効率的に操作するためのアドバイスについては、「[Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) アドインのリソース制限とパフォーマンスの最適化」の「アプリケーション固有の API によるパフォーマンスの向上」セクションを参照してください。
 
 ## <a name="suspend-excel-processes-temporarily"></a>Excel のプロセスを一時的に中断する
 
@@ -73,7 +68,7 @@ Excel.run(async function(ctx) {
 Excel では、コード内で発生したのとほぼ同時に、アドインによって行われた変更が表示されます。 大規模で反復的なデータ セットの場合は、進捗状況の画面上での確認をリアルタイムで行う必要はありません。 `Application.suspendScreenUpdatingUntilNextSync()` は、アドインが `context.sync()` を呼び出すまで、または `Excel.run` が終了するまで (`context.sync` を暗黙的に呼び出す)、Excel のビジュアルの更新を一時停止します。 Excel では、更新停止の通知や表示などが次回の同期まで行われません。この遅延の準備のガイダンスや、アクティビティを示すステータス バーが、アドインによって提供される必要があります。
 
 > [!NOTE]
-> 繰り返し `suspendScreenUpdatingUntilNextSync` 呼び出す (ループ内など) は使用しない。 繰り返し呼び出しを行Excelウィンドウがちらつきます。
+> 繰り返し呼 `suspendScreenUpdatingUntilNextSync` び出す (ループ内など) は使用しない。 繰り返し呼び出しを行Excelウィンドウがちらつきます。
 
 ### <a name="enable-and-disable-events"></a>イベントの有効化と無効化
 
@@ -107,11 +102,11 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> [Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__) メソッドを使用すると、Table オブジェクトを Range オブジェクトに簡単に変換できます。
+> [Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-converttorange-member(1)) メソッドを使用すると、Table オブジェクトを Range オブジェクトに簡単に変換できます。
 
 ## <a name="payload-size-limit-best-practices"></a>ペイロード サイズの制限のベスト プラクティス
 
-JavaScript API Excel API 呼び出しのサイズ制限があります。 Excel on the web 5 MB の要求と応答のペイロード サイズ制限を持ち、この制限を超えると API はエラー `RichAPI.Error` を返します。 すべてのプラットフォームで、取得操作の範囲は 500 万セルに制限されます。 大きい範囲は、通常、これらの制限の両方を超える。
+JavaScript API Excel API 呼び出しのサイズ制限があります。 Excel on the web 5 MB の要求と応答のペイロード サイズ制限を持ち、この制限を超えると API `RichAPI.Error` はエラーを返します。 すべてのプラットフォームで、取得操作の範囲は 500 万セルに制限されます。 大きい範囲は、通常、これらの制限の両方を超える。
 
 要求のペイロード サイズは、次の 3 つのコンポーネントの組み合わせです。
 
@@ -119,11 +114,11 @@ JavaScript API Excel API 呼び出しのサイズ制限があります。 Excel 
 * オブジェクトなどのオブジェクトの `Range` 数
 * 設定または取得する値の長さ
 
-API がエラーを返す場合は、この記事に記載されているベスト プラクティス戦略を使用して、スクリプトを最適化し、エラー `RequestPayloadSizeLimitExceeded` を回避してください。
+API がエラーを返す `RequestPayloadSizeLimitExceeded` 場合は、この記事に記載されているベスト プラクティス戦略を使用して、スクリプトを最適化し、エラーを回避してください。
 
 ### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>戦略 1: 変更されていない値をループから移動する
 
-パフォーマンスを向上させるために、ループ内で発生するプロセスの数を制限します。 次のコード サンプルでは、ループ内で変更しないので、ループから移動 `context.workbook.worksheets.getActiveWorksheet()` `for` できます。
+パフォーマンスを向上させるために、ループ内で発生するプロセスの数を制限します。 次のコード サンプルでは、 `context.workbook.worksheets.getActiveWorksheet()` ループ内 `for` で変更しないので、ループから移動できます。
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -140,7 +135,7 @@ async function run() {
 }
 ```
 
-次のコード サンプルは、前のコード サンプルと同様のロジックを示していますが、パフォーマンス戦略が改善されています。 ループが実行されるごとにこの値を取得する必要がないので、ループの前に値 `context.workbook.worksheets.getActiveWorksheet()` `for` が `for` 取得されます。 ループのコンテキスト内で変化する値のみをそのループ内で取得する必要があります。
+次のコード サンプルは、前のコード サンプルと同様のロジックを示していますが、パフォーマンス戦略が改善されています。 ループが `context.workbook.worksheets.getActiveWorksheet()` 実行されるごとにこの `for` 値を取得する必要がないので、ループの前に値が取得 `for` されます。 ループのコンテキスト内で変化する値のみをそのループ内で取得する必要があります。
 
 ```js
 // This code sample shows a good performance strategy.
@@ -165,12 +160,12 @@ async function run() {
 
 #### <a name="split-each-range-array-into-multiple-arrays"></a>各範囲配列を複数の配列に分割する
 
-範囲オブジェクトを少なくする方法の 1 つは、各範囲配列を複数の配列に分割し、ループと新しい呼び出しで各新しい配列を処理 `context.sync()` する方法です。
+範囲オブジェクトを少なくする方法の 1 つは、各範囲配列を複数の配列に分割し、ループと新しい呼び出しで各新しい配列を処理する方法 `context.sync()` です。
 
 > [!IMPORTANT]
-> ペイロード要求のサイズ制限を超えたと最初に判断した場合にのみ、この戦略を使用します。 複数のループを使用すると、5 MB の制限を超えしないように各ペイロード要求のサイズを小さくできますが、複数のループと複数の呼び出しを使用するとパフォーマンスに悪影響 `context.sync()` を及ぼす可能性があります。
+> ペイロード要求のサイズ制限を超えたと最初に判断した場合にのみ、この戦略を使用します。 複数のループを使用すると、5 MB `context.sync()` の制限を超えしないように各ペイロード要求のサイズを小さくできますが、複数のループと複数の呼び出しを使用するとパフォーマンスに悪影響を及ぼす可能性があります。
 
-次のコード サンプルでは、1 回のループで範囲の大規模な配列を処理し、次に 1 回の呼び出しを実行 `context.sync()` します。 1 回の呼び出しで範囲の値が多すぎると、ペイロード `context.sync()` 要求のサイズが 5 MB の制限を超える原因になります。
+次のコード サンプルでは、1 回のループで範囲の大規模な配列を処理し、次に 1 回の呼び出しを実行 `context.sync()` します。 1 回の呼び出しで `context.sync()` 範囲の値が多すぎると、ペイロード要求のサイズが 5 MB の制限を超える原因になります。
 
 ```js
 // This code sample does not show a recommended strategy.
@@ -218,9 +213,9 @@ async function run() {
 
 #### <a name="set-range-values-in-an-array"></a>配列内の範囲の値を設定する
 
-範囲オブジェクトを少なくするもう 1 つの方法は、配列を作成し、ループを使用してその配列内のすべてのデータを設定し、配列の値を範囲に渡す方法です。 これにより、パフォーマンスとペイロードのサイズの両方が向上します。 ループ内の各範囲 `range.values` を呼び出す代わりに、ループの外側 `range.values` で 1 回呼び出されます。
+範囲オブジェクトを少なくするもう 1 つの方法は、配列を作成し、ループを使用してその配列内のすべてのデータを設定し、配列の値を範囲に渡す方法です。 これにより、パフォーマンスとペイロードのサイズの両方が向上します。 ループ内の各範囲を `range.values` 呼び出す代 `range.values` わりに、ループの外側で 1 回呼び出されます。
 
-次のコード サンプルは、配列を作成し、ループ内の配列の値を設定し、その配列の値をループの外側の範囲 `for` に渡す方法を示しています。
+次のコード サンプルは、 `for` 配列を作成し、ループ内の配列の値を設定し、その配列の値をループの外側の範囲に渡す方法を示しています。
 
 ```js
 // This code sample shows a good performance strategy.

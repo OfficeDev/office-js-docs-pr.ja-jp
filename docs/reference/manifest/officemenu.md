@@ -1,18 +1,25 @@
 ---
 title: マニフェスト ファイルの OfficeMenu 要素
 description: OfficeMenu 要素は、コンテキスト メニューに追加するコントロールのコレクションOffice定義します。
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eba4431fd31ee7df918014cb30d8085a4040880f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154072"
 ---
+
 # <a name="officemenu-element"></a>OfficeMenu 要素
 
 Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。 Word、Excel、PowerPoint、OneNote アドインに適用されます。
+
+**アドインの種類:** 作業ウィンドウ
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- Taskpane 1.0
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="attributes"></a>属性
 
@@ -41,7 +48,7 @@ Office のコンテキスト メニューに追加するコントロールのコ
 
 ```xml
 <OfficeMenu id="ContextMenuCell">
-    <Control xsi:type="Menu" id="myMenuID">
+    <Control xsi:type="Menu" id="Contoso.myMenu">
       <Label resid="residLabel3" />
       <Supertip>
           <Title resid="residLabel" />

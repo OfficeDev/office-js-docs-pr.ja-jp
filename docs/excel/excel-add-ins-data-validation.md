@@ -3,13 +3,8 @@ title: Excel の範囲にデータの入力規則を追加する
 description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f7f21621b6ddffa3cb7e51134a3b4cd1cc2aaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151506"
 ---
+
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
 Excel の JavaScript ライブラリには、ブック内の表、列、行、その他の範囲に自動のデータの入力規則をアドインで追加できる API が用意されています。 データ検証の概念と用語を理解するには、ユーザーが UI を使用してデータ検証を追加する方法に関する以下のExcelしてください。
@@ -163,7 +158,7 @@ Excel.run(function (context) {
 ユーザーがセルに無効なデータを入力しようとした際に表示される、カスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては、次の点に注意してください。
 
 - `style` プロパティは、ユーザーが情報アラート、警告、または "停止" アラートを取得するかどうかを決定します。 ユーザーによる無効なデータの追加を実際に防止するのは `Stop` のみです。 いずれにせよ、`Warning` と `Information` のポップアップには、ユーザーが無効なデータを入力できるオプションがあります。
-- `showAlert` プロパティの既定値は `true` です。 つまり、Excelメッセージ、タイトル、およびスタイルに設定または設定するカスタム アラートを作成しない限り、一般的なアラート (種類) が `Stop` `showAlert` `false` ポップアップします。 このコードでは、カスタムのメッセージとタイトルを設定します。
+- `showAlert` プロパティの既定値は `true` です。 つまり、Excelメッセージ、タイトル、およびスタイルに設定または設定するカスタム アラートを作成しない限り、一般的なアラート (`Stop`種類) `false` `showAlert` がポップアップします。 このコードでは、カスタムのメッセージとタイトルを設定します。
 
 ```js
 Excel.run(function (context) {
@@ -210,7 +205,7 @@ Excel.run(function (context) {
 
 ## <a name="remove-data-validation-from-a-range"></a>範囲からデータの入力規則を削除する
 
-範囲からデータの入力規則を削除するには、[Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__) メソッドを呼び出します。
+範囲からデータの入力規則を削除するには、[Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#excel-excel-datavalidation-clear-member(1)) メソッドを呼び出します。
 
 ```js
 myrange.dataValidation.clear()

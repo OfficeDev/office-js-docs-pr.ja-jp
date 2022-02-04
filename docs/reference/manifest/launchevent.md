@@ -1,20 +1,21 @@
 ---
 title: マニフェスト ファイルの LaunchEvent
 description: LaunchEvent 要素は、サポートされているイベントに基づいてアクティブ化するアドインを構成します。
-ms.date: 11/01/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ab75633d87284e02e9db9b1a71f7a8436f7daf
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681710"
 ---
+
 # <a name="launchevent-element"></a>LaunchEvent 要素
 
-サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の [`<LaunchEvents>`](launchevents.md) 子。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
+サポートされているイベントに基づいてアクティブ化するアドインを構成します。 要素の子 [`<LaunchEvents>`](launchevents.md) 。 詳細については、「イベント ベース[のアクティブ化Outlookアドインを構成する」を参照してください](../../outlook/autolaunch.md)。
 
 **アドインの種類:** メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="syntax"></a>構文
 
@@ -39,15 +40,15 @@ ms.locfileid: "60681710"
 |:-----|:-----|:-----|
 |  **種類**  |  はい  | サポートされているイベントの種類を指定します。 サポートされている一連の種類については、「イベント ベースのライセンス認証Outlookアドインを構成する[」を参照してください](../../outlook/autolaunch.md#supported-events)。 |
 |  **FunctionName**  |  はい  | 属性で指定されたイベントを処理する JavaScript 関数の名前を指定 `Type` します。 |
-|  **SendMode** (プレビュー) |  いいえ  | 必須と `OnMessageSend` イベント `OnAppointmentSend` 。 アドインがアイテムの送信を停止する場合にユーザーが使用できるオプションを指定します。 使用可能なオプションについては、「使用可能な [SendMode オプション」を参照してください](#available-sendmode-options-preview)。 |
+|  **SendMode** (プレビュー) |  不要  | 必須と `OnMessageSend` イベント `OnAppointmentSend` 。 アドインがアイテムの送信を停止する場合にユーザーが使用できるオプションを指定します。 使用可能なオプションについては、「使用可能な [SendMode オプション」を参照してください](#available-sendmode-options-preview)。 |
 
 ## <a name="available-sendmode-options-preview"></a>使用可能な SendMode オプション (プレビュー)
 
-マニフェストにイベントを `OnMessageSend` 含 `OnAppointmentSend` める場合は **、SendMode プロパティも設定する必要** があります。 使用可能なオプションを次に示します。 アドインが探している条件に基づいて、ユーザーは、アドインが送信されるアイテムに問題を見つけた場合に警告を受け取る。
+マニフェストにイベントを `OnMessageSend` 含 `OnAppointmentSend` める場合は、 **SendMode プロパティも設定する必要** があります。 使用可能なオプションを次に示します。 アドインが探している条件に基づいて、ユーザーは、アドインが送信されるアイテムに問題を見つけた場合に警告を受け取る。
 
 | SendMode オプション | 説明 |
 |---|---|
-|`PromptUser`|アラートで、ユーザーは [任意の方法で送信 **]** を選択するか、問題に対処してから、アイテムの再送信を試みます。|
+|`PromptUser`|アラートで、ユーザーは [任意の方法で送信] を選択するか、問題に対処してから、アイテムの再送信を試みます。|
 |`SoftBlock`|ユーザーは、アイテムを再送信する前に問題を解決する必要があります。|
 
 ## <a name="see-also"></a>関連項目

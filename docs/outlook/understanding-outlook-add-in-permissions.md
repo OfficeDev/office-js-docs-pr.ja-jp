@@ -3,13 +3,8 @@ title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0a9df52bc37652ef7d5b1981dabdc0a8aa30e4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149592"
 ---
+
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 
 Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは **Restricted**、**ReadItem**、**ReadWriteItem**、**ReadWriteMailbox** です。これらのレベルのアクセス許可は累積されます。**Restricted** は最低レベルであり、それぞれの上位レベルには、下位レベルのアクセス許可がすべて含まれます。**ReadWriteMailbox** にはサポートされるアクセス許可がすべて含まれます。
@@ -68,11 +63,11 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ### <a name="can-do"></a>できること
 
-- 閲覧フォームまたは [新規作成フォーム](item-data.md)の現在のアイテムの [すべてのプロパティの読み取り](get-and-set-item-data-in-a-compose-form.md)。たとえば、閲覧フォームの [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) および新規作成フォームの [item.to.getAsync](/javascript/api/outlook/office.Recipients#getAsync_options__callback_)。
+- 閲覧フォームまたは [新規作成フォーム](item-data.md)の現在のアイテムの [すべてのプロパティの読み取り](get-and-set-item-data-in-a-compose-form.md)。たとえば、閲覧フォームの [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) および新規作成フォームの [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))。
 
 - Exchange Web Services (EWS) または [Outlook REST API](use-rest-api.md) で[アイテムの添付ファイルを取得する](get-attachments-of-an-outlook-item.md)か、アイテム全体を取得するためのコールバック トークンを取得。
 
-- そのアイテムのアドインが設定する[カスタム プロパティの書き込み](/javascript/api/outlook/office.CustomProperties)。
+- そのアイテムのアドインが設定する[カスタム プロパティの書き込み](/javascript/api/outlook/office.customproperties)。
 
 - アイテムの件名または本文から、サブセットだけでなく、[存在する既知のエンティティをすべて取得する](match-strings-in-an-item-as-well-known-entities.md)。
 
@@ -107,24 +102,24 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
   - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
   - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
   - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.body.prependAsync](/javascript/api/outlook/office.body#prependAsync_data__options__callback_)
-  - [item.body.setAsync](/javascript/api/outlook/office.body#setAsync_data__options__callback_)
-  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#setSelectedDataAsync_data__options__callback_)
-  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.end.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)
-  - [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_)
-  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
+  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
+  - [item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1))
+  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))
+  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.end.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
+  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.start.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)
-  - [item.subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)
-  - [item.to.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.to.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
+  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))
+  - [item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
 
 ## <a name="readwriteitem-permission"></a>ReadWriteItem アクセス許可
 
@@ -156,7 +151,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 - そのメール ボックスのフォルダーまたはアイテムの作成、読み取り、書き込み。
 - そのメール ボックスからのアイテムの送信。
 
-**mailbox.makeEWSRequestAsync** を使用すると、次の EWS 操作にアクセスできます。
+**mailbox.makeEWSRequestAsync を使用** すると、次の EWS 操作にアクセスできます。
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

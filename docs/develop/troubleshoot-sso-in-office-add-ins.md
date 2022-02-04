@@ -3,13 +3,8 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeの条件やエラーを処理する方法について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b6f72ec43a3d9d654206ab895cd5e4eb98bf7e
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320222"
 ---
+
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
@@ -33,7 +28,7 @@ ms.locfileid: "62320222"
 
 ### <a name="13000"></a>13000
 
-[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) API は、このアドインまたは Office バージョンではサポートされていません。
+[getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API は、このアドインまたは Office バージョンではサポートされていません。
 
 - この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Microsoft 365チャネルでサブスクリプションに追加されます。
 - アドインのマニフェストに適切な [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) セクションがありません。

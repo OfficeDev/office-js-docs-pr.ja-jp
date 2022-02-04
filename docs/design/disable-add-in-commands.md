@@ -3,13 +3,8 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c1af8c641e949a3d86df9d7edf807a2dd7bef379
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222151"
 ---
+
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
@@ -29,24 +24,24 @@ ms.locfileid: "62222151"
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「バージョンと要件[Officeを参照してください](../develop/office-versions-and-requirement-sets.md)。
+要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「Office[要件セット」を参照してください](../develop/office-versions-and-requirement-sets.md)。
 
 有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属します。
 
 > [!NOTE]
-> RibbonApi **1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 その呼 *び出しが返* された場合にのみ、 `true` コードは有効/無効 API を呼び出す可能性があります。 戻り値の `isSetSupported` 呼び出しの場合は、すべてのカスタム アドイン `false` コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例については、「アプリケーションと API Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」 `isSetSupported` [を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 [](../develop/specify-office-hosts-and-api-requirements.md) (セクション[「その記事Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)ホストできるバージョンとプラットフォームを指定する」は、リボン 1.1 には適用されません。
+> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「その記事Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)ホストできるバージョンとプラットフォームを指定する」は、リボン 1.1 には適用されません。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
 この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順を実行します。
 
-1. マニフェストの [Runtimes](../reference/manifest/runtimes.md) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は **、VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
+1. マニフェストの [Runtimes](../reference/manifest/runtimes.md) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は、**VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
 2. マニフェストの [Resources.Urls](../reference/manifest/resources.md) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。
 3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順の 1 つ以上を実行する必要があります。
 
-    - アドインに作業ウィンドウが含まれている場合は、Action の `resid` 属性を設定[します](../reference/manifest/action.md)。[SourceLocation](../reference/manifest/sourcelocation.md)要素は、手順 1 の Runtime 要素で使用した文字列とまったく同じ文字列を指定します。たとえば `resid` 、 `Contoso.SharedRuntime.Url` です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインにカスタム関数が含まれているExcel Page の `resid` 属性を設定[します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md)要素は、手順 1 の Runtime 要素で使用した文字列とまったく同じです。たとえば `resid` 、 `Contoso.SharedRuntime.Url` です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインに関数ファイルが含まれている場合は、手順 1 の Runtime 要素で使用した文字列とまったく同じ文字列に FunctionFile 要素の属性を設定します。たとえば、 を指定します `resid` [](../reference/manifest/functionfile.md) `resid`  `Contoso.SharedRuntime.Url` 。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに作業ウィンドウが含まれている場合は、Action の属性 `resid` を設定 [します](../reference/manifest/action.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、 `resid` 手順 1 の **Runtime** 要素で使用した文字列とまったく同じ文字列を指定 `Contoso.SharedRuntime.Url`します。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインにカスタム関数がExcel場合は、Page の属性`resid`を設定 [します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに関数`resid`ファイルが含まれている場合は、手順 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じ文字列に [FunctionFile](../reference/manifest/functionfile.md) `resid` 要素の属性を設定します。たとえば、 を指定します。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
 
@@ -79,7 +74,7 @@ ms.locfileid: "62222151"
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
 1. (1) コマンドとその親グループとタブをマニフェストで宣言された名前の ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。および (2) は、コマンドの有効または無効の状態を指定します。
-2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) メソッドに渡します。
+2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) メソッドに渡します。
 
 次に簡単な例を示します。 マニフェストから "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" がコピーされます。
 
@@ -118,7 +113,7 @@ const enableButton = async () => {
 }
 ```
 
-親関数 `await` が非同期である **場合は requestUpdate()** の呼び出しを実行できますが、リボンの状態を更新するときに、Office アプリケーションが制御する点に注意してください。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドは、リボンが実際に更新された場合ではなく、要求をキューに入れ次第、promise オブジェクトを解決します。
+親関数`await`が非同期の **場合は requestUpdate()** の呼び出しを実行できますが、リボンの状態を更新するときに Office アプリケーションが制御する点に注意してください。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドは、リボンが実際に更新された場合ではなく、要求をキューに入れ次第、promise オブジェクトを解決します。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>イベントに応じて状態を変更する
 
@@ -166,7 +161,7 @@ function enableChartFormat() {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
 
-requestUpdate **メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeアドインを参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+**requestUpdate メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Office参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 

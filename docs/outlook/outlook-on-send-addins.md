@@ -3,13 +3,8 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 08/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9195128dff2bac178822764eda03588597b50d10
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151416"
 ---
+
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
 Outlook アドインの送信時機能は、メッセージまたは会議アイテムを処理する方法、またはユーザーが特定のアクションを実行できないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。たとえば、送信時機能を使用すると次のことが可能です。
@@ -36,7 +31,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 > オン送信機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在のサーバーと [クライアントのサポートを](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
 
 > [!IMPORTANT]
-> 送信時機能を使用するアドインは [、AppSource では許可されません](https://appsource.microsoft.com)。
+> AppSource では、送信時機能を使用するアドインは [許可されません](https://appsource.microsoft.com)。
 
 ## <a name="how-does-the-on-send-feature-work"></a>送信時機能のしくみ
 
@@ -63,17 +58,17 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 現在、送信時機能には次の制限事項があります。
 
-- **送信時の** 追加機能 送信ハンドラー &ndash; [で item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) を呼び出した場合、エラーが返されます。
+- **送信時の** 追加機能 &ndash; 送信ハンドラー [で item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) を呼び出した場合、エラーが返されます。
 - **AppSource** &ndash; 送信時機能を使用する Outlook アドインは AppSource の検証で失敗するため、[AppSource](https://appsource.microsoft.com) に発行することはできません。 送信時機能を使用するアドインは、管理者が展開する必要があります。
 - **マニフェスト** &ndash; 1 つのアドインに対して 1 つの `ItemSend` イベントのみがサポートされています。 マニフェストに 2 つ以上の `ItemSend` イベントがある場合、マニフェストの検証は失敗します。
 - **パフォーマンス** &ndash; アドインをホストする Web サーバーへの複数回のラウンドトリップは、アドインのパフォーマンスに影響する可能性があります。複数のメッセージ ベースまたは会議ベースの操作が必要なアドインを作成する場合は、パフォーマンスへの影響を考慮してください。
 - **後で送信** (Mac のみ) &ndash; 送信時アドインがある場合、**後で送信** 機能は使用できません。
 
-また、イベントの完了後にアイテムを閉じると自動的に行われますので、送信時のイベント ハンドラーを呼び出 `item.close()` すのは推奨されません。
+また、イベントの完了後 `item.close()` にアイテムを閉じると自動的に行われますので、送信時のイベント ハンドラーを呼び出すのは推奨されません。
 
 ### <a name="mailbox-typemode-limitations"></a>メールボックスの種類とモードの制限事項
 
-送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 Outlook アドインの概要ページの [アドインで使用できるメールボックス アイテム][](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)セクションで、アドインがアクティブ化されない状況に加えて、そのモードが使用可能なオフライン モードでは機能は現在サポートされていません。
+送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 Outlook アドインの概要ページの [アドインで使用可能なメールボックス アイテム] セクションで、アドイン[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)がアクティブ化されない状況に加えて、そのモードが使用可能なオフライン モードでは機能は現在サポートされていません。
 
 カスタム アドインOutlookアクティブ化しない場合、送信時アドインは実行され、メッセージが送信されます。
 
@@ -188,7 +183,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="web-browser---modern-outlook"></a>[Web ブラウザー - モダン Outlook](#tab/modern)
 
-送信時機能を使用する Outlook on the web (モダン) のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス基準を満たすために送信時アドインを実行する必要がある場合は、メールボックス ポリシーに *OnSendAddinsEnabled* フラグを設定して、アドインの送信時にアイテムの編集が許可されない必要があります。 `true`
+送信時機能を使用する Outlook on the web (モダン) のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス基準を満たすために送信時アドインを実行する必要がある場合は、メールボックス ポリシーに *OnSendAddinsEnabled* `true` フラグを設定して、アドインの送信時にアイテムの編集が許可されない必要があります。
 
 新しいアドインをインストールするには、次の Exchange Online PowerShell コマンドレットを実行します。
 
@@ -278,16 +273,16 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-送信時機能を使用する Outlook on Windows のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス基準を満たすためにアドインを実行する必要がある場合は、グループ ポリシー  [Web アドインを読み込めないときに送信をブロックする]を各該当するコンピューターで [有効] に設定する必要があります。
+送信時機能を使用する Outlook on Windows のアドインは、インストールされているすべてのユーザーに対して実行されます。 ただし、ユーザーがコンプライアンス基準を満たすためにアドインを実行する必要がある場合は、グループ ポリシー [Web  アドインを読み込めないときに送信をブロックする] を各該当するコンピューターで [有効] に設定する必要があります。
 
-メールボックス ポリシーを設定するには、管理者は管理用 [](https://www.microsoft.com/download/details.aspx?id=49030)テンプレート ツールをダウンロードし、ローカル グループ ポリシー エディター **gpedit.msc** を実行して最新の管理テンプレートにアクセスできます。
+メールボックス ポリシーを設定するために、管理者は管理用テンプレート [](https://www.microsoft.com/download/details.aspx?id=49030) ツールをダウンロードし、ローカル グループ ポリシー エディター **gpedit.msc** を実行して最新の管理テンプレートにアクセスできます。
 
 > [!NOTE]
-> 以前のバージョンの管理用テンプレート ツールでは、ポリシー名が **[Web** 拡張機能を読み込めなかったときに送信を無効にする] でした。 必要に応じて、後の手順でこの名前を置き換える。
+> 以前のバージョンの管理用テンプレート ツールでは、ポリシー名が [Web 拡張機能を読み込めないときに送信 **を無効** にする] でした。 必要に応じて、後の手順でこの名前を置き換える。
 
 #### <a name="what-the-policy-does"></a>ポリシーの内容
 
-コンプライアンスのために、管理者は、最新の送信時アドインを実行できるようになるまでユーザーがメッセージまたは会議アイテムを送信できないようにする必要があります。 管理者は、すべてのアドインがExchange から更新され、各メッセージまたは会議アイテムが送信時に予想されるルールと規制を満たしているか確認するために、Web アドインが読み込めない場合にグループ ポリシーの送信をブロックする必要があります。
+コンプライアンスのために、管理者は、最新の送信時アドインを実行できるようになるまでユーザーがメッセージまたは会議アイテムを送信できないようにする必要があります。 管理者は、すべてのアドインが Exchange  から更新され、各メッセージまたは会議アイテムが送信時に予想されるルールと規制を満たしているか確認するために、Web アドインが読み込めない場合にグループ ポリシーの送信をブロックする必要があります。
 
 |ポリシーの状態|結果|
 |---|---|
@@ -296,14 +291,14 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="manage-the-on-send-policy"></a>送信時ポリシーを管理する
 
-既定では、送信時ポリシーは無効になっています。 管理者は、ユーザーのグループ ポリシー設定 **[Web** アドインを読み込めない場合に送信をブロックする] を [有効] に設定することで、送信時ポリシーを有効 **にできます**。 ユーザーのポリシーを無効にするには、管理者が [**無効**] に設定する必要があります。 このポリシー設定を管理するには、次の操作を行います。
+既定では、送信時ポリシーは無効になっています。 管理者は、ユーザーのグループ ポリシー設定 [ **Web** アドインを読み込めない場合に送信をブロックする] を [有効] に設定することで、送信時ポリシーを有効 **にできます**。 ユーザーのポリシーを無効にするには、管理者が [**無効**] に設定する必要があります。 このポリシー設定を管理するには、次の操作を行います。
 
 1. 最新の[管理用テンプレートツール](https://www.microsoft.com/download/details.aspx?id=49030)をダウンロードします。
-1. ローカル グループ ポリシー エディター **(gpedit.msc) を開きます**。
-1. [ユーザー構成 **] [**  >  **管理用テンプレート**   >  **] [Microsoft Outlook 2016** セキュリティ  >    >  **信頼センター] に移動します**。
+1. ローカル グループ ポリシー エディター (**gpedit.msc) を開きます**。
+1. User **ConfigurationAdministrative** >  **TemplatesMicrosoft** >   >  Outlook 2016 **SecurityTrust** >  **Center に移動します**。
 1. [Web **アドインが読み込めない場合に送信をブロックする] 設定を選択** します。
 1. リンクを開いてポリシー設定を編集します。
-1. [Web **アドインが** 読み込めない場合に送信をブロックする]ダイアログウィンドウで、[有効] または[無効] を適切に選択し **、[OK]** または [適用] を選択して更新プログラムを有効にします。
+1. [**Web アドインが** 読み込めない場合に送信をブロックする] ダイアログ ウィンドウで、[有効] または [無効] を適切に選択し **、[OK**] または [適用] を選択して更新プログラムを有効にします。
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -325,7 +320,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |キーの状態|結果|
 |---|---|
 |false|送信時アドインの現在ダウンロードされているマニフェスト (必ずしも最新バージョンではない) は、送信されるメッセージまたは会議アイテムで実行されます。 これは既定の状態/動作です。|
-|true|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合は、送信がブロックされ、[送信] **ボタン** が無効になります。|
+|true|送信時アドインの最新のマニフェストが Exchange からダウンロードされると、送信されるメッセージまたは会議アイテムに対してアドインが実行されます。 それ以外の場合は、送信がブロックされ、[ **送信] ボタン** が無効になります。|
 
 ---
 
@@ -350,7 +345,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |1|有効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
 |2|無効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
 |3|有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
-|4 |有効|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
+|4|有効|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web ブラウザー (モダン Outlook)、Windows、Mac
 
@@ -380,14 +375,14 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 送信時アドインがアイテムを処理している間、ユーザーは不適切なテキストや添付ファイルを追加してアイテムを編集できます。 アドインが送信時に処理されている間にユーザーがアイテムを編集するのを防ぐ場合は、ダイアログを使用して回避策を実装できます。 この回避策は、Outlook on the web (クラシック)、Windows Mac で使用できます。
 
 > [!IMPORTANT]
-> モダン Outlook on the web: アドインの送信時の処理中にユーザーがアイテムを編集できない場合は、この記事の「送信時に使用する Outlook アドインのインストール」の説明に従って *OnSendAddinsEnabled* フラグを設定する必要があります。 `true` [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
+> モダン Outlook on the web: アドインの送信時の処理中にユーザーがアイテムを編集できない場合は、この記事の「送信時に使用する [Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) アドインのインストール」の説明に従って *OnSendAddinsEnabled* `true` フラグを設定する必要があります。
 
 送信時ハンドラーで、次の処理を行います。
 
-1. [displayDialogAsync を](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_)呼び出してダイアログを開き、マウスのクリックとキーストロークが無効になります。
+1. [displayDialogAsync を](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#office-office-ui-displaydialogasync-member(1))呼び出してダイアログを開き、マウスのクリックとキーストロークが無効になります。
 
     > [!IMPORTANT]
-    > クラシック モードでこの動作を[Outlook on the web、displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe)プロパティを呼び出しの `true` `options` パラメーターに設定する必要 `displayDialogAsync` があります。
+    > クラシック モードでこの動作をOutlook on the web、[displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#office-office-dialogoptions-displayiniframe-member) `true` `options` プロパティを呼び出しのパラメーターに設定する必要`displayDialogAsync`があります。
 
 1. アイテムの処理を実装します。
 1. ダイアログを閉じます。 また、ユーザーがダイアログを閉じるとどうなるかを処理します。
@@ -425,7 +420,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 ```
 
 > [!IMPORTANT]
-> Visual Studio 2019 を使用して送信時アドインを開発している場合は、次のような検証警告が表示される場合があります。"これは無効な xsi:type http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events ' 'です。この問題を回避するには、この警告に関するブログの GitHub gist として提供されている MailAppVersionOverridesV1_1.xsd の新しいバージョン[が必要です](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)。
+> Visual Studio 2019 を使用してオン送信アドインを開発している場合、次のような検証警告が表示される場合があります。"これは無効な xsi:type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events' です。この問題を回避するには、この警告に関するブログの GitHub gist として提供されている MailAppVersionOverridesV1_1.xsd の新しいバージョンが[必要です](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)。
 
 `Contoso Subject and CC Checker.xml` マニフェスト ファイルの場合、次の例では、メッセージ送信イベントで呼び出す関数ファイルと関数名を示します。
 
@@ -483,7 +478,7 @@ function validateBody(event) {
 `validateBody` 関数は、指定した形式 (HTML) の現在の本文を取得し、コールバック メソッドでのアクセスにコードが必要とする `ItemSend` イベント オブジェクトを渡します。 `getAsync` メソッドに加え、`Body` オブジェクトは本文を指定したテキストに置き換えるために使用できる `setAsync` メソッドも提供します。
 
 > [!NOTE]
-> 詳細については、「[Event オブジェクト](/javascript/api/office/office.addincommands.event)」と「[Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_)」を参照してください。
+> 詳細については、「[Event オブジェクト](/javascript/api/office/office.addincommands.event)」と「[Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))」を参照してください。
   
 
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>`NotificationMessages` オブジェクトと `event.completed` メソッド
@@ -526,7 +521,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 ### <a name="replaceasync-removeasync-and-getallasync-methods"></a>`replaceAsync` メソッド、`removeAsync` メソッド、および`getAllAsync`メソッド
 
-`addAsync` メソッドに加え、`NotificationMessages` オブジェクトは本文を指定したテキストに置き換えるために使用できる `replaceAsync`、`removeAsync`、および `getAllAsync` の各メソッドも提供します。  このコード サンプルでは、これらのメソッドは使用されません。  詳細については、「[NotificationMessages](/javascript/api/outlook/office.NotificationMessages)」を参照してください。
+`addAsync` メソッドに加え、`NotificationMessages` オブジェクトは本文を指定したテキストに置き換えるために使用できる `replaceAsync`、`removeAsync`、および `getAllAsync` の各メソッドも提供します。  このコード サンプルでは、これらのメソッドは使用されません。  詳細については、「[NotificationMessages](/javascript/api/outlook/office.notificationmessages)」を参照してください。
 
 
 ### <a name="subject-and-cc-checker-code"></a>件名および CC のチェッカー コード

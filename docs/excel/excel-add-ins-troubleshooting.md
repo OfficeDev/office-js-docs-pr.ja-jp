@@ -3,13 +3,8 @@ title: アドインExcelトラブルシューティング
 description: アドインの開発エラーをトラブルシューティングするExcel説明します。
 ms.date: 02/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152926"
 ---
+
 # <a name="troubleshooting-excel-add-ins"></a>アドインExcelトラブルシューティング
 
 この記事では、ユーザーに固有のトラブルシューティングの問題についてExcel。 ページの下部にあるフィードバック ツールを使用して、記事に追加できるその他の問題を提案してください。
@@ -44,15 +39,15 @@ ms.locfileid: "59152926"
 
 ## <a name="coauthoring"></a>共同編集
 
-共同[編集環境でイベントと](co-authoring-in-excel-add-ins.md)Excelするパターンについては、「Coauthoring in Excelアドイン」を参照してください。 この記事では、 などの特定の API を使用する場合の潜在的なマージ競合について説明します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
+共同[編集環境でイベントとExcel](co-authoring-in-excel-add-ins.md)するパターンについては、「Coauthoring in Excelアドイン」を参照してください。 この記事では、 などの特定の API を使用する場合の潜在的なマージ競合について説明します [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))。
 
 ## <a name="known-issues"></a>既知の問題
 
 ### <a name="binding-events-return-temporary-binding-obects"></a>バインド イベントは一時的 `Binding` な obects を返します
 
-[BindingDataChangedEventArgs.binding と](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)の両方が、イベントを発生したオブジェクトの ID を含む一時オブジェクト `Binding` `Binding` を返します。 この ID を使用して `BindingCollection.getItem(id)` 、イベントを発生 `Binding` したオブジェクトを取得します。
+[BindingDataChangedEventArgs.binding と](/javascript/api/excel/excel.bindingdatachangedeventargs#excel-excel-bindingdatachangedeventargs-binding-member) [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#excel-excel-bindingselectionchangedeventargs-binding-member) `Binding` の両方が、イベントを発生したオブジェクトの ID `Binding` を含む一時オブジェクトを返します。 この ID を使用して、 `BindingCollection.getItem(id)` イベントを発生 `Binding` したオブジェクトを取得します。
 
-次のコード サンプルは、この一時的なバインド ID を使用して関連するオブジェクトを取得する方法を示 `Binding` しています。 サンプルでは、イベント リスナーがバインドに割り当てられます。 イベントがトリガーされると `getBindingId` 、リスナー `onDataChanged` はメソッドを呼び出します。 メソッド `getBindingId` は、一時オブジェクトの ID `Binding` を使用して、イベントを発生 `Binding` したオブジェクトを取得します。
+次のコード サンプルは、この一時的なバインド ID を使用して関連するオブジェクトを取得する方法を示 `Binding` しています。 サンプルでは、イベント リスナーがバインドに割り当てられます。 イベントがトリガーされると、 `getBindingId` リスナーはメソッド `onDataChanged` を呼び出します。 メソッド `getBindingId` は、一時オブジェクトの ID を使用 `Binding` して、イベントを発生した `Binding` オブジェクトを取得します。
 
 ```js
 Excel.run(function (context) {
@@ -82,19 +77,19 @@ function getBindingId(eventArgs) {
 }
 ```
 
-### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>セルの `useStandardHeight` 形式 `useStandardWidth` と問題
+### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>セルの形式 `useStandardHeight` と `useStandardWidth` 問題
 
-[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight)プロパティは、このプロパティで正 `CellPropertiesFormat` Excel on the web。 UI の問題のため、このExcel on the webで高さを不正確に `useStandardHeight` 計算するプロパティ `true` を設定します。 たとえば、標準の高さ **14** は **14.25** に変更Excel on the web。
+[useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) プロパティは`CellPropertiesFormat`、このプロパティで正Excel on the web。 UI の問題のため、このExcel on the web `useStandardHeight` `true`で高さを不正確に計算するプロパティを設定します。 たとえば、標準の高さ 14 は **14.25** に変更Excel on the web。
 
-すべてのプラットフォームで [、useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) プロパティと [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) プロパティは、 に設定される `CellPropertiesFormat` のみです `true` 。 これらのプロパティを設定 `false` すると、効果はありません。 
+すべてのプラットフォームで、 [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) プロパティと [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) `CellPropertiesFormat` プロパティは、 に設定されるのみです `true`。 これらのプロパティを設定すると `false` 、効果はありません。 
 
 ### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>Range `getImage` メソッドは、サポートされていないExcel for Mac
 
-Range [getImage](/javascript/api/excel/excel.range#getImage__)メソッドは現在、このメソッドではExcel for Mac。 現在 [の状態については、「OfficeDev/office-js issue #235」](https://github.com/OfficeDev/office-js/issues/235) を参照してください。
+Range [getImage](/javascript/api/excel/excel.range#excel-excel-range-getimage-member(1)) メソッドは現在、このメソッドではExcel for Mac。 現在 [の状態については、「OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) 」を参照してください。
 
 ### <a name="range-return-character-limit"></a>範囲の戻り値の文字制限
 
-[Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_)メソッドと[Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_)メソッドのアドレス文字列の制限は 8192 文字です。 この制限を超えると、アドレス文字列は 8192 文字に切り詰まれます。
+[Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) メソッドと [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getranges-member(1)) メソッドのアドレス文字列の制限は 8192 文字です。 この制限を超えると、アドレス文字列は 8192 文字に切り詰まれます。
 
 ## <a name="see-also"></a>関連項目
 

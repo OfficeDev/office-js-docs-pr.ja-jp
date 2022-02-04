@@ -3,13 +3,8 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d7eaa51f6ac9255772e7dcd154e82dc28f39e848
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149747"
 ---
+
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
 この記事では、Excel、Word、OneNote でアドインを構築するために API モデルを使用する方法について説明します。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
@@ -225,7 +220,7 @@ Excel.run(function (ctx) {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>一部のプロパティを直接設定できません
 
-書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 プロパティ `zoom` は、次に示すように [、1 つの PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
+書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 プロパティ `zoom` は、次に示すように、 [1 つの PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -234,7 +229,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 前の例では、`zoom` 値: `sheet.pageLayout.zoom.scale = 200;`を直接割り当てることは ***できません***。 このステートメントは、`zoom` が読み込まれないので、エラーを発生させます。 `zoom` が読み込まれるような場合でも、スケール セットは有効化されません。 すべてのコンテキスト操作は `zoom`上、でアドインのプロキシオブジェクトを更新し、ローカルに設定された値を上書きする場合に発生します。
 
-この動作は、[Range.format](/javascript/api/excel/excel.range#format)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 プロパティは `format` 、次に示すようにオブジェクト ナビゲーションを使用して設定できます。
+この動作は、[Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 プロパティは `format` 、次に示すようにオブジェクト ナビゲーションを使用して設定できます。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

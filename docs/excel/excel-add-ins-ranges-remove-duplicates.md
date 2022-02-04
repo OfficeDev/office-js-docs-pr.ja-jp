@@ -4,24 +4,19 @@ description: JavaScript API を使用して重複Excelする方法について�
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: abb1a1b819349996d56d5e820b283713fe7f7c33
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150258"
 ---
+
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>JavaScript API を使用して重複Excel削除する
 
-この記事では、JavaScript API を使用して範囲内の重複エントリを削除するExcel示します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲内の重複エントリを削除するExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="remove-rows-with-duplicate-entries"></a>重複するエントリがある行を削除する
 
-[Range.removeDuplicates メソッド](/javascript/api/excel/excel.range#removeDuplicates_columns__includesHeader_)は、指定した列に重複するエントリがある行を削除します。 メソッドは、最も低い値のインデックスから範囲の最も高い値のインデックス (上から下) の範囲の各行を通過します。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
+[Range.removeDuplicates メソッド](/javascript/api/excel/excel.range#excel-excel-range-removeduplicates-member(1))は、指定した列に重複するエントリがある行を削除します。 メソッドは、最も低い値のインデックスから範囲の最も高い値のインデックス (上から下) の範囲の各行を通過します。 任意の行で、指定された 1 つまたは複数の列が範囲より前に表示されている場合、その行は削除されます。 範囲にある削除された行の下の行が上に移動します。 `removeDuplicates` は、範囲外にあるセルの位置には影響しません。
 
-`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 このメソッドは、最初の行がヘッダーであるかどうかを指定するブール型パラメーターも取ります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 このメソッドは、削除された行の数と残りの一意の行数を指定する `removeDuplicates` `RemoveDuplicatesResult` オブジェクトを返します。
+`removeDuplicates` は、どの重複をチェックするかを示す列インデックスを表す `number[]` を受け取ります。 この配列は、0 から始まり、ワークシートではなく範囲を基準にしています。 このメソッドは、最初の行がヘッダーであるかどうかを指定するブール型パラメーターも取ります。 **true** の場合、重複について考慮するとき最初の行は無視されます。 この `removeDuplicates` メソッドは、削除された `RemoveDuplicatesResult` 行の数と残りの一意の行数を指定するオブジェクトを返します。
 
-範囲のメソッドを使用する場合 `removeDuplicates` は、次の念に従います。
+範囲のメソッドを使用する場合は `removeDuplicates` 、次の念に従います。
 
 - `removeDuplicates` は、関数の結果ではなくセルの値を考慮します。 2 つの異なる関数が同じ結果として評価される場合、セルの値は重複と見なしません。
 - 空のセルは、`removeDuplicates` に無視されることはありません。 空のセルの値は、その他の値と同様に扱われます。 つまり、範囲に含まれる空の行は `RemoveDuplicatesResult` に含まれることになります。

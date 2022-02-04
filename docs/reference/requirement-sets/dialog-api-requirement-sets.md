@@ -4,13 +4,8 @@ description: ダイアログ API 要件セットの詳細について説明し�
 ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 4802189b0dbde30d0d9058b542c35cac47074998
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138556"
 ---
+
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
@@ -22,7 +17,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 | DialogApi 1.2  | 該当なし | 該当なし | 該当なし | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | 2.37 以降 | 16.37 以降 | 2020 年 6 月 | 該当なし |
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | ビルド 16.0.12527.20720 以降 | ビルド 16.0.14326.20454 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降 | 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 
->\*一度に購入したユーザーはOffice更新プログラムを受け入れてない可能性があります。 その場合、dialogApi をサポートするために更新された DLL がユーザーのコンピューターにインストールされていない場合でも、Office が UI でバージョンを報告するために使用する DLL は、ここに示されているバージョンよりも大きい場合があります。 必要なパッチがインストールされていることを確認するには、Office 更新リスト ([Office 2013 リストまたは Office 2016](/officeupdates/msp-files-office-2013)リスト) に移動し **、osfclient-x-none** を検索し、一覧に記載されている更新プログラムをインストールする必要があります。 [](/officeupdates/msp-files-office-2016)
+>\*一度に購入したユーザーはOffice更新プログラムを受け入れてない可能性があります。 その場合、dialogApi をサポートするために更新された DLL がユーザーのコンピューターにインストールされていない場合でも、Office が UI でバージョンを報告するために使用する DLL は、ここに示されているバージョンよりも大きい場合があります。 必要な更新プログラムがインストールされていることを確認するには、Office 更新プログラムの一覧 ([Office 2013 リストまたは Office 2016](/officeupdates/msp-files-office-2013) リスト) に移動し [](/officeupdates/msp-files-office-2016)、**osfclient-x-none** を検索し、一覧に記載されている更新プログラムをインストールする必要があります。
 
 ## <a name="office-on-windows-subscription-support"></a>Office (Windows) のサポートに関する情報
 
@@ -47,7 +42,7 @@ DialogApi 1.2 要件セットは、コンシューマー チャネル バージ�
 
 ## <a name="dialog-api-11-and-12"></a>ダイアログ API 1.1 および 1.2
 
-ダイアログ API 1.1 は、API の最初のバージョンです。 要件セット 1.2 は、親ページから[Office.dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message_)メソッドを使用してダイアログ ボックスにデータを送信するサポートを追加します。 これらの API の詳細については [、「Dialog API リファレンス」を](/javascript/api/office/office.ui) 参照してください。
+ダイアログ API 1.1 は、API の最初のバージョンです。 要件セット 1.2 は、親ページからダイアログ ボックスにデータを送信するサポートを [Office.dialog.messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) メソッドで追加します。 これらの API の詳細については、「 [Dialog API リファレンス」を](/javascript/api/office/office.ui) 参照してください。
 
 ## <a name="see-also"></a>関連項目
 

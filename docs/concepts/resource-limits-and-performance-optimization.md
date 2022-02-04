@@ -3,13 +3,8 @@ title: Office アドインのリソースの制限とパフォーマンスの最
 description: CPU とメモリを含む、Officeプラットフォームのリソース制限について説明します。
 ms.date: 08/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 03050c325ffd7b67c8c7eaf5047215fce6ac70dd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149788"
 ---
+
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
 ユーザーのベスト エクスペリエンスを実現するために、Office アドイン実行時の CPU コア、メモリの使用量、信頼性、および Outlook アドインの正規表現の評価の応答時間を一定以内に保つ必要があります。これらの実行時のリソース使用量の制限は、Windows と OS X 用の Office クライアントに適用され、モバイルアプリやブラウザーでは適用されません。
@@ -26,7 +21,7 @@ ms.locfileid: "59149788"
 
 - **メモリ使用量**: デバイスの利用可能な物理メモリに基づいて動的に決定される、既定のメモリ使用量しきい値。
 
-   既定では、Office クライアントがデバイス上の物理メモリ使用量が使用可能なメモリの 80% を超えていると検出すると、クライアントはアドインのメモリ使用量、コンテンツ アドインと作業ウィンドウ アドインのドキュメント レベル、および Outlook アドインのメールボックス レベルでの監視を開始します。既定の間隔 5 秒で、クライアントは、ドキュメントレベルまたはメールボックス レベルでの一連のアドインの物理メモリ使用量が 50% を超えた場合にユーザーに警告します。 このメモリ使用量の制限では、仮想メモリではなく物理メモリを使用して、タブレットなどの RAM が制限されているデバイスのパフォーマンスを確保します。 管理者は **、MemoryAlertThreshold** Windows レジストリ キーをグローバル設定として使用することで、この動的設定を明示的な制限で上書きできます。ir は **AlertInterval** キーをグローバル設定として使用してアラート間隔を調整します。
+   既定では、Office クライアントがデバイス上の物理メモリ使用量が使用可能なメモリの 80% を超えていると検出すると、クライアントはアドインのメモリ使用量、コンテンツ アドインと作業ウィンドウ アドインのドキュメント レベル、および Outlook アドインのメールボックス レベルでの監視を開始します。既定の間隔 5 秒で、クライアントは、ドキュメントレベルまたはメールボックス レベルでの一連のアドインの物理メモリ使用量が 50% を超えた場合にユーザーに警告します。 このメモリ使用量の制限では、仮想メモリではなく物理メモリを使用して、タブレットなどの RAM が制限されているデバイスのパフォーマンスを確保します。 管理者は、**MemoryAlertThreshold** Windows レジストリ キーをグローバル設定として使用することで、この動的設定を明示的な制限で上書きできます。グローバル設定として **AlertInterval** キーを使用してアラート間隔を調整します。
 
 - **クラッシュ許容度**: 既定の制限は、1 つのアドインにつき 4 回。
 
@@ -60,9 +55,9 @@ CPU コア、メモリ、および信頼性のルールに加えて、Outlookは
 - Excel on the web ではペイロードのサイズが要求と応答で 5 MB に制限されています。 その制限を超えると、`RichAPI.Error` がスローされます。
 - 取得操作のセル範囲は 500 万セルに制限されます。
 
-ユーザー入力がこれらの制限を超えると予想される場合は、必ずデータを確認してから呼び出してください `context.sync()` 。 必要に応じて、操作を小さな部分に分割します。 これらの操作が再 `context.sync()` びバッチ処理されるのを避けるために、各サブ操作を必ず呼び出してください。
+ユーザー入力がこれらの制限を超えると予想される場合は、必ずデータを確認してから呼び出してください `context.sync()`。 必要に応じて、操作を小さな部分に分割します。 これらの操作が再び `context.sync()` バッチ処理されるのを避けるために、各サブ操作を必ず呼び出してください。
 
-通常、これらの制限は大きな範囲で超過します。 アドインで [RangeAreas](/javascript/api/excel/excel.rangeareas) を使用して、より大きな範囲内のセルを戦略的に更新できる場合があります。 操作の詳細については、「複数の範囲を同時に操作する」を参照Excel `RangeAreas` [アドインを参照してください](../excel/excel-add-ins-multiple-ranges.md)。ペイロード サイズを最適化する方法の詳細については、「Excel制限のベスト プラクティス」[を参照してください](../excel/performance.md#payload-size-limit-best-practices)。
+通常、これらの制限は大きな範囲で超過します。 アドインで [RangeAreas](/javascript/api/excel/excel.rangeareas) を使用して、より大きな範囲内のセルを戦略的に更新できる場合があります。 操作の詳細については、「`RangeAreas`複数の範囲を同時に操作する」を参照Excel[アドインを参照してください](../excel/excel-add-ins-multiple-ranges.md)。ペイロード サイズを最適化する方法の詳細については、「Excel制限のベスト プラクティス[」を参照してください](../excel/performance.md#payload-size-limit-best-practices)。
 
 ### <a name="task-pane-and-content-add-ins"></a>作業ウィンドウ アドインとコンテンツ アドイン
 
@@ -91,7 +86,7 @@ Office には、Office アドインでのリソースの使用に関する問題
 |7 |アドインのマニフェストが正常にダウンロードされました||アドインのマニフェストがOfficeアプリケーションによって正常に読み込まれ、読みOfficeされました。|
 |8 |アドインのマニフェストがダウンロードされませんでした|重大|アプリケーションOffice、アドインのマニフェスト ファイルを Office カタログ、企業カタログ、または AppSource から読み込むSharePointできなかった。|
 |9 |アドインのマークアップを解析できませんでした|重大|アプリケーションOfficeアドイン マニフェストOffice読み込みましたが、アプリの HTML マークアップを読み取る必要があります。|
-|10 |アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
+|10|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
 |15 |アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
 |18 |アドインは正常に終了しました||アプリケーションOfficeアドインを正常に閉じOfficeに完了しました。|
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
@@ -113,20 +108,20 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 ### <a name="performance-improvements-with-the-application-specific-apis"></a>アプリケーション固有の API によるパフォーマンスの向上
 
-アプリケーション固有の[API モデル](../develop/application-specific-api-model.md)の使用に関するパフォーマンス のヒントは、Excel、OneNote、Visio、および Word のアプリケーション固有の API を使用する場合のガイダンスを提供します。 要約すると、次の作業を行う必要があります。
+アプリケーション固有の [API モデル](../develop/application-specific-api-model.md)の使用に関するパフォーマンス のヒントは、Excel、OneNote、Visio、および Word のアプリケーション固有の API を使用する場合のガイダンスを提供します。 要約すると、次の作業を行う必要があります。
 
 - [必要なプロパティのみを読み込む](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended)。
-- [sync() 呼び出しの数を最小限に抑えてください](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls)。 コード [内の呼び出しを管理する方法の詳細については、「ループで context.sync](correlated-objects-pattern.md) メソッドを使用しないようにする」 `sync` を参照してください。
-- [作成されたプロキシ オブジェクトの数を最小限に抑える](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created)。 次のセクションで説明するように、プロキシ オブジェクトの追跡を解除することもできます。
+- [sync() 呼び出しの数を最小限に抑える](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls)。 コード[内の呼び出しを管理する方法の詳細については、「ループ](correlated-objects-pattern.md)`sync`で context.sync メソッドを使用しないようにする」を参照してください。
+- [作成されるプロキシ オブジェクトの数を最小限に抑える](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created)。 次のセクションで説明するように、プロキシ オブジェクトの追跡を解除することもできます。
 
 #### <a name="untrack-unneeded-proxy-objects"></a>不要なプロキシ オブジェクトの追跡を解除する
 
-[プロキシ オブジェクトは](../develop/application-specific-api-model.md#proxy-objects) 、呼び出されるまで `RequestContext.sync()` メモリ内に保持されます。 大規模なバッチ操作では、アドインが 1 回のみ必要とするプロキシ オブジェクトが大量に生成されることがあります。それらのオブジェクトは、バッチの実行前にメモリから解放できます。
+[プロキシ オブジェクトは](../develop/application-specific-api-model.md#proxy-objects) 、呼び出されるまでメモリ `RequestContext.sync()` 内に保持されます。 大規模なバッチ操作では、アドインが 1 回のみ必要とするプロキシ オブジェクトが大量に生成されることがあります。それらのオブジェクトは、バッチの実行前にメモリから解放できます。
 
-メソッド `untrack()` は、メモリからオブジェクトを解放します。 このメソッドは、多くのアプリケーション固有の API プロキシ オブジェクトに実装されています。 オブジェクトを使用してアドインを実行した後に呼び出す場合は、多数のプロキシ オブジェクトを使用する場合に顕著なパフォーマンス上の利点 `untrack()` が得られる必要があります。
+メソッド `untrack()` は、メモリからオブジェクトを解放します。 このメソッドは、多くのアプリケーション固有の API プロキシ オブジェクトに実装されています。 オブジェクト `untrack()` を使用してアドインを実行した後に呼び出す場合は、多数のプロキシ オブジェクトを使用する場合に顕著なパフォーマンス上の利点が得られる必要があります。
 
 > [!NOTE]
-> `Range.untrack()` は、[ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_) のショートカットです。 プロキシ オブジェクトは、コンテキスト内の追跡対象オブジェクト リストから削除することで追跡解除できます。
+> `Range.untrack()` は、[ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#office-officeextension-trackedobjects-remove-member(1)) のショートカットです。 プロキシ オブジェクトは、コンテキスト内の追跡対象オブジェクト リストから削除することで追跡解除できます。
 
 次のExcelコード サンプルは、一度に 1 つのセルであるデータで選択した範囲を塗りつぶしします。 セルに値が追加されると、そのセルを表している範囲の追跡が解除されます。 10,000 から 20,000 個のセルの範囲を選択して、このコードを実行します。最初の実行では `cell.untrack()` の行を使用し、その後でこの行を削除して実行します。 `cell.untrack()` の行がないコードよりも、この行があるコードの方が高速になることがわかります。 また、クリーンアップの手順にかかる時間が短くなるため、その後の応答時間も速くなることがわかります。
 

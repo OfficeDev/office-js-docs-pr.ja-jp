@@ -3,13 +3,8 @@ title: カスタムExcel JavaScript API を呼び出す
 description: カスタム関数Excel呼び出す JavaScript API について説明します。
 ms.date: 08/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149887"
 ---
+
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタムExcel JavaScript API を呼び出す
 
 カスタムExcel JavaScript API を呼び出して、範囲データを取得し、計算のコンテキストを取得します。 カスタム関数Excel JavaScript API の呼び出しは、次の場合に役立ちます。
@@ -22,9 +17,9 @@ ms.locfileid: "59149887"
 
 ## <a name="code-sample"></a>コード サンプル
 
-カスタム関数Excel JavaScript API を呼び出す場合は、まずコンテキストが必要です。 次の[Excel。コンテキストを取得する RequestContext](/javascript/api/excel/excel.requestcontext)オブジェクト。 次に、ブックで必要な API を呼び出すコンテキストを使用します。
+カスタム関数Excel JavaScript API を呼び出す場合は、まずコンテキストが必要です。 次のExcel[。コンテキストを取得する RequestContext](/javascript/api/excel/excel.requestcontext) オブジェクト。 次に、ブックで必要な API を呼び出すコンテキストを使用します。
 
-次のコード サンプルは、ブック内のセルから値を取得する `Excel.RequestContext` 方法を示しています。 このサンプルでは、パラメーター `address` は JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_)メソッドExcel渡され、文字列として入力する必要があります。 たとえば、Excel UI に入力されたカスタム関数は、値を取得するセルのアドレスであるパターンに `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` 従う必要があります。
+次のコード サンプルは、ブック内のセル `Excel.RequestContext` から値を取得する方法を示しています。 このサンプルでは、パラメーター`address`は JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) メソッドExcel渡され、文字列として入力する必要があります。 たとえば、Excel UI `=CONTOSO.GETRANGEVALUE("A1")``"A1"` に入力されたカスタム関数は、値を取得するセルのアドレスであるパターンに従う必要があります。
 
 ```JavaScript
 /**

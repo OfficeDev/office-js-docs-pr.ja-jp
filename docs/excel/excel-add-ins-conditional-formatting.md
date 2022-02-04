@@ -3,13 +3,8 @@ title: Excel JavaScript API を使用して範囲に条件付き書式を適用�
 description: JavaScript アドインのコンテキストでの条件付Excelについて説明します。
 ms.date: 04/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d36989b1161ad6953c21207f9f478a60aceafb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149644"
 ---
+
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 
 Excel の JavaScript ライブラリは、ワークシートのデータ範囲に条件付き書式を適用するための API を提供します。 この機能により、大量のデータ セットの視覚的な解析を簡単に行うことができます。 範囲内で行われた変更に応じて、書式も動的に更新されます。
@@ -33,7 +28,7 @@ Excel の JavaScript ライブラリは、ワークシートのデータ範囲�
 -    `topBottom`
 
 > [!NOTE]
-> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 このパターンの詳細については[ \* 、「OrNullObject メソッド」セクションを参照](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)してください。
+> これらの書式設定プロパティにはそれぞれ、対応する `*OrNullObject` バリアントが存在します。 このパターンの詳細については、「 [\*OrNullObject メソッド」セクションを参照](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) してください。
 
 ConditionalFormat オブジェクトに設定することができる書式の種類は、1 つのみです。 この種類は、[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) の列挙値である `type` プロパティによって決定されます。 `type` は、範囲に条件付き書式を追加するときに設定されます。
 
@@ -153,7 +148,7 @@ await context.sync();
 
 ### <a name="icon-set"></a>[アイコン セット](/javascript/api/excel/excel.iconsetconditionalformat)
 
-アイコン セットの条件付き書式では、Excel の[アイコン](/javascript/api/excel/excel.icon)を使用してセルを強調表示することができます。 `criteria` プロパティは、[ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion) の配列です。挿入する記号と、その記号の挿入条件を定義します。 この配列には、既定のプロパティを持つ条件要素が事前設定されています。 個々のプロパティは上書きできません。 プロパティを書き換えるには、条件オブジェクト全体を置き換える必要があります。 
+アイコン セットの条件付き書式では、Excel の[アイコン](/javascript/api/excel/excel.icon)を使用してセルを強調表示することができます。 `criteria` プロパティは、[ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion) の配列です。挿入する記号と、その記号の挿入条件を定義します。 この配列には、既定のプロパティを持つ条件要素が事前設定されています。 個々のプロパティは上書きできません。 プロパティを書き換えるには、条件オブジェクト全体を置き換える必要があります。 
 
 次に、3 つの三角形のアイコン セットを範囲に適用する例を示します。
 
@@ -196,7 +191,7 @@ await context.sync();
 
 ### <a name="preset-criteria"></a>[事前設定の条件](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-事前設定の条件付き書式では、選択した標準ルールに基づいて、ユーザー定義の書式を範囲に適用することができます。 これらのルールは、[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 内の [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) で定義します。 
+事前設定の条件付き書式では、選択した標準ルールに基づいて、ユーザー定義の書式を範囲に適用することができます。 これらのルールは、[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 内の [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.conditionalformatpresetcriterion) で定義します。 
 
 次の使用例は、セルの値が範囲の平均より少なくとも 1 つの標準偏差である場合は、フォントを白に色付けします。
 
@@ -243,7 +238,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottom"></a>[上位/下位](/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottom"></a>[上位/下位](/javascript/api/excel/excel.topbottomconditionalformat)
 
 上位/下位の条件付き書式では、範囲内の上位または下位の値を持つセルに書式を適用することができます。 [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule) の種類である `rule` プロパティでは、条件を上位または下位のどちらで設定するのか、また順位とパーセンテージのどちらでランクを決定するのかを、設定します。 
 

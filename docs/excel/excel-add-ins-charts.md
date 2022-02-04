@@ -3,17 +3,12 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
 ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242078"
 ---
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。
-and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「Chart `Chart` `ChartCollection` Object [(JavaScript API for Excel)」](/javascript/api/excel/excel.chart)および「Chart [Collection Object (JavaScript API for](/javascript/api/excel/excel.chartcollection)Excel)」を参照してください。
+and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「Chart [Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart)」および「Chart [Collection Object (JavaScript API for Excel)」を参照](/javascript/api/excel/excel.chartcollection)してください。`Chart` `ChartCollection`
 
 ## <a name="create-a-chart"></a>グラフの作成
 
@@ -128,7 +123,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>グラフの枠線の表示/非表示を設定する
 
-次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 に設定すると、グラフの値軸の大きなグリッド線を表示 `chart.axes.valueAxis.majorGridlines.visible` できます `true` 。
+次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 に設定すると、グラフの値軸の大きなグリッド線を表示 `chart.axes.valueAxis.majorGridlines.visible` できます `true`。
 
 ```js
 Excel.run(function (context) {
@@ -169,7 +164,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>近似曲線を更新する
 
-次のコード サンプルでは、Sample という名前のワークシートの最初のグラフの最初の系列に対して、傾向線 `Linear` を入力します。 
+次のコード サンプルは、`Linear`Sample という名前のワークシートの最初のグラフの最初の系列の傾向線を **入力します。**
 
 ```js
 Excel.run(function (context) {
@@ -190,11 +185,11 @@ Excel.run(function (context) {
 
 ## <a name="add-and-format-a-chart-data-table"></a>グラフ データ テーブルの追加と書式設定
 
-メソッドを使用して、グラフのデータ テーブル要素にアクセス [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) できます。 このメソッドは、オブジェクトを返 [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) します。 オブジェクト `ChartDataTable` には、、、、などのブール型の書式設定 `visible` `showLegendKey` プロパティがあります `showHorizontalBorder` 。
+メソッドを使用して、グラフのデータ テーブル要素にアクセス [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getdatatableornullobject-member(1)) できます。 このメソッドは、オブジェクトを返 [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) します。 オブジェクト `ChartDataTable` には、、、、などのブール型 `visible`の書式設定プロパティ `showLegendKey`があります `showHorizontalBorder`。
 
-プロパティ `ChartDataTable.format` はオブジェクトを返 [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) します。これにより、データ テーブルの書式とスタイルを設定できます。 オブジェクト `ChartDataTableFormat` は、、 `border` プロパティ `fill` を提供 `font` します。
+プロパティ `ChartDataTable.format` はオブジェクトを返 [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) します。これにより、データ テーブルの書式とスタイルを設定できます。 オブジェクト`ChartDataTableFormat`は、、プロパティ`border``fill`を提供`font`します。
 
-次のコード サンプルは、グラフにデータ テーブルを追加し、and オブジェクトを使用してそのデータ テーブルの書式を設定する方法 `ChartDataTable` を示 `ChartDataTableFormat` しています。
+次のコード サンプルは、グラフにデータ テーブルを追加し、and オブジェクトを使用してそのデータ テーブルの書式を設定する方法を `ChartDataTable` 示 `ChartDataTableFormat` しています。
 
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 

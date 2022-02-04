@@ -1,15 +1,10 @@
 ---
 title: Excel JavaScript API を使用して Excel の組み込みワークシート関数を呼び出す
-description: JavaScript API などの組み込Excelワークシート関数を呼び出して使用するExcel `VLOOKUP` `SUM` 説明します。
+description: JavaScript API などの組み込Excelワークシート`VLOOKUP``SUM`関数を呼び出して使用するExcel説明します。
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152819"
 ---
+
 # <a name="call-built-in-excel-worksheet-functions"></a>Excel の組み込みワークシート関数の呼び出し
 
 この記事では、Excel JavaScript API を使用して、Excel の組み込みワークシート関数 (`VLOOKUP` や `SUM` など) を呼び出す方法について説明します。 また、Excel JavaScript API を使用して呼び出し可能な Excel の組み込みワークシート関数の完全な一覧も示します。
@@ -19,7 +14,7 @@ ms.locfileid: "59152819"
 
 ## <a name="calling-a-worksheet-function"></a>ワークシート関数の呼び出し
 
-次のコード スニペットは、ワークシート関数を呼び出す方法を示しています。ここで、呼び出す関数の名前と、関数に必要な入力パラメーターに置き換える必要がある `sampleFunction()` プレースホルダーを示します。 ワークシート関数によって返されるオブジェクトのプロパティには、指定した `value` `FunctionResult` 関数の結果が含まれる。 この例に示すように、オブジェクトを読み取る前に、オブジェクトの `load` `value` `FunctionResult` プロパティを使用する必要があります。 この例では、関数の結果は単にコンソールに書き込まれます。
+次のコード スニペットは、 `sampleFunction()` ワークシート関数を呼び出す方法を示しています。ここで、呼び出す関数の名前と、関数に必要な入力パラメーターに置き換える必要があるプレースホルダーを示します。 ワークシート `value` 関数によって返 `FunctionResult` されるオブジェクトのプロパティには、指定した関数の結果が含まれる。 この例に示すように、オブジェクトを読`load`み取る`value``FunctionResult`前に、オブジェクトのプロパティを使用する必要があります。 この例では、関数の結果は単にコンソールに書き込まれます。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -447,4 +442,4 @@ Excel JavaScript API を使用して呼び出し可能な Excel の組み込み�
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
 - [Functions クラス (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
-- [Workbook Functions オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Workbook Functions オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

@@ -3,13 +3,8 @@ title: SSO を使用した Microsoft Graph への承認
 description: Microsoft アドインからデータをOfficeシングル サインオン (SSO) を使用する方法について説明Graph。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 538648e96233bd0c2b497ef588d10c4f708e8522
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320268"
 ---
+
 # <a name="authorize-to-microsoft-graph-with-sso"></a>SSO を使用した Microsoft Graph への承認
 
 ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 Office アドインの [Microsoft Graph](https://developer.microsoft.com/graph/docs) へのアクセスの承認には、ユーザーの Office サインオン資格証明を使用するのが最良の方法です。 これにより、2 回目はサインインする必要なく Microsoft Graph データにアクセスできます。
@@ -26,7 +21,7 @@ Web アプリケーションのページと JavaScript をホスティングす�
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="SSO プロセスを示す図。" border="false":::
 
-1. アドインのクライアント側コードは、API [getAccessToken Office.js呼び出します](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)。 これにより、アドインOfficeアクセス トークンを取得する必要があります。
+1. アドインのクライアント側コードは、API [getAccessToken Office.js呼び出します](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))。 これにより、アドインOfficeアクセス トークンを取得する必要があります。
 
     ユーザーがサインインしていない場合、Officeホストは、Microsoft ID プラットフォームにサインインして同意するための UI を提供します。
 
@@ -81,5 +76,5 @@ SSO を使用する Outlook アドインを開発し、テスト用にサイド�
 ## <a name="see-also"></a>関連項目
 
 * [OAuth2 トークン Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
-* [Microsoft ID プラットフォーム OAuth 2.0 On-Behalf-Of フロー](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+* [Microsoft ID プラットフォームと OAuth 2.0 On-Behalf-Of フロー](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
 * [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)

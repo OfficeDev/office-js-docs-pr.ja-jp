@@ -4,15 +4,10 @@ description: Office アドインで Excel データ型を使用するための�
 ms.date: 01/14/2021
 ms.topic: conceptual
 ms.prod: excel
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: a769010ad46af7bba2210d9a6f9d66082cb3f815
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074309"
 ---
+
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
 > [!NOTE]
@@ -29,11 +24,11 @@ ms.locfileid: "62074309"
 
 ## <a name="core-concepts"></a>中心概念
 
-データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#values) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson`4 つの基本型に関する拡張情報を返すことができます。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson`4 つの基本型に関する拡張情報を返すことができます。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
 
 ### <a name="json-schema"></a>JSON スキーマ
 
-各データ型は、その型用に設計された JSON メタデータ スキーマを使用します。 これは、データの [CellValueType](/javascript/api/excel/excel.cellvaluetype) と `basicValue`、`numberFormat`、`address` などのセルに関する追加情報を定義します。 各`CellValueType`は、その型によって使用可能なプロパティがあります。 たとえば、 `webImage` の種類には、[altText](/javascript/api/excel/excel.webimagecellvalue#altText) と [属性](/javascript/api/excel/excel.webimagecellvalue#attribution) プロパティが含まれます。 次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
+各データ型は、その型用に設計された JSON メタデータ スキーマを使用します。 これは、データの [CellValueType](/javascript/api/excel/excel.cellvaluetype) と `basicValue`、`numberFormat`、`address` などのセルに関する追加情報を定義します。 各`CellValueType`は、その型によって使用可能なプロパティがあります。 たとえば、 `webImage` の種類には、[altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) と [属性](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) プロパティが含まれます。 次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
 
 各データ型の JSON メタデータ スキーマには、データ型機能の最小ビルド数要件を満たしていないバージョンの Excel など、計算で互換性のないシナリオが発生した場合に使用される 1 つ以上の読み取り専用プロパティも含まれます。 プロパティ `basicType` は、すべてのデータ型の JSON メタデータの一部であり、常に読み取り専用プロパティです。 `basicType` プロパティは、データ型がサポートされていないか、正しくフォーマットされていない場合のフォールバックとして使用されます。
 

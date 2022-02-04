@@ -3,16 +3,11 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0237b880610bffef675e011d7c02f70cef4346d5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154243"
 ---
+
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
-Outlook Mobile でアドイン コマンドを使用すると、ユーザーは Outlook on the web、Windows、および Mac で既に持っているのと同じ機能 (いくつかの制限[があります)](#code-considerations)にアクセスできます。 Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
+Outlook Mobile でアドイン コマンドを使用すると、ユーザーは Outlook on the web、Windows、および Mac で既に持っているのと同じ機能 (いくつかの制限[があります) に](#code-considerations)アクセスできます。 Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 
 ## <a name="updating-the-manifest"></a>マニフェストを更新する
 
@@ -72,7 +67,7 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドは、Outlook Mobile ではサポートされていません。可能な場合には、アドインは優先的に Office.js API から情報を取得します。Office.js API によって表示されていない情報がアドインで必要な場合、[Outlook REST APIs](/outlook/rest/) を使用してユーザーのメールボックスにアクセスする必要があります。
 
-メールボックス要件セット 1.5 では、REST API と互換性のあるアクセス トークンを要求できる新しいバージョンの[Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)と、ユーザーの REST API エンドポイントの検索に使用できる新しい[Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)プロパティが導入されました。
+メールボックス要件セット 1.5 では、REST API と互換性のあるアクセス トークンを要求できる新しいバージョンの [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) と、ユーザーの REST API エンドポイントの検索に使用できる新しい [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) プロパティが導入されました。
 
 ### <a name="pinch-zoom"></a>ピンチによるズーム
 
@@ -80,11 +75,11 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 ### <a name="close-task-panes"></a>作業ウィンドウを閉じる
 
-Outlook Mobile では、作業ウィンドウが画面全体を占めるので、既定ではユーザーが作業ウィンドウを閉じてメッセージに戻る必要があります。シナリオが完成したら、[Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) メソッドを使用して作業ウィンドウを閉じることを検討してください。
+Outlook Mobile では、作業ウィンドウが画面全体を占めるので、既定ではユーザーが作業ウィンドウを閉じてメッセージに戻る必要があります。シナリオが完成したら、[Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) メソッドを使用して作業ウィンドウを閉じることを検討してください。
 
 ### <a name="compose-mode-and-appointments"></a>作成モードと予定
 
-現在、Outlook Mobile のアドインは、メッセージの読み取り時にのみアクティブ化をサポートしています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、オンライン会議プロバイダー統合アドインは、予定オーガナイザー モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「オンライン会議プロバイダー Outlookを作成する」[を参照してください](online-meeting.md#available-apis)。
+現在、Outlook Mobile のアドインは、メッセージの読み取り時にのみアクティブ化をサポートしています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、オンライン会議プロバイダー統合アドインは、予定オーガナイザー モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「オンライン会議プロバイダー Outlookモバイル アドインを作成する[」を参照してください](online-meeting.md#available-apis)。
 
 ### <a name="unsupported-apis"></a>サポートされていない API
 

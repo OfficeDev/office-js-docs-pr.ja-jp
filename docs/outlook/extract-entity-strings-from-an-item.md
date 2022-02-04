@@ -3,13 +3,8 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074281"
 ---
+
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
 この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。
@@ -205,7 +200,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティ `_MyEntities` のインスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティの `_MyEntities` インスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -234,7 +229,7 @@ Office.initialize = function () {
 ## <a name="extracting-addresses"></a>住所の抽出
 
 
-ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](/javascript/api/outlook/office.entities#addresses) プロパティから住所の配列を取得します (住所が抽出されていた場合)。 抽出された各住所は、配列内の文字列として保存されます。 `myGetAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された住所のリストを表示します。 関連する JavaScript コードを次に示します。
+ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](/javascript/api/outlook/office.entities#outlook-office-entities-addresses-member) プロパティから住所の配列を取得します (住所が抽出されていた場合)。 抽出された各住所は、配列内の文字列として保存されます。 `myGetAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された住所のリストを表示します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -258,22 +253,22 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>連絡先情報の抽出
 
 
-ユーザーが [連絡先情報の **取得]** ボタンをクリックすると、イベント ハンドラーは、抽出された場合、オブジェクトの contacts プロパティから連絡先の配列と情報を `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` 取得します。 抽出された各連絡先は、配列に [Contact](/javascript/api/outlook/office.contact) オブジェクトとして格納されます。 `myGetContacts` 各連絡先に関するその他のデータを取得します。 コンテキストは、Outlook が電子メール メッセージの最後に署名をアイテムから抽出できるかどうか、または少なくとも次の情報の一部が連絡先の近くに存在する必要があるかどうかを決定します。 &mdash;
+ユーザーが [連絡先情報 **の取得**`myGetContacts`] ボタンをクリックすると、イベント ハンドラーは、抽出された場合、オブジェクトの [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` プロパティから連絡先の配列と情報を取得します。 抽出された各連絡先は、配列に [Contact](/javascript/api/outlook/office.contact) オブジェクトとして格納されます。 `myGetContacts` 各連絡先に関するその他のデータを取得します。 コンテキストは、Outlook&mdash; が電子メール メッセージの最後にアイテム署名から連絡先を抽出できるかどうか、または少なくとも次の情報の一部が連絡先の近くに存在する必要があるかどうかを決定します。
 
 
-- [Contact.personName](/javascript/api/outlook/office.contact#personName) プロパティから取得される連絡先の名前を表す文字列。
+- [Contact.personName](/javascript/api/outlook/office.contact#outlook-office-contact-personname-member) プロパティから取得される連絡先の名前を表す文字列。
 
-- [Contact.businessName](/javascript/api/outlook/office.contact#businessName) プロパティから取得される連絡先に関連付けられた会社名を表す文字列。
+- [Contact.businessName](/javascript/api/outlook/office.contact#outlook-office-contact-businessname-member) プロパティから取得される連絡先に関連付けられた会社名を表す文字列。
 
-- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phoneNumbers) プロパティから取得される、連絡先に関連付けられた電話番号の配列。各電話番号は [PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトによって表されます。
+- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) プロパティから取得される、連絡先に関連付けられた電話番号の配列。各電話番号は [PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトによって表されます。
 
-- 電話番号配列内の **PhoneNumber** メンバーごとの、[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString) プロパティから取得される電話番号を表す文字列。
+- 電話番号配列内の **PhoneNumber** メンバーごとの、[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member) プロパティから取得される電話番号を表す文字列。
 
-- [Contact.urls](/javascript/api/outlook/office.contact#urls) プロパティから取得される連絡先に関連付けられた URL の配列。各 URL は配列メンバーの文字列として表されます。
+- [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) プロパティから取得される連絡先に関連付けられた URL の配列。各 URL は配列メンバーの文字列として表されます。
 
-- [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailAddresses) プロパティから取得される、連絡先に関連付けられた電子メール アドレスの配列。各電子メール アドレスは配列メンバーの文字列として表されます。
+- [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) プロパティから取得される、連絡先に関連付けられた電子メール アドレスの配列。各電子メール アドレスは配列メンバーの文字列として表されます。
 
-- [Contact.addresses](/javascript/api/outlook/office.contact#addresses) プロパティから取得される、連絡先に関連付けられた郵送先住所の配列。各郵送先住所は配列メンバーの文字列として表されます。
+- [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) プロパティから取得される、連絡先に関連付けられた郵送先住所の配列。各郵送先住所は配列メンバーの文字列として表されます。
 
 `myGetContacts` はローカル HTML 文字列を `htmlText` で生成し、各連絡先のデータを表示します。関連する JavaScript コードを次に示します。
 
@@ -346,7 +341,7 @@ function myGetContacts()
 ## <a name="extracting-email-addresses"></a>電子メール アドレスの抽出
 
 
-ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#emailAddresses) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。
+ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -369,30 +364,30 @@ function myGetEmailAddresses() {
 ## <a name="extracting-meeting-suggestions"></a>会議提案の抽出
 
 
-ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](/javascript/api/outlook/office.entities#meetingSuggestions) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。
+ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-meetingsuggestions-member) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。
 
 
  > [!NOTE]
- > エンティティの種類は、メッセージのみサポートされますが、予定 `MeetingSuggestion` はサポートされません。
+ > エンティティの種類は、メッセージのみサポートされますが、予定は `MeetingSuggestion` サポートされません。
 
 抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
 
 
-- [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingString) プロパティから取得される会議提案として識別された文字列。
+- [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member) プロパティから取得される会議提案として識別された文字列。
 
-- [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees) プロパティから取得される、会議の出席者の配列。各出席者は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
+- [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) プロパティから取得される、会議の出席者の配列。各出席者は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
 
-- 出席者ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName) プロパティから取得される名前。
+- 出席者ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) プロパティから取得される名前。
 
-- 出席者ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress) プロパティから取得される SMTP アドレス。
+- 出席者ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member) プロパティから取得される SMTP アドレス。
 
-- [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location) プロパティから取得される、会議提案の場所を表す文字列。
+- [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-location-member) プロパティから取得される、会議提案の場所を表す文字列。
 
-- [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#subject) プロパティから取得される、会議提案の議題を表す文字列。
+- [MeetingSuggestion.subject](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-subject-member) プロパティから取得される、会議提案の議題を表す文字列。
 
-- [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#start) プロパティから取得される、会議提案の開始時刻を表す文字列。
+- [MeetingSuggestion.start](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-start-member) プロパティから取得される、会議提案の開始時刻を表す文字列。
 
-- [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#end) プロパティから取得される会議提案の終了時刻を表す文字列。
+- [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-end-member) プロパティから取得される会議提案の終了時刻を表す文字列。
 
 `myGetMeetingSuggestions` はローカル HTML 文字列を `htmlText` で生成し、会議提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
 
@@ -455,14 +450,14 @@ function myGetMeetingSuggestions() {
 ## <a name="extracting-phone-numbers"></a>電話番号の抽出
 
 
-ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#phoneNumbers) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。
+ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。
 
 
-- [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。
+- [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。
 
-- [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString) プロパティから取得される、実際の電話番号を表す文字列。
+- [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member) プロパティから取得される、実際の電話番号を表す文字列。
 
-- [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalPhoneString) プロパティから取得される電話番号として最初に識別された文字列。
+- [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-originalphonestring-member) プロパティから取得される電話番号として最初に識別された文字列。
 
 `myGetPhoneNumbers` はローカル HTML 文字列を `htmlText` で生成し、各電話番号のデータを表示します。関連する JavaScript コードを次に示します。
 
@@ -506,16 +501,16 @@ function myGetPhoneNumbers()
 ## <a name="extracting-task-suggestions"></a>タスクの提案の抽出
 
 
-ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#taskSuggestions) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。
+ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。
 
 
-- [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskString) プロパティから取得されるタスクの提案として最初に識別された文字列。
+- [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member) プロパティから取得されるタスクの提案として最初に識別された文字列。
 
-- [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees) プロパティから取得される、タスクの割り当て先の配列。各割り当て先は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
+- [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) プロパティから取得される、タスクの割り当て先の配列。各割り当て先は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
 
-- 割り当て先ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName) プロパティから取得される名前。
+- 割り当て先ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) プロパティから取得される名前。
 
-- 割り当て先ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress) プロパティから取得される SMTP アドレス。
+- 割り当て先ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member) プロパティから取得される SMTP アドレス。
 
 `myGetTaskSuggestions` はローカル HTML 文字列を `htmlText` で生成し、タスクの提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
 
@@ -571,7 +566,7 @@ function myGetTaskSuggestions()
 ## <a name="extracting-urls"></a>URL の抽出
 
 
-ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#urls) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。
+ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。
 
 
 ```js

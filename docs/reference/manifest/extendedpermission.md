@@ -3,13 +3,8 @@ title: マニフェスト ファイルの ExtendedPermission 要素
 description: アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。
 ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed3745da87c2fa04839a8fbd1c677f62ad771dc
-ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "62042141"
 ---
+
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 要素
 
 アドインが関連付けられた API または機能にアクセスするために必要な拡張アクセス許可を定義します。 要素 `ExtendedPermission` は [ExtendedPermissions の子要素です](extendedpermissions.md)。
@@ -23,7 +18,7 @@ ms.locfileid: "62042141"
 
 - メール 1.1
 
-詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 **次の要件セットに関連付けられている**。
 
@@ -35,7 +30,7 @@ ms.locfileid: "62042141"
 
 |使用可能な値|説明|Hosts|
 |---|---|---|
-|`AppendOnSend`|アドインがアプリケーション を使用[Office。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_) API。|Outlook|
+|`AppendOnSend`|アドインがアプリケーション を使用Office[。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) API。|Outlook|
 
 ## <a name="extendedpermission-example"></a>`ExtendedPermission` 例
 
