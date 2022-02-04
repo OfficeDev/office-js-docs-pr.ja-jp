@@ -1,22 +1,18 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 01/26/2022
+ms.date: 02/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f86ef910d032069fe3e537ae5bf5e63bb4ffb0
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263003"
 ---
+
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
-Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、太平洋時間午前 8:00 に毎月第 2 水曜日に発生します。 予定表の招待は 、でダウンロードできます https://aka.ms/officeaddinscommunitycall 。
+Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、太平洋時間午前 8:00 に毎月第 2 水曜日に発生します。 予定表の招待は 、でダウンロードできます https://aka.ms/officeaddinscommunitycall。
 
 ## <a name="agenda-for-february-9th-call"></a>2 月 9 日の呼び出しの議題
 
-2 月の議題は、通話の約 1 週間前に投稿されます。
+- API の[データ型](../excel/excel-data-types-overview.md)をExcelします。
+- Word API で更新します。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 

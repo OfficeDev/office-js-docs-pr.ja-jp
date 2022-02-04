@@ -22,7 +22,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
   - 作業ウィンドウと共有される実行環境はありません。
   - 作業ウィンドウと同じセッション ストレージ ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しません。
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
-- ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
+- ダイアログ ボックスは、[messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) メソッドを使用して、作業ウィンドウに情報を返すことができます。 このメソッドは、作業ウィンドウと同じドメイン (プロトコル、サブドメイン、およびポートを含む) にホストされているページからのみ呼び出すことをお勧めします。 それ以外の方法を使用した場合、メソッドを呼び出してメッセージを処理する方法が複雑になります。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 
 既定では、ダイアログ ボックスは、iframe ではなく、新しい Web ビュー コントロールで開きます。 これにより、ID プロバイダーのサインイン ページを開くことができます。 この記事の後半で説明するように、Office ダイアログ ボックスの特性は、Microsoft 認証ライブラリ (MSAL) や Passport などの認証ライブラリまたは承認ライブラリの使用方法に影響します。
 
