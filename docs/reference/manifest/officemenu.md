@@ -1,10 +1,15 @@
 ---
 title: マニフェスト ファイルの OfficeMenu 要素
 description: OfficeMenu 要素は、コンテキスト メニューに追加するコントロールのコレクションOffice定義します。
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 11b68edaef4044fb7ddde0d413debc0339b15c3a
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467744"
 ---
-
 # <a name="officemenu-element"></a>OfficeMenu 要素
 
 Office のコンテキスト メニューに追加するコントロールのコレクションを定義します。 Word、Excel、PowerPoint、OneNote アドインに適用されます。
@@ -42,7 +47,7 @@ Office のコンテキスト メニューに追加するコントロールのコ
 
 ## <a name="control"></a>コントロール
 
-各 **OfficeMenu** 要素には、1 つ以上の [メニュー](control.md#menu-dropdown-button-controls) コントロールが必要です。 
+各 **OfficeMenu 要素には** 、1 つ以上の [Menu コントロールが必要です](control-menu.md)。 
 
 ## <a name="example"></a>例
 

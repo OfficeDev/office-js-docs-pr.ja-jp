@@ -1,15 +1,15 @@
 ---
 title: キーボード ショートカットの要件セット
 description: キーボード ショートカットの要件は、Officeの情報を設定します。
-ms.date: 11/22/2021
+ms.date: 02/07/2022
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 209cc46c37ac004422796e267a8c350e33ffc615
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 074460510e054cdcfbeca4676883c4180bb2202d
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153798"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467844"
 ---
 # <a name="keyboard-shortcuts-requirement-sets"></a>キーボード ショートカットの要件セット
 
@@ -19,7 +19,10 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 |  要件セット  | Windows での Office 2013 以降<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| KeyboardShortcuts 1.1  | N/A | バージョン: 2111 (ビルド 14701.10000) | N/A | 16.55 | 2021 年 9 月 |
+| KeyboardShortcuts 1.1  | 該当なし | バージョン: 2111 (ビルド 14701.10000) | 該当なし | 16.55 | 2021 年 9 月 |
+
+> [!NOTE]
+> **KeyboardShortcuts 1.1** 要件セットは、ユーザーのExcel。
 
 ## <a name="office-versions-and-build-numbers"></a>Office のバージョンとビルド番号
 
@@ -34,7 +37,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="keyboardshortcuts-11"></a>KeyboardShortcuts 1.1
 
-この要件セットの API の詳細については[、「Office.actions」を参照してください](/javascript/api/office/office.actions)。
+この要件セットの API の詳細については、「[Office.actions」を参照してください](/javascript/api/office/office.actions)。
 
 ## <a name="see-also"></a>関連項目
 

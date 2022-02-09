@@ -1,10 +1,15 @@
 ---
 title: アドインでの単体Officeテスト
 description: JavaScript API を呼び出すテスト コードを単体Officeする方法について説明します。
-ms.date: 11/30/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 39bd49f52087433a7095d0949bf22abd10dd0bb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467758"
 ---
-
 # <a name="unit-testing-in-office-add-ins"></a>アドインでの単体Officeテスト
 
 単体テストでは、ネットワーク接続やサービス接続を必要とせずに、アドインの機能を確認します (アプリケーションへの接続Officeします。 [Office JavaScript API を](../develop/understanding-the-javascript-api-for-office.md)呼び出していないサーバー側コードとクライアント側コードの単体テストは、Office アドインの場合と Web アプリケーションの場合と同じなので、特別なドキュメントは必要としません。 ただし、JavaScript API を呼び出すクライアント側Officeテストは困難です。 これらの問題を解決するために、単体テストでのモック Office オブジェクトの作成を簡略化するライブラリを作成しました:[Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock)。 ライブラリを使用すると、次の方法でテストが容易になります。
@@ -20,7 +25,7 @@ ms.localizationpriority: medium
 
 この記事の例では、Jest フレームワークを使用します。 Mocha フレームワークを使用する例は、[Office-Addin-Mock のホーム ページに表示されます](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples)。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須条件
 
 この記事では、テスト ファイルの作成と実行方法など、単体テストとモックの基本的な概念に精通し、単体テスト フレームワークの経験を持っている必要があります。
 
@@ -185,6 +190,7 @@ module.exports = myOutlookAddinFeature;
 
 名前の付いたテスト `my-outlook-add-in-feature.test.js` ファイルは、アドイン コード ファイルの場所を基準としてサブフォルダーに格納されます。 ファイルの内容を次に示します。 トップ レベルのプロパティは、次の`context`値Office[。Context](/javascript/api/office/office.context) オブジェクトなので、モックされているオブジェクトは、このプロパティの親であるオブジェクト(オブジェクト[Officeです。](/javascript/api/office) このコードについては、次の点に注意してください。
 
+- モック `host` オブジェクトのプロパティは、モック ライブラリによって内部的に使用して、アプリケーションのOfficeします。 この機能は、Outlook。 現在、他のアプリケーションの目的Officeしません。
 - JavaScript `Office` Officeはノード プロセスに読み込まれないので、アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
 
 ```javascript
@@ -193,6 +199,8 @@ const myOutlookAddinFeature = require("../my-outlook-add-in-feature");
 
 // Create the seed mock object.
 const mockData = {
+  // Identify the host to the mock library (required for Outlook).
+  host: "outlook",
   context: {
     mailbox: {
       item: {

@@ -1,13 +1,18 @@
 ---
 title: マニフェスト ファイルの Supertip 要素
 description: Supertip 要素は、リッチ ヒント (タイトルと説明の両方) を定義します。
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: aab7ab3f17e772940403e75796346020b2b9aebe
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467858"
 ---
-
 # <a name="supertip"></a>Supertip
 
-豊富なヒント (タイトルと説明の両方) を定義します。[ボタン](control.md#button-control) または [メニュー](control.md#menu-dropdown-button-controls) コントロールの両方で使用されます。
+豊富なヒント (タイトルと説明の両方) を定義します。 これは、Button コントロールと [Menu コントロールの](control-button.md) 両方 [で使用されます](control-menu.md)。
 
 **アドインの種類:** 作業ウィンドウ, メール
 

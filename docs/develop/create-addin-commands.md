@@ -1,18 +1,18 @@
 ---
 title: Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 12/13/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 3a239d6b5b33d2244c6a172c2c61baa894535ab7
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073382"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467751"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
-マニフェスト **[で VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、アプリケーション、アプリケーション、および Word のExcelコマンドPowerPoint定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
+マニフェスト **[で VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
 
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
@@ -27,7 +27,7 @@ ms.locfileid: "62073382"
 この記事では、アドイン コマンドを定義するマニフェストの編集方法について説明します。次の図に、アドイン コマンドを定義するのに使用される要素の階層を示します。これらの要素は、この記事で詳細に説明します。
 
 > [!NOTE]
-> アドイン コマンドは、Outlook でもサポートされています。 詳細については、「アドイン のアドイン コマンド[」を参照Outlook](../outlook/add-in-commands-for-outlook.md)
+> アドイン コマンドは、Outlook でもサポートされています。 詳細については、「アドイン の[アドイン コマンド」を参照Outlook](../outlook/add-in-commands-for-outlook.md)
 
 次の画像は、マニフェスト内のアドイン コマンド要素の概要です。
 
@@ -35,11 +35,11 @@ ms.locfileid: "62073382"
 
 ## <a name="step-1-create-the-project"></a>手順 1: プロジェクトを作成する
 
-[作業ウィンドウ アドインの作成] などのクイック スタートの 1 つを実行して[、Excelを作成することをお勧めします](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word、および PowerPointの各クイック スタートは、作業ウィンドウを表示するアドイン コマンド (ボタン) が既に含まれているプロジェクトを生成します。 アドイン コマンドを使用[](../design/add-in-commands.md)する前に、Excel、Word、PowerPointのアドイン コマンドを読み取っている必要があります。
+[作業ウィンドウ アドインのビルド] などのクイック スタートの 1 つを実行してExcel[を作成することをお勧めします](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word、および PowerPointの各クイック スタートは、作業ウィンドウを表示するアドイン コマンド (ボタン) が既に含まれているプロジェクトを生成します。 アドイン コマンドを使用する前に、Excel[、Word](../design/add-in-commands.md)、PowerPointアドイン コマンドを読み取る必要があります。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>手順 2: 作業ウィンドウ アドインを作成する
 
-アドイン コマンドの使用を開始するには、まず作業ウィンドウ アドインを作成してから、この記事で説明するようにアドインのマニフェストを変更する必要があります。 コンテンツ アドインでアドイン コマンドを使用することはできません。既存のマニフェストを更新する場合は、「手順 [3: Add VersionOverrides](#step-3-add-versionoverrides-element)要素」の説明に従って、適切な **XML** 名前空間を追加し **、VersionOverrides** 要素をマニフェストに追加する必要があります。
+アドイン コマンドの使用を開始するには、まず作業ウィンドウ アドインを作成してから、この記事で説明するようにアドインのマニフェストを変更する必要があります。 コンテンツ アドインでアドイン コマンドを使用することはできません。既存のマニフェストを更新する場合は、「手順 [3: VersionOverrides](#step-3-add-versionoverrides-element) 要素の追加」の説明に従って、適切な **XML** 名前空間を追加し、**VersionOverrides** 要素をマニフェストに追加する必要があります。
 
 次の例は、Office 2013 アドインのマニフェストを示します。**VersionOverrides** 要素がないため、このマニフェストにはアドイン コマンドがありません。Office 2013 は、アドイン コマンドをサポートしていませんが、このマニフェストに **VersionOverrides** を追加することで、アドインは Office 2013 と Office 2016 の両方で動作します。Office 2013 では、アドインはアドイン コマンドを表示しません。また、**SourceLocation** の値を使用して、アドインを単一の作業ウィンドウ アドインとして実行します。Office 2016 では、**VersionOverrides** 要素が含まれない場合、アドインを実行するために **SourceLocation** が使用されます。ただし、**VersionOverrides** を含める場合は、アドインにアドイン コマンドのみが表示され、アドインは単一の作業ウィンドウ アドインとして表示されません。
   
@@ -86,7 +86,7 @@ ms.locfileid: "62073382"
 |要素|説明|
 |:-----|:-----|
 |**説明** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
-|**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「アプリケーションと[API の要件Office指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
+|**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「アプリケーションと [API 要件Office指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
 |**Hosts** <br/> |必須。 アプリケーションのコレクションをOfficeします。 子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。 "Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
 |**Resources** <br/> |マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。たとえば、**Description** 要素の値は、**Resources** の子要素を参照します。**Resources** 要素については、この記事の「[手順 7: Resources 要素を追加する](#step-7-add-the-resources-element)」で説明します。 <br/> |
 
@@ -118,7 +118,7 @@ ms.locfileid: "62073382"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>手順 4: Hosts、Host、DesktopFormFactor 要素を追加する
 
-**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host 要素** は、特定のアプリケーションをOfficeします。 **Host 要素** には、アドインをそのアプリケーションにインストールした後に表示するアドイン コマンドを指定する子Officeがあります。 2 つ以上の異なるアプリケーションで同じアドイン コマンドを表示するにはOffice Host の子要素を複製する必要 **があります**。
+**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host 要素** は、アプリケーションの特定のOfficeします。 **Host 要素** には、アドインをそのアプリケーションにインストールした後に表示するアドイン コマンドを指定する子Officeがあります。 2 つ以上の異なるアプリケーションで同じアドイン コマンドを表示するには、Officeホスト内の子要素を複製する必要 **があります**。
 
 **DesktopFormFactor** 要素では、Office on the web (ブラウザーを使用) と Windows で実行するアドインの設定を指定します。
 
@@ -146,7 +146,7 @@ ms.locfileid: "62073382"
 
 ## <a name="step-5-add-the-functionfile-element"></a>手順 5: FunctionFile 要素を追加する
 
-**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](../reference/manifest/control.md#button-control)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
+**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](../reference/manifest/control-button.md)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
 
 **FunctionFile** 要素の例を次に示します。
   
@@ -164,7 +164,7 @@ ms.locfileid: "62073382"
 > [!IMPORTANT]
 > JavaScript コードが `Office.initialize` を呼び出していることを確認します。
 
-**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](../reference/manifest/control.md#button-control)」の説明を参照) は、**FunctionFile** の関数を使用します。
+**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](../reference/manifest/control-button.md)」の説明を参照) は、**FunctionFile** の関数を使用します。
 
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
@@ -203,7 +203,7 @@ ms.locfileid: "62073382"
 
 ## <a name="step-6-add-extensionpoint-elements"></a>手順 6: ExtensionPoint 要素を追加する
 
-**ExtensionPoint** 要素は、Office UI のどこにアドイン コマンドを表示するかを定義します。 これらの **xsi:type** 値を使用して **ExtensionPoint 要素を定義** できます。
+**ExtensionPoint** 要素は、Office UI のどこにアドイン コマンドを表示するかを定義します。 これらの xsi **:type** 値を使用して **ExtensionPoint 要素を定義** できます。
 
 - **PrimaryCommandSurface**。Office のリボンを参照します。
 
@@ -249,13 +249,13 @@ ms.locfileid: "62073382"
 |要素|説明|
 |:-----|:-----|
 |**CustomTab** <br/> |カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 <br/> |
-|**OfficeTab** <br/> |既定のリボン タブ **(PrimaryCommandSurface** をOffice アプリする場合は必須です。 OfficeTab 要素 **を使用する** 場合は **、CustomTab 要素を使用** することはできません。 <br/> **id** 属性で使用するその他のタブ値については、「既定のリボン タブのタブ [値Office アプリ参照してください](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |既定のリボン タブ (**PrimaryCommandSurface** をOffice アプリする場合は必須です。 **OfficeTab 要素を使用する** 場合は、**CustomTab 要素を使用** することはできません。 <br/> **id** 属性で使用するタブ値の詳細については、「既定のリボン タブのタブ値 [Office アプリ参照してください](../reference/manifest/officetab.md)。  <br/> |
 |**OfficeMenu** <br/> | 既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は **ContextMenuText**。ユーザーがテキストを選択し、選択したテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。<br/> Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。 <br/> |
 |**グループ** <br/> |タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 <br/> |
 |**Label** <br/> |必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Icon** <br/> |必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
 |**Tooltip** <br/> |省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
-|**Control** <br/> |各グループには、1 つ以上のコントロールが必要です。**Control** 要素は、**Button** または **Menu** のいずれかにすることができます。ボタンのコントロールのドロップダウン リストを指定するには、**Menu** を使用します。現在、ボタンとメニューのみがサポートされています。詳しくは、「[ボタン コントロール](../reference/manifest/control.md#button-control)」および「[メニュー コントロール](../reference/manifest/control.md#menu-dropdown-button-controls)」のセクションをご覧ください。<br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
+|**Control** <br/> |各グループには、少なくとも 1 つのコントロールが必要です。 **Control 要素** には、Button または **Menu** のいずれかを指定 **できます**。 メニュー **を使用** して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細 [については、「Button コントロール](../reference/manifest/control-button.md) と [Menu コントロール](../reference/manifest/control-menu.md) 」を参照してください。 <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
 
 ### <a name="button-controls"></a>Button コントロール
 
@@ -380,7 +380,7 @@ ms.locfileid: "62073382"
 |**Tooltip** <br/> |省略可能。メニューのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**SuperTip** <br/> | 必須。メニューのヒントであり、次のものによって定義されます。 <br/> **Title** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Icon** <br/> | 必須。メニューの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  メニューの画像。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズ (ピクセル単位) が必要です。16、32、および 80。次の 5 つのオプションのサイズ (ピクセル単位) もサポートされています。20、24、40、48、および 64。 <br/> |
-|**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](../reference/manifest/control.md#button-control)と同じ子要素を含みます。  <br/> |
+|**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](../reference/manifest/control-button.md)と同じ子要素を含みます。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>手順 7: Resources 要素を追加する
 

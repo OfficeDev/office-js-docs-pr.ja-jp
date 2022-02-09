@@ -1,18 +1,18 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニュー コントロールを選択するときに実行するアクションを指定します。
-ms.date: 06/08/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fb213d8d2938d2d2c0654c1b3a7bf4f177931321
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5eee17864ecacf101d7fbfe3519b3da500768deb
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152727"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467872"
 ---
 # <a name="action-element"></a>Action 要素
 
-ユーザーが Button コントロールまたは Menu コントロールを選択するときに実行[するアクションを](control.md#button-control)[指定](control.md#menu-dropdown-button-controls)します。
+ユーザーが Button コントロールまたは Menu コントロールを選択するときに実行[するアクションを](control-button.md)[指定します](control-menu.md)。
 
 ## <a name="attributes"></a>属性
 
@@ -38,7 +38,7 @@ ms.locfileid: "59152727"
 - `ShowTaskpane`
 
 > [!IMPORTANT]
-> **xsi:type**[が](../objectmodel/preview-requirement-set/office.context.mailbox.md#events)[.](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) `ExecuteFunction`
+> **xsi:type** `ExecuteFunction`[が](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [.](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events)
 
 ## <a name="functionname"></a>FunctionName
 
@@ -52,7 +52,7 @@ ms.locfileid: "59152727"
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi:type が**"ShowTaskpane" の場合は必須の要素です。 この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で、Resources 要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
+**xsi:type が "** ShowTaskpane" の場合は必須の要素です。 この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で、Resources 要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -109,7 +109,7 @@ ms.locfileid: "59152727"
 > [!NOTE]
 > この子要素は、アドインOutlookサポートされていません。
 
-次の例は、Title 要素を使用するアクション **を示** しています。 Title を文字列に **直接割り** 当てない点に注意してください。 代わりに、マニフェストの [リソース] セクションで定義されているリソース ID  (常駐) を割り当て、32 文字以内にできます。
+次の例は、Title 要素を使用するアクション **を示** しています。 Title を文字列に **直接割り** 当てない点に注意してください。 代わりに、マニフェストの [リソース] セクションで定義されているリソース ID (常駐)  を割り当て、32 文字以内にできます。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -137,7 +137,7 @@ ms.locfileid: "59152727"
 **xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
 
 > [!IMPORTANT]
-> 要素は `SupportsPinning` 要件セット[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)で導入されましたが、現在サポートされているのは、次を使用Microsoft 365サブスクライバーのみです。
+> 要素は`SupportsPinning`要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) で導入されましたが、現在サポートされているのは、次を使用Microsoft 365サブスクライバーのみです。
 >
 > - Outlook 2016以降 (Windows 7628.1000 以降のビルド)
 > - Outlook 2016以降の Mac (ビルド 16.13.503 以降)

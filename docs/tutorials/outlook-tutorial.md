@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 05/12/2021
+ms.date: 01/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: d79089ee8b63883d0fe07a98042c8d683a8bfb43
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 10b07f1283184949de1e5128d0c7e6d20f3d4a25
+ms.sourcegitcommit: be6ba48ba733acc08d1ac2b4f164246de5864f12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154540"
+ms.lasthandoff: 02/04/2022
+ms.locfileid: "62369347"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -158,10 +158,9 @@ ms.locfileid: "59154540"
 
 この先に進める前に、ジェネレーターによって生成されたアドインをテストして、プロジェクトが正しく設定されていることを確認します。
 
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインがサイドロードされます。
 
     ```command&nbsp;line
     npm start
@@ -858,7 +857,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>構成設定を管理するファイルを作成する
 
-HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。 **./src/helpers** フォルダーに **addin-config.js** という名前のファイルを作成し、次のコードを追加します。 このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.RoamingSettings)を使用して、構成値を取得または設定するものです。
+HTML 関数ファイルは **addin-config.js** という名前のファイルを参照していますが、このファイルはまだ存在していません。 **./src/helpers** フォルダーに **addin-config.js** という名前のファイルを作成し、次のコードを追加します。 このコードは、[RoamingSettings オブジェクト](/javascript/api/outlook/office.roamingsettings)を使用して、構成値を取得または設定するものです。
 
 ```js
 function getConfig() {
