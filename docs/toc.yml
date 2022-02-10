@@ -283,6 +283,8 @@ items:
               - name: Visual Studio Code と Edge Chromium WebView2 を使用してデバッグする
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
+              - name: Visual Studio Code と Edge Legacy WebView を使用してデバッグする
+                href: testing/debug-with-vs-extension.md
               - name: Internet Explorer 11 でテストする
                 href: testing/ie-11-testing.md
           - name: Web ブラウザー
@@ -302,8 +304,6 @@ items:
             displayName: 'uninstall, sideload'
           - name: ランタイム ログを使用してデバッグする
             href: testing/runtime-logging.md
-          - name: Visual Studio Code 用 デバッガー 拡張機能
-            href: testing/debug-with-vs-extension.md
           - name: パフォーマンス
             items:
               - name: ループで context.sync メソッドを使用しないでください
@@ -485,6 +485,12 @@ items:
                     href: reference/manifest/allformfactors.md
                   - name: コントロール
                     href: reference/manifest/control.md
+                  - name: コントロール (ボタン)
+                    href: reference/manifest/control-button.md
+                  - name: コントロール (メニュー)
+                    href: reference/manifest/control-menu.md
+                  - name: コントロール (MobileButton)
+                    href: reference/manifest/control-mobilebutton.md
                   - name: CustomTab
                     href: reference/manifest/customtab.md
                   - name: DesktopFormFactor
@@ -513,6 +519,10 @@ items:
                     href: reference/manifest/hosts.md
                   - name: Icon
                     href: reference/manifest/icon.md
+                  - name: アイテム
+                    href: reference/manifest/item.md
+                  - name: アイテム
+                    href: reference/manifest/items.md
                   - name: LaunchEvent
                     href: reference/manifest/launchevent.md
                   - name: LaunchEvents
