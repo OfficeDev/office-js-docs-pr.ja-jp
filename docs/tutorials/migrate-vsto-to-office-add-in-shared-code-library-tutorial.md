@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 ms.localizationpriority: high
-ms.openlocfilehash: ddf1e22141cee516bcd7808fd37b789f6943e093
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 91ecee722bf18c5a88758ce24bc8861b6c772805
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073140"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855465"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -285,10 +285,10 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
     })();
 
     function showUnicode() {
-      Excel.run(function (ctx) {
-        const range = ctx.workbook.getSelectedRange();
+      Excel.run(function (context) {
+        const range = context.workbook.getSelectedRange();
         range.load("values");
-        return ctx.sync(range).then(function (range) {
+        return context.sync(range).then(function (range) {
           const url = "https://localhost:<ssl port number>/api/analyzeunicode?value=" + range.values[0][0];
           $.ajax({
             type: "GET",

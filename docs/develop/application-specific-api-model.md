@@ -1,19 +1,24 @@
 ---
 title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
-ms.date: 07/08/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ffce8433be95de0bf75ec1cfba813f7d6cbf57f
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855584"
 ---
-
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
-この記事では、Excel、Word、OneNote でアドインを構築するために API モデルを使用する方法について説明します。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
+この記事では、API モデルを使用して、アドインを Excel、Word、PowerPoint、およびOneNote。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
 
 > [!NOTE]
 > このモデルは、Office 2013 クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)」を参照してください。
 
 > [!TIP]
-> このページの例では Excel JavaScript API を使用しますが、概念は OneNote、Visio、Word JavaScript API にも適用されます。
+> このページの例では、Excel JavaScript API を使用していますが、この概念は OneNote、PowerPoint、Visio、および Word JavaScript API にも適用されます。
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Promise ベース API の非同期の性質
 
@@ -90,18 +95,11 @@ worksheet.getRange("A1").set({
 次の例は、ローカル JavaScript proxy オブジェクト (`selectedRange`) を定義し、そのオブジェクトのプロパティを読み込み、JavaScript の Promises パターンを使用して `context.sync()` を呼び出し、プロキシ オブジェクトと Excel ドキュメント内のオブジェクトの状態を同期するバッチ関数を示しています。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
+    console.log('The selected range is: ' + selectedRange.address);
 });
 ```
 
@@ -118,25 +116,18 @@ Excel JavaScript API では、`sync()` は唯一の非同期操作で、状況�
 プロキシ オブジェクトのプロパティを読み取るには、まず Office ドキュメントからプロキシ オブジェクトとデータを入力するためにプロパティを明確に読み込み、`context.sync()`を呼び出す必要があります。 たとえば、選択範囲を操作するプロキシ オブジェクトを作成してから選択範囲の`address` プロパティを読み取る場合、読み取る前に`address` プロパティを読み込む必要があります。 読み込むプロキシ オブジェクトのプロパティを要求するには、オブジェクトに対して `load()` メソッドを呼び出し、読み込むプロパティを指定します。 次の例は、`myRange`に読み込まれているプロパティ `Range.address`を示しています 。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var sheetName = 'Sheet1';
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
+    await context.sync();
+      
+    console.log (myRange.address);   // ok
+    //console.log (myRange.values);  // not ok as it was not loaded
 
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);   // ok
-        //console.log (myRange.values);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    console.log('done');
 });
 ```
 
@@ -179,11 +170,10 @@ var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
-return context.sync()
-    .then(function () {
-        // Trying to log the value before calling sync would throw an error.
-        console.log (tableCount.value);
-    });
+await context.sync();
+
+// Trying to log the value before calling sync would throw an error.
+console.log (tableCount.value);
 ```
 
 ### <a name="set"></a>set()
@@ -193,8 +183,8 @@ return context.sync()
 次のコード サンプルは、`set()` メソッドを呼び出し、`Range`Range **オブジェクトのプロパティの構造を反映するプロパティ名と型を持つ JavaScript オブジェクトを渡すことによって、範囲のいくつかの書式プロパティを設定します。この例では、範囲** B2:E2 にデータがあると仮定します。
 
 ```js
-Excel.run(function (ctx) {
-    var sheet = ctx.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -209,12 +199,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync();
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
 });
 ```
 
@@ -250,20 +235,21 @@ range.format.font.size = 10;
 > [!NOTE]
 > `*OrNullObject` のバリエーションは、JavaScript 値`null`を返すことはありません。 通常の Office プロキシ オブジェクトを返します。 オブジェクトが表すエンティティが存在しない場合は、オブジェクトの `isNullObject` プロパティが `true`に設定されます。 返されたオブジェクトの null 値または 真偽性はテストしません。 これは、決して `null`、 `false`、`undefined`ではありません。
 
-次のコード サンプルは `getItemOrNullObject()` メソッドを使用して、"Data" という名前のワークシートの取得を試行します。 その名前のワークシートが存在しない場合は、新しいシートが作成されます。 コードは`isNullObject`プロパティを読み込まないことにご注意ください。 Office は、`context.sync`が呼ばれると、自動的にこのプロパティを読み込みます。ですから、`datasheet.load('isNullObject')`のような名前で明示的に読み込む必要はありません。
+次のコード サンプルは `getItemOrNullObject()` メソッドを使用して、"Data" という名前のワークシートの取得を試行します。 その名前のワークシートが存在しない場合は、新しいシートが作成されます。 コードは`isNullObject`プロパティを読み込まないことにご注意ください。 Office は、`context.sync`が呼ばれると、自動的にこのプロパティを読み込みます。ですから、`dataSheet.load('isNullObject')`のような名前で明示的に読み込む必要はありません。
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
-
-return context.sync()
-    .then(function () {
-        if (dataSheet.isNullObject) {
-            dataSheet = context.workbook.worksheets.add("Data");
-        }
-
-        // Set `dataSheet` to be the second worksheet in the workbook.
-        dataSheet.position = 1;
-    });
+await Excel.run(async (context) => {
+    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    
+    await context.sync();
+    
+    if (dataSheet.isNullObject) {
+        dataSheet = context.workbook.worksheets.add("Data");
+    }
+    
+    // Set `dataSheet` to be the second worksheet in the workbook.
+    dataSheet.position = 1;
+});
 ```
 
 ## <a name="see-also"></a>関連項目

@@ -3,12 +3,12 @@ title: ドキュメントが開いたら、Office アドインでコードを実
 description: ドキュメントが開いたら、Officeアドインでコードを実行する方法について学習します。
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990552"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855549"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>ドキュメントが開いたら、Office アドインでコードを実行する
 
@@ -31,7 +31,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ## <a name="place-startup-code-in-officeinitialize"></a>スタートアップ コードを Office.initialize に配置する
 
-ドキュメントが開いているときに読み込むアドインが構成されている場合、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラー `Office.initialize` に `Office.onReady` 配置します。
+ドキュメントが開いているときに読み込むアドインが構成されている場合、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラーに`Office.initialize``Office.onReady`配置します。
 
 次のExcelコードは、アクティブなワークシートから変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成すると、ドキュメントを開く際にイベント ハンドラーが登録されます。 作業ウィンドウを開く前に変更イベントを処理できます。
 
@@ -55,12 +55,11 @@ Office.initialize = () => {
  * @param event The event information from Excel
  */
 async function onChange(event) {
-  return Excel.run(function(context) {
-    return context.sync().then(function() {
-      console.log("Change type of event: " + event.changeType);
-      console.log("Address of event: " + event.address);
-      console.log("Source of event: " + event.source);
-    });
+    await Excel.run(async (context) => {    
+        await context.sync();
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);
   });
 }
 ```

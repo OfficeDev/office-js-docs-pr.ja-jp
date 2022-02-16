@@ -1,38 +1,38 @@
 ---
 title: Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 description: TypeScript を使用するために、Officeアドイン プロジェクトをVisual Studioする方法について説明します。
-ms.date: 07/08/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2771dbde52689200bc861aa208b33280776798b0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 78a03c29662a981c51a93fcae0c61050a2007dda
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149708"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855570"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Visual Studio の Office アドイン プロジェクトを TypeScript に変換する
 
 Visual Studio の Office アドイン テンプレートを使用して JavaScript を使用するアドインを作成すると、そのアドイン プロジェクトは TypeScript に変換できます。 この記事では、Excel アドイン用のこの変換プロセスについて説明します。 同じ手順を使用すると、その他の種類の Office アドイン プロジェクトを JavaScript から Visual Studio の TypeScript に変換できます。
 
 > [!IMPORTANT]
-> この記事では、F5 キーを押すとコードが JavaScript にトランスピロードされ、コードが自動的に Office にサイドロードされるのを確認するために必要な最小限の手順について説明します。  ただし、コードは非常に "TypeScripty" ではありません。 たとえば、変数はキーワードではなくキーワードで宣言され、指定された `var` `let` 型では宣言されません。 TypeScript の強力なタイピングを活用するには、コードをさらに変更する方法を検討してください。 
+> この記事では、F5 キーを押すとコードが JavaScript にトランスピロードされ、コードが自動的に Office にサイドロードされるのを確認するために必要な最小限の手順について説明します。 ただし、コードは非常に "TypeScripty" ではありません。 たとえば、変数はキーワードではなくキーワード`var``let`で宣言され、指定された型では宣言されません。 TypeScript の強力なタイピングを活用するには、コードをさらに変更する方法を検討してください。
 
 > [!NOTE]
 > Visual Studio を使用することなく Office アドイン TypeScript プロジェクトを作成するには、「[5 分間のクイック スタート](../index.yml)」の「Yeoman ジェネレーター」のセクションに示された手順を実行して、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)のプロンプトが表示されたら `TypeScript` を選択します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- **Office/SharePoint 開発** ワークロードがインストールされている [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- [Visual Studio 2019 以降で](https://www.visualstudio.com/vs/)、Office **/SharePointワークロードが** インストールされている場合
 
     > [!TIP]
-    > 既に Visual Studio 2019 がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発** ワークロードがインストールされていることを確認してください。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)してください。
+    > 以前にインストール済み [Visual Studio、Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、Office **/SharePointが** インストールされていることを確認します。 このワークロードがまだインストールされていない場合は、Visual Studio インストーラーを使用して[インストール](/visualstudio/install/modify-visual-studio#modify-workloads)してください。
 
-- TypeScript SDK バージョン 2.3 以降 (Visual Studio 2019 用)
+- TypeScript SDK バージョン 2.3 以降。
 
     > [!TIP]
     > [Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)で、**[個別のコンポーネント]** タブを選択して、**[SDK、ライブラリ、およびフレームワーク]** セクションまでスクロール ダウンします。 そのセクション内で、**TypeScript SDK** コンポーネント (バージョン 2.3 以降) のうち少なくとも 1 つが選択されていることを確認します。 **TypeScript SDK** コンポーネントが選択されていない場合は、利用可能な最新バージョンの SDK を選択し、[変更] を選択して個々のコンポーネント [をインストールします](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。
 
-- Excel 2016 以降
+- Excel 2016以降。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -56,12 +56,12 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 
 4. [**ツール**] タブから [**NuGet パッケージ マネージャー**] を選択し、[**ソリューション用の NuGet パッケージの管理...**] を選択します。
 
-5. [参照] **タブが** 選択されている場合は **、「jquery」と入力します。TypeScript.DefinitelyTyped**. このパッケージをインストールするか、既にインストールされている場合は更新します。 これにより、jQuery TypeScript 定義がプロジェクトに確実に含まれます。 jQuery のパッケージは、Visual Studio という名前のファイル **にpackages.config。**
+5. [参照] **タブが** 選択されている場合は、「 **jquery」と入力します。TypeScript.DefinitelyTyped**。 このパッケージをインストールするか、既にインストールされている場合は更新します。 これにより、jQuery TypeScript 定義がプロジェクトに確実に含まれます。 jQuery のパッケージは、Visual Studio という名前のファイル **にpackages.config**。
 
     > [!NOTE]
     > TypeScript プロジェクトには、TypeScript ファイルと JavaScript ファイルをどちらも一緒に含めることができ、プロジェクトはコンパイルされます。TypeScript は、JavaScript にコンパイルされる JavaScript の型付けスーパーセットであるためです。
 
-6. **Home.ts** で、行を見つけて、次に示すように、行の直後に行を追加してグローバル `Office.initialize = function (reason) {` `window.Promise` をポリフィルします。
+6. **Home.ts**`Office.initialize = function (reason) {` `window.Promise`で、行を見つけて、次に示すように、行の直後に行を追加してグローバルをポリフィルします。
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -70,7 +70,7 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
         ...
     ```
 
-7. **Home.ts** で関数を検索し、関数全体を次のコードに置き換え `displaySelectedCells` 、ファイルを保存します。
+7. **Home.ts で** 関数を検索`displaySelectedCells`し、関数全体を次のコードに置き換え、ファイルを保存します。
 
     ```TypeScript
     function displaySelectedCells() {
@@ -237,4 +237,4 @@ Visual Studio の Office アドイン テンプレートを使用して JavaScri
 ## <a name="see-also"></a>関連項目
 
 - [StackOverflow における Promise 実装に関するディスカッション](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-- [GitHub における Office アドインのサンプル](https://github.com/officedev)
+- [GitHub における Office アドインのサンプル](https://github.com/OfficeDev/Office-Add-in-samples)

@@ -1,18 +1,30 @@
 ---
 title: マニフェスト ファイルの Namespace 要素
 description: Namespace 要素は、カスタム関数がカスタム関数で使用する名前空間を定義Excel。
-ms.date: 10/09/2018
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5afed3d55bde7e9735df534215f96ae1ba7bd3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f9fddaca6ec8ce6128ae638c9b798efb06319ba0
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154915"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855626"
 ---
 # <a name="namespace-element"></a>Namespace 要素
 
 Excel でカスタム関数によって使用される名前空間を定義します。
+
+**アドインの種類:** カスタム関数
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- Taskpane 1.0
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>属性
 

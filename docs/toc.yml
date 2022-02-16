@@ -1345,6 +1345,9 @@ items:
         displayName: Excel
   - name: リソース
     items:
+      - name: 用語集
+        href: resources/resources-glossary.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
       - name: 外部リソース
         href: resources/resources-links-help.md
         displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'

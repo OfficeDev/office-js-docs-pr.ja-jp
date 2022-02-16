@@ -1,18 +1,30 @@
 ---
 title: マニフェスト ファイルの Metadata 要素
 description: Metadata 要素は、カスタム関数がカスタム 関数で使用するメタデータ設定を定義Excel。
-ms.date: 10/09/2018
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f58b00bb13bde1e2b1742462716119b8b6d369d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 52938155442bb5424a170634d1324de77de2b788
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152866"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855535"
 ---
 # <a name="metadata-element"></a>MetaData 要素
 
 Excel でカスタム関数によって使用されるメタデータの設定を定義します。
+
+**アドインの種類:** カスタム関数
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- Taskpane 1.0
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>属性
 

@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの ExtensionPoint 要素
 description: Office UI でアドインが機能を公開する場所を定義します。
-ms.date: 02/07/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 279cc1b27f42d55e2ead00ee0c4df64afab16a3d
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 1f8ccc08a9c0d42edf89c904b8809a530239be4c
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467865"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855633"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 要素
 
@@ -28,71 +28,111 @@ ms.locfileid: "62467865"
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  はい  | 定義される拡張点の種類。|
+|  **xsi:type**  |  はい  | 定義される拡張点の種類。 使用できる値は、Office Host 要素の値で定義されているホスト アプリケーション **によって** 異なっています。|
 
-## <a name="extension-points-for-excel-only"></a>Excel のみの拡張点
+## <a name="extension-points-for-excel-onenote-powerpoint-and-word-add-in-commands"></a>アドイン、Excel、OneNote、PowerPoint、および Word アドイン コマンドの拡張ポイント
 
-- **CustomFunctions** - Excel 向けの JavaScript で記述されたカスタム関数。
+これらのホストの一部またはすべてで使用できる拡張ポイントは 3 種類あります。
 
-[この XML コード サンプル](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)は、**CustomFunctions** 属性の値を持つ **ExtensionPoint** 要素を使用する方法と、使用する子要素を示しています。
+- [PrimaryCommandSurface](#primarycommandsurface) (Word、Excel、PowerPoint、OneNote に有効) - Office のリボン。
+- [ContextMenu](#contextmenu) (Word、Excel、PowerPoint、および OneNote で有効) - Office UI で長押し (または右クリック) すると表示されるショートカット メニュー。
+- [CustomFunctions](#customfunctions) (Excel の場合のみ有効) - JavaScript で作成されたカスタム関数で、Excel。
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Word、Excel、PowerPoint、OneNote アドイン コマンドの拡張点
+これらの種類の拡張ポイントの子要素と例については、次のサブセクションを参照してください。
 
-- **PrimaryCommandSurface** - Office のリボン。
-- **ContextMenu** Office UI で右クリックしたときに表示されるショートカット メニュー。
+### <a name="primarycommandsurface"></a>PrimaryCommandSurface
 
-次の例は、**PrimaryCommandSurface** と **ContextMenu** の属性値を持つ **ExtensionPoint** 要素を使用する方法と、各要素と併用する必要がある子要素を示しています。
+Word、Excel、PowerPoint、OneNoteの主なコマンド サーフェスがリボンです。
+
+#### <a name="child-elements"></a>子要素
+
+|要素|説明|
+|:-----|:-----|
+|[CustomTab](customtab.md|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
+|[OfficeTab](officetab.md)|既定のリボン タブ (**PrimaryCommandSurface** をOffice アプリする場合は必須です。 **OfficeTab 要素を使用する** 場合は、**CustomTab 要素を使用** することはできません。|
+
+#### <a name="example"></a>例
+
+次の例は、**PrimaryCommandSurface で ExtensionPoint 要素を使用する方法を示しています**。 リボンにカスタム タブを追加します。
 
 > [!IMPORTANT]
-> ID 属性を含む要素では、一意の ID を指定してください。会社の名前と ID を使用することをお勧めします。たとえば、次の形式にします。`<CustomTab id="mycompanyname.mygroupname">`
+> ID 属性を含む要素では、一意の ID を指定してください。
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <CustomTab id="Contoso Tab">
-          <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
-            <!-- <OfficeTab id="TabData"> -->
-            <Label resid="residLabel4" />
-            <Group id="Group1Id12">
-              <Label resid="residLabel4" />
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Tooltip resid="residToolTip" />
-              <Control xsi:type="Button" id="Button1Id1">
-
-                  <!-- information about the control -->
-              </Control>
-              <!-- other controls, as needed -->
-            </Group>
-          </CustomTab>
-        </ExtensionPoint>
-
-      <ExtensionPoint xsi:type="ContextMenu">
-        <OfficeMenu id="ContextMenuCell">
-          <Control xsi:type="Menu" id="ContextMenu2">
-                  <!-- information about the control -->
-          </Control>
-          <!-- other controls, as needed -->
-        </OfficeMenu>
-        </ExtensionPoint>
+  <CustomTab id="Contoso.MyTab1">
+    <Label resid="residLabel4" />
+    <Group id="Contoso.Group1">
+      <Label resid="residLabel4" />
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Tooltip resid="residToolTip" />
+      <Control xsi:type="Button" id="Contoso.Button1">
+          <!-- information about the control -->
+      </Control>
+      <!-- other controls, as needed -->
+    </Group>
+  </CustomTab>
+</ExtensionPoint>
 ```
+
+### <a name="contextmenu"></a>ContextMenu
+
+コンテキスト メニューは、UI で右クリックすると表示されるショートカット Officeです。
 
 #### <a name="child-elements"></a>子要素
  
 |要素|説明|
 |:-----|:-----|
-|[CustomTab](customtab.md)|カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 |
-|[OfficeTab](officetab.md)|既定のリボン タブ (**PrimaryCommandSurface** をOffice アプリする場合は必須です。 **OfficeTab 要素を使用する** 場合は、**CustomTab 要素を使用** することはできません。|
-|[OfficeMenu](officemenu.md)|既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は - **ContextMenuText**。テキストが選択され、ユーザーが選択されたテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。 <br/> Excel の場合は - **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。|
-|[グループ](group.md)|タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 |
-|**Label**|必須。 グループのラベルです。 **resid 属性** は 32 文字以内で、String 要素の **id** 属性の値に設定する **必要** があります。 **String** 要素は、 **Resources** 要素の子要素である **ShortStrings** 要素の子要素です。|
-|[Icon](icon.md)|必須。 小さいフォーム ファクターのデバイス、または表示されるボタンが多すぎるときに使用されるグループのアイコンを指定します。 **resid 属性** は 32 文字以内で、Image 要素の **id** 属性の値に設定する **必要** があります。 **Image** 要素は、 **Resources** 要素の子要素である **Images** 要素の子要素です。 **size** 属性は、イメージのサイズをピクセル単位で指定します。 3 つのイメージのサイズ (16、32、80) が必要です。 5 つのオプションのサイズ (20、24、40、48、64) もサポートされています。|
-|**Tooltip**|省略可能。 グループのツールヒント。 **resid 属性** は 32 文字以内で、String 要素の **id** 属性の値に設定する **必要** があります。 **String** 要素は、 **Resources** 要素の子要素である **LongStrings** 要素の子要素です。|
-|[Control](control.md)|各グループには、少なくとも 1 つのコントロールが必要です。 **Control 要素** には、Button または **Menu** のいずれかを指定 **できます**。 [ **メニュー] を** 使用して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細 [については、「Button control](control-button.md) and [Menu control」](control-menu.md) を参照してください。<br/>**注:**  トラブルシューティングを容易にするために、 **Control** 要素と関連する **Resources** 子要素を一度に 1 つ追加することをお勧めします。|
-|[スクリプト](script.md)|カスタム関数の定義と登録コードを含む JavaScript ファイルにリンクします。 Developer Preview では、この要素は使用しません。 代わりに、HTML ページはすべての JavaScript ファイルを読み込みます。|
-|[Page](page.md)|カスタム関数についての HTML ページにリンクします。|
+|[OfficeMenu](officemenu.md)|アドイン コマンドを既定のコンテキスト メニュー (ContextMenu を使用) に追加する場合 **は必須です**。 **id 属性は**、次のいずれかの文字列に設定する必要があります。 <br/> - **コンテキスト メニューを開** く必要がある場合、ユーザーが選択したテキストを右クリックすると ContextMenuText。 <br/> - **ContextMenuCell** を使用すると、ユーザーがスプレッドシート上のセルを右クリックすると、コンテキスト メニューがExcelされます。|
+
+#### <a name="example"></a>例
+
+次に、ユーザー設定のコンテキスト メニューをスプレッドシート内のセルExcelします。
+
+```xml
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="Contoso.ContextMenu2">
+            <!-- information about the control -->
+    </Control>
+    <!-- other controls, as needed -->
+  </OfficeMenu>
+</ExtensionPoint>
+```
+
+### <a name="customfunctions"></a>CustomFunctions
+
+JavaScript または TypeScript で作成されたカスタム関数で、Excel。
+
+#### <a name="child-elements"></a>子要素
+
+|要素|説明|
+|:-----|:-----|
+|[Script](script.md)|必須です。 カスタム関数の定義と登録コードを含む JavaScript ファイルへのリンク。|
+|[Page](page.md)|必須です。 カスタム関数についての HTML ページにリンクします。|
+|[MetaData](metadata.md)|必須です。 Excel でカスタム関数によって使用されるメタデータの設定を定義します。|
+|[Namespace](namespace.md)|省略可能。 Excel でカスタム関数によって使用される名前空間を定義します。|
+
+#### <a name="example"></a>例
+
+```xml
+<ExtensionPoint xsi:type="CustomFunctions">
+  <Script>
+    <SourceLocation resid="Functions.Script.Url"/>
+  </Script>
+  <Page>
+    <SourceLocation resid="Shared.Url"/>
+  </Page>
+  <Metadata>
+    <SourceLocation resid="Functions.Metadata.Url"/>
+  </Metadata>
+  <Namespace resid="Functions.Namespace"/>
+</ExtensionPoint>
+```
 
 ## <a name="extension-points-for-outlook"></a>Outlook のみの拡張点
 
@@ -132,7 +172,7 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom2">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -163,7 +203,7 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom3">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -194,7 +234,7 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom4">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -225,7 +265,7 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom5">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -263,9 +303,9 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Group id="mobileGroupID">
+  <Group id="Contoso.mobileGroup1">
     <Label resid="residAppName"/>
-      <Control id="mobileButton1" xsi:type="MobileButton">
+      <Control  xsi:type="MobileButton id="Contoso.mobileButton1"">
         <!-- Control definition -->
       </Control>
   </Group>
@@ -297,7 +337,7 @@ ms.locfileid: "62467865"
 
 ```xml
 <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+  <Control xsi:type="MobileButton" id="Contoso.onlineMeetingFunctionButton1">
     <Label resid="residUILessButton0Name" />
     <Icon>
       <bt:Image resid="UiLessIcon" size="25" scale="1" />

@@ -3,8 +3,13 @@ title: Excel JavaScript API を使用してグラフを操作する
 description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
 ms.date: 11/29/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855612"
 ---
-
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
 この記事では、Excel JavaScript API を使用して、グラフの一般的なタスクを実行する方法のサンプル コードを提供します。
@@ -228,8 +233,8 @@ Excel.run(function (context) {
 グラフを Excel の外部で画像としてレンダリングできます。 `Chart.getImage` からは、グラフを JPEG 画像として表す base 64 エンコード文字列が返されます。 次のコードでは、画像の文字列を取得してコンソールに表示する方法を示します。
 
 ```js
-Excel.run(function (ctx) {
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (context) {
+    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
     return context.sync().then(function () {
         console.log(imageAsString.value);

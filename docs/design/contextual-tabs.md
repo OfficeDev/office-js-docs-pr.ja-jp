@@ -1,10 +1,15 @@
 ---
 title: カスタム コンテキスト タブを Officeアドインで作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
-ms.date: 01/22/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: bf359c29552a7ca64e9d14a6b40aa5dc671bbb6d
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855591"
 ---
-
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
 
 コンテキスト タブは、指定したイベントがドキュメント内で発生した場合にタブ行に表示Officeリボンの非表示のタブ コントロールOfficeです。 たとえば、テーブル **が選択されている** ときにリボンのExcel[テーブルのデザイン] タブが表示されます。 カスタム コンテキスト タブは、Officeアドインに含め、表示設定を変更するイベント ハンドラーを作成して、表示または非表示の状態を指定します。 (ただし、カスタム コンテキスト タブはフォーカスの変更に応答しない)。
@@ -13,8 +18,6 @@ ms.localizationpriority: medium
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
 > - [アドイン コマンドの基本概念](add-in-commands.md)
-
-[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > カスタム コンテキスト タブは現在、これらのプラットフォームExcelビルドでのみサポートされています。

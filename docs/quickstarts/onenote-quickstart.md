@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な OneNote 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/13/2022
+ms.date: 02/11/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: e377f3f73f6879b374672157ebc127a0cf412830
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7d806922785f97430619bd74eb04c7c42595aa4e
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222089"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855577"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -50,7 +50,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ```js
 try {
-    await OneNote.run(async context => {
+    await OneNote.run(async (context) => {
 
         // Get the current page.
         var page = context.application.getActivePage();
@@ -62,8 +62,8 @@ try {
         var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
-        // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync();
+        // Run the queued commands.
+        await context.sync();
     });
 } catch (error) {
     console.log("Error: " + error);
@@ -78,20 +78,13 @@ try {
     cd "My Office Add-in"
     ```
 
-1. ローカル Web サーバーを起動し、アドインのサイドロードを行います。
+1. ローカル Web サーバーを開始します。 プロジェクトのルート ディレクトリから次のコマンドを実行します。
+
+    ```command&nbsp;line
+    npm run dev-server
+    ```
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-    > [!TIP]
-    > Mac でアドインをテストしている場合は、先に進む前に次のコマンドを実行してください。 このコマンドを実行すると、ローカル Web サーバーが起動します。
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の OneNote ドキュメントの URL に置き換えます。
-
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]`
 
 1. [OneNote on the web](https://www.onenote.com/notebooks) でノートブックを開き、新しいページを作成します。
 

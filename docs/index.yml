@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 09/09/2021
+  ms.date: 02/10/2022
 highlightedContent:
   items:
     - itemType: overview
@@ -29,7 +29,7 @@ highlightedContent:
       title: カスタム アドインOfficeサンプル
       url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
-      title: Officeアドイン の初心者向けガイド
+      title: Office アドインの初心者向けガイド
       url: overview/learning-path-beginner.md
     - itemType: reference
       title: Office JavaScript API リファレンス ドキュメント
@@ -101,9 +101,12 @@ conceptualContent:
         - url: 'https://developer.microsoft.com/office'
           itemType: whats-new
           text: 開発者プログラムに参加する
-        - url: /answers/products/m365
+        - url: 'https://aka.ms/m365dev-suggestions'
           itemType: architecture
           text: 機能のリクエスト
+        - url: /answers/products/m365
+          itemType: reference
+          text: Microsoft Q Office.js A に関する質問&する
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
           text: スタック オーバーフローのOffice.js質問をする

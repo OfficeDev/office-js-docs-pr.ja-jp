@@ -1,24 +1,22 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 02/04/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5ea373a45bd8d8b6ee0a3e3e396db2fb5b7234
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: f694d6e718f1e187a1e7b0314ddfa26a1d750a25
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467716"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855556"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
 Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び出しで、新機能、開発プラクティス、および Office アドインの作成に関する詳細情報を確認できます。コミュニティ呼び出しは、太平洋時間午前 8:00 に毎月第 2 水曜日に発生します。 予定表の招待は 、でダウンロードできます https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-february-9th-call"></a>2 月 9 日の呼び出しの議題
+## <a name="agenda-for-march-9th-call"></a>3 月 9 日の通話の議題
 
-- API の[データ型](../excel/excel-data-types-overview.md)をExcelします。
-- Word API で更新します。
-- Outlookアドインと REST V2 Outlook使用停止。
+3 月の議題は、通話の約 1 週間前に投稿されます。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 
