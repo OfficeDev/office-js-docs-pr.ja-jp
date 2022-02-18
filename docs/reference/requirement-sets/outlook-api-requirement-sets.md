@@ -1,11 +1,16 @@
 ---
 title: Outlook JavaScript API の要件セット
 description: Outlook JavaScript API の要件セットの詳細。
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.prod: outlook
 ms.localizationpriority: high
+ms.openlocfilehash: 4398afa60c2a3a15571db2a706cb01811c9f41f7
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892511"
 ---
-
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API の要件セット
 
 Outlook アドインは、[マニフェスト](../manifest/requirements.md)で[要件](../../develop/add-in-manifests.md)要素を使用して、必要な API のバージョンを宣言します。Outlook アドインには、`Name` 属性が `Mailbox` に設定され、`MinVersion` 属性がアドインのシナリオをサポートする最小 API 要件セットに設定された[設定](../manifest/set.md)要素が常に含まれます。
@@ -116,18 +121,9 @@ if (item.somePropertyOrFunction !== undefined) {
 >
 > <sup>5</sup> 現在、モバイル クライアント用のアドインを設計および実装する際には、さらに考慮事項があります。 たとえば、サポートされるモードは、メールの読み取りのみです。 詳細については、[Outlook Mobile にアドイン コマンドのサポートを追加するときのコードの考慮事項](../../outlook/add-mobile-support.md#code-considerations)を参照してください。
 >
-> <sup>6</sup> アドインは、Android の Web ブラウザー上の最新の Outlook では機能しません。 サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)」を参照してください。
+> <sup>6</sup> アドインは、iPhone および Android スマートフォンの最新の Outlook on the web では機能しません。 サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)」を参照してください。
 
-> [!TIP]
-> メールボックスのツールバーを確認することで、Web ブラウザーでの Outlook がモダンかクラシックかを区別できます。
->
-> **モダン**
->
-> ![Outlook ツールバー (モダン) の部分的なスクリーンショット。](../../images/outlook-on-the-web-new-toolbar.png)
->
-> **クラシック**
->
-> ![Outlook ツールバー (クラシック) の部分的なスクリーンショット。](../../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="using-preview-apis"></a>プレビュー API の使用
 
