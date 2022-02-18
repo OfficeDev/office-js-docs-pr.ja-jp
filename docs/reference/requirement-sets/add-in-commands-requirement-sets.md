@@ -1,11 +1,16 @@
 ---
 title: アドイン コマンドの要件セット
 description: アドイン コマンドOfficeセットの概要。
-ms.date: 01/20/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e35a36c10f9ca275d5dd969a3592df42a5e1000a
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892546"
 ---
-
 # <a name="add-in-commands-requirement-sets"></a>アドイン コマンドの要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
@@ -17,7 +22,7 @@ ms.localizationpriority: medium
 
 アドイン コマンドの最初のリリースには、対応する要件セットが含まれています (つまり、AddinCommands 1.0 要件セットは存在しない)。 次の表に、Officeバージョンをサポートするクライアント アプリケーションと、それらのアプリケーションのビルド バージョンまたは番号を示します。  
 
-| リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |
+| リリース   |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) | Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション)   |  Office on iPad<br>(サブスクリプション)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回購入)   | Office on the web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | アドイン コマンド (初期リリース、要件設定なし) | N/A | 該当なし | バージョン 1809 (ビルド 10827.20150) 以降| 16.0.14326.20454 以降 |バージョン 1603 (ビルド 6769.0000) 以降 | 該当なし | 15.33 以降| 2016 年 1 月 |
 
@@ -27,7 +32,7 @@ ms.localizationpriority: medium
 
 次の表に、アドイン コマンドの要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) |  Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続)   |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  
+|  要件セット  |  Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows 版 Office 2019<br>(1 回限りの購入) |  Windows 版 Office 2021<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション)   |  Office on iPad<br>(サブスクリプション)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回購入)   | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.3  | 該当なし | 該当なし | 該当なし | 該当なし | サポートされていません | N/A | サポートされていません | 2020 年 11 月 |
 | AddInCommands 1.1  | N/A | 該当なし  | バージョン 1809 (ビルド 10827.20150) 以降&dagger; | 16.0.14326.20454 以降&dagger; | バージョン 1705 (ビルド 8121.1000) 以降&dagger; | 該当なし | 15.34 以降&dagger;\*| 2017 年 5 月 |

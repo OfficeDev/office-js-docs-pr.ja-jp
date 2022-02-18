@@ -1,10 +1,15 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
 description: Outlookモバイル アドインは、すべてのビジネス アカウントと Microsoft 365.com アカウントOutlookサポートされています。
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892525"
 ---
-
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
@@ -64,7 +69,7 @@ Outlook Mobile でアドインをテストするには、まず、web、Windows�
 モバイルでのトラブルシューティングは、使い慣らされたツールを使用していない可能性があるから、難しい場合があります。 ただし、iOS でトラブルシューティングを行う方法の 1 つは、Fiddler を使用する方法です (iOS デバイスでの使用に関するこのチュートリアル [を参照してください](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices))。
 
 > [!NOTE]
-> アドインは、Android 上の web ブラウザー Outlookで動作しません。 サポートされているデバイスの詳細については、「[アドインを実行するOffice」を参照してください](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
+> アプリOutlook on the web Android iPhoneの最新のアプリは、アドインのテストに必要Outlook使用できなくなりました。サポートされているデバイスの詳細については、「[アドインを実行するOffice」を参照してください](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
 
 ## <a name="next-steps"></a>次の手順
 
