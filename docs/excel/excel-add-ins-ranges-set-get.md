@@ -1,14 +1,19 @@
 ---
 title: JavaScript API を使用して選択した範囲を設定Excel取得する
 description: JavaScript API を使用して、Excel JavaScript API を使用して選択した範囲を設定および取得するExcel説明します。
-ms.date: 07/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ff8690d1d79063114441320232bdef2000af71d5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340730"
 ---
-
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>JavaScript API を使用して選択した範囲を設定Excel取得する
 
-この記事では、JavaScript API を使用して選択した範囲を設定して取得するExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して選択した範囲を設定および取得するExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -17,14 +22,14 @@ ms.localizationpriority: medium
 次のコード サンプルは、作業中のワークシートの範囲 **B2:E6** を選択します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:E6");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:E6");
 
     range.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="selected-range-b2e6"></a>選択範囲 B2:E6
@@ -36,15 +41,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、選択した範囲を取得し、そのプロパティを読 `address` み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.load("address");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the selected range is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    console.log(`The address of the selected range is "${range.address}"`);
+});
 ```
 
 ## <a name="select-the-edge-of-a-used-range"></a>使用範囲の端を選択する
@@ -60,26 +64,26 @@ Excel.run(function (context) {
 次のコード サンプルは、 `Range.getRangeEdge` メソッドを使用して、現在使用されている範囲の最も遠い端にあるセルを上方向に選択する方法を示しています。 このアクションは、範囲が選択されている間に Ctrl + 上矢印キーのキーボード ショートカットを使用した結果と一致します。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.up;
+    let direction = Excel.KeyboardDirection.up;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get the top-most cell of the current used range.
     // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
-    var rangeEdge = range.getRangeEdge(
+    let rangeEdge = range.getRangeEdge(
       direction,
       activeCell
     );
     rangeEdge.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-the-cell-at-the-edge-of-the-used-range"></a>使用範囲の端にあるセルを選択する前に
@@ -99,26 +103,26 @@ Excel.run(function (context) {
 次のコード サンプル `Range.getExtendedRange` は、メソッドを使用して、現在選択されている範囲から使用範囲の最も遠い端まで、下方向のすべてのセルを選択する方法を示しています。 このアクションは、範囲が選択されている間に Ctrl + Shift +下矢印キーのキーボード ショートカットを使用した結果と一致します。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.down;
+    let direction = Excel.KeyboardDirection.down;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get all the cells from the currently selected range to the bottom-most edge of the used range.
     // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
-    var extendedRange = range.getExtendedRange(
+    let extendedRange = range.getExtendedRange(
       direction,
       activeCell
     );
     extendedRange.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>現在の範囲から使用範囲の端までのすべてのセルを選択する前に

@@ -1,11 +1,16 @@
 ---
 title: JavaScript API を使用して動的配列と範囲のスピルExcel処理する
 description: JavaScript API を使用して動的配列と範囲のスピルを処理するExcel説明します。
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: b096225a7f4582f15b5707dcd0059e8e8869ad8d
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340695"
 ---
-
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>JavaScript API を使用して動的配列とスピルExcel処理する
 
 この記事では、JavaScript API を使用して動的配列と範囲のスピルを処理するコード サンプルExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
@@ -17,23 +22,23 @@ ms.localizationpriority: medium
 次のサンプルは、セルに範囲の内容をコピーする基本的な数式を示しています。これは隣接するセルに流出します。 その後、アドインは流出を含む範囲をログに記録します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Set G4 to a formula that returns a dynamic array.
-    var targetCell = sheet.getRange("G4");
+    let targetCell = sheet.getRange("G4");
     targetCell.formulas = [["=A4:D4"]];
 
     // Get the address of the cells that the dynamic array spilled into.
-    var spillRange = targetCell.getSpillingToRange();
+    let spillRange = targetCell.getSpillingToRange();
     spillRange.load("address");
 
     // Sync and log the spilled-to range.
-    return context.sync().then(function () {
-        // This will log the range as "G4:J4".
-        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // This will log the range as "G4:J4".
+    console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+});
 ```
 
 ## <a name="range-spilling"></a>範囲の流出

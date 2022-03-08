@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b498d445f53441cd5db97aa71f4dee36cac45a06
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ec1e2d761f6c2e489122cfdaa86e1a492e729774
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074302"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340961"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel アドインのデータ型の概要 (プレビュー)
 

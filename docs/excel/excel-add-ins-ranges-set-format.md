@@ -1,19 +1,19 @@
 ---
 title: JavaScript API を使用して範囲のExcel設定する
 description: JavaScript API の Excelを使用して範囲の形式を設定する方法について説明します。
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a380a64c76709e423be2d5c529a6e35cd44a5d1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 41727f6fd71636be24bdc1bb8416cb3ba07c06e1
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150247"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340352"
 ---
 # <a name="set-range-format-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲Excel設定する
 
-この記事では、JavaScript API を使用して範囲のセルのフォントの色、塗りつぶしの色、および数値Excelします。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲のセルのフォントの色、塗りつぶしの色、数値の形式を設定するExcelします。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -22,15 +22,15 @@ ms.locfileid: "59150247"
 次のコード サンプルは、範囲 **B2：E2** のセルのフォントの色と塗りつぶしの色を設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var range = sheet.getRange("B2:E2");
+    let range = sheet.getRange("B2:E2");
     range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>フォントの色と塗りつぶしの色を設定する前の範囲内のデータ
@@ -46,20 +46,20 @@ Excel.run(function (context) {
 次のコード サンプルは、範囲 **D3：E5** のセルの数値を書式を設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var formats = [
+    let formats = [
         ["0.00", "0.00"],
         ["0.00", "0.00"],
         ["0.00", "0.00"]
     ];
 
-    var range = sheet.getRange("D3:E5");
+    let range = sheet.getRange("D3:E5");
     range.numberFormat = formats;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-in-range-before-number-format-is-set"></a>数値の書式を設定する前の範囲内のデータ

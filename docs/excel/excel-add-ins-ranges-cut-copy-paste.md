@@ -1,11 +1,16 @@
 ---
 title: JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
-description: JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。
-ms.date: 04/02/2021
+description: JavaScript API を使用して範囲を切り取り、コピー、貼りExcel説明します。
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1933807d90a03c2999eda4fa5cce635ab366c9fa
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340947"
 ---
-
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲を切り取り、コピー Excel貼り付ける
 
 この記事では、JavaScript API を使用して範囲を切り取り、コピー、貼り付けるExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
@@ -19,12 +24,12 @@ ms.localizationpriority: medium
 次のコード サンプルでは、**A1:E1** のデータを **G1** で始まる範囲にコピーします (この貼り付けは **G1:K1** で終わります)。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1").
     sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Range.copyFrom` には、省略可能なパラメーターが 3 つあります。
@@ -49,20 +54,20 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 次のコード サンプルと画像は、この動作をシンプルなシナリオで示しています。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy a range, omitting the blank cells so existing data is not overwritten in those cells.
     sheet.getRange("D1").copyFrom("A1:C1",
         Excel.RangeCopyType.all,
         true, // skipBlanks
         false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    // Copy a range, including the blank cells which will overwrite existing data in the target cells.
     sheet.getRange("D2").copyFrom("A2:C2",
         Excel.RangeCopyType.all,
         false, // skipBlanks
         false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>範囲がコピーおよび貼り付けされる前のデータ
@@ -71,7 +76,7 @@ Excel.run(function (context) {
 
 ### <a name="data-after-range-is-copied-and-pasted"></a>範囲がコピーおよび貼り付けされた後のデータ
 
-![範囲のコピー Excelが実行された後のデータ。](../images/excel-range-copyfrom-skipblanks-after.png)
+![範囲のExcelが実行された後のデータ。](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## <a name="cut-and-paste-move-cells"></a>セルの切り取りと貼り付け (移動)
 
@@ -80,13 +85,13 @@ Excel.run(function (context) {
 次のコード サンプルでは、メソッドを使用して範囲を移動 `Range.moveTo` します。 移動先の範囲がソースより小さい場合は、ソース コンテンツを含む範囲に拡張されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.getRange("F1").values = [["Moved Range"]];
 
     // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
     sheet.getRange("A1:E1").moveTo("G1");
-    return context.sync();
+    await context.sync();
 });
 ```
 

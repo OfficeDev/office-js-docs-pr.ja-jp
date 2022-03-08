@@ -1,25 +1,30 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
-description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelサンプル。
-ms.date: 10/22/2021
+description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelコード サンプル。
+ms.date: 02/17/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340268"
 ---
-
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table)」および「[TableCollection オブジェクト (JavaScript API for Excel)」を](/javascript/api/excel/excel.tablecollection)参照してください。`Table` `TableCollection`
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 `Table` および `TableCollection` オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 > [!NOTE]
 > テーブルの名前を指定するには、 `name` 次の例に示すように、最初にテーブルを作成し、そのプロパティを設定する必要があります。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
 
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
@@ -41,25 +46,25 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい表**
+### <a name="new-table"></a>新しい表
 
 ![新しいテーブル (Excel)。](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 > [!NOTE]
-> `index` [TableRow オブジェクトのプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト `TableRow` には、行を識別 `id` するための一意のキーとして使用できるプロパティが含まれている必要があります。
+> `index` オブジェクトの [index](/javascript/api/excel/excel.tablerow) プロパティは、表の行コレクション内の行のインデックス番号を示しています。 `TableRow` オブジェクトには、行を一意に識別できる `id` プロパティは含まれていません。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.rows.add(null /*add rows to the end of the table*/, [
         ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
@@ -76,13 +81,13 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい行を含む表**
+### <a name="table-with-new-rows"></a>新しい行を含む表
 
-![新しい行が含Excel。](../images/excel-tables-add-rows.png)
+![テーブルに新しい行が含Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>表に列を追加する
 
@@ -93,12 +98,12 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Day of the Week"],
@@ -116,22 +121,22 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい列を含む表**
+#### <a name="table-with-new-column"></a>新しい列を含む表
 
 ![テーブルに新しい列が含Excel。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Type of the Day"],
@@ -149,64 +154,63 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい集計列を含む表**
+#### <a name="table-with-new-calculated-column"></a>新しい集計列を含む表
 
-![テーブルに新しい計算列があるExcel。](../images/excel-tables-add-calculated-column.png)
+![テーブルに新しい計算列が含Excel。](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="resize-a-table"></a>テーブルのサイズを変更する
 
 アドインは、テーブルにデータを追加したり、セル値を変更したりすることなく、テーブルのサイズを変更できます。 テーブルのサイズを変更するには、 [Table.resize メソッドを使用](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) します。 次のコード サンプルは、テーブルのサイズを変更する方法を示しています。 このコード サンプルでは、この記事の前の [](#create-a-table)「テーブルの作成」セクションの **ExpensesTable** を使用し、テーブルの新しい範囲を **A1:D20 に設定します**。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the worksheet and a table on that worksheet.
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     // Resize the table.
     expensesTable.resize("A1:D20");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 > [!IMPORTANT]
 > テーブルの新しい範囲は元の範囲と重なり、ヘッダー (またはテーブルの上部) は同じ行に含む必要があります。
 
-**サイズ変更後のテーブル** 
+### <a name="table-after-resize"></a>サイズ変更後のテーブル
 
 ![複数の空の行が含Excel。](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
     expensesTable.columns.load("items");
 
-    return context.sync()
-        .then(function () {
-            expensesTable.columns.items[0].name = "Purchase date";
+    await context.sync();
+        
+    expensesTable.columns.items[0].name = "Purchase date";
 
-            if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-                sheet.getUsedRange().format.autofitColumns();
-                sheet.getUsedRange().format.autofitRows();
-            }
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
+        sheet.getUsedRange().format.autofitColumns();
+        sheet.getUsedRange().format.autofitRows();
+    }
 
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい列名を含む表**
+### <a name="table-with-new-column-name"></a>新しい列名を含む表
 
 ![テーブルに新しい列名が含Excel。](../images/excel-tables-update-column-name.png)
 
@@ -215,44 +219,43 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** ワークシートから **ExpensesTable** という表のデータを読み取り、そのデータを同じワークシートの表の下に出力します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Get data from the header row
-    var headerRange = expensesTable.getHeaderRowRange().load("values");
+    // Get data from the header row.
+    let headerRange = expensesTable.getHeaderRowRange().load("values");
 
-    // Get data from the table
-    var bodyRange = expensesTable.getDataBodyRange().load("values");
+    // Get data from the table.
+    let bodyRange = expensesTable.getDataBodyRange().load("values");
 
-    // Get data from a single column
-    var columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
+    // Get data from a single column.
+    let columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
 
-    // Get data from a single row
-    var rowRange = expensesTable.rows.getItemAt(1).load("values");
+    // Get data from a single row.
+    let rowRange = expensesTable.rows.getItemAt(1).load("values");
 
-    // Sync to populate proxy objects with data from Excel
-    return context.sync()
-        .then(function () {
-            var headerValues = headerRange.values;
-            var bodyValues = bodyRange.values;
-            var merchantColumnValues = columnRange.values;
-            var secondRowValues = rowRange.values;
+    // Sync to populate proxy objects with data from Excel.
+    await context.sync();
 
-            // Write data from table back to the sheet
-            sheet.getRange("A11:A11").values = [["Results"]];
-            sheet.getRange("A13:D13").values = headerValues;
-            sheet.getRange("A14:D20").values = bodyValues;
-            sheet.getRange("B23:B29").values = merchantColumnValues;
-            sheet.getRange("A32:D32").values = secondRowValues;
+    let headerValues = headerRange.values;
+    let bodyValues = bodyRange.values;
+    let merchantColumnValues = columnRange.values;
+    let secondRowValues = rowRange.values;
 
-            // Sync to update the sheet in Excel
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    // Write data from table back to the sheet
+    sheet.getRange("A11:A11").values = [["Results"]];
+    sheet.getRange("A13:D13").values = headerValues;
+    sheet.getRange("A14:D20").values = bodyValues;
+    sheet.getRange("B23:B29").values = merchantColumnValues;
+    sheet.getRange("A32:D32").values = secondRowValues;
+
+    // Sync to update the sheet in Excel.
+    await context.sync();
+});
 ```
 
-**表とデータの出力**
+### <a name="table-and-data-output"></a>表とデータの出力
 
 ![テーブル のデータをExcel。](../images/excel-tables-get-data.png)
 
@@ -264,15 +267,15 @@ Excel.run(function (context) {
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
-function onTableChanged(eventArgs) {
-    Excel.run(function (context) {
-        var details = eventArgs.details;
-        var address = eventArgs.address;
+async function onTableChanged(eventArgs) {
+    await Excel.run(async (context) => {
+        let details = eventArgs.details;
+        let address = eventArgs.address;
 
         // Print the before and after types and values to the console.
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
             + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
-        return context.sync();
+        await context.sync();
     });
 }
 ```
@@ -282,12 +285,12 @@ function onTableChanged(eventArgs) {
 次のコード サンプルでは、表の 4 番目の列の値に従って降順で表データを並べ替えます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to sort data by the fourth column of the table (descending)
-    var sortRange = expensesTable.getDataBodyRange();
+    // Queue a command to sort data by the fourth column of the table (descending).
+    let sortRange = expensesTable.getDataBodyRange();
     sortRange.sort.apply([
         {
             key: 3,
@@ -295,12 +298,12 @@ Excel.run(function (context) {
         },
     ]);
 
-    // Sync to run the queued command in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued command in Excel.
+    await context.sync();
+});
 ```
 
-**金額 (降順) で並べ替えた表データ**
+### <a name="table-data-sorted-by-amount-descending"></a>Amount (降順) で並べ替えた表データ
 
 ![テーブル のデータを並べ替Excel。](../images/excel-tables-sort.png)
 
@@ -311,30 +314,30 @@ Excel.run(function (context) {
 次のコード サンプルでは、表内の **Amount** 列と **Category** 列にフィルターを適用しています。 フィルター処理の結果、**Category** が指定した値であり、**Amount** が表示されている行の平均値未満の行のみが表示されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to apply a filter on the Category column
-    filter = expensesTable.columns.getItem("Category").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.values,
-        values: ["Restaurant", "Groceries"]
+    // Queue a command to apply a filter on the Category column.
+    let categoryFilter = expensesTable.columns.getItem("Category").filter;
+    categoryFilter.apply({
+      filterOn: Excel.FilterOn.values,
+      values: ["Restaurant", "Groceries"]
     });
 
-    // Queue a command to apply a filter on the Amount column
-    var filter = expensesTable.columns.getItem("Amount").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.dynamic,
-        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    // Queue a command to apply a filter on the Amount column.
+    let amountFilter = expensesTable.columns.getItem("Amount").filter;
+    amountFilter.apply({
+      filterOn: Excel.FilterOn.dynamic,
+      dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    // Sync to run the queued commands in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued commands in Excel.
+    await context.sync();
+});
 ```
 
-**Category と Amount にフィルターを適用した表データ**
+### <a name="table-data-with-filters-applied-for-category-and-amount"></a>Category と Amount にフィルターを適用した表データ
 
 ![[テーブル] でフィルター処理されたExcel。](../images/excel-tables-filters-apply.png)
 
@@ -343,37 +346,35 @@ Excel.run(function (context) {
 次のコード サンプルでは、表に現在適用されているフィルターをクリアします。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.clearFilters();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**フィルターが適用されていない表データ**
+### <a name="table-data-with-no-filters-applied"></a>フィルターが適用されていない表データ
 
 ![テーブル のデータは、フィルター処理されていないExcel。](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
-次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すメソッド `getVisibleView()` を使用すると、列フィルターが適用されるたびにテーブルの表示内容を取得できます。
+次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すとおり、`getVisibleView()` メソッドを使用して、列フィルターが適用されているときに表に表示されるコンテンツを取得します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    var visibleRange = expensesTable.getDataBodyRange().getVisibleView();
+    let visibleRange = expensesTable.getDataBodyRange().getVisibleView();
     visibleRange.load("values");
 
-    return context.sync()
-        .then(function() {
-            console.log(visibleRange.values);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(visibleRange.values);
+});
 ```
 
 ## <a name="autofilter"></a>オートフィルター
@@ -383,9 +384,9 @@ Excel.run(function (context) {
 次のコードサンプルは、[前のコードサンプルと同じデータフィルタリング](#apply-filters-to-a-table)を示していますが、完全に自動フィルタを介して行われます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
         filterOn: Excel.FilterOn.values,
@@ -396,8 +397,8 @@ Excel.run(function (context) {
         dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `AutoFilter` は、ワークシートレベルでの範囲にも適用できます。 詳しくは、[Excel JavaScript APIを使用したワークシートの処理](excel-add-ins-worksheets.md#filter-data)を参照してください。
@@ -407,20 +408,20 @@ Excel.run(function (context) {
 次のコード サンプルでは、表に書式を適用します。 表のヘッダー行、表の本体、表の 2 行目、表の 1 列目にそれぞれ別の塗りつぶし色を指定します。 書式の指定に使用できるプロパティの詳細については、「[RangeFormat オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat)」を参照してください。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.getHeaderRowRange().format.fill.color = "#C70039";
     expensesTable.getDataBodyRange().format.fill.color = "#DAF7A6";
     expensesTable.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
     expensesTable.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**書式設定を適用後の表**
+### <a name="table-after-formatting-is-applied"></a>書式設定を適用後の表
 
 ![書式が適用された後のテーブルは、Excel。](../images/excel-tables-formatting-after.png)
 
@@ -429,11 +430,11 @@ Excel.run(function (context) {
 次のコード サンプルでは、データ範囲を作成し、その範囲を表に変換します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    // Define values for the range
-    var values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
+    // Define values for the range.
+    let values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
     ["Frames", 5000, 7000, 6544, 4377],
     ["Saddles", 400, 323, 276, 651],
     ["Brake levers", 12000, 8766, 8456, 9812],
@@ -441,8 +442,8 @@ Excel.run(function (context) {
     ["Mirrors", 225, 600, 923, 544],
     ["Spokes", 6005, 7634, 4589, 8765]];
 
-    // Create the range
-    var range = sheet.getRange("A1:E7");
+    // Create the range.
+    let range = sheet.getRange("A1:E7");
     range.values = values;
 
     if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
@@ -452,35 +453,35 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    // Convert the range to a table
-    var expensesTable = sheet.tables.add('A1:E7', true);
+    // Convert the range to a table.
+    let expensesTable = sheet.tables.add('A1:E7', true);
     expensesTable.name = "ExpensesTable";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**範囲データ (範囲を表に変換する前)**
+### <a name="data-in-the-range-before-the-range-is-converted-to-a-table"></a>範囲データ (範囲を表に変換する前)
 
 ![データの範囲内Excel。](../images/excel-ranges.png)
 
-**範囲データ (範囲を表に変換した後)**
+### <a name="data-in-the-table-after-the-range-is-converted-to-a-table"></a>表内のデータ (範囲を表に変換した後)
 
 ![テーブル内のデータは、Excel。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適した値に設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
 
-    var transactions = [
+    let transactions = [
       {
         "DATE": "1/1/2017",
         "MERCHANT": "The Phone Company",
@@ -495,7 +496,7 @@ Excel.run(function (context) {
       }
     ];
 
-    var newData = transactions.map(item =>
+    let newData = transactions.map(item =>
         [item.DATE, item.MERCHANT, item.CATEGORY, item.AMOUNT]);
 
     expensesTable.rows.add(null, newData);
@@ -507,11 +508,11 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい表**
+### <a name="new-table"></a>新しい表
 
 ![インポートされた JSON データの新しいテーブルが、Excel。](../images/excel-tables-create-from-json.png)
 

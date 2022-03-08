@@ -1,16 +1,21 @@
 ---
-title: JavaScript API を使用して図形Excelする
+title: JavaScript API を使用して図形をExcelする
 description: 図形をExcel図面レイヤーに配置するオブジェクトとして定義する方法についてExcel。
-ms.date: 01/14/2020
+ms.date: 02/17/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: e035774817c69f7672a2caeb109b9e2706a5efc8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341059"
 ---
-
-# <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形Excelする
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>JavaScript API を使用して図形をExcelする
 
 Excel図形は、図形の描画レイヤーに配置されるオブジェクトとして定義Excel。 つまり、セルの外側にあるものは図形です。 この記事では、図形および [ShapeCollection](/javascript/api/excel/excel.shapecollection) API と組み合わせて幾何学的図形[](/javascript/api/excel/excel.shape)、線、および画像を使用する方法について説明します。 [グラフ](/javascript/api/excel/excel.chart)については、独自の記事「[JavaScript API](excel-add-ins-charts.md) を使用してグラフをExcelします。
 
 次の図は、体温計を形成する図形を示しています。
-![図形として作成された体温計Excel。](../images/excel-shapes.png)
+![図形として作成された体温計Excelします。](../images/excel-shapes.png)
 
 ## <a name="create-shapes"></a>図形を作成する
 
@@ -35,16 +40,18 @@ Excel図形は、図形の描画レイヤーに配置されるオブジェクト
 ```js
 // This sample creates a rectangle positioned 100 pixels from the top and left sides
 // of the worksheet and is 150x150 pixels.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var rectangle = shapes.addGeometricShape(Excel.GeometricShapeType.rectangle);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+
+    let rectangle = shapes.addGeometricShape(Excel.GeometricShapeType.rectangle);
     rectangle.left = 100;
     rectangle.top = 100;
     rectangle.height = 150;
     rectangle.width = 150;
     rectangle.name = "Square";
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
 ### <a name="images"></a>画像
@@ -55,15 +62,15 @@ JPEG、PNG、SVG 画像は、ワークシートに図形として挿入できま
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
-var myFile = document.getElementById("selectedFile");
-var reader = new FileReader();
+let myFile = document.getElementById("selectedFile");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run(function (context) {
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var myBase64 = reader.result.toString().substr(startIndex + 7);
-        var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-        var image = sheet.shapes.addImage(myBase64);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let myBase64 = reader.result.toString().substr(startIndex + 7);
+        let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+        let image = sheet.shapes.addImage(myBase64);
         image.name = "Image";
         return context.sync();
     }).catch(errorHandlerFunction);
@@ -78,13 +85,13 @@ reader.readAsDataURL(myFile.files[0]);
 行がで作成されます `ShapeCollection.addLine`。 このメソッドには、行の開始点と終了点の左余白と上余白が必要です。 また、 [ConnectorType 列挙型を使用](/javascript/api/excel/excel.connectortype) して、エンドポイント間の行のコントルト方法を指定します。 次のコード サンプルでは、ワークシートに直線を作成します。
 
 ```js
-// This sample creates a straight line from [200,50] to [300,150] on the worksheet
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var line = shapes.addLine(200, 50, 300, 150, Excel.ConnectorType.straight);
+// This sample creates a straight line from [200,50] to [300,150] on the worksheet.
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let line = shapes.addLine(200, 50, 300, 150, Excel.ConnectorType.straight);
     line.name = "StraightLine";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 線は他の Shape オブジェクトに接続できます。 and `connectBeginShape` メソッド `connectEndShape` は、指定した接続ポイントの図形に線の開始位置と終了位置をアタッチします。 これらのポイントの `Shape.connectionSiteCount` 位置は図形によって異なりますが、アドインが境界外のポイントに接続しない場合に使用できます。 線は、and メソッドを使用して、接続されている図形から`disconnectBeginShape``disconnectEndShape`切断されます。
@@ -93,13 +100,13 @@ Excel.run(function (context) {
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var line = shapes.getItem("MyLine").line;
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let line = shapes.getItem("MyLine").line;
     line.connectBeginShape(shapes.getItem("LeftShape"), 0);
     line.connectEndShape(shapes.getItem("RightShape"), 3);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="move-and-resize-shapes"></a>図形の移動とサイズ変更
@@ -118,17 +125,19 @@ Excel.run(function (context) {
 ```js
 // In this sample, the shape "Octagon" is rotated 30 degrees clockwise
 // and scaled 25% larger, with the upper-left corner remaining in place.
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-    var shape = sheet.shapes.getItem("Octagon");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+
+    let shape = sheet.shapes.getItem("Octagon");
     shape.incrementRotation(30);
     shape.lockAspectRatio = true;
     shape.scaleWidth(
         1.25,
         Excel.ShapeScaleType.currentSize,
         Excel.ShapeScaleFrom.scaleFromTopLeft);
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
 ## <a name="text-in-shapes"></a>図形内のテキスト
@@ -139,38 +148,41 @@ Excel.run(function (context) {
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var wave = shapes.addGeometricShape(Excel.GeometricShapeType.wave);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let wave = shapes.addGeometricShape(Excel.GeometricShapeType.wave);
     wave.left = 100;
     wave.top = 400;
     wave.height = 50;
     wave.width = 150;
+
     wave.name = "Wave";
     wave.fill.setSolidColor("lightblue");
+
     wave.textFrame.textRange.text = "Shape text";
     wave.textFrame.textRange.font.color = "purple";
     wave.textFrame.horizontalAlignment = Excel.ShapeTextHorizontalAlignment.center;
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
-この `addTextBox` メソッドは、 `ShapeCollection` 白い背景と `GeometricShape` 黒い `Rectangle` テキストを持つ型を作成します。 これは、[挿入] タブの `addTextBox` [テキスト Excel] ボタンによって作成される操作と同じです。文字列引数を使用して、 のテキストを設定します。`TextRange`
+この `addTextBox` メソッドは、 `ShapeCollection` 白い背景と `GeometricShape` 黒い `Rectangle` テキストを持つ型を作成します。 これは、[挿入] タブ`addTextBox`の Excel の [テキスト ボックス] ボタンによって作成される操作と同じです。文字列引数を使用して、 のテキストを設定します。`TextRange`
 
 次のコード サンプルは、テキスト "Hello!" を含むテキスト ボックスの作成を示しています。
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var textbox = shapes.addTextBox("Hello!");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
     textbox.height = 20;
     textbox.width = 45;
     textbox.name = "Textbox";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="shape-groups"></a>図形グループ
@@ -182,26 +194,26 @@ Excel.run(function (context) {
 ```js
 // This sample takes three previously-created shapes ("Square", "Pentagon", and "Octagon")
 // and groups them into a single ShapeGroup.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var square = shapes.getItem("Square");
-    var pentagon = shapes.getItem("Pentagon");
-    var octagon = shapes.getItem("Octagon");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let square = shapes.getItem("Square");
+    let pentagon = shapes.getItem("Pentagon");
+    let octagon = shapes.getItem("Octagon");
 
-    var shapeGroup = shapes.addGroup([square, pentagon, octagon]);
+    let shapeGroup = shapes.addGroup([square, pentagon, octagon]);
     shapeGroup.name = "Group";
     console.log("Shapes grouped");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 // This sample moves the previously created shape group to the right by 50 pixels.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var shapeGroup = sheet.shapes.getItem("Group");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let shapeGroup = shapes.getItem("Group");
     shapeGroup.incrementLeft(50);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 > [!IMPORTANT]
@@ -212,16 +224,16 @@ Excel.run(function (context) {
 任意 `Shape` のオブジェクトをイメージに変換できます。 [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getasimage-member(1)) は base64 エンコードされた文字列を返します。 イメージの形式は、に渡される [PictureFormat](/javascript/api/excel/excel.pictureformat) 列挙型として指定されます `getAsImage`。
 
 ```js
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var shape = sheet.shapes.getItem("Image");
-    var stringResult = shape.getAsImage(Excel.PictureFormat.png);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let shape = shapes.getItem("Image");
+    let stringResult = shape.getAsImage(Excel.PictureFormat.png);
 
-    return context.sync().then(function () {
-        console.log(stringResult.value);
-        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    console.log(stringResult.value);
+    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+});
 ```
 
 ## <a name="delete-shapes"></a>図形を削除する
@@ -232,19 +244,20 @@ Excel.run(function (context) {
 
 ```js
 // This deletes all the shapes from "MyWorksheet".
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-    var shapes = sheet.shapes;
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+    let shapes = sheet.shapes;
 
     // We'll load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");
-    return context.sync().then(function () {
-        shapes.items.forEach(function (shape) {
-            shape.delete()
-        });
-        return context.sync();
-    }).catch(errorHandlerFunction);
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    shapes.items.forEach(function (shape) {
+        shape.delete();
+    });
+    
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>関連項目

@@ -1,12 +1,17 @@
 ---
-title: イベント ベースのOutlook用にアドインを構成する
+title: イベント ベースのOutlookアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 02/03/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340289"
 ---
-
-# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlook用にアドインを構成する
+# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlookアドインを構成する
 
 イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、特定のイベントに基づいて、特にすべてのアイテムに適用される操作に基づいてタスクを実行できます。 作業ウィンドウや UI レス機能と統合することもできます。
 
@@ -42,14 +47,14 @@ ms.localizationpriority: medium
 
 使用可能な場合にこれらのイベントをプレビューするには、次の手順を実行します。
 
-- 次のOutlook on the web。
-  - [対象のリリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+- 次のOutlook on the web:
+  - [対象となるリリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - () **の** ベータ ライブラリを参照CDN。https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
 - 新Outlook Mac UI プレビューの詳細については、次の操作を行います。
   - 最小必要なビルドは 16.54 (21101001)。 Insider プログラムOffice[参加](https://insider.office.com/join/Mac)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14511.10000 です。 Insider プログラムOffice[参加](https://insider.office.com/join/windows)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
-  - レジストリを構成します。 Outlookコンテンツ配信ネットワーク (CDN) から読み込む代わりに、Office.js の製品版とベータ版のローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ コピーに切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
+  - レジストリを構成します。 Outlookコンテンツ配信ネットワーク (Office.js) から読み込む代わりに、製品版とベータ版のローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ 版に切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
     1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`。
     1. という名前のエントリを追加 `EnableBetaAPIsInJavaScript` し、値をに設定します `1`。 レジストリは次の図のようになります。
 
@@ -135,6 +140,9 @@ ms.localizationpriority: medium
             <LaunchEvents>
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              
+              <!-- Other available events (currently released) -->
+              <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -142,8 +150,13 @@ ms.localizationpriority: medium
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
+              -->
+
+              <!-- Other available events (currently in preview) -->
+              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -162,7 +175,7 @@ ms.localizationpriority: medium
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -189,11 +202,18 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
 このシナリオでは、新しいアイテムを作成する処理を追加します。
 
-1. 同じクイック スタート プロジェクトで、コード エディター **で ./src/commands/commands.js** ファイルを開きます。
+1. 同じクイック スタート プロジェクトから、/src/ ディレクトリの **下に launchevent という名前** の **新しいフォルダーを作成** します。
 
-1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
+1. **./src/launchevent フォルダーで**、次の名前の新しいファイルを **launchevent.js**。
+
+1. コード エディターで **ファイル ./src/launchevent/launchevent.js** を開き、次の JavaScript コードを追加します。
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -204,23 +224,19 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-          "asyncContext" : event
+          "asyncContext": event
         },
         function (asyncResult) {
           // Handle success or error.
           if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
           }
-    
+
           // Call event.completed() after all work is done.
           asyncResult.asyncContext.completed();
         });
     }
-    ```
 
-1. ファイルの末尾に次の JavaScript コードを追加します。
-
-    ```js
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
     Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
@@ -231,16 +247,38 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 > [!IMPORTANT]
 > Windows: 現在、イベント ベースのアクティブ化の処理を実装する JavaScript ファイルではインポートはサポートされていません。
 
+## <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
+
+プロジェクトの **ルートwebpack.config.js** にあるファイルを開き、次の手順を実行します。
+
+1. オブジェクト内の `plugins` 配列を見つけて `config` 、配列の先頭にこの新しいオブジェクトを追加します。
+
+    ```js
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
+        },
+      ],
+    }),
+    ```
+
+1. 変更内容を保存します。
+
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
+1. プロジェクトのルート ディレクトリで次のコマンドを実行します。 実行すると、 `npm start`ローカル Web サーバーが起動し (まだ実行されていない場合)、アドインがサイドロードされます。
 
+    ```command&nbsp;line
+    npm run build
+    ```
     ```command&nbsp;line
     npm start
     ```
 
     > [!NOTE]
-    > アドインが自動的にサイドロードされていない場合は、[サイドロード Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) アドインの手順に従って、Outlook でアドインを手動でサイドロードするテストを行います。
+    > アドインが自動的にサイドロードされていない場合は、「[サイドロード Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) アドイン」の手順に従ってテストを行い、Outlook でアドインを手動でサイドロードします。
 
 1. Outlook on the web で新しいメッセージを作成します。
 
@@ -248,47 +286,30 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
 1. 新Outlook Mac UI プレビューで、新しいメッセージを作成します。
 
-    ![新規作成時に件名が設定された新Outlook Mac UI プレビューのメッセージ ウィンドウのスクリーンショット。](../images/outlook-mac-autolaunch.png)
+    ![新しい Mac UI プレビュー Outlookメッセージ ウィンドウのスクリーンショットを作成時に設定します。](../images/outlook-mac-autolaunch.png)
 
 1. [Outlook] でWindows新しいメッセージを作成します。
 
-    ![作成時に件名が設定されているOutlookのWindowsウィンドウのスクリーンショット。](../images/outlook-win-autolaunch.png)
+    ![作成時に設定された件名OutlookのWindowsウィンドウのスクリーンショット。](../images/outlook-win-autolaunch.png)
 
-    > [!NOTE]
-    > localhost からアドインを実行している場合は、「申し訳ありませんが、{ *your-add-in-name-here}* にアクセスできませんでした。」というエラーが表示されます。 ネットワーク接続が確立されている必要があります。 問題が解決しない場合は、後でもう一度お試しください。ループバックの除外を有効にする必要がある場合があります。
-    >
-    > 1. Outlook を終了します。
-    > 1. タスク マネージャー **を開** き、 **タスクmsoadfsb.exeが** 実行されていないか確認します。
-    > 1. (マニフェストの既定の `https://localhost` バージョン) を使用している場合は、次のコマンドを実行します。
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. 使用している場合は、次 `http://localhost`のコマンドを実行します。
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. Outlook を再起動します。
+    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="debug"></a>デバッグ
 
 アドインで起動イベント処理に変更を加える場合は、次の点に注意する必要があります。
 
-- マニフェストを更新した場合は、 [アドインを](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 削除してから、もう一度サイドロードします。
-- マニフェスト以外のファイルに変更を加えた場合は、OutlookでWindowsを閉じて再び開Outlook on the web。
+- マニフェストを更新した場合は、 [アドインを](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)削除してから、もう一度サイドロードします。 アプリでアプリを使用しているOutlook、Windows閉じて再度開きます。
+- マニフェスト以外のファイルに変更を加えた場合は、OutlookでWindowsを閉じて再び開くか、Outlook on the web を実行しているブラウザー タブを更新します。
 
-独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「Debug [your event-based Outlookアドイン」を参照してください](debug-autolaunch.md)。
+独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「イベント ベースのアドインをデバッグするOutlook[参照してください](debug-autolaunch.md)。
 
-ランタイム ログは、この機能に対して、Windows。 詳細については、「ランタイム ログを [使用してアドインをデバッグする」を参照してください](../testing/runtime-logging.md#runtime-logging-on-windows)。
+ランタイム ログは、この機能で使用することもできます。Windows。 詳細については、「ランタイム ログを [使用してアドインをデバッグする」を参照してください](../testing/runtime-logging.md#runtime-logging-on-windows)。
 
 ## <a name="deploy-to-users"></a>ユーザーへの展開
 
 イベント ベースのアドインを展開するには、イベント ベースのアドインを使用してマニフェストをアップロードMicrosoft 365 管理センター。 管理ポータルで、ナビゲーション ウィンドウで [**設定] セクション** を展開し、[統合アプリ **] を選択します**。 [統合アプリ **] ページで**、[カスタム アプリ] アップロード **を選択** します。
 
-![カスタム アプリのアクションを含む、Microsoft 365 管理センター統合アプリ ページアップロードスクリーンショット。](../images/outlook-deploy-event-based-add-ins.png)
+![カスタム アプリのアクションを含む、Microsoft 365 管理センターアプリの統合アップロードのスクリーンショット。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource とアプリ内 Office ストア: イベント ベースのアドインを展開したり、イベント ベースのアクティブ化機能を含める既存のアドインを更新したりする機能は、すぐに利用できる必要があります。
 
@@ -340,5 +361,6 @@ CORS の完全なサポートは近日公開予定です。
 - [イベント ベースのアドインの AppSource Outlookオプション](autolaunch-store-options.md)
 - [スマート アラートと OnMessageSend のチュートリアル](smart-alerts-onmessagesend-walkthrough.md)
 - PnP サンプル:
+  - [イベント ベースOutlookを使用して、添付ファイルの暗号化、会議出席依頼の出席者の処理、予定の日時の変更への対応を行います。](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Outlook イベントベースのアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
-  - [イベント ベースOutlookを使用して外部受信者にタグを付け](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+  - [Outlook イベントベースのアクティブ化を使用して、外部受信者をタグ付けする](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

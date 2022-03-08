@@ -1,14 +1,19 @@
 ---
 title: JavaScript API を使用Excel範囲
 description: JavaScript API を使用して範囲の行または列をグループ化してアウトラインを作成するExcel説明します。
-ms.date: 04/05/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 7a982fc9965772cfeb27934cf60cc4c83967ce51
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340800"
 ---
-
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>JavaScript API を使用してアウトラインExcelグループ化する
 
-この記事では、JavaScript API を使用してアウトラインの範囲をグループ化するExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用してアウトラインの範囲をグループ化する方法を示すExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>アウトラインの範囲の行または列をグループ化する
 
@@ -19,8 +24,8 @@ ms.localizationpriority: medium
 次のコード サンプルでは、行と列の両方に 2 つのレベルのグループを含むアウトラインを作成します。 次の図は、そのアウトラインのグループ化を示しています。 コード サンプルでは、グループ化されている範囲にアウトライン コントロールの行または列 (この例の "Totals") は含めされません。 グループは、コントロールの行または列ではなく、折りたたむものを定義します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Group the larger, main level. Note that the outline controls
     // will be on row 10, meaning 4-9 will collapse and expand.
@@ -40,8 +45,8 @@ Excel.run(function (context) {
     sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
     sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
     sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ![2 つのレベルの 2 次元アウトラインを持つ範囲。](../images/excel-outline.png)

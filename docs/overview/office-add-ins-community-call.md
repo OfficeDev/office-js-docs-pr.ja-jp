@@ -1,14 +1,14 @@
 ---
 title: Microsoft Officeアドインのコミュニティ呼び出し
 description: 毎月のMicrosoft Office、スケジュール、およびリソースを呼び出します。
-ms.date: 02/11/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f694d6e718f1e187a1e7b0314ddfa26a1d750a25
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 7cf5f15d44ddd24d9a34efc86ddac8b5a38e3005
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855556"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341045"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Officeアドインのコミュニティ呼び出し
 
@@ -16,12 +16,14 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 ## <a name="agenda-for-march-9th-call"></a>3 月 9 日の通話の議題
 
-3 月の議題は、通話の約 1 週間前に投稿されます。
+- SSO Graph CORS を使用してイベント ベースのアドインから Outlookサービスを使用する。
+- Excel API 1.15 プレビュー。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 
 以前のコミュニティ呼び出しを見逃しましたか? 次のブログリソースを参照して、議論に取り上げよう!
 
+- [2022 年 2 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
@@ -39,7 +41,7 @@ Microsoft Officeアドイン コミュニティ呼び出しは、毎月の呼び
 
 - [定期的な毎月のコミュニティ通話カレンダーの招待](https://aka.ms/officeaddinscommunitycall)
 - [Communityトピックの要求と質問を呼び出す](https://aka.ms/officeaddinsform)
-- [Microsoft 365開発者向け YouTube チャネル](https://aka.ms/m365devyoutube)
+- [Microsoft 365 YouTube チャネル](https://aka.ms/m365devyoutube)
 - [Microsoft 365 YouTube チャンネル](https://aka.ms/m365pnp/videos )
 - [Microsoft 365 PnP on Tech Community](https://aka.ms/m365pnp/community)
 - [Microsoft 365 PnP tech コミュニティ ブログ](https://aka.ms/m365pnp/community/blog)

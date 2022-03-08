@@ -1,19 +1,19 @@
 ---
-title: JavaScript API を使用して範囲をクリアExcel削除する
+title: JavaScript API を使用して範囲をクリアまたはExcelする
 description: JavaScript API を使用して範囲をクリアまたは削除するExcel説明します。
-ms.date: 04/02/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: ced04c207bef26c25818d3f4f6f6ed14452e4da6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7336a0e6485ce502216818b4a8cd077fed0069c3
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149874"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340709"
 ---
-# <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲をクリアExcel削除する
+# <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲をクリアまたはExcelする
 
-この記事では、JavaScript API を使用して範囲をクリアおよび削除するコード Excel示します。 オブジェクトでサポートされるプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲をクリアおよび削除するExcelを提供します。 オブジェクトでサポートされるプロパティと`Range`メソッドの完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -22,14 +22,14 @@ ms.locfileid: "59149874"
 次のコード サンプルは、範囲 **E2：E5** のセルの内容と書式をすべてクリアします。  
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("E2:E5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("E2:E5");
 
     range.clear();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-cleared"></a>範囲をクリアする前のデータ
@@ -45,14 +45,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、 **範囲 B4:E4** のセルを削除し、他のセルを上に移動して、削除されたセルで空いた領域を埋める。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B4:E4");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B4:E4");
 
     range.delete(Excel.DeleteShiftDirection.up);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-deleted"></a>範囲を削除する前のデータ
@@ -61,8 +61,7 @@ Excel.run(function (context) {
 
 ### <a name="data-after-range-is-deleted"></a>範囲を削除した後のデータ
 
-![範囲がExcel後のデータ。](../images/excel-ranges-after-delete.png)
-
+![範囲がExcelされた後のデータ。](../images/excel-ranges-after-delete.png)
 
 ## <a name="see-also"></a>関連項目
 

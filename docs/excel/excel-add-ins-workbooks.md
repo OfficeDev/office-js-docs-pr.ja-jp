@@ -1,14 +1,19 @@
 ---
 title: Excel JavaScript API を使用してブックを操作する
 description: JavaScript API を使用してブックまたはアプリケーション レベルの機能で一般的なタスクを実行するExcel説明します。
-ms.date: 06/07/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 4e07ac7ba679a7016ce19bfbce1b7570ddf29ee5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340555"
 ---
-
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してブックを操作する
 
-この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッド`Workbook`の完全な一覧については、「[Workbook Object (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.workbook)。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
+この記事では、Excel JavaScript API を使用して、ブックでタスクを実行する方法のコード サンプルを示しています。 オブジェクトがサポートするプロパティとメソッドの`Workbook`完全な一覧については、「[Workbook Object (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.workbook)。 この記事では、[Application](/javascript/api/excel/excel.application) オブジェクトを使用して実行するブック レベルのアクションについても説明します。
 
 Workbook オブジェクトは、Excel を操作するアドインのエントリ ポイントです。 このオブジェクトは、Excel データのアクセスや変更に使用するワークシート、テーブル、ピボットテーブル、その他のコレクションを保持します。 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) オブジェクトは、個々のワークシートを使用して、ブックのすべてのデータにアドインからアクセスできるようにします。 具体的には、アドインからワークシートの追加、ワークシート間の移動、ワークシート イベントへのハンドラーの割り当てができます。 ワークシートへのアクセスと編集の方法については、「[Excel JavaScript API を使用してワークシートを操作する](excel-add-ins-worksheets.md)」を参照してください。
 
@@ -17,24 +22,23 @@ Workbook オブジェクトは、Excel を操作するアドインのエント�
 Workbook オブジェクトには、ユーザーまたはアドインが選択したセルの範囲を取得する 2 つのメソッド `getActiveCell()` と `getSelectedRange()` があります。 `getActiveCell()` はブックからアクティブ セルを [Range オブジェクト](/javascript/api/excel/excel.range)として取得します。 次の例では、`getActiveCell()` を呼び出し、コンソールにセルのアドレスを表示します。
 
 ```js
-Excel.run(function (context) {
-    var activeCell = context.workbook.getActiveCell();
+await Excel.run(async (context) => {
+    let activeCell = context.workbook.getActiveCell();
     activeCell.load("address");
+    await context.sync();
 
-    return context.sync().then(function () {
-        console.log("The active cell is " + activeCell.address);
-    });
-}).catch(errorHandlerFunction);
+    console.log("The active cell is " + activeCell.address);
+});
 ```
 
 `getSelectedRange()` メソッドは現在選択されている単一の範囲を返します。 複数の範囲が選択されている場合は、InvalidSelection エラーがスローされます。 次の例では、`getSelectedRange()` を呼び出し、範囲の塗りつぶし色を黄色に設定します。
 
 ```js
-Excel.run(function(context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.format.fill.color = "yellow";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="create-a-workbook"></a>ブックを作成する
@@ -51,18 +55,18 @@ Excel.createWorkbook();
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(externalWorkbook);
         return context.sync();
-    }).catch(errorHandlerFunction);
+    });
 });
 
 // Read the file as a data URL so we can parse the base64-encoded string.
@@ -71,33 +75,33 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>既存のブックのコピーを現在のブックに挿入する
 
-前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット `insertWorksheetsFromBase64` ブックのワークシートのコピーを自体に挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。 
+前の例は、既存のブックから作成された新しいブックを示しています。 既存のブックの一部またはすべてを、アドインに関連付けられているブックにコピーすることもできます。 ブック [には](/javascript/api/excel/excel.workbook) 、ターゲット `insertWorksheetsFromBase64` ブックのワークシートのコピーを自体に挿入するメソッドがあります。 他のブックのファイルは、呼び出しと同様に、base64 エンコードされた文字列として渡 `Excel.createWorkbook` されます。
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> この`insertWorksheetsFromBase64`メソッドは、Excel Mac、Windows Web 上でサポートされています。 iOS ではサポートされていません。 さらに、このExcel on the webピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされていません。 これらのオブジェクトが存在する場合、メソッド`insertWorksheetsFromBase64`はエラーを`UnsupportedFeature`返Excel on the web。 
+> この`insertWorksheetsFromBase64`メソッドは、Excel Mac、Windowsでサポートされています。 iOS ではサポートされていません。 さらに、このExcel on the webでは、ピボットテーブル、グラフ、コメント、またはスライサー要素を持つソース ワークシートはサポートされません。 これらのオブジェクトが存在する場合、メソッド`insertWorksheetsFromBase64`はエラーを`UnsupportedFeature`返Excel on the web。
 
 次のコード サンプルは、別のブックから現在のブックにワークシートを挿入する方法を示しています。 このコード サンプルでは、 [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) まずオブジェクトを使用してブック ファイルを処理し、base64 エンコードされた文字列を抽出し、次にこの base64 エンコードされた文字列を現在のブックに挿入します。 新しいワークシートは、Sheet1 という名前のワークシートの後 **に挿入されます**。 `[]` [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) プロパティのパラメーターとして渡されます。 つまり、ターゲット ブックのすべてのワークシートが現在のブックに挿入されます。
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
         // Retrieve the current workbook.
-        var workbook = context.workbook;
+        let workbook = context.workbook;
             
         // Set up the insert options. 
-        var options = { 
+        let options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
             relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
@@ -118,16 +122,15 @@ reader.readAsDataURL(myFile.files[0]);
 アドインでは、ブックのシート構成を編集するユーザーの機能を制御できます。 Workbook オブジェクトの `protection` プロパティは [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) オブジェクトであり、`protect()` メソッドを備えています。 次の例では、ブックのシート構成の保護を切り替える基本的なシナリオを示します。
 
 ```js
-Excel.run(function (context) {
-    var workbook = context.workbook;
+await Excel.run(async (context) => {
+    let workbook = context.workbook;
     workbook.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!workbook.protection.protected) {
-            workbook.protection.protect();
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (!workbook.protection.protected) {
+        workbook.protection.protect();
+    }
+});
 ```
 
 `protect` メソッドは、オプションの文字列パラメーターを受け取ります。 この文字列は、ユーザーが保護をバイパスしてブックのシート構成を変更するために必要なパスワードを表します。
@@ -142,11 +145,11 @@ Excel.run(function (context) {
 Workbook オブジェクトは、[ドキュメント プロパティ](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75)と呼ばれる Office ファイルのメタデータにアクセスできます。 Workbook オブジェクトの `properties` プロパティは、これらのメタデータ値を含む [DocumentProperties](/javascript/api/excel/excel.documentproperties) オブジェクトです。 次の例は、プロパティを設定する方法を示 `author` しています。
 
 ```js
-Excel.run(function (context) {
-    var docProperties = context.workbook.properties;
+await Excel.run(async (context) => {
+    let docProperties = context.workbook.properties;
     docProperties.author = "Alex";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="custom-properties"></a>カスタム プロパティ
@@ -154,24 +157,23 @@ Excel.run(function (context) {
 カスタム プロパティを定義することもできます。 DocumentProperties オブジェクトには `custom` プロパティが含まれていて、ユーザー定義プロパティのキー値のペアのコレクションを表します。 次の例では、"Hello" という値を持つ **Introduction** という名前のカスタム プロパティを作成し、それを取得する方法を示します。
 
 ```js
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
     customDocProperties.add("Introduction", "Hello");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
-    var customProperty = customDocProperties.getItem("Introduction");
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
+    let customProperty = customDocProperties.getItem("Introduction");
     customProperty.load(["key, value"]);
+    await context.sync();
 
-    return context.sync().then(function() {
-        console.log("Custom key  : " + customProperty.key); // "Introduction"
-        console.log("Custom value : " + customProperty.value); // "Hello"
-    });
-}).catch(errorHandlerFunction);
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
 ```
 
 #### <a name="worksheet-level-custom-properties"></a>ワークシート レベルのカスタム プロパティ
@@ -179,31 +181,31 @@ Excel.run(function (context) {
 カスタム プロパティは、ワークシート レベルで設定することもできます。 これらはドキュメント レベルのカスタム プロパティに似ていますが、異なるワークシートで同じキーを繰り返す場合があります。 次の例は、現在のワークシートに値 "Alpha" を指定して **WorksheetGroup** という名前のカスタム プロパティを作成し、それを取得する方法を示しています。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Add the custom property.
-    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    let customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
     customWorksheetProperties.add("WorksheetGroup", "Alpha");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Load the keys and values of all custom properties in the current worksheet.
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
     worksheet.load("name");
 
-    var customWorksheetProperties = worksheet.customProperties;
-    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    let customWorksheetProperties = worksheet.customProperties;
+    let customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
     customWorksheetProperty.load(["key", "value"]);
 
-    return context.sync().then(function() {
-        // Log the WorksheetGroup custom property to the console.
-        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
-        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // Log the WorksheetGroup custom property to the console.
+    console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+    console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
+});
 ```
 
 ## <a name="access-document-settings"></a>ドキュメント設定へのアクセス
@@ -211,16 +213,15 @@ Excel.run(function (context) {
 ブックの設定は、カスタム プロパティのコレクションに似ています。 設定は 1 つの Excel ファイルとアドインのペアリングに固有であるのに対して、プロパティはファイルに接続しているだけである点が異なります。 次の例は、設定を作成してアクセスする方法を示しています。
 
 ```js
-Excel.run(function (context) {
-    var settings = context.workbook.settings;
+await Excel.run(async (context) => {
+    let settings = context.workbook.settings;
     settings.add("NeedsReview", true);
-    var needsReview = settings.getItem("NeedsReview");
+    let needsReview = settings.getItem("NeedsReview");
     needsReview.load("value");
 
-    return context.sync().then(function() {
-        console.log("Workbook needs review : " + needsReview.value);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Workbook needs review : " + needsReview.value);
+});
 ```
 
 ## <a name="access-application-culture-settings"></a>アプリケーション カルチャの設定にアクセスする
@@ -236,25 +237,25 @@ Excel.run(function (context) {
 ```js
 // This will convert a number like "14,37" to "14.37"
 // (assuming the system decimal separator is ".").
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var decimalSource = sheet.getRange("B2");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let decimalSource = sheet.getRange("B2");
+
     decimalSource.load("values");
     context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+    await context.sync();
 
-    return context.sync().then(function() {
-        var systemDecimalSeparator =
-            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
-        var oldDecimalString = decimalSource.values[0][0];
+    let systemDecimalSeparator =
+        context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+    let oldDecimalString = decimalSource.values[0][0];
 
-        // This assumes the input column is standardized to use "," as the decimal separator.
-        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+    // This assumes the input column is standardized to use "," as the decimal separator.
+    let newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
 
-        var resultRange = sheet.getRange("C2");
-        resultRange.values = [[newDecimalString]];
-        resultRange.format.autofitColumns();
-        return context.sync();
-    });
+    let resultRange = sheet.getRange("C2");
+    resultRange.values = [[newDecimalString]];
+    resultRange.format.autofitColumns();
+    await context.sync();
 });
 ```
 
@@ -267,39 +268,38 @@ Excel の Open XML **.xlsx** ファイル形式を使用すると、アドイン
 以下のサンプルは、カスタム XML パーツを使用する方法を示しています。 最初のコード ブロックは、XML データをドキュメントに埋め込む方法を示しています。 レビュー担当者のリストを保管してから、ブックの設定を使用して XML の `id` を保存して、後から取得できるようにします。 2 番目のブロックでは、後からその XML にアクセスする方法が示されています。 "ContosoReviewXmlPartId" 設定がロードされ、ブックの `customXmlParts` に渡されます。 それから、XML データがコンソールに出力されます。
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Add reviewer data to the document as XML
-    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
     customXmlPart.load("id");
+    await context.sync();
 
-    return context.sync().then(function() {
-        // Store the XML part's ID in a setting
-        var settings = context.workbook.settings;
-        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
-    });
-}).catch(errorHandlerFunction);
+    // Store the XML part's ID in a setting
+    let settings = context.workbook.settings;
+    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+});
 ```
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Retrieve the XML part's id from the setting
-    var settings = context.workbook.settings;
-    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+    let settings = context.workbook.settings;
+    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
 
-    return context.sync().then(function () {
-        if (xmlPartIDSetting.value) {
-            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-            var xmlBlob = customXmlPart.getXml();
+    await context.sync();
 
-            return context.sync().then(function () {
-                // Add spaces to make more human readable in the console
-                var readableXML = xmlBlob.value.replace(/></g, "> <");
-                console.log(readableXML);
-            });
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (xmlPartIDSetting.value) {
+        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+        let xmlBlob = customXmlPart.getXml();
+
+        await context.sync();
+
+        // Add spaces to make it more human-readable in the console.
+        let readableXML = xmlBlob.value.replace(/></g, "> <");
+        console.log(readableXML);
+    }
+});
 ```
 
 > [!NOTE]
@@ -346,26 +346,26 @@ context.application.suspendApiCalculationUntilNextSync();
 次のコード サンプルは、イベント ハンドラーを登録し `onActivated` 、コールバック関数を設定する方法を示しています。
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the workbook.
-    var workbook = context.workbook;
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the workbook.
+        let workbook = context.workbook;
+    
+        // Register the workbook activated event handler.
+        workbook.onActivated.add(workbookActivated);
+        await context.sync();
+    });
+}
 
-    // Register the workbook activated event handler.
-    workbook.onActivated.add(workbookActivated);
-
-    return context.sync();
-});
-
-function workbookActivated(event) {
-    Excel.run(function (context) {
+async function workbookActivated(event) {
+    await Excel.run(async (context) => {
         // Retrieve the workbook and load the name.
-        var workbook = context.workbook;
-        workbook.load("name");
-        
-        return context.sync().then(function () {
-            // Callback function for when the workbook is activated.
-            console.log(`The workbook ${workbook.name} was activated.`);
-        });
+        let workbook = context.workbook;
+        workbook.load("name");        
+        await context.sync();
+
+        // Callback function for when the workbook is activated.
+        console.log(`The workbook ${workbook.name} was activated.`);
     });
 }
 ```

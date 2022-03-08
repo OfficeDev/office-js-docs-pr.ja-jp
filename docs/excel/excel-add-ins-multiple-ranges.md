@@ -1,14 +1,14 @@
 ---
 title: Excel アドインで複数の範囲を同時に操作する
 description: JavaScript ライブラリExcelを使用して、複数の範囲で操作を実行し、プロパティを設定する方法について説明します。
-ms.date: 04/01/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 571e19814cb5f1b8d3117cd6cccbe18f584330d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 75b1248a15c37c548b11fa8ac47a809b045571e4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151494"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340912"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Excel アドインで複数の範囲を同時に操作する
 
@@ -31,9 +31,9 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `RangeAreas.getEntireColumn` と `RangeAreas.getEntireRow` は、`RangeAreas` に指定された全範囲のセルの列 (または行) すべてを表す、別の `RangeAreas` オブジェクトを返します。 たとえば、`RangeAreas` が "A1:C4" と "F14:L15" を表す場合、`RangeAreas.getEntireColumn` は "A:C" と "F:L" を表す `RangeAreas` オブジェクトを返します。
 - `RangeAreas.copyFrom` は、コピー操作のコピー元範囲を表す `Range` または `RangeAreas` パラメーターのいずれかを取得できます。
 
-#### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>RangeAreas でも利用可能な Range メンバーの全リスト
+### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>RangeAreas でも利用可能な Range メンバーの全リスト
 
-##### <a name="properties"></a>プロパティ
+#### <a name="properties"></a>プロパティ
 
 リストにあるプロパティを読み取るコードを書く前に、「[RangeAreas のプロパティの読み取り](#read-properties-of-rangeareas)」の内容を理解しておいてください。 繰り返される内容について細かい注意点があります。
 
@@ -49,7 +49,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>メソッド
+#### <a name="methods"></a>メソッド
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()` (オブジェクト `getOffsetRangeAreas` の名前 `RangeAreas` )
+- `getOffsetRange()` (オブジェクトの `getOffsetRangeAreas` 名前 `RangeAreas` )
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()` (オブジェクト `getUsedRangeAreas` の名前 `RangeAreas` )
-- `getUsedRangeOrNullObject()` (オブジェクト `getUsedRangeAreasOrNullObject` の名前 `RangeAreas` )
+- `getUsedRange()` (オブジェクトの `getUsedRangeAreas` 名前 `RangeAreas` )
+- `getUsedRangeOrNullObject()` (オブジェクトの `getUsedRangeAreasOrNullObject` 名前 `RangeAreas` )
 - `load()`
 - `set()`
 - `setDirty()`
@@ -79,7 +79,7 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 
 - `areas`: `RangeAreas` オブジェクトが表す全範囲を含む `RangeCollection` オブジェクト。 `RangeCollection` オブジェクトも新しいオブジェクトであり、他の Excel コレクション オブジェクトと類似しています。 これには、範囲を表す `Range` オブジェクトの配列である `items` プロパティがあります。
 - `areaCount`: `RangeAreas` で指定された範囲の合計数。
-- `getOffsetRangeAreas`: [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_) と同じように動作します。ただし、`RangeAreas` を返し、元の `RangeAreas` で指定された範囲の 1 つからの各オフセットである範囲を含みます。
+- `getOffsetRangeAreas`: [Range.getOffsetRange](/javascript/api/excel/excel.range#excel-excel-range-getoffsetrange-member(1)) と同じように動作します。ただし、`RangeAreas` を返し、元の `RangeAreas` で指定された範囲の 1 つからの各オフセットである範囲を含みます。
 
 ## <a name="create-rangeareas"></a>RangeAreas の作成
 
@@ -103,13 +103,13 @@ Excel JavaScript ライブラリを使用すると、同時に複数の範囲に
 次に、複数の範囲にプロパティを設定する例を示します。 この関数は、**F3:F5** と **H3:H5** の範囲を強調表示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 この例は、`getRanges` に渡す範囲のアドレスをハード コーディングできる場合や実行時に簡単に計算できる場合に適用されます。 たとえば、これが適切なのは次のような場合です。
@@ -119,7 +119,7 @@ Excel.run(function (context) {
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>複数の範囲からの特定のセルの取得
 
-`RangeAreas` オブジェクトの `getSpecialCells` メソッドと `getSpecialCellsOrNullObject` メソッドは、`Range` オブジェクトの同じ名前のメソッドと同じように機能します。 これらのメソッドでは、`RangeAreas.areas` コレクション内のすべての範囲から、指定された特性を持つセルが返されます。 特殊セルの詳細については、「範囲内の特殊な [セルを検索する」を参照してください](excel-add-ins-ranges-special-cells.md)。
+`RangeAreas` オブジェクトの `getSpecialCells` メソッドと `getSpecialCellsOrNullObject` メソッドは、`Range` オブジェクトの同じ名前のメソッドと同じように機能します。 これらのメソッドでは、`RangeAreas.areas` コレクション内のすべての範囲から、指定された特性を持つセルが返されます。 特殊なセルの詳細については、「範囲内の特殊 [なセルを検索する」を参照してください](excel-add-ins-ranges-special-cells.md)。
 
 `RangeAreas` オブジェクトで `getSpecialCells` メソッドまたは `getSpecialCellsOrNullObject` メソッドを呼び出す場合:
 
@@ -128,25 +128,22 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>RangeAreas のプロパティの読み取り
 
-`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが *できる* 場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンク ( ) の RGB コードがコンソールに記録されます。オブジェクト内の範囲は両方ともピンク色の塗りつぶしを持ち、両方とも列全体のため `#FFC0CB` `true` `RangeAreas` です。
+`RangeAreas` のプロパティ値の読み取りには、注意が必要です。`RangeAreas`内の範囲それぞれで、プロパティの値が異なる可能性があるためです。 一貫性のある値を返すことが *できる* 場合には返す、というのが一般的なルールです。 たとえば、次のコードでは、ピンク (`#FFC0CB`) `true` `RangeAreas` の RGB コードで、オブジェクト内の両方の範囲がピンク色の塗りつぶしを持ち、両方とも列全体のため、コンソールにログに記録されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    var rangeAreas = sheet.getRanges("F:F, H:H");  
+    let rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // #FFC0CB
-            console.log(rangeAreas.isEntireColumn); // true
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // #FFC0CB
+    console.log(rangeAreas.isEntireColumn); // true
+});
 ```
 
 一貫性を期待できない場合、事態は複雑となります。 `RangeAreas` プロパティの動作は、次の 3 つの原則に従います。
@@ -158,23 +155,20 @@ Excel.run(function (context) {
 たとえば、次のコードでは、1 つの範囲のみが列全体であり、1 つの範囲のみがピンクで塗りつぶされている `RangeAreas` を作成します。 コンソールには、塗りつぶし色の場合は `null`、`isEntireRow` プロパティの場合は `false`、`address` プロパティの場合は "Sheet1!F3:F5, Sheet1!H:H" ("Sheet1" はシート名) が表示されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H:H");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    var pinkColumnRange = sheet.getRange("H:H");
+    let pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // null
-            console.log(rangeAreas.isEntireColumn); // false
-            console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // null
+    console.log(rangeAreas.isEntireColumn); // false
+    console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
+});
 ```
 
 ## <a name="see-also"></a>関連項目

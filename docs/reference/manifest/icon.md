@@ -1,18 +1,34 @@
 ---
 title: マニフェスト ファイルの Icon 要素
 description: ボタン または メニュー コントロールの Image 要素を定義します。
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 9eb4ccf394bb1c894f2b17f34038ca64fee09dc5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467730"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341066"
 ---
 # <a name="icon-element"></a>Icon 要素
 
-Button コントロール **と Menu** コントロール [の Image](control-button.md) 要素 [を定義します](control-menu.md)。
+Button コントロールまたは Menu コントロール **の Image** 要素 [のセット](control-button.md)[を定義](control-menu.md)します。
+
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) 親 **VersionOverrides が** Taskpane 1.0 と入力されている場合。
+- 親 **VersionOverrides が Mail** 1.0 と入力されている場合のメールボックス [1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)。
+- 親 **VersionOverrides が Mail** 1.1 と入力されている場合のメールボックス [1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)。
 
 ## <a name="attributes"></a>属性
 
@@ -39,7 +55,7 @@ Button コントロール **と Menu** コントロール [の Image](control-bu
 ```
 
 > [!IMPORTANT]
-> この画像がアドインの代表的なアイコンである場合は、「Create effective [listings in AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) and within Office サイズと他の要件」を参照してください。
+> この画像がアドインの代表的なアイコンである場合は、「サイズや他の要件については、「[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) および Office 内で効果的なリストを作成する」を参照してください。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>モバイル フォーム ファクターの追加要件
 

@@ -1,70 +1,69 @@
 ---
 title: JavaScript API を使用して日付Excelする
 description: 日付をMoment-MSDateするには、JavaScript API Excelプラグインを使用します。
-ms.date: 04/02/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e09badf3bf6f848f96fc9e5864f383f781ef63f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: becbbc9deb6f07e244ed0aac1f04b3dad1a800eb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149844"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340569"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>JavaScript API と Excelプラグインを使用して日付Moment-MSDate作業する
 
-この記事では、JavaScript API と[Moment-MSDate](https://www.npmjs.com/package/moment-msdate)プラグインを使用して日付Excelする方法を示すコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については、 `Range` 次の[Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API と [Moment-MSDate](https://www.npmjs.com/package/moment-msdate) プラグインを使用して日付をExcelする方法を示すコード サンプルを提供します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、次のExcel[。Range クラス](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
-## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>日付をMoment-MSDateするには、このプラグインを使用する
+## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>日付をMoment-MSDateする場合は、このプラグインを使用します。
 
 [Moment JavaScript ライブラリ](https://momentjs.com/)により、日付とタイムスタンプが便利に使用できるようになります。 [Moment-MSDate プラグイン](https://www.npmjs.com/package/moment-msdate)は、日付と時刻の形式を Excel に適したものに変換します。 これは、[NOW 関数](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46)から返される形式と同じです。
 
-次のコードは **、B4** の範囲をモーメントのタイムスタンプに設定する方法を示しています。
+次のコードは、 **B4** の範囲をモーメントのタイムスタンプに設定する方法を示しています。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var now = Date.now();
-    var nowMoment = moment(now);
-    var nowMS = nowMoment.toOADate();
+    let now = Date.now();
+    let nowMoment = moment(now);
+    let nowMS = nowMoment.toOADate();
 
-    var dateRange = sheet.getRange("B4");
+    let dateRange = sheet.getRange("B4");
     dateRange.values = [[nowMS]];
 
     dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-次のコード サンプルは、セルから日付を取得し、その日付を他の形式に変換する同様の `Moment` 手法を示しています。
+次のコード サンプルは、 `Moment` セルから日付を取得し、その日付を他の形式に変換する同様の手法を示しています。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var dateRange = sheet.getRange("B4");
+    let dateRange = sheet.getRange("B4");
     dateRange.load("values");
 
-    return context.sync().then(function () {
-        var nowMS = dateRange.values[0][0];
+    await context.sync();
 
-        // log the date as a moment
-        var nowMoment = moment.fromOADate(nowMS);
-        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+    let nowMS = dateRange.values[0][0];
 
-        // log the date as a UNIX-style timestamp
-        var now = nowMoment.unix();
-        console.log(`get (timestamp): ${now}`);
-    });
-}).catch(errorHandlerFunction);
+    // Log the date as a moment.
+    let nowMoment = moment.fromOADate(nowMS);
+    console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+    // Log the date as a UNIX-style timestamp.
+    let now = nowMoment.unix();
+    console.log(`get (timestamp): ${now}`);
+});
 ```
 
-ユーザーが読み取り可能な形式で日付を表示するには、アドインで範囲の書式を設定する必要があります。 たとえば `"[$-409]m/d/yy h:mm AM/PM;@"` 、「12/3/18 3:57 PM」と表示されます。 日付と時刻の形式の詳細については、「数値書式のカスタマイズに関するガイドライン」の「日付と時刻の書式に関するガイドライン」 [を参照](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) してください。
-
+ユーザーが読み取り可能な形式で日付を表示するには、アドインで範囲の書式を設定する必要があります。 たとえば、「 `"[$-409]m/d/yy h:mm AM/PM;@"` 12/3/18 3:57 PM」と表示されます。 日付と時刻の形式の詳細については、「数値書式のカスタマイズに関するガイドライン」の「日付と時刻の書式に関するガイドライン」 [を参照](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) してください。
 
 ## <a name="see-also"></a>関連項目
 

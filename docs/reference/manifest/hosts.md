@@ -1,20 +1,34 @@
 ---
 title: マニフェスト ファイルの Hosts 要素
-description: Office アドインをアクティブにする Office クライアント アプリケーションを指定します。
-ms.date: 10/09/2018
+description: アドインがOfficeするクライアント アプリケーションOfficeを指定します。
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2684753fc32a295d7e177ef3bf668c194458128e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9ea6cc9745f47b6e9b1c9bb0232b744304078053
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151446"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341073"
 ---
 # <a name="hosts-element"></a>Hosts 要素
 
-Office アドインをアクティブにする Office クライアント アプリケーションを指定します。 **Host** 要素のコレクションとその設定が含まれます。 
+アドインがOfficeするクライアント アプリケーションOfficeを指定します。 **Host** 要素のコレクションとその設定が含まれます。 
 
-[VersionOverrides](versionoverrides.md) ノードに含まれる場合、この要素は、マニフェストの親部分の **Hosts** 要素よりも優先されます。 
+## <a name="as-child-of-versionoverrides-element"></a>VersionOverrides 要素の子として
+
+このセクションの情報 *は、***Hosts** 要素が [VersionOverrides の子である場合にのみ適用されます](versionoverrides.md)。
+
+この要素は、基本マニフェスト **の Hosts** 要素をオーバーライドします。
+
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="child-elements"></a>子要素
 

@@ -1,18 +1,32 @@
 ---
 title: マニフェスト ファイルの Action 要素
 description: この要素は、ユーザーがボタンまたはメニュー コントロールを選択するときに実行するアクションを指定します。
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eee17864ecacf101d7fbfe3519b3da500768deb
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 21c8f9a6345641f23aad70efed67c9c45f72a1c8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467872"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340415"
 ---
 # <a name="action-element"></a>Action 要素
 
-ユーザーが Button コントロールまたは Menu コントロールを選択するときに実行[するアクションを](control-button.md)[指定します](control-menu.md)。
+ユーザーが Button コントロールまたは Menu コントロールを選択するときに実行[するアクションを](control-button.md)[指定](control-menu.md)します。
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) 親 **VersionOverrides が** Taskpane 1.0 と入力されている場合。
+- 親 **VersionOverrides が Mail** 1.0 と入力されている場合のメールボックス [1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)。
+- 親 **VersionOverrides が Mail** 1.1 と入力されている場合のメールボックス [1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)。
 
 ## <a name="attributes"></a>属性
 
@@ -42,7 +56,7 @@ ms.locfileid: "62467872"
 
 ## <a name="functionname"></a>FunctionName
 
-**xsi:type** が "ExecuteFunction" のときに必ず指定する要素です。実行する関数の名前を指定します。関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
+**xsi:type** `ExecuteFunction`が . 実行する関数の名前を指定します。 関数は、[FunctionFile](functionfile.md) 要素に指定されたファイルに含まれています。
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -52,7 +66,7 @@ ms.locfileid: "62467872"
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-**xsi:type が "** ShowTaskpane" の場合は必須の要素です。 この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で、Resources 要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
+**xsi:type** `ShowTaskpane`が . この操作のソース ファイルの場所を指定します。 **resid 属性** は 32 文字以内で、Resources 要素の **Urls** 要素の **Url** 要素の **id** 属性の値に設定 [する必要](resources.md)があります。
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -62,7 +76,19 @@ ms.locfileid: "62467872"
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。作業ウィンドウ コンテナーの ID を指定します。複数の "ShowTaskpane" の操作があり、それぞれに対して独立したウィンドウを開く場合は、異なる **TaskpaneId** を使用します。同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。ユーザーが同じ **TaskpaneId** を共有するコマンドを選択した場合、ウィンドウ コンテナーは開いたままですが、ウィンドウのコンテンツは対応する操作の "SourceLocation" に置き換えられます。
+**xsi:type** `ShowTaskpane`が . 作業ウィンドウ コンテナーの ID を指定します。 複数のアクションがある場合 `ShowTaskpane` は、それぞれ独立したウィンドウが必要な場合は、別の **TaskpaneId** を使用します。 同じウィンドウを共有する異なる操作に対しては、同じ **TaskpaneId** を使用します。 ユーザーが同じ **TaskpaneId** を共有するコマンドを選択すると、ウィンドウ コンテナーは開いたままですが、ウィンドウの内容は対応する Action に置き換えます `SourceLocation`。
+
+**アドインの種類:** 作業ウィンドウ
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > この要素は、Outlook ではサポートされていません。
@@ -104,7 +130,19 @@ ms.locfileid: "62467872"
 
 ## <a name="title"></a>役職
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
+**xsi:type** `ShowTaskpane`が . この操作に関する、作業ウィンドウのカスタム タイトルを指定します。
+
+**アドインの種類:** 作業ウィンドウ
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > この子要素は、アドインOutlookサポートされていません。
@@ -134,12 +172,24 @@ ms.locfileid: "62467872"
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-**xsi:type** が "ShowTaskpane" の場合に省略可能な要素。 これを収容している [VersionOverrides](versionoverrides.md) 要素は、`xsi:type` 属性の値が `VersionOverridesV1_1` になっている必要があります。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
+**xsi:type** `ShowTaskpane`が . 含まれている [VersionOverrides 要素](versionoverrides.md) には **、xsi:type 属性値が** 必要です `VersionOverridesV1_1`。 作業ウィンドウのピン留めをサポートする場合は、この要素に `true` の値を含めます。 ユーザーは、作業ウィンドウをピン留めできるようになります。ピン留めすると、選択を変更したときも作業ウィンドウが開いたままになります。 詳細については、「[Outlook にピン留め可能な作業ウィンドウを実装する](../../outlook/pinnable-taskpane.md)」を参照してください。
+
+**アドインの種類:** メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [Mailbox 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 > [!IMPORTANT]
-> 要素は`SupportsPinning`要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) で導入されましたが、現在サポートされているのは、次を使用Microsoft 365サブスクライバーのみです。
+> **SupportPinning 要素** は要件セット [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) で導入されましたが、現在サポートされているのは、以下を使用する Microsoft 365サブスクライバーのみです。
 >
-> - Outlook 2016以降 (Windows 7628.1000 以降のビルド)
+> - Outlook 2016以降 (ビルド 7628.1000 以降) Windows(ビルド 7628.1000 以降)
 > - Outlook 2016以降の Mac (ビルド 16.13.503 以降)
 > - モダン Outlook on the web
 

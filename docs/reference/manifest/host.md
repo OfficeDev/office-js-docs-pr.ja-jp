@@ -1,14 +1,14 @@
 ---
 title: マニフェスト ファイルの Host 要素
 description: アドインでアクティブ化する Office アプリケーションの種類を個別に指定します。
-ms.date: 11/05/2019
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e262183f11361d02d1a710d1f442539a8e936bcd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ea0f5c8bc07c72c0c888fb56b40d98c6030c2ebc
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154711"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340688"
 ---
 # <a name="host-element"></a>Host 要素
 
@@ -53,13 +53,25 @@ ms.locfileid: "59154711"
 
 ## <a name="versionoverrides-node"></a>VersionOverrides ノード
 
-[VersionOverrides](versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。
+[VersionOverrides](versionoverrides.md) で定義されている場合、ホストの種類は `xsi:type` 属性によって決定されます。 
+
+この要素は、基本マニフェスト **の Hosts** 要素をオーバーライドします。
+
+**アドインの種類:** 作業ウィンドウ, メール
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ### <a name="attributes"></a>属性
 
 |  属性  |  必須  |  説明  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  はい  | これらの設定が適用Officeアプリケーションについて説明します。|
+|  [xsi:type](#xsitype)  |  はい  | これらの設定が適用Officeアプリケーションを指定します。|
 
 ### <a name="child-elements"></a>子要素
 

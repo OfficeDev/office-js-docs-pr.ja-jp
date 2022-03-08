@@ -1,10 +1,15 @@
 ---
 title: Excel JavaScript API を使用してイベントを操作する
 description: JavaScript オブジェクトのイベントExcel一覧です。 これには、イベント ハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
-ms.date: 12/06/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 8bc1dcad8bccb51dbcedfee741954fabf6967670
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340583"
 ---
-
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 
 この記事では、Excel のイベント操作に関連する重要な概念について説明します。また、Excel JavaScript API を使用したイベント ハンドラーの登録、イベントの処理、およびイベント ハンドラーの削除の方法を示すコード例も提供します。
@@ -69,14 +74,12 @@ Excel の既定の動作に準拠する変更により、それに対応する�
 次のコード例では、ワークシートの `onChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録します。 このコードでは、そのワークシートでデータが変更されたときに、`handleChange` 関数を実行するように指定しています。
 
 ```js
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     worksheet.onChanged.add(handleChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onChanged event in the worksheet.");
-        });
+    await context.sync();
+    console.log("Event handler successfully registered for onChanged event in the worksheet.");
 }).catch(errorHandlerFunction);
 ```
 
@@ -85,56 +88,48 @@ Excel.run(function (context) {
 前の例で示したように、イベント ハンドラーの登録時には、特定のイベントが発生したときに実行する関数を指定します。 その関数は、目的のシナリオに必要なアクションを実行するように設計できます。 次のコード例は、イベントに関する情報を単にコンソールに出力するイベント ハンドラー関数を示しています。
 
 ```js
-function handleChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Change type of event: " + event.changeType);
-                console.log("Address of event: " + event.address);
-                console.log("Source of event: " + event.source);
-            });
+async function handleChange(event) {
+    await Excel.run(async (context) => {
+        await context.sync();        
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);       
     }).catch(errorHandlerFunction);
 }
 ```
 
 ## <a name="remove-an-event-handler"></a>イベント ハンドラーを削除する
 
-次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。 イベント ハンドラーを削除 `RequestContext` するには、イベント ハンドラーの作成に使用する必要があります。 
+次のコード例では、ワークシートの `onSelectionChanged` イベントに対応するイベント ハンドラーを **Sample** という名前で登録して、そのイベントの発生時に実行される `handleSelectionChange` 関数を定義しています。 また、そのイベント ハンドラーを削除するために、後から呼び出すことができる `remove()` 関数も定義しています。 イベント ハンドラーを削除 `RequestContext` するには、イベント ハンドラーの作成に使用する必要があります。
 
 ```js
-var eventResult;
+let eventResult;
 
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     eventResult = worksheet.onSelectionChanged.add(handleSelectionChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
-        });
-}).catch(errorHandlerFunction);
-
-function handleSelectionChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Address of current selection: " + event.address);
-            });
-    }).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
+  });
 }
 
-function remove() {
-    return Excel.run(eventResult.context, function (context) {
-        eventResult.remove();
+async function handleSelectionChange(event) {
+  await Excel.run(async (context) => {
+    await context.sync();
+    console.log("Address of current selection: " + event.address);
+  });
+}
 
-        return context.sync()
-            .then(function() {
-                eventResult = null;
-                console.log("Event handler successfully removed.");
-            });
-    }).catch(errorHandlerFunction);
+async function remove() {
+  await Excel.run(eventResult.context, async (context) => {
+    eventResult.remove();
+    await context.sync();
+    
+    eventResult = null;
+    console.log("Event handler successfully removed.");
+  });
 }
 ```
 
@@ -149,19 +144,20 @@ function remove() {
 次のコード サンプルは、イベントのオンとオフを切り替える方法を示しています。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     context.runtime.load("enableEvents");
-    return context.sync()
-        .then(function () {
-            var eventBoolean = !context.runtime.enableEvents;
-            context.runtime.enableEvents = eventBoolean;
-            if (eventBoolean) {
-                console.log("Events are currently on.");
-            } else {
-                console.log("Events are currently off.");
-            }
-        }).then(context.sync);
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    let eventBoolean = !context.runtime.enableEvents;
+    context.runtime.enableEvents = eventBoolean;
+    if (eventBoolean) {
+        console.log("Events are currently on.");
+    } else {
+        console.log("Events are currently off.");
+    }
+    
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>関連項目

@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してグラフを操作する
-description: JavaScript API を使用してグラフ タスクを示すExcelサンプルです。
-ms.date: 11/29/2021
+description: JavaScript API を使用してグラフ タスクを示すExcelサンプル。
+ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: fa9409370d08329a288ba16d6cbb69bbd6c88f7c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855612"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340786"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してグラフを操作する
 
@@ -20,48 +20,50 @@ and オブジェクトがサポートするプロパティとメソッドの完�
 次のコード サンプルでは、**Sample** というワークシートにグラフを作成します。 グラフは、範囲 **A1:B13** のデータに基づいた **折れ線** グラフです。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var dataRange = sheet.getRange("A1:B13");
-    var chart = sheet.charts.add("Line", dataRange, "auto");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let dataRange = sheet.getRange("A1:B13");
+    let chart = sheet.charts.add(
+      Excel.ChartType.line, 
+      dataRange, 
+      Excel.ChartSeriesBy.auto);
 
     chart.title.text = "Sales Data";
-    chart.legend.position = "right"
+    chart.legend.position = Excel.ChartLegendPosition.right;
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新しい折れ線グラフ**
+### <a name="new-line-chart"></a>新しい折れ線グラフ
 
 ![グラフの新しいExcel。](../images/excel-charts-create-line.png)
-
 
 ## <a name="add-a-data-series-to-a-chart"></a>データ系列をグラフに追加する
 
 次のコード サンプルは、ワークシートの最初のグラフにデータ系列を追加します。 新しいデータ系列は **2016** という名前の列に対応し、範囲 **D2:D5** のデータに基づいています。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var chart = sheet.charts.getItemAt(0);
-    var dataRange = sheet.getRange("D2:D5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let chart = sheet.charts.getItemAt(0);
+    let dataRange = sheet.getRange("D2:D5");
 
-    var newSeries = chart.series.add("2016");
+    let newSeries = chart.series.add("2016");
     newSeries.setValues(dataRange);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**2016 データ系列が追加される前のグラフ**
+### <a name="chart-before-the-2016-data-series-is-added"></a>2016 データ系列が追加される前のグラフ
 
-![2016 Excel前のグラフを追加しました。](../images/excel-charts-data-series-before.png)
+![2016 Excel前のグラフが追加されました。](../images/excel-charts-data-series-before.png)
 
-**2016 データ系列が追加された後のグラフ**
+### <a name="chart-after-the-2016-data-series-is-added"></a>2016 データ系列が追加された後のグラフ
 
 ![2016 Excelデータ系列が追加された後のグラフ。](../images/excel-charts-data-series-after.png)
 
@@ -70,17 +72,17 @@ Excel.run(function (context) {
 次のコード サンプルは、ワークシートの最初のグラフのタイトルを **Sales Data by Year** に設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.title.text = "Sales Data by Year";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**タイトル設定後のグラフ**
+### <a name="chart-after-title-is-set"></a>タイトル設定後のグラフ
 
 ![グラフにタイトルが含Excel。](../images/excel-charts-title-set.png)
 
@@ -93,36 +95,36 @@ Excel.run(function (context) {
 次のコード サンプルは、ワークシートの最初のグラフの、項目軸のタイトルを **Product** に設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.categoryAxis.title.text = "Product";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**項目軸のタイトルが設定された後のグラフ**
+### <a name="chart-after-title-of-category-axis-is-set"></a>項目軸のタイトルが設定された後のグラフ
 
-![グラフに軸のタイトルが含Excel。](../images/excel-charts-axis-title-set.png)
+![グラフの軸のタイトルがExcel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>軸の表示単位を設定する
 
 次のコード サンプルは、ワークシートの最初のグラフの、数値軸の表示単位を **Hundreds** に設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.displayUnit = "Hundreds";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**数値軸の表示単位が設定された後のグラフ**
+### <a name="chart-after-display-unit-of-value-axis-is-set"></a>数値軸の表示単位が設定された後のグラフ
 
 ![グラフに軸表示単位をExcel。](../images/excel-charts-axis-display-unit-set.png)
 
@@ -131,17 +133,17 @@ Excel.run(function (context) {
 次のコード サンプルは、ワークシートの最初のグラフの、数値軸の主な枠線を非表示にします。 に設定すると、グラフの値軸の大きなグリッド線を表示 `chart.axes.valueAxis.majorGridlines.visible` できます `true`。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.majorGridlines.visible = false;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**枠線が非表示にされたグラフ**
+### <a name="chart-with-gridlines-hidden"></a>枠線が非表示にされたグラフ
 
 ![グリッド線が非表示のグラフは、Excel。](../images/excel-charts-gridlines-removed.png)
 
@@ -152,18 +154,18 @@ Excel.run(function (context) {
 次のコード サンプルは、**Sample** という名前のワークシートの、最初のグラフの最初の系列に移動平均の近似曲線を追加します。近似曲線は 5 期間にわたる移動平均を示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
     seriesCollection.getItemAt(0).trendlines.add("MovingAverage").movingAveragePeriod = 5;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**移動平均の近似曲線が記入されたグラフ**
+#### <a name="chart-with-moving-average-trendline"></a>移動平均の近似曲線が記入されたグラフ
 
 ![グラフ内の移動平均の傾向線Excel。](../images/excel-charts-create-trendline.png)
 
@@ -172,19 +174,19 @@ Excel.run(function (context) {
 次のコード サンプルは、`Linear`Sample という名前のワークシートの最初のグラフの最初の系列の傾向線を **入力します。**
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
-    var series = seriesCollection.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
+    let series = seriesCollection.getItemAt(0);
     series.trendlines.getItem(0).type = "Linear";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**線形の近似曲線が記入されたグラフ**
+#### <a name="chart-with-linear-trendline"></a>線形の近似曲線が記入されたグラフ
 
 ![グラフに線形の傾向線Excel。](../images/excel-charts-trendline-linear.png)
 
@@ -199,12 +201,12 @@ Excel.run(function (context) {
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 
 // and then adjusts the display and format of that data table.
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the chart on the "Sample" worksheet.
-    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+    let chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
 
     // Get the chart data table object and load its properties.
-    var chartDataTable = chart.getDataTableOrNullObject();
+    let chartDataTable = chart.getDataTableOrNullObject();
     chartDataTable.load();
 
     // Set the display properties of the chart data table.
@@ -215,13 +217,13 @@ Excel.run(function (context) {
     chartDataTable.showOutlineBorder = true;
 
     // Retrieve the chart data table format object and set font and border properties. 
-    var chartDataTableFormat = chartDataTable.format;
+    let chartDataTableFormat = chartDataTable.format;
     chartDataTableFormat.font.color = "#B76E79";
     chartDataTableFormat.font.name = "Comic Sans";
     chartDataTableFormat.border.color = "blue";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 次のスクリーンショットは、前のコード サンプルが作成するデータ テーブルを示しています。
@@ -233,14 +235,14 @@ Excel.run(function (context) {
 グラフを Excel の外部で画像としてレンダリングできます。 `Chart.getImage` からは、グラフを JPEG 画像として表す base 64 エンコード文字列が返されます。 次のコードでは、画像の文字列を取得してコンソールに表示する方法を示します。
 
 ```js
-Excel.run(function (context) {
-    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    var imageAsString = chart.getImage();
-    return context.sync().then(function () {
-        console.log(imageAsString.value);
-        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
-    });
-}).catch(errorHandlerFunction);
+await Excel.run(async (context) => {
+    let chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    let imageAsString = chart.getImage();
+    await context.sync();
+    
+    console.log(imageAsString.value);
+    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+});
 ```
 
 `Chart.getImage` は、省略可能なパラメーターとして幅、高さ、自動調整モードの 3 つを受け取ります。

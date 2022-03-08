@@ -1,24 +1,28 @@
 ---
 title: JavaScript API を使用して、非バウンド範囲に対する読み取りExcel書き込み
-description: JavaScript API を使用して、Excel範囲の読み取りまたは書き込みを行う方法について説明します。
-ms.date: 04/05/2021
+description: JavaScript API を使用して、Excel範囲を読み取りまたは書き込みする方法について説明します。
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: a7b2a564377d0dab73d4f3ad6d3aacf2219ddeae
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152820"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340954"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>JavaScript API を使用して、非バウンド範囲に対する読み取りExcel書き込み
 
-この記事では、JavaScript API を使用して、非バウンド範囲に対する読み取りExcel説明します。 オブジェクトがサポートするプロパティとメソッドの完全な一覧については `Range` [、「Excel。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して、非バウンド範囲に対する読み取りExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
-非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 以下に例を示します。
+非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 例:
 
-- 列全体で構成される範囲アドレス:<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- 行全体で構成される範囲アドレス:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- 列全体で構成される範囲アドレス。
+  - `C:C`
+  - `A:F`
+- 行全体で構成される範囲アドレス。
+  - `2:2`
+  - `1:4`
 
 ## <a name="read-an-unbounded-range"></a>無制限の範囲の読み取り
 
@@ -26,11 +30,11 @@ API が無制限の範囲を取得する要求を行う場合 (`getRange('C:C')`
 
 ## <a name="write-to-an-unbounded-range"></a>無制限の範囲への書き込み
 
-入力要求が大きすぎるため、セル レベルのプロパティ (、 など) を非バウンド `values` `numberFormat` `formula` 範囲に設定することはできません。 たとえば、次のコード例は、非バウンド範囲を指定しようとして `values` 無効です。 非バウンド範囲のセル レベルのプロパティを設定しようとすると、API はエラーを返します。
+入力要求が大きすぎる`values`ため、セル レベルのプロパティ (`numberFormat``formula`、 など) を非バウンド範囲に設定することはできません。 たとえば、次のコード例は `values` 、非バウンド範囲を指定しようとして無効です。 非バウンド範囲のセル レベルのプロパティを設定しようとすると、API はエラーを返します。
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 

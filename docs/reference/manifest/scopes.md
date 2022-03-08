@@ -1,18 +1,33 @@
 ---
 title: マニフェスト ファイルの Scopes 要素
 description: Scopes 要素には、アドインが外部リソースに接続するために必要なアクセス許可が含まれる。
-ms.date: 10/25/2021
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e8a19a7aa73efa6aac00c915fde8d2b8647bad
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 883a1e318df7262bf8cdbd9d97b9d02d201066d8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681536"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340401"
 ---
 # <a name="scopes-element"></a>Scopes 要素
 
 Microsoft などの外部リソースに対してアドインに必要なアクセス許可がGraph。 Microsoft Graphリソースである場合、AppSource は Scopes 要素を使用して同意ダイアログ ボックスを作成します。 ユーザーがストアからアドインをインストールすると、ユーザーの Microsoft Graph のデータに対する指定されたアクセス許可をアドインに付与するように要求されます。
+
+**アドインの種類:** 作業ウィンドウ、メール、コンテンツ
+
+**次の VersionOverrides スキーマでのみ有効です**。
+
+- 作業ウィンドウ 1.0
+- コンテンツ 1.0
+- メール 1.0
+- メール 1.1
+
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**次の要件セットに関連付けられている**。
+
+- [IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)
 
 **スコープは** 、マニフェスト内の [WebApplicationInfo](webapplicationinfo.md) 要素の子要素です。
 

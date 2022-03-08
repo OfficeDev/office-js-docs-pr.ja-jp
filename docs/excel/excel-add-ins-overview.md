@@ -1,16 +1,16 @@
 ---
 title: Excel アドインの概要
 description: Excel アドインを使用すると、Windows、Mac、iPad、ブラウザーなどの複数のプラットフォームで Excel アプリケーションの機能を拡張できます。
-ms.date: 10/14/2020
+ms.date: 02/16/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f4141fb743e61605906d4460025f6570ce243480
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 84246ce43df4b442e32771ee36afe1309e95b7fb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514090"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340870"
 ---
 # <a name="excel-add-ins-overview"></a>Excel アドインの概要
 
@@ -61,8 +61,6 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 アドイン コマンドは、Excel UI を拡張する UI 要素であり、アドインのアクションを開始します。アドイン コマンドを使って、Excel のリボンにボタンを追加したり、コンテキスト メニューに項目を追加したりできます。ユーザーがアドイン コマンドを選択するときは、JavaScript コードの実行や、作業ウィンドウでのアドインのページの表示といったアクションを開始します。
 
-**アドイン コマンド**
-
 ![Excel のアドイン コマンド。](../images/excel-add-in-commands-script-lab.png)
 
 コマンドの機能、サポートされているプラットフォーム、およびアドイン コマンド開発のベスト プラクティスについては、「[Excel、Word、および PowerPoint のアドイン コマンド](../design/add-in-commands.md)」を参照してください。
@@ -70,8 +68,6 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 ### <a name="task-panes"></a>作業ウィンドウ
 
 作業ウィンドウは、通常 Excel 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行して Excel ドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
-
-**作業ウィンドウ**
 
 ![Excel の作業ウィンドウ アドイン。](../images/excel-add-in-task-pane-insights.png)
 
@@ -81,8 +77,6 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 開発者は、カスタム関数を使用して関数をアドインの一部として JavaScript で定義することによって、Excel に新しい関数を追加できます。 ユーザーは Excel 内から、`SUM()` などの Excel のあらゆるネイティブ関数の場合と同じようにカスタム関数にアクセスできます。
 
-**カスタム関数**
-
 ![MYFUNCTION.SPHEREVOLUME カスタム関数を EXCEL ワークシートのセルへ挿入するエンド ユーザーを示すアニメーション画像。](../images/SphereVolumeNew.gif)
 
 カスタム関数の詳細については、「[Excel でカスタム関数を作成する](custom-functions-overview.md)」を参照してください。
@@ -91,8 +85,6 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 
 ダイアログ ボックスは、作業中の Excel アプリケーション ウィンドウの手前に浮動するサーフェスです。 ダイアログ ボックスは、作業ウィンドウに直接開くことができないサインイン ページの表示、ユーザーによるアクションを確認するための要求、作業ウィンドウ内で再生すると小さすぎるビデオのホストなどの作業に使用できます。 Excel アドインでダイアログ ボックスを開くには、[ダイアログ API](/javascript/api/office/office.ui) を使用します。
 
-**ダイアログ ボックス**
-
 ![Excel のアドイン ダイアログ ボックス。](../images/excel-add-in-dialog-choose-number.png)
 
 ダイアログ ボックスとダイアログ API の詳細については、「[Office アドインのダイアログ ボックス](../design/dialog-boxes.md)」と「[Office アドインでダイアログ API を使用する](../develop/dialog-api-in-office-add-ins.md)」を参照してください。
@@ -100,8 +92,6 @@ Web アプリケーションは、任意の Web サーバー上でホストで�
 ### <a name="content-add-ins"></a>コンテンツ アドイン
 
 コンテンツ アドインは、Excel ドキュメントに直接埋め込むことができるサーフェスです。 コンテンツ アドインを使用すると、グラフ、データのビジュアル化、メディアなど豊富な Web ベース オブジェクトをワークシートに埋め込んだり、Excel ドキュメントの変更またはデータ ソースのデータの表示のためのコードを実行するインターフェイス コントロールへのアクセスをユーザーに提供したりできます。 機能を直接ドキュメントに埋め込む場合は、コンテンツ アドインを使用します。
-
-**コンテンツ アドイン**
 
 ![Excel のコンテンツ アドイン。](../images/excel-add-in-content-map.png)
 

@@ -3,16 +3,16 @@ ms.date: 05/17/2020
 description: 作業ウィンドウを使用しないExcelカスタム関数を使用してユーザーを認証します。
 title: UI レスカスタム関数の認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a003dbcf3c36842c2b5c98aba7844c9e53e012
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 946800cf884f903e0794702d32ffb7e1075e1ca3
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074239"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340275"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>UI レスカスタム関数の認証
 
-一部のシナリオでは、作業ウィンドウまたは他のユーザー インターフェイス要素 (UI レスのカスタム関数) を使用しないカスタム関数は、保護されたリソースにアクセスするためにユーザーを認証する必要があります。 UI レスのカスタム関数は JavaScript 専用ランタイムで実行されます。 この理由から、JavaScript 専用ランタイムと、オブジェクトと Dialog API を使用するほとんどのアドインで使用される一般的なブラウザー エンジン ランタイムとの間でデータを前後に渡す必要があります。 `OfficeRuntime.storage`
+一部のシナリオでは、作業ウィンドウまたは他のユーザー インターフェイス要素 (UI レスのカスタム関数) を使用しないカスタム関数は、保護されたリソースにアクセスするためにユーザーを認証する必要があります。 UI レスのカスタム関数は JavaScript 専用ランタイムで実行されます。 この理由から、JavaScript `OfficeRuntime.storage` 専用ランタイムと、オブジェクトと Dialog API を使用するほとんどのアドインで使用される一般的なブラウザー エンジン ランタイムとの間でデータを前後に渡す必要があります。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -20,25 +20,25 @@ ms.locfileid: "62074239"
 
 ## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage オブジェクト
 
-UI レスのカスタム関数で使用される JavaScript 専用ランタイムは、通常はデータを格納するグローバル ウィンドウでオブジェクト `localStorage` を使用できません。 代わりに [、OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) を使用してデータを設定および取得することで、UI レスのカスタム関数と作業ウィンドウ間でデータを共有する必要があります。
+UI レスのカスタム関数で使用される JavaScript `localStorage` 専用ランタイムは、通常はデータを格納するグローバル ウィンドウでオブジェクトを使用できません。 代わりに、 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) を使用してデータを設定および取得することで、UI レスのカスタム関数と作業ウィンドウ間でデータを共有する必要があります。
 
 ### <a name="suggested-usage"></a>おすすめの使用法
 
-UI レスのカスタム関数から認証する必要がある場合は、アクセス トークンが既に取得 `storage` 済みか確認します。 取得されていない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得して、後で使用するために `storage` に保存します。
+UI `storage` レスのカスタム関数から認証する必要がある場合は、アクセス トークンが既に取得済みか確認します。 取得されていない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得して、後で使用するために `storage` に保存します。
 
 ## <a name="dialog-api"></a>ダイアログ API
 
 トークンが存在しない場合は、ユーザーにサインインを求めるダイアログ API を表示する必要があります。 ユーザーが資格情報を入力すると、結果のアクセストークンが `storage` に保存されます。
 
 > [!NOTE]
-> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムの Dialog オブジェクトとは若干異なる Dialog オブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれますが、JavaScript 専用ランタイムでユーザーを認証 `OfficeRuntime.Dialog` するために使用します。
+> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムの Dialog オブジェクトとは若干異なる Dialog オブジェクトを使用します。 これらはどちらも "Dialog API" `OfficeRuntime.Dialog` と呼ばれますが、JavaScript 専用ランタイムでユーザーを認証するために使用します。
 
 この基本的な手順を次の図に示します。 点線は、UI レスのカスタム関数とアドインの作業ウィンドウが、アドイン全体の両方の一部であり、個別のランタイムを使用します。
 
 1. UI レスのカスタム関数呼び出しは、ブック内のセルからExcelします。
 2. UI レスのカスタム関数は、ユーザー `Dialog` 資格情報を Web サイトに渡す場合に使用します。
 3. この Web サイトは、UI レスのカスタム関数にアクセス トークンを返します。
-4. その後、UI レスのカスタム関数は、このアクセス トークンを `storage` .
+4. その後、UI レスのカスタム関数は、このアクセス トークンを `storage`.
 5. アドインの作業ウィンドウは、`storage` からトークンにアクセスします。
 
 ![ダイアログ API を使用してアクセス トークンを取得し、OfficeRuntime.storage API を介して作業ウィンドウとトークンを共有するカスタム関数の図。](../images/authentication-diagram.png "認証図。")
@@ -47,7 +47,7 @@ UI レスのカスタム関数から認証する必要がある場合は、ア�
 
 次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage)したコードサンプルです。 UI レスのカスタム関数と作業ウィンドウ間でデータを共有する完全な例については、このコード サンプルを参照してください。
 
-UI レスのカスタム関数が認証された場合、アクセス トークンを受け取り、そのトークンを格納する必要があります `storage` 。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 この関数は UI レスのカスタム関数で、たとえばユーザーの値 `storeValue` を格納します。 必要なトークン値を格納するように変更できます。
+UI レスのカスタム関数が認証された場合、アクセス トークンを受け取り、そのトークンを格納する必要があります `storage`。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 この `storeValue` 関数は UI レスのカスタム関数で、たとえばユーザーの値を格納します。 必要なトークン値を格納するように変更できます。
 
 ```js
 /**
@@ -90,12 +90,12 @@ Office アドインは web ベースで、あらゆる web 認証技術を使用
 
 カスタム関数を開発する場合は、次の場所を使用してデータを格納しないようにします。
 
-- `localStorage`: UI レスのカスタム関数はグローバル オブジェクトにアクセスできないので、に格納されている `window` データにアクセスできない `localStorage` 。
+- `localStorage`: UI レスのカスタム関数はグローバル `window` オブジェクトにアクセスできないので、に格納されているデータにアクセスできない `localStorage`。
 - `Office.context.document.settings`: この場所は安全ではないため、アドインを使用しているユーザーが情報を抽出できます。
 
 ## <a name="dialog-box-api-example"></a>ダイアログ ボックス API の例
 
-次のコード サンプルでは、関数は API の関数を `getTokenViaDialog` `Dialog` 使用 `displayWebDialogOptions` してダイアログ ボックスを表示します。 このサンプルは、認証方法を示すのではなく、オブジェクトの機能 `Dialog` を示すサンプルです。
+次のコード サンプルでは、関数は `getTokenViaDialog` `Dialog` API の関数を使用して `displayWebDialogOptions` ダイアログ ボックスを表示します。 このサンプルは、認証方法を `Dialog` 示すのではなく、オブジェクトの機能を示すサンプルです。
 
 ```JavaScript
 /**
@@ -142,9 +142,10 @@ function getTokenViaDialog(url) {
 ```
 
 ## <a name="next-steps"></a>次の手順
+
 UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
 
 ## <a name="see-also"></a>関連項目
 
-* [UI レス のカスタム関数Excelランタイム](custom-functions-runtime.md)
+* [UI レスのカスタム関数Excelランタイム](custom-functions-runtime.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

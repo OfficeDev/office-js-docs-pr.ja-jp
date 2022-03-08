@@ -1,14 +1,19 @@
 ---
 title: JavaScript API を使用して重複Excel削除する
 description: JavaScript API を使用して重複Excelする方法について説明します。
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 80e1227e06f177d0e37cc2750a7830c727a59436
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340576"
 ---
-
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>JavaScript API を使用して重複Excel削除する
 
-この記事では、JavaScript API を使用して範囲内の重複エントリを削除するExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
+この記事では、JavaScript API を使用して範囲内の重複エントリを削除するコード サンプルExcel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
 ## <a name="remove-rows-with-duplicate-entries"></a>重複するエントリがある行を削除する
 
@@ -24,23 +29,23 @@ ms.localizationpriority: medium
 次のコード サンプルは、最初の列に重複する値を持つエントリの削除を示しています。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:D11");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B2:D11");
 
-    var deleteResult = range.removeDuplicates([0],true);
+    let deleteResult = range.removeDuplicates([0],true);
     deleteResult.load();
 
-    return context.sync().then(function () {
-        console.log(deleteResult.removed + " entries with duplicate names removed.");
-        console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    console.log(deleteResult.removed + " entries with duplicate names removed.");
+    console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
+});
 ```
 
 ### <a name="data-before-duplicate-entries-are-removed"></a>重複するエントリが削除される前のデータ
 
-![範囲のExcelの重複メソッドが実行される前のデータ。](../images/excel-ranges-remove-duplicates-before.png)
+![範囲の remove duplicates メソッドExcel実行する前に、データ内のデータを指定します。](../images/excel-ranges-remove-duplicates-before.png)
 
 ### <a name="data-after-duplicate-entries-are-removed"></a>重複するエントリが削除された後のデータ
 

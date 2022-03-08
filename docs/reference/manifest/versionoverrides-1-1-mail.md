@@ -1,21 +1,21 @@
 ---
 title: メール アドインのマニフェスト ファイル内の VersionOverrides 1.1 要素
 description: アドイン マニフェスト (XML) ファイルの VersionOverrides 1.1 要素 (メール) Officeドキュメントを参照してください。
-ms.date: 01/04/2022
+ms.date: 02/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d3187b1c6c60db47e23709f21f264d3c3b0538e4
-ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
+ms.openlocfilehash: 7e826dad6e4586c83ece8aaa7b083f74b69fade0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "62042200"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340667"
 ---
 # <a name="versionoverrides-11-element-in-the-manifest-file-for-a-mail-add-in"></a>メール アドインのマニフェスト ファイル内の VersionOverrides 1.1 要素
 
 この要素には、基本マニフェストでサポートされていない機能の情報が含まれています。
 
 > [!NOTE]
-> この記事では、要素の属性とバリエーションに関する重要な情報を含む [VersionOverrides](versionoverrides.md)要素の概要を理解している必要があります。
+> この記事では、要素の属性とバリエーションに関する重要な情報を含む [VersionOverrides](versionoverrides.md) 要素の概要を理解している必要があります。
 
 **アドインの種類:** メール
 
@@ -23,7 +23,7 @@ ms.locfileid: "62042200"
 
 - メール 1.1
 
-詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 **次の要件セットに関連付けられている**。
 
@@ -32,25 +32,25 @@ ms.locfileid: "62042200"
 
 ## <a name="child-elements"></a>子要素
 
-次の表は **、VersionOverrides** 要素のバージョン 1.1 にのみ適用され、メール アドインにのみ適用されます。
+次の表は、 **VersionOverrides** 要素のバージョン 1.1 にのみ適用され、メール アドインにのみ適用されます。
 
 > [!NOTE]
-> iOS では、サポート `<WebApplicationInfo>` されているのは唯一です。 **VersionOverrides** の他のすべての子要素は無視されます。
+> iOS では、 **WebApplicationInfo だけが** サポートされています。 **VersionOverrides の他のすべての子要素は** 無視されます。
 
 |  要素 |  必須  |  説明  |
 |:-----|:-----|:-----|
 |  [説明](#description)    |  いいえ   |  アドインについての説明。 |
-|  [Requirements](requirements.md)  |  いいえ   |  親のマークアップを有効にするためにサポートする必要がある最小要件セット `VersionOverrides` を指定します。 これは、マニフェスト *の基本* 部分の要素よりも常に `Requirements` 制限が厳しい必要があります。|
+|  [Requirements](requirements.md)  |  いいえ   |  親 **VersionOverrides** のマークアップを有効にするためにサポートする必要がある最小要件セットを指定します。 これは、マニフェストの *基本* 部分の **Requirements** 要素よりも常に制限が厳しい必要があります。|
 |  [Hosts](hosts.md)                |  はい  |  アプリケーションのコレクションをOfficeします。 子 Hosts 要素は、マニフェストの親部分にある Hosts 要素をオーバーライドします。  |
 |  [Resources](resources.md)    |  はい  | マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。|
 |  [EquivalentAddins](equivalentaddins.md)    |  いいえ  | Web アドインと同等のネイティブ (COM/XLL) アドインを指定します。 同等のネイティブ アドインがインストールされている場合、Web アドインはアクティブ化されません。|
 |  **VersionOverrides**    |  いいえ  | 現在、メール アドインの VersionOverrides 1.1 では使用できません。 |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  いいえ  | セキュリティで保護されたトークン発行者とのアドインの登録に関する詳細 (V2.0 などAzure Active Directory指定します。 |
-|  [ExtendedPermissions](extendedpermissions.md) |  なし  |  拡張アクセス許可のコレクションを指定します。 |
+|  [ExtendedPermissions](extendedpermissions.md) |  いいえ  |  拡張アクセス許可のコレクションを指定します。 |
 
 ### <a name="description"></a>説明
 
-アドインの説明です。 これは、マニフェスト内の任意の親部分の `Description` 要素を上書きします。 説明のテキストは、**Resources** 要素の [LongString](resources.md) 要素の子要素に含まれています。 `resid`Description 要素の **属性** は 32 文字以内で、テキストを含む要素の属性の値 `id` `String` に設定されます。
+アドインの説明です。 マニフェストのすべての親部分の **Description** 要素を上書きします。 説明のテキストは、**Resources** 要素の [LongString](resources.md) 要素の子要素に含まれています。 Description `resid` 要素の属性は 32 `id` 文字以内で、Resources 要素に含まれる **ShortString** 要素の子要素の属性の値と一致 [する必要](resources.md)があります。
 
 **アドインの種類:** 作業ウィンドウ, メール
 
@@ -60,19 +60,19 @@ ms.locfileid: "62042200"
 - メール 1.0
 - メール 1.1
 
-詳細については、「マニフェストの [バージョンオーバーライド」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+詳細については、「Version [overrides in the manifest」を参照してください](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 **次の要件セットに関連付けられている**。
 
-- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) 親が `<VersionOverrides>` Taskpane 1.0 型の場合。
-- [親が Mail 1.0](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) と入力されている場合のメールボックス `<VersionOverrides>` 1.3。
-- [親が Mail 1.1](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) と入力されている場合のメールボックス `<VersionOverrides>` 1.5。
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) 親 **VersionOverrides が** Taskpane 1.0 と入力されている場合。
+- 親 **VersionOverrides が Mail** 1.0 と入力されている場合のメールボックス [1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)。
+- 親 **VersionOverrides が Mail** 1.1 と入力されている場合のメールボックス [1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)。
 
 ## <a name="example"></a>例
 
-次に簡単な例を示します。 詳細な例については、アドイン コード サンプルのサンプル アドインOffice[を参照してください](https://github.com/OfficeDev/PnP-OfficeAddins)。
+次に簡単な例を示します。 より複雑な例については、アドイン コード サンプルのサンプル アドインOffice[を参照してください](https://github.com/OfficeDev/PnP-OfficeAddins)。
 
-次に示すのは、一般的な要素の例です。一部の子要素は必須ではなく、通常 `<VersionOverrides>` は使用されます。
+次に示すのは、一般的な **VersionOverrides** 要素の例です。一部の子要素は必須ではなく、通常は使用されます。
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">
