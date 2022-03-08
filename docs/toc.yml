@@ -252,8 +252,6 @@ items:
                   - name: 概要
                     href: develop/develop-add-ins-visual-studio.md
                     displayName: Visual Studio
-                  - name: Visual Studio で Office アドインをデバッグする
-                    href: develop/debug-office-add-ins-in-visual-studio.md
                   - name: Visual Studio で JavaScript IntelliSense を利用できるようにする
                     href: develop/get-javascript-intellisense-in-visual-studio.md
                   - name: JavaScript プロジェクトを TypeScript に変換する
@@ -282,9 +280,10 @@ items:
                 href: testing/debug-add-ins-using-devtools-edge-chromium.md
               - name: Visual Studio Code と Edge Chromium WebView2 を使用してデバッグする
                 href: testing/debug-desktop-using-edge-chromium.md
-                displayName: 'debug, windows'
               - name: Visual Studio Code と Edge Legacy WebView を使用してデバッグする
                 href: testing/debug-with-vs-extension.md
+              - name: Visual Studio で Office アドインをデバッグする
+                href: develop/debug-office-add-ins-in-visual-studio.md
               - name: Internet Explorer 11 でテストする
                 href: testing/ie-11-testing.md
           - name: Web ブラウザー
