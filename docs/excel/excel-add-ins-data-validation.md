@@ -1,10 +1,15 @@
 ---
 title: Excel の範囲にデータの入力規則を追加する
-description: JavaScript API Excelを使用して、ブック内のテーブル、列、行、その他の範囲に自動データ検証を追加する方法について説明します。
-ms.date: 03/19/2019
+description: JavaScript API Excelにより、ブック内のテーブル、列、行、その他の範囲に自動データ検証をアドインで追加する方法について説明します。
+ms.date: 02/16/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: e2f77bcfad39addbda2ad14044ceffef2141bed7
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340121"
 ---
-
 # <a name="add-data-validation-to-excel-ranges"></a>Excel の範囲にデータの入力規則を追加する
 
 Excel の JavaScript ライブラリには、ブック内の表、列、行、その他の範囲に自動のデータの入力規則をアドインで追加できる API が用意されています。 データ検証の概念と用語を理解するには、ユーザーが UI を使用してデータ検証を追加する方法に関する以下のExcelしてください。
@@ -18,7 +23,7 @@ Excel の JavaScript ライブラリには、ブック内の表、列、行、�
 `Range.dataValidation` プロパティは [DataValidation](/javascript/api/excel/excel.datavalidation) オブジェクトを取得しますが、これは Excel でデータの入力規則をプログラムにより制御するためのエントリ ポイントになります。 `DataValidation` オブジェクトには 5 つのプロパティがあります。
 
 - `rule` &#8212; 範囲の有効データの構成要素を定義します。 「[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)」を参照してください。
-- `errorAlert` &#8212; ユーザーが無効なデータを入力した場合にエラーがポップアップ表示されるかどうかを指定し、アラートのテキスト、タイトル、スタイルを定義します。たとえば、**情報提供**、**警告**、**停止** などです。 「[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)」を参照してください。
+- `errorAlert` &#8212; ユーザーが無効なデータを入力した場合にエラーがポップアップするかどうかを指定し、警告テキスト、タイトル、およびスタイルを定義します。たとえば、 `information`、 、 `warning`と です `stop`。 「[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)」を参照してください。
 - `prompt` &#8212; ユーザーが範囲の上にカーソルを動かすとダイアログが表示されるかどうかを指定し、表示されるダイアログ メッセージを定義します。 「[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)」を参照してください。
 - `ignoreBlanks` &#8212; データの入力規則を範囲内の空白セルに適用するかどうかを指定します。 既定値は `true` です。
 - `type` &#8212; WholeNumber、Date、TextLength などの入力規則のタイプの読み取り専用 ID です。これは `rule` プロパティを設定すると間接的に設定されます。
@@ -40,44 +45,44 @@ Excel の JavaScript ライブラリには、ブック内の表、列、行、�
 
 次に、入力規則を作成する例を示します。 このコードについては、次の点に注意してください。
 
-- `operator` は二項演算子 "GreaterThan" です。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値は左側のオペランドになり、`formula1` で指定された値は右側のオペランドになります。 そのため、この規則では、0 より大きい整数のみが有効になります。
+- は `operator` バイナリ演算子です `greaterThan`。 二項演算子を使用する際は必ず、ユーザーがセルに入力しようとする値は左側のオペランドになり、`formula1` で指定された値は右側のオペランドになります。 そのため、この規則では、0 より大きい整数のみが有効になります。
 - `formula1` はハードコーディングされた値です。 コーディングの時点でその正しい値がわからない場合は、その値に Excel の数式 (文字列) を使用することもできます。 たとえば、"=A3" や "=SUM(A4,B5)" を `formula1` の値にすることもできます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
 
     range.dataValidation.rule = {
             wholeNumber: {
                 formula1: 0,
-                operator: "GreaterThan"
+                operator: Excel.DataValidationOperator.greaterThan
             }
         };
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
-その他の二項演算子のリストについては、「[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)」を参照してください。 
+その他の二項演算子のリストについては、「[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)」を参照してください。
 
-また、2 個の三項演算子、"Between" と "NotBetween" もあります。 これらを使用するには、省略可能な `formula2` プロパティを指定する必要があります。 `formula1` and `formula2`の値はバウンディング オペランドです。 ユーザーがセルに入力しようとする値は、第三の (評価済み) オペランドです。 "Between" 演算子の使用例を次に示します。
+また、2 つの 3 項演算子があります。 `between` `notBetween` これらを使用するには、省略可能な `formula2` プロパティを指定する必要があります。 `formula1` and `formula2`の値はバウンディング オペランドです。 ユーザーがセルに入力しようとする値は、第三の (評価済み) オペランドです。 "Between" 演算子の使用例を次に示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
 
     range.dataValidation.rule = {
             decimal: {
                 formula1: 0,
                 formula2: 100,
-                operator: "Between"
+              operator: Excel.DataValidationOperator.between
             }
         };
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 次の 2 つのルール プロパティは、値として [DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation) オブジェクトをとります。
@@ -85,23 +90,23 @@ Excel.run(function (context) {
 - `date`
 - `time`
 
-`DateTimeDataValidation` オブジェクトは `BasicDataValidation` と同様に構成されています。つまり、プロパティ `formula1`、`formula2`、および `operator` があり、同じ方法で使用されます。 ただし、数式プロパティで数値が使用できない代わりに [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) を入力できる点が異なります。 次に、2018 年 4 月の最初の週の日付として有効な値を定義する例を示します。 
+`DateTimeDataValidation` オブジェクトは `BasicDataValidation` と同様に構成されています。つまり、プロパティ `formula1`、`formula2`、および `operator` があり、同じ方法で使用されます。 ただし、数式プロパティで数値が使用できない代わりに [ISO 8606 datetime](https://www.iso.org/iso-8601-date-and-time-format.html) 文字列 (または Excel の式) を入力できる点が異なります。 次に、有効な値を 2022 年 4 月の最初の週の日付として定義する例を示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
 
     range.dataValidation.rule = {
             date: {
-                formula1: "2018-04-01",
-                formula2: "2018-04-08",
-                operator: "Between"
+                formula1: "2022-04-01",
+                formula2: "2022-04-08",
+                operator: Excel.DataValidationOperator.between
             }
         };
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ### <a name="list-validation-rule-type"></a>リスト入力規則のタイプ
@@ -113,10 +118,10 @@ Excel.run(function (context) {
 - `inCellDropDown` プロパティは、ユーザーがセルを選択したときにセルにドロップダウン コントロールを表示するかどうかを指定します。 `true` に設定した場合、ドロップダウンには `source` からの値のリストが表示されます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");   
-    var nameSourceRange = context.workbook.worksheets.getItem("Names").getRange("A1:A3");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");   
+    let nameSourceRange = context.workbook.worksheets.getItem("Names").getRange("A1:A3");
 
     range.dataValidation.rule = {
         list: {
@@ -125,7 +130,7 @@ Excel.run(function (context) {
         }
     };
 
-    return context.sync();
+    await context.sync();
 })
 ```
 
@@ -138,10 +143,9 @@ Excel.run(function (context) {
 - `SEARCH(A2,B2)` は A2 内の文字列の開始位置 (B2 内の文字列での) を返します。 A2 が B2 に含まれていない場合は数値を返しません。 `ISNUMBER()` はブール値を返します。 そのため、`formula` プロパティは、**コメント** 列の有効なデータが **アスリート名** 列内の文字列を含まないデータであることを示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
-    var commentsRange = sheet.tables.getItem("AthletesTable").columns.getItem("Comments").getDataBodyRange();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let commentsRange = sheet.tables.getItem("AthletesTable").columns.getItem("Comments").getDataBodyRange();
 
     commentsRange.dataValidation.rule = {
             custom: {
@@ -149,33 +153,33 @@ Excel.run(function (context) {
             }
         };
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ## <a name="create-validation-error-alerts"></a>入力規則のエラー アラートを作成する
 
 ユーザーがセルに無効なデータを入力しようとした際に表示される、カスタムのエラー アラートを作成できます。 次に簡単な例を示します。 このコードについては、次の点に注意してください。
 
-- `style` プロパティは、ユーザーが情報アラート、警告、または "停止" アラートを取得するかどうかを決定します。 ユーザーによる無効なデータの追加を実際に防止するのは `Stop` のみです。 いずれにせよ、`Warning` と `Information` のポップアップには、ユーザーが無効なデータを入力できるオプションがあります。
-- `showAlert` プロパティの既定値は `true` です。 つまり、Excelメッセージ、タイトル、およびスタイルに設定または設定するカスタム アラートを作成しない限り、一般的なアラート (`Stop`種類) `false` `showAlert` がポップアップします。 このコードでは、カスタムのメッセージとタイトルを設定します。
+- `style` プロパティは、ユーザーが情報アラート、警告、または "停止" アラートを取得するかどうかを決定します。 ユーザーによる無効なデータの追加を実際に防止するのは `stop` のみです。 ポップアップには、ユーザーが`warning``information`無効なデータを入力できるオプションがあります。
+- `showAlert` プロパティの既定値は `true` です。 つまり、Excelメッセージ、タイトル、およびスタイルに設定または設定するカスタム アラートを作成しない限り、一般的なアラート (`stop`種類) `false` `showAlert` がポップアップします。 このコードでは、カスタムのメッセージとタイトルを設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
 
     range.dataValidation.errorAlert = {
             message: "Sorry, only positive whole numbers are allowed",
-            showAlert: true, // default is 'true'
-            style: "Stop", // other possible values: Warning, Information
+            showAlert: true, // The default is 'true'.
+              style: Excel.DataValidationAlertStyle.stop,
             title: "Negative or Decimal Number Entered"
         };
 
     // Set range.dataValidation.rule and optionally .prompt here.
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 詳細については、「[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)」を参照してください。
@@ -185,20 +189,20 @@ Excel.run(function (context) {
 ユーザーがデータの入力規則が適用されたセルの上でカーソルを動かすか、データの入力規則が適用されたセルを選択した場合に表示される、説明用のダイアログを作成できます。 次に例を示します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:C5");
 
     range.dataValidation.prompt = {
             message: "Please enter a positive whole number.",
-            showPrompt: true, // default is 'false'
+            showPrompt: true, // The default is 'false'.
             title: "Positive Whole Numbers Only."
         };
 
     // Set range.dataValidation.rule and optionally .errorAlert here.
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 詳細については、「[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)」を参照してください。

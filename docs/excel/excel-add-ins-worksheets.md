@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
-description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelコード サンプル。
-ms.date: 12/08/2021
+description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelサンプル。
+ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 55234d7c7c4d13fcfc3663e6d5454bf04b75b830
-ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
+ms.openlocfilehash: 13ae6ffa852bff117ff77ba41388918ded4d8ab7
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "61406635"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340142"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -22,22 +22,22 @@ ms.locfileid: "61406635"
 次のコード サンプルでは、ワークシートのコレクションを取得し、各ワークシートの `name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items/name");
 
-    return context.sync()
-        .then(function () {
-            if (sheets.items.length > 1) {
-                console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
-            } else {
-                console.log(`There is one worksheet in the workbook:`);
-            }
-            sheets.items.forEach(function (sheet) {
-              console.log(sheet.name);
-            });
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    if (sheets.items.length > 1) {
+        console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
+    } else {
+        console.log(`There is one worksheet in the workbook:`);
+    }
+
+    sheets.items.forEach(function (sheet) {
+        console.log(sheet.name);
+    });
+});
 ```
 
 > [!NOTE]
@@ -48,15 +48,13 @@ Excel.run(function (context) {
 次のコード サンプルでは、作業中のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The active worksheet is "${sheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The active worksheet is "${sheet.name}"`);
+});
 ```
 
 ## <a name="set-the-active-worksheet"></a>作業中のワークシートを設定する
@@ -64,16 +62,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、作業中のワークシートを **Sample** という名前のワークシートに設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 その名前を持つワークシートが存在しない場合、`activate()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.activate();
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The active worksheet is "${sheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The active worksheet is "${sheet.name}"`);
+});
 ```
 
 ## <a name="reference-worksheets-by-relative-position"></a>相対位置でワークシートを参照する
@@ -85,15 +81,13 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックの最初のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var firstSheet = context.workbook.worksheets.getFirst();
+await Excel.run(async (context) => {
+    let firstSheet = context.workbook.worksheets.getFirst();
     firstSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the first worksheet is "${firstSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the first worksheet is "${firstSheet.name}"`);
+});
 ```
 
 ### <a name="get-the-last-worksheet"></a>最後のワークシートを取得する
@@ -101,15 +95,13 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックの最後のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var lastSheet = context.workbook.worksheets.getLast();
+await Excel.run(async (context) => {
+    let lastSheet = context.workbook.worksheets.getLast();
     lastSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the last worksheet is "${lastSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the last worksheet is "${lastSheet.name}"`);
+});
 ```
 
 ### <a name="get-the-next-worksheet"></a>次のワークシートを取得する
@@ -117,16 +109,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックで作業中のワークシートの後のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの後にワークシートがない場合、`getNext()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
- Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
-    var nextSheet = currentSheet.getNext();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    let nextSheet = currentSheet.getNext();
     nextSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the sheet that follows the active worksheet is "${nextSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the sheet that follows the active worksheet is "${nextSheet.name}"`);
+});
 ```
 
 ### <a name="get-the-previous-worksheet"></a>前のワークシートを取得する
@@ -134,16 +124,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックで作業中のワークシートの前のワークシートを取得し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。 作業中のワークシートの前にワークシートが存在しない場合、`getPrevious()` メソッドにより `ItemNotFound` エラーがスローされます。
 
 ```js
-Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
-    var previousSheet = currentSheet.getPrevious();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    let previousSheet = currentSheet.getPrevious();
     previousSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the sheet that precedes the active worksheet is "${previousSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the sheet that precedes the active worksheet is "${previousSheet.name}"`);
+});
 ```
 
 ## <a name="add-a-worksheet"></a>ワークシートを追加する
@@ -151,17 +139,15 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** という名前の新しいワークシートをブックに追加し、`name` プロパティと `position` プロパティを読み込み、コンソールにメッセージを書き込みます。新しいワークシートは既存の全ワークシートの後に追加されます。
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
 
-    var sheet = sheets.add("Sample");
+    let sheet = sheets.add("Sample");
     sheet.load("name, position");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
+});
 ```
 
 ### <a name="copy-an-existing-worksheet"></a>既存のワークシートをコピーする
@@ -174,11 +160,11 @@ Excel.run(function (context) {
 次のコード サンプルは、現在のワークシートをコピーし、現在のワークシートの直後に新しいシートを挿入します。
 
 ```js
-Excel.run(function (context) {
-    var myWorkbook = context.workbook;
-    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
-    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
-    return context.sync();
+await Excel.run(async (context) => {
+    let myWorkbook = context.workbook;
+    let sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    let copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    await context.sync();
 });
 ```
 
@@ -187,24 +173,22 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックの最後のワークシートを (ただし、ブック内の唯一のシートでない場合に) 削除し、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items/name");
 
-    return context.sync()
-        .then(function () {
-            if (sheets.items.length === 1) {
-                console.log("Unable to delete the only worksheet in the workbook");
-            } else {
-                var lastSheet = sheets.items[sheets.items.length - 1];
+    await context.sync();
+    if (sheets.items.length === 1) {
+        console.log("Unable to delete the only worksheet in the workbook");
+    } else {
+        let lastSheet = sheets.items[sheets.items.length - 1];
 
-                console.log(`Deleting worksheet named "${lastSheet.name}"`);
-                lastSheet.delete();
+        console.log(`Deleting worksheet named "${lastSheet.name}"`);
+        lastSheet.delete();
 
-                return context.sync();
-            };
-        });
-}).catch(errorHandlerFunction);
+        await context.sync();
+    }
+});
 ```
 
 > [!NOTE]
@@ -215,12 +199,12 @@ Excel.run(function (context) {
 次のコード サンプルでは、作業中のワークシートの名前を **New Name** に変更します。
 
 ```js
-Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
     currentSheet.name = "New Name";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="move-a-worksheet"></a>ワークシートを移動する
@@ -228,18 +212,15 @@ Excel.run(function (context) {
 次のコード サンプルでは、ブックの最後の位置からブックの最初の位置にワークシートを移動します。
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            var lastSheet = sheets.items[sheets.items.length - 1];
-            lastSheet.position = 0;
-
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    let lastSheet = sheets.items[sheets.items.length - 1];
+    lastSheet.position = 0;
+    await context.sync();
+});
 ```
 
 ## <a name="set-worksheet-visibility"></a>ワークシートの可視性を設定する
@@ -251,16 +232,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** という名前のワークシートの可視性を非表示に設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.hidden;
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Worksheet with name "${sheet.name}" is hidden`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Worksheet with name "${sheet.name}" is hidden`);
+});
 ```
 
 ### <a name="unhide-a-worksheet"></a>ワークシートを再表示する
@@ -268,16 +247,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** という名前のワークシートの可視性を表示に設定し、`name` プロパティを読み込み、コンソールにメッセージを書き込みます。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.visible;
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Worksheet with name "${sheet.name}" is visible`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Worksheet with name "${sheet.name}" is visible`);
+});
 ```
 
 ## <a name="get-a-single-cell-within-a-worksheet"></a>ワークシート内で単一のセルを取得する
@@ -285,16 +262,14 @@ Excel.run(function (context) {
 次のコード サンプルでは、**Sample** という名前のワークシートの 2 行目、5 列目にあるセルを取得し、`address` プロパティと `values` プロパティを読み込み、コンソールにメッセージを書き込みます。 `getCell(row: number, column:number)` メソッドに渡される値は、取得するセルの 0 から始まる行番号および列番号です。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var cell = sheet.getCell(1, 4);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let cell = sheet.getCell(1, 4);
     cell.load("address, values");
 
-    return context.sync()
-        .then(function() {
-            console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
-        })
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
+});
 ```
 
 ## <a name="detect-data-changes"></a>データ変更を検出します
@@ -307,8 +282,8 @@ Excel.run(function (context) {
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
     Excel.run(function (context) {
-        var details = eventArgs.details;
-        var address = eventArgs.address;
+        let details = eventArgs.details;
+        let address = eventArgs.address;
 
         // Print the before and after types and values to the console.
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
@@ -322,34 +297,36 @@ function onWorksheetChanged(eventArgs) {
 
 アドインは、ワークシート内の数式の変更を追跡できます。 これは、ワークシートが外部データベースに接続されている場合に便利です。 ワークシート内の数式が変更されると、このシナリオのイベントによって外部データベースの対応する更新プログラムがトリガーされます。
 
-数式の変更を検出するには、 [ワークシート](excel-add-ins-events.md#register-an-event-handler) の [onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) イベントのイベント ハンドラーを登録します。 イベントのイベント ハンドラーは、イベントが発生すると `onFormulaChanged` [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) オブジェクトを受け取る。
+数式の変更を検出するには、 [ワークシート](excel-add-ins-events.md#register-an-event-handler) の [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) イベントのイベント ハンドラーを登録します。 イベントのイベント ハンドラーは、 `onFormulaChanged` イベントが発生すると [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) オブジェクトを受け取る。
 
 > [!IMPORTANT]
-> このイベントは、数式自体が変更された場合を検出します。数式の計算に起因する `onFormulaChanged` データ値は検出しません。
+> この `onFormulaChanged` イベントは、数式自体が変更された場合を検出します。数式の計算に起因するデータ値は検出しません。
 
-次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用して変更された数式の `onFormulaChanged` `WorksheetFormulaChangedEventArgs` [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails) 配列を取得し [、FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) プロパティを使用して変更された数式の詳細を出力する方法を示しています。
+次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用して変更された数式の [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) 配列を取得し、[FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) プロパティを使用して変更された数式の詳細を出力する方法を示しています。`onFormulaChanged` `WorksheetFormulaChangedEventArgs`
 
 > [!NOTE]
 > このコード サンプルは、1 つの数式が変更された場合にのみ機能します。
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the worksheet named "Sample".
-    var sheet = context.workbook.worksheets.getItem("Sample");
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the worksheet named "Sample".
+        let sheet = context.workbook.worksheets.getItem("Sample");
+    
+        // Register the formula changed event handler for this worksheet.
+        sheet.onFormulaChanged.add(formulaChangeHandler);
+    
+        await context.sync();
+    });
+}
 
-    // Register the formula changed event handler for this worksheet.
-    sheet.onFormulaChanged.add(formulaChangeHandler);
-
-    return context.sync();
-});
-
-function formulaChangeHandler(event) {
-    Excel.run(function (context) {
+async function formulaChangeHandler(event) {
+    await Excel.run(async (context) => {
         // Retrieve details about the formula change event.
         // Note: This method assumes only a single formula is changed at a time. 
-        var cellAddress = event.formulaDetails[0].cellAddress;
-        var previousFormula = event.formulaDetails[0].previousFormula;
-        var source = event.source;
+        let cellAddress = event.formulaDetails[0].cellAddress;
+        let previousFormula = event.formulaDetails[0].previousFormula;
+        let source = event.source;
     
         // Print out the change event details.
         console.log(
@@ -372,27 +349,27 @@ function formulaChangeHandler(event) {
 
 以下の画像は、並べ替えイベントの `address` プロパティによって返される範囲を示しています。 まず、並べ替えの前のサンプル データを次に示します。
 
-![並べ替え前Excelテーブル データ。](../images/excel-sort-event-before.png)
+![並べ替える前Excelテーブル のデータ。](../images/excel-sort-event-before.png)
 
-**"Q1" ("B"** の値) に対して上から下への並べ替えを実行すると、次の強調表示された行がによって返されます `WorksheetRowSortedEventArgs.address` 。
+"**Q1**" ("**B**" の値) で上から下への並べ替えを実行すると、次の強調表示された行がによって返されます `WorksheetRowSortedEventArgs.address`。
 
 ![上から下への並べ替えの後の Excel のテーブル データ。 移動した行が強調表示されます。](../images/excel-sort-event-after-row.png)
 
-元のデータの **"Quinces"**("**4**") の値に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address` 。
+元のデータの "**Quinces**" (**"4**" の値) に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address`。
 
 ![左から右への並べ替えの後の Excel のテーブル データ。 移動した列が強調表示されます。](../images/excel-sort-event-after-column.png)
 
 次のコード サンプルは、`Worksheet.onRowSorted` イベントのイベント ハンドラーを登録する方法を示しています。 ハンドラーのコールバックは、範囲の塗りつぶしの色をクリアし、移動した行のセルを塗りつぶします。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // This will fire whenever a row has been moved as the result of a sort action.
-    sheet.onRowSorted.add(function (event) {
-        return Excel.run(function (context) {
+    sheet.onRowSorted.add(async (event) => {
+        await Excel.run(async (context) => {
             console.log("Row sorted: " + event.address);
-            var sheet = context.workbook.worksheets.getActiveWorksheet();
+            let sheet = context.workbook.worksheets.getActiveWorksheet();
 
             // Clear formatting for section, then highlight the sorted area.
             sheet.getRange("A1:E5").format.fill.clear();
@@ -400,12 +377,12 @@ Excel.run(function (context) {
                 sheet.getRanges(event.address).format.fill.color = "yellow";
             }
 
-            return context.sync();
+            await context.sync();
         });
     });
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="find-all-cells-with-matching-text"></a>一致するテキストがあるすべてのセルを検索する
@@ -413,29 +390,28 @@ Excel.run(function (context) {
 `Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。 以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。 指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) メソッドを使用するようにしてください。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var foundRanges = sheet.findAll("Complete", {
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let foundRanges = sheet.findAll("Complete", {
         completeMatch: true, // findAll will match the whole cell value
         matchCase: false // findAll will not match case
     });
 
-    return context.sync()
-        .then(function() {
-            foundRanges.format.fill.color = "green"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    foundRanges.format.fill.color = "green"
+});
 ```
 
 > [!NOTE]
 > このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
-> - オブジェクトを使用してワークシート内の範囲を取得する方法を示す例については、「JavaScript API を使用して範囲を取得するExcel `Range` [参照してください](excel-add-ins-ranges-get.md)。
+>
+> - オブジェクトを使用してワークシート内`Range`の範囲を取得する方法を示す例については、「[JavaScript API](excel-add-ins-ranges-get.md) を使用して範囲を取得するExcel参照してください。
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
 ## <a name="filter-data"></a>データをフィルター処理する
 
-[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次の `Worksheet.autoFilter.apply` パラメーターを持つ、で作成されます。
+[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメーター `Worksheet.autoFilter.apply`を持つ、で作成されます。
 
 - `range`: フィルターが適用される範囲を、`Range` オブジェクトまたは文字列の範囲として指定します。
 - `columnIndex`: フィルター条件が評価される 0 から始まる列インデックス。
@@ -446,50 +422,50 @@ Excel.run(function (context) {
 ```js
 // This method adds a custom AutoFilter to the active worksheet
 // and applies the filter to a column of the used range.
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var farmData = sheet.getUsedRange();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let farmData = sheet.getUsedRange();
 
     // This filter will only show the rows with the top 25% of values in column 3.
     sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 次のコード サンプルでは、`reapply` メソッドを使用してオート フィルターを更新する方法を示します。 これは、範囲内のデータが変更されたときに実行する必要があります。
 
 ```js
 // This method refreshes the AutoFilter to ensure that changes are captured.
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-次のコード サンプルは、メソッドを使用して、他の列でアクティブなフィルターを残しながら、1 つの列から自動フィルターをクリアする方法 `clearColumnCriteria` を示しています。
+次のコード サンプルは、 `clearColumnCriteria` メソッドを使用して、他の列でアクティブなフィルターを残しながら、1 つの列から自動フィルターをクリアする方法を示しています。
 
 ```js
 // This method clears the AutoFilter setting from one column.
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the active worksheet.
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Clear the filter from only column 3.
     sheet.autoFilter.clearColumnCriteria(3);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 最後のオート フィルター コード サンプルでは、`remove` メソッドを使用してワークシートからオート フィルターを削除する方法を示します。
 
 ```js
 // This method removes all AutoFilters from the active worksheet.
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `AutoFilter` を個々のテーブルに適用することもできます。 詳しくは、[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md#autofilter)を参照してください。
@@ -499,16 +475,15 @@ Excel.run(function (context) {
 ご使用のアドインでは、ワークシート内のデータを編集するユーザー機能を制御できます。 ワークシートの `protection` プロパティは [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) オブジェクトであり、`protect()` メソッドを備えています。 次の例では、アクティブなワークシートの完全な保護を切り替える基本的なシナリオを示します。
 
 ```js
-Excel.run(function (context) {
-    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let activeSheet = context.workbook.worksheets.getActiveWorksheet();
     activeSheet.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!activeSheet.protection.protected) {
-            activeSheet.protection.protect();
-        }
-    })
-}).catch(errorHandlerFunction);
+    if (!activeSheet.protection.protected) {
+        activeSheet.protection.protect();
+    }
+});
 ```
 
 `protect` メソッドには、2 つの省略可能なパラメーターがあります。
@@ -520,30 +495,31 @@ Excel.run(function (context) {
 
 ### <a name="detect-changes-to-the-worksheet-protection-state"></a>ワークシートの保護状態の変更を検出する
 
-ワークシートの保護状態は、アドインまたは UI を使用してExcelできます。 保護状態の変更を検出するには [、ワークシートのイベント](excel-add-ins-events.md#register-an-event-handler) のイベント [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) ハンドラーを登録します。 イベントのイベント ハンドラーは `onProtectionChanged` 、イベントが発生 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) するとオブジェクトを受け取る。
+ワークシートの保護状態は、アドインまたは UI を使用してExcelできます。 保護状態の変更を検出するには [、ワークシートのイベント](excel-add-ins-events.md#register-an-event-handler) の [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) イベント ハンドラーを登録します。 イベントのイベント ハンドラーは、 `onProtectionChanged` イベントが発生すると [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) オブジェクトを受け取る。
 
-次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用してイベントの `onProtectionChanged` `WorksheetProtectionChangedEventArgs` 、 、およびプロパティを `isProtected` `worksheetId` `source` 取得する方法を示しています。
+次のコード サンプルは、イベント ハンドラーを登録`onProtectionChanged` `WorksheetProtectionChangedEventArgs` `isProtected`し、オブジェクトを使用してイベントの 、 、`worksheetId``source`およびプロパティを取得する方法を示しています。
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
-Excel.run(function (context) {
-    // Retrieve the worksheet named "Sample".
-    var sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Register the onProtectionChanged event handler.
-    sheet.onProtectionChanged.add(checkProtection);
-
-    return context.sync();
-}).catch(errorHandlerFunction);
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the worksheet named "Sample".
+        let sheet = context.workbook.worksheets.getItem("Sample");
+    
+        // Register the onProtectionChanged event handler.
+        sheet.onProtectionChanged.add(checkProtection);
+        await context.sync();
+    });
+}
 
 // This method is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
-function checkProtection(event) {
-    Excel.run(function (context) {
+async function checkProtection(event) {
+    await Excel.run(async (context) => {
         // Retrieve the protection, worksheet ID, and source properties of the event.
-        var protectionStatus = event.isProtected;
-        var worksheetId = event.worksheetId;
-        var source = event.source;
+        let protectionStatus = event.isProtected;
+        let worksheetId = event.worksheetId;
+        let source = event.source;
 
         // Print the event properties to the console.
         console.log("Protection status changed. Protection status is now: " + protectionStatus);
@@ -560,11 +536,11 @@ function checkProtection(event) {
 `Worksheet.horizontalPageBreaks` と `Worksheet.verticalPageBreaks` は [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection) です。 これらは [PageBreak](/javascript/api/excel/excel.pagebreak) のコレクションで、手動改ページを挿入する範囲を指定します。 次のコード サンプルは、水平の改ページを行 **21** の上に追加します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Worksheet.pageLayout` は、[PageLayout](/javascript/api/excel/excel.pagelayout) オブジェクトです。 このオブジェクトには、プリンター固有の実装に依存しないレイアウト設定とプリント設定が含まれています。 これらの設定には、余白、印刷の向き、ページ番号、タイトル行、および印刷範囲が含まれます。
@@ -572,8 +548,8 @@ Excel.run(function (context) {
 次のコード サンプルは、ページを縦方向と横方向ともに中央に配置、すべてのページの上部に印刷するタイトル行を設定し、ワークシートのサブセクションで印刷範囲を設定します。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Center the page in both directions.
     sheet.pageLayout.centerHorizontally = true;
@@ -585,8 +561,8 @@ Excel.run(function (context) {
     // Limit the area to be printed to the range "A1:D100".
     sheet.pageLayout.setPrintArea("A1:D100");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>関連項目
