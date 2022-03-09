@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 01/13/2022
+ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222187"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340877"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -54,7 +54,7 @@ ms.locfileid: "62222187"
 
 1. コード エディターでプロジェクトを開きます。
 
-1. ファイル **./src/taskpane/taskpane.html** を開きます。  このファイルには、作業ウィンドウの HTML マークアップが含まれます。
+1. ファイル **./src/taskpane/taskpane.html** を開きます。このファイルには、作業ウィンドウ用の HTML マークアップが含まれています。
 
 1. `<main>` 要素を見つけて、開始 `<main>` タグの後、終了 `</main>` タグの前に表示されるすべての行を削除します。
 
@@ -64,7 +64,7 @@ ms.locfileid: "62222187"
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. ファイル **./src/taskpane/taskpane.js** を開きます。 このファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
+1. ファイル **./src/taskpane/taskpane.js** を開きます。このファイルには、作業ウィンドウと Office クライアント アプリケーションの間の相互作用を容易にする Office JavaScript API コードが含まれています。
 
 1. 次の操作を行って、[`run`] ボタンと [`run()`] 関数へのすべての参照を削除します。
 
@@ -72,7 +72,7 @@ ms.locfileid: "62222187"
 
     - `run()` 関数全体を見つけて削除します。
 
-1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Excel) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
+1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Excel) {` 行を見つけ、その行の直後に次のコードを追加します。次の点に注意してください。
 
     - このコードの最初の部分では、ユーザーの Excel のバージョンが、このチュートリアルのシリーズで使用する API をすべて含んでいるバージョンの Excel.js をサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分の Excel のバージョンでサポートされているアドインの部分を使用できるようになります。
 
@@ -94,11 +94,11 @@ ms.locfileid: "62222187"
 
     - `context.sync` メソッドは、キューに登録されたすべてのコマンドを実行するために Excel に送信します。
 
-    - これは、どのような場合にも当てはまるベスト プラクティスです。 
+    - これは、どのような場合にも当てはまるベスト プラクティスです。
 
     ```js
-    function createTable() {
-        Excel.run(function (context) {
+    async function createTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue table creation logic here.
 
@@ -106,7 +106,7 @@ ms.locfileid: "62222187"
 
             // TODO3: Queue commands to format the table.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -126,8 +126,8 @@ ms.locfileid: "62222187"
     - テーブルの名前は、ワークシート内だけでなくブック全体で一意にする必要があります。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -227,13 +227,13 @@ ms.locfileid: "62222187"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function filterTable() {
-        Excel.run(function (context) {
+    async function filterTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -251,9 +251,9 @@ ms.locfileid: "62222187"
    - `applyValuesFilter` メソッドは、`Filter` オブジェクトのフィルター処理方法の 1 つです。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var categoryFilter = expensesTable.columns.getItem('Category').filter;
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ```
 
@@ -278,12 +278,12 @@ ms.locfileid: "62222187"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function sortTable() {
-        Excel.run(function (context) {
+    async function sortTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to sort the table by Merchant name.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -303,9 +303,9 @@ ms.locfileid: "62222187"
    - `Table` の `sort` メンバーは、`TableSort` オブジェクトであり、メソッドではありません。 `TableSort` オブジェクトの `apply` メソッドには、`SortField` が渡されます。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var sortFields = [
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -354,8 +354,8 @@ ms.locfileid: "62222187"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function createChart() {
-        Excel.run(function (context) {
+    async function createChart() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to get the range of data to be charted.
 
@@ -363,7 +363,7 @@ ms.locfileid: "62222187"
 
             // TODO3: Queue commands to position and format the chart.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -377,12 +377,12 @@ ms.locfileid: "62222187"
 1. `createChart()` 関数で、`TODO1` を次のコードに置き換えます。 ヘッダー行を除外するために、このコードでは、`getRange` メソッドではなく `Table.getDataBodyRange` メソッドを使用してグラフを作成するデータの範囲を取得しています。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var dataRange = expensesTable.getDataBodyRange();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const dataRange = expensesTable.getDataBodyRange();
     ```
 
-1. `createChart()` 関数で、`TODO2` を次のコードに置き換えます。 次のパラメーターに注意してください。
+1. `createChart()` 関数内で、`TODO2` を次のコードに置き換えます。次のパラメーターに注意してください。
 
    - `add` への最初のパラメーターでは、グラフの種類を指定します。数十種類あります。
 
@@ -391,7 +391,7 @@ ms.locfileid: "62222187"
    - 3 番目のパラメーターでは、テーブルからの一連のデータ ポイントを行方向と列方向のどちらでグラフ化する必要があるかを決定します。オプション `auto` は、最適な方法を判断するように Excel に指示します。
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
+    const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 1. `createChart()` 関数で、`TODO3` を次のコードに置き換えます。 このコードのほとんどの部分は、わかりやすく説明不要なものです。 注:
@@ -449,12 +449,12 @@ ms.locfileid: "62222187"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function freezeHeader() {
-        Excel.run(function (context) {
+    async function freezeHeader() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -472,7 +472,7 @@ ms.locfileid: "62222187"
    - `freezeRows` メソッドでは、上から数えた行数を、ピン留めする位置のパラメーターとして使用します。`1` を渡して最初の行を適所にピン留めします。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
@@ -601,12 +601,12 @@ ms.locfileid: "62222187"
 1. `action` 関数の直後に次の関数を追加します。 関数に `args` パラメーターを指定していることと、関数の最後のほうの行で `args.completed` を呼び出していることに注目してください。 **ExecuteFunction** タイプのすべてのアドイン コマンドでは、これが要件になります。 これにより、関数が終了したことと、UI が再度応答可能になることを Office クライアント アプリケーションに通知します。
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -627,7 +627,7 @@ ms.locfileid: "62222187"
 1. `toggleProtection` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。 `TODO2` については、次のセクションで説明します。
 
     ```js
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -655,53 +655,30 @@ ms.locfileid: "62222187"
 
    - すべての Excel オブジェクトに `load` の方法があります。パラメーターで読み取るオブジェクトのプロパティをコンマ区切り名前の文字列として指定します。この場合、必要なプロパティは、`protection` プロパティのサブプロパティです。サブプロパティは、コード内の他の場所とほぼ同じ方法で参照します。ただし、"." 文字の代わりにスラッシュ ('/') を使用します。
 
-   - `sync` が完了してドキュメントからフェッチされた適切な値が `sheet.protection.protected` に割り当てられるまで、`sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするために、そのロジックを `sync` が完了するまで実行されない `then` 関数に (この後の手順で) 移動します。
+   - `sync` が完了し、`sheet.protection.protected` にドキュメントからフェッチされた正しい値が割り当てられるまでに `sheet.protection.protected` を読み取る切り替えロジックが実行されないようにするには、`sync` が完了したことを確認した後に `await` 演算子が来る必要があります。
 
     ```js
     sheet.load('protection/protected');
-    return context.sync()
-        .then(
-            function() {
-                // TODO3: Move the queued toggle logic here.
-            }
-        )
-        // TODO4: Move the final call of `context.sync` here and ensure that it
-        //        does not run until the toggle logic has been queued.
-    ```
-
-1. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Excel.run` の最後にある最終行の `return context.sync();` を削除します。新しい最後の `context.sync` は、このチュートリアルの後の方で追加します。
-
-1. `toggleProtection` 関数内の `if ... else` 構造を切り取って、`TODO3` の代わりに貼り付けます。
-
-1. `TODO4` を次のコードに置き換えます。次の点に注意してください。
-
-   - `sync` メソッドを `then` 関数に渡すことで、`sheet.protection.unprotect()` または `sheet.protection.protect()` のどちらかがキューに登録されるまで、そのメソッドが実行されないようにします。
-
-   - `then` メソッドは渡された関数を呼び出します。`sync` が 2 回呼び出されないように、`context.sync` の末尾の "()" は省略します。
-
-    ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
    作業が完了すると、関数の全体は次のようになります。
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
-          var sheet = context.workbook.worksheets.getActiveWorksheet();
-          sheet.load('protection/protected');
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            sheet.load('protection/protected');
 
-          return context.sync()
-              .then(
-                  function() {
-                    if (sheet.protection.protected) {
-                        sheet.protection.unprotect();
-                    } else {
-                        sheet.protection.protect();
-                    }
-                  }
-              )
-              .then(context.sync);
+            await context.sync();
+
+            if (sheet.protection.protected) {
+                sheet.protection.unprotect();
+            } else {
+                sheet.protection.protect();
+            }
+            
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -828,11 +805,11 @@ ms.locfileid: "62222187"
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-1. `TODO2` を次のコードに置き換えます。 `messageParent` メソッドは、パラメーターを親ページ (この例では、作業ウィンドウ内のページ) に渡します。 パラメーターは文字列である必要があります。これには、XML や JSON などの文字列としてシリアル化できるもの、または文字列にキャストできる任意の型が含まれます。
+1. `TODO2` は次のコードで置き換えます。`messageParent` メソッドは、パラメーターを親ページ (この場合は作業ウィンドウのページ) に渡します。パラメーターは文字列である必要があります。これには、XML や JSON など、文字列としてシリアル化できるものであるか、または文字列にキャストできる任意のタイプが含まれます。
 
     ```js
     function sendStringToParentPage() {
-        var userName = document.getElementById("name-box").value;
+        const userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
@@ -926,7 +903,7 @@ ms.locfileid: "62222187"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `freeze-header` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。 `openDialog`メソッドは後の手順で作成します。
+1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `freeze-header` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。後の手順で `openDialog` メソッドを作成します。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
@@ -935,7 +912,7 @@ ms.locfileid: "62222187"
 1. ファイルの最後に次の宣言を追加します。この変数は、親ページの実行コンテキスト内のオブジェクトを保持するために使用され、ダイアログ ページの実行コンテキストへの仲介者として機能します。
 
     ```js
-    var dialog = null;
+    let dialog = null;
     ```
 
 1. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在 *しない* ことです。 これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
@@ -965,7 +942,7 @@ ms.locfileid: "62222187"
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>ダイアログからのメッセージを処理してダイアログを閉じる
 
-1. ファイル **./src/taskpane/taskpane.js** の `openDialog` 関数内で、`TODO2` を次のコードに置き換えます。 注:
+1. ファイル **./src/taskpane/taskpane.js** の `openDialog` 関数内で、`TODO2` を次のコードに置き換えます。次の点に注意してください。
 
    - コールバックは、ダイアログが正常に開いた直後、ユーザーがダイアログで操作を行う前に実行されます。
 

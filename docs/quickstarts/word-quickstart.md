@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 01/13/2022
+ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 55a54dd08d18204bfe4d821ba9403e3a3d9c09a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222214"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340450"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -88,7 +88,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="next-steps"></a>次の手順
 
-おめでとうございます。 Word の作業ウィンドウ アドインが正常に作成されました。 次に、Word アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Word アドインのチュートリアル](../tutorials/word-tutorial.md)」をご覧ください。
+おめでとうございます! これで Word 作業ウィンドウ アドインを作成できました。次に、Word アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Word アドインのチュートリアル](../tutorials/word-tutorial.md)」をご覧ください。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -164,24 +164,23 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
             });
         });
 
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
+        async function insertEmersonQuoteAtSelection() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                var thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
+                await context.sync();
+                console.log('Added a quote from Ralph Waldo Emerson.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -191,20 +190,19 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
             });
         }
 
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
+        async function insertChekhovQuoteAtTheBeginning() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
+                await context.sync();
+                console.log('Added a quote from Anton Chekhov.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -214,20 +212,19 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
             });
         }
 
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
+        async function insertChineseProverbAtTheEnd() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
+                await context.sync();
+                console.log('Added a quote from a Chinese proverb.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -292,7 +289,7 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 ### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、新しく作成した Word アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された Word を起動します。アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、**F5** キーを押すか、**[デバッグ]** > **[デバッグの開始]** を選択して、新しく作成した Word アドインをテストし、リボンに表示された **[作業ウィンドウのアドインを表示する]** ボタンを使用して Word を起動します。 アドインは IIS でローカルにホストされます。
 
 2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Microsoft 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
 
