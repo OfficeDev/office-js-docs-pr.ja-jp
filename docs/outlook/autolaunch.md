@@ -2,14 +2,14 @@
 title: イベント ベースのOutlookアドインを構成する
 description: イベント ベースのアクティブ化Outlookアドインを構成する方法について学習します。
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7c3445199098efc95ed54b20105418502368bc16
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340289"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63400000"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlookアドインを構成する
 
@@ -48,17 +48,12 @@ ms.locfileid: "63340289"
 使用可能な場合にこれらのイベントをプレビューするには、次の手順を実行します。
 
 - 次のOutlook on the web:
-  - [対象となるリリースをテナントにMicrosoft 365します](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+  - [ターゲット リリースをテナントにMicrosoft 365します。](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - () **の** ベータ ライブラリを参照CDN。https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
 - 新Outlook Mac UI プレビューの詳細については、次の操作を行います。
   - 最小必要なビルドは 16.54 (21101001)。 Insider プログラムOffice[参加](https://insider.office.com/join/Mac)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
 - [OutlookのWindows:
   - 必要な最小ビルドは 16.0.14511.10000 です。 Insider プログラムOffice[参加](https://insider.office.com/join/windows)し、ベータ版のビルドにアクセスするためのベータ Officeを選択します。
-  - レジストリを構成します。 Outlookコンテンツ配信ネットワーク (Office.js) から読み込む代わりに、製品版とベータ版のローカル コピーが含CDN。 既定では、API のローカル実稼働コピーが参照されます。 JavaScript API のローカル ベータ 版に切り替Outlook、このレジストリ エントリを追加する必要があります。それ以外の場合は、ベータ版 API が見つからない場合があります。
-    1. レジストリ キーを作成します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`。
-    1. という名前のエントリを追加 `EnableBetaAPIsInJavaScript` し、値をに設定します `1`。 レジストリは次の図のようになります。
-
-        ![EnableBetaAPIsInJavaScript レジストリ キー値を持つレジストリ エディターのスクリーンショット。](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -202,7 +197,7 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
 このシナリオでは、新しいアイテムを作成する処理を追加します。
 
-1. 同じクイック スタート プロジェクトから、/src/ ディレクトリの **下に launchevent という名前** の **新しいフォルダーを作成** します。
+1. 同じクイック スタート プロジェクトから、./src ディレクトリの **下に launchevent という** 名前の **新しいフォルダーを作成** します。
 
 1. **./src/launchevent フォルダーで**、次の名前の新しいファイルを **launchevent.js**。
 
@@ -247,9 +242,21 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 > [!IMPORTANT]
 > Windows: 現在、イベント ベースのアクティブ化の処理を実装する JavaScript ファイルではインポートはサポートされていません。
 
+## <a name="update-the-commands-html-file"></a>コマンドの HTML ファイルを更新する
+
+1. **./src/commands フォルダーで**、ファイルを **開** commands.html。
+
+1. 終了ヘッド タグ (`<\head>`**) の直前** に、イベント処理 JavaScript コードを含めるスクリプト エントリを追加します。
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. 変更内容を保存します。
+
 ## <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
 
-プロジェクトの **ルートwebpack.config.js** にあるファイルを開き、次の手順を実行します。
+1. プロジェクトの **ルートwebpack.config.js** にあるファイルを開き、次の手順を実行します。
 
 1. オブジェクト内の `plugins` 配列を見つけて `config` 、配列の先頭にこの新しいオブジェクトを追加します。
 
@@ -292,8 +299,6 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 
     ![作成時に設定された件名OutlookのWindowsウィンドウのスクリーンショット。](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## <a name="debug"></a>デバッグ
 
 アドインで起動イベント処理に変更を加える場合は、次の点に注意する必要があります。
@@ -304,6 +309,8 @@ OutlookはWindows JavaScript ファイルを使用しますが、Outlook on the 
 独自の機能を実装する場合は、コードのデバッグが必要な場合があります。 イベント ベースのアドインのアクティブ化をデバッグする方法のガイダンスについては、「イベント ベースのアドインをデバッグするOutlook[参照してください](debug-autolaunch.md)。
 
 ランタイム ログは、この機能で使用することもできます。Windows。 詳細については、「ランタイム ログを [使用してアドインをデバッグする」を参照してください](../testing/runtime-logging.md#runtime-logging-on-windows)。
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="deploy-to-users"></a>ユーザーへの展開
 
