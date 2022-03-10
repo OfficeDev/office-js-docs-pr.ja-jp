@@ -1,16 +1,16 @@
 ---
 title: Word アドインの概要
 description: Word アドインの基礎について説明します。
-ms.date: 10/14/2020
+ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 488b009861349940c7ccc69a720139c2c3599ee1
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d298caa78dab205740723998c1fa7ed42c821c66
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514146"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340646"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -26,16 +26,16 @@ Word のアドインは、[Office アドイン プラットフォーム](../over
 
 ![Word の作業ウィンドウで実行されているアドイン。](../images/word-add-in-show-host-client.png)
 
-Word アドイン (1) は、Word 文書 (2) に要求を送信し、JavaScript を使用して段落オブジェクトにアクセスして段落を更新、削除、または移動することができます。たとえば、次のコードは、その段落に新しい文を追加する方法を示しています。
+Word アドイン (1) は、Word 文書 (2) に要求を送信し、JavaScript を使用して段落オブジェクトにアクセスして段落を更新、削除、または移動します。たとえば、次のコードは、その段落に新しい文を追加する方法を示しています。
 
 ```js
-Word.run(function (context) {
-    var paragraphs = context.document.getSelection().paragraphs;
+await Word.run(async (context) => {
+    const paragraphs = context.document.getSelection().paragraphs;
     paragraphs.load();
-    return context.sync().then(function () {
-        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+    await context.sync();
+    paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                        Word.InsertLocation.end);
-    }).then(context.sync);
+    await context.sync();
 });
 
 ```

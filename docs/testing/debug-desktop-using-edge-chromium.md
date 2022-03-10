@@ -1,14 +1,14 @@
 ---
 title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 description: VS Code で Microsoft Edge WebView2 (Chromium ベース) を使用する Office アドインをデバッグする方法について説明します。
-ms.date: 02/01/2022
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 90e7bef4d3902f0282a739569a87b8ca57095f50
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467706"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340156"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
@@ -68,8 +68,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 
    **[OK]** を選択します。
 
-   > [!NOTE]
-   > **[キャンセル]** を選択すると、このアドインのインスタンスの実行中はダイアログが表示されなくなります。 ただし、アドインを再起動すると、ダイアログはもう一度表示されます。
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. これで、プロジェクトのコードにブレークポイントを設定し、デバッグを実行できるようになりました。 Visual Studio Code でブレークポイントを設定するには、コード行の横にマウス ポインターを置き、表示される赤い円を選択します。
 
@@ -132,7 +131,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 1. ローカル サーバーが実行されているノード ウィンドウを閉じます (自動的に閉じられない場合)。
 1. Office アプリケーションを閉じます (自動的に閉じられない場合)。
 1. プロジェクトで `\.vscode\launch.json` ファイルを開きます。 
-1. `configurations` 配列には、いくつかの構成オブジェクトがあります。 名前のパターンが `$HOST$ Desktop (Edge Chromium)`であるものを見つけます。ここで、$HOST$ はアドインが実行される Office アプリケーションです。たとえば、`Outlook Desktop (Edge Chromium)` や `Word Desktop (Edge Chromium)` などです。 
+1. `configurations` 配列には、いくつかの構成オブジェクトがあります。名前のパターンが `$HOST$ Desktop (Edge Chromium)` であるものを見つけます。ここで、$HOST$ はアドインが実行される Office アプリケーションです。たとえば、`Outlook Desktop (Edge Chromium)` や `Word Desktop (Edge Chromium)` などです。 
 1. `"type"` プロパティの値を `"edge"` から `"pwa-msedge"` に変更します。
 1. `"useWebView"` プロパティの値を文字列 `"advanced"` からブール値 `true` に変更します (`true` は引用符で囲まないことに注意してください)。
 1. ファイルを保存します。

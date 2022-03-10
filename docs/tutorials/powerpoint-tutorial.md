@@ -1,15 +1,15 @@
 ---
 title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-ms.date: 05/12/2021
+ms.date: 02/18/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: efddb10e0d72ad79b5da10c3e9b5e7c8d24ecf54
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38430240b768709d0c6d1bca12c91ebbf019a662
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154534"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340163"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -41,6 +41,11 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
      ![Hello World ソリューションの2つのプロジェクトである Hello World と Hello World Web を示す Visual Studio ソリューション エクスプローラー ウィンドウのスクリーンショット。](../images/powerpoint-tutorial-solution-explorer.png)
+
+6. 次の NuGet パッケージをインストールする必要があります。 Visual Studio の **NuGet パッケージ マネージャー** を使用してインストールします。 手順については、Visual Studio のヘルプを参照してください。 これらの 2 つ目は、最初のインストール時に自動的にインストールされる場合があります。
+
+   - Microsoft.AspNet.WebApi.WebHost
+   - Microsoft.AspNet.WebApi.Core
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -243,7 +248,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. **Home.html** ファイルで `TODO2` を次のマークアップと置き換え、ヘッダー セクションとタイトルを作業ウィンドウに追加します。 注意:
 
-    - `ms-` で始まるスタイルは、[Office アドインの Fabric Core](../design/fabric-core.md) で定義されています。これは、Office のユーザー エクスペリエンスを構築するための JavaScript フロント エンドのフレームワークです。 **Home.html** ファイルには、Fabric Core スタイル シートへの参照が含まれています。
+    - `ms-` で始まるスタイルは、[Office アドインの Fabric Core](../design/fabric-core.md) で定義されています。これは、Office のユーザー エクスペリエンスを構築するための JavaScript フロント エンド フレームワークです。 **Home.html** ファイルには、Fabric Core スタイルシートへの参照が含まれています。
 
     ```html
     <div id="content-header">
@@ -259,7 +264,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. Visual Studio を使用して、PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。 アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
     ![Visual Studio で強調表示された [スタート] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-start.png)
 
@@ -311,7 +316,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。 アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
     ![Visual Studio で強調表示されている [スタート] ボタンのスクリーンショット。](../images/powerpoint-tutorial-start.png)
 
@@ -370,7 +375,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。 アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
     ![Visual Studio の [スタート] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-start.png)
 
@@ -470,7 +475,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
-1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。 アドインは IIS 上でローカルにホストされます。
+1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
     ![Visual Studio ツール バー上で強調表示された [スタート] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-start.png)
 

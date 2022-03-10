@@ -4,12 +4,12 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 7a83eb3d8ca35c8d29cf795db1906a7f9594e2e8
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222299"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340170"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -53,7 +53,7 @@ ms.locfileid: "62222299"
 
 1. コード エディターでプロジェクトを開きます。
 
-1. ファイル **./src/taskpane/taskpane.html** を開きます。 このファイルには、作業ウィンドウの HTML マークアップが含まれます。
+1. ファイル **./src/taskpane/taskpane.html** を開きます。このファイルには、作業ウィンドウ用の HTML マークアップが含まれています。
 
 1. `<main>` 要素を見つけて、開始 `<main>` タグの後、終了 `</main>` タグの前に表示されるすべての行を削除します。
 
@@ -63,7 +63,7 @@ ms.locfileid: "62222299"
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-1. ファイル **./src/taskpane/taskpane.js** を開きます。 このファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
+1. ファイル **./src/taskpane/taskpane.js** を開きます。このファイルには、作業ウィンドウと Office クライアント アプリケーションの間の相互作用を容易にする Office JavaScript API コードが含まれています。
 
 1. 次の操作を行って、[`run`] ボタンと [`run()`] 関数へのすべての参照を削除します。
 
@@ -71,7 +71,7 @@ ms.locfileid: "62222299"
 
     - `run()` 関数全体を見つけて削除します。
 
-1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Word) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
+1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Word) {` 行を見つけ、その行の直後に次のコードを追加します。次の点に注意してください。
 
     - このコードの最初の部分では、ユーザーの Word のバージョンが、このチュートリアルのすべての段階で使用するすべての API を含んでいる Word.js のバージョンをサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分が使用している Word のバージョンでサポートされているアドインの部分を使用できるようになります。
     - このコードの 2 番目の部分では、[`insert-paragraph`] ボタンのイベント ハンドラーを追加します。
@@ -95,12 +95,12 @@ ms.locfileid: "62222299"
    - これは、どのような場合にも当てはまるベスト プラクティスです。
 
     ```js
-    function insertParagraph() {
-        Word.run(function (context) {
+    async function insertParagraph() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a paragraph into the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -118,7 +118,7 @@ ms.locfileid: "62222299"
    - 2番目のパラメーターは、本文内で段落を挿入する場所です。親オブジェクトが本文の場合、[段落の挿入] のその他のオプションは、"End" または "Replace" です。
 
     ```js
-    var docBody = context.document.body;
+    const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
@@ -156,7 +156,7 @@ ms.locfileid: "62222299"
 
 1. 段落に変更を加えます。
 
-1. [**段落の挿入**] ボタンをもう一度選択します。 `insertParagraph` メソッドはドキュメントの本文の開始位置に挿入を行うため、新しい段落は前の段落より上に表示されます。
+1. **[段落の挿入]** ボタンをもう一度選択します。`insertParagraph` メソッドはドキュメントの本文の開始位置に挿入を行うため、新しい段落は前の段落より上に追加されます。
 
     ![アドインの [段落の挿入] ボタンが表示されているスクリーンショット。](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -185,12 +185,12 @@ ms.locfileid: "62222299"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function applyStyle() {
-        Word.run(function (context) {
+    async function applyStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to style text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -204,7 +204,7 @@ ms.locfileid: "62222299"
 1. `applyStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードではスタイルを段落に適用していますが、スタイルはテキストの範囲にも適用できます。
 
     ```js
-    var firstParagraph = context.document.body.paragraphs.getFirst();
+    const firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ```
 
@@ -229,12 +229,12 @@ ms.locfileid: "62222299"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function applyCustomStyle() {
-        Word.run(function (context) {
+    async function applyCustomStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply the custom style.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -248,7 +248,7 @@ ms.locfileid: "62222299"
 1. `applyCustomStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、まだ存在していないカスタム スタイルを適用しています。 「[アドインをテストする](#test-the-add-in-1)」の手順で **MyCustomStyle** という名前のスタイルを作成します。
 
     ```js
-    var lastParagraph = context.document.body.paragraphs.getLast();
+    const lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ```
 
@@ -275,12 +275,12 @@ ms.locfileid: "62222299"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function changeFont() {
-        Word.run(function (context) {
+    async function changeFont() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply a different font.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -291,10 +291,10 @@ ms.locfileid: "62222299"
     }
     ```
 
-1. `changeFont()` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、`Paragraph.getNext` メソッドにチェーンされた `ParagraphCollection.getFirst` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
+1. `changeFont()` 関数内で、`TODO1` を次のコードに置き換えます。 コードは、`Paragraph.getNext` メソッドにチェーンされた `ParagraphCollection.getFirst` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     secondParagraph.font.set({
             name: "Courier New",
             bold: true,
@@ -347,8 +347,8 @@ ms.locfileid: "62222299"
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function insertTextIntoRange() {
-        Word.run(function (context) {
+    async function insertTextIntoRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert text into a selected range.
 
@@ -358,7 +358,7 @@ ms.locfileid: "62222299"
             // TODO3: Queue commands to repeat the text of the original
             //        range at the end of the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -382,8 +382,8 @@ ms.locfileid: "62222299"
    - チュートリアルの以前のステージでは、"body" オブジェクトの "insert * メソッド" の "Before" と "After" のオプションはありません。これは、文書の本文以外のコンテンツを入力できないためです。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
     ```
 
@@ -409,45 +409,33 @@ ms.locfileid: "62222299"
   
     ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO4: Move the doc.body.insertParagraph line here.
-        })
-        // TODO5: Move the final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
-    ```
+    await context.sync();
 
-1. 分岐していない同一のコード パスに 2 つの `return` ステートメントを含めることはできないため、`Word.run` の最後にある最終行の `return context.sync();` を削除します。新しい最後の `context.sync` は、このチュートリアルの後の方で追加します。
+    // TODO4: Move the doc.body.insertParagraph line here.
+
+    // TODO5: Move the final call of context.sync here and ensure
+    //        that it does not run until the insertParagraph has
+    //        been queued.
+    ```
 
 1. `doc.body.insertParagraph` 行を切り取り、`TODO4` の代わりに貼り付けます。
-
-1. `TODO5` を次のコードに置き換えます。次の点に注意してください。
-
-   - `sync` メソッドを `then` 関数に渡すことで、`insertParagraph` ロジックがキューに登録されるまで、そのメソッドが実行されないようにします。
-
-   - `then` メソッドは渡されたどんな関数でも呼び出します。`sync` が 2 回呼び出されないように、context.sync の末尾の「()」は省略します。
-
-    ```js
-    .then(context.sync);
-    ```
 
 作業が完了すると、関数の全体は次のようになります。
 
 ```js
-function insertTextIntoRange() {
-    Word.run(function (context) {
+async function insertTextIntoRange() {
+    await Word.run(async (context) => {
 
-        var doc = context.document;
-        var originalRange = doc.getSelection();
+        const doc = context.document;
+        const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
-        return context.sync()
-            .then(function() {
-                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
-            })
-            .then(context.sync);
+        await context.sync();
+
+        doc.body.insertParagraph("Original range: " + originalRange.text, "End");
+
+        await context.sync();
     })
     .catch(function (error) {
         console.log("Error: " + error);
@@ -479,8 +467,8 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function insertTextBeforeRange() {
-        Word.run(function (context) {
+    async function insertTextBeforeRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a new range before the
             //        selected range.
@@ -507,8 +495,8 @@ function insertTextIntoRange() {
    - 2番目のパラメーターは、追加するテキストを挿入する範囲内の場所を指定します。[場所] オプションの詳細については、前の `insertTextIntoRange` 関数の説明を参照してください。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
@@ -516,14 +504,13 @@ function insertTextIntoRange() {
 
      ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO3: Queue commands to insert the original range as a
-            //        paragraph at the end of the document.
-        })
-        // TODO4: Make a final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
+    await context.sync();
+
+    // TODO3: Queue commands to insert the original range as a
+    //        paragraph at the end of the document.
+
+    // TODO4: Make a final call of context.sync here and ensure
+    //        that it runs after the insertParagraph has been queued.
     ```
 
 1. `TODO3` は次のコードで置き換えます。この新しい段落には、新しいテキストが、元の選択範囲に含まれていない  ます。元の範囲には、選択された時点のテキストのみが残ります。
@@ -535,7 +522,7 @@ function insertTextIntoRange() {
 1. `TODO4` を次のコードに置き換えます。
 
     ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
 ### <a name="replace-the-text-of-a-range"></a>範囲のテキストを置き換える
@@ -559,12 +546,12 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function replaceText() {
-        Word.run(function (context) {
+    async function replaceText() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -578,8 +565,8 @@ function insertTextIntoRange() {
 1. `replaceText()` 関数で、`TODO1` を次のコードに置き換えます。 このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("many", "Replace");
     ```
 
@@ -651,12 +638,12 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function insertImage() {
-        Word.run(function (context) {
+    async function insertImage() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert an image.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -694,12 +681,12 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function insertHTML() {
-        Word.run(function (context) {
+    async function insertHTML() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a string of HTML.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -717,7 +704,7 @@ function insertTextIntoRange() {
    - 2 行目は、その段落の末尾に HTML の文字列を挿入します。具体的には、Verdana フォントで書式設定された段落と、Word 文書の既定のスタイルが設定された段落の 2 つの段落が挿入されます。
 
     ```js
-    var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
+    const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
@@ -742,15 +729,15 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function insertTable() {
-        Word.run(function (context) {
+    async function insertTable() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
             // TODO2: Queue commands to create a table and populate it with data.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -761,10 +748,10 @@ function insertTextIntoRange() {
     }
     ```
 
-1. `insertTable()` 関数で、`TODO1` を次のコードに置き換えます。 この行は `ParagraphCollection.getFirst` メソッドを使用して最初の段落への参照を取得し、次に `Paragraph.getNext` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
+1. `insertTable()` 関数内で、`TODO1` を次のコードに置き換えます。この行は `ParagraphCollection.getFirst` メソッドを使用して最初の段落への参照を取得し、次に `Paragraph.getNext` メソッドを使用して 2 番目の段落への参照を取得することに注意してください。
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
 1. `insertTable()` 関数内で、`TODO2` を次のコードに置き換えます。次の点に注意してください。
@@ -778,7 +765,7 @@ function insertTextIntoRange() {
    - このテーブルには既定のスタイルがそのまま設定されますが、`insertTable` メソッドがさまざまなメンバーを持つ `Table` オブジェクトを返し、その一部がテーブルのスタイル設定に使用されます。
 
     ```js
-    var tableData = [
+    const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
@@ -834,12 +821,12 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function createContentControl() {
-        Word.run(function (context) {
+    async function createContentControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to create a content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -863,8 +850,8 @@ function insertTextIntoRange() {
    - `ContentControl.color` プロパティは、タグまたは境界ボックスの境界線の色を指定します。
 
     ```js
-    var serviceNameRange = context.document.getSelection();
-    var serviceNameContentControl = serviceNameRange.insertContentControl();
+    const serviceNameRange = context.document.getSelection();
+    const serviceNameContentControl = serviceNameRange.insertContentControl();
     serviceNameContentControl.title = "Service Name";
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
@@ -892,13 +879,13 @@ function insertTextIntoRange() {
 1. 次の関数をファイルの最後に追加します。
 
     ```js
-    function replaceContentInControl() {
-        Word.run(function (context) {
+    async function replaceContentInControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -914,7 +901,7 @@ function insertTextIntoRange() {
     - `ContentControlCollection.getByTag` メソッドによって、指定されたタグのすべてのコンテンツ コントロールの `ContentControlCollection` が返されます。 `getFirst` を使用して、目的のコントロールの参照を取得します。
 
     ```js
-    var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
+    const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 

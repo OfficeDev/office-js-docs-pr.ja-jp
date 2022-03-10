@@ -1,14 +1,14 @@
 ---
 title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける
-ms.date: 01/27/2022
+ms.date: 02/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 67afa308625c4f18775c3470c2bc2410af37905c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263059"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340380"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -42,9 +42,9 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 
 以下に、Windows でのデバッグに関する一般的なガイダンスを示します。 Excel の UI なしのカスタム関数と Outlook のイベントベースのアドインをデバッグするための特別な手順があります。 このセクションで後述する「[Windows の特殊なケース](#special-cases-in-windows)」を参照してください。 Windows でのデバッグは、IDE によって異なります。
 
-- **Visual Studio**: 内部デバッガーを使用してデバッグします。 「[Visual Studio で Office アドインをデバッグする](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。
+- **Visual Studio**: ブラウザーの F12 ツールを使用してデバッグします。 「[Visual Studio で Office アドインをデバッグする](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。
 - **Visual Studio Code**: Visual Studio Code 用の [アドイン デバッガー拡張機能を使用してデバッグします](debug-with-vs-extension.md)。
-- **その他の IDE** (または IDE 内でデバッグしたくない場合): アドインが開発コンピューターで使用するブラウザー ランタイムに関連付けられている開発者ツールを使用します。 次のいずれかをご覧ください。
+- **その他の IDE** (または IDE 内でデバッグしたくない場合): アドインが開発コンピューターで使用するブラウザー ランタイムに関連付けられている開発者ツールを使用します。次のいずれかを参照してください。
 
     - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
     - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
@@ -74,7 +74,7 @@ Mac で UI なしのカスタム関数をデバッグするには、「[UI な�
 
 ## <a name="debug-on-linux"></a>Linux でのデバッグ
 
-Office for Linux のデスクトップ バージョンはないため、テストとデバッグを行うには、[Web 上の Office にアドインをサイドロードする](sideload-office-add-ins-for-testing.md)必要があります。 デバッグについてのガイダンスは「[Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)」で確認できます。
+Office for Linux のデスクトップ バージョンはないため、テストとデバッグを行うには、[Web 上の Office にアドインをサイドロードする](sideload-office-add-ins-for-testing.md)必要があります。デバッグのガイドは、「[Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)」で確認できます。
 
 > [!NOTE]
 > Linux コンピューターで Office アドインを開発することはお勧めしません。ただし、すべてのアドインのユーザーが Linux コンピューターから Web 上の Office を介してアドインにアクセスすることが確実な場合を除きます。
