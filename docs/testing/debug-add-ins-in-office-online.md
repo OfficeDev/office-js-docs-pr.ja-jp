@@ -1,53 +1,39 @@
 ---
 title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
-ms.date: 12/02/2021
+ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 5a07185c064d65432c7a3afce1e9f32e99034c3e
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765907"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63435691"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
-Windows、Office 2013、または Office 2016 デスクトップ クライアントを実行していないコンピューター (たとえば、Mac で開発を行っている場合) でアドインの作成とデバッグを行えます。この記事では、Office Online を使用してアドインのテストとデバッグを行う方法について説明します。 この記事では、Office on the web を使用してアドインをテストおよびデバッグする方法について説明します。 
+この記事では、アドインをOffice on the webする方法について説明します。次の方法を使用します。
 
-## <a name="prerequisites"></a>前提条件
+- たとえば、Mac または Linux で開発している場合に、Windows または Office&mdash; デスクトップ クライアントを実行しないコンピューターでアドインをデバッグするには
+- IDE でデバッグできない、または実行しない場合は、別のデバッグ プロセスとして、Visual StudioやVisual Studio Code。
 
-開始するには
+この記事では、デバッグが必要なアドイン プロジェクトが含まれると想定しています。 Web でのデバッグの練習を行う場合は、Word のこのクイック スタートなど、特定の Office アプリケーションのクイック スタートのいずれかを使用して新しいプロジェクトを作成[します](../quickstarts/word-quickstart.md)。
 
-- 開発者アカウントMicrosoft 365持ってない場合、またはサイトにアクセスできる場合は、SharePointします。
-
-  > [!NOTE]
-  > 開発者向けの無料の 90 日間の更新プログラムをMicrosoft 365、開発者向けプログラムMicrosoft 365[参加してください](https://developer.microsoft.com/office/dev-program)。 開発者プログラム[Microsoft 365](/office/developer-program/office-365-developer-program)に参加してサブスクリプションを構成する方法の詳細については、開発者プログラムのドキュメントMicrosoft 365参照してください。
-
-- [オンライン] でアプリ カタログをSharePointします。 アプリ カタログは、SharePoint アドイン用のドキュメント ライブラリをホストする Office サイト コレクションです。サイトに独自のSharePoint場合は、アプリ カタログ ドキュメント ライブラリを設定できます。 詳細については、「タスク ウィンドウと[コンテンツ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)アドインをアプリ カタログに公開する」を参照SharePoint。
-
-
-## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Excel または Word on the web からアドインをデバッグする
+## <a name="debug-your-add-in"></a>アドインのデバッグ
 
 Word on the web を使用してアドインをデバッグするには: 
 
-1. SSL をサポートするサーバーにアドインを展開します。
+1. localhost でプロジェクトを実行し、プロジェクトをローカル ホストのドキュメントにサイドOffice on the web。 サイドローディングの手順の詳細については、「[Sideload Office Web 上のアドイン」を参照してください](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)。
 
-    > [!NOTE]
-    > [Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して、アドインを作成し、ホストすることをお勧めします。
+2. ブラウザーの開発者ツールを開きます。 これは通常、F12 キーを押して行います。 デバッガー ツールを開き、ブレークポイントとウォッチ変数の設定に使用します。 ブラウザーのツールの使用に関する詳細なヘルプについては、次のいずれかを参照してください。  
 
-2. [アドイン マニフェスト ファイル](../develop/add-in-manifests.md)で、相対 URI ではなく絶対 URI を含めるように **SourceLocation** 要素の値を更新します。たとえば次のようにします。
+   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
-
-3. SharePoint のアプリ カタログにある Office アドイン ライブラリにマニフェストをアップロードします。
-
-4. アプリExcel起動Word on the web起動して、新しいMicrosoft 365を開きます。
-
-5. [挿入] タブで、**[個人用アドイン]** または **[Office アドイン]** をクリックし、アプリにアドインを挿入してテストします。
-
-6. ブラウザーのデバッグ ツールを使用してアドインをデバッグします。 通常は F12 キーを押して開きます。
+   > [!NOTE]
+   > Office on the webが開かInternet Explorer。
 
 ## <a name="potential-issues"></a>潜在的な問題
 
@@ -57,11 +43,9 @@ Word on the web を使用してアドインをデバッグするには:
 
 - ブラウザーに無効な証明書エラーが表示されることがありますが、このエラーはバイパスする必要があります。 これを行うプロセスは、ブラウザおよびこの変更を定期的に行うさまざまなブラウザの UI によって異なります。 詳細については、ブラウザーのヘルプを検索するか、オンラインで検索してください。 (たとえば、「Microsoft Edge の無効な証明書警告」を検索します。) ほとんどのブラウザーには、警告ページにリンクがあり、このリンクをクリックするとアドイン ページにアクセスされます。 たとえば、Microsoft Edge には「Web ページへ移動 (推奨しません)」というリンクがあります。 ただし、通常はアドインが再び読み込まれるたびに、このリンクを経由する必要があります。 継続的なバイパスについては、お勧めのヘルプを参照してください。
 
-- コードにブレークポイントを設定すると、保存できないというエラーが Office on the web からスローされることがあります。
+- コードにブレークポイントを設定すると、Office on the web保存できないというエラーがスローされる場合があります。
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン開発のベスト プラクティス](../concepts/add-in-development-best-practices.md)
-- [AppSource の検証ポリシー](/legal/marketplace/certification-policies)  
-- [効率的な AppSource アプリおよびアドインを作成する](/office/dev/store/create-effective-office-store-listings)  
 - [Office アドインでのユーザー エラーのトラブルシューティング](testing-and-troubleshooting.md)
