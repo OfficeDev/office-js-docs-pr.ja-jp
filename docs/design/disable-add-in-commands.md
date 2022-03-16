@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ee45e606b8b8981550cab7439eb526ec641ac9
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855563"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511345"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -23,7 +23,7 @@ ms.locfileid: "62855563"
 
 ## <a name="office-application-and-platform-support-only"></a>Officeとプラットフォームのサポートのみ
 
-この記事で説明する API は、すべてのプラットフォームExcelおよびすべてのプラットフォームでのみPowerPoint on the web。
+この記事で説明する API は、Excel、PowerPoint、および Word でのみ使用できます。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
@@ -32,7 +32,7 @@ ms.locfileid: "62855563"
 有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属します。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「その記事Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)ホストできるバージョンとプラットフォームを指定する」は、リボン 1.1 には適用されません。
+> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「リボン](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) 1.1 にはOfficeのアドインをホストできるバージョンとプラットフォームを指定する」を参照してください。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
@@ -43,7 +43,7 @@ ms.locfileid: "62855563"
 3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順の 1 つ以上を実行する必要があります。
 
     - アドインに作業ウィンドウが含まれている場合は、Action の属性 `resid` を設定 [します](../reference/manifest/action.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、 `resid` 手順 1 の **Runtime** 要素で使用した文字列とまったく同じ文字列を指定 `Contoso.SharedRuntime.Url`します。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインにカスタム関数がExcel場合は、Page の属性`resid`を設定 [します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインにカスタム関数が含まれているExcel、Page の属性`resid`を設定 [します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
     - アドインに関数`resid`ファイルが含まれている場合は、手順 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じ文字列に [FunctionFile](../reference/manifest/functionfile.md) `resid` 要素の属性を設定します。たとえば、 を指定します。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
@@ -164,7 +164,7 @@ function enableChartFormat() {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
 
-**requestUpdate メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Office参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+**requestUpdate メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeアドインを参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 

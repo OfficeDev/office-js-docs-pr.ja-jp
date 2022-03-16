@@ -115,6 +115,8 @@ items:
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
               - name: ITP とサード パーティの Cookie
                 href: develop/itp-and-third-party-cookies.md
+              - name: 同一生成元ポリシー制限への対処
+                href: develop/addressing-same-origin-policy-limitations.md
           - name: 認証と承認
             items:
               - name: 概要
@@ -554,8 +556,6 @@ items:
                     href: reference/manifest/supportssharedfolders.md
                   - name: WebApplicationInfo
                     href: reference/manifest/webapplicationinfo.md
-          - name: 同一生成元ポリシー制限への対処
-            href: develop/addressing-same-origin-policy-limitations.md
           - name: Office アドインによって使用されるブラウザー
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'

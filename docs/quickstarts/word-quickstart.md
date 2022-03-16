@@ -4,16 +4,14 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0c6a12cc84f35ceb04e26df8be4635bddd42ca04
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340450"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511335"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
-
-_対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
 
 この記事では、Word の作業ウィンドウ アドインを作成するプロセスを紹介します。
 
@@ -139,6 +137,8 @@ _対象: Windows 用 Word 2016 以降、Word on iPad および Mac_
     ```
 
 2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

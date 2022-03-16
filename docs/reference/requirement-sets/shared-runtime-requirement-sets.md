@@ -1,25 +1,25 @@
 ---
 title: 共有ランタイム要件セット
 description: SharedRuntime API をサポートOfficeするプラットフォームとアプリケーションを指定します。
-ms.date: 02/05/2022
+ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892532"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511287"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-作業ウィンドウ、アドイン コマンドから起動される関数ファイル、Excel カスタム関数など、JavaScript コードを実行する Office アドインの一部は、単一の JavaScript ランタイムを共有できます。 これにより、すべてのパーツで一連のグローバル変数を共有したり、読み込まれたライブラリのセットを共有したり、永続ストレージを介してメッセージを渡したりすることなく相互に通信することができます。 詳細については、「共有 [JavaScript ランタイムを使用Officeアドインを構成する」を参照してください](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+作業ウィンドウ、アドイン コマンドから起動される関数ファイル、Excel カスタム関数など、JavaScript コードを実行する Office アドインの一部は、単一の JavaScript ランタイムを共有できます。 これにより、すべてのパーツで一連のグローバル変数を共有したり、読み込まれたライブラリのセットを共有したり、永続ストレージを介してメッセージを渡したりすることなく相互に通信することができます。 詳細については、「共有 JavaScript ランタイムを使用Officeアドインを構成する[」を参照してください](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 次の表に、SharedRuntime 1.1 要件セット、その要件セットをサポートする Office クライアント アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-| 要件セット | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) | Office on iPad<br>(Microsoft 365 サブスクリプションに接続) | Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回購入)  | Office on the web | Office Online Server |
+| 要件セット | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) | Office on iPad<br>(Microsoft 365 サブスクリプションに接続) | Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回の購入)  | Office on the web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1.1  | ビルド 16.0.14326.20454 以降 | バージョン 2002 (ビルド 12527.20092) 以降 | 該当なし | 16.35 以降 | 2020 年 2 月 | 該当なし |
 
@@ -30,13 +30,15 @@ ms.locfileid: "62892532"
 
 SharedRuntime 1.1 要件セットは、Excel on the web、Windows、および Mac 用にリリースされます。
 
-## <a name="preview-support-for-version-11-on-word-and-powerpoint"></a>Word と Word のバージョン 1.1 のサポートをプレビュー PowerPoint
+## <a name="preview-support-for-version-11-on-word-and-powerpoint"></a>Word と Word のバージョン 1.1 のプレビュー サポートPowerPoint
 
 次の表に、共有 JavaScript ランタイムのプレビューをサポートする追加のアプリケーション ビルドを示します。 共有ランタイムのプレビュー バージョンは変更される可能性があります。 運用環境での使用はサポートされません。 最新のビルドを入手するには、[Office Insider に参加する](https://insider.office.com/join)必要があります。 プレビュー機能を試す良い方法は、Microsoft 365 サブスクリプションを使用することです。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。
 
 |Office アプリケーション |ビルド |
 |-------------------|------|
 |PowerPoint on Windows |ビルド 16.0.13218.10000 以降 |
+|PowerPoint on Mac |ビルド 16.46.207.0 以降 |
+|PowerPoint on the web | 2022 年 2 月 |
 |Word on Windows |ビルド 16.0.13218.10000 以降 |
 |Word on Mac |ビルド 16.46.207.0 以降 |
 

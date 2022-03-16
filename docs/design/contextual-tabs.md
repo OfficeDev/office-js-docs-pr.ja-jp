@@ -1,18 +1,18 @@
 ---
-title: カスタム コンテキスト タブを Officeアドインで作成する
+title: アドインでカスタム コンテキスト タブOffice作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bf359c29552a7ca64e9d14a6b40aa5dc671bbb6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 285a73b144470798e20d6d4ca374fb8a1655db2b
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855591"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511273"
 ---
-# <a name="create-custom-contextual-tabs-in-office-add-ins"></a>カスタム コンテキスト タブを Officeアドインで作成する
+# <a name="create-custom-contextual-tabs-in-office-add-ins"></a>アドインでカスタム コンテキスト タブOffice作成する
 
-コンテキスト タブは、指定したイベントがドキュメント内で発生した場合にタブ行に表示Officeリボンの非表示のタブ コントロールOfficeです。 たとえば、テーブル **が選択されている** ときにリボンのExcel[テーブルのデザイン] タブが表示されます。 カスタム コンテキスト タブは、Officeアドインに含め、表示設定を変更するイベント ハンドラーを作成して、表示または非表示の状態を指定します。 (ただし、カスタム コンテキスト タブはフォーカスの変更に応答しない)。
+コンテキスト タブは、指定したイベントがドキュメント内で発生した場合にタブ行に表示Officeリボンの非表示のタブ コントロールOfficeです。 たとえば、テーブル **が選択されている** ときにリボンのExcel[テーブルのデザイン] タブが表示されます。 カスタム コンテキスト タブは、Officeアドインに含め、表示設定を変更するイベント ハンドラーを作成して、表示または非表示の設定を指定します。 (ただし、カスタム コンテキスト タブはフォーカスの変更に応答しない)。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
@@ -20,9 +20,10 @@ ms.locfileid: "62855591"
 > - [アドイン コマンドの基本概念](add-in-commands.md)
 
 > [!IMPORTANT]
-> カスタム コンテキスト タブは現在、これらのプラットフォームExcelビルドでのみサポートされています。
+> カスタム コンテキスト タブは、現在、これらのプラットフォームExcelビルドでのみサポートされています。
 >
-> - Excel (Windows サブスクリプションMicrosoft 365): バージョン 2102 (ビルド 13801.20294) 以降。
+> - Excel (WindowsサブスクリプションMicrosoft 365): バージョン 2102 (ビルド 13801.20294) 以降。
+> - Excel Mac: バージョン 16.53.806.0 以降。
 > - Excel on the web
 
 > [!NOTE]
@@ -41,7 +42,7 @@ ms.locfileid: "62855591"
 - 1 つ以上の組み込みのコンテキスト タブと、アドインから 1 つ以上のカスタム コンテキスト タブが同時に表示される場合、カスタム コンテキスト タブは常にすべての組み込みコンテキスト タブの右側に表示されます。
 - アドインに複数のコンテキスト タブが含み、複数のコンテキストが表示されている場合は、アドインで定義されている順序で表示されます。 (方向は Office 言語と同じ方向です。つまり、左から右の言語では左から右、右から左の言語では右から左)。定義[方法の詳細については、「タブに表示される](#define-the-groups-and-controls-that-appear-on-the-tab)グループとコントロールを定義する」を参照してください。
 - 特定のコンテキストで表示されるコンテキスト タブが複数のアドインにある場合は、アドインが起動された順序で表示されます。
-- カスタム *コンテキスト* タブは、カスタム コア タブとは異なり、アプリケーションのリボンOffice完全に追加されません。 アドインが実行されているOfficeドキュメントにのみ存在します。
+- カスタム *コンテキスト* タブは、カスタム コア タブとは異なり、アプリケーションのリボンOffice完全には追加されません。 アドインが実行されているOfficeドキュメントにのみ存在します。
 
 ## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>アドインにコンテキスト タブを含む場合の主な手順
 
@@ -58,12 +59,12 @@ ms.locfileid: "62855591"
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>タブに表示されるグループとコントロールを定義する
 
-マニフェストで XML で定義されたカスタム コア タブとは異なり、カスタム コンテキスト タブは実行時に JSON BLOB を使用して定義されます。 コードは BLOB を JavaScript オブジェクトに解析し、オブジェクトを [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) メソッドに渡します。 カスタム コンテキスト タブは、アドインが現在実行されているドキュメントにのみ表示されます。 これは、アドインのインストール時に Office アプリケーション リボンに追加されるカスタム コア タブとは異なります。また、別のドキュメントを開いた時点でも存在します。 また、メソッド `requestCreateControls` はアドインのセッションで 1 回だけ実行できます。 再び呼び出された場合は、エラーがスローされます。
+マニフェストで XML で定義されたカスタム コア タブとは異なり、カスタム コンテキスト タブは実行時に JSON BLOB を使用して定義されます。 コードは BLOB を JavaScript オブジェクトに解析し、オブジェクトを [Office.ribbon.requestCreateControls メソッドに渡](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))します。 カスタム コンテキスト タブは、アドインが現在実行されているドキュメントにのみ表示されます。 これは、アドインのインストール時に Office アプリケーション リボンに追加されるカスタム コア タブとは異なります。また、別のドキュメントを開いた時点でも存在します。 また、メソッド `requestCreateControls` はアドインのセッションで 1 回だけ実行できます。 再び呼び出された場合は、エラーがスローされます。
 
 > [!NOTE]
 > JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](../reference/manifest/customtab.md) 要素とその子孫要素の構造と大まかに平行です。
 
-コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは [、dynamic-ribbon.schema.json にあります](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して、JSON を取得IntelliSense検証できます。 詳細については、「JSON スキーマと[設定を使用して JSON Visual Studio Code編集する」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
+コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは [、dynamic-ribbon.schema.json にあります](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して JSON のIntelliSense検証できます。 詳細については、「JSON スキーマと[設定を使用して JSON Visual Studio Code編集する」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
 1. まず、という名前の 2 つの配列プロパティを持つ JSON 文字列を作成 `actions` します `tabs`。 配列 `actions` は、コンテキスト タブのコントロールで実行できるすべての関数の仕様です。配列 `tabs` は、最大 20 までの 1 つ以上のコンテキスト タブ *を定義します*。
 
@@ -117,7 +118,7 @@ ms.locfileid: "62855591"
     - すべてのプロパティが必要です。
     - プロパティ `id` は、マニフェスト内のすべてのグループ間で一意である必要があります。 最大 125 文字の簡潔でわかりやすい ID を使用します。
     - グループ `label` のラベルとして使用するユーザーフレンドリーな文字列です。
-    - プロパティ`icon`の値は、リボンのサイズとアプリケーション ウィンドウのサイズに応じて、グループがリボンに表示するアイコンをOffice配列です。
+    - プロパティ`icon`の値は、リボンのサイズとアプリケーション ウィンドウのサイズに応じて、リボンに表示されるアイコンを指定するオブジェクトOfficeです。
     - プロパティ `controls` の値は、グループ内のボタンとメニューを指定するオブジェクトの配列です。 少なくとも 1 つが必要です。
 
     > [!IMPORTANT]
@@ -136,7 +137,7 @@ ms.locfileid: "62855591"
     }
     ```
 
-1. すべてのグループには、32x32 px と 80x80 px の少なくとも 2 つのサイズのアイコンが必要です。 必要に応じて、サイズ 16x16 px、20x20 px、24x24 px、40x40 px、48x48 px、および 64x64 px のアイコンを使用できます。 Office、リボンのサイズとアプリケーション ウィンドウのサイズに基づいて使用するOffice決定します。 アイコン配列に次のオブジェクトを追加します。 (ウィンドウとリボンのサイズが、グループのコントロールの少なくとも 1 つが表示されるのに十分な大きさの場合、グループ アイコンは表示されません。 たとえば、Word **ウィンドウを縮小** して展開する場合は、Word リボンの [スタイル] グループを確認します)。このマークアップについて、次の点に注意してください。
+1. すべてのグループには、32x32 px と 80x80 px の少なくとも 2 つのサイズのアイコンが必要です。 必要に応じて、サイズ 16x16 px、20x20 px、24x24 px、40x40 px、48x48 px、および 64x64 px のアイコンを使用できます。 Office、リボンとアプリケーション ウィンドウのサイズに基づいて使用するOffice決定します。 アイコン配列に次のオブジェクトを追加します。 (ウィンドウとリボンのサイズが、グループのコントロールの少なくとも 1 つが表示されるのに十分な大きさの場合、グループ アイコンは表示されません。 たとえば、Word **ウィンドウを縮小** して展開する場合は、Word リボンの [スタイル] グループを確認します)。このマークアップについて、次の点に注意してください。
 
     - 両方のプロパティが必要です。
     - プロパティ `size` の単位はピクセルです。 アイコンは常に正方形なので、数値は高さと幅の両方です。
@@ -252,7 +253,7 @@ JSON BLOB の完全な例を次に示します。
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>requestCreateControls でコンテキスト タブを Officeに登録する
 
-コンテキスト タブは、[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) メソッドを呼び出Officeに登録されます。 これは通常、メソッドに割り当てられている `Office.initialize` 関数またはメソッドで行 `Office.onReady` われます。 これらのメソッドとアドインの初期化の詳細については、「Initialize [your Officeアドイン」を参照してください](../develop/initialize-add-in.md)。 ただし、初期化後にいつでもメソッドを呼び出す場合があります。
+コンテキスト タブは、[Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) メソッドOffice呼び出すことによって、ユーザーに登録されます。 これは通常、メソッドに割り当てられている `Office.initialize` 関数またはメソッドで行 `Office.onReady` われます。 これらのメソッドとアドインの初期化の詳細については、「Initialize [your Officeアドイン」を参照してください](../develop/initialize-add-in.md)。 ただし、初期化後にいつでもメソッドを呼び出す場合があります。
 
 > [!IMPORTANT]
 > メソッド `requestCreateControls` は、アドインの特定のセッションで 1 回だけ呼び出される場合があります。 再び呼び出された場合は、エラーがスローされます。
@@ -269,7 +270,7 @@ Office.onReady(async () => {
 
 ## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>requestUpdate でタブが表示されるコンテキストを指定する
 
-通常、ユーザーが開始したイベントがアドイン コンテキストを変更すると、カスタム コンテキスト タブが表示されます。 グラフ (ブックの既定のワークシート) がアクティブ化されている場合にのみ、タブを表示する必要があるシナリオExcel考えます。
+通常、ユーザーが開始したイベントがアドイン コンテキストを変更すると、カスタム コンテキスト タブが表示されます。 グラフ (ブックの既定のワークシート) がアクティブ化されている場合にのみ、タブを表示するシナリオExcel考えます。
 
 まず、ハンドラーを割り当てる。 これは、一般的 `Office.onReady` に、ハンドラー (後の手順で作成) `onActivated` `onDeactivated` をワークシート内のすべてのグラフのイベントに割り当てる次の例のようにメソッドで行われます。
 
@@ -310,7 +311,7 @@ async function showDataTab() {
 
 タブを非表示にするハンドラーは、 `visible` プロパティをに設定する以外は、ほぼ同じです `false`。
 
-またOffice JavaScript ライブラリには、オブジェクトを簡単に構築するためのいくつかのインターフェイス (型) も用意`RibbonUpdateData`されています。 TypeScript の関数 `showDataTab` を次に示します。これらの型を使用します。
+JavaScript Officeには、オブジェクトを簡単に構築するためのインターフェイス (型) も用意`RibbonUpdateData`されています。 TypeScript の関数 `showDataTab` を次に示します。これらの型を使用します。
 
 ```typescript
 const showDataTab = async () => {
@@ -471,7 +472,7 @@ function myContextChanges() {
 
 ## <a name="localize-the-json-text"></a>JSON テキストをローカライズする
 
-渡される JSON BLOB `requestCreateControls` は、カスタム コア タブのマニフェスト マークアップがローカライズされるのと同じ方法でローカライズされません (マニフェストからのローカライズの制御で [説明します](../develop/localization.md#control-localization-from-the-manifest))。 代わりに、ローカライズは、ロケールごとに個別の JSON BLOB を使用して実行時に行う必要があります。 `switch` [Office.context.displayLanguage プロパティ](/javascript/api/office/office.context#office-office-context-displaylanguage-member)をテストするステートメントを使用してください。 次に例を示します。
+渡される JSON BLOB `requestCreateControls` は、カスタム コア タブのマニフェスト マークアップがローカライズされるのと同じ方法でローカライズされません (マニフェストからのローカライズの制御で [説明します](../develop/localization.md#control-localization-from-the-manifest))。 代わりに、ローカライズは、ロケールごとに個別の JSON BLOB を使用して実行時に行う必要があります。 `switch` [Office.context.displayLanguage プロパティをテストするステートメントを使用してください](/javascript/api/office/office.context#office-office-context-displaylanguage-member)。 次に例を示します。
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -594,7 +595,7 @@ function showDataTab() {
 }
 ```
 
-## <a name="resources"></a>リソース
+## <a name="resources"></a>関連情報
 
 - [コード サンプル: リボンにカスタム コンテキスト タブを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs)
 - Communityタブのサンプルのデモ
