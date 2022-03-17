@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 01/06/2022
+ms.date: 02/23/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 10b07f1283184949de1e5128d0c7e6d20f3d4a25
-ms.sourcegitcommit: be6ba48ba733acc08d1ac2b4f164246de5864f12
+ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "62369347"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511382"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -27,16 +27,9 @@ ms.locfileid: "62369347"
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) またはお好みのコード エディター
 
 - Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web
 
@@ -124,7 +117,7 @@ ms.locfileid: "62369347"
 
 1. このアドインは以下のライブラリを使用します。
 
-    - MarkdownをHTMLに変換する[Showdown](https://github.com/showdownjs/showdown)ライブラリ
+    - MarkdownをHTMLに変換する [Showdown](https://github.com/showdownjs/showdown) ライブラリ。
     - 相対URLを構築するための[URI.js](https://github.com/medialize/URI.js)ライブラリ。
     - DOMとの相互操作を単純化するための[jquery](https://jquery.com/)ライブラリ。
 
@@ -134,6 +127,10 @@ ms.locfileid: "62369347"
     npm install showdown urijs jquery --save
     ```
 
+1. VS Code またはお好みのコード エディターでプロジェクトを開きます。
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
 アドインのマニフェストは、Outlook での表示方法を制御します。またマニフェストは、アドインがアドイン一覧に表示される方法と、リボンに表示されるボタンを定義し、アドインによって使用される HTML ファイルと JavaScript ファイルの URL を設定します。
@@ -142,13 +139,13 @@ ms.locfileid: "62369347"
 
 **manifest.xml** ファイルで次の更新を行い、アドインに関する基本情報を指定します。
 
-1. `ProviderName` 要素を探し、既定値を会社名に置き換えます。
+1. **ProviderName** 要素を探し、既定値を会社名に置き換えます。
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. `Description` 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。
+1. **Description** 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -166,7 +163,13 @@ ms.locfileid: "62369347"
     npm start
     ```
 
-1. Outlookで既存のメッセージを開き、**タスクパネルを表示** ボタンを選択します。 すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
+1. Outlookで既存のメッセージを開き、**タスクパネルを表示** ボタンを選択します。
+
+1. **WebView Stop On Load** ダイアログ ボックスでプロンプトが表示されたら、**[OK]** を選択します。
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
+    すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
 
     ![[作業ウィンドウを表示] ボタンのスクリーンショットとサンプルによって追加された作業ウィンドウの Git the gist。](../images/button-and-pane.png)
 
@@ -180,21 +183,21 @@ ms.locfileid: "62369347"
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>MessageReadCommandSurface 拡張点を削除する
 
-**manifest.xml** ファイルを開き、`MessageReadCommandSurface` 型の `ExtensionPoint` 要素を探します。 この `ExtensionPoint` 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
+**manifest.xml** ファイルを開き、種類が **MessageReadCommandSurface** の **ExtensionPoint** 要素を見つけます。 この **ExtensionPoint** 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>MessageComposeCommandSurface 拡張点を追加する
 
 マニフェスト内で `</DesktopFormFactor>` という行を探します。 この行の直前に、次の XML マークアップを挿入します。 このマークアップについて、次の情報にご注意ください。
 
-- `xsi:type="MessageComposeCommandSurface"`とともに`ExtensionPoint`は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
+- `xsi:type="MessageComposeCommandSurface"` の **ExtensionPoint** は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
 
-- `id="TabDefault"` の `OfficeTab` 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。
+- `id="TabDefault"` の **OfficeTab** 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。
 
-- `Group` 要素は、`groupLabel` リソースによってラベルが設定された新しいボタンのグループ化を定義します。
+- **Group** 要素は、**groupLabel** リソースによってラベルが設定された新しいボタンのグループ化を定義します。
 
-- 最初の `Control` 要素には、`xsi:type="ShowTaskPane"` の `Action` 要素が含まれているので、このボタンは作業ウィンドウを開きます。
+- 最初の **Control** 要素には、`xsi:type="ShowTaskPane"` の **Action** 要素が含まれているので、このボタンは作業ウィンドウを開きます。
 
-- 2 番目の `Control` 要素には `xsi:type="ExecuteFunction"` の `Action` 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。
+- 2 番目の **Control** 要素には `xsi:type="ExecuteFunction"` の **Action** 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。
 
 ```xml
 <!-- Message Compose -->
@@ -239,11 +242,11 @@ ms.locfileid: "62369347"
 
 ### <a name="update-resources-in-the-manifest"></a>マニフェスト内のリソースを更新する
 
-前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。 この情報を、マニフェストの`Resources`部分で指定します。
+前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。 この情報を、マニフェストの **Resources** セクションで指定します。
 
-1. マニフェストファイル内の`Resources`要素を見つけて、要素全体（その終了タグを含む）を削除します。
+1. マニフェストファイルで **Resources** 要素を見つけて、要素全体 (その終了タグを含む) を削除します。
 
-1. 同じ場所に、次のマークアップを追加して、削除した `Resources` 要素を置き換えます。
+1. 同じ場所に、次のマークアップを追加して、削除した **Resources** 要素を置き換えます。
 
     ```xml
     <Resources>
@@ -274,15 +277,15 @@ ms.locfileid: "62369347"
 
 ### <a name="reinstall-the-add-in"></a>アドインを再インストールする
 
-以前にはファイルからアドインをインストールしたため、マニフェストに対して行った変更を有効にするにはそのアドインを再インストールする必要があります。
+マニフェストの変更を有効にするには、アドインを再インストールする必要があります。
 
-1. 指示に従って、[サイドロードされたアドイン](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)から **Git the gist** を削除します。
+1. Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。
 
-1. **[個人用アドイン]** ウィンドウを閉じます。
+1. 次のコマンドを実行し、ローカル Web サーバーを起動してアドインのサイドロードを自動的に行います。
 
-1. カスタム ボタンは一時的にリボンに表示されなくなります。
-
-1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って、更新した **manifest.xml** ファイルを使用してアドインを再インストールします。
+    ```command&nbsp;line
+    npm start
+    ```
 
 アドインを再インストールした後、メッセージ作成ウィンドウで **Insert gist** と **Insert default gist** のコマンドを確認して、アドインが正常にインストールされたことを確認できます。 このアドインのビルドはまだ完了していないため、どちらを選択しても何も起こりません。
 
@@ -300,7 +303,7 @@ ms.locfileid: "62369347"
 
 ### <a name="collect-data-from-the-user"></a>ユーザーからデータを収集する
 
-ダイアログ自体の UI を作成することから始めましょう。 **./src** フォルダー内に、**settings** という名前の新しいサブフォルダーを作成します。 **./src/settings** フォルダーに **dialog.html** という名前のファイルを作成し、次のマークアップを追加して、GitHubユーザー名、およびJavaScriptを介して生成される空の概要リストのテキストを入力できるごく基本的なフォームを定義します。
+ダイアログ自体の UI を作成することから始めましょう。 **./src** フォルダー内に、**settings** という名前の新しいサブフォルダーを作成します。 **./src/settings** フォルダーに **dialog.html** という名前のファイルを作成し、次のマークアップを追加して、GitHub ユーザー名、および JavaScript を介して生成される空の概要リストのテキストを入力できる基本的なフォームを定義します。
 
 ```html
 <!DOCTYPE html>
@@ -365,7 +368,6 @@ ms.locfileid: "62369347"
       </div>
     </section>
   </main>
-  <script type="text/javascript" src="../../node_modules/core-js/client/core.js"></script>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
@@ -373,6 +375,8 @@ ms.locfileid: "62369347"
 
 </html>
 ```
+
+HTML ファイルが、まだ存在しない JavaScript ファイル **gist-api.js** を参照することがわかります。 このファイルは、以下の [[GitHub からデータを取得する]](#fetch-data-from-github) セクションで作成されます。
 
 次に、**./src/settings** フォルダーに **dialog.css** という名前のファイルを作成し、次のコードを追加して **dialog.html** で使用されるスタイルを指定します。
 
@@ -409,7 +413,7 @@ ul {
 }
 ```
 
-これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。 **./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。 このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために `messageParent` 関数を使用しています。
+これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。 **./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。 このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために **messageParent** 関数を使用しています。
 
 ```js
 (function(){
@@ -515,62 +519,70 @@ ul {
 
 #### <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
 
-最後に、プロジェクトのルートディレクトリにあるファイル **webpack.config.js** ファイルを開き、以下の手順を実行します。
+最後に、プロジェクトのルート ディレクトリにある **webpack.config.js** ファイルを開き、次の手順を実行します。
 
 1. `config`オブジェクト内で`entry`オブジェクトを探し、`dialog`の新しいエントリーを追加します。
 
     ```js
-    dialog: "./src/settings/dialog.js"
+    dialog: "./src/settings/dialog.js",
     ```
 
     これを実行すると、新しい`entry`オブジェクトは次のようになります。
 
     ```js
     entry: {
-      polyfill: "@babel/polyfill",
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      dialog: "./src/settings/dialog.js"
+      dialog: "./src/settings/dialog.js",
     },
     ```
 
-1. `config` オブジェクト内で `plugins` 配列を探します。 `new CopyWebpackPlugin` オブジェクトの`patterns` 配列で、`taskpane.css` エントリーの後に新しいエントリーを追加します。
+1. `config` オブジェクト内で `plugins` 配列を探します。 `new CopyWebpackPlugin` オブジェクトの `patterns` 配列で、**taskpane.css** と **dialog.css** の新しいエントリを追加します。
 
     ```js
     {
+      from: "./src/taskpane/taskpane.css",
+      to: "taskpane.css",
+    },
+    {
+      from: "./src/settings/dialog.css",
       to: "dialog.css",
-      from: "./src/settings/dialog.css"
     },
     ```
 
     これを実行すると、`new CopyWebpackPlugin`オブジェクトは次のようになります。
 
     ```js
-      new CopyWebpackPlugin({
-        patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
+    new CopyWebpackPlugin({
+      patterns: [
+      {
+        from: "./src/taskpane/taskpane.css",
+        to: "taskpane.css",
+      },
+      {
+        from: "./src/settings/dialog.css",
+        to: "dialog.css",
+      },
+      {
+        from: "assets/*",
+        to: "assets/[name][ext][query]",
+      },
+      {
+        from: "manifest*.xml",
+        to: "[name]." + buildType + "[ext]",
+        transform(content) {
+          if (dev) {
+            return content;
+          } else {
+            return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
           }
-        }
-      ]}),
+        },
+      },
+    ]}),
     ```
 
-1. `config`オブジェクト内で`plugins` 配列を探し、この新しいオブジェクトをその配列の末尾に追加します。
+1. `plugins` オブジェクト内の同じ `config` 配列で、この新しいオブジェクトをその配列の末尾に追加します。
 
     ```js
     new HtmlWebpackPlugin({
@@ -584,38 +596,42 @@ ul {
 
     ```js
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane"]
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
-          }
-        }
-      ]}),
+          {
+            from: "./src/taskpane/taskpane.css",
+            to: "taskpane.css",
+          },
+          {
+            from: "./src/settings/dialog.css",
+            to: "dialog.css",
+          },
+          {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+          },
+          {
+            from: "manifest*.xml",
+            to: "[name]." + buildType + "[ext]",
+            transform(content) {
+              if (dev) {
+                return content;
+              } else {
+                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+              }
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
+        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "dialog.html",
@@ -625,25 +641,11 @@ ul {
     ],
     ```
 
-1. Webサーバーが稼働している場合は、ノード コマンド ウィンドウを閉じます。
-
-1. 次のコマンドを実行してプロジェクトを再構築します。
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-1. 次のコマンドを実行し、Web サーバーを起動してアドインのサイドロードを行います。
-
-    ```command&nbsp;line
-    npm start
-    ```
-
 ### <a name="fetch-data-from-github"></a>GitHub からデータを取得する
 
-上記で作成した **dialog.js** ファイルには、GitHub ユーザー名フィールドについて `change` イベントが発生したときにアドインが Gist を読み込む必要があることが指定されています。 GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。
+上記で作成した **dialog.js** ファイルでは、GitHub ユーザー名フィールドについて **変更** イベントが発生したときにアドインが Gist を読み込む必要があることを指定しています。 GitHub からユーザーの Gist を取得するには、[GitHub Gist の API](https://developer.github.com/v3/gists/) を使用します。
 
-**./src** フォルダー内に、**helpers** という名前の新しいサブフォルダーを作成します。 **./src/helpers** フォルダーに **gist-api.js** という名前のファイルを作成し、以下のコードを追加してGitHubからユーザーの概要を取得し、概要のリストを作成します。
+**./src** フォルダー内に、**helpers** という名前の新しいサブフォルダーを作成します。**./src/helpers** フォルダーに **Gist-api.js** という名前のファイルを作成し、以下のコードを追加して GitHub からユーザーの Gist を取得し、Gist のリストを作成します。
 
 ```js
 function getUserGists(user, callback) {
@@ -713,8 +715,11 @@ function buildFileList(files) {
 }
 ```
 
-> [!NOTE]
-> 設定ダイアログを呼び出すためのボタンがないことに気づかれたかもしれません。 代わりに、アドインは構成済みであるかどうかを、ユーザーが **[Insert default gist]** ボタンまたは **[Insert gist]** ボタンのいずれかを選択したときに確認します。 アドインがまだ構成されていない場合、設定ダイアログが表示され、処理を進める前に構成するようにユーザーに促します。
+次のコマンドを実行してプロジェクトを再構築します。
+
+```command&nbsp;line
+npm run build
+```
 
 ## <a name="implement-a-ui-less-button"></a>UI のないボタンを実装する
 
@@ -726,7 +731,7 @@ function buildFileList(files) {
 
 ### <a name="update-the-function-file-html"></a>関数ファイルを更新する (HTML)
 
-UI のないボタンによって呼び出される関数は、対応するフォーム ファクターのマニフェスト内の `FunctionFile` 要素で指定されたファイルで定義する必要があります。 このアドインのマニフェストでは、`https://localhost:3000/commands.html` が関数ファイルとして指定されています。
+UI のないボタンによって呼び出される関数は、対応するフォーム係数のマニフェスト内の **FunctionFile** 要素で指定されたファイルで定義する必要があります。このアドインのマニフェストは、関数ファイルとして `https://localhost:3000/commands.html` を指定します。
 
 ファイル **./src/commands/commands.html** を開き、内容全体を次のマークアップに置き換えます。
 
@@ -741,11 +746,11 @@ UI のないボタンによって呼び出される関数は、対応するフ�
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-    <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-    <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-    <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+    <script type="text/javascript" src="../helpers/addin-config.js"></script>
+    <script type="text/javascript" src="../helpers/gist-api.js"></script>
 </head>
 
 <body>
@@ -756,9 +761,11 @@ UI のないボタンによって呼び出される関数は、対応するフ�
 </html>
 ```
 
+HTML ファイルが、まだ存在しない JavaScript ファイル **addin-config.js** を参照することがわかります。 このファイルは、このチュートリアルの後半の [[構成設定を管理するファイルを作成する]](#create-a-file-to-manage-configuration-settings) セクションで作成されます。
+
 ### <a name="update-the-function-file-javascript"></a>関数ファイルを更新する (JavaScript)
 
-ファイル **./src/commands/commands.js** を開き、内容全体を次のコードに置き換えます。 アドインがまだ構成されていないことが `insertDefaultGist` 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。 これにより、**./settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。
+ファイル **./src/commands/commands.js** を開き、内容全体を次のコードに置き換えます。 アドインがまだ構成されていないことが **insertDefaultGist** 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。 これにより、**./src/settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。
 
 ```js
 var config;
@@ -815,7 +822,7 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
     var dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
@@ -879,7 +886,7 @@ function setConfig(config, callback) {
 
 ### <a name="create-new-functions-to-process-gists"></a>Gist を処理する新しい関数を作成する
 
-次に、**./src/helpers/gist-api.js** ファイルを開き、以下の機能を追加します。 次の点に注意してください。
+次に、**./src/helpers/Gist-api.js** ファイルを開き、以下の機能を追加します。次の点に注意してください。
 
 - Gist に HTML が含まれている場合、アドインは HTML をそのままメッセージの本文に挿入します。
 
@@ -911,7 +918,7 @@ function buildBodyContent(gist, callback) {
         // We have a winner.
         switch (file.language) {
           case 'HTML':
-            // Insert as-is.
+            // Insert as is.
             callback(file.content);
             break;
           case 'Markdown':
@@ -935,7 +942,7 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a>ボタンをテストする
+### <a name="test-the-insert-default-gist-button"></a>[既定の Gist の挿入] ボタンをテストする
 
 すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert default gist]** ボタンのテストを行います。
 
@@ -945,11 +952,11 @@ function buildBodyContent(gist, callback) {
 
     ![アドインを構成するためのダイアログ プロンプトのスクリーンショット。](../images/addin-prompt-configure.png)
 
-1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **選択** するかクリックします。すると、`change` イベントが呼び出され、公開 Gist のリストが読み込まれます。 既定とする Gist を選択し、**[Done]** を選択します。
+1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **[タブ]** するかクリックします。すると、**変更** イベントが呼び出され、公開 Gist のリストが読み込まれます。既定にする Gist を選択し、**[完了]** を選択します。
 
     ![アドインの設定ダイアログのスクリーンショット。](../images/addin-settings.png)
 
-1. もう一度 **[Insert default gist]** ボタンを選択します。 今度は、Gist のコンテンツが電子メールの本文に挿入されます。
+1. ここでもう一度、**[既定の Gist の挿入]** ボタンを選択します。今度は、電子メールの本文に挿入された形で Gist の内容が表示されます。
 
    > [!NOTE]
    > Windows 上の Outlook: 最新の設定を選択するには、[メッセージの作成] ウィンドウを閉じて、もう一度開く必要がある場合があります。
@@ -1011,11 +1018,11 @@ function buildBodyContent(gist, callback) {
       <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
     </div>
   </footer>
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="taskpane.js"></script>
 </body>
 
@@ -1142,11 +1149,8 @@ ul {
       -webkit-flex: 1 0 0px;
               flex: 1 0 0px;
       padding: 20px; }
-      .ms-landing-page__footer--left:active, .ms-landing-page__footer--left:hover {
-        background: #005ca4;
-        cursor: pointer; }
       .ms-landing-page__footer--left:active {
-        background: #005ca4; }
+        cursor: default; }
       .ms-landing-page__footer--left--disabled {
         opacity: 0.6;
         pointer-events: none;
@@ -1235,7 +1239,7 @@ ul {
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
+        var url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
@@ -1296,7 +1300,7 @@ ul {
 })();
 ```
 
-### <a name="test-the-button"></a>ボタンをテストする
+### <a name="test-the-insert-gist-button"></a>[Insert gist] ボタンをテストする
 
 すべての変更を保存したら、コマンド プロンプトから `npm start` を実行します (サーバーがまだ実行されていない場合)。 その後、次の手順に従って **[Insert gist]** ボタンのテストを行います。
 

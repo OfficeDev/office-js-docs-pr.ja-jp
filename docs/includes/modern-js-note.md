@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> 次のコードは ES6 JavaScript を使用しています。これは、[InternetExplorer 11 ブラウザー エンジンを使用する古いバージョンの Office](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins) とは互換性がありません。 これらのプラットフォームを本番環境でサポートする方法については、「[Internet Explorer 11のサポート](/office/dev/add-ins/develop/support-ie-11)」を参照してください。 [Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる最新の Office アプリケーションを含む 90 日間の更新可能な Microsoft 365 サブスクリプションを無料で入手してください。

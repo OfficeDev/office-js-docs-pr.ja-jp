@@ -4,12 +4,12 @@ description: Excel アドインを構築します。このアドインでは、�
 ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: f8d21b0003f24b1b216e0e6823d1962778e18223
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340877"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511306"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -30,6 +30,11 @@ ms.locfileid: "63340877"
 ## <a name="prerequisites"></a>前提条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Microsoft 365 サブスクリプションに接続されている Office (Office for the web を含む)。
+
+    > [!NOTE]
+    > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
 
 ## <a name="create-your-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -95,6 +100,8 @@ ms.locfileid: "63340877"
     - `context.sync` メソッドは、キューに登録されたすべてのコマンドを実行するために Excel に送信します。
 
     - これは、どのような場合にも当てはまるベスト プラクティスです。
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function createTable() {
@@ -300,7 +307,7 @@ ms.locfileid: "63340877"
 
    - `SortField` オブジェクトの `key` プロパティは、並べ替えに使用される対象列の 0 から始まるインデックスです。 テーブルの行は、参照する列の値に基づいて並べ替えられます。
 
-   - `Table` の `sort` メンバーは、`TableSort` オブジェクトであり、メソッドではありません。 `TableSort` オブジェクトの `apply` メソッドには、`SortField` が渡されます。
+   - `Table` の `sort` メンバーは、`TableSort` オブジェクトであり、メソッドではありません。`SortField` は、`TableSort` オブジェクトの `apply` メソッドに渡されます。
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -374,7 +381,7 @@ ms.locfileid: "63340877"
     }
     ```
 
-1. `createChart()` 関数で、`TODO1` を次のコードに置き換えます。 ヘッダー行を除外するために、このコードでは、`getRange` メソッドではなく `Table.getDataBodyRange` メソッドを使用してグラフを作成するデータの範囲を取得しています。
+1. `createChart()` 関数で、`TODO1` を次のコードに置き換えます。ヘッダー行を除外するために、このコードでは、`getRange` メソッドではなく `Table.getDataBodyRange` メソッドを使用してグラフを作成するデータの範囲を取得しています。
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -394,7 +401,7 @@ ms.locfileid: "63340877"
     const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. `createChart()` 関数で、`TODO3` を次のコードに置き換えます。 このコードのほとんどの部分は、わかりやすく説明不要なものです。 注:
+1. `createChart()` 関数で、`TODO3` を次のコードに置き換えます。このコードのほとんどの部分は、わかりやすく説明不要なものです。次の点に注意してください。
 
    - `setPosition` 方法のパラメーターでは、グラフを挿入するワークシート領域の左上のセルを指定します。Excel では、指定した空間でグラフを見栄えよくするために、線の太さなどの調整ができます。
 
@@ -502,7 +509,7 @@ ms.locfileid: "63340877"
 
 1. マニフェスト ファイル **./manifest.xml** を開きます。
 
-1. `<Control>` 要素を見つけます。 この要素では、アドインの起動に使用している **[ホーム]** リボンの **[作業ウィンドウの表示]** ボタンを定義しています。 ここでは、**[ホーム]** リボンの同じグループに 2 つ目のボタンを追加します。 `</Control>` 終了タグと `</Group>` 終了タグの間に、次のマークアップを追加します。
+1. `<Control>` 要素を見つけます。この要素は、アドインの起動に使用する **[ホーム]** リボンの **[作業ウィンドウを表示]** ボタンを定義します。**[ホーム]** リボンの同じグループに 2 番目のボタンを追加します。終了 `</Control>` タグと終了 `</Group>` タグの間に、次のマークアップを追加します。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -528,7 +535,7 @@ ms.locfileid: "63340877"
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-1. 次の3つの `TODO` によってリソース ID `resid`が設定されます。 リソースは文字列 (最大長 32 文字) で、後の手順でこれら 3 つの文字列を作成します。 ここでは、そのリソースに ID を割り当てる必要があります。 ボタンのラベルは「Toggle Protection」と表示されるようにしますが、この文字列の *ID* は「ProtectionButtonLabel」にします。そのため、`Label` 要素は次のようになります。
+1. 次の 3 つの `TODO` は、リソース ID または `resid` を設定します。リソースは文字列 (最大文字数32文字) です。これら 3 つの文字列は、この後の手順で作成します。ここでは、そのリソースに ID を割り当てる必要があります。ボタンのラベルは「トグル プロテクション」と表示されますが、この文字列の *ID* は「ProtectionButtonLabel」である必要があるため、`Label` 要素は次のようになります。
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
@@ -546,7 +553,7 @@ ms.locfileid: "63340877"
    > [!NOTE]
    > 運用アドインでは、2つの異なるボタンに同じアイコンを使用することはできません。ただし、このチュートリアルを簡素化するには、このチュートリアルを行います。新しい `Control` の `Icon` マークアップは、既存の `Control`の `Icon` 要素のコピーにすぎません。
 
-1. 既にマニフェストに存在している元の `Control` 要素の内側にある `Action` 要素では、その要素のタイプが `ShowTaskpane` に設定されていますが、新しいボタンで作業ウィンドウを開く予定はありません。このボタンでは、この後の手順で作成するカスタム関数を実行する予定です。 そのため、`TODO5` は、カスタム関数をトリガーするボタンのアクションの種類である `ExecuteFunction` に置き換えます。 `Action` 要素の開始タグは次のようになります。
+1. 元の `Control` 要素内の `Action` 要素の種類は `ShowTaskpane` に設定されていますが、新しいボタンでは作業ウィンドウが開きません。後の手順で作成するカスタム関数を実行します。したがって、`TODO5` を `ExecuteFunction` に置き換えます。これは、カスタム関数をトリガーするボタンの操作の種類です。`Action` 要素の開始タグは次のようになります。
 
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -624,7 +631,7 @@ ms.locfileid: "63340877"
     g.toggleProtection = toggleProtection;
     ```
 
-1. `toggleProtection` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。 `TODO2` については、次のセクションで説明します。
+1. `toggleProtection` 関数で、`TODO1` を次のコードに置き換えます。このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。`TODO2` については次のセクションで説明します。
 
     ```js
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -641,7 +648,7 @@ ms.locfileid: "63340877"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>ドキュメントのプロパティを作業ウィンドウのスクリプト オブジェクトにフェッチするコードを追加する
 
-これまでこのチュートリアルで作成した各関数で、Office ドキュメントに *書き込む* コマンドをキューに入れました。 各関数は、キューに登録されたコマンドを実行対象の文書に送信する `context.sync()` メソッドの呼び出しで終了します。 ただし、最後の手順で追加したコードは `sheet.protection.protected property`を呼び出します。 `sheet` オブジェクトは、この作業ウィンドウのスクリプトに存在する単なるプロキシ オブジェクトであるため、これまでに作成した関数とは大きく異なります。 プロキシ オブジェクトではドキュメントの実際の保護の状態を認識できません。そのため、その `protection.protected` プロパティでは実際の値が保持できません。 例外エラーを回避するには、まずドキュメントから保護の状態をフェッチする必要があり、その状態を使用して `sheet.protection.protected` の値を設定します。 このフェッチ処理には、3 つの手順があります。
+これまでこのチュートリアルで作成した各関数では、Office ドキュメントに *書き込み* するコマンドをキューに登録します。各関数は `context.sync()` メソッドの呼び出しで終了しました。このメソッドは、キューに登録されたコマンドを実行するドキュメントに送信します。ただし、最後の手順で追加したコードは `sheet.protection.protected property` を呼び出します。`sheet` オブジェクトは、作業ウィンドウのスクリプトに存在するプロキシ オブジェクトにすぎないため、これは以前に書き込んだ関数と大きく違います。プロキシ オブジェクトはドキュメントの実際の保護状態を認識していないため、その `protection.protected` プロパティに実際の値を設定することはできません。例外エラーを回避するには、最初にドキュメントから保護状態を取得し、それを使用して `sheet.protection.protected` の値を設定する必要があります。この取得プロセスには、次の 3 つの手順があります。
 
    1. コードで読み取る必要があるプロパティをロードする (つまりフェッチする) コマンドをキューに登録します。
 
@@ -728,7 +735,7 @@ ms.locfileid: "63340877"
 
         アドインを使用するには、Excel on the web でドキュメントを開き、「[Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)」の手順に従ってアドインをサイドロードします。
 
-1. Excel の [**ホーム**] タブで、[**ワークシート保護を切り換える**] ボタンを選択します。 次のスクリーンショットに示すように、リボンのほとんどのコントロールは、無効化 (淡色表示) されます。
+1. Excel の [**ホーム**] タブで、[**ワークシート保護を切り換える**] ボタンを選択します。次のスクリーンショットに示すように、リボンのほとんどのコントロールは無効化 (淡色表示) されることに注意してください。
 
     ![[ワークシート保護の切り替え] ボタンが強調表示され、有効になっている Excel リボンのスクリーンショット。 他のほとんどのボタンは灰色表示され、無効になります。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
@@ -895,7 +902,7 @@ ms.locfileid: "63340877"
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-1. このダイアログでは、ユーザーに名前の入力を求めて、ユーザーの名前を作業ウィンドウに渡します。 作業ウィンドウでは、それがラベルに表示されます。 前の手順で追加した `button` の直後に、次のマークアップを追加します。
+1. このダイアログでは、ユーザーに名前の入力を求めて、ユーザーの名前を作業ウィンドウに渡します。作業ウィンドウでは、それがラベルに表示されます。前の手順で追加した `button` の直後に、次のマークアップを追加します。
 
     ```html
     <label id="user-name"></label><br/><br/>
@@ -915,7 +922,7 @@ ms.locfileid: "63340877"
     let dialog = null;
     ```
 
-1. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。 このコードで注目する重要な点は、そこに `Excel.run` の呼び出しが存在 *しない* ことです。 これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
+1. (`dialog` の宣言の後で) ファイルの最後に次の関数を追加します。このコードについて注意すべき重要なことは、そこに *ない* ものがあることであり、そのないものとは `Excel.run` の呼び出しです。これは、ダイアログを開く API はすべての Office アプリケーションで共有されるため、Excel 固有の API ではなく Office JavaScript 共通 API に含まれているからです。
 
     ```js
     function openDialog() {
@@ -978,7 +985,7 @@ ms.locfileid: "63340877"
 
 1. ダイアログが開いたら、ドラッグしたりサイズ変更したりします。ワークシートを操作して、作業ウィンドウの他のボタンを押すことはできますが、同じ作業ウィンドウのページから 2 番目のダイアログを起動することはできないことに注意してください。
 
-1. ダイアログで、名前を入力して [**OK**] ボタンを選択します。 作業ウィンドウに名前が表示され、ダイアログが閉じられます。
+1. ダイアログで、名前を入力して [**OK**] ボタンを選択します。作業ウィンドウに名前が表示され、ダイアログが閉じられます。
 
 1. 必要に応じて、`processMessage` 関数の行 `dialog.close();` をコメントにします。このセクションの手順を繰り返します。ダイアログは開いたままで、名前を変更できます。右上隅の **X** ボタンを押して、手動で閉じることができます。
 

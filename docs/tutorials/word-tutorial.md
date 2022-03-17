@@ -4,12 +4,12 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340170"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511239"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -29,6 +29,11 @@ ms.locfileid: "63340170"
 ## <a name="prerequisites"></a>前提条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Microsoft 365 サブスクリプションに接続されている Office (Office for the web を含む)。
+
+    > [!NOTE]
+    > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
 
 ## <a name="create-your-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -93,6 +98,8 @@ ms.locfileid: "63340170"
    - `context.sync` メソッドは、キューに登録されたすべてのコマンドを、実行するために Word に送信します。
 
    - これは、どのような場合にも当てはまるベスト プラクティスです。
+
+   [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function insertParagraph() {
@@ -201,7 +208,7 @@ ms.locfileid: "63340170"
     }
     ```
 
-1. `applyStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードではスタイルを段落に適用していますが、スタイルはテキストの範囲にも適用できます。
+1. `applyStyle()` 関数内で、`TODO1` を次のコードに置き換えます。 コードは段落にスタイルを適用しますが、スタイルはテキストの範囲にも適用できることに注意してください。
 
     ```js
     const firstParagraph = context.document.body.paragraphs.getFirst();
@@ -245,7 +252,7 @@ ms.locfileid: "63340170"
     }
     ```
 
-1. `applyCustomStyle()` 関数で、`TODO1` を次のコードに置き換えます。 このコードでは、まだ存在していないカスタム スタイルを適用しています。 「[アドインをテストする](#test-the-add-in-1)」の手順で **MyCustomStyle** という名前のスタイルを作成します。
+1. `applyCustomStyle()` 関数内で、`TODO1` を次のコードに置き換えます。 コードはまだ存在しないカスタムスタイルを適用することに注意してください。 [アドインのテスト](#test-the-add-in-1) の手順で、**MyCustomStyle** という名前のスタイルを作成します。
 
     ```js
     const lastParagraph = context.document.body.paragraphs.getLast();
@@ -310,7 +317,7 @@ ms.locfileid: "63340170"
 
 1. アドイン タスク ウィンドウが Word でまだ開いていない場合は、[**ホーム**] タブに移動し、リボンの [**作業ウィンドウを表示**] ボタンを選択して開きます。
 
-1. ドキュメントに 3 つ以上の段落があることを確認してください。 [**段落の挿入**] ボタンを 3 回選択できます。 *ドキュメントの最後に空白の段落がないことを慎重にチェックしてください。空白の段落がある場合は、それを削除します。*
+1. ドキュメントに 3 つ以上の段落があることを確認してください。 **[段落の挿入]** を 3 回選択できます。 *ドキュメントの最後に空白の段落がないことを慎重にチェックしてください。空白の段落がある場合は、それを削除します。*
 
 1. Word で、"MyCustomStyle" という名前の[カスタム スタイル](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563)を作成します。このスタイルには、必要に応じて任意の書式を設定できます。
 
@@ -387,7 +394,7 @@ ms.locfileid: "63340170"
     originalRange.insertText(" (C2R)", "End");
     ```
 
-1. `TODO2` はスキップし、次のセクションに移ります。 `insertTextIntoRange()` 関数で、`TODO3` を次のコードに置き換えます。 このコードは、このチュートリアルの最初の段階で作成したコードに似ていますが、文書の先頭ではなく末尾に新しい段落を挿入する点が異なります。 この新しい段落で、新しいテキストが元の範囲の一部になっていることが示されます。
+1. `TODO2` はスキップし、次のセクションに移ります。`insertTextIntoRange()` 関数内で `TODO3` を次のコードに置き換えます。 このコードは、このチュートリアルの最初の段階で作成したコードに似ていますが、文書の先頭ではなく末尾に新しい段落を挿入する点が異なります。 この新しい段落で、新しいテキストが元の範囲の一部になっていることが示されます。
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -562,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. `replaceText()` 関数で、`TODO1` を次のコードに置き換えます。 このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
+1. `replaceText()` 関数で、`TODO1` を次のコードに置き換えます。このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
     ```js
     const doc = context.document;
@@ -588,7 +595,7 @@ async function insertTextIntoRange() {
 
 1. [**追加バージョン情報**] ボタンを選択します。"Office 2019" は "office 2016" と "Microsoft 365" の間に挿入されることにご注意ください。また、新しい段落はドキュメントの下部に追加されますが、新しい文字列が元の範囲に追加されるのではなく新しい範囲となったため、元の選択されたテキストのみがそこに含まれていることにもご注意ください。
 
-1. ドキュメント内で、「複数」という語句を選択します。 *選択範囲の前後にあるスペースは含めないように注意してください。*
+1. ドキュメント内で、「複数」という語句を選択します。*選択範囲の前後にあるスペースは含めないように注意してください。*
 
 1. **[数量の単位を変更]** ボタンを選択します。選択したテキストは "多" で置き換えられます。
 
@@ -654,7 +661,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. `insertImage()` 関数で、`TODO1` を次のコードに置き換えます。 この行により、Base 64 でエンコードされた画像がドキュメントの末尾に挿入されることに注意してください。 (`Paragraph` オブジェクトにも `insertInlinePictureFromBase64` メソッドやその他の `insert*` メソッドがあります。 例については、次の insertHTML セクションを参照してください)。
+1. `insertImage()` 関数で、`TODO1` を次のコードに置き換えます。この行により、Base 64 でエンコードされた画像がドキュメントの末尾に挿入されることに注意してください。 (`Paragraph` オブジェクトにも `insertInlinePictureFromBase64` メソッドやその他の `insert*` メソッドがあります。 例については、次の insertHTML セクションを参照してください)。
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -915,7 +922,7 @@ async function insertTextIntoRange() {
 
 1. 作業ウィンドウで [**段落の挿入**] ボタンを選択し、文書の先頭が "Microsoft 365" となっている段落があることを確認します。
 
-1. ドキュメントで "Microsoft 365" というテキストを選択し、[**コンテンツ コントロールの作成**] ボタンを選択します。 Service Name というラベルが付いたタグで語句がラップされていることに注意してください。
+1. ドキュメントで、"Microsoft 365" というテキストを選択し、**[コンテンツコントロールの作成]** ボタンを選択します。 フレーズは "サービス名" というラベルの付いたタグで囲まれていることに注意してください。
 
 1. **[サービス名の変更]** ボタンを選択し、コンテンツ コントロールのテキストが Fabrikam Online Productivity Suite に変わることに注意してください。
 

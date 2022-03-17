@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 08/04/2021
+ms.date: 02/28/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 51ec95f49ef89f21aaf6a776115f8754c4a87c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154483"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511394"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -25,16 +25,11 @@ ms.locfileid: "59154483"
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- [Node.js](https://nodejs.org/) (最新 [LTS](https://nodejs.org/about/releases) バージョン)
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) または任意のコード エディター
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Yeomanのジェネレーターを過去に取付けている場合でも、npmからのパッケージを最新のバージョンにすることをお勧めします。
+- Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web
 
 ### <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -71,7 +66,10 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. コードエディタで、**./src/taskpane/taskpane.html** ファイルを開き、全体の`<main>`要素（一部の`<body>`要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js** のスクリプトがデータを書き込む場所にラベルを追加します。
+1. VS Codeまたは任意のコード エディターでプロジェクトを開きます。
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. コードエディタで、**./src/taskpane/taskpane.html** ファイルを開き、全体の **\<main\>** 要素（一部の **\<body\>** 要素）を次のマークアップに置き換えます。 この新しいマークアップは、**./src/taskpane/taskpane.js** のスクリプトがデータを書き込む場所にラベルを追加します。
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -83,7 +81,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     </main>
     ```
 
-1. コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。 このコードはOffice JavaScript APIを使用して現在のメッセージへの参照を取得し、その`subject`プロパティ値を作業ペインに書き込みます。
+1. コードエディターで、ファイル **./src/taskpane/taskpane.js** を開き、**実行** 関数内に次のコードを追加してください。 このコードは、Office JavaScript API を使用して、現在のメッセージへの参照を取得し、その **subject** プロパティの値をタスクペインに書き込むものです。
 
     ```js
     // Get a reference to the current message
@@ -95,16 +93,13 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="try-it-out"></a>試してみる
 
-> [!NOTE]
-> 開発の最中でも、OfficeアドインはHTTPではなくHTTPSを使用する必要があります。 次のコマンドを実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。 変更を行うには、管理者としてコマンド プロンプトまたはターミナルを実行する必要がある場合もあります。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが (まだ実行されていない場合) 起動し、アドインがサイドロードされます。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが [サイドロード](../outlook/sideload-outlook-add-ins-for-testing.md) されます。
 
     ```command&nbsp;line
     npm start
     ```
-
-1. 「[テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」の手順に従って Outlook アドインをサイドロードします。
 
 1. Outlook で、[閲覧ウィンドウ](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0)でメッセージを表示するか、独自のウィンドウでメッセージを開きます。
 
@@ -115,6 +110,10 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     > [!NOTE]
     > 作業ウィンドウで、「このアドインを localhost から開くことはできません」 というエラーが表示される場合は、[「トラブルシューティングの記事」](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost) に記載されている手順に従ってください。
 
+1. **WebView Stop On Load** ダイアログ ボックスでプロンプトが表示されたら、**OK** を選択します。
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
 1. 作業ペインの下部までスクロールし、**実行** リンクを選択してメッセージを作業ペインに書き込みます。
 
     ![実行リンクが強調表示されたアドインの作業ウィンドウを示すスクリーンショット。](../images/quick-start-task-pane-2.png)
@@ -123,7 +122,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="next-steps"></a>次の手順
 
-おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。 次に、Outlook アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」をご覧ください。
+。おめでとうございます! 最初の Outlook 作業ウィンドウ アドインの作成に成功しました。次に、Outlook アドインの機能をさらに学び、より複雑なアドインを作成するには、「[Outlook アドインのチュートリアル](../tutorials/outlook-tutorial.md)」 を参照してください。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -147,7 +146,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. プロジェクトに名前を付けて、**[OK]** を選択します。
 
-1. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが **ソリューション エクスプローラー** に表示されます。 **MessageRead.html** ファイルが Visual Studio で開きます。
+1. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**MessageRead.html** ファイルが Visual Studio で開かれます。
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -160,7 +159,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **MessageRead.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **MessageRead.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+1. **MessageRead.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **MessageRead.html** で、**\<body\>** 要素を次のマークアップに置き換えて、ファイルを保存します。
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -196,7 +195,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
     </body>
     ```
 
-1. Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+1. Web アプリケーション プロジェクトのルートにあるファイル **MessageRead.js** を開きます。このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     'use strict';
@@ -245,11 +244,11 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-1. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+1. **ProviderName** 要素にはプレースホルダー値があります。これをあなたの名前で置き換えます。
 
-1. `DisplayName` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 それを `My Office Add-in` に置き換えます。
+1. **DisplayName** 要素の **DefaultValue** 属性にプレースホルダーがあります。 それを `My Office Add-in` に置き換えます。
 
-1. `Description` 要素の `DefaultValue` 属性にはプレースホルダー値が含まれています。 それを `My First Outlook add-in` に置き換えます。
+1. **Description** 要素の **DefaultValue** 属性にプレースホルダーがあります。`My First Outlook add-in`で置き換えてください。
 
 1. ファイルを保存します。
 
