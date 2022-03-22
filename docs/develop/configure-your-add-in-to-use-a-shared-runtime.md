@@ -4,12 +4,12 @@ title: 共有 JavaScript ランタイムを使用するように Office アド�
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: f11c2060d48dc30f2403fd16f1d7d10481107f75
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081429"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711176"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -19,7 +19,7 @@ ms.locfileid: "61081429"
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-新しいプロジェクトを開始する場合は、次の手順に従って、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使って Excel アドインまたは PowerPoint アドインを作成します。
+新しいプロジェクトを開始する場合は、次の手順に従って、[Office アドイン用の Yeoman ジェネレーター](yeoman-generator-overview.md)を使って Excel アドインまたは PowerPoint アドインを作成します。
 
 次のいずれかの操作を行います。
 
@@ -36,7 +36,7 @@ ms.locfileid: "61081429"
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-新規または既存のプロジェクトで共有ランタイムが使用できるように構成するには、次の手順を実行します。 これらの手順は、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用してプロジェクトを生成したことを前提としています。
+新規または既存のプロジェクトで共有ランタイムが使用できるように構成するには、次の手順を実行します。 これらの手順は、[Office アドイン用の Yeoman ジェネレーター](yeoman-generator-overview.md)を使用してプロジェクトを生成したことを前提としています。
 
 1. Visual Studio Code を起動し、生成した Excel または PowerPoint アドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。

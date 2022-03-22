@@ -1,4 +1,4 @@
-パフォーマンス上の理由から、多くの場合、アドインは Mac Officeにキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない可能性があります。
+多くの場合、パフォーマンス上の理由から、アドインは Mac Officeにキャッシュされます。 通常、キャッシュはアドインを再読み込みすることでクリアされます。 同じドキュメント内に複数のアドインが存在する場合、再読み込み時にキャッシュを自動的にクリアするプロセスは信頼できない可能性があります。
 
 作業ウィンドウ アドインの [パーソナリティ] メニューを使用してキャッシュをクリアすることができます。
 
@@ -8,12 +8,14 @@
 
     ![[パーソナリティ] メニューの [Web キャッシュのクリア] オプションのスクリーン ショット。](../images/mac-clear-cache-menu.png)
 
-`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアすることもできます。
+`~/Library/Containers/com.Microsoft.OsfWebHost/Data/` フォルダーのコンテンツを削除することによってキャッシュを手動でクリアすることもできます。 ターミナル経由でこのフォルダーを探します。
 
 > [!NOTE]
-> そのフォルダーが存在しない場合には次のフォルダーを確認し、見つかった場合はフォルダーのコンテンツを削除します。
+> そのフォルダーが存在しない場合は、ターミナル経由で次のフォルダーを確認し、見つかった場合は、フォルダーの内容を削除します。
 >
 > - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`
 > - `{host}` が Office アプリケーション (例: `Excel`) である `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+>
+> Finder を使用してこれらのフォルダーを検索するには、非表示のファイルを表示する Finder を設定する必要があります。 Finder は、**コンテナー** ディレクトリ内のフォルダーを、**com.microsoft.Excel** ではなく、Microsoft Excel などの製品名で表示します。

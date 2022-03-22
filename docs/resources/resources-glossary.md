@@ -3,12 +3,12 @@ title: Officeアドイン用語集
 description: アドインのドキュメント全体で一般的にOffice用語集。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c83f056f4eea9c8750bbf4c2d47a2888af96ec2
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 327c7a8bcc8c3ab21c437c50003e57d34fb933e0
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855731"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711218"
 ---
 # <a name="office-add-ins-glossary"></a>Officeアドイン用語集
 
@@ -16,9 +16,9 @@ ms.locfileid: "62855731"
 
 ## <a name="add-in"></a>アドイン
 
-Officeアドインは、アプリケーションを拡張するOfficeです。 これらの Web アプリケーションは、外部データの取り込み、プロセスの自動化、ドキュメントへの対話型オブジェクトの埋め込みなど、Office アプリケーションに新しい機能を追加Officeします。
+Officeアドインは、アプリケーションを拡張する web Officeです。 これらの Web アプリケーションは、外部データの取り込み、プロセスの自動化、ドキュメントへの対話型オブジェクトの埋め込みなど、Office アプリケーションに新しい機能を追加Officeします。
 
-Officeアドインは、クロスプラットフォーム サポート (通常は web、Windows、Mac、および iPad) を提供し、標準 Web テクノロジ (HTML、CSS、JavaScript) に基づくため、VBA、COM、および VSTO アドインとは異なります。 アドインの主なプログラミング言語Office JavaScript または TypeScript です。
+Office アドインは、クロスプラットフォーム サポート (通常は web、Windows、Mac、および iPad) を提供し、標準 Web テクノロジ (HTML、CSS、JavaScript) に基づくため、VBA、COM、および VSTO アドインとは異なります。 アドインの主なプログラミング言語はOffice JavaScript または TypeScript です。
 
 ## <a name="add-in-commands"></a>アドイン コマンド
 
@@ -28,35 +28,35 @@ Officeアドインは、クロスプラットフォーム サポート (通常�
 
 ## <a name="application"></a>アプリケーション
 
-**アプリケーション** は、アプリケーションをOfficeします。 Office アドインをサポートする Office アプリケーションは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
+**アプリケーション** は、アプリケーションOfficeします。 Office アドインをサポートする Office アプリケーションは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
 
 「client、[host](#client)[、Office](#host)[、Office」も参照してください](#office-application-office-client)。
 
 ## <a name="application-specific-api"></a>アプリケーション固有の API
 
-アプリケーション固有の API は、特定のアプリケーションにネイティブなオブジェクトを操作する、強力に型指定されたオブジェクトOfficeします。 たとえば、ワークシート、範囲、表、グラフExcelアクセスするために JavaScript API を呼び出します。 現在、アプリケーション固有の API は、Excel、OneNote、PowerPoint、Visio、および Word で使用できます。 詳細 [については、「アプリケーション固有の API モデル](../develop/application-specific-api-model.md) 」を参照してください。
+アプリケーション固有の API は、特定のアプリケーションにネイティブなオブジェクトを操作する、強力に型指定されたオブジェクトOfficeします。 たとえば、ワークシート、範囲、テーブル、グラフExcelアクセスするために JavaScript API を呼び出します。 現在、アプリケーション固有の API は、Excel、OneNote、PowerPoint、Visio、および Word で使用できます。 詳細 [については、「アプリケーション固有の API モデル](../develop/application-specific-api-model.md) 」を参照してください。
 
 「Common [API」も参照してください](#common-api)。
 
 ## <a name="client"></a>クライアント
 
-**クライアント** は通常、アプリケーションをOfficeします。 Office アドインをサポートする Office アプリケーション、またはクライアントは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
+**クライアント** は通常、アプリケーションをOfficeします。 Office Office アドインをサポートする Office アプリケーション、またはクライアントは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
 
 「application、[host](#application)[、Office](#host)[、Office」も参照してください](#office-application-office-client)。
 
 ## <a name="common-api"></a>Common API
 
-一般的な API は、複数のアプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスOfficeされます。 この API モデルでは [コールバック](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office アプリケーションに送信する各要求で 1 つの操作のみを指定できます。
+一般的な API は、複数のアプリケーションで共通の UI、ダイアログ、クライアント設定などの機能にOfficeされます。 この API モデルでは [コールバック](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office アプリケーションに送信する各要求で 1 つの操作のみを指定できます。
 
-一般的な API は 2013 年Office導入され、2013 以降のユーザーとの対話Office使用されます。 一部の一般的な API は、2010 の初期の従来の API です。 Excel、PowerPoint、Word はすべて共通の API 機能を持っていますが、ほとんどの機能はアプリケーション固有の API モデルに置き換えられたり置き換えられたりしています。 可能な場合は、アプリケーション固有の API が優先されます。
+一般的な API は、2013 年Office導入され、2013 以降のアプリケーションとのOffice使用されます。 一部の一般的な API は、2010 の初期の従来の API です。 Excel、PowerPoint、Word はすべて共通の API 機能を持っていますが、ほとんどの機能はアプリケーション固有の API モデルに置き換えられたり置き換えられたりしています。 可能な場合は、アプリケーション固有の API が優先されます。
 
-その他の一般的な API (Outlook、UI、認証に関連する一般的な API など)は、これらの目的に合った最新の API です。 共通 API オブジェクト モデルの詳細については、「 [Common JavaScript API オブジェクト モデル」を参照してください](../develop/office-javascript-api-object-model.md)。
+その他の一般的な API (Outlook、UI、認証に関連する共通 API など) は、これらの目的に合った最新の API です。 共通 API オブジェクト モデルの詳細については、「 [Common JavaScript API オブジェクト モデル」を参照してください](../develop/office-javascript-api-object-model.md)。
 
 「アプリケーション固有の [API」も参照してください](#application-specific-api)。
 
 ## <a name="content-add-in"></a>コンテンツ アドイン
 
-**コンテンツ アドインは、** Web ビューまたは Web ブラウザー ビューで、Excel、OneNote、またはPowerPointに埋め込みます。 コンテンツ アドインにより、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。 機能を直接ドキュメントに埋め込む場合は、コンテンツ アドインを使用します。 詳細[については、「content Office アドイン](../design/content-add-ins.md)」を参照してください。
+**コンテンツ アドインは**、webviews または Web ブラウザー ビューで、Excel、OneNote、または PowerPoint ドキュメントに直接埋め込みます。 コンテンツ アドインにより、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。 機能を直接ドキュメントに埋め込む場合は、コンテンツ アドインを使用します。 詳細[については、「content Office アドイン](../design/content-add-ins.md)」を参照してください。
 
 「 [webview」も参照してください](#webview)。
 
@@ -70,11 +70,11 @@ Officeアドインは、クロスプラットフォーム サポート (通常�
 
 ## <a name="custom-function"></a>カスタム関数
 
-カスタム **関数は**、カスタム アドインと一緒にパッケージ化されたユーザー Excel関数です。 カスタム関数を使用すると、開発者は、アドインの一部として JavaScript でそれらの関数を定義することで、Excel機能を超えて新しい関数を追加できます。 ユーザーは、Excel内のネイティブ関数と同じ方法でカスタム関数にExcel。 詳細については[、「Create custom functions in Excel](../excel/custom-functions-overview.md)」を参照してください。
+カスタム **関数は**、アドインにパッケージ化されたユーザー定義Excelです。 カスタム関数を使用すると、開発者は、アドインの一部として JavaScript でそれらの関数を定義することで、Excel機能を超えて新しい関数を追加できます。 ユーザーは、Excel内のネイティブ関数と同じ方法でカスタム関数にExcel。 詳細については[、「カスタム関数を作成する」Excel](../excel/custom-functions-overview.md)を参照してください。
 
 ## <a name="custom-functions-runtime"></a>カスタム関数ランタイム
 
-カスタム **関数ランタイムは、** カスタム関数のみを実行する JavaScript ランタイムです。 UI は持たれ、API を操作Office.jsできません。 アドインにカスタム関数しか含めない場合、これは軽量で使いやすいランタイムです。 カスタム関数が作業ウィンドウまたは API を操作する必要がある場合は、Office.js JavaScript ランタイムを構成します。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+カスタム **関数ランタイムは、** カスタム関数のみを実行する JavaScript ランタイムです。 UI は持たれ、API と対話Office.jsできません。 アドインにカスタム関数しか含めない場合、これは軽量で使いやすいランタイムです。 カスタム関数が作業ウィンドウまたは API を操作する必要がある場合は、Office.js JavaScript ランタイムを構成します。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 「 [JavaScript ランタイム、共有 JavaScript](#javascript-runtime) [ランタイム、共有ランタイム」も参照してください](#shared-javascript-runtime-shared-runtime)。
 
@@ -86,23 +86,23 @@ Officeアドインは、クロスプラットフォーム サポート (通常�
 
 ## <a name="javascript-runtime"></a>JavaScript ランタイム
 
-**JavaScript ランタイムは**、アドインが実行されるブラウザー ホスト環境です。 Mac Office Windows および Office では、JavaScript ランタイムは、Internet Explorer、Edge Legacy、Edge WebView2、Safari などの埋め込みブラウザー コントロール (または webview) です。 アドインの異なる部分は、個別の JavaScript ランタイムで実行されます。 たとえば、共有 JavaScript ランタイムを構成しない限り、アドイン コマンド、カスタム関数、作業ウィンドウ コードは通常、個別の JavaScript ランタイムを使用します。 詳細[については、「Officeアドイン](../concepts/browsers-used-by-office-web-add-ins.md)で使用されるブラウザー」を参照してください。
+**JavaScript ランタイムは**、アドインが実行されるブラウザー ホスト環境です。 Mac Office Windows および Office では、JavaScript ランタイムは、Internet Explorer、Edge Legacy、Edge WebView2、Safari などの埋め込みブラウザー コントロール (または webview) です。 アドインの異なる部分は、個別の JavaScript ランタイムで実行されます。 たとえば、共有 JavaScript ランタイムを構成しない限り、アドイン コマンド、カスタム関数、作業ウィンドウ コードは通常、個別の JavaScript ランタイムを使用します。 詳細[については、「Officeアドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 「カスタム関数ランタイム[、共有](#custom-functions-runtime) [JavaScript ランタイム、共有ランタイム、Webview」も](#shared-javascript-runtime-shared-runtime)[参照してください](#webview)。
 
 ## <a name="office-application-office-client"></a>Office アプリケーション、Office クライアント
 
-**Officeクライアントは**、アプリケーションをOfficeします。 Office アドインをサポートする Office アプリケーション、またはクライアントは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
+**Officeクライアントは**、アプリケーションをOfficeします。 Office Office アドインをサポートする Office アプリケーション、またはクライアントは、Excel、OneNote、Outlook、PowerPoint、Project、および Word です。
 
 「アプリケーション、[クライアント、](#application)[ホスト」も](#client)[参照してください](#host)。
 
 ## <a name="platform"></a>platform
 
-プラットフォーム **は** 通常、アプリケーションを実行しているオペレーティング Officeします。 アドインをサポートOfficeプラットフォームには、Windows Mac、iPad、Web ブラウザーが含まれます。
+プラットフォーム **は** 通常、アプリケーションを実行しているオペレーティング Officeします。 このアドインをOfficeするプラットフォームには、Windows Mac、iPad、Web ブラウザーが含まれます。
 
 ## <a name="quick-start"></a>クイック スタート
 
-クイック **スタートは** 、特定のプログラムの基本的な操作に必要な主要なスキルと知識の概要です。 アドインのOfficeでは、クイック スタートは、アプリケーションなどの特定のアプリケーション用のアドインの開発の概要Outlook。 クイック スタートには、アドイン開発者が約 5 分で完了できる一連の手順が含まれているので、アドインと機能の開発環境が機能します。
+クイック **スタートは** 、特定のプログラムの基本的な操作に必要な主要なスキルと知識の概要です。 アドインのOffice、クイック スタートは、アプリケーションなどの特定のアプリケーション用のアドインの開発の概要Outlook。 クイック スタートには、アドイン開発者が約 5 分で完了できる一連の手順が含まれているので、アドインと機能の開発環境が機能します。
 
 「チュートリアル」も [参照してください](#tutorial)。
 
@@ -144,25 +144,25 @@ Officeアドインは、クロスプラットフォーム サポート (通常�
 
 ## <a name="web-add-in"></a>Web アドイン
 
-**Web アドインは、** 既存のアドインのOffice用語です。 この用語は、Microsoft 365 ドキュメントでモダン Office アドインを VBA、COM、または VSTO などの他の種類のアドインと区別する必要がある場合に使用できます。
+**Web アドインは、** 既存のアドインのOffice用語です。 この用語は、Microsoft 365 ドキュメントでモダン Office アドインと VBA、COM、または VSTO などの他の種類のアドインを区別する必要がある場合に使用できます。
 
 「アドイン」 [も参照してください](#add-in)。
 
 ## <a name="webview"></a>webview
 
-**Webview は**、アプリケーション内の Web コンテンツを表示する要素またはビューです。 コンテンツ アドインと作業ウィンドウには、両方とも埋め込み Web ブラウザーが含まれているので、webviews の例として、Officeがあります。
+**Webview は**、アプリケーション内の Web コンテンツを表示する要素またはビューです。 コンテンツ アドインと作業ウィンドウの両方に埋め込み Web ブラウザーが含まれているのは、Officeアドインの Web ビューの例です。
 
 「コンテンツ アドイン[、作業ウィンドウ」](#content-add-in)[も参照してください](#task-pane)。
 
 ## <a name="xll"></a>XLL
 
-**XLL アドイン** は、ユーザー Excel機能を提供し、ファイル拡張子 **が .xll** のアドイン ファイルです。 XLL ファイルは、ダイナミック リンク ライブラリ (DLL) ファイルの一種で、このファイルを開くExcel。 XLL アドイン ファイルは、C または C++ で記述する必要があります。 カスタム関数は、XLL ユーザー定義関数に相当する最新の関数です。 カスタム関数は、プラットフォーム間でサポートを提供し、XLL ファイルと下位互換性があります。 詳細については [、「XLL ユーザー定義関数を使用してカスタム関数を拡張する](/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf) 」を参照してください。
+**XLL アドイン** は、Excel関数を提供し、ファイル拡張子 **が .xll** のアドイン ファイルです。 XLL ファイルは、動的リンク ライブラリ (DLL) ファイルの一種で、このファイルを開くExcel。 XLL アドイン ファイルは、C または C++ で記述する必要があります。 カスタム関数は、XLL ユーザー定義関数に相当する最新の関数です。 カスタム関数は、プラットフォーム間でサポートを提供し、XLL ファイルと下位互換性があります。 詳細については [、「XLL ユーザー定義関数を使用してカスタム関数を拡張する](/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf) 」を参照してください。
 
 「カスタム関数」 [も参照してください](#custom-function)。
 
 ## <a name="yeoman-generator-yo-office"></a>Yeoman ジェネレーター、yo office
 
-アドイン[の Yeoman ジェネレーター Office](https://github.com/OfficeDev/generator-office)、オープンソースの [Yeoman](https://github.com/yeoman/yo) ツールを使用して、コマンド ラインをOfficeアドインを生成します。 `yo office`は、アドインの Yeoman ジェネレーターをOfficeコマンドです。このOfficeクイック スタートとチュートリアルでは、Yeoman ジェネレーターを使用します。
+アドイン[の Yeoman ジェネレーター Office](../develop/yeoman-generator-overview.md)、オープンソースの [Yeoman](https://github.com/yeoman/yo) ツールを使用して、コマンド ラインをOfficeアドインを生成します。 `yo office`は、アドインの Yeoman ジェネレーターを実行Officeコマンドです。このOfficeクイック スタートとチュートリアルでは、Yeoman ジェネレーターを使用します。
 
 ## <a name="see-also"></a>関連項目
 

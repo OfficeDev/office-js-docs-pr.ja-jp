@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf1a1df922a08f63af80498da2e357d285775e9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: df076c1b148ce604c0b52fe5fbb76fe5f8e3deb5
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074232"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711148"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスのバッチ カスタム関数呼び出し
 
@@ -20,9 +20,9 @@ ms.locfileid: "62074232"
 
 ## <a name="view-the-completed-sample"></a>完成したサンプルを表示する
 
-この記事を参考にして、自分のプロジェクトにコードの例を貼り付けることができます。 たとえば、[Yo Office ジェネレーター](https://github.com/OfficeDev/generator-office)を使用して TypeScript 用の新しいカスタム関数プロジェクトを作成し、この記事のすべてのコードをそのプロジェクトに追加することができます。 その後、コードを実行して試してください。
+完成したサンプルを表示するには、この記事に従い、コード例を独自のプロジェクトに貼り付けます。 たとえば、TypeScript 用の新しいカスタム関数プロジェクトを作成するには、Office アドインに [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用し、この記事のすべてのコードをプロジェクトに追加します。 コードを実行し、試してみてください。
 
-[カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示することができます。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
+または、カスタム関数バッチ 処理パターンで完全なサンプル プロジェクト [をダウンロードまたは表示します](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>この記事内でバッチ処理パターンを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "62074232"
 2. バッチの準備ができたときのリモート要求を行う関数です。
 3. バッチ要求に応答するサーバー コードは、すべての操作の結果を計算して値を返します。
 
-次のセクションでは、一度に 1 つのコード例を構築する方法が表示されます。 **functions.ts** ファイルにそれぞれのコード例を追加します。 Yo Office ジェネレーター 使用して、新しいカスタム関数のプロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、 [Excel のカスタム関数の開発を開始する](../quickstarts/excel-custom-functions-quickstart.md)を参照し、JavaScript ではなく TypeScript を使用してください。
+次のセクションでは、コードを一度に 1 つの例で作成する方法について説明します。 **functions.ts** ファイルにそれぞれのコード例を追加します。 新しいアドイン ジェネレーターの [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して、新しいカスタムOffice作成をお勧めします。 新しいプロジェクトを作成するには、「[](../quickstarts/excel-custom-functions-quickstart.md)カスタム関数の開発を開始Excel JavaScript の代わりに TypeScript を使用する」を参照してください。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>カスタム関数の各呼び出しにバッチ処理をする
 
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>`_fetchFromRemoteService`をライブ リモート サービスに変更する
 
-ライブ リモート サービス `_fetchFromRemoteService` で実行する関数を変更するには、次の変更を行います。
+ライブ リモート サービスで `_fetchFromRemoteService` 実行する関数を変更するには、次の変更を行います。
 
 - サーバー プラットフォーム (Node.js またはその他) のマップによっては、クライアント ネットワークがこの関数を呼び出します。 
 - モックの一部としてネットワークの遅延をシミュレートする`pause`関数を削除する。

@@ -3,12 +3,12 @@ title: テスト用に Office on the web で Office アドインをサイドロ�
 description: サイドローディングOfficeして、Office on the webアドインをテストします。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8c2a9cc30093f6b307239367b9d81d31b2caf8
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 8b525074b16372093d400c8d9bf42553678dbc40
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855619"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711197"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
@@ -23,9 +23,9 @@ ms.locfileid: "62855619"
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Office on the web で Office アドインをサイドロードする
 
-このプロセスは、**Excel、OneNote****、PowerPoint****でのみ****サポート** されます。 他のホスト アプリケーションについては、次のセクションの手動サイドローディング手順を参照してください。 このプロジェクトの例では、[Yeoman](https://github.com/OfficeDev/generator-office) ジェネレーターを使用して作成されたプロジェクトを、新しいアドインOffice想定しています。
+このプロセスは、**Excel、OneNote****、PowerPoint****、****および Word でのみサポート** されます。 他のホスト アプリケーションについては、次のセクションの手動サイドローディング手順を参照してください。 このプロジェクトの例では、[Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して作成されたプロジェクトを、新しいアドインOffice想定しています。
 
-1. [Office on the web] [を開きます](https://office.live.com/)。 [作成 **] オプション** を使用して、Word、**Excel、OneNote****、PowerPoint** でドキュメント **を** 作成 **します**。 この新しいドキュメントで、リボン **で [共有** ] を選択し、[リンクのコピー] **を選択** して URL をコピーします。
+1. [ファイル[Office on the web] を開きます](https://office.live.com/)。 [作成 **] オプション** を使用して、Word、**Excel、OneNote****、PowerPoint** でドキュメント **を** 作成 **します**。 この新しいドキュメントで、リボン **で [共有** ] を選択し、[リンクのコピー] **を選択** して URL をコピーします。
 
 1. yo office プロジェクト ファイルのルート ディレクトリで、 **package.json ファイルを開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
 
@@ -46,7 +46,7 @@ ms.locfileid: "62855619"
     > Yeoman ジェネレーターを使用している場合は、Yeoman ツールによってこの情報が自動的に追加されるので、この情報を追加する必要はありません。
     > ただし、どちらの場合も、localhost からのみマニフェストを読み込み可能です。
 
-1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します。 "{url}" を、Office 上の OneDrive またはアクセス許可を持つ SharePoint ライブラリの URL に置き換える。
+1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します。 "{url}" を、Officeまたはアクセス許可を持つ OneDrive ライブラリSharePoint URL に置き換える。
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
@@ -58,13 +58,13 @@ ms.locfileid: "62855619"
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手動でOfficeアドインをサイドOffice on the webする
 
-このメソッドはコマンド ラインを使用しないので、ホスト アプリケーション内のコマンド (コマンド など) を使用Excel。
+このメソッドはコマンド ラインを使用し、ホスト アプリケーション内のコマンド (コマンド など) を使用Excel。
 
-1. [Office on the web] [を開きます](https://office.com/)。 Word、**Excel、OneNote****、PowerPoint****でドキュメント** を開 **きます**。 [アドイン **]** セクションのリボンの [挿入] タブ **で、[アドイン**] Office **選択します**。
+1. [ファイル[Office on the web] を開きます](https://office.com/)。 Word、**Excel、OneNote****、PowerPoint****でドキュメント** を開 **きます**。 [アドイン **]** セクションのリボンの [挿入] タブ **で、[アドイン**] Office **選択します**。
 
-1. [アドイン **Office]** ダイアログで、[**MY アドイン**] タブを選択し、[マイ アドインの管理] を選択し、[アップロード] **をクリックします**。
+1. [アドイン **Office]** ダイアログで、[**MY ADD-INS**] タブを選択し、[自分のアドインの管理] を選択して、[アップロード] をクリック **します**。
 
-    ![右上Officeの [アドインの管理] というドロップダウンが表示された [Office アドイン] ダイアログボックスと、その下に [アップロード マイ アドイン] というオプションが表示されます。](../images/office-add-ins-my-account.png)
+    ![右上にOfficeが表示された [アドインの管理] ダイアログが表示され、その下に "アップロード My アドイン" というオプションが表示されます。](../images/office-add-ins-my-account.png)
 
 1. アドイン マニフェスト ファイルを **参照** して、**[アップロード]** を選択します。
 
@@ -73,7 +73,7 @@ ms.locfileid: "62855619"
 1. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
 
 > [!NOTE]
-> 元の WebView Officeを使用Microsoft Edgeアドインをテストするには、追加の構成手順が必要です。 コマンド プロンプトWindows、次の行を実行します`npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`。 この機能は、Officeベースのエッジ WebView2 をChromium場合は必要ありません。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> 元の WebView Officeを使用Microsoft Edgeアドインをテストするには、追加の構成手順が必要です。 コマンド プロンプトWindows、次の行を実行します`npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`。 この機能は、Officeベースの Edge WebView2 をChromium場合は必要ありません。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "62855619"
 
 1. アカウントにサインインMicrosoft 365します。
 
-1. ツール バーの左側起動ツールで App 起動ツールを開き、新しいドキュメントExcel、PowerPoint、**または Word** を選択し、新しいドキュメントを作成します。 
+1. ツール バーの左側起動ツールで App 起動ツール を開き、[**Excel、PowerPoint**、**または Word**] を選択し、新しいドキュメントを作成します。
 
 1. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 

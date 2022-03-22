@@ -3,8 +3,13 @@ ms.date: 03/08/2021
 description: カスタム関数内でさまざまなパラメーターを使用する方法 (Excelパラメーター、呼び出しコンテキストなど) について説明します。
 title: カスタム関数Excelオプション
 ms.localizationpriority: medium
+ms.openlocfilehash: 2cc0c825932afe3a70d0f9ab6483327051c199fd
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711022"
 ---
-
 # <a name="custom-functions-parameter-options"></a>カスタム関数パラメーター のオプション
 
 カスタム関数は、さまざまなパラメーター オプションで構成できます。
@@ -192,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>単一の範囲パラメーター
 
-1 つの範囲パラメーターは、技術的には繰り返しパラメーターではなく、宣言が繰り返しパラメーターと非常に似ているため、ここに含まれています。 ユーザーには ADD(A2:B3) と表示され、1 つの範囲が 1 つの範囲で指定Excel。 次のサンプルは、1 つの範囲パラメーターを宣言する方法を示しています。
+1 つの範囲パラメーターは、技術的には繰り返しパラメーターではなく、宣言が繰り返しパラメーターと非常に似ているため、ここに含まれています。 ADD(A2:B3) としてユーザーに表示され、1 つの範囲がユーザーから渡Excel。 次のサンプルは、1 つの範囲パラメーターを宣言する方法を示しています。
 
 ```JS
 /**
@@ -257,7 +262,7 @@ function getAddress(first, second, invocation) {
 これは、入力データ型が異なる場合に役立ちます。 入力パラメーターのアドレスを使用して、入力値の数値形式を確認できます。 必要に応じて、数値の形式を入力前に調整できます。 入力パラメーターのアドレスを使用して、入力値に後続の計算に関連する可能性のある関連プロパティが含されているかどうかを検出することもできます。 
 
 >[!NOTE]
-> 手動で作成した [JSON](custom-functions-json.md) メタデータを操作して、Yo Office `options` `matrix``requiresParameterAddresses` `true``result` `dimensionality` ジェネレーターの代わりにパラメーター アドレスを返す場合、オブジェクトにはプロパティが設定されている必要があります。オブジェクトにはプロパティがに設定されている必要があります。
+> 手動で作成した [JSON](custom-functions-json.md) メタデータを操作して[、Office アドインの Yeoman](../develop/yeoman-generator-overview.md)`options` `matrix``requiresParameterAddresses` `true``result` `dimensionality` ジェネレーターの代わりにパラメーター アドレスを返す場合は、オブジェクトにプロパティが設定されている必要があります。オブジェクトには、プロパティがに設定されている必要があります。
 
 次のカスタム関数は、3 `parameterAddresses` `Invocation` つの入力パラメーターを取り込み、各パラメーターのオブジェクトのプロパティを取得し、アドレスを返します。 
 

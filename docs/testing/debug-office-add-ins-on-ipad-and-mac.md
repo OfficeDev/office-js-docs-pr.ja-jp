@@ -1,14 +1,14 @@
 ---
 title: Mac で Office アドインをデバッグする
 description: Mac を使用してアドインをデバッグするOffice説明します。
-ms.date: 10/16/2020
+ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 46104e5cbd9c81e56c1a83b6f49ae5883097b3e5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc9017eb7bd27ee0bc22d3ad448e5996895c5eee
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151447"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711209"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 
@@ -18,7 +18,7 @@ ms.locfileid: "59151447"
 
 作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
 
-Mac で Office アドインをデバッグするには、Mac OS High Sierra AND Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 Mac ビルドがない場合は、Office開発者プログラムに参加Microsoft 365[取得できます](https://developer.microsoft.com/office/dev-program)。
+Mac で Office アドインをデバッグするには、Mac OS High Sierra AND Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 Mac ビルドがない場合はOffice開発者プログラムに参加Microsoft 365[取得できます](https://developer.microsoft.com/office/dev-program)。
 
 最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
 
@@ -31,7 +31,7 @@ Mac で Office アドインをデバッグするには、Mac OS High Sierra AND 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
     > [!IMPORTANT]
-    > Mac App Store ビルドのOfficeフラグはサポート `OfficeWebAddinDeveloperExtras` されていません。
+    > Mac App Store ビルドのOfficeフラグはサポート`OfficeWebAddinDeveloperExtras`されていません。
 
 次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。 このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
 

@@ -1,23 +1,23 @@
 ---
 title: イベント ベースのライセンス認証を使用するOutlookでシングル サインオン (SSO) を有効にする
 description: イベント ベースのアクティブ化アドインで作業するときに SSO を有効にする方法について学習します。
-ms.date: 11/16/2021
+ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 66d1edb8b7b0092ee107b73af24d5420caee8677
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: bb52678356fe0cf456cbbf023febee738cccdb31
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066654"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710931"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>イベント ベースのライセンス認証を使用するOutlookでシングル サインオン (SSO) を有効にする
 
-イベント Outlookがイベント ベースのアクティブ化を使用する場合、イベントは別の JavaScript ランタイムで実行されます。 [「Outlook](authenticate-a-user-with-an-sso-token.md)アドインでシングル サインオン トークンを使用してユーザーを認証する」の手順を完了した後、この記事で説明する追加の手順に従って、イベント処理コードの SSO を有効にします。 SSO を有効にしたら、API を呼び出して、ユーザーの ID を持つアクセス `getAccessToken()` トークンを取得できます。
+イベント Outlookがイベント ベースのアクティブ化を使用する場合、イベントは別の JavaScript ランタイムで実行されます。 [「Outlook](authenticate-a-user-with-an-sso-token.md) アドインでシングル サインオン トークンを使用してユーザーを認証する」の手順を完了した後、この記事で説明する追加の手順に従って、イベント処理コードの SSO を有効にします。 SSO を有効にしたら、API を呼び出 `getAccessToken()` して、ユーザーの ID を持つアクセス トークンを取得できます。
 
 > [!NOTE]
-> この記事の手順は、アプリでアドインOutlook実行する場合にのみWindows。 これは、OutlookのWindows JavaScript ファイルを使用し、Outlook on the web同じ JavaScript ファイルを参照できる HTML ファイルを使用する場合です。
+> この記事の手順は、アドインを Outlookで実行する場合にのみWindows。 これは、OutlookのWindows JavaScript ファイルを使用し、Outlook on the webは同じ JavaScript ファイルを参照できる HTML ファイルを使用する場合です。
 
-Outlook Windows Outlook アドインのマニフェストで、イベント ベースのアクティブ化のために読み込む 1 つの JavaScript ファイルを識別します。 また、このファイルが SSO をサポートOffice許可されている場合は、そのファイルを指定する必要があります。 これを行うには、2 つの方法があります。 すべてのアドインとその JavaScript ファイルの一覧を作成して、既知の URI を使用Officeを提供できます。 または、SSO を有効にするカスタム応答ヘッダーを追加できます。
+Outlook Windows Outlook アドインのマニフェストで、イベント ベースのアクティブ化のために読み込む単一の JavaScript ファイルを識別します。 また、このファイルが SSO をサポートOffice許可されている場合は、そのファイルを指定する必要があります。 これを行うには、すべてのアドインとその JavaScript ファイルの一覧を作成して、既知の URI Officeを提供します。
 
 ## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>よく知られている URI を使用して許可されているアドインを一覧表示する
 
@@ -35,21 +35,11 @@ SSO を使用できるアドインを一覧表示するには、各アドイン�
 }
 ```
 
-元のルートにある URI で指定された場所の `.well-known` 下に JSON ファイルをホストします。 たとえば、原点がである場合 `https://addin.contoso.com:8000/` 、既知の URI はです `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json` 。
+元のルートにある URI で `.well-known` 指定された場所の下に JSON ファイルをホストします。 たとえば、原点がである場合 `https://addin.contoso.com:8000/`、既知の URI はです `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json`。
 
-原点は、スキーム + サブドメイン + ドメイン + ポートのパターンを参照します。 場所の名前は 、 **リソース** ファイルの名前を指定する `.well-known` **必要** があります `microsoft-officeaddins-allowed.json` 。 このファイルには、それぞれのアドインの SSO に対して承認されたすべての JavaScript ファイルの配列である値という名前の属性を持つ JSON オブジェクトが `allowed` 含まれている必要があります。
-
-## <a name="add-a-custom-response-header"></a>カスタム応答ヘッダーの追加
-
-2 つ目の方法は、という名前のカスタム応答ヘッダーを追加します `MS-OfficeAddins-Allowed-Origin` 。 ヘッダーの値は、JavaScript ファイルの原点である必要があります。
-
-たとえば、JavaScript ファイルが場所にある場合は `https://addin.contoso.com:8000/main/js/autorun.js` 、次の応答ヘッダーを追加します。
-
-`MS-OfficeAddins-Allowed-Origin : https://addin.contoso.com:8000`
-
-カスタム応答ヘッダーを追加する方法については、特定の Web サーバーのドキュメントを参照する必要があります。
+原点は、スキーム + サブドメイン + ドメイン + ポートのパターンを参照します。 場所の名前は 、 **リソース** `.well-known`ファイルの名前を指定する **必要** があります `microsoft-officeaddins-allowed.json`。 このファイルには、それぞれのアドインの SSO `allowed` に対して承認されたすべての JavaScript ファイルの配列である値という名前の属性を持つ JSON オブジェクトが含まれている必要があります。
 
 ## <a name="see-also"></a>関連項目
 
 - [アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する](authenticate-a-user-with-an-sso-token.md)
-- [イベント ベースのOutlook用にアドインを構成する](autolaunch.md)
+- [イベント ベースのOutlookアドインを構成する](autolaunch.md)

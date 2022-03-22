@@ -3,36 +3,36 @@ title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43007ece67d85f584a682b7503f1b59e0d19ad5b
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537507"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711246"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
 サイドロードを使用すると、最初にアドイン カタログに置かなくても、テスト用に Outlook アドインをインストールすることができます。
 
 > [!IMPORTANT]
-> Outlook アドインがモバイルをサポートしている場合は、web、Windows、または Mac の Outlook クライアントに関するこの記事の指示に従ってマニフェストをサイドロードし[、「Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile)用アドイン」の「モバイルでアドインをテストする」の記事のガイダンスに従います。
+> Outlook アドインがモバイルをサポートしている場合は、web、Windows、または Mac の Outlook クライアントに関するこの記事の指示に従ってマニフェストをサイドロードし、「[Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile) 用アドイン」の「モバイル でアドインをテストする」の記事のガイダンスに従います。
 
 ## <a name="sideload-automatically"></a>サイドロードが自動的に実行される
 
-Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)ジェネレーターを使用して Outlook アドインを作成した場合は、サイドローディングは Windows のコマンド ラインを通じて行うのが最善です。 これにより、1 つのコマンドでサポートされているすべてのデバイスでツールとサイドロードを利用できます。
+Office アドイン用の [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して Outlook アドインを作成した場合は、サイドローディングは Windows のコマンド ラインを使用して行うのが最善です。 これにより、1 つのコマンドでサポートされているすべてのデバイスでツールとサイドロードを利用できます。
 
 1. このWindowsコマンド プロンプトを開き、Yeoman が生成したアドイン プロジェクトのルート ディレクトリに移動します。 コマンド`npm start`を実行します。
 
-1. ユーザー Outlookは、デスクトップ コンピューター上のOutlookに自動的にサイドロードされます。 アドインをサイドロードしようとして、マニフェスト ファイルの名前と場所を一覧に表示するダイアログが表示されます。 **[OK]** を選択し、マニフェストを登録します。
+1. ユーザー Outlookは、デスクトップ コンピューター上のOutlookに自動的にサイドロードされます。 アドインをサイドロードしようとして、マニフェスト ファイルの名前と場所を一覧に表示するダイアログが表示されます。 [ **OK] を** 選択し、マニフェストを登録します。
 
     > [!IMPORTANT]
     > マニフェストにエラーが含まれているか、マニフェストへのパスが無効な場合は、エラー メッセージが表示されます。
 
-1. マニフェストにエラーが含まれるが、パスが有効な場合、アドインはサイドロードされ、デスクトップと Outlook on the web の両方で使用できます。 また、サポートされているすべてのデバイスにインストールされます。
+1. マニフェストにエラーが含まれているのにパスが有効な場合、アドインはサイドロードされ、デスクトップとアプリの両方でOutlook on the web。 また、サポートされているすべてのデバイスにインストールされます。
 
 ## <a name="sideload-manually"></a>サイドロードを手動で実行する
 
-前のセクションで説明したコマンド ラインから自動的にサイドローディングすることを強く推奨しますが、Outlook クライアントに基づいて Outlook アドインを手動でサイドロードすることもできます。
+前のセクションで説明したコマンド ラインから自動的にサイドロードすることを強く推奨しますが、Outlook アドインを Outlook クライアントに基づいて手動でサイドロードすることもできます。
 
 ### <a name="outlook-on-the-web"></a>Outlook on the web
 
@@ -40,11 +40,11 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 - メールボックスのツールバーが次の図のような場合、「[新しい Outlook on the web のアドインをサイドロードする](#new-outlook-on-the-web)」を参照してください。
 
-    ![新しいツール バーの部分的なOutlook on the webです。](../images/outlook-on-the-web-new-toolbar.png)
+    ![新しいツール バーの部分的なスクリーンショットOutlook on the webします。](../images/outlook-on-the-web-new-toolbar.png)
 
 - メールボックスのツールバーが次の図のような場合、「[従来の Outlook on the web のアドインをサイドロードする](#classic-outlook-on-the-web)」を参照してください。
 
-    ![従来のツール バーの一部Outlook on the webスクリーンショット。](../images/outlook-on-the-web-classic-toolbar.png)
+    ![従来のツール バーの部分的なOutlook on the webです。](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > 組織のメールボックスのツールバーにロゴが含まれている場合、上の図に示されるものと表示が少し異なる場合があります。
@@ -57,11 +57,11 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 1. 新しいメッセージの下部で [**...**] を選択し、表示されるメニューから [**アドインを取得**] を選択します。
 
-    ![[アドインの取得] オプションが強調表示Outlook on the web新しいウィンドウのメッセージ作成ウィンドウ。](../images/outlook-on-the-web-new-get-add-ins.png)
+    ![[アドインの取得] オプションが強調表示Outlook on the web新しいウィンドウの [メッセージ作成] ウィンドウが表示されます。](../images/outlook-on-the-web-new-get-add-ins.png)
 
 1. [**Outlook のアドイン**] ダイアログ ボックスで、[**個人用アドイン**] を選択します。
 
-    ![[自分のOutlook] を選択した新しいOutlook on the webダイアログ ボックスのアドイン。](../images/outlook-on-the-web-new-my-add-ins.png)
+    ![[自分のアドイン] Outlookを選択した新しいOutlook on the webダイアログ ボックスのアドイン。](../images/outlook-on-the-web-new-my-add-ins.png)
 
 1. ダイアログ ボックスの下部にある [**カスタム アドイン**] セクションに移動します。 [**カスタム アドインを追加**] リンクを選択し、[**ファイルから追加**] を選択します。
 
@@ -75,7 +75,7 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 1. ツールバー右上のセクションにあるギア アイコンを選択し、[**アドインの管理**] を選択します。
 
-    ![Outlook on the webアドインの管理オプションをポイントするスクリーンショットを作成します。](../images/outlook-sideload-web-manage-integrations.png)
+    ![Outlook on the webアドインの管理オプションをポイントするスクリーンショットを参照してください。](../images/outlook-sideload-web-manage-integrations.png)
 
 1. **アドインの管理** ページで、**[アドイン]** を選択してから、**[個人用アドイン]** を選択します。
 
@@ -98,15 +98,15 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
     ![Outlook 2016アドインの取得] ボタンをポイントするリボンを選択します。](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
-    > バージョンの [アドインの取得] ボタンが表示されていない場合は、次Outlook選択します。
+    > バージョンの [アドインの取得]  ボタンが表示されていない場合は、次Outlook選択します。
     >
     > - **リボン** の [ストア] ボタン (使用可能な場合)。
     >
     >   または
     >
-    > - **[** ファイル] メニューの [情報] タブの[アドインの管理]ボタンを選択して、[アドイン] ダイアログボックスを開Outlook on the web。 <br>Web エクスペリエンスの詳細については、前のセクションの「アドインをサイドロードする」を参照[Outlook on the web。](#outlook-on-the-web)
+    > - **[** ファイル] メニューの [情報] タブの [アドインの管理] ボタンを選択して、[アドイン] ダイアログボックスを開Outlook on the web。<br>Web エクスペリエンスの詳細については、前のセクションの「アドインをサイドロードする」を参照[Outlook on the web。](#outlook-on-the-web)
 
-1. ダイアログの上部にタブがある場合は、[アドイン] タブが **選択** されている必要があります。 [ **個人用アドイン**] を選びます。
+1. ダイアログの上部にタブがある場合は、[アドイン] **タブが選択** されている必要があります。 [ **個人用アドイン**] を選びます。
 
     ![Outlook 2016[マイ アドイン] が選択されている場合は、[ストア] ダイアログボックスを開きます。](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -122,15 +122,15 @@ Office アドイン用の[Yeoman](https://github.com/OfficeDev/generator-office)
 
 1. [ファイル **] メニューを** 選択し、[情報] タブの [アドインの管理] ボタンを選択しますOutlookブラウザーで Web バージョンが開きます。
 
-1. [アドインのサイドロード][セクションの](#outlook-on-the-web)手順に従って、Outlook on the webのバージョンに従Outlook on the web。
+1. [アドインの[サイドロード]](#outlook-on-the-web) セクションの手順に従って、Outlook on the webのバージョンに従Outlook on the web。
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-すべてのバージョンの Outlook、サイドロードされたアドインを削除するキーは、インストールされているアドインを一覧表示する[マイ アドイン] ダイアログです。アドインの省略記号 ( `...` ) を選択し、[削除] を **選択します**。
+すべてのバージョンの Outlook では、サイドロードされたアドインを削除するキーは、インストールされているアドインを一覧表示する [マイ アドイン] ダイアログです。アドインの省略記号 (`...`) を選択し、[削除] を選択 **します**。
 
-Outlook クライアントの[マイ アドイン] ダイアログ ボックスに移動するには、この記事の前のセクションで手動[](#sideload-manually)サイドローディングの最後の手順を使用します。
+Outlook クライアントの [マイ アドイン] ダイアログ ボックスに移動するには、この記事の前のセクションで手動サイドローディングの最後の[](#sideload-manually)手順を使用します。
 
-サイドロードされたアドインを Outlook から削除するには、この記事で説明した手順を使用して、インストールされているアドインを一覧表示するダイアログボックスの [カスタム アドイン] セクションでアドインを検索します。アドインの省略記号 ( ) を選択し、[削除] を選択して、その特定の `...` アドインを削除します。  ダイアログを閉じます。
+サイドロードされたアドインを Outlook から削除するには、この記事で説明した手順を使用して、インストールされているアドインを一覧表示するダイアログ ボックスの [カスタム アドイン] セクションでアドインを検索します。アドインの省略記号 (`...`) を選択し、[削除] を選択 **して特定の** アドインを削除します。 ダイアログを閉じます。
 
 ## <a name="see-also"></a>関連項目
 

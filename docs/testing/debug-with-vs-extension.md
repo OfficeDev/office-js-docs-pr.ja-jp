@@ -1,24 +1,24 @@
 ---
 title: Visual Studio Code と Microsoft Edge 従来版 WebView (EdgeHTML) を使用して Windows 上のアドインをデバッグする
-description: Office VS Code の Office アドイン デバッガー拡張機能を使用して、Microsoft Edge 従来版 WebView (EdgeHTML) を使用するアドインをデバッグする方法について説明します。
+description: VS Code の Office アドイン デバッガー拡張機能を使用して、Microsoft Edge 従来版 WebView (EdgeHTML Office) を使用するアドインをデバッグする方法について説明します。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0e8c072e7b08182f9028414a9321bf78a049b1
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 98ac2fc4eab8ef20ddc416b299fde88095ef4fb4
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892539"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710945"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 
-Office Windows で実行されているアドインでは、Visual Studio Code の Office アドイン デバッガー拡張機能を使用して、Microsoft Edge 従来版 に対して元の WebView (EdgeHTML) ランタイムでデバッグできます。 
+Office Windows で実行されているアドインは、Visual Studio Code の Office アドイン デバッガー拡張機能を使用して、Microsoft Edge 従来版 に対して元の WebView (EdgeHTML) ランタイムでデバッグできます。 
 
 > [!IMPORTANT]
-> この記事は、「Office アドインで使用されるブラウザー」で説明したように、Office が元の WebView (EdgeHTML Office) ランタイムでアドインを実行[する場合にのみ適用](../concepts/browsers-used-by-office-web-add-ins.md)されます。Visual Studio Microsoft Edge WebView2 (Chromium ベース) に対する Visual Studio コードでのデバッグの手順については、「Microsoft Office アドイン デバッガー拡張機能 for Visual Studio Code」[を参照してください](debug-desktop-using-edge-chromium.md)。
+> この記事は、Office WebView (EdgeHTML) ランタイムでアドインを実行する場合にのみ適用されます(「Office アドインで使用されるブラウザー」を[参照](../concepts/browsers-used-by-office-web-add-ins.md)してください。Visual Studio WebView2 (Chromium ベース) に対する Microsoft Edge コードでのデバッグの手順については、「Microsoft Office アドイン デバッガー拡張機能 for Visual Studio Code」[を参照してください](debug-desktop-using-edge-chromium.md)。
 
 > [!TIP]
-> Visual Studio Code に組み込みのツールを使用してデバッグできない、またはデバッグしない場合、またはアドインが Visual Studio Code の外部で実行されている場合にのみ発生する問題が発生する場合は、「開発ツールを使用してアドインをデバッグする」の説明に従ってエッジ レガシ (EdgeHTML) ランタイムをデバッグできます。[Microsoft Edge 従来版](debug-add-ins-using-devtools-edge-legacy.md)。
+> Visual Studio Code に組み込みのツールを使用してデバッグできない、またはデバッグしない場合、または Visual Studio Code の外部でアドインを実行するときにのみ発生する問題が発生する場合は、「開発ツールを使用してアドインをデバッグする」の説明に従ってエッジ レガシ (EdgeHTML) ランタイムをデバッグできます。[Microsoft Edge 従来版](debug-add-ins-using-devtools-edge-legacy.md)。
 
 このデバッグ モードは動的であるため、コードの実行中にブレークポイントを設定できます。 デバッガーが接続されている間、コード内の変更をすぐに確認できます。すべてデバッグ セッションを失う必要はありません。 コードの変更も保持されます。そのため、コードに対する複数の変更の結果を確認できます。 次の画像は、この拡張機能の動作を示しています。
 
@@ -29,17 +29,17 @@ Office Windows で実行されているアドインでは、Visual Studio Code �
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (バージョン 10 以上)](https://nodejs.org/)
 - Windows 10, 11
-- [Microsoft Edge](https://www.microsoft.com/edge) Office アドインで使用されるブラウザーで説明したように、Microsoft Edge 従来版 と元の Web ビュー (EdgeHTML [Office](../concepts/browsers-used-by-office-web-add-ins.md)) をサポートするプラットフォームと Office アプリケーションの組み合わせ。
+- [Microsoft Edge](https://www.microsoft.com/edge) Microsoft Edge 従来版 をサポートするプラットフォームと Office アプリケーションと、Microsoft Edge 従来版 アドインで使用されるブラウザーで説明されている元の webview (EdgeHTML [Office](../concepts/browsers-used-by-office-web-add-ins.md)) の組み合わせ。
 
 ## <a name="install-and-use-the-debugger"></a>デバッガーをインストールして使用する
 
-これらの手順は、コマンド ラインの使用経験があり、基本的な JavaScript を理解していて、Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成したことがあることを前提としています。 前にこれを行ったことがない場合は、次のようなチュートリアルの 1 つを参照Excel Office[検討してください](../tutorials/excel-tutorial.md)。
+これらの手順では、コマンドラインの使用経験、基本的な JavaScript の理解、および Office アドインの [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターの使用前に Office アドイン プロジェクトを作成したと仮定します。前にこれを行ったことがない場合は、次のようなチュートリアルの 1 つを参照Excel Office[検討してください](../tutorials/excel-tutorial.md)。
 
 1. 最初の手順は、プロジェクトとその作成方法によって異なります。
 
-   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、[Office アドイン用の Yeoman ジェネレーターを使用します](https://github.com/OfficeDev/generator-office)。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」など、クイック スタート ガイドのいずれかを使用します。 
+   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、[Office アドイン用の Yeoman ジェネレーターを使用します](../develop/yeoman-generator-overview.md)。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」など、クイック スタート ガイドのいずれかを使用します。 
    - Yo Office で作成された既存のプロジェクトをデバッグする場合は、スキップして次の手順に進みます。
-   - Yo Office で作成されていない既存のプロジェクトをデバッグする場合は、「[付録](#appendix)」の手順を実行し、次の手順に戻ってください。
+   - Yo Office で作成されていない既存のプロジェクトをデバッグする場合は、付録の手順を実行し、次の手順に戻[](#appendix)ってください。
 
 
 1. VS Code を開始し、プロジェクトを開きます。 
@@ -117,7 +117,7 @@ Office Windows で実行されているアドインでは、Visual Studio Code �
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインのテストとデバッグ](test-debug-office-add-ins.md)
-- [WebView2 (WindowsベースWindows WebView2 Visual Studio Code Microsoft Edgeを使用して、Chromiumアドインをデバッグします](debug-desktop-using-edge-chromium.md)。
+- [WebView2 (WindowsベースVisual Studio CodeをMicrosoft Edgeして、Chromiumアドインをデバッグします](debug-desktop-using-edge-chromium.md)。
 - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
 - [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)

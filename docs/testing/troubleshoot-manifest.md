@@ -3,12 +3,12 @@ title: Office アドインのマニフェストを検証する
 description: XML スキーマおよび他のツールを使用して、Officeアドインのマニフェストを検証する方法について説明します。
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 89335ffb670f6bb9a41f2d29f300123e1ea78397
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081422"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711260"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -19,20 +19,20 @@ ms.locfileid: "61081422"
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Office アドイン用の Yeoman ジェネレーターでマニフェストを検証する
 
-[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用してアドインを作成した場合は、それを使用してプロジェクトのマニフェスト ファイルを検証することもできます。 プロジェクトのルート ディレクトリから次のコマンドを実行します。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドインを作成した場合は、それを使用してプロジェクトのマニフェスト ファイルを検証することもできます。 プロジェクトのルート ディレクトリから次のコマンドを実行します。
 
 ```command&nbsp;line
 npm run validate
 ```
 
-![コマンド ラインで実行され、検証Office渡された結果を生成する、Yo の値を示すアニメーション GIF。](../images/yo-office-validator.gif)
+![コマンド ラインで実行されている Yo Office検証ツールを示し、検証が渡された結果を生成するアニメーション GIF。](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> この機能にアクセスするには、アドイン プロジェクトが [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office) バージョン 1.1.17 以降を使用して作成されている必要があります。
+> この機能にアクセスするには、Office アドイン バージョン 1.1.17 以降の [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用してアドイン プロジェクトを作成する必要があります。
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>office-addin-manifest を使用してマニフェストを検証する
 
-[Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用せずアドインを作成した場合は、[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest) を使用してマニフェストを検証することもできます。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用せずアドインを作成した場合は、[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest) を使用してマニフェストを検証することもできます。
 
 1. [Node.js](https://nodejs.org/download/) をインストールします。
 
@@ -49,7 +49,7 @@ npm run validate
     ```
 
     > [!NOTE]
-    > このコマンドが使用できない場合や機能しない場合は、代わりに次のコマンドを実行して、office-addin-manifest ツールの最新バージョンを強制的に使用します (マニフェスト ファイルの名前に置き `MANIFEST_FILE` 換えてください)。
+    > このコマンドが使用できない場合や機能しない場合は、代わりに次のコマンドを実行して、office-addin-manifest ツールの最新バージョンを強制的に使用します ( `MANIFEST_FILE` マニフェスト ファイルの名前に置き換えてください)。
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -77,4 +77,4 @@ npm run validate
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
-- [アドインの開発者ツールを使用してアドインをデバッグする (Microsoft EdgeベースChromium)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)
