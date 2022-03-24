@@ -4,8 +4,13 @@ description: ExcelApi 1.12 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 3c88f8c472ba2ac08ad8c96128616b290dcbb1f1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747067"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel新機能
 
 ExcelApi 1.12 では、動的配列を追跡し、数式の直接の前例を見つけ出す API を追加することで、範囲の数式のサポートが増加しました。 ピボットテーブル フィルターの API コントロールも追加しました。 コメント、カルチャ設定、カスタム プロパティの機能領域でも改善が行われた。

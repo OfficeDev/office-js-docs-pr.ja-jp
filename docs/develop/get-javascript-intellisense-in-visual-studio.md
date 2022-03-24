@@ -3,12 +3,12 @@ title: Visual Studio 2019 で JavaScript IntelliSense を利用できるよう�
 description: JSDoc を使用して JavaScript 変数IntelliSense、パラメーター、および戻り値のデータを作成する方法について説明します。
 ms.date: 10/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fedf9e637ffaa32318e6eeca5f0f724abf62ba1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 142f4cf81f83cdc518fb94f65a8e6f67f41a4783
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150066"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743491"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![JavaScript の例の 'paras' パラメーター ('paragraphs' パラメーター IntelliSenseの抜粋を示すスクリーンショット。](../images/intellisense-vs17-param.png)
+![JavaScript の例IntelliSense 'paras' パラメーター ('paragraphs' パラメーター) の抜粋を示すスクリーンショット。](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-!['myFunc()' IntelliSense値の抜粋を示すスクリーンショット。](../images/intellisense-vs17-return.png)
+!['myFunc()' のIntelliSenseの抜粋を示すスクリーンショット。](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>複合型
 

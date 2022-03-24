@@ -1,25 +1,25 @@
 ---
 title: Outlook アドイン API 要件セット 1.1
-description: メールボックス API 1.1 のOutlook JavaScript API および Office JavaScript API 用に導入された機能と API。
+description: メールボックス API 1.1 のOutlook JavaScript API および Office用に導入された機能と API。
 ms.date: 12/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 57abdcfc5cc4974e315284357e85c94045885479
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 74a6b2561cf7d0ec28d97810d7337fe909a30837
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152872"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746672"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook アドイン API 要件セット 1.1
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。 OutlookJavaScript API 1.1 (メールボックス 1.1) は、API の最初のバージョンです。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。 Outlook JavaScript API 1.1 (メールボックス 1.1) は API の最初のバージョンです。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
 
 ## <a name="whats-new-in-11"></a>1.1 の新機能
 
-要件セット 1.1 には、すべての共通[API](../../requirement-sets/office-add-in-requirement-sets.md)要件セットが含まれています。Outlook。 アドインでメッセージと予定の本文にアクセスする機能、および現在のアイテムを変更する機能が追加されました。
+要件セット 1.1 には、すべての共通 [API](../../requirement-sets/office-add-in-requirement-sets.md) 要件セットが含まれています。Outlook。 アドインでメッセージと予定の本文にアクセスする機能、および現在のアイテムを変更する機能が追加されました。
 
 ### <a name="change-log"></a>変更ログ
 

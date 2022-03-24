@@ -3,20 +3,25 @@ title: OneNote ページ コンテンツを使用する
 description: JavaScript API を使用してページ OneNoteを使用する方法について説明します。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 780e7a23f30482f3f8b52524b7a21339c6e19110
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746011"
 ---
-
 # <a name="work-with-onenote-page-content"></a>OneNote ページ コンテンツを使用する
 
 OneNote アドインの JavaScript API では、ページ コンテンツは次のようなオブジェクト モデルで表されます。
 
-  ![OneNote オブジェクト モデル図を参照します。](../images/one-note-om-page.png)
+  ![OneNoteオブジェクト モデル図を参照します。](../images/one-note-om-page.png)
 
 - ページ オブジェクトには、PageContent オブジェクトのコレクションが含まれています。
 - PageContent オブジェクトには、アウトライン、イメージ、その他のコンテンツ タイプが含まれています。
 - アウトライン オブジェクトには、Paragraph オブジェクトのコレクションが含まれています。
 - Paragraph オブジェクトには、RichText、Image、Table、Other のコンテンツ タイプが含まれています。
 
-空のページを作成OneNote、次のいずれかの方法を使用します。
+空のページをOneNoteするには、次のいずれかの方法を使用します。
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#onenote-onenote-section-addpage-member(1))
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#onenote-onenote-section-insertsectionassibling-member(1))

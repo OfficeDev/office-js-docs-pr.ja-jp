@@ -4,8 +4,13 @@ description: ExcelApi 1.11 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ce900104d301fed1038fa1ede78fe661f7257e0f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745605"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel新機能
 
 ExcelApi 1.11 では、コメントとブック レベルのコントロール (ブックの保存や閉じるなど) のサポートが強化されました。 また、ローカライズのアカウントに役立つカルチャ設定へのアクセスも追加されました。
@@ -15,7 +20,7 @@ ExcelApi 1.11 では、コメントとブック レベルのコントロール (
 | コメント [メンション](../../excel/excel-add-ins-comments.md#mentions) |コメントを使用して他のブック ユーザーにタグを付け、通知します。 | [Comment](/javascript/api/excel/excel.comment), [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
 | コメント [の解決](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | コメント スレッドを解決し、解決状態を取得します。 | [コメント](/javascript/api/excel/excel.comment) |
 | [カルチャの設定](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 数値の書式設定など、ブックの文化システム設定を取得します。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo)、 [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [アプリケーション](/javascript/api/excel/excel.application) |
-| [切り取りと貼り付け (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Range のカット アンド ペースト機能をExcelコピーします。 | [Range](/javascript/api/excel/excel.range) |
+| [切り取りと貼り付け (moveTo)](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | Range のセル内の切り取りExcel機能をレプリケートします。 | [Range](/javascript/api/excel/excel.range) |
 | ブックを[保存](../../excel/excel-add-ins-workbooks.md#save-the-workbook)して[閉じる](../../excel/excel-add-ins-workbooks.md#close-the-workbook) | ブックを保存して閉じます。 | [Workbook](/javascript/api/excel/excel.workbook) |
 | ワークシート のイベント | ワークシートの計算と非表示の行に関するその他のイベントとイベント情報。 | [WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs), [WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs) |
 
@@ -41,7 +46,7 @@ ExcelApi 1.11 では、コメントとブック レベルのコントロール (
 ||[解決済み](/javascript/api/excel/excel.commentreply#excel-excel-commentreply-resolved-member)|コメントの返信の状態。|
 ||[richContent](/javascript/api/excel/excel.commentreply#excel-excel-commentreply-richcontent-member)|豊富なコメント コンテンツ (コメント内のメンションなど)。|
 ||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.commentreply#excel-excel-commentreply-updatementions-member(1))|特別に書式設定された文字列とメンションの一覧を使用してコメント コンテンツを更新します。|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: CommentRichContent string\|, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#excel-excel-commentreplycollection-add-member(1))|コメントのコメント返信を作成します。|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: CommentRichContent \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#excel-excel-commentreplycollection-add-member(1))|コメントのコメント返信を作成します。|
 |[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#excel-excel-commentrichcontent-mentions-member)|コメント内で言及されているすべてのエンティティ (人など) を含む配列。|
 ||[richContent](/javascript/api/excel/excel.commentrichcontent#excel-excel-commentrichcontent-richcontent-member)|コメントのリッチ コンテンツを指定します (例: メンション付きコメント コンテンツ、最初に言及したエンティティの ID 属性は 0、2 番目に指定したエンティティの ID 属性は 1)。|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[name](/javascript/api/excel/excel.cultureinfo#excel-excel-cultureinfo-name-member)|languagecode2-country/regioncode2 形式のカルチャ名 ("zh-cn" や "ja-us" など) を取得します。|

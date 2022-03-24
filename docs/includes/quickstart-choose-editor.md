@@ -1,1 +1,1 @@
-[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。 使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。 使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。

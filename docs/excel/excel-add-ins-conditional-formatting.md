@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用して範囲に条件付き書式を適用�
 description: JavaScript アドインのコンテキストでの条件付Excelについて説明します。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3ce732da461808bfb36bd273ad085eeacdfafb
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: c69de0b998111226939dcb5b2a0d0eb6e47f0083
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340842"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744835"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Excel の範囲に条件付き書式を適用する
 

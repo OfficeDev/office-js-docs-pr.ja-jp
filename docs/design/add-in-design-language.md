@@ -3,12 +3,12 @@ title: Office アドインのデザイン言語
 description: アドインと視覚的に互換性Officeする方法について説明Office。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a945cdbe4ba50bc00d9334492ccbd280b93a2487
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a7623b305ec7857957ce1215574ea5cdee70b3d7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149755"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742793"
 ---
 # <a name="office-add-in-design-language"></a>Office アドインのデザイン言語
 
@@ -22,7 +22,7 @@ Office のデザイン言語は、エクスペリエンス全体の整合性を�
 - アニメーションの定義
 - 一般的なコンポーネント
 
-[Fluent UI は](../design/add-in-design.md)、デザイン言語を使用して構築するためのOfficeフレームワークです。 UI Fluent使用はオプションですが、アドインが自然な拡張機能のように感じ取る最も速い方法Office。 UI を活用Fluent、ユーザーインターフェイスを補完するアドインを設計Office。
+[Fluent UI は](../design/add-in-design.md)、デザイン言語を使用して構築するためのOfficeフレームワークです。 UI Fluentを使用する方法はオプションですが、アドインがユーザーインターフェイスの自然な拡張のように感じOffice。 UI を活用Fluent、ユーザーインターフェイスを補完するアドインを設計Office。
 
 多くの Office アドインは、以前から存在するブランドに関連付けられています。強力なブランドとそのビジュアルまたはコンポーネント言語を、アドインに保持できます。Office と統合する際に、独自のビジュアル言語を保持する機会を探します。Office の色、文字体裁、アイコン、その他のスタイルの要素を、独自のブランドの要素と交換する方法を検討してください。お客様によく知られているコントロールやコンポーネントを挿入する際は、一般的なアドイン レイアウトや UX 設計パターンに従う方法を検討してください。
 

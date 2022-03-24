@@ -1,15 +1,15 @@
 ---
 title: ダイアログ配信元の要件セット
 description: 詳細については、「Dialog Origin requirement sets」を参照してください。
-ms.date: 07/22/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: db97b19c0a23fa7dbd1b93e03ccd7a7b76317d7a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 47713f2c7c6a9516d04eed608c69b55899c859c8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154345"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746071"
 ---
 # <a name="dialog-origin-requirement-sets"></a>ダイアログ配信元の要件セット
 
@@ -17,7 +17,7 @@ ms.locfileid: "59154345"
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、Dialog Origin 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルドまたはバージョン番号をOfficeします。
 
-|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Office 2019 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション) |  Office on iPad<br>(サブスクリプション)  |  Office on Mac<br>(サブスクリプション)  | Office on the web  |  Office Online Server  |
+|  要件セット  | Windows 版 Office 2013<br>(1 回限りの購入) | Windows 版 Office 2016<br>(1 回限りの購入) | Windows での Office 2019 以降<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション) |  Office on iPad<br>(サブスクリプション)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回の購入)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogOrigin 1.1  | ビルド<br>15.0.5371.1000<br>以降 | ビルド<br>16.0.5200.1000<br>以降 | ビルド<br>TBD<br>以降 | TBD | 2.52 以降 | 16.52 以降 | 2021 年 7 月 | バージョン 2108<br>(ビルド 10377.1000)<br>以降 |
 
@@ -34,7 +34,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="dialog-origin-11"></a>Dialog Origin 1.1
 
-Dialog Origin 1.1 は API の最初のバージョンです。 ダイアログとその親ページ間のクロスドメイン メッセージングのサポートを提供します。 これらの API の詳細については[、「Office.ui」を](/javascript/api/office/office.ui)参照してください。
+Dialog Origin 1.1 は API の最初のバージョンです。 ダイアログとその親ページ間のクロスドメイン メッセージングのサポートを提供します。 これらの API の詳細については、「[Office.ui リファレンス」を](/javascript/api/office/office.ui)参照してください。
 
 ## <a name="see-also"></a>関連項目
 

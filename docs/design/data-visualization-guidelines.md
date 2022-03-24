@@ -3,18 +3,18 @@ title: Office アドインのデータ可視化のスタイル ガイドライ�
 description: アドイン内のデータを視覚化する方法に関する優れたOfficeを取得します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3c743e3a793c4d4fdc2639313eb40a01923ada
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173416be6ac3346ede19737939b00c7a437f6588
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150139"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743269"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office アドインのデータ可視化のスタイル ガイドライン
 
 データ可視化が良好なら、ユーザーはデータから洞察が得やすくなります。ユーザーは、これらの洞察を使って通知や説得の話ができます。この記事では、Excel やその他の Office アプリ用のアドインで効果的なデータ可視化を設計するためのガイドラインを示します。
 
-データ可視化のクロムを[Fluent UI](../design/add-in-design.md)を使用することをお勧めします。 FluentUI には、外観と外観をシームレスに統合するOfficeコンポーネントが含まれます。
+データ可視化のクロムを[Fluent UI](../design/add-in-design.md) を使用することをお勧めします。 Fluent UI には、外観と外観をシームレスに統合するOfficeコンポーネントが含まれます。
 
 ## <a name="data-visualization-elements"></a>データ可視化の要素
 
@@ -28,14 +28,14 @@ ms.locfileid: "59150139"
 
 - グラフのタイトルを見やすくします。グラフの残りの部分との階層関係を視覚ではっきり示すように配置します。
 - 一般に、文頭だけを大文字にします (最初の単語の最初の文字を大文字にします)。コントラストを付けたり、階層を明確にしたりするには、すべて大文字を使用できますが、控えめに使用する必要があります。
-- Segoe[をFluent UI](https://developer.microsoft.com/fluentui#/styles/web/typography)タイプの傾斜を組み込み、グラフを Office UI と一貫性を保ちます。 グラフのコンテンツを UI と区別するために、異なる書体を使用することもできます。
+- Segoe [をFluent UI](https://developer.microsoft.com/fluentui#/styles/web/typography) の種類の傾斜を組み込み、グラフを Office UI と一貫性を保ちます。 グラフのコンテンツを UI と区別するために、異なる書体を使用することもできます。
 - カウンターの大きい sans-serif 書体を使用します。
 
 ### <a name="axis-labels"></a>軸ラベル
 
 テキスト色と背景色のコントラスト比を適正に保ちつつ、軸ラベルをはっきり読める程度にまで濃くします。データ インクと張り合うほど濃くしません。
 
-軸のラベルには明るいグレーが最も効果的です。 UI を使用している場合Fluentニュートラル カラー[パレットを参照してください](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
+軸のラベルには明るいグレーが最も効果的です。 UI を使用している場合Fluentニュートラル カラー [パレットを参照してください](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 ### <a name="data-ink"></a>データ インク
 
@@ -55,7 +55,7 @@ ms.locfileid: "59150139"
 
 グラフを正確に読み取るために目盛線が必要な場合もありますが、データ インクを引き立てる (データ インクと競合しない) 2 次的なビジュアル要素でなければなりません。静的な目盛線は特にハイ コントラスト用にデザインされたものでなければ、細く明るい色にします。また、ユーザーがグラフを対話的に使用するときにコンテキストに沿って現れる、その場限りの動的な目盛線を対話的操作によって作成することもできます。
 
-目盛線には明るいグレーが最も効果的です。 UI を使用している場合Fluentニュートラル カラー[パレットを参照してください](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
+目盛線には明るいグレーが最も効果的です。 UI を使用している場合Fluentニュートラル カラー [パレットを参照してください](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 次の図は、目盛線のあるデータ可視化を示しています。
 

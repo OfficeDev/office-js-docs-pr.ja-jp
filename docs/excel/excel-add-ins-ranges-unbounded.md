@@ -4,18 +4,18 @@ description: JavaScript API を使用して、Excel範囲を読み取りまた�
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5ef9b6a385db5b1de90e1bd61802d20ef7864533
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340954"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745502"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>JavaScript API を使用して、非バウンド範囲に対する読み取りExcel書き込み
 
 この記事では、JavaScript API を使用して、非バウンド範囲に対する読み取りExcel説明します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「Excel[。Range クラス](/javascript/api/excel/excel.range)。
 
-非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 例:
+非バウンド範囲アドレスは、列全体または行全体を指定する範囲アドレスです。 次に例を示します。
 
 - 列全体で構成される範囲アドレス。
   - `C:C`

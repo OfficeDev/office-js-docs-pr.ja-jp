@@ -3,23 +3,23 @@ title: マニフェストの拡張オーバーライドを処理する
 description: マニフェストの拡張オーバーライドを使用して機能拡張機能を構成する方法について学習します。
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d9af67a19233979cc46ecccc7030fe5b4a65beb7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150072"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743796"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>マニフェストの拡張オーバーライドを使用する
 
 Office アドインの一部の機能拡張機能は、アドインの XML マニフェストではなく、サーバーでホストされている JSON ファイルで構成されます。
 
 > [!NOTE]
-> この記事では、アドイン マニフェストOfficeアドインでの役割について理解している必要があります。最近Office[場合は、「アドイン XML](add-in-manifests.md)マニフェスト」を参照してください。
+> この記事では、アドイン マニフェストOfficeアドインでの役割について理解している必要があります。最近Office[アドインの XML](add-in-manifests.md) マニフェストを参照してください。
 
 次の表は、機能のドキュメントへのリンクと共に、拡張オーバーライドを必要とする機能拡張機能を指定します。
 
-| 特徴 | 開発手順 |
+| 機能 | 開発手順 |
 | :----- | :----- |
 | キーボード ショートカット | [カスタム キーボード ショートカットをアドインOffice追加する](../design/keyboard-shortcuts.md) |
 
@@ -30,7 +30,7 @@ JSON 形式を定義するスキーマは [、拡張マニフェスト スキー
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>JSON ファイルOffice場所を確認する
 
-マニフェストを使用して、JSON Office場所を確認します。 マニフェスト *内* の要素の直下 (内部ではない) `<VersionOverrides>` に [ExtendedOverrides 要素を追加](../reference/manifest/extendedoverrides.md) します。 属性を `Url` JSON ファイルの完全な URL に設定します。 最も単純な要素の例を次に示 `<ExtendedOverrides>` します。
+マニフェストを使用して、JSON Office場所を確認します。 マニフェスト *内* の要素の直下 ( `<VersionOverrides>` 内部ではない) に [ExtendedOverrides 要素を追加](../reference/manifest/extendedoverrides.md) します。 属性を `Url` JSON ファイルの完全な URL に設定します。 最も単純な要素の例を次に示 `<ExtendedOverrides>` します。
 
 ```xml
     ...
@@ -63,7 +63,7 @@ JSON 形式を定義するスキーマは [、拡張マニフェスト スキー
 
 ## <a name="localize-the-extended-overrides-file"></a>拡張上書きファイルをローカライズする
 
-アドインが複数のロケールをサポートしている場合は、要素の属性を使用して、ローカライズされたリソースOfficeを `ResourceUrl` `<ExtendedOverrides>` ポイントできます。 次に例を示します。
+アドインが複数のロケール`ResourceUrl``<ExtendedOverrides>`をサポートしている場合は、要素の属性を使用して、ローカライズされたリソースOfficeをポイントできます。 次に例を示します。
 
 ```xml
     ...
@@ -74,4 +74,4 @@ JSON 形式を定義するスキーマは [、拡張マニフェスト スキー
 </OfficeApp>
 ```
 
-リソース ファイルを作成して使用する方法、拡張オーバーライド ファイル内のリソースを参照する方法、およびここで説明していない追加のオプションの詳細については [、「Localize extended overrides」](localization.md#localize-extended-overrides)を参照してください。
+リソース ファイルを作成して使用する方法、拡張オーバーライド ファイル内のリソースを参照する方法、およびここで説明していない追加のオプションの詳細については、「 [Localize extended overrides](localization.md#localize-extended-overrides)」を参照してください。

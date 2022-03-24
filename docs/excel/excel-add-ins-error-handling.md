@@ -3,12 +3,12 @@ title: JavaScript API のExcel処理
 description: ランタイム エラー Excel説明する JavaScript API エラー処理ロジックについて説明します。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fa03cd9a3ccee9fce1cbb7025baf6c2463ff938d
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 829e8ccc947ffd7997146de1aafaf517fd7ebf06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340541"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744978"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API のExcel処理
 

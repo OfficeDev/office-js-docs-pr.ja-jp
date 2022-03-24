@@ -3,12 +3,12 @@ title: Office アドインのナビゲーション パターン
 description: コマンド バー、タブ バー、および戻るボタンを使用して、アドインのナビゲーションを設計するためのベスト プラクティスOffice説明します。
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e725ac482245f18d65a5eda3bb8573a1a4f926
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc7d75c9e914cf6294409590783e5ef73670dcc5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150085"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743223"
 ---
 # <a name="navigation-patterns"></a>ナビゲーション パターン
 
@@ -31,10 +31,10 @@ CommandBar は、作業ウィンドウ内のサーフェスで、ウィンドウ
 
 タブ バーには、縦に積み上げされたテキストとアイコンを含むボタンを使用したナビゲーションが表示されます。 タブ バーを使用すると、短くてわかりやすいタイトルのタブが使用されたナビゲーションを表示できます。
 
-![デスクトップ アプリケーション作業ウィンドウ内のタブ Officeを示す図。 次の使用例は、アドイン名の直下に "Home"、"設定"、"お気に入り"、および "Account" タブを持つタブ バーを表示します。](../images/add-in-tab-bar.png)
+![デスクトップ アプリケーション作業ウィンドウ内のタブ Officeを示す図。 次の使用例は、アドイン名の直下に"Home"、"設定"、"お気に入り"、および "Account" タブを持つタブ バーを表示します。](../images/add-in-tab-bar.png)
 
 ## <a name="back-button"></a>[戻る] ボタン
 
 [戻る] ボタンを使用すると、ユーザーはドリルダウン ナビゲーション アクションから回復できます。 このパターンは、ユーザーが順序のある一連の手順に従えるようにするのに役立ちます。
 
-![デスクトップ アプリケーション作業ウィンドウ内の戻るOfficeを示す図。 次の使用例は、左上にアドイン名の直下に戻るボタンを示しています。](../images/add-in-back-button.png)
+![デスクトップ アプリケーション作業ウィンドウ内の [戻る] Officeを示す図。 次の使用例は、左上にアドイン名の直下に戻るボタンを示しています。](../images/add-in-back-button.png)

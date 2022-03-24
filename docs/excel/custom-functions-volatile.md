@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 揮発性およびオフラインのストリーミング カスタム関数を実装する方法について説明します。
 title: 関数の揮発性の値
 ms.localizationpriority: medium
-ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 401be3e04a7b36a226547175df4311fc653c027a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151507"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744470"
 ---
 # <a name="volatile-values-in-functions"></a>関数の揮発性の値
 
@@ -20,7 +20,7 @@ Excel には、`RAND` や `TODAY` などの組み込み揮発性関数がいく�
 
 カスタム関数を使用すると、独自の揮発性関数を作成できます。これは、日付、時刻、乱数、およびモデリングを処理するときに役立つ場合があります。 たとえば、 [モンテカルロシミュレーションでは、](https://en.wikipedia.org/wiki/Monte_Carlo_method) 最適なソリューションを決定するためにランダムな入力を生成する必要があります。
 
-JSON ファイルの自動生成を選択する場合は、JSDoc コメント タグを使用して揮発性関数を宣言します `@volatile` 。 自動生成の詳細については、「カスタム関数の [JSON メタデータの自動生成」を参照してください](custom-functions-json-autogeneration.md)。
+JSON ファイルの自動生成を選択する場合は、JSDoc コメント タグを使用して揮発性関数を宣言します `@volatile`。 自動生成の詳細については、「カスタム関数の JSON メタデータの自動生成 [」を参照してください](custom-functions-json-autogeneration.md)。
 
 揮発性のカスタム関数の例を次に示します。これは、6 辺のサイコロの回転をシミュレートします。
 
@@ -38,7 +38,7 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>次の手順
-* カスタム関数 [パラメーター オプションについて説明します](custom-functions-parameter-options.md)。
+* カスタム関数 [のパラメーター オプションについて説明します](custom-functions-parameter-options.md)。
 
 ## <a name="see-also"></a>関連項目
 

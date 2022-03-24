@@ -4,8 +4,13 @@ description: ExcelApi 1.14 要件セットの詳細。
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 93b1690a3c03e51dadb2110ec6382ca6ee86cfe1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747017"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel新機能
 
 ExcelApi 1.14 には、グラフのデータ テーブル機能を制御するオブジェクト、数式のすべての先行セルを検索するメソッド、ワークシートの保護状態の変更を追跡するワークシート保護イベントが追加されました。 また、、 、、[`getItemOrNullObject`](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties)など、`CommentCollection``ShapeCollection`オブジェクトの複数のメソッドを追加し、エラー処理`StyleCollection`を改善しました。
@@ -56,7 +61,7 @@ ExcelApi 1.14 には、グラフのデータ テーブル機能を制御する�
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#excel-excel-tablescopedcollection-getitemornullobject-member(1))|名前または ID でテーブルを取得します。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[クエリ](/javascript/api/excel/excel.workbook#excel-excel-workbook-queries-member)|ブックの一部である Power Query クエリのコレクションを返します。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onProtectionChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member)|ワークシートの保護状態が変更された場合に発生します。|
-||[tabId](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-tabid-member)|Open ファイルの XML で読み取り可能なこのワークシートを表すOfficeします。|
+||[tabId](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-tabid-member)|Open オブジェクト XML で読み取り可能なこのワークシートを表す値Officeします。|
 |[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#excel-excel-worksheetchangedeventargs-changedirectionstate-member)|セルまたはセルを削除または挿入するときに、ワークシート内のセルが移動する方向への変更を表します。|
 ||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#excel-excel-worksheetchangedeventargs-triggersource-member)|イベントのトリガー ソースを表します。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onprotectionchanged-member)|ワークシートの保護状態が変更された場合に発生します。|

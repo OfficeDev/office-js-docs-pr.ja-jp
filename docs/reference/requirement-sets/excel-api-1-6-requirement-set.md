@@ -4,8 +4,13 @@ description: ExcelApi 1.6 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: d68bfae3494ec21df1eee5909ac2df532a0537b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745834"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 の新機能
 
 ## <a name="conditional-formatting"></a>条件付き書式
@@ -42,15 +47,15 @@ ms.localizationpriority: medium
 |[ConditionalColorScaleCriteria](/javascript/api/excel/excel.conditionalcolorscalecriteria)|[maximum](/javascript/api/excel/excel.conditionalcolorscalecriteria#excel-excel-conditionalcolorscalecriteria-maximum-member)|カラー スケール条件の最大ポイント。|
 ||[midpoint](/javascript/api/excel/excel.conditionalcolorscalecriteria#excel-excel-conditionalcolorscalecriteria-midpoint-member)|カラー スケールの基準の中間点 (カラー スケールが 3 色スケールの場合)。|
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#excel-excel-conditionalcolorscalecriteria-minimum-member)|色スケール基準の最小点。|
-|[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-color-member)|色スケールの色の HTML カラー コード表現 (赤を表#FF0000など)。|
+|[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-color-member)|色スケールの色の HTML カラー コード表現 (例:赤を#FF0000など)。|
 ||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-formula-member)|数値、数式、または `null` (if is `type` `lowestValue`)|
 ||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-type-member)|条件式の基準の基になる条件。|
-|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-bordercolor-member)|境界線の色を表す HTML カラー コード (#RRGGBB"FFA500" など) または名前の付いた HTML 色 ("オレンジ色" など) です。|
-||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-fillcolor-member)|塗りつぶしの色を表す HTML カラー コード (#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) として指定します。|
+|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-bordercolor-member)|境界線の色を表す HTML カラー コード(#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) です。|
+||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-fillcolor-member)|塗りつぶしの色を表す HTML カラー コード (#RRGGBB ("FFA500" など) または名前付き HTML 色 (例: "orange") です。|
 ||[matchPositiveBorderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-matchpositivebordercolor-member)|負のデータ バーが正のデータ バーと同じ罫線の色を持っている場合に指定します。|
 ||[matchPositiveFillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-matchpositivefillcolor-member)|負のデータ バーが正のデータ バーと同じ塗りつぶし色を持つ場合に指定します。|
-|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-bordercolor-member)|境界線の色を表す HTML カラー コード (#RRGGBB"FFA500" など) または名前の付いた HTML 色 ("オレンジ色" など) です。|
-||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-fillcolor-member)|塗りつぶしの色を表す HTML カラー コード (#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) として指定します。|
+|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-bordercolor-member)|境界線の色を表す HTML カラー コード(#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) です。|
+||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-fillcolor-member)|塗りつぶしの色を表す HTML カラー コード (#RRGGBB ("FFA500" など) または名前付き HTML 色 (例: "orange") です。|
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-gradientfill-member)|データ バーにグラデーションが設定されている場合に指定します。|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#excel-excel-conditionaldatabarrule-formula-member)|必要に応じて、データ バー ルールを評価する数式。|
 ||[type](/javascript/api/excel/excel.conditionaldatabarrule#excel-excel-conditionaldatabarrule-type-member)|データ バーのルールの種類。|
@@ -91,7 +96,7 @@ ms.localizationpriority: medium
 ||[operator](/javascript/api/excel/excel.conditionaliconcriterion#excel-excel-conditionaliconcriterion-operator-member)|`greaterThan` または `greaterThanOrEqual` 、アイコンの条件付き書式のルールの種類ごとに指定します。|
 ||[type](/javascript/api/excel/excel.conditionaliconcriterion#excel-excel-conditionaliconcriterion-type-member)|アイコンの条件式は次のものに基づいています。|
 |[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule)|[条件](/javascript/api/excel/excel.conditionalpresetcriteriarule#excel-excel-conditionalpresetcriteriarule-criterion-member)|条件付き書式の条件。|
-|[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#excel-excel-conditionalrangeborder-color-member)|境界線の色を表す HTML カラー コード (#RRGGBB"FFA500" など) または名前の付いた HTML 色 ("オレンジ色" など) です。|
+|[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#excel-excel-conditionalrangeborder-color-member)|境界線の色を表す HTML カラー コード(#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) です。|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#excel-excel-conditionalrangeborder-sideindex-member)|罫線の特定の辺を表す定数値。|
 ||[style](/javascript/api/excel/excel.conditionalrangeborder#excel-excel-conditionalrangeborder-style-member)|罫線の線スタイルを指定する、線スタイル定数のいずれか 1 つ。|
 |[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[bottom](/javascript/api/excel/excel.conditionalrangebordercollection#excel-excel-conditionalrangebordercollection-bottom-member)|下の罫線を取得します。|
@@ -103,10 +108,10 @@ ms.localizationpriority: medium
 ||[right](/javascript/api/excel/excel.conditionalrangebordercollection#excel-excel-conditionalrangebordercollection-right-member)|右の罫線を取得します。|
 ||[top](/javascript/api/excel/excel.conditionalrangebordercollection#excel-excel-conditionalrangebordercollection-top-member)|上の罫線を取得します。|
 |[ConditionalRangeFill](/javascript/api/excel/excel.conditionalrangefill)|[clear()](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-clear-member(1))|塗りつぶしをリセットします。|
-||[color](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-color-member)|塗りつぶしの色を表す HTML カラー コード (#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) として指定します。|
+||[color](/javascript/api/excel/excel.conditionalrangefill#excel-excel-conditionalrangefill-color-member)|塗りつぶしの色を表す HTML カラー コードは、#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) として表されます。|
 |[ConditionalRangeFont](/javascript/api/excel/excel.conditionalrangefont)|[bold](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-bold-member)|フォントが太字の場合に指定します。|
 ||[clear()](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-clear-member(1))|フォントの書式設定をリセットします。|
-||[color](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-color-member)|テキストの色の HTML カラー コード表現 (例:赤を#FF0000など)。|
+||[color](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-color-member)|テキストの色の HTML カラー コード表現 (赤を表#FF0000など)。|
 ||[italic](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-italic-member)|フォントが italic の場合に指定します。|
 ||[strikethrough](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-strikethrough-member)|フォントの取り消し線の状態を指定します。|
 ||[underline](/javascript/api/excel/excel.conditionalrangefont#excel-excel-conditionalrangefont-underline-member)|フォントに適用される下線の種類。|
@@ -120,11 +125,11 @@ ms.localizationpriority: medium
 ||[type](/javascript/api/excel/excel.conditionaltopbottomrule#excel-excel-conditionaltopbottomrule-type-member)|上または下のランクに基づいて値を書式設定します。|
 |[CustomConditionalFormat](/javascript/api/excel/excel.customconditionalformat)|[format](/javascript/api/excel/excel.customconditionalformat#excel-excel-customconditionalformat-format-member)|条件付き書式のフォント、塗りつぶし、罫線、その他のプロパティをカプセル化する format オブジェクトを返します。|
 ||[ルール](/javascript/api/excel/excel.customconditionalformat#excel-excel-customconditionalformat-rule-member)|この条件付き形式 `Rule` のオブジェクトを指定します。|
-|[DataBarConditionalFormat](/javascript/api/excel/excel.databarconditionalformat)|[axisColor](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-axiscolor-member)|軸線の色を表す HTML カラー コード (#RRGGBB ("FFA500" など) または名前付き HTML 色 ("オレンジ色" など) です。|
+|[DataBarConditionalFormat](/javascript/api/excel/excel.databarconditionalformat)|[axisColor](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-axiscolor-member)|軸線の色を表す HTML カラー コードは、#RRGGBB 形式 ("FFA500"など)、または名前付き HTML 色 ("オレンジ色" など) として表されます。|
 ||[axisFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-axisformat-member)|データ バーに対して軸がどのように決定Excel表現します。|
 ||[barDirection](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-bardirection-member)|データ バー グラフィックの基になる方向を指定します。|
 ||[lowerBoundRule](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-lowerboundrule-member)|データ バーの下限値 (および該当する場合はその計算方法) を構成するルール。|
-||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-negativeformat-member)|データ バー内の軸の左側のすべての値Excel表現します。|
+||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-negativeformat-member)|データ バー内の軸の左側のすべての値Excel表示します。|
 ||[positiveFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-positiveformat-member)|データ バー内の軸の右側のすべての値Excel表示します。|
 ||[showDataBarOnly](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-showdatabaronly-member)|If `true`は、データ バーが適用されているセルの値を非表示にします。|
 ||[upperBoundRule](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-upperboundrule-member)|データ バーの上限値 (および該当する場合はその計算方法) を構成するルール。|

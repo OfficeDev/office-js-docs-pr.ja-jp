@@ -3,16 +3,16 @@ title: Excel、PowerPoint、Word のマニフェストにアドイン コマン�
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a239d6b5b33d2244c6a172c2c61baa894535ab7
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467751"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743922"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
-マニフェスト **[で VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
+マニフェスト **[で VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、アプリケーション、Excel、および Word のPowerPointを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
 
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
@@ -31,11 +31,11 @@ ms.locfileid: "62467751"
 
 次の画像は、マニフェスト内のアドイン コマンド要素の概要です。
 
-![マニフェスト内のアドイン コマンド要素の概要。 ここでのトップ ノードは、子ホストとリソースを持つ VersionOverrides です。 [ホスト] の下に [ホスト] と [DesktopFormFactor] が表示されます。 DesktopFormFactor の下には FunctionFile と ExtensionPoint があります。 [ExtensionPoint] の下には CustomTab または OfficeTab と Officeがあります。 [CustomTab] または [Office] タブが [グループ] 、[コントロール] 、[アクション] の順に選択します。 [コントロール] Office[コントロール] [アクション] の順に選択します。 [リソース] (VersionOverrides の子) には、イメージ、Url、ShortStrings、および LongStrings があります。](../images/version-overrides.png)
+![マニフェスト内のアドイン コマンド要素の概要。 ここでのトップ ノードは、子ホストとリソースを持つ VersionOverrides です。 [ホスト] の下に [ホスト] と [DesktopFormFactor] が表示されます。 DesktopFormFactor の下には FunctionFile と ExtensionPoint があります。 [ExtensionPoint] の下には CustomTab または OfficeTab と Officeがあります。 [CustomTab] または [Office] タブが [グループ] 、[コントロール] 、[アクション] の順に選択します。 [コントロール] Office[コントロール] 、[アクション] の順に選択します。 [リソース] (VersionOverrides の子) には、イメージ、Url、ShortStrings、および LongStrings があります。](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>手順 1: プロジェクトを作成する
 
-[作業ウィンドウ アドインのビルド] などのクイック スタートの 1 つを実行してExcel[を作成することをお勧めします](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word、および PowerPointの各クイック スタートは、作業ウィンドウを表示するアドイン コマンド (ボタン) が既に含まれているプロジェクトを生成します。 アドイン コマンドを使用する前に、Excel[、Word](../design/add-in-commands.md)、PowerPointアドイン コマンドを読み取る必要があります。
+[作業ウィンドウ アドインのビルド] などのクイック スタートの 1 つを実行して[Excel作成することをお勧めします](../quickstarts/excel-quickstart-jquery.md)。 作業ウィンドウを表示Excel、Word、および PowerPointの各クイック スタートによって、既にアドイン コマンド (ボタン) が含まれているプロジェクトが生成されます。 アドイン コマンドを使用する前に、Excel[、Word](../design/add-in-commands.md)、PowerPointのアドイン コマンドを読み取っている必要があります。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>手順 2: 作業ウィンドウ アドインを作成する
 
@@ -86,7 +86,7 @@ ms.locfileid: "62467751"
 |要素|説明|
 |:-----|:-----|
 |**説明** <br/> |省略可能。アドインについての説明。この子の **Description** 要素は、マニフェストの親部分の、元の **Description** 要素を上書きします。この **Description** 要素の **resid** 属性は、**String** 要素の **id** に設定されます。**String** 要素には、**Description** のテキストが含まれます。 <br/> |
-|**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「アプリケーションと [API 要件Office指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
+|**Requirements** <br/> |省略可能。 アドインに必要な最小の Office.js のセットおよびバージョンを指定します。 この子の **Requirements** 要素は、マニフェストの親部分の **Requirements** 要素を上書きします。 詳細については、「アプリケーションと [API の要件Office指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
 |**Hosts** <br/> |必須。 アプリケーションのコレクションをOfficeします。 子の **Hosts** 要素は、マニフェストの親部分の **Hosts** 要素を上書きします。 "Workbook" または "Document" に設定された **xsi:type** 属性を含める必要があります。 <br/> |
 |**Resources** <br/> |マニフェストの他の要素によって参照されるリソースのコレクション (文字列、URL、画像) を定義します。たとえば、**Description** 要素の値は、**Resources** の子要素を参照します。**Resources** 要素については、この記事の「[手順 7: Resources 要素を追加する](#step-7-add-the-resources-element)」で説明します。 <br/> |
 
@@ -118,7 +118,7 @@ ms.locfileid: "62467751"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>手順 4: Hosts、Host、DesktopFormFactor 要素を追加する
 
-**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host 要素** は、アプリケーションの特定のOfficeします。 **Host 要素** には、アドインをそのアプリケーションにインストールした後に表示するアドイン コマンドを指定する子Officeがあります。 2 つ以上の異なるアプリケーションで同じアドイン コマンドを表示するには、Officeホスト内の子要素を複製する必要 **があります**。
+**Hosts** 要素には、1 つ以上の **Host** 要素が含まれます。 **Host 要素** は、特定のアプリケーションOfficeします。 **Host 要素** には、アドインをそのアプリケーションにインストールした後に表示するアドイン コマンドを指定する子Officeがあります。 2 つ以上の異なるアプリケーションで同じアドイン コマンドを表示するには、Officeホスト内の子要素を複製する必要 **があります**。
 
 **DesktopFormFactor** 要素では、Office on the web (ブラウザーを使用) と Windows で実行するアドインの設定を指定します。
 
@@ -442,6 +442,6 @@ Excel および Word で、既定の Office UI タブを使用することで、
 ## <a name="see-also"></a>関連項目
 
 - [Excel、PowerPoint、Word のアドイン コマンド](../design/add-in-commands.md)
-- [サンプル: コマンド ボタンExcelアドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [サンプル: コマンド ボタンを使用Excelアドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
 - [サンプル: コマンド ボタンを使用して Word アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
 - [サンプル: コマンド ボタンPowerPointアドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

@@ -3,8 +3,13 @@ title: プレゼンテーション、スライド、図形にカスタム タグ
 description: プレゼンテーション、スライド、図形に関するカスタム メタデータにタグを使用する方法について説明します。
 ms.date: 12/14/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 01c8ce5c5e3689ef6bd2131334363b3a77710cac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746966"
 ---
-
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>プレゼンテーション、スライド、図形にカスタム タグを使用PowerPoint
 
 アドインは、"tags" と呼ばれるキーと値のペアの形式で、スライド上のプレゼンテーション、特定のスライド、および特定の図形にカスタム メタデータを添付できます。
@@ -24,7 +29,7 @@ ms.localizationpriority: medium
 
 - メソッドの最初のパラメーター `add` は、キーと値のペアのキーです。
 - 2 番目のパラメーターは値です。
-- キーは大文字です。 これはメソッドでは厳密には必須ではありませんが、キーは常に PowerPoint によって大文字として格納され、タグ関連のメソッドによっては、キーを大文字で表す必要があります。そのため、タグ キーのコードでは常に大文字を使用することをお勧めします。`add`
+- キーは大文字です。 これはメソッドでは厳密に必須ではありませんが、キーは常に PowerPoint によって大文字として格納され、タグ関連のメソッドによってはキーを大文字で表す必要があります。そのため、タグ キーには常にコードで大文字を使用することをお勧めします。`add`
 
 ```javascript
 async function addMultipleSlideTags() {

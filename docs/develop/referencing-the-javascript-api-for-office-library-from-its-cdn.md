@@ -3,12 +3,12 @@ title: Office JavaScript API ライブラリの参照
 description: アドインで JavaScript API ライブラリOfficeタイプ定義を参照する方法について説明します。
 ms.date: 02/18/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 134b3de88218101761c3f25c897ea67c2eb3d68c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 514959c7aa703172c61bcf061a9c1f047858caa4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149970"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743685"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Office JavaScript API ライブラリの参照
 
@@ -24,11 +24,11 @@ ms.locfileid: "59149970"
 これにより、Office JavaScript API ファイルが初めて読み込まれると、Office.js の最新の実装と指定したバージョンの関連ファイルが使用されます。
 
 > [!IMPORTANT]
-> ページのセクション内Office JavaScript API を参照して、本文要素の前に API が完全に初期化 `<head>` される必要があります。
+> ページのセクション内Office JavaScript API を参照して、本文要素の前に API `<head>` が完全に初期化される必要があります。
 
 ## <a name="api-versioning-and-backward-compatibility"></a>API のバージョン管理と下位互換性
 
-前の HTML スニペットでは、URL の前に、CDN バージョン 1 の増分リリース `/1/` `office.js` を指定Office.js。 JavaScript API Office互換性が維持されるので、最新のリリースでは、バージョン 1 で以前に導入された API メンバーを引き続きサポートします。 既存のプロジェクトをアップグレードする必要がある場合は[、「JavaScript API](update-your-javascript-api-for-office-and-manifest-schema-version.md)とマニフェスト スキーマ ファイルのバージョンOffice更新する」を参照してください。 
+前の HTML スニペットでは、`/1/``office.js`ページ URL の前CDNバージョン 1 の増分リリースを指定Office.js。 JavaScript API Officeは下位互換性を維持しますので、最新のリリースでは、バージョン 1 で以前に導入された API メンバーを引き続きサポートします。 既存のプロジェクトをアップグレードする必要がある場合は、「[JavaScript API](update-your-javascript-api-for-office-and-manifest-schema-version.md) とマニフェスト スキーマ ファイルのバージョンOffice更新する」を参照してください。 
 
 AppSource から Office アドインを発行する場合は、この CDN の参照を使用する必要があります。ローカル参照は、内部シナリオ、開発シナリオ、デバッグ シナリオにのみ適用できます。
 
@@ -37,7 +37,7 @@ AppSource から Office アドインを発行する場合は、この CDN の参
 
 ## <a name="enabling-intellisense-for-a-typescript-project"></a>TypeScript プロジェクトIntelliSenseを有効にする
 
-前述のように Office JavaScript API を参照する以外に[、DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js)の型定義を使用して TypeScript アドイン プロジェクトの IntelliSense を有効にすることもできます。 これを行うには、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行します。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
+前述のように Office JavaScript API を参照する以外に、[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js) の型定義を使用して、TypeScript アドイン プロジェクトの IntelliSense を有効にすることもできます。 これを行うには、プロジェクト フォルダーのルートからノード対応のシステム プロンプト (または git bash ウィンドウ) で次のコマンドを実行します。 (npm を含む) [Node.js](https://nodejs.org) をインストールしておく必要があります。
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js

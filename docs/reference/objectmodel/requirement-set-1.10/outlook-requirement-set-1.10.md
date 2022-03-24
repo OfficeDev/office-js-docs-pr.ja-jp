@@ -3,11 +3,16 @@ title: Outlook API 要件セット 1.10
 description: アドイン API の要件セット 1.10 Outlook 1.10。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: a7412c655423d016101b406444f86da0f2be610d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746529"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook API 要件セット 1.10
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
@@ -28,7 +33,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#outlook-office-body-setsignatureasync-member(1)): オブジェクトに新しい関数を追加`Body`しました。 作成モードでアイテム本文の署名を追加または置き換えます。
 - [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): 新規作成モードで送信側メールボックスのクライアント署名を無効にする新しい関数を追加しました。
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) の追加: 新規作成モードでメッセージの作成の種類を取得する新しい関数を追加します。
-- [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods) を追加しました。 新規作成モードでアイテムでクライアント署名が有効になっているか確認する新しい関数を追加します。
+- [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods) を追加しました: 新規作成モードでアイテムでクライアント署名が有効になっているか確認する新しい関数を追加します。
 - 追加された[Office。MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true): 新しい列挙型を追加します。 通知メッセージのカスタム アクションの種類を表します。
 - 追加された[Office。MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): 新規作成モードで使用できる新しい列挙型を追加します。
 - 追加された[Office。MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): 列挙型に新しい型を追加`ItemNotificationMessageType`します。 カスタム アクションを含む通知メッセージを表します。

@@ -3,12 +3,12 @@ ms.date: 03/30/2021
 description: カスタム関数に関する一般的なExcelトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: b95dae1acb60fe21298641076fb63f0655193e11
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151512"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744480"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -80,7 +80,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>既知の問題
 
-既知の問題は、リポジトリのカスタム関数Excel[でGitHubされます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+既知の問題は、カスタム関数リポジトリExcel[追跡GitHubされます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 

@@ -3,12 +3,12 @@ title: Office名前空間 - 要件セット 1.10
 description: Office API 要件セット 1.10 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c87a57efd9ac37bf43bbd986d16c51000cc5681d
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 0ff70852925766fca3743f34eefa849b8ec0a16d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237736"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745519"
 ---
 # <a name="office-mailbox-requirement-set-110"></a>Office (メールボックス要件セット 1.10)
 
@@ -38,7 +38,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ## <a name="namespaces"></a>名前空間
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.10&preserve-view=true): 、 など、Outlook固有の列挙の `ItemType` `EntityType` `AttachmentType` 数 `RecipientType` が `ResponseType` 含まれています `ItemNotificationMessageType` 。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.10&preserve-view=true): 、 `ItemType``EntityType``AttachmentType`など、Outlook固有の列挙の数が`RecipientType``ResponseType`含まれています。`ItemNotificationMessageType`
 
 ## <a name="enumeration-details"></a>列挙の詳細
 

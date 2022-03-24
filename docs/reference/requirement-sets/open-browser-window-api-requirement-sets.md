@@ -1,11 +1,16 @@
 ---
 title: ブラウザー ウィンドウの要件セットを開く
 description: openBrowserWindow API Officeサポートするプラットフォームとビルドを指定します。
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 3162315b7d90a416d0b847d796a2a45876f102df
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746407"
 ---
-
 # <a name="open-browser-window-api-requirement-sets"></a>ブラウザー ウィンドウ API の要件セットを開く
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office ホストがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
@@ -14,7 +19,7 @@ OpenBrowserWindow API セットを使用すると、アドインはブラウザ�
 
 Office アドインは Office の複数のバージョンで機能します。 次の表に、OpenBrowserWindow API 要件セット、その要件セットをサポートする Office ホスト アプリケーション、および Office アプリケーションのビルドまたはバージョン番号を示します。
 
-|  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(Microsoft 365 サブスクリプションに接続)  | Office on the web  |  Office Online Server  |
+|  要件セット  | Office 2021 以降のWindows<br>(1 回限りの購入) | Windows での Office<br>(Microsoft 365 サブスクリプションに接続) |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回の購入)   | Office on the web  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | OpenBrowserWindowApi 1.1  | ビルド 16.0.14326.20454 以降 | バージョン 1810 (ビルド 16.0.11001.20074) 以降 | 16.0.0.0 以降 | 16.0.0.0 以降 | 該当なし | 該当なし|
 
@@ -37,7 +42,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1.1
 
-OpenBrowserWindowApi 1.1 は API の最初のバージョンです。 API の詳細については、「[Office.context.ui](/javascript/api/office/office.context#office-office-context-ui-member) リファレンス」を参照してください。
+OpenBrowserWindowApi 1.1 は API の最初のバージョンです。 API の詳細については、「[Office.context.ui」を](/javascript/api/office/office.context#office-office-context-ui-member)参照してください。
 
 ## <a name="see-also"></a>関連項目
 

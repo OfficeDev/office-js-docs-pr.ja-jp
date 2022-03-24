@@ -1,14 +1,14 @@
 ---
 title: テスト用に Outlook アドインをサイドロードする
 description: サイドロードを使用して、最初にアドイン カタログに置かずに、テスト用に Outlook アドインをインストールします。
-ms.date: 10/22/2021
+ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 5f9a76aec20574b5397df9fcfd18e4714e5c8dd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711246"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745724"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>テスト用に Outlook アドインをサイドロードする
 
@@ -49,7 +49,7 @@ Office アドイン用の [Yeoman](../develop/yeoman-generator-overview.md) ジ�
 > [!NOTE]
 > 組織のメールボックスのツールバーにロゴが含まれている場合、上の図に示されるものと表示が少し異なる場合があります。
 
-### <a name="new-outlook-on-the-web"></a>新しいOutlook on the web
+#### <a name="new-outlook-on-the-web"></a>新しいOutlook on the web
 
 1. [[Outlook on the web]](https://outlook.office.com) に進みます。
 
@@ -69,7 +69,7 @@ Office アドイン用の [Yeoman](../develop/yeoman-generator-overview.md) ジ�
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
-### <a name="classic-outlook-on-the-web"></a>クラシック Outlook on the web
+#### <a name="classic-outlook-on-the-web"></a>クラシック Outlook on the web
 
 1. [[Outlook on the web]](https://outlook.office.com) に進みます。
 
@@ -89,22 +89,44 @@ Office アドイン用の [Yeoman](../develop/yeoman-generator-overview.md) ジ�
 
 ### <a name="outlook-on-the-desktop"></a>Outlookの設定
 
-### <a name="outlook-2016-or-later"></a>Outlook 2016以降
+#### <a name="outlook-2016-or-later-on-windows-or-mac"></a>Outlook 2016または Mac のWindows以降
 
 1. [Outlook 2016または Mac で、Windows以降を開きます。
 
 1. リボンで [**アドインを取得**] ボタンを選択します。
 
-    ![Outlook 2016アドインの取得] ボタンをポイントするリボンを選択します。](../images/outlook-sideload-desktop-store.png)
+    # <a name="windows"></a>[Windows](#tab/windows)
+
+    ![OutlookアドインWindowsをポイントするリボンをクリックします。](../images/outlook-sideload-desktop-windows.png)
+
+    # <a name="mac"></a>[Mac](#tab/mac)
+
+    ![Outlookアドインの取得] ボタンをポイントする Mac リボンをクリックします。](../images/outlook-sideload-mac-classic.png)
+
+    ---
 
     > [!IMPORTANT]
-    > バージョンの [アドインの取得]  ボタンが表示されていない場合は、次Outlook選択します。
+    > バージョンの [アドインの取得]  ボタンが表示Outlook、次のいずれかの操作を行います。
     >
-    > - **リボン** の [ストア] ボタン (使用可能な場合)。
+    > # <a name="windows"></a>[Windows](#tab/windows)
     >
-    >   または
+    > - リボン レイアウトを簡略化リボンに構成した場合は、リボンから省略記号ボタン (`...`) を選択し、[アドインの取得 **] を選択します**。
     >
-    > - **[** ファイル] メニューの [情報] タブの [アドインの管理] ボタンを選択して、[アドイン] ダイアログボックスを開Outlook on the web。<br>Web エクスペリエンスの詳細については、前のセクションの「アドインをサイドロードする」を参照[Outlook on the web。](#outlook-on-the-web)
+    >   ![Outlook省略Windowsアドインの取得] ボタンをポイントする方法について確認します。](../images/outlook-sideload-simplified-ribbon.png)
+    >
+    > - 使用可能な **場合は** 、リボンの [ストア] ボタンを選択します。
+    >
+    > - [ファイル] **メニューを** 選択し、[情報] タブの [アドインの管理] ボタンを選択して、[アドイン] ダイアログボックスを開Outlook on the web。 Web エクスペリエンスの詳細については、前のセクションの「アドインをサイドロードする」を参照[Outlook on the web。](#outlook-on-the-web)
+    >
+    > # <a name="mac"></a>[Mac](#tab/mac)
+    >
+    > - リボンから省略記号ボタン (`...`) を選択し、[アドインの取得 **] を選択します**。
+    >
+    >   ![Outlook省略記号ボタンから [アドインの取得] ボタンをポイントする Mac 上のボタンをクリックします。](../images/outlook-sideload-deskop-mac.png)
+    >
+    > - 使用可能な **場合は** 、リボンの [ストア] ボタンを選択します。
+    >
+    > ---
 
 1. ダイアログの上部にタブがある場合は、[アドイン] **タブが選択** されている必要があります。 [ **個人用アドイン**] を選びます。
 
@@ -116,7 +138,7 @@ Office アドイン用の [Yeoman](../develop/yeoman-generator-overview.md) ジ�
 
 1. カスタム アドインのマニフェスト ファイルを探してインストールします。インストール中にすべてのプロンプトを受け入れます。
 
-### <a name="outlook-2013"></a>Outlook 2013
+#### <a name="outlook-2013-on-windows"></a>Windows 用 Outlook 2013
 
 1. 2013 Outlook 2013 を開Windows。
 

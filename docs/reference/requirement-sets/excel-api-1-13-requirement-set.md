@@ -4,8 +4,13 @@ description: ExcelApi 1.13 要件セットの詳細。
 ms.date: 07/09/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 5d7358c35dc4560bf5478bb9ad9970fc364a1b6a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747043"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel新機能
 
 ExcelApi 1.13 では、Base64 エンコード文字列からブックにワークシートを挿入するメソッドと、ブックのアクティブ化を検出するイベントが追加されました。 また、API を追加して数式の変更を追跡し、数式の直接依存セルを特定することで、範囲内の数式のサポートを増やしました。 さらに、代替テキスト、スタイル、空のセル管理用の PivotLayout API を追加することで、ピボットテーブルのサポートを拡張しました。

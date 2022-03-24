@@ -3,12 +3,12 @@ title: Office アドインの音声ガイドライン
 description: ユーザー ヘルプや他の文字列を作成する場合のベスト プラクティスについて、Office説明します。
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb96b70c1a5319c4dcefd99bc982c6db50d8812
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4cf7d6a58c33df116e7776589f581fdd191abd56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149752"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743092"
 ---
 # <a name="voice-guidelines"></a>音声のガイドライン
 

@@ -1,14 +1,14 @@
 ---
 title: JavaScript API を使用してピボットテーブルをExcelする
 description: JavaScript API Excel使用してピボットテーブルを作成し、それらのコンポーネントを操作します。
-ms.date: 02/16/2022
+ms.date: 03/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a47baf51a371a388959acbc56778e04f72bcd57
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5e05e4feaa5cbc9e21279332c07ffa7e22420d9e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340373"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745172"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>JavaScript API を使用してピボットテーブルをExcelする
 
@@ -21,6 +21,8 @@ PivotTables は、より大きなデータ セットを合理化します。 グ
 > OLAP で作成されたピボットテーブルは現在サポートされていません。 Power Pivot もサポートされていません。
 
 ## <a name="object-model"></a>オブジェクト モデル
+
+:::image type="content" source="../images/pivottable-object-model.png" alt-text="ピボットテーブルのオブジェクトの種類間の関係を示す図です(以降のリストと関連するリファレンス ドキュメントで説明します)。":::
 
 ピボット[テーブルは](/javascript/api/excel/excel.pivottable)、JavaScript API のピボットテーブルOfficeです。
 

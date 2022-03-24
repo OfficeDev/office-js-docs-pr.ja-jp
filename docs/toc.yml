@@ -243,13 +243,15 @@ items:
                 href: develop/show-hide-add-in.md
               - name: ローカリゼーション
                 href: develop/localization.md
-          - name: フレームワークと IDE
+          - name: フレームワーク、IDE、およびその他のツール
             items:
               - name: Angular でアドインを開発する
                 href: develop/add-ins-with-angular2.md
+              - name: Yeoman ジェネレーターでアドインを作成する
+                href: develop/yeoman-generator-overview.md
               - name: Visual Studio Code でアドインを開発する
                 href: develop/develop-add-ins-vscode.md
-              - name: Visual Studio でアドインを開発する
+              - name: Visual Studio を使用してアドインを作成および開発する
                 items:
                   - name: 概要
                     href: develop/develop-add-ins-visual-studio.md

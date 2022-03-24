@@ -1,11 +1,16 @@
 ---
 title: Word JavaScript API 要件セット 1.1
-description: WordApi 1.1 要件セットの詳細
+description: WordApi 1.1 要件セットの詳細。
 ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: dfcb1954cd9522de6165130cc115fddbb5f3ec45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744213"
 ---
-
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 の新機能
 
 WordApi 1.1 は、Word JavaScript API の最初の要件セットです。 これは、ユーザーがサポートする唯一の Word API 要件セットWord 2016。

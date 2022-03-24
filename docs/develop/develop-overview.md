@@ -1,14 +1,14 @@
 ---
 title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
-ms.date: 07/08/2021
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: aa56af832d1be3d868700ec4fae731ec55507579
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765942"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711162"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -19,11 +19,11 @@ ms.locfileid: "61765942"
 
 ## <a name="create-an-office-add-in"></a>Office アドインを作成する
 
-Office アドイン用の Yeoman ジェネレーターまたは Visual Studio を使用して Office アドインを作成することができます。
+[Office アドイン用の Yeoman ジェネレーター](yeoman-generator-overview.md) または Visual Studio を使用して Office アドインを作成することができます。
 
-### <a name="yeoman-generator-for-office-add-ins"></a>Office アドイン用の Yeoman ジェネレーター
+### <a name="yeoman-generator"></a>Yeoman ジェネレーター
 
-[Office アドイン用の Yeoman ジェネレーター](https://github.com/officedev/generator-office)を使用することで、Visual Studio Code やその他のエディターで管理することができる、Node.js Office アドイン プロジェクトを作成できます。 ジェネレーターでは、次のいずれのホスト用の Office アドインも作成できます。
+Office アドイン用の Yeoman ジェネレーターを使用することで、Visual Studio Code やその他のエディターで管理することができる、Node.js Office アドイン プロジェクトを作成できます。このジェネレーターは、次のいずれに対しても Office アドインを作成できます。
 
 - Excel
 - OneNote
@@ -33,7 +33,7 @@ Office アドイン用の Yeoman ジェネレーターまたは Visual Studio �
 - Word
 - Excel のカスタム関数
 
-プロジェクトを作成するのに、HTML、CSS、および JavaScript を使用するのか、Angular または React を使用するのかを選択できます。 いずれのフレームワークを選択した場合も、JavaScript と Typescript の間から選択することができます。 Yeoman ジェネレーターを使用してアドインを作成する方法については、「[Visual Studio Code を使用して Office アドインを開発する](../develop/develop-add-ins-vscode.md)」を参照してください。
+HTML、CSS、JavaScript (または TypeScript) を使用するか、Angular または React を使用してプロジェクトを作成します。 いずれのフレームワークを選択した場合も、JavaScript と Typescript の間から選択することができます。 Yeoman ジェネレーターを使用してアドインを作成する方法については、「[Office アドイン用の Yeoman ジェネレーター](yeoman-generator-overview.md)」を参照してください。
 
 ### <a name="visual-studio"></a>Visual Studio
 

@@ -3,21 +3,21 @@ title: Office アドインの Fluent UI React
 description: アドインで UI FluentをReactするOfficeについて学習します。
 ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 453befe44dbcec6527930fcd73c5cb2cb243d965
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222242"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743126"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>アドインFluent UI ReactをOfficeする
 
 Fluent UI Reactは、Office を含む幅広い Microsoft 製品にシームレスに適合するエクスペリエンスを構築するように設計された、公式のオープン ソース JavaScript フロントエンド フレームワークです。 CSS-in-JS を使用して、高度にカスタマイズ可能かつ堅牢で最新のアクセス可能な React ベースのコンポーネントを提供します。
 
 > [!NOTE]
-> この記事では、アドインのコンテキストFluent UI Reactの使用Office説明します。ただし、さまざまなアプリや拡張機能でもMicrosoft 365使用されます。 詳細については[、「UI](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) web Fluent UI Reactおよびオープン ソースの repo Fluent[を参照してください](https://github.com/microsoft/fluentui)。
+> この記事では、アドインのコンテキストFluent UI Reactの使用Office説明します。ただし、さまざまなアプリや拡張機能Microsoft 365使用されます。 詳細については、「UI Fluent [UI](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) React UI Web」を参照Fluent[してください](https://github.com/microsoft/fluentui)。
 
-この記事では、カスタム コンポーネントを使用して構築されたアドインを作成し、React UI FluentをReactします。
+この記事では、React を使用して構築されたアドインを作成し、Fluent UI React説明します。
 
 ## <a name="create-an-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -38,7 +38,7 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
 
 ![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-word-react.png)
 
-ウィザードを完了すると、ジェネレーターによってプロジェクトが作成され、サポートしているノード コンポーネントがインストールされます。
+ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -67,17 +67,17 @@ Office アドイン用の Yeoman ジェネレーターを使用して、React �
         npm start
         ```
 
-    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持つ OneDriveまたは SharePoint ライブラリの Word ドキュメントの URL に置き換える。
+    - ブラウザー上の Word でアドインをテストするには、プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の Word ドキュメントの URL に置き換えます。
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-3. アドイン作業ウィンドウを開く場合は、[ホーム] **タブで** [タスクウィンドウの表示] **ボタンを選択** します。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、UI コンポーネントから UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンをFluent React。
+3. アドイン作業ウィンドウを開く場合は、[ホーム] **タブで [** タスクウィンドウの表示 **] ボタンを選択** します。 作業ウィンドウの下部にある既定のテキストと [**実行**] ボタンに注意してください。 このチュートリアルの残りの部分では、UI コンポーネントから UX コンポーネントを使用する React コンポーネントを作成して、このテキストとボタンをFluent React。
 
     ![[タスクウィンドウの表示] リボン ボタンが強調表示された Word アプリケーションと、作業ウィンドウで [実行] ボタンと直前のテキストが強調表示された状態を示すスクリーンショット。](../images/word-task-pane-yo-default.png)
 
 ## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>UI コントロールReactを使用するFluentコンポーネントをReact
 
-この時点で、React を使用して構築された非常に基本的な作業ウィンドウ アドインが作成されました。 次の手順に従って、アドイン プロジェクト内で新しい React コンポーネント (`ButtonPrimaryExample`) を作成します。 コンポーネントは、UI `Label` コントロール `PrimaryButton` のコンポーネントとコンポーネントFluent使用React。
+この時点で、React を使用して構築された非常に基本的な作業ウィンドウ アドインが作成されました。 次の手順に従って、アドイン プロジェクト内で新しい React コンポーネント (`ButtonPrimaryExample`) を作成します。 コンポーネントは、UI `Label` コントロールのコンポーネント`PrimaryButton`とコンポーネントFluent使用React。
 
 1. Yeoman ジェネレーターで作成したプロジェクト フォルダーを開き、**src\taskpane\components** に移動します。
 2. そのフォルダーで、**button.tsx** という名前の新しいファイルを作成します。
@@ -121,10 +121,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 このコードは、次の処理を実行します。
 
 - `import * as React from 'react';` を使用して、React ライブラリを参照します。
-- 作成に使用Fluentコンポーネント ( 、 、 ) React UI `PrimaryButton` `IButtonProps` `Label` を参照します `ButtonPrimaryExample` 。
+- 作成に使用Fluentコンポーネント (`PrimaryButton``IButtonProps``Label`React) の UI を参照します。`ButtonPrimaryExample`
 - `export class ButtonPrimaryExample extends React.Component` を使用して、新しい `ButtonPrimaryExample` コンポーネントを宣言します。
 - ボタンの `onClick` イベントを処理する `insertText` 関数を宣言します。
-- `render` 関数で React コンポーネントの UI を定義します。 HTML マークアップは、UI FluentおよびReactを使用し、イベントが発生すると、関数が `Label` `PrimaryButton` `onClick` `insertText` 実行されます。
+- `render` 関数で React コンポーネントの UI を定義します。 HTML マークアップでは、`Label`UI のプロパティFluent`PrimaryButton`コンポーネントReactし、イベントが`onClick`発生すると、関数が`insertText`実行されます。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>React コンポーネントをアドインに追加
 

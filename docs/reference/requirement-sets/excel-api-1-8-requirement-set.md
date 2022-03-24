@@ -4,8 +4,13 @@ description: ExcelApi 1.8 要件セットの詳細。
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 39f3a5daf89849d3f8517794ab8cd4214309a667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746856"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel新機能
 
 Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブル、データの入力規則、グラフ、グラフのイベント、パフォーマンス オプション、ブック作成に対応する API が含まれます。
@@ -117,7 +122,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 ||[dataLabels](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-datalabels-member)|系列内のすべてのデータ ラベルのコレクションを表します。|
 ||[爆発](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-explosion-member)|円グラフまたはドーナツ グラフのスライスの展開値を指定します。|
 ||[firstSliceAngle](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-firstsliceangle-member)|最初の円グラフまたはドーナツ グラフのスライスの角度を度 (垂直方向から時計回り) で指定します。|
-||[invertIfNegative](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-invertifnegative-member)|True の場合Excelに対応する場合は、アイテム内のパターンを反転します。|
+||[invertIfNegative](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-invertifnegative-member)|True の場合Excelが負の数値に対応する場合に、アイテム内のパターンを反転します。|
 ||[オーバーラップ](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-overlap-member)|横棒と縦棒の配置方法を指定します。|
 ||[secondPlotSize](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-secondplotsize-member)|円グラフまたは円グラフの 2 番目のセクションのサイズを、プライマリ 円グラフのサイズに対する割合で指定します。|
 ||[splitType](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-splittype-member)|円グラフまたは円グラフの 2 つのセクションを分割する方法を指定します。|
@@ -174,7 +179,7 @@ Excel JavaScript API 要件セット 1.8 の機能には、ピボットテーブ
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[カスタム](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-custom-member)|データ検証条件のカスタム数式。|
 ||[date](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-date-member)|日付のデータ検証条件。|
 ||[decimal](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-decimal-member)|10 進数のデータ検証条件。|
-||[リスト](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-list-member)|リストのデータ検証条件。|
+||[list](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-list-member)|リストのデータ検証条件。|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-textlength-member)|テキストの長さデータの検証条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-time-member)|時刻のデータ検証条件。|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-wholenumber-member)|数値データの検証条件。|

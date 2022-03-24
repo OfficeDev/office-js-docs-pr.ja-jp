@@ -3,18 +3,18 @@ title: Office.context - 要件セット 1.1
 description: Office。メールボックス API 要件セット 1.1 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80e5f566b7ae962947917ebc7f77ae20c699956c
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 88a45465e1a45fe472689264b34dd698fdbf108b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237785"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746680"
 ---
 # <a name="context-mailbox-requirement-set-11"></a>context (メールボックス要件セット 1.1)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context は、すべてのアプリでアドインによって使用される共有インターフェイスをOfficeします。 この一覧には、アドインで使用されるインターフェイスOutlook記載されています。Office.context 名前空間の完全な一覧については、common API の[Office.context リファレンスを参照してください](/javascript/api/office/office.context?view=outlook-js-1.1&preserve-view=true)。
+Office.context は、すべてのアプリでアドインで使用される共有インターフェイスをOfficeします。 この一覧には、アドインで使用されるインターフェイスOutlook記載されています。Office.context 名前空間の完全な一覧については、common [API の Office.context リファレンスを参照してください](/javascript/api/office/office.context?view=outlook-js-1.1&preserve-view=true)。
 
 ##### <a name="requirements"></a>要件
 
@@ -41,7 +41,7 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 
 アイテムを編集するユーザーによって指定されたロケール (言語) を取得します。
 
-この値は、クライアント アプリケーション内の [ファイル] > オプション > `contentLanguage` **言語** でOffice設定を反映します。 
+この`contentLanguage`値は、クライアント **アプリケーション内の** [ファイル] > **オプション >言語** でOffice設定を反映します。
 
 ##### <a name="type"></a>型
 
@@ -111,9 +111,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage: String
 
-ユーザーがクライアント アプリケーションの UI 用に指定した RFC 1766 Language タグ形式のロケール (言語) をOfficeします。
+クライアント アプリケーションの UI に対してユーザーが指定した RFC 1766 Language タグ形式のロケール (言語) をOfficeします。
 
-この `displayLanguage` 値は、クライアントアプリケーションの [File >**オプション**] >言語でOffice反映されます。
+この`displayLanguage`値は、クライアント アプリケーションの [File > オプション] >**言語** でOfficeされます。
 
 ##### <a name="type"></a>型
 
@@ -182,7 +182,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
-このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインが使用できます。 `RoamingSettings`
+`RoamingSettings`このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインで使用できます。
 
 ##### <a name="type"></a>型
 

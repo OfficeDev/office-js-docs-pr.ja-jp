@@ -3,12 +3,12 @@ title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074295"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745690"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -16,7 +16,7 @@ Outlook アドインで API を使用するには、Office.js ライブラリの
 
 ## <a name="officejs-library"></a>Office.js ライブラリ
 
-Outlook アドイン API と対話操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリのコンテンツ配信ネットワーク (CDN) はです `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 。 AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
+Outlook アドイン API と対話操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリのコンテンツ配信ネットワーク (CDN) はです`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`。 AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
 
 アドインの UI を実行する Web ページ (.html、.aspx、.php のファイル) の `<head>` タグの中の `<script>` タグの中で CDN を参照します。
 
@@ -27,7 +27,7 @@ Outlook アドイン API と対話操作するには、Office.js の JavaScript 
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
 > [!IMPORTANT]
-> 任意のクライアント アプリケーション用のアドインを開発Office、ページのセクション内Office JavaScript API を `<head>` 参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。
+> 任意のクライアント アプリケーション用のアドインを開発Office、ページのセクションOffice JavaScript API `<head>` を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。
 
 ## <a name="requirement-sets"></a>要件セット
 
@@ -65,7 +65,7 @@ if (item.somePropertyOrFunction) {
 | **読み取り/書き込み** | **アイテムの読み取り** で許可される内容に加えて、次に示す内容が許可されます。<ul><li>`makeEwsRequestAsync` を除いた、完全な Outlook アドイン API のアクセス</li><li>アイテムのプロパティの設定</li></ul> |
 | **メールボックスの読み取り/書き込み** | **読み取り/書き込み** で許可されているものに加えて、以下のものが許可されます。<ul><li>アイテムやフォルダーの作成、読み取り、書き込み</li><li>アイテムの送信</li><li>[makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) の呼び出し</li></ul> |
 
-一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェスト内の `<Permissions>` 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題の詳細については、「プライバシーとセキュリティ for [Officeアドイン」を参照してください](../concepts/privacy-and-security.md)。
+一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェスト内の `<Permissions>` 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題の詳細については、「プライバシーとセキュリティ[」を参照Officeアドインを参照してください](../concepts/privacy-and-security.md)。
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
 

@@ -3,18 +3,18 @@ title: Office.context - 要件セット 1.3
 description: Office。メールボックス API 要件セット 1.3 をOutlookアドインで使用できるコンテキスト オブジェクト メンバー。
 ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 96473c8406d82757b43965247af4567b05632dd9
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: bb354617a710dad2c53645a2f6392794ff254a98
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250393"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744903"
 ---
 # <a name="context-mailbox-requirement-set-13"></a>context (メールボックス要件セット 1.3)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context は、すべてのアプリでアドインによって使用される共有インターフェイスをOfficeします。 この一覧には、アドインで使用されるインターフェイスOutlook記載されています。Office.context 名前空間の完全な一覧については、common API の[Office.context リファレンスを参照してください](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)。
+Office.context は、すべてのアプリでアドインで使用される共有インターフェイスをOfficeします。 この一覧には、アドインで使用されるインターフェイスOutlook記載されています。Office.context 名前空間の完全な一覧については、common [API の Office.context リファレンスを参照してください](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)。
 
 ##### <a name="requirements"></a>要件
 
@@ -41,7 +41,7 @@ Office.context は、すべてのアプリでアドインによって使用さ�
 
 アイテムを編集するユーザーによって指定されたロケール (言語) を取得します。
 
-この値は、クライアント アプリケーション内の [ファイル] > オプション > `contentLanguage` **言語** でOffice設定を反映します。 
+この`contentLanguage`値は、クライアント **アプリケーション内の** [ファイル] > **オプション >言語** でOffice設定を反映します。
 
 ##### <a name="type"></a>型
 
@@ -84,7 +84,7 @@ function write(message){
 
 アドインが実行されている環境に関する情報を取得します。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true)
 
@@ -111,9 +111,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage: String
 
-ユーザーがクライアント アプリケーションの UI 用に指定した RFC 1766 Language タグ形式のロケール (言語) をOfficeします。
+クライアント アプリケーションの UI に対してユーザーが指定した RFC 1766 Language タグ形式のロケール (言語) をOfficeします。
 
-この `displayLanguage` 値は、クライアントアプリケーションの [File >**オプション**] >言語でOffice反映されます。
+この`displayLanguage`値は、クライアント アプリケーションの [File > オプション] >**言語** でOfficeされます。
 
 ##### <a name="type"></a>型
 
@@ -156,7 +156,7 @@ function write(message){
 
 現在のアプリケーションとプラットフォームでサポートされている要件セットを決定するメソッドを提供します。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true)
 
@@ -174,7 +174,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ```
 
 > [!IMPORTANT]
-> 現在、2013 年のバージョンに対してエラー Outlook on the web `isSetSupported('mailbox', '1.3')` `true` がExchangeされています。 サポートされる要件セット、Exchange サーバー、および Outlook クライアントの組み合わせの詳細については、「Exchange サーバーと Outlook クライアントでサポートされる要件セット[」を参照](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)してください。
+> 現在、`isSetSupported('mailbox', '1.3')` が Exchange 2013 に対して Outlook on the web で誤って `true` を返すバグがあります。 要件セット、Exchange サーバー、および Outlook クライアントのサポートされている組み合わせの詳細については、「[Exchange サーバーおよび Outlook クライアントでサポートされている要件セット](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)」を参照してください。
 
 <br>
 
@@ -185,9 +185,9 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ユーザーのメールボックスに保存されている、メール アドインのカスタム設定や状態を表すオブジェクトを取得します。
 
-このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインが使用できます。 `RoamingSettings`
+`RoamingSettings`このオブジェクトを使用すると、ユーザーのメールボックスに格納されているメール アドインのデータを格納してアクセスできます。これにより、そのメールボックスへのアクセスに使用される Outlook クライアントから実行されている場合に、そのアドインで使用できます。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true)
 
@@ -208,7 +208,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 ダイアログ ボックスなどの UI コンポーネントを作成および操作するために使用できるオブジェクトとメソッドを、Office提供します。
 
-##### <a name="type"></a>種類
+##### <a name="type"></a>型
 
 *   [UI](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true)
 

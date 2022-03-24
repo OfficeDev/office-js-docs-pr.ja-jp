@@ -1,14 +1,14 @@
 ---
 ms.date: 07/08/2021
-description: Excel でのカスタム関数を使って外部データを workbook にストリーミング要求したりキャンセルしたりします
+description: カスタム関数を使用して、ブックへの外部データのストリーミングを要求、ストリーム、キャンセルExcel。
 title: カスタム関数でデータを受信して​​処理する
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aee26cb3c22d43a11ee2b0f500d04f9c7e596e8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 641c6da717ede364d59591838849cd47d887f63c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152740"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744654"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
@@ -27,7 +27,7 @@ ms.locfileid: "59152740"
 
 ### <a name="fetch-example"></a>Fetch の使用例
 
-次のコード サンプルでは、この関数は、国際宇宙ステーションの現在の人数を追跡する架空の Contoso "スペース内のユーザー数" API に `webRequest` 到達します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
+次のコード `webRequest` サンプルでは、この関数は、国際宇宙ステーションの現在の人数を追跡する架空の Contoso "スペース内のユーザー数" API に到達します。 この関数は JavaScript Promise を返し、fetchを使って API から情報を要求します。 結果のデータは JSON に変換され、`names`プロパティは Promise を解決するために使用される文字列に変換されます。
 
 独自の機能を開発するときに、Web 要求が時間内に完了しない場合は、アクションを実行するか、[複数の API 要求をバッチ処理すること](custom-functions-batching.md)を検討してください。
 
@@ -56,7 +56,7 @@ function webRequest() {
 
 ### <a name="xhr-example"></a>XHR の使用例
 
-次のコード サンプルでは、この関数は Github API を呼び出して、特定のユーザーのリポジトリに与えられた星の量 `getStarCount` を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
+次のコード サンプルでは、 `getStarCount` この関数は Github API を呼び出して、特定のユーザーのリポジトリに与えられた星の量を検出します。 これは JavaScript Promise を返す非同期関数です。 データが web 呼び出しから取得されると、Promise が解決され、データがセルに返されます。
 
 ```TS
 /**
@@ -102,7 +102,7 @@ async function getStarCount(userName: string, repoName: string) {
 ストリーミング関数を宣言するには、次のいずれかを使用できます。
 
 - タグ `@streaming` 。
-- 呼 `CustomFunctions.StreamingInvocation` び出しパラメーター。
+- 呼び `CustomFunctions.StreamingInvocation` 出しパラメーター。
 
 以下のコード サンプルは、毎秒ごとに結果に数値を追加するカスタム関数です。 このコードについては、次の点に注意してください。
 
@@ -133,7 +133,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>関数を取り消す
 
-Excel場合は、関数の実行を取り消します。
+Excelの場合、関数の実行を取り消します。
 
 - ユーザーが、関数を参照するセルを編集または削除した場合。
 - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
@@ -147,7 +147,7 @@ Excel場合は、関数の実行を取り消します。
 
 `invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 この `invocation` パラメーターは、セルに関するコンテキスト (アドレスやコンテンツなど) を提供し、使用およびメソッド `setResult` を `onCanceled` 使用できます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
 
-TypeScript を使用している場合、呼び出しハンドラーは型または [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) .
+TypeScript を使用している場合、呼び出しハンドラーは[`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation)[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)型または .
 
 ## <a name="receiving-data-via-websockets"></a>WebSocket 経由のデータ受信
 

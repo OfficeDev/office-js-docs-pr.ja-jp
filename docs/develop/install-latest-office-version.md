@@ -3,12 +3,12 @@ title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d1a9b40daa648d33f1bf30cfa9a14cdbf69679d2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ce13e35ecd3969d4b5917a2635bb785b499ec787
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150055"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743808"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -16,8 +16,8 @@ ms.locfileid: "59150055"
 
 ## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>最新のビルドの取得をオプトインOffice
 
-- ユーザー、個人、またはMicrosoft 365 Familyのサブスクライバーの場合は[、「Be a Office Insider」を参照してください](https://insider.office.com)。
-- 顧客の場合は、「Microsoft 365 Apps for businessの最初のリリース ビルドをインストールする[」をMicrosoft 365 Apps for businessしてください](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead)。
+- ユーザー、個人、またはMicrosoft 365 Familyのサブスクライバーの場合は、「[Be a Office Insider」を参照してください](https://insider.office.com)。
+- 顧客の場合は、「Microsoft 365 Apps for businessの最初のリリース ビルドをインストール[する」をMicrosoft 365 Apps for businessしてください](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead)。
 - Mac で Office を実行している場合は、次の操作を行います。
   - Office アプリケーションを起動します。
   - [ヘルプ] メニューで [**更新プログラムのチェック**] を選択します。

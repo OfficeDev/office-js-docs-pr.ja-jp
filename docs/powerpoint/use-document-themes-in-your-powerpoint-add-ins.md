@@ -3,18 +3,18 @@ title: PowerPoint アドインでドキュメントのテーマを使用する
 description: プレゼンテーション、ドキュメント、ワークシート、電子メールに適用するフォントや色などのテーマを視覚的に調整する方法について説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a61844351114f396c35cba5cf8b24539483a4d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 679dc91c773306f782274b437aa25c925af2e2d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154615"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747155"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>PowerPoint アドインでドキュメントのテーマを使用する
 
 [Office テーマ](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6)の一部は表示が調整されたフォントと色のセットで構成されており、このセットをプレゼンテーション、文書、ワークシート、電子メールに適用できます。PowerPoint でプレゼンテーションのテーマを適用したりカスタマイズしたりするには、リボンの **[デザイン]** タブの **[テーマ]** グループと **[バリエーション]** グループを使います。PowerPoint は既定の **Office テーマ** の新しい空白のプレゼンテーションを割り当てますが、**[デザイン]** タブ上の使用できる他のテーマを選択したり、Office.com から追加のテーマをダウンロードしたり、独自のテーマを作成してカスタマイズしたりできます。
 
-OfficeThemes.css を使用して、2 つの方法でPowerPointアドインを設計します。
+OfficeThemes.css を使用して、2 つの方法でアプリケーションとPowerPointアドインを設計します。
 
 - **PowerPoint 用のコンテンツ アドイン**。OfficeThemes.css の文書テーマ クラスを使用して、コンテンツ アドインの挿入先のプレゼンテーションのテーマと一致するフォントと色を指定します。このフォントと色は、ユーザーがプレゼンテーションのテーマを変更したりカスタマイズしたりすると動的に更新されます。
     
@@ -26,7 +26,7 @@ OfficeThemes.css を使用して、2 つの方法でPowerPointアドインを設
 
 ![カラー パレット。](../images/office15-app-color-palette.png)
 
-PowerPoint で 12 種類のテーマの色の完全なセットを表示またはカスタマイズするには、[デザイン]タブの [バリアント] グループで、[その他] ドロップダウンをクリックし、[色のカスタマイズ] を選択して [新しいテーマの色の作成] ダイアログ ボックスを表示します。   >   
+PowerPoint の 12 種類のテーマカラーの完全なセットを表示またはカスタマイズするには、[デザイン] タブの [バリアント] グループで、[その他]  ドロップダウンをクリックし、[**ColorsCustomize**  >  Colors] を選択して [新しいテーマの色の作成] ダイアログ ボックスを表示します。
 
 ![[新しいテーマの色を作成する] ダイアログ ボックス。](../images/office15-app-create-new-theme-colors.png)
 
@@ -38,13 +38,13 @@ PowerPoint で 12 種類のテーマの色の完全なセットを表示また�
 
 ![フォントピッカー。](../images/office15-app-font-picker.png)
 
-PowerPoint でテーマ フォントを表示またはカスタマイズするには、[デザイン]タブの [バリアント] グループで、[その他] ドロップダウンをクリックし、[フォントのカスタマイズ] を選択して [新しいテーマ フォントの作成] ダイアログ ボックスを表示します。   >   
+PowerPoint でテーマ フォントを表示またはカスタマイズするには、[デザイン] タブの [バリアント] グループで、[その他] ドロップダウンをクリックし、[**FontsCustomize**  >  Fonts] を選択して [新しいテーマ フォントの作成] ダイアログ ボックスを表示します。
 
 ![[新しいテーマ フォントの作成] ダイアログ ボックス。](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Office の UI のテーマのフォントと色
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. これを行うには、[ファイル アカウント]**ドロップダウンOffice**(任意のアプリケーションから)  >    >   Officeします。
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. これを行うには、[**FileAccount** >  >  **Officeテーマ**] ドロップダウン (任意のアプリケーションOfficeします。
 
 ![Officeのドロップダウン。](../images/office15-app-office-theme-picker.png)
 
@@ -59,7 +59,7 @@ OfficeThemes.css ファイルと PowerPoint 用のコンテンツ アドイン�
 OfficeThemes.css ファイルを アドイン プロジェクトに追加して、このファイルを参照するには、次の手順に従います。
 
 > [!NOTE]
-> この手順は、Visual Studio 2015 にのみ適用されます。 2019 Visual Studioを使用している場合、OfficeThemes.css ファイルは、作成する新しい PowerPoint アドイン プロジェクトに対して自動的に作成されます。
+> この手順は、Visual Studio 2015 にのみ適用されます。 2019 年 2019 Visual Studioを使用している場合、OfficeThemes.css ファイルは、作成した新しい PowerPoint アドイン プロジェクトに対して自動的に作成されます。
 
 1. **ソリューション エクスプローラー** で、_**project_name**_**Web** プロジェクト内の [**コンテンツ**] フォルダーを右クリックし、[**追加**] を選択してから、[**スタイル シート**] を選択します。
     
@@ -131,7 +131,7 @@ OfficeThemes.css ファイルを アドイン プロジェクトに追加して�
 
 ## <a name="reference-officethemescss-in-your-add-ins-html-pages"></a>アドインの HTML ページで OfficeThemes.css を参照する
 
-アドイン プロジェクトで OfficeThemes.css ファイルを使用するには、この形式でアドインの UI を実装する Web ページ `<link>` (.html、.aspx、.php ファイルなど) のタグ内に OfficeThemes.css ファイルを参照するタグを追加します。 `<head>`
+アドイン プロジェクトで OfficeThemes.css ファイルを使用するには、この形式でアドインの UI を実装する Web ページ (.html、.aspx、.php ファイルなど) のタグ内に OfficeThemes.css `<link>` `<head>` ファイルを参照するタグを追加します。
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
@@ -149,7 +149,7 @@ Visual Studio でこの作業を行うには、次の手順に従ってくださ
 
 4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
-5. 既定のテンプレートの Home.html など、アドインの UI を実装する HTML ページで `<link>` 、OfficeThemes.css ファイルを参照するタグ内に次のタグを追加します。 `<head>`
+5. 既定のテンプレートの Home.html `<link>` `<head>` など、アドインの UI を実装する HTML ページで、OfficeThemes.css ファイルを参照するタグ内に次のタグを追加します。
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
@@ -176,7 +176,7 @@ OfficeTheme.css 文書テーマ クラスを使用するコンテンツ アド�
 </body>
 ```
 
-実行時に、既定のテーマテーマを使用するプレゼンテーションに挿入 **Office** コンテンツ アドインは次のようにレンダリングされます。
+実行時に、既定のテーマを使用するプレゼンテーションに挿入 **Office** コンテンツ アドインは次のようにレンダリングされます。
 
 ![テーマを使用して実行Officeアプリ。](../images/office15-app-content-app-office-theme.png)
 

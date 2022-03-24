@@ -4,12 +4,12 @@ description: JavaScript API の Excelを使用して範囲の形式を設定す�
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 41727f6fd71636be24bdc1bb8416cb3ba07c06e1
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b3cd37aa4415627c2d549b1d11bdb6276388868b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340352"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745355"
 ---
 # <a name="set-range-format-using-the-excel-javascript-api"></a>JavaScript API を使用して範囲Excel設定する
 

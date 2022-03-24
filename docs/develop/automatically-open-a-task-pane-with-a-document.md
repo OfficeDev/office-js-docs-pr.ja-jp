@@ -3,18 +3,18 @@ title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
-ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
+ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "59326766"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743070"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
-アドインのアドイン コマンドを使用して、Officeリボンにボタンを追加Office UI を拡張Office アプリできます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
+アドインのアドイン コマンドを使用して、OfficeリボンにボタンOfficeを追加することで、Office アプリ UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
-いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)要件セットで導入された自動開く作業ウィンドウ機能を使用すると、シナリオで必要なときに作業ウィンドウを自動的に開きます。
+いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md) 要件セットで導入された自動開く作業ウィンドウ機能を使用すると、シナリオで必要なときに作業ウィンドウを自動的に開きます。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
@@ -112,7 +112,7 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 |`storeType` 値|`id` value|`store` value|`version` 値|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource アセット ID (「メモ」を参照)。|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (「メモ」を参照)。|
-|WOPICatalog (サードパーティ [の WOPI ホスト](/microsoft-365/cloud-storage-partner-program/online/) )| アドインの AppSource アセット ID (「メモ」を参照)。 | "wopicatalog" この値は、App Source で公開され、サードパーティの WOPI ホストにインストールされているアドインに使用します。 詳細については[、「Integrating with Office Online」を参照してください](/microsoft-365/cloud-storage-partner-program/online/overview)。 | アドイン マニフェストでのバージョン。|
+|WOPICatalog (サードパーティ [の WOPI ホスト](/microsoft-365/cloud-storage-partner-program/online/) )| アドインの AppSource アセット ID (「メモ」を参照)。 | "wopicatalog" この値は、App Source で公開され、サードパーティの WOPI ホストにインストールされているアドインに使用します。 詳細については、「[Integrating with Office Online」を参照してください](/microsoft-365/cloud-storage-partner-program/online/overview)。 | アドイン マニフェストでのバージョン。|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
 |EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、一元展開を使用するアドインで使用する行Microsoft 365 管理センター。|アドイン マニフェストでのバージョン。|
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
@@ -139,7 +139,7 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 > [!NOTE]
 > ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
 
-XML を記述する簡単な方法は、最初にアドインを実行し[](#tag-the-document-on-the-client-side)、クライアント側でドキュメントにタグを付けて値を書き込み、次にドキュメントを保存して生成された XML を調べてください。Office、適切な属性値を検出して提供します。 Open [XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) を使用して、生成C#にマークアップをプログラムで追加するコードを生成することもできます。
+XML を記述する簡単な方法は、最初にアドインを実行し、[](#tag-the-document-on-the-client-side)クライアント側でドキュメントにタグを付けて値を書き込み、次にドキュメントを保存して生成された XML を調べてください。Office、適切な属性値を検出して提供します。 Open [XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) を使用して、生成C#にマークアップをプログラムで追加するコードを生成することもできます。
 
 ## <a name="test-and-verify-opening-task-panes"></a>作業ウィンドウ表示のテストと検証
 
@@ -155,7 +155,7 @@ XML を記述する簡単な方法は、最初にアドインを実行し[](#tag
 </we:webextension>
 ```
 
-前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待通り動作します。 Microsoft 365 サブスクリプションをまだ持ってない場合は、Microsoft 365 開発者プログラムに参加することで、90 日間の無料のMicrosoft 365 サブスクリプション[を取得できます](https://developer.microsoft.com/office/dev-program)。
+前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待通り動作します。 Microsoft 365 サブスクリプションをまだ持ってない場合は、Microsoft 365 開発者プログラムに参加することで、90 日間の無料のMicrosoft 365 サブスクリプション[をMicrosoft 365できます](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="see-also"></a>関連項目
 

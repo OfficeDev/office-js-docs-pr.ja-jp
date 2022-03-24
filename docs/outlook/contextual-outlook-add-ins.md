@@ -3,12 +3,12 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 83ed12c2bb8c61ba25db93c321406a1d43de4594
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2f343f48f0c49de2b322cb737c5896df2f130ec9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154180"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747200"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
@@ -84,7 +84,7 @@ ms.locfileid: "59154180"
 
 ## <a name="current-contextual-add-ins"></a>現在のコンテキスト アドイン
 
-次のコンテキスト アドインは、既定で、アドインを使用しているユーザー Outlookインストールされます。
+次のコンテキスト アドインは、既定では、アドインを使用しているユーザー Outlookインストールされます。
 
 - Bing 地図
 - 会議の候補

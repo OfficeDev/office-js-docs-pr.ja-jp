@@ -4,12 +4,12 @@ description: Excel ビルド用の Office アドイン要件セットの情報�
 ms.date: 01/14/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 615a615f965fdbcef38d14020e307de26a7e4401
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: 466df0fcb48c49d524850e0e92803e0dc10cc3cc
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222221"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747117"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API の要件セット
 

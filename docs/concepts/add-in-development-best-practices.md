@@ -3,8 +3,13 @@ title: Office アドイン開発のベスト プラクティス
 description: 開発時にベスト プラクティスを適用して、Officeを作成します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742851"
 ---
-
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
 効果的なアドインは、目で見て分かる方法で Office アプリケーションを拡張する、ユニークで頼もしい機能を提供します。優れたアドインを作成するには、魅力的な初回エクスペリエンスをユーザーに提供して、最高の UI エクスペリエンスを設計し、アドインのパフォーマンスを最適化します。この記事で説明するベスト プラクティスを適用して、ユーザーが迅速かつ効率的に仕事を遂行するための助けになるアドインを作成してください。
@@ -129,7 +134,7 @@ ms.localizationpriority: medium
 
 - ユーザーがアドインを見つけて使うことができる Web サイトを作成します。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>JavaScript をサポートする JavaScript をInternet Explorer
+## <a name="use-javascript-that-supports-internet-explorer"></a>サポートされている JavaScript を使用Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

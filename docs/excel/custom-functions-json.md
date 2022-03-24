@@ -3,12 +3,12 @@ title: カスタム関数の JSON メタデータを手動で作成Excel
 description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dd0fec92ad286ea1ef0855c6a4a4f6cdd433c23f
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 0ef786be050f081c7186f157b6add7a4aca5b04a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711029"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744554"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 

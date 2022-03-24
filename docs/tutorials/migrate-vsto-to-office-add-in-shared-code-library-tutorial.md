@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 ms.localizationpriority: high
-ms.openlocfilehash: 91ecee722bf18c5a88758ce24bc8861b6c772805
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 76b9e49adcf5954f50794aaae2fdf740c436c480
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855465"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711253"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -50,8 +50,8 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 
 次のものも必要です:
 
-- Microsoft 365 アカウント。 Office アプリを含む、90 日間の更新可能な Microsoft 365 サブスクリプションが提供される [Microsoft 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加できます。
-- Microsoft Azure テナント。 [Microsoft Azure](https://account.windowsazure.com/SignUp) では、試用版のサブスクリプションを入手できます。
+- Microsoft 365 アカウント。Office アプリを含む、90 日間の更新可能な Microsoft 365 サブスクリプションが提供される [Microsoft 365 開発者プログラム](https://aka.ms/devprogramsignup)に参加できます。
+- Microsoft Azure テナント。[Microsoft Azure](https://account.windowsazure.com/SignUp) では、試用版のサブスクリプションを入手できます。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>セル アナライザー VSTO アドイン
 
@@ -66,7 +66,7 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** プロジェクトを右クリックして **[プロパティ]** を選択します。
 1. プロパティの **[署名]** カテゴリを選択します。
 1. **[ClickOnce マニフェストに署名する]** を選択してから、**[テスト証明書の作成]** を選択します。
-1. **[テスト証明書の作成]** ダイアログで、パスワードを入力して、確認します。 **[OK]** を選択します。
+1. **[テスト証明書の作成]** ダイアログで、パスワードを入力して、確認します。**[OK]** を選択します。
 
 このアドインは、Excel のカスタム作業ウィンドウです。 テキストが含まれる任意のセルを選択してから、**[Show unicode]** ボタンをクリックしてください。 このアドインにより、**[結果]** セクションでテキスト内の各文字とその文字に対応する Unicode 番号のリストが表示されます。
 
@@ -245,7 +245,7 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
 
 ### <a name="add-the-office-add-in-project"></a>Office アドイン プロジェクトを追加する
 
-作業が簡単になるように、すべてのコードを 1 つのソリューションに納めます。 この Office アドイン プロジェクトは、既存の Visual Studio ソリューションに追加します。 ただし、[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)と Visual Studio Code の扱いに慣れている場合は、`yo office` を実行してプロジェクトを作成することもできます。 その手順は、ほとんど同じです。
+作業が簡単になるように、すべてのコードを 1 つのソリューションに納めます。 この Office アドイン プロジェクトは、既存の Visual Studio ソリューションに追加します。 ただし、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)と Visual Studio Code の扱いに慣れている場合は、`yo office` を実行してプロジェクトを作成することもできます。 その手順は、ほとんど同じです。
 
 1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** ソリューションを右クリックして、**[追加] > [新しいプロジェクト]** を選択します。
 1. **[新しいプロジェクトの追加] ダイアログ** で、**[Excel Web アドイン]** を選択してから **[次へ]** を選択します。

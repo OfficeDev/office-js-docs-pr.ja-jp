@@ -1,14 +1,14 @@
 ---
 title: アドインで ID トークンを使用してユーザーを認証する
 description: サービスで SSO を実装するために、Outlook アドインが提供する ID トークンの使用方法について説明します。
-ms.date: 10/31/2019
+ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff51cd4759d4b6e59fd18d6a613a4e6a85f2e152
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154234"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744621"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Exchange の ID トークンを使用してユーザーを認証する
 
@@ -49,7 +49,7 @@ Exchange のユーザー ID トークンは、アドインがアドイン ユー
 
 ### <a name="generate-a-unique-id"></a>一意の ID を生成する
 
-`msexchuid` プロパティと `amurl` プロパティを組み合わせて使用することをお勧めします。 たとえば、2 つの値を連結して、Base64 でエンコードされた文字列を生成します。 この値は毎回トークンから確実に生成できるので、Exchange のユーザー ID トークンをシステム内のユーザーにマップできます。
+プロパティとプロパティの組み合わせを `msexchuid` 使用 `amurl` します。 たとえば、2 つの値を連結して、Base64 でエンコードされた文字列を生成します。 この値は毎回トークンから確実に生成できるので、Exchange のユーザー ID トークンをシステム内のユーザーにマップできます。
 
 ### <a name="check-the-user"></a>ユーザーを確認する
 

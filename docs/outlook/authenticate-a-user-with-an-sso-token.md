@@ -3,8 +3,13 @@ title: シングル サインオン トークンを使用してユーザーを�
 description: サービスに SSO を実装するために Outlook アドインが提供するシングル サインオン トークンを使用することについて説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 108b11327087972ac064420357c822ff5bfe67d8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745826"
 ---
-
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>アドイン内のシングル サインオン トークンを使用してユーザー Outlook認証する
 
 シングル サインオン (SSO) は、アドインがユーザーを認証する (またオプションでアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出す) ための、シームレスな方法を提供します。
@@ -18,7 +23,7 @@ Office アドインの SSO の概要については、[「Office アドインの
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>テナントでモダン認証を有効Microsoft 365する
 
-SSO をアドインと一緒Outlookするには、テナントのモダン認証を有効Microsoft 365があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+SSO をアドインとOutlookするには、テナントのモダン認証を有効Microsoft 365があります。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="register-your-add-in"></a>アドインを登録する
 
@@ -50,7 +55,7 @@ SSO を使用するには、Outlook アドインに Azure Active Directory (AAD)
 ## <a name="see-also"></a>関連項目
 
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
-- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO[」を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+- SSO トークンをOutlookして Microsoft Graph API にアクセスするアドインのサンプルについては、「Outlook SSO」[を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 - [SSO API リファレンス](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)
 - [イベント ベースのライセンス認証を使用するOutlookでシングル サインオン (SSO) を有効にする](use-sso-in-event-based-activation.md)

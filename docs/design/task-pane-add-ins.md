@@ -3,12 +3,12 @@ title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 352874739b0a7c5aa2caaa930aaeb1562c065454
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7994073dde86c76368f0a0e6ea4a4b71b8ca71b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150084"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743238"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
 
@@ -59,7 +59,7 @@ Windows の場合、パーソナル メニューは 12x32 ピクセルを測定�
 
 *図 4. Windows のパーソナル メニュー*
 
-![デスクトップ上のパーソナリティ メニュー Windows図。](../images/personality-menu-win.png)
+![デスクトップ上のパーソナリティ メニューをWindows図。](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、スペースは 34x32 ピクセルに増加します (図を参照)。
 

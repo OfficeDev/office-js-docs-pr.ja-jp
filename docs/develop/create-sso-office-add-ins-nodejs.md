@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
-description: Office シングル サインオンを使用する Node.js ベースのアドインを作成する方法を学ぶ
+description: シングル サインオンを使用Node.jsベースのアドインをOfficeする方法について学習します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dbcc2e9dcc1c5abdf03e192e869fe36045ce3a19
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 911268198d5607953f34461ccaf8bcbc67dfe478
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320152"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743908"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -31,7 +31,7 @@ ms.locfileid: "62320152"
 
 * コード エディター。 Visual Studio Code をお勧めします。
 
-* サブスクリプションに保存されているファイルとフォルダー OneDrive for Business少なくともMicrosoft 365です。
+* サブスクリプションに保存されているファイルとフォルダー OneDrive for Business少なくともMicrosoft 365します。
 
 * Microsoft Azure サブスクリプション。 このアドインには、Azure Active Directory (AD) が必要です。 Azure AD は、アプリケーションが認証および承認に使用する ID サービスを提供します。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得できます。
 
@@ -68,7 +68,7 @@ ms.locfileid: "62320152"
 1. **Office-Add-in-NodeJS-SSO** ページで、**アプリケーション (クライアント) ID** と **ディレクトリ (テナント) ID** の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
 
     > [!NOTE]
-    > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
+    > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認アクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
 
 1. **[管理]** の下の **[認証]** を選択します。 [暗黙的な **付与] セクション** で、Access トークンと ID トークン **の両方のチェック ボックスを****有効にします**。 サンプルには、SSO が利用できないときに呼び出されるフォールバック認証システムがあります。 このシステムは、暗黙的フローを使用します。
 
@@ -76,7 +76,7 @@ ms.locfileid: "62320152"
 
 1. **[管理]** で **[証明書とシークレット]** を選択します。 **[新しいクライアント シークレット]** ボタンを選択します。 **[説明]** に値を入力してから、**[有効期限]** に適切なオプションを選択し、**[追加]** を選択します。 *クライアント シークレットの値をすぐにコピーして、後の手順で必要になるため、先に進む前にアプリケーションIDと一緒に保存* してください。
 
-1. **[管理]** の下の **[API の公開]** を選択します。 [設定] **リンクを選択** します。 これにより、"api://$App ID GUID$" という形式のアプリケーション ID URI が生成されます。$App ID GUID$ は **アプリケーション (クライアント) ID です**。
+1. **[管理]** の下の **[API の公開]** を選択します。 [設定] **リンクを選択** します。 これにより、"api://$App ID GUID$" という形式でアプリケーション ID URI が生成されます。$App ID GUID$ は **アプリケーション (クライアント) ID です**。
 
 1. 生成された ID で、ダブル `localhost:44355/` スラッシュと GUID の間に挿入 (末尾にスラッシュ "/" が付加されている点に注意してください)。 完了したら、ID `api://localhost:44355/$App ID GUID$`全体にフォーム (たとえば) が必要です `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
@@ -86,10 +86,10 @@ ms.locfileid: "62320152"
 
 1. `access_as_user`管理者とユーザーの同意のプロンプトを構成するためのフィールドに、Office クライアント アプリケーションが現在のユーザーと同じ権限でアドインの Web API を使用できる範囲に適した値を入力します。 提案:
 
-    * **管理者の同意表示名**: Officeユーザーとして機能できます。
+    * **管理者の同意表示名**: Officeユーザーとして機能することができます。
     * **管理者の同意の説明**: 現在のユーザーと同じ権限で Office がアドインの Web API を呼び出すことを可能にします。
-    * **ユーザーの同意表示名**: Officeとして機能する場合があります。
-    * **ユーザーの同意の** 説明: Officeと同じ権限を持つアドインの Web API を呼び出す方法を有効にしてください。
+    * **ユーザーの同意表示名**: Officeユーザーとして機能できます。
+    * **ユーザーの同意の** 説明: Officeと同じ権限でアドインの Web API を呼び出す方法を有効にしてください。
 
 1. **[状態]** が **[有効]** に設定されていることを確認してください。
 
@@ -108,7 +108,7 @@ ms.locfileid: "62320152"
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     > [!NOTE]
-    > ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e には、リストされている他のすべての ID が含まれています。Office アドイン SSO フローでサービスで使用する Office ホスト エンドポイントのすべてを事前承認するために、単独で使用できます。
+    > ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e には、リストされている他のすべての ID が含まれています。Office アドイン SSO フローでサービスで使用するためにすべての Office ホスト エンドポイントを事前承認するために単独で使用できます。
 
     ID ごとに、次の手順を実行します。
 
@@ -174,7 +174,7 @@ ms.locfileid: "62320152"
 1. Office.onReady メソッドの下に次のコードを追加します。
 
     > [!NOTE]
-    > この記事で使用する 2 つのアクセス トークンを区別するために、getAccessToken() から返されるトークンはブートストラップ トークンと呼ばれます。 後で、On-Behalf-Of フローを通じて、Microsoft サービスへのアクセス権を持つ新しいトークンGraph。
+    > この記事で使用する 2 つのアクセス トークンを区別するために、getAccessToken() から返されるトークンはブートストラップ トークンと呼ばれます。 その後、On-Behalf-Of フローを通じて、Microsoft サービスへのアクセス権を持つ新しいトークンGraph。
 
     ```javascript
     async function getGraphData() {
@@ -205,8 +205,8 @@ ms.locfileid: "62320152"
 
     * `Office.auth.getAccessToken`は、Azure AD からブートストラップ トークンを取得するよう Office に指示します。 ブートストラップ トークンは ID トークンですが、値 `scp` を持つ (scope) プロパティも持っています `access-as-user`。 このトークンは、Web アプリケーションによって、Microsoft のアクセス許可を持つアクセス トークンと交換Graph。
     * オプションを `allowSignInPrompt` true に設定すると、現在サインインしているユーザーが Officeない場合Officeポップアップ サインイン プロンプトが開きます。
-    * オプションを `allowConsentPrompt` true に設定すると、ユーザーがアドインがユーザーの AAD プロファイルにアクセスする同意を得ていない場合、Office は同意のプロンプトを開きます。 (このプロンプトでは、ユーザーはユーザーのプロファイルに同意することAAD、Microsoft のスコープGraphしません)。
-    * `forMSGraphAccess`オプションを true に設定すると、Office は、アドインがブートストラップ トークンを使用して、ID トークンとして使用するのではなく、Microsoft Graph へのアクセス許可を持つ追加のアクセス トークンを取得する予定です。 テナント管理者が Microsoft Graph へのアドインのアクセスに同意していない場合、`Office.auth.getAccessToken`はエラー **13012** を返します。 アドインは、Office が Microsoft Graph スコープではなく、ユーザーの Azure AD プロファイルへの同意のみを要求できるために必要となる承認の代替システムにフォールバックすることで応答できます。 フォールバック承認システムでは、ユーザーが再度サインインする必要があります。また、ユーザーは Microsoft のスコープに同意するように求Graphできます。 そのため`forMSGraphAccess`オプションは、同意の欠如により失敗するトークン交換をアドインが行わないことを保証します。 (前のステップで管理者の同意が与えられているため、このアドインにおいてはこのシナリオは発生しません。 ベスト プラクティスを示すことを目的として、このオプションはここに含まれています。)
+    * このオプション`allowConsentPrompt`を true に設定すると、アドインがユーザーの AAD プロファイルにアクセスできると同意していない場合、Office は同意のプロンプトを開きます。 (このプロンプトでは、ユーザーはユーザーのプロファイルに同意することAAD、Microsoft のスコープGraphしません)。
+    * `forMSGraphAccess`オプションを true に設定すると、Office は、アドインがブートストラップ トークンを使用して、ID トークンとして使用するのではなく、Microsoft Graph へのアクセス許可を持つ追加のアクセス トークンを取得する予定です。 テナント管理者が Microsoft Graph へのアドインのアクセスに同意していない場合、`Office.auth.getAccessToken`はエラー **13012** を返します。 アドインは、Office が Microsoft Graph スコープではなく、ユーザーの Azure AD プロファイルへの同意のみを要求できるために必要となる承認の代替システムにフォールバックすることで応答できます。 フォールバック承認システムでは、ユーザーがもう一度サインインする必要があります。また、ユーザーは Microsoft のスコープに同意するように求Graphできます。 そのため`forMSGraphAccess`オプションは、同意の欠如により失敗するトークン交換をアドインが行わないことを保証します。 (前のステップで管理者の同意が与えられているため、このアドインにおいてはこのシナリオは発生しません。 ベスト プラクティスを示すことを目的として、このオプションはここに含まれています。)
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
@@ -220,7 +220,7 @@ ms.locfileid: "62320152"
 
 1. `TODO 3`を以下のように置き換えます。 このコードについては、以下の点に注意してください。
 
-    * テナントがMicrosoft 365認証`exchangeResponse``claims`を必要とするように構成されている場合、追加の必須要素に関する情報を含むプロパティが含まれます。 その場合は`Office.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
+    * 複数要素認証Microsoft 365 `exchangeResponse` `claims`テナントが構成されている場合、追加の必須要素に関する情報を含むプロパティが含まれます。 その場合は`Office.auth.getAccessToken`を再度呼び出し、`authChallenge`オプションを Claims プロパティの値に設定する必要があります。 これにより、必要なすべての認証形式をユーザーに求めるよう AAD に指示します。
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -257,7 +257,7 @@ ms.locfileid: "62320152"
     }
     ```
 
-1. `getGraphData`メソッドの下に、以下の関数を追加します。 これはサーバー`/auth`側の Express ルートで、ブートストラップ トークンと microsoft Azure AD へのアクセス許可を持つアクセス トークンを交換Graph。
+1. `getGraphData`メソッドの下に、以下の関数を追加します。 これはサーバー`/auth`側の Express ルートで、Microsoft Azure AD へのアクセス許可を持つアクセス トークンのブートストラップ トークンを Graph。
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -339,7 +339,7 @@ ms.locfileid: "62320152"
     }
     ```
 
-1. まれに、Office がキャッシュしたブートストラップ トークンは、Office が検証したが、Azure AD に達するまでに期限切れになります。 Azure AD はエラー **AADSTS500133** で応答します。 この場合、アドインはもう一度呼び出す必要 `getGraphData` があります。 キャッシュされたブートストラップ トークンの有効期限が切れているため、Office は Azure AD から新しいものを取得します。 そのため、次に置 `TODO 8` き換える必要があります。
+1. まれに、Office がキャッシュしたブートストラップ トークンは、Office が検証するが、Azure AD に達すると期限切れになります。 Azure AD はエラー **AADSTS500133** で応答します。 この場合、アドインはもう一度呼び出す必要 `getGraphData` があります。 キャッシュされたブートストラップ トークンの有効期限が切れているため、Office は Azure AD から新しいものを取得します。 そのため、次に置 `TODO 8` き換える必要があります。
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)

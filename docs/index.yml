@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Office アドイン ドキュメント
-summary: Office アドイン プラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメントや Outlook メール メッセージと予定表アイテムのコンテンツを操作するソリューションを構築します。 Officeアドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Office on the web、Windows、Mac、モバイルで実行できるソリューションを構築できます。
+summary: Office アドイン プラットフォームを使用して、Office アプリケーションを拡張し、Office ドキュメントや Outlook メール メッセージと予定表アイテムのコンテンツを操作するソリューションを構築します。 Office アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Office on the web、Windows、Mac、モバイルで実行できるソリューションを構築できます。
 brand: office
 metadata:
   title: Office アドイン ドキュメント
@@ -23,10 +23,10 @@ highlightedContent:
       title: 'Microsoft Learn: アドインOfficeカスタマイズの概要'
       url: /learn/modules/intro-office-add-ins
     - itemType: learn
-      title: 'Microsoft Learn: Officeアドインを使用Officeクライアントを拡張する'
+      title: 'Microsoft Learn: Office アドインを使用Officeクライアントを拡張する'
       url: /learn/paths/m365-office-add-in-associate
     - itemType: sample
-      title: カスタム アドインOfficeサンプル
+      title: アドインOfficeサンプル
       url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
       title: Office アドインの初心者向けガイド

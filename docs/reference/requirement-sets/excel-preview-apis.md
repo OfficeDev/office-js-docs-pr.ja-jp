@@ -4,8 +4,13 @@ description: JavaScript API のExcel詳細。
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f15a72631f83a5102fb4e042cc1357d179d1fa3d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747179"
 ---
-
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript プレビュー API
 
 新しい Excel JavaScript API は最初に "プレビュー" で導入され、その後、十分なテストが行われ、ユーザー フィードバックが得られてから、番号付きの特定の要件セットの一部になります。
@@ -265,7 +270,7 @@ ms.localizationpriority: medium
 ||[basicValue](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-basicvalue-member)|この値を持つセルに対して返 `Range.values` される値を表します。|
 ||[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errorsubtype-member)|の種類を表します `SpillErrorCellValue`。|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errortype-member)|の種類を表します `ErrorCellValue`。|
-||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledcolumns-member)|データが表示された場合に流出する列の数を#SPILL! エラーを返します。|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledcolumns-member)|データが表示された場合に流出する列の数を表#SPILL! エラーを返します。|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledrows-member)|データが表示された場合に流出する行の数を表#SPILL! エラーを返します。|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-type-member)|このセル値の種類を表します。|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[basicType](/javascript/api/excel/excel.stringcellvalue#excel-excel-stringcellvalue-basictype-member)|この値を持つセルに対して返 `Range.valueTypes` される値を表します。|

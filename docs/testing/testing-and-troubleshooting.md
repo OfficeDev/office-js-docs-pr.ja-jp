@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
-description: アドインのユーザー エラーをトラブルシューティングOfficeする方法について説明します。
+description: アドインのユーザー エラーのトラブルシューティングOffice説明します。
 ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990545"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746390"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -40,7 +40,7 @@ ms.locfileid: "59990545"
 
 Windows で実行され、[Internet Explorer を使用している](../concepts/browsers-used-by-office-web-add-ins.md) Outlook アドインが正常に機能しない場合は、Internet Explorer でスクリプトのデバッグを有効にしてみてください。
 
-- [インターネット オプションの詳細設定>**ツール] に**  >  **移動します**。
+- [インターネット オプション **Advanced**>**ツール** > ] に移動します。
 - **[参照]** で、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオフにします。
 
 これらの設定は、問題のトラブルシューティングを行う場合にのみチェックボックスをオフにすることをお勧めします。チェックボックスをオフにしたままにすると、参照時にメッセージが表示されます。問題が解決したら、**[スクリプトのデバッグを無効にする (Internet Explorer)]** と **[スクリプトのデバッグを無効にする (その他)]** の各チェックボックスをオンにしてください。

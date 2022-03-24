@@ -4,12 +4,12 @@ description: OneNote JavaScript API の要件セットについて説明しま�
 ms.date: 08/24/2020
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 579046ea007104d777d4cb02d4305aca79f72aae
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e6804f7613aa988b834c2e4449bf82885e7bdb56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154900"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743942"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 

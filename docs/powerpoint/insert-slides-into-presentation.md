@@ -3,11 +3,16 @@ title: プレゼンテーションにスライドをPowerPointする
 description: プレゼンテーションから別のプレゼンテーションにスライドを挿入する方法について説明します。
 ms.date: 03/07/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: b08dd8bd82e5d4f4f86114630e9238b6c43b6ae7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747026"
 ---
-
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>プレゼンテーションにスライドをPowerPointする
 
-1 PowerPoint PowerPointアドインは、アプリケーション固有の JavaScript ライブラリを使用して、1 つのプレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入されたスライドがソース プレゼンテーションの書式設定を保持するか、ターゲット プレゼンテーションの書式設定を保持するかどうかを制御できます。
+特定PowerPoint PowerPointアドインは、アプリケーション固有の JavaScript ライブラリを使用して、1 つのプレゼンテーションのスライドを現在のプレゼンテーションに挿入できます。 挿入されたスライドがソース プレゼンテーションの書式設定を保持するか、ターゲット プレゼンテーションの書式設定を保持するかどうかを制御できます。
 
 スライド挿入 API は、主にプレゼンテーション テンプレートのシナリオで使用されます。既知のプレゼンテーションは、アドインによって挿入できるスライドのプールとして機能します。 このようなシナリオでは、ユーザーまたは顧客のどちらかが、スライドのタイトルや画像などの選択基準とスライドの ID を関連付けるデータ ソースを作成および管理する必要があります。 API は、ユーザーが任意のプレゼンテーションからスライドを挿入できるシナリオでも使用できますが、そのシナリオでは、ユーザーは実質的にソース プレゼンテーションからすべてのスライドを挿入する制限があります。 詳細 [については、「挿入するスライドの選択](#selecting-which-slides-to-insert) 」を参照してください。
 
@@ -36,7 +41,7 @@ ms.localizationpriority: medium
     ![HTML ファイルの種類の入力コントロールの前に「スライドを挿入するプレゼンテーションを選択する」というPowerPointを示すスクリーンショット。 コントロールは、"ファイルの選択" というラベルの付いたボタンの後に"ファイルが選択されません" という文で構成されます。](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > ファイルを取得する方法は他にPowerPointがあります。 たとえば、ファイルがサーバーまたはサーバーに保存されているOneDrive SharePoint、Microsoft Graphを使用してダウンロードできます。 詳細については、「[Microsoft Graph](/graph/api/resources/onedrive)ファイルの操作」および「[Access Files with Microsoft Graph」を参照してください](/learn/modules/msgraph-access-file-data/)。
+    > ファイルを取得する方法は他にPowerPointがあります。 たとえば、ファイルがサーバーまたはサーバーに保存されているOneDrive、SharePoint Microsoft Graphを使用してダウンロードできます。 詳細については、「[Microsoft Graph](/graph/api/resources/onedrive)ファイルの操作」および「[Access Files with Microsoft Graph」を参照してください](/learn/modules/msgraph-access-file-data/)。
 
 2. 次のコードをアドインの JavaScript に追加して、入力コントロールのイベントに関数を割り当 `change` てる。 (次の手順で `storeFileAsBase64` 関数を作成します。
 
@@ -70,7 +75,7 @@ ms.localizationpriority: medium
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>insertSlidesFromBase64 を使用してスライドを挿入する
 
-アドインは、[Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) メソッドを使用して、PowerPointプレゼンテーションから現在のプレゼンテーションにスライドを挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは、`chosenFileBase64`base64 でエンコードされたバージョンのプレゼンテーション ファイルを保持するPowerPoint注意してください。
+アドインは、[Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) メソッドを使用してPowerPointプレゼンテーションから現在のプレゼンテーションにスライドを挿入します。 次に示すのは、ソース プレゼンテーションのすべてのスライドが現在のプレゼンテーションの先頭に挿入され、挿入されたスライドがソース ファイルの書式を保持する簡単な例です。 これは、`chosenFileBase64`base64 でエンコードされたバージョンのプレゼンテーション ファイルを保持するグローバルPowerPoint注意してください。
 
 ```javascript
 async function insertAllSlides() {
@@ -103,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 もちろん、通常、ターゲット スライドの ID または作成 ID はコーディング時にはわかりません。 より一般的には、アドインはユーザーにターゲット スライドの選択を求める場合があります。 次の手順では、現在選択されているスライドの ***nnn*#** ID を取得し、それをターゲット スライドとして使用する方法を示します。
 
-1. 共通 JavaScript API の [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッドを使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 呼び出しは Promise `getSelectedDataAsync` 戻り関数に埋め込まれている点に注意してください。 これを行う理由と方法の詳細については、「 [Promise-returning 関数でCommon-APIsラップ」を参照してください](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
+1. 共通 JavaScript API の [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッドを使用して、現在選択されているスライドの ID を取得する関数を作成します。 次に例を示します。 呼び出しは Promise `getSelectedDataAsync` 戻り関数に埋め込まれている点に注意してください。 これを行う理由と方法の詳細については、「 [Wrap Common-APIs関数」を参照してください](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
 
  
     ```javascript
@@ -125,7 +130,7 @@ async function insertSlidesDestinationFormatting() {
     }
     ```
 
-1. main 関数の [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) 内で新しい関数を呼び出し、返される ID ("#" 記号と連結) `targetSlideId` `InsertSlideOptions` をパラメーターのプロパティの値として渡します。 次に例を示します。
+1. メイン関数の [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) 内で新しい関数を呼び出し、返す ID ("#" 記号と連結) `targetSlideId` `InsertSlideOptions` をパラメーターのプロパティの値として渡します。 次に例を示します。
 
     ```javascript
     async function insertAfterSelectedSlide() {

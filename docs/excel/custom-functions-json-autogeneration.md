@@ -1,14 +1,14 @@
 ---
 ms.date: 07/08/2021
-description: JSDoc タグを使用して、カスタム関数の JSON メタデータを動的に作成します。
+description: JSDoc タグを使用して、カスタム関数 JSON メタデータを動的に作成します。
 title: カスタム関数用の JSON メタデータの自動生成
 ms.localizationpriority: medium
-ms.openlocfilehash: c5047fb48fe30ba5fdeb69cef46b3a2178ca2343
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c14196da1d686beb32b31589187e57b2b6f2616d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151272"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744548"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>カスタム関数用の JSON メタデータの自動生成
 
@@ -56,7 +56,7 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 関数が取り消された場合に、カスタム関数がアクションを実行します。
 
-最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数はプロパティに関数を割り当て、関数が取り消された場合の結果 `oncanceled` を示します。
+最後の関数パラメーターは `CustomFunctions.CancelableInvocation` の型にする必要があります。 関数はプロパティに関数を割り当て `oncanceled` 、関数が取り消された場合の結果を示します。
 
 最後の関数のパラメーターが `CustomFunctions.CancelableInvocation` 型の場合、タグは表示されませんが、`@cancelable` と見なされます。
 
@@ -119,7 +119,7 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 ### <a name="description"></a>説明
 
-説明は、関数の入力中Excelユーザーに表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
+説明は、関数を入力Excelユーザーに表示され、関数の動作を指定します。 説明に特定のタグは必要ありません。 JSDoc コメント内に関数の機能を説明するフレーズを入力して、カスタム関数に説明を追加します。 既定では、JSDoc コメント セクションでタグが付けられていないテキストは、関数の説明です。
 
 次の例では、「2 つの数値を加算する関数」というフレーズが、ID プロパティ `ADD` のカスタム関数の説明です。
 
@@ -138,7 +138,7 @@ JavaScript または TypeScript 関数のコード コメントに`@customfuncti
 
 指定された _url_ が Excel で表示されます。
 
-次の例では、 `helpurl` です `www.contoso.com/weatherhelp` 。
+次の例では、 です`helpurl``www.contoso.com/weatherhelp`。
 
 ```js
 /**
@@ -218,9 +218,9 @@ function add(first: number, second: number): number {
 
 関数が評価されているセルのアドレスを指定する必要があることを示します。
 
-最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります `@requiresAddress` 。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
+最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります `@requiresAddress`。 関数が呼び出されると、`address` プロパティにアドレスが含まれます。
 
-次のサンプルは、パラメーターを組み合わせて使用して、カスタム関数を呼び出したセルのアドレス `invocation` `@requiresAddress` を返す方法を示しています。 詳細については [、「呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter) 」を参照してください。
+次のサンプルは、パラメーターを組み `invocation` 合わせて使用して `@requiresAddress` 、カスタム関数を呼び出したセルのアドレスを返す方法を示しています。 詳細については [、「呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter) 」を参照してください。
 
 ```js
 /**
@@ -242,11 +242,11 @@ function getAddress(first, second, invocation) {
 
 関数が入力パラメーターのアドレスを返す必要があります。 
 
-最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります  `@requiresParameterAddresses` 。 JSDoc コメントには、戻り値を行列として指定するタグも含 `@returns` める `@returns {string[][]}` 必要があります `@returns {number[][]}` 。 詳細については [、「Matrix 型](#matrix-type) 」を参照してください。 
+最後の関数パラメーターは、使用する型 `CustomFunctions.Invocation` または派生型である必要があります  `@requiresParameterAddresses`。 JSDoc コメントには、戻り `@returns` 値を行列として指定するタグも含める必要 `@returns {string[][]}` があります `@returns {number[][]}`。 詳細については [、「Matrix 型](#matrix-type) 」を参照してください。 
 
-関数が呼び出された場合、 `parameterAddresses` プロパティには入力パラメーターのアドレスが含まれます。
+関数が呼び出された場合、プロパティ `parameterAddresses` には入力パラメーターのアドレスが含まれます。
 
-次のサンプルは、3 つの入力パラメーターのアドレスを返す場合と組み合わせてパラメーターを使用 `invocation` `@requiresParameterAddresses` する方法を示しています。 詳細 [については、「パラメーターのアドレスを検出する](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 」を参照してください。 
+次のサンプルは、3 つの入力 `invocation` パラメーターのアドレスを `@requiresParameterAddresses` 返す場合と組み合わせてパラメーターを使用する方法を示しています。 詳細 [については、「パラメーターのアドレスを検出する](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 」を参照してください。 
 
 ```js
 /**
@@ -298,8 +298,8 @@ function add(first: number, second: number): number {
 
 カスタム関数がストリーミング関数であることを示すのに使用されます。 
 
-最後のパラメーターは型です `CustomFunctions.StreamingInvocation<ResultType>` 。
-この関数は、 を返します `void` 。
+最後のパラメーターは型です `CustomFunctions.StreamingInvocation<ResultType>`。
+この関数は、 を返します `void`。
 
 ストリーミング関数は値を直接返すのではなく、最後のパラメーターを使用 `setResult(result: ResultType)` して呼び出します。
 
@@ -339,7 +339,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>マトリックス型
 
-2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、型は `number[][]` 数値の行列を示し、 `string[][]` 文字列の行列を示します。
+2 次元配列型を使用して、パラメーターまたは戻り値を値のマトリックスにします。 たとえば、型は数値 `number[][]` の行列を示し、 `string[][]` 文字列の行列を示します。
 
 ### <a name="error-type"></a>エラーの種類
 

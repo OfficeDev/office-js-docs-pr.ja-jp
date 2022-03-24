@@ -3,11 +3,16 @@ title: 共有フォルダーと共有メールボックスのシナリオを、O
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745853"
 ---
-
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
-この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼[ばれる) と](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)共有メールボックス (プレビュー中) のシナリオを有効にする方法について説明します。これには、Office JavaScript API がサポートするアクセス許可が含まれます。
+この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼[ばれる) と](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)共有メールボックス (プレビュー中) のシナリオを有効にする方法について説明します。これには、Office JavaScript API でサポートされているアクセス許可が含まれます。
 
 ## <a name="supported-clients-and-platforms"></a>サポートされているクライアントとプラットフォーム
 
@@ -37,7 +42,7 @@ ms.localizationpriority: medium
 
 Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では、[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-"自動Exchange Server" と呼ばれる機能が既定でオンになっています。つまり、Outlook が閉じて再び[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「Open」の「Outlook に共有メールボックスを追加して、Outlook で共有メールボックスを使用する」に示されている手動の手順に従[う必要があります](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+"自動Exchange Server" と呼ばれる Exchange Server 機能が既定でオンになっています。つまり、Outlook を閉じて再度[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)開いた後、共有メールボックスはユーザーの Outlook アプリに自動的に表示されます。 ただし、管理者が自動マップをオフにした場合、ユーザーは記事「開く」の「Outlook に共有メールボックスを追加し、Outlook で共有メールボックスを使用する」に示されている手動の手順[に従う必要があります](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 
 > [!WARNING]
 > パスワード **を** 使用して共有メールボックスにサインインしない。 この場合、機能 API は機能しません。
@@ -46,13 +51,13 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 #### <a name="shared-folders"></a>共有フォルダー
 
-メールボックスの所有者は、まずメールボックス フォルダー [のアクセス許可を](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 更新して代理人へのアクセスを提供する必要があります。 代理人は、記事「他のユーザーのメールボックスにアクセスする」の「Outlook Web App のフォルダー リストに他のユーザーのメールボックスを追加する」に記載されている手順に従う[必要があります](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
+メールボックスの所有者は、まずメールボックス フォルダー [のアクセス許可を](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 更新して代理人へのアクセスを提供する必要があります。 代理人は、記事「他のユーザーのメールボックスにアクセスする」の「Outlook Web App のフォルダー リストに別のユーザーのメールボックスを追加する」に記載されている手順に従う[必要があります](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
 Exchange管理者は、アクセスするユーザーのセットの共有メールボックスを作成および管理できます。 現時点では、[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)この機能でサポートされている唯一のサーバー バージョンです。
 
-アクセスを受け取った後、共有メールボックス ユーザーは、記事「Open and use a shared mailbox in Outlook on the web」の「プライマリ メールボックスの下に表示される共有メールボックスを追加する」に示されている手順[に従う必要があります](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
+アクセスを受信した後、共有メールボックス ユーザーは、「Open and use a shared mailbox in Outlook on the web」の「プライマリ メールボックスの下に表示される共有メールボックスを追加する」セクションに示されている手順に[従う必要があります](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
 
 > [!WARNING]
 > " **別の** メールボックスを開く" などの他のオプションを使用しない。 機能 API が正しく動作しない場合があります。
@@ -79,7 +84,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 ---
 
-アドインが一般にアクティブ化する場所とアクティブ化しない場所の詳細については、「Outlook アドイン[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)の概要」ページの「アドインで使用可能なメールボックス アイテム」セクションを参照してください。
+アドインが一般的にアクティブ化する場所とアクティブ化しない場所の詳細については、「Outlook アドイン[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)の概要」ページの「アドインで使用可能なメールボックス アイテム」セクションを参照してください。
 
 ## <a name="supported-permissions"></a>サポートされているアクセス許可
 
@@ -225,7 +230,7 @@ if (item.getSharedPropertiesAsync) {
 
 メッセージ作成モードでは、次の条件を満たしていない限り、Outlook on the web または Windows で [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) はサポートされません。
 
-a. **アクセス/共有フォルダーの委任**
+a.  **アクセス/共有フォルダーの委任**
 
 1. メールボックスの所有者がメッセージを開始します。 これは、新しいメッセージ、返信、または転送を指定できます。
 1. メッセージを保存し、そのメッセージを自分の **下** 書きフォルダーから代理人と共有するフォルダーに移動します。

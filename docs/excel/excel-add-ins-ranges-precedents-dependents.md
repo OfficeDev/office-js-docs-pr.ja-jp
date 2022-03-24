@@ -1,33 +1,33 @@
 ---
-title: Excel JavaScript API を使用して数式の前例と依存ファイルを処理する
-description: Excel JavaScript API を使用して数式の前例と従属を取得する方法について説明します。
+title: JavaScript API を使用して数式の前例と依存Excel処理する
+description: JavaScript API の Excelを使用して、数式の前例と依存を取得する方法について説明します。
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e401ea6dfe285a56fe0da3d250222a6e016b24c
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 9d686b416b271dce81ee072a98f8cb9e1dac65b2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340702"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744089"
 ---
-# <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して数式の前例と従属を取得する
+# <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>JavaScript API を使用して数式の前例と依存Excel取得する
 
-Excel の数式は、多くの場合、他のセルを参照します。 これらのクロスセル参照は、"前例" および "依存" と呼ばれる。 前例は、数式にデータを提供するセルです。 従属とは、他のセルを参照する数式を含むセルです。 セル間のリレーションシップに関連する Excel 機能の詳細については、「数式とセル間のリレーションシップを表示する [」を参照してください](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507)。
+Excelは、多くの場合、他のセルを参照します。 これらのクロスセル参照は、"前例" および "依存" と呼ばれる。 前例は、数式にデータを提供するセルです。 従属とは、他のセルを参照する数式を含むセルです。 セル間のリレーションシップにExcelする機能の詳細については、「数式とセル間のリレーションシップを表示する[」を参照してください](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507)。
 
 前例のセルには、独自の前例セルがあります。 前例のこのチェーン内のすべての先行セルは、元のセルの前例です。 被扶養者に対して同じ関係が存在します。 別のセルの影響を受けるセルは、そのセルに依存します。 "直接の前例" は、親子関係の親の概念と同様に、このシーケンス内のセルの最初の前のグループです。 "直接依存" は、親子関係の子と同様に、シーケンス内のセルの最初の依存グループです。
 
-この記事では、Excel JavaScript API を使用して数式の前例と依存を取得するコード サンプルを提供します。 `Range` オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Range オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.range)」を参照してください。
+この記事では、JavaScript API を使用して数式の前例と依存を取得するコード Excel示します。 オブジェクトがサポートするプロパティとメソッドの`Range`完全な一覧については、「[Range Object (JavaScript API for Excel)」を参照してください](/javascript/api/excel/excel.range)。
 
 ## <a name="get-the-precedents-of-a-formula"></a>数式の前例を取得する
 
-[Range.getPrecedents](/javascript/api/excel/excel.range#excel-excel-range-getprecedents-member(1)) を使用して数式の先行セルを検索します。 `Range.getPrecedents` オブジェクトを返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての前例のアドレスが含まれます。 このオブジェクトには、少 `RangeAreas` なくとも 1 つの数式の前例を含むワークシートごとに個別のオブジェクトがあります。 オブジェクトの詳細については、「 `RangeAreas` Excel アドインで複数の範囲を同時に処理する [」を参照してください](excel-add-ins-multiple-ranges.md)。
+[Range.getPrecedents](/javascript/api/excel/excel.range#excel-excel-range-getprecedents-member(1)) を使用して数式の先行セルを検索します。 `Range.getPrecedents` オブジェクトを返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての前例のアドレスが含まれます。 このオブジェクトには、少 `RangeAreas` なくとも 1 つの数式の前例を含むワークシートごとに個別のオブジェクトがあります。 オブジェクトの詳細については、「`RangeAreas`複数の範囲を同時に処理する」を参照Excel[アドインを参照してください](excel-add-ins-multiple-ranges.md)。
 
 数式の直接の先行セルのみを検索するには、 [Range.getDirectPrecedents を使用します](/javascript/api/excel/excel.range#excel-excel-range-getdirectprecedents-member(1))。 `Range.getDirectPrecedents` 同様に動作 `Range.getPrecedents` し、直接の `WorkbookRangeAreas` 前例のアドレスを含むオブジェクトを返します。
 
-次のスクリーンショットは、Excel UI で [ **前** 例のトレース] ボタンを選択した結果を示しています。 このボタンは、前のセルから選択したセルに矢印を描画します。 選択したセル **E3** には数式 "=C3 * **D3**" が含まれているので、**C3 と D3** の両方が先行セルです。 Excel UI ボタンとは異なり、メソッド`getPrecedents``getDirectPrecedents`と矢印は描画されません。
+次のスクリーンショットは、UI の [前例のトレース] ボタンを選択した結果Excel示しています。 このボタンは、前のセルから選択したセルに矢印を描画します。 選択したセル **E3** には数式 "=C3 * **D3**" が含まれているので、**C3 と D3** の両方が先行セルです。 UI ボタンExcel、メソッド`getPrecedents``getDirectPrecedents`は矢印を描画しない。
 
-![Excel UI の矢印トレースの先行セル。](../images/excel-ranges-trace-precedents.png)
+![UI の矢印トレースの先行セルExcelします。](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > and `getPrecedents` メソッド `getDirectPrecedents` は、ブック全体で先行セルを取得しない。
@@ -72,11 +72,11 @@ await Excel.run(async (context) => {
 
 ## <a name="get-the-direct-dependents-of-a-formula"></a>数式の直接依存を取得する
 
-[Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)) を使用して数式の直接依存セルを検索します。 同様 `Range.getDirectPrecedents`に、 `Range.getDirectDependents` オブジェクトも返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての直接依存のアドレスが含まれます。 このオブジェクトには、少 `RangeAreas` なくとも 1 つの数式に依存するワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「 `RangeAreas` Excel アドインで複数の範囲を同時に操作する [」を参照してください](excel-add-ins-multiple-ranges.md)。
+[Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)) を使用して数式の直接依存セルを検索します。 同様 `Range.getDirectPrecedents`に、 `Range.getDirectDependents` オブジェクトも返 `WorkbookRangeAreas` します。 このオブジェクトには、ブック内のすべての直接依存のアドレスが含まれます。 このオブジェクトには、少 `RangeAreas` なくとも 1 つの数式に依存するワークシートごとに個別のオブジェクトがあります。 オブジェクトの操作の詳細については、「`RangeAreas`複数の範囲を同時に操作する」を参照Excel[してください](excel-add-ins-multiple-ranges.md)。
 
-次のスクリーンショットは、Excel UI で [ **トレース** 依存] ボタンを選択した結果を示しています。 このボタンは、依存セルから選択したセルに矢印を描画します。 選択したセル **D3** には、セル **E3** が従属セルとして含されます。 **E3 には** 、"=C3 * D3" という数式が含まれる。 Excel UI ボタンとは異なり、メソッド `getDirectDependents` は矢印を描画しない。
+次のスクリーンショットは、UI の [トレース依存] ボタンを選択した結果Excel示しています。 このボタンは、依存セルから選択したセルに矢印を描画します。 選択したセル **D3** には、セル **E3** が従属セルとして含されます。 **E3 には** 、"=C3 * D3" という数式が含まれる。 UI ボタンExcel異なり、メソッド`getDirectDependents`は矢印を描画しない。
 
-![Excel UI の矢印トレース依存セル。](../images/excel-ranges-trace-dependents.png)
+![UI 内の依存セルをExcelします。](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > この `getDirectDependents` メソッドは、ブック全体の依存セルを取得しない。
@@ -107,5 +107,5 @@ await Excel.run(async (context) => {
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Excel JavaScript オブジェクト モデル](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API を使用してセルを使用する](excel-add-ins-cells.md)
+- [JavaScript API を使用してセルExcelする](excel-add-ins-cells.md)
 - [Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)

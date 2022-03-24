@@ -1,22 +1,22 @@
 ---
-title: アドインのモノOfficeアイコンのガイドライン
-description: アドインで Monoline スタイル アイコンを使用Officeガイドライン。
+title: アドインのモノOfficeアイコンガイドライン
+description: アドインでモノOfficeアイコンを使用する場合のガイドライン。
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43048b2e32810fb1f702e58ffb8eb5d9d85bbd4b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150198"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743044"
 ---
-# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンのガイドライン
+# <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンガイドライン
 
-モノライン スタイルのアイコンは、アプリでOfficeされます。 2013+ のサブスクリプション以外の新しいスタイルとアイコンが一致することを希望する場合は、「Office アドインのフレッシュ スタイル[アイコンガイドライン](add-in-icons-fresh.md)」を参照Officeしてください。
+モノライン スタイルのアイコンは、アプリでOfficeされます。 Office 2013 年 2013 以上のサブスクリプション以外のフレッシュ スタイルとアイコンが一致することを希望する場合は、「Office アドインの新しいスタイル [アイコン ガイドライン](add-in-icons-fresh.md)」を参照してください。
 
 ## <a name="office-monoline-visual-style"></a>Officeモノラインの表示スタイル
 
-モノライン スタイルの目的は、アクションと機能を簡単なビジュアルで通信し、アイコンがすべてのユーザーにアクセス可能で、Windows の他の場所で使用されているスタイルと一致するスタイルを持つ、一貫性のある、明確でアクセスしやすい図ノグラフィを持つという目的です。
+モノライン スタイルの目的は、アクションと機能を簡単なビジュアルで伝え、アイコンがすべてのユーザーにアクセス可能で、Windows の他の場所で使用されているスタイルと一致するスタイルを持つ、一貫性があり、明確で、アクセスしやすい図図を作成します。
 
 次のガイドラインは、既に製品に表示されているアイコンと一致する機能のアイコンを作成するサードパーティの開発者Officeです。
 
@@ -24,7 +24,7 @@ ms.locfileid: "59150198"
 
 - シンプル、クリーン、クリア。
 - 必要な要素のみを含む。
-- アイコンのスタイルWindowsにインスパイアされています。
+- アイコン のスタイルWindowsにインスパイアされています。
 - すべてのユーザーがアクセスできます。
 
 #### <a name="convey-meaning"></a>意味を伝える
@@ -61,7 +61,7 @@ ms.locfileid: "59150198"
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 > [!IMPORTANT]
-> アドインの代表的なアイコンである画像については、「サイズなどの要件については[、「AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)および Office 内で効果的なリストを作成する」を参照してください。
+> アドインの代表的なアイコンである画像については、「サイズや他の要件については、[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) および Office 内で効果的なリストを作成する」を参照してください。
 
 ### <a name="layout"></a>レイアウト
 
@@ -181,7 +181,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ![色を使用する 5 つのアイコンのコンパイル。](../images/monolineicon29.png)
 
-上記のアウトラインと塗りつぶし以外 **の 1** つの追加の色にアイコンを制限する必要があります。 ただし、比喩に不可欠な場合は、灰色以外の 2 つの追加の色を制限して、より多くの色を使用できます。 まれに、より多くの色が必要な場合は例外があります。 1 つの色を使用するアイコンの良い例を次に示します。
+上記のアウトラインと塗りつぶし以外 **の** 1 つの追加の色にアイコンを制限する必要があります。 ただし、比喩に不可欠な場合は、灰色以外の 2 つの追加の色を制限して、より多くの色を使用できます。 まれに、より多くの色が必要な場合は例外があります。 1 つの色を使用するアイコンの良い例を次に示します。
 
   ![それぞれ 1 色を使用する 5 つのアイコンのコンパイル。](../images/monolineicon30.png)
 
@@ -205,7 +205,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ### <a name="icon-file-format"></a>アイコン ファイル形式
 
-最後のアイコンは、イメージ ファイルとして.pngする必要があります。 背景が透明で、奥行きが 32 ビットの PNG 形式を使用します。
+最終的なアイコンは、イメージ ファイルとして.pngする必要があります。 背景が透明で、奥行きが 32 ビットの PNG 形式を使用します。
 
 ## <a name="see-also"></a>関連項目
 

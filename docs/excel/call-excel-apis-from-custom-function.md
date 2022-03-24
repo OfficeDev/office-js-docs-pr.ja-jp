@@ -3,8 +3,13 @@ title: カスタムExcel JavaScript API を呼び出す
 description: カスタム関数Excel呼び出す JavaScript API について説明します。
 ms.date: 08/30/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744398"
 ---
-
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタムExcel JavaScript API を呼び出す
 
 カスタムExcel JavaScript API を呼び出して、範囲データを取得し、計算のコンテキストを取得します。 カスタム関数Excel JavaScript API の呼び出しは、次の場合に役立ちます。

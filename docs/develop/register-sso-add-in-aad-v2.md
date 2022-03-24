@@ -1,16 +1,16 @@
 ---
-title: SSO をOfficeするアドインをそのアドインに登録Microsoft ID プラットフォーム
-description: Excel Word、Office、PowerPoint、および Outlook で SSO を使用する Microsoft ID プラットフォーム アドインを登録する方法についてOutlook。
+title: SSO をOfficeするアドインをアプリに登録Microsoft ID プラットフォーム
+description: Word、Office、PowerPoint Microsoft ID プラットフォーム、および Outlook で SSO を使用する Excel アドインを Outlook。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b11ce5130e020b049038631b9ae1c0e62fdadeab
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: e408a57534437f0d0fe0c5fb3b4ab844f7dde9ac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320248"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743382"
 ---
-# <a name="register-an-office-add-in-that-uses-single-sign-on-sso-with-the-microsoft-identity-platform"></a>シングル サインオンOffice (SSO) を使用するアドインをユーザーに登録Microsoft ID プラットフォーム
+# <a name="register-an-office-add-in-that-uses-single-sign-on-sso-with-the-microsoft-identity-platform"></a>シングル サインオンOffice (SSO) を使用するアドインを、そのアドインに登録Microsoft ID プラットフォーム
 
 この記事では、SSO を使用Officeアドインを Microsoft ID プラットフォームする方法について説明します。 開発を開始する際にアドインを登録し、テストまたは実稼働に進むときに、既存の登録を変更したり、アドインの開発、テスト、および実稼働バージョンの個別の登録を作成したりすることができます。
 

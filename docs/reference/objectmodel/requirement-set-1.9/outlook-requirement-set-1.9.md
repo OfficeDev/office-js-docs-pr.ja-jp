@@ -3,11 +3,16 @@ title: Outlook API 要件セット 1.9
 description: アドイン API の要件セット 1.9 Outlook 1.9。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c98db3909400a01ffa12d75acf4ee3c4a7752bf1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745331"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-19"></a>Outlook API 要件セット 1.9
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
@@ -29,7 +34,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-displaynewappointmentformasync-member(1)): `Mailbox` 新しい予定フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョン `displayNewAppointmentForm` です。
 - [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-displaynewmessageformasync-member(1)): `Mailbox` 新しいメッセージ フォームを表示するオブジェクトに新しい関数を追加しました。 これは、メソッドの非同期バージョン `displayNewMessageForm` です。
 - [Office.context.mailbox.item.body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)): `Body` 新規作成モードでアイテム本文の末尾にデータを追加する新しい関数をオブジェクトに追加しました。
-- [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods) の追加: `Item` 読み取りモードで "Reply all" フォームを表示する新しい関数をオブジェクトに追加します。 これは、メソッドの非同期バージョン `displayReplyAllForm` です。
+- [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods) を追加しました: `Item` 読み取りモードで "Reply all" フォームを表示する新しい関数をオブジェクトに追加します。 これは、メソッドの非同期バージョン `displayReplyAllForm` です。
 - [Office.context.mailbox.item.displayReplyFormAsync](office.context.mailbox.item.md#methods) の追加: `Item` 読み取りモードで "Reply" フォームを表示するオブジェクトに新しい関数を追加します。 これは、メソッドの非同期バージョン `displayReplyForm` です。
 
 ## <a name="see-also"></a>関連項目

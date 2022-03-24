@@ -1,14 +1,14 @@
 ---
 title: Office アドインのダイアログ ボックス
-description: アドインのダイアログの視覚的な設計に関するベスト プラクティスOffice説明します。
+description: アドインのダイアログを視覚的に設計するためのベスト プラクティスOffice説明します。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3dff8249e7d198712c0058f9876aa4806c7e08
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 623a94b5cd0fdd398de2e61cb779f5d256c46d76
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150132"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743255"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office アドインのダイアログ ボックス
 
@@ -16,7 +16,7 @@ ms.locfileid: "59150132"
 
 *図 1. ダイアログ ボックスの一般的なレイアウト*
 
-![アプリケーションに表示されるダイアログ ボックスの一般的なOfficeです。](../images/overview-with-app-dialog.png)
+![アプリケーションに表示されるダイアログ ボックスの一般的Officeレイアウト。](../images/overview-with-app-dialog.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 

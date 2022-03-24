@@ -3,16 +3,16 @@ title: Excel JavaScript API を使用して表を操作する
 description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelコード サンプル。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b4ea42468c9cc64682ab02423f7df4813333edc7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340268"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745233"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 `Table` および `TableCollection` オブジェクトをサポートするプロパティとメソッドの完全なリストについては、「[Table オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.table)」および「[TableCollection オブジェクト (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection)」を参照してください。
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table)」および「[TableCollection オブジェクト (JavaScript API for](/javascript/api/excel/excel.tablecollection) Excel)」を参照してください。`Table` `TableCollection`
 
 ## <a name="create-a-table"></a>表を作成する
 
@@ -59,7 +59,7 @@ await Excel.run(async (context) => {
 次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが [](../reference/requirement-sets/excel-api-requirement-sets.md)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
 
 > [!NOTE]
-> `index` オブジェクトの [index](/javascript/api/excel/excel.tablerow) プロパティは、表の行コレクション内の行のインデックス番号を示しています。 `TableRow` オブジェクトには、行を一意に識別できる `id` プロパティは含まれていません。
+> `index` [TableRow オブジェクトのプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト `TableRow` には、行を識別 `id` するための一意のキーとして使用できるプロパティが含まれている必要があります。
 
 ```js
 await Excel.run(async (context) => {
@@ -362,7 +362,7 @@ await Excel.run(async (context) => {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
-次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すとおり、`getVisibleView()` メソッドを使用して、列フィルターが適用されているときに表に表示されるコンテンツを取得します。
+次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すメソッド `getVisibleView()` を使用すると、列フィルターが適用されるたびにテーブルの表示内容を取得できます。
 
 ```js
 await Excel.run(async (context) => {

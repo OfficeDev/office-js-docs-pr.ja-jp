@@ -3,12 +3,12 @@ title: Office アドインの認証設計ガイドライン
 ms.date: 02/09/2021
 description: アドインでサインオンまたはサインアップ ページを視覚的に設計するOffice説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 3edfbcf805718444fc58823eb5bd726c033636ed
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9df30377c9f10b424c02fe39fbfeeda0980d4ab4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150186"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742970"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -33,15 +33,15 @@ ms.locfileid: "59150186"
 
 1. ID プロバイダーの選択肢ダイアログ - ID プロバイダーのわかりやすい一覧を表示します。該当する場合、ユーザー名やパスワードのフォームも含めます。 認証ダイアログが開いているとき、アドイン UI はブロックされることがあります。
 
-    ![アプリケーション内の [ID プロバイダーの選択肢] ダイアログをOfficeします。](../images/add-in-auth-choices-dialog.png)
+    ![アプリケーション内の [ID プロバイダーの選択肢] ダイアログをOfficeスクリーンショット。](../images/add-in-auth-choices-dialog.png)
 
-1. ID プロバイダーのサインイン - ID プロバイダーによって独自の UI が提供されます。 Microsoft Azure Active Directoryを使用すると、サインイン ページとアクセス パネル ページをカスタマイズして、サービスとの一貫性のある外観を提供できます。 [詳細を参照してください](/azure/active-directory/fundamentals/customize-branding)。
+1. ID プロバイダーのサインイン - ID プロバイダーによって独自の UI が提供されます。 Microsoft Azure Active Directoryを使用すると、サインイン ページとアクセス パネル ページをカスタマイズして、サービスと一貫性のある外観を保ちます。 [詳細については、「詳細」を参照してください](/azure/active-directory/fundamentals/customize-branding)。
 
     ![アプリ内の ID プロバイダー サインイン ダイアログを示すOfficeします。](../images/add-in-auth-identity-sign-in.png)
 
 1. 進捗状況 - 設定や UI の読み込みの進行状況を示します。
 
-    ![アプリケーション内の進行状況インジケーターを含むダイアログをOfficeスクリーンショット。](../images/add-in-auth-modal-interstitial.png)
+    ![アプリケーション内の進行状況インジケーターを含むダイアログを示Officeスクリーンショット。](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE]
 > Microsoft の ID サービスを使用すると、商標付きのサインイン ボタンを使用できます。このボタンは淡色テーマまたは濃色テーマにカスタマイズできます。 詳細情報。
@@ -49,9 +49,9 @@ ms.locfileid: "59150186"
 ## <a name="single-sign-on-authentication-flow"></a>単一Sign-On認証フロー
 
 > [!NOTE]
-> シングル サインオン API は現在、Word、Excel、Outlook、およびPowerPoint。 シングル サインオンのサポートの詳細については [、「IdentityAPI 要件セット」を参照してください](../reference/requirement-sets/identity-api-requirement-sets.md)。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> シングル サインオン API は現在、Word、Excel、Outlook、およびPowerPoint。 シングル サインオンのサポートの詳細については、「 [IdentityAPI 要件セット」を参照してください](../reference/requirement-sets/identity-api-requirement-sets.md)。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
-シングル サインオンを使用して、よりスムーズなエンド ユーザー エクスペリエンスを実現します。 アドインへのサインインには、Office内のユーザーの id (Microsoft アカウントまたは Microsoft 365 ID) が使用されます。 その結果、ユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
+シングル サインオンを使用して、よりスムーズなエンド ユーザー エクスペリエンスを実現します。 アドインへのサインインには、Office内のユーザーの ID (Microsoft アカウントまたは Microsoft 365 ID) が使用されます。 その結果、ユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 
 1. アドインがインストールされている間、ユーザーには次のような同意ウィンドウが表示されます。
 

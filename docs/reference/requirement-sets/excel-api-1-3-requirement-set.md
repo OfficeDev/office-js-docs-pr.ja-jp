@@ -4,8 +4,13 @@ description: ExcelApi 1.3 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1bf8bc604c2c770f517878193994c1ed32640da1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745340"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 の新機能
 
 ExcelApi 1.3 では、データ バインドと基本的なピボットテーブル アクセスのサポートが追加されました。

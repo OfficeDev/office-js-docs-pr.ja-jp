@@ -3,12 +3,12 @@ title: Office アドインのブランド パターン設計ガイドライン
 description: ビジュアル デザインと互換性をOfficeしながら、アドインをブランド化する方法Office。
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9a7bb186d5f65c5a372427b9a02bb002855541
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 529daa6b6e78f1cff1ea7ea3c61efb40f8e4eb60
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150180"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742942"
 ---
 # <a name="branding-patterns"></a>ブランド パターン
 
@@ -30,7 +30,7 @@ ms.locfileid: "59150180"
 
 ブランド バーは、ブランド名とロゴを含むフッター内のスペースです。 また、あなたのブランドの Web サイトや、オプションのアクセス ロケーションへのリンクとして機能します。
 
-![デスクトップ アプリケーションのアドイン作業ウィンドウに表示されるブランド バー Office表示されます。](../images/add-in-brand-bar.png)
+![デスクトップ アプリケーションのアドイン作業ウィンドウに表示されるOfficeバー。](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>スプラッシュ スクリーン
 

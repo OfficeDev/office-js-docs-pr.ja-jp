@@ -4,12 +4,12 @@ description: 共通 API 要件セットOffice詳細を確認します。
 ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 743473566e632022946bdc2b7e372b5bb6fede49
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153471"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744114"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 共通 API の要件セット
 
@@ -29,10 +29,10 @@ ms.locfileid: "61153471"
 
 ## <a name="common-api-requirement-sets"></a>共通 API の要件セット
 
-以下のセクションでは、共通 API 要件セット、各セット内のメソッド、および要件セットをサポートするクライアント アプリケーションOffice一覧を示します。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
+以下のセクションでは、共通 API 要件セット、各セット内のメソッド、およびその要件セットをサポートOfficeクライアント アプリケーションの一覧を示します。 特に指定がない限り、これらの API 要件セットのバージョンはすべて 1.1 です。
 
 > [!TIP]
-> アドインと要件セットがアプリケーションとバージョンでサポートされている場所Office必要ですか? [「Officeアドインのクライアント アプリケーションとプラットフォームの可用性Officeを参照してください](../../overview/office-add-in-availability.md)。
+> アドインと要件セットがアプリケーションとバージョンでサポートされている場所Office必要ですか? 「[Officeのクライアント アプリケーションとプラットフォームの可用性Office参照してください](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -84,7 +84,7 @@ ms.locfileid: "61153471"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| 「Dialog [Origin requirement sets」を参照してください](dialog-origin-requirement-sets.md)。 | 以下のクロスドメインサポート<br>UI.messageParent<br>UI。Dialog.messageChild |
+| 「 [Dialog Origin requirement sets」を参照してください](dialog-origin-requirement-sets.md)。 | 以下のクロスドメインサポート<br>UI.messageParent<br>UI。Dialog.messageChild |
 
 ---
 
@@ -196,7 +196,7 @@ ms.locfileid: "61153471"
 
 |**Office アプリケーション**|**セット内のメソッド**|
 |:-----|:-----|
-| リボン [API 要件セットを参照してください](ribbon-api-requirement-sets.md)。 | Office.ribbon.requestUpdate |
+| 「 [リボン API 要件セット」を参照してください](ribbon-api-requirement-sets.md)。 | Office.ribbon.requestUpdate |
 
 ---
 
@@ -266,7 +266,7 @@ ms.locfileid: "61153471"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>要件セットの一部ではないメソッド
 
-JavaScript API の次Officeメソッドは、要件セットの一部ではない。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「アプリケーションと[API の要件Office指定する」を参照してください](../../develop/specify-office-hosts-and-api-requirements.md)。
+JavaScript API の次Officeメソッドは、要件セットの一部ではない。 アドインでこれらのメソッドが必要な場合は、アドインのマニフェストで **Methods** 要素と **Method** 要素を使用してメソッドが必要であると宣言するか、または `if` ステートメントを使用してランタイム チェックを実行します。 詳細については、「アプリケーションと [API の要件Office指定する」を参照してください](../../develop/specify-office-hosts-and-api-requirements.md)。
 
 |**メソッド名**|**Officeサポート**|
 |:-----|:-----|

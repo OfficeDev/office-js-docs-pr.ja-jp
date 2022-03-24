@@ -3,18 +3,18 @@ title: ドキュメントが開いたら、Office アドインでコードを実
 description: ドキュメントが開いたら、Officeアドインでコードを実行する方法について学習します。
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 20cd7a90f34c0141ca166119ceae92960a904595
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855549"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744079"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>ドキュメントが開いたら、Office アドインでコードを実行する
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-ドキュメントが開Officeすぐにコードを読み込み、実行するアドインを構成できます。 これは、アドインが表示される前に、イベント ハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、その他のタスクの実行が必要な場合に便利です。
+ドキュメントが開Officeコードを読み込み、実行するアドインを構成できます。 これは、アドインが表示される前に、イベント ハンドラーの登録、作業ウィンドウのデータの事前読み込み、UI の同期、その他のタスクの実行が必要な場合に便利です。
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -33,7 +33,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ドキュメントが開いているときに読み込むアドインが構成されている場合、すぐに実行されます。 イベント `Office.initialize` ハンドラーが呼び出されます。 スタートアップ コードをイベント ハンドラーに`Office.initialize``Office.onReady`配置します。
 
-次のExcelコードは、アクティブなワークシートから変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成すると、ドキュメントを開く際にイベント ハンドラーが登録されます。 作業ウィンドウを開く前に変更イベントを処理できます。
+次のExcelアドイン コードは、アクティブなワークシートから変更イベントのイベント ハンドラーを登録する方法を示しています。 ドキュメントを開く際に読み込むアドインを構成すると、ドキュメントを開く際にイベント ハンドラーが登録されます。 作業ウィンドウを開く前に変更イベントを処理できます。
 
 ```JavaScript
 // This is called as soon as the document opens.

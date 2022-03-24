@@ -1,14 +1,14 @@
 ---
 title: Office のキャッシュをクリアする
 description: コンピューターで Office のキャッシュをクリアする方法について説明します。
-ms.date: 01/27/2022
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2c2b22ececbf293578c9467269c4ad6779eb9aea
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 04a329e9e7289f90b02b9307c67eef2818191221
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263094"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711232"
 ---
 # <a name="clear-the-office-cache"></a>Office のキャッシュをクリアする
 
@@ -21,11 +21,11 @@ ms.locfileid: "62263094"
 
 ## <a name="clear-the-office-cache-on-windows"></a>Windows で Office のキャッシュをクリアする
 
-Windows コンピューターの Office キャッシュをクリアするには、自動、手動、およびMicrosoft Edge開発者ツールの使用という 3 つの方法があります。 メソッドについては、次のサブセクションで説明します。
+Windows コンピューターの Office キャッシュをクリアするには、自動、手動、および Microsoft Edge 開発者ツールの使用という 3 つの方法があります。メソッドについては、次のサブセクションで説明します。
 
 ### <a name="automatically"></a>自動的に
 
-この方法は、アドイン開発用コンピューターに推奨されます。 Office on Windows バージョンが 2108 以降の場合、次の手順では、次に Office を再度開いたときに Office キャッシュをクリアするように構成します。
+この方法は、アドイン開発用コンピューターに推奨されます。Office on Windows バージョンが 2108 以降の場合、以下の手順では、次に Office を再度開いたときに Office キャッシュがクリアされるように構成します。
 
 > [!NOTE]
 > 自動的な方法は Outlook ではサポートされていません。

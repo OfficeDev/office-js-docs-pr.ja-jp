@@ -5,12 +5,12 @@ title: 開発ライフサイクルの概要
 description: ライフサイクル イベントの計画、開発、テスト、公開についての詳細情報。
 ms.date: 05/25/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 26450019026a81ab134ba623521e6dc2a34e77d9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b42dd4c2b56a1a52c8de4333b169704cd7af4151
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151374"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745932"
 ---
 # <a name="development-lifecycle-overview"></a>開発ライフサイクルの概要
 

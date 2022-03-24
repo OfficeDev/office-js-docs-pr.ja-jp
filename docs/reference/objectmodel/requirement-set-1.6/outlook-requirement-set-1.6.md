@@ -3,11 +3,16 @@ title: Outlook アドイン API 要件セット 1.6
 description: メールボックス API 1.6 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c9bb9194b300f95f105e24f5e318e348055040ea
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746109"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook アドイン API 要件セット 1.6
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。

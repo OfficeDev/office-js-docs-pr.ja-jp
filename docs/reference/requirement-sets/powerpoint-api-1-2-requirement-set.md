@@ -4,8 +4,13 @@ description: PowerPointApi 1.2 要件セットの詳細。
 ms.date: 01/27/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 0e8ae36a7a137db1645051628aa90a451caf4d56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744226"
 ---
-
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>JavaScript API 1.2 PowerPoint新機能
 
 PowerPointApi 1.2 では、別のプレゼンテーションから現在のプレゼンテーションにスライドを挿入し、スライドを削除するためのサポートが追加されました。
@@ -18,7 +23,7 @@ PowerPointApi 1.2 では、別のプレゼンテーションから現在のプ�
 
 ## <a name="api-list"></a>API リスト
 
-次の表に、JavaScript API PowerPointセット 1.2 の一覧を示します。 すべての JavaScript API (プレビュー API PowerPoint以前にリリースされた API を含む) の完全な一覧については、JavaScript API のすべてのPowerPoint[参照してください](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
+次の表に、JavaScript API PowerPointセット 1.2 の一覧を示します。 すべての JavaScript API (プレビュー API PowerPoint以前にリリースされた API を含む) の完全な一覧については、[JavaScript API PowerPoint参照してください](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
 
 | クラス | フィールド | 説明 |
 |:---|:---|:---|

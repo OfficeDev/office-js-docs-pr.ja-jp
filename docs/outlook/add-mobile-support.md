@@ -3,8 +3,13 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 07/16/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: ae8fbc6635e568cc6a9e8888ed52f0877f817320
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745968"
 ---
-
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
 Outlook Mobile でアドイン コマンドを使用すると、ユーザーは Outlook on the web、Windows、および Mac で既に持っているのと同じ機能 (いくつかの制限[があります) に](#code-considerations)アクセスできます。 Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
@@ -79,11 +84,11 @@ Outlook Mobile では、作業ウィンドウが画面全体を占めるので�
 
 ### <a name="compose-mode-and-appointments"></a>作成モードと予定
 
-現在、Outlook Mobile のアドインは、メッセージの読み取り時にのみアクティブ化をサポートしています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、オンライン会議プロバイダー統合アドインは、予定オーガナイザー モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「オンライン会議プロバイダー Outlookモバイル アドインを作成する[」を参照してください](online-meeting.md#available-apis)。
+現在、モバイル のアドインは、Outlook読み取り時にのみアクティブ化をサポートしています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、オンライン会議プロバイダー統合アドインは、予定オーガナイザー モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「オンライン会議プロバイダー Outlookモバイル アドインを作成する[」を参照してください](online-meeting.md#available-apis)。
 
 ### <a name="unsupported-apis"></a>サポートされていない API
 
-要件セット 1.6 以降で導入された API は、モバイル ではOutlookされません。 以前の要件セットの次の API もサポートされていません。
+要件セット 1.6 以降で導入された API は、モバイル デバイスOutlookされません。 以前の要件セットの次の API もサポートされていません。
 
 - [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)

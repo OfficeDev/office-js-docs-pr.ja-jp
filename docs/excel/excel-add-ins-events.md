@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してイベントを操作する
 description: JavaScript オブジェクトのイベントExcel一覧です。 これには、イベント ハンドラーと関連付けられたパターンの使用に関する情報が含まれます。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bc1dcad8bccb51dbcedfee741954fabf6967670
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: c15beba846fc5348143b63dfb07321b6dad01ea2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340583"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745013"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してイベントを操作する
 

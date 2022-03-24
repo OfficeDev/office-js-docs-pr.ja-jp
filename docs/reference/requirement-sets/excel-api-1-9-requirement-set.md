@@ -4,8 +4,13 @@ description: ExcelApi 1.9 要件セットの詳細。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f34b109f95f013cf27f0abfca9c2a8c6b1e4e7c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746695"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-19"></a>JavaScript API 1.9 Excel新機能
 
 1.9 の要件セットにより、500 件を超える新しい Excel API が 導入されました。 最初の表には API が簡潔にまとめられています。その後の表は詳しい一覧になっています。
@@ -119,9 +124,9 @@ ms.localizationpriority: medium
 |[ChartMapOptions](/javascript/api/excel/excel.chartmapoptions)|[labelStrategy](/javascript/api/excel/excel.chartmapoptions#excel-excel-chartmapoptions-labelstrategy-member)|地域マップ グラフの系列マップ ラベル戦略を指定します。|
 ||[level](/javascript/api/excel/excel.chartmapoptions#excel-excel-chartmapoptions-level-member)|地域マップ グラフの系列マッピング レベルを指定します。|
 ||[projectionType](/javascript/api/excel/excel.chartmapoptions#excel-excel-chartmapoptions-projectiontype-member)|地域マップ グラフの系列投影の種類を指定します。|
-|[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showaxisfieldbuttons-member)|軸フィールド ボタンをウィンドウに表示するかどうかを指定ピボットグラフ。|
+|[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showaxisfieldbuttons-member)|軸フィールド ボタンを軸フィールド ボタンで表示するかどうかを指定ピボットグラフ。|
 ||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showlegendfieldbuttons-member)|凡例フィールド ボタンを凡例フィールド ボタンで表示するかどうかを指定ピボットグラフ。|
-||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showreportfilterfieldbuttons-member)|レポート にレポート フィルター フィールド ボタンを表示するかどうかを指定ピボットグラフ。|
+||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showreportfilterfieldbuttons-member)|レポート フィルター フィールド ボタンをレポート ウィンドウに表示するかどうかを指定ピボットグラフ。|
 ||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#excel-excel-chartpivotoptions-showvaluefieldbuttons-member)|フィールドの [値の表示] ボタンを表示するかどうかを指定ピボットグラフ。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[binOptions](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-binoptions-member)|ヒストグラム図とパレート図のビンのオプションをカプセル化します。|
 ||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-boxwhiskeroptions-member)|箱ひげ図グラフのオプションをカプセル化します。|
@@ -386,7 +391,7 @@ ms.localizationpriority: medium
 ||[type](/javascript/api/excel/excel.shapedeactivatedeventargs#excel-excel-shapedeactivatedeventargs-type-member)|イベントの種類を取得します。|
 ||[worksheetId](/javascript/api/excel/excel.shapedeactivatedeventargs#excel-excel-shapedeactivatedeventargs-worksheetid-member)|図形が非アクティブ化されているワークシートの ID を取得します。|
 |[ShapeFill](/javascript/api/excel/excel.shapefill)|[clear()](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-clear-member(1))|この図形の塗りつぶしの書式設定をクリアします。|
-||[foregroundColor](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-foregroundcolor-member)|図形塗りつぶしの前景色を #RRGGBB HTML の色形式で表します ("FFA500"など) 形式で、または名前付き HTML 色 ("オレンジ色" など) として表します。|
+||[foregroundColor](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-foregroundcolor-member)|図形塗りつぶしの前景色を HTML カラー形式で表し、#RRGGBB 形式 ("FFA500"など) または名前付き HTML 色 ("orange" など) として表します。|
 ||[setSolidColor(color: string)](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-setsolidcolor-member(1))|図形の塗りつぶしの書式設定を均一な色に設定します。|
 ||[transparency](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-transparency-member)|塗りつぶしの透明度の割合を 0.0 (不透明) から 1.0 (クリア) の値として指定します。|
 ||[type](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-type-member)|図形の塗りつぶしの種類を返します。|

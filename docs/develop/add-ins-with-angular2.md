@@ -1,27 +1,27 @@
 ---
 title: Angular で Office アドインを開発する
-description: このAngularを使用して、Office単一ページ アプリケーションとしてアドインを作成します。
+description: '[Angularを使用して、Officeを 1 つのページ アプリケーションとして作成します。'
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149751"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743649"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
 この記事では、Angular 2+ を使って、単一ページのアプリケーションとして Office アドインを作成する方法を説明します。
 
 > [!NOTE]
-> アドインを使用してアドインを作成するAngularにOffice何かがありますか? この記事に投稿[するには、GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md)で問題を提出するか、フィードバックを提供します。 [](https://github.com/OfficeDev/office-js-docs-pr/issues)
+> アドインを使用したエクスペリエンスに基づいて、AngularアドインOffice提供する必要がありますか? この記事に投稿[するには](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md)、GitHubで問題を提出するか、[フィードバックを提供](https://github.com/OfficeDev/office-js-docs-pr/issues)します。
 
 Angular フレームワークを使用してビルドされる Office アドインのサンプルについては、「[Angular でビルドする Word スタイル チェック アドイン](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)」を参照してください。
 
 ## <a name="install-the-typescript-type-definitions"></a>TypeScript 型の定義をインストールする
 
-コマンド ウィンドウNode.js開き、コマンド ラインで次のコマンドを入力します。
+ウィンドウを開Node.jsコマンド ラインで次のコマンドを入力します。
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>ブートス トラップは必ず Office.initialize 内に
 
-JavaScript API の Office、Word、または Excelを呼び出す任意のページで、最初にメソッドをプロパティに割り当てる必要 `Office.initialize` があります。 (初期化コードがない場合、メソッド本体は空の " " 記号にできますが、プロパティを未定義 `{}` のままに `Office.initialize` しすることはできません。 詳細については、「アドイン[の初期化」Officeを参照してください](initialize-add-in.md)。Office JavaScript ライブラリを初期化した直後に、このメソッドOffice呼び出します。
+JavaScript API の Office、Word、または Excelを呼び出すページでは、最初にメソッドをプロパティに割り当てる必要`Office.initialize`があります。 (初期化コードがない場合は、メソッド本体は空の "`{}`" 記号にできますが、プロパティを未定義のままに `Office.initialize` する必要はありません。 詳細については、「Initialize [your Office](initialize-add-in.md) アドイン.)Office JavaScript ライブラリを初期化した直後にこのメソッドOffice呼び出します。
 
 **Angular のブートストラップ コードは `Office.initialize` に割り当てられたメソッドの中で呼び出すことで**、Office の JavaScript ライブラリが最初に初期化されるようにする必要があります。以下は、これを行う方法を示した簡単な例です。このコードは、プロジェクトの main.ts ファイルの中にある必要があります。
 
@@ -82,7 +82,7 @@ Office のアドインの Dialog API を使えば、アドインでは、メイ�
 
 [DisplayDialogAsync](/javascript/api/office/office.ui) メソッドは、ダイアログ ボックスで開くべきページの URL を指定するパラメーターを受け取ります。アドインでは、独立した HTML ページ (基本ページとは異なるページ) でこのパラメーターに渡すか、Angular アプリケーションでルートの URL を渡すことができます。
 
-重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。 ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。 この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。 ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。 同様に、ダイアログ ボックスには独自のセッション ストレージ [(Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) があります。これは作業ウィンドウ内のコードからアクセスできません。  
+重要な点として、ルートを渡すと、ダイアログ ボックスによって新しいウィンドウとその実行コンテキストが作成されることに注意してください。 ダイアログ ボックスで、この新しいコンテキストに対して基本ページとそのすべての初期化、およびブートストラップ コードを再度実行し、すべての変数が初期値に設定されます。 この手法により、ダイアログ ボックスで、単一ページのアプリケーションの 2 番目のインスタンスが起動します。 ダイアログ ボックス内の変数を変更するコードは、同じ変数の作業ウィンドウのバージョンは変更しません。 同様に、ダイアログ ボックスには独自のセッション ストレージ ( [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) があります。これは作業ウィンドウ内のコードからアクセスできません。  
 
 ## <a name="trigger-the-ui-update"></a>UI の更新をトリガーする
 
@@ -152,9 +152,9 @@ ng serve --aot
 > [!NOTE]
 > Angular Ahead-of-Time (AOT) コンパイラの詳細については、[公式ガイド](https://angular.io/guide/aot-compiler)を参照してください。
 
-## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>動的Internet Explorer読み込む場合のサポート Office.js
+## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>動的Internet Explorerを読み込む場合のサポート Office.js
 
-アドインがWindowsしているOfficeデスクトップ クライアントに基づいて、アドインが 11 を使用Internet Explorer可能性があります。 (詳細については、「[アドインで使用Officeブラウザー」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。Angular API によって異なりますが、これらの API は、デスクトップ クライアントに埋め込まれた IE ランタイム `window.history` Windowsしません。 これらの API が機能しない場合、アドインが正しく動作しない場合があります。たとえば、空白の作業ウィンドウが読み込まれかねない場合があります。 これを軽減するために、Office.jsを無効にしてください。 ただし、動的に読み込む場合Office.js AngularJS が読み込Office.js。 その場合は、アドインのページに次のコードを追加して API `window.history` **をindex.html** があります。
+アドインが実行されている Windowsバージョンと Office デスクトップ クライアントに基づいて、アドインが 11 のInternet Explorer可能性があります。 (詳細については、「アドインで[使用Officeブラウザー」を参照](../concepts/browsers-used-by-office-web-add-ins.md)してください。Angularに依存する`window.history`API ですが、これらの API は、デスクトップ クライアントに埋め込まれた IE ランタイムWindowsしません。 これらの API が機能しない場合、アドインが正しく動作しない場合があります。たとえば、空白の作業ウィンドウが読み込まれかねない場合があります。 これを軽減するために、Office.jsを無効にできます。 ただし、動的に読み込む場合Office.js AngularJS が読み込Office.js。 その場合は、 `window.history` アドインのページに次のコードを追加して API **をindex.html** してください。
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

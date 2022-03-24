@@ -3,19 +3,19 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081443"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745865"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
 ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。
 
 > [!NOTE]
-> ランタイム ログ機能は、2016 Office以降のデスクトップで使用できます。
+> 現在、ランタイム ログ機能は、2016 以降Officeデスクトップで使用できます。
 
 > [!IMPORTANT]
 > ランタイムのログはパフォーマンスに影響します。アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
@@ -145,4 +145,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [テスト用に Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [Internet Explorer の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-f12-tools-ie.md)
 - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
-- [アドインの開発者ツールを使用してアドインをデバッグする (Microsoft EdgeベースChromium)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md) 

@@ -3,12 +3,12 @@ title: Office名前空間 - 要件セット 1.4
 description: Office API 要件セット 1.4 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f351dc22dd22ac92dc7cc6bec53369471ed634
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: cc177e1c003ecd50a1151a0466240b37d040da5b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237596"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746755"
 ---
 # <a name="office-mailbox-requirement-set-14"></a>Office (メールボックス要件セット 1.4)
 
@@ -31,13 +31,13 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 | 列挙体 | モード | 戻り値の種類 | 最小値<br>要件セット |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [CoercionType](#coerciontype-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | 文字列 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 作成<br>読み取り | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>名前空間
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true): 、 など、Outlook固有の列挙の `ItemType` `EntityType` `AttachmentType` 数 `RecipientType` が `ResponseType` 含まれています `ItemNotificationMessageType` 。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true): 、 `ItemType``EntityType``AttachmentType`など、Outlook固有の列挙の数が`RecipientType``ResponseType`含まれています。`ItemNotificationMessageType`
 
 ## <a name="enumeration-details"></a>列挙の詳細
 

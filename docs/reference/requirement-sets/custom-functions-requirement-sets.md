@@ -4,18 +4,18 @@ description: JavaScript API のカスタム関数要件セットExcel詳細で�
 ms.date: 02/15/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7558035b6b151977e985ec04ed1fa84c116f0886
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 3f8e66932d6f960898dc2185299fcbe58324f281
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892518"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746220"
 ---
 # <a name="custom-functions-requirement-sets"></a>カスタム関数の要件セット
 
 [カスタム関数](../../excel/custom-functions-overview.md)は、コア Excel JavaScript API の個別の要件セットを使用します。 次の表に、カスタム関数の要件セット、サポートされているクライアント アプリケーションOffice、それらのアプリケーションのビルド バージョンまたは番号を示します。
 
-|  要件セット  |  Office 2021 以降のWindows<br>(1 回限りの購入)  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2021 以降Office 1 回の購入)  | Office on the web |
+|  要件セット  |  Office 2021 以降のWindows<br>(1 回限りの購入)  |  Windows での Office<br>(Microsoft 365 サブスクリプションに接続)  |  Office on iPad<br>(Microsoft 365 サブスクリプションに接続)  |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2021 以降Office 1 回購入)  | Office on the web |
 |:-----|:-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.3 | 16.0.14326.20454 以降 | 16.0.13127.20296 以降 | サポート対象外 | 16.40.20081000 以降 | 2020 年 7 月 |
 | CustomFunctionsRuntime 1.2 | 16.0.14326.20454 以降 | 16.0.12527.20194 以降 | サポート対象外 | 16.34.20020900 以降 | 2020 年 1 月 |

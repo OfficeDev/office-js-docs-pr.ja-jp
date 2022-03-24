@@ -3,16 +3,16 @@ title: Outlook アドイン API 要件セット 1.8
 description: アドイン API の要件セット 1.8 Outlook 1.8。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 956bf1ed7109ce274d47ad6f2fda3999d1db913b
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: b8edd22cfd0b6c7febc369b183f2d8807810f7e2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237764"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745218"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Outlook アドイン API 要件セット 1.8
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
@@ -23,12 +23,12 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 - 添付ファイル、カテゴリ、代理人アクセス、拡張された場所、インターネット ヘッダー、および送信ブロック機能用の新しい API が追加されました。
 - Event.completed にオプションの `options` パラメーターが追加されました。
-- イベントのサポート `AttachmentsChanged` が `EnhancedLocationsChanged` 追加されました。
+- イベントのサポート `AttachmentsChanged` が追加 `EnhancedLocationsChanged` されました。
 
 ### <a name="change-log"></a>変更ログ
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true) が追加されました: 添付ファイルのコンテンツを表す新しいオブジェクトを追加します。
-- [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true)を追加しました: 新規作成モードで添付ファイルの詳細を表す新しいオブジェクトを追加します。
+- [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true) の追加: 新規作成モードで添付ファイルの詳細を表す新しいオブジェクトを追加します。
 - [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true) が追加されました: 項目カテゴリを表す新しいオブジェクトを追加します。
 - [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true) が追加されました: カテゴリの詳細 (名前とそれに関連付けられた色) を表す新しいオブジェクトを追加します。
 - [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true) が追加されました: 予定の場所のセットを表す新しいオブジェクトを追加します。
@@ -36,7 +36,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 - [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所を表す新しいオブジェクトを追加します。 読み取り専用です。
 - [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true) が追加されました: 場所の ID を表す新しいオブジェクトを追加します。
 - [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいオブジェクトを追加します。
-- [SharedProperties の追加](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): 共有フォルダー内の予定またはメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。
+- [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true) の追加: 共有フォルダー内の予定またはメッセージ アイテムのプロパティを表す新しいオブジェクトを追加します。
 - [SupportsSharedFolders マニフェスト要素](../../manifest/supportssharedfolders.md) が追加されました: [DesktopFormFactor](../../manifest/desktopformfactor.md) マニフェスト要素に子要素を追加します。 代理人のシナリオでアドインが使用できるかどうかを定義します。
 - [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties) が追加されました: メールボックスのカテゴリ マスター リストを表す新しいプロパティを追加します。
 - [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties) が追加されました: アイテムのカテゴリのセットを表す新しいプロパティを追加します。

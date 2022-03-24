@@ -1,10 +1,15 @@
 ---
 title: Office.context.mailbox - 要件セット 1.4
-description: Outlook API 要件セット 1.4 バージョンのメールボックス オブジェクト モデル。
+description: Outlook API 要件セットメールボックス オブジェクト モデルの 1.4 バージョン。
 ms.date: 03/18/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: 0319366a18b7d3b1682cb603c616c426a1999014
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745807"
 ---
-
 # <a name="mailbox-requirement-set-14"></a>メールボックス (要件セット 1.4)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
@@ -30,7 +35,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 ## <a name="methods"></a>メソッド
 
-| Method | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
+| メソッド | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
 |---|---|---|:---:|
 | [convertToEwsId(itemId, restVersion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#outlook-office-mailbox-converttoewsid-member(1)) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToLocalClientTime(timeValue)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true#outlook-office-mailbox-converttolocalclienttime-member(1)) | ReadItem | 作成<br>読み取り | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

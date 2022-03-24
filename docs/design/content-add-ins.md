@@ -3,12 +3,12 @@ title: コンテンツ Office アドイン
 description: コンテンツ アドインは、Excel または PowerPoint ドキュメントに直接埋め込むことができるサーフェイスです。これでは、ユーザーはコードを実行してドキュメントを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d158a4067a4492901128438392cd1607ad851bcf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150174"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742956"
 ---
 # <a name="content-office-add-ins"></a>コンテンツ Office アドイン
 
@@ -16,7 +16,7 @@ ms.locfileid: "59150174"
 
 *図 1. コンテンツ アドインの一般的なレイアウト*
 
-![アプリケーション内のコンテンツ アドインの一般的なレイアウトOfficeします。](../images/overview-with-app-content.png)
+![アプリケーション内のコンテンツ アドインの一般的なレイアウトOfficeです。](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
@@ -35,7 +35,7 @@ Windows の場合、パーソナル メニューは 12x32 ピクセルを測定�
 
 *図 2. Windows のパーソナル メニュー*
 
-![デスクトップ上の 12x32 ピクセルWindowsメニュー。](../images/personality-menu-win.png)
+![デスクトップ上の 12x32 ピクセルのWindows。](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、占有スペースは 34x32 ピクセルに増加します (図を参照)。
 

@@ -4,8 +4,13 @@ description: WordApi 1.3 要件セットの詳細。
 ms.date: 03/09/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: d9e0d450b601845d4e11e0fd74652c4e167f802c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746030"
 ---
-
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 の新機能
 
 WordApi 1.3 では、コンテンツ コントロールとドキュメント レベルの設定のサポートが追加されました。
@@ -19,7 +24,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 |[Application](/javascript/api/word/word.application)|[createDocument(base64File?: string)](/javascript/api/word/word.application#word-word-application-createdocument-member(1))|オプションの base64 エンコードファイルを使用して新しい.docxします。|
 |[Body](/javascript/api/word/word.body)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.body#word-word-body-getrange-member(1))|範囲として、本文全体、あるいは本文の開始点または終了点を取得します。|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.body#word-word-body-inserttable-member(1))|指定した数の行と列を含むテーブルを挿入します。|
-||[lists](/javascript/api/word/word.body#word-word-body-lists-member)|本文に含まれるリスト オブジェクトのコレクションを取得します。|
+||[サイト](/javascript/api/word/word.body#word-word-body-lists-member)|本文に含まれるリスト オブジェクトのコレクションを取得します。|
 ||[parentBody](/javascript/api/word/word.body#word-word-body-parentbody-member)|本文の親の本文を取得します。|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#word-word-body-parentbodyornullobject-member)|本文の親の本文を取得します。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#word-word-body-parentcontentcontrolornullobject-member)|本文を含むコンテンツ コントロールを取得します。|
@@ -31,7 +36,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-getrange-member(1))|範囲として、コンテンツ コントロール全体、あるいはコンテンツ コントロールの開始点または終了点を取得します。|
 ||[getTextRanges(endingMarks: string[], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-gettextranges-member(1))|句読点や他の終了記号を使用して、コンテンツ コントロール内のテキスト範囲を取得します。|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserttable-member(1))|指定した数の行と列を含むテーブルを、コンテンツ コントロール内またはコンテンツ コントロールの横に挿入します。|
-||[lists](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。|
+||[サイト](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|コンテンツ コントロールに含まれるリスト オブジェクトのコレクションを取得します。|
 ||[parentBody](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentbody-member)|コンテンツ コントロールの親の本文を取得します。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentcontentcontrolornullobject-member)|コンテンツ コントロールを含むコンテンツ コントロールを取得します。|
 ||[parentTable](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parenttable-member)|コンテンツ コントロールを含むテーブルを取得します。|
@@ -127,7 +132,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.paragraph#word-word-paragraph-inserttable-member(1))|指定した数の行と列を含むテーブルを挿入します。|
 ||[isLastParagraph](/javascript/api/word/word.paragraph#word-word-paragraph-islastparagraph-member)|段落がその親の本文内の最後の段落であることを示します。|
 ||[isListItem](/javascript/api/word/word.paragraph#word-word-paragraph-islistitem-member)|段落がリスト アイテムであるかどうかを確認します。|
-||[リスト](/javascript/api/word/word.paragraph#word-word-paragraph-list-member)|この段落が属するリストを取得します。|
+||[list](/javascript/api/word/word.paragraph#word-word-paragraph-list-member)|この段落が属するリストを取得します。|
 ||[listItem](/javascript/api/word/word.paragraph#word-word-paragraph-listitem-member)|段落の ListItem を取得します。|
 ||[listItemOrNullObject](/javascript/api/word/word.paragraph#word-word-paragraph-listitemornullobject-member)|段落の ListItem を取得します。|
 ||[listOrNullObject](/javascript/api/word/word.paragraph#word-word-paragraph-listornullobject-member)|この段落が属するリストを取得します。|
@@ -158,7 +163,7 @@ WordApi 1.3 では、コンテンツ コントロールとドキュメント レ
 ||[intersectWith(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwith-member(1))|別の範囲とこの範囲の交点として、新しい範囲を返します。|
 ||[intersectWithOrNullObject(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwithornullobject-member(1))|別の範囲とこの範囲の交点として、新しい範囲を返します。|
 ||[isEmpty](/javascript/api/word/word.range#word-word-range-isempty-member)|範囲の長さが 0 であるかどうかを確認します。|
-||[lists](/javascript/api/word/word.range#word-word-range-lists-member)|範囲内のリスト オブジェクトのコレクションを取得します。|
+||[サイト](/javascript/api/word/word.range#word-word-range-lists-member)|範囲内のリスト オブジェクトのコレクションを取得します。|
 ||[parentBody](/javascript/api/word/word.range#word-word-range-parentbody-member)|範囲の親の本文を取得します。|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#word-word-range-parentcontentcontrolornullobject-member)|範囲を格納するコンテンツ コントロールを取得します。|
 ||[parentTable](/javascript/api/word/word.range#word-word-range-parenttable-member)|範囲を含むテーブルを取得します。|

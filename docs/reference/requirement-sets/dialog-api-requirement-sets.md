@@ -1,27 +1,32 @@
 ---
 title: ダイアログ API の要件セット
 description: ダイアログ API 要件セットの詳細について説明します。
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e0130ddae76bad97ae840375cb4b1801c628bdc9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747171"
 ---
-
 # <a name="dialog-api-requirement-sets"></a>ダイアログ API の要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
 
-Office アドインは Office の複数のバージョンで機能します。 次の表に、Dialog API 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルドまたはバージョン番号をOfficeします。
+Office アドインは Office の複数のバージョンで機能します。 次の表に、Dialog API 要件セット、その要件セットをサポートする Office クライアント アプリケーション、およびアプリケーションのビルド番号またはバージョン番号をOfficeします。
 
-| 要件セット | Windows 版 Office 2013\*<br>(1 回限りの購入) | Windows 版 Office 2016\*<br>(1 回限りの購入) | Windows 版 Office 2019\*<br>(1 回限りの購入) | Office 2021 以降のWindows\*<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション) | Office on iPad<br>(サブスクリプション) |  Office on Mac<br>(サブスクリプション) | Office on the web | Office Online Server |
+| 要件セット | Windows 版 Office 2013\*<br>(1 回限りの購入) | Windows 版 Office 2016\*<br>(1 回限りの購入) | Windows 版 Office 2019\*<br>(1 回限りの購入) | Office 2021 以降のWindows\*<br>(1 回限りの購入) | Windows での Office<br>(サブスクリプション) | Office on iPad<br>(サブスクリプション) |  Office on Mac<br>(両方のサブスクリプション<br> Mac 2019 以降Office 1 回の購入) | Office on the web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.2  | 該当なし | 該当なし | 該当なし | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | 2.37 以降 | 16.37 以降 | 2020 年 6 月 | 該当なし |
 | DialogApi 1.1  | ビルド 15.0.4855.1000 以降 | ビルド 16.0.4390.1000 以降 | ビルド 16.0.12527.20720 以降 | ビルド 16.0.14326.20454 以降 | バージョン 1602 (ビルド 6741.0000) 以降 | 1.22 以降 | 15.20 以降 | 2017 年 1 月 | バージョン 1608 (ビルド 7601.6800) 以降|
 
->\*一度に購入したユーザーはOffice更新プログラムを受け入れてない可能性があります。 その場合、dialogApi をサポートするために更新された DLL がユーザーのコンピューターにインストールされていない場合でも、Office が UI でバージョンを報告するために使用する DLL は、ここに示されているバージョンよりも大きい場合があります。 必要な更新プログラムがインストールされていることを確認するには、Office 更新プログラムの一覧 ([Office 2013 リストまたは Office 2016](/officeupdates/msp-files-office-2013) リスト) に移動し [](/officeupdates/msp-files-office-2016)、**osfclient-x-none** を検索し、一覧に記載されている更新プログラムをインストールする必要があります。
+>\*一度に購入したユーザーはOfficeパッチと更新プログラムを受け入れてない可能性があります。 その場合、Office が UI でバージョンを報告するために使用する DLL は、DialogApi をサポートするために必要な更新された DLL がユーザーのコンピューターにインストールされていない場合でも、ここに示されているバージョンよりも大きい場合があります。 必要な更新プログラムがインストールされていることを確認するには、Office 更新プログラムの一覧 ([Office 2013 リストまたは Office 2016](/officeupdates/msp-files-office-2013) リスト) に移動 [](/officeupdates/msp-files-office-2016)し、**osfclient-x-none** を検索し、一覧に記載されている更新プログラムをインストールする必要があります。
 
 ## <a name="office-on-windows-subscription-support"></a>Office (Windows) のサポートに関する情報
 
-DialogApi 1.2 要件セットは、コンシューマー チャネル バージョン 2005 (ビルド 12827.20268 以上) でサポートされています。 Windows Office では、この機能は 2020 年 6 月 9 日以降に利用可能な Semi-Annual チャネルおよび月次 Enterprise チャネル ビルドでもサポートされます。 各チャネルでサポートされる最小ビルドは次のとおりです。  
+DialogApi 1.2 要件セットは、コンシューマー チャネル バージョン 2005 (ビルド 12827.20268 以上) でサポートされています。 Office Windows では、この機能は 2020 年 6 月 9 日以降の Semi-Annual チャネルおよび月次 Enterprise チャネル ビルドでもサポートされます。 各チャネルでサポートされる最小ビルドは次のとおりです。  
 
 |チャネル | バージョン | ビルド|
 |:-----|:-----|:-----|

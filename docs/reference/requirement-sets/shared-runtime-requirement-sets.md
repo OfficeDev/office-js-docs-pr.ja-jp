@@ -4,12 +4,12 @@ description: SharedRuntime API をサポートOfficeするプラットフォー�
 ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: ef4bb9aebea8ee6f9c316a68cac784c20c4db160
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511287"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746310"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共有ランタイム要件セット
 

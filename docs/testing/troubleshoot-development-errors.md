@@ -3,14 +3,19 @@ title: Office アドインでの開発エラーのトラブルシューティン
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c804f4e73dc28e6f401aca01cea68e6d2ce30917
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747098"
 ---
-
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
-アドインの開発中に発生する可能性がある一般的な問題Office次に示します。
+アドインの開発中に発生する可能性がある一般的な問題のOffice次に示します。
 
 > [!TIP]
-> 多くの場合、Officeキャッシュをクリアすると、古いコードに関連する問題が修正されます。 これにより、現在のファイル名、メニュー テキスト、その他のコマンド要素を使用して、最新のマニフェストがアップロードされます。 詳細については、「キャッシュのクリア[」をOfficeしてください](clear-cache.md)。
+> 多くの場合Officeキャッシュをクリアすると、古いコードに関連する問題が修正されます。 これにより、現在のファイル名、メニュー テキスト、その他のコマンド要素を使用して、最新のマニフェストがアップロードされます。 詳細については、「キャッシュをクリア[する」をOfficeしてください](clear-cache.md)。
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
@@ -18,7 +23,7 @@ ms.localizationpriority: medium
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない
 
-キャッシュをクリアすると、アドインのマニフェストの最新バージョンが使用されます。 キャッシュをクリアするにはOfficeキャッシュをクリアするの手順[にOfficeします](clear-cache.md)。 アプリを使用しているOffice on the web、ブラウザーの UI を使用してブラウザーのキャッシュをクリアします。
+キャッシュをクリアすると、アドインのマニフェストの最新バージョンが使用されます。 キャッシュをクリアするにはOfficeキャッシュをクリアするの手順[に従Officeします](clear-cache.md)。 アプリを使用しているOffice on the web、ブラウザーの UI を使用してブラウザーのキャッシュをクリアします。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>JavaScript、HTML、CSS などの静的ファイルへの変更は有効になりません
 
@@ -58,9 +63,9 @@ myChart.id = "5";
 
 このエラーの原因の一部を次に示します。 その他の原因が見つかった場合は、ページの下部にあるフィードバック ツールを使って教えて下さい。
 
-- アプリケーションを使用しているVisual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉じるVisual Studio。 再起動してVisual Studio F5 キーを再度押してみてください。
-- アドインのマニフェストは、展開場所 (集中展開、SharePoint、ネットワーク共有など) から削除されています。
-- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のトレースOffice削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
+- このファイルを使用Visual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉Visual Studio。 再起動してVisual Studio F5 を再度押してみてください。
+- アドインのマニフェストは、集中展開、SharePointカタログ、ネットワーク共有などの展開場所から削除されています。
+- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のOfficeを削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
 - `resid`アドインのマニフェストには、マニフェストの [[リソース](../reference/manifest/resources.md) `resid` `<Resources>`] セクションのどこにも定義されていないか、使用する場所とセクションで定義されている場所のスペルが一致しません。
 - マニフェストのどこか `resid` に 32 文字を超える属性があります。 属性 `resid` と、セクション内 `id` の `<Resources>` 対応するリソースの属性は、32 文字を超えることはできません。
 - アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォームで実行しようとしている。 詳細については、「アドイン コマンド [の要件セット」を参照してください](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
@@ -71,7 +76,7 @@ myChart.id = "5";
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excelはエラーをスローしますが、一貫して発生しません
 
-考[えられる原因Excelについては、「トラブルシューティング Excel](../excel/excel-add-ins-troubleshooting.md)アドイン」を参照してください。
+考[えられる原因については、「Excelアドインのトラブルシューティング](../excel/excel-add-ins-troubleshooting.md)」を参照してください。
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>プロジェクトのマニフェスト スキーマ検証Visual Studioエラー
 
@@ -84,7 +89,7 @@ myChart.id = "5";
 ### <a name="locate-the-xsd-files"></a>XSD ファイルを見つける
 
 1. Visual Studio でプロジェクトを開きます。
-1. ソリューション **エクスプローラーで**、ファイルを開manifest.xmlします。 マニフェストは、通常、ソリューションの下の最初のプロジェクトに含まれます。
+1. ソリューション **エクスプローラーで、** ファイルを開manifest.xmlします。 マニフェストは、通常、ソリューションの下の最初のプロジェクトに含まれます。
 1. [**ViewProperties** > ] ウィンドウ (F4) を選択します。
 1. [プロパティ **] ウィンドウで**、省略記号 (...) を選択して **XML スキーマ エディターを開** きます。 ここでは、プロジェクトで使用しているすべてのスキーマ ファイルの正確なフォルダーの場所を確認できます。
 

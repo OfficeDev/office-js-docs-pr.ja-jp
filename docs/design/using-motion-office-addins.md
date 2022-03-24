@@ -1,14 +1,14 @@
 ---
 title: Office アドインでモーションを使用する
-description: 移行、モーション、またはアニメーションをアドインで使用するためのベスト プラクティスOffice取得します。
+description: 移行、モーション、またはアニメーションをアドインで使用するためのベスト Officeを取得します。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0b9af5c11c6b2363b6198fc0ebeaf4cb524820
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d5d67e50f3e1d2a0883c35bf65d23098dda6868
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150079"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743145"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Office アドインでモーションを使用する
 
@@ -33,7 +33,7 @@ Office は生産性に重点を置いているため、Office のアニメーシ
 
 ## <a name="use-expected-motions"></a>予想される動作を使用する
 
-Fluent [UI を](https://developer.microsoft.com/fluentui#/)使用して Office プラットフォームとの視覚的な接続を作成することをお勧めします。また[、Fluent UI アニメーション](https://developer.microsoft.com/fluentui#/styles/web/motion)を使用して Fabric モーション言語に合ったモーションを作成することをお勧めします。
+Fluent [UI](https://developer.microsoft.com/fluentui#/) を使用して Office プラットフォームとの視覚的な接続を作成することをお勧めします。また、[Fluent UI アニメーション](https://developer.microsoft.com/fluentui#/styles/web/motion)を使用して Fabric モーション言語に合ったモーションを作成することをお勧めします。
 
 これを、Office とシームレスに適合するように使用します。こうすることにより、直感的なエクスペリエンスを実現できます。アニメーション CSS クラスには、Office のメンタル モデルを明確にするのに役立つ、方向性、開始/終了、期間に関する詳細な設定が用意されており、アドインの操作方法も学べるようになっています。
 
@@ -62,5 +62,5 @@ Fluent [UI を](https://developer.microsoft.com/fluentui#/)使用して Office �
 
 ## <a name="see-also"></a>関連項目
 
-* [FluentUI アニメーションのガイドライン](https://developer.microsoft.com/fluentui#/styles/web/motion)
+* [Fluent UI アニメーションのガイドライン](https://developer.microsoft.com/fluentui#/styles/web/motion)
 * [ユニバーサル Windows プラットフォーム アプリ用のモーション](/windows/uwp/design/motion)

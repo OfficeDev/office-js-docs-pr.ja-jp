@@ -1,15 +1,15 @@
 ---
 title: JavaScript API を使用した大きな範囲の読み取りExcel書き込み
-description: JavaScript API を使用して大きな範囲を読み取りまたは書きExcel説明します。
+description: JavaScript API を使用して、大きな範囲を読み取りExcelする方法について説明します。
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b0398c043ba7cfc4933efe600f89281c988bbb1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 64b47c59e231b0ef40f81d670c511eb7836bd204
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149836"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745304"
 ---
 # <a name="read-or-write-to-a-large-range-using-the-excel-javascript-api"></a>JavaScript API を使用した大きな範囲の読み取りExcel書き込み
 

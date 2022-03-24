@@ -3,12 +3,12 @@ title: Office アドインの最初の実行エクスペリエンス パター�
 description: アドインの初回実行エクスペリエンスを設計するためのベスト プラクティスOffice説明します。
 ms.date: 07/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a89fb53a0693c4a7f6da49713413986f10584514
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 43127e2a83c07ae659c6672a57486e5488ad268e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150121"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743249"
 ---
 # <a name="first-run-experience-patterns"></a>最初の実行エクスペリエンス
 
@@ -50,7 +50,7 @@ ms.locfileid: "59150121"
 
 *図 4.ロゴ、明確な値の提案、機能の概要、および行動の呼び出しを含む値の配置*
 
-![デスクトップ アプリケーション作業ウィンドウの最初の実行エクスペリエンスでのOfficeを示す図。 この例では、作業ウィンドウにアドイン のロゴ、アドインの説明、および開始するボタンが表示されます。](../images/add-in-FRE-value.png)
+![デスクトップ アプリケーション作業ウィンドウの最初の実行エクスペリエンスでの値の配置Office図。 この例では、作業ウィンドウにアドイン のロゴ、アドインの説明、および開始するボタンが表示されます。](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>ビデオ プレイスマット
 
@@ -62,4 +62,4 @@ ms.locfileid: "59150121"
 
 *図 6.ビデオ プレーヤー - ダイアログ ウィンドウ内でビデオを表示するユーザー*
 
-![デスクトップ アプリケーションとアドイン作業ウィンドウがバックグラウンドOfficeウィンドウ内のビデオを示す図。](../images/add-in-FRE-video-dialog.png)
+![デスクトップ アプリケーションとアドイン作業ウィンドウをバックグラウンドでOfficeウィンドウ内のビデオを示す図。](../images/add-in-FRE-video-dialog.png)

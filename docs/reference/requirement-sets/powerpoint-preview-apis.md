@@ -4,11 +4,16 @@ description: JavaScript API のPowerPoint詳細。
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 2d43ca19d36b9f30e8699370bc97ecf194395d06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742946"
 ---
-
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint JavaScript プレビュー API
 
-JavaScript api PowerPoint最初に "プレビュー" で導入され、後で十分なテストが行われるとユーザーフィードバックが取得された後、特定の番号付き要件セットの一部になります。
+JavaScript API PowerPointは最初に "プレビュー" で導入され、後で十分なテストが行われるとユーザーフィードバックが取得された後、特定の番号付き要件セットの一部になります。
 
 最初の表には API が簡潔にまとめられています。その後の表は詳しい一覧になっています。
 
@@ -41,8 +46,8 @@ JavaScript api PowerPoint最初に "プレビュー" で導入され、後で十
 ||[left](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-left-member)|図形の左側からスライドの左側までの距離をポイントで指定します。|
 ||[top](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-top-member)|図形の上端からスライドの上端までの距離をポイントで指定します。|
 ||[width](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-width-member)|図形の幅をポイント単位で指定します。|
-|[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[addGeometricShape(geometricShapeType: PowerPoint.GeometricShapeType、オプション?: PowerPoint。ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgeometricshape-member(1))|スライドに幾何学的な図形を追加します。|
-||[addLine(connectorType?: PowerPoint.ConnectorType、オプション?: PowerPoint。ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addline-member(1))|スライドに線を追加します。|
+|[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[addGeometricShape(geometricShapeType: PowerPoint.GeometricShapeType、 options?: PowerPoint。ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgeometricshape-member(1))|スライドに幾何学的な図形を追加します。|
+||[addLine(connectorType?: PowerPoint.ConnectorType、 options?: PowerPoint。ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addline-member(1))|スライドに線を追加します。|
 ||[addTextBox(text: string, options?: PowerPoint.ShapeAddOptions)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1))|指定したテキストをコンテンツとしてスライドにテキスト ボックスを追加します。|
 |[ShapeFill](/javascript/api/powerpoint/powerpoint.shapefill)|[clear()](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-clear-member(1))|この図形の塗りつぶしの書式設定をクリアします。|
 ||[foregroundColor](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-foregroundcolor-member)|図形塗りつぶしの前景色を HTML カラー形式で表し、#RRGGBB 形式 ("FFA500"など) または名前付き HTML 色 ("オレンジ色" など) として表します。|

@@ -3,12 +3,12 @@ title: Office名前空間 - 要件セット 1.7
 description: Office API 要件セット 1.7 をOutlookアドインで使用できる名前空間メンバーを指定します。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 96dffd8dac96a67746c1669c6672461552cb838e
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 9df3643162eee5edec0d382960917dd31771b7e8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237624"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745951"
 ---
 # <a name="office-mailbox-requirement-set-17"></a>Office (メールボックス要件セット 1.7)
 
@@ -38,7 +38,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 
 ## <a name="namespaces"></a>名前空間
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.7&preserve-view=true): 、 など、Outlook固有の列挙の `ItemType` `EntityType` `AttachmentType` 数 `RecipientType` が `ResponseType` 含まれています `ItemNotificationMessageType` 。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.7&preserve-view=true): 、 `ItemType``EntityType``AttachmentType`など、Outlook固有の列挙の数が`RecipientType``ResponseType`含まれています。`ItemNotificationMessageType`
 
 ## <a name="enumeration-details"></a>列挙の詳細
 
@@ -111,7 +111,7 @@ Office 名前空間は、すべての Office アプリケーションのアド�
 |`AppointmentTimeChanged`| String | 選択した予定または系列の日付または時刻が変更されました。 | 1.7 |
 |`ItemChanged`| String | 作業ウィンドウOutlook表示する場合は、別のアイテムが選択されています。 | 1.5 |
 |`RecipientsChanged`| String | 選択したアイテムまたは予定の場所の受信者リストが変更されました。 | 1.7 |
-|`RecurrenceChanged`| 文字列 | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
+|`RecurrenceChanged`| String | 選択した系列の定期的なパターンが変更されました。 | 1.7 |
 
 ##### <a name="requirements"></a>要件
 

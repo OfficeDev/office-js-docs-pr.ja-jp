@@ -3,12 +3,12 @@ title: Visual Studio Code と Microsoft Edge 従来版 WebView (EdgeHTML) を使
 description: VS Code の Office アドイン デバッガー拡張機能を使用して、Microsoft Edge 従来版 WebView (EdgeHTML Office) を使用するアドインをデバッグする方法について説明します。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ac2fc4eab8ef20ddc416b299fde88095ef4fb4
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: e43afbe2ae600a7013a8d4872d4148c571c0861d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710945"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744096"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能
 

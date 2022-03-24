@@ -3,9 +3,13 @@ title: Excel アドインの共同編集機能
 description: オンラインで、Excel、OneDrive、OneDrive for BusinessにSharePointします。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7fd2e2846c4256e7aac1ffa7263b4aa57b744d21
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744384"
 ---
-
-
 # <a name="coauthoring-in-excel-add-ins"></a>Excel アドインの共同編集機能  
 
 [共同編集機能](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104)により、複数のユーザーが連携して同じ Excel ブックを同時に編集できるようになります。 ブックのすべての共同編集者は、他の共同編集者がブックを保存するとすぐに、その共同編集者による変更の内容を確認できます。 Excel ブックを共同編集するには、そのブックが OneDrive、OneDrive for Business、SharePoint Online のいずれかに保存されている必要があります。
@@ -15,7 +19,7 @@ ms.localizationpriority: medium
 
 ## <a name="coauthoring-overview"></a>共同編集機能の概要
 
-ブックの内容に変更を加えると、その変更は Excel によってすべての共同編集者間で同期されます。 共同編集者はブックの内容を変更できますが、Excel アドイン内で実行するコードもブックの内容を変更できます。 たとえば、次の JavaScript コードがアドインで実行Office、範囲の値は Contoso に設定されます。
+ブックの内容に変更を加えると、その変更は Excel によってすべての共同編集者間で同期されます。 共同編集者はブックの内容を変更できますが、Excel アドイン内で実行するコードもブックの内容を変更できます。 たとえば、次の JavaScript コードがアドインのOffice場合、範囲の値は Contoso に設定されます。
 
 ```js
 range.values = [['Contoso']];

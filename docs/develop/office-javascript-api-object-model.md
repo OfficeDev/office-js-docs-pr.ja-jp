@@ -1,10 +1,15 @@
 ---
 title: 共通 JavaScript API オブジェクト モデル
-description: JavaScript 共通 API Officeモデルの詳細
+description: JavaScript 共通 API Officeモデルについて説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 381d3089b47fe04f403459ecae249bf68f7ca872
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743773"
 ---
-
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -19,7 +24,7 @@ Office JavaScript API を使用すると、クライアント アプリケーシ
 
 たとえば、作業ウィンドウ アドインまたはコンテンツ アドインにおいて、[Context](/javascript/api/office/office.context#office-office-context-document-member) オブジェクトの **document** プロパティを使用して、**Document** オブジェクトのプロパティおよびメソッドにアクセスし、Word 文書、Excel ワークシート、または Project スケジュールのコンテンツとやり取りできます。同様に、Outlook アドインにおいて、[Context](/javascript/api/office/office.context#office-office-context-mailbox-member) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトのプロパティおよびメソッドにアクセスし、メッセージ、会議出席依頼または予定のコンテンツとやり取りできます。
 
-**Context** オブジェクトは、[contentLanguage プロパティと displayLanguage](/javascript/api/office/office.context#office-office-context-contentlanguage-member) プロパティにアクセスし、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。[](/javascript/api/office/office.context#office-office-context-displaylanguage-member) [roamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#office-office-context-ui-member) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
+**Context** オブジェクトでは、[contentLanguage プロパティと displayLanguage](/javascript/api/office/office.context#office-office-context-contentlanguage-member) プロパティにアクセスして、ドキュメントまたはアイテム、または Office アプリケーションで使用されるロケール (言語) を特定できます。[](/javascript/api/office/office.context#office-office-context-displaylanguage-member) [roamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) プロパティによって、[RoamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) オブジェクトのメンバーにアクセスできます。このオブジェクトによって、個々のユーザーのメールボックスに対してアドインに固有の設定が保存されます。 最後に、**Context** オブジェクトの [ui](/javascript/api/office/office.context#office-office-context-ui-member) プロパティを使用すると、アドインでポップアップ ダイアログを開始できます。
 
 ## <a name="document-object"></a>Document オブジェクト
 
@@ -41,7 +46,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
 これらのデータ アクセスのすべての形式は、抽象オブジェクトのインスタンスから始 `Document` まる。
 
-オブジェクトの document プロパティを `Document` 使用して、作業ウィンドウアドインまたはコンテンツ アドインを初期化するときに、 [オブジェクトのインスタンス](/javascript/api/office/office.context#office-office-context-document-member) にアクセス `Context` できます。 オブジェクト`Document`は、Word ドキュメントとドキュメント間で共有される一般的なデータ アクセスExcel`CustomXmlParts`定義し、Word ドキュメントのオブジェクトへのアクセスも提供します。
+オブジェクトの document プロパティを `Document` 使用して、作業ウィンドウアドインまたはコンテンツ アドインを初期化するときに、 [オブジェクトのインスタンス](/javascript/api/office/office.context#office-office-context-document-member) にアクセス `Context` できます。 この`Document`オブジェクトは、Word およびドキュメント間で共有される一般的なデータ アクセス`CustomXmlParts`Excel定義し、Word ドキュメントのオブジェクトへのアクセスも提供します。
 
 このオブジェクト `Document` は、開発者がドキュメントコンテンツにアクセスするための 4 つの方法をサポートしています。
 
@@ -59,7 +64,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
  **適用対象:** コンテンツ アドインおよび作業ウィンドウ アドインの種類
 
-異なる Office ドキュメント間でシームレスに機能する拡張機能を作成するために、Office JavaScript API は、共通のデータ型を使用して各 Office アプリケーションの特異点を抽象化し、異なるドキュメントコンテンツを 3 つの共通データ型に変換する機能を提供します。
+Office JavaScript API は、異なる Office ドキュメント間でシームレスに機能する拡張機能を作成するために、共通のデータ型を使用して各 Office アプリケーションの特定性を抽象化し、異なるドキュメントコンテンツを 3 つの一般的なデータ型に変換できます。
 
 #### <a name="common-data-types"></a>共通のデータ型
 
@@ -138,7 +143,7 @@ var item = Office.context.mailbox.item;
 
 ```
 
-さらに、Outlookアドインは次のオブジェクトを使用できます。
+さらに、Outlookは次のオブジェクトを使用できます。
 
 - `Office` object: 初期化用。
 

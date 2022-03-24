@@ -1,14 +1,14 @@
 ---
 title: Microsoft 以外の ID プロバイダーでの承認
-description: OAuth 2.0、承認コード、暗黙的フローを使用して、Microsoft 以外のデータ ソースへの承認を取得します。
+description: OAuth 2.0 と承認コードと暗黙的フローを使用して、Microsoft 以外のデータ ソースへの承認を取得します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 873bf0ad86490670db7a4733db971e377748babf
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320431"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743641"
 ---
 # <a name="authorization-with-non-microsoft-identity-providers"></a>Microsoft 以外の ID プロバイダーでの承認
 

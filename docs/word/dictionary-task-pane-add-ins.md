@@ -3,9 +3,13 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: 辞書作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 09/26/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8eebf7f42073bd144ab3b3010c67c9ece1e8bd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746716"
 ---
-
-
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
 

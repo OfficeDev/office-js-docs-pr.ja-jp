@@ -3,8 +3,13 @@ title: Office アドインにおける非同期プログラミング
 description: JavaScript ライブラリがOfficeアドインで非同期プログラミングを使用する方法Office説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: eae14e015d10c31ba531325f15cb8465fae76725
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743933"
 ---
-
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -13,7 +18,7 @@ ms.localizationpriority: medium
 
 API 内のすべての非同期メソッドの名前は、"Async" (、 、メソッドなど) `Document.getSelectedDataAsync`で`Binding.getDataAsync``Item.loadCustomPropertiesAsync`終わる。 "Async" メソッドは呼び出されるとすぐに実行され、後続のスクリプトも続けて実行することができます。 "Async" メソッドに渡す任意のコールバック関数は、データまたは要求された操作の準備が整い次第、すぐに実行されます。 コールバック関数の実行は通常、直ちに行われますが、戻るまでに若干の遅延が生じることがあります。
 
-次の図は、サーバー ベースの Word または Excel で開いているドキュメントでユーザーが選択したデータを読み取る "Async" メソッドへの呼び出しの実行フローを示しています。 "Async" 呼び出しが行われた時点で、JavaScript 実行スレッドは追加のクライアント側処理を自由に実行できます (ただし、図には何も表示されません)。 "Async" メソッドが返されると、コールバックはスレッドでの実行を再開し、アドインはデータにアクセスし、データにアクセスして何かを行い、結果を表示できます。 同じ非同期実行パターンは、Word 2013 や 2013 Officeなど、リッチ クライアント アプリケーションを操作するときに保持Excelします。
+次の図は、サーバー ベースの Word または Excel で開いているドキュメントでユーザーが選択したデータを読み取る "Async" メソッドへの呼び出しの実行フローを示しています。 "Async" 呼び出しが行われた時点で、JavaScript 実行スレッドは追加のクライアント側処理を自由に実行できます (ただし、図には何も表示されません)。 "Async" メソッドが返されると、コールバックはスレッドでの実行を再開し、アドインはデータにアクセスし、データにアクセスして何かを行い、結果を表示できます。 同じ非同期実行パターンは、Word 2013 や 2013 Officeなど、リッチ クライアント アプリケーションを操作するときに保持Excelです。
 
 *図 1. 非同期プログラミング実行フロー*
 
@@ -88,7 +93,7 @@ function write(message){
 
 オブジェクト `asyncContext`の `status`、 、 `error` プロパティは `AsyncResult` 、すべての "Async" メソッドに渡されるコールバック関数に同じ種類の情報を返します。 ただし、プロパティに返される `AsyncResult.value` 内容は、"Async" メソッドの機能によって異なります。
 
-`addHandlerAsync`たとえば、これらのオブジェクトで表されるアイテムにイベント ハンドラー関数を追加するには、メソッド ([Binding](/javascript/api/office/office.binding)、[CustomXmlPart](/javascript/api/office/office.customxmlpart)、[Document](/javascript/api/office/office.document)、[RoamingSettings](/javascript/api/outlook/office.roamingsettings)、[および 設定](/javascript/api/office/office.settings) オブジェクト) を使用します。 任意のメソッドに渡すコールバック関数からプロパティにアクセスできますが、イベント ハンドラーを追加するときにデータやオブジェクトがアクセスされていないので、アクセスしようとすると、プロパティは常に未定義を返します。 `AsyncResult.value` `addHandlerAsync` `value`
+たとえば、`addHandlerAsync`これらのオブジェクトで表されるアイテムにイベント ハンドラー関数を追加するには、メソッド ([Binding](/javascript/api/office/office.binding)、[CustomXmlPart](/javascript/api/office/office.customxmlpart)、[Document](/javascript/api/office/office.document)、[RoamingSettings](/javascript/api/outlook/office.roamingsettings)、[および 設定](/javascript/api/office/office.settings) オブジェクト) を使用します。 任意のメソッドに渡すコールバック関数からプロパティにアクセスできますが、イベント ハンドラーを追加するときにデータやオブジェクトがアクセスされていないので、アクセスしようとすると、プロパティは常に未定義を返します。 `AsyncResult.value` `addHandlerAsync` `value`
 
 一方、メソッドを呼び`Document.getSelectedDataAsync``AsyncResult.value`出した場合は、ドキュメントで選択したユーザーのデータをコールバック内のプロパティに返します。 または、 [Bindings.getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) `Binding` メソッドを呼び出した場合は、ドキュメント内のすべてのオブジェクトの配列を返します。 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) メソッドを呼び出した場合は、1 つのオブジェクトを返`Binding`します。
 
@@ -362,7 +367,7 @@ function getDocumentFilePath() {
 このメソッドを待つ必要がある `await` 場合は、キーワードを使用するか、関数に渡す関数として呼び出 `then` すことができます。
 
 > [!NOTE]
-> この手法は、アプリケーション固有のオブジェクト モデルの 1 つでメソッドの呼び出し内で共通 API `run` の 1 つを呼び出す必要がある場合に特に便利です。 この方法で使用されている上記の関数の例については、 [ サンプル Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js) のHome.jsを参照してください。
+> この手法は、アプリケーション固有のオブジェクト モデルの 1 つでメソッドの呼び出し内で共通 API `run` の 1 つを呼び出す必要がある場合に特に便利です。 この方法で使用されている上記の関数の例については、 [ サンプル Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js) のファイルHome.jsを参照してください。
 
 TypeScript を使用する例を次に示します。
 

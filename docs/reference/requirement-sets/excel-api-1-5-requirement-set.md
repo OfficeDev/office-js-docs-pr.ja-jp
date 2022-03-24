@@ -4,8 +4,13 @@ description: ExcelApi 1.5 要件セットの詳細。
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 60da29607a8c8a22b38c9e19345a574e4f923922
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745206"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 の新機能
 
 ExcelApi 1.5 では、カスタム XML パーツが追加されます。 これらは、ブック オブジェクトの [カスタム XML パーツ コレクション](/javascript/api/excel/excel.workbook#excel-excel-workbook-customxmlparts-member) からアクセスできます。

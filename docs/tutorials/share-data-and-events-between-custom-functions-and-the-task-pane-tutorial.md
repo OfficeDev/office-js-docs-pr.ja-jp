@@ -4,20 +4,20 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 69dbb7c2b57d09f3d71397db0b1d56babf7c64a6
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: 6942e20495f8d4743df2fa3db1e0c729c1c1d608
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242055"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710917"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
-グローバル データを共有し、共有ランタイムを使用して、Excel アドインの作業ウィンドウとカスタム関数の間でイベントを送信します。 ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。 このチュートリアルでは、Yo Office ジェネレーターを使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
+グローバル データを共有し、共有ランタイムを使用して、Excel アドインの作業ウィンドウとカスタム関数の間でイベントを送信します。 ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。 このチュートリアルでは、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
-[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) を使用し、Excel アドイン プロジェクトを作成します。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) を使用し、Excel アドイン プロジェクトを作成します。
 
 - カスタム関数を使用して Excel アドインを生成するには、次のコマンドを実行します。
     

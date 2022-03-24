@@ -3,8 +3,13 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
+ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743236"
 ---
-
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
 キーボード ショートカット (キーの組み合わせとも呼ばれる) を使用すると、アドインのユーザーの作業効率が向上します。 キーボード ショートカットは、マウスの代替手段を提供することで、障がいを持つユーザーに対するアドインのアクセシビリティも向上します。
@@ -12,13 +17,13 @@ localization_priority: Normal
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> キーボード ショートカットが既に有効になっているアドインの作業バージョンから始めるには、キーボード ショートカットのサンプル を複製Excel[実行します](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 キーボード ショートカットを独自のアドインに追加する準備ができたら、この記事に進む。
+> キーボード ショートカットが既に有効になっているアドインの作業バージョンから開始するには、キーボード ショートカットのサンプル を複製Excel[実行します](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 キーボード ショートカットを独自のアドインに追加する準備ができたら、この記事に進む。
 
 アドインにキーボード ショートカットを追加するには、3 つの手順があります。
 
 1. [アドインのマニフェストを構成します](#configure-the-manifest)。
 1. [アクションとそのキーボード ショートカットを定義するショートカット JSON](#create-or-edit-the-shortcuts-json-file) ファイルを作成または編集します。
-1. [](#create-a-mapping-of-actions-to-their-functions) [Office.actions.associate API の 1](/javascript/api/office/office.actions#office-office-actions-associate-member) つ以上のランタイム呼び出しを追加して、関数を各アクションにマップします。
+1. [](#create-a-mapping-of-actions-to-their-functions) [Office.actions.associate API の 1 つ](/javascript/api/office/office.actions#office-office-actions-associate-member)以上のランタイム呼び出しを追加して、各アクションに関数をマップします。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -85,7 +90,7 @@ localization_priority: Normal
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>アクションの関数へのマッピングを作成する
 
 1. プロジェクトで、HTML ページによって読み込まれた JavaScript ファイルを要素で開 `<FunctionFile>` きます。
-1. JavaScript ファイルで、[Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API を使用して、JSON ファイルで指定した各アクションを JavaScript 関数にマップします。 次の JavaScript をファイルに追加します。 コードについて次の点に注意してください。
+1. JavaScript ファイルで[、Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API を使用して、JSON ファイルで指定した各アクションを JavaScript 関数にマップします。 次の JavaScript をファイルに追加します。 コードについて次の点に注意してください。
 
     - 最初のパラメーターは、JSON ファイルからのアクションの 1 つです。
     - 2 番目のパラメーターは、JSON ファイル内のアクションにマップされているキーの組み合わせをユーザーが押すと実行される関数です。
@@ -111,7 +116,7 @@ localization_priority: Normal
     });
     ```
 
-1. 2 番目の関数呼び`Office.actions.associate``HIDETASKPANE`出しを追加して、アクションを [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) を呼び出す関数にマップします。 次に例を示します。
+1. 2 番目の関数呼び`Office.actions.associate``HIDETASKPANE`出しを追加して、アクションを [Office.addin.hide を呼](/javascript/api/office/office.addin#office-office-addin-hide-member(1))び出す関数にマップします。 次に例を示します。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -125,7 +130,7 @@ localization_priority: Normal
     });
     ```
 
-前の手順に従うと、Ctrl + **Alt + Up** キーと **Ctrl + Alt + Down** キーを押して、作業ウィンドウの表示を切り替えます。 同じ動作が、Excelの[](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)アドイン PnP repo の Office キーボード ショートカット のサンプルGitHub。
+前の手順に従うと、Ctrl + **Alt + Up** キーと **Ctrl + Alt + Down** キーを押して、作業ウィンドウの表示を切り替えます。 同じ動作が、Excelアドイン [](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) PnP repo の Officeのキーボード ショートカット サンプルにGitHub。
 
 ## <a name="details-and-restrictions"></a>詳細と制限
 
@@ -193,7 +198,7 @@ shortcuts.json の配列でオブジェクトを指定する場合は、 `shortc
 ショートカット JSON の完全なスキーマは [、extended-manifest.schema.json です](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
-> キーヒントは、Excel ショートカットなどのシーケンシャル キー ショートカットとも呼ばれる、塗りつぶしの色を選択する **Alt +H、H** など、Office アドインではサポートされていません。
+> 塗りつぶしの色を選択する Excel ショートカットなどのシーケンシャル キー ショートカットとも呼ばれる KeyTips **Alt+H、H** は、Office アドインではサポートされていません。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>他のアドインで使用されるキーの組み合わせを回避する
 
@@ -205,20 +210,20 @@ shortcuts.json の配列でオブジェクトを指定する場合は、 `shortc
 
 ユーザーは、キーボード ショートカットで実行する操作を選択できます。 選択を行った後、同じショートカットの今後の使用のために基本設定が保存されます。 ショートカットの基本設定は、プラットフォームごとにユーザーごとに保存されます。 ユーザーが自分の設定を変更する場合は、[教えて] 検索ボックスから [Office アドインのショートカット設定のリセット] コマンド **を** 呼び出します。 このコマンドを呼び出すと、ユーザーのすべてのアドイン ショートカット設定がクリアされ、次に競合するショートカットを使用しようとすると、ユーザーに競合ダイアログ ボックスが表示されます。
 
-![[アドインのショートカットの設定] Excel設定のリセットOfficeを表示するダイアログ ボックスを表示します。](../images/add-in-reset-shortcuts-action.png)
+![[アドインのショートカットの基本設定] Excel設定のリセットOfficeを表示するダイアログ ボックスを表示します。](../images/add-in-reset-shortcuts-action.png)
 
 最適なユーザー エクスペリエンスを得る場合は、これらの優れたプラクティスを使用して、Excelを最小限にすることをお勧めします。
 
 - キーボード ショートカットのみを使用して、次のパターンを使用します。**Ctrl+Shift+Alt+* x***、 *x* は他のキーです。
-- キーボード ショートカットが必要な場合は、キーボード ショートカットExcel[一](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)覧を確認し、アドインでキーボード ショートカットを使用しないようにします。
+- さらにキーボード ショートカットが必要な場合は、キーボード [](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)ショートカットExcel一覧を確認し、アドインでキーボード ショートカットを使用しないようにします。
 - キーボード フォーカスがアドイン UI 内にある場合、 **Ctrl + Spacebar** と **Ctrl + Shift + F10** は基本的なアクセシビリティ ショートカットとして機能しません。
-- Windows または Mac コンピューターで、検索メニューで [Office アドインのショートカット設定をリセットする] コマンドが使用できない場合は、コンテキスト メニューからリボンをカスタマイズしてリボンにコマンドを手動で追加できます。
+- Windows または Mac コンピューターで、[Office アドインのショートカット設定をリセットする] コマンドが検索メニューで使用できない場合は、コンテキスト メニューからリボンをカスタマイズして、リボンにコマンドを手動で追加できます。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>プラットフォームごとにキーボード ショートカットをカスタマイズする
 
 ショートカットをプラットフォーム固有にカスタマイズできます。 次に、次の`shortcuts`各プラットフォームのショートカットをカスタマイズするオブジェクトの例を示`mac``web`します。 `windows` ただし、ショートカットごとにショートカット キーが `default` 必要です。
 
-次の例では、キー `default` は、指定されていないプラットフォームのフォールバック キーです。 指定されていない唯一のプラットフォームはWindows、キー`default`はユーザーにのみ適用Windows。
+次の例では、キー `default` は、指定されていないプラットフォームのフォールバック キーです。 指定されていない唯一のプラットフォームはWindowsので、キー`default`はユーザーにのみ適用Windows。
 
 ```json
     "shortcuts": [
@@ -287,10 +292,10 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-ユーザーで既に使用されているショートカットを確認するには、[Office.actions.getShortcuts メソッドを呼び出](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member)します。 このメソッドは、ユーザーが指定したアクション `[actionId:string]:string|null}`を呼び出す場合に使用する必要がある現在のキーボードの組み合わせを表す、型のオブジェクトを返します。 値は、次の 3 つの異なるソースから取得できます。
+ユーザーで既に使用されているショートカットを確認するには、[Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) メソッドを呼び出します。 このメソッドは、ユーザーが指定したアクション `[actionId:string]:string|null}`を呼び出す場合に使用する必要がある現在のキーボードの組み合わせを表す、型のオブジェクトを返します。 値は、次の 3 つの異なるソースから取得できます。
 
 - ショートカットとの競合が発生し、ユーザーがキーボードの組み合わせに対して別のアクション (ネイティブアドインまたは別のアドイン) `null` を使用する場合、ショートカットが上書きされ、ユーザーが現在そのアドイン アクションを呼び出すキーボードの組み合わせがない場合に返される値になります。
-- [ショートカットが Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) メソッドを使用してカスタマイズされている場合、返される値はカスタマイズされたキーボードの組み合わせになります。
+- [ショートカットが Office.actions.replaceShortcuts メソッド](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member)を使用してカスタマイズされている場合、返される値はカスタマイズされたキーボードの組み合わせになります。
 - ショートカットがオーバーライドまたはカスタマイズされていない場合は、アドインの拡張マニフェスト JSON から値が返されます。
 
 次に例を示します。
@@ -306,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は、[Office.actions.areShortcutsInUse メソッドに文字列の配列として](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member)渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}`。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、プロパティ `inUse` は に設定されます `true`。 たとえば、`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` などです。 次のコード スニペットは、例です。
+「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は、[Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}`。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、プロパティ `inUse` は に設定されます `true`。 たとえば、`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` などです。 次のコード スニペットは、例です。
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];

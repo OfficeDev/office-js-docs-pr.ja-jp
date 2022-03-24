@@ -3,12 +3,12 @@ title: Office アドインのユーザビリティ テスト
 description: 実際のユーザーと一緒にアドイン設計をテストする方法について学習します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b7ef0b2665d9cef5079d414cfa45e9ee0400d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ebfde462bcfd2e3b6536a97dc45cba9dbf98415c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149898"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744414"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office アドインのユーザビリティ テスト
 
@@ -108,7 +108,7 @@ Live アドインをテストするか、プロトタイプをテストするこ
 
 平均すると、ユーザーがアドインのインストール方法をひととおり実行するには約 5 分間かかります。明確で簡潔なインストール手順の例を次に示します。テストの仕様に基づいて手順を調整してください。
 
-**次の手順に従って、(ここにアドイン名を挿入する) アドインをインストールPowerPointインストールしてください。**
+**次の手順に従って、PowerPointアドインをインストールしてください。**
 
 1. Microsoft PowerPoint を開きます。
 1. **[新しいプレゼンテーション]** を選択します。

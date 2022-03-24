@@ -4,8 +4,13 @@ description: 複数のアドインを使用した Image Coercion 要件セット
 ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 50533d179180eeef81825a97c9c39fda95af554f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746921"
 ---
-
 # <a name="image-coercion-requirement-sets"></a>画像強制型変換要件セット
 
 要件セットは、API メンバーの名前付きグループです。Office アドインは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判別します。詳しくは、「[Office のバージョンと要件セット](../../develop/office-versions-and-requirement-sets.md)」をご覧ください。
@@ -34,7 +39,7 @@ ImageCoercion 1.2 では、メソッドを使用してデータを書き込む�
 - Excel 2021 以降のWindows
 - Excel 2021 以降
 - PowerPoint 2021 以降のWindows
-- PowerPoint 2021 以降の Mac
+- PowerPoint 2021 以降
 - PowerPoint on the web
 - Word 2021 以降のWindows
 - Mac 上の Word 2021 以降

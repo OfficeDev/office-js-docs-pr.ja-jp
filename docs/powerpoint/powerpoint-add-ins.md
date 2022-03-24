@@ -3,10 +3,15 @@ title: PowerPoint アドイン
 description: PowerPoint アドインを使用して Windows、iPad、Mac、ブラウザー上など、複数のプラットフォームでプレゼンテーション用の魅力的なソリューションを構築する方法を説明します。
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: a1bfa8f17f6a63896025a374a9fe8a6bdbf36f55
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746995"
 ---
-
 # <a name="powerpoint-add-ins"></a>PowerPoint アドイン
 
 PowerPoint アドインを使用して、Windows、iPad、Mac を含むプラットフォーム間、およびブラウザーで、ユーザーのプレゼンテーション用に魅力的なソリューションを構築できます。次の 2 種類の PowerPoint アドインを作成できます。

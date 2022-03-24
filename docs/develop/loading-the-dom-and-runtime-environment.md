@@ -1,14 +1,14 @@
 ---
 title: DOM とランタイム環境を読み込む
-description: DOM を読み込Officeアドインランタイム環境を使用します。
+description: DOM を読み込みOfficeアドインランタイム環境を使用します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db6b8667678e6a38c0932faf66fc2b0b63cc7a9b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1dac1980c5f5068451893d24e24d0e0c3da3a6f5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150025"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743788"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
@@ -18,13 +18,13 @@ ms.locfileid: "59150025"
 
 次の図では、Excel、PowerPoint、Project、または Word のコンテンツ アドインまたは作業ウィンドウ アドインの起動に関連するイベントのフローを示しています。
 
-![Flowまたは作業ウィンドウ アドインを開始する際のイベントの種類。](../images/office15-app-sdk-loading-dom-agave-runtime.png)
+![Flowまたは作業ウィンドウ アドインを開始するときに発生するイベントの種類。](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 次のイベントは、コンテンツ アドインまたは作業ウィンドウ アドインの開始時に発生します。
 
 1. ユーザーは、既にアドインが含まれているドキュメントを開くか、ドキュメントにアドインを挿入します。
 
-2. クライアント Officeは、アドインの XML マニフェストを AppSource、SharePoint のアプリ カタログ、またはそれが作成元の共有フォルダー カタログから読み取ります。
+2. クライアント Officeは、アドインの XML マニフェストを AppSource、SharePoint 上のアプリ カタログ、またはそこから作成された共有フォルダー カタログから読み取ります。
 
 3. クライアント Officeブラウザー コントロールでアドインの HTML ページを開きます。
 
@@ -32,7 +32,7 @@ ms.locfileid: "59150025"
 
 4. ブラウザー コントロールは DOM と HTML 本文を読み込み、イベントのイベント ハンドラーを呼び出 `window.onload` します。
 
-5. Office クライアント アプリケーションはランタイム環境を読み込み、Office JavaScript API ライブラリ ファイルをコンテンツ配布ネットワーク (CDN) サーバーからダウンロードしてキャッシュし、ハンドラーが割り当てられている場合は[、Office](/javascript/api/office)オブジェクトの[](/javascript/api/office#Office_initialize_reason_)initialize イベントに対してアドインのイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との区別の詳細については、「 `Office.initialize` アドイン `Office.onReady` の初期化 [」を参照してください](initialize-add-in.md)。
+5. Office クライアント アプリケーションはランタイム環境を読み込み、Office JavaScript API ライブラリ ファイルをコンテンツ配布ネットワーク (CDN) サーバーからダウンロードしてキャッシュし、ハンドラーが割り当てられている場合は、[Office](/javascript/api/office) オブジェクトの initialize イベント用にアドインのイベント ハンドラーを呼[](/javascript/api/office#Office_initialize_reason_)び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 とを区別する方法の詳細については、「`Office.initialize``Office.onReady`アドインの[初期化」を参照してください](initialize-add-in.md)。
 
 6. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
 
@@ -40,7 +40,7 @@ ms.locfileid: "59150025"
 
 次の図は、デスクトップ、タブレット、スマートフォンで実行される Outlook アドインの起動に関係するイベントのフローを示しています。
 
-![Flowを開始する際Outlookイベントの種類。](../images/outlook15-loading-dom-agave-runtime.png)
+![Flowを開始する際Outlookイベントの一覧。](../images/outlook15-loading-dom-agave-runtime.png)
 
 次のイベントは、アドインのOutlook発生します。
 
@@ -54,7 +54,7 @@ ms.locfileid: "59150025"
 
 5. ブラウザー コントロールは DOM と HTML 本文を読み込み、イベントのイベント ハンドラーを呼び出 `onload` します。
 
-6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#Office_initialize_reason_) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 との区別の詳細については、「 `Office.initialize` アドイン `Office.onReady` の初期化 [」を参照してください](initialize-add-in.md)。
+6. Outlook がランタイム環境を読み込みます (このランタイム環境は、コンテンツ配布ネットワーク (CDN) サーバーから JavaScript API for JavaScript ライブラリ ファイルをダウンロードしてキャッシュします)。その後、ハンドラーが割り当てられている場合は、アドインの [Office](/javascript/api/office#Office_initialize_reason_) オブジェクトの [initialize](/javascript/api/office) イベントに対するイベント ハンドラーを呼び出します。 現時点では、コールバック (またはチェーンされた `then()` 関数) が `Office.onReady` ハンドラーに渡された (チェーンされた) かどうかも確認します。 とを区別する方法の詳細については、「`Office.initialize``Office.onReady`アドインの[初期化」を参照してください](initialize-add-in.md)。
 
 7. DOM と HTML 本文の読み込み、およびアドインの初期化が完了すると、アドインのメイン関数は処理を続行できます。
 

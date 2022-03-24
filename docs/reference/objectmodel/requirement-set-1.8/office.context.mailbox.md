@@ -1,10 +1,15 @@
 ---
 title: Office.context.mailbox - 要件セット 1.8
-description: Outlook API 要件セットメールボックス オブジェクト モデルの 1.8 バージョン。
+description: Outlook API 要件セット 1.8 バージョンのメールボックス オブジェクト モデル。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 62fd5b8f97a5126e288eda5d253538da28fda016
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746850"
 ---
-
 # <a name="mailbox-requirement-set-18"></a>メールボックス (要件セット 1.8)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
@@ -32,7 +37,7 @@ Microsoft Outlook の Outlook アドイン オブジェクト モデルへのア
 
 ## <a name="methods"></a>メソッド
 
-| Method | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
+| メソッド | 最小値<br>アクセス許可レベル | モード | 最小値<br>要件セット |
 |---|---|---|:---:|
 | [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#outlook-office-mailbox-addhandlerasync-member(1)) | ReadItem | 作成<br>読み取り | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [convertToEwsId(itemId, restVersion)](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#outlook-office-mailbox-converttoewsid-member(1)) | Restricted | 作成<br>読み取り | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |

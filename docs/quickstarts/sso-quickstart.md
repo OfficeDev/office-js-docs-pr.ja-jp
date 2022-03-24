@@ -4,8 +4,13 @@ description: Yeoman ジェネレーターを使用して、シングル サイ�
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
+ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711239"
 ---
-
 # <a name="single-sign-on-sso-quick-start"></a>シングル サインオン (SSO) のクイック スタート
 
 この記事では、可能な場合シングル サインオン (SSO) を使用し、SSO がサポートされていない場合は別のユーザー認証方法を使用する Excel、Outlook、Word、または PowerPoint 用の Office アドインを作成するプロセスを説明します。
@@ -19,7 +24,7 @@ Yeoman ジェネレーターは、Azure 内で SSO を構成するために必�
 
 - [Node.js](https://nodejs.org) (最新 [LTS](https://nodejs.org/about/releases) バージョン)。
 
-- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
+- 最新バージョンの [Yeoman](https://github.com/yeoman/yo) と [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)。これらのツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -70,7 +75,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
     ```
 
     > [!WARNING]
-    > このコマンドは、テナントが 2 要素認証を要求するように構成されている場合、失敗します。 このシナリオでは、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」チュートリアルで説明されているように、Azure アプリの登録および SSO の構成手順を手動で完了する必要があります。
+    > テナントが 2 要素認証を要求するように構成されている場合、このコマンドは失敗します。このシナリオでは、「[シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)」チュートリアルで説明されているように、Azure アプリの登録および SSO の構成手順を手動で完了する必要があります。
 
 3. Web ブラウザー ウィンドウが開き、Azure にサインインするように指示されます。 Microsoft 365 管理者の資格情報を使用して Azure にサインインします。 これらの資格情報を使用して Azure に新しいアプリケーションが登録され、SSO に必要な設定が構成されます。
 
@@ -95,9 +100,9 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
     npm start
     ```
 
-2. 前のコマンド (Excel、Word、PowerPoint など) を実行したときに開く Office クライアント アプリケーションで、[前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Microsoft 365 管理者アカウントと同じ Microsoft 365 組織のメンバーであるユーザーでサインインしていることを確認します。 これにより、SSO を正常に実行するための適切な条件が確立されます。
+2. 前のコマンド (Excel、Word、PowerPoint など) を実行したときに開く Office クライアント アプリケーションで、[前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Microsoft 365 管理者アカウントと同じ Microsoft 365 組織のメンバーであるユーザーでサインインしていることを確認します。これにより、SSO を正常に実行するための適切な条件が確立されます。
 
-3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。 次の画像は、Excel のこのボタンを示しています。
+3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。次の画像は、Excel のこのボタンを示しています。
 
     ![Excel アドイン ボタン。](../images/excel-quickstart-addin-3b.png)
 

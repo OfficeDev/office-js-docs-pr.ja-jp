@@ -3,12 +3,12 @@ title: ドキュメントやスプレッドシート内の領域へのバイン�
 description: バインドを使用して、識別子を使用してドキュメントまたはスプレッドシートの特定の領域または要素に一貫してアクセスする方法について説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da5dabe75f41e0ab7add6ee33aa82144a53b3e7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 56db3bf320e51015ae073ab882596802534f9d79
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149712"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743539"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
@@ -24,13 +24,13 @@ ms.locfileid: "59149712"
 
 ## <a name="binding-types"></a>バインドの種類
 
-次の[3 種類の]バインド[Office。] [addFromSelectionAsync]メソッド[、addFromPromptAsync]メソッド、または[addFromNamedItemAsync]メソッドを使用してバインドを作成するときに bindingType パラメーターで指定する BindingType。
+バインドには[、次の 3 種類Office][。] [addFromSelectionAsync] メソッド、[addFromPromptAsync] メソッド、または [addFromNamedItemAsync] メソッドを使用してバインドを作成するときに bindingType パラメーターで指定する BindingType。
 
 1. **[テキスト バインド][TextBinding]** - テキストとして表現できるドキュメントの領域にバインドします。
 
     Word では、連続する選択範囲の大部分が有効ですが、Excel では、単一セルの範囲のみがテキスト バインドの対象です。Excel では、プレーン テキストのみがサポートされます。Word では、3 つの形式 (プレーン テキスト、HTML、および Open XML for Office) がサポートされます。
 
-2. **[Matrix Binding][MatrixBinding]** - ヘッダーのない表形式のデータを含むドキュメントの固定領域にバインドします。マトリックス バインド内のデータは、2 次元 **配列** として記述または読み取り 、JavaScript では配列の配列として実装されます。 たとえば、2 つの列の 2 行の文字列値を、3 行の 1 つの列として書き込みまたは読み取 `[['a', 'b'], ['c', 'd']]` ることができます `[['a'], ['b'], ['c']]` 。
+2. **[Matrix] [BindingMatrixBinding]** - ヘッダーのない表形式のデータを含むドキュメントの固定領域にバインドします。マトリックス バインド内のデータは 2 次元 **配列** として記述または読み取り、JavaScript では配列の配列として実装されます。 たとえば、2 つの`[['a', 'b'], ['c', 'd']]`列の 2 行の文字列値を、3 行の 1 つの列として書き込みまたは読み取ることができます。`[['a'], ['b'], ['c']]`
 
     Excel では、セルの連続する選択範囲を使用してマトリックス バインドを設定できます。Word では、表のみがマトリックス バインドをサポートします。
 
@@ -38,7 +38,7 @@ ms.locfileid: "59149712"
 
     Excel または Word の表はすべて、テーブル バインドの基礎にできます。テーブル バインドを確立すると、ユーザーが表に追加する新しい各行または各列が、自動的にバインドに含まれます。
 
-オブジェクトの 3 つの "addFrom" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトのメソッドを使用してバインドのデータとプロパティを処理できます `Bindings` [。MatrixBinding、TableBinding、][または TextBinding][]です。 この 3 つのオブジェクトはすべて、[] オブジェクトの [getDataAsync] メソッドおよび `Binding` メソッドを継承しているので、バインドされたデータを操作できます。
+オブジェクトの 3 つの "addFrom" メソッドのいずれかを使用してバインドを作成した後、対応するオブジェクトのメソッド ([MatrixBinding、TableBinding]、[または TextBinding]) `Bindings` を使用して、バインドのデータ[]とプロパティを処理できます。 この 3 つのオブジェクトはすべて、[] オブジェクトの [getDataAsync] メソッドおよび `Binding` メソッドを継承しているので、バインドされたデータを操作できます。
 
 > [!NOTE]
 > **マトリックス バインドとテーブル バインドの使い分け** 作業中の表形式のデータに集計行が含まれ、アドインのスクリプトが集計行の値にアクセスする必要がある場合、またはユーザーの選択が集計行にあることを検出する必要がある場合は、マトリックス バインドを使用する必要があります。集計行を含む表形式データに対するテーブル バインドを設定する場合、[TableBinding.rowCount] プロパティおよびイベント ハンドラーの [BindingSelectionChangedEventArgs] オブジェクトの `rowCount` および `startRow` プロパティは、集計行のそれらの値に反映されません。この制限を回避するには、集計行を処理するマトリックス バインドを設定する必要があります。
@@ -103,7 +103,7 @@ function write(message){
 
 ## <a name="add-a-binding-to-a-named-item"></a>名前付きアイテムにバインドを追加する
 
-次の例は `myRange` [、addFromNamedItemAsync] メソッドを使用して、既存の名前付きアイテムにバインドを "マトリックス" バインドとして追加し、バインドを "myMatrix" として割り当てる方法を `id` 示しています。
+次の例 `myRange` は、 [addFromNamedItemAsync] メソッドを使用して、既存の名前付きアイテムにバインドを "マトリックス" バインドとして追加し、バインドを "myMatrix `id` " として割り当てる方法を示しています。
 
 ```js
 function bindNamedItem() {
@@ -123,12 +123,12 @@ function write(message){
 
 ```
 
-**たとえばExcel** `itemName` [addFromNamedItemAsync]メソッドのパラメーターは、既存の名前付き範囲、参照スタイルで指定された範囲、またはテーブルを `A1` `("A1:A3")` 参照できます。 既定では、Excel のテーブルを追加すると、最初に追加したテーブルには "Table1"、次に追加したテーブルには "Table2" という名前が割り当てられます。 UI でテーブルにわかりやすい名前をExcelするには、[テーブル ツール] ページのプロパティを `Table Name` **使用|リボン** の [デザイン] タブ。
+**たとえばExcel**`itemName` [addFromNamedItemAsync] `A1` `("A1:A3")`メソッドのパラメーターは、既存の名前付き範囲、参照スタイルで指定された範囲、またはテーブルを参照できます。 既定では、Excel のテーブルを追加すると、最初に追加したテーブルには "Table1"、次に追加したテーブルには "Table2" という名前が割り当てられます。 UI でテーブルにわかりやすい名前を割り当てるには、Excel ツール `Table Name` のプロパティ **を使用|リボン** の [デザイン] タブ。
 
 > [!NOTE]
-> このExcel、テーブルを名前付きアイテムとして指定する場合は、ワークシート名を次の形式でテーブルの名前に含めるには、名前を完全に修飾する必要があります。`"Sheet1!Table1"`
+> このExcel、テーブルを名前付きアイテムとして指定する場合は、ワークシート名を次の形式のテーブルの名前に含めるには、名前を完全に修飾する必要があります。`"Sheet1!Table1"`
 
-次の使用例は、Excel 列 A ( ) の最初の 3 つのセルにバインドを作成し、id を割り当て、そのバインドに 3 つの都市名 `"A1:A3"` `"MyCities"` を書き込みます。
+次の使用例は、Excel 列 A ( `"A1:A3"`) の最初の 3 つのセルにバインドを作成し、id `"MyCities"`を割り当て、そのバインドに 3 つの都市名を書き込みます。
 
 ```js
  function bindingFromA1Range() {
@@ -154,11 +154,11 @@ function write(message){
 }
 ```
 
-**Word の** 場合 `itemName` [、addFromNamedItemAsync] メソッドのパラメーターは、コンテンツ `Title` コントロールのプロパティを `Rich Text` 参照します。 (`Rich Text` コンテンツ コントロール以外のコンテンツ コントロールにはバインドできません)。
+**Word の** 場合、`itemName`[addFromNamedItemAsync] メソッドのパラメーターは`Title`、コンテンツ コントロールのプロパティを`Rich Text`参照します。 (`Rich Text` コンテンツ コントロール以外のコンテンツ コントロールにはバインドできません)。
 
-既定では、コンテンツ コントロールには値が `Title*` 割り当てられていない。 Word UI で意味のあるテーブル名を割り当てるには、リボンの [ **開発者**] タブの [ **コントロール**] グループから [ **リッチ テキスト**] コンテンツ コントロールを挿入した後、[ **コントロール**] グループの [ **プロパティ**] コマンドを使用して [ **コンテンツ コントロールのプロパティ**] ダイアログ ボックスを表示します。 次に、 `Title` コンテンツ コントロールのプロパティを、コードから参照する名前に設定します。
+既定では、コンテンツ コントロールには値が割り `Title*`当てられていない。 Word UI で意味のあるテーブル名を割り当てるには、リボンの [ **開発者**] タブの [ **コントロール**] グループから [ **リッチ テキスト**] コンテンツ コントロールを挿入した後、[ **コントロール**] グループの [ **プロパティ**] コマンドを使用して [ **コンテンツ コントロールのプロパティ**] ダイアログ ボックスを表示します。 次に、コンテンツ `Title` コントロールのプロパティを、コードから参照する名前に設定します。
 
-次の例では、Word でという名前のリッチ テキスト コンテンツ コントロールにテキスト バインドを作成し、id を割り当て、その情報 `"FirstName"`  `"firstName"` を表示します。
+次の例では、Word `"FirstName"`でという名前のリッチ テキスト コンテンツ コントロールにテキスト バインドを作成し、 **id** `"firstName"`を割り当て、その情報を表示します。
 
 ```js
 function bindContentControl() {
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-パラメーターとして関数に渡される匿名関数は、操作 `callback` が完了すると実行されます。 この関数は、ドキュメント内のバインドの配列を含む 1 つのパラメーターで `asyncResult` 呼び出されます。 配列は反復処理されて、バインドの ID を含む文字列が作成されます。 この文字列がメッセージ ボックスに表示されます。
+パラメーターとして関数に渡 `callback` される匿名関数は、操作が完了すると実行されます。 この関数は、ドキュメント内の `asyncResult`バインドの配列を含む 1 つのパラメーターで呼び出されます。 配列は反復処理されて、バインドの ID を含む文字列が作成されます。 この文字列がメッセージ ボックスに表示されます。
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Bindings オブジェクトの getByIdAsync メソッドを使用して ID でバインドを取得する
 
@@ -220,7 +220,7 @@ function write(message){
 }
 ```
 
-この例では、最初の `id` パラメーターは取得するバインドの ID です。
+この例では、最初のパラメーター `id` は取得するバインドの ID です。
 
 2 番目のコールバック パラメーターとして関数に渡される匿名 _関数は、_ 操作が完了すると実行されます。 この関数は、呼び出しのステータスおよび ID が "myBinding" であるバインドが格納される _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。
 
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> メソッド promise が Binding オブジェクトを正常に返す場合、そのオブジェクトは `select` [、getDataAsync、setDataAsync、addHandlerAsync、removeHandlerAsync][][][][]の 4 つのメソッドのみを公開します。 Promise が Binding オブジェクトを返できない場合、コールバックを使用して `onError` [asyncResult].error オブジェクトにアクセスして詳細を取得できます。メソッドによって返される Binding オブジェクトの約束によって公開される 4 つのメソッド以外の[]Binding オブジェクトのメンバーを呼び出す必要がある場合は `select` [、Document.bindings]プロパティと Bindings[][を使用して getByIdAsync メソッドを使用します。Binding オブジェクトを取得する getByIdAsync]メソッド。 []
+> `select`メソッドの promise が [Binding] オブジェクトを正常に返す場合、そのオブジェクトは、[getDataAsync、setDataAsync]、[addHandlerAsync、removeHandlerAsync] の 4 つのメソッドのみを[]公開します。 [] Promise が Binding オブジェクトを返できない`onError`場合、コールバックを使用して [asyncResult.error] オブジェクトにアクセスして詳細を取得できます。メソッドによって返される Binding オブジェクトの約束によって公開される 4 つのメソッド以外の Binding オブジェクトのメンバーを[]呼び出す必要がある場合は、[Document.bindings プロパティと Bindings] [] を使用して getByIdAsync メソッドを使用します。`select`[Binding オブジェクトを取得する getByIdAsync] メソッド。[]
 
 ## <a name="release-a-binding-by-id"></a>ID でバインドを解除する
 
@@ -302,9 +302,9 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 `myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。
 
-この例では、最初のパラメーターはに設定する値です `myBinding` 。 これはテキスト バインドのため、値は `string` です。 バインドの種類が異なる場合、異なる型のデータが使用されます。
+この例では、最初のパラメーターはに設定する値です `myBinding`。 これはテキスト バインドのため、値は `string` です。 バインドの種類が異なる場合、異なる型のデータが使用されます。
 
-関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。 この関数は、結果の状態を含む 1 つのパラメーター `asyncResult` で呼び出されます。
+関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。 この関数は、結果の状態 `asyncResult`を含む 1 つのパラメーターで呼び出されます。
 
 > [!NOTE]
 > Excel 2013 SP1 および Excel on the web の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../excel/excel-add-ins-tables.md)ができるようになりました。
@@ -329,9 +329,9 @@ function write(message){
 
 `myBinding` は、ドキュメント内の既存のテキスト バインドを格納している変数です。
 
-[addHandlerAsync]メソッドの最初の eventType パラメーターは、サブスクライブするイベントの名前を指定します。  [Office.EventType] は、使用できるイベントの種類の値の列挙型です。 `Office.EventType.BindingDataChanged` 文字列 "bindingDataChanged" に評価されます。
+[addHandlerAsync メソッドの最初の eventType] パラメーターは、サブスクライブするイベントの名前を指定します。 [Office.EventType] は、使用できるイベントの種類の値の列挙型です。 `Office.EventType.BindingDataChanged` 文字列 "bindingDataChanged" に評価されます。
 
-2 番目のハンドラー パラメーターとして関数に渡される関数は、バインド内のデータが変更されると実行される `dataChanged` イベント ハンドラーです。  この関数は、バインドへの参照が格納される _eventArgs_ という 1 つのパラメーターを使用して呼び出されます。 このバインドを使用して、更新されたデータを取得できます。
+2 番目のハンドラー パラメーターとして関数に渡される関数は、バインド内のデータが変更されると実行されるイベント ハンドラーです。`dataChanged` この関数は、バインドへの参照が格納される _eventArgs_ という 1 つのパラメーターを使用して呼び出されます。 このバインドを使用して、更新されたデータを取得できます。
 
 同様に、バインドの [SelectionChanged] イベントにイベント ハンドラーを関連付けることによって、バインド内の選択範囲の変更を検出できます。これを行うには、[addHandlerAsync] メソッドの `eventType` パラメーターを `Office.EventType.BindingSelectionChanged` または `"bindingSelectionChanged"` と指定します。
 
@@ -349,7 +349,7 @@ function removeEventHandlerFromBinding() {
 ```
 
 > [!IMPORTANT]
-> [removeHandlerAsync]メソッドが呼び出されると、オプションのハンドラー パラメーターを省略すると、指定したイベント ハンドラーはすべて `eventType` 削除されます。
+> [removeHandlerAsync] `eventType` メソッドが呼び出されると、オプションのハンドラー パラメーターを省略すると、指定したイベント ハンドラーはすべて削除されます。
 
 ## <a name="see-also"></a>関連項目
 

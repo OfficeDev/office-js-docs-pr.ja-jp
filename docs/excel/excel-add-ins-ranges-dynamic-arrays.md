@@ -4,12 +4,12 @@ description: JavaScript API を使用して動的配列と範囲のスピルを�
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: b096225a7f4582f15b5707dcd0059e8e8869ad8d
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 4ba4ab2bbce04465bc7db0a75e8ce39a6584a5a8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340695"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745070"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>JavaScript API を使用して動的配列とスピルExcel処理する
 

@@ -3,12 +3,12 @@ title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows �
 description: VS Code で Microsoft Edge WebView2 (Chromium ベース) を使用する Office アドインをデバッグする方法について説明します。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340156"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711015"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
@@ -33,11 +33,11 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 
 ## <a name="use-the-visual-studio-code-debugger"></a>Visual Studio Code デバッガーを使用する
 
-これらの手順は、コマンド ラインの使用経験があり、基本的な JavaScript を理解していて、Yo Office ジェネレーターを使用する前に Office アドイン プロジェクトを作成したことがあることを前提としています。 これを行ったことがない場合は、「[Excel Office アドインのチュートリアル](../tutorials/excel-tutorial.md)」など、いずれかのチュートリアルを参照することを検討してください。
+これらの手順は、コマンド ラインの使用経験があり、基本的な JavaScript を理解し、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用する前に Office アドイン プロジェクトを作成したことを前提としています。これまでにこれを行ったことがない場合は、[Excel Office アドイン チュートリアル](../tutorials/excel-tutorial.md)などのチュートリアルの 1 つにアクセスすることを検討してください。
 
 1. 最初の手順は、プロジェクトとその作成方法によって異なります。
 
-   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、[Office アドイン用の Yeoman ジェネレーターを使用します](https://github.com/OfficeDev/generator-office)。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」など、クイック スタート ガイドのいずれかを使用します。 
+   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、[Office アドイン用の Yeoman ジェネレーターを使用します](../develop/yeoman-generator-overview.md)。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」など、クイック スタート ガイドのいずれかを使用します。 
    - Yo Office で作成された既存のプロジェクトをデバッグする場合は、スキップして次の手順に進みます。
    - Yo Office で作成されていない既存のプロジェクトをデバッグする場合は、「[付録 A](#appendix-a)」の手順を実行し、この手順の次の手順に戻ります。
 

@@ -3,11 +3,16 @@ title: Outlook アドイン API 要件セット 1.4
 description: メールボックス API 1.4 の一部Outlook JavaScript API および Office JavaScript API 用に導入された機能と API。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 881bde1450ddcf3b1ca7edcbd1632a315c0a766e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745193"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-14"></a>Outlook アドイン API 要件セット 1.4
 
-Office Outlook JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
+Office JavaScript API の Outlook アドイン API サブセットには、Outlook アドインで使用できるオブジェクト、メソッド、プロパティ、イベントが含まれます。
 
 > [!NOTE]
 > このドキュメントは、最新の要件セット以外の[要件セット](../../requirement-sets/outlook-api-requirement-sets.md)のためのものです。
@@ -18,7 +23,7 @@ Office Outlook JavaScript API の Outlook アドイン API サブセットには
 
 ### <a name="change-log"></a>変更ログ
 
-- [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-displaydialogasync-member(1)) の追加: アプリケーション内のダイアログ ボックスをOfficeします。
+- [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-displaydialogasync-member(1)): アプリケーション内のダイアログ ボックスを表示Officeしました。
 - [Office.context.ui.messageParent](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-messageparent-member(1)) が追加されました。メッセージをダイアログ ボックスからその親/オープナー ページに配信します。
 - [Dialog](/javascript/api/office/office.dialog?view=outlook-js-1.4&preserve-view=true) オブジェクトが追加されました。このオブジェクトは、[`displayDialogAsync`](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-displaydialogasync-member(1)) メソッドが呼び出されたときに返されます。
 

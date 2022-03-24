@@ -4,8 +4,13 @@ description: ExcelApi 1.7 要件セットの詳細。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: cd8f0f333b76306a6feecff95b9ba8831428606a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744528"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 の新機能
 
 Excel JavaScript API 要件セット 1.7 の機能には、グラフ、イベント、ワークシート、範囲、ドキュメント プロパティ、名前付きアイテム、保護のオプションとスタイルに対応する API が含まれます。
@@ -68,7 +73,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[id](/javascript/api/excel/excel.chart#excel-excel-chart-id-member)|グラフの一意の ID。|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#excel-excel-chart-showallfieldbuttons-member)|すべてのフィールド ボタンを 1 つのウィンドウに表示するかどうかをピボットグラフ。|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[罫線](/javascript/api/excel/excel.chartareaformat#excel-excel-chartareaformat-border-member)|色、線のスタイル、太さなど、グラフ領域の罫線の形式を表します。|
-|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem(type: Excel.ChartAxisType、group?: Excel。ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#excel-excel-chartaxes-getitem-member(1))|種類とグループで識別された特定の軸を返します。|
+|[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem(type: Excel.ChartAxisType、 group?: Excel。ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#excel-excel-chartaxes-getitem-member(1))|種類とグループで識別された特定の軸を返します。|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[axisGroup](/javascript/api/excel/excel.chartaxis#excel-excel-chartaxis-axisgroup-member)|指定した軸のグループを指定します。|
 ||[baseTimeUnit](/javascript/api/excel/excel.chartaxis#excel-excel-chartaxis-basetimeunit-member)|指定したカテゴリ軸の基本単位を指定します。|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#excel-excel-chartaxis-categorytype-member)|カテゴリ軸の種類を指定します。|
@@ -199,7 +204,7 @@ Excel イベント API には各種のイベント ハンドラーが用意さ�
 ||[hyperlink](/javascript/api/excel/excel.range#excel-excel-range-hyperlink-member)|現在の範囲のハイパーリンクを表します。|
 ||[isEntireColumn](/javascript/api/excel/excel.range#excel-excel-range-isentirecolumn-member)|現在の範囲が列全体であるかどうかを表します。|
 ||[isEntireRow](/javascript/api/excel/excel.range#excel-excel-range-isentirerow-member)|現在の範囲が行全体であるかどうかを表します。|
-||[numberFormatLocal](/javascript/api/excel/excel.range#excel-excel-range-numberformatlocal-member)|ユーザー Excelの言語設定に基づいて、指定した範囲の数値書式コードを表します。|
+||[numberFormatLocal](/javascript/api/excel/excel.range#excel-excel-range-numberformatlocal-member)|ユーザーのExcelに基づいて、指定した範囲の数値書式コードを表します。|
 ||[showCard()](/javascript/api/excel/excel.range#excel-excel-range-showcard-member(1))|アクティブ セルに多数の値が含まれる場合、そのセルのカードを表示します。|
 ||[style](/javascript/api/excel/excel.range#excel-excel-range-style-member)|現在の範囲のスタイルを表します。|
 |[範囲の形式](/javascript/api/excel/excel.rangeformat)|[textOrientation](/javascript/api/excel/excel.rangeformat#excel-excel-rangeformat-textorientation-member)|範囲内のすべてのセルのテキストの向き。|
