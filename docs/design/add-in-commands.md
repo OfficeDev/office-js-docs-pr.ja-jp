@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f5acefe4023a37e04b56cc6e27346965a6e39774
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514118"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742814"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -107,7 +107,7 @@ Excel でグラフが選択されている場合など、特定のコンテキ�
   - 6 個以上のトップ レベル コマンドがある場合は、コマンドをカスタム タブに配置します。
   - グループに、アドインの名前と一致する名前を指定します。グループが複数ある場合は、そのグループのコマンドが提供する機能に基づいた名前を各グループに付けます。
   - アドインの使用スペースを増やす余分なボタンを追加しないでください。
-  - ユーザーがドキュメントを操作する主な方法がアドインである場合を除き、カスタムタブを [ホーム] タブの左側に配置したり、ドキュメントを開いたときに既定でフォーカスを設定したりしないでください。 アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。
+  - ユーザーがドキュメントを操作する主な方法がアドインである場合を除き、カスタム タブを [ホーム] タブの左側に配置したり、ドキュメントを開いたときに既定でフォーカスを設定したりしないでください。アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。
   - アドインがユーザーがドキュメントを操作する主な方法であり、カスタム リボン タブがある場合は、ユーザーが頻繁に必要とする Office 機能のボタンをタブに統合することを検討してください。
   - カスタム タブで提供される機能を特定のコンテキストでのみ使用できるようにする必要がある場合は、[カスタム コンテキスト タブ](contextual-tabs.md)を使用します。 カスタム コンテキスト タブを使用する場合は、[カスタム コンテキスト タブをサポートしていないプラットフォームでアドインを実行する場合のフォールバック エクスペリエンス](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)を実装します。
 

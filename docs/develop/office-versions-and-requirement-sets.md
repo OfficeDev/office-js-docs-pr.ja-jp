@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 38c1bec5acc116fb05cee14a83db83d3ecc16254
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b212da4528cf2583c6665cac9f65f5afcf19cbac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150007"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743372"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -51,7 +51,7 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 `ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office アプリケーションを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office アプリケーション (Word、Outlook など) の要件セットにも対応していません。  Office アプリケーションの要件セットがリリースされる割合は、アプリケーションによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
 
-Office JavaScript API ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。 `ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。 Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。 バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
+Office JavaScript API for ライブラリ (Office.js) には、現在利用可能なすべての要件セットが含まれています。`ExcelApi 1.3` や `WordApi 1.3` のような要件セットは存在しますが、`Office.js 1.3` のような要件セットは存在しません。Office.js の最新リリースは、コンテンツ配信ネットワーク (CDN) 経由で配信される単一の Office エンドポイントとして維持されます。バージョン管理や下位互換性の処理方法など、Office.js CDN に関する詳細については、「[Office JavaScript API について](../develop/understanding-the-javascript-api-for-office.md)」を参照してください。
 
 ## <a name="specify-office-applications-and-requirement-sets"></a>Office アプリケーションと要件セットを指定する
 

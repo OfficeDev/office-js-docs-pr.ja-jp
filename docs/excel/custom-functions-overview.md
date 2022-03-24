@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: d3866c5091c586c039029cab205a5ae0519e992b
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 0d3e478e6deaf630f6665b3bba2796c26826fcde
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711036"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744494"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>マニフェスト ファイル
 
-カスタム関数 ([Office アドイン用の Yeomanジェネレーター](../develop/yeoman-generator-overview.md)によって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
+カスタム関数 ([Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)によって作成されたプロジェクトの **./manifest.xml**) を定義するアドイン用 XML マニフェスト ファイルには、以下のような複数の機能があります。
 
 - カスタム関数に名前空間を定義します。ユーザーがアドインの一部として関数を特定するのに役立つように、名前空間がカスタム関数の前に付加されます。
 - カスタム関数マニフェストに固有の `<ExtensionPoint>` および `<Resources>` 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。

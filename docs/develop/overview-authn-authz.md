@@ -3,13 +3,18 @@ title: Office アドインにおける認証と承認の概要
 description: Office アドインでの認証と承認のしくみについて説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743703"
 ---
-
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
 Office アドインでは、既定で匿名アクセスが許可されますが、ユーザーに対して、アドインを使用するために Microsoft アカウント、Microsoft 365 Education または職場アカウント、その他の一般的なアカウントでサインインすることを要求できます。 これによりユーザーの確認がアドインで可能になることから、このタスクはユーザー認証と呼ばれています。
 
-アドインはまた、Microsoft Graph データ (ユーザーの Microsoft 365 プロファイル、OneDrive ファイル、SharePoint データなど) や Google、Facebook、LinkedIn、SalesForce、GitHub などの外部ソース内のデータにアクセスするためのユーザーの同意を取得することもできます。 これにより承認されるのはユーザーではなく *アドイン* であることから、このタスクはアドイン (またはアプリ) 承認と呼ばれています。
+アドインは、Microsoft Graph データ (Microsoft 365 プロファイル、OneDrive ファイル、SharePoint データなど) または Google、Facebook、LinkedIn、SalesForce、GitHub などの他の外部ソースのデータにアクセスすることにユーザーの同意を得ることもできます。このタスクは、ユーザーではなく、承認されている *アドイン* であるため、アドイン (またはアプリ) 承認と呼ばれます。
 
 ## <a name="key-resources-for-authentication-and-authorization"></a>認証と承認のための主要なリソース
 

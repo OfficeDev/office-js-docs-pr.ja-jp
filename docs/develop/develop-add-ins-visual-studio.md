@@ -3,19 +3,19 @@ title: Visual Studio を使用して Office アドインを開発する
 description: Visual Studio を使用して Office アドインを開発する方法
 ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 52740e16363e3e038269e08a9e50e0f08877db66
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263045"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743841"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Visual Studio を使用して Office アドインを開発する
 
 この記事では、Visual Studio を使用して Office アドインを開発する方法について説明します。 アドインの作成が既に完了している場合は、「[Visual Studio を使用して アドインを開発する](#develop-the-add-in-using-visual-studio)」セクションに進んでください。
 
 > [!NOTE]
-> Visual Studio を使用する代わりに、Office アドイン用の Yeoman ジェネレーターと VS コードを使用して Office アドインを作成することもできます。 この選択肢の詳細については、「[Office アドインの作成 ](../develop/develop-overview.md#create-an-office-add-in)」を参照してください。
+> Visual Studio を使用する代わりに、Office アドイン用の Yeoman ジェネレーターと VS コードを使用して Office アドインを作成することもできます。この選択肢の詳細については、「[Office アドインの作成](../develop/develop-overview.md#create-an-office-add-in)」を参照してください。
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>Visual Studio を使用してアドイン プロジェクトを作成する
 
@@ -26,7 +26,7 @@ Visual Studio は、Excel、Outlook、Word、および PowerPoint 用の Office 
 - [Word クイック スタート](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint クイック スタート](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていません。 これらのいずれかのアプリケーション用の Office アドインを作成するには、[OneNote クイック スタート](../quickstarts/onenote-quickstart.md) または [Project クイック スタート](../quickstarts/project-quickstart.md) で説明するように、Office アドイン用の Yeoman ジェネレーターを使用する必要があります。
+Visual Studio では、OneNote または Project 用の Office アドインの作成はサポートされていません。これらのいずれかのアプリケーション用の Office アドインを作成するには、[OneNote クイック スタート](../quickstarts/onenote-quickstart.md) または [Project クイック スタート](../quickstarts/project-quickstart.md) で説明するように、Office アドイン用の Yeoman ジェネレーターを使用する必要があります。
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Visual Studio を使用してアドインを開発する
 

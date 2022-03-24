@@ -3,8 +3,13 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 09/28/2021
 ms.localizationpriority: high
+ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743696"
 ---
-
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
 Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
@@ -152,7 +157,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 子要素 `VersionOverrides` の中には、親要素 `OfficeApp` の値を上書きする値があります。 たとえば、`VersionOverrides` 内の `Hosts` 要素は `OfficeApp` 内の `Hosts` 要素よりも優先されます。
 
-`VersionOverrides` 要素には独自のスキーマがあり、実際にはアドインの種類や使用する機能に応じて 4 つのスキーマがあります。 スキーマは以下のとおりです。
+`VersionOverrides` 要素には独自のスキーマがあり、実際にはアドインの種類や使用する機能に応じて 4 つのスキーマがあります。スキーマは以下のとおりです。
 
 - [作業ウィンドウ 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [コンテンツ 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)

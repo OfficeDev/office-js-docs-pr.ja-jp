@@ -5,12 +5,12 @@ ms.date: 01/14/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 75b4b5f1e30549628ba9327957e6d0b39c308da9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 568628f60b36a3c6bcb7dd3ab3856e86d96956b7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074274"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744633"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Script Lab を使用して Office JavaScript API を探索する
 
@@ -70,7 +70,7 @@ Outlook 用 Script Lab は、次のクライアントで使用できます。
 Outlook 用 Script Lab の詳細については、関連する[ブログの投稿](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)を参照してください。
 
 > [!IMPORTANT]
-> Script Lab は、Internet Explorer を使ってアドインをホストするプラットフォームと Office バージョンの組み合わせで動作しなくなりました。これには、Office 2019 までの 1 回限りの購入の Office のバージョンが含まれます。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> Script Lab は、Internet Explorer を使ってアドインをホストするプラットフォームと Office バージョンの組み合わせで動作しなくなりました。これには、Office 2019 までの 1 回限りの購入の Office のバージョンが含まれます。詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -5,12 +5,12 @@ ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: d298caa78dab205740723998c1fa7ed42c821c66
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 4d8714086c0dc80edfe2a59f37dc8e94cdd96639
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340646"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745371"
 ---
 # <a name="word-add-ins-overview"></a>Word アドインの概要
 
@@ -53,7 +53,7 @@ Word JavaScript API を使用すると、アプリケーションから Word 文
 
 ## <a name="javascript-apis-for-word"></a>Word 用 JavaScript API
 
-2 セットの JavaScript API を使用して、Word 文書のオブジェクトおよびメタデータと対話できます。 1 つ目は、Office 2013 で導入された[共通 API](/javascript/api/office) です。 2 つ以上の Office クライアントでホストされているアドインで、共通 API の多くのオブジェクトを使用することができます。 この API は、広範囲にわたってコールバックを使用します。
+2 セットの JavaScript API を使用して、Word 文書のオブジェクトおよびメタデータと対話できます。1 つ目は、Office 2013 で導入された[共通 API](/javascript/api/office) です。2 つ以上の Office クライアントでホストされているアドインで、共通 API の多くのオブジェクトを使用することができます。この API は、広範囲にわたってコールバックを使用します。
 
 2 つ目は、[Word JavaScript API](/javascript/api/word) です。これは、Word 2016 で導入された [アプリケーション固有の API モデル](../develop/application-specific-api-model.md) で、Mac と Windows の Word 2016 を対象とする Word アドインを作成するために使用できる、厳密に型指定されたオブジェクト モデルです。このオブジェクト モデルは Promise を使用し、[本文](/javascript/api/word/word.body)、[コンテンツ コントロール](/javascript/api/word/word.contentcontrol)、[インライン画像](/javascript/api/word/word.inlinepicture)、および [段落](/javascript/api/word/word.paragraph)などの Word 固有のオブジェクトへのアクセスを提供します。Word JavaScript API には、IDE 内のコード ヒントを取得できるように、TypeScript の定義と vsdoc ファイルが含まれています。
 

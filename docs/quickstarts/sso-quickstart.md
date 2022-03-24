@@ -4,12 +4,12 @@ description: Yeoman ジェネレーターを使用して、シングル サイ�
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711239"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747192"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>シングル サインオン (SSO) のクイック スタート
 
@@ -102,7 +102,7 @@ Excel、Word、または PowerPoint アドインを試すには、次の手順�
 
 2. 前のコマンド (Excel、Word、PowerPoint など) を実行したときに開く Office クライアント アプリケーションで、[前のセクション](#configure-sso)の手順 3 で SSO を構成している間に Azure の接続に使用した Microsoft 365 管理者アカウントと同じ Microsoft 365 組織のメンバーであるユーザーでサインインしていることを確認します。これにより、SSO を正常に実行するための適切な条件が確立されます。
 
-3. Office クライアント アプリケーションで、[**ホーム**] タブを選択し、リボンの [**作業ウィンドウの表示**] ボタンをクリックして、アドインの作業ウィンドウを開きます。次の画像は、Excel のこのボタンを示しています。
+3. Office クライアント アプリケーションで、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。次の画像は、Excel のこのボタンを示しています。
 
     ![Excel アドイン ボタン。](../images/excel-quickstart-addin-3b.png)
 

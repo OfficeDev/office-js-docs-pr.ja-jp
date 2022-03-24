@@ -5,12 +5,12 @@ ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dfce989064ac21a09e07805b408ef744f9dcd3bf
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 393777730a6f4889d7d053382fd885de3714a4d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647959"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744358"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Excel のカスタム関数でデータ型を使用する (プレビュー)
 
@@ -37,7 +37,7 @@ Excel アドインでのデータ型の使用の詳細については、「[Exce
 
 カスタム関数プロジェクトには、JSON メタデータ ファイルが含まれています。 この JSON メタデータ ファイルは、データ型 API で使用される JSON スキーマとは異なります。 データ型とカスタム関数の統合を使用するには、カスタム関数の JSON メタデータ ファイルを手動で更新して、プロパティ `allowCustomDataForDataTypeAny` を含める必要があります。 このプロパティを `true` に設定します。
 
-手動の JSON 作成プロセスの詳細については、「[カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)」を参照してください。 このプロパティの追加の詳細については、[allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) を参照してください。
+手動の JSON 作成プロセスの詳細については、「[カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)」を参照してください。このプロパティの詳細については、「[allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview)」を参照してください。
 
 ### <a name="script-lab-option"></a>Script Lab オプション
 

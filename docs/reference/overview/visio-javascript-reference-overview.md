@@ -1,17 +1,17 @@
 ---
 title: Visio JavaScript API の概要
-description: Visio JavaScript API の概要
+description: Visio JavaScript API の概要。
 ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61a835ac425d862ed417b3b47a892e963b6a1b27
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: ccd09288d3f6e7fff4b102743391efc8f6e75e4b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514125"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743356"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -68,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
 
-埋め込みセッションで宣言され使用されている Visio の JavaScript オブジェクトは、Visio ドキュメントの実際のオブジェクトのプロキシ オブジェクトになります。 プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。 ドキュメントの状態は、`context.sync()` の実行時に同期されます。
+埋め込みセッションで宣言され使用される Visio の JavaScript オブジェクトは、Visio 図面の実際のオブジェクトのプロキシ オブジェクトになります。プロキシ オブジェクトで実行されたすべてのアクションは、Visio では認識されません。また、Visio ドキュメントの状態は、ドキュメントの状態が同期されるまでプロキシ オブジェクトで認識されません。ドキュメントの状態は、`context.sync()` の実行時に同期されます。
 
 たとえば、ローカルの JavaScript オブジェクト getActivePage は、選択されたページを参照するように宣言されています。 これは、このオブジェクトのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 `sync()` メソッドが実行されるまで、これらのオブジェクトのアクションは認識されません。
 
@@ -78,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-`sync()`sync() メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。 このメソッドは、同期処理が完了したときに解決される promise を返します。
+`sync()` メソッドは、Visio 内の JavaScript のプロキシ オブジェクトと実際のオブジェクトの間で状態を同期させます。これは、コンテキストでキューに入れられた指示の実行と、ユーザーのコードで使用するために読み込まれた Office オブジェクトのプロパティを取得することで同期させます。このメソッドは、同期処理が完了したときに解決される promise を返します。
 
 ## <a name="load"></a>load()
 
-`load()` メソッドは、JavaScript レイヤーで作成されたプロキシ オブジェクトに取り込むために使用されます。 ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。 このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。 しかし、オブジェクトのプロパティや関係を読み取るためには、最初に `load()` メソッドと `sync()` メソッドを呼び出す必要があります。 load() メソッドは、`sync()` メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
+`load()` メソッドは、JavaScript レイヤーで作成されたプロキシ オブジェクトに設定を取り込むために使用されます。ドキュメントなどのオブジェクトを取得しようとすると、まず JavaScript レイヤーでローカル プロキシ オブジェクトが作成されます。このようなオブジェクトは、そのプロパティと呼び出しメソッドの設定をキューに登録するために使用できます。しかし、オブジェクトのプロパティや関係を読み取るためには、最初に `load()` メソッドと `sync()` メソッドを呼び出す必要があります。load() メソッドは、`sync()` メソッドが呼び出されたときに読み込まれる必要があるプロパティと関係を取り込みます。
 
 以下に示すのは `load()` メソッドの構文です。
 

@@ -3,11 +3,16 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744253"
 ---
-
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
-ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。 これとシングル サインオン (SSO) を使用すれば、ユーザーに 2 度目のサインインを求めずに、アドインを承認しユーザーを認証できます。
+ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。これを利用して、さらにシングル サインオン (SSO) も使用すれば、ユーザーに 2 度目のサインインを求めずに、ご自分のアドインに対してユーザーの認証および許可を実行できます。
 
 ![アドインのサインイン プロセスを示す画像。](../images/sso-for-office-addins.png)
 
@@ -23,7 +28,7 @@ ms.localizationpriority: high
 4. Office ホスト アプリケーションは、Microsoft Identity プラットフォームから現在のユーザーの **アクセス トークン** を要求します。
 5. Microsoft ID プラットフォームは、アクセス トークンを Office に返します。 Office はユーザーの代わりにトークンをキャッシュし、**getAccessToken** への今後の呼び出しが、キャッシュされたトークンを返すようにします。
 6. Office ホスト アプリケーションが、 `getAccessToken` 呼び出しによって返される結果オブジェクトの一部として、アドインに **アクセス トークン** を送信します。
-7. トークンは、**アクセス トークン** と **ID トークン** の両方です。 ID トークンとして使用して、ユーザーの名前や電子メール アドレスなど、ユーザーに関する要求を解析して調べることができます。
+7. トークンは、**アクセス トークン** と **ID トークン** の両方です。ID トークンとして使用して、ユーザーの名前や電子メール アドレスなど、ユーザーに関する要求を解析して調べることができます。
 8. 必要に応じて、アドインはトークンを **アクセス トークン** として使用して、サーバー側の API に対して認証された HTTPS 要求を行うことができます。 アクセス トークンには ID 要求が含まれているため、サーバーはユーザー設定などのユーザーの ID に関連付けられた情報を格納できます。
 
 ## <a name="requirements-and-best-practices"></a>要件とベスト プラクティス
@@ -102,7 +107,7 @@ Word、Excel、PowerPoint アドインの場合は、 `<VersionOverrides ... xsi
 
 ### <a name="include-the-identity-api-requirement-set"></a>Identity API 要件セットを含める
 
-SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。 詳細については、「[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。詳細については、「[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
 
 ### <a name="add-client-side-code"></a>クライアント側のコードを追加する
 
@@ -200,7 +205,7 @@ $.ajax({
 
 #### <a name="use-the-access-token-as-an-identity-token"></a>アクセス トークンを ID トークンとして使用する
 
-アドインでユーザーの ID を検証する必要がある場合、`getAccessToken()` から返されたアクセス トークンには ID を確定するために使用できる情報が含まれています。 ID に関連するトークン内のクレームは次のとおりです。
+アドインでユーザーの ID を検証する必要がある場合、`getAccessToken()` から返されたアクセス トークンには ID を確定するために使用できる情報が含まれています。ID に関連するトークン内のクレームは次のとおりです。
 
 - `name`: ユーザーの表示名。
 - `preferred_username`: ユーザーの電子メール アドレス。

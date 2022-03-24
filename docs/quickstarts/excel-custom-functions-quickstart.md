@@ -1,27 +1,29 @@
 ---
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222305"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746404"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
-カスタム関数機能により、開発者は、アドインの一部としてカスタム関数を JavaScript または Typescript で定義することによって、新しい関数を Excel に追加できるようになりました。 Excel のユーザーは、`SUM()` など、Excel のすべてのネイティブ関数にアクセスするとの同じようにカスタム関数にアクセスできます。
+カスタム関数機能を使用すると、開発者は、アドインの一部としてカスタム関数を JavaScript または TypeScript で定義することによって、新しい関数を Excel に追加できます。 Excel のユーザーは、`SUM()` など、Excel のすべてのネイティブ関数にアクセスするとの同じようにカスタム関数にアクセスできます。
 
 ## <a name="prerequisites"></a>前提条件
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel (バージョン 1904 以降) または Excel on the web。
-- Excel カスタム関数は (Microsoft 365 サブスクリプションに接続されている) Mac 版 Office でサポートされており、このチュートリアルはまもなく更新されます。
+- Microsoft 365 サブスクリプションに接続されている Office (Office for the web を含む)。
+
+  > [!NOTE]
+  > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
 
 ## <a name="build-your-first-custom-functions-project"></a>カスタム関数プロジェクトを初めて作成する
 
@@ -49,11 +51,11 @@ ms.locfileid: "62222305"
     npm run build
     ```
 
-1. Node.js で実行しているローカル Web サーバーを開始します。 カスタム関数アドインは Web 版 Excel または Windows 版 Excel で試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
+1. Node.js で実行しているローカル Web サーバーを開始します。 Excel でカスタム関数アドインを試すことができます。 アドインの作業ウィンドウを開くように求められる場合がありますが、これは省略可能です。 カスタム関数はアドインの作業ウィンドウを開かなくても実行できます。
 
-# <a name="excel-on-windows"></a>[Windows 版 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
-アドインを Windows 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれた状態で Excel が開きます。
+Windows または Mac の Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動し、アドインが読み込まれたときに Excel が開きます。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,18 +70,6 @@ npm run start:desktop
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-カスタム関数アドインを使用するには、ブラウザー上の Excel で新しいブックを開きます。 このブックで次の手順を実行してアドインをサイドロードします。
-
-1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
-
-   ![[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
-
-1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
-
-1. **[参照...]** を選択し、Yeoman ジェネレーターによって作成されたプロジェクトのルート ディレクトリに移動します。
-
-1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
 ---
 

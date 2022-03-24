@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222256"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745577"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -17,7 +17,7 @@ ms.locfileid: "62222256"
 
 このチュートリアルの内容:
 > [!div class="checklist"]
-> - [Office アドイン用の Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)を使用して、カスタム関数アドインを作成します。
+> - [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して、カスタム関数アドインを作成します。
 > - あらかじめ用意されているカスタム関数を使用し、単純な計算を実行します。
 > - Web からデータを取得するカスタム関数を作成します。
 > - Web からデータをリアルタイムでストリーミングするカスタム関数を作成します。
@@ -26,14 +26,17 @@ ms.locfileid: "62222256"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel (バージョン 1904 以降) または Excel on the web。
+- Microsoft 365 サブスクリプションに接続されている Office (Office for the web を含む)。
+
+  > [!NOTE]
+  > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
 
 ## <a name="create-a-custom-functions-project"></a>カスタム関数プロジェクトを作成する
 
- まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。[Office アドインの Yeoman ジェネレーター](https://www.npmjs.com/package/generator-office)は、試すことができるいくつかのカスタム関数を使ってプロジェクトをセットアップします。カスタム関数のクイック スタートを既に実行し、プロジェクトを生成している場合は、そのプロジェクトを引き続き使用し、代わりに[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進みます。
+ まず、カスタム関数アドインをビルドするコード プロジェクトを作成します。[Office アドインの Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)は、試すことができるいくつかのカスタム関数を使ってプロジェクトをセットアップします。カスタム関数のクイック スタートを既に実行し、プロジェクトを生成している場合は、そのプロジェクトを引き続き使用し、代わりに[この手順](#create-a-custom-function-that-requests-data-from-the-web)に進みます。
 
 > [!NOTE]
-> yo Office Project を再作成すると、Office キャッシュに同じ名前の関数のインスタンスが既に含まれているため、エラーが発生する可能性があります。 `npm run start` を実行する前に [Office キャッシュをクリアする](../testing/clear-cache.md)ことにより、これを防ぐことができます。
+> Office Project を再作成すると、Office キャッシュに同じ名前の関数のインスタンスが既に含まれているため、エラーが発生する可能性があります。`npm run start` を実行する前に [Office キャッシュをクリアする](../testing/clear-cache.md)ことにより、これを防ぐことができます。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -62,7 +65,7 @@ ms.locfileid: "62222256"
     > [!NOTE]
     > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
 
-1. Node.js で実行しているローカル Web サーバーを開始します。 Web または Windows 上の Excel でカスタム関数アドインを試すことができます。
+1. Node.js で実行しているローカル Web サーバーを開始します。 Excel でカスタム関数アドインを試すことができます。
 
 # <a name="excel-on-windows-or-mac"></a>[Windows または Mac 上の Excel](#tab/excel-windows)
 
@@ -72,11 +75,15 @@ Windows または Mac の Excel でアドインをテストするには、次の
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-ブラウザーの Excel でアドインをテストするには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の Excel ドキュメントの URL に置き換えます。
+# <a name="excel-on-the-web"></a>[Web 版 Excel](#tab/excel-online)
+
+アドインを Web 版 Excel で試すには、次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーが起動します。 "{url}" を、アクセス許可を持っている OneDrive または SharePoint ライブラリ上の Excel ドキュメントの URL に置き換えます。
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 
