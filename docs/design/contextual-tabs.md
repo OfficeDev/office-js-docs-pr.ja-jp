@@ -3,12 +3,12 @@ title: アドインでカスタム コンテキスト タブOffice作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa301996d653170d02280efbdb7e94733b5dd924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742933"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483891"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>アドインでカスタム コンテキスト タブOffice作成する
 
@@ -29,8 +29,8 @@ ms.locfileid: "63742933"
 > [!NOTE]
 > カスタム コンテキスト タブは、次の要件セットをサポートするプラットフォームでのみ機能します。 要件セットとそれらを使用する方法の詳細については、「アプリケーションと API の要件Office[指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。
 >
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
 >
 > コードのランタイム チェックを使用して、ユーザーのホストとプラットフォームの組み合わせがこれらの要件セットをサポートするかどうかをテストできます(「メソッドと要件セットのサポートのランタイム チェック」を [参照](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support))。 (マニフェストで要件セットを指定する方法は、この記事でも説明しますが、現在 RibbonApi 1.2 では機能しません)。または、カスタム コンテキスト タブ [がサポートされていない場合に、別の UI エクスペリエンスを実装することもできます](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 
@@ -62,7 +62,7 @@ ms.locfileid: "63742933"
 マニフェストで XML で定義されたカスタム コア タブとは異なり、カスタム コンテキスト タブは実行時に JSON BLOB を使用して定義されます。 コードは BLOB を JavaScript オブジェクトに解析し、オブジェクトを [Office.ribbon.requestCreateControls メソッドに渡](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))します。 カスタム コンテキスト タブは、アドインが現在実行されているドキュメントにのみ表示されます。 これは、アドインのインストール時に Office アプリケーション リボンに追加されるカスタム コア タブとは異なります。また、別のドキュメントを開いた時点でも存在します。 また、メソッド `requestCreateControls` はアドインのセッションで 1 回だけ実行できます。 再び呼び出された場合は、エラーがスローされます。
 
 > [!NOTE]
-> JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](../reference/manifest/customtab.md) 要素とその子孫要素の構造と大まかに平行です。
+> JSON BLOB のプロパティとサブプロパティ (およびキー名) の構造は、マニフェスト XML の [CustomTab](/javascript/api/manifest/customtab) 要素とその子孫要素の構造と大まかに平行です。
 
 コンテキスト タブ JSON BLOB のステップ バイ ステップの例を作成します。 コンテキスト タブ JSON の完全なスキーマは [、dynamic-ribbon.schema.json にあります](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json)。 このドキュメントで作業しているVisual Studio Code、このファイルを使用して JSON のIntelliSense検証できます。 詳細については、「JSON スキーマと[設定を使用して JSON Visual Studio Code編集する」を参照してください](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
@@ -530,9 +530,9 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>コンテキスト以外のタブまたはコントロールを使用する
 
-カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合に、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md) があります。
+カスタム コンテキスト タブをサポートしないアプリケーションまたはプラットフォームでアドインが実行されている場合に、カスタム コンテキスト タブを実装するアドインでフォールバック エクスペリエンスを作成するように設計されたマニフェスト要素 [、OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi) があります。
 
-この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、非コンテキスト カスタム タブ) をマニフェストで定義する方法です。 ただし、重複する`<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`グループ、コントロール、およびメニューの Item 要素[](../reference/manifest/control.md)の最初の子要素として、カスタム コア タブに追加します。[](../reference/manifest/group.md) その効果は次のとおりです。
+この要素を使用する最も簡単な方法は、アドインのカスタム コンテキスト タブのリボンカスタマイズを複製する 1 つ以上のカスタム コア タブ (つまり、非コンテキスト カスタム タブ) をマニフェストで定義する方法です。 ただし、重複する`<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`グループ、コントロール、およびメニューの Item 要素[](/javascript/api/manifest/control)の最初の子要素として、カスタム コア タブに追加します。[](/javascript/api/manifest/group) その効果は次のとおりです。
 
 - カスタム コンテキスト タブをサポートするアプリケーションとプラットフォームでアドインが実行されている場合、カスタム コア グループとコントロールはリボンに表示されません。 代わりに、アドインがメソッドを呼び出す際に、カスタム コンテキスト タブが作成 `requestCreateControls` されます。
 - アドインがサポートしない`requestCreateControls`アプリケーションまたはプラットフォームで実行されている場合、要素はカスタム コア タブに表示されます。
@@ -561,7 +561,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 </OfficeApp>
 ```
 
-その他の例については、「 [OverriddenByRibbonApi」を参照してください](../reference/manifest/overriddenbyribbonapi.md)。
+その他の例については、「 [OverriddenByRibbonApi」を参照してください](/javascript/api/manifest/overriddenbyribbonapi)。
 
 親グループまたはメニュー `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`にマークが付いている場合、そのグループは表示されません。カスタム コンテキスト タブがサポートされていない場合、すべての子マークアップは無視されます。 したがって、これらの子要素の中に **OverriddenByRibbonApi** 要素がある場合や、その値が何かは関係ありません。 この意味`<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`は、メニュー項目またはコントロールをすべてのコンテキストで表示する必要がある場合、メニュー項目またはコントロールがマークされていない必要があるだけでなく、その親メニューとグループもこの方法でマークしなけらなければならないという意味 *です。*
 

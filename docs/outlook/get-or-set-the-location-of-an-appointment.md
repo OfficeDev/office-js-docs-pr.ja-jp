@@ -3,14 +3,19 @@ title: アドインで予定の場所を取得または設定する
 description: Outlook アドインで予定の場所を取得または設定する方法について説明します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: d409019dd5d99a27c030bea825c108f65fc35567
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484600"
 ---
-
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
 JavaScript API Officeには、ユーザーが作成している予定の場所を管理するためのプロパティとメソッドが提供されています。 現在、予定の場所を提供する 2 つのプロパティがあります。
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる基本 API。
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): 場所を取得および設定できる拡張 API で、場所の種類の指定が [含まれます](/javascript/api/outlook/office.mailboxenums.locationtype)。 この型は、 `LocationType.Custom` を使用して場所を設定した場合です `item.location`。
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): 場所を取得および設定できる基本 API。
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): 場所を取得および設定できる拡張 API で、場所の種類の指定が [含まれます](/javascript/api/outlook/office.mailboxenums.locationtype)。 この型は、 `LocationType.Custom` を使用して場所を設定した場合です `item.location`。
 
 次の表に、場所 API と、使用可能なモード (新規作成または読み取り) の一覧を示します。
 

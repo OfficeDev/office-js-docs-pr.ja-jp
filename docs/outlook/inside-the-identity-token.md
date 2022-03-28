@@ -3,16 +3,16 @@ title: Outlook アドインでの Exchange の ID トークンの内部
 description: Outlook アドインから生成される Exchange のユーザー ID トークンの内容について説明します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b42d5c9d3cd08bc229acb55963b115fd16234a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151476"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484052"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Exchange の ID トークンの内部
 
-[getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドによって返された Exchange のユーザー ID トークンは、アドイン コードがバックエンド サービスへの呼び出しでユーザー ID を含めるための方法を提供します。 この記事では、トークンの形式と内容について説明します。
+[getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドによって返された Exchange のユーザー ID トークンは、アドイン コードがバックエンド サービスへの呼び出しでユーザー ID を含めるための方法を提供します。 この記事では、トークンの形式と内容について説明します。
 
 Exchange ユーザー ID トークンとは、そのトークンを送信する Exchange サーバーによって自己署名された、Base 64 URL 形式でエンコードされた文字列です。 トークンは暗号化されていません。署名の検証に使用する公開キーは、トークンを発行した Exchange サーバーに保存されています。 トークンには 3 つのパーツ (ヘッダー、ペイロード、署名) があります。 トークン文字列では、トークンを容易に分割できるように、パーツがピリオド文字 (`.`) で区切られています。
 
@@ -66,7 +66,7 @@ ID トークンのペイロードのパーツを、次の表に示します。
 
 | クレーム | 説明 |
 |:-----|:-----|
-| `aud` | トークンを要求したアドインの URL。 トークンは、クライアントのブラウザー内で実行されているアドインから送信された場合にのみ有効です。 アドインが Office アドイン マニフェスト スキーマ v1.1 を使用する場合、この URL はフォーム タイプ `ItemRead` または `ItemEdit` (アドイン マニフェスト内で [FormSettings](../reference/manifest/formsettings.md) 要素の一部として最初に出現する方) の下にある、最初の `SourceLocation` 要素に指定された URL になります。 |
+| `aud` | トークンを要求したアドインの URL。 トークンは、クライアントのブラウザー内で実行されているアドインから送信された場合にのみ有効です。 アドインが Office アドイン マニフェスト スキーマ v1.1 を使用する場合、この URL はフォーム タイプ `ItemRead` または `ItemEdit` (アドイン マニフェスト内で [FormSettings](/javascript/api/manifest/formsettings) 要素の一部として最初に出現する方) の下にある、最初の `SourceLocation` 要素に指定された URL になります。 |
 | `iss` | トークンを発行した Exchange サーバーの一意の識別子です。この Exchange サーバーから発行されるトークンはすべて同じ識別子になります。 |
 | `nbf` | トークンの有効期間の開始日時です。この値は 1970 年 1 月 1 日を起点とする秒数です。 |
 | `exp` | トークンの有効期間の終了日時です。この値も 1970 年 1 月 1 日を起点とする秒数です。 |

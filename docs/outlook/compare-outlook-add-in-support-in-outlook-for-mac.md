@@ -3,12 +3,12 @@ title: Mac Outlookでアドインのサポートを比較Outlook比較する
 description: Mac でのアドインサポートと他Outlookクライアントとの比較Outlookします。
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 55e647e5932cbbf1d51fe3158d76a664e54a9516
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 12d81015f70e3f23dd39c06e2429033ca2d9ef05
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744780"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484070"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Mac Outlookのアドイン サポートと他Outlookクライアントとの比較Outlookする
 
@@ -21,7 +21,7 @@ Outlook アドインは、クライアントごとに JavaScript をカスタマ
 | 分野 | Outlook on the web、Windows、モバイル デバイス | Outlook on Mac |
 |:-----|:-----|:-----|
 | サポート対象バージョンの office.js および Office アドインのマニフェスト スキーマ | Office.js および スキーマ v1.1 のすべての API。 | Office.js および スキーマ v1.1 のすべての API。<br><br>**注**: Mac Outlookでは、16.35.308 以降のビルドだけが会議の保存をサポートします。 それ以外の場合、作成 `saveAsync` モードで会議から呼び出された場合、メソッドは失敗します。 回避策については、「[Office JS API を使用して Outlook for Mac で会議を下書きとして保存できない](https://support.microsoft.com/help/4505745)」を参照してください。 |
-| 定期的な予定系列のインスタンス | <ul><li>定期的な系列のマスター予定または予定インスタンスのアイテム ID および他のプロパティを取得できます。</li><li>[mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) を使用して、定期的な系列のインスタンスまたはマスターを表示できます。</li></ul> | <ul><li>マスター予定のアイテム ID と他のプロパティを取得できますが、定期的な系列のインスタンスのアイテム ID とプロパティは取得できません。</li><li>定期的な系列のマスター予定を表示できます。アイテム ID がない場合、定期的な系列のインスタンスは表示できません。</li></ul> |
+| 定期的な予定系列のインスタンス | <ul><li>定期的な系列のマスター予定または予定インスタンスのアイテム ID および他のプロパティを取得できます。</li><li>[mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を使用して、定期的な系列のインスタンスまたはマスターを表示できます。</li></ul> | <ul><li>マスター予定のアイテム ID と他のプロパティを取得できますが、定期的な系列のインスタンスのアイテム ID とプロパティは取得できません。</li><li>定期的な系列のマスター予定を表示できます。アイテム ID がない場合、定期的な系列のインスタンスは表示できません。</li></ul> |
 | 予定出席者の受信者の種類 | [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) を使用して、出席者の受信者の種類を特定できます。 | `EmailAddressDetails.recipientType` は予定出席者には `undefined` を返します。 |
 | クライアント アプリケーションのバージョン文字列 | [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) によって返されるバージョン文字列の形式は、実際のクライアントの種類によって異なります。 次に例を示します。<ul><li>OutlookのWindows:`15.0.4454.1002`</li><li>Outlook on the web:`15.0.918.2`</li></ul> |Mac 上のバージョンで返`Diagnostics.hostVersion`されるバージョンOutlook例を示します。`15.0 (140325)` |
 | アイテムのカスタム プロパティ | ネットワークが使用できなくなっても、アドインはキャッシュに入っているカスタム プロパティに引き続きアクセスできます。 | Mac Outlookはカスタム プロパティをキャッシュしないので、ネットワークがダウンした場合、アドインはカスタム プロパティにアクセスできない可能性があります。 |

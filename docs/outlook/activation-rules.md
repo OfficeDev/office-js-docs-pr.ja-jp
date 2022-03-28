@@ -3,12 +3,12 @@ title: Outlook アドインのアクティブ化ルール
 description: Outlook では、ユーザーが読み取りや作成をしようとしているメッセージまたは予定が、アドインのアクティブ化のルールに準ずる場合に、ある種類のアドインをアクティブにします。
 ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d59b6afa9140ad0aa4d362cf8dc82a8d2144f5e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 6af5003108efede78fa06b220abe3c89d472c6e5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746906"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484114"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Outlook コンテキスト アドインのアクティブ化ルール
 
@@ -24,17 +24,17 @@ Outlook では、ユーザーが読み取りや作成をしようとしている
 
 特定のOutlookをアクティブ化するには、次のいずれかの要素を使用してアドイン マニフェストでアクティブ化ルールを指定`Rule`します。
 
-- [Rule 要素 (MailApp complexType)](../reference/manifest/rule.md) - 個別のルールを指定します。
-- [Rule 要素 (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - 論理演算子を使用して複数のルールを結合します。
+- [Rule 要素 (MailApp complexType)](/javascript/api/manifest/rule) - 個別のルールを指定します。
+- [Rule 要素 (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) - 論理演算子を使用して複数のルールを結合します。
 
 
  > [!NOTE]
- > 個々 `Rule` のルールを指定するために使用する要素は、抽象 [Rule](../reference/manifest/rule.md) 複合型です。 次の各種類のルールは、この抽象複合型を `Rule` 拡張します。 したがって、マニフェストで個別のルールを指定するときは、[xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性を使用してルールの以下の型の 1 つをさらに定義する必要があります。
+ > 個々 `Rule` のルールを指定するために使用する要素は、抽象 [Rule](/javascript/api/manifest/rule) 複合型です。 次の各種類のルールは、この抽象複合型を `Rule` 拡張します。 したがって、マニフェストで個別のルールを指定するときは、[xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性を使用してルールの以下の型の 1 つをさらに定義する必要があります。
  > 
- > たとえば、次のルールは [ItemIs ルールを定義](../reference/manifest/rule.md#itemis-rule) します。
+ > たとえば、次のルールは [ItemIs ルールを定義](/javascript/api/manifest/rule#itemis-rule) します。
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > 属性 `FormType` はマニフェスト v1.1 `VersionOverrides` のアクティブ化ルールに適用されますが、v1.0 では定義されていません。 したがって、 [ItemIs](../reference/manifest/rule.md#itemis-rule) がノードで使用されている場合は使用 `VersionOverrides` できません。
+ > 属性 `FormType` はマニフェスト v1.1 `VersionOverrides` のアクティブ化ルールに適用されますが、v1.0 では定義されていません。 したがって、 [ItemIs](/javascript/api/manifest/rule#itemis-rule) がノードで使用されている場合は使用 `VersionOverrides` できません。
 
 次の表は、使用できるルールの種類を示しています。詳細については、この表の後の説明と、「[閲覧フォーム用の Outlook アドインを作成する](read-scenario.md)」の該当記事を参照してください。
 
@@ -67,7 +67,7 @@ ItemIs ルールの属性で、次のいずれかの `ItemType` アイテムの�
  > [!NOTE]
  > ItemIs 属性 `FormType` はスキーマ v1.1 `VersionOverrides` 以降で定義されますが、v1.0 では定義されません。 アドイン コマンドを定義するときに `FormType` 属性を含めない。
 
-アドインがアクティブ化された後は、 [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) プロパティを使用して Outlook で現在選択されているアイテムを取得し、 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティを使用して現在のアイテムの種類を取得できます。
+アドインがアクティブ化された後は、 [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) プロパティを使用して Outlook で現在選択されているアイテムを取得し、 [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティを使用して現在のアイテムの種類を取得できます。
 
 必要に応じて`ItemClass``IncludeSubClasses`、属性を使用してアイテムのメッセージ クラスを指定し、属性を使用して、アイテムが指定されたクラスのサブクラスである場合にルールを **true** にするかどうかを指定できます。
 

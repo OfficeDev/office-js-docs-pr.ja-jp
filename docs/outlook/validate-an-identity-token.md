@@ -3,12 +3,12 @@ title: Outlook アドイン ID トークンを検証する
 description: 使用している Outlook アドインから Exchange のユーザー ID トークンを送信できますが、要求を信頼する前に、トークンを検証して適切な Exchange サーバーからのものであることを確認する必要があります。
 ms.date: 10/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c22c174e6783a53e856e11e4338d0168cb974a20
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 6b903b582fee59fd1c5ff0aa949d614c4ee1dff7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367482"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484414"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Exchange の ID トークンを検証する
 
@@ -18,7 +18,7 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 
 ## <a name="extract-the-json-web-token"></a>JSON Web トークンを抽出する
 
-[getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) から返されたトークンは、トークンのエンコードされた文字列表現です。 この形式では、すべての JWT にピリオドで区切られた 3 つの部分があります (RFC 7519 ごと)。 形式は次のようになります。
+[getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) から返されたトークンは、トークンのエンコードされた文字列表現です。 この形式では、すべての JWT にピリオドで区切られた 3 つの部分があります (RFC 7519 ごと)。 形式は次のようになります。
 
 ```json
 {header}.{payload}.{signature}
@@ -35,27 +35,27 @@ ID トークンの検証およびユーザーの一意識別子の取得は 4 �
 トークンの内容を検証するには、次の内容を確認する必要があります。
 
 - ヘッダーを確認し、次の項目を確認します。
-  - `typ` claim は に設定されています `JWT` 。
-  - `alg` claim は に設定されています `RS256` 。
+  - `typ` claim は に設定されています `JWT`。
+  - `alg` claim は に設定されています `RS256`。
   - `x5t` クレームが存在します。
 
 - ペイロードを確認し、次の情報を確認します。
-  - `amurl` 内のクレーム `appctx` は、承認されたトークン署名キー マニフェスト ファイルの場所に設定されます。 たとえば、この値の期待 `amurl` 値は Microsoft 365です https://outlook.office365.com:443/autodiscover/metadata/json/1 。 詳細については、次のセクション [「ドメインを確認](#verify-the-domain) する」を参照してください。
-  - 現在の時刻は、クレームで指定された `nbf` 時刻 `exp` の間です。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
+  - `amurl` 内のクレーム `appctx` は、承認されたトークン署名キー マニフェスト ファイルの場所に設定されます。 たとえば、この値の期待`amurl`値Microsoft 365ですhttps://outlook.office365.com:443/autodiscover/metadata/json/1。 詳細については、次のセクション [「ドメインを確認](#verify-the-domain) する」を参照してください。
+  - 現在の時刻は、クレームで指定された時刻 `nbf` の `exp` 間です。 `nbf` クレームは、トークンが有効と考えられる最も早い時刻を指定し、`exp` クレームはトークンの有効期限を指定します。 サーバー間のクロック設定には、ある程度の変動を許可することをお勧めします。
   - `aud` claim はアドインの予想される URL です。
-  - `version` クレーム内の `appctx` クレームは に設定されます `ExIdTok.V1` 。
+  - `version` クレーム内のクレームは `appctx` に設定されます `ExIdTok.V1`。
 
 ### <a name="verify-the-domain"></a>ドメインを確認する
 
-前のセクションで説明した検証ロジックを実装する場合は、クレームのドメインがユーザーの自動検出ドメインと一致するように要求 `amurl` する必要があります。 これを行うには、自動検出を使用または実装する必要[Exchange。](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)
+前のセクションで説明した `amurl` 検証ロジックを実装する場合は、クレームのドメインがユーザーの自動検出ドメインと一致するように要求する必要があります。 これを行うには、自動検出を使用または実装する必要[Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange)。
 
-- たとえばExchange Online、既知のドメイン (、または地域固有または特殊なクラウド ( Office 365 URL と IP アドレス範囲) に `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1) 属しているか[確認します](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)。
+- たとえばExchange Online`amurl`、既知のドメイン (https://outlook.office365.com:443/autodiscover/metadata/json/1)または地域固有または特殊なクラウド (Office 365 URL と IP アドレス範囲) に[属しているか確認します](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)。
 
-- アドイン サービスにユーザーのテナントを持つ既存の構成がある場合は、これが信頼される場合に `amurl` 確立できます。
+- アドイン サービスにユーザーのテナントを持つ既存の構成がある場合は、これが信頼される場合に確立 `amurl` できます。
 
-- ハイブリッド展開[Exchange、OAuth](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)ベースの自動検出を使用して、ユーザーに必要なドメインを確認します。 ただし、ユーザーは自動検出フローの一部として認証する必要がある一方で、アドインはユーザーの資格情報を収集して基本認証を行う必要があります。
+- ハイブリッド展開[Exchange、](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)OAuth ベースの自動検出を使用して、ユーザーに必要なドメインを確認します。 ただし、ユーザーは自動検出フローの一部として認証する必要がある一方で、アドインはユーザーの資格情報を収集して基本認証を行う必要があります。
 
-アドインでこれらのオプションの使用を確認できない場合は、アドインのワークフローに認証が必要な場合は、ユーザーに適切な通知を受け取ってアドインを正常にシャットダウンできます。 `amurl`
+`amurl`アドインでこれらのオプションの使用を確認できない場合は、アドインのワークフローに認証が必要な場合は、ユーザーに適切な通知を受け取ってアドインを正常にシャットダウンできます。
 
 ## <a name="validate-the-identity-token-signature"></a>ID トークンの署名を検証する
 
@@ -114,7 +114,7 @@ JWT に必要なクレームが含まれていることを確認したら、ト�
 
 ## <a name="use-a-library-to-validate-the-token"></a>ライブラリを使用してトークンを検証する
 
-一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft は、 `System.IdentityModel.Tokens.Jwt` ユーザー ID トークンの検証に使用できるExchange提供しています。
+一般的な JWT の解析と検証を行うことができるライブラリは数多くあります。 Microsoft は、ユーザー `System.IdentityModel.Tokens.Jwt` ID トークンの検証に使用できるExchange提供しています。
 
 > [!IMPORTANT]
 > Microsoft.Exchange.WebServices.Auth.dll は使用できなくなったため、Exchange Web Services マネージ API は廃止され、Microsoft.IdentityModel.Extensions.dll のようなサポートされていないライブラリに依存しています。

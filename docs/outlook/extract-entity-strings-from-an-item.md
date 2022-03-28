@@ -3,8 +3,13 @@ title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 3270409dcd24cb0cde4f0e7693400e49efb5c868
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484481"
 ---
-
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
 この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。
@@ -200,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティの `_MyEntities` インスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティの `_MyEntities` インスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
 
 
 ```js
@@ -825,4 +830,4 @@ function myGetUrls()
 
 - [閲覧フォーム用の Outlook アドインを作成する](read-scenario.md)
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)
-- [item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッド
+- [item.getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッド

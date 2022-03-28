@@ -3,12 +3,12 @@ title: Outlook アドインの要件
 description: Outlook アドインが正しく読み込まれて機能するためには、サーバーとクライアントの両方に関していくつかの要件があります。
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0946cf6841fd46957b21b0d24698042e8d3fcb8c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0b163c7c90cd430a4502800e7e39fe474b188a44
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746200"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483457"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook アドインの要件
 
@@ -44,5 +44,5 @@ Outlook アドインが正しく読み込まれて機能するためには、サ
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md)
-- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性 (Outlook セクション)](../overview/office-add-in-availability.md#outlook)
-- [Outlook JavaScript API の要件セットのサポート](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性 (Outlook セクション)](/javascript/api/requirement-sets#outlook)
+- [Outlook JavaScript API の要件セットのサポート](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

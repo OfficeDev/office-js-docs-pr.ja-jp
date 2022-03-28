@@ -3,12 +3,12 @@ title: Office アドインに既存の COM アドインとの互換性をもた�
 description: アドインと同等の COM アドインOffice互換性を有効にする。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f78f41532f916dc5df43cf5a6d4e455b6f16864f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d6c2b891fa12f4ec79b52bbff8cac02a8eb45861
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743799"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483672"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Office アドインに既存の COM アドインとの互換性をもたせる
 
@@ -27,7 +27,7 @@ Office アドインを構成して、同等の COM アドインが既にユー�
 
 Office アドインと COM アドイン間の互換性を有効にするには、Office アドインのマニフェストで同等の COM アドインを識別します。[](add-in-manifests.md) 次Office、Windows両方がインストールされている場合は、Officeアドインの代わりに COM アドインを使用します。
 
-次の例は、COM アドインを同等のアドインとして指定するマニフェストの部分を示しています。 要素の値は `ProgId` COM アドインを識別し、 [EquivalentAddins](../reference/manifest/equivalentaddins.md) 要素は終了タグの直前に配置する必要 `VersionOverrides` があります。
+次の例は、COM アドインを同等のアドインとして指定するマニフェストの部分を示しています。 要素の値は `ProgId` COM アドインを識別し、 [EquivalentAddins](/javascript/api/manifest/equivalentaddins) 要素は終了タグの直前に配置する必要 `VersionOverrides` があります。
 
 ```xml
 <VersionOverrides>

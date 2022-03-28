@@ -3,12 +3,12 @@ title: アドインの状態と設定を保持する
 description: ブラウザー コントロールのステートレス環境Officeアドイン Web アプリケーションでデータを保持する方法について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b09520d997354e5acc7ec68e3408d97230e4c9dc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 512d23a361239399c77dba9bb831f1b630aa6796
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743679"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483649"
 ---
 # <a name="persist-add-in-state-and-settings"></a>アドインの状態と設定を保持する
 
@@ -28,7 +28,7 @@ Office アドインは、基本的にブラウザー コントロールのステ
 
 ## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>JavaScript API でアドインの状態と設定Office保持する
 
-JavaScript API Officeには、設定、[RoamingSettings](/javascript/api/outlook/office.roamingsettings)、[CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトが提供され、次の表に示すとおり、セッション間でアドインの状態を保存できます。[](/javascript/api/office/office.settings) すべてのケースで、保存された設定値は、それを作成したアドインの [Id](../reference/manifest/id.md) にのみ関連付けられます。
+JavaScript API Officeには、設定、[RoamingSettings](/javascript/api/outlook/office.roamingsettings)、[CustomProperties](/javascript/api/outlook/office.customproperties) オブジェクトが提供され、次の表に示すとおり、セッション間でアドインの状態を保存できます。[](/javascript/api/office/office.settings) すべてのケースで、保存された設定値は、それを作成したアドインの [Id](/javascript/api/manifest/id) にのみ関連付けられます。
 
 |**オブジェクト**|**アドインの種類のサポート**|**ストレージの場所**|**Officeサポート**|
 |:-----|:-----|:-----|:-----|

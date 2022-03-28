@@ -3,20 +3,25 @@ title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
 ms.date: 07/06/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 063a819ccb7f71351e0eec8cef1702d98c8466b0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483382"
 ---
-
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
-[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
+[Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
 
 > [!IMPORTANT]
 > **REST api Outlookは非推奨です**
 >
-> REST Outlookは 2022 年 11 月に完全に使用停止されます (詳細については、[2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 年 11 月の発表を参照してください)。 Microsoft アドインを使用するには、既存のアドインを[移行Graph。](/outlook/rest#outlook-rest-api-via-microsoft-graph) また、[REST API エンドポイントGraphとOutlook比較します](/outlook/rest/compare-graph)。
+> REST Outlookは 2022 年 11 月に完全に使用停止されます (詳細については、[2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 年 11 月の発表を参照してください)。 Microsoft アドインを使用するには、既存のアドインを[移行Graph。](/outlook/rest#outlook-rest-api-via-microsoft-graph) また、[Microsoft の REST API GraphとOutlook比較します](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>アクセス トークンを取得する
 
-Outlook REST API では、`Authorization` ヘッダーにベアラー トークンが必要です。通常、アプリは OAuth2 フローを使用してトークンを取得します。ただし、アドインは、メールボックス要件セット 1.5 で導入されている新しい [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用することにより、OAuth2 を実装せずにトークンを取得できます。
+Outlook REST API では、`Authorization` ヘッダーにベアラー トークンが必要です。通常、アプリは OAuth2 フローを使用してトークンを取得します。ただし、アドインは、メールボックス要件セット 1.5 で導入されている新しい [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用することにより、OAuth2 を実装せずにトークンを取得できます。
 
 `isRest` オプションを `true` に設定することにより、REST API と互換性があるトークンを要求できます。
 
@@ -43,10 +48,10 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 
 ## <a name="get-the-item-id"></a>項目 ID を取得する
 
-REST を経由して現在の項目を取得するには、REST 用に正しく書式設定された項目の ID がアドインに必要です。 これは [Office.context.mailbox.item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティから取得されますが、REST 用に書式設定された ID であることを確認するためのいくつかの確認が必要です。
+REST を経由して現在の項目を取得するには、REST 用に正しく書式設定された項目の ID がアドインに必要です。 これは [Office.context.mailbox.item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティから取得されますが、REST 用に書式設定された ID であることを確認するためのいくつかの確認が必要です。
 
 - Outlook Mobile の場合、`Office.context.mailbox.item.itemId` によって返される値が REST 用に形式設定された ID であり、そのまま使用できます。
-- その他の Outlook クライアントの場合、`Office.context.mailbox.item.itemId` によって返される値が EWS 用に設定された ID であり、[Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して変換する必要があります。
+- その他の Outlook クライアントの場合、`Office.context.mailbox.item.itemId` によって返される値が EWS 用に設定された ID であり、[Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して変換する必要があります。
 - また、これを使用するには、Attachment ID を REST 用に形式設定された ID に変換する必要もあります。 ID を変換する必要がある理由は、EWS ID に URL セーフ以外の値が含まれている可能性があり、その場合は REST で問題が発生するためです。
 
 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member) プロパティを確認することにより、アドインは読み込まれる Outlook クライアントを判別できます。
@@ -70,7 +75,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>REST API URL を取得する
 
-REST API を呼び出すためにアドインで必要な情報の最終部分は、API 要求の送信に使用するホスト名です。この情報は [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) プロパティにあります。
+REST API を呼び出すためにアドインで必要な情報の最終部分は、API 要求の送信に使用するホスト名です。この情報は [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) プロパティにあります。
 
 ### <a name="example"></a>例
 
@@ -84,7 +89,7 @@ var restHost = Office.context.mailbox.restUrl;
 アドインがアクセス トークン、アイテム ID、および REST API URL を取得すると、REST API を呼び出すバックエンド サービスにその情報を渡すか、AJAX を使用して直接呼び出すことができるようになります。 次の例は、Outlook Mail REST API を呼び出して現在のメッセージを取得します。
 
 > [!IMPORTANT]
-> オンプレミスのExchange展開では、AJAX または類似のライブラリを使用するクライアント側の要求は、そのサーバーセットアップで CORS がサポートされていないため失敗します。
+> オンプレミスのExchange展開では、AJAX または類似のライブラリを使用するクライアント側の要求は、そのサーバーセットアップで CORS がサポートされていないので失敗します。
 
 ```js
 function getCurrentItem(accessToken) {

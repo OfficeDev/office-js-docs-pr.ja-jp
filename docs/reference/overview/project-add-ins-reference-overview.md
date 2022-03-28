@@ -4,12 +4,12 @@ description: Project の JavaScript API の概要。
 ms.date: 07/05/2019
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 5823c2978fffe71c1ea083c2653e9556c71b739d
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 9da3a4e19e20dae30dff8b04bd9596893298711d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744123"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484619"
 ---
 # <a name="javascript-api-for-project"></a>JavaScript API for Project 
 
@@ -24,4 +24,4 @@ Projectでは、JavaScript API で作成されたアドインがサポートさ�
 - [Project アドイン ドキュメント](../../project/index.yml)
 - [Project アドインの概要](../../project/project-add-ins.md)
 - [API リファレンス ドキュメント](../javascript-api-for-office.md)
-- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)

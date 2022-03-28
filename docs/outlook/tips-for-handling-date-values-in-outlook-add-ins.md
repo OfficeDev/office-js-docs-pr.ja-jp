@@ -1,13 +1,18 @@
 ---
 title: Outlook アドインで日付値を処理する
-description: JavaScript API Office JavaScript Date オブジェクトは、ほとんどの日付と時刻の格納および取得に使用されます。
+description: JavaScript API Officeは、ほとんどの日付と時刻の格納および取得に JavaScript Date オブジェクトを使用します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: adcf7cebd93a5881094a843d19fd65f95ae459a3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484489"
 ---
-
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>Outlook アドインで日付値を処理するためのヒント
 
-JavaScript API Office JavaScript [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) オブジェクトを使用して、ほとんどのストレージと日付と時刻の取得を行います。 
+JavaScript API Officeは、ほとんどの日付と時刻の格納および取得に JavaScript [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) オブジェクトを使用します。 
 
 この`Date`オブジェクトは、[getUTCDate、](https://www.w3schools.com/jsref/jsref_getutcdate.asp)[getUTCHour](https://www.w3schools.com/jsref/jsref_getutchours.asp)、[getUTCMinutes](https://www.w3schools.com/jsref/jsref_getutcminutes.asp)、[toUTCString](https://www.w3schools.com/jsref/jsref_toutcstring.asp) などのメソッドを提供し、要求された日付または時刻の値をユニバーサル座標時刻 (UTC) 時刻に従って返します。
 
@@ -42,10 +47,10 @@ JavaScript `Date` オブジェクトを使用して、UTC またはクライア�
 
 |**タイム ゾーン**|**説明**|
 |:-----|:-----|
-|クライアント コンピューターのタイム ゾーン|これは、クライアント コンピューターのオペレーティング システムで設定されています。 ほとんどのブラウザーでは、クライアント コンピューターのタイム ゾーンを使用して、JavaScript オブジェクトの日付または時刻の値を表示 `Date` します。<br/><br/>Outlook リッチ クライアントでは、このタイム ゾーンを使用して、ユーザー インターフェイスの日付または時刻の値を表示します。 <br/><br/>たとえば、Windows を実行しているクライアント コンピューター上の Outlook では、Windows 上で設定されているタイム ゾーンをローカル タイム ゾーンとして使用します。 Mac では、ユーザーがクライアント コンピューターのタイム ゾーンを変更した場合、mac の Outlook でタイム ゾーンを更新するように求めるメッセージが表示Outlookされます。|
-|Exchange 管理センター (EAC) のタイム ゾーン|ユーザーが初めてユーザーまたはモバイル デバイスにログオンするときに、このタイム ゾーン値 (および優先言語) を設定Outlook on the webユーザーが設定します。 <br/><br/>Outlook on the webモバイル デバイスは、このタイム ゾーンを使用して、ユーザー インターフェイスに日付または時刻の値を表示します。|
+|クライアント コンピューターのタイム ゾーン|これは、クライアント コンピューターのオペレーティング システムで設定されています。 ほとんどのブラウザーでは、クライアント コンピューターのタイム ゾーンを使用して、JavaScript オブジェクトの日付または時刻の値を表示 `Date` します。<br/><br/>Outlook リッチ クライアントでは、このタイム ゾーンを使用して、ユーザー インターフェイスの日付または時刻の値を表示します。 <br/><br/>たとえば、Windows を実行しているクライアント コンピューター上の Outlook では、Windows 上で設定されているタイム ゾーンをローカル タイム ゾーンとして使用します。 Mac では、ユーザーがクライアント コンピューターのタイム ゾーンを変更した場合、Mac 上の Outlook でタイム ゾーンの更新を求めるメッセージが表示Outlook。|
+|Exchange 管理センター (EAC) のタイム ゾーン|ユーザーが初めてユーザーまたはモバイル デバイスにログオンするときに、このタイム ゾーン値 (および優先言語) を設定Outlook on the web設定します。 <br/><br/>Outlook on the webモバイル デバイスは、このタイム ゾーンを使用して、ユーザー インターフェイスに日付または時刻の値を表示します。|
 
-Outlook リッチ クライアントはクライアント コンピューターのタイム ゾーンを使用し、Outlook on the web とモバイル デバイスのユーザー インターフェイスは EAC タイム ゾーンを使用します。Outlook リッチ クライアントと Outlook on the web またはモバイル デバイスで実行すると、同じメールボックスにインストールされている同じアドインのローカル時間が異なる場合があります。 Outlook アドイン開発者は日付の値を適切に入力して出力し、その値が、ユーザーから対応するクライアントに求められるタイム ゾーンと常に一致するようにする必要があります。
+Outlook リッチ クライアントはクライアント コンピューターのタイム ゾーンを使用し、Outlook on the web とモバイル デバイスのユーザー インターフェイスは EAC タイム ゾーンを使用しますので、Outlook リッチ クライアントと Outlook on the web またはモバイル デバイスで実行する場合、同じメールボックスにインストールされている同じアドインのローカル時間が異なる場合があります。 Outlook アドイン開発者は日付の値を適切に入力して出力し、その値が、ユーザーから対応するクライアントに求められるタイム ゾーンと常に一致するようにする必要があります。
 
 
 ### <a name="date-related-api"></a>日付関連の API
@@ -55,15 +60,15 @@ Outlook リッチ クライアントはクライアント コンピューター�
 |API メンバー|タイム ゾーン表現|Outlook リッチ クライアントの例|モバイル デバイスOutlook on the web例|
 |--------------|----------------------------|-------------------------------------|-------------------|
 |[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true#outlook-office-userprofile-timezone-member)|Outlook リッチ クライアントでは、このプロパティはクライアント コンピューターのタイム ゾーンを返します。 モバイル Outlook on the webでは、このプロパティは EAC タイム ゾーンを返します。 |EST|PST|
-|[Office.context.mailbox.item.dateTimeCreated](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) および [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|これらの各プロパティは、JavaScript オブジェクトを返 `Date` します。 次`Date`の例に示すように`myUTCDate`、この値は UTC が正しく、リッチ クライアント、Outlook、モバイル デバイスOutlook on the web同じです。<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>`myDate.getDate`ただし、呼び出しはクライアント コンピューターのタイム ゾーンの日付値を返します。これは、Outlook リッチ クライアント インターフェイスで日付時刻の値を表示するために使用されるタイム ゾーンと一致しますが、Outlook on the web とモバイル デバイスがユーザー インターフェイスで使用する EAC タイム ゾーンとは異なる場合があります。|アイテムが午前 9 時 (UTC) に作成された場合:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` は、午前 4 時 (EST) を返します。<br/><br/>アイテムが午前 11 時 (UTC) に変更された場合:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` は、午前 6 時 (EST) を返します。|アイテムの作成時刻が午前 9 時 (UTC) の場合:<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` は、午前 4 時 (EST) を返します。<br/><br/>アイテムが午前 11 時 (UTC) に変更された場合:<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` は、午前 6 時 (EST) を返します。<br/><br/>ユーザー インターフェイスで作成時刻や変更時刻を表示する場合は、まず時刻を PST に変換して、他のユーザー インターフェイスと一貫性を保つようにします。|
-|[Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)|各 Start パラメーター  _と End_ パラメーター _には_ JavaScript オブジェクトが必要 `Date` です。 引数は、Outlook リッチ クライアントまたはモバイル デバイスのユーザー インターフェイスで使用されるタイム ゾーンに関係なく、UTC Outlook on the webする必要があります。|予定フォームの開始時刻と終了時刻が午前 9 時 (UTC) と午前 11 時 (UTC) の場合、`start` と `end` の引数は正しい UTC 時刻である必要があります。つまり、<br/><br/><ul><li>`start.getUTCHours` は午前 9 時 (UTC) を返します。</li><li>`end.getUTCHours` は午前 11 時 (UTC) を返します。</li></ul>|予定フォームの開始時刻と終了時刻が午前 9 時 (UTC) と午前 11 時 (UTC) の場合、`start` と `end` の引数は正しい UTC 時刻である必要があります。つまり、<br/><br/><ul><li>`start.getUTCHours` は午前 9 時 (UTC) を返します。</li><li>`end.getUTCHours` は午前 11 時 (UTC) を返します。</li></ul>|
+|[Office.context.mailbox.item.dateTimeCreated](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) および [Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|これらの各プロパティは、JavaScript オブジェクトを返 `Date` します。 次`Date`の例に示`myUTCDate`すように、この値は UTC が正しく、リッチ クライアント、Outlook、モバイル デバイスOutlook on the web同じです。<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>`myDate.getDate`ただし、呼び出しはクライアント コンピューターのタイム ゾーンの日付値を返します。これは、Outlook リッチ クライアント インターフェイスで日付時刻の値を表示するために使用されるタイム ゾーンと一致しますが、Outlook on the web とモバイル デバイスがユーザー インターフェイスで使用する EAC タイム ゾーンとは異なる場合があります。|アイテムが午前 9 時 (UTC) に作成された場合:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` は、午前 4 時 (EST) を返します。<br/><br/>アイテムが午前 11 時 (UTC) に変更された場合:<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` は、午前 6 時 (EST) を返します。|アイテムの作成時刻が午前 9 時 (UTC) の場合:<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` は、午前 4 時 (EST) を返します。<br/><br/>アイテムが午前 11 時 (UTC) に変更された場合:<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` は、午前 6 時 (EST) を返します。<br/><br/>ユーザー インターフェイスで作成時刻や変更時刻を表示する場合は、まず時刻を PST に変換して、他のユーザー インターフェイスと一貫性を保つようにします。|
+|[Office.context.mailbox.displayNewAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)|各 Start パラメーター  _と End_ パラメーター _には_ JavaScript オブジェクトが必要 `Date` です。 引数は、リッチ クライアントまたはモバイル デバイスのユーザー インターフェイスで使用されるタイム ゾーンに関係なく、UTC Outlook正しいOutlook on the webする必要があります。|予定フォームの開始時刻と終了時刻が午前 9 時 (UTC) と午前 11 時 (UTC) の場合、`start` と `end` の引数は正しい UTC 時刻である必要があります。つまり、<br/><br/><ul><li>`start.getUTCHours` は午前 9 時 (UTC) を返します。</li><li>`end.getUTCHours` は午前 11 時 (UTC) を返します。</li></ul>|予定フォームの開始時刻と終了時刻が午前 9 時 (UTC) と午前 11 時 (UTC) の場合、`start` と `end` の引数は正しい UTC 時刻である必要があります。つまり、<br/><br/><ul><li>`start.getUTCHours` は午前 9 時 (UTC) を返します。</li><li>`end.getUTCHours` は午前 11 時 (UTC) を返します。</li></ul>|
 
 ## <a name="helper-methods-for-date-related-scenarios"></a>日付関連のシナリオ向けのヘルパー メソッド
 
 
-前のセクションで説明したように、Outlook on the web またはモバイル デバイスのユーザーの "現地時間" は、Outlook リッチ クライアントでは異なる場合がありますが、JavaScript **Date** オブジェクトはクライアント コンピューターのタイム ゾーンまたは UTC への変換のみをサポートしています。Office JavaScript API には、Office という 2 つのヘルパー メソッドがあります。 [.context.mailbox.convertToLocalClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) と [Office.context.mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
+前のセクションで説明したように、Outlook on the web またはモバイル デバイスのユーザーの "ローカル時刻" は Outlook リッチ クライアントで異なる場合がありますが、JavaScript **Date** オブジェクトはクライアント コンピューターのタイム ゾーンまたは UTC への変換のみをサポートしています。Office JavaScript API には、Office という 2 つのヘルパー メソッドが [提供されています。.context.mailbox.convertToLocalClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) と [Office.context.mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods).
 
-これらのヘルパー メソッドは、Outlook リッチ クライアント、Outlook on the web、およびモバイル デバイスで、次の 2 つの日付関連のシナリオで日付または時刻を異なる方法で処理する必要がある場合に対応するため、アドインの異なるクライアントに対して "書き込み 1 回" を強化します。
+これらのヘルパー メソッドは、Outlook リッチ クライアント、Outlook on the web、およびモバイル デバイスで、次の 2 つの日付関連のシナリオで異なる方法で日付または時刻を処理する必要を処理するため、アドインの異なるクライアントに対して "write-once" を強化します。
 
 
 ### <a name="scenario-a-displaying-item-creation-or-modified-time"></a>シナリオ A: アイテムの作成時刻または変更時刻の表示

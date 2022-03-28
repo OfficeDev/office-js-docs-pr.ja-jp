@@ -4,12 +4,12 @@ description: PowerPoint JavaScript API の概要。
 ms.date: 07/05/2019
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 406c22c3f35e5e749aabbbed9631dbb3b82cd4d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3657ff530743bf5bf06c30483aa7de4d2cdff6c1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746874"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484650"
 ---
 # <a name="javascript-api-for-powerpoint"></a>JavaScript API for PowerPoint
 
@@ -38,5 +38,5 @@ PowerPoint JavaScript API オブジェクト モデルの詳細については�
 - [PowerPoint アドイン ドキュメント](../../powerpoint/index.yml)
 - [PowerPoint アドインの概要](../../powerpoint/powerpoint-add-ins.md)
 - [PowerPoint JavaScript API リファレンス](/javascript/api/powerpoint)
-- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)
 - [API リファレンス ドキュメント](../javascript-api-for-office.md)

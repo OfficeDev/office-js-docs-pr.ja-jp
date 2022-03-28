@@ -3,12 +3,12 @@ title: Office アドインでの開発エラーのトラブルシューティン
 description: アドインの開発エラーをトラブルシューティングするOffice説明します。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c804f4e73dc28e6f401aca01cea68e6d2ce30917
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b16dbcbb9bf1c80e9d82f96fb0e6fa317b364840
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747098"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484325"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -65,10 +65,10 @@ myChart.id = "5";
 
 - このファイルを使用Visual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉Visual Studio。 再起動してVisual Studio F5 を再度押してみてください。
 - アドインのマニフェストは、集中展開、SharePointカタログ、ネットワーク共有などの展開場所から削除されています。
-- マニフェスト内の [ID 要素](../reference/manifest/id.md) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のOfficeを削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
-- `resid`アドインのマニフェストには、マニフェストの [[リソース](../reference/manifest/resources.md) `resid` `<Resources>`] セクションのどこにも定義されていないか、使用する場所とセクションで定義されている場所のスペルが一致しません。
+- マニフェスト内の [ID 要素](/javascript/api/manifest/id) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のOfficeを削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
+- `resid`アドインのマニフェストには、マニフェストの [[リソース](/javascript/api/manifest/resources) `resid` `<Resources>`] セクションのどこにも定義されていないか、使用する場所とセクションで定義されている場所のスペルが一致しません。
 - マニフェストのどこか `resid` に 32 文字を超える属性があります。 属性 `resid` と、セクション内 `id` の `<Resources>` 対応するリソースの属性は、32 文字を超えることはできません。
-- アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォームで実行しようとしている。 詳細については、「アドイン コマンド [の要件セット」を参照してください](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
+- アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォームで実行しようとしている。 詳細については、「アドイン コマンド [の要件セット」を参照してください](/javascript/api/requirement-sets/add-in-commands-requirement-sets)。
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>アドインは Edge では機能しませんが、他のブラウザーで動作します
 

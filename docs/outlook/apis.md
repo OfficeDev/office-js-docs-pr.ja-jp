@@ -3,12 +3,12 @@ title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745690"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484291"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > このような確認は、マニフェストで指定された要件セットのバージョンに存在する API には必要ありません。
 
-それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要件セットは、`<Requirements>` 要素内のマニフェストで指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](../reference/requirement-sets/outlook-api-requirement-sets.md)」を参照してください。
+それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要件セットは、`<Requirements>` 要素内のマニフェストで指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook-api-requirement-sets)」を参照してください。
 
 `<Methods>` 要素は Outlook アドインには適用されないので、特定のメソッドのサポートは宣言できません。
 
@@ -63,7 +63,7 @@ if (item.somePropertyOrFunction) {
 | **制限付き** | エンティティは使用できますが、正規表現は使用できません。 |
 | **アイテムの読み取り** | **制限付き** で許可されているものに加えて、以下のものが許可されます。<ul><li>正規表現</li><li>Outlook アドイン API の読み取りアクセス</li><li>アイテムのプロパティとコールバック トークンの取得</li></ul> |
 | **読み取り/書き込み** | **アイテムの読み取り** で許可される内容に加えて、次に示す内容が許可されます。<ul><li>`makeEwsRequestAsync` を除いた、完全な Outlook アドイン API のアクセス</li><li>アイテムのプロパティの設定</li></ul> |
-| **メールボックスの読み取り/書き込み** | **読み取り/書き込み** で許可されているものに加えて、以下のものが許可されます。<ul><li>アイテムやフォルダーの作成、読み取り、書き込み</li><li>アイテムの送信</li><li>[makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) の呼び出し</li></ul> |
+| **メールボックスの読み取り/書き込み** | **読み取り/書き込み** で許可されているものに加えて、以下のものが許可されます。<ul><li>アイテムやフォルダーの作成、読み取り、書き込み</li><li>アイテムの送信</li><li>[makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) の呼び出し</li></ul> |
 
 一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェスト内の `<Permissions>` 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題の詳細については、「プライバシーとセキュリティ[」を参照Officeアドインを参照してください](../concepts/privacy-and-security.md)。
 
@@ -74,5 +74,5 @@ if (item.somePropertyOrFunction) {
 ## <a name="see-also"></a>関連項目
 
 - [Outlook アドインのマニフェスト](manifests.md)
-- [Outlook API 要件セットについて](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook-api-requirement-sets)
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)

@@ -3,12 +3,12 @@ title: 新規作成フォーム用の Outlook アドインを作成する
 description: 新規作成フォーム用の Outlook アドインのシナリオと機能について説明します。
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7f34c46c720a650890d2b991cb539862e3cb8187
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746786"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484002"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>新規作成フォーム用の Outlook アドインを作成する
 
@@ -39,10 +39,10 @@ Office アドイン マニフェストのスキーマのバージョン 1.1 と 
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>新規作成モードで使用できるアドインの種類
 
-新規作成アドインは [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)として実装されます。 メール作成または会議出席依頼の返信用のアドインをアクティブ化するために、アドインのマニフェストには [MessageComposeCommandSurface 拡張点要素](../reference/manifest/extensionpoint.md#messagecomposecommandsurface)が含まれます。 ユーザーが開催者である予定や会議の新規作成または編集を行うためのアドインをアクティブ化する場合、アドインには [AppointmentOrganizerCommandSurface 拡張点要素](../reference/manifest/extensionpoint.md#appointmentorganizercommandsurface)が含まれます。
+新規作成アドインは [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)として実装されます。 メール作成または会議出席依頼の返信用のアドインをアクティブ化するために、アドインのマニフェストには [MessageComposeCommandSurface 拡張点要素](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface)が含まれます。 ユーザーが開催者である予定や会議の新規作成または編集を行うためのアドインをアクティブ化する場合、アドインには [AppointmentOrganizerCommandSurface 拡張点要素](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface)が含まれます。
 
 > [!NOTE]
-> アドイン コマンドがサポートされていないクライアントまたはサーバー用に開発されたアドインは、[OfficeApp](../reference/manifest/officeapp.md) 要素に含まれる[ルール](../reference/manifest/rule.md)要素の中の[アクティブ化ルール](activation-rules.md)を使用します。 アドインが特に古いクライアントやサーバーのために開発されている場合を除き、新規アドインはアドイン コマンドを使用すべきです。
+> アドイン コマンドがサポートされていないクライアントまたはサーバー用に開発されたアドインは、[OfficeApp](/javascript/api/manifest/officeapp) 要素に含まれる[ルール](/javascript/api/manifest/rule)要素の中の[アクティブ化ルール](activation-rules.md)を使用します。 アドインが特に古いクライアントやサーバーのために開発されている場合を除き、新規アドインはアドイン コマンドを使用すべきです。
 
 ## <a name="api-features-available-to-compose-add-ins"></a>新規作成アドインに使用できる API の機能
 

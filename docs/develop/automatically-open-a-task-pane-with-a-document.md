@@ -3,18 +3,18 @@ title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開くと自動的に開Officeアドインを構成する方法について学習します。
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 29fd772fe201a568e7507235805f4b570bf1adb1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743070"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483785"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
 アドインのアドイン コマンドを使用して、OfficeリボンにボタンOfficeを追加することで、Office アプリ UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
-いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md) 要件セットで導入された自動開く作業ウィンドウ機能を使用すると、シナリオで必要なときに作業ウィンドウを自動的に開きます。
+いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1](/javascript/api/requirement-sets/add-in-commands-requirement-sets) 要件セットで導入された自動開く作業ウィンドウ機能を使用すると、シナリオで必要なときに作業ウィンドウを自動的に開きます。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
@@ -56,7 +56,7 @@ Autoopen 機能では、特定のドキュメントに特定の作業ウィン�
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>手順 1: 開く作業ウィンドウを指定する
 
-自動的に開く作業ウィンドウを指定するには、[TaskpaneId](../reference/manifest/action.md#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。
+自動的に開く作業ウィンドウを指定するには、[TaskpaneId](/javascript/api/manifest/action#taskpaneid) の値を **Office.AutoShowTaskpaneWithDocument** に設定します。この値は 1 つの作業ウィンドウにのみ設定できます。この値を複数の作業ウィンドウに設定すると、最初に見つかった値が認識され、その他は無視されます。
 
 次の例では、Office.AutoShowTaskpaneWithDocument に設定された TaskPaneId の値を示しています。
 

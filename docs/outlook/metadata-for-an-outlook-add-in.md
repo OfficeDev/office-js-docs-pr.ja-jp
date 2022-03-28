@@ -3,8 +3,13 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: b07322733f741747568fd57a99f03dc2d3e4d3bb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484147"
 ---
-
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
 次のいずれかの方法を使用して、Outlook アドインでカスタム データを管理できます。
@@ -113,7 +118,7 @@ function removeAddInSetting()
 
 ### <a name="using-custom-properties"></a>カスタム プロパティの使用
 
-カスタム プロパティを使用するには、まず [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出して読み込む必要があります方法です。 プロパティ バッグを作成したら、[set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) と [get](/javascript/api/outlook/office.customproperties) メソッドを使用してカスタム プロパティを追加し、取得できます。 プロパティ バッグで行った変更を保存するには、[saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) メソッドを使用する必要があります。
+カスタム プロパティを使用するには、まず [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを呼び出して読み込む必要があります方法です。 プロパティ バッグを作成したら、[set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) と [get](/javascript/api/outlook/office.customproperties) メソッドを使用してカスタム プロパティを追加し、取得できます。 プロパティ バッグで行った変更を保存するには、[saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) メソッドを使用する必要があります。
 
 
  > [!NOTE]
@@ -196,7 +201,7 @@ EWS または REST を使用して **CustomProperties** を取得する場合は
 
 #### <a name="get-custom-properties-using-ews"></a>EWS を使用してカスタム プロパティを取得する
 
-メール アドインは、 `CustomProperties` EWS GetItem 操作を使用して MAPI ベースの拡張プロパティ [を取得](/exchange/client-developer/web-service-reference/getitem-operation) できます。 コールバック `GetItem` トークンを使用して、または [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用してクライアント側でサーバー側にアクセスします。 要求で `GetItem` 、前の `CustomProperties` セクション「アイテムにカスタム プロパティを保存する方法」で説明した詳細を使用して、MAPI ベースのプロパティをプロパティ セット [に指定します](#how-custom-properties-are-stored-on-an-item)。
+メール アドインは、 `CustomProperties` EWS GetItem 操作を使用して MAPI ベースの拡張プロパティ [を取得](/exchange/client-developer/web-service-reference/getitem-operation) できます。 コールバック `GetItem` トークンを使用して、または [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用してクライアント側でサーバー側にアクセスします。 要求で `GetItem` 、前の `CustomProperties` セクション「アイテムにカスタム プロパティを保存する方法」で説明した詳細を使用して、MAPI ベースのプロパティをプロパティ セット [に指定します](#how-custom-properties-are-stored-on-an-item)。
 
 次の例では、アイテムとそれのカスタム プロパティを取得する方法を示します。
 

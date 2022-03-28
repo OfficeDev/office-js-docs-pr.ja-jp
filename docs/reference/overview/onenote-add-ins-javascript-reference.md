@@ -4,12 +4,12 @@ description: OneNote JavaScript API の詳細情報。
 ms.date: 07/28/2020
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 8fdbe6b6706e7e85729d85e13b76b4d1b4e6b9d3
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b9cfb288d93c9f44cce2416f56a55ba2237f08eb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744534"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484178"
 ---
 # <a name="onenote-javascript-api-overview"></a>OneNote JavaScript API の概要
 
@@ -39,4 +39,4 @@ OneNote JavaScript API オブジェクト モデルの詳細については、[O
 * [OneNote アドイン ドキュメント](../../onenote/index.yml)
 * [OneNote アドインの概要](../../onenote/onenote-add-ins-programming-overview.md)
 * [OneNote JavaScript API リファレンス](/javascript/api/onenote)
-* [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+* [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)

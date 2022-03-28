@@ -3,19 +3,19 @@ title: Outlook アドインで定期的なアイテムを取得して設定す�
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b211e72304e22874f847f2231e3a800efaceb4d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0c763abd238d007fd397c17278472db1fb97e04e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154135"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484666"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
 毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 JavaScript API Officeを使用して、アドイン内の予定シリーズの定期的なパターンを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="available-recurrence-patterns"></a>使用可能な定期的なパターン
 
@@ -42,12 +42,12 @@ ms.locfileid: "59154135"
 
 |予定の状態|編集可能な定期的なアイテムですか。|表示可能な定期的なアイテムですか。|
 |---|---|---|
-|予定の開催者 - 定期的な予定を作成する|はい ( [`setAsync`][setAsync link] )|はい ( [`getAsync`][getAsync link] )|
-|予定の開催者 - インスタンスを作成する|いいえ (`setAsync` がエラーを返します)|はい ( [`getAsync`][getAsync link] )|
-|予定の出席者 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
-|予定の出席者 - インスタンスを読む|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
-|会議出席依頼 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
-|会議出席依頼 - インスタンスを確認する|いいえ (`setAsync` が使用不可)|はい ( [`item.recurrence`][item.recurrence link] )|
+|予定の開催者 - 定期的な予定を作成する|はい ([`setAsync`][setAsync link])|はい ([`getAsync`][getAsync link])|
+|予定の開催者 - インスタンスを作成する|いいえ (`setAsync` がエラーを返します)|はい ([`getAsync`][getAsync link])|
+|予定の出席者 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
+|予定の出席者 - インスタンスを読む|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
+|会議出席依頼 - 定期的な予定を確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
+|会議出席依頼 - インスタンスを確認する|いいえ (`setAsync` が使用不可)|はい ([`item.recurrence`][item.recurrence link])|
 
 ## <a name="set-recurrence-as-the-organizer"></a>定期的なアイテムを開催者として設定する
 
@@ -201,7 +201,7 @@ var recurrenceType = recurrence.recurrenceType;
 [RecurrenceChanged イベント](/javascript/api/office/office.eventtype)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties
 [setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth

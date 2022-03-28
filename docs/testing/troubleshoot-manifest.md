@@ -1,14 +1,14 @@
 ---
 title: Office アドインのマニフェストを検証する
 description: XML スキーマおよび他のツールを使用して、Officeアドインのマニフェストを検証する方法について説明します。
-ms.date: 10/29/2020
+ms.date: 03/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d885fbfca96d759c10c556bea3533bc54433db
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 02273647a2e1f639aec7adb260453a811035d7e4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745671"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404722"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Office アドインのマニフェストを検証する
 
@@ -29,6 +29,8 @@ npm run validate
 
 > [!NOTE]
 > この機能にアクセスするには、Office アドイン バージョン 1.1.17 以降の [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用してアドイン プロジェクトを作成する必要があります。
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>office-addin-manifest を使用してマニフェストを検証する
 
@@ -54,6 +56,14 @@ npm run validate
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
+
+このコマンドで問題が発生した場合は、次の手順を実行します ( `MANIFEST_FILE` マニフェスト ファイルの名前に置き換えてください)。
+
+```command&nbsp;line
+npx office-addin-manifest validate -p MANIFEST_FILE
+```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>XML スキーマと比較してマニフェストを検証する
 

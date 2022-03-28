@@ -3,12 +3,12 @@ title: アドインで ID トークンを使用してユーザーを認証する
 description: サービスで SSO を実装するために、Outlook アドインが提供する ID トークンの使用方法について説明します。
 ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4f2a24bb918cc55527adfb7b789004d3dd15d839
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744621"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484384"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Exchange の ID トークンを使用してユーザーを認証する
 
@@ -19,7 +19,7 @@ Exchange のユーザー ID トークンは、アドインがアドイン ユー
 
 ## <a name="send-the-id-token-with-each-request"></a>要求ごとに ID トークンを送信する
 
-最初の手順では、[getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) を呼び出すことにより、アドインでサーバーから Exchange のユーザー ID トークンを取得します。 その次に、アドインはこのトークンを、バックエンドに対する各要求とともに送信します。 これはヘッダーか、要求の本文の一部として組み込まれます。
+最初の手順では、[getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を呼び出すことにより、アドインでサーバーから Exchange のユーザー ID トークンを取得します。 その次に、アドインはこのトークンを、バックエンドに対する各要求とともに送信します。 これはヘッダーか、要求の本文の一部として組み込まれます。
 
 ## <a name="validate-the-token"></a>トークンを検証する
 

@@ -3,19 +3,19 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeやエラーを処理する方法について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744187"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483519"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/identity-api-requirement-sets)」を参照してください。
 > Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
@@ -36,7 +36,7 @@ ms.locfileid: "63744187"
 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API は、このアドインまたは Office バージョンではサポートされていません。
 
 - この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Microsoft 365チャネルでサブスクリプションに追加されます。
-- アドインのマニフェストに適切な [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) セクションがありません。
+- アドインのマニフェストに適切な [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) セクションがありません。
 
 アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
@@ -98,7 +98,7 @@ ms.locfileid: "63744187"
 
 考えられる原因は複数あります。
 
-- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](../reference/requirement-sets/identity-api-requirement-sets.md)。
+- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](/javascript/api/requirement-sets/identity-api-requirement-sets)。
 - `getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡され、ユーザーが AppSource からアドインを取得しました。 このシナリオでは、アドインが必要とする Microsoft Graph スコープ (権限) について、テナント管理者はアドインに同意していません。 Office では、ユーザーに求めることができるのは AAD `profile` スコープへの同意のみであるため、`allowConsentPrompt` を使用して `getAccessToken` を取り消しても問題は解決できません。
 
 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
@@ -140,7 +140,7 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 この種類のエラーが表示されるのは、開発中のみである必要があります。
 
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送り、そのエラーのログをコンソールで作成するか、ログに記録する必要があります。
-- アドイン マニフェストの[範囲](../reference/manifest/scopes.md)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
+- アドイン マニフェストの[範囲](/javascript/api/manifest/scopes)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 
 ### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft サーバーのアクセス トークンで対象ユーザーエラーがGraph
 

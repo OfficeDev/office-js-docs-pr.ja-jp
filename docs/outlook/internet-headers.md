@@ -1,32 +1,37 @@
 ---
 title: インターネット ヘッダーの取得と設定
-description: アドイン内のメッセージでインターネット ヘッダーを取得およびOutlookする方法。
+description: アドイン内のメッセージのインターネット ヘッダーを取得Outlookする方法。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: ddbb555f8901e1b244fb3e30682d73c21928963e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483999"
 ---
-
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>アドイン内のメッセージのインターネット ヘッダーを取得Outlook設定する
 
 ## <a name="background"></a>背景
 
-アドインの開発Outlook一般的な要件は、アドインに関連付けられているカスタム プロパティを異なるレベルに格納する方法です。 現時点では、カスタム プロパティはアイテムまたはメールボックス レベルで格納されます。
+アドインの開発Outlook一般的な要件は、アドインに関連付けられたカスタム プロパティを異なるレベルに格納する方法です。 現時点では、カスタム プロパティはアイテムまたはメールボックス レベルで格納されます。
 
 - アイテム レベル - 特定のアイテムに適用されるプロパティの場合は、 [CustomProperties オブジェクトを使用](/javascript/api/outlook/office.customproperties) します。 たとえば、電子メールを送信したユーザーに関連付けられた顧客コードを保存します。
 - メールボックス レベル - ユーザーのメールボックス内のすべてのメール アイテムに適用されるプロパティの場合は、 [RoamingSettings オブジェクトを使用](/javascript/api/outlook/office.roamingsettings) します。 たとえば、ユーザーの好みを保存して、特定のスケールで温度を表示します。
 
-両方の種類のプロパティは、アイテムが Exchange サーバーから離れる後は保持されないので、電子メール受信者はアイテムに設定されたプロパティを取得できません。 したがって、開発者は、これらの設定や他の MIME プロパティにアクセスして、読み取りシナリオの向上を可能にしません。
+両方の種類のプロパティは、アイテムが Exchange サーバーを離れる後は保持されないので、電子メール受信者はアイテムに設定されたプロパティを取得できません。 したがって、開発者は、これらの設定や他の MIME プロパティにアクセスして、読み取りシナリオの向上を可能にしません。
 
-EWS 要求を介してインターネット ヘッダーを設定する方法は用意されているが、EWS 要求を行うシナリオによっては機能しない場合があります。 たとえば、デスクトップ上の作成モードOutlook、アイテム ID は onin キャッシュ モードでは `saveAsync` 同期されません。
+EWS 要求を介してインターネット ヘッダーを設定する方法は用意されているが、EWS 要求を行うシナリオによっては機能しない場合があります。 たとえば、デスクトップ上の作成モードOutlookアイテム ID は onin キャッシュ モードで `saveAsync` 同期されません。
 
 > [!TIP]
 > これらの[オプションの使用の詳細については、「Get and set add-in metadata for an Outlook](metadata-for-an-outlook-add-in.md)アドイン」を参照してください。
 
 ## <a name="purpose-of-the-internet-headers-api"></a>インターネット ヘッダー API の目的
 
-要件セット [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) で導入されたインターネット ヘッダー API を使用すると、開発者は次の機能を使用できます。
+要件セット [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) で導入されたインターネット ヘッダー API を使用すると、開発者は次の機能を使用できます。
 
 - すべてのクライアントに送信された後に保持される電子メールExchangeスタンプします。
-- メールがメールの読み取りシナリオですべてのクライアントに送信Exchange後に保持された電子メールに関する情報を読み取る。
+- メールがメール読み取りシナリオですべてのクライアントに渡Exchange後に保持された電子メールに関する情報を読み取る。
 - メールの MIME ヘッダー全体にアクセスします。
 
 ![インターネット ヘッダーの図。 テキスト: ユーザー 1 は電子メールを送信します。 ユーザーが電子メールを作成している間、アドインはカスタム インターネット ヘッダーを管理します。 ユーザー 2 は電子メールを受信します。 アドインは受信したメールからインターネット ヘッダーを取得し、カスタム ヘッダーを解析して使用します。](../images/outlook-internet-headers.png)

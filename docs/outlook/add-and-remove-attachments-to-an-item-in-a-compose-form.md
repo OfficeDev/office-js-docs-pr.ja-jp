@@ -3,12 +3,12 @@ title: Outlook アドインで添付ファイルを追加および削除する
 description: さまざまな添付ファイル API を使用して、ユーザー Outlookに添付されているファイルまたはアイテムを管理します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebecb1b0674641b58c20c0d8d78681f2bbf48110
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: bf49b5ad099541602d94dea0cab5869dbd54a960
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744346"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483957"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>フォーム内の作成フォームでアイテムの添付ファイルを管理Outlook
 
@@ -18,9 +18,9 @@ JavaScript API Officeには、ユーザーが作成するときにアイテム�
 
 添付ファイルの種類に適したOutlookを使用して、ファイルまたはアイテムを作成フォームに添付できます。
 
-- [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): ファイルを添付する
-- [addFileAttachmentFromBase64Async: base64](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 文字列を使用してファイルを添付する
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): アイテムを添付Outlookする
+- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): ファイルを添付する
+- [addFileAttachmentFromBase64Async: base64](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 文字列を使用してファイルを添付する
+- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): アイテムを添付Outlookする
 
 これらは非同期メソッドです。つまり、アクションが完了するのを待たずに実行を続けできます。 追加する添付ファイルの元の場所とサイズによっては、非同期呼び出しの完了に時間がかかる場合があります。
 
@@ -81,7 +81,7 @@ function write(message){
 
 ### <a name="attach-an-outlook-item"></a>アイテムを添付Outlookする
 
-Outlook アイテム (メール、予定表、連絡先アイテムなど) を作成フォームのメッセージまたは予定に添付するには、アイテムの Exchange Web サービス (EWS) ID `addItemAttachmentAsync` を指定し、メソッドを使用します。 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation) にアクセスすると、ユーザーのメールボックス内の電子メール、予定表、連絡先、またはタスク アイテムの EWS ID を取得できます。 閲覧フォームの既存のアイテムでは、 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティでも EWS ID が取得できます。
+Outlook アイテム (メール、予定表、連絡先アイテムなど) を作成フォームのメッセージまたは予定に添付するには、アイテムの Exchange Web サービス (EWS) ID `addItemAttachmentAsync` を指定し、メソッドを使用します。 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation) にアクセスすると、ユーザーのメールボックス内の電子メール、予定表、連絡先、またはタスク アイテムの EWS ID を取得できます。 閲覧フォームの既存のアイテムでは、 [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティでも EWS ID が取得できます。
 
 次の JavaScript 関数は `addItemAttachment`、上記の最初の例を拡張し、構成されている電子メールまたは予定に添付ファイルとしてアイテムを追加します。 この関数は、添付するアイテムの EWS ID を引数として受け取ります。 接続が成功した場合は、同じセッションで添付ファイルを削除するなど、さらに処理するための添付ファイル ID を取得します。
 
@@ -116,14 +116,14 @@ function addItemAttachment(itemId) {
 
 ## <a name="get-attachments"></a>添付ファイルを取得する
 
-作成モードで添付ファイルを取得する API は、要件セット [1.8 から利用できます](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)。
+作成モードで添付ファイルを取得する API は、要件セット [1.8 から利用できます](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)。
 
-- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
-[getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを使用して、構成されているメッセージまたは予定の添付ファイルを取得できます。
+[getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを使用して、構成されているメッセージまたは予定の添付ファイルを取得できます。
 
-添付ファイルのコンテンツを取得するには、 [getAttachmentContentAsync メソッドを使用](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) できます。 サポートされている形式は、 [AttachmentContentFormat 列挙型に一覧表示](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) されます。
+添付ファイルのコンテンツを取得するには、 [getAttachmentContentAsync メソッドを使用](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) できます。 サポートされている形式は、 [AttachmentContentFormat 列挙型に一覧表示](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) されます。
 
 output パラメーター オブジェクトを使用して、状態とエラーを確認するコールバック メソッドを `AsyncResult` 指定する必要があります。 省略可能なパラメーターを使用して、コールバック メソッドに追加のパラメーターを渡 `asyncContext` することもできます。
 
@@ -165,7 +165,7 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>添付ファイルの削除
 
-[removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを使用する場合は、対応する添付ファイル ID を指定して、作成フォームのメッセージまたは予定アイテムからファイルまたはアイテムの添付ファイルを削除できます。
+[removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを使用する場合は、対応する添付ファイル ID を指定して、作成フォームのメッセージまたは予定アイテムからファイルまたはアイテムの添付ファイルを削除できます。
 
 > [!IMPORTANT]
 > 要件セット 1.7 以前を使用している場合は、同じアドインが同じセッションで追加した添付ファイルのみを削除する必要があります。

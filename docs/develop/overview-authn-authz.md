@@ -3,12 +3,12 @@ title: Office アドインにおける認証と承認の概要
 description: Office アドインでの認証と承認のしくみについて説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: ba7f55a0b8ca163b994bcfb91879c675b777a7c9
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743703"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483642"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
@@ -26,7 +26,7 @@ Office アドインでは、既定で匿名アクセスが許可されますが�
 
 ## <a name="sso-scenarios"></a>SSO のシナリオ
 
-シングル サインオン (SSO) を使用すると、Office に 1 回サインインするだけで済むため、ユーザーにとって便利です。 アドインに個別にサインインする必要はありません。 SSO はすべてのバージョンの Office でサポートされているわけではないため、[Microsoft ID プラットフォームを使用して](#authenticate-with-the-microsoft-identity-platform)別のサインイン 方法を実装する必要があります。 サポートされている Office バージョンの詳細については、「[Identity API 要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+シングル サインオン (SSO) を使用すると、Office に 1 回サインインするだけで済むため、ユーザーにとって便利です。 アドインに個別にサインインする必要はありません。 SSO はすべてのバージョンの Office でサポートされているわけではないため、[Microsoft ID プラットフォームを使用して](#authenticate-with-the-microsoft-identity-platform)別のサインイン 方法を実装する必要があります。 サポートされている Office バージョンの詳細については、「[Identity API 要件セット](/javascript/api/requirement-sets/identity-api-requirement-sets)」を参照してください。
 
 ### <a name="get-the-users-identity-through-sso"></a>SSO を使用してユーザーの ID を取得する
 

@@ -3,12 +3,12 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744253"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483609"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
@@ -107,7 +107,7 @@ Word、Excel、PowerPoint アドインの場合は、 `<VersionOverrides ... xsi
 
 ### <a name="include-the-identity-api-requirement-set"></a>Identity API 要件セットを含める
 
-SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。詳細については、「[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
+SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。詳細については、「[IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)」を参照してください。
 
 ### <a name="add-client-side-code"></a>クライアント側のコードを追加する
 
@@ -248,4 +248,4 @@ Excel、PowerPoint、または Word のアドインで SSO を使用する場合
 
 - [Microsoft ID プラットフォームのドキュメント](/azure/active-directory/develop/)
 - [要件セット](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)

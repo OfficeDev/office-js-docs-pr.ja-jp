@@ -3,16 +3,16 @@ title: 共有フォルダーと共有メールボックスのシナリオを、O
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 アクセスを委任する) と共有メールボックスを使用します。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745853"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484654"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>共有フォルダーと共有メールボックスのシナリオを、Outlookアドインで有効にする
 
-この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼[ばれる) と](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)共有メールボックス (プレビュー中) のシナリオを有効にする方法について説明します。これには、Office JavaScript API でサポートされているアクセス許可が含まれます。
+この記事では、Outlook アドインで共有フォルダー (代理人アクセスとも呼[ばれる) と](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)共有メールボックス (プレビュー中) のシナリオを有効にする方法について説明します。これには、Office JavaScript API でサポートされているアクセス許可が含まれます。
 
 ## <a name="supported-clients-and-platforms"></a>サポートされているクライアントとプラットフォーム
 
@@ -20,13 +20,13 @@ ms.locfileid: "63745853"
 
 | Client | Exchange Online | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2013 オンプレミス |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|不要|不要|不要|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|いいえ|いいえ|いいえ|
 |Mac:<br>ビルド 16.47 以降|はい|はい|はい|はい|
 |Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|不要|不要|不要|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|いいえ|いいえ|いいえ|
 
 > [!IMPORTANT]
-> この機能のサポートは、要件セット [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) で導入されました (詳細については、クライアントとプラットフォーム [を参照してください](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients))。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
+> この機能のサポートは、要件セット [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) で導入されました (詳細については、クライアントとプラットフォーム [を参照してください](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients))。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
 
 ## <a name="supported-setups"></a>サポートされているセットアップ
 
@@ -115,9 +115,9 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、親要素の下のマニフェストで [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 要素を設定する必要があります `DesktopFormFactor`。 現時点では、他のフォーム ファクターはサポートされていません。
+アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、親要素の下のマニフェストで [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) `true` 要素を設定する必要があります `DesktopFormFactor`。 現時点では、他のフォーム ファクターはサポートされていません。
 
-代理人からの REST 呼び出しをサポートするには、マニフェストの [Permissions](../reference/manifest/permissions.md) ノードをに設定します `ReadWriteMailbox`。
+代理人からの REST 呼び出しをサポートするには、マニフェストの [Permissions](/javascript/api/manifest/permissions) ノードをに設定します `ReadWriteMailbox`。
 
 次の例は、マニフェスト `SupportsSharedFolders` のセクションに設定 `true` された要素を示しています。
 
@@ -148,7 +148,7 @@ Exchange管理者は、アクセスするユーザーのセットの共有メー
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>代理人または共有メールボックス ユーザーとして操作を実行する
 
-[item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) メソッドを呼び出すことによって、作成モードまたは読み取りモードでアイテムの共有プロパティを取得できます。 これにより、現在ユーザーのアクセス許可、所有者の電子メール アドレス、REST API の基本 URL、およびターゲット メールボックスを提供する [SharedProperties](/javascript/api/outlook/office.sharedproperties) オブジェクトが返されます。
+[item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを呼び出すことによって、作成モードまたは読み取りモードでアイテムの共有プロパティを取得できます。 これにより、現在ユーザーのアクセス許可、所有者の電子メール アドレス、REST API の基本 URL、およびターゲット メールボックスを提供する [SharedProperties](/javascript/api/outlook/office.sharedproperties) オブジェクトが返されます。
 
 次の例は、メッセージまたは予定の共有プロパティを取得し、代理人または共有メールボックス ユーザーが **書** き込みアクセス許可を持つか確認し、REST 呼び出しを行う方法を示しています。
 

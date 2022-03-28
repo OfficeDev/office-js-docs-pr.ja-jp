@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなどOffice API のルールとベスト プラクティスを提供します。
 ms.date: 07/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 773edd6b041ad6e49b479b3705ebcdea1875e561
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a9d9dcbbeeb52aa8d05c27c3cd823ce336c71233
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743497"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483730"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -23,7 +23,7 @@ ms.locfileid: "63743497"
 
 - ダイアログ ボックスは HTTP ではなく HTTPS URL にのみ移動できます。
 - [displayDialogAsync](/javascript/api/office/office.ui) メソッドに渡される URL は、アドイン自体とまったく同じドメインにある必要があります。 サブドメインにすることはできません。 ただし、そのページに渡されたページは、別のドメインのページにリダイレクトできます。
-- アドイン コマンドの作業ウィンドウまたは UI レス関数ファイルを使用できるホスト ウィンドウ[](../reference/manifest/functionfile.md)では、一度に開くことができるダイアログ ボックスは 1 つのみです。
+- アドイン コマンドの作業ウィンドウまたは UI レス関数ファイルを使用できるホスト ウィンドウ[](/javascript/api/manifest/functionfile)では、一度に開くことができるダイアログ ボックスは 1 つのみです。
 - ダイアログ ボックスOffice 2 つの API のみを呼び出します。
   - [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) 関数。
   - `Office.context.requirements.isSetSupported`(詳細については、「アプリケーションと [API 要件Office指定する」を参照してください](specify-office-hosts-and-api-requirements.md)。

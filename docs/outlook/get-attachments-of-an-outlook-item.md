@@ -3,32 +3,32 @@ title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6d635535e9d8882877a6567160fa540c138310
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b8f851eba0eae9373d751b63e37c35db5f5ead3a
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074351"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484264"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
-2 つの方法でOutlookアイテムの添付ファイルを取得できますが、使用するオプションはシナリオによって異なります。
+複数の方法でOutlookアイテムの添付ファイルを取得できますが、使用するオプションはシナリオによって異なります。
 
 1. リモート サービスに添付ファイル情報を送信します。
 
     アドインは添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。 そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
 
-1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
 
-    この API は、EWS/REST が使用できない場合 (たとえば、Exchange サーバーの管理構成のため)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、この API は、添付ファイルがまだ Exchange に同期されていない可能性がある作成シナリオで使用できます。詳細については `getAttachmentContentAsync` [、「Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)の作成フォームでアイテムの添付ファイルを管理する」を参照してください。
+    この API は、EWS/REST が使用できない場合 (たとえば、Exchange サーバーの管理構成のため)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、`getAttachmentContentAsync`この API は、添付ファイルがまだ Exchange に同期されていない可能性がある作成シナリオで使用できます。詳細については、「[Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) の作成フォームでアイテムの添付ファイルを管理する」を参照してください。
 
 この記事では、最初のオプションについて詳しく説明します。 リモート サービスに添付ファイル情報を送信するには、次のプロパティと関数を使用します。
 
 - [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) プロパティ &ndash; メールボックスをホストしている Exchange サーバー上の Exchange Web サービス (EWS) の URL を指定します。サービスはこの URL を使用して、[ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) メソッドまたは [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS 操作を呼び出します。
 
-- [Office.context.mailbox.item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) プロパティ &ndash; [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) オブジェクトの配列をアイテムの添付ファイルごとに 1 つ取得します。
+- [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティ &ndash; [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) オブジェクトの配列をアイテムの添付ファイルごとに 1 つ取得します。
 
-- [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 関数 &ndash; メールボックスをホストする Exchange サーバーを非同期で呼び出し、添付ファイルの要求の認証のために Exchange サーバーに送り返すコールバック トークンを取得します。
+- [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 関数 &ndash; メールボックスをホストする Exchange サーバーを非同期で呼び出し、添付ファイルの要求の認証のために Exchange サーバーに送り返すコールバック トークンを取得します。
 
 ## <a name="using-the-attachments-api"></a>添付ファイル API を使用する
 
@@ -49,7 +49,7 @@ ms.locfileid: "62074351"
 
 ## <a name="get-a-callback-token"></a>コールバック トークンを取得する
 
-[Office.context.mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) オブジェクトは、Exchange サーバーで認証を行うためにリモート サーバーが使用できるトークンを取得するための `getCallbackTokenAsync` 関数を提供します。 次のコードは、コールバック トークンを取得するための非同期要求を起動するアドイン内の関数と、応答を取得するコールバック関数を示しています。 コールバック トークンは、次のセクションで定義されているサービス要求オブジェクトに保存されます。
+[Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) オブジェクトは、Exchange サーバーで認証を行うためにリモート サーバーが使用できるトークンを取得するための `getCallbackTokenAsync` 関数を提供します。 次のコードは、コールバック トークンを取得するための非同期要求を起動するアドイン内の関数と、応答を取得するコールバック関数を示しています。 コールバック トークンは、次のセクションで定義されているサービス要求オブジェクトに保存されます。
 
 ```js
 function getAttachmentToken() {

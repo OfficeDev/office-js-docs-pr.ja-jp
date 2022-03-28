@@ -4,19 +4,19 @@ description: アドインに追加送信機能を実装する方法についてO
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3411ba2527e0b6c99e5e5674811ff76e240ccf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154237"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484166"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>アドインに append-on-send をOutlookする
 
-このチュートリアルの最後には、メッセージが送信Outlook免責事項を挿入できる新しいアドインがあります。
+このチュートリアルの終わりまでに、メッセージが送信Outlook免責事項を挿入できる新しいアドインが作成されます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -24,15 +24,15 @@ ms.locfileid: "59154237"
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインで追加送信機能を有効にするには `AppendOnSend` [、ExtendedPermissions](../reference/manifest/extendedpermissions.md)のコレクションにアクセス許可を含める必要があります。
+アドインで追加送信機能を `AppendOnSend` 有効にするには、 [ExtendedPermissions のコレクションにアクセス許可を含める必要があります](/javascript/api/manifest/extendedpermissions)。
 
-このシナリオでは、[アクションの実行] ボタンを選択して関数を実行する代わりに、関数 `action` を実行 `appendOnSend` します。
+このシナリオでは、[アクションの実行] `action` ボタンを選択して関数を実行する代わりに、関数を実行`appendOnSend`します。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
 1. プロジェクトの **manifest.xml** にあるファイルを開きます。
 
-1. ノード全体 (開 `<VersionOverrides>` くタグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
+1. ノード全体 (開く `<VersionOverrides>` タグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -127,13 +127,13 @@ ms.locfileid: "59154237"
 次に、送信イベントに追加を実装します。
 
 > [!IMPORTANT]
-> アドインで[on-send `ItemSend` ](outlook-on-send-addins.md)イベント処理も実装している場合は、このシナリオがサポートされていないので、オン送信ハンドラーを呼び出してエラー `AppendOnSendAsync` を返します。
+> アドインで [on-send `ItemSend`](outlook-on-send-addins.md)`AppendOnSendAsync` イベント処理も実装している場合は、このシナリオがサポートされていないので、オン送信ハンドラーを呼び出してエラーを返します。
 
 このシナリオでは、ユーザーが送信するときにアイテムに免責事項を追加する方法を実装します。
 
 1. 同じクイック スタート プロジェクトで、コード エディター **で ./src/commands/commands.js** ファイルを開きます。
 
-1. 関数の `action` 後に、次の JavaScript 関数を挿入します。
+1. 関数の後 `action` に、次の JavaScript 関数を挿入します。
 
     ```js
     function appendDisclaimerOnSend(event) {
@@ -175,9 +175,9 @@ ms.locfileid: "59154237"
 
 1. 新しいメッセージを作成し、[To] 行に **自分自身を追加** します。
 
-1. リボンまたはオーバーフロー メニューから、[アクションの実行 **] を選択します**。
+1. リボンまたはオーバーフロー メニューで、[アクションの実行 **] を選択します**。
 
-1. メッセージを送信し、受信トレイまたは送信アイテムフォルダーからメッセージを開き、追加された免責事項を表示します。
+1. メッセージを送信し、受信トレイまたは送信アイテム フォルダーからメッセージを開き、追加された免責事項を表示します。
 
     ![メッセージの例のスクリーンショットで、免責事項が送信時に追加Outlook on the web。](../images/outlook-web-append-disclaimer.png)
 

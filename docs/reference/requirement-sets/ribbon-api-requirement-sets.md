@@ -4,12 +4,12 @@ description: 動的リボン API Officeサポートするプラットフォー�
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8dc590471433f1a98e6a653cb167bac70e1cbf1a
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746688"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404662"
 ---
 # <a name="ribbon-api-requirement-sets"></a>リボン API の要件セット
 
@@ -27,7 +27,7 @@ Office アドインは Office の複数のバージョンで機能します。 �
 | RibbonApi 1.2  | ビルド 16.0.14326.20454 以降 | 2102 (ビルド 13801.20294) | 該当なし | 16.53.806.0 | 2021 年 5 月 | 該当なし|
 | RibbonApi 1.1  | ビルド 16.0.14326.20454 以降 | サポートを見る<br>下のセクション | 該当なし | 16.38 | 2020 年 11 月 | 該当なし|
 
-> **&#42;** リボン API は、リボン API でのみサポートExcel。
+> **&#42;** リボン API は、製品アドインでのみサポートExcel。 この機能は、PowerPointおよび Word のプレビューとして使用できますが、Office (サブスクリプション) と Mac Windowsでのみ使用できます。 
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>バージョン 1.1 on Office (サブスクリプション) Windowsサポート
 

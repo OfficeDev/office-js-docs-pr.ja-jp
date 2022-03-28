@@ -3,12 +3,12 @@ title: アドインのモノOfficeアイコンガイドライン
 description: アドインでモノOfficeアイコンを使用する場合のガイドライン。
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8c076bae2efd15cdc927f65804f33096fd6ecacb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743044"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483973"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>アドインのモノOfficeアイコンガイドライン
 
@@ -209,7 +209,7 @@ icon 要素を別の要素の上に配置すると、主に読みやすさを目
 
 ## <a name="see-also"></a>関連項目
 
-- [Icon manifest 要素](../reference/manifest/icon.md)
-- [IconUrl マニフェスト要素](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl マニフェスト要素](../reference/manifest/highresolutioniconurl.md)
+- [Icon manifest 要素](/javascript/api/manifest/icon)
+- [IconUrl マニフェスト要素](/javascript/api/manifest/iconurl)
+- [HighResolutionIconUrl マニフェスト要素](/javascript/api/manifest/highresolutioniconurl)
 - [アドイン用のアイコンの作成](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

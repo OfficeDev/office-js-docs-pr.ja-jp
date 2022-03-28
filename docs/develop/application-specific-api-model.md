@@ -3,19 +3,19 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a89ad869305d88736c72619f9f86ecd7121437
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743652"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483821"
 ---
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
 この記事では、API モデルを使用して、アドインを Excel、Word、PowerPoint、およびOneNote。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
 
 > [!NOTE]
-> このモデルは、Office 2013 クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)」を参照してください。
+> このモデルは、Office 2013 クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)」を参照してください。
 
 > [!TIP]
 > このページの例では、Excel JavaScript API を使用していますが、この概念は OneNote、PowerPoint、Visio、および Word JavaScript API にも適用されます。

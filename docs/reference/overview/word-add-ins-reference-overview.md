@@ -4,12 +4,12 @@ description: Word JavaScript API の概要。
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: c442e654ee939b945ab0cdf1838a84fd6eee69e5
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747132"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484628"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
@@ -42,4 +42,4 @@ Word JavaScript API オブジェクト モデルの詳細については、[Word
 * [Word アドイン ドキュメント](../../word/index.yml)
 * [Word アドインの概要](../../word/word-add-ins-programming-overview.md)
 * [Word JavaScript API リファレンス](/javascript/api/word)
-* [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../../overview/office-add-in-availability.md)
+* [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)

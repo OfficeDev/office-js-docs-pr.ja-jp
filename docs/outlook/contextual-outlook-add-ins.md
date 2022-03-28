@@ -3,12 +3,12 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f343f48f0c49de2b322cb737c5896df2f130ec9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747200"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484681"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
@@ -24,11 +24,11 @@ ms.locfileid: "63747200"
 > [!NOTE]
 > 現在、Android および iOS 用の Outlook では、コンテキスト アドインをご利用いただけません。 今後、この機能が使用可能になる予定です。
 >
-> この機能のサポートは、要件セット 1.6 に導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.6 に導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="how-to-make-a-contextual-add-in"></a>コンテキスト アドインの作成方法
 
-コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
+コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
 
 そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例は、電話番号であるエンティティが検出されたメッセージでアドインをアクティブに設定する方法を示しています。
 

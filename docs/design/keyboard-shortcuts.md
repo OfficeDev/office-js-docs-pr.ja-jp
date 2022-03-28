@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743236"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483878"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -35,7 +35,7 @@ ms.locfileid: "63743236"
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>マッピング ファイルをマニフェストにリンクする
 
-マニフェスト *内* の要素の直下 ( `<VersionOverrides>` 内部ではない) に [ExtendedOverrides 要素を追加](../reference/manifest/extendedoverrides.md) します。 後の `Url` 手順で作成するプロジェクトの JSON ファイルの完全な URL に属性を設定します。
+マニフェスト *内* の要素の直下 ( `<VersionOverrides>` 内部ではない) に [ExtendedOverrides 要素を追加](/javascript/api/manifest/extendedoverrides) します。 後の `Url` 手順で作成するプロジェクトの JSON ファイルの完全な URL に属性を設定します。
 
 ```xml
     ...
@@ -46,7 +46,7 @@ ms.locfileid: "63743236"
 
 ## <a name="create-or-edit-the-shortcuts-json-file"></a>ショートカット JSON ファイルを作成または編集する
 
-プロジェクトに JSON ファイルを作成します。 ファイルのパスが [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 要素の属性に指定した`Url`場所と一致する必要があります。 このファイルには、キーボード ショートカットと、キーボード ショートカットが呼び出すアクションが記述されます。
+プロジェクトに JSON ファイルを作成します。 ファイルのパスが [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 要素の属性に指定した`Url`場所と一致する必要があります。 このファイルには、キーボード ショートカットと、キーボード ショートカットが呼び出すアクションが記述されます。
 
 1. JSON ファイル内には、2 つの配列があります。 actions 配列には、呼び出すアクションを定義するオブジェクトが含まれます。ショートカット配列には、キーの組み合わせをアクションにマップするオブジェクトが含まれます。 次に例を示します。
     ```json
@@ -270,7 +270,7 @@ Web でカスタム キーボード ショートカットを使用する場合�
 > プレビュー機能を試す良い方法は、Microsoft 365 サブスクリプションを使用することです。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。
 
 > [!NOTE]
-> このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 必要です。
+> このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) 必要です。
 
 ユーザーのカスタム キーボードの組み合わせをアドイン アクションに割り当てるには、[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) メソッドを使用します。 メソッドは、アドイン`{[actionId:string]: string|null}``actionId`の拡張マニフェスト JSON で定義する必要があるアクションの ID のサブセットである型のパラメーターを受け取ります。 値は、ユーザーの優先キーの組み合わせです。 また、この`null``actionId`値を使用すると、カスタマイズが削除され、アドインの拡張マニフェスト JSON で定義されている既定のキーボードの組み合わせに戻されます。
 
@@ -311,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は、[Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}`。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、プロパティ `inUse` は に設定されます `true`。 たとえば、`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` などです。 次のコード スニペットは、例です。
+「他の [アドインで](#avoid-key-combinations-in-use-by-other-add-ins)使用されているキーの組み合わせを避ける」で説明したように、ショートカットの競合を避けることをお試しください。 1 つ以上のキーの組み合わせが既に使用されている場合は、[Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) メソッドに文字列の配列として渡します。 メソッドは、型のオブジェクトの配列の形式で既に使用されているキーの組み合わせを含むレポートを返します `{shortcut: string, inUse: boolean}`。 プロパティ `shortcut` はキーの組み合わせです。例: "Ctrl+ Shift+1" 。 組み合わせが既に別のアクションに登録されている場合、プロパティ `inUse` は に設定されます `true`。 たとえば、「 `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]` 」のように入力します。 次のコード スニペットは、例です。
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];

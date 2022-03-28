@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8bc2ea45588c7e10cd4fbd2fc32ff88a6c3233a2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746473"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484139"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -33,7 +33,7 @@ ms.locfileid: "63746473"
 
 1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](../reference/requirement-sets/shared-runtime-requirement-sets.md) を要求します。
+1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/shared-runtime-requirement-sets) を要求します。
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ ms.locfileid: "63746473"
     ```
     
     > [!NOTE]
-    > アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+    > アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 1. `<Page>` 要素を検索します。次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 

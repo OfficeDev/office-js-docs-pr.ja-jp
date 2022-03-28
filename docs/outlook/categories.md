@@ -3,19 +3,19 @@ title: カテゴリの取得と設定
 description: メールボックスとアイテムのカテゴリを管理する方法。
 ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f9167fcc31110543d08019e5428952beab0ccc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3f39fba37e209b4f23955aebb54e8f88807f24dd
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746295"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484525"
 ---
 # <a name="get-and-set-categories"></a>カテゴリの取得と設定
 
 このOutlookユーザーは、メールボックス データを整理する手段として、メッセージや予定にカテゴリを適用できます。 ユーザーは、自分のメールボックスの色分けされたカテゴリのマスター リストを定義し、それらのカテゴリの 1 つ以上を任意のメッセージまたは予定アイテムに適用できます。 マスター [リスト](/javascript/api/outlook/office.categorydetails)内の各カテゴリは、ユーザーが指定した名前[](/javascript/api/outlook/office.mailboxenums.categorycolor)と色で表されます。 JavaScript API の Officeを使用して、メールボックスのカテゴリ マスター リストとアイテムに適用されるカテゴリを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット 1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.8 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="manage-categories-in-the-master-list"></a>マスター リストのカテゴリを管理する
 
@@ -141,4 +141,4 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>関連項目
 
 - [Outlookアクセス許可](understanding-outlook-add-in-permissions.md)
-- [マニフェストの Permissions 要素](../reference/manifest/permissions.md)
+- [マニフェストの Permissions 要素](/javascript/api/manifest/permissions)

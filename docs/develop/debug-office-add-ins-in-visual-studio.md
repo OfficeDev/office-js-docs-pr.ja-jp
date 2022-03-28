@@ -3,12 +3,12 @@ title: Visual Studio で Office アドインをデバッグする
 description: このVisual Studioを使用して、Officeデスクトップ クライアントでOfficeアドインをデバッグWindows。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c0f5d0545c67ee64de40fa27c8bf3ae34fa62414
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743530"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483773"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Visual Studio で Office アドインをデバッグする
 
@@ -88,7 +88,7 @@ Web アプリケーション **プロジェクトの [** プロパティ] ウィ
 
 次に、Visual Studio で次の操作が行われます。
 
-1. トークンをスタート ページの完全修飾アドレス (たとえば) に置き換え、XML マニフェスト ファイル (`_ProjectName_\bin\Debug\OfficeAppManifests`ディレクトリにコピーされた) `~remoteAppUrl` の [SourceLocation](../reference/manifest/sourcelocation.md) 要素を変更します`https://localhost:44302/Home.html`。
+1. トークンをスタート ページの完全修飾アドレス (たとえば) に置き換え、XML マニフェスト ファイル (`_ProjectName_\bin\Debug\OfficeAppManifests`ディレクトリにコピーされた) `~remoteAppUrl` の [SourceLocation](/javascript/api/manifest/sourcelocation) 要素を変更します`https://localhost:44302/Home.html`。
 
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
 
@@ -144,7 +144,7 @@ Web アプリケーション **プロジェクトの [** プロパティ] ウィ
 
 次に、Visual Studio で次の操作が行われます。
 
-1. トークンをスタート ページの完全修飾アドレス (たとえば) に置き換え、XML マニフェスト ファイル (`_ProjectName_\bin\Debug\OfficeAppManifests`ディレクトリにコピーされた) `~remoteAppUrl` の [SourceLocation](../reference/manifest/sourcelocation.md) 要素を変更します`https://localhost:44302/Home.html`。
+1. トークンをスタート ページの完全修飾アドレス (たとえば) に置き換え、XML マニフェスト ファイル (`_ProjectName_\bin\Debug\OfficeAppManifests`ディレクトリにコピーされた) `~remoteAppUrl` の [SourceLocation](/javascript/api/manifest/sourcelocation) 要素を変更します`https://localhost:44302/Home.html`。
 
 2. IIS Express で Web アプリケーション プロジェクトを起動します。
 

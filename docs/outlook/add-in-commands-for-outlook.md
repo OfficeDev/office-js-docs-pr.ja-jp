@@ -3,12 +3,12 @@ title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
 ms.date: 07/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 52c1bda4a21fba869d67cb3a15d9573d660b8471
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745764"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483529"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
@@ -28,7 +28,7 @@ Outlook アドイン コマンドを作成して、ボタンまたはドロッ�
 
 ## <a name="creating-the-add-in-command"></a>アドイン コマンドの作成
 
-アドイン コマンドは、[VersionOverrides](../reference/manifest/versionoverrides.md) 要素のアドイン マニフェストで宣言されます。この要素はマニフェスト スキーマ v1.1 に追加されたもので、下位互換性が保証されています。`VersionOverrides` をサポートしていないクライアントでも、既存のアドインは引き続きアドイン コマンドのないときと変わらずに機能します。
+アドイン コマンドは、[VersionOverrides](/javascript/api/manifest/versionoverrides) 要素のアドイン マニフェストで宣言されます。この要素はマニフェスト スキーマ v1.1 に追加されたもので、下位互換性が保証されています。`VersionOverrides` をサポートしていないクライアントでも、既存のアドインは引き続きアドイン コマンドのないときと変わらずに機能します。
 
 `VersionOverrides` マニフェスト エントリは、アドインについての多くの事柄 (アプリケーション、リボンに追加するコントロールの種類、テキスト、アイコン、関連する機能など) を指定します。
 

@@ -3,12 +3,12 @@ title: マニフェストの拡張オーバーライドを処理する
 description: マニフェストの拡張オーバーライドを使用して機能拡張機能を構成する方法について学習します。
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 34002ffcb621fad9f318aad80b32feb22ac45f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743796"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483718"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>マニフェストの拡張オーバーライドを使用する
 
@@ -30,7 +30,7 @@ JSON 形式を定義するスキーマは [、拡張マニフェスト スキー
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>JSON ファイルOffice場所を確認する
 
-マニフェストを使用して、JSON Office場所を確認します。 マニフェスト *内* の要素の直下 ( `<VersionOverrides>` 内部ではない) に [ExtendedOverrides 要素を追加](../reference/manifest/extendedoverrides.md) します。 属性を `Url` JSON ファイルの完全な URL に設定します。 最も単純な要素の例を次に示 `<ExtendedOverrides>` します。
+マニフェストを使用して、JSON Office場所を確認します。 マニフェスト *内* の要素の直下 ( `<VersionOverrides>` 内部ではない) に [ExtendedOverrides 要素を追加](/javascript/api/manifest/extendedoverrides) します。 属性を `Url` JSON ファイルの完全な URL に設定します。 最も単純な要素の例を次に示 `<ExtendedOverrides>` します。
 
 ```xml
     ...

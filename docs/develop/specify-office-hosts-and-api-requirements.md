@@ -3,12 +3,12 @@ title: Office のホストと API の要件を指定する
 description: アドインが期待通Office動作するアプリケーションと API 要件を指定する方法について説明します。
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df753dfe3e5c517f49d597f9298744cf0c79f52
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e4533f1de76b8d40c5b9c938ff0e113529d73d95
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744058"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483591"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -27,7 +27,7 @@ ms.locfileid: "63744058"
 この記事は、アドインが期待どおりに機能し、できるだけ多くのユーザーが利用できるようにするために選択する必要のあるオプションについて理解するのに役立ちます。
 
 > [!NOTE]
-> Office アドインが現在サポートされている場所の詳細なビューについては、「[Office](../overview/office-add-in-availability.md) クライアント アプリケーションと Office アドインのプラットフォームの可用性」ページを参照してください。
+> Office アドインが現在サポートされている場所の詳細なビューについては、「[Office](/javascript/api/requirement-sets) クライアント アプリケーションと Office アドインのプラットフォームの可用性」ページを参照してください。
 
 > [!TIP]
 > この記事で説明するタスクの多くは、Office アドインの [Yeoman](yeoman-generator-overview.md) ジェネレーターや Visual Studio の Office アドイン テンプレートの 1 つなど、ツールを使用してアドイン プロジェクトを作成するときに、全体または一部で実行されます。 このような場合は、タスクが実行されたことを確認する必要があるという意味として、タスクを解釈してください。
@@ -44,7 +44,7 @@ ms.locfileid: "63744058"
 
 既定では、指定したアドインの種類 (メール、作業ウィンドウ、またはコンテンツ) でサポートされているすべての Office アプリケーションにアドインをインストールできます。 たとえば、作業ウィンドウ アドインは Access、Excel、OneNote、PowerPoint、Project、および Word で既定でインストールできます。 
 
-アドインがアプリケーションのサブセットにインストール可能Office、マニフェストの [Hosts](../reference/manifest/hosts.md) 要素と [Host](../reference/manifest/host.md) 要素を使用します。
+アドインがアプリケーションのサブセットにインストール可能Office、マニフェストの [Hosts](/javascript/api/manifest/hosts) 要素と [Host](/javascript/api/manifest/host) 要素を使用します。
 
 たとえば、次の **Hosts** および **Host** 宣言は、アドインが Excel の任意のリリース (Excel on the web、Windows、および iPad を含む)にインストールできますが、他の Office アプリケーションにはインストールできないことを指定します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63744058"
 | Workbook      | Excel on the web、Windows、Mac、iPad           | 作業ウィンドウ、コンテンツ     |
 
 > [!NOTE]
-> Officeアプリケーションはさまざまなプラットフォームでサポートされ、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行されます。 通常、アドインの実行に使用できるプラットフォームを指定できません。 たとえば、指定した場合`Workbook`は、Excel on the webとWindowsアドインの実行に使用できます。 ただし、指定した場合`Mailbox`、モバイル拡張ポイントを定義しない限り、Outlookクライアントでアドイン[が実行されません](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)。
+> Officeアプリケーションはさまざまなプラットフォームでサポートされ、デスクトップ、Web ブラウザー、タブレット、モバイル デバイスで実行されます。 通常、アドインの実行に使用できるプラットフォームを指定できません。 たとえば、指定した場合`Workbook`は、Excel on the webとWindowsアドインの実行に使用できます。 ただし、指定した場合`Mailbox`、モバイル拡張ポイントを定義しない限り、Outlookクライアントでアドイン[が実行されません](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface)。
 
 > [!NOTE]
 > アドイン マニフェストを複数の種類 (メール、作業ウィンドウ、コンテンツ) に適用できない。 つまり、Outlook と他の Office アプリケーションの 1 つでアドインをインストールする場合は、メールの種類マニフェストを持つ 2 つのアドインと、作業ウィンドウマニフェストまたはコンテンツ タイプ マニフェストを持つアドインを 2 つ作成する必要があります。
@@ -91,7 +91,7 @@ Office のバージョンとビルド、またはアドインをインストー�
 要件セットのサポートは、Officeアプリケーション、Officeアプリケーションのバージョン、およびアプリケーションが実行されているプラットフォームによって異なります。 たとえば、DialogApi 1.2 は Office 2021 より前の 1 回購入バージョンの Office ではサポートされていませんが、DialogApi 1.1 は Office 2013 に戻るすべてのワンタイム購入バージョンでサポートされています。 使用する API をサポートするプラットフォームと Office バージョンのすべての組み合わせでアドインをインストール可能にし、アドインに必要な各要件セットの最小バージョンをマニフェストで常に指定する必要があります。 これを行う方法の詳細については、この記事の後半で説明します。
 
 > [!TIP]
-> 要件セットのバージョン管理の詳細については、「[Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) 要件セットの可用性」、および各 API に関する要件セットと情報の完全な一覧については、「[Office](../reference/requirement-sets/office-add-in-requirement-sets.md) アドイン要件セット」を参照してください。 ほとんどの API の参照トピックOffice.js、その API に属する要件セット (必要な場合) も指定します。
+> 要件セットのバージョン管理の詳細については、「[Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) 要件セットの可用性」、および各 API に関する要件セットと情報の完全な一覧については、「[Office](/javascript/api/requirement-sets/office-add-in-requirement-sets) アドイン要件セット」を参照してください。 ほとんどの API の参照トピックOffice.js、その API に属する要件セット (必要な場合) も指定します。
 
 > [!NOTE]
 > 一部の要件セットには、マニフェスト要素も関連付けられているものがあります。 この [事実がアドインデザインに関連する](#specify-requirements-in-a-versionoverrides-element) 場合の詳細については、「VersionOverrides 要素での要件の指定」を参照してください。
@@ -102,12 +102,12 @@ Office のバージョンとビルド、またはアドインをインストー�
 
 ### <a name="requirements-element"></a>Requirements 要素
 
-Requirements 要素とその子要素 [Sets](../reference/manifest/sets.md) と [Methods](../reference/manifest/requirements.md) を[](../reference/manifest/methods.md)使用して、アドインをインストールするために Office アプリケーションでサポートする必要がある最小要件セットまたは API メンバーを指定します。 
+Requirements 要素とその子要素 [Sets](/javascript/api/manifest/sets) と [Methods](/javascript/api/manifest/requirements) を[](/javascript/api/manifest/methods)使用して、アドインをインストールするために Office アプリケーションでサポートする必要がある最小要件セットまたは API メンバーを指定します。 
 
 Office アプリケーションまたはプラットフォームが **Requirements** 要素で指定された要件セットまたは API メンバーをサポートしない場合、アドインは、そのアプリケーションまたはプラットフォームでは実行されません。また、My アドインには表示されません。
 
 > [!NOTE]
-> **Requirements 要素** は、すべてのアドインに対して省略可能です(ただし、Outlookを除く)。ルート要素`xsi:type`の属性が存在`OfficeApp``MailBox`する場合は、アドインで必要な MailBox 要件セットの最小バージョンを指定する **Requirements** 要素が必要です。 詳細については、「[JavaScript API 要件セットOutlook参照してください](../reference/requirement-sets/outlook-api-requirement-sets.md)。
+> **Requirements 要素** は、すべてのアドインに対して省略可能です(ただし、Outlookを除く)。ルート要素`xsi:type`の属性が存在`OfficeApp``MailBox`する場合は、アドインで必要な MailBox 要件セットの最小バージョンを指定する **Requirements** 要素が必要です。 詳細については、「[JavaScript API 要件セットOutlook参照してください](/javascript/api/requirement-sets/outlook-api-requirement-sets)。
 
 次のコード例は、以下をサポートするすべてのアプリケーションでインストール可能なアドインOffice示しています。
 
@@ -134,15 +134,15 @@ Office アプリケーションまたはプラットフォームが **Requiremen
 
 - **Requirements 要素には**、Sets と **Methods** **の子要素が** 含まれます。
 - **Sets 要素には**、1 つ以上の **Set 要素を含** めできます。 `DefaultMinVersion` すべての子 Set 要素の `MinVersion` 既定値を **指定** します。
-- [Set 要素](../reference/manifest/set.md)は、アドインをインストール可能Officeアプリケーションがサポートする必要がある要件セットを指定します。 属性 `Name` は、要件セットの名前を指定します。 要件 `MinVersion` セットの最小バージョンを指定します。 `MinVersion` 親セットの属性の値 `DefaultMinVersion` を上書き **します**。
-- **Methods 要素には**、1 つ以上の [Method 要素を含](../reference/manifest/method.md)めできます。 Outlook アドインで **Methods** 要素を使用することはできません。
+- [Set 要素](/javascript/api/manifest/set)は、アドインをインストール可能Officeアプリケーションがサポートする必要がある要件セットを指定します。 属性 `Name` は、要件セットの名前を指定します。 要件 `MinVersion` セットの最小バージョンを指定します。 `MinVersion` 親セットの属性の値 `DefaultMinVersion` を上書き **します**。
+- **Methods 要素には**、1 つ以上の [Method 要素を含](/javascript/api/manifest/method)めできます。 Outlook アドインで **Methods** 要素を使用することはできません。
 - **Method 要素** は、アドインをインストール可能Officeアプリケーションがサポートする必要がある個別のメソッドを指定します。 属性 `Name` は必須であり、親オブジェクトで修飾されたメソッドの名前を指定します。
 
 ## <a name="design-for-alternate-experiences"></a>代替エクスペリエンスの設計
 
 アドイン プラットフォームが提供する機能Office機能は、次の 3 種類に分けて役立ちます。
 
-- アドインがインストールされた直後に使用できる機能拡張。 この種の機能を利用するには、マニフェストで [VersionOverrides](../reference/manifest/versionoverrides.md) 要素を構成します。 この種の機能の例は、 [カスタム](../design/add-in-commands.md) リボン ボタンとメニューであるアドイン コマンドです。
+- アドインがインストールされた直後に使用できる機能拡張。 この種の機能を利用するには、マニフェストで [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素を構成します。 この種の機能の例は、 [カスタム](../design/add-in-commands.md) リボン ボタンとメニューであるアドイン コマンドです。
 - アドインが実行され、JavaScript API で実装されている場合にのみ使用可能な機能Office.js機能。たとえば、[ [ダイアログ ボックス] などです](../design/dialog-boxes.md)。
 - 実行時にのみ使用できますが、 **VersionOverrides** 要素の JavaScript と構成Office.js組み合わせて実装されている機能。 これらの例には、Excel[、](../excel/custom-functions-overview.md)シングル サインオン、カスタム コンテキスト [タブがあります](../design/contextual-tabs.md)。 [](sso-in-office-add-ins.md)
 
@@ -167,7 +167,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 このコードについては、以下の点に注意してください。
 
-- 最初のパラメーターは必須です。 これは、要件セットの名前を表す文字列です。 利用できる要件セットの詳細については、「[Office アドインの要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)」を参照してください。
+- 最初のパラメーターは必須です。 これは、要件セットの名前を表す文字列です。 利用できる要件セットの詳細については、「[Office アドインの要件セット](/javascript/api/requirement-sets/office-add-in-requirement-sets)」を参照してください。
 - 2 番目のパラメーターは省略可能です。 これは、ステートメント内のコードを実行するために Office `if` アプリケーションがサポートする必要がある最小要件セットのバージョン ("**1.9**" など) を指定する文字列です。 使用しない場合は、バージョン "1.1" が想定されます。
 
 > [!WARNING]
@@ -199,7 +199,7 @@ else
 > [!NOTE] 
 > これらの`isSetSupported`アプリケーションのメソッドと要件セットは、アプリケーションのOffice.jsファイルで使用CDN。 `isSetSupported` CDN から Office.js を使用しない場合、未定義の古いバージョンのライブラリを使用している場合、アドインによって例外が生成される場合があります。 詳細については、「[Use the latest Office JavaScript API ライブラリ」を参照してください](#use-the-latest-office-javascript-api-library)。
 
-アドインが要件セットの一部ではないメソッドに依存している場合は、ランタイム チェックを使用して、次のコード例に示すように、メソッドが Office アプリケーションでサポートされているかどうかを判断します。 要件セットに属さないメソッドの詳細な一覧については、「[Office アドインの要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set)」を参照してください。
+アドインが要件セットの一部ではないメソッドに依存している場合は、ランタイム チェックを使用して、次のコード例に示すように、メソッドが Office アプリケーションでサポートされているかどうかを判断します。 要件セットに属さないメソッドの詳細な一覧については、「[Office アドインの要件セット](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set)」を参照してください。
 
 > [!NOTE]
 > アドインのコードでのこの種のランタイム チェックは、限定的に使用することをお勧めします。
@@ -215,9 +215,9 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### <a name="specify-requirements-in-a-versionoverrides-element"></a>VersionOverrides 要素で要件を指定する
 
-[VersionOverrides](../reference/manifest/versionoverrides.md) 要素は、アドイン コマンド (カスタム リボン ボタンやメニュー) など、アドインのインストール直後に使用できる必要がある機能をサポートするために、主にマニフェスト スキーマに追加されましたが、排他的ではありません。 Officeマニフェストを解析するときに、これらの機能について知っている必要があります。 
+[VersionOverrides](/javascript/api/manifest/versionoverrides) 要素は、アドイン コマンド (カスタム リボン ボタンやメニュー) など、アドインのインストール直後に使用できる必要がある機能をサポートするために、主にマニフェスト スキーマに追加されましたが、排他的ではありません。 Officeマニフェストを解析するときに、これらの機能について知っている必要があります。 
 
-アドインでこれらの機能の 1 つを使用しているが、アドインは重要であり、この機能をサポートしない Office バージョンでもインストール可能である必要があるとします。 このシナリオでは、基本要素の子としてではなく **、VersionOverrides** 要素 [](../reference/manifest/sets.md)自体の子として含める [Requirements](../reference/manifest/requirements.md) 要素 (および子の Sets と [Methods](../reference/manifest/methods.md) 要素) を使用して機能を識別`OfficeApp`します。 この場合の効果は、Office はアドインのインストールを許可しますが、Office は機能がサポートされていない Office バージョンの **VersionOverrides** 要素の子要素の一部を無視します。
+アドインでこれらの機能の 1 つを使用しているが、アドインは重要であり、この機能をサポートしない Office バージョンでもインストール可能である必要があるとします。 このシナリオでは、基本要素の子としてではなく **、VersionOverrides** 要素 [](/javascript/api/manifest/sets)自体の子として含める [Requirements](/javascript/api/manifest/requirements) 要素 (および子の Sets と [Methods](/javascript/api/manifest/methods) 要素) を使用して機能を識別`OfficeApp`します。 この場合の効果は、Office はアドインのインストールを許可しますが、Office は機能がサポートされていない Office バージョンの **VersionOverrides** 要素の子要素の一部を無視します。
 
 具体的には、Hosts 要素など、基本マニフェストの要素をオーバーライドする **VersionOverrides** の子要素は無視され、代わりに基本マニフェストの対応する要素が使用されます。 ただし、 **VersionOverrides** には、基本マニフェストの設定を上書きするのではなく、追加の機能を実際に実装する子要素が含まれます。 2 つの例は、 と `WebApplicationInfo` です `EquivalentAddins`。 **VersionOverrides のこれらの部分** は、対応する機能をサポートしているプラットフォームとバージョンOffice無視されません。  
 
@@ -253,5 +253,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの XML マニフェスト](add-in-manifests.md)
-- [Office アドインの要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Office アドインの要件セット](/javascript/api/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

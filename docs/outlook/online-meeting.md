@@ -1,19 +1,24 @@
 ---
 title: オンライン会議プロバイダー Outlookモバイル アドインを作成する
-description: オンライン会議サービス プロバイダー Outlookモバイル アドインをセットアップする方法について説明します。
+description: オンライン会議サービス プロバイダー用Outlookモバイル アドインをセットアップする方法について説明します。
 ms.topic: article
 ms.date: 07/09/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ba2d3b9889bd07065aca584d72f8213739c3532
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484361"
 ---
-
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー Outlookモバイル アドインを作成する
 
-オンライン会議のセットアップは、Outlookユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlook](/microsoftteams/teams-add-in-for-outlook)です。 ただし、Microsoft 以外のサービスを使用Outlookオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを合理化できます。
+オンライン会議のセットアップは、Outlook ユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlookです。](/microsoftteams/teams-add-in-for-outlook) ただし、Microsoft 以外のサービスを使用Outlookでオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを効率化できます。
 
 > [!IMPORTANT]
 > この機能は、Android と iOS でのみサポートされ、サブスクリプションMicrosoft 365されます。
 
-この記事では、オンライン会議サービスを使用してユーザーが会議を整理して参加できるよう、Outlook モバイル アドインをセットアップする方法について学習します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
+この記事では、Outlook モバイル アドインをセットアップして、ユーザーがオンライン会議サービスを使用して会議を整理して参加する方法について学習します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
@@ -21,7 +26,7 @@ ms.localizationpriority: medium
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成するには、親要素の下のマニフェストで [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) 拡張ポイントを構成する必要があります `MobileFormFactor`。 他のフォーム ファクターはサポートされていません。
+ユーザーがアドインを使用してオンライン会議を作成するには、親要素の下のマニフェストで [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) 拡張ポイントを構成する必要があります `MobileFormFactor`。 他のフォーム ファクターはサポートされていません。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
@@ -117,7 +122,7 @@ ms.localizationpriority: medium
 ```
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」および「[Outlook](manifests.md) Mobile 用アドイン コマンドのサポート[の追加」を参照してください](add-mobile-support.md)。
+> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」および「[Outlook](manifests.md) Mobile 用アドイン コマンドのサポート[の追加」を参照](add-mobile-support.md)してください。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
@@ -125,7 +130,7 @@ ms.localizationpriority: medium
 
 1. 同じクイック スタート プロジェクトで、コード エディター **で ./src/commands/commands.js** ファイルを開きます。
 
-1. ファイルのコンテンツ全体を **次commands.js** JavaScript に置き換える。
+1. ファイルのコンテンツ全体を次 **commands.js** JavaScript に置き換える。
 
     ```js
     // 1. How to construct online meeting details.
@@ -244,7 +249,7 @@ ms.localizationpriority: medium
   - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.roamingSettings](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
 - 認証フローの処理
   - [ダイアログ API](../develop/dialog-api-in-office-add-ins.md)
 
@@ -253,7 +258,7 @@ ms.localizationpriority: medium
 いくつかの制限が適用されます。
 
 - オンライン会議サービス プロバイダーにのみ適用されます。
-- 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたは TeamsオプションSkypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
+- 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたはTeams置Skypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進数コード `#919191` または他の色形式で同等のコードを使用してグレー [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
 - 予定オーガナイザー (作成) モードでは、1 つの UI レス コマンドだけがサポートされます。
 - アドインは、1 分のタイムアウト期間内に予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開いたアドインなどのダイアログ ボックスで費やされた時間は、タイムアウト期間から除外されます。

@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b50311b814f91d44792325fce408d58e80e68a1f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 5530e1a2acc21ffbf3f2bb0c9a16aa178141202c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743212"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483856"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -29,7 +29,7 @@ ms.locfileid: "63743212"
 
 要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「Office[要件セット」を参照してください](../develop/office-versions-and-requirement-sets.md)。
 
-有効/無効 API は [、RibbonApi 1.1 要件セットに](../reference/requirement-sets/ribbon-api-requirement-sets.md) 属します。
+有効/無効 API は [、RibbonApi 1.1 要件セットに](/javascript/api/requirement-sets/ribbon-api-requirement-sets) 属します。
 
 > [!NOTE]
 > **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「リボン](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) 1.1 にはOfficeのアドインをホストできるバージョンとプラットフォームを指定する」を参照してください。
@@ -38,17 +38,17 @@ ms.locfileid: "63743212"
 
 この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順を実行します。
 
-1. マニフェストの [Runtimes](../reference/manifest/runtimes.md) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は、**VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
-2. マニフェストの [Resources.Urls](../reference/manifest/resources.md) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。
+1. マニフェストの [Runtimes](/javascript/api/manifest/runtimes) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は、**VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
+2. マニフェストの [Resources.Urls](/javascript/api/manifest/resources) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。
 3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順の 1 つ以上を実行する必要があります。
 
-    - アドインに作業ウィンドウが含まれている場合は、Action の属性 `resid` を設定 [します](../reference/manifest/action.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、 `resid` 手順 1 の **Runtime** 要素で使用した文字列とまったく同じ文字列を指定 `Contoso.SharedRuntime.Url`します。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインにカスタム関数が含まれているExcel、Page の属性`resid`を設定 [します](../reference/manifest/page.md)。[SourceLocation](../reference/manifest/sourcelocation.md) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインに関数`resid`ファイルが含まれている場合は、手順 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じ文字列に [FunctionFile](../reference/manifest/functionfile.md) `resid` 要素の属性を設定します。たとえば、 を指定します。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに作業ウィンドウが含まれている場合は、Action の属性 `resid` を設定 [します](/javascript/api/manifest/action)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、 `resid` 手順 1 の **Runtime** 要素で使用した文字列とまったく同じ文字列を指定 `Contoso.SharedRuntime.Url`します。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインにカスタム関数が含まれているExcel、Page の属性`resid`を設定 [します](/javascript/api/manifest/page)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに関数`resid`ファイルが含まれている場合は、手順 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じ文字列に [FunctionFile](/javascript/api/manifest/functionfile) `resid` 要素の属性を設定します。たとえば、 を指定します。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
 
-既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](../reference/manifest/action.md) 要素の *直下* (内部ではない) に、[Enabled](../reference/manifest/enabled.md) 要素 (値は `false`) を追加するだけで無効にすることができます。 以下に、基本的な構造を示します。
+既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](/javascript/api/manifest/action) 要素の *直下* (内部ではない) に、[Enabled](/javascript/api/manifest/enabled) 要素 (値は `false`) を追加するだけで無効にすることができます。 以下に、基本的な構造を示します。
 
 ```xml
 <OfficeApp ...>
@@ -122,7 +122,7 @@ const enableButton = async () => {
 
 リボンの状態を変更する一般的なシナリオは、ユーザーが開始したイベントがアドインのコンテキストを変更したときです。
 
-グラフがアクティブになったときにのみボタンを有効にするシナリオを考えます。 まず、マニフェストのボタンの [Enabled](../reference/manifest/enabled.md) 要素を `false` に設定します。 例については上記を参照してください。
+グラフがアクティブになったときにのみボタンを有効にするシナリオを考えます。 まず、マニフェストのボタンの [Enabled](/javascript/api/manifest/enabled) 要素を `false` に設定します。 例については上記を参照してください。
 
 次に、ハンドラーを割り当てます。 これは通常、ハンドラー (後の手順で作成) をワークシート内のすべてのグラフの **onActivated** および **onDeactivated** イベントに割り当てる以下の例のように、**Office.onReady** メソッドで行います。
 
@@ -173,7 +173,7 @@ function enableChartFormat() {
 1. `requestUpdate` が呼び出された場合はいつでも、コードがカスタム ボタンとメニュー項目の意図した状態を記録する必要があります。
 2. カスタム コントロールがクリックされたら、ハンドラーの最初のコードが、ボタンがクリック可能になっているかどうかを確認する必要があります。 クリック可能でない場合は、コードがエラーの報告または記録を行い、ボタンを意図した状態に設定し直す必要があります。
 
-次の例は、ボタンを無効にし、ボタンの状態を記録する関数を示しています。 `chartFormatButtonEnabled` は、マニフェスト内のボタンの [Enabled](../reference/manifest/enabled.md) 要素と同じ値に初期化されるグローバルなブール変数です。
+次の例は、ボタンを無効にし、ボタンの状態を記録する関数を示しています。 `chartFormatButtonEnabled` は、マニフェスト内のボタンの [Enabled](/javascript/api/manifest/enabled) 要素と同じ値に初期化されるグローバルなブール変数です。
 
 ```javascript
 function disableChartFormat() {

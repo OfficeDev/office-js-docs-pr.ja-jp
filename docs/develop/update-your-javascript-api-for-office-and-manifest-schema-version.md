@@ -3,12 +3,12 @@ title: JavaScript API ライブラリOfficeバージョン 1.1 アドイン マ�
 description: Office アドイン プロジェクトの JavaScript ファイル (Office.js ファイルとアプリに固有の .js ファイル) とアドイン マニフェスト検証ファイルをバージョン 1.1 に更新します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5466b010cb0364d78819942f0a1dcc941e1c1269
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8545c3249b9d03e7c0014a38c4944e64b3348124
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742925"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483514"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>JavaScript API ライブラリOfficeバージョン 1.1 アドイン マニフェスト スキーマの最新バージョンへの更新
 
@@ -74,7 +74,7 @@ Office JavaScript API およびアドイン マニフェスト スキーマの v
 ```
 
 > [!NOTE]
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新した後、**Capabilities** 要素と Capability 要素を削除し、それらを Hosts 要素 [](../reference/manifest/hosts.md)と **Host** 要素、または [Requirements 要素と Requirements](specify-office-hosts-and-api-requirements.md) 要素 [](../reference/manifest/host.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新した後、**Capabilities** 要素と Capability 要素を削除し、それらを Hosts 要素 [](/javascript/api/manifest/hosts)と **Host** 要素、または [Requirements 要素と Requirements](specify-office-hosts-and-api-requirements.md) 要素 [](/javascript/api/manifest/host)に置き換える必要があります。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>テキスト エディターまたは他の IDE で作成した Office アドイン プロジェクトを更新する
 
@@ -116,7 +116,7 @@ Office JavaScript API ファイル (Office.js およびアプリ固有の .js �
 ```
 
 > [!NOTE]
-> アドイン マニフェスト スキーマのバージョンを 1.1 に更新した後、**Capabilities** 要素と Capability 要素を削除し、それらを Hosts 要素 [](../reference/manifest/hosts.md)と **Host** 要素、または [Requirements 要素と Requirements](specify-office-hosts-and-api-requirements.md) 要素 [](../reference/manifest/host.md)に置き換える必要があります。
+> アドイン マニフェスト スキーマのバージョンを 1.1 に更新した後、**Capabilities** 要素と Capability 要素を削除し、それらを Hosts 要素 [](/javascript/api/manifest/hosts)と **Host** 要素、または [Requirements 要素と Requirements](specify-office-hosts-and-api-requirements.md) 要素 [](/javascript/api/manifest/host)に置き換える必要があります。
 
 ## <a name="see-also"></a>関連項目
 

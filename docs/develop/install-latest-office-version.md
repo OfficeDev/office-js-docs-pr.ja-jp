@@ -3,12 +3,12 @@ title: Office の最新バージョンをインストールする
 description: Office の最新ビルドを取得するためにオプトインする方法に関する情報。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce13e35ecd3969d4b5917a2635bb785b499ec787
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c558da4540638c91ed3519685de007379d1e1061
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743808"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483664"
 ---
 # <a name="install-the-latest-version-of-office"></a>Office の最新バージョンをインストールする
 
@@ -39,10 +39,10 @@ ms.locfileid: "63743808"
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API の要件セットの最小 Office ビルド
 
-- [Excel JavaScript API の要件セット](../reference/requirement-sets/excel-api-requirement-sets.md)
-- [OneNote JavaScript API の要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Outlook JavaScript API の要件セット](../reference/requirement-sets/outlook-api-requirement-sets.md)
-- [PowerPoint JavaScript API の要件セット](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
-- [Word JavaScript API の要件セット](../reference/requirement-sets/word-api-requirement-sets.md)
-- [ダイアログ API の要件セット](../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Office 共通 API の要件セット](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Excel JavaScript API の要件セット](/javascript/api/requirement-sets/excel-api-requirement-sets)
+- [OneNote JavaScript API の要件セット](/javascript/api/requirement-sets/onenote-api-requirement-sets)
+- [Outlook JavaScript API の要件セット](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [PowerPoint JavaScript API の要件セット](/javascript/api/requirement-sets/powerpoint-api-requirement-sets)
+- [Word JavaScript API の要件セット](/javascript/api/requirement-sets/word-api-requirement-sets)
+- [ダイアログ API の要件セット](/javascript/api/requirement-sets/dialog-api-requirement-sets)
+- [Office 共通 API の要件セット](/javascript/api/requirement-sets/office-add-in-requirement-sets)

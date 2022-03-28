@@ -3,12 +3,12 @@ title: Outlook アドインに関するプライバシー、アクセス許可�
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
 ms.date: 07/27/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 594c5715336533931d68acaffc5b8688cf1a40a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151392"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484670"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -81,7 +81,7 @@ ms.locfileid: "59151392"
   > [!IMPORTANT]
   > - アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
   >
-  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
+  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
 
 - AppSource からアドインをインストールする前に、エンド ユーザーは、そのアドインが自分のデータに対して実行可能なアクセスとアクションを確認して、先に進むことを明示的に確認する必要があります。Outlook アドインは、ユーザーまたは管理者による手動検証なしでクライアント コンピューター上に自動的にインストールされることはありません。
 
@@ -120,7 +120,7 @@ ms.locfileid: "59151392"
 
 - 開発者は、Outlook アドインがアクティブ化される方法、およびメール アドインがアイテムの特定のプロパティを読み書きする必要性や、アイテムを作成および送信する必要性に基づいて、Outlook アドインの適切なレベルのアクセス許可を要求します。
 
-- 開発者は、Outlook アドインのマニフェストの [Permissions](../reference/manifest/permissions.md) 要素を使用して、**Restricted**、**ReadItem**、**ReadWriteItem** または **ReadWriteMailbox** の値を必要に応じて割り当ててアクセス許可を要求します。
+- 開発者は、Outlook アドインのマニフェストの [Permissions](/javascript/api/manifest/permissions) 要素を使用して、**Restricted**、**ReadItem**、**ReadWriteItem** または **ReadWriteMailbox** の値を必要に応じて割り当ててアクセス許可を要求します。
 
   > [!NOTE]
   > **ReadWriteItem** のアクセス許可は、マニフェスト スキーマ v1.1 以降で利用できます。
@@ -149,7 +149,7 @@ ms.locfileid: "59151392"
 
 - Outlook アドインが新規作成アイテムのプロパティ (受信者名、メールアドレス、本文、件名など) を書き込む必要がある場合、またはアイテムの添付ファイルを追加または削除する必要がある場合、開発者は **アイテムの読み取り/書き込み** 許可を要求します。
 
-- 開発者は、Outlook アドインで [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) メソッドを使用して次のいずれか 1 つ以上の処理を実行する必要がある場合にのみ、**メールボックスの読み取り/書き込み** のアクセス許可を要求します。
+- 開発者は、Outlook アドインで [mailbox.makeEWSRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して次のいずれか 1 つ以上の処理を実行する必要がある場合にのみ、**メールボックスの読み取り/書き込み** のアクセス許可を要求します。
 
   - メールボックスのアイテムのプロパティに対する読み取りまたは書き込み。
   - メールボックスのアイテムの作成、読み取り、書き込み、または送信。

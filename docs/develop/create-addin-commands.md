@@ -3,16 +3,16 @@ title: Excel、PowerPoint、Word のマニフェストにアドイン コマン�
 description: マニフェストで VersionOverrides を使用して、アプリケーション、Excel、および Word のPowerPoint定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 248fd3cf36e27cfbb345a5379591b30619584d6b
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743922"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483782"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
-マニフェスト **[で VersionOverrides](../reference/manifest/versionoverrides.md)** を使用して、アプリケーション、Excel、および Word のPowerPointを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
+マニフェスト **[で VersionOverrides](/javascript/api/manifest/versionoverrides)** を使用して、アプリケーション、Excel、および Word のPowerPointを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドを使用して、以下のことを行えます。
 
 - アドインの機能を簡単に使用できる UI 要素またはエントリ ポイントを作成します。
 - ボタン、またはボタンのドロップダウンリストをリボンに追加します。
@@ -146,7 +146,7 @@ ms.locfileid: "63743922"
 
 ## <a name="step-5-add-the-functionfile-element"></a>手順 5: FunctionFile 要素を追加する
 
-**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](../reference/manifest/control-button.md)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
+**FunctionFile** 要素では、アドイン コマンドが **ExecuteFunction** 操作を使用するときに実行される JavaScript コードを含むファイルを指定します (「[ボタン コントロール](/javascript/api/manifest/control-button)」の説明を参照)。**FunctionFile** 要素の **resid** 属性は、アドイン コマンドに必要なすべての JavaScript ファイルを含む HTML ファイルに設定されます。JavaScript ファイルに直接リンクすることはできません。HTML ファイルにのみリンクできます。ファイル名は、**Resources** 要素の **Url** 要素として指定されます。
 
 **FunctionFile** 要素の例を次に示します。
   
@@ -164,7 +164,7 @@ ms.locfileid: "63743922"
 > [!IMPORTANT]
 > JavaScript コードが `Office.initialize` を呼び出していることを確認します。
 
-**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](../reference/manifest/control-button.md)」の説明を参照) は、**FunctionFile** の関数を使用します。
+**FunctionFile** 要素によって参照される HTML ファイルの JavaScript は、`Office.initialize` を呼び出す必要があります。**FunctionName** 要素 (「[ボタン コントロール](/javascript/api/manifest/control-button)」の説明を参照) は、**FunctionFile** の関数を使用します。
 
 次のコードは、**FunctionName** で使用される関数の実装方法を示しています。
 
@@ -249,13 +249,13 @@ ms.locfileid: "63743922"
 |要素|説明|
 |:-----|:-----|
 |**CustomTab** <br/> |カスタム タブをリボンに追加する必要がある場合は必須 (**PrimaryCommandSurface** を使用)。**CustomTab** 要素を使用する場合、**OfficeTab** 要素は使用できません。**id** 属性が必要です。 <br/> |
-|**OfficeTab** <br/> |既定のリボン タブ (**PrimaryCommandSurface** をOffice アプリする場合は必須です。 **OfficeTab 要素を使用する** 場合は、**CustomTab 要素を使用** することはできません。 <br/> **id** 属性で使用するタブ値の詳細については、「既定のリボン タブのタブ値 [Office アプリ参照してください](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |既定のリボン タブ (**PrimaryCommandSurface** をOffice アプリする場合は必須です。 **OfficeTab 要素を使用する** 場合は、**CustomTab 要素を使用** することはできません。 <br/> **id** 属性で使用するタブ値の詳細については、「既定のリボン タブのタブ値 [Office アプリ参照してください](/javascript/api/manifest/officetab)。  <br/> |
 |**OfficeMenu** <br/> | 既定のコンテキスト メニューにアドイン コマンドを追加する場合は必須 (**ContextMenu** を使用)。**id** 属性は以下に設定する必要があります。 <br/> Excel または Word の場合は **ContextMenuText**。ユーザーがテキストを選択し、選択したテキストを右クリックしたときに、コンテキスト メニューに項目が表示されます。<br/> Excel の場合は **ContextMenuCell**。ユーザーがスプレッドシートのセルを右クリックすると、コンテキスト メニューに項目が表示されます。 <br/> |
 |**グループ** <br/> |タブのユーザー インターフェイスの拡張点のグループ。1 つのグループに、最大 6 個のコントロールを指定できます。**id** 属性が必要です。最大 125 文字の文字列です。 <br/> |
 |**Label** <br/> |必須。グループのラベル。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Icon** <br/> |必須。小さいフォーム ファクターのデバイス、または多くのボタンが表示されるときに使用されるグループのアイコンを指定します。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で指定します。次の 3 つのイメージのサイズが必要です。16、32、および 80。次の 5 つのオプションのサイズもサポートされています。20、24、40、48、および 64。 <br/> |
 |**Tooltip** <br/> |省略可能。グループのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
-|**Control** <br/> |各グループには、少なくとも 1 つのコントロールが必要です。 **Control 要素** には、Button または **Menu** のいずれかを指定 **できます**。 メニュー **を使用** して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細 [については、「Button コントロール](../reference/manifest/control-button.md) と [Menu コントロール](../reference/manifest/control-menu.md) 」を参照してください。 <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
+|**Control** <br/> |各グループには、少なくとも 1 つのコントロールが必要です。 **Control 要素** には、Button または **Menu** のいずれかを指定 **できます**。 メニュー **を使用** して、ボタン コントロールのドロップダウン リストを指定します。 現在は、ボタンとメニューのみがサポートされています。 詳細 [については、「Button コントロール](/javascript/api/manifest/control-button) と [Menu コントロール](/javascript/api/manifest/control-menu) 」を参照してください。 <br/>**注:** トラブルシューティングを容易にするために、**Control** 要素と関連する **Resources** 子要素を 1 つずつ追加することをお勧めします。          |
 
 ### <a name="button-controls"></a>Button コントロール
 
@@ -380,7 +380,7 @@ ms.locfileid: "63743922"
 |**Tooltip** <br/> |省略可能。メニューのヒント。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**SuperTip** <br/> | 必須。メニューのヒントであり、次のものによって定義されます。 <br/> **Title** <br/>  必須。ヒントのテキスト。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**ShortStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> **説明** <br/>  必須。ヒントの説明。**resid** 属性は、**String** 要素の **id** 属性の値に設定する必要があります。**String** 要素は、**LongStrings** 要素 (**Resources** 要素の子要素) の子要素です。 <br/> |
 |**Icon** <br/> | 必須。メニューの **Image** 要素を含みます。画像ファイルは必ず .png 形式です。 <br/> **Image** <br/>  メニューの画像。**resid** 属性は、**Image** 要素の **id** 属性の値に設定する必要があります。**Image** 要素は、**Images** 要素 (**Resources** 要素の子要素) の子要素です。**size** 属性は、イメージのサイズをピクセル単位で示します。次の 3 つのイメージのサイズ (ピクセル単位) が必要です。16、32、および 80。次の 5 つのオプションのサイズ (ピクセル単位) もサポートされています。20、24、40、48、および 64。 <br/> |
-|**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](../reference/manifest/control-button.md)と同じ子要素を含みます。  <br/> |
+|**Items** <br/> |必須。各サブメニュー項目の **Item** 要素を含みます。各 **Item** 要素は、[ボタン コントロール](/javascript/api/manifest/control-button)と同じ子要素を含みます。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>手順 7: Resources 要素を追加する
 
