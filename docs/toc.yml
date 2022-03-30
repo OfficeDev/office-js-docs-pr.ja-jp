@@ -45,14 +45,15 @@ items:
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
           - name: Office のバージョンと要件セット
             href: develop/office-versions-and-requirement-sets.md
-          - name: Office アプリケーションとプラットフォームの可用性
-            href: overview/office-add-in-availability.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
           - name: アドインを実行するための要件
             href: concepts/requirements-for-running-office-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
           - name: Office の最新バージョンをインストールする
             href: develop/install-latest-office-version.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Office アドインによって使用されるブラウザー
+            href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
           - name: Internet Explorer 11 をサポート
             href: develop/support-ie-11.md
@@ -62,6 +63,8 @@ items:
           - name: 概要
             href: develop/develop-overview.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: API リファレンス
+            href: reference/javascript-api-for-office.md
           - name: Office JavaScript API について
             href: develop/understanding-the-javascript-api-for-office.md
           - name: アプリケーション固有の API モデルの使用
@@ -78,6 +81,8 @@ items:
                 href: develop/persisting-add-in-state-and-settings.md
               - name: ドキュメントまたはスプレッドシートの領域にバインドする
                 href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+              - name: 一般的な API エラー コード
+                href: reference/javascript-api-for-office-error-codes.md
           - name: アドインをセットアップして実行する
             items:
               - name: Office.js を参照する
@@ -100,6 +105,8 @@ items:
             items:
               - name: 概要
                 href: develop/add-in-manifests.md
+              - name: マニフェスト リファレンス
+                href: reference/manifest-reference.md
               - name: 拡張オーバーライド
                 href: develop/extended-overrides.md
               - name: マニフェスト要素の正しい順序を確認する
@@ -290,6 +297,8 @@ items:
                 href: develop/debug-office-add-ins-in-visual-studio.md
               - name: Internet Explorer 11 でテストする
                 href: testing/ie-11-testing.md
+              - name: サポートされていないウィンドウ オブジェクト
+                href: reference/window-objects-unsupported-in-add-ins.md
           - name: Web ブラウザー
             items:
               - name: Office on the web でアドインをサイドロードする
@@ -341,230 +350,6 @@ items:
             href: /legal/marketplace/certification-policies
           - name: SharePoint アプリ カタログにアドインを発行する
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-      - name: Reference
-        items:
-          - name: API リファレンス ドキュメント
-            href: reference/javascript-api-for-office.md
-            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
-          - name: API の要件セット (共通)
-            items:
-              - name: アドイン コマンドの要件セット
-                href: reference/requirement-sets/add-in-commands-requirement-sets.md
-              - name: ダイアログ API の要件セット
-                href: reference/requirement-sets/dialog-api-requirement-sets.md
-              - name: ダイアログ配信元の要件セット
-                href: reference/requirement-sets/dialog-origin-requirement-sets.md
-              - name: ID API の要件セット
-                href: reference/requirement-sets/identity-api-requirement-sets.md
-              - name: 画像強制型変換要件セット
-                href: reference/requirement-sets/image-coercion-requirement-sets.md
-              - name: キーボード ショートカットの要件セット
-                href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
-              - name: Office 共通 API の要件セット
-                href: reference/requirement-sets/office-add-in-requirement-sets.md
-              - name: ブラウザー ウィンドウの要件セットを開く
-                href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
-              - name: リボン API の要件セット
-                href: reference/requirement-sets/ribbon-api-requirement-sets.md
-              - name: 共有ランタイム要件のセット
-                href: reference/requirement-sets/shared-runtime-requirement-sets.md
-          - name: Office アドインのマニフェスト リファレンス
-            items:
-              - name: AllowSnapshot
-                href: reference/manifest/allowsnapshot.md
-              - name: AlternateId
-                href: reference/manifest/alternateid.md
-              - name: AppDomain
-                href: reference/manifest/appdomain.md
-              - name: AppDomains
-                href: reference/manifest/appdomains.md
-              - name: CitationText
-                href: reference/manifest/citationtext.md
-              - name: DefaultLocale
-                href: reference/manifest/defaultlocale.md
-              - name: DefaultSettings
-                href: reference/manifest/defaultsettings.md
-              - name: Description
-                href: reference/manifest/description.md
-              - name: DesktopSettings
-                href: reference/manifest/desktopsettings.md
-              - name: Dictionary
-                href: reference/manifest/dictionary.md
-              - name: DictionaryHomePage
-                href: reference/manifest/dictionaryhomepage.md
-              - name: DisableEntityHighlighting
-                href: reference/manifest/disableentityhighlighting.md
-              - name: DisplayName
-                href: reference/manifest/displayname.md
-              - name: EquivalentAddin
-                href: reference/manifest/equivalentaddin.md
-              - name: EquivalentAddins
-                href: reference/manifest/equivalentaddins.md
-              - name: ExtendedOverrides
-                href: reference/manifest/extendedoverrides.md
-              - name: FileName
-                href: reference/manifest/filename.md
-              - name: フォーム
-                href: reference/manifest/form.md
-              - name: FormSettings
-                href: reference/manifest/formsettings.md
-              - name: HighResolutionIconUrl
-                href: reference/manifest/highresolutioniconurl.md
-              - name: Host
-                href: reference/manifest/host.md
-              - name: Hosts
-                href: reference/manifest/hosts.md
-              - name: IconUrl
-                href: reference/manifest/iconurl.md
-              - name: ID
-                href: reference/manifest/id.md
-              - name: Metadata
-                href: reference/manifest/metadata.md
-              - name: Method
-                href: reference/manifest/method.md
-              - name: Methods
-                href: reference/manifest/methods.md
-              - name: Namespace
-                href: reference/manifest/namespace.md
-              - name: OfficeApp
-                href: reference/manifest/officeapp.md
-              - name: Override
-                href: reference/manifest/override.md
-              - name: Permissions
-                href: reference/manifest/permissions.md
-              - name: PhoneSettings
-                href: reference/manifest/phonesettings.md
-              - name: ProgId
-                href: reference/manifest/progid.md
-              - name: ProviderName
-                href: reference/manifest/providername.md
-              - name: QueryUri
-                href: reference/manifest/queryuri.md
-              - name: RequestedHeight
-                href: reference/manifest/requestedheight.md
-              - name: RequestedWidth
-                href: reference/manifest/requestedwidth.md
-              - name: Requirements
-                href: reference/manifest/requirements.md
-              - name: Rule
-                href: reference/manifest/rule.md
-              - name: Set
-                href: reference/manifest/set.md
-              - name: Sets
-                href: reference/manifest/sets.md
-              - name: SourceLocation
-                href: reference/manifest/sourcelocation.md
-              - name: SupportUrl
-                href: reference/manifest/supporturl.md
-              - name: TabletSettings
-                href: reference/manifest/tabletsettings.md
-              - name: TargetDialect
-                href: reference/manifest/targetdialect.md
-              - name: TargetDialects
-                href: reference/manifest/targetdialects.md
-              - name: トークン
-                href: reference/manifest/tokens.md
-              - name: トークン
-                href: reference/manifest/token.md
-              - name: 種類
-                href: reference/manifest/type.md
-              - name: バージョン
-                href: reference/manifest/version.md
-              - name: VersionOverrides
-                items:
-                  - name: VersionOverrides の概要
-                    href: reference/manifest/versionoverrides.md
-                  - name: VersionOverrides 1.0 TaskPane
-                    href: reference/manifest/versionoverrides-1-0-taskpane.md
-                  - name: VersionOverrides 1.0 コンテンツ
-                    href: reference/manifest/versionoverrides-1-0-content.md
-                  - name: VersionOverrides 1.0 メール
-                    href: reference/manifest/versionoverrides-1-0-mail.md
-                  - name: VersionOverrides 1.1 メール
-                    href: reference/manifest/versionoverrides-1-1-mail.md
-                  - name: Action
-                    href: reference/manifest/action.md
-                  - name: AllFormFactors
-                    href: reference/manifest/allformfactors.md
-                  - name: コントロール
-                    href: reference/manifest/control.md
-                  - name: コントロール (ボタン)
-                    href: reference/manifest/control-button.md
-                  - name: コントロール (メニュー)
-                    href: reference/manifest/control-menu.md
-                  - name: コントロール (MobileButton)
-                    href: reference/manifest/control-mobilebutton.md
-                  - name: CustomTab
-                    href: reference/manifest/customtab.md
-                  - name: DesktopFormFactor
-                    href: reference/manifest/desktopformfactor.md
-                  - name: Enabled
-                    href: reference/manifest/enabled.md
-                  - name: EquivalentAddin
-                    href: reference/manifest/equivalentaddin.md
-                  - name: EquivalentAddins
-                    href: reference/manifest/equivalentaddins.md
-                  - name: イベント
-                    href: reference/manifest/event.md
-                  - name: ExtendedPermission
-                    href: reference/manifest/extendedpermission.md
-                  - name: ExtendedPermissions
-                    href: reference/manifest/extendedpermissions.md
-                  - name: ExtensionPoint
-                    href: reference/manifest/extensionpoint.md
-                  - name: FunctionFile
-                    href: reference/manifest/functionfile.md
-                  - name: GetStarted
-                    href: reference/manifest/getstarted.md
-                  - name: Group
-                    href: reference/manifest/group.md
-                  - name: Hosts
-                    href: reference/manifest/hosts.md
-                  - name: Icon
-                    href: reference/manifest/icon.md
-                  - name: アイテム
-                    href: reference/manifest/item.md
-                  - name: アイテム
-                    href: reference/manifest/items.md
-                  - name: LaunchEvent
-                    href: reference/manifest/launchevent.md
-                  - name: LaunchEvents
-                    href: reference/manifest/launchevents.md
-                  - name: MobileFormFactor
-                    href: reference/manifest/mobileformfactor.md
-                  - name: OfficeMenu
-                    href: reference/manifest/officemenu.md
-                  - name: OfficeTab
-                    href: reference/manifest/officetab.md
-                  - name: OverriddenByRibbonApi
-                    href: reference/manifest/overriddenbyribbonapi.md
-                  - name: Page
-                    href: reference/manifest/page.md
-                  - name: リソース
-                    href: reference/manifest/resources.md
-                  - name: ランタイム
-                    href: reference/manifest/runtime.md
-                  - name: ランタイム
-                    href: reference/manifest/runtimes.md
-                  - name: Scopes
-                    href: reference/manifest/scopes.md
-                  - name: Script
-                    href: reference/manifest/script.md
-                  - name: SourceLocation (カスタム関数)
-                    href: reference/manifest/customfunctionssourcelocation.md
-                  - name: Supertip
-                    href: reference/manifest/supertip.md
-                  - name: SupportsSharedFolders
-                    href: reference/manifest/supportssharedfolders.md
-                  - name: WebApplicationInfo
-                    href: reference/manifest/webapplicationinfo.md
-          - name: Office アドインによって使用されるブラウザー
-            href: concepts/browsers-used-by-office-web-add-ins.md
-            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-          - name: Office の一般的な API エラー コード
-            href: reference/javascript-api-for-office-error-codes.md
-          - name: サポートされていないウィンドウ オブジェクト
-            href: reference/window-objects-unsupported-in-add-ins.md
   - name: Excel
     items:
       - name: Excel アドイン ドキュメント
@@ -595,58 +380,6 @@ items:
           - name: 概要
             href: reference/overview/excel-add-ins-reference-overview.md
             displayName: Excel
-          - name: API 要件セット
-            items:
-              - name: 概要
-                href: reference/requirement-sets/excel-api-requirement-sets.md
-                displayName: Excel
-              - name: Excel プレビュー API
-                href: reference/requirement-sets/excel-preview-apis.md
-                displayName: Excel
-              - name: ExcelApi オンラインのみの要件セット
-                href: reference/requirement-sets/excel-api-online-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.14 要件セット
-                href: reference/requirement-sets/excel-api-1-14-requirement-set.md
-              - name: ExcelApi 1.13 要件セット
-                href: reference/requirement-sets/excel-api-1-13-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.12 要件セット
-                href: reference/requirement-sets/excel-api-1-12-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.11 要件セット
-                href: reference/requirement-sets/excel-api-1-11-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.10 要件セット
-                href: reference/requirement-sets/excel-api-1-10-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.9 要件セット
-                href: reference/requirement-sets/excel-api-1-9-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.8 要件セット
-                href: reference/requirement-sets/excel-api-1-8-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.7 要件セット
-                href: reference/requirement-sets/excel-api-1-7-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.6 要件セット
-                href: reference/requirement-sets/excel-api-1-6-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.5 要件セット
-                href: reference/requirement-sets/excel-api-1-5-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.4 要件セット
-                href: reference/requirement-sets/excel-api-1-4-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.3 要件セット
-                href: reference/requirement-sets/excel-api-1-3-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.2 要件セット
-                href: reference/requirement-sets/excel-api-1-2-requirement-set.md
-                displayName: Excel
-              - name: ExcelApi 1.1 要件セット
-                href: reference/requirement-sets/excel-api-1-1-requirement-set.md
-                displayName: Excel
           - name: API リファレンス
             href: reference/excel-api-reference.md
             displayName: Excel
@@ -773,9 +506,6 @@ items:
           - name: 概要
             href: excel/custom-functions-overview.md
             displayName: 'Excel, Custom Functions'
-          - name: CustomFunctionsRuntime API の要件セット
-            href: reference/requirement-sets/custom-functions-requirement-sets.md
-            displayName: 'Excel, Custom Functions'
           - name: チュートリアル
             items:
               - name: 最初のカスタム関数アドインをビルドする
@@ -853,9 +583,6 @@ items:
           - name: 概要
             href: reference/overview/onenote-add-ins-javascript-reference.md
             displayName: OneNote
-          - name: API 要件セット
-            href: reference/requirement-sets/onenote-api-requirement-sets.md
-            displayName: OneNote
           - name: API リファレンス
             href: reference/onenote-api-reference.md
             displayName: OneNote
@@ -882,180 +609,6 @@ items:
           - name: 概要
             href: outlook/apis.md
             displayName: Outlook
-          - name: API 要件セット
-            displayName: Outlook
-            items:
-              - name: 概要
-                href: reference/requirement-sets/outlook-api-requirement-sets.md
-                displayName: Outlook
-              - name: メールボックス プレビュー要件セット
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
-                  - name: Office
-                    href: reference/objectmodel/preview-requirement-set/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/preview-requirement-set/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
-                  - name: Outlook Preview API リファレンス
-                    href: reference/outlook-api-reference-preview.md
-              - name: メールボックス要件セット 1.11
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.11/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.11/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.item.md
-                  - name: Outlook 1.11 API リファレンス
-                    href: reference/outlook-api-reference-1-11.md
-              - name: メールボックス要件セット 1.10
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.10/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.10/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.item.md
-                  - name: Outlook 1.10 API リファレンス
-                    href: reference/outlook-api-reference-1-10.md
-              - name: メールボックス要件セット 1.9
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.9/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.9/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
-                  - name: Outlook 1.9 API リファレンス
-                    href: reference/outlook-api-reference-1-9.md
-              - name: メールボックス要件セット 1.8
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.8/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.8/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
-                  - name: Outlook 1.8 API リファレンス
-                    href: reference/outlook-api-reference-1-8.md
-              - name: メールボックス要件セット 1.7
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.7/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.7/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
-                  - name: Outlook 1.7 API リファレンス
-                    href: reference/outlook-api-reference-1-7.md
-              - name: メールボックス要件セット 1.6
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.6/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.6/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
-                  - name: Outlook 1.6 API リファレンス
-                    href: reference/outlook-api-reference-1-6.md
-              - name: メールボックス要件セット 1.5
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.5/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.5/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
-                  - name: Outlook 1.5 API リファレンス
-                    href: reference/outlook-api-reference-1-5.md
-              - name: メールボックス要件セット 1.4
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.4/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.4/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
-                  - name: Outlook 1.4 API リファレンス
-                    href: reference/outlook-api-reference-1-4.md
-              - name: メールボックス要件セット 1.3
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.3/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.3/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
-                  - name: Outlook 1.3 API リファレンス
-                    href: reference/outlook-api-reference-1-3.md
-              - name: メールボックス要件セット 1.2
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.2/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.2/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
-                  - name: Outlook 1.2 API リファレンス
-                    href: reference/outlook-api-reference-1-2.md
-              - name: メールボックス要件セット 1.1
-                items:
-                  - name: 概要
-                    href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
-                  - name: Office
-                    href: reference/objectmodel/requirement-set-1.1/office.md
-                  - name: Office.context
-                    href: reference/objectmodel/requirement-set-1.1/Office.context.md
-                  - name: Office.context.mailbox
-                    href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
-                  - name: Office.context.mailbox.item
-                    href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
-                  - name: Outlook 1.1 API リファレンス
-                    href: reference/outlook-api-reference-1-1.md
           - name: API リファレンス - 最新リリース
             href: reference/outlook-api-reference-1-11.md
             displayName: Outlook
@@ -1208,23 +761,6 @@ items:
           - name: 概要
             href: reference/overview/powerpoint-add-ins-reference-overview.md
             displayName: PowerPoint
-          - name: API 要件セット
-            items:
-              - name: 概要
-                href: reference/requirement-sets/powerpoint-api-requirement-sets.md
-                displayName: PowerPoint
-              - name: PowerPointApi プレビュー要件セット
-                href: reference/requirement-sets/powerpoint-preview-apis.md
-                displayName: PowerPoint
-              - name: PowerPointApi 1.3 要件セット
-                href: reference/requirement-sets/powerpoint-api-1-3-requirement-set.md
-                displayName: PowerPoint
-              - name: PowerPointApi 1.2 要件セット
-                href: reference/requirement-sets/powerpoint-api-1-2-requirement-set.md
-                displayName: PowerPoint
-              - name: PowerPointApi 1.1 要件セット
-                href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
-                displayName: PowerPoint
           - name: API リファレンス
             href: reference/powerpoint-api-reference.md
             displayName: PowerPoint
@@ -1298,23 +834,6 @@ items:
           - name: 概要
             href: reference/overview/word-add-ins-reference-overview.md
             displayName: Word
-          - name: API 要件セット
-            items:
-              - name: 概要
-                href: reference/requirement-sets/word-api-requirement-sets.md
-                displayName: Word
-              - name: Word プレビュー API
-                href: reference/requirement-sets/word-preview-apis.md
-                displayName: Word
-              - name: WordApi 1.3 要件セット
-                href: reference/requirement-sets/word-api-1-3-requirement-set.md
-                displayName: Word
-              - name: WordApi 1.2 要件セット
-                href: reference/requirement-sets/word-api-1-2-requirement-set.md
-                displayName: Word
-              - name: WordApi 1.1 要件セット
-                href: reference/requirement-sets/word-api-1-1-requirement-set.md
-                displayName: Word
           - name: API リファレンス
             href: reference/word-api-reference.md
             displayName: Word

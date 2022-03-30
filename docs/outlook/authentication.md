@@ -3,8 +3,13 @@ title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 ms.date: 09/03/2021
 ms.localizationpriority: high
+ms.openlocfilehash: dc5920408af4f5fd48e13a30741321269fe07a58
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496300"
 ---
-
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
 Outlook アドインは、アドインをホストするサーバー、内部ネットワーク、クラウド内の別の場所などに関わらず、インターネット上のあらゆる場所から情報にアクセスできます。 その情報が保護されている場合、アドインにはユーザーを認証する方法が必要になります。 Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
@@ -14,8 +19,7 @@ Outlook アドインは、アドインをホストするサーバー、内部ネ
 シングル サインオン アクセス トークンは、アドインがアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出すための、シームレスな方法を提供します。 ユーザーが資格情報を入力する必要がないため、この機能は摩擦を低減します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](../reference/requirement-sets/identity-api-requirement-sets.md)」を参照してください。
-> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint でサポートされています。シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。Outlook アドインで作業している場合は、Microsoft 365 テナントで先進認証を有効にしてください。この方法の詳細については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 アドインが次の場合は、SSO アクセス トークンの使用を検討してください。
 
@@ -57,8 +61,8 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 
 ## <a name="callback-tokens"></a>コールバック トークン
 
-コールバック トークンは、[Exchange Web サービス (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) または [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api) を使用した、サーバーのバックエンドからユーザーのメールボックスへのアクセスを提供します。 アドインが次の場合は、コールバック トークンの使用を検討してください。
+コールバック トークンは、[Exchange Web サービス (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) または [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api) を使用して、サーバーのバックエンドからユーザーのメールボックスへのアクセスを提供します。アドインが次に当てはまる場合は、コールバック トークンの使用を検討してください。
 
 - サーバーのバックエンドからユーザーのメールボックスにアクセスする必要がある。
 
-アドインは、[getCallbackTokenAsync メソッド](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)の 1 つを使用して、コールバック トークンを取得します。 アクセスのレベルは、アドイン マニフェストで指定されたアクセス許可によって制御されます。
+アドインは、[getCallbackTokenAsync メソッド](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)の 1 つを使用して、コールバック トークンを取得します。 アクセスのレベルは、アドイン マニフェストで指定されたアクセス許可によって制御されます。

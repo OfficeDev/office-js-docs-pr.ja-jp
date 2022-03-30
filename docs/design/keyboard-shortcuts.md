@@ -3,12 +3,12 @@ title: カスタム キーボード ショートカット (Office アドイン)
 description: カスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) をアドインに追加するOffice説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 69fbc94c0d0cda700ae3362168cc02a055c0e521
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483878"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496785"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>カスタム キーボード ショートカットをアドインOffice追加する
 
@@ -270,7 +270,7 @@ Web でカスタム キーボード ショートカットを使用する場合�
 > プレビュー機能を試す良い方法は、Microsoft 365 サブスクリプションを使用することです。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、[Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。
 
 > [!NOTE]
-> このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) 必要です。
+> このセクションで説明する API には [、KeyboardShortcuts 1.1 要件セットが](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) 必要です。
 
 ユーザーのカスタム キーボードの組み合わせをアドイン アクションに割り当てるには、[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) メソッドを使用します。 メソッドは、アドイン`{[actionId:string]: string|null}``actionId`の拡張マニフェスト JSON で定義する必要があるアクションの ID のサブセットである型のパラメーターを受け取ります。 値は、ユーザーの優先キーの組み合わせです。 また、この`null``actionId`値を使用すると、カスタマイズが削除され、アドインの拡張マニフェスト JSON で定義されている既定のキーボードの組み合わせに戻されます。
 

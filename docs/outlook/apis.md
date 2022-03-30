@@ -3,12 +3,12 @@ title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484291"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496314"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > このような確認は、マニフェストで指定された要件セットのバージョンに存在する API には必要ありません。
 
-それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要件セットは、`<Requirements>` 要素内のマニフェストで指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook-api-requirement-sets)」を参照してください。
+それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要件セットは、`<Requirements>` 要素内のマニフェストで指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)」を参照してください。
 
 `<Methods>` 要素は Outlook アドインには適用されないので、特定のメソッドのサポートは宣言できません。
 
@@ -74,5 +74,5 @@ if (item.somePropertyOrFunction) {
 ## <a name="see-also"></a>関連項目
 
 - [Outlook アドインのマニフェスト](manifests.md)
-- [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)

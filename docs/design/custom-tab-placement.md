@@ -3,12 +3,12 @@ title: カスタム タブをリボンに配置する
 description: カスタム タブがリボンに表示される場所と、既定Officeフォーカスが設定されているかどうかを制御する方法について説明します。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1309e0e12817b9a1434f7865b1a578b3aba3f1
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: a250a3fbffc0a2aef140c8f0ac0286f61e2c5dbc
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483848"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496741"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>カスタム タブをリボンに配置する
 
@@ -55,4 +55,4 @@ Office、[ファイル] タブの右側にあるタブに既定のフォーカ�
 
 ## <a name="behavior-on-unsupported-platforms"></a>サポートされていないプラットフォームでの動作
 
-アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets) をサポートしないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、カスタム タブはリボンの右端のタブとして表示されます。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンスの設計」で説明するように、アドインを設計して、 **AddinCommands 1.3** がサポートされていない場合に代替エクスペリエンスを [提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、カスタム タブが必要な場所を想定した手順がアドインに含まれている場合は、タブが右端にあると仮定する別のバージョンを使用できます。
+アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、カスタム タブはリボンの右端のタブとして表示されます。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンスの設計」で説明するように、アドインを設計して、 **AddinCommands 1.3** がサポートされていない場合に代替エクスペリエンスを [提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、カスタム タブが必要な場所を想定した手順がアドインに含まれている場合は、タブが右端にあると仮定する別のバージョンを使用できます。

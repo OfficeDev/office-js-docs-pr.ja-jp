@@ -3,19 +3,19 @@ title: シングル サインオン (SSO) のエラー メッセージのトラ�
 description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeやエラーを処理する方法について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: e0607a059ec0ab14dc987d7703b7162330c58c44
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483519"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496797"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/identity-api-requirement-sets)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。
 > Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
@@ -98,7 +98,7 @@ ms.locfileid: "64483519"
 
 考えられる原因は複数あります。
 
-- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](/javascript/api/requirement-sets/identity-api-requirement-sets)。
+- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。
 - `getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡され、ユーザーが AppSource からアドインを取得しました。 このシナリオでは、アドインが必要とする Microsoft Graph スコープ (権限) について、テナント管理者はアドインに同意していません。 Office では、ユーザーに求めることができるのは AAD `profile` スコープへの同意のみであるため、`allowConsentPrompt` を使用して `getAccessToken` を取り消しても問題は解決できません。
 
 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。

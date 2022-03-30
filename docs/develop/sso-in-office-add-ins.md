@@ -3,12 +3,12 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483609"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496328"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
@@ -85,7 +85,7 @@ SSO を使用するには、Microsoft ID プラットフォームにアドイン
 - **Scopes** - 1 つ以上の **Scope** 要素の親。
 - **スコープ** - アドインに必要なアクセス許可を指定します。 `profile` と `openID` のアクセス許可は常に必要であり、これは唯一必要なアクセス許可である場合があります。 アドインが Microsoft Graph またはその他の Microsoft 365 リソースにアクセスする必要がある場合は、追加の **スコープ** 要素が必要です。 たとえば、Microsoft Graph のアクセス許可の場合は、 `User.Read` と `Mail.Read` のスコープを要求できます。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
-Word、Excel、PowerPoint アドインの場合は、 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。 Outlook アドインでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
+Word、Excel、PowerPoint のアドインでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook アドインでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
 マークアップの例を次に示します。
 
@@ -107,7 +107,7 @@ Word、Excel、PowerPoint アドインの場合は、 `<VersionOverrides ... xsi
 
 ### <a name="include-the-identity-api-requirement-set"></a>Identity API 要件セットを含める
 
-SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。詳細については、「[IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)」を参照してください。
+SSO を使用するには、アドインに Identity API 1.3 要件セットが必要です。詳細については、「[IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。
 
 ### <a name="add-client-side-code"></a>クライアント側のコードを追加する
 
@@ -146,7 +146,7 @@ async function getUserData() {
 
 アドインにサインイン済みのユーザーが必要な場合は、`Office.initialize` 内から `getAccessToken` を呼び出す必要があります。 `getAccessToken` の `options` パラメーターにも `allowSignInPrompt: true` を渡す必要があります。 たとえば、`OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });` これにより、ユーザーがまだサインインしていない場合は、Office が UI からユーザーに今すぐサインインするように求めます。
 
-サインイン済みのユーザーを必要としない機能がアドインにある場合、`getAccessToken` *ユーザーがサインイン済みのユーザーを必要とするアクションを実行したときに呼び出すことができます*。 `getAccessToken` の重複呼び出しによってパフォーマンスが大幅に低下することはありません。これは、Office がアクセス トークンをキャッシュし、それが期限切れになるまで、`getAccessToken` が呼び出されるたびに [Microsoft ID プラットフォーム](/azure/active-directory/develop/)が再度呼び出すことなく再利用されるためです。 このため、`getAccessToken` の呼び出しを、このトークンが必要とされる場所でアクションを開始するすべての関数とハンドラーに追加できます。
+ユーザーのサインインを必要としない機能がアドインにある場合は、ユーザーのサインインを必要とする操作をユーザーが行った時に `getAccessToken` *を呼び出せます*。`getAccessToken` の重複呼び出しによってパフォーマンスが大幅に低下することはありません。これは、Office ではアクセス トークンがキャッシュされ、それが期限切れになるまで、`getAccessToken` が呼び出されても [Microsoft ID プラットフォーム](/azure/active-directory/develop/)が再度呼び出されずに再利用されるためです。 このため、`getAccessToken` の呼び出しを、このトークンが必要とされる場所でアクションを開始するすべての関数とハンドラーに追加できます。
 
 > [!IMPORTANT]
 > ベスト セキュリティプラクティスとして、アクセス トークンが必要な場合は常に `getAccessToken` を呼び出します。 Office によってキャッシュされます。 独自のコードを使用してアクセス トークンをキャッシュまたは格納しないでください。
@@ -248,4 +248,4 @@ Excel、PowerPoint、または Word のアドインで SSO を使用する場合
 
 - [Microsoft ID プラットフォームのドキュメント](/azure/active-directory/develop/)
 - [要件セット](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

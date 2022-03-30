@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0d3e478e6deaf630f6665b3bba2796c26826fcde
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 839f88eb1f4e46f50ca08321b48f62e15c07fd89
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744494"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496825"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -40,7 +40,7 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>コードでカスタム関数を定義する方法
 
-[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して Excel のカスタム関数アドイン プロジェクトを作成する場合、使用する関数および作業ウィンドウを制御するファイルが作成されます。 このため、カスタム関数に重要なファイルに注意を集中できます。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して Excel のカスタム関数アドイン プロジェクトを作成する場合、使用する関数および作業ウィンドウを制御するファイルが作成されます。このため、カスタム関数に重要なファイルに注意を集中できます。
 
 | ファイル | ファイル形式 | 説明 |
 |------|-------------|-------------|
@@ -97,7 +97,7 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 ## <a name="see-also"></a>関連項目
 
 * [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
-* [カスタム関数の要件セット](../reference/requirement-sets/custom-functions-requirement-sets.md)
+* [カスタム関数の要件セット](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
 * [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
 * [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

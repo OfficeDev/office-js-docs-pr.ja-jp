@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745577"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404731"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -44,7 +44,7 @@ ms.locfileid: "63745577"
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
 
-    ![カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。":::
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -63,7 +63,7 @@ ms.locfileid: "63745577"
     ```
 
     > [!NOTE]
-    > Office アドインは、開発中であっても HTTP ではなく HTTPS を使用する必要があります。 `npm run build`の実行後に証明書をインストールするように指示が出された場合は、Yeomanジェネレーターが提供する証明書をインストールする手順に従ってください。
+    > 開発の最中でも、Office アドインでは HTTP ではなく HTTPS を使用する必要があります。`npm run build` を実行した後に証明書をインストールするように求められた場合は、Yeoman ジェネレーターによって提供される証明書をインストールするプロンプトを受け入れます。
 
 1. Node.js で実行しているローカル Web サーバーを開始します。 Excel でカスタム関数アドインを試すことができます。
 
@@ -98,6 +98,8 @@ npm run start:desktop
 1. セル内で値 `=CONTOSO.ADD(10,200)` を入力して Enter キーを押し、入力パラメーターとして数値 `10` と `200` を指定して、`CONTOSO.ADD` 関数を実行します。
 
 `ADD` カスタム関数によって、指定した 2 つの数字の合計が計算され、**210** という結果が返されます。
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Web からデータを要求するカスタム関数を作成する
 
@@ -145,14 +147,19 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 1. Excel を閉じて再び開きます。
 
-1. Excel で [**挿入**] タブを選択し、[**個人用アドイン**] の右にある下向き矢印を選択します。![[個人用アドイン] 下向き矢印が強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/select-insert.png)
+1. Excel で、**[挿入]** タブを選択し、**[個人用アドイン]** の右側に配置された下矢印を選択します。
+
+    :::image type="content" source="../images/select-insert.png" alt-text="[個人用アドイン] の下矢印が強調表示された Windows での Excel の [挿入] リボンのスクリーンショット":::
 
 1. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
-    ![[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。](../images/list-starcount.png)
 
-# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
+    :::image type="content" source="../images/list-starcount.png" alt-text="[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。":::
 
-1. Excel で [**挿入**] タブを選択し、[**アドイン**] を選択します。![[個人用アドイン] ボタンが強調表示されている Excel on the web の [挿入] リボンのスクリーンショット。](../images/excel-cf-online-register-add-in-1.png)
+# <a name="excel-on-the-web"></a>[Web 版 Excel](#tab/excel-online)
+
+1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="[個人用アドイン] ボタンが強調表示された Excel on the web の [挿入] リボンのスクリーンショット。":::
 
 1. **[マイ アドインの管理]** を選択し、**[マイ アドインのアップロード]** を選択します。
 
@@ -160,7 +167,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 1. **manifest.xml** ファイルを選択し、**[開く]** を選択し、**[アップロード]** を選択します。
 
-5. 新しい関数をお試しください。 セル **B1** で、テキスト **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** を入力し、Enter キーを押します。 セル **B1** の結果は [Excel-Custom-Functions Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions) に与えられた現在の星の数です。
+1. 新しい関数をお試しください。 セル **B1** で、テキスト **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** を入力し、Enter キーを押します。 セル **B1** の結果は [Excel-Custom-Functions Github リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions) に与えられた現在の星の数です。
 
 ---
 

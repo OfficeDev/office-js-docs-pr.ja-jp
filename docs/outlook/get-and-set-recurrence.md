@@ -3,19 +3,19 @@ title: Outlook アドインで定期的なアイテムを取得して設定す�
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c763abd238d007fd397c17278472db1fb97e04e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7ebdce8236d55fc6569756aa88fb721d8e6ec9f1
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484666"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496286"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
 毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 JavaScript API Officeを使用して、アドイン内の予定シリーズの定期的なパターンを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="available-recurrence-patterns"></a>使用可能な定期的なパターン
 
@@ -201,7 +201,7 @@ var recurrenceType = recurrence.recurrenceType;
 [RecurrenceChanged イベント](/javascript/api/office/office.eventtype)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
 [setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth

@@ -1,15 +1,15 @@
 ---
-ms.date: 10/05/2021
+ms.date: 03/23/2022
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743924"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496862"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -23,11 +23,14 @@ ms.locfileid: "63743924"
 
 次のいずれかの操作を行います。
 
-- カスタム関数を使用して Excel アドインを生成するには、コマンド `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true` を実行します。
+- カスタム関数を使用して Excel アドインを生成するには、コマンド `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true` を実行します。
 
     または
 
-- PowerPoint アドインを生成するには、コマンド `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true` を実行します。
+- PowerPoint アドインを生成するには、コマンド `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true` を実行します。
+
+> [!IMPORTANT]
+> `--name` の引数値は、スペースがない場合でも二重引用符で囲む必要があります。
 
 ジェネレーターはプロジェクトを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -40,7 +43,7 @@ ms.locfileid: "63743924"
 
 1. Visual Studio Code を起動し、生成した Excel または PowerPoint アドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. Excel アドインを生成していた場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](../reference/requirement-sets/shared-runtime-requirement-sets.md)を使用します。次のように XML が表示されるはずです。
+1. Excel アドインを生成していた場合は、要件セクションを更新して、カスタム関数ランタイムの代わりに[共有ランタイム](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)を使用します。次のように XML が表示されるはずです。
 
     ```xml
     <Hosts>
@@ -200,7 +203,7 @@ ms.locfileid: "63743924"
 ```
 
 > [!NOTE]
-> アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](../reference/manifest/runtimes.md)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 ## <a name="about-the-shared-javascript-runtime"></a>共有 JavaScript ランタイムについて
 

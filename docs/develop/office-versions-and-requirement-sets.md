@@ -3,12 +3,12 @@ title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 62dbac6c5f08596792c29ce5451cdaca077ddcdb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483652"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496818"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -36,18 +36,18 @@ Office アドインは API 要件セットを使用して、使用する必要�
 
 アドインは、そのアドインが動作している Office アプリケーションのバージョンでサポートされている要件セットにある API のみを使用できます。特定の Office アプリケーションのバージョンで使用できる要件セットを正確に確認するには、アプリケーション固有の要件セットに関する次の記事を参照してください。
 
-- [Excel JavaScript API 要件セット](/javascript/api/requirement-sets/excel-api-requirement-sets) (ExcelApi)
-- [Word JavaScript API 要件セット](/javascript/api/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API 要件セット](/javascript/api/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [PowerPoint JavaScript API 要件セット](/javascript/api/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook-api-requirement-sets) (Mailbox)
+- [Excel JavaScript API 要件セット](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) (ExcelApi)
+- [Word JavaScript API 要件セット](/javascript/api/requirement-sets/word/word-api-requirement-sets) (WordApi)
+- [OneNote JavaScript API 要件セット](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets) (OneNoteApi)
+- [PowerPoint JavaScript API 要件セット](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets) (PowerPointApi)
+- [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) (Mailbox)
 
 一部の要件セットには、どの Office アプリケーションでも使用できる API が含まれています。それらの要件セットの詳細については、次の記事を参照してください。
 
-- [Office の共通要件セット](/javascript/api/requirement-sets/office-add-in-requirement-sets)
-- [アドイン コマンドの要件セット](/javascript/api/requirement-sets/add-in-commands-requirement-sets)
-- [ダイアログ API の要件セット](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [Identity API の要件セット](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Office の共通要件セット](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
+- [アドイン コマンドの要件セット](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
+- [ダイアログ API の要件セット](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Identity API の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 `ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office アプリケーションを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office アプリケーション (Word、Outlook など) の要件セットにも対応していません。  Office アプリケーションの要件セットがリリースされる割合は、アプリケーションによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
 

@@ -5,12 +5,12 @@ ms.date: 07/16/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cfda46d5006b8ff351fcd339c601ef3e22613519
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 1f1d909f655558dd96705cc83ea2996cd21d6c85
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514139"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496307"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -52,7 +52,7 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
   >
   > - アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
   >
-  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
+  > - Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。 この機能のプレビューの詳細については、「[Information Rights Management (IRM) で保護されているアイテムのアドインのアクティブ化](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)」を参照してください。
 
 - メッセージ クラスが IPM.Report.* である配信レポートまたは通知 (配信レポート、配信不能レポート (NDR)、開封通知、未開封通知、遅延通知など)。
 
@@ -63,19 +63,19 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
 - 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス\*内、[アーカイブ メールボックス](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox)内、パブリック フォルダー内。
 
   > [!IMPORTANT]
-  > \* [要件セット 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートをプレビューしています。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](delegate-access.md)」を参照してください。
+  > \* [要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートをプレビューしています。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](delegate-access.md)」を参照してください。
 
 - カスタム フォームを使用する場合。
 
 - [簡易 MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5) で作成されます。 簡易 MAPI は、Outlook が閉じられている間に Office ユーザーが Windows 上の Office アプリケーションからメールを作成または送信するときに使用されます。 たとえば、ユーザーは Word での作業中に Outlook メールを作成できます。これにより、Outlook アプリケーション全体を起動せずに Outlook メール作成ウィンドウがトリガーされます。 ただし、ユーザーが Word からメールを作成するときに Outlook が既に実行されている場合、これは簡易 MAPI シナリオではないため、Outlook アドインは、他のアクティブ化要件が満たされている限り、作成フォームで動作します。
 
-既知のエンティティの文字列照合に基づいてアクティブ化されるアドインを除いて、通常、Outlook は [送信済みアイテム] フォルダーのアイテムに対して閲覧フォーム内でアドインをアクティブ化できます。 この理由の詳細は、[Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)の「既知のエンティティに対するサポート」をご覧ください。
+既知のエンティティの文字列照合に基づいてアクティブ化されるアドインを除いて、通常、[送信済みアイテム] フォルダーのアイテムに対して Outlook は閲覧フォーム内でアドインをアクティブ化できます。この背後にある理由の詳細については、「[Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)」の「既知のエンティティに対するサポート」を参照してください。
 
 現在、モバイル クライアント用のアドインを設計および実装する際には、さらに考慮事項があります。 詳細については、「[Outlook アドインにモバイル サポートを追加する](add-mobile-support.md#compose-mode-and-appointments)」を参照してください。
 
 ## <a name="supported-clients"></a>サポートされるクライアント
 
-Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Outlook on the web と Outlook.com でサポートされています。 最新の機能すべてが、すべての[クライアント](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各アプリケーションでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
+Outlook アドインは、Windows 用 Outlook 2013 以降、Mac 用 Outlook 2016 以降、オンプレミスの Exchange 2013 用 Outlook on the web 以降の各バージョン、iOS 用 Outlook、Android 用 Outlook、および Outlook on the web と Outlook.com でサポートされています。 最新の機能すべてが、すべての[クライアント](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)で同時にサポートされているわけではありません。 これらの機能が各アプリケーションでサポートされる可能性の有無については、該当する機能に関する記事や API リファレンスを参照してください。
 
 ## <a name="get-started-building-outlook-add-ins"></a>Outlook アドインの作成を開始する
 

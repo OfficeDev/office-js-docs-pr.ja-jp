@@ -3,12 +3,12 @@ title: Outlook アドインにモバイル サポートを追加する
 description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484309"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496972"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
@@ -109,4 +109,4 @@ Outlook Mobile では、作業ウィンドウが画面全体を占めるので�
 
 ## <a name="see-also"></a>関連項目
 
-[Exchange サーバーと Outlook クライアントでサポートされる要件セット](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Exchange サーバーと Outlook クライアントでサポートされる要件セット](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

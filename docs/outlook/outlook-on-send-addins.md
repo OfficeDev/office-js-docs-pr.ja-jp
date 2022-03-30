@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 08/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 904e108e623324c6cfc241f81c794edf30c1a3c9
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 583cf08e02ae72a65dcd3a6e006cd411ee824a74
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483474"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496867"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -33,7 +33,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 |Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
 
 > [!NOTE]
-> オン送信機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在のサーバーと [クライアントのサポートを](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
+> オン送信機能は、要件セット 1.8 で正式にリリースされました (詳細については、現在のサーバーと [クライアントのサポートを](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 参照してください)。 ただし、機能のサポート マトリックスは要件セットのスーパーセットです。
 
 > [!IMPORTANT]
 > AppSource では、送信時機能を使用するアドインは [許可されません](https://appsource.microsoft.com)。

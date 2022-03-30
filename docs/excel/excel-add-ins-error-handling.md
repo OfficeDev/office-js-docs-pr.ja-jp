@@ -3,12 +3,12 @@ title: JavaScript API のExcel処理
 description: ランタイム エラー Excel説明する JavaScript API エラー処理ロジックについて説明します。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f826968ae5137931fc334e62c9594461850cf649
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d62a146262f66bb675fce2dbf0ec2a7c5da3ce2a
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484076"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496874"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API のExcel処理
 
@@ -68,7 +68,7 @@ JavaScript API Excelが正常に実行できない場合、API は次のプロ�
 |`AccessDenied` |要求された操作を実行できません。| |
 |`ActivityLimitReached`|アクティビティの制限に達しました。| |
 |`ApiNotAvailable`|要求された API は使用できません。| |
-|`ApiNotFound`|使用しようとしている API が見つかりませんでした。 このバージョンは、新しいバージョンの Excel。 詳細についてはExcel [JavaScript API 要件セットの記事](/javascript/api/requirement-sets/excel-api-requirement-sets)を参照してください。| |
+|`ApiNotFound`|使用しようとしている API が見つかりませんでした。 このバージョンは、新しいバージョンの Excel。 詳細についてはExcel [JavaScript API 要件セットの記事](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)を参照してください。| |
 |`BadPassword`|指定したパスワードが正しくありません。| |
 |`Conflict`|競合のため、要求を処理できませんでした。| |
 |`ContentLengthRequired`|HTTP `Content-length` ヘッダーが見つからない。| |

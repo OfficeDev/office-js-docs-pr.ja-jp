@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5530e1a2acc21ffbf3f2bb0c9a16aa178141202c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483856"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496734"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -29,7 +29,7 @@ ms.locfileid: "64483856"
 
 要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「Office[要件セット」を参照してください](../develop/office-versions-and-requirement-sets.md)。
 
-有効/無効 API は [、RibbonApi 1.1 要件セットに](/javascript/api/requirement-sets/ribbon-api-requirement-sets) 属します。
+有効/無効 API は [、RibbonApi 1.1 要件セットに](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) 属します。
 
 > [!NOTE]
 > **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「リボン](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) 1.1 にはOfficeのアドインをホストできるバージョンとプラットフォームを指定する」を参照してください。

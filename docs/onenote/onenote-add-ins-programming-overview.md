@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 67f2e5f5e8d3645c44c8eab4c6a1a168ac05e924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 938a9f6a954162c8774cfeea970596b41afb79ee
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746707"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496321"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -83,7 +83,7 @@ OneNote JavaScript API の `load`/`sync` パターンとその他の一般的な
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判断します。OneNote JavaScript API 要件セットの詳細については、「[OneNote JavaScript API の要件セット](../reference/requirement-sets/onenote-api-requirement-sets.md)」を参照してください。
+要件セットは、API メンバーの名前付きグループです。Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判断します。OneNote JavaScript API 要件セットの詳細については、「[OneNote JavaScript API の要件セット](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)」を参照してください。
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 

@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484139"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496916"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -33,7 +33,7 @@ ms.locfileid: "64484139"
 
 1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/shared-runtime-requirement-sets) を要求します。
+1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) を要求します。
 
     ```xml
     <Requirements>

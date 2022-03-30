@@ -3,12 +3,12 @@ title: カスタム関数のエラーを処理して返す
 description: '#NULL! のようなエラーを処理して返す カスタム関数から。'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c8f2667f47c1c983b135f38ce2c67ad1f31502c9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483499"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496293"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>カスタム関数のエラーを処理して返す
 
@@ -135,5 +135,5 @@ function getComment(commentID) {
 ## <a name="see-also"></a>関連項目
 
 * [カスタム関数のデバッグ](custom-functions-debugging.md)
-* [カスタム関数の要件セット](/javascript/api/requirement-sets/custom-functions-requirement-sets)
+* [カスタム関数の要件セット](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)

@@ -3,12 +3,12 @@ title: 組み込みのコントロール Officeカスタム コントロール �
 description: カスタム コマンド グループとタブに組み込Officeボタンをリボンに含めるOfficeします。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a40b7c455cf56457595ae55f8d7d2799b270b4
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 91e64e3939ea83c6468b1f8b35ac189ad7d3d373
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483922"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496727"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
 
@@ -76,4 +76,4 @@ ms.locfileid: "64483922"
 
 ## <a name="behavior-on-unsupported-platforms"></a>サポートされていないプラットフォームでの動作
 
-アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets) をサポートしていないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンス用のデザイン」で説明したように、アドインを設計して **AddinCommands 1.3** がサポートされていない場合にエクスペリエンス [を提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、組み込みのボタンがカスタム グループ内にあると仮定する手順がアドインに含まれている場合は、組み込みボタンが通常の場所にのみ含まれると想定するバージョンを設計できます。
+アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしていないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンス用のデザイン」で説明したように、アドインを設計して **AddinCommands 1.3** がサポートされていない場合にエクスペリエンス [を提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、組み込みのボタンがカスタム グループ内にあると仮定する手順がアドインに含まれている場合は、組み込みボタンが通常の場所にのみ含まれると想定するバージョンを設計できます。

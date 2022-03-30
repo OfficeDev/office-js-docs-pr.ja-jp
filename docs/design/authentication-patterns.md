@@ -3,12 +3,12 @@ title: Office アドインの認証設計ガイドライン
 ms.date: 02/09/2021
 description: アドインでサインオンまたはサインアップ ページを視覚的に設計するOffice説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0188487f7a4a32bf16c00eed3f151d0a9a52be87
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4973ba8f81ff075d7db8021b15fdfe0f8f0683c4
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483932"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496790"
 ---
 # <a name="authentication-patterns"></a>認証パターン
 
@@ -49,7 +49,7 @@ ms.locfileid: "64483932"
 ## <a name="single-sign-on-authentication-flow"></a>単一Sign-On認証フロー
 
 > [!NOTE]
-> シングル サインオン API は現在、Word、Excel、Outlook、およびPowerPoint。 シングル サインオンのサポートの詳細については、「 [IdentityAPI 要件セット」を参照してください](/javascript/api/requirement-sets/identity-api-requirement-sets)。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> シングル サインオン API は現在、Word、Excel、Outlook、およびPowerPoint。 シングル サインオンのサポートの詳細については、「 [IdentityAPI 要件セット」を参照してください](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。 Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 シングル サインオンを使用して、よりスムーズなエンド ユーザー エクスペリエンスを実現します。 アドインへのサインインには、Office内のユーザーの ID (Microsoft アカウントまたは Microsoft 365 ID) が使用されます。 その結果、ユーザーは 1 回だけサインインします。 お客様は途中で止められることなく、簡単に利用を開始できます。
 

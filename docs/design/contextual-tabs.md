@@ -3,12 +3,12 @@ title: アドインでカスタム コンテキスト タブOffice作成する
 description: カスタム コンテキスト タブをアドインに追加するOffice説明します。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 57d95db1e425f1ca4f5111a79d99de44f8f09e31
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483891"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496748"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>アドインでカスタム コンテキスト タブOffice作成する
 
@@ -29,8 +29,8 @@ ms.locfileid: "64483891"
 > [!NOTE]
 > カスタム コンテキスト タブは、次の要件セットをサポートするプラットフォームでのみ機能します。 要件セットとそれらを使用する方法の詳細については、「アプリケーションと API の要件Office[指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md)。
 >
-> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 >
 > コードのランタイム チェックを使用して、ユーザーのホストとプラットフォームの組み合わせがこれらの要件セットをサポートするかどうかをテストできます(「メソッドと要件セットのサポートのランタイム チェック」を [参照](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support))。 (マニフェストで要件セットを指定する方法は、この記事でも説明しますが、現在 RibbonApi 1.2 では機能しません)。または、カスタム コンテキスト タブ [がサポートされていない場合に、別の UI エクスペリエンスを実装することもできます](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 

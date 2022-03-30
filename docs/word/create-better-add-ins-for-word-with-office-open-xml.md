@@ -3,12 +3,12 @@ title: Office Open XML を使用してより良い Word 用アドインを作成
 description: Open XML を使用して Word アドインを改善するOffice概要。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f742c4a295e3f6312a4bcb01effc35d8b650b61
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8747f4c7f98cdb88a02e4fe55ec2bf09514c9eb3
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484577"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496951"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
 
@@ -16,7 +16,7 @@ ms.locfileid: "64484577"
 
 Word で実行する Office アドインを構築する場合は、Office JavaScript API (Office.js) がドキュメント コンテンツの読み取りおよび書き込み用に複数の形式を提供している場合があります。 そのような書式は強制タイプと呼ばれ、プレーン テキスト、表、HTML、Office Open XML が含まれています。
 
-それでは、イメージ、書式設定された表、グラフ、あるいは書式設定だけされたテキストをドキュメントに追加する必要があるとき、何を選択しますか。 WordApi 要件セットで使用可能な API から始め [、必要](/javascript/api/requirement-sets/word-api-requirement-sets) な情報が提供されるのかを確認します。 例については、「Word の [スクリプト ラボで](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) 書式設定されたテキスト コードを [挿入する」を](https://appsource.microsoft.com/product/office/wa104380862) 参照してください。
+それでは、イメージ、書式設定された表、グラフ、あるいは書式設定だけされたテキストをドキュメントに追加する必要があるとき、何を選択しますか。 WordApi 要件セットで使用可能な API から始め [、必要](/javascript/api/requirement-sets/word/word-api-requirement-sets) な情報が提供されるのかを確認します。 例については、「Word の [スクリプト ラボで](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) 書式設定されたテキスト コードを [挿入する」を](https://appsource.microsoft.com/product/office/wa104380862) 参照してください。
 
 API がまだ使用できない場合は、HTML を使用して、画像などのリッチ コンテンツの一部の種類を挿入できます。 シナリオによっては、コンテンツで使用できる書式設定および配置に関する制限など、HTML 強制型変換にとって不利な点が存在する場合があります。
 

@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化Outlookアドインを�
 ms.topic: article
 ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3454f68c76b40392ddd49586585d09a32a30e7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: bd6dfab38d59d5e120ca9672df8eb3ac6e7654e7
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484279"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496909"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのOutlookアドインを構成する
 
@@ -18,7 +18,7 @@ ms.locfileid: "64484279"
 このチュートリアルの最後には、新しいアイテムが作成され、件名が設定されるたびに実行されるアドインがあります。
 
 > [!NOTE]
-> この機能のサポートは、要件セット [1.10 で導入されました](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは、要件セット [1.10 で導入されました](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="supported-events"></a>サポートされるイベント
 
