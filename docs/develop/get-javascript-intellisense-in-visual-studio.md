@@ -1,18 +1,18 @@
 ---
-title: Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
-description: JSDoc を使用して JavaScript 変数IntelliSense、パラメーター、および戻り値のデータを作成する方法について説明します。
-ms.date: 10/11/2019
+title: Visual Studio で JavaScript IntelliSense を利用できるようにする
+description: JSDoc を使用して、JavaScript 変数、オブジェクト、パラメーター、および戻り値の IntelliSense を作成する方法について説明します。
+ms.date: 04/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 142f4cf81f83cdc518fb94f65a8e6f67f41a4783
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4fb18199c53b7b836079754b5fb4561b76a968b1
+ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743491"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "64682260"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Visual Studio 2019 で JavaScript IntelliSense を利用できるようにする
+# <a name="get-javascript-intellisense-in-visual-studio"></a>Visual Studio で JavaScript IntelliSense を利用できるようにする
 
-Visual Studio 2019 を使用して Office アドインを開発する場合は、JSDoc を使用することで、JavaScript の変数、オブジェクト、パラメーター、および戻り値の IntelliSense を有効にできます。この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。詳細については、「[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
+Visual Studio 2019 以降を使用してアドインOffice開発する場合、JSDoc を使用して JavaScript 変数、オブジェクト、パラメーター、および戻り値に対して IntelliSense を有効にすることができます。 この記事では、JSDoc の概要と、JSDoc を使用して Visual Studio の IntellSense を作成する方法について説明します。 詳細については、「[JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)」および「[JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)」を参照してください。 
 
 ## <a name="officejs-type-definitions"></a>Office.js の型定義
 
@@ -49,7 +49,7 @@ Visual Studio に Office.js の型の定義を提供する必要があります�
 var subsetRange;
 ```
 
-!['subsetRange' 変数のIntelliSense抜粋を示すスクリーンショット。](../images/intellisense-vs17-var.png)
+!['subsetRange' 変数の IntelliSense の抜粋を示すスクリーンショット。](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>パラメーター
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![JavaScript の例IntelliSense 'paras' パラメーター ('paragraphs' パラメーター) の抜粋を示すスクリーンショット。](../images/intellisense-vs17-param.png)
+!['paras' パラメーター (JavaScript の例では'paragraphs' パラメーター) の IntelliSense の抜粋を示すスクリーンショット。](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>戻り値
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-!['myFunc()' のIntelliSenseの抜粋を示すスクリーンショット。](../images/intellisense-vs17-return.png)
+!['myFunc()' 戻り値の IntelliSense の抜粋を示すスクリーンショット。](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>複合型
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-!['var myVar;IntelliSenseの複合型宣言の例を示すスクリーンショット。](../images/intellisense-vs17-complex-type.png)
+![たとえば、'var myVar;' の複合型宣言の IntelliSense を示すスクリーンショット。](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>関連項目
 

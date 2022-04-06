@@ -1,63 +1,63 @@
 ---
 title: SSO を使用してサインインしているユーザーの ID を取得する
 description: getAccessToken API を呼び出して、サインインしているユーザーに関する名前、電子メール、追加情報を含む ID トークンを取得します。
-ms.date: 01/25/2022
+ms.date: 02/16/2022
 localization_priority: Normal
-ms.openlocfilehash: 2c9b3c89a154d624f99e196014c7d8024286d927
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 2e8cc0074f5b6f4f5598320f07c8bf5c0a7b301d
+ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62322337"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "64682239"
 ---
 # <a name="use-sso-to-get-the-identity-of-the-signed-in-user"></a>SSO を使用してサインインしているユーザーの ID を取得する
 
-API を`getAccessToken`使用して、ユーザーにサインインしている現在のユーザーの ID を含むアクセス トークンをOffice。 アクセス トークンは、サインインしているユーザーに関する ID クレーム (名前や電子メールなど) が含まれているため、ID トークンです。 ID トークンを使用して、独自の Web サービスを呼び出す際にユーザーを識別できます。 呼び出`getAccessToken`しを行う場合は、Officeで SSO を使用するアドインを構成するOffice。
+API を`getAccessToken`使用して、Officeにサインインしている現在のユーザーの ID を含むアクセス トークンを取得します。 アクセス トークンは、サインインしているユーザーに関する ID 要求 (名前や電子メールなど) が含まれているため、ID トークンでもあります。 ID トークンを使用して、独自の Web サービスを呼び出すときにユーザーを識別することもできます。 呼び出`getAccessToken`すには、Officeで SSO を使用するように、Office アドインを構成する必要があります。
 
-この記事では、ID トークンを取得し、作業ウィンドウにユーザーの名前、電子メール、および一意の ID を表示する Office アドインを作成します。
+この記事では、ID トークンを取得し、ユーザーの名前、電子メール、一意の ID を作業ウィンドウに表示するOffice アドインを作成します。
 
 > [!NOTE]
-> SSO と Office API は`getAccessToken`、すべてのシナリオで機能しません。 SSO が使用できない場合は、常にフォールバック ダイアログを実装してユーザーにサインインします。 詳細については、「認証と承認[」を参照してください。Office API を使用します](auth-with-office-dialog-api.md)。
+> Officeと API の `getAccessToken` SSO は、すべてのシナリオでは機能しません。 SSO が利用できない場合は、常にフォールバック ダイアログを実装してユーザーにサインインします。 詳細については、「[Office ダイアログ API を使用した認証と承認」を](auth-with-office-dialog-api.md)参照してください。
 
 ## <a name="create-an-app-registration"></a>アプリの登録を作成する
 
-Office で SSO を使用するには、Microsoft ID プラットフォーム が Office アドインとそのユーザーに認証および承認サービスを提供できるよう、Azure portal でアプリ登録を作成する必要があります。
+Officeで SSO を使用するには、Microsoft ID プラットフォームがOffice アドインとそのユーザーに認証サービスと承認サービスを提供できるように、Azure portalにアプリ登録を作成する必要があります。
 
-1. アプリを登録するには、 [Azure portal - アプリ登録ページに移動](https://go.microsoft.com/fwlink/?linkid=2083908) します。
+1. アプリを登録するには、[Azure portal - アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908) ページに移動します。
 
-1. 管理者資格情報を **_使用してテナント_** にサインインMicrosoft 365します。 たとえば、MyName@contoso.onmicrosoft.com です。
+1. **_管理者_** 資格情報を使用してMicrosoft 365テナントにサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
 
 1. **[新規登録]** を選択します。 **[アプリケーションを登録]** ページで、次のように値を設定します。
 
    - `Office-Add-in-SSO` に **[名前]** を設定します。
    - **[サポートされているアカウントの種類]** を **[任意の組織のディレクトリ内のアカウントと個人用の Microsoft アカウント (例: Skype、 Xbox、Outlook.com)]** に設定します。
-   - アプリケーションの種類を Web に設定 **し** 、[リダイレクト **URI] をに設定** します `https://localhost:[port]/dialog.html`。 Web `[port]` アプリケーションの正しいポート番号に置き換える。 yo office を使用してアドインを作成した場合、ポート番号は通常 3000 で、package.json ファイルに含まれています。 Visual Studio 2019 年に 2019 年にアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
+   - アプリケーションの種類を **Web** に設定し、[ **リダイレクト URI] を [リダイレクト URI]** に `https://localhost:[port]/dialog.html`設定します。 Web アプリケーションの正しいポート番号に置き換えます `[port]` 。 office を使用してアドインを作成した場合、通常、ポート番号は 3000 であり、package.json ファイルにあります。 Visual Studio 2019 でアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
    - **[登録]** を選択します。
 
-1. [Office **-アドイン SSO**] ページで、アプリケーション **(クライアント) ID** とディレクトリ **(テナント) ID** の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
+1. **Officeアドイン SSO ページで**、**アプリケーション (クライアント) ID** と **ディレクトリ (テナント)** ID の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
 
    > [!NOTE]
-   > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" 値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
+   > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excelなど) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" の値です。 また、そのアプリケーションが Microsoft Graph への承認されたアクセスを求めるときには、このアプリケーションの「クライアント ID」になります。
 
-1. **[管理]** の下の **[認証]** を選択します。 [暗黙的な **付与] セクション** で、Access トークンと ID トークン **の両方のチェック ボックスを****有効にします**。
+1. **[管理]** の下の **[認証]** を選択します。 [ **暗黙的な付与** ] セクションで、 **アクセス トークン** と **ID トークン** の両方のチェック ボックスをオンにします。
 
 1. フォームの最上部で **[保存]** を選択します。
 
-1. **[管理]** の下の **[API の公開]** を選択します。 [設定] **リンクを選択** します。 これにより、アプリケーション (クライアント) `api://[app-id-guid]``[app-id-guid]` ID という形式の **アプリケーション ID URI が生成されます**。
+1. **[管理]** の下の **[API の公開]** を選択します。 [ **設定** ] リンクを選択します。 これにより、フォーム`api://[app-id-guid]``[app-id-guid]`にアプリケーション ID URI (**アプリケーション (クライアント) ID)** が生成されます。
 
-1. 生成された ID で、ダブル `localhost:[port]/` スラッシュと GUID の間に挿入 (末尾にスラッシュ "/" が付加されている点に注意してください)。 Web `[port]` アプリケーションの正しいポート番号に置き換える。 yo office を使用してアドインを作成した場合、ポート番号は通常 3000 で、package.json ファイルに含まれています。 Visual Studio 2019 年に 2019 年にアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
-   完了したら、ID `api://localhost:[port]/[app-id-guid]`全体にフォーム (たとえば) が必要です `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
+1. 生成された ID で、二重スラッシュと GUID の間に挿入 `localhost:[port]/` (末尾にスラッシュ "/" が追加されていることに注意してください)。 Web アプリケーションの正しいポート番号に置き換えます `[port]` 。 office を使用してアドインを作成した場合、通常、ポート番号は 3000 であり、package.json ファイルにあります。 Visual Studio 2019 でアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
+   完了したら、ID 全体にフォーム `api://localhost:[port]/[app-id-guid]`が含まれている必要があります 。たとえば、次のようになります `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
 1. **[Scope の追加]** ボタンをクリックします。 開いたパネルで、`access_as_user`を **[スコープ名]** として入力します。
 
 1. **[同意できるのはだれですか?]** を **[管理者とユーザー]** に設定します。
 
-1. `access_as_user`管理者とユーザーの同意のプロンプトを構成するためのフィールドに、Office クライアント アプリケーションが現在のユーザーと同じ権限でアドインの Web API を使用できる範囲に適した値を入力します。 提案:
+1. 管理者とユーザーの同意プロンプトを構成するためのフィールドに、現在のユーザーと同じ権限を持つアドインの Web API をOfficeクライアント アプリケーションで使用できるようにするスコープに適`access_as_user`した値を入力します。 提案:
 
-   - **管理者の同意表示名**: Officeユーザーとして機能できます。
+   - **管理者の同意表示名**: Officeはユーザーとして機能できます。
    - **管理者の同意の説明**: 現在のユーザーと同じ権限で Office がアドインの Web API を呼び出すことを可能にします。
-   - **ユーザーの同意表示名**: Officeとして機能する場合があります。
-   - **ユーザーの同意の** 説明: Officeと同じ権限を持つアドインの Web API を呼び出す方法を有効にしてください。
+   - **ユーザー同意表示名**: Officeはユーザーとして機能できます。
+   - **ユーザーの同意の説明**: Officeが持っているのと同じ権限を持つアドインの Web API を呼び出すようにします。
 
 1. **[状態]** が **[有効]** に設定されていることを確認してください。
 
@@ -66,23 +66,24 @@ Office で SSO を使用するには、Microsoft ID プラットフォーム が
    > [!NOTE]
    > テキストフィールドのすぐ下に表示される **[スコープ名]** のドメイン部分は、以前に設定したアプリケーション ID URI に自動的に一致し、末尾に`/access_as_user`が追加されます。たとえば、`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`です。
 
-1. **[承認済みのクライアント アプリケーション]** セクションで、アドインの Web アプリケーションに対して承認するアプリケーションを特定します。 次のそれぞれの ID を事前承認する必要があります。
+1. [**承認済みクライアント アプリケーション**] セクションで、次の ID を入力して、すべてのMicrosoft Officeアプリケーション エンドポイントを事前に承認します。
 
-   - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-   - `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-   - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-   - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`(すべてのMicrosoft Officeアプリケーション エンドポイント)
 
-   ID ごとに、次の手順を実行します。
+    > [!NOTE]
+    > ID は`ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`、次のすべてのプラットフォームでOfficeを事前に承認します。 または、何らかの理由で一部のプラットフォームでOfficeへの承認を拒否する場合は、次の ID の適切なサブセットを入力することもできます。 承認を保留するプラットフォームの ID は残しておきます。 これらのプラットフォーム上のアドインのユーザーは、Web API を呼び出すことはできませんが、アドイン内の他の機能は引き続き機能します。
+    >
+    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
+    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-   a. [ **クライアント アプリケーションの追加]** ボタン `[app-id-guid]` を選択し、開くパネルで、アプリケーション (クライアント) ID に設定し、 のチェック ボックスをオンにします `api://localhost:44355/[app-id-guid]/access_as_user`。
+1. [ **クライアント アプリケーションの追加] ボタンを** 選択し、開いたパネルで [アプリケーション (クライアント) ID] に設定 `[app-id-guid]` し `api://localhost:44355/[app-id-guid]/access_as_user`、[.
 
-   b. **[アプリケーションの追加]** を選択します。
+1. **[アプリケーションの追加]** を選択します。
 
 1. **[管理]** の下の **[API アクセス許可]** を選択し、**[アクセス許可の追加]** を選択します。 開いたパネルで、**[Microsoft Graph]** を選択してから **[委任されたアクセス許可]** を選択します。
 
-1. アドインに必要な権限を検索するには、**[アクセス許可を選択]** の検索ボックスを使用します。 プロファイルのアクセス許可を検索して **選択** します。 この`profile`アクセス許可は、Office Web アプリケーションにトークンを取得するために必要です。
+1. アドインに必要な権限を検索するには、**[アクセス許可を選択]** の検索ボックスを使用します。 **プロファイル** のアクセス許可を検索して選択します。 Office `profile` アプリケーションがアドイン Web アプリケーションにトークンを取得するには、このアクセス許可が必要です。
 
    - profile
 
@@ -91,33 +92,33 @@ Office で SSO を使用するには、Microsoft ID プラットフォーム が
 
 1. パネル下部にある **[アクセス許可の追加]** ボタンを選択します。
 
-1. 同じページで、[ **管理者の同意を \<tenant-name\>** 許可する] ボタンを選択し、表示される確認のために **[は** い] を選択します。
+1. 同じページで、[管理者の **同意\<tenant-name\>の付与**] ボタンを選択し、表示される確認のために **[はい**] を選択します。
 
 ## <a name="create-the-office-add-in"></a>Office アドインを作成する
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. 2019 Visual Studioを開始し、[新しいプロジェクトの作成 **] を選択します**。
-1. Web アドイン プロジェクト テンプレートExcel **を検索して** 選択します。 **[次へ]** を選択します。 注: SSO は任意のOfficeアプリケーションで動作しますが、この記事では、このアプリケーションでExcel。
+1. 2019 Visual Studio開始し、**新しいプロジェクトの作成を** 選択します。
+1. **Excel Web アドイン** プロジェクト テンプレートを検索して選択します。 **[次へ]** を選択します。 注: SSO は任意のOffice アプリケーションで動作しますが、この記事ではExcelで機能します。
 1. **sso-display-user-info** などのプロジェクト名を入力し、[作成] を選択 **します**。 他のフィールドは既定値のままにできます。
-1. [アドイン **の種類の選択]** ダイアログ ボックスで、[新しい機能を追加する] を選択し、[**Excel] を** 選択 **します**。
+1. [**アドインの種類の選択**] ダイアログ ボックスで、[**Excelに新しい機能の追加**] を選択し、[完了] を選択 **します**。
 
-プロジェクトが作成され、ソリューションに 2 つのプロジェクトが含まれています。
+プロジェクトが作成され、ソリューションに 2 つのプロジェクトが含まれます。
 
-- **sso-display-user-info**: アドインをサイドローディングするマニフェストと詳細がExcel。
-- **sso-display-user-infoWeb**: アドイン ASP.NET Web ページをホストするプロジェクトの一覧です。
+- **sso-display-user-info**: アドインをExcelにサイドロードするためのマニフェストと詳細が含まれます。
+- **sso-display-user-infoWeb**: アドインの Web ページをホストする ASP.NET プロジェクト。
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
-必ず [開発 [環境をセットアップする] を選択します](../overview/set-up-your-dev-environment.md)。
+[開発環境を設定](../overview/set-up-your-dev-environment.md)していることを確認します。
 
 1. 次のコマンドを入力してプロジェクトを作成します。
 
-   ```command line
+   ```command line
    yo office --projectType taskpane --name 'sso-display-user-info' --host excel --js true
    ```
 
-プロジェクトは、 **sso-display-user-info という名前の新しいフォルダーに作成されます**。
+プロジェクトは、 **sso-display-user-info** という名前の新しいフォルダーに作成されます。
 
 ---
 
@@ -125,15 +126,15 @@ Office で SSO を使用するには、Microsoft ID プラットフォーム が
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. ソリューション **エクスプローラーで** **sso-display-user-info > sso-display-user-infoManifest > sso-display-user-info.xml**
+1. **sso-display-user-info > sso-display-user-infoManifest > sso-display-user-info.xmlを開ソリューション エクスプローラー** 
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
-1. コードVisual Studio、ファイルを **開** manifest.xmlします。
+1. Visual Studio コードで、**manifest.xml** ファイルを開きます。
 
 ---
 
-1. マニフェストの下部の近くに閉じる要素 `</Resources>` があります。 要素の下に、終了要素の前に `</Resources>` 次の XML を挿入 `</VersionOverrides>` します。 [Office以外のアプリケーションOutlook、セクションの末尾にマークアップを追加`<VersionOverrides ... xsi:type="VersionOverridesV1_0">`します。 Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
+1. マニフェストの下部付近には、終了 `</Resources>` 要素があります。 要素のすぐ下に、終了`</VersionOverrides>`要素の前に`</Resources>`次の XML を挿入します。 Outlook以外のOffice アプリケーションの場合は、セクションの末尾にマークアップを`<VersionOverrides ... xsi:type="VersionOverridesV1_0">`追加します。 Outlook では、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 
    ```xml
    <WebApplicationInfo>
@@ -147,8 +148,8 @@ Office で SSO を使用するには、Microsoft ID プラットフォーム が
    </WebApplicationInfo>
    ```
 
-1. プロジェクト `[port]` の正しいポート番号に置き換える。 yo office を使用してアドインを作成した場合、ポート番号は通常 3000 で、package.json ファイルに含まれています。 Visual Studio 2019 年に 2019 年にアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
-1. 両方のプレースホルダー `[application-id]` を、アプリ登録の実際のアプリケーション ID に置き換える。
+1. プロジェクトの正しいポート番号に置き換えます `[port]` 。 office を使用してアドインを作成した場合、通常、ポート番号は 3000 であり、package.json ファイルにあります。 Visual Studio 2019 でアドインを作成した場合、ポートは Web プロジェクトの **SSL URL** プロパティにあります。
+1. 両方 `[application-id]` のプレースホルダーを、アプリ登録の実際のアプリケーション ID に置き換えます。
 1. ファイルを保存します。
 
 挿入した XML には、次の要素と情報が含まれています。
@@ -159,22 +160,22 @@ Office で SSO を使用するには、Microsoft ID プラットフォーム が
 - **Scopes** - 1 つ以上の **Scope** 要素の親。
 - **Scope** - アドインが AAD に対して必要なアクセス許可を指定する。 `profile` と `openID` のアクセス許可は常に必要です。ご利用のアドインが Microsoft Graph にアクセスしない場合、これは唯一必要なアクセス許可になる場合があります。 アクセスする場合、Microsoft Graph へのアクセスに必要な許可として、`User.Read`、`Mail.Read` など **Scope** 要素も必要になります。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 たとえば、.NET 用の Microsoft 認証ライブラリ (MSAL) では、`offline_access` のアクセス許可が必要です。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
-## <a name="add-the-jwt-decode-package"></a>jwt-decode パッケージを追加する
+## <a name="add-the-jwt-decode-package"></a>jwt デコード パッケージを追加する
 
-API を呼び出して`getAccessToken`、ID トークンをユーザーから取得Office。 まず、jwt-decode パッケージを追加して、ID トークンのデコードと表示を容易にします。
+API を`getAccessToken`呼び出して、Officeから ID トークンを取得できます。 まず、jwt デコード パッケージを追加して、ID トークンのデコードと表示を容易にします。
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. ソリューションをVisual Studioします。
-1. メニューの [ツール] **メニューの [コンソール> NuGet パッケージ マネージャー > パッケージ マネージャーします**。
-1. コンソールで次のコマンド **をパッケージ マネージャーします**。
+1. Visual Studio ソリューションを開きます。
+1. メニューの [ツール] **> NuGet パッケージ マネージャー > パッケージ マネージャー [コンソール**] を選択します。
+1. **パッケージ マネージャー コンソール** に次のコマンドを入力します。
 
    `Install-Package jwt-decode -Projectname sso-display-user-infoWeb`
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
 1. ターミナル/コンソール ウィンドウから、アドイン プロジェクトのルート フォルダーに移動します。
-1. 次のコマンドを入力します。
+1. 次のコマンドを入力します
 
    `npm install jwt-decode`
 
@@ -182,18 +183,18 @@ API を呼び出して`getAccessToken`、ID トークンをユーザーから取
 
 ## <a name="add-ui-to-the-task-pane"></a>作業ウィンドウに UI を追加する
 
-作業ウィンドウを変更して、ID トークンから取得するユーザー情報を表示する必要があります。
+ID トークンから取得するユーザー情報を表示できるように作業ウィンドウを変更する必要があります。
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. ファイルを開Home.htmlします。
-1. ページのセクションに次のスクリプト タグ `<head>` を追加します。 これには、前に追加した jwt-decode パッケージが含まれます。
+1. Home.html ファイルを開きます。
+1. 次のスクリプト タグを `<head>` ページのセクションに追加します。 これには、前に追加した jwt デコード パッケージが含まれます。
 
    ```html
    <script src="Scripts/jwt-decode-2.2.0.js" type="text/javascript"></script>
    ```
 
-1. セクションを次 `<body>` の HTML に置き換える。
+1. セクションを次の `<body>` HTML に置き換えます。
 
    ```html
    <body>
@@ -211,8 +212,8 @@ API を呼び出して`getAccessToken`、ID トークンをユーザーから取
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
-1. **src/taskpane/taskpane.htmlファイルを開** きます。
-1. セクションを次 `<body>` の HTML に置き換える。
+1. **src/taskpane/taskpane.html** ファイルを開きます。
+1. セクションを次の `<body>` HTML に置き換えます。
 
    ```html
    <body>
@@ -232,11 +233,11 @@ API を呼び出して`getAccessToken`、ID トークンをユーザーから取
 
 ## <a name="call-the-getaccesstoken-api"></a>getAccessToken API を呼び出す
 
-最後の手順は、呼び出して ID トークンを取得します `getAccessToken`。
+最後の手順は、ID トークンを呼び出 `getAccessToken`して取得することです。
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. ファイルを **開Home.js** します。
+1. **Home.js** ファイルを開きます。
 1. ファイルのすべての内容を次のコードで置き換えます。
 
    ```javascript
@@ -282,7 +283,7 @@ API を呼び出して`getAccessToken`、ID トークンをユーザーから取
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
-1. **src/taskpane/taskpane.jsファイルを開** きます。
+1. **src/taskpane/taskpane.js** ファイルを開きます。
 1. ファイルのすべての内容を次のコードで置き換えます。
 
    ```javascript
@@ -329,23 +330,24 @@ API を呼び出して`getAccessToken`、ID トークンをユーザーから取
 
 # <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/vs2019)
 
-1. [ **デバッグ] を>を開始するか**、 **F5 キーを押します**。
+1. [ **デバッグ] > [デバッグの開始]** を選択するか、 **F5** キーを押します。
 
 # <a name="yo-office"></a>[yo office](#tab/yooffice)
 
-コマンド `npm start` ラインから実行します。
+コマンド ラインから実行 `npm start` します。
 
 ---
 
-1. アプリExcel、アプリの登録Officeと同じテナント アカウントでサインインします。
-1. [ホーム **] リボンで** 、[ **タスクウィンドウの表示] を選択して** アドインを開きます。
-1. アドインの作業ウィンドウで、[GET ID トークン] **を選択します**。
+1. Excel開始したら、アプリの登録の作成に使用したのと同じテナント アカウントを使用してOfficeにサインインします。
+1. **[ホーム**] リボンで 、[**タスクウィンドウの表示**] を選択してアドインを開きます。
+1. アドインの作業ウィンドウで、[ **ID トークンの取得**] を選択します。
 
 アドインには、サインインしたアカウントの名前、電子メール、ID が表示されます。
 
 > [!NOTE]
-> エラーが発生した場合は、この記事のアプリ登録の登録手順を確認してください。 アプリの登録を設定するときに詳細が見つからないのは、SSO を操作する際の問題の一般的な原因です。 それでもアドインを正常に実行できない場合は、「シングル サインオン (SSO)のエラー メッセージのトラブルシューティング」を [参照してください](troubleshoot-sso-in-office-add-ins.md)。
+> エラーが発生した場合は、この記事の登録手順でアプリの登録を確認してください。 アプリの登録を設定するときに詳細が見つからないことが、SSO での作業に関する一般的な原因です。 アドインを正常に実行できない場合は、 [シングル サインオン (SSO) のエラー メッセージのトラブルシューティングに関するページを](troubleshoot-sso-in-office-add-ins.md)参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-[クレームを使用してユーザーを確実に識別する (Subject および Object ID)](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id)
+[要求を使用してユーザーを確実に識別する (サブジェクト ID とオブジェクト ID)](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id)
+
