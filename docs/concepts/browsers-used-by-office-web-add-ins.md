@@ -3,71 +3,71 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a6dd2eceb320b9f88575c80f1f4a17becc06cbe5
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 38eefad27511935289d74a06744d1afc686dc5b7
+ms.sourcegitcommit: c1a41d3c52a1d3bd7ef8bebff257777bcde15e0a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483370"
+ms.lasthandoff: 04/13/2022
+ms.locfileid: "64822403"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
-Officeアドインは、iFrames を使用して表示される Web アプリケーションです。Office on the web。 デスクトップOfficeモバイル クライアントの場合、Officeアドインは埋め込みブラウザー コントロール (Webview とも呼ばれる) を使用します。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込みブラウザーとエンジンの両方が、ユーザーのコンピューターにインストールされているブラウザーによって提供されます。
+Office アドインは、Office on the webで実行するときに iFrame を使用して表示される Web アプリケーションです。 デスクトップ およびモバイル クライアントのOfficeでは、Office アドインは埋め込みブラウザー コントロール (Web ビューとも呼ばれます) を使用します。 アドインには JavaScript を実行するための JavaScript エンジンも必要です。 埋め込みブラウザーとエンジンの両方が、ユーザーのコンピューターにインストールされているブラウザーによって提供されます。
 
 どのブラウザが使用されているかは、以下によります。
 
 - コンピューターのオペレーティング システム。
-- アドインが 2013 以降の Office on the web、Microsoft 365、またはサブスクリプション以外で実行Officeかどうか。
+- アドインが 2013 以降のOffice on the web、Microsoft 365、または非サブスクリプションOffice実行されているかどうか。
 
 > [!IMPORTANT]
-> **Internet Explorerアドインで引き続きOffice使用される場合**
+> **Office アドインで引き続き使用される Internet Explorer**
 >
-> Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。この記事で説明したように、プラットフォームと Office バージョンの組み合わせ (Office 2019 年 1 回限り購入バージョンを含む) は、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせに対するサポートは、Internet Explorerに提出されたアドインに対して引き続き [必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
+> Microsoft は Internet Explorer のサポートを終了していますが、これはアドインOffice大きな影響を与えません。Office 2019 までの 1 回限りの購入バージョンなど、プラットフォームとOffice バージョンのいくつかの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポート、つまり Internet Explorer のサポートは、 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) に送信されたアドインに対して引き続き必要です。 次の 2 つの点 *が変化しています* 。
 >
-> - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合わせOffice *を* テストInternet Explorer。
-> - この[Script Labツールは](../overview/explore-with-script-lab.md)、この機能をサポートInternet Explorer。
+> - Internet Explorer でOffice on the webが開かなくなりました。 そのため、AppSource では、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。 ただし、AppSource は引き続き、Internet Explorer を使用するプラットフォームとOffice *デスクトップ* バージョンの組み合わせをテストします。
+> - [Script Lab ツール](../overview/explore-with-script-lab.md)は Internet Explorer をサポートしなくなりました。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
 |OS|Office のバージョン
-|Edge WebView2 (Chromiumベース) がインストールされていますか?|ブラウザー|
+|Edge WebView2 (Chromium ベース) がインストールされていますか?|ブラウザー|
 |:-----|:-----|:-----|:-----|
-|any|Office on the web|該当なし|Office が開かれているブラウザー。<br>(ただし、Office on the webは開かInternet Explorer。<br>そうしようとすると、Edge でOffice on the web開きます)。 |
-|Mac|any|該当なし|Safari|
-|iOS|any|該当なし|Safari|
+|any|Office on the web|該当なし|Office が開かれているブラウザー。<br>(ただし、Office on the webは Internet Explorer では開かないことに注意してください。<br>これを行おうとすると、Edge でOffice on the web開きます)。 |
+|Mac|any|該当なし|WKWebView を使用した Safari|
+|iOS|any|該当なし|WKWebView を使用した Safari|
 |Android|any|該当なし|Chrome|
-|Windows 7、8.1、10、11 | サブスクリプション以外のOffice 2013 ~ Office 2019|かまいません|Internet Explorer 11|
-|Windows 10, 11 | サブスクリプション以外のOffice 2021 以降|はい|Microsoft Edge <sup>1</sup> with WebView2 (Chromiumベース)|
+|Windows 7、8.1、10、11 | 非サブスクリプション Office 2013 ~ Office 2019|かまいません|Internet Explorer 11|
+|Windows 10, 11 | サブスクリプション以外のOffice 2021以降|はい|Microsoft Edge <sup>1</sup> と WebView2 (Chromium ベース)|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | 不要| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.116292<sup></sup>| かまいません|Internet Explorer 11|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629AND16.0.13530.204242&nbsp;&nbsp;<sup></sup><&nbsp;| かまいません|Microsoft Edge <sup>1、3</sup>、元の WebView (EdgeHTML)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| いいえ |Microsoft Edge <sup>1、3</sup>、元の WebView (EdgeHTML)|
-|Windows 8.1<br>Windows 10、<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| はい<sup>4</sup>|  Microsoft Edge <sup>1</sup> with WebView2 (Chromiumベース) |
+|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629AND16.0.13530.204242&nbsp;&nbsp;<sup></sup><&nbsp;| かまいません|Microsoft Edge <sup>1、3 と</sup>元の WebView (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| 不要 |Microsoft Edge <sup>1、3 と</sup>元の WebView (EdgeHTML)|
+|Windows 8.1<br>Windows 10、<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| はい<sup>4</sup>|  Microsoft Edge <sup>1</sup> と WebView2 (Chromium ベース) |
 
-<sup>1</sup> Microsoft Edgeされている場合、Windows ナレーター ("スクリーン リーダー" とも呼ばれる) `<title>` は、作業ウィンドウで開くページ内のタグを読み取ります。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
+<sup>1</sup> Microsoft Edgeが使用されている場合、Windows ナレーター ("スクリーン リーダー" とも呼ばれます) は、作業ウィンドウで開いたページでタグを読み取ります`<title>`。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
-<sup>2 詳細</sup>については、「[更新履歴](/officeupdates/update-history-office365-proplus-by-date)」ページと、「クライアント バージョンと更新Officeを見つける[方法」を](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)参照してください。
+<sup>2</sup> 詳細については、[更新履歴ページ](/officeupdates/update-history-office365-proplus-by-date)と[、Officeクライアントのバージョンと更新チャネルを見つける](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)方法を参照してください。
 
-<sup>3</sup> アドインにマニフェスト`<Runtimes>`に要素が含まれる場合、元の WebView (EdgeHTML) Microsoft Edgeを使用しない。 WebView2 で使用するMicrosoft Edge (Chromiumベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、Internet Explorerバージョンに関係なく、Windows 11 Microsoft 365します。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」を参照してください。
+<sup>3</sup> アドインにマニフェスト内の要素が`<Runtimes>`含まれている場合、元の WebView (EdgeHTML) でMicrosoft Edgeは使用されません。 WebView2 でMicrosoft Edgeを使用する条件 (Chromium ベース) が満たされている場合、アドインはそのブラウザーを使用します。 それ以外の場合は、WindowsまたはMicrosoft 365バージョンに関係なく Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」を参照してください。
 
-<sup>4</sup> Windows 11 よりWindows前のバージョンでは、WebView2 コントロールをインストールして、Office埋め込む必要があります。 Microsoft 365 バージョン 2101 以降、および 2021 以降の 1 回購入 Officeでインストールされますが、Microsoft Edge では自動的にはインストールされません。 以前のバージョンの Microsoft 365 または 1 回の購入 Office がある場合は、Microsoft Edge [WebView2 / Embed Web content ..でコントロールをインストールする手順を使用します。WebView2 Microsoft Edgeを使用します](https://developer.microsoft.com/microsoft-edge/webview2/)。 Microsoft 365 16.0.14326.xxxxx より前のビルドでは、レジストリ キーを作成し、HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2に設定する必要があります。**** `dword:00000001`
+<sup>4</sup> Windows 11より前のWindows バージョンでは、webView2 コントロールをインストールして、Officeに埋め込む必要があります。 Microsoft 365 バージョン 2101 以降、および 1 回限りの購入Office 2021以降でインストールされますが、Microsoft Edgeでは自動的にインストールされません。 以前のバージョンのMicrosoft 365または 1 回限りの購入Officeがある場合は、[Microsoft Edge WebView2 / Embed Web content ... でコントロールをインストールする手順を使用します。Microsoft Edge WebView2 を使用](https://developer.microsoft.com/microsoft-edge/webview2/)します。 16.0.14326.xxxxx より前のMicrosoft 365 ビルドでは、レジストリ キー **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** を作成し、その値`dword:00000001`を .
 
 > [!IMPORTANT]
-> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーの中に Internet Explorer 11 を使用するプラットフォームがある場合、ECMAScript 2015 以降の構文と機能を使用するには、2 つのオプションがあります。
+> Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 アドインのユーザーのいずれかが Internet Explorer 11 を使用するプラットフォームを持っている場合は、ECMAScript 2015 以降の構文と機能を使用するには、2 つのオプションがあります。
 >
-> - ECMAScript 2015 (ES6 とも呼ばれる) 以降の JavaScript または TypeScript でコードを記述し、バベルや [tsc](https://www.typescriptlang.org/index.html) などのコンパイラを使用してコードを ES5 JavaScript にコンパイル[](https://babeljs.io/)します。
-> - ECMAScript 2015 以降の JavaScript で記述しますが、IE でコード[](https://en.wikipedia.org/wiki/Polyfill_(programming))を実行できる [core-js](https://github.com/zloirock/core-js) などのポリフィル ライブラリも読み込む必要があります。
+> - ECMAScript 2015 (ES6 とも呼ばれます) または TypeScript でコードを記述し、 [バベル](https://babeljs.io/) や [tsc](https://www.typescriptlang.org/index.html) などのコンパイラを使用してコードを ES5 JavaScript にコンパイルします。
+> - ECMAScript 2015 以降の JavaScript で記述しますが、IE でコードを実行できるようにする [core-js](https://github.com/zloirock/core-js) などの[ポリフィル](https://en.wikipedia.org/wiki/Polyfill_(programming)) ライブラリも読み込みます。
 >
-> これらのオプションの詳細については、「Support [Internet Explorer 11」を参照してください](../develop/support-ie-11.md)。
+> これらのオプションの詳細については、 [Internet Explorer 11 のサポートに関するページを](../develop/support-ie-11.md)参照してください。
 >
-> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「アドインが実行中かどうかを実行時に確認する」を参照[Internet Explorer。](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「 [Internet Explorer でアドインが実行されているかどうかを実行時に確認](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)する」を参照してください。
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>問題Microsoft Edgeトラブルシューティング
+## <a name="troubleshooting-microsoft-edge-issues"></a>Microsoft Edgeの問題のトラブルシューティング
 
-### <a name="service-workers-are-not-working"></a>サービス ワーカーが動作していない
+### <a name="service-workers-are-not-working"></a>Service Worker が機能していない
 
-Office WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML) を使用する場合、アドインはサービス ワーカー Microsoft Edgeサポートされません。 これらは、Chromium [Edge WebView2 でサポートされています](/microsoft-edge/hosting/webview2)。
+Office アドインは、元の webView [(EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML)) Microsoft Edgeが使用されている場合、Service Workers をサポートしません。 [これらは、Chromium ベースの Edge WebView2](/microsoft-edge/hosting/webview2) でサポートされています。
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>作業ウィンドウにスクロール バーが表示されない
 
@@ -81,9 +81,9 @@ Office WebView [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML) を使用す�
 
 既知の原因の1つとして、Microsoft Edge では開発用コンピューター上では localhost にループバックの除外を与える必要があることが挙げられます。 [Cannot open add-in from localhost (localhostからアドインを開くことができません)](/office/troubleshoot/error-messages/cannot-open-add-in-from-localhost)の指示に従ってください。
 
-### <a name="get-errors-trying-to-download-a-pdf-file"></a>PDF ファイルをダウンロードしようとしてエラーを取得する
+### <a name="get-errors-trying-to-download-a-pdf-file"></a>PDF ファイルのダウンロード中にエラーが発生する
 
-エッジがブラウザーの場合、アドインで BLOB を PDF ファイルとして直接ダウンロードすることはできません。 回避策は、BLOB を PDF ファイルとしてダウンロードする簡単な Web アプリケーションを作成することです。 アドインで、メソッドを呼び出 `Office.context.ui.openBrowserWindow(url)` し、Web アプリケーションの URL を渡します。 これにより、Web アプリケーションがブラウザー ウィンドウの外部で開Office。
+Edge がブラウザーの場合、アドイン内の PDF ファイルとして BLOB を直接ダウンロードすることはできません。 回避策は、PDF ファイルとして BLOB をダウンロードする単純な Web アプリケーションを作成することです。 アドインでメソッドを呼び出 `Office.context.ui.openBrowserWindow(url)` し、Web アプリケーションの URL を渡します。 これにより、Officeの外側のブラウザー ウィンドウで Web アプリケーションが開きます。
 
 ## <a name="see-also"></a>関連項目
 
