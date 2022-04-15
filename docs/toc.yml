@@ -866,6 +866,8 @@ items:
       - name: Excel で開く
         href: excel/pnp-open-in-excel.md
         displayName: Excel
+      - name: Script LabスニペットをYo Officeにコピーする
+        href: overview/create-an-office-add-in-from-script-lab.md
   - name: リソース
     items:
       - name: 用語集

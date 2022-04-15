@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 02/26/2022
+ms.date: 04/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca9ea0fdc600d6044cf3a5ef405dd0f3a98e2b3
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
+ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746415"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64863288"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -717,7 +717,11 @@ ms.locfileid: "63746415"
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-1. ローカル Web サーバーが既に実行中の場合は、ノード コマンド ウィンドウを閉じて終了します。
+1. ローカル Web サーバーが既に実行されている場合は、コマンド プロンプトに次のコマンドを入力して停止します。 これにより、ノード コマンド ウィンドウが閉じられます。
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. マニフェスト ファイルが更新されているため、更新されたマニフェスト ファイルを使用してアドインを再度サイドロードする必要があります。 ローカル Web サーバーを起動し、アドインのサイドロードを行います。
 
@@ -822,7 +826,7 @@ ms.locfileid: "63746415"
     ```
 
 > [!NOTE]
-> その **popup.html** ファイルと、そのファイルで読み込む **popup.js** ファイルは、アドインの作業ウィンドウとは完全に別な実行時のブラウザ プロセスで実行されます。 **popup.js** が **app.js** ファイルと同じ **bundle.js** ファイルからトランスパイルされていた場合、アドインでは **bundle.js** の 2 つのコピーを読み込むことが必要になり、バンドル化の意味がなくなります。 そのため、このアドインでは **popup.js** を一切トランスパイルしていません。
+> **popup.html** ファイルと、そのファイルで読み込む **popup.js** ファイルは、アドインの作業ウィンドウとは完全に別な Microsoft Edge または Internet Explorer 11 プロセスで実行されます。**popup.js** が **app.js** ファイルと同じ **bundle.js** ファイルにトランスパイルされた場合、アドインは 2 つの **bundle.js** ファイルのコピーを読み込む必要があります。これはバンドルの目的に違反します。したがって、このアドインは **popup.js** ファイルをまったくトランスパイルしません。
 
 ### <a name="update-webpack-config-settings"></a>Webpackの機能設定を更新する
 
@@ -884,7 +888,11 @@ ms.locfileid: "63746415"
     ],
     ```
 
-1. ローカル Web サーバーが実行中の場合は、ノード コマンド ウィンドウを閉じて終了します。
+1. ローカル Web サーバーが実行されている場合は、コマンド プロンプトで次のコマンドを入力して停止します。 これにより、ノード コマンド ウィンドウが閉じられます。
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. 次のコマンドを実行してプロジェクトを再構築します。
 
