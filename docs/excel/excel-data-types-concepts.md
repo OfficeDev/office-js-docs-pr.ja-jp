@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 02/15/2022
+ms.date: 04/19/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b0827509c4592958a9529af20e3a76da4a4008be
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: eb1d459a75ef0268cc7ffa68153613aa975e5fe6
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743350"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963471"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -29,7 +29,24 @@ ms.locfileid: "63743350"
 
 ## <a name="core-concepts"></a>中心概念
 
-データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson`4 つの基本型に関する拡張情報を返すことができます。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson` は、4 つの基本型に関する拡張情報を返します。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+
+この`valuesAsJson` プロパティは、[CellValue](/javascript/api/excel/excel.cellvalue)型エイリアスを返します。これは、次のデータ型の[共用体](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)です。
+
+- [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
+- [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
+- [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
+- [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
+- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+- [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
+- [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue)
+- [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
+- [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
+- [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
+
+[CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) オブジェクトは、他の`*CellValue`型との[交差部分](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types)です。 データ型自体ではありません。 `CellValueExtraProperties` オブジェクトのプロパティは、セル値の上書きに関連する詳細を指定するために、すべてのデータ型で使用されます。
 
 ### <a name="json-schema"></a>JSON スキーマ
 

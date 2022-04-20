@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
-description: エンド ユーザーがアドインを実行するために必要なクライアント要件とサーバー要件Office説明します。
-ms.date: 02/15/2022
+description: エンド ユーザーがアドインOffice実行するために必要なクライアントとサーバーの要件について説明します。
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1bd7eb5f2949d6b0c70654c3aa3a276a3ee83c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742824"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963492"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -16,7 +16,7 @@ ms.locfileid: "63742824"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Office アドインが現在サポートされている場所の詳細なビューについては、「Office クライアント アプリケーションと Office アドインのプラットフォーム[の](../overview/office-add-in-availability.md)可用性」を参照してください。
+Office アドインが現在サポートされている場所の概要については、「Office アドインの[クライアント アプリケーションとプラットフォームの可用性Office](/javascript/api/requirement-sets)参照してください。
 
 ## <a name="server-requirements"></a>サーバーの要件
 
@@ -29,22 +29,22 @@ Office アドインをインストールおよび実行できるようにする�
 > [!TIP]
 > Visual Studio でアドインを開発およびデバッグする際、Visual Studio は IIS Express を使用してアドインの Web ページ ファイルをローカルで展開および実行するので、追加の Web サーバーは必要ありません。
 
-コンテンツ アドインと作業ウィンドウ アドインの場合、サポートされている Office クライアント アプリケーション (Excel、PowerPoint、Project、または Word) では、アドインの XML マニフェスト ファイルをアップロードするために SharePoint のアプリ カタログも必要か、統合アプリ[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)を使用してアドインを展開する必要があります。[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+コンテンツ および作業ウィンドウ アドインの場合、サポートされているOffice クライアント アプリケーション (Excel、PowerPoint、Project、Word) では、アドインの XML マニフェスト ファイルをアップロードするためにSharePointの[アプリ カタログ](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)も必要です。また、[統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)を使用してアドインを展開する必要があります。
 
-Outlook アドインをテストして実行するには、ユーザーの Outlook 電子メール アカウントが Exchange 2013 以降に存在し、Microsoft 365、Exchange Online、またはオンプレミスインストールを通じて使用できる必要があります。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
+Outlook アドインをテストして実行するには、ユーザーのOutlook電子メール アカウントが 2013 以降Exchangeに存在する必要があります。これは、Microsoft 365、Exchange Online、またはオンプレミスのインストールを通じて使用できます。 ユーザーまたは管理者は、サーバー上に Outlook アドインのマニフェスト ファイルをインストールします。
 
 > [!NOTE]
 > Outlook の POP および IMAP 電子メール アカウントは、Office アドインをサポートしていません。
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
 
-Windows ベースのデスクトップ、ラップトップ、またはタブレット デバイスで実行されるサポートされている Office デスクトップ クライアントまたは Web クライアント用の Office アドインを開発するには、次のソフトウェアが必要です。
+Windows ベースのデスクトップ、ノート PC、またはタブレット デバイスで実行される、サポートされているOffice デスクトップ クライアントまたは Web クライアント用のOffice アドインを開発するには、次のソフトウェアが必要です。
 
 - Windows x86 および x64 デスクトップおよび Surface Pro などのタブレット:
   - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
   - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013、またはそれ以降の Office クライアントのバージョン (特にこれらの Office デスクトップ クライアントを対象として Office アドインをテストまたは実行する場合)。Office デスクトップ クライアントはオンプレミスでインストールすることも、クイック実行によってクライアント コンピューターにインストールすることもできます。
 
-  有効なサブスクリプションをMicrosoft 365、Office クライアントにアクセスできない場合は、最新バージョンの Office を[ダウンロードしてインストールできます](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)。
+  有効なMicrosoft 365 サブスクリプションがあり、Office クライアントにアクセスできない場合は、[最新バージョンのOfficeをダウンロードしてインストール](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)できます。
 
 - Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
 
@@ -56,7 +56,7 @@ Windows ベースのデスクトップ、ラップトップ、またはタブレ
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
-Outlookの一部として配布される Mac 上のMicrosoft 365は、Outlookアドインをサポートします。mac Outlook で Outlook アドインを実行するには、Mac 自体で Outlook と同じ要件があります。オペレーティング システムは、少なくとも OS X v10.10 "Yosemite" である必要があります。 Mac 上の Outlook はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
+Microsoft 365の一部として配布される Mac 上のOutlookは、Outlook アドインをサポートします。Mac でOutlookでOutlookアドインを実行する場合、Mac 自体のOutlookと同じ要件があります。オペレーティング システムは OS X v10.10 "Marketplace" 以上である必要があります。 Mac 上の Outlook はレイアウト エンジンとして WebKit を使用して、アドイン ページを表示するので、追加のブラウザーの依存関係はありません。
 
 次は、Office アドインをサポートする Mac 上の Office の最小クライアント バージョンです。
 
@@ -66,28 +66,39 @@ Outlookの一部として配布される Mac 上のMicrosoft 365は、Outlookア
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>クライアントの要件: Office Web クライアントと SharePoint のブラウザー サポート
 
-ecMAScript 5.1、HTML5、CSS3 をサポートするブラウザー (Microsoft Edge、Chrome、Firefox、Safari (Mac OS) など、Internet Explorer を除くすべてのブラウザー。
+ECMAScript 5.1、HTML5、CSS3 をサポートする Internet Explorer を除くすべてのブラウザー (Microsoft Edge、Chrome、Firefox、Safari (Mac OS) など)。
 
-## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアント要件: スマートフォンWindowsタブレット以外
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアント要件: スマートフォンとタブレットの非Windows
 
-特に、Outlookおよび非タブレット デバイスで実行Windows、アドインのテストと実行には、次のソフトウェアOutlook必要です。
+スマートフォンや非Windowsタブレット デバイスで実行されるOutlookには、Outlook アドインのテストと実行に次のソフトウェアが必要です。
 
 | Office アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 上の Outlook|- Android タブレット<br>- Android スマートフォン|- Android 4.4 KitKat 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|ブラウザーは適用されません。 Android 用のネイティブ アプリを使用します。<sup>1</sup>|
-|Outlook on iOS|- iPadタブレット<br>- iPhoneスマートフォン|- iOS 11 以降|最新の更新プログラムのMicrosoft 365 Apps for businessまたはExchange Online|ブラウザーは適用されません。 iOS 用のネイティブ アプリを使用します。<sup>1</sup>|
-|Outlook on the web (モダン)<sup>2</sup>|- iPad 2 以降<br>- Android タブレット |- iOS 5 以降<br>- Android 4.4 KitKat 以降|オンMicrosoft 365、Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook on the web (クラシック)|- iPhone 4 以降<br>- iPad 2 以降<br>- iPod Touch 4 以降|- iOS 5 以降|2013 以降Exchange Serverオンプレミス の場合|- Safari|
+|Android 上の Outlook|- Android タブレット<br>- Android スマートフォン|- Android 4.4 KitKat 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 Android 用のネイティブ アプリを使用します。<sup>1</sup>|
+|Outlook on iOS|- タブレットをiPadする<br>- スマートフォンをiPhoneする|- iOS 11 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 iOS 用のネイティブ アプリを使用します。<sup>1</sup>|
+|Outlook on the web (モダン)<sup>2</sup>|- iPad 2 以降<br>- Android タブレット |- iOS 5 以降<br>- Android 4.4 KitKat 以降|Microsoft 365では、Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook on the web (クラシック)|- iPhone 4 以降<br>- iPad 2 以降<br>- iPod Touch 4 以降|- iOS 5 以降|オンプレミス Exchange Server 2013 以降 <sup>3</sup>|- Safari|
 
 > [!NOTE]
-> <sup>Android 用</sup> 1 OWA、iPad OWA、およびネイティブ アプリiPhone OWA は[廃止されました](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)。
+> Android 用 <sup>1</sup> OWA、iPad用 OWA、およびネイティブ アプリ用の OWA iPhone[非推奨](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)になりました。
 >
-> <sup>2</sup> Outlook on the webおよび Android iPhoneのモダン デバイスは、アドインのテストに必要Outlook使用できなくなりました。
+> iPhoneおよび Android スマートフォンの <sup>2</sup> つの最新のOutlook on the webは、Outlook アドインのテストに必要または利用できなくなりました。
+>
+> <sup>3</sup> つのアドインは、Android、iOS、およびオンプレミスのExchange アカウントを備えた最新のモバイル Web のOutlookではサポートされていません。
 
-[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
+> [!TIP]
+> メールボックスのツールバーを確認することで、Web ブラウザーでの Outlook がモダンかクラシックかを区別できます。
+>
+> **モダン**
+>
+> ![Outlook ツールバー (モダン) の部分的なスクリーンショット。](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **クラシック**
+>
+> ![Outlook ツールバー (クラシック) の部分的なスクリーンショット。](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](../overview/office-add-in-availability.md)
+- [Office アドインの Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)
 - [Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)

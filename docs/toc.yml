@@ -656,8 +656,6 @@ items:
                 href: outlook/add-mobile-support.md
           - name: アドインの要件
             href: outlook/add-in-requirements.md
-          - name: アドイン API
-            href: outlook/apis.md
           - name: Outlook REST API を呼び出す
             href: outlook/use-rest-api.md
           - name: Exchange Web サービスを呼び出す
