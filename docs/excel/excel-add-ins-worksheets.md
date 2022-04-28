@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API を使用してワークシートを操作する
-description: JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示Excelサンプル。
-ms.date: 02/17/2022
+description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコード サンプル。
+ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 565a186220fb9b9a33d97ad73954fe405658cf97
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
+ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743394"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "65076683"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -295,14 +295,14 @@ function onWorksheetChanged(eventArgs) {
 
 ## <a name="detect-formula-changes"></a>数式の変更を検出する
 
-アドインは、ワークシート内の数式の変更を追跡できます。 これは、ワークシートが外部データベースに接続されている場合に便利です。 ワークシート内の数式が変更されると、このシナリオのイベントによって外部データベースの対応する更新プログラムがトリガーされます。
+アドインは、ワークシート内の数式に対する変更を追跡できます。 これは、ワークシートが外部データベースに接続されている場合に便利です。 ワークシートで数式が変更されると、このシナリオのイベントによって外部データベースで対応する更新がトリガーされます。
 
-数式の変更を検出するには、 [ワークシート](excel-add-ins-events.md#register-an-event-handler) の [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) イベントのイベント ハンドラーを登録します。 イベントのイベント ハンドラーは、 `onFormulaChanged` イベントが発生すると [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) オブジェクトを受け取る。
+数式の変更を検出するには、ワークシートの [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) イベントのイベント [ハンドラーを登録](excel-add-ins-events.md#register-an-event-handler)します。 イベントの `onFormulaChanged` イベント ハンドラーは、イベントが発生したときに [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) オブジェクトを受け取ります。
 
 > [!IMPORTANT]
-> この `onFormulaChanged` イベントは、数式自体が変更された場合を検出します。数式の計算に起因するデータ値は検出しません。
+> このイベントは `onFormulaChanged` 、数式の計算に起因するデータ値ではなく、数式自体が変更されたときに検出されます。
 
-次のコード サンプルは、イベント ハンドラーを登録し、オブジェクトを使用して変更された数式の [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) 配列を取得し、[FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) プロパティを使用して変更された数式の詳細を出力する方法を示しています。`onFormulaChanged` `WorksheetFormulaChangedEventArgs`
+次のコード サンプルは、イベント ハンドラーを `onFormulaChanged` 登録し、オブジェクトを `WorksheetFormulaChangedEventArgs` 使用して変更された [数式の formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) 配列を取得し、変更された数式の詳細を [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) プロパティで出力する方法を示しています。
 
 > [!NOTE]
 > このコード サンプルは、1 つの数式が変更された場合にのみ機能します。
@@ -349,13 +349,13 @@ async function formulaChangeHandler(event) {
 
 以下の画像は、並べ替えイベントの `address` プロパティによって返される範囲を示しています。 まず、並べ替えの前のサンプル データを次に示します。
 
-![並べ替える前Excelテーブル のデータ。](../images/excel-sort-event-before.png)
+![並べ替える前に、Excelのテーブル データ。](../images/excel-sort-event-before.png)
 
-"**Q1**" ("**B**" の値) で上から下への並べ替えを実行すると、次の強調表示された行がによって返されます `WorksheetRowSortedEventArgs.address`。
+"**Q1**" ("**B**" の値) に対して上から下への並べ替えを実行すると、次の強調表示された行が返されます `WorksheetRowSortedEventArgs.address`。
 
 ![上から下への並べ替えの後の Excel のテーブル データ。 移動した行が強調表示されます。](../images/excel-sort-event-after-row.png)
 
-元のデータの "**Quinces**" (**"4**" の値) に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address`。
+元のデータの "**Quinces**" ("**4**" の値) に対して左から右への並べ替えを実行すると、次の強調表示された列が返されます `WorksheetColumnsSortedEventArgs.address`。
 
 ![左から右への並べ替えの後の Excel のテーブル データ。 移動した列が強調表示されます。](../images/excel-sort-event-after-column.png)
 
@@ -387,31 +387,33 @@ await Excel.run(async (context) => {
 
 ## <a name="find-all-cells-with-matching-text"></a>一致するテキストがあるすべてのセルを検索する
 
-`Worksheet` オブジェクトには、ワークシート内の指定された文字列を検索するための `find` メソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。 以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列がワークシートに存在しない場合、`ItemNotFound` エラーが `findAll` によってスローされます。 指定した文字列がワークシートに存在しない可能性がある場合は、自分のコードで適切にシナリオを処理できるように、[findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) メソッドを使用するようにしてください。
+`Worksheet`オブジェクトには、ワークシート内で[`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1))指定した文字列を検索するメソッドがあります。 このメソッドは `RangeAreas` オブジェクトを返します。これは、一度に編集できる `Range` オブジェクトのコレクションとなります。
+
+以下のコード サンプルは、文字列 **Complete** と等しいすべてのセルを検索し、そのセルの色を緑色にします。 指定した文字列が `findAll` ワークシートに存在しない場合、エラーがスロー `ItemNotFound` されることに注意してください。 指定した文字列がワークシートに存在するかどうか不明な場合は、 [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) メソッドを使用してそのシナリオを適切に処理します。
 
 ```js
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
     await context.sync();
-    foundRanges.format.fill.color = "green"
+    foundRanges.format.fill.color = "green";
 });
 ```
 
 > [!NOTE]
 > このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
 >
-> - オブジェクトを使用してワークシート内`Range`の範囲を取得する方法を示す例については、「[JavaScript API](excel-add-ins-ranges-get.md) を使用して範囲を取得するExcel参照してください。
+> - オブジェクトを使用して`Range`ワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して範囲を取得する](excel-add-ins-ranges-get.md)」を参照してください。
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
 ## <a name="filter-data"></a>データをフィルター処理する
 
-[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメーター `Worksheet.autoFilter.apply`を持つ、で作成されます。
+[AutoFilter](/javascript/api/excel/excel.autofilter) はワークシート内の範囲にわたってデータ フィルターを適用します。 これは、次のパラメーターを持つ `Worksheet.autoFilter.apply`、で作成されます。
 
 - `range`: フィルターが適用される範囲を、`Range` オブジェクトまたは文字列の範囲として指定します。
 - `columnIndex`: フィルター条件が評価される 0 から始まる列インデックス。
@@ -443,7 +445,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-次のコード サンプルは、 `clearColumnCriteria` メソッドを使用して、他の列でアクティブなフィルターを残しながら、1 つの列から自動フィルターをクリアする方法を示しています。
+次のコード サンプルでは、メソッドを使用 `clearColumnCriteria` して、1 つの列からのみ自動フィルターをクリアし、他の列でフィルターをアクティブのままにする方法を示します。
 
 ```js
 // This method clears the AutoFilter setting from one column.
@@ -493,11 +495,11 @@ await Excel.run(async (context) => {
 
 ワークシートの保護と、Excel の UI を使用してそれを変更する方法の詳細については、記事「[ワークシートを保護する](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6)」を参照してください。
 
-### <a name="detect-changes-to-the-worksheet-protection-state"></a>ワークシートの保護状態の変更を検出する
+### <a name="detect-changes-to-the-worksheet-protection-state"></a>ワークシート保護状態の変更を検出する
 
-ワークシートの保護状態は、アドインまたは UI を使用してExcelできます。 保護状態の変更を検出するには [、ワークシートのイベント](excel-add-ins-events.md#register-an-event-handler) の [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) イベント ハンドラーを登録します。 イベントのイベント ハンドラーは、 `onProtectionChanged` イベントが発生すると [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) オブジェクトを受け取る。
+ワークシートの保護状態は、アドインまたはExcel UI を使用して変更できます。 保護状態の変更を検出するには、ワークシート [のイベント](excel-add-ins-events.md#register-an-event-handler) のイベント ハンドラーを [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) 登録します。 イベントのイベント ハンドラーは、 `onProtectionChanged` イベントが [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 発生したときにオブジェクトを受け取ります。
 
-次のコード サンプルは、イベント ハンドラーを登録`onProtectionChanged` `WorksheetProtectionChangedEventArgs` `isProtected`し、オブジェクトを使用してイベントの 、 、`worksheetId``source`およびプロパティを取得する方法を示しています。
+次のコード サンプルは、イベント ハンドラーを`onProtectionChanged`登録し、オブジェクトを`WorksheetProtectionChangedEventArgs`使用してイベントの`isProtected`プロパティを`worksheetId``source`取得する方法を示しています。
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
