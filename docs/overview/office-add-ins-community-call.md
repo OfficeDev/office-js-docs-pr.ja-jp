@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office アドイン コミュニティの呼び出し
 description: 毎月のMicrosoft Office アドイン コミュニティは、議題、スケジュール、リソースを呼び出します。
-ms.date: 04/14/2022
+ms.date: 05/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b96854c2d341b228bd2f70fe8f2010e0dbc5de9
-ms.sourcegitcommit: 345f950b4722903dda77af81ef7d700e6ea4bc83
+ms.openlocfilehash: 0912acca84090b8b73b6209b98a715c0124fc254
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64884329"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187309"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office アドイン コミュニティの呼び出し
 
@@ -22,6 +22,7 @@ Microsoft Office アドイン コミュニティ呼び出しは、新機能、�
 
 以前のコミュニティの呼び出しを見逃しましたか? 次のブログ リソースを確認して、ディスカッションに取り組んでください。
 
+- [2022 年 4 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-13-2022/ba-p/3288498)
 - [2022 年 3 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-9-2022/ba-p/3255173)
 - [2022 年 2 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
