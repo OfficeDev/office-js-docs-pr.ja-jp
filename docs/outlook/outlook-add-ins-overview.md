@@ -1,16 +1,16 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 07/16/2021
+ms.date: 04/28/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 1f1d909f655558dd96705cc83ea2996cd21d6c85
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ead0787a84b51c890e7951bdaa52bd3e51407916
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496307"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187337"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -63,7 +63,7 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
 - 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス\*内、[アーカイブ メールボックス](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox)内、パブリック フォルダー内。
 
   > [!IMPORTANT]
-  > \* [要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートをプレビューしています。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](delegate-access.md)」を参照してください。
+  > \* [要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートは、Windowsお よび Mac の Outlook でプレビューになりました。 詳細については、「[共有フォルダーと共有メールボックスのシナリオを有効にする](delegate-access.md)」を参照してください。
 
 - カスタム フォームを使用する場合。
 
