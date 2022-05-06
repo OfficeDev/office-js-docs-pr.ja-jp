@@ -3,12 +3,12 @@ title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインOffice実行するために必要なクライアントとサーバーの要件について説明します。
 ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963492"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244773"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -52,7 +52,7 @@ Windows ベースのデスクトップ、ノート PC、またはタブレット
   > Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
 
 - 既定のブラウザーとして次のいずれか: Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
-- メモ帳などの HTML および JavaScript エディター、[Visual Studio および Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、またはサードパーティの Web 開発ツール。
+- [Visual Studio Code、Visual Studio](https://code.visualstudio.com/)、[Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、Microsoft 以外の Web 開発ツールなどの HTML および JavaScript エディター。
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 

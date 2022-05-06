@@ -1,38 +1,38 @@
 ---
-title: オンライン会議プロバイダー Outlookモバイル アドインを作成する
-description: オンライン会議サービス プロバイダー用Outlookモバイル アドインをセットアップする方法について説明します。
+title: オンライン会議プロバイダーのOutlookモバイル アドインを作成する
+description: オンライン会議サービス プロバイダーのOutlookモバイル アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 07/09/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba2d3b9889bd07065aca584d72f8213739c3532
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: ada539c323ce6fdf578c26c221eb6090280b5a0a
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484361"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244864"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダー Outlookモバイル アドインを作成する
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーのOutlookモバイル アドインを作成する
 
-オンライン会議のセットアップは、Outlook ユーザーの主要なエクスペリエンスであり、モバイルユーザーとのTeams作成[Outlookです。](/microsoftteams/teams-add-in-for-outlook) ただし、Microsoft 以外のサービスを使用Outlookでオンライン会議を作成すると、面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、アドイン ユーザーのオンライン会議Outlookを効率化できます。
+オンライン会議の設定は、Outlook ユーザーのコア エクスペリエンスであり、Outlook モバイル[を使用してTeams会議を簡単に作成](/microsoftteams/teams-add-in-for-outlook)できます。 ただし、Microsoft 以外のサービスを使用してOutlookでオンライン会議を作成するのは面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、Outlook アドイン ユーザーのオンライン会議作成エクスペリエンスを合理化できます。
 
 > [!IMPORTANT]
-> この機能は、Android と iOS でのみサポートされ、サブスクリプションMicrosoft 365されます。
+> この機能は、Microsoft 365 サブスクリプションを持つ Android および iOS でのみサポートされます。
 
-この記事では、Outlook モバイル アドインをセットアップして、ユーザーがオンライン会議サービスを使用して会議を整理して参加する方法について学習します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
+この記事では、ユーザーがオンライン会議サービスを使用して会議を整理して参加できるように、Outlook モバイル アドインを設定する方法について説明します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-クイック スタート[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)完了し、Yeoman ジェネレーターを使用してアドイン プロジェクトを作成し、Office作成します。
+Office アドイン用の Yeoman ジェネレーターを使用してアドイン プロジェクトを作成するOutlook[クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成するには、親要素の下のマニフェストで [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) 拡張ポイントを構成する必要があります `MobileFormFactor`。 他のフォーム ファクターはサポートされていません。
+ユーザーがアドインを使用してオンライン会議を作成できるようにするには、親要素`MobileFormFactor`の下のマニフェストで [MobileOnlineMeetingCommandSurface 拡張機能ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)を構成する必要があります。 その他のフォーム ファクターはサポートされていません。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
-1. プロジェクトの **manifest.xml** にあるファイルを開きます。
+1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. ノード全体 (開く `<VersionOverrides>` タグと閉じるタグを含む) を選択し、次の XML に置き換えてください。
+1. ノード全体 `<VersionOverrides>` (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -122,15 +122,15 @@ ms.locfileid: "64484361"
 ```
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」および「[Outlook](manifests.md) Mobile 用アドイン コマンドのサポート[の追加」を参照](add-mobile-support.md)してください。
+> Outlook アドインのマニフェストの詳細については、「[Outlook アドイン マニフェスト](manifests.md)」と「[Outlook Mobile のアドイン コマンドのサポートの追加](add-mobile-support.md)」を参照してください。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
 このセクションでは、アドイン スクリプトでユーザーの会議を更新して、オンライン会議の詳細を含める方法について説明します。
 
-1. 同じクイック スタート プロジェクトで、コード エディター **で ./src/commands/commands.js** ファイルを開きます。
+1. 同じクイック スタート プロジェクトから、コード エディターで **ファイル ./src/commands/commands.js** を開きます。
 
-1. ファイルのコンテンツ全体を次 **commands.js** JavaScript に置き換える。
+1. **commands.js** ファイルの内容全体を次の JavaScript に置き換えます。
 
     ```js
     // 1. How to construct online meeting details.
@@ -155,7 +155,7 @@ ms.locfileid: "64484361"
         }
     );
 
-    // 2. How to define a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -171,6 +171,8 @@ ms.locfileid: "64484361"
             }
         );
     }
+    // Register the function.
+    Office.actions.associate("insertContosoMeeting", insertContosoMeeting);
 
     // 3. How to implement a supporting function `updateBody`
     //    that appends the online meeting details to the current body of the meeting.
@@ -188,53 +190,38 @@ ms.locfileid: "64484361"
             }
         );
     }
-
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-
-    const g = getGlobal();
-
-    // The add-in command functions need to be available in global scope.
-    g.insertContosoMeeting = insertContosoMeeting;
     ```
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインをテストして検証 [するには、通常のガイダンスに従います](testing-and-tips.md)。 Android[、Outlook on the web](sideload-outlook-add-ins-for-testing.md)、Windows Mac でサイドローディングした後、Android Outlook iOS モバイル デバイスでデバイスを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeが自分のトグルに置き換えられるか確認します。
+アドインを [テストして検証するには、通常のガイダンスに](testing-and-tips.md)従います。 Outlook on the web、Windows、Mac で[サイドローディング](sideload-outlook-add-ins-for-testing.md)した後、Android または iOS モバイル デバイスでOutlookを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeの切り替えが自分のトグルに置き換えられていることを確認します。
 
-### <a name="create-meeting-ui"></a>会議 UI の作成
+### <a name="create-meeting-ui"></a>会議 UI を作成する
 
 会議の開催者として、会議を作成すると、次の 3 つの画像のような画面が表示されます。
 
-[![Android の会議の作成画面 - Contoso のトグル オフ。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso の読み込みトグル。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso のトグル オン。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Android の [会議の作成] 画面 - Contoso はオフに切り替えます。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android の [会議の作成] 画面 - Contoso の切り替えを読み込みます。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso がオンに切り替えます。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
-### <a name="join-meeting-ui"></a>会議の UI に参加する
+### <a name="join-meeting-ui"></a>会議に参加する UI
 
-会議の出席者として、会議を表示すると、次のような画面が表示されます。
+会議出席者として、会議を表示すると、次の図のような画面が表示されます。
 
-[![Android の参加会議画面のスクリーンショット。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Android の [参加会議] 画面のスクリーンショット。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> [参加] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については [、「オンライン会議テンプレートの登録」](#register-your-online-meeting-template) セクションを参照してください。
+> **[参加**] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については、「 [オンライン会議テンプレートの登録](#register-your-online-meeting-template) 」セクションを参照してください。
 
 ## <a name="register-your-online-meeting-template"></a>オンライン会議テンプレートを登録する
 
-サービスのオンライン会議テンプレートを登録する場合は、詳細に関する問題GitHub作成できます。 その後、登録のタイムラインを調整するためにお問い合わせください。
+サービスのオンライン会議テンプレートを登録する場合は、詳細に関するGitHubの問題を作成できます。 その後、登録タイムラインを調整するためにお客様に連絡します。
 
-1. この記事の **最後** にある [フィードバック] セクションに移動します。
-1. [このページ **] リンクを押** します。
-1. 新しい **問題のタイトル** を "my-service のオンライン会議テンプレートを登録する" `my-service` に設定し、サービス名に置き換える。
-1. 問題本文で、文字列 "[Enter feedback here]" `newBody` を、この記事の「オンライン会議の詳細の追加を実装する[](#implement-adding-online-meeting-details)」セクションの類似の変数で設定した文字列に置き換える必要があります。
-1. [新 **しい問題の送信] をクリックします**。
+1. この記事の最後にある **[フィードバック]** セクションに移動します。
+1. **[このページ**] リンクを押します。
+1. 新しい問題の **タイトル** を "サービスのオンライン会議テンプレートを登録する" に設定し、サービス名に `my-service` 置き換えます。
+1. 問題本文で、この記事の「[オンライン会議の詳細の追加を実装](#implement-adding-online-meeting-details)する」セクションの`newBody`変数で設定した文字列に文字列 "[フィードバックを入力してください]" を置き換えます。
+1. [ **新しい問題の送信]** をクリックします。
 
-![Contoso のサンプル コンテンツGitHub新しい問題の画面のスクリーンショット。](../images/outlook-request-to-register-online-meeting-template.png)
+![Contoso サンプル コンテンツを含む新しいGitHub問題画面のスクリーンショット。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>使用可能な API
 
@@ -245,12 +232,12 @@ ms.locfileid: "64484361"
   - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) ([場所](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([受信者](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([受信者](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.roamingSettings](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
-- 認証フローの処理
+  - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([件名](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.RoamingSettings](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
+- 認証フローを処理する
   - [ダイアログ API](../develop/dialog-api-in-office-add-ins.md)
 
 ## <a name="restrictions"></a>制限
@@ -258,10 +245,10 @@ ms.locfileid: "64484361"
 いくつかの制限が適用されます。
 
 - オンライン会議サービス プロバイダーにのみ適用されます。
-- 管理者がインストールしたアドインだけが会議の作成画面に表示され、既定の構成オプションまたはTeams置Skypeされます。 ユーザーがインストールしたアドインはアクティブ化されません。
-- アドイン アイコンは、16 進数コード `#919191` または他の色形式で同等のコードを使用してグレー [スケールで表示する必要があります](https://convertingcolors.com/hex-color-919191.html)。
-- 予定オーガナイザー (作成) モードでは、1 つの UI レス コマンドだけがサポートされます。
-- アドインは、1 分のタイムアウト期間内に予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開いたアドインなどのダイアログ ボックスで費やされた時間は、タイムアウト期間から除外されます。
+- 管理者がインストールしたアドインのみが会議の作成画面に表示され、既定のTeamsまたはSkypeオプションが置き換えられます。 ユーザーがインストールしたアドインはアクティブ化されません。
+- アドイン アイコンは、16 進コード `#919191` を使用するか、 [他の色形式](https://convertingcolors.com/hex-color-919191.html)で同等の色を使用してグレースケールにする必要があります。
+- 予定オーガナイザー (compose) モードでは、UI レス コマンドは 1 つだけサポートされます。
+- アドインは、1 分間のタイムアウト期間内に、予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開かれたアドインがダイアログ ボックスに費やされた時間は、タイムアウト期間から除外されます。
 
 ## <a name="see-also"></a>関連項目
 

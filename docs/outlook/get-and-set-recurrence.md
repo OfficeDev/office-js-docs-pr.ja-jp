@@ -3,19 +3,19 @@ title: Outlook アドインで定期的なアイテムを取得して設定す�
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ebdce8236d55fc6569756aa88fb721d8e6ec9f1
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 17c774b9a9b0bb87dd158e18114c18dd745f64fc
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496286"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244745"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
-毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 JavaScript API Officeを使用して、アドイン内の予定シリーズの定期的なパターンを管理できます。
+毎週のチーム プロジェクトの進捗会議や毎年の誕生日通知など、定期的な予定の作成や更新が必要な場合があります。 Office JavaScript API を使用して、アドイン内の予定シリーズの繰り返しパターンを管理できます。
 
 > [!NOTE]
-> この機能のサポートは、要件セット 1.7 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは [、要件セット 1.7](/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7) で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="available-recurrence-patterns"></a>使用可能な定期的なパターン
 
@@ -76,9 +76,9 @@ function callback(asyncResult)
 }
 ```
 
-## <a name="change-recurrence-as-the-organizer"></a>開催者として定期的に変更する
+## <a name="change-recurrence-as-the-organizer"></a>開催者として繰り返しを変更する
 
-次の例では、作成モードでは、予定オーガナイザーは、その系列またはその系列のインスタンスを指定して予定シリーズの定期的なオブジェクトを取得し、新しい定期的な期間を設定します。
+次の例では、作成モードでは、予定の開催者は、系列またはその系列のインスタンスを指定して、予定系列の繰り返しオブジェクトを取得し、新しい繰り返し期間を設定します。
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
