@@ -3,16 +3,16 @@ title: Office アドインの UI をデザインする
 description: Office アドインのビジュアル デザインのベスト プラクティスについて説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e54e39531ef6308fdc79d73ed3bc3ef2d3a0ae
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efbb0ee5f0ba75170b8bd4343392c07d9eda8501
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743065"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244752"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>Office アドインの UI をデザインする
 
-Office アドインは、ユーザーが Office クライアントで使用できるコンテキストに応じた機能を提供することで、Office のエクスペリエンスを拡張します。アドインにより、コストのかかるコンテキストの切り替えなしで、サード パーティの機能が Office で使用できるようになり、ユーザーの生産性は向上します。
+Office アドインは、ユーザーが Office クライアントで使用できるコンテキストに応じた機能を提供することで、Office のエクスペリエンスを拡張します。アドインにより、コストのかかるコンテキストの切り替えなしで、外部の機能が Office で使用できるようになり、ユーザーの生産性は向上します。
 
 アドインの UI 設計は、効率的で自然な対話式操作をユーザーに提供するために、Office とシームレスに統合する必要があります。[アドインのコマンド](add-in-commands.md)を利用して、アドインへのアクセスを提供します。また、HTML ベースのカスタム UI を作成するときに推奨されるベスト プラクティスを適用します。
 

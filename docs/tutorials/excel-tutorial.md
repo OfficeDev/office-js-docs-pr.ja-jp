@@ -1,15 +1,15 @@
 ---
 title: Excel アドインのチュートリアル
 description: Excel アドインを構築します。このアドインでは、テーブルの作成、表示、フィルター処理、並べ替えを行うことができ、グラフの作成、テーブルのヘッダーの固定、ワークシートの保護も可能となります。また、ダイアログを開くこともできます。
-ms.date: 04/13/2022
+ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
+ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863288"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244801"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -624,11 +624,11 @@ ms.locfileid: "64863288"
         args.completed();
     }
     ```
-
-1. 次の行を、ファイルの最後に追加します。
+    
+1. 関数のすぐ下に次の行を追加して登録します。
 
     ```js
-    g.toggleProtection = toggleProtection;
+    Office.actions.associate("toggleProtection", toggleProtection);
     ```
 
 1. `toggleProtection` 関数で、`TODO1` を次のコードに置き換えます。このコードでは、標準の切り替えパターンで、ワークシート オブジェクトの protection プロパティを使用します。`TODO2` については次のセクションで説明します。
@@ -888,7 +888,7 @@ ms.locfileid: "64863288"
     ],
     ```
 
-1. ローカル Web サーバーが実行されている場合は、コマンド プロンプトで次のコマンドを入力して停止します。 これにより、ノード コマンド ウィンドウが閉じられます。
+1. ローカル Web サーバーが実行されている場合は、コマンド プロンプトで次のコマンドを入力して停止します。これにより、ノード コマンド ウィンドウが閉じられます。
 
     ```command&nbsp;line
     npm stop
