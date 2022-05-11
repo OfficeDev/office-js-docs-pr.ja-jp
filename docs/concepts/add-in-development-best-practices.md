@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
-description: 開発時にベスト プラクティスを適用して、Officeを作成します。
-ms.date: 01/14/2022
+description: 開発時にベスト プラクティスを適用して、Office アドインを作成します。
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742851"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313206"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -21,7 +21,7 @@ ms.locfileid: "63742851"
 - ユーザーがタスクをすばやく効率的に完了するのに役立つアドインを作成します。Office アプリケーションに当てはまるシナリオに絞ります。次に例を示します。
   - コア オーサリング タスクをよりスピーディかつ簡単にし、中断を減らします。
   - Office 内で新しいシナリオを有効にします。
-  - アプリケーション内に補完的なOffice埋め込む。
+  - Office アプリケーション内に補完サービスを埋め込みます。
   - Office エクスペリエンスを向上させて生産性を高めます。
 - [魅力的な初回実行時エクスペリエンス](#create-an-engaging-first-run-experience)を作成して、ユーザーがアドインの価値をすぐに感じられるようにしてください。
 - [効果的な AppSource リスト](/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
@@ -36,11 +36,11 @@ ms.locfileid: "63742851"
 
 - 使い方や UI を個人用に設定する方法を説明する UI を提供します。
 
-  !["Do" vs. "Don't" 比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックして開始できるボタンを含むアドインを示しています。 "Don't" の例は、導入手順やボタンを含むアドインを示しています。](../images/contoso-part-catalog-do-dont.png)
+  !["Do" と "Don't" の比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックして開始できるボタンを含むアドインを示しています。 "Don't" の例は、入門ステップやボタンのないアドインを示しています。](../images/contoso-part-catalog-do-dont.png)
 
 - コンテンツ アドインがユーザーのドキュメント内のデータにバインドされている場合は、サンプル データまたはテンプレートを含めて、使用するデータ形式をユーザーに表示します。
 
-  !["Do" vs. "Don't" 比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックしてサンプル データを挿入できるボタンを含むアドインを示しています。 "Don't" の例は、サンプル データやボタンのないアドインを示しています。](../images/add-in-title.png)
+  !["Do" と "Don't" の比較を示すスクリーンショット。 "Do" の例は、ユーザーがクリックしてサンプル データを挿入できるボタンを含むアドインを示しています。 "Don't" の例は、サンプル データやボタンのないアドインを示しています。](../images/add-in-title.png)
 
 - [無料の試用版](/office/dev/store/decide-on-a-pricing-model)を提供します。アドインでサブスクリプションを要求する場合は、一部の機能をサブスクリプションなしでも利用できるようにします。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63742851"
 
 ## <a name="apply-ux-design-principles"></a>UX 設計原則を適用する
 
-- アドインの機能とルック アンド フィールと機能が、Office のエクスペリエンスと合っていることを確認します。 「[アドインの UI をOfficeする」を参照してください](../design/add-in-design.md)。
+- アドインの機能とルック アンド フィールと機能が、Office のエクスペリエンスと合っていることを確認します。 [「Office アドインの UI を設計する」を](../design/add-in-design.md)参照してください。
 
 - クロムよりもコンテンツを優先します。ユーザー エクスペリエンスの価値を高めない余分な UI 要素を追加しないようにします。
 
@@ -77,7 +77,7 @@ ms.locfileid: "63742851"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) プロパティを使用して、アドインが実行Officeアプリケーションがタッチが有効になっているかどうかを検出します。
+- [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) プロパティを使用して、アドインが実行されるOffice アプリケーションがタッチが有効になっているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -91,7 +91,7 @@ ms.locfileid: "63742851"
 - [サイドロード](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)を使用して、アドインを実際のデバイスでテストしてください。
 
 > [!NOTE]
-> デザイン要素に UI Fluent[を](../design/using-office-ui-fabric-react.md)React場合、これらの要素の多くはデザイン システムに組み込まれています。
+> [設計要素にFluent UI React](../design/using-office-ui-fabric-react.md)を使用している場合、これらの要素の多くはデザイン システムに組み込まれています。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>アドインのパフォーマンスを最適化して監視する
 
@@ -101,7 +101,7 @@ ms.locfileid: "63742851"
 
 - 長時間実行する操作には、読み込みインジケーターを提供します。
 
-- コンテンツ配信ネットワーク (CDN) を使用して、イメージ、リソース、および共通ライブラリをホストします。 可能な限り多くのものを 1 つの場所から読み込みます。
+- コンテンツ配信ネットワーク (CDN) を使用して、イメージ、リソース、共通ライブラリをホストします。 可能な限り多くのものを 1 つの場所から読み込みます。
 
 - Web ページを最適化するには、標準的な Web の慣習に従います。運用環境では、ライブラリの縮小バージョンのみを使用します。必要なリソースのみを読み込み、リソースが読み込まれる方法を最適化します。
 
@@ -120,7 +120,7 @@ ms.locfileid: "63742851"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
-- アドインとドキュメント間のデータ交換を最小限Officeします。 詳細については、「 [context.sync メソッドをループで使用しないようにする」を参照してください](correlated-objects-pattern.md)。
+- アドインとOffice ドキュメント間のデータ交換を最小限に抑えます。 詳細については、「 [ループでの context.sync メソッドの使用を避ける](correlated-objects-pattern.md)」を参照してください。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 
@@ -134,9 +134,9 @@ ms.locfileid: "63742851"
 
 - ユーザーがアドインを見つけて使うことができる Web サイトを作成します。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>サポートされている JavaScript を使用Internet Explorer
+## <a name="support-internet-explorer-recommended-but-not-required"></a>Internet Explorer をサポートする (推奨されるが必須ではない)
 
-[!INCLUDE [How to support IE](../includes/es5-support.md)]
+[サポート Internet Explorer 11](../develop/support-ie-11.md) を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,56 +1,59 @@
 ---
-title: Internet Explorer 11 テスト
-description: 11 でOfficeアドインをテストInternet Explorerします。
-ms.date: 11/02/2021
+title: Internet Explorer 11 のテスト
+description: Internet Explorer 11 でOffice アドインをテストします。
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 994fde9ee255844f70f1d04f5898f7fffe0e3c5f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b8d027d4d583d42aa4efbe29e080afcd17297a74
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745320"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313218"
 ---
-# <a name="test-your-office-add-in-on-internet-explorer-11"></a>11 でOfficeアドインをテストInternet Explorerする
+# <a name="test-your-office-add-in-on-internet-explorer-11"></a>Internet Explorer 11 でOffice アドインをテストする
 
 > [!IMPORTANT]
-> **Internet Explorerアドインで引き続きOffice使用される場合**
+> **Office アドインで引き続き使用される Internet Explorer**
 >
-> Microsoft は、アドインのサポートInternet Explorer終了していますが、これはアドインのOffice大きな影響を及ぼします。Office アドインで使用されるブラウザーで説明したように、プラットフォームと Office バージョンの一部の組み合わせ (Office 2019 までの 1 回限り購入バージョンを含む) は、Internet Explorer 11 に付属する webview コントロールを引き続き使用してアドインをホスト[](../concepts/browsers-used-by-office-web-add-ins.md)します。さらに、これらの組み合わせのサポートは、AppSource にInternet Explorerアドインに対して引き続き[必要です](/office/dev/store/submit-to-appsource-via-partner-center)。 次の *2 つの点が変化* しています。
+> Office 2019 までの 1 回限りの購入バージョンなど、一部のプラットフォームとOffice バージョンの組み合わせでは、Office アドイン[で使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
 >
-> - Office on the webで開かなくなったInternet Explorer。 そのため、AppSource はブラウザーとしてアプリケーションを使用してOffice on the webアドインInternet Explorerテストしなくなりました。 ただし、AppSource は引き続き、プラットフォームとデスクトップ バージョンの組み合わせOffice *を* テストInternet Explorer。
-> - この[Script Labツールは](../overview/explore-with-script-lab.md)、この機能をサポートInternet Explorer。
+> - Internet Explorer でOffice on the webが開かなくなりました。 その結果、[AppSource は](/office/dev/store/submit-to-appsource-via-partner-center)、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。
+> - AppSource は引き続き Internet Explorer を使用するプラットフォームとOffice *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
+> - [Script Lab ツール](../overview/explore-with-script-lab.md)は Internet Explorer をサポートしなくなりました。
 
-AppSource を使用してアドインを販売する予定がある場合、または以前のバージョンの Windows および Office をサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 コマンド ラインを使用して、アドインで使用される最新のランタイムから、このテスト用の Internet Explorer 11 ランタイムに切り替えます。 Windows および Office のバージョンで Internet Explorer 11 Web ビュー コントロールを使用する方法については、「Office アドインで使用[される](../concepts/browsers-used-by-office-web-add-ins.md)ブラウザー」を参照してください。
+以前のバージョンのWindowsとOfficeをサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 コマンド ラインを使用すると、アドインで使用されるよりモダンなランタイムから、このテスト用の Internet Explorer 11 ランタイムに切り替えることができます。 Internet Explorer 11 Web ビュー コントロールを使用するWindowsとOfficeのバージョンについては、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 > [!IMPORTANT]
 > Internet Explorer 11はES5以降のJavaScriptバージョンをサポートしていません。 ECMAScript 2015 以降の構文と機能を使用する場合は、次の 2 つのオプションがあります。
 >
-> - ECMAScript 2015 (ES6 とも呼ばれる) 以降の JavaScript または TypeScript でコードを記述し、バベルや [tsc](https://www.typescriptlang.org/index.html) などのコンパイラを使用してコードを ES5 JavaScript にコンパイル[](https://babeljs.io/)します。
-> - ECMAScript 2015 以降の JavaScript で記述しますが、IE でコード[](https://en.wikipedia.org/wiki/Polyfill_(programming))を実行できる [core-js](https://github.com/zloirock/core-js) などのポリフィル ライブラリも読み込む必要があります。
+> - ECMAScript 2015 (ES6 とも呼ばれます) または TypeScript でコードを記述し、 [バベル](https://babeljs.io/) や [tsc](https://www.typescriptlang.org/index.html) などのコンパイラを使用してコードを ES5 JavaScript にコンパイルします。
+> - ECMAScript 2015 以降の JavaScript で記述しますが、IE でコードを実行できるようにする [core-js](https://github.com/zloirock/core-js) などの[ポリフィル](https://en.wikipedia.org/wiki/Polyfill_(programming)) ライブラリも読み込みます。
 >
-> これらのオプションの詳細については、「Support [Internet Explorer 11」を参照してください](../develop/support-ie-11.md)。
+> これらのオプションの詳細については、 [Internet Explorer 11 のサポートに関するページを](../develop/support-ie-11.md)参照してください。
 >
-> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「アドインが実行中かどうかを実行時に確認する」を参照[Internet Explorer。](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)
+> また、Internet Explorer 11 は、メディア、録音、および位置情報などの HTML 5 機能の一部をサポートしていません。 詳細については、「 [Internet Explorer でアドインが実行されているかどうかを実行時に確認](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)する」を参照してください。
 
 > [!NOTE]
-> Office on the web Internet Explorer 11 では開くことができませんので、Office on the web でアドインをテストする必要Internet Explorer。
+> - Office on the web Internet Explorer 11 で開くことができないので、Internet Explorer を使用してOffice on the webでアドインをテストすることはできません (およびテストする必要はありません)。
+>
+> - Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
 
-## <a name="switch-to-the-internet-explorer-11-webview"></a>11 webview Internet Explorerに切り替える
+## <a name="switch-to-the-internet-explorer-11-webview"></a>Internet Explorer 11 Webview に切り替える
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-Webview に切り替える方法は 2 Internet Explorerがあります。 コマンド プロンプトで簡単なコマンドを実行するか、既定でコマンド を使用OfficeバージョンInternet Explorerインストールできます。 最初の方法をお勧めします。 ただし、次のシナリオでは 2 つ目を使用する必要があります。
+Internet Explorer Webview を切り替えるには、2 つの方法があります。 コマンド プロンプトで簡単なコマンドを実行することも、Internet Explorer を既定で使用するバージョンのOfficeをインストールすることもできます。 最初の方法をお勧めします。 ただし、次のシナリオでは 2 つ目を使用する必要があります。
 
-- プロジェクトは、プロジェクトと IIS Visual Studio開発されました。 この機能は、node.jsに基づいて行う必要があります。
-- テストで絶対に堅牢になる必要があります。
+- プロジェクトは、Visual Studioと IIS で開発されました。 node.jsベースではありません。
+- テストで絶対に堅牢になりたいと考えています。
 - 何らかの理由でコマンド ライン ツールが機能しない場合。
 
-### <a name="switch-via-the-command-line"></a>コマンド ライン経由で切り替える
+### <a name="switch-via-the-command-line"></a>コマンド ラインを使用して切り替える
 
 [!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
 
-### <a name="install-a-version-of-office-that-uses-internet-explorer"></a>アプリケーションを使用するバージョンOfficeインストールInternet Explorer
+### <a name="install-a-version-of-office-that-uses-internet-explorer"></a>Internet Explorer を使用するバージョンのOfficeをインストールする
 
 [!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 

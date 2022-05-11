@@ -1,14 +1,14 @@
 ---
 title: Office アドインを実行するための要件
 description: エンド ユーザーがアドインOffice実行するために必要なクライアントとサーバーの要件について説明します。
-ms.date: 04/14/2022
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: a9a86c7a68282135904dba981eeecb27a28e94e5
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244773"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313199"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Office アドインを実行するための要件
 
@@ -38,7 +38,7 @@ Outlook アドインをテストして実行するには、ユーザーのOutloo
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>クライアントの要件: Windows デスクトップおよびタブレット
 
-Windows ベースのデスクトップ、ノート PC、またはタブレット デバイスで実行される、サポートされているOffice デスクトップ クライアントまたは Web クライアント用のOffice アドインを開発するには、次のソフトウェアが必要です。
+Windows ベースのデスクトップ、ノート PC、またはTablet PC デバイスで実行される、サポートされているOffice デスクトップ クライアントまたは Web クライアント用のOffice アドインを開発するには、次のソフトウェアが必要です。
 
 - Windows x86 および x64 デスクトップおよび Surface Pro などのタブレット:
   - Windows 7 以降のバージョンで実行している Office 2013 以降のバージョンの、32 ビットまたは 64 ビット バージョン。
@@ -46,13 +46,15 @@ Windows ベースのデスクトップ、ノート PC、またはタブレット
 
   有効なMicrosoft 365 サブスクリプションがあり、Office クライアントにアクセスできない場合は、[最新バージョンのOfficeをダウンロードしてインストール](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)できます。
 
-- Internet Explorer 11 または Microsoft Edge (Windows および Office のバージョンによる) がインストールされている必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして動作する Office のクライアントは、Internet Explorer 11 または Microsoft Edge に組み込まれているブラウザー コンポーネントを使用します。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。
+- Microsoft Edgeをインストールする必要がありますが、既定のブラウザーである必要はありません。 Office アドインをサポートするために、ホストとして機能するOffice クライアントは、Microsoft Edgeの一部であるブラウザー コンポーネントを使用します。
 
   > [!NOTE]
-  > Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
+  > - 厳密に言えば、Internet Explorer 11 がインストールされているが、Microsoft Edgeされていないコンピューターでアドインを開発することは可能です。 ただし、IE は、特定の古いバージョンのWindowsとOfficeバージョンの組み合わせでのみアドインを実行するために使用されます。 詳細については、「[Office アドインによって使用されるブラウザー](browsers-used-by-office-web-add-ins.md)」を参照してください。 プライマリ アドイン開発環境のような古い環境を使用することはお勧めしません。 ただし、これらの古い組み合わせで動作しているアドインの顧客がいる可能性が高い場合は、Internet Explorer をサポートすることをお勧めします。 詳細については、「 [Internet Explorer 11 のサポート](../develop/support-ie-11.md)」を参照してください。
+  > 
+  > - Office Web アドインが機能するためには、Internet Explorer のセキュリティ強化の構成 (ESC) がオフになっている必要があります。 アドインを開発する際に Windows Server コンピューターをクライアントとして使用する場合は、Windows Server では既定で ESC がオンになっていることに注意してください。
 
 - 既定のブラウザーとして次のいずれか: Internet Explorer 11、または Microsoft Edge、Chrome、Firefox、Safari (Mac OS) の最新バージョンのうちいずれか。
-- [Visual Studio Code、Visual Studio](https://code.visualstudio.com/)、[Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、Microsoft 以外の Web 開発ツールなどの HTML および JavaScript エディター。
+- [Visual Studio Code](https://code.visualstudio.com/)、[Visual Studio、Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs)、Microsoft 以外の Web 開発ツールなどの HTML および JavaScript エディター。
 
 ## <a name="client-requirements-os-x-desktop"></a>クライアントの要件: OS X デスクトップ
 
@@ -68,23 +70,23 @@ Microsoft 365の一部として配布される Mac 上のOutlookは、Outlook �
 
 ECMAScript 5.1、HTML5、CSS3 をサポートする Internet Explorer を除くすべてのブラウザー (Microsoft Edge、Chrome、Firefox、Safari (Mac OS) など)。
 
-## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアント要件: スマートフォンとタブレットの非Windows
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>クライアント要件: 非WindowsスマートフォンとTablet PC
 
-スマートフォンや非Windowsタブレット デバイスで実行されるOutlookには、Outlook アドインのテストと実行に次のソフトウェアが必要です。
+スマートフォンや非Windows Tablet PC デバイスで実行されるOutlookに特に、Outlook アドインのテストと実行には、次のソフトウェアが必要です。
 
 | Office アプリケーション | デバイス | オペレーティング システム | Exchange アカウント | モバイル ブラウザー |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 上の Outlook|- Android タブレット<br>- Android スマートフォン|- Android 4.4 KitKat 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 Android 用のネイティブ アプリを使用します。<sup>1</sup>|
-|Outlook on iOS|- タブレットをiPadする<br>- スマートフォンをiPhoneする|- iOS 11 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 iOS 用のネイティブ アプリを使用します。<sup>1</sup>|
-|Outlook on the web (モダン)<sup>2</sup>|- iPad 2 以降<br>- Android タブレット |- iOS 5 以降<br>- Android 4.4 KitKat 以降|Microsoft 365では、Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Android 上の Outlook|- タブレットをAndroidする<br>- スマートフォンをAndroidする|- Android 4.4 KitKat 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 Androidにはネイティブ アプリを使用します。<sup>1</sup>|
+|Outlook on iOS|- タブレットをiPadする<br>- スマートフォンをiPhoneする|- iOS 11 以降|Microsoft 365 Apps for businessまたはExchange Onlineの最新の更新時|ブラウザーは適用されません。 iOSにはネイティブ アプリを使用します。<sup>1</sup>|
+|Outlook on the web (モダン)<sup>2</sup>|- iPad 2 以降<br>- タブレットをAndroidする |- iOS 5 以降<br>- Android 4.4 KitKat 以降|Microsoft 365では、Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
 |Outlook on the web (クラシック)|- iPhone 4 以降<br>- iPad 2 以降<br>- iPod Touch 4 以降|- iOS 5 以降|オンプレミス Exchange Server 2013 以降 <sup>3</sup>|- Safari|
 
 > [!NOTE]
-> Android 用 <sup>1</sup> OWA、iPad用 OWA、およびネイティブ アプリ用の OWA iPhone[非推奨](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)になりました。
+> <sup>Android</sup>の場合は 1 OWA、iPadの場合は OWA、ネイティブ アプリの場合は OWA iPhone[非推奨になりました](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)。
 >
-> iPhoneおよび Android スマートフォンの <sup>2</sup> つの最新のOutlook on the webは、Outlook アドインのテストに必要または利用できなくなりました。
+> iPhoneおよびAndroidスマートフォンの <sup>2</sup> つの最新のOutlook on the webは、Outlook アドインのテストに必要な、または使用できなくなりました。
 >
-> <sup>3</sup> つのアドインは、Android、iOS、およびオンプレミスのExchange アカウントを備えた最新のモバイル Web のOutlookではサポートされていません。
+> <sup>3</sup> つのアドインは、Android、iOS、およびオンプレミスのExchange アカウントを持つ最新のモバイル Web のOutlookではサポートされていません。
 
 > [!TIP]
 > メールボックスのツールバーを確認することで、Web ブラウザーでの Outlook がモダンかクラシックかを区別できます。

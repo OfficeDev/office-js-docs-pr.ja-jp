@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 10/22/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eefad27511935289d74a06744d1afc686dc5b7
-ms.sourcegitcommit: c1a41d3c52a1d3bd7ef8bebff257777bcde15e0a
+ms.openlocfilehash: 5e563c836b48a16f572aca492fa39f33b9661052
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "64822403"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313185"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -22,10 +22,13 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 > [!IMPORTANT]
 > **Office アドインで引き続き使用される Internet Explorer**
 >
-> Microsoft は Internet Explorer のサポートを終了していますが、これはアドインOffice大きな影響を与えません。Office 2019 までの 1 回限りの購入バージョンなど、プラットフォームとOffice バージョンのいくつかの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。 さらに、これらの組み合わせのサポート、つまり Internet Explorer のサポートは、 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) に送信されたアドインに対して引き続き必要です。 次の 2 つの点 *が変化しています* 。
+> Office 2019 までの 1 回限りの購入バージョンなど、プラットフォームとOffice バージョンのいくつかの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを使用してアドインをホストします。 Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
 >
-> - Internet Explorer でOffice on the webが開かなくなりました。 そのため、AppSource では、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。 ただし、AppSource は引き続き、Internet Explorer を使用するプラットフォームとOffice *デスクトップ* バージョンの組み合わせをテストします。
+> - Internet Explorer でOffice on the webが開かなくなりました。 その結果、[AppSource は](/office/dev/store/submit-to-appsource-via-partner-center)、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。
+> - AppSource は引き続き Internet Explorer を使用するプラットフォームとOffice *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
 > - [Script Lab ツール](../overview/explore-with-script-lab.md)は Internet Explorer をサポートしなくなりました。
+>
+> Internet Explorer のサポートとアドインでの正常なエラー メッセージの構成の詳細については、 [Internet Explorer 11 のサポート](../develop/support-ie-11.md)に関するページを参照してください。
 
 次の表は、さまざまなプラットフォームとオペレーティングシステムに使用されているブラウザを示しています。
 
@@ -39,13 +42,13 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 |Windows 7、8.1、10、11 | 非サブスクリプション Office 2013 ~ Office 2019|かまいません|Internet Explorer 11|
 |Windows 10, 11 | サブスクリプション以外のOffice 2021以降|はい|Microsoft Edge <sup>1</sup> と WebView2 (Chromium ベース)|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | 不要| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.116292<sup></sup>| かまいません|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629AND16.0.13530.204242&nbsp;&nbsp;<sup></sup><&nbsp;| かまいません|Microsoft Edge <sup>1、3 と</sup>元の WebView (EdgeHTML)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| 不要 |Microsoft Edge <sup>1、3 と</sup>元の WebView (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| いいえ |Microsoft Edge <sup>1、3 と</sup>元の WebView (EdgeHTML)|
 |Windows 8.1<br>Windows 10、<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| はい<sup>4</sup>|  Microsoft Edge <sup>1</sup> と WebView2 (Chromium ベース) |
 
-<sup>1</sup> Microsoft Edgeが使用されている場合、Windows ナレーター ("スクリーン リーダー" とも呼ばれます) は、作業ウィンドウで開いたページでタグを読み取ります`<title>`。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
+<sup>1</sup> Microsoft Edgeが使用されている場合、Windows ナレーター ("スクリーン リーダー" とも呼ばれます) は作業ウィンドウで開いたページでタグを読み取ります`<title>`。 Internet Explorer 11 が使用されている場合、ナレーターはアドイン マニフェストの `<DisplayName>` の値から提供される作業ウィンドウのタイトル バーを読み取ります。
 
 <sup>2</sup> 詳細については、[更新履歴ページ](/officeupdates/update-history-office365-proplus-by-date)と[、Officeクライアントのバージョンと更新チャネルを見つける](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)方法を参照してください。
 
