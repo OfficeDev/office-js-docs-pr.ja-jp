@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 12/13/2021
+ms.date: 05/10/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 620452cee57532eee02c72d32dcbd4854b3ae909
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483406"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313192"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -64,14 +64,14 @@ ms.locfileid: "64483406"
 > [!NOTE]
 > この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[リボンにカスタムタブを配置する](custom-tab-placement.md)」を参照してください。
 
-### <a name="integration-of-built-in-office-buttons-preview"></a>組み込みの Office ボタンの統合 (プレビュー)
+### <a name="integration-of-built-in-office-buttons"></a>組み込みの Office ボタンの統合
 
 組み込みの Office リボン ボタンをカスタム コマンド グループとカスタム リボン タブに挿入できます。
 
 > [!NOTE]
 > この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[組み込みの Office ボタンをカスタム タブに統合する](built-in-button-integration.md)」を参照してください。
 
-### <a name="contextual-tabs-preview"></a>コンテキスト タブ (プレビュー)
+### <a name="contextual-tabs"></a>操作別タブ
 
 Excel でグラフが選択されている場合など、特定のコンテキストでのみタブがリボンに表示されるように指定できます。
 
