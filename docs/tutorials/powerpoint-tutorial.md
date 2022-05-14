@@ -1,15 +1,15 @@
 ---
 title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-ms.date: 02/18/2022
+ms.date: 05/11/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: a42d7e0187779687fa179252879d969ea8c0828e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
+ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745091"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "65393933"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -24,7 +24,19 @@ ms.locfileid: "63745091"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
+- [Visual Studio 2019、*バージョン16.10.3 以前*、またはVisual Studio 2022](https://www.visualstudio.com/vs/)、**Office/SharePoint 開発** ワークロードがインストールされていること。 
+
+    > [!IMPORTANT]
+    > 16.10.3 以降の一部のバージョンの Visual Studio 2019 には、このチュートリアルの完了を妨げるバグがあります。 それ以前のバージョンの Visual Studio 2019 を使用するか、Visual Studio 2022 を使用します。
+
+    > [!NOTE]
+    > 既に Visual Studio がインストールされている場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio)を使用して、**Office/SharePoint 開発** ワークロードがインストールされていることを確認してください。
+
+- Microsoft 365 サブスクリプションに接続されている Office (Office for the web を含む)。
+
+    > [!NOTE]
+    > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
+
 
 ## <a name="create-your-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -124,6 +136,9 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 3. **[スキャフォールディングを追加]** ダイアログ ウィンドウで、「**Web API 2 Controller - Empty**」を選択し、**[追加]** ボタンを選択します。 
 
 4. **[コントローラーの追加]** ダイアログ ウィンドウでコントローラー名として「**PhotoController**」と入力し、**[追加]** ボタンを選択します。 Visual Studio によって **PhotoController.cs** ファイルが作成され、表示されます。
+
+    > [!NOTE]
+    > バージョン 16.10.3 以降の Visual Studio 2019 の一部のバージョンでは、スキャフォールディング プロセスが正しく完了しません。 Visual Studio 2022 は影響を受けません。
 
 5. **PhotoController.cs** ファイルの内容全体を、Bing サービスを呼び出す次のコードに置き換え、その日の写真を Base64 でエンコードされた文字列として取得します。 Office JavaScript API を使用してイメージをドキュメントに挿入する場合は、イメージ データを Base64 でエンコードされた文字列として指定する必要があります。
 
@@ -238,7 +253,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     ![[画像の挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
     ![Visual Studio で強調表示された [停止] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-stop.png)
 
@@ -276,7 +291,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     ![[イメージの挿入] ボタンがある PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
     ![Visual Studio で強調表示された [停止] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-stop.png)
 
@@ -332,7 +347,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     ![アドインで強調表示された [テキストの挿入] ボタンを含む PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-insert-text.png)
 
-5. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+5. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
     ![[停止] ボタンが強調表示されている Visual Studio のスクリーンショット。](../images/powerpoint-tutorial-stop.png)
 
@@ -387,7 +402,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     ![アドインで [Get Slide Metadata] (スライドのメタデータの取得) ボタンが強調表示された PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
     ![Visual Studio の [停止] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-stop.png)
 
@@ -501,7 +516,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
     ![[最後のスライドに移動] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. Visual Studio で **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+8. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
     ![Visual Studio ツール バー上で強調表示された [停止] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-stop.png)
 
