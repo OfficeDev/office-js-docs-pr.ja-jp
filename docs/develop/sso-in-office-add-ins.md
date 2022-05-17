@@ -1,14 +1,14 @@
 ---
 title: Office アドインでシングル サインオン (SSO) を有効にする
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
+ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496328"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "65432210"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
@@ -20,7 +20,7 @@ ms.locfileid: "64496328"
 
 次の図は、SSO の動作のしくみを示しています。 青い要素は、Office または Microsoft ID プラットフォームを表します。 灰色の要素は、書き込むコードを表し、アドインのクライアント側コード (作業ウィンドウ) とサーバー側コードを含みます。
 
-![SSO プロセスを示す図。](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="SSO プロセスを示す図。" border="false":::
 
 1. アドインでは、JavaScript コードは Office.js API である [getAccessToken Office.js](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) を呼び出します。 ユーザーが既に Office にサインインしている場合、Office ホストは、サインインしているユーザーの要求を含むアクセス トークンを返します。
 2. ユーザーがサインインしていない場合、ユーザーにサインインを求めるダイアログ ボックスが Office ホスト アプリケーションによって開かれます。 サインイン プロセスを完了するために、Office は Microsoft ID プラットフォームにリダイレクトします。
