@@ -1,29 +1,21 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 04/19/2022
+ms.date: 05/18/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: eb1d459a75ef0268cc7ffa68153613aa975e5fe6
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963471"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628088"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
-> [!NOTE]
-> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
->
-> プレビュー API を使用するには:
->
-> - コンテンツ配信ネットワーク (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) の **ベータ** ライブラリを参照する必要があります。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。 詳細については、[@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM パッケージ readme を参照してください。
-> - 最新の Office ビルドにアクセスするには、[Office Insider プログラム](https://insider.office.com)に参加する必要がある場合もあります。
->
-> Windows 版 Office でデータ型を試すには、16.0.14626.10000 以上の Excel ビルド番号が必要です。 Office on Mac でデータ型を試すには、16.55.21102600 以上の Excel ビルド番号が必要です。
+[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
 この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用してデータ型を操作する方法について説明します。 ここでは、データ型の開発の基本となる主要な概念を紹介します。
 
@@ -60,7 +52,7 @@ ms.locfileid: "64963471"
 
 次の JSON コード サンプルは、フォーマットされた数値の完全なスキーマを示しています。 コード サンプルの `myDate`書式設定された数値は、Excel UI で **1/16/1990** と表示されます。 データ型機能の最小互換性要件が満たされていない場合、計算では、フォーマットされた数値の代わりに `basicValue` が使用されます。
 
-```json
+```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate: Excel.FormattedNumberCellValue = {
@@ -79,7 +71,7 @@ const myDate: Excel.FormattedNumberCellValue = {
 
 次の JSON コード サンプルは、テキスト、画像、日付、および追加のテキスト値を含むエンティティ値の完全なスキーマを示しています。
 
-```json
+```TypeScript
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity: Excel.EntityCellValue = {
@@ -98,6 +90,8 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+エンティティ値には、エンティティのカードを作成する `layouts` プロパティも用意されています。 カードは、Excel UI のモーダル ウィンドウとして表示され、セルに表示される内容を超えて、エンティティ値に含まれる追加情報を表示できます。 詳細については、「[エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)」を参照してください。
+
 ## <a name="web-image-values"></a>Web 画像の値
 
 [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) オブジェクトは、[エンティティ](#entity-values)の一部として、または範囲内の独立した値として画像を格納する機能を作成します。このオブジェクトには、`address`、`altText`、`relatedImagesAddress` など、多くのプロパティが用意されています。
@@ -106,7 +100,7 @@ const myEntity: Excel.EntityCellValue = {
 
 次の JSON コード サンプルは、Web イメージの完全なスキーマを示しています。
 
-```json
+```TypeScript
 // This is an example of the complete JSON for a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
@@ -142,5 +136,6 @@ const myImage: Excel.WebImageCellValue = {
 ## <a name="see-also"></a>関連項目
 
 - [Excel アドインのデータ型の概要](excel-data-types-overview.md)
+- [エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
 - [カスタム関数とデータ型](custom-functions-data-types-concepts.md)

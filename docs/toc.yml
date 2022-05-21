@@ -230,8 +230,6 @@ items:
                     href: design/content-add-ins.md
                   - name: ダイアログ ボックス
                     items:
-                      - name: 概要
-                        href: design/dialog-boxes.md
                       - name: Office アドインで Office ダイアログ API を使用する
                         href: develop/dialog-api-in-office-add-ins.md
                       - name: Office ダイアログ API のベスト プラクティスとルール
@@ -413,6 +411,9 @@ items:
                 displayName: Excel
               - name: 概念 (プレビュー)
                 href: excel/excel-data-types-concepts.md
+                displayName: Excel
+              - name: エンティティ値カード (プレビュー)
+                href: excel/excel-data-types-entity-card.md
                 displayName: Excel
           - name: データの入力規則
             href: excel/excel-add-ins-data-validation.md
