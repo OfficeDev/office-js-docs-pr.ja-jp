@@ -1,20 +1,20 @@
 ---
 title: Office アドインのレイアウト ガイドライン
-description: アドインで作業ウィンドウまたはダイアログをレイアウトする方法に関するOfficeを取得します。
-ms.date: 07/08/2021
+description: Office アドインで作業ウィンドウまたはダイアログをレイアウトする方法に関するガイドラインを取得します。
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e9f64a4568015b4149eee537da2d80b0218ac2e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 134e8c01a5a6057f84ef2f4f62c290a161e94cfa
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742972"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628076"
 ---
 # <a name="layout"></a>レイアウト
 
 Office に埋め込まれている各 HTML コンテナーは、レイアウトを持つことになります。これらのレイアウトは、アドインのメイン画面です。そこでは、お客様による操作の開始、設定の変更、表示、スクロール、コンテンツ間の移動を可能にするエクスペリエンスを作成します。エクスペリエンスの継続性を保証するために、画面全体のレイアウトが整合性のあるアドインを設計します。お客様が使い慣れている既存の Web サイトがある場合、既存の Web ページのレイアウトを再利用することを検討してください。Office HTML コンテナー内に調和よく収まるようにそれらを適合させます。
 
-レイアウトのガイドラインについては、[作業ウィンドウ](task-pane-add-ins.md)、[コンテンツ](content-add-ins.md)、[ダイアログ ボックス](dialog-boxes.md)に関する記事をご覧ください。 Fluent [UI](using-office-ui-fabric-react.md) React または [Office UI Fabric JS](fabric-core.md) のコンポーネントを一般的なレイアウトとユーザー エクスペリエンス フローに組み立てる方法の詳細については、「[UX](ux-design-pattern-templates.md) デザイン パターン テンプレート」を参照してください。
+レイアウトのガイドラインについては、「 [作業ウィンドウ](task-pane-add-ins.md)、 [コンテンツ](content-add-ins.md)」を参照してください。 [FLUENT UI React](using-office-ui-fabric-react.md)、または [JS Office UI Fabric](fabric-core.md)コンポーネントを一般的なレイアウトとユーザー エクスペリエンス フローにアセンブルする方法の詳細については、「[UX デザイン パターン テンプレート](ux-design-pattern-templates.md)」を参照してください。
 
 レイアウトには、次の一般的なガイドラインを適用します。
 

@@ -1,29 +1,21 @@
 ---
 title: Excel アドインのデータ型の概要
 description: Excel JavaScript API のデータ型を使用すると、Office アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値、エンティティ値内の配列、および拡張エラーをデータ型として操作できます。
-ms.date: 12/27/2021
+ms.date: 05/19/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b42717b58afe75ce2f1e2097b861e51e9224a47d
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 99694e7302b7aab6b1dfd0a7ec46122dd5bc69d7
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745627"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628139"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel アドインのデータ型の概要 (プレビュー)
 
-> [!NOTE]
-> 現在、データ型 API はパブリック プレビューでのみ使用できます。 プレビュー API は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー API を使用しないでください。
->
-> プレビュー API を使用するには:
->
-> - コンテンツ配信ネットワーク (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) の **ベータ** ライブラリを参照する必要があります。 TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。 詳細については、[@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM パッケージ readme を参照してください。
-> - 最新の Office ビルドにアクセスするには、[Office Insider プログラム](https://insider.office.com)に参加する必要がある場合もあります。
->
-> Windows 版 Office でデータ型を試すには、16.0.14626.10000 以上の Excel ビルド番号が必要です。 Office on Mac でデータ型を試すには、16.55.21102600 以上の Excel ビルド番号が必要です。
+[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
 Excel JavaScript API のデータ型を使用すると、アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値などのオブジェクトとして複雑なデータ構造を整理できます。
 

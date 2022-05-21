@@ -1,25 +1,25 @@
 ---
 title: Excel JavaScript API を使用して表を操作する
-description: JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示Excelコード サンプル。
-ms.date: 02/17/2022
+description: Excel JavaScript API を使用してテーブルで一般的なタスクを実行する方法を示すコード サンプル。
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9352be37c4a0d86dbbf9a1c1d62d0ccb640387aa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: f4cbed134c8ca9f53e89fa97bd4c7ccaa35e45c7
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496937"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628111"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Excel JavaScript API を使用して表を操作する
 
-この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 and オブジェクトがサポートするプロパティとメソッドの完全な一覧については、「[Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table)」および「[TableCollection オブジェクト (JavaScript API for](/javascript/api/excel/excel.tablecollection) Excel)」を参照してください。`Table` `TableCollection`
+この記事では、Excel JavaScript API を使用して、表に関する一般的なタスクを実行する方法を示すサンプル コードを提供します。 オブジェクトがサポートする`Table`プロパティとメソッドの完全な一覧については、「[Table Object (Excel 用 JavaScript API)](/javascript/api/excel/excel.table)」と[「TableCollection オブジェクト (Excel用の JavaScript API)」](/javascript/api/excel/excel.tablecollection)を参照`TableCollection`してください。
 
 ## <a name="create-a-table"></a>表を作成する
 
-次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、**Sample** というワークシートに表を作成します。 表にはヘッダーがあり、4 つの列と 7 つのデータ行が含まれています。 コードが実行されているExcel アプリケーションで [要件セット](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2** がサポートされている場合、列の幅と行の高さは、テーブル内の現在のデータに最も適するように設定されます。
 
 > [!NOTE]
-> テーブルの名前を指定するには、 `name` 次の例に示すように、最初にテーブルを作成し、そのプロパティを設定する必要があります。
+> テーブルの名前を指定するには、次の例に示すように、最初にテーブルを作成してから、その `name` プロパティを設定する必要があります。
 
 ```js
 await Excel.run(async (context) => {
@@ -52,34 +52,38 @@ await Excel.run(async (context) => {
 
 ### <a name="new-table"></a>新しい表
 
-![新しいテーブル (Excel)。](../images/excel-tables-create.png)
+![Excelの新しいテーブル。](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>表に行を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 新しい行は表の末尾に追加されます。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に 7 つの新しい行を追加します。 `index`メソッドの[`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))パラメーターは `null`、テーブル内の既存の行の後に行を追加することを指定します。 `alwaysInsert`このパラメーターは 、テーブルの下ではなく、テーブルに新しい行を挿入することを示す値に設定`true`されます。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 > [!NOTE]
-> `index` [TableRow オブジェクトのプロパティ](/javascript/api/excel/excel.tablerow)は、テーブルの rows コレクション内の行のインデックス番号を示します。 オブジェクト `TableRow` には、行を識別 `id` するための一意のキーとして使用できるプロパティが含まれている必要があります。
+> [TableRow](/javascript/api/excel/excel.tablerow) オブジェクトのプロパティは`index`、テーブルの行コレクション内の行のインデックス番号を示します。 オブジェクトには `TableRow` 、行を `id` 識別するために一意のキーとして使用できるプロパティが含まれていません。
 
 ```js
+// This code sample shows how to add rows to a table that already exists 
+// on a worksheet named Sample.
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    expensesTable.rows.add(null /*add rows to the end of the table*/, [
-        ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
-        ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
-        ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
-        ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
-        ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
-        ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
-        ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
-    ]);
+    expensesTable.rows.add(
+        null, // index, Adds rows to the end of the table.
+        [
+            ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
+            ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
+            ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
+            ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
+            ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
+            ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
+            ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
+        ], 
+        true, // alwaysInsert, Specifies that the new rows be inserted into the table.
+    );
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -87,7 +91,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-with-new-rows"></a>新しい行を含む表
 
-![テーブルに新しい行が含Excel。](../images/excel-tables-add-rows.png)
+![Excelの新しい行を含むテーブル。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>表に列を追加する
 
@@ -98,7 +102,7 @@ await Excel.run(async (context) => {
 
 ### <a name="add-a-column-that-contains-static-values"></a>静的な値を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は、表内の既存の列すべての後に追加され、ヘッダー (「曜日」) を含み、列内のセルにデータが作成されます。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 ```js
 await Excel.run(async (context) => {
@@ -116,10 +120,8 @@ await Excel.run(async (context) => {
         ["Monday"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -127,11 +129,11 @@ await Excel.run(async (context) => {
 
 #### <a name="table-with-new-column"></a>新しい列を含む表
 
-![テーブルに新しい列が含Excel。](../images/excel-tables-add-column.png)
+![Excelの新しい列を含むテーブル。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>数式を含む列を追加する
 
-次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、**Sample** ワークシート内の **ExpensesTable** という表に新しい列を追加します。 新しい列は表の末尾に追加され、ヘッダー (「曜日」) を含み、数式を使用して列内のそれぞれのデータ セルを作成します。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 ```js
 await Excel.run(async (context) => {
@@ -149,10 +151,8 @@ await Excel.run(async (context) => {
         ['=IF(OR((TEXT([DATE], "dddd") = "Saturday"), (TEXT([DATE], "dddd") = "Sunday")), "Weekend", "Weekday")']
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -160,11 +160,11 @@ await Excel.run(async (context) => {
 
 #### <a name="table-with-new-calculated-column"></a>新しい集計列を含む表
 
-![テーブルに新しい計算列が含Excel。](../images/excel-tables-add-calculated-column.png)
+![Excelの新しい計算列を含むテーブル。](../images/excel-tables-add-calculated-column.png)
 
 ## <a name="resize-a-table"></a>テーブルのサイズを変更する
 
-アドインは、テーブルにデータを追加したり、セル値を変更したりすることなく、テーブルのサイズを変更できます。 テーブルのサイズを変更するには、 [Table.resize メソッドを使用](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) します。 次のコード サンプルは、テーブルのサイズを変更する方法を示しています。 このコード サンプルでは、この記事の前の [](#create-a-table)「テーブルの作成」セクションの **ExpensesTable** を使用し、テーブルの新しい範囲を **A1:D20 に設定します**。
+アドインは、テーブルにデータを追加したり、セル値を変更したりすることなく、テーブルのサイズを変更できます。 テーブルのサイズを変更するには、 [Table.resize](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) メソッドを使用します。 次のコード サンプルは、テーブルのサイズを変更する方法を示しています。 このコード サンプルでは、この記事の前半の「[テーブルの作成](#create-a-table)」セクションの **ExpensesTable** を使用し、テーブルの新しい範囲を **A1:D20** に設定します。
 
 ```js
 await Excel.run(async (context) => {
@@ -180,15 +180,15 @@ await Excel.run(async (context) => {
 ```
 
 > [!IMPORTANT]
-> テーブルの新しい範囲は元の範囲と重なり、ヘッダー (またはテーブルの上部) は同じ行に含む必要があります。
+> テーブルの新しい範囲は元の範囲と重複している必要があり、ヘッダー (またはテーブルの先頭) は同じ行に含まれている必要があります。
 
 ### <a name="table-after-resize"></a>サイズ変更後のテーブル
 
-![複数の空の行が含Excel。](../images/excel-tables-resize.png)
+![Excel内に複数の空の行を含むテーブル。](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>列名を更新する
 
-次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、表の最初の列の名前を **Purchase date** に更新します。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 ```js
 await Excel.run(async (context) => {
@@ -201,10 +201,8 @@ await Excel.run(async (context) => {
         
     expensesTable.columns.items[0].name = "Purchase date";
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -212,7 +210,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-with-new-column-name"></a>新しい列名を含む表
 
-![テーブルに新しい列名が含Excel。](../images/excel-tables-update-column-name.png)
+![Excelの新しい列名を持つテーブル。](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>表からデータを取得する
 
@@ -257,7 +255,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-and-data-output"></a>表とデータの出力
 
-![テーブル のデータをExcel。](../images/excel-tables-get-data.png)
+![Excelのテーブル データ。](../images/excel-tables-get-data.png)
 
 ## <a name="detect-data-changes"></a>データの変更の検出
 
@@ -305,7 +303,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-sorted-by-amount-descending"></a>Amount (降順) で並べ替えた表データ
 
-![テーブル のデータを並べ替Excel。](../images/excel-tables-sort.png)
+![Excel内の並べ替えられたテーブル データ。](../images/excel-tables-sort.png)
 
 ワークシートでデータを並べ替えると、イベント通知が発生します。 並べ替え関連のイベントと、アドインがイベント ハンドラーを登録してそのようなイベントに応答する方法の詳細については、「[並べ替えイベントを処理する](excel-add-ins-worksheets.md#handle-sorting-events)」を参照してください。
 
@@ -339,7 +337,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-with-filters-applied-for-category-and-amount"></a>Category と Amount にフィルターを適用した表データ
 
-![[テーブル] でフィルター処理されたExcel。](../images/excel-tables-filters-apply.png)
+![Excelでフィルター処理されたテーブル データ。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>表フィルターのクリア
 
@@ -358,11 +356,11 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-with-no-filters-applied"></a>フィルターが適用されていない表データ
 
-![テーブル のデータは、フィルター処理されていないExcel。](../images/excel-tables-filters-clear.png)
+![Excelでフィルター処理されていないテーブル データ。](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>フィルター処理された表から、表示されている範囲を取得します。
 
-次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すメソッド `getVisibleView()` を使用すると、列フィルターが適用されるたびにテーブルの表示内容を取得できます。
+次のコード サンプルでは、指定した表内で現在表示されているセルのデータのみを含む範囲を取得し、その範囲の値をコンソールに書き込みます。 次に示すように、このメソッドを `getVisibleView()` 使用すると、列フィルターが適用されるたびにテーブルの目に見える内容を取得できます。
 
 ```js
 await Excel.run(async (context) => {
@@ -423,11 +421,11 @@ await Excel.run(async (context) => {
 
 ### <a name="table-after-formatting-is-applied"></a>書式設定を適用後の表
 
-![書式が適用された後のテーブルは、Excel。](../images/excel-tables-formatting-after.png)
+![Excelで書式設定が適用された後のテーブル。](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>範囲を表に変換する
 
-次のコード サンプルでは、データ範囲を作成し、その範囲を表に変換します。
+次のコード サンプルでは、データ範囲を作成し、その範囲を表に変換します。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 ```js
 await Excel.run(async (context) => {
@@ -446,10 +444,8 @@ await Excel.run(async (context) => {
     let range = sheet.getRange("A1:E7");
     range.values = values;
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
@@ -463,15 +459,15 @@ await Excel.run(async (context) => {
 
 ### <a name="data-in-the-range-before-the-range-is-converted-to-a-table"></a>範囲データ (範囲を表に変換する前)
 
-![データの範囲内Excel。](../images/excel-ranges.png)
+![Excelの範囲内のデータ。](../images/excel-ranges.png)
 
 ### <a name="data-in-the-table-after-the-range-is-converted-to-a-table"></a>表内のデータ (範囲を表に変換した後)
 
-![テーブル内のデータは、Excel。](../images/excel-tables-from-range.png)
+![Excelのテーブル内のデータ。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>JSON データを表にインポートする
 
-次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 コードが実行されている Excel アプリケーションが [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)**要件セット ExcelApi 1.2** をサポートしている場合、列の幅と行の高さは、テーブル内の現在のデータに最適に合うように設定されます。
+次のコード サンプルでは、**Sample** ワークシートに表を作成し、2 行のデータを定義する JSON オブジェクトを使用して表にデータを入力します。 次に、列の幅と行の高さが、テーブル内の現在のデータに最も適するように設定されます。
 
 ```js
 await Excel.run(async (context) => {
@@ -501,10 +497,8 @@ await Excel.run(async (context) => {
 
     expensesTable.rows.add(null, newData);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
@@ -514,7 +508,7 @@ await Excel.run(async (context) => {
 
 ### <a name="new-table"></a>新しい表
 
-![インポートされた JSON データの新しいテーブルが、Excel。](../images/excel-tables-create-from-json.png)
+![Excelでインポートされた JSON データからの新しいテーブル。](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>関連項目
 

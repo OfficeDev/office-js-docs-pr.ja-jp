@@ -1,14 +1,14 @@
 ---
 title: Office のホストと API の要件を指定する
 description: アドインが期待どおりに動作するようにOfficeアプリケーションと API 要件を指定する方法について説明します。
-ms.date: 04/04/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 090557aca861e0d71ec011ed6d1d55c9a1f1df4c
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 60ad00c918b04b6f12ecb6eec6c40772448b2ab8
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682225"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628048"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Office アプリケーションと API 要件を指定する
 
@@ -59,7 +59,7 @@ Office アドインは、特定のOffice アプリケーション (Office ホス
 | 名前          | Office クライアント アプリケーション                     | 使用可能なアドインの種類 |
 |:--------------|:-----------------------------------------------|:-----------------------|
 | データベース      | Access Web アプリ                                | 作業ウィンドウ              |
-| Document      | Word on the web、Windows、Mac、iPad            | 作業ウィンドウ              |
+| 文書      | Word on the web、Windows、Mac、iPad            | 作業ウィンドウ              |
 | Mailbox       | Outlook on the web、Windows、Mac、Android、iOS | メール                   |
 | Notebook      | OneNote on the web                             | 作業ウィンドウ、コンテンツ     |
 | Presentation  | PowerPoint on the web、Windows、Mac、iPad      | 作業ウィンドウ、コンテンツ     |
@@ -86,7 +86,7 @@ Officeバージョンとビルド、またはアドインをインストール�
 
 アドインで必要な API を指定するプロセスを簡略化するために、ほとんどの API を *要件セット* にグループ化Office。 [共通 API オブジェクト モデル](understanding-the-javascript-api-for-office.md#api-models)の API は、それらがサポートする開発機能によってグループ化されます。 たとえば、テーブル バインドに接続されているすべての API は、"TableBindings 1.1" という要件セットにあります。 [アプリケーション固有のオブジェクト モデル](understanding-the-javascript-api-for-office.md#api-models)の API は、運用環境のアドインで使用するためにリリースされた時点でグループ化されます。
 
-要件セットはバージョン管理されています。 たとえば、 [ダイアログ ボックス](../design/dialog-boxes.md) をサポートする API は、要件セット DialogApi 1.1 にあります。 作業ウィンドウからダイアログへのメッセージングを有効にする追加の API がリリースされると、DialogApi 1.2 と DialogApi 1.1 のすべての API にグループ化されました。 *要件セットの各バージョンは、以前のすべてのバージョンのスーパーセットです。*
+要件セットはバージョン管理されています。 たとえば、 [ダイアログ ボックス](../develop/dialog-api-in-office-add-ins.md) をサポートする API は、要件セット DialogApi 1.1 にあります。 作業ウィンドウからダイアログへのメッセージングを有効にする追加の API がリリースされると、DialogApi 1.2 と DialogApi 1.1 のすべての API にグループ化されました。 *要件セットの各バージョンは、以前のすべてのバージョンのスーパーセットです。*
 
 要件セットのサポートは、Office アプリケーション、Office アプリケーションのバージョン、およびそれが実行されているプラットフォームによって異なります。 たとえば、DialogApi 1.2 は、Office 2021以前の 1 回限りの購入バージョンのOfficeではサポートされていませんが、DialogApi 1.1 は 2013 Officeに戻るすべての 1 回限りの購入バージョンでサポートされています。 アドインを、使用する API をサポートするプラットフォームとOffice バージョンのすべての組み合わせにインストールできるようにする必要があるため、アドインで必要な各要件セットの *最小* バージョンをマニフェストで常に指定する必要があります。 これを行う方法の詳細については、この記事の後半で説明します。
 
@@ -143,7 +143,7 @@ Office アプリケーションまたはプラットフォームが **Requiremen
 Office アドイン プラットフォームが提供する機能拡張機能は、次の 3 種類に分けることができます。
 
 - アドインがインストールされた直後に使用できる機能拡張。 この種の機能を利用するには、マニフェストで [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素を構成します。 この種の機能の例として、カスタム リボン ボタンとメニューである [アドイン コマンド](../design/add-in-commands.md)があります。
-- アドインが実行されていて、Office.js JavaScript API で実装されている場合にのみ使用できる機能拡張機能。たとえば、 [ダイアログ ボックスなどです](../design/dialog-boxes.md)。
+- アドインが実行されていて、Office.js JavaScript API で実装されている場合にのみ使用できる機能拡張機能。たとえば、 [ダイアログ ボックスなどです](../develop/dialog-api-in-office-add-ins.md)。
 - 拡張機能機能は、実行時にのみ使用できますが、 **VersionOverrides** 要素でOffice.js JavaScript と構成の組み合わせで実装されます。 これらの例は、[カスタム関数](../excel/custom-functions-overview.md)、[シングル サインオン](sso-in-office-add-ins.md)、およびカスタム [コンテキスト タブExcelです](../design/contextual-tabs.md)。
 
 アドインが機能の一部に特定の機能拡張機能を使用しているが、機能拡張機能を必要としないその他の便利な機能がある場合は、拡張機能機能をサポートしないプラットフォームとOfficeバージョンの組み合わせにインストールできるようにアドインを設計する必要があります。 これらの組み合わせに対する貴重なエクスペリエンスを提供できます。 
