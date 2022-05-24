@@ -3,12 +3,12 @@ title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 71b6a8a270bd044a972356db4e6d4394a01d8ace
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 708b02cabdfafad599171839b29195d49009f37c
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244843"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650585"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
@@ -57,7 +57,7 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 
 - 制御外のサービスにアクセスする必要があります。
 
-この方法を使用すると、アドインはユーザーに、[displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) メソッドを使用して OAuth2 フローを初期化するか、OAuth2 の暗黙のフローに [office-js-helpers ライブラリ](https://github.com/OfficeDev/office-js-helpers)を使用することでサービスにサインインするよう求めるダイアログを表示します。
+このメソッドを使用すると、アドインは [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) メソッドを使用して OAuth2 フローを初期化することで、ユーザーにサービスへのサインインを求めます。
 
 ## <a name="callback-tokens"></a>コールバック トークン
 

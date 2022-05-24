@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 05/01/2022
+ms.date: 05/19/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244794"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650641"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -1309,3 +1309,10 @@ ul {
 
 > [!div class="nextstepaction"]
 > [Outlook アドインの API](../outlook/apis.md)
+
+## <a name="see-also"></a>関連項目
+
+- [Outlook アドインのマニフェスト](../outlook/manifests.md)
+- [Outlook アドインの設計ガイドライン](../outlook/outlook-addin-design.md)
+- [Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)
+- [UI レスの Outlook アドインをデバッグする](../outlook/debug-ui-less.md)

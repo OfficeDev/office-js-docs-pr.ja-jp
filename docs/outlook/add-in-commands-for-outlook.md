@@ -1,14 +1,14 @@
 ---
 title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
-ms.date: 07/07/2020
+ms.date: 05/19/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483529"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650613"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
@@ -120,3 +120,5 @@ JavaScript 関数を実行するアドイン コマンド ボタンは、操作�
 
 - [アドイン コマンド デモの Outlook アドイン](https://github.com/officedev/outlook-add-in-command-demo)
 - [Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する](../develop/create-addin-commands.md)
+- [UI レスの Outlook アドインをデバッグする](debug-ui-less.md)
+- [チュートリアル: メッセージ作成 Outlook アドインのビルド](../tutorials/outlook-tutorial.md)

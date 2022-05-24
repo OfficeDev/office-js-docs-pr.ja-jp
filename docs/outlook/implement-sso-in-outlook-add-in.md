@@ -1,26 +1,21 @@
 ---
 title: 'シナリオ: サービスにシングル サインオンを実装する'
 description: Outlook アドインが提供するシングル サインオン トークンと Exchange ID トークンを使用して、サービスに SSO を実装する方法について説明します。
-ms.date: 09/03/2021
+ms.date: 05/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9c4031a0011d2333582b4a10abe42f6844f763
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ab4797b6c43726ee125f1e9fbab199bef756d851
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496923"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650578"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>シナリオ: Outlook アドインでサービスにシングル サインオンを実装する
 
 この記事では、独自のバックエンド サービスにシングル サインオンの実装を提供するために、[シングル サインオン アクセス トークン](authenticate-a-user-with-an-sso-token.md)と [Exchange ID トークン](authenticate-a-user-with-an-identity-token.md)を同時に使用する推奨の方法について説明します。 両方のトークンを同時に使用することで、SSO アクセス トークンが使用できる場合はその利点を活用し、そのトークンが使用できない場合でもアドインが確実に動作するようにします。SSO アクセス トークンは、ユーザーがそのトークンをサポートしていないクライアントに切り替えたときや、ユーザーのメールボックスがオンプレミスの Exchange サーバーにある場合などは使用できません。
 
-この記事のアイデアを実装するサンプル アドインについては、「Outlook [SSO」を参照してください](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
-
-
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。
-> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
-
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint でサポートされています。シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。Outlook アドインで作業している場合は、Microsoft 365 テナントで先進認証を有効にしてください。この方法の詳細については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="why-use-the-sso-access-token"></a>SSO アクセス トークンを使用する理由
 
@@ -81,9 +76,6 @@ Microsoft Graph API と Contoso Data API を呼び出すバックエンド Web A
 バックエンド Web API からの応答に基づいて、アドインは Microsoft Graph API または Contoso Data API、またはその両方のユーザーを承認することが必要になる場合があります。 どちらの API も OAuth2 認証を使用するため、その方法はどちらも同様になります。
 
 1. アドインは、API の使用を承認する必要があることをユーザーに通知して、そのプロセスを開始するためにリンクまたはボタンをクリックするように求めます。
-
-    > [!NOTE]
-    > [Outlook アドイン SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) のアドインの例は、ダイアログ API と [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) ライブラリをオプションとして使用して[、](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)API の [OAuth2 承認](/azure/active-directory/develop/active-directory-protocols-oauth-code)コード フローを開始する方法を示しています。
 
 1. このフローが完了すると、アドインは更新トークンをバックエンド Web API に送信し、SSO トークン (使用可能な場合) または Exchange ID トークンを含めます。
 

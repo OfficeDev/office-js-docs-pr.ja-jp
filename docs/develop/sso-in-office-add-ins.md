@@ -3,16 +3,16 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
-ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
+ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "65432210"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650599"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
-ユーザーは個人用の Microsoft アカウントまたは Microsoft 365 Education または職場アカウントのいずれかを使用して、Office (オンライン、モバイル、およびデスクトップ プラットフォーム) にサインインします。これを利用して、さらにシングル サインオン (SSO) も使用すれば、ユーザーに 2 度目のサインインを求めずに、ご自分のアドインに対してユーザーの認証および許可を実行できます。
+ユーザーは個人用の Microsoft アカウント、 Microsoft 365 Education または職場アカウントのいずれかを使用して、Officeにサインインします。これとシングル サインオン (SSO) を使用すれば、ユーザーに 2 度目のサインインを求めずに、アドインを承認しユーザーを認証できます。
 
 ![アドインのサインイン プロセスを示す画像。](../images/sso-for-office-addins.png)
 
