@@ -741,6 +741,8 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: アドインのアクティブ化のトラブルシューティング
                 href: outlook/troubleshoot-outlook-add-in-activation.md
+              - name: UI なしのアドインをデバッグする
+                href: outlook/debug-ui-less.md
               - name: イベントベースのアクティブ化をデバッグする
                 href: outlook/debug-autolaunch.md
   - name: PowerPoint
