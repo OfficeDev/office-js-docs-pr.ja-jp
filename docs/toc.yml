@@ -105,6 +105,9 @@ items:
             items:
               - name: 概要
                 href: develop/add-in-manifests.md
+              - name: Office アドインの Teams マニフェスト
+                href: develop/json-manifest-overview.md
+                displayName: preview
               - name: マニフェスト リファレンス
                 href: reference/manifest-reference.md
               - name: 拡張オーバーライド
@@ -404,17 +407,18 @@ items:
           - name: コメント
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: データ型 (プレビュー)
+          - name: データ型
+            displayName: preview
             items:
-              - name: 概要 (プレビュー)
+              - name: 概要
                 href: excel/excel-data-types-overview.md
-                displayName: Excel
-              - name: 概念 (プレビュー)
+                displayName: 'Excel, preview'
+              - name: 概念
                 href: excel/excel-data-types-concepts.md
-                displayName: Excel
-              - name: エンティティ値カード (プレビュー)
+                displayName: 'Excel, preview'
+              - name: エンティティ値カード
                 href: excel/excel-data-types-entity-card.md
-                displayName: Excel
+                displayName: 'Excel, preview'
           - name: データの入力規則
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -532,9 +536,9 @@ items:
           - name: JSON メタデータの自動生成
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: データ型 (プレビュー)
+          - name: データ型
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions'
+            displayName: 'Excel, Custom Functions, preview'
           - name: Excel JavaScript API を呼び出す
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
@@ -603,6 +607,9 @@ items:
       - name: 最初の Outlook アドインをビルドする
         href: quickstarts/outlook-quickstart.md
         displayName: Outlook
+      - name: Teams マニフェストを使用して Outlook アドインをビルドする
+        href: quickstarts/outlook-quickstart-json-manifest.md
+        displayName: 'Outlook, preview'
       - name: Outlook アドインのチュートリアル
         href: tutorials/outlook-tutorial.md
         displayName: Outlook
