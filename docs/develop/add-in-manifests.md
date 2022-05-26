@@ -1,18 +1,21 @@
 ---
 title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
-ms.date: 09/28/2021
+ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
+ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743696"
+ms.lasthandoff: 05/25/2022
+ms.locfileid: "65672060"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
 Office アドインの XML マニフェスト ファイルでは、エンド ユーザーが Office ドキュメントや Office アプリケーションにアドインをインストールして使用するときにアドインをアクティブ化する方法が記述されています。
+
+> [!TIP]
+> この記事では、現在の XML 形式のマニフェストについて説明します。 プレビューで使用できる JSON 形式のTeams マニフェストもあります。 詳細については、「[Office アドイン用のTeams マニフェスト (プレビュー)](json-manifest-overview.md)」を参照してください。
 
 XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。
 
@@ -70,53 +73,53 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 <!-- Links for above table -->
 
-[officeapp]: ../reference/manifest/officeapp.md
-[id]: ../reference/manifest/id.md
-[version]: ../reference/manifest/version.md
-[providername]: ../reference/manifest/providername.md
-[defaultlocale]: ../reference/manifest/defaultlocale.md
-[displayname]: ../reference/manifest/displayname.md
-[description]: ../reference/manifest/description.md
-[iconurl]: ../reference/manifest/iconurl.md
-[supporturl]: ../reference/manifest/supporturl.md
-[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
-[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
-[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
-[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[officeapp]: /javascript/api/manifest/officeapp
+[id]: /javascript/api/manifest/id
+[version]: /javascript/api/manifest/version
+[providername]: /javascript/api/manifest/providername
+[defaultlocale]: /javascript/api/manifest/defaultlocale
+[displayname]: /javascript/api/manifest/displayname
+[description]: /javascript/api/manifest/description
+[iconurl]: /javascript/api/manifest/iconurl
+[supporturl]: /javascript/api/manifest/supporturl
+[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
+[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
 [desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
 [sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
-[permissions (contentapp)]: ../reference/manifest/permissions.md
-[permissions (taskpaneapp)]: ../reference/manifest/permissions.md
-[permissions (mailapp)]: ../reference/manifest/permissions.md
-[rule (rulecollection)]: ../reference/manifest/rule.md
-[rule (mailapp)]: ../reference/manifest/rule.md
-[requirements (mailapp)*]: ../reference/manifest/requirements.md
-[set*]: ../reference/manifest/set.md
-[sets (mailapprequirements)*]: ../reference/manifest/sets.md
-[form*]: ../reference/manifest/form.md
-[formsettings*]: ../reference/manifest/formsettings.md
-[sets (requirements)*]: ../reference/manifest/sets.md
-[hosts*]: ../reference/manifest/hosts.md
+[permissions (contentapp)]: /javascript/api/manifest/permissions
+[permissions (taskpaneapp)]: /javascript/api/manifest/permissions
+[permissions (mailapp)]: /javascript/api/manifest/permissions
+[rule (rulecollection)]: /javascript/api/manifest/rule
+[rule (mailapp)]: /javascript/api/manifest/rule
+[requirements (mailapp)*]: /javascript/api/manifest/requirements
+[set*]: /javascript/api/manifest/set
+[sets (mailapprequirements)*]: /javascript/api/manifest/sets
+[form*]: /javascript/api/manifest/form
+[formsettings*]: /javascript/api/manifest/formsettings
+[sets (requirements)*]: /javascript/api/manifest/sets
+[hosts*]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
 [アドイン コマンド](create-addin-commands.md)などで使用されるすべてのイメージ URI はキャッシュをサポートしている必要があります。 イメージをホストしているサーバーは、HTTP 応答で `no-cache`、`no-store`、または同様のオプションを指定する `Cache-Control` ヘッダーを返しません。
 
-[SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている** べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
+[SourceLocation](/javascript/api/manifest/sourcelocation) 要素で指定されるソース ファイルの場所など、すべての URL は **SSL (HTTPS) でセキュリティ保護されている** べきです。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
 アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。
 
-AppSource に提出するアドインには、[SupportUrl](../reference/manifest/supporturl.md) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/legal/marketplace/certification-policies)」をご覧ください。
+AppSource に提出するアドインには、[SupportUrl](/javascript/api/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/legal/marketplace/certification-policies)」をご覧ください。
 
-必ず [AppDomains](../reference/manifest/appdomains.md) 要素を使い、認証シナリオのために [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されたもの以外のドメインを指定してください。
+必ず [AppDomains](/javascript/api/manifest/appdomains) 要素を使い、認証シナリオのために [SourceLocation](/javascript/api/manifest/sourcelocation) 要素で指定されたもの以外のドメインを指定してください。
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](../reference/manifest/sourcelocation.md) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
+Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/javascript/api/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
 
-このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](../reference/manifest/appdomains.md) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
+このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/javascript/api/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
 > [!NOTE]
 > この動作に対する例外は 2 つあります。
@@ -124,7 +127,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 > - これは、アドインのルート ウィンドウに対してのみ適用されます。アドイン ページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
 > - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
 
-次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](../reference/manifest/appdomain.md) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップであっても、そのページはアドイン ウィンドウで開きます。
+次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](/javascript/api/manifest/appdomain) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップであっても、そのページはアドイン ウィンドウで開きます。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -149,7 +152,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ## <a name="version-overrides-in-the-manifest"></a>マニフェストでのバージョンの上書き
 
-オプションの [VersionOverrides](../reference/manifest/versionoverrides.md) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
+オプションの [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
 
  - Office リボンやメニューをカスタマイズします。
  - アドインが実行される埋め込みブラウザー ランタイムでの Office の動作をカスタマイズします。
@@ -200,7 +203,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Office.js API 呼び出しが行われるドメインを指定する
 
-アドインは、マニフェスト ファイルの [SourceLocation](../reference/manifest/sourcelocation.md) 要素で参照されているドメインから Office.js API 呼び出しを行うことができます。 アドイン内に、Office.js API にアクセスする必要がある他の IFrame がある場合は、マニフェスト ファイルの [AppDomains](../reference/manifest/appdomains.md) 要素で指定されているリストにそのソース URL のドメインを追加します。 `AppDomains` リストに含まれていないソースを持つ IFrame が Office.js API 呼び出しを行おうとすると、アドインには[アクセス許可の拒否エラー](../reference/javascript-api-for-office-error-codes.md)が返されます。
+アドインは、マニフェスト ファイルの [SourceLocation](/javascript/api/manifest/sourcelocation) 要素で参照されているドメインから Office.js API 呼び出しを行うことができます。 アドイン内に、Office.js API にアクセスする必要がある他の IFrame がある場合は、マニフェスト ファイルの [AppDomains](/javascript/api/manifest/appdomains) 要素で指定されているリストにそのソース URL のドメインを追加します。 `AppDomains` リストに含まれていないソースを持つ IFrame が Office.js API 呼び出しを行おうとすると、アドインには[アクセス許可の拒否エラー](../reference/javascript-api-for-office-error-codes.md)が返されます。
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>マニフェスト v1.1 XML ファイルの例とスキーマ
 
