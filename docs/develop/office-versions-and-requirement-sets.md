@@ -1,14 +1,14 @@
 ---
 title: Office のバージョンと要件セット
 description: JavaScript API を使用してサポートされる Office.js プラットフォーム。
-ms.date: 07/08/2021
+ms.date: 05/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: bedf4378c60d39a121f4d9b7031d5a6aba7e44b8
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496818"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752849"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office のバージョンと要件セット
 
@@ -47,7 +47,13 @@ Office アドインは API 要件セットを使用して、使用する必要�
 - [Office の共通要件セット](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [アドイン コマンドの要件セット](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
 - [ダイアログ API の要件セット](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [ダイアログ配信元の要件セット](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)
 - [Identity API の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
+- [画像強制型変換要件セット](/javascript/api/requirement-sets/common/image-coercion-requirement-sets)
+- [キーボード ショートカットの要件セット](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+- [ブラウザー ウィンドウの要件セットを開く](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
+- [リボン API の要件セット](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [共有ランタイム要件のセット](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 
 `ExcelApi 1.1` の "1.1" など、要件セットのバージョン番号は Office アプリケーションを基準にしています。 特定の要件セットのバージョン番号 (例: `ExcelApi 1.1`) は、Office.js のバージョン番号には対応しておらず、他の Office アプリケーション (Word、Outlook など) の要件セットにも対応していません。  Office アプリケーションの要件セットがリリースされる割合は、アプリケーションによって異なります。 たとえば、`ExcelApi 1.5` の方が `WordApi 1.3` 要件セットより前にリリースされました。
 

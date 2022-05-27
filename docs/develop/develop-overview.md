@@ -1,14 +1,14 @@
 ---
 title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
-ms.date: 05/19/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1ea32ff4a77116c922b36257048b99a70e5fe304
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628069"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752877"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -58,7 +58,7 @@ Office アドインのマニフェスト (XML ファイル) は、アドイン�
 - アドインを説明するメタデータ (ID、バージョン、説明、表示名、既定のロケールなど)。
 - アドインが実行される Office アプリケーション。
 - アドインに必要なアクセス許可。
-- アドインによって作成されるカスタム UI (カスタム タブ、リボンのボタンなど) などの統合も含めた、アドインの Office との統合方法。
+- アドインが作成するカスタム UI (カスタム タブやカスタム リボン ボタンなど) を含む、アドインと Office の統合方法。
 - ブランドおよびコマンドの図像としてアドインで使用される画像の場所。
 - アドインの寸法 (例: コンテンツ アドインの寸法、Outlook アドインに対して要求される高さなど)。
 - メッセージや予定のコンテキストでアドインをアクティブにさせるタイミングを指定するルール (Outlook アドインのみ)。

@@ -1,14 +1,14 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 05/10/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313192"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752856"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -37,7 +37,7 @@ ms.locfileid: "65313192"
 
 ### <a name="extension-points"></a>拡張点
 
-- リボン タブ: 組み込みのタブを拡張するか、新しいカスタム タブを作成します。
+- リボン タブ - 組み込みタブを拡張するか、新しいカスタム タブを作成します。アドインには、カスタム タブを 1 つだけ含めることができます。
 - コンテキスト メニュー: 選択されたコンテキスト メニューを拡張します。
 
 ### <a name="control-types"></a>コントロールの種類
@@ -66,7 +66,7 @@ ms.locfileid: "65313192"
 
 ### <a name="integration-of-built-in-office-buttons"></a>組み込みの Office ボタンの統合
 
-組み込みの Office リボン ボタンをカスタム コマンド グループとカスタム リボン タブに挿入できます。
+組み込みの Office リボン ボタンはカスタム コマンド グループとカスタム リボン タブに挿入できます。
 
 > [!NOTE]
 > この機能はすべての Office アプリケーションまたはシナリオでサポートされてはいません。 詳細については、「[組み込みの Office ボタンをカスタム タブに統合する](built-in-button-integration.md)」を参照してください。

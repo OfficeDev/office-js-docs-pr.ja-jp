@@ -1,29 +1,29 @@
 ---
-title: ネットワーク共有Officeテスト用にアドインをサイドロードする
-description: ネットワーク共有からテストOfficeアドインをサイドロードする方法について学習します。
-ms.date: 06/02/2020
+title: ネットワーク共有からテストするためのサイドロード Office アドイン
+description: ネットワーク共有からテストするためにOffice アドインをサイドロードする方法について説明します。
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 839caa3c693682c06071d13b7fc2bde8a131636e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745662"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752884"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有Officeテスト用にアドインをサイドロードする
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有からテストするためのサイドロード Office アドイン
 
-Office 上の Office クライアントで Windows アドインをテストするには、マニフェストをネットワーク ファイル共有に発行します (以下の手順を参照)。 この展開オプションは、ローカル ホストでの開発とテストを完了し、ローカル 以外のサーバーまたはクラウド アカウントからアドインをテストする場合に使用することを目的とします。
+Windows上にあるOffice クライアントでOffice アドインをテストするには、マニフェストをネットワーク ファイル共有に発行します (以下の手順を参照)。 このデプロイ オプションは、ローカル ホストでの開発とテストを完了し、ローカル以外のサーバーまたはクラウド アカウントからアドインをテストする場合に使用することを目的としています。
 
 > [!IMPORTANT]
-> ネットワーク共有による展開は、実稼働アドインではサポートされていません。このメソッドには、次の制限があります。
+> 運用アドインでは、ネットワーク共有によるデプロイはサポートされていません。このメソッドには、次の制限事項があります。
 >
-> - アドインは、コンピューターにのみインストールWindowsできます。
-> - 新しいバージョンのアドインがリボンを変更した場合、各ユーザーはアドインを再インストールする必要があります。
+> - アドインは、Windows コンピューターにのみインストールできます。
+> - 新しいバージョンのアドインでリボンが変更された場合 (カスタム タブやカスタム ボタンを追加するなど) は、各ユーザーがアドインを再インストールする必要があります。
 
 > [!NOTE]
 > アドイン プロジェクトが十分に新しい [Office 用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) バージョンで作成されている場合、アドインは `npm start` を実行すると自動的に Office デスクトップ クライアントにサイドロードします。
 
-この記事は、Word、Excel、PowerPoint、Projectアドインのテストにのみ適用され、Windows。 別のプラットフォームでテストする場合や、Outlookアドインをテストする場合は、次のいずれかのトピックを参照してアドインをサイドロードします。
+この記事は、Word、Excel、PowerPoint、Project アドインのテストにのみ適用され、Windowsでのみ適用されます。 別のプラットフォームでテストする場合や、Outlook アドインをテストする場合は、次のいずれかのトピックを参照してアドインをサイドロードします。
 
 - [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -47,7 +47,7 @@ Office 上の Office クライアントで Windows アドインをテストす�
 
 1. 「**ユーザーのフォルダーは共有されています**」という確認メッセージが表示されたら、フォルダー名のすぐ後に表示される完全なネットワーク パスを書き留めます。 (この記事の次のセクションで説明する通り、[共有フォルダーを信頼できるカタログとして指定する](#specify-the-shared-folder-as-a-trusted-catalog)際に、このネットワーク パスを [**カタログの URL**] として入力する必要があります。) [**完了**] を選択して [**ネットワーク アクセス**] ダイアログ ウィンドウを閉じます。
 
-   ![共有パスが強調表示されたネットワーク アクセス ダイアログ。](../images/sideload-windows-network-access-dialog.png)
+   ![共有パスが強調表示された [ネットワーク アクセス] ダイアログ。](../images/sideload-windows-network-access-dialog.png)
 
 1. [**閉じる**] を選択して、[**プロパティ**] ダイアログ ウィンドウを閉じます。
 
@@ -71,9 +71,9 @@ Office 上の Office クライアントで Windows アドインをテストす�
 
 1. 新しく追加されたアイテムの [**メニューに表示する**] チェック ボックスをオンにし、[**OK**] を選択して [**セキュリティ センター** ] ダイアログ ウィンドウを閉じます。 
 
-    ![カタログが選択された [信頼センター] ダイアログ。](../images/sideload-windows-trust-center-dialog.png)
+    ![カタログが選択された [セキュリティ センター] ダイアログ。](../images/sideload-windows-trust-center-dialog.png)
 
-1. [ **OK] ボタンを** 選択して、[オプション] **ダイアログ ウィンドウ** を閉じます。
+1. **[OK]** ボタンを選択して **、[オプション]** ダイアログ ウィンドウを閉じます。
 
 1. Office アプリケーションを閉じてからもう一度開くと変更内容が有効になります。
 
@@ -81,7 +81,7 @@ Office 上の Office クライアントで Windows アドインをテストす�
 
 1. テキスト エディターで、TrustNetworkShareCatalog.reg という名前のファイルを作成します。
 
-1. ファイルに次のコンテンツを追加します。
+1. 次のコンテンツをファイルに追加します。
 
     ```text
     Windows Registry Editor Version 5.00
@@ -121,7 +121,7 @@ Office 上の Office クライアントで Windows アドインをテストす�
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > プロジェクトVisual Studio、フォルダー内のプロジェクトによって構築されたマニフェストを使用`{projectfolder}\bin\Debug\OfficeAppManifests`します。
+    > Visual Studio プロジェクトの場合は、フォルダー内のプロジェクトによってビルドされたマニフェストを`{projectfolder}\bin\Debug\OfficeAppManifests`使用します。
 
 1. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。 Projectで、リボンの [**Project**]タブの [**個人用アドイン**] を選択します。
 
@@ -131,7 +131,7 @@ Office 上の Office クライアントで Windows アドインをテストす�
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-以前にサイドロードされたアドインを削除するには、コンピューター上Officeキャッシュをクリアします。 キャッシュをクリアする方法の詳細については、「Windowsキャッシュをクリアする」[をOfficeしてください](clear-cache.md#clear-the-office-cache-on-windows)。
+以前にサイドロードされたアドインを削除するには、コンピューター上のOffice キャッシュをクリアします。 Windowsでキャッシュをクリアする方法の詳細については、「Office [キャッシュをクリアする](clear-cache.md#clear-the-office-cache-on-windows)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
