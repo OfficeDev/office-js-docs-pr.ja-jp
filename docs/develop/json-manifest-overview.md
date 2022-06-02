@@ -3,12 +3,12 @@ title: Office アドインのTeams マニフェスト (プレビュー)
 description: プレビュー JSON マニフェストの概要を確認します。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f5c529a982956922ae3a76de6d09e15e710f1f03
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672103"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833900"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Office アドインのTeams マニフェスト (プレビュー)
 
@@ -33,7 +33,7 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 ### <a name="schemas-and-general-points"></a>スキーマと一般的なポイント
 
-[プレビュー JSON マニフェスト](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md)のスキーマは 1 つだけですが、現在の XML マニフェストには合計 7 つの[スキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)があります。  
+[プレビュー JSON マニフェスト](/microsoftteams/platform/resources/dev-preview/developer-preview-intro)のスキーマは 1 つだけですが、現在の XML マニフェストには合計 7 つの[スキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)があります。  
 
 ### <a name="conceptual-mapping-of-the-preview-json-and-current-xml-manifests"></a>プレビュー JSON マニフェストと現在の XML マニフェストの概念マッピング
 
