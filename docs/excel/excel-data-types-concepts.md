@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 05/18/2022
+ms.date: 05/26/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628088"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833907"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -91,6 +91,10 @@ const myEntity: Excel.EntityCellValue = {
 ```
 
 エンティティ値には、エンティティのカードを作成する `layouts` プロパティも用意されています。 カードは、Excel UI のモーダル ウィンドウとして表示され、セルに表示される内容を超えて、エンティティ値に含まれる追加情報を表示できます。 詳細については、「[エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)」を参照してください。
+
+### <a name="linked-entities"></a>リンクされたエンティティ
+
+リンクされたエンティティ値 または [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) オブジェクトは、エンティティ値の種類です。 これらのオブジェクトは外部サービスによって提供されるデータを統合し、このデータを通常のエンティティ値のように [エンティティ カード](excel-data-types-entity-card.md) として表示できます。 Excel UI で使用できる [株価と地理データ型](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) はリンクされたエンティティ値です。
 
 ## <a name="web-image-values"></a>Web 画像の値
 
