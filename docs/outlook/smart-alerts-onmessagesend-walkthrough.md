@@ -2,14 +2,14 @@
 title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
 description: イベント ベースのアクティブ化を使用して、Outlook アドインで送信中のイベントを処理する方法について説明します。
 ms.topic: article
-ms.date: 05/26/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 1adced1e138ad41cef38947ddb3ffe8c273be871
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833941"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872009"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
 
@@ -327,3 +327,4 @@ event.completed メソッドの [errorMessage プロパティ](/javascript/api/o
 - [イベント ベースのアクティブ化のためにOutlook アドインを構成する](autolaunch.md)
 - [イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
 - [イベント ベースのOutlook アドインの AppSource 一覧表示オプション](autolaunch-store-options.md)
+- [Office アドインのコード サンプル: スマート アラートOutlook使用する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
