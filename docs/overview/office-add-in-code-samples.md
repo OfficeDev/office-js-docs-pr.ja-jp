@@ -1,14 +1,14 @@
 ---
 title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
-ms.date: 02/17/2022
+ms.date: 06/02/2022
 localization_priority: high
-ms.openlocfilehash: e727e1df0bfb02eade1133e575234554f7c2b144
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1ad5fcb3ed860832b093dc6aef212e9d1176f298
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745959"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872016"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
@@ -48,6 +48,7 @@ ms.locfileid: "63745959"
 | [添付ファイルを暗号化し、会議出席依頼の出席者を処理し、予定の日付/時刻の変更に対応](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | イベント ベースのアクティブ化を使用して、ユーザーが追加したときに添付ファイルを暗号化します。また、会議出席依頼で変更された受信者、および会議出席依頼の開始または終了の日時の変更にはイベント処理も使用します。 |
 | [Outlook イベントベースのアクティブ化を使用して、外部受信者をタグ付けする](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | イベントベースのアクティブ化を使用して、ユーザーがメッセージ作成中に受信者を変更した場合に Outlook アドインを実行します。 このアドインでは、`appendOnSendAsync` API も使用して免責事項を追加します。 |
 | [Outlook イベントベースのアクティブ化を使用して署名を設定する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | イベント ベースのアクティブ化を使用して、ユーザーが新しいメッセージまたは予定を作成するときに Outlook アドインを実行します。 アドインは、作業ウィンドウが開いていない場合でも、イベントに応答できます。 このアドインでは、`setSignatureAsync` API も使用します。 |
+| [Outlook スマート アラートを使用する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories) | Outlook スマート アラートを使用して、新規メッセージまたは予定が送信される前に、必要な色の分類項目が適用されていることを確認します。 |
 
 ## <a name="word"></a>Word
 
