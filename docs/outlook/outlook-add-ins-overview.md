@@ -1,16 +1,16 @@
 ---
 title: Outlook アドインの概要
 description: Outlook アドインとは、Microsoft の Web ベース プラットフォームを使用して Outlook に組み込まれるサードパーティ製の統合機能です。
-ms.date: 04/28/2022
+ms.date: 06/08/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ead0787a84b51c890e7951bdaa52bd3e51407916
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: fcdc6dc87deff67138f18a2bc1b7bd58ea0fd85c
+ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187337"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "66019627"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
@@ -67,7 +67,7 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
 
 - カスタム フォームを使用する場合。
 
-- [簡易 MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5) で作成されます。 簡易 MAPI は、Outlook が閉じられている間に Office ユーザーが Windows 上の Office アプリケーションからメールを作成または送信するときに使用されます。 たとえば、ユーザーは Word での作業中に Outlook メールを作成できます。これにより、Outlook アプリケーション全体を起動せずに Outlook メール作成ウィンドウがトリガーされます。 ただし、ユーザーが Word からメールを作成するときに Outlook が既に実行されている場合、これは簡易 MAPI シナリオではないため、Outlook アドインは、他のアクティブ化要件が満たされている限り、作成フォームで動作します。
+- 簡易 MAPI で作成されます。 簡易 MAPI は、Outlook が閉じられている間に Office ユーザーが Windows 上の Office アプリケーションからメールを作成または送信するときに使用されます。 たとえば、ユーザーは Word での作業中に Outlook メールを作成できます。これにより、Outlook アプリケーション全体を起動せずに Outlook メール作成ウィンドウがトリガーされます。 ただし、ユーザーが Word からメールを作成するときに Outlook が既に実行されている場合、これは簡易 MAPI シナリオではないため、Outlook アドインは、他のアクティブ化要件が満たされている限り、作成フォームで動作します。
 
 既知のエンティティの文字列照合に基づいてアクティブ化されるアドインを除いて、通常、[送信済みアイテム] フォルダーのアイテムに対して Outlook は閲覧フォーム内でアドインをアクティブ化できます。この背後にある理由の詳細については、「[Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)」の「既知のエンティティに対するサポート」を参照してください。
 
