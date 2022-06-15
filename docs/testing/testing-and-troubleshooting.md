@@ -1,14 +1,14 @@
 ---
 title: Office アドインでのユーザー エラーのトラブルシューティング
 description: Office アドインのユーザー エラーをトラブルシューティングする方法について説明します。
-ms.date: 09/23/2021
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 8b8be1c092bf18ae806e6dcd1b0462fba9193edd
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746390"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091147"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Office アドインでのユーザー エラーのトラブルシューティング
 
@@ -30,8 +30,8 @@ ms.locfileid: "63746390"
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>アドインをインストールすると、ステータス バーに "アドイン読み込み中のエラー" と表示される
 
 1. Office を終了します。
-1. マニフェストが有効であることを確認する
-1. アドインを再起動する
+1. マニフェストが有効であることを確認します。 [「Office アドインのマニフェストを検証](troubleshoot-manifest.md)する」を参照してください。
+1. アドインを再起動します。
 1. もう一度アドインをインストールする。
 
 また、フィードバックを寄せることができます。Windows または Mac 用 Excel を使用している場合は、Excel から直接 Office の機能拡張チームにフィードバックを送信できます。 これを行うには、[**ファイル**] | [**フィードバック**] | [**問題点、改善の報告**] の順に選択します。 問題点、改善の報告により、問題を理解するために必要なログが提供されます。

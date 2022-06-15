@@ -2,21 +2,21 @@
 title: オンライン会議プロバイダーのOutlookモバイル アドインを作成する
 description: オンライン会議サービス プロバイダーのOutlookモバイル アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ada539c323ce6fdf578c26c221eb6090280b5a0a
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244864"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091119"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーのOutlookモバイル アドインを作成する
 
 オンライン会議の設定は、Outlook ユーザーのコア エクスペリエンスであり、Outlook モバイル[を使用してTeams会議を簡単に作成](/microsoftteams/teams-add-in-for-outlook)できます。 ただし、Microsoft 以外のサービスを使用してOutlookでオンライン会議を作成するのは面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、Outlook アドイン ユーザーのオンライン会議作成エクスペリエンスを合理化できます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションを持つ Android および iOS でのみサポートされます。
+> この機能は、Microsoft 365 サブスクリプションのAndroidとiOSでのみサポートされます。
 
 この記事では、ユーザーがオンライン会議サービスを使用して会議を整理して参加できるように、Outlook モバイル アドインを設定する方法について説明します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
 
@@ -194,34 +194,33 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインを [テストして検証するには、通常のガイダンスに](testing-and-tips.md)従います。 Outlook on the web、Windows、Mac で[サイドローディング](sideload-outlook-add-ins-for-testing.md)した後、Android または iOS モバイル デバイスでOutlookを再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeの切り替えが自分のトグルに置き換えられていることを確認します。
+アドインを [テストして検証するには、通常のガイダンスに](testing-and-tips.md)従います。 Outlook on the web、Windows、または Mac で[サイドローディング](sideload-outlook-add-ins-for-testing.md)した後、Androidまたはモバイル デバイスでOutlook iOS再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeの切り替えが自分のトグルに置き換えられていることを確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI を作成する
 
 会議の開催者として、会議を作成すると、次の 3 つの画像のような画面が表示されます。
 
-[![Android の [会議の作成] 画面 - Contoso はオフに切り替えます。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android の [会議の作成] 画面 - Contoso の切り替えを読み込みます。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android の会議の作成画面 - Contoso がオンに切り替えます。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Contoso がオフになっているAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![読み込み Contoso トグルを使用してAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Contoso トグルがオンになっているAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>会議に参加する UI
 
 会議出席者として、会議を表示すると、次の図のような画面が表示されます。
 
-[![Android の [参加会議] 画面のスクリーンショット。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Androidの [会議への参加] 画面。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > **[参加**] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については、「 [オンライン会議テンプレートの登録](#register-your-online-meeting-template) 」セクションを参照してください。
 
 ## <a name="register-your-online-meeting-template"></a>オンライン会議テンプレートを登録する
 
-サービスのオンライン会議テンプレートを登録する場合は、詳細に関するGitHubの問題を作成できます。 その後、登録タイムラインを調整するためにお客様に連絡します。
+オンライン会議アドインの登録は省略可能です。 会議のリンクに加えて、[ **参加** ] ボタンを会議に表示する場合にのみ適用されます。 オンライン会議アドインを開発し、登録する場合は、次のガイダンスに従ってGitHub問題を作成します。 登録タイムラインの調整については、お客様にお問い合わせください。
 
-1. この記事の最後にある **[フィードバック]** セクションに移動します。
-1. **[このページ**] リンクを押します。
+1. [新しいGitHubの問題](https://github.com/OfficeDev/office-js/issues/new)を作成します。
 1. 新しい問題の **タイトル** を "サービスのオンライン会議テンプレートを登録する" に設定し、サービス名に `my-service` 置き換えます。
-1. 問題本文で、この記事の「[オンライン会議の詳細の追加を実装](#implement-adding-online-meeting-details)する」セクションの`newBody`変数で設定した文字列に文字列 "[フィードバックを入力してください]" を置き換えます。
+1. 問題本文で、既存のテキストを、この記事の前の「[オンライン会議の詳細の追加](#implement-adding-online-meeting-details)の`newBody`実装」セクションの変数または類似の変数で設定した文字列に置き換えます。
 1. [ **新しい問題の送信]** をクリックします。
 
-![Contoso サンプル コンテンツを含む新しいGitHub問題画面のスクリーンショット。](../images/outlook-request-to-register-online-meeting-template.png)
+![Contoso サンプル コンテンツを含む新しいGitHubの問題画面。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>使用可能な API
 

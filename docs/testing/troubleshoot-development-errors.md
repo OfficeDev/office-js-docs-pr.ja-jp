@@ -1,21 +1,21 @@
 ---
 title: Office アドインでの開発エラーのトラブルシューティング
-description: アドインの開発エラーをトラブルシューティングするOffice説明します。
-ms.date: 09/24/2021
+description: Office アドインの開発エラーをトラブルシューティングする方法について説明します。
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c1eb77a6d92926e83e3a0465112cc976fcaa8446
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 7f463b7a7c9a8895283b9f8e18c11bdb63d3da9d
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496958"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091126"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
-アドインの開発中に発生する可能性がある一般的な問題のOffice次に示します。
+Office アドインの開発中に発生する可能性がある一般的な問題の一覧を次に示します。
 
 > [!TIP]
-> 多くの場合Officeキャッシュをクリアすると、古いコードに関連する問題が修正されます。 これにより、現在のファイル名、メニュー テキスト、その他のコマンド要素を使用して、最新のマニフェストがアップロードされます。 詳細については、「キャッシュをクリア[する」をOfficeしてください](clear-cache.md)。
+> Office キャッシュをクリアすると、古いコードに関連する問題が修正されることがよくあります。 これにより、現在のファイル名、メニュー テキスト、およびその他のコマンド要素を使用して、最新のマニフェストがアップロードされます。 詳細については、「[Office キャッシュをクリアする](clear-cache.md)」を参照してください。
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>アドインが作業ウィンドウで読み込まれない、または他のアドイン マニフェストの問題
 
@@ -23,7 +23,7 @@ ms.locfileid: "64496958"
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>リボン ボタンとメニュー項目が含まれているアドイン コマンドへの変更が反映されない
 
-キャッシュをクリアすると、アドインのマニフェストの最新バージョンが使用されます。 キャッシュをクリアするにはOfficeキャッシュをクリアするの手順[に従Officeします](clear-cache.md)。 アプリを使用しているOffice on the web、ブラウザーの UI を使用してブラウザーのキャッシュをクリアします。
+キャッシュをクリアすると、アドインのマニフェストの最新バージョンが使用されていることを確認できます。 Office キャッシュをクリアするには、「[Office キャッシュをクリアする](clear-cache.md)」の手順に従います。 Office on the webを使用している場合は、ブラウザーの UI を使用してブラウザーのキャッシュをクリアします。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>JavaScript、HTML、CSS などの静的ファイルへの変更は有効になりません
 
@@ -50,9 +50,9 @@ Node.JS Express サーバーでこれを行う例については、「[この ap
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>プロパティ値に加えた変更は発生し、エラー メッセージはありません
+## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>プロパティ値に加えられた変更は発生せず、エラー メッセージはありません
 
-プロパティが読み取り専用である場合は、プロパティのリファレンス ドキュメントを参照してください。 また、[JS の TypeScript 定義Office](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)、読み取り専用のオブジェクト プロパティを指定します。 読み取り専用プロパティを設定しようとすると、書き込み操作はサイレント モードで失敗し、エラーはスローされます。 次の例では、読み取り専用プロパティを誤って [設定 Chart.id。](/javascript/api/excel/excel.chart#excel-excel-chart-id-member)「一部 [のプロパティを直接設定できない」も参照してください](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+プロパティが読み取り専用かどうかを確認するには、プロパティのリファレンス ドキュメントを参照してください。 また、Office JS の [TypeScript 定義](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)では、読み取り専用のオブジェクト プロパティを指定します。 読み取り専用プロパティを設定しようとすると、書き込み操作はサイレント モードで失敗し、エラーはスローされません。 次の例では、読み取り専用プロパティ [Chart.id](/javascript/api/excel/excel.chart#excel-excel-chart-id-member) の設定を誤って試みます。「 [一部のプロパティを直接設定できない](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)」も参照してください。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -61,47 +61,54 @@ myChart.id = "5";
 
 ## <a name="getting-error-this-add-in-is-no-longer-available"></a>エラーの取得: "このアドインは使用できなくなりました"
 
-このエラーの原因の一部を次に示します。 その他の原因が見つかった場合は、ページの下部にあるフィードバック ツールを使って教えて下さい。
+このエラーの原因の一部を次に示します。 その他の原因が見つかれば、ページの下部にあるフィードバック ツールを使用してください。
 
-- このファイルを使用Visual Studio、サイドローディングに問題がある可能性があります。 ホストとホストのすべてのインスタンスOffice閉Visual Studio。 再起動してVisual Studio F5 を再度押してみてください。
-- アドインのマニフェストは、集中展開、SharePointカタログ、ネットワーク共有などの展開場所から削除されています。
-- マニフェスト内の [ID 要素](/javascript/api/manifest/id) の値は、展開されたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、まず Office ホストからアドインを削除してから、元のマニフェストを変更したマニフェストに置き換える必要があります。 多くの場合、元のOfficeを削除するには、キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをOffice方法](clear-cache.md)については、「キャッシュのクリア」の記事を参照してください。
-- `resid`アドインのマニフェストには、マニフェストの [[リソース](/javascript/api/manifest/resources) `resid` `<Resources>`] セクションのどこにも定義されていないか、使用する場所とセクションで定義されている場所のスペルが一致しません。
-- マニフェストのどこか `resid` に 32 文字を超える属性があります。 属性 `resid` と、セクション内 `id` の `<Resources>` 対応するリソースの属性は、32 文字を超えることはできません。
-- アドインにはカスタム アドイン コマンドがありますが、それをサポートしないプラットフォームで実行しようとしている。 詳細については、「アドイン コマンド [の要件セット」を参照してください](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)。
+- Visual Studioを使用している場合は、サイドローディングに問題がある可能性があります。 Office ホストとVisual Studioのすべてのインスタンスを閉じます。 Visual Studio再起動し、F5 キーをもう一度押してみてください。
+- アドインのマニフェストは、一元配置、SharePoint カタログ、ネットワーク共有など、デプロイの場所から削除されました。
+- マニフェスト内の [ID](/javascript/api/manifest/id) 要素の値は、デプロイされたコピーで直接変更されています。 何らかの理由でこの ID を変更する場合は、最初にアドインをOffice ホストから削除してから、元のマニフェストを変更されたマニフェストに置き換えます。 多くの場合、元のトレースをすべて削除するには、Office キャッシュをクリアする必要があります。 オペレーティング システム[のキャッシュをクリアする](clear-cache.md)方法については、「Office キャッシュをクリアする」の記事を参照してください。
+- アドインのマニフェストには、`resid`マニフェストの [[リソース](/javascript/api/manifest/resources)] セクションのどこにも定義されていないものがあります。また、使用する場所とセクション内で定義`<Resources>`されている場所との間の`resid`スペルが一致しません。
+- `resid`マニフェストのどこかに、32 文字を超える属性があります。 `resid`属性と`id`、セクション内`<Resources>`の対応するリソースの属性は、32 文字を超えることはできません。
+- アドインにはカスタム アドイン コマンドがありますが、それをサポートしていないプラットフォームで実行しようとしています。 詳細については、「 [アドイン コマンドの要件セット](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)」を参照してください。
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>アドインは Edge では機能しませんが、他のブラウザーで動作します
 
-「[トラブルシューティングMicrosoft Edge」を参照してください](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+[Microsoft Edgeの問題のトラブルシューティングに関するページを](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)参照してください。
 
-## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excelはエラーをスローしますが、一貫して発生しません
+## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel アドインはエラーをスローしますが、一貫したエラーはスローされません
 
-考[えられる原因については、「Excelアドインのトラブルシューティング](../excel/excel-add-ins-troubleshooting.md)」を参照してください。
+考えられる原因については、「[Excel アドインのトラブルシューティング](../excel/excel-add-ins-troubleshooting.md)」を参照してください。
 
-## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>プロジェクトのマニフェスト スキーマ検証Visual Studioエラー
+## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Visual Studio プロジェクトのマニフェスト スキーマ検証エラー
 
-マニフェスト ファイルを変更する必要がある新しい機能を使用している場合は、マニフェスト ファイルで検証エラー Visual Studio。 たとえば、共有 JavaScript ランタイムを `<Runtimes>` 実装する要素を追加すると、次の検証エラーが表示される場合があります。
+マニフェスト ファイルの変更を必要とする新しい機能を使用している場合は、Visual Studioで検証エラーが発生する可能性があります。 たとえば、共有 JavaScript ランタイムを `<Runtimes>` 実装する要素を追加すると、次の検証エラーが表示されることがあります。
 
-**名前空間 '' の要素 'http://schemas.microsoft.com/office/taskpaneappversionoverridesHost' に、名前空間 '' に無効な子要素 'Runtimes' が含http://schemas.microsoft.com/office/taskpaneappversionoverridesまれている**
+**名前空間 '' の要素 'Host' に、名前空間 'http://schemas.microsoft.com/office/taskpaneappversionoverrides''の無効な子要素 'Runtimes' がありますhttp://schemas.microsoft.com/office/taskpaneappversionoverrides。**
 
-この場合は、使用する XSD ファイルVisual Studio最新バージョンに更新できます。 最新のスキーマ バージョンは [[MS-OWEMXML]: 付録 A: 完全 XML スキーマです](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。
+これが発生した場合は、Visual Studioが使用する XSD ファイルを最新バージョンに更新できます。 最新のスキーマ バージョンは [、[MS-OWEMXML]: 付録 A: 完全な XML スキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)にあります。
 
 ### <a name="locate-the-xsd-files"></a>XSD ファイルを見つける
 
 1. Visual Studio でプロジェクトを開きます。
-1. ソリューション **エクスプローラーで、** ファイルを開manifest.xmlします。 マニフェストは、通常、ソリューションの下の最初のプロジェクトに含まれます。
-1. [**ViewProperties** > ] ウィンドウ (F4) を選択します。
-1. [プロパティ **] ウィンドウで**、省略記号 (...) を選択して **XML スキーマ エディターを開** きます。 ここでは、プロジェクトで使用しているすべてのスキーマ ファイルの正確なフォルダーの場所を確認できます。
+1. **ソリューション エクスプローラー** で、manifest.xml ファイルを開きます。 マニフェストは通常、ソリューションの下の最初のプロジェクトにあります。
+1. [ **ビュー** > **のプロパティ] ウィンドウ** (F4) を選択します。
+1. **[プロパティ] ウィンドウ** で省略記号 (...) を選択して **、XML スキーマ エディターを** 開きます。 ここでは、プロジェクトが使用するすべてのスキーマ ファイルの正確なフォルダーの場所を確認できます。
 
 ### <a name="update-the-xsd-files"></a>XSD ファイルを更新する
 
-1. 更新する XSD ファイルをテキスト エディターで開きます。 検証エラーのスキーマ名は XSD ファイル名に関連付けされます。 たとえば、 **TaskPaneAppVersionOverridesV1_0.xsd を開きます**。
-1. [ [MS-OWEMXML]: 付録 A: 完全 XML スキーマで更新されたスキーマを探します](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。 たとえば、TaskPaneAppVersionOverridesV1_0 [は taskpaneappversionoverrides スキーマです](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)。
-1. テキストをテキスト エディターにコピーします。
+1. 更新する XSD ファイルをテキスト エディターで開きます。 検証エラーのスキーマ名は、XSD ファイル名に関連付けられます。 たとえば、 **TaskPaneAppVersionOverridesV1_0.xsd を開きます**。
+1. [[MS-OWEMXML]: 付録 A: 完全な XML スキーマ](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)で更新されたスキーマを見つけます。 たとえば、TaskPaneAppVersionOverridesV1_0は [taskpaneappversionoverrides スキーマにあるとします](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)。
+1. テキスト をテキスト エディターにコピーします。
 1. 更新された XSD ファイルを保存します。
-1. 新Visual Studio XSD ファイルの変更を取得するには、次のコマンドを再起動します。
+1. Visual Studio再起動して、新しい XSD ファイルの変更を取得します。
 
-古い追加のスキーマに対して、前のプロセスを繰り返します。
+古い追加スキーマについては、前のプロセスを繰り返すことができます。
+
+## <a name="when-working-offline-no-office-apis-work"></a>オフラインで作業している場合、Office API は機能しません
+
+CDNからではなく、ローカル コピーから Office JavaScript ライブラリを読み込むと、ライブラリが最新でない場合、API の動作が停止することがあります。 しばらくプロジェクトから離れている場合は、ライブラリを再インストールして最新バージョンを取得します。 プロセスは IDE によって異なります。 環境に基づいて、次のいずれかのオプションを選択します。
+
+- **Visual Studio**: [最新のOffice JavaScript API ライブラリへの更新](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)に関する記事を参照してください。 
+- **その他の IDE**: @microsoft [/office-js および @types/](https://www.npmjs.com/package/@microsoft/office-js)[office-js のnpm](https://www.npmjs.com/package/@types/office-js) パッケージを参照してください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -559,9 +559,6 @@ items:
               - name: UI のない関数の認証
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: UI のない関数のデバッグ
-                href: excel/custom-functions-debugging.md
-                displayName: 'Excel, Custom Functions'
               - name: ランタイム
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
@@ -570,6 +567,9 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Web リクエスト
             href: excel/custom-functions-web-reqs.md
+            displayName: 'Excel, Custom Functions'
+          - name: デバッグ
+            href: excel/custom-functions-debugging.md
             displayName: 'Excel, Custom Functions'
           - name: トラブルシューティング
             href: excel/custom-functions-troubleshooting.md

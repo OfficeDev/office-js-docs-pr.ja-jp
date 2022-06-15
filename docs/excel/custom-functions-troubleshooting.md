@@ -1,14 +1,14 @@
 ---
-ms.date: 03/30/2021
-description: カスタム関数に関する一般的なExcelトラブルシューティングを行います。
+ms.date: 06/09/2022
+description: Excelカスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744480"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090888"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -17,6 +17,12 @@ ms.locfileid: "63744480"
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 問題を解決するには、[ランタイム ログを有効にしてエラーをキャプチャ](#enable-runtime-logging)し、[Excel のネイティブ エラー メッセージ](#check-for-excel-error-messages)を参照します。 また、[promise を未解決のままにしておく](#ensure-promises-return)など、よくある間違いがないか確認します。
+
+## <a name="debugging-custom-functions"></a>カスタム関数のデバッグ
+
+共有ランタイムを使用するカスタム関数アドインをデバッグするには、「共有 [JavaScript ランタイムを使用するようにOffice アドインを構成する:デバッグ](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)」を参照してください。
+
+共有ランタイムを使用しないカスタム関数アドインをデバッグするには、「 [カスタム関数のデバッグ](custom-functions-debugging.md)」を参照してください。
 
 ## <a name="enable-runtime-logging"></a>ランタイム ログを有効にする
 
@@ -39,9 +45,9 @@ Excel には多くの組み込みエラー メッセージがあり、計算エ�
 
 ## <a name="common-problems-and-solutions"></a>一般的な問題と解決策
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>localhost からアドインを開くことができません: ローカル ループバックの除外を使用する
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>localhost からアドインを開けない: ローカル ループバックの除外を使用する
 
-"localhost からこのアドインを開くことができません" というエラーが表示される場合は、ローカル ループバックの除外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)を参照してください。
+"localhost からこのアドインを開けない" というエラーが表示された場合は、ローカル ループバックの除外を有効にする必要があります。 方法の詳細については、[このMicrosoft サポート記事](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)を参照してください。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 上の Excel でランタイム ログが「TypeError: Network request failed」と報告する
 
@@ -53,7 +59,7 @@ Excelがカスタム関数の完了を待っている間、＃BUSY！と表示�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>エラー：開発サーバーはすでにポート3000で実行されています。
 
-`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーの実行が停止するには数分かかる場合があります。
+`npm start`を実行しているときに、開発サーバーが既にポート3000（またはアドインが使用しているポート）で実行されているというエラーが表示されることがあります。 `npm stop`を実行するか、Node.jsウィンドウを閉じることによって、開発サーバーを停止できます。 場合によっては、開発サーバーの実行が停止するまで数分かかることがあります。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
@@ -76,11 +82,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-このプロセスの詳細については、「関数名と [JSON メタデータの関連付け」を参照してください](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+このプロセスの詳細については、「 [関数名と JSON メタデータの関連付け](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)」を参照してください。
 
 ## <a name="known-issues"></a>既知の問題
 
-既知の問題は、カスタム関数リポジトリExcel[追跡GitHubされます](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+既知の問題は、[Excel カスタム関数GitHub リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions/issues)で追跡および報告されます。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 
@@ -95,9 +101,11 @@ Windows または Mac で Excel を使用している場合は、Excel から Of
 ドキュメント ページの下部にある "コンテンツ フィードバック" 機能を使用するか、[カスタム関数リポジトリに直接新しい問題を記入](https://github.com/OfficeDev/Excel-Custom-Functions/issues)して、発生した問題をお気軽に送信してください。
 
 ## <a name="next-steps"></a>次の手順
+
 「[XLL ユーザー定義関数と互換性のある、カスタム関数を作成する](make-custom-functions-compatible-with-xll-udf.md)」で方法を確認してください。
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
+- [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
+- [Excel でカスタム関数を作成する](custom-functions-overview.md)
+- [カスタム関数のデバッグ](custom-functions-debugging.md)
