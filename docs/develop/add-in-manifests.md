@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: a89207dc575e103ca7b29fa1ce69ca18aba2c0c0
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672060"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090958"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -19,17 +19,17 @@ Office アドインの XML マニフェスト ファイルでは、エンド ユ
 
 XML マニフェスト ファイルを使用すると、Office アドインで次のことができます。
 
-* ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
+- ID、バージョン、説明、表示名、および既定のロケールを指定することで、アプリ自体について説明する。
 
-* アドインのブランド化に使用するイメージと、Office アプリ リボンで[アドイン コマンド](create-addin-commands.md)に使用する画像を指定する。
+- アドインのブランド化に使用するイメージと、Office アプリ リボンで[アドイン コマンド](create-addin-commands.md)に使用する画像を指定する。
 
-* アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
+- アドインを Office に統合する方法を指定する。アドインによって作成されるカスタム UI (リボンのボタンなど) の統合も含む。
 
-* コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。
+- コンテンツ アドインに必要な既定のサイズ、および Outlook アドインに必要な高さを指定する。
 
-* ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。
+- ドキュメントの読み取り、書き込みなど、Office アドインに必要なアクセス許可を宣言する。
 
-* Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
+- Outlook アドインでは、アプリがアクティブ化されてメッセージ、予定、または会議出席依頼アイテムを操作するコンテキストを指定するルールを定義する。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -44,28 +44,26 @@ XML マニフェスト ファイルを使用すると、Office アドインで�
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office アドインの種類ごとの必要な要素
 
-| 要素                                                                                      | コンテンツ | 作業ウィンドウ | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| 要素                                                                                      | コンテンツ    | 作業ウィンドウ    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | 必須   | 必須     | 必須     |
+| [Id][]                                                                                       | 必須   | 必須     | 必須     |
+| [バージョン][]                                                                                  | 必須   | 必須     | 必須     |
+| [ProviderName][]                                                                             | 必須   | 必須     | 必須     |
+| [DefaultLocale][]                                                                            | 必須   | 必須     | 必須     |
+| [DisplayName][]                                                                              | 必須   | 必須     | 必須     |
+| [Description][]                                                                              | 必須   | 必須     | 必須     |
+| [IconUrl][]                                                                                  | 必須   | 必須     | 必須     |
+| [SupportUrl][]\*\*                                                                           | 必須   | 必須     | 必須     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | 必須   | 必須     | 使用不可|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| 必須 | 必須 | 必須   |
+| [DesktopSettings][]                                                                          | 使用不可 | 使用不可 | 必須 |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | 必須   | 必須     | 必須     |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | 使用不可 | 使用不可 | 必須 |
+| [Requirements (MailApp)][]\*                                                                 | 該当なし| 使用不可 | 必須 |
+| [Set][]\*<br/>[Sets (Requirements)][]\*<br/>[Sets (MailAppRequirements)][]\*                 | 必須   | 必須     | 必須     |
+| [Form][]\*<br/>[FormSettings][]\*                                                            | 使用不可 | 使用不可 | 必須 |
+| [Hosts][]\*                                                                                  | 必須   | 必須     | 省略可能     |
 
 _\*Office アドイン マニフェスト スキーマ バージョン 1.1 で追加されました。_
 
@@ -86,20 +84,20 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissions (contentapp)]: /javascript/api/manifest/permissions
 [permissions (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[requirements (mailapp)]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[sets (mailapprequirements)]: /javascript/api/manifest/sets
+[form]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[sets (requirements)]: /javascript/api/manifest/sets
+[hosts]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>ホストするための要件
 
@@ -154,9 +152,9 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 オプションの [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
 
- - Office リボンやメニューをカスタマイズします。
- - アドインが実行される埋め込みブラウザー ランタイムでの Office の動作をカスタマイズします。
- - アドインが Azure Active Directory やシングル サインオン用 Microsoft Graph と対話する方法を構成します。
+- Office リボンやメニューをカスタマイズします。
+- アドインが実行される埋め込みブラウザー ランタイムでの Office の動作をカスタマイズします。
+- アドインが Azure Active Directory やシングル サインオン用 Microsoft Graph と対話する方法を構成します。
 
 子要素 `VersionOverrides` の中には、親要素 `OfficeApp` の値を上書きする値があります。 たとえば、`VersionOverrides` 内の `Hosts` 要素は `OfficeApp` 内の `Hosts` 要素よりも優先されます。
 
@@ -548,12 +546,12 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ## <a name="see-also"></a>関連項目
 
-* [マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)
-* [マニフェストでアドイン コマンドを作成する](create-addin-commands.md)
-* [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)
-* [Office アドインのローカライズ](localization.md)
-* [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [API とマニフェストのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [同等な COM アドインを特定する](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [アドインでの API 使用についてアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)
+- [マニフェスト要素の正しい順序を確認する方法](manifest-element-ordering.md)
+- [マニフェストでアドイン コマンドを作成する](create-addin-commands.md)
+- [Office アプリケーションと API 要件を指定する](specify-office-hosts-and-api-requirements.md)
+- [Office アドインのローカライズ](localization.md)
+- [Office アドイン マニフェストのスキーマ参照](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [API とマニフェストのバージョンを更新する](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [同等な COM アドインを特定する](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [アドインでの API 使用についてアクセス許可を要求する](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)
