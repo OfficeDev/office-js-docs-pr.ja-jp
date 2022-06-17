@@ -1,14 +1,14 @@
 ---
 title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
-ms.date: 06/02/2022
+ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 1ad5fcb3ed860832b093dc6aef212e9d1176f298
-ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
+ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "65872016"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091028"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
@@ -28,6 +28,11 @@ ms.locfileid: "65872016"
 ---
 
 ---
+
+## <a name="blazor-webassembly"></a>Blazor WebAssembly
+
+- [Blazor WebAssembly Excel アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Blazor WebAssembly Word アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 

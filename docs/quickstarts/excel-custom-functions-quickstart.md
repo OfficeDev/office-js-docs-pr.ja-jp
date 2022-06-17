@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: Excel カスタム関数開発のためのクイック スタート ガイド。
 title: カスタム関数クイック スタート
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: aa44caf014a6d617112a616e96e1c67079c4c385
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404708"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091084"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Excel カスタム関数の開発を開始する
 
@@ -33,16 +33,16 @@ ms.locfileid: "64404708"
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。":::
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
 1. Yeoman ジェネレーターによりプロジェクトの作業に関する手順がコマンド ライン内にいくつか示されますが、これらは無視し、引き続き指示に従います。プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. プロジェクトをビルドします。
@@ -105,3 +105,4 @@ Excel ブックで次の手順を実行し、`ADD` カスタム関数を試し�
 - [カスタム関数の概要](../excel/custom-functions-overview.md)
 - [カスタム関数のメタデータ](../excel/custom-functions-json.md)
 - [Excel カスタム関数のランタイム](../excel/custom-functions-runtime.md)
+- [Visual Studio コードを使用して発行する](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

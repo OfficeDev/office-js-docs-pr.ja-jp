@@ -1,15 +1,15 @@
 ---
 title: シングル サインオン (SSO) のクイック スタート
 description: Yeoman ジェネレーターを使用して、シングル サインオンを使用する Node.js Office アドインを作成する。
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 852cd9057d8f215f8ff3d637ea344c6f5c879eda
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747192"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091112"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>シングル サインオン (SSO) のクイック スタート
 
@@ -162,3 +162,4 @@ Outlook アドインを試すには、次の手順を実行します。
 - [Node.js SSO が有効なアドインをカスタマイズする](sso-quickstart-customize.md)
 - [シングル サインオンを使用する Node.js Office アドインを作成する](../develop/create-sso-office-add-ins-nodejs.md)
 - [シングル サインオン (SSO) のエラー メッセージのトラブルシューティング](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Visual Studio コードを使用して発行する](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

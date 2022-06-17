@@ -6,9 +6,9 @@
 
     :::image type="content" source="../images/select-insert.png" alt-text="[個人用アドイン] の下矢印が強調表示された Windows での Excel の [挿入] リボンのスクリーンショット":::
 
-1. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
+1. 使用可能なアドインの一覧で、[**開発者アドイン**] セクションを見つけて、[**マイ カスタム関数アドイン**] を選択して登録します。
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。":::
 
 # <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 

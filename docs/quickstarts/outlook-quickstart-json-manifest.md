@@ -1,15 +1,15 @@
 ---
 title: Teams マニフェスト (プレビュー) を使用して、Outlook アドインをビルドする
 description: JSON マニフェストを使用して単純な Outlook 作業ウィンドウ アドインを構築する方法について説明します。
-ms.date: 06/02/2022
+ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 203440e8fca2277b2abd0ed10af3199cc8751b61
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891957"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091049"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Teams マニフェスト (プレビュー) を使用して、Outlook アドインをビルドする
 
@@ -274,3 +274,4 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 ## <a name="see-also"></a>関連項目
 
 - [Office アドインの Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md)
+- [Visual Studio コードを使用して発行する](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

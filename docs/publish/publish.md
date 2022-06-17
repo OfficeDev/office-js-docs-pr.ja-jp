@@ -1,14 +1,14 @@
 ---
 title: Office アドインを展開し、発行する
 description: テスト目的またはユーザーに配布する目的で Office アドインを展開するための方法とオプション。
-ms.date: 12/07/2021
+ms.date: 06/13/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
-ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
+ms.openlocfilehash: c6a6410ac2466995ceaf723d08a8735a3c4886c2
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "61331079"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091133"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Office アドインを展開し、発行する
 
@@ -18,7 +18,7 @@ ms.locfileid: "61331079"
 |:---------|:------------|
 |[サイドロード](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|開発プロセスの一環として、Windows、iPad、Mac、またはブラウザーで実行するアドインをテストします。(製品版アドインではありません。)|
 |[ネットワーク共有](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|開発プロセスの一環として、ローカルホスト以外のサーバーにアドインを公開した後、Windows で実行されているアドインをテストします。 (運用環境用のアドインや、iPad、Mac、Web でのテスト用ではありません。)|
-|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|ユーザーに配布する目的でアドインを公開します。|
+|[AppSource][AppSource]|ユーザーに配布する目的でアドインを公開します。|
 |[Microsoft 365 管理センター](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|クラウド環境で、Microsoft 365 管理センターを使用して組織内のユーザーにアドインを配布します。 これは、[統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)または[一元展開](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)によって行われます。 |
 |[SharePoint カタログ](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|オンプレミス環境で、組織内のユーザーにアドインを配布します。|
 |[Exchange サーバー](#outlook-add-in-deployment)|オンプレミス環境またはオンライン環境で、ユーザーに Outlook アドインを配布します。|
@@ -33,9 +33,9 @@ ms.locfileid: "61331079"
 
 | 拡張点 | サイドロード | ネットワーク共有 | AppSource | Microsoft 365 管理センター | SharePoint カタログ\* |
 |:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| コンテンツ         | X           | X             | X         | X                          | X                    |
-| 作業ウィンドウ       | X           | X             | X         | X                          | X                    |
-| コマンド         | X           | X             | X         | X                          |                      |
+| コンテンツ         | サポート   | サポート     | サポート | サポート                  | サポート            |
+| 作業ウィンドウ       | サポート   | サポート     | サポート | サポート                  | サポート            |
+| コマンド         | サポート   | サポート     | サポート | サポート                  | 利用不可        |
 
 &#42; SharePoint カタログは Office on Mac をサポートしません。
 
@@ -43,8 +43,8 @@ ms.locfileid: "61331079"
 
 | 拡張点 | サイドロード | AppSource | Exchange サーバー |
 |:----------------|:-----------:|:---------:|:---------------:|
-| メール アプリ        | X           | X         | X               |
-| コマンド         | X           | X         | X               |
+| メール アプリ        | サポート   | サポート | サポート       |
+| コマンド         | サポート   | サポート | サポート       |
 
 ## <a name="production-deployment-methods"></a>運用環境での展開方法
 
@@ -87,9 +87,11 @@ Outlook アドインの展開には以下が必要です。
 
 - [テスト用に Outlook アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [AppSource に提出する][AppSource]
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
 - [Office アドインの設計ガイドライン](../design/add-in-design.md)
 - [効果的な AppSource 登録リストを作成する](/office/dev/store/create-effective-office-store-listings)
 - [Office アドインでのユーザー エラーのトラブルシューティング](../testing/testing-and-troubleshooting.md)
 - [Microsoft コマーシャル マーケットプレースとは](/azure/marketplace/overview)
+- [Microsoft デベロッパー センター アプリ発行ページ](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center

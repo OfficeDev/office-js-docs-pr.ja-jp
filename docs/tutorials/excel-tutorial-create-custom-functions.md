@@ -1,15 +1,15 @@
 ---
 title: Excel カスタム関数のチュートリアル
 description: このチュートリアルでは、計算の実行、Web データの要求、Web データのストリームが可能なカスタム関数を含む Excel アドインを作成します。
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: 9550986edcbbed56c69e25e183c304ebe6f6cc07
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404731"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091069"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>チュートリアル: Excel でのカスタム関数の作成
 
@@ -42,9 +42,9 @@ ms.locfileid: "64404731"
 
     - **Choose a project type: (プロジェクトの種類を選択)** `Excel Custom Functions Add-in project`
     - **Choose a script type: (スクリプトの種類を選択)** `JavaScript`
-    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `starcount`
+    - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="カスタム関数プロジェクトの Yeoman Office アドイン ジェネレーター コマンドライン インターフェイス プロンプトのスクリーンショット。":::
 
     Yeoman ジェネレーターはプロジェクト ファイルを作成し、サポートしているノード コンポーネントをインストールします。
 
@@ -53,7 +53,7 @@ ms.locfileid: "64404731"
 1. プロジェクトのルート フォルダーに移動します。
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. プロジェクトをビルドします。
@@ -105,7 +105,7 @@ npm run start:desktop
 
 Web からデータを統合することは、カスタム関数を使用して Excel を拡張する優れた方法です。 次に、特定の Github リポジトリが所有する星の数を示す `getStarCount` という名前のカスタム関数を作成します。
 
-1. **starcount** プロジェクトで **./src/functions/functions.js** ファイルを見つけ、それをコード エディターで開きます。
+1. **マイ カスタム関数アドイン** プロジェクトで、**./src/functions/functions.js** ファイルを見つけて、コード エディターで開きます。
 
 1. **function.js** で、次のコードを追加します。
 
@@ -151,11 +151,11 @@ Web からデータを統合することは、カスタム関数を使用して 
 
     :::image type="content" source="../images/select-insert.png" alt-text="[個人用アドイン] の下矢印が強調表示された Windows での Excel の [挿入] リボンのスクリーンショット":::
 
-1. 使用可能なアドインのリストから [**開発者向けアドイン**] セクションを見つけ、**starcount** アドインを選択して登録します。
+1. 使用可能なアドインの一覧で、[**開発者アドイン**] セクションを見つけて、[**マイ カスタム関数アドイン**] を選択して登録します。
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンのスクリーンショット。":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="[個人用アドイン] 一覧で [Excel カスタム関数] アドインが強調表示されている Windows 上の Excel の [挿入] リボンを示すスクリーンショット。":::
 
-# <a name="excel-on-the-web"></a>[Web 版 Excel](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel on the web](#tab/excel-online)
 
 1. Excel で、[**挿入**] タブを選択して、[**アドイン**] を選択します。
 
@@ -177,7 +177,7 @@ Web からデータを統合することは、カスタム関数を使用して 
 
 次のコード例では、`currentTime` と `clock` という 2 つの関数があることがわかります。 `currentTime` 関数は、ストリーミングを使わない静的な関数です。 日付を表す文字列を返します。 `clock` 関数は、`currentTime` 関数を使用して、Excel 内のセルに毎秒新しい時間を提します。 `invocation.setResult`を使用して Excel セルに時間を配信し、関数のキャンセルを処理する`invocation.onCanceled`を使用します。 
 
-**starcount** プロジェクトには、**./src/functions/functions.js** ファイルに次の 2 つの関数が既に含まれています。
+**マイ カスタム関数アドイン** プロジェクトには、**./src/functions/functions.js** ファイルに次の 2 つの関数が既に含まれています。
 
 ```JS
 /**

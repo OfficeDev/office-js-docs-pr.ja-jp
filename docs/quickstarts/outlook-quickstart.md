@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 02/28/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511394"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091098"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -17,7 +17,7 @@ ms.locfileid: "63511394"
 
 ## <a name="create-the-add-in"></a>アドインを作成する
 
-[Office アドイン用の Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。 使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。
+[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) または Visual Studio を使用して Office アドインを作成することができます。 Yeoman ジェネレーターでは Visual Studio Code またはその他のエディターで管理できる Node.js プロジェクトを作成します。一方、Visual Studio では Visual Studio のソリューションを作成します。 使用する方のタブを選択し、手順に従ってアドインを作成してローカルでテストします。
 
 # <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
@@ -27,7 +27,7 @@ ms.locfileid: "63511394"
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) または任意のコード エディター
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) またはお好みのコード エディター
 
 - Windows 上の Outlook 2016 以降 (Microsoft 365 アカウントに接続されたもの) または Outlook on the web
 
@@ -293,3 +293,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 おめでとうございます、最初のOutlook作業ペインアドインの作成に成功しました。 次に、「[Visual Studio を使用して Office アドインを開発する](../develop/develop-add-ins-visual-studio.md)」を参照してください。
 
 ---
+
+## <a name="see-also"></a>関連項目
+
+- [Visual Studio コードを使用して発行する](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
