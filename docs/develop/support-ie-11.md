@@ -3,12 +3,12 @@ title: Internet Explorer 11 をサポート
 description: アドインで Internet Explorer 11 および ES5 Javascript をサポートする方法について説明します。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fea604c17525836857b7cff4c8670da757f2a6
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313178"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136426"
 ---
 # <a name="support-internet-explorer-11"></a>Internet Explorer 11 をサポート
 
@@ -79,9 +79,9 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
 ```
 
 > [!IMPORTANT]
-> 通常、プロパティを読み取 `userAgent` るのをお勧めしません。 ユーザー [エージェントを使用したブラウザーの検出](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)に関する記事(推奨事項や読み取りの `userAgent`代替手段など)について理解していることを確認してください。 特に、上記の句でオプション 1 を `else` 使用している場合は、ユーザー エージェントのテストではなく機能検出を使用することを検討してください。
+> 通常、プロパティを読み取 `userAgent` るのをお勧めしません。 ユーザー [エージェントを使用したブラウザーの検出](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent)に関する記事(推奨事項や読み取りの `userAgent`代替手段など)について理解していることを確認してください。 特に、上記の句でオプション 1 を `else` 使用している場合は、ユーザー エージェントのテストではなく機能検出を使用することを検討してください。
 >
-> 2021 年 9 月 30 日の時点で、「 [ユーザー エージェントのどの部分に探している情報が含まれているか」セクションのテキストは](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) 、Internet Explorer 11 がリリースされる前の日付です。 一般的にはまだ正確であり、英語版の記事のセクションの *テーブル* は最新です。 同様に、記事の英語以外のバージョンのテキストとほとんどの場合、テーブルは最新ではありません。
+> 2021 年 9 月 30 日の時点で、「 [ユーザー エージェントのどの部分に探している情報が含まれているか」セクションのテキストは](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) 、Internet Explorer 11 がリリースされる前の日付です。 一般的にはまだ正確であり、英語版の記事のセクションの *テーブル* は最新です。 同様に、記事の英語以外のバージョンのテキストとほとんどの場合、テーブルは最新ではありません。
 
 ## <a name="test-an-add-in-on-internet-explorer"></a>Internet Explorer でアドインをテストする
 
