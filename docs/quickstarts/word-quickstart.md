@@ -1,15 +1,15 @@
 ---
 title: 最初の Word の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Word 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 02/23/2022
+ms.date: 06/10/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: c88f8b2b90c4078c4ba10e1ce37aec3a20e9639c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 237f668385207a15278ca86d9653c5b22277f1bb
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484340"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090874"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -315,3 +315,4 @@ ms.locfileid: "64484340"
 - 
   [Word アドインのコード サンプル](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Word JavaScript API リファレンス](../reference/overview/word-add-ins-reference-overview.md)
+- [Visual Studio コードを使用して発行する](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
