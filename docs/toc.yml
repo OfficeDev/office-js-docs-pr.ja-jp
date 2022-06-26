@@ -554,12 +554,12 @@ items:
           - name: 動的配列を返す
             href: excel/custom-functions-dynamic-arrays.md
             displayName: 'Excel, Custom Functions'
-          - name: UI のないカスタム関数
+          - name: 共有ランタイムのないカスタム関数
             items:
-              - name: UI のない関数の認証
+              - name: 共有ランタイムのないカスタム関数の認証
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: ランタイム
+              - name: カスタム関数のための JavaScript 専用ランタイム
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
           - name: 揮発性関数
@@ -850,9 +850,6 @@ items:
           - name: ワードオブジェクト モデル
             href: word/word-add-ins-core-concepts.md
             displayName: Word
-          - name: Office Open XML を使用して、より高性能な Word 用アドインを作成する
-            href: word/create-better-add-ins-for-word-with-office-open-xml.md
-            displayName: Word
           - name: 辞書の作業ウィンドウ アドイン
             href: word/dictionary-task-pane-add-ins.md
             displayName: Word
@@ -862,11 +859,14 @@ items:
           - name: 現在の選択範囲での読み取りと書き込み
             href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
             displayName: Word
-          - name: Null 値
+          - name: null 値を理解する
             href: word/null-values.md
             displayName: Word
-          - name: 検索オプションを使用して Word アドインでテキストを検索する
+          - name: 検索オプションを使用してテキストを検索する
             href: word/search-option-guidance.md
+            displayName: Word
+          - name: Office Open XML 形式を使用するタイミングと方法
+            href: word/create-better-add-ins-for-word-with-office-open-xml.md
             displayName: Word
   - name: サンプル
     items:
