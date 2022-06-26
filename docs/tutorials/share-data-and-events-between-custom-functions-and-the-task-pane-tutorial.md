@@ -1,19 +1,19 @@
 ---
 title: 'チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する'
 description: Excel でカスタム関数と作業ウィンドウの間でデータとイベントを共有する方法について説明します。
-ms.date: 11/29/2021
+ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496916"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229716"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
-グローバル データを共有し、共有ランタイムを使用して、Excel アドインの作業ウィンドウとカスタム関数の間でイベントを送信します。 ほとんどのカスタム関数のシナリオでは、作業ウィンドウのない（非表示の）カスタム関数を使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。 このチュートリアルでは、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
+グローバル データを共有し、共有ランタイムを使用して、Excel アドインの作業ウィンドウとカスタム関数の間でイベントを送信します。 ほとんどのカスタム関数のシナリオでは、カスタム関数専用アドインを使用する特別な理由がない限り、共有ランタイムの使用をお勧めします。 このチュートリアルでは、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する方法に慣れていることを前提としています。 まだ使い慣れていない場合は、[Excel カスタム関数のチュートリアル](excel-tutorial-create-custom-functions.md)を完了することを検討してください。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 

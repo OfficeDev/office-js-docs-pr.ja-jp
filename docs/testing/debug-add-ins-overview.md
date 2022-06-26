@@ -1,14 +1,14 @@
 ---
 title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける。
-ms.date: 02/17/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 87265e8aeb760aa9449c86a7991b3ad6ed8943ee
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744706"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229702"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -40,7 +40,7 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 
 ## <a name="debug-on-windows"></a>Windows でデバッグする
 
-以下に、Windows でのデバッグに関する一般的なガイダンスを示します。 Excel の UI なしのカスタム関数と Outlook のイベントベースのアドインをデバッグするための特別な手順があります。 このセクションで後述する「[Windows の特殊なケース](#special-cases-in-windows)」を参照してください。 Windows でのデバッグは、IDE によって異なります。
+以下に、Windows でのデバッグに関する一般的なガイダンスを示します。 Excel のカスタム関数と Outlook のイベントベースのアドインをデバッグするための特別な手順があります。 このセクションで後述する「[Windows の特殊なケース](#special-cases-in-windows)」を参照してください。 Windows でのデバッグは、IDE によって異なります。
 
 - **Visual Studio**: ブラウザーの F12 ツールを使用してデバッグします。 「[Visual Studio で Office アドインをデバッグする](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。
 - **Visual Studio Code**: Visual Studio Code 用の [アドイン デバッガー拡張機能を使用してデバッグします](debug-with-vs-extension.md)。
@@ -57,20 +57,20 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 
 ### <a name="special-cases-in-windows"></a>Windows の特殊なケース
 
-Windows で UI なしのカスタム関数をデバッグするには、「[UI なしのカスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
+Windows で共有ランタイムを使用せずにカスタム関数をデバッグするには、「[カスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
 
 Outlook でイベント ベースのアドインをデバッグするには、「[イベント ベースの Outlook アドインをデバッグする](../outlook/debug-autolaunch.md)」を参照してください。 このプロセスには、Visual Studio Code が必要です。
 
 ## <a name="debug-on-mac"></a>Mac でデバッグする
 
-以下に、Mac でのデバッグに関する一般的なガイダンスを示します。 Excel で UI なしのカスタム関数をデバッグするための特別な手順があります。 このセクションで後述する「[Mac の特殊なケース](#special-cases-in-mac)」を参照してください。
+以下に、Mac でのデバッグに関する一般的なガイダンスを示します。 Excel で共有ランタイムを使用せずにカスタム関数をデバッグするための特別な手順があります。 このセクションで後述する「[Mac の特殊なケース](#special-cases-in-mac)」を参照してください。
 
 - Visual Studio Code を使用している場合は、[Visual Studio Code 用のアドイン デバッガー拡張機能](debug-with-vs-extension.md)を使用してデバッグします。
 - その他の IDE の場合は、Safari Web Inspector を使用してください。 手順については、「[Mac Officeアドインのデバッグ](debug-office-add-ins-on-ipad-and-mac.md)」を参照してください。
 
 ### <a name="special-cases-in-mac"></a>Mac の特殊なケース
 
-Mac で UI なしのカスタム関数をデバッグするには、「[UI なしのカスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
+Mac で共有ランタイムを使用せずにカスタム関数をデバッグするには、「[カスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
 
 ## <a name="debug-on-linux"></a>Linux でのデバッグ
 

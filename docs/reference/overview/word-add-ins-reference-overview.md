@@ -4,12 +4,12 @@ description: Word JavaScript API の概要。
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2bb9b016b8711822164bccbcae45cdc8eb822a8e
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484628"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229723"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API の概要
 
@@ -27,7 +27,7 @@ Word アドインは、次の 2 つの JavaScript オブジェクト モデル�
 
 ## <a name="learn-about-api-capabilities"></a>API 機能について学ぶ
 
-ドキュメントのこのセクションに記載されている他の記事を参照すると、[アドインからドキュメント全体を取得する](../../word/get-the-whole-document-from-an-add-in-for-word.md)方法、[検索オプションを使用して Word アドインでテキストを検索する](../../word/search-option-guidance.md)方法などを学習できます。すべての提供可能な記事の一覧については、目次でご確認ください。
+ドキュメントのこのセクションに記載されている他の記事を参照すると、[アドインからドキュメント全体を取得する](../../word/get-the-whole-document-from-an-add-in-for-word.md)方法、[Word アドインの検索オプションを使用してテキストを検索する](../../word/search-option-guidance.md)方法などを学習できます。 すべての提供可能な記事の一覧については、目次でご確認ください。
 
 Word JavaScript API を使用して Word のオブジェクトにアクセスするための実践的なエクスペリエンスに関しては、「[Word アドインのチュートリアル](../../tutorials/word-tutorial.md)」を完了してください。
 

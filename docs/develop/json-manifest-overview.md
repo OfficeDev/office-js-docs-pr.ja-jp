@@ -1,14 +1,14 @@
 ---
 title: Office アドインのTeams マニフェスト (プレビュー)
 description: プレビュー JSON マニフェストの概要を確認します。
-ms.date: 05/24/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833900"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229639"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Office アドインのTeams マニフェスト (プレビュー)
 
@@ -108,7 +108,7 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 | "requirements.scopes" | アドインをインストールできる Office アプリケーションを識別します。 | **Hosts** |  |
 | "ribbons" | アドインがカスタマイズするリボン。 | **ホスト**、 **ExtensionPoints**、およびさまざまな **\*FormFactor** 要素 | "ribbons" プロパティは、これら 3 つの要素の目的をマージする匿名オブジェクトの配列です。 [「リボン」の表](#ribbons-table)を参照してください。|
 | "alternatives" | 同等の COM アドイン、XLL、またはその両方との下位互換性を指定します。 | **EquivalentAddins** | 背景情報については、[「EquivalentAddins - 参照」](/javascript/api/manifest/equivalentaddins#see-also)を参照してください。 |
-| "runtimes"  | カスタム のリボン ボタンから直接実行されるカスタム関数や関数など、さまざまな種類の "UI のない" アドインを構成します。 | **Runtimes**。 **FunctionFile**、および **ExtensionPoint** (CustomFunctions 型) |  |
+| "runtimes"  | カスタム関数専用アドインやカスタムのリボン ボタンから直接実行される関数など、さまざまな種類の "UI のない" アドインを構成します。 | **Runtimes**。 **FunctionFile**、および **ExtensionPoint** (CustomFunctions 型) |  |
 | "autoRunEvents" | 指定したイベントのイベント ハンドラーを構成します。 | **Event** と **ExtensionPoint** (イベントの種類) |  |
 
 ##### <a name="ribbons-table"></a>"ribbons" テーブル
