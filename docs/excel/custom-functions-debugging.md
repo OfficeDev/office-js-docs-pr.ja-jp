@@ -1,14 +1,14 @@
 ---
 title: カスタム関数のデバッグ
 description: 共有ランタイムを使用しないExcelカスタム関数をデバッグする方法について説明します。
-ms.date: 06/09/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b29f2f2cc08839d1d9d58fcff59ebe37d1089d1
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 1c53d73a0356d4f5f9af9bebbb6c34b99dbeb395
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090919"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229688"
 ---
 # <a name="custom-functions-debugging"></a>カスタム関数のデバッグ
 
@@ -186,9 +186,9 @@ VS Codeを使用していない場合は、コマンド ライン (bash、PowerS
 - `npm run start:web -- --document {url}`(ここで`{url}`、OneDriveまたはSharePoint上のExcel ファイルの URL): Excel on the webを開始し、アドインをサイドロードします。
 - `npm run stop`: Excelとデバッグを停止します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-[UI レスカスタム関数の認証方法](custom-functions-authentication.md)について説明します。
+[共有ランタイムを使用しないカスタム関数の認証](custom-functions-authentication.md)について説明します。
 
 ## <a name="see-also"></a>関連項目
 

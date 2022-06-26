@@ -1,16 +1,16 @@
 ---
-title: Office Open XML を使用してより良い Word 用アドインを作成する
-description: Office Open XML を使用して Word アドインを改善する方法の概要。
+title: Word アドインで Office Open XML を使用するタイミングと方法を理解する
+description: Word アドインで open XML Office使用するタイミングと方法の概要。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e127eb7a05e513daa38f65ea092e7ede8a3133c5
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187330"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229737"
 ---
-# <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Office Open XML を使用してより良い Word 用アドインを作成する
+# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Word アドインで Office Open XML を使用するタイミングと方法を理解する
 
 **提供元:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
@@ -192,7 +192,7 @@ Open XML マークアップを初めてOfficeする多くのアドイン開発�
 ```
 
 > [!NOTE]
-> ここに示すマークアップを XML ファイルに追加し、バージョンと mso アプリケーションの XML 宣言タグ (図 13) をファイルの先頭に追加すると、そのファイルを Word ドキュメントとして Word で開くことができます。 または、これらのタグを使用せずに、Word で **FileOpen を** > 使用して開くこともできます。 Word のタイトル バーに **互換モード** が表示されます。これは Word 文書であることを示す設定を削除したためです。 このマークアップを既存の Word 文書に追加しているため、コンテンツにはまったく影響しません。
+> ここに示すマークアップを XML ファイルに追加し、バージョンと mso アプリケーションの XML 宣言タグ (図 13) をファイルの先頭に追加すると、そのファイルを Word ドキュメントとして Word で開くことができます。 または、これらのタグを使用せずに、Word で **ファイル** > を **開いて開** くこともできます。 Word のタイトル バーに **互換モード** が表示されます。これは Word 文書であることを示す設定を削除したためです。 このマークアップを既存の Word 文書に追加しているため、コンテンツにはまったく影響しません。
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>setSelectedDataAsync を使用するための JavaScript
 
@@ -729,7 +729,7 @@ Word アドインのコード サンプルの [Open XML の読み込みと書き
 
 このトピックでは、アドインで開く XML Officeで実行できる操作の例をいくつか紹介しました。Office Open XML 強制型を使用してドキュメントに挿入できる豊富なコンテンツ タイプの例を、選択範囲または指定された (バインドされた) 場所に挿入するための JavaScript メソッドと共に、さまざまな豊富なコンテンツ タイプの例を見てきました。
 
-そのため、アドインをスタンドアロンで使用する場合 (つまり、ストアまたは独自のサーバーの場所から挿入される) と、アドインを操作するように設計された事前に作成されたテンプレートで使用する場合は、他に何を知る必要がありますか? 必要なことはすべて知っているというのが答えかもしれません。
+そのため、アドインをスタンドアロンで使用する場合 (つまり、Microsoft Storeまたは独自のサーバーの場所から挿入される) と、アドインを操作するように設計された事前に作成されたテンプレートで使用する場合は、他に何を知る必要がありますか? 必要なことはすべて知っているというのが答えかもしれません。
 
 特定のコンテンツ タイプとそれを挿入するためのメソッドのマークアップは、アドインがスタンドアロンに設計されているか、テンプレートを操作するように設計されているかに関係なく同じです。 自分のアドインで作動するように設計されたテンプレートを使用する場合、参照コンテンツがドキュメントにすでに存在するシナリオを構成するコールバックを必ず JavaScript に含めます (セクション「[指定コンテンツ コントロールを追加し、それにバインドする](#add-and-bind-to-a-named-content-control)」のバインド例)。
 

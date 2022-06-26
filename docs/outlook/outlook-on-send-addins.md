@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 05/19/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e167c5611e2c3950a4f8f20119fc4a4483d1d779
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650606"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229653"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -25,7 +25,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 次の表は、必要最小限の累積更新プログラム (該当する場合) など、送信時機能でサポートされているクライアントとサーバーの組み合わせを示しています。 除外された組み合わせはサポートされていません。
 
-| クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
+| Client | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
 |Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
 |Mac：<br>ビルド 16.47 以降|はい|はい|はい|
@@ -53,11 +53,11 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 次のスクリーンショットは、送信者に件名を追加するように通知する情報バーを示しています。
 
-![不足している件名行の入力をユーザーに求めるエラー メッセージを示すスクリーンショット。](../images/block-on-send-subject-cc-inforbar.png)
+![不足している件名行の入力をユーザーに求めるエラー メッセージ。](../images/block-on-send-subject-cc-inforbar.png)
 
 次のスクリーンショットは、送信者に禁止された単語が見つかったことを通知する情報バーを示しています。
 
-![ブロックされた単語が見つかったことをユーザーに伝えるエラー メッセージを示すスクリーンショット。](../images/block-on-send-body.png)
+![ブロックされた単語が見つかったことをユーザーに伝えるエラー メッセージ。](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>制限事項
 
@@ -300,7 +300,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 1. 最新の[管理用テンプレートツール](https://www.microsoft.com/download/details.aspx?id=49030)をダウンロードします。
 1. ローカル グループ ポリシー エディター (**gpedit.msc**) を開きます。
-1. **User** **ConfigurationAdministrative** >  **TemplatesMicrosoft**  >  Outlook 2016  > **SecurityTrust** >  Center に移動 **します**。
+1. **ユーザー構成** > **管理用テンプレート**  > **Microsoft Outlook 2016** >  **Security** > **セキュリティ センター** に移動します。
 1. **[Web アドインが読み込むことができない場合に送信をブロック** する] 設定を選択します。
 1. リンクを開いてポリシー設定を編集します。
 1. [**Web アドインが読み込むことができない場合に送信をブロック** する] ダイアログ ウィンドウで、必要に応じて [**有効]** または **[無効]** を選択し、[**OK] または [適用] を** 選択して更新を有効にします。
@@ -332,6 +332,12 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 ## <a name="on-send-feature-scenarios"></a>送信時機能のシナリオ
 
 送信時機能を使用するアドインのサポートされているシナリオとサポートされていないシナリオは、次のとおりです。
+
+### <a name="event-handlers-are-dynamically-defined"></a>イベント ハンドラーが動的に定義されている
+
+アドインのイベント ハンドラーは、時間`Office.initialize`によって定義するか`Office.onReady()`、呼び出す必要があります (詳細については、「[Outlook アドインのスタートアップ](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in)」および「[Office アドインの初期化](../develop/initialize-add-in.md)」を参照してください)。 初期化中にハンドラー コードが特定の状況によって動的に定義されている場合は、完全に定義されたハンドラーを呼び出すスタブ関数を作成する必要があります。 スタブ関数は、 **マニフェストの Event** 要素の `FunctionName` 属性で参照する必要があります。 この回避策により、ハンドラーが定義され、1 回または`Office.onReady()`実行されると`Office.initialize`参照できるようになります。
+
+アドインの初期化後にハンドラーが定義されていない場合は、メール アイテムの情報バーから "コールバック関数に到達できません" と送信者に通知されます。
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>ユーザー メールボックスで送信時アドイン機能が有効になっているが、アドインはインストールされていない
 
@@ -606,6 +612,9 @@ CC 行に受信者を追加して、送信時にメッセージに件名が含�
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>送信時Outlook使用するアドインをデバッグする
 
 送信時アドインをデバッグする方法については、「[UI レス Outlook アドインのデバッグ](debug-ui-less.md)」を参照してください。
+
+> [!TIP]
+> ユーザーがアドインを実行したときにエラー "コールバック関数に到達できません" が表示され、アドインのイベント ハンドラーが動的に定義されている場合は、回避策としてスタブ関数を作成する必要があります。 詳細については、「 [イベント ハンドラーが動的に定義されている](#event-handlers-are-dynamically-defined) 」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

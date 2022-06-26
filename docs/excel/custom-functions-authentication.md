@@ -1,18 +1,18 @@
 ---
-ms.date: 05/17/2020
-description: 作業ウィンドウを使用しないExcelカスタム関数を使用してユーザーを認証します。
-title: UI レスカスタム関数の認証
+ms.date: 06/15/2022
+description: 共有ランタイムを使用しないカスタム関数を使用してユーザーを認証します。
+title: 共有ランタイムのないカスタム関数の認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 946800cf884f903e0794702d32ffb7e1075e1ca3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340275"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229681"
 ---
-# <a name="authentication-for-ui-less-custom-functions"></a>UI レスカスタム関数の認証
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>共有ランタイムのないカスタム関数の認証
 
-一部のシナリオでは、作業ウィンドウまたは他のユーザー インターフェイス要素 (UI レスのカスタム関数) を使用しないカスタム関数は、保護されたリソースにアクセスするためにユーザーを認証する必要があります。 UI レスのカスタム関数は JavaScript 専用ランタイムで実行されます。 この理由から、JavaScript `OfficeRuntime.storage` 専用ランタイムと、オブジェクトと Dialog API を使用するほとんどのアドインで使用される一般的なブラウザー エンジン ランタイムとの間でデータを前後に渡す必要があります。
+一部のシナリオでは、共有ランタイムを使用しないカスタム関数が、保護されたリソースにアクセスするためにユーザーを認証する必要があります。 共有ランタイムを使用しないカスタム関数は、JavaScript 専用ランタイムで実行されます。 このため、アドインに作業ウィンドウがある場合は、JavaScript 専用ランタイムと作業ウィンドウで使用される HTML サポート ランタイムの間でデータをやり取りする必要があります。 これを行うには、 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) オブジェクトと特別な Dialog API を使用します。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -20,34 +20,34 @@ ms.locfileid: "63340275"
 
 ## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage オブジェクト
 
-UI レスのカスタム関数で使用される JavaScript `localStorage` 専用ランタイムは、通常はデータを格納するグローバル ウィンドウでオブジェクトを使用できません。 代わりに、 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) を使用してデータを設定および取得することで、UI レスのカスタム関数と作業ウィンドウ間でデータを共有する必要があります。
+JavaScript 専用ランタイムには、通常データを `localStorage` 格納するグローバル ウィンドウで使用できるオブジェクトがありません。 代わりに、コードは、データの設定と取得に使用 `OfficeRuntime.storage` して、カスタム関数と作業ウィンドウの間でデータを共有する必要があります。
 
 ### <a name="suggested-usage"></a>おすすめの使用法
 
-UI `storage` レスのカスタム関数から認証する必要がある場合は、アクセス トークンが既に取得済みか確認します。 取得されていない場合は、ダイアログ API を使用してユーザーを認証し、アクセストークンを取得して、後で使用するために `storage` に保存します。
+共有ランタイムを使用しないカスタム関数アドインから認証する必要がある場合は、コードでアクセス トークンが既に取得されているかどうかを確認 `OfficeRuntime.storage` する必要があります。 そうでない場合は、 [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) を使用してユーザーを認証し、アクセス トークンを取得し、今後使用できるようにトークン `OfficeRuntime.storage` を格納します。
 
 ## <a name="dialog-api"></a>ダイアログ API
 
-トークンが存在しない場合は、ユーザーにサインインを求めるダイアログ API を表示する必要があります。 ユーザーが資格情報を入力すると、結果のアクセストークンが `storage` に保存されます。
+トークンが存在しない場合は、API を `OfficeRuntime.dialog` 使用してユーザーにサインインを求める必要があります。 ユーザーが資格情報を入力した後、結果のアクセス トークンをアイテム `OfficeRuntime.storage`として格納できます。
 
 > [!NOTE]
-> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムの Dialog オブジェクトとは若干異なる Dialog オブジェクトを使用します。 これらはどちらも "Dialog API" `OfficeRuntime.Dialog` と呼ばれますが、JavaScript 専用ランタイムでユーザーを認証するために使用します。
+> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは若干異なるダイアログ オブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれますが、[OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) を使用して、[Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) *ではなく* JavaScript 専用ランタイムでユーザーを認証します。
 
-この基本的な手順を次の図に示します。 点線は、UI レスのカスタム関数とアドインの作業ウィンドウが、アドイン全体の両方の一部であり、個別のランタイムを使用します。
+この基本的な手順を次の図に示します。 点線は、カスタム関数とアドインの作業ウィンドウがアドイン全体の一部であることを示しますが、個別のランタイムを使用します。
 
-1. UI レスのカスタム関数呼び出しは、ブック内のセルからExcelします。
-2. UI レスのカスタム関数は、ユーザー `Dialog` 資格情報を Web サイトに渡す場合に使用します。
-3. この Web サイトは、UI レスのカスタム関数にアクセス トークンを返します。
-4. その後、UI レスのカスタム関数は、このアクセス トークンを `storage`.
-5. アドインの作業ウィンドウは、`storage` からトークンにアクセスします。
+1. Excel ワークブックのセルからカスタム関数を発行します。
+2. カスタム関数は、ユーザーの資格情報を web サイトに渡すために `OfficeRuntime.dialog` を使用します。
+3. その後、web サイトは、アクセストークンをカスタム関数に返します。
+4. 次に、カスタム関数によって、このアクセス トークンが .`OfficeRuntime.storage`
+5. アドインの作業ウィンドウは、`OfficeRuntime.storage` からトークンにアクセスします。
 
-![ダイアログ API を使用してアクセス トークンを取得し、OfficeRuntime.storage API を介して作業ウィンドウとトークンを共有するカスタム関数の図。](../images/authentication-diagram.png "認証図。")
+![ダイアログ API を使用してアクセス トークンを取得し、OfficeRuntime.storage API を使用して作業ウィンドウでトークンを共有するカスタム関数の図。](../images/authentication-diagram.png "認証図。")
 
 ## <a name="storing-the-token"></a>トークンの格納
 
-次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage)したコードサンプルです。 UI レスのカスタム関数と作業ウィンドウ間でデータを共有する完全な例については、このコード サンプルを参照してください。
+次の例は、[カスタム関数の OfficeRuntime.storage を使用 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage)したコードサンプルです。 カスタム関数と、共有ランタイムを使用しないアドインの作業ウィンドウ間でデータを共有する完全な例については、このコード サンプルを参照してください。
 
-UI レスのカスタム関数が認証された場合、アクセス トークンを受け取り、そのトークンを格納する必要があります `storage`。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 この `storeValue` 関数は UI レスのカスタム関数で、たとえばユーザーの値を格納します。 必要なトークン値を格納するように変更できます。
+カスタム関数が認証されたら、アクセストークンを受け取り、`OfficeRuntime.storage`に保存する必要があります。 次のコードサンプルは、`storage.setItem`メソッドを呼び出して値を格納する方法を示します。 この `storeValue` 関数は、ユーザーの値を格納するカスタム関数です。 必要なトークン値を格納するように変更できます。
 
 ```js
 /**
@@ -65,7 +65,7 @@ function storeValue(key, value) {
 }
 ```
 
-作業ウィンドウにアクセストークンが必要な場合は、`storage`から トークンを取得できます。 次のコードサンプルは、`storage.getItem`メソッドを使用してトークンを取得する方法を示します。
+作業ウィンドウにアクセス トークンが必要な場合は、アイテムからトークンを `OfficeRuntime.storage` 取得できます。 次のコードサンプルは、`storage.getItem`メソッドを使用してトークンを取得する方法を示します。
 
 ```js
 /**
@@ -86,20 +86,20 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般的なガイダンス
 
-Office アドインは web ベースで、あらゆる web 認証技術を使用できます。 UI レスのカスタム関数を使用して独自の認証を実装するために従う必要がある特定のパターンやメソッドはありません。 さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](../develop/auth-external-add-ins.md)  
+Office アドインは web ベースで、あらゆる web 認証技術を使用できます。 カスタム関数を使用して独自の認証を実装するのに、特定のパターンやメソッドはありません。 さまざまな認証パターンに関するドキュメントを参照してください。 [この記事では、外部サービスによる認証について説明します。](../develop/auth-external-add-ins.md)  
 
-カスタム関数を開発する場合は、次の場所を使用してデータを格納しないようにします。
+カスタム関数を開発するときに、次の場所にデータを格納しないようにします。
 
-- `localStorage`: UI レスのカスタム関数はグローバル `window` オブジェクトにアクセスできないので、に格納されているデータにアクセスできない `localStorage`。
-- `Office.context.document.settings`: この場所は安全ではないため、アドインを使用しているユーザーが情報を抽出できます。
+- `localStorage`: 共有ランタイムを使用しないカスタム関数は、グローバル `window` オブジェクトにアクセスできないため、格納されている `localStorage`データにアクセスできません。
+- `Office.context.document.settings`: この場所はセキュリティで保護されておらず、アドインを使用して誰でも情報を抽出できます。
 
 ## <a name="dialog-box-api-example"></a>ダイアログ ボックス API の例
 
-次のコード サンプルでは、関数は `getTokenViaDialog` `Dialog` API の関数を使用して `displayWebDialogOptions` ダイアログ ボックスを表示します。 このサンプルは、認証方法を `Dialog` 示すのではなく、オブジェクトの機能を示すサンプルです。
+次のコード サンプルでは、関数は関数 `getTokenViaDialog` を `OfficeRuntime.displayWebDialog` 使用してダイアログ ボックスを表示します。 このサンプルは、認証方法ではなく、メソッドの機能を示すために提供されています。
 
 ```JavaScript
 /**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
@@ -141,11 +141,11 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
+[カスタム関数をデバッグ](custom-functions-debugging.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [UI レスのカスタム関数Excelランタイム](custom-functions-runtime.md)
+* [カスタム関数の JavaScript 専用ランタイム](custom-functions-runtime.md)
 * [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

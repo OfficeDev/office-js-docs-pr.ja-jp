@@ -1,42 +1,42 @@
 ---
-ms.date: 07/08/2021
-description: 作業Excel特定の JavaScript ランタイムを使用しないカスタム関数について説明します。
-title: UI レス のカスタム関数Excelランタイム
+ms.date: 06/15/2022
+description: 共有ランタイムExcel使用しないカスタム関数とその特定の JavaScript ランタイムについて説明します。
+title: カスタム関数の JavaScript 専用ランタイム
 ms.localizationpriority: medium
-ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149668"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229667"
 ---
-# <a name="runtime-for-ui-less-excel-custom-functions"></a>UI レス のカスタム関数Excelランタイム
+# <a name="javascript-only-runtime-for-custom-functions"></a>カスタム関数の JavaScript 専用ランタイム
 
-作業ウィンドウを使用しないカスタム関数 (UI レスのカスタム関数) は、計算のパフォーマンスを最適化するように設計された JavaScript ランタイムを使用します。
+共有ランタイムを使用しないカスタム関数では、計算のパフォーマンスを最適化するように設計された JavaScript 専用ランタイムが使用されます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-この JavaScript ランタイムは、UI レスのカスタム関数と作業ウィンドウでデータを格納するために使用できる名前空間内の `OfficeRuntime` API へのアクセスを提供します。
+この JavaScript ランタイムは、カスタム関数と作業ウィンドウ (別のランタイムで `OfficeRuntime` 実行される) でデータを格納するために使用できる名前空間内の API へのアクセスを提供します。
 
-## <a name="request-external-data"></a>外部データの要求
+## <a name="request-external-data"></a>外部データを要求する
 
-UI レスのカスタム関数内では [、Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) のような API を使用するか、サーバーとやり取りするための HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使用して外部データを要求できます。
+カスタム関数内では、[Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) などの API や、サーバーとやり取りする HTTP 要求を発行する標準 Web API である [XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) を使用して、外部データを要求できます。
 
-XMLHttpRequests を作成する場合は、UI レス関数で追加のセキュリティ対策を使用[](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)する必要があります。同じオリジン ポリシーと単純[な CORS](https://www.w3.org/TR/cors/)が必要です。
+XmlHttpRequests を作成する場合は、カスタム関数で追加のセキュリティ対策を使用する必要があることに注意してください。 [同じ配信元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) と単純な [CORS](https://www.w3.org/TR/cors/) が必要です。
 
-単純な CORS 実装では Cookie を使用できません。単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプが 、 である場合は、単純な CORS でヘッダー `Content-Type` `application/x-www-form-urlencoded` `text/plain` を使用できます `multipart/form-data` 。
+単純な CORS 実装では Cookie を使用できず、単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプ`application/x-www-form-urlencoded`が `Content-Type` 、`text/plain`、または `multipart/form-data`.
 
-## <a name="store-and-access-data"></a>データの保存とアクセス
+## <a name="store-and-access-data"></a>データのMicrosoft Storeとアクセス
 
-UI レスのカスタム関数内では、オブジェクトを使用してデータを格納およびアクセス `OfficeRuntime.storage` できます。 `Storage` は、UI レスのカスタム関数では使用できない [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)の代替手段を提供する、暗号化されていない永続的なキー値ストレージ システムです。 `Storage` ドメインごとに 10 MB のデータを提供します。 ドメインは、複数のアドインで共有できます。
+共有ランタイムを使用しないカスタム関数内では、 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) オブジェクトを使用してデータを格納してアクセスできます。 オブジェクトは `Storage` 、JavaScript 専用ランタイムを使用するカスタム関数では使用できない [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) の代替手段を提供する、暗号化されていない永続的なキー値ストレージ システムです。 このオブジェクトは `Storage` 、ドメインごとに 10 MB のデータを提供します。 ドメインは、複数のアドインで共有できます。
 
-`Storage` は共有ストレージ ソリューションとして機能することを意図しています。つまり、アドインの複数の部分が同じデータにアクセスできるようになります。 たとえば、ユーザー認証のトークンは、UI レスのカスタム関数と作業ウィンドウなどのアドイン UI 要素の両方からアクセスできるので、格納 `storage` できます。 同様に、2 つのアドインが同じドメイン (たとえば、 ) を共有している場合、情報の前後 `www.contoso.com/addin1` `www.contoso.com/addin2` の共有も許可されます `storage` 。 異なるサブドメインを持つアドインは、(たとえば、 ) の異なるインスタンスを持つ点に `storage` `subdomain.contoso.com/addin1` 注意 `differentsubdomain.contoso.com/addin2` してください。
+オブジェクトは `Storage` 共有ストレージ ソリューションであり、アドインの複数の部分が同じデータにアクセスできることを意味します。 たとえば、ユーザー認証用のトークンは、カスタム関数 (JavaScript 専用ランタイムを使用) と作業ウィンドウ (フル Web ビュー ランタイムを使用) の両方からアクセスできるため、オブジェクトに格納 `Storage` できます。 同様に、2 つのアドインが同じドメイン (たとえば、) `www.contoso.com/addin2`を共有する場合、`www.contoso.com/addin1`オブジェクトを介して`Storage`情報を前後に共有することも許可されます。 サブドメインが異なるアドインには、異なるインスタンス `Storage` (例: `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`) があることに注意してください。
 
-`storage` は共有の場所として機能することから、キー値の組み合わせが書き換えられる可能性があることにご注意ください。
+オブジェクトは `Storage` 共有の場所であるため、キーと値のペアをオーバーライドできることを認識することが重要です。
 
-オブジェクトでは、次のメソッドを使用 `storage` できます。
+オブジェクトでは、次のメソッドを `Storage` 使用できます。
 
 - `getItem`
 - `getItems`
@@ -47,11 +47,11 @@ UI レスのカスタム関数内では、オブジェクトを使用してデ�
 - `getKeys`
 
 > [!NOTE]
-> すべての情報 (など) をクリアする方法はありません `clear` 。 代わりに、一度に複数のエントリを削除できる `removeItems` を使用してください。
+> すべての情報 (など `clear`) をクリアする方法はありません。 代わりに、一度に複数のエントリを削除できる `removeItems` を使用してください。
 
 ### <a name="officeruntimestorage-example"></a>OfficeRuntime.storage の例
 
-次のコード サンプルでは、キー `OfficeRuntime.storage.setItem` と値をに設定する関数を呼び出します `storage` 。
+次のコード サンプルでは、キーと値`storage`を`OfficeRuntime.storage.setItem`設定する関数を呼び出します。
 
 ```js
 function StoreValue(key, value) {
@@ -64,16 +64,12 @@ function StoreValue(key, value) {
 }
 ```
 
-## <a name="additional-considerations"></a>その他の考慮事項
+## <a name="next-steps"></a>次のステップ
 
-アドインで UI レスのカスタム関数のみを使用する場合は、UI レスのカスタム関数を使用してドキュメント オブジェクト モデル (DOM) にアクセスしたり、DOM に依存する jQuery のようなライブラリを使用したりすることはできません。
-
-## <a name="next-steps"></a>次の手順
-
-UI レスの [カスタム関数をデバッグする方法について説明します](custom-functions-debugging.md)。
+[カスタム関数をデバッグ](custom-functions-debugging.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [UI レスのカスタム関数を認証する](custom-functions-authentication.md)
+* [共有ランタイムのないカスタム関数の認証](custom-functions-authentication.md)
 * [Excel でカスタム関数を作成する](custom-functions-overview.md)
 * [カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
