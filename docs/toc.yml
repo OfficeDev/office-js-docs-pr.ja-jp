@@ -632,7 +632,7 @@ items:
             href: outlook/extension-module-outlook-add-ins.md
           - name: Outlook Mobile のアドイン
             href: outlook/outlook-mobile-addins.md
-          - name: モバイルでのオンライン会議
+          - name: オンライン ミーティング アドインの作成
             href: outlook/online-meeting.md
           - name: 送信時アドイン
             href: outlook/outlook-on-send-addins.md
