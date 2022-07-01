@@ -1,38 +1,112 @@
 ---
-title: オンライン会議プロバイダーのOutlookモバイル アドインを作成する
-description: オンライン会議サービス プロバイダーのOutlookモバイル アドインを設定する方法について説明します。
+title: オンライン会議プロバイダーの Outlook アドインを作成する
+description: オンライン会議サービス プロバイダー用に Outlook アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 06/10/2022
+ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
+ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091119"
+ms.lasthandoff: 07/01/2022
+ms.locfileid: "66574426"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーのOutlookモバイル アドインを作成する
+# <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーの Outlook アドインを作成する
 
-オンライン会議の設定は、Outlook ユーザーのコア エクスペリエンスであり、Outlook モバイル[を使用してTeams会議を簡単に作成](/microsoftteams/teams-add-in-for-outlook)できます。 ただし、Microsoft 以外のサービスを使用してOutlookでオンライン会議を作成するのは面倒な場合があります。 この機能を実装することで、サービス プロバイダーは、Outlook アドイン ユーザーのオンライン会議作成エクスペリエンスを合理化できます。
+オンライン会議の設定は、Outlook ユーザーのコア エクスペリエンスであり、 [Outlook を使用して Teams 会議を簡単に作成できます](/microsoftteams/teams-add-in-for-outlook)。 ただし、Microsoft 以外のサービスを使用して Outlook でオンライン会議を作成するのは面倒な場合があります。 この機能を実装することで、サービス プロバイダーは Outlook アドイン ユーザーのオンライン会議の作成と参加エクスペリエンスを合理化できます。
 
 > [!IMPORTANT]
-> この機能は、Microsoft 365 サブスクリプションのAndroidとiOSでのみサポートされます。
+> この機能は、Microsoft 365 サブスクリプションのOutlook on the web、Windows、Mac、Android、および iOS でサポートされています。
 
-この記事では、ユーザーがオンライン会議サービスを使用して会議を整理して参加できるように、Outlook モバイル アドインを設定する方法について説明します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
+この記事では、Outlook アドインを設定して、ユーザーがオンライン会議サービスを使用して会議を整理して参加できるようにする方法について説明します。 この記事では、架空のオンライン会議サービス プロバイダー "Contoso" を使用します。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Office アドイン用の Yeoman ジェネレーターを使用してアドイン プロジェクトを作成するOutlook[クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
+Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成できるようにするには、親要素`MobileFormFactor`の下のマニフェストで [MobileOnlineMeetingCommandSurface 拡張機能ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)を構成する必要があります。 その他のフォーム ファクターはサポートされていません。
+ユーザーがアドインを使用してオンライン会議を作成できるようにするには、マニフェストで **VersionOverrides** ノードを構成する必要があります。 Outlook on the web、Windows、Mac でのみサポートされるアドインを作成する場合は、ガイダンスとして **[Windows]、[Mac]、[Web**] タブを選択します。 ただし、アドインが Outlook on Android と iOS でもサポートされる場合は、[ **モバイル** ] タブを選択します。
 
-1. コード エディターで、クイック スタート プロジェクトを開きます。
+# <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
+
+1. コード エディターで、作成した Outlook クイック スタート プロジェクトを開きます。
 
 1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. ノード全体 `<VersionOverrides>` (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
+1. **VersionOverrides** ノード全体 (オープン タグとクローズ タグを含む) を選択し、次の XML に置き換えます。
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+# <a name="mobile"></a>[モバイル](#tab/mobile)
+
+ユーザーがモバイル デバイスからオンライン会議を作成できるように、 [MobileOnlineMeetingCommandSurface 拡張ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) は、親要素 **MobileFormFactor** の下のマニフェストで構成されます。 この拡張ポイントは、他のフォーム ファクターではサポートされていません。
+
+1. コード エディターで、作成した Outlook クイック スタート プロジェクトを開きます。
+
+1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
+
+1. **VersionOverrides** ノード全体 (オープン タグとクローズ タグを含む) を選択し、次の XML に置き換えます。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -121,12 +195,14 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
 </VersionOverrides>
 ```
 
+---
+
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「[Outlook アドイン マニフェスト](manifests.md)」と「[Outlook Mobile のアドイン コマンドのサポートの追加](add-mobile-support.md)」を参照してください。
+> Outlook アドインのマニフェストの詳細については、「Outlook アドイン マニフェスト」と [「Outlook](manifests.md) [Mobile 用アドイン コマンドのサポートの追加](add-mobile-support.md)」を参照してください。
 
 ## <a name="implement-adding-online-meeting-details"></a>オンライン会議の詳細の追加を実装する
 
-このセクションでは、アドイン スクリプトでユーザーの会議を更新して、オンライン会議の詳細を含める方法について説明します。
+このセクションでは、アドイン スクリプトでユーザーの会議を更新して、オンライン会議の詳細を含める方法について説明します。 次は、サポートされているすべてのプラットフォームに適用されます。
 
 1. 同じクイック スタート プロジェクトから、コード エディターで **ファイル ./src/commands/commands.js** を開きます。
 
@@ -194,33 +270,36 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
 
 ## <a name="testing-and-validation"></a>テストと検証
 
-アドインを [テストして検証するには、通常のガイダンスに](testing-and-tips.md)従います。 Outlook on the web、Windows、または Mac で[サイドローディング](sideload-outlook-add-ins-for-testing.md)した後、Androidまたはモバイル デバイスでOutlook iOS再起動します。 次に、新しい会議画面で、Microsoft TeamsまたはSkypeの切り替えが自分のトグルに置き換えられていることを確認します。
+通常のガイダンスに従って[アドインをテストして検証](testing-and-tips.md)し、Outlook on the web、Windows、または Mac でマニフェストを[サイドロード](sideload-outlook-add-ins-for-testing.md)します。 アドインでモバイルもサポートされている場合は、サイドロード後に Android または iOS デバイスで Outlook を再起動します。 アドインがサイドロードされたら、新しい会議を作成し、Microsoft Teams または Skype トグルが自分の会議に置き換えられていることを確認します。
 
 ### <a name="create-meeting-ui"></a>会議 UI を作成する
 
 会議の開催者として、会議を作成すると、次の 3 つの画像のような画面が表示されます。
 
-[![Contoso がオフになっているAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![読み込み Contoso トグルを使用してAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Contoso トグルがオンになっているAndroidの会議の作成画面。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Contoso がオフになっている Android の会議の作成画面。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![読み込み Contoso トグルを使用した Android の会議の作成画面。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Contoso トグルがオンになっている Android の会議の作成画面。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>会議に参加する UI
 
 会議出席者として、会議を表示すると、次の図のような画面が表示されます。
 
-[![Androidの [会議への参加] 画面。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Android の [参加会議] 画面。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> **[参加**] リンクが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については、「 [オンライン会議テンプレートの登録](#register-your-online-meeting-template) 」セクションを参照してください。
+> **[参加**] ボタンは、Outlook on the web、Mac、Android、および iOS でのみサポートされます。 会議リンクのみが表示されているが、サポートされているクライアントに **[参加** ] ボタンが表示されない場合は、サービスのオンライン会議テンプレートがサーバーに登録されていない可能性があります。 詳細については、「 [オンライン会議テンプレートの登録](#register-your-online-meeting-template) 」セクションを参照してください。
 
 ## <a name="register-your-online-meeting-template"></a>オンライン会議テンプレートを登録する
 
-オンライン会議アドインの登録は省略可能です。 会議のリンクに加えて、[ **参加** ] ボタンを会議に表示する場合にのみ適用されます。 オンライン会議アドインを開発し、登録する場合は、次のガイダンスに従ってGitHub問題を作成します。 登録タイムラインの調整については、お客様にお問い合わせください。
+オンライン会議アドインの登録は省略可能です。 会議のリンクに加えて、[ **参加** ] ボタンを会議に表示する場合にのみ適用されます。 オンライン会議アドインを開発し、登録する場合は、次のガイダンスを使用して GitHub の問題を作成します。 登録タイムラインの調整については、お客様にお問い合わせください。
 
-1. [新しいGitHubの問題](https://github.com/OfficeDev/office-js/issues/new)を作成します。
-1. 新しい問題の **タイトル** を "サービスのオンライン会議テンプレートを登録する" に設定し、サービス名に `my-service` 置き換えます。
+> [!IMPORTANT]
+> **[参加**] ボタンは、Outlook on the web、Mac、Android、および iOS でのみサポートされます。
+
+1. 新しい [GitHub の問題](https://github.com/OfficeDev/office-js/issues/new)を作成します。
+1. 新しい問題の **タイトル** を [Outlook: my-service のオンライン会議テンプレートを登録する] に設定し、サービス名に `my-service` 置き換えます。
 1. 問題本文で、既存のテキストを、この記事の前の「[オンライン会議の詳細の追加](#implement-adding-online-meeting-details)の`newBody`実装」セクションの変数または類似の変数で設定した文字列に置き換えます。
 1. [ **新しい問題の送信]** をクリックします。
 
-![Contoso サンプル コンテンツを含む新しいGitHubの問題画面。](../images/outlook-request-to-register-online-meeting-template.png)
+![Contoso サンプル コンテンツを含む新しい GitHub の問題画面。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>使用可能な API
 
@@ -244,7 +323,7 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
 いくつかの制限が適用されます。
 
 - オンライン会議サービス プロバイダーにのみ適用されます。
-- 管理者がインストールしたアドインのみが会議の作成画面に表示され、既定のTeamsまたはSkypeオプションが置き換えられます。 ユーザーがインストールしたアドインはアクティブ化されません。
+- 管理者がインストールしたアドインのみが会議の作成画面に表示され、既定の Teams または Skype オプションが置き換えられます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進コード `#919191` を使用するか、 [他の色形式](https://convertingcolors.com/hex-color-919191.html)で同等の色を使用してグレースケールにする必要があります。
 - 予定オーガナイザー (compose) モードでは、UI レス コマンドは 1 つだけサポートされます。
 - アドインは、1 分間のタイムアウト期間内に、予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開かれたアドインがダイアログ ボックスに費やされた時間は、タイムアウト期間から除外されます。
