@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0afb6bcd46873dd968c242e57ac1a6f8d7f41627
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229716"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659928"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -33,7 +33,7 @@ ms.locfileid: "66229716"
 
 1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. 次の `<Requirements>` セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) を要求します。
+1. 次の **\<Requirements\>** セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) を要求します。
 
     ```xml
     <Requirements>
@@ -57,7 +57,7 @@ ms.locfileid: "66229716"
     <DefaultSettings>
     ```
 
-1. `<VersionOverrides>` セクションを検索して次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の `<bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+1. **\<VersionOverrides\>** セクションを検索して次の **\<Runtimes\>** セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の `<bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
     
     ```xml
     <Runtimes>
@@ -66,7 +66,7 @@ ms.locfileid: "66229716"
     ```
     
     > [!IMPORTANT]
-    > `<Runtimes>` セクションは、次の XML で示される正確な順序で `<Host xsi:type="...">` 要素の後に入力する必要があります。
+    > **\<Runtimes\>** セクションは、次の XML で示される正確な順序で `<Host xsi:type="...">` 要素の後に入力する必要があります。
 
     ```xml
     <VersionOverrides ...>
@@ -82,7 +82,7 @@ ms.locfileid: "66229716"
     > [!NOTE]
     > アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
-1. `<Page>` 要素を検索します。次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
+1. **\<Page\>** 要素を検索します。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 
    ```xml
    <AllFormFactors>

@@ -1,21 +1,22 @@
 ---
 title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
-ms.date: 05/25/2022
+ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752856"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659676"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
 アドイン コマンドは、Office UI を拡張し、アドインでアクションを開始する UI 要素です。アドイン コマンドを使用すると、リボン上のボタンやアイテムをコンテキスト メニューに追加できます。ユーザーがアドイン コマンドを選択すると、JavaScript コードを実行したり、アドインのページを作業ウィンドウに表示するなどのアクションが開始されます。アドイン コマンドは、ユーザーがアドインを検索して使用ために役立ちます。これにより、アドインの導入と再利用を促進し、顧客維持率を向上させることができます。
 
 > [!NOTE]
-> SharePoint カタログは、アドイン コマンドをサポートしません。[統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使用してテストのためのアドイン コマンドを展開できます。
+> - SharePoint カタログは、アドイン コマンドをサポートしません。[統合アプリ](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)または [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) でアドイン コマンドを展開するか、[サイドロード](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)を使用してテストのためのアドイン コマンドを展開できます。
+> - 現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
 
 > [!IMPORTANT]
 > アドイン コマンドは、Outlook でもサポートされています。 詳細については、「[Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)」を参照してください。
@@ -28,12 +29,19 @@ ms.locfileid: "65752856"
 
 ![Excel on the web のアドイン コマンドのスクリーンショット。](../images/add-in-commands-2.png)
 
+## <a name="types-of-add-in-commands"></a>アドイン コマンドの種類
+
+コマンドがトリガーするアクションの種類に基づいて、2 種類のアドイン コマンドがあります。
+
+- **作業ウィンドウ コマンド**: ボタンまたはメニュー項目によって、アドインの作業ウィンドウが開きます。 この種のアドイン コマンドをマニフェスト内のマークアップと共に追加します。 コマンドの "分離コード" は Office に指定されます。
+- **関数コマンド**: ボタンまたはメニュー項目は任意の JavaScript を実行します。 ほとんどの場合、このコードは Office JavaScript ライブラリで API を呼び出しますが、そうする必要はありません。 この種類のアドインでは、通常、ボタンまたはメニュー項目自体以外の UI は表示されません。 関数コマンドについては、次の点に注意してください。
+
+   - トリガーされる関数は [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) メソッドを呼び出してダイアログを表示できます。これは、エラーの表示、進行状況の表示、またはユーザーからの入力を求める適切な方法です。 アドインが共有ランタイムを使用するように構成されている場合、関数は [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) メソッドを呼び出すこともできます。
+   - 関数コマンドを実行する JavaScript ランタイムは、ブラウザーベースの完全なランタイムです。 HTML をレンダリングし、インターネットに呼び出してデータを送信または取得できます。
+
 ## <a name="command-capabilities"></a>コマンドの機能
 
 現在は、次のコマンド機能がサポートされています。
-
-> [!NOTE]
-> 現在、コンテンツ アドインは、アドイン コマンドをサポートしていません。
 
 ### <a name="extension-points"></a>拡張点
 
@@ -44,11 +52,6 @@ ms.locfileid: "65752856"
 
 - 単純なボタン: 特定のアクションをトリガーします。
 - メニュー: アクションをトリガーするボタン付きの単純なメニューのドロップダウン。
-
-### <a name="actions"></a>アクション
-
-- ShowTaskpane: カスタムの HTML ページをロードする 1 つまたは複数のウィンドウを表示します。
-- ExecuteFunction: 非表示の HTML ページをロードして、JavaScript 関数を実行します。関数内で UI を表示するには (エラー、進行状況、追加入力など)、[displayDialog](/javascript/api/office/office.ui) API を使用できます。  
 
 ### <a name="default-enabled-or-disabled-status"></a>既定で有効または無効になっている状態 
 
