@@ -3,12 +3,12 @@ title: 辞書の作業ウィンドウ アドインを作成する
 description: 辞書作業ウィンドウ アドインを作成する方法について説明します。
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6df6ec5e3fc90899475e3fd089a8e5c0ca766b
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187323"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660061"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -250,11 +250,11 @@ public class WebService : System.Web.Services.WebService {
 
 **親要素**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **子要素**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **注釈**
 
@@ -266,11 +266,11 @@ public class WebService : System.Web.Services.WebService {
 
 **親要素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **子要素**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **解説**
 
@@ -307,7 +307,7 @@ public class WebService : System.Web.Services.WebService {
 
 **親要素**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **注釈**
 
@@ -325,7 +325,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 **親要素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **解説**
 
@@ -343,7 +343,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 **親要素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **解説**
 
@@ -363,7 +363,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 **親要素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **解説**
 
@@ -383,7 +383,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 **親要素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **解説**
 
@@ -489,7 +489,7 @@ a:hover, a:active
 
 次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。 このスクリプトでは、上で説明した XML Web サービスを再利用しています。 例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されます このスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。
 
-この実装から呼び出されるOffice JavaScript API (Office.js) のプライマリ メンバーは次のとおりです。
+この実装から呼び出される Office JavaScript API (Office.js) のプライマリ メンバーは次のとおりです。
 
 - アドイン コンテキストの [初期化](/javascript/api/office) 時に `Office` 発生するオブジェクトの初期化イベントで、アドインが操作しているドキュメントを表す [Document](/javascript/api/office/office.document) オブジェクト インスタンスにアクセスできます。
 - オブジェクトの [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) メソッド。これは、ユーザー選択の`Document`変更をリッスンするドキュメントの [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加する関数で`initialize`呼び出されます。

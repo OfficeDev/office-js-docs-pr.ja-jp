@@ -1,41 +1,41 @@
 ---
-title: カスタム関数の JSON メタデータを手動で作成Excel
-description: カスタム関数の JSON メタデータを定義し、Excel ID と名前のプロパティを関連付ける。
+title: Excel でカスタム関数の JSON メタデータを手動で作成する
+description: Excel でカスタム関数の JSON メタデータを定義し、関数 ID と名前のプロパティを関連付けます。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ef786be050f081c7186f157b6add7a4aca5b04a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fdb3861a7924473b556020fea0ec5916e9291082
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744554"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660222"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
-カスタム関数の概要[](custom-functions-overview.md)に関する記事で説明したように、カスタム関数プロジェクトには、JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) ファイルの両方を含め、関数を登録して使用できる必要があります。 カスタム関数は、ユーザーが初めてアドインを実行した後、すべてのブックで同じユーザーが使用できる場合に登録されます。
+[カスタム関数の概要](custom-functions-overview.md)に関する記事で説明されているように、カスタム関数プロジェクトには、JSON メタデータ ファイルとスクリプト (JavaScript または TypeScript) ファイルの両方を含めて関数を登録し、使用できるようにする必要があります。 カスタム関数は、ユーザーがアドインを初めて実行したときに登録され、その後、すべてのブックで同じユーザーが使用できるようになります。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-独自の JSON ファイルを作成する代わりに、可能な場合は JSON 自動生成を使用することをお勧めします。 自動生成はユーザー エラーの発生が少なく、スキャ `yo office` フォールディング されたファイルには既にこれが含まれます。 JSDoc タグと JSON 自動生成プロセスの詳細については、「カスタム関数の JSON メタデータを自動生成 [する」を参照してください](custom-functions-json-autogeneration.md)。
+可能であれば、独自の JSON ファイルを作成する代わりに、JSON 自動生成を使用することをお勧めします。 自動生成はユーザー エラーの発生が少なく、 `yo office` スキャフォールディングされたファイルには既にこれが含まれています。 JSDoc タグと JSON 自動生成プロセスの詳細については、「 [カスタム関数の JSON メタデータを自動生成する」を](custom-functions-json-autogeneration.md)参照してください。
 
-ただし、カスタム関数プロジェクトを最初から作成できます。 このプロセスでは、次の操作を行う必要があります。
+ただし、カスタム関数プロジェクトを最初から作成できます。 このプロセスでは、次のことを行う必要があります。
 
-- JSON ファイルを書き込む。
+- JSON ファイルを記述します。
 - マニフェスト ファイルが JSON ファイルに接続されていることを確認します。
-- 関数を登録するために、 `id` `name` スクリプト ファイル内の関数とプロパティを関連付ける。
+- 関数を登録するために、スクリプト ファイル内の関数 `id` と `name` プロパティを関連付けます。
 
-次の図は、スキャフォールディング ファイルの使用と JSON の `yo office` 最初からの書き込みとの違いを説明しています。
+次の図では、スキャフォールディング ファイルの使用 `yo office` と JSON の最初からの書き込みの違いについて説明します。
 
-![アドインに Yeoman ジェネレーターを使用して、Office JSON を記述する場合の違いをイメージします。](../images/custom-functions-json.png)
+![Office アドイン用の Yeoman ジェネレーターの使用と独自の JSON の作成の違いのイメージ。](../images/custom-functions-json.png)
 
 > [!NOTE]
-> アドインに [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用しない場合は、XML マニフェスト ファイルのセクションを通じて、作成した JSON `<Resources>` ファイルにマニフェストを接続Officeしてください。
+> [Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用しない場合は、XML マニフェスト ファイルのセクションを使用して **\<Resources\>**、作成した JSON ファイルにマニフェストを必ず接続してください。
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>メタデータの作成とマニフェストへの接続
 
-プロジェクトに JSON ファイルを作成し、関数のパラメーターなど、プロジェクト内の関数に関する詳細を提供します。 関数プロパティ[の完全な一覧](#json-metadata-example)[については、](#metadata-reference)次のメタデータ例とメタデータ参照を参照してください。
+プロジェクトに JSON ファイルを作成し、その中の関数に関するすべての詳細 (関数のパラメーターなど) を指定します。 関数プロパティの完全な一覧については、 [次のメタデータの例](#json-metadata-example) と [メタデータリファレンス](#metadata-reference) を参照してください。
 
-次の例と同様に、XML マニフェスト ファイルでセクション内の JSON `<Resources>` ファイルを参照してください。
+次の例のように、XML マニフェスト ファイルがセクション内の **\<Resources\>** JSON ファイルを参照していることを確認します。
 
 ```json
 <Resources>
@@ -136,27 +136,27 @@ ms.locfileid: "63744554"
 ```
 
 > [!NOTE]
-> 完全なサンプル JSON ファイルは、リポジトリのコミット履歴Excel [OfficeDev/GitHub-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) で使用できます。 プロジェクトが JSON を自動的に生成するために調整されたので、手書き JSON の完全なサンプルは、以前のバージョンのプロジェクトでのみ使用できます。
+> 完全なサンプル JSON ファイルは、 [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub リポジトリのコミット履歴で入手できます。 プロジェクトが JSON を自動的に生成するように調整されているため、手書きの JSON の完全なサンプルは、以前のバージョンのプロジェクトでのみ使用できます。
 
-## <a name="metadata-reference"></a>メタデータ参照
+## <a name="metadata-reference"></a>メタデータリファレンス
 
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (プレビュー)
 
 > [!NOTE]
-> プロパティ`allowCustomDataForDataTypeAny`は現在パブリック プレビューで使用できます。このプロパティは、パブリック プレビュー OfficeとWindows。 プレビュー機能は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー機能を使用しないでください。
+> この `allowCustomDataForDataTypeAny` プロパティは現在、パブリック プレビューで使用でき、Windows 上の Office とのみ互換性があります。 プレビュー機能は変更されることがあります。運用環境での使用は意図されていません。 試用はテスト環境と開発環境に限定することをお勧めします。 運用環境やビジネス上重要なドキュメントでプレビュー機能を使用しないでください。
 >
-> Windows の Office でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、[Office Insider プログラム](https://insider.office.com/)に参加して、**ベータ チャネル** Insider レベルを選択する必要があります。 詳細については、「[Office Insider プログラムに参加する](https://insider.office.com/join/windows)」を参照してください。
+> Office on Windows でこのプロパティを試すには、Excel ビルド番号が 16.0.14623.20002 以上である必要があります。 この機能を使用するには、[Office Insider プログラム](https://insider.office.com/)に参加して、**ベータ チャネル** Insider レベルを選択する必要があります。 詳細については、「[Office Insider プログラムに参加する](https://insider.office.com/join/windows)」を参照してください。
 
-プロパティ `allowCustomDataForDataTypeAny` はブール型です。 この値を設定すると、 `true` カスタム関数はデータ型をパラメーターとして受け入れ、値を返します。 詳細については、「カスタム関数 [とデータ型」を参照してください](custom-functions-data-types-concepts.md)。
+プロパティは `allowCustomDataForDataTypeAny` ブール型です。 この値を設定すると `true` 、カスタム関数がパラメーターとしてデータ型を受け入れ、値を返すことができます。 詳細については、「 [カスタム関数とデータ型](custom-functions-data-types-concepts.md)」を参照してください。
 
-他のほとんどの JSON メタデータ プロパティとは異なり、 `allowCustomDataForDataTypeAny` トップ レベルのプロパティであり、サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
+他のほとんどの JSON メタデータ プロパティとは異なり、 `allowCustomDataForDataTypeAny` 最上位のプロパティであり、サブプロパティは含んでいません。 このプロパティを書式設定する方法の例については、上記の [JSON メタデータ コード サンプル](#json-metadata-example) を参照してください。
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 
-プロパティ `allowErrorForDataTypeAny` はブール型です。 値を設定すると、カスタム `true` 関数は入力値としてエラーを処理できます。 に設定されている場合、型を持`any``any[][]`つすべてのパラメーターまたは入力値としてエラーを受け`allowErrorForDataTypeAny`入れることができます`true`。 既定値は `allowErrorForDataTypeAny` です `false`。
+プロパティは `allowErrorForDataTypeAny` ブール型です。 カスタム関数が入力値 `true` としてエラーを処理できるように値を設定します。 型`any`を持つすべてのパラメーター、または`any[][]`入力値としてエラーを受け入れる場合があります `true`。`allowErrorForDataTypeAny`. 既定値 `allowErrorForDataTypeAny` は `false`.
 
 > [!NOTE]
-> 他の JSON メタデータ プロパティとは異なり、 `allowErrorForDataTypeAny` トップ レベルのプロパティであり、サブプロパティは含まれています。 このプロパティを書式設定する方法 [の例については](#json-metadata-example) 、上記の JSON メタデータ コード サンプルを参照してください。
+> 他の JSON メタデータ プロパティとは異なり、 `allowErrorForDataTypeAny` 最上位のプロパティであり、サブプロパティは含んでいません。 このプロパティを書式設定する方法の例については、上記の [JSON メタデータ コード サンプル](#json-metadata-example) を参照してください。
 
 ### <a name="functions"></a>functions
 
@@ -166,8 +166,8 @@ ms.locfileid: "63744554"
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
 | `helpUrl`     | 文字列    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
-| `id`          | 文字列    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
-| `name`        | 文字列    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 このExcel、この関数名には、XML マニフェスト ファイルで指定されたカスタム関数名前空間のプレフィックスが付けられている。 |
+| `id`          | string    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
+| `name`        | string    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名の前に、XML マニフェスト ファイルで指定されたカスタム関数名前空間が付けられます。 |
 | `options`     | オブジェクト    | いいえ       | Excel で関数を実行する方法とタイミングの一部をユーザーがカスタマイズできます。 詳細については、[options](#options) に関する説明を参照してください。                                                          |
 | `parameters`  | 配列     | はい      | 関数の入力パラメーターを定義する配列です。 詳細については [、パラメーター](#parameters) を参照してください。                                                                             |
 | `result`      | object    | はい      | 関数が返す情報の種類を定義するオブジェクトです。 詳細については、[result](#result) に関する説明を参照してください。                                                                 |
@@ -178,11 +178,11 @@ ms.locfileid: "63744554"
 
 | プロパティ          | データ型 | 必須                               | 説明 |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 キャンセル可能な関数は、通常、1 つの結果を返す非同期関数でのみ使用され、データ要求の取り消しを処理する必要があります。 関数は、プロパティとプロパティの両方を `stream` 使用 `cancelable` することはできません。 |
-| `requiresAddress` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true`は、カスタム関数は、それを呼び出したセルのアドレスにアクセスできます。 呼 `address` び出しパラメーター [のプロパティには](custom-functions-parameter-options.md#invocation-parameter) 、カスタム関数を呼び出したセルのアドレスが含まれます。 関数は、プロパティとプロパティの両方を `stream` 使用 `requiresAddress` することはできません。 |
-| `requiresParameterAddresses` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true`は、カスタム関数は、関数の入力パラメーターのアドレスにアクセスできます。 このプロパティは、result オブジェクトのプロパティと`dimensionality`組み合[](#result) `dimensionality` `matrix`わせて使用する必要があります。 詳細 [については、「パラメーターのアドレスを検出する](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 」を参照してください。 |
-| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳細については、「ストリーミング機能 [を作成する」を参照してください](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合`true`は、数式の依存値が変更Excelではなく、計算が再計算されるごとに関数が再計算されます。 関数は、プロパティとプロパティの両方を `stream` 使用 `volatile` することはできません。 プロパティと `stream` プロパティの `volatile` 両方がに設定されている場合 `true`、揮発性プロパティは無視されます。 |
+| `cancelable`      | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 キャンセル可能な関数は通常、1 つの結果を返し、データの要求の取り消しを処理する必要がある非同期関数にのみ使用されます。 関数では、プロパティと`cancelable`プロパティの両方を`stream`使用できません。 |
+| `requiresAddress` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | カスタム関数が呼び出したセルのアドレスにアクセスできる場合 `true`。 `address` [呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter)のプロパティには、カスタム関数を呼び出したセルのアドレスが含まれています。 関数では、プロパティと`requiresAddress`プロパティの両方を`stream`使用できません。 |
+| `requiresParameterAddresses` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | カスタム関数が関数の入力パラメーターのアドレスにアクセスできる場合 `true`。 このプロパティは[、結果](#result)オブジェクトのプロパティと`dimensionality`組み合わせて使用する必要`matrix`があり`dimensionality`、. 詳細については、「 [パラメーターのアドレスを検出](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) する」を参照してください。 |
+| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳細については、「 [ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。 |
+| `volatile`        | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true`は、数式の依存値が変更されたときだけでなく、Excel が再計算するたびに関数が再計算されます。 関数では、プロパティと`volatile`プロパティの両方を`stream`使用できません。 プロパティと`volatile`プロパティの`stream`両方が設定`true`されている場合、volatile プロパティは無視されます。 |
 
 ### <a name="parameters"></a>parameters
 
@@ -190,12 +190,12 @@ ms.locfileid: "63744554"
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは、ユーザーのExcelに表示IntelliSense。  |
-|  `dimensionality`  |  文字列  |  いいえ  |  (配列以外 `scalar` の値) または (2 次元配列) `matrix` のいずれかである必要があります。  |
-|  `name`  |  文字列  |  はい  |  パラメーターの名前です。 この名前は、ExcelのIntelliSense。  |
-|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 、、`boolean`、`number``string`、を使用`any`すると、前の 3 つの種類の任意のを使用できます。 このプロパティを指定しない場合、データ型の既定値は `any`. |
+|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは Excel の IntelliSense に表示されます。  |
+|  `dimensionality`  |  文字列  |  いいえ  |  `scalar` (配列以外の値) または `matrix` (2 次元配列) である必要があります。  |
+|  `name`  |  string  |  はい  |  パラメーターの名前です。 この名前は、Excel の IntelliSense に表示されます。  |
+|  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 `boolean`には、`number``string``any`前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定値 `any`は . |
 |  `optional`  | ブール | いいえ | `true` の場合、パラメーターは省略可能です。 |
-|`repeating`| ブール | いいえ | If `true`, parameters populate from a specified array. 関数のすべての繰り返しパラメーターは、定義によって省略可能なパラメーターと見なされます。  |
+|`repeating`| ブール | いいえ | 場合 `true`は、指定した配列からパラメーターが設定されます。 関数のすべての繰り返しパラメーターは、定義によって省略可能なパラメーターと見なされることに注意してください。  |
 
 ### <a name="result"></a>result
 
@@ -203,12 +203,12 @@ ms.locfileid: "63744554"
 
 | プロパティ         | データ型 | 必須 | 説明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | いいえ       | (配列以外 `scalar` の値) または (2 次元配列) `matrix` のいずれかである必要があります。 |
-| `type` | 文字列    | いいえ       | 結果のデータ型。 、、`boolean`、 `number``string``any` または (これは、前の 3 つの種類の任意の使用を可能にする) を指定できます。 このプロパティを指定しない場合、データ型の既定値は `any`. |
+| `dimensionality` | string    | いいえ       | `scalar` (配列以外の値) または `matrix` (2 次元配列) である必要があります。 |
+| `type` | 文字列    | いいえ       | 結果のデータ型。 `boolean`、、`number``string`または `any` (前の 3 つの型のいずれかを使用できます) ことができます。 このプロパティが指定されていない場合、データ型の既定値 `any`は . |
 
 ## <a name="associating-function-names-with-json-metadata"></a>関数名を JSON メタデータに関連付ける
 
-関数が正しく動作するには、関数 `id` のプロパティを JavaScript 実装に関連付ける必要があります。 関連付けがある場合は、関数が登録されないので、この関数を使用Excel。 次のコード サンプルは、メソッドを使用して関連付けを行う方法を示 `CustomFunctions.associate()` しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
+関数が正しく機能するには、関数の `id` プロパティを JavaScript 実装に関連付ける必要があります。 関連付けがあることを確認します。それ以外の場合、関数は登録されません。Excel では使用できません。 次のコード サンプルは、メソッドを使用して関連付けを行う方法を `CustomFunctions.associate()` 示しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
 
 ```js
 /**
@@ -262,9 +262,9 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 - 対応する JavaScript 関数の名前に関連付けられた後では、JSON のメタデータ ファイル内の `id` プロパティの値を変更しないでください。 JSON のメタデータ ファイル内の `name` プロパティを更新することによって Excel でエンド ユーザーに表示される関数の名前を変更することができます。しかし、確立された後は、 `id` プロパティの値を決して変更しないでください。
 
-- JavaScript ファイルで、各関数の後に使用するカスタム関数の関連 `CustomFunctions.associate` 付けを指定します。
+- JavaScript ファイルで、各関数の後に使用する `CustomFunctions.associate` カスタム関数の関連付けを指定します。
 
-次のサンプルは、前の JavaScript コード サンプルで定義されている関数に対応する JSON メタデータを示しています。 プロパティ `id` の `name` 値は大文字で、カスタム関数を記述する場合のベスト プラクティスです。 独自の JSON ファイルを手動で準備し、自動生成を使用しない場合にのみ、この JSON を追加する必要があります。 自動生成の詳細については、「カスタム関数の [JSON メタデータの自動生成」を参照してください](custom-functions-json-autogeneration.md)。
+次の例は、前の JavaScript コード サンプルで定義された関数に対応する JSON メタデータを示しています。 `id`プロパティ値と`name`プロパティ値は大文字です。これは、カスタム関数を記述する場合のベスト プラクティスです。 この JSON は、自動生成を使用せず、独自の JSON ファイルを手動で準備している場合にのみ追加する必要があります。 自動生成の詳細については、「 [カスタム関数の JSON メタデータを自動生成する」を](custom-functions-json-autogeneration.md)参照してください。
 
 ```json
 {
@@ -286,10 +286,10 @@ JavaScript ファイルでカスタム関数を作成し、JSON のメタデー�
 
 ## <a name="next-steps"></a>次の手順
 
-関数に[名前を付けるベスト](custom-functions-naming.md) プラクティスを説明するか、[](custom-functions-localize.md)前に説明した手書き JSON メソッドを使用して関数をローカライズする方法について説明します。
+関数に [名前を付けるためのベスト プラクティス](custom-functions-naming.md) や、前述の手書き JSON メソッドを使用して [関数をローカライズ](custom-functions-localize.md) する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
 - [カスタム関数用の JSON メタデータの自動生成](custom-functions-json-autogeneration.md)
-- [カスタム関数パラメーター のオプション](custom-functions-parameter-options.md)
+- [カスタム関数パラメーター オプション](custom-functions-parameter-options.md)
 - [Excel でカスタム関数を作成する](custom-functions-overview.md)

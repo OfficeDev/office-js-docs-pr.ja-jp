@@ -3,52 +3,52 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ca9e35026acb91a54affa8215178f2eaa6cbd4c9
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496734"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659823"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
 アドインの一部の機能を特定のコンテキストでのみ使用可能にする必要がある場合、カスタム アドイン コマンドをプログラムで有効または無効にすることができます。 たとえば、表の見出しを変更する関数は、カーソルが表の中にある場合にのみ有効にする必要があります。
 
-また、クライアント アプリケーションを開く際にコマンドを有効または無効Office指定することもできます。
+Office クライアント アプリケーションが開いたときに、コマンドを有効にするか無効にするかを指定することもできます。
 
 > [!NOTE]
 > この記事は、以下のドキュメントについて既に理解していることを前提としています。 最近、アドイン コマンド (カスタム メニュー項目とリボン ボタン) を使用してない場合は、ドキュメントをご確認ください。
 >
 > - [アドイン コマンドの基本概念](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Officeとプラットフォームのサポートのみ
+## <a name="office-application-and-platform-support-only"></a>Office アプリケーションとプラットフォームのサポートのみ
 
 この記事で説明する API は、Excel、PowerPoint、および Word でのみ使用できます。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>要件セットを使用したプラットフォーム サポートのテスト
 
-要件セットは、API メンバーの名前付きグループです。 Officeアドインは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインに必要な API をサポートするかどうかを判断します。 詳細については、「Office[要件セット」を参照してください](../develop/office-versions-and-requirement-sets.md)。
+要件セットは、API メンバーの名前付きグループです。 Office アドインでは、マニフェストで指定された要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションとプラットフォームの組み合わせがアドインで必要な API をサポートしているかどうかを判断します。 詳細については、「 [Office のバージョンと要件セット](../develop/office-versions-and-requirement-sets.md)」を参照してください。
 
-有効/無効 API は [、RibbonApi 1.1 要件セットに](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) 属します。
+有効/無効 API は [、RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) 要件セットに属します。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要件セットはマニフェストでまだサポートされていないので、マニフェストの [要件] セクション **で指定** することはできません。 サポートをテストするには、コードを呼び出す必要があります `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 その呼 *び出しが返* された `true`場合にのみ、コードは有効/無効 API を呼び出す可能性があります。 戻り値の呼び `isSetSupported` 出しの `false`場合は、すべてのカスタム アドイン コマンドがすべての時間有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、実稼働アドインとアプリ内の指示を設計する必要があります。 使用の詳細と例`isSetSupported`については、「アプリケーションと [API](../develop/specify-office-hosts-and-api-requirements.md) Officeを指定する、特にメソッドと要件セットのサポートに関するランタイム チェック」[を参照してください](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 (セクション[「リボン](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) 1.1 にはOfficeのアドインをホストできるバージョンとプラットフォームを指定する」を参照してください。
+> **RibbonApi 1.1** 要件セットはマニフェストではまだサポートされていないため、マニフェストの **\<Requirements\>** セクションでは指定できません。 サポートをテストするには、コードが呼び出す `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`必要があります。 その呼び出 *しが* 返された `true`場合にのみ、コードは enable/disable API を呼び出すことができます。 戻`false`り値の`isSetSupported`呼び出しの場合、すべてのカスタム アドイン コマンドが常に有効になります。 **RibbonApi 1.1** 要件セットがサポートされていない場合の動作を考慮するために、運用アドインとアプリ内指示を設計する必要があります。 使用 `isSetSupported`の詳細と例については、「 [Office アプリケーションと API の要件の指定](../develop/specify-office-hosts-and-api-requirements.md)、特に [メソッドと要件セットのサポートに関するランタイム チェック](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)」を参照してください。 (「この記事の [アドインをホストできる Office バージョンとプラットフォームを指定](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) する」セクションは、リボン 1.1 には適用されません)。
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
-この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順を実行します。
+この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順に従います。
 
-1. マニフェストの [Runtimes](/javascript/api/manifest/runtimes) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに **Runtimes** 要素が存在しない場合は、**VersionOverrides** セクションの **Host** 要素の下に最初の子として作成します。
+1. マニフェストの [Runtimes](/javascript/api/manifest/runtimes) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに要素がまだ **\<Runtimes\>** ない場合は、セクションの要素の下に最初の **\<Host\>****\<VersionOverrides\>** 子として作成します)。
 2. マニフェストの [Resources.Urls](/javascript/api/manifest/resources) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。
-3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順の 1 つ以上を実行する必要があります。
+3. アドインに作業ウィンドウ、関数ファイル、または Excel カスタム関数が含まれているかどうかに応じて、次の 3 つの手順のうち 1 つ以上を実行する必要があります。
 
-    - アドインに作業ウィンドウが含まれている場合は、Action の属性 `resid` を設定 [します](/javascript/api/manifest/action)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、 `resid` 手順 1 の **Runtime** 要素で使用した文字列とまったく同じ文字列を指定 `Contoso.SharedRuntime.Url`します。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインにカスタム関数が含まれているExcel、Page の属性`resid`を設定 [します](/javascript/api/manifest/page)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、手順 `resid` 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じです。たとえば、 です。 そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
-    - アドインに関数`resid`ファイルが含まれている場合は、手順 1 `Contoso.SharedRuntime.Url`の **Runtime** 要素で使用した文字列とまったく同じ文字列に [FunctionFile](/javascript/api/manifest/functionfile) `resid` 要素の属性を設定します。たとえば、 を指定します。 そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに作業ウィンドウが含まれている場合は、アクションの`resid`属性を設定 [します](/javascript/api/manifest/action)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、手順 1 の要素に使用`resid`**\<Runtime\>** したものとまったく同じ文字列です。たとえば、 `Contoso.SharedRuntime.Url`. そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに Excel カスタム関数が含まれている場合は、Page の属性を`resid`設定 [します](/javascript/api/manifest/page)。[SourceLocation](/javascript/api/manifest/sourcelocation) 要素は、手順 1 の`resid`**\<Runtime\>** 要素に使用したものとまったく同じ文字列です。たとえば、 `Contoso.SharedRuntime.Url`. そうすると要素は `<SourceLocation resid="Contoso.SharedRuntime.Url"/>` のようになります。
+    - アドインに関数ファイルが含まれている場合は、[FunctionFile](/javascript/api/manifest/functionfile) 要素の属性を、手順 1 の要素で使用したものと`resid`**\<Runtime\>** まったく同じ文字列に設定`resid`します。たとえば、 `Contoso.SharedRuntime.Url`. そうすると要素は `<FunctionFile resid="Contoso.SharedRuntime.Url"/>` のようになります。
 
 ## <a name="set-the-default-state-to-disabled"></a>既定の状態を無効に設定する
 
-既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](/javascript/api/manifest/action) 要素の *直下* (内部ではない) に、[Enabled](/javascript/api/manifest/enabled) 要素 (値は `false`) を追加するだけで無効にすることができます。 以下に、基本的な構造を示します。
+既定では、Office アプリケーションの起動時にすべてのアドイン コマンドが有効になります。 Office アプリケーションの起動時にカスタム ボタンまたはメニュー項目を無効にするには、マニフェストで指定します。 コントロールの宣言の [Action](/javascript/api/manifest/action) 要素の *直下* (内部ではない) に、[Enabled](/javascript/api/manifest/enabled) 要素 (値は `false`) を追加するだけで無効にすることができます。 基本的な構造を次に示します。
 
 ```xml
 <OfficeApp ...>
@@ -76,10 +76,10 @@ ms.locfileid: "64496734"
 
 アドイン コマンドの有効な状態を変更するには、以下の手順が重要になります。
 
-1. (1) コマンドとその親グループとタブをマニフェストで宣言された名前の ID で指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。および (2) は、コマンドの有効または無効の状態を指定します。
+1. (1) マニフェストで宣言されている ID でコマンドとその親グループとタブを指定する [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) オブジェクトを作成します。(2) コマンドの有効または無効の状態を指定します。
 2. **RibbonUpdaterData** オブジェクトを [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) メソッドに渡します。
 
-次に簡単な例を示します。 マニフェストから "MyButton"、"OfficeAddinTab1"、および "CustomGroup111" がコピーされます。
+次に簡単な例を示します。 "MyButton"、"OfficeAddinTab1"、"CustomGroup111" はマニフェストからコピーされることに注意してください。
 
 ```javascript
 function enableButton() {
@@ -116,7 +116,7 @@ const enableButton = async () => {
 }
 ```
 
-親関数`await`が非同期の **場合は requestUpdate()** の呼び出しを実行できますが、リボンの状態を更新するときに Office アプリケーションが制御する点に注意してください。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドは、リボンが実際に更新された場合ではなく、要求をキューに入れ次第、promise オブジェクトを解決します。
+親関数が非同期の場合は **requestUpdate()** を呼び出すことができます`await`が、Office アプリケーションはリボンの状態を更新するタイミングを制御します。 **requestUpdate ()** メソッドが、更新の要求をキューイングします。 このメソッドは、リボンが実際に更新されたときではなく、要求をキューに入れるとすぐに promise オブジェクトを解決します。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>イベントに応じて状態を変更する
 
@@ -162,13 +162,13 @@ function enableChartFormat() {
 
 最後に、`disableChartFormat` ハンドラーを定義します。 `enableChartFormat` と同じですが、ボタン オブジェクトの **enabled** プロパティを `false` に設定する必要があります。
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効な状態を同時に切り替える
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>タブの表示とボタンの有効状態を同時に切り替える
 
-**requestUpdate メソッド** は、カスタム コンテキスト タブの表示を切り替える場合にも使用されます。このコードとコード例の詳細については、「カスタム コンテキスト タブを作成する」を参照 [Officeアドインを参照してください](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+**requestUpdate** メソッドは、カスタム コンテキスト タブの表示を切り替えるためにも使用されます。このコードとコード例の詳細については、「[Office アドインでカスタム コンテキスト タブを作成する](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)」を参照してください。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>ベスト プラクティス: コントロールの状態エラーのテスト
 
-状況によっては、`requestUpdate` が呼び出された後でもリボンが再描画されず、コントロールのクリック可能な状態が変更されない場合があります。 そこで、アドインのベスト プラクティスとして、コントロールの状態を追跡することが挙げられます。 アドインは、次の規則に準拠している必要があります。
+状況によっては、`requestUpdate` が呼び出された後でもリボンが再描画されず、コントロールのクリック可能な状態が変更されない場合があります。 そこで、アドインのベスト プラクティスとして、コントロールの状態を追跡することが挙げられます。 アドインは、次の規則に従う必要があります。
 
 1. `requestUpdate` が呼び出された場合はいつでも、コードがカスタム ボタンとメニュー項目の意図した状態を記録する必要があります。
 2. カスタム コントロールがクリックされたら、ハンドラーの最初のコードが、ボタンがクリック可能になっているかどうかを確認する必要があります。 クリック可能でない場合は、コードがエラーの報告または記録を行い、ボタンを意図した状態に設定し直す必要があります。

@@ -3,12 +3,12 @@ title: Outlook アドインのアクセス許可を理解する
 description: Outlook アドインでは、必要なアクセス許可のレベルをマニフェストで指定します。使用可能なレベルは Restricted、ReadItem、ReadWriteItem、ReadWriteMailbox です。
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b515ef470331a513d6b57007f372b3e4dec1d25b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484185"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660229"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Outlook アドインのアクセス許可を理解する
 
@@ -31,7 +31,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ### <a name="cant-do"></a>できないこと
 
-- 連絡先、電子メール アドレス、会議の提案、またはタスク提案エンティティで [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ルールを使用します。
+- 連絡先、電子メール アドレス、会議の提案、またはタスク候補エンティティで [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ルールを使用します。
 
 - [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) ルールまたは [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ルールを使用。
 
@@ -64,7 +64,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ## <a name="readitem-permission"></a>ReadItem アクセス許可
 
-**ReadItem** アクセス許可は、アクセス許可モデルの中でその次に位置するアクセス許可レベルです。このアクセス許可を要求するには、マニフェストの **Permissions** 要素内で **ReadItem** を指定します。
+**ReadItem** アクセス許可は、アクセス許可モデルの次のレベルのアクセス許可です。 このアクセス許可を要求するには、**\<Permissions\>** マニフェストの要素に **ReadItem** を指定します。
 
 ### <a name="can-do"></a>できること
 
@@ -76,7 +76,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - アイテムの件名または本文から、サブセットだけでなく、[存在する既知のエンティティをすべて取得する](match-strings-in-an-item-as-well-known-entities.md)。
 
-- [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](/javascript/api/manifest/rule#itemhasknownentity-rule)、または [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule)をすべて使用します。 次の例は、スキーマ v1.1 に従っています。 選択したメッセージの件名または本文に既知のエンティティが 1 つ以上見つかった場合にアドインをアクティブ化するルールが表示されます。
+- [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) ルールの [既知のエンティティ](/javascript/api/manifest/rule#itemhasknownentity-rule)、または [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) ルールの [正規表現](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule)をすべて使用します。 次の例は、スキーマ v1.1 に従っています。 選択したメッセージの件名または本文に 1 つ以上の既知のエンティティが見つかった場合にアドインをアクティブ化するルールを示します。
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -103,7 +103,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
   - Outlook REST API を使用した現在のアイテムの更新または削除、またはユーザーのメールボックスにあるその他アイテムへのアクセス。
   - Outlook REST API を使用した現在の予定表イベント アイテムの取得。
 
-- 次の API を使用します。
+- 次のいずれかの API を使用します。
   - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
   - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
@@ -128,7 +128,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ## <a name="readwriteitem-permission"></a>ReadWriteItem アクセス許可
 
-マニフェストの **Permissions** 要素に **ReadWriteItem** を指定すると、このアクセス許可を要求できます。作成フォームでアクティブになり、書き込みメソッド (**Message.to.addAsync** または **Message.to.setAsync**) を使用するメール アドインは、このレベル以上のアクセス許可を使用する必要があります。
+このアクセス許可を要求するには、**\<Permissions\>** マニフェストの要素に **ReadWriteItem** を指定します。 作成フォームでアクティブになり、書き込みメソッド (**Message.to.addAsync** または **Message.to.setAsync**) を使用するメール アドインは、このレベル以上のアクセス許可を使用する必要があります。
 
 ### <a name="can-do"></a>できること
 
@@ -136,7 +136,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 - そのアイテムで[添付ファイルを追加または削除](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- **Mailbox.makeEWSRequestAsync** を除Officeメール アドインに適用可能な JavaScript API の他のすべてのメンバーを使用します。
+- **メールボックス.makeEWSRequestAsync** を除く、メール アドインに適用できる Office JavaScript API の他のすべてのメンバーを使用します。
 
 ### <a name="cant-do"></a>できないこと
 
@@ -148,7 +148,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 
 ## <a name="readwritemailbox-permission"></a>ReadWriteMailbox アクセス許可
 
-**ReadWriteMailbox** アクセス許可は、最高のアクセス許可レベルです。このアクセス許可を要求するには、マニフェストの **Permissions** 要素内で **ReadWriteMailbox** を指定します。
+**ReadWriteMailbox** アクセス許可は、最上位レベルのアクセス許可です。 このアクセス許可を要求するには、**\<Permissions\>** マニフェストの要素に **ReadWriteMailbox** を指定します。
 
 **ReadWriteItem** アクセス許可がサポートする内容に加え、**mailbox.getCallbackTokenAsync** が提供するトークンでは、Exchange Web Services (EWS) 操作または Outlook REST API を使用して以下を行うためのアクセス権が提供されます。
 
@@ -156,7 +156,7 @@ Outlook アドインでは、必要なアクセス許可のレベルをマニフ
 - そのメール ボックスのフォルダーまたはアイテムの作成、読み取り、書き込み。
 - そのメール ボックスからのアイテムの送信。
 
-**mailbox.makeEWSRequestAsync を使用** すると、次の EWS 操作にアクセスできます。
+**mailbox.makeEWSRequestAsync** を使用すると、次の EWS 操作にアクセスできます。
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

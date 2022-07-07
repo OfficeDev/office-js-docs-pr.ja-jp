@@ -1,25 +1,25 @@
 ### YamlMime:Landing
 title: Outlook アドイン ドキュメント
-summary: Outlook アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、web、Windows、Mac、iOS などの複数のプラットフォームで Outlook で実行できるソリューションを構築できます。 Outlook アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
+summary: Outlook アドインを使用すると、HTML、CSS、JavaScript などの使い慣れた Web テクノロジを使用して、Web、Windows、Mac、iOS など、複数のプラットフォームにわたって Outlook で実行できるソリューションを構築できます。 Outlook アドインの構築、テスト、デバッグ、発行を行う方法を学びます。
 metadata:
   title: Outlook アドイン ドキュメント
   description: Outlook アドイン向けの学習用リソース。
   ms.prod: outlook
   ms.topic: landing-page
-  ms.date: 03/29/2021
+  ms.date: 06/30/2022
   ms.localizationpriority: high
-  ms.openlocfilehash: ac60bd35b7140dbdd2d2ca46196e5fd90318efa8
-  ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+  ms.openlocfilehash: d675d9c5a32c1e341d36e7c54f93dd3b3beaff85
+  ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/23/2022
-  ms.locfileid: "63745058"
+  ms.lasthandoff: 07/06/2022
+  ms.locfileid: "66660292"
 landingContent:
-- title: アドインOutlookについて
+- title: Outlook アドインについて
   linkLists:
   - linkListType: overview
     links:
-    - text: アドインOutlookは何ですか?
+    - text: Outlook アドインとは
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -29,13 +29,15 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: JavaScript API Outlookを使用してオブジェクトを操作する
+    - text: Outlook JavaScript API を使用してオブジェクトを操作する
       url: apis.md
-    - text: アドインをテストOutlookデバッグする
+    - text: メールボックス要件セットを移動して使用する
+      url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+    - text: Outlook アドインをテストしてデバッグする
       url: ../testing/test-debug-office-add-ins.md
-    - text: アドインを展開Outlook発行する
+    - text: Outlook アドインを展開して発行する
       url: ../publish/publish.md
-- title: 主要Officeアドインの概念
+- title: Office アドインの主要な概念
   linkLists:
   - linkListType: overview
     links:

@@ -1,22 +1,21 @@
 ---
 title: シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
-description: シングル サインオン (SSO) に関する問題をトラブルシューティングし、Officeやエラーを処理する方法について説明します。
+description: Office アドインでのシングル サインオン (SSO) に関する問題をトラブルシューティングし、特別な条件やエラーを処理する方法に関するガイダンス。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e0607a059ec0ab14dc987d7703b7162330c58c44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: e155b1da472e9e9e081bf43b1660996583f97cc1
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496797"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659954"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>シングル サインオン (SSO) のエラー メッセージのトラブルシューティング
 
 この記事では、Office アドインのシングル サインオン (SSO) に関する問題のトラブルシューティング方法と、SSO が有効なアドインによって特別な条件やエラーを確実に処理する方法について説明します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook, および PowerPoint でサポートされています。 シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。
-> Outlook アドインで作業している場合は、Microsoft 365 テナントの先進認証が有効になっていることを確認してください。 この方法の詳細については、「[Exchange Online: テナントの先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint でサポートされています。シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。Outlook アドインで作業している場合は、Microsoft 365 テナントで先進認証を有効にしてください。この方法の詳細については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
 
 ## <a name="debugging-tools"></a>デバッグ ツール
 
@@ -35,7 +34,7 @@ ms.locfileid: "64496797"
 
 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API は、このアドインまたは Office バージョンではサポートされていません。
 
-- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、Microsoft 365チャネルでサブスクリプションに追加されます。
+- この Office のバージョンは、SSO をサポートしていません。 必要なバージョンは、任意の月次チャネルの Microsoft 365 サブスクリプションです。
 - アドインのマニフェストに適切な [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) セクションがありません。
 
 アドインがこのエラーに対応するには、ユーザー認証の代替システムにフォールバックする必要があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
@@ -59,11 +58,11 @@ ms.locfileid: "64496797"
 
 ### <a name="13003"></a>13003
 
-ユーザーの種類がサポートされていません。 ユーザーが有効な Microsoft アカウントOfficeまたは仕事用アカウントを使用Microsoft 365 Educationサインインしていない。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 このOutlook、ユーザーのテナントでモダン認証が無効[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)になっている場合にも、このエラーが発生Exchange Online。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
+ユーザーの種類がサポートされていません。 ユーザーは、有効な Microsoft アカウント、Microsoft 365 Educationアカウント、または職場アカウントを使用して Office にサインインしていません。 このエラーは、Office がオンプレミス ドメイン アカウントで実行されている場合に発生する可能性があります。 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。 Outlook では、Exchange Onlineのユーザーのテナントに対して[先進認証が無効になっている](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)場合にも、このエラーが発生する可能性があります。 詳細については、「[要件とベスト プラクティス](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)」を参照してください。
 
 ### <a name="13004"></a>13004
 
-無効なリソースです。 (このエラーは開発でのみ表示される必要があります)。アドイン マニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、**Resource** 要素 (**WebApplicationInfo** 要素内) にアドインのドメインと一致しないドメインがあることです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
+無効なリソースです。 (このエラーは、開発でのみ発生する必要があります)。アドイン マニフェストが正しく構成されていません。 マニフェストを更新してください。 詳細については、「[Office アドインのマニフェストを検証する](../testing/troubleshoot-manifest.md)」を参照してください。 最も一般的な問題は、 **\<Resource\>** 要素 (要素内 **\<WebApplicationInfo\>** ) にアドインのドメインと一致しないドメインがあるということです。 Resource 値のプロトコル部分は "https" ではなく "api" である必要があります。ドメイン名の他のすべての部分は (ポートがある場合はそれも含めて)、アドインと同じである必要があります。
 
 ### <a name="13005"></a>13005
 
@@ -77,12 +76,12 @@ ms.locfileid: "64496797"
 
 ### <a name="13007"></a>13007
 
-アプリケーションOfficeアドインの Web サービスへのアクセス トークンを取得できなかった。
+Office アプリケーションは、アドインの Web サービスへのアクセス トークンを取得できませんでした。
 
 - 開発中にこのエラーが発生する場合は、アドインの登録とアドイン マニフェストで `profile` のアクセス許可および (MSAL.NET を使用している場合は) `openid` のアクセス許可が指定されていることを確認してください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 - 運用環境では、このエラーの原因として考えられることがいくつかあります。 その一部を次に示します。
   - ユーザーは Microsoft アカウント ID を持っています。
-  - Microsoft 365 Education またはワーク アカウントで他の 13xxx エラーの 1 つが発生する状況によっては、MSA を使用すると 13007 が発生します。
+  - Microsoft 365 Educationまたは職場のアカウントで他の 13xxx エラーのいずれかが発生する場合、MSA を使用すると 13007 が発生します。
 
   これらのすべてのケースでは、コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
 
@@ -92,13 +91,13 @@ ms.locfileid: "64496797"
 
 ### <a name="13010"></a>13010
 
-ユーザーがアドインを実行している場合は、OfficeでMicrosoft Edge。 ユーザーのドメインMicrosoft 365ドメイン`login.microsoftonline.com`は、ブラウザーの設定で別のセキュリティ 領域に入っています。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
+ユーザーは Office on Microsoft Edge でアドインを実行しています。 ユーザーの Microsoft 365 ドメインと `login.microsoftonline.com` ドメインは、ブラウザー設定の別のセキュリティ ゾーンにあります。 このエラーは **Office on the web** でのみ確認されています。 このエラーが返された場合、ユーザーには、これについて説明するエラーとゾーンの構成を変更する方法に関するページへのリンクが表示されています。 アドインがユーザーのサインインを必要としない機能を提供している場合、コードでは、このエラーをキャッチして、アドインの実行を続行する必要があります。
 
 ### <a name="13012"></a>13012
 
-考えられる原因は複数あります。
+考えられる原因はいくつかあります。
 
-- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 「Identity [API の要件セット」も参照してください](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。
+- アドインは、`getAccessToken` API をサポートしていないプラットフォーム上で実行されています。 たとえば、iPad 上ではサポートされていません。 [ID API 要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)も参照してください。
 - `getAccessToken` への呼び出しで `forMSGraphAccess` オプションが渡され、ユーザーが AppSource からアドインを取得しました。 このシナリオでは、アドインが必要とする Microsoft Graph スコープ (権限) について、テナント管理者はアドインに同意していません。 Office では、ユーザーに求めることができるのは AAD `profile` スコープへの同意のみであるため、`allowConsentPrompt` を使用して `getAccessToken` を取り消しても問題は解決できません。
 
 コードでは、ユーザー認証の代替システムにフォールバックする必要があります。
@@ -107,7 +106,7 @@ ms.locfileid: "64496797"
 
 ### <a name="13013"></a>13013
 
-短`getAccessToken`い時間で何度も呼び出されたので、Officeの呼び出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しが推奨されるシナリオがあります。 ただし、コードはカウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されていないことを確認する必要があります。 同じ "再試行" コード パスが再び実行されている場合、コードはユーザー認証の別のシステムに戻る必要があります。 コード例については、変数がどのように使用`retryGetAccessToken`されるのか[HomeES6.jsをssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [ 。 ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+短時間 `getAccessToken` で呼び出された回数が多すぎるため、Office は最新の呼び出しを調整しました。 これは通常、メソッドの呼び出しの無限ループによって発生します。 メソッドの呼び出しを推奨するシナリオがあります。 ただし、コードでは、カウンター変数またはフラグ変数を使用して、メソッドが繰り返し呼び出されないようにする必要があります。 同じ "再試行" コード パスが再度実行されている場合、コードは別のユーザー認証システムにフォールバックする必要があります。 コード例については、変数が `retryGetAccessToken` [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) または [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)でどのように使用されるかを参照してください。
 
 ### <a name="50001"></a>50001
 
@@ -123,11 +122,11 @@ ms.locfileid: "64496797"
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件付きアクセスおよび多要素認証のエラー
 
-AAD および Microsoft 365 の ID の特定の構成では、ユーザーの Microsoft 365 テナンシーが不要な場合でも、Microsoft Graph でアクセス可能な一部のリソースで多要素認証 (MFA) を必要とすることができます。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
+AAD と Microsoft 365 の ID の特定の構成では、ユーザーの Microsoft 365 テナントが必要ない場合でも、Microsoft Graph でアクセスできる一部のリソースで多要素認証 (MFA) を要求できます。 AAD は、MFA で保護されたリソースへのトークンの要求を、代理フロー経由で受け取ると、アドインの Web サービスに `claims` プロパティを含む JSON メッセージを返します。 claims プロパティには、さらに必要となる認証要素の情報が含まれています。
 
 コードは、この `claims` プロパティについてテストする必要があります。 アドインのアーキテクチャによっては、クライアント側でテストすることができます。または、サーバー側でテストし、クライアントにリレーすることができます。 SSO アドインの認証は Office によって処理されるため、この情報がクライアントで必要になります。この情報をサーバー側からリレーする場合、クライアントへのメッセージは、エラー (`500 Server Error` や `401 Unauthorized` など) または成功応答の本文 (`200 OK` など) のいずれかになります。 どちらの場合でも、アドインの Web API に対する、コードによるクライアント側の AJAX 呼び出しのコールバック (失敗または成功) が、この応答をテストする必要があります。
 
-アーキテクチャに関係なく`getAccessToken``authChallenge: CLAIMS-STRING-HERE`、クレーム値が AAD から送信されている場合、コードはパラメーターでオプションを呼び出して渡す必要`options`があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
+アーキテクチャに関係なく、要求値が AAD から送信された場合、コードはパラメーター内の`options`オプション`authChallenge: CLAIMS-STRING-HERE`を呼び出`getAccessToken`して渡す必要があります。 AAD がこの文字列を認識すると、ユーザーに追加の要素を入力するよう促してから、代理フローで受け入れられる新しいアクセス トークンを返します。
 
 ### <a name="consent-missing-errors"></a>同意なしエラー
 
@@ -142,6 +141,6 @@ AAD に、ユーザー (またはテナント管理者) がアドインに (Micr
 - サーバー側のコードでは、`403 Forbidden` 応答をクライアントに送り、そのエラーのログをコンソールで作成するか、ログに記録する必要があります。
 - アドイン マニフェストの[範囲](/javascript/api/manifest/scopes)セクションで、必要なすべてのアクセス許可が指定されていることを確認してください。 また、アドインの Web サービスの登録で同じアクセス許可が指定されていることを確認してください。 スペルミスもチェックしてください。 詳細については、「[Azure AD v2.0 エンドポイントにアドインを登録する](register-sso-add-in-aad-v2.md)」を参照してください。
 
-### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft サーバーのアクセス トークンで対象ユーザーエラーがGraph
+### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft Graph のアクセス トークンで無効な対象ユーザー エラー
 
 サーバー側のコードは、`403 Forbidden` 応答をクライアントに送って、ユーザーにわかりやすいメッセージを提示しなければなりません。場合によっては、エラーについて、コンソールでログを作成するか、ログに記録する必要もあります。

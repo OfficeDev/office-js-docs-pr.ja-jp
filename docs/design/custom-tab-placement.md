@@ -1,30 +1,30 @@
 ---
 title: カスタム タブをリボンに配置する
-description: カスタム タブがリボンに表示される場所と、既定Officeフォーカスが設定されているかどうかを制御する方法について説明します。
+description: Office リボンにカスタム タブが表示される場所と、既定でフォーカスがあるかどうかを制御する方法について説明します。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a250a3fbffc0a2aef140c8f0ac0286f61e2c5dbc
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 42445898623e082c3c85e756625307dc5a237c28
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496741"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659816"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>カスタム タブをリボンに配置する
 
-アドインのマニフェストでマークアップを使用して、Office アプリケーションのリボンにアドインのカスタム タブを表示する場所を指定できます。
+アドインのマニフェストのマークアップを使用して、アドインのカスタム タブを Office アプリケーションのリボンに表示する場所を指定できます。
 
 > [!NOTE]
-> この記事では、アドイン コマンドの基本的な概念に精通 [している必要があります](add-in-commands.md)。 最近行ったことがない場合は、確認してください。
+> この記事では、 [アドイン コマンドの基本的な概念](add-in-commands.md)に関する記事を理解していることを前提としています。 最近行っていない場合は、確認してください。
 
 > [!IMPORTANT]
 >
-> - この記事で説明するアドイン機能とマークアップは、この記事 *でのみPowerPoint on the web*。
-> - この記事で説明するマークアップは、要件セット **AddinCommands 1.3** をサポートするプラットフォームでのみ機能します。 以下の [「サポートされていないプラットフォームでの動作」を参照](#behavior-on-unsupported-platforms) してください。
+> - この記事で説明するアドイン機能とマークアップは *、PowerPoint on the webでのみ使用できます*。
+> - この記事で説明するマークアップは、要件セット **AddinCommands 1.3** をサポートするプラットフォームでのみ機能します。 以下 [の「サポートされていないプラットフォームでの動作」を](#behavior-on-unsupported-platforms) 参照してください。
 
-カスタム タブを表示する場所を指定するには、そのタブの横に配置する組み込みの Office タブを特定し、組み込みタブの左側または右側に配置するかどうかを指定します。アドインのマニフェストの [CustomTab](/javascript/api/manifest/customtab) 要素に [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (左) 要素または [InsertAfter](/javascript/api/manifest/customtab#insertafter) (右) 要素を含めて、これらの仕様を指定します。 (両方の要素を持つ必要があります)。
+カスタム タブを表示する場所を指定するには、その横に表示する組み込み Office タブを特定し、組み込みタブの左側または右側に配置するかどうかを指定します。アドインのマニフェストの [CustomTab](/javascript/api/manifest/customtab) 要素に [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (左) または [InsertAfter](/javascript/api/manifest/customtab#insertafter) (右) 要素を含めることで、これらの仕様を作成します。 (両方の要素を持つことはできません。)
 
-次の例では、カスタム タブが [レビュー] タブの直後 *に表示* するように **構成** されています。**InsertAfter** 要素の値は、組み込みの [プロパティ] タブOffice注意してください。 
+次の例では、カスタム タブが **[校閲**] タブ *のすぐ後* に表示されるように構成されています。要素の **\<InsertAfter\>** 値は、組み込みの Office タブの ID であることに注意してください。 
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -38,21 +38,21 @@ ms.locfileid: "64496741"
 </ExtensionPoint>
 ```
 
-以下の点を念頭に置いておきます。
+次の点に留意してください。
 
-- **InsertBefore 要素と** **InsertAfter** 要素はオプションです。 どちらも使用しない場合は、カスタム タブがリボンの右端のタブとして表示されます。
-- **InsertBefore 要素と** **InsertAfter** 要素は相互に排他的です。 両方を使用することはできません。
-- ユーザーが複数のアドインをインストールし、そのユーザー設定タブが同じ場所に構成されている場合は、[確認]  タブの後に、最近インストールしたアドインのタブがその場所に配置されます。 以前にインストールしたアドインのタブは、1 か所に移動されます。 たとえば、ユーザーはその順序でアドイン A、B、および C をインストールし、すべて [レビュー] タブの後にタブを挿入するように構成され、タブは次の順序で表示されます:**Review**、**AddinCTab**、**AddinBTab**、**AddinATab**。
-- ユーザーは、アプリケーションでリボンをOfficeできます。 たとえば、ユーザーはアドインのタブを移動または非表示にできます。これを防止したり、発生したことを検出したりすることはできません。
-- ユーザーが組み込みタブの 1 つを移動すると、Office は、組み込みタブの既定の場所に関して **InsertBefore** 要素と **InsertAfter** 要素を *解釈します*。たとえば、ユーザーが [レビュー] タブをリボンの右側に移動した場合、Office は前の例のマークアップを「既定で [レビュー] タブの右側にカスタム タブを置く」という意味と解釈します。**
+- 要素と **\<InsertAfter\>** 要素は **\<InsertBefore\>** 省略可能です。 どちらも使用しないと、リボンの右端のタブとしてカスタム タブが表示されます。
+- 要素と **\<InsertAfter\>** 要素は **\<InsertBefore\>** 相互に排他的です。 両方を使用することはできません。
+- ユーザーが同じ場所に対してカスタム タブが構成されている複数のアドインをインストールした場合 ( **たとえば、[校閲** ] タブの後) は、最後にインストールされたアドインのタブがその場所に配置されます。 以前にインストールしたアドインのタブは、1 か所に移動されます。 たとえば、ユーザーはその順序でアドイン A、B、C をインストールし、すべて **[校閲** ] タブの後にタブを挿入するように構成されます。その後、タブは次の順序で表示されます: **Review**、 **AddinCTab**、 **AddinBTab**、 **AddinATab**。
+- ユーザーは、Office アプリケーションでリボンをカスタマイズできます。 たとえば、ユーザーはアドインのタブを移動または非表示にすることができます。これを防止したり、発生したことを検出したりすることはできません。
+- ユーザーが組み込みタブの 1 つを移動した場合、Office は *組み込みタブの既定の場所* の観点から要素と **\<InsertAfter\>** 要素を解釈 **\<InsertBefore\>** します。たとえば、ユーザーが **[校閲**] タブをリボンの右端に移動した場合、Office は前の例のマークアップを"***[校閲**] タブの既定の場所* の右側にカスタム タブを配置する" という意味として解釈します。
 
-## <a name="specify-which-tab-has-focus-when-the-document-opens"></a>ドキュメントを開く際にフォーカスがあるタブを指定する
+## <a name="specify-which-tab-has-focus-when-the-document-opens"></a>ドキュメントが開いたときにフォーカスがあるタブを指定する
 
-Office、[ファイル] タブの右側にあるタブに既定のフォーカスが常に **表示** されます。既定では、[ホーム] **タブ** です。[ホーム] タブの前に`<InsertBefore>TabHome</InsertBefore>`カスタム タブを構成すると、ドキュメントが開くと、カスタム タブにフォーカスが設定されます。
+Office では常に、[ **ファイル** ] タブの右側にあるタブに既定のフォーカスが設定されます。既定では、[ **ホーム** ] タブです。[ **ホーム** ] タブの前にカスタム タブを設定すると、 `<InsertBefore>TabHome</InsertBefore>`ドキュメントが開いたときにカスタム タブにフォーカスが設定されます。
 
 > [!IMPORTANT]
-> アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。 ユーザーがドキュメントを操作する主な方法がアドインではない限り、ユーザー設定タブを [ホーム] タブの前に配置しない。
+> アドインの不便さを過度に目立たせ、ユーザーや管理者を悩ませます。 アドインがユーザーがドキュメントを操作する主な方法でない限り、カスタム タブを **[ホーム** ] タブの前に配置しないでください。
 
 ## <a name="behavior-on-unsupported-platforms"></a>サポートされていないプラットフォームでの動作
 
-アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、カスタム タブはリボンの右端のタブとして表示されます。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンスの設計」で説明するように、アドインを設計して、 **AddinCommands 1.3** がサポートされていない場合に代替エクスペリエンスを [提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、カスタム タブが必要な場所を想定した手順がアドインに含まれている場合は、タブが右端にあると仮定する別のバージョンを使用できます。
+アドインが [要件セット AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしていないプラットフォームにインストールされている場合、この記事で説明されているマークアップは無視され、カスタム タブはリボンの右端のタブとして表示されます。 マークアップをサポートしていないプラットフォームにアドインがインストールされないようにするには、マニフェストのセクションで要件セットへの参照を **\<Requirements\>** 追加します。 手順については、「アドインを [ホストできる Office バージョンとプラットフォームを指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンスの設計」で説明されているように、 **AddinCommands 1.3** がサポートされていない場合に、別のエクスペリエンスを持つアドイン [を設計します](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、カスタム タブが目的の場所であると想定する手順がアドインに含まれている場合は、タブが最も右側であることを前提とした別のバージョンを使用できます。

@@ -1,20 +1,20 @@
 ---
 title: Office アドインの作業ウィンドウを表示または非表示にする
-description: 継続的に実行されている間に、アドインのユーザー インターフェイスをプログラムで非表示または表示する方法について説明します。
+description: アドインの継続的な実行中に、プログラムによってアドインのユーザー インターフェイスを非表示または表示する方法について説明します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e881f5fc0d5258aa886709a0aee2eee5836feef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743962"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660131"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Office アドインの作業ウィンドウを表示または非表示にする
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-関数を呼び出すことによって、Officeアドインの作業ウィンドウを表示`Office.addin.showAsTaskpane()`できます。
+関数を呼び出すことで、Office アドインの作業ウィンドウを `Office.addin.showAsTaskpane()` 表示できます。
 
 ```javascript
 function onCurrentQuarter() {
@@ -26,9 +26,9 @@ function onCurrentQuarter() {
 }
 ```
 
-前のコードでは、**CurrentQuarterSales** という名前のワークシートExcelシナリオを想定しています。 このワークシートがアクティブ化されるたびに、アドインによって作業ウィンドウが表示されます。 メソッドは`onCurrentQuarter`、メソッドのハンドラー Office[。ワークシートに登録されている Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) イベント。
+前のコードでは、 **CurrentQuarterSales** という名前の Excel ワークシートがあるシナリオを前提としています。 アドインは、このワークシートがアクティブ化されるたびに作業ウィンドウを表示します。 このメソッド `onCurrentQuarter` は、ワークシートに登録されている [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) イベントのハンドラーです。
 
-関数を呼び出して作業ウィンドウを非表示に `Office.addin.hide()` することもできます。
+また、関数を呼び出して作業ウィンドウを非表示に `Office.addin.hide()` することもできます。
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -36,36 +36,36 @@ function onCurrentQuarterDeactivated() {
 }
 ```
 
-前のコードは、アプリケーションに登録されているハンドラー Office[。Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member) イベント。
+前のコードは、 [Office.Worksheet.onDeactivated イベントに](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member) 登録されているハンドラーです。
 
 ## <a name="additional-details-on-showing-the-task-pane"></a>作業ウィンドウの表示に関するその他の詳細
 
-呼び出す`Office.addin.showAsTaskpane()`場合Office作業ウィンドウのリソース ID (`resid`) 値として割り当てたファイルが作業ウィンドウに表示されます。 この `resid` 値を割り当てたり変更 **したり** するには、manifest.xmlファイル `<SourceLocation>` を開き、要素内を検索 `<Action xsi:type="ShowTaskpane">` します。
-(詳細[については、「Office共有](configure-your-add-in-to-use-a-shared-runtime.md)ランタイムを使用するアドインの構成」を参照してください。
+呼び出 `Office.addin.showAsTaskpane()`すと、作業ウィンドウのリソース ID (`resid`) 値として割り当てたファイルが作業ウィンドウに表示されます。 この`resid`値は、**manifest.xml** ファイルを開いて要素内`<Action xsi:type="ShowTaskpane">`を **\<SourceLocation\>** 特定することで、割り当てまたは変更できます。
+(詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md) 」を参照してください)。
 
-非同期 `Office.addin.showAsTaskpane()` メソッドであるから、関数が完了するまでコードは実行を続ける。 使用している JavaScript 構文`await``then()`に応じて、キーワードまたはメソッドでこの完了を待ちます。
+非同期メソッドであるため `Office.addin.showAsTaskpane()` 、関数が完了するまでコードの実行は続行されます。 使用している JavaScript 構文に応じて、キーワードまたは`then()`メソッドで`await`この完了を待ちます。
 
-## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>共有ランタイムを使用するアドインを構成する
+## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
 
-and メソッドを `showAsTaskpane()` 使用 `hide()` するには、アドインで共有ランタイムを使用する必要があります。 詳細については、「共有ランタイム[を使用Officeアドインを構成する」を参照してください](configure-your-add-in-to-use-a-shared-runtime.md)。
+メソッドを`showAsTaskpane()``hide()`使用するには、アドインで共有ランタイムを使用する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="preservation-of-state-and-event-listeners"></a>状態リスナーとイベント リスナーの保持
 
-and `hide()` メソッド `showAsTaskpane()` は、作業ウィンドウ *の表示* 設定のみを変更します。 アンロードまたは再読み込み (または状態の再初期化) は行ないます。
+およびメソッドは `hide()` 、 `showAsTaskpane()` 作業ウィンドウの *可視性* のみを変更します。 アンロードまたは再読み込み (またはその状態の再初期化) は行われません。
 
-次のシナリオについて考えます。作業ウィンドウはタブで設計されています。 アドイン **が** 最初に起動すると、[ホーム] タブが開きます。 たとえば、ユーザーが [設定] `hide()` タブを **開** き、後で作業ウィンドウ内のコードが何らかのイベントに応答して呼び出されたとします。 別のイベントに応答して `showAsTaskpane()` 以降のコード呼び出し。 作業ウィンドウが再び表示され、[**設定] タブ** が選択されます。
+次のシナリオを考慮してください。作業ウィンドウはタブで設計されています。 アドインが最初に起動されると、[ **ホーム** ] タブが開きます。 ユーザーが **[設定]** タブを開き、後で作業ウィンドウのコードが何らかのイベントに応答して呼び出 `hide()` されたとします。 別のイベントに応答して、さらに後のコード呼び出し `showAsTaskpane()` 。 作業ウィンドウが再表示され、[ **設定]** タブは引き続き選択されます。
 
-![[ホーム]、[お気に入り]、および [アカウント] という 4 つのタブ設定作業ウィンドウのスクリーンショット。](../images/TaskpaneWithTabs.png)
+![[ホーム]、[設定]、[お気に入り]、および [アカウント] という 4 つのタブがある作業ウィンドウのスクリーンショット。](../images/TaskpaneWithTabs.png)
 
-さらに、作業ウィンドウに登録されているイベント リスナーは、作業ウィンドウが非表示の場合でも引き続き実行されます。
+さらに、作業ウィンドウに登録されているイベント リスナーは、作業ウィンドウが非表示になっている場合でも引き続き実行されます。
 
-次のシナリオについて考えます。 作業`Worksheet.onActivated`ウィンドウには、**Sheet1** という名前のシートのExcelイベント`Worksheet.onDeactivated`の登録されたハンドラーがあります。 アクティブ化されたハンドラーによって、作業ウィンドウに緑色のドットが表示されます。 非アクティブ化されたハンドラーは、ドットを赤色 (既定の状態) に変える。 次に、**シート 1** が`hide()`アクティブ化されていないときにコードが呼び出され、ドットが赤になっているとします。 作業ウィンドウが非表示の間、 **シート 1 が** アクティブになります。 以降のコードは、 `showAsTaskpane()` いくつかのイベントに応答して呼び出します。 作業ウィンドウが開くと、作業ウィンドウが非表示の場合でもイベント リスナーとハンドラーが実行されたため、ドットは緑色になります。
+次のシナリオを考慮してください。作業ウィンドウには、Excel `Worksheet.onActivated` の登録済みハンドラーと`Worksheet.onDeactivated`**、Sheet1** という名前のシートのイベントがあります。 アクティブ化されたハンドラーにより、作業ウィンドウに緑色のドットが表示されます。 非アクティブ化されたハンドラーは、ドットの赤 (既定の状態) を回します。 次に、**Sheet1** がアクティブ化されておらず、ドットが赤の場合にコードが呼び出`hide()`されるとします。 作業ウィンドウが非表示になっている間、 **シート 1** がアクティブ化されます。 後のコードは、いくつかのイベントに応答して呼び出されます `showAsTaskpane()` 。 作業ウィンドウが開くと、作業ウィンドウが非表示であってもイベント リスナーとハンドラーが実行されたため、ドットは緑色になります。
 
-## <a name="handle-the-visibility-changed-event"></a>表示が変更されたイベントを処理する
+## <a name="handle-the-visibility-changed-event"></a>可視性が変更されたイベントを処理する
 
-コードで作業ウィンドウの表示`showAsTaskpane()``hide()``VisibilityModeChanged`設定を変更すると、イベントOfficeトリガーされます。 このイベントを処理すると便利です。 たとえば、作業ウィンドウにブック内のすべてのシートの一覧が表示されたとします。 作業ウィンドウが非表示の状態で新しいワークシートが追加された場合、作業ウィンドウを表示すると、それ自体で新しいワークシート名がリストに追加されません。 ただし、以下の`VisibilityModeChanged`コード例に示すように、コードはイベントに応答して [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) コレクション[内のすべての](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member)ワークシートの Worksheet.name プロパティを再読み込みできます。
+コードで作業ウィンドウ`showAsTaskpane()``hide()`の表示を変更すると、Office によってイベントが`VisibilityModeChanged`トリガーされます。 このイベントを処理すると便利です。 たとえば、作業ウィンドウにブック内のすべてのシートの一覧が表示されたとします。 作業ウィンドウが非表示の間に新しいワークシートが追加された場合、作業ウィンドウを表示することは、それ自体では、新しいワークシート名をリストに追加しません。 ただし、次の`VisibilityModeChanged`コード例に示すように、コードはイベントに応答して[、Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) コレクション内のすべてのワークシートの [Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) プロパティを再読み込みできます。
 
-イベントのハンドラーを登録するには、ほとんどの JavaScript コンテキストと同様に、"add handler" メソッドOffice使用します。 代わりに、ハンドラーを渡す特別な関数が[Office.addin.onVisibilityModeChanged です](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1))。 次に例を示します。 プロパティは [VisibilityMode](/javascript/api/office/office.visibilitymode)`args.visibilityMode` 型です。
+イベントのハンドラーを登録するには、ほとんどの Office JavaScript コンテキストと同様に "ハンドラーの追加" メソッドを使用しません。 代わりに、ハンドラー ( [Office.addin.onVisibilityModeChanged) を](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1))渡す特別な関数があります。 次に例を示します。 プロパティは `args.visibilityMode` [VisibilityMode](/javascript/api/office/office.visibilitymode) 型であることに注意してください。
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
@@ -77,7 +77,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-この関数は、ハンドラーを登録解除 *する別の関数を* 返します。 ここでは、単純ですが堅牢ではない例を示します。
+この関数は、ハンドラーの *登録を解除* する別の関数を返します。 単純な堅牢な例を次に示します。
 
 ```javascript
 var removeVisibilityModeHandler =
@@ -92,7 +92,7 @@ var removeVisibilityModeHandler =
 removeVisibilityModeHandler();
 ```
 
-この `onVisibilityModeChanged` メソッドは非同期であり、約束を返します。つまり、コードは登録解除ハンドラーを呼び出す前に、約束の履行を待つ **必要** があります。
+このメソッドは `onVisibilityModeChanged` 非同期であり、promise を返します。つまり、 **コードは、登録解除** ハンドラーを呼び出す前に、Promise の履行を待機する必要があることを意味します。
 
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
@@ -105,7 +105,7 @@ var removeVisibilityModeHandler =
     });
 ```
 
-登録解除関数も非同期であり、約束を返します。 したがって、登録解除が完了するまで実行しないコードがある場合は、登録解除関数によって返される約束を待つ必要があります。
+登録解除関数も非同期であり、Promise を返します。 そのため、登録解除が完了するまで実行しないコードがある場合は、登録解除関数によって返される Promise を待機する必要があります。
 
 ```javascript
 // await the promise from the deregister handler before continuing

@@ -1,26 +1,26 @@
 ---
-title: Outlook アドインに append-on-send を実装する
-description: Outlook アドインに追加オン送信機能を実装する方法について説明します。
+title: Outlook アドインに Append-on-send を実装する
+description: Outlook アドインで追加オン送信機能を実装する方法について説明します。
 ms.topic: article
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 968b730aca1fc36640e43ff45404c8d4c7b92d47
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244836"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659830"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインに append-on-send を実装する
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインに Append-on-send を実装する
 
-このチュートリアルの終わりまでに、メッセージの送信時に免責事項を挿入できるOutlook アドインが作成されます。
+このチュートリアルの終わりまでに、メッセージの送信時に免責事項を挿入できる Outlook アドインが作成されます。
 
 > [!NOTE]
 > この機能のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Office アドイン用の Yeoman ジェネレーターを使用してアドイン プロジェクトを作成するOutlook[クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
+Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -32,7 +32,7 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
 
 1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. ノード全体 `<VersionOverrides>` (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
+1. ノード全体 **\<VersionOverrides\>** (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,7 +120,7 @@ Office アドイン用の Yeoman ジェネレーターを使用してアドイ�
     ```
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、[アドイン マニフェストのOutlook](manifests.md)を参照してください。
+> Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
 ## <a name="implement-append-on-send-handling"></a>append-on-send 処理を実装する
 

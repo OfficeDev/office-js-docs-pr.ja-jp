@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: eda6444a84632de5349af42deab7744c712551ad
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229653"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660264"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -29,7 +29,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 |---|:---:|:---:|:---:|
 |Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
 |Mac：<br>ビルド 16.47 以降|はい|はい|はい|
-|Web ブラウザー:<br>モダン Outlook UI|あり|該当なし|該当なし|
+|Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|
 |Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
 
 > [!NOTE]
@@ -46,10 +46,10 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 - メッセージに件名行が含まれていることを確認します。
 - あらかじめ決められた受信者を設定します。
 
-送信イベントがトリガーされたときにOutlookクライアント側で検証が行われ、アドインがタイムアウトするまでに最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションの実行を求めるエラー メッセージが情報バーに表示されます。
+送信イベントがトリガーされると、Outlook のクライアント側で検証が行われ、アドインがタイムアウトするまでに最大 5 分かかります。検証に失敗すると、アイテムの送信がブロックされ、ユーザーにアクションの実行を求めるエラー メッセージが情報バーに表示されます。
 
 > [!NOTE]
-> Outlook on the webでは、Outlook ブラウザー タブ内で構成されているメッセージで送信中の機能がトリガーされると、検証やその他の処理を完了するために、アイテムが独自のブラウザー ウィンドウまたはタブにポップアップ表示されます。
+> Outlook on the webでは、Outlook ブラウザー タブ内で構成されているメッセージで送信時機能がトリガーされると、検証やその他の処理を完了するために、アイテムが独自のブラウザー ウィンドウまたはタブにポップアップ表示されます。
 
 次のスクリーンショットは、送信者に件名を追加するように通知する情報バーを示しています。
 
@@ -73,11 +73,11 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 ### <a name="mailbox-typemode-limitations"></a>メールボックスの種類とモードの制限事項
 
-送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 Outlook アドインの概要ページの [メールボックス[アイテム](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)] セクションで説明されているようにアドインがアクティブ化されない状況に加えて、この機能は現在、オフライン モードでサポートされていません。このモードは使用できます。
+送信時機能は Outlook on the web、Windows、Mac のユーザー メールボックスでのみサポートされます。 Outlook アドインの概要ページの [メールボックス [アイテム](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) ] セクションで説明されているようにアドインがアクティブ化されない状況に加えて、この機能は現在、オフライン モードでサポートされていません。このモードは使用可能です。
 
 Outlook アドインがアクティブ化されない場合、送信時アドインは実行されず、メッセージが送信されます。
 
-ただし、送信中の機能が有効で使用可能で、メールボックスのシナリオがサポートされていない場合、Outlook送信は許可されません。
+ただし、送信時機能が有効で使用可能で、メールボックスのシナリオがサポートされていない場合、Outlook は送信を許可しません。
 
 ## <a name="multiple-on-send-add-ins"></a>複数の送信時アドイン
 
@@ -287,12 +287,12 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="what-the-policy-does"></a>ポリシーの内容
 
-コンプライアンスのために、管理者は、最新の送信時アドインを実行できるようになるまでユーザーがメッセージまたは会議アイテムを送信できないようにする必要があります。 管理者は、すべてのアドインがExchangeから更新され、各メッセージまたは会議アイテムが送信時に予想されるルールと規制を満たしていることを確認するために使用できるように、Web アドインを **読み込むことができない場合** にグループ ポリシーの送信をブロックする必要があります。
+コンプライアンスのために、管理者は、最新の送信時アドインを実行できるようになるまでユーザーがメッセージまたは会議アイテムを送信できないようにする必要があります。 管理者は、すべてのアドインが Exchange から更新され、各メッセージまたは会議アイテムが送信時に予想されるルールと規制を満たしていることを確認するために使用できるように、Web アドインを **読み込むことができない場合** にグループ ポリシーの送信をブロックする必要があります。
 
 |ポリシーの状態|結果|
 |---|---|
 |無効|送信中のメッセージまたは会議アイテムに対して、現在ダウンロードされている送信時アドインのマニフェスト (必ずしも最新バージョンとは限りません) が実行されます。 これが既定の状態/動作です。|
-|Enabled|送信中のアドインの最新のマニフェストがExchangeからダウンロードされると、アドインは送信されるメッセージまたは会議アイテムで実行されます。 それ以外の場合、送信はブロックされます。|
+|Enabled|送信時アドインの最新のマニフェストが Exchange からダウンロードされた後、アドインは、送信されるメッセージまたは会議アイテムに対して実行されます。 それ以外の場合、送信はブロックされます。|
 
 #### <a name="manage-the-on-send-policy"></a>送信時ポリシーを管理する
 
@@ -325,7 +325,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |キーの状態|結果|
 |---|---|
 |false|送信中のメッセージまたは会議アイテムに対して、現在ダウンロードされている送信時アドインのマニフェスト (必ずしも最新バージョンとは限りません) が実行されます。 これは既定の状態/動作です。|
-|true|送信中のアドインの最新のマニフェストがExchangeからダウンロードされると、アドインは送信されるメッセージまたは会議アイテムで実行されます。 それ以外の場合、送信はブロックされ、[ **送信]** ボタンは無効になります。|
+|true|送信時アドインの最新のマニフェストが Exchange からダウンロードされた後、アドインは、送信されるメッセージまたは会議アイテムに対して実行されます。 それ以外の場合、送信はブロックされ、[ **送信]** ボタンは無効になります。|
 
 ---
 
@@ -335,7 +335,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="event-handlers-are-dynamically-defined"></a>イベント ハンドラーが動的に定義されている
 
-アドインのイベント ハンドラーは、時間`Office.initialize`によって定義するか`Office.onReady()`、呼び出す必要があります (詳細については、「[Outlook アドインのスタートアップ](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in)」および「[Office アドインの初期化](../develop/initialize-add-in.md)」を参照してください)。 初期化中にハンドラー コードが特定の状況によって動的に定義されている場合は、完全に定義されたハンドラーを呼び出すスタブ関数を作成する必要があります。 スタブ関数は、 **マニフェストの Event** 要素の `FunctionName` 属性で参照する必要があります。 この回避策により、ハンドラーが定義され、1 回または`Office.onReady()`実行されると`Office.initialize`参照できるようになります。
+アドインのイベント ハンドラーは、時間`Office.initialize``Office.onReady()`によって定義するか、呼び出す必要があります (詳細については、「[Outlook アドインのスタートアップ](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in)」および「[Office アドインの初期化](../develop/initialize-add-in.md)」を参照してください)。 初期化中にハンドラー コードが特定の状況によって動的に定義されている場合は、完全に定義されたハンドラーを呼び出すスタブ関数を作成する必要があります。 スタブ関数は、マニフェストの要素`FunctionName`の **\<Event\>** 属性で参照する必要があります。 この回避策により、ハンドラーが定義され、1 回または`Office.onReady()`実行されると`Office.initialize`参照できるようになります。
 
 アドインの初期化後にハンドラーが定義されていない場合は、メール アイテムの情報バーから "コールバック関数に到達できません" と送信者に通知されます。
 
@@ -386,7 +386,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 送信時アドインがアイテムを処理している間、ユーザーは不適切なテキストや添付ファイルなどを追加してアイテムを編集できます。 アドインが送信時に処理中にユーザーがアイテムを編集できないようにする場合は、ダイアログを使用して回避策を実装できます。 この回避策は、Outlook on the web (クラシック)、Windows、Mac で使用できます。
 
 > [!IMPORTANT]
-> モダン Outlook on the web: アドインが送信時に処理中にユーザーがアイテムを編集できないようにするには、この記事の「On-send を使用する`true`[アドインのインストール Outlook」](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)セクションで説明したように *、OnSendAddinsEnabled* フラグを設定する必要があります。
+> モダン Outlook on the web: アドインが送信時に処理中にユーザーがアイテムを編集できないようにするには、この記事の前半の「[On-send を使用する Outlook アドインのインストール](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)」セクションで説明されているように *、OnSendAddinsEnabled* フラグ`true`を設定する必要があります。
 
 送信時ハンドラーで次の処理を行います。
 
@@ -431,7 +431,7 @@ Exchange サーバーがオンラインでアクセスできる場合、送信�
 ```
 
 > [!IMPORTANT]
-> Visual Studio 2019 を使用して送信時アドインを開発している場合は、次のような検証警告が表示されることがあります。"これは無効な xsi:type ''http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Eventsです。これを回避するには、[この警告に関するブログ](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)でGitHubの要として提供されているMailAppVersionOverridesV1_1.xsd の新しいバージョンが必要になります。
+> Visual Studio 2019 を使用して送信時アドインを開発している場合は、次のような検証警告が表示されることがあります。"これは無効な xsi:type ''ですhttp://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events。これを回避するには、 [この警告に関するブログ](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)で GitHub の要として提供されているMailAppVersionOverridesV1_1.xsd の新しいバージョンが必要です。
 
 `Contoso Subject and CC Checker.xml` マニフェスト ファイルの場合、次の例では、メッセージ送信イベントで呼び出す関数ファイルと関数名を示します。
 
@@ -609,9 +609,9 @@ function subjectOnSendChange(subject, event) {
 
 CC 行に受信者を追加して、送信時にメッセージに件名が含まれていることを確認する方法、および使用可能な API を表示する方法の詳細については、「[Outlook-Add-in-On-Send サンプル](https://github.com/OfficeDev/Outlook-Add-in-On-Send)」を参照してください。コードには詳細なコメントが付けられています。
 
-## <a name="debug-outlook-add-ins-that-use-on-send"></a>送信時Outlook使用するアドインをデバッグする
+## <a name="debug-outlook-add-ins-that-use-on-send"></a>On-send を使用する Outlook アドインをデバッグする
 
-送信時アドインをデバッグする方法については、「[UI レス Outlook アドインのデバッグ](debug-ui-less.md)」を参照してください。
+送信時アドインをデバッグする方法については、「 [UI レス Outlook アドインのデバッグ](debug-ui-less.md)」を参照してください。
 
 > [!TIP]
 > ユーザーがアドインを実行したときにエラー "コールバック関数に到達できません" が表示され、アドインのイベント ハンドラーが動的に定義されている場合は、回避策としてスタブ関数を作成する必要があります。 詳細については、「 [イベント ハンドラーが動的に定義されている](#event-handlers-are-dynamically-defined) 」を参照してください。

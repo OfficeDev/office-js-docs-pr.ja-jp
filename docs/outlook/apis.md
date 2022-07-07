@@ -1,22 +1,22 @@
 ---
 title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
-ms.date: 01/14/2022
+ms.date: 06/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 583d2b07a0590e7a04b052d5675320b8ea73a61f
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496314"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660257"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
-Outlook アドインで API を使用するには、Office.js ライブラリの場所、要件セット、スキーマ、アクセス許可を指定する必要があります。 メールボックス オブジェクトを通じて公開Office JavaScript API を主に[使用](#mailbox-object)します。
+Outlook アドインで API を使用するには、Office.js ライブラリの場所、要件セット、スキーマ、アクセス許可を指定する必要があります。 主に [、Mailbox](#mailbox-object) オブジェクトを通じて公開される Office JavaScript API を使用します。
 
 ## <a name="officejs-library"></a>Office.js ライブラリ
 
-Outlook アドイン API と対話操作するには、Office.js の JavaScript API を使用する必要があります。 ライブラリのコンテンツ配信ネットワーク (CDN) はです`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`。 AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
+[Outlook アドイン API](/javascript/api/outlook) を操作するには、Office.jsで JavaScript API を使用する必要があります。 ライブラリのコンテンツ配信ネットワーク (CDN) は `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. AppSource に送られるアドインは、この CDN で Office.js を参照しなければなりません。ローカル参照は使用できません。
 
 アドインの UI を実行する Web ページ (.html、.aspx、.php のファイル) の `<head>` タグの中の `<script>` タグの中で CDN を参照します。
 
@@ -27,11 +27,11 @@ Outlook アドイン API と対話操作するには、Office.js の JavaScript 
 新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
 
 > [!IMPORTANT]
-> 任意のクライアント アプリケーション用のアドインを開発Office、ページのセクションOffice JavaScript API `<head>` を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。
+> 任意の Office クライアント アプリケーション用のアドインを開発する場合は、ページのセクション内 `<head>` から Office JavaScript API を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。
 
 ## <a name="requirement-sets"></a>要件セット
 
-すべての Outlook API は `Mailbox` 要件セットに属しています。 `Mailbox` の要件セットにはバージョンがあり、リリースされる新しい API の各セットは、新しいバージョンのセットに属しています。 最新の API セットがリリースされても、すべての Outlook クライアントがそれをサポートするわけではありませんが、ある Outlook クライアントが 1 つの要件セットのサポートを宣言した場合、その要件セットの中のすべての API がサポートされます。
+すべての Outlook API は [、メールボックス要件セット](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)に属しています。 `Mailbox` の要件セットにはバージョンがあり、リリースされる新しい API の各セットは、新しいバージョンのセットに属しています。 最新の API セットがリリースされても、すべての Outlook クライアントがそれをサポートするわけではありませんが、ある Outlook クライアントが 1 つの要件セットのサポートを宣言した場合、その要件セットの中のすべての API がサポートされます。
 
 どの Outlook クライアントにアドインを表示するかを制御するには、最小の要件セットのバージョンをマニフェストで指定します。たとえば、要件セットのバージョン 1.3 を指定すると、最小バージョンの 1.3 をサポートしていない Outlook クライアントにはアドインが表示されなくなります。
 
@@ -48,9 +48,9 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > このような確認は、マニフェストで指定された要件セットのバージョンに存在する API には必要ありません。
 
-それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要件セットは、`<Requirements>` 要素内のマニフェストで指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)」を参照してください。
+それなしではアドインの機能が機能しないような、シナリオに絶対必要な API のセットをサポートする最低限要件セットを指定します。 要素のマニフェストで要件セットを **\<Requirements\>** 指定します。 詳細は、[Outlook のアドイン マニフェスト](manifests.md)と「[Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)」を参照してください。
 
-`<Methods>` 要素は Outlook アドインには適用されないので、特定のメソッドのサポートは宣言できません。
+この要素は **\<Methods\>** Outlook アドインには適用されないため、特定のメソッドのサポートを宣言することはできません。
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -65,7 +65,7 @@ if (item.somePropertyOrFunction) {
 | **読み取り/書き込み** | **アイテムの読み取り** で許可される内容に加えて、次に示す内容が許可されます。<ul><li>`makeEwsRequestAsync` を除いた、完全な Outlook アドイン API のアクセス</li><li>アイテムのプロパティの設定</li></ul> |
 | **メールボックスの読み取り/書き込み** | **読み取り/書き込み** で許可されているものに加えて、以下のものが許可されます。<ul><li>アイテムやフォルダーの作成、読み取り、書き込み</li><li>アイテムの送信</li><li>[makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) の呼び出し</li></ul> |
 
-一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェスト内の `<Permissions>` 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題の詳細については、「プライバシーとセキュリティ[」を参照Officeアドインを参照してください](../concepts/privacy-and-security.md)。
+一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可は、マニフェストの **\<Permissions\>** 要素で宣言されます。 詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題については、「 [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)」を参照してください。
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
 

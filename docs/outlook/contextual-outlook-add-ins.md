@@ -3,12 +3,12 @@ title: コンテキスト Outlook アドイン
 description: メッセージ自体から移動しなくてもそのメッセージに関連したタスクを開始できます。それにより、操作が簡単になると同時にユーザー エクスペリエンスが豊かになります。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496902"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660138"
 ---
 # <a name="contextual-outlook-add-ins"></a>コンテキスト Outlook アドイン
 
@@ -28,9 +28,9 @@ ms.locfileid: "64496902"
 
 ## <a name="how-to-make-a-contextual-add-in"></a>コンテキスト アドインの作成方法
 
-コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 要素が含まれている必要があります。 **ExtensionPoint** 要素内で、アドインはアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
+コンテキスト アドインのマニフェストには、`xsi:type` 属性が `DetectedEntity` に設定されている [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 要素が含まれている必要があります。 **\<ExtensionPoint\>** 要素内で、アドインは、それをアクティブ化できるエンティティまたは正規表現を指定します。 エンティティを指定する場合、そのエンティティは [Entities](/javascript/api/outlook/office.entities) オブジェクトのどのプロパティであってもかまいません。
 
-そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例は、電話番号であるエンティティが検出されたメッセージでアドインをアクティブに設定する方法を示しています。
+そのため、アドイン マニフェストには、ルールの種類 **ItemHasKnownEntity** または **ItemHasRegularExpressionMatch** が含まれている必要があります。 次の例では、電話番号であるエンティティが検出されたメッセージに対してアドインをアクティブ化するように指定する方法を示します。
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -64,7 +64,7 @@ ms.locfileid: "64496902"
 
 **強調表示されているエンティティ (住所) が含まれるテキストの例**
 
-![メール内の強調表示されたエンティティを表示します。](../images/outlook-detected-entity-highlight.png)
+![電子メール内で強調表示されているエンティティを表示します。](../images/outlook-detected-entity-highlight.png)
     
 1 つのメッセージ内に複数のエンティティまたはコンテキスト アドインが存在する場合、ユーザー操作の規則がいくつかあります。
 
@@ -84,7 +84,7 @@ ms.locfileid: "64496902"
 
 ## <a name="current-contextual-add-ins"></a>現在のコンテキスト アドイン
 
-次のコンテキスト アドインは、既定では、アドインを使用しているユーザー Outlookインストールされます。
+次のコンテキスト アドインは、Outlook アドインを使用するユーザーに対して既定でインストールされます。
 
 - Bing 地図
 - 会議の候補

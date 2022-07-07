@@ -4,12 +4,12 @@ description: オンライン会議サービス プロバイダー用に Outlook 
 ms.topic: article
 ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
-ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
+ms.openlocfilehash: ad96cbd385f53959501dcb5ac8b7e9be22d4585a
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2022
-ms.locfileid: "66574426"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660278"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーの Outlook アドインを作成する
 
@@ -26,7 +26,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成できるようにするには、マニフェストで **VersionOverrides** ノードを構成する必要があります。 Outlook on the web、Windows、Mac でのみサポートされるアドインを作成する場合は、ガイダンスとして **[Windows]、[Mac]、[Web**] タブを選択します。 ただし、アドインが Outlook on Android と iOS でもサポートされる場合は、[ **モバイル** ] タブを選択します。
+ユーザーがアドインを使用してオンライン会議を作成できるようにするには、マニフェストでノードを構成する **\<VersionOverrides\>** 必要があります。 Outlook on the web、Windows、Mac でのみサポートされるアドインを作成する場合は、ガイダンスとして **[Windows]、[Mac]、[Web**] タブを選択します。 ただし、アドインが Outlook on Android と iOS でもサポートされる場合は、[ **モバイル** ] タブを選択します。
 
 # <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
 
@@ -34,7 +34,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. **VersionOverrides** ノード全体 (オープン タグとクローズ タグを含む) を選択し、次の XML に置き換えます。
+1. ノード全体 **\<VersionOverrides\>** (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -100,13 +100,13 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 # <a name="mobile"></a>[モバイル](#tab/mobile)
 
-ユーザーがモバイル デバイスからオンライン会議を作成できるように、 [MobileOnlineMeetingCommandSurface 拡張ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) は、親要素 **MobileFormFactor** の下のマニフェストで構成されます。 この拡張ポイントは、他のフォーム ファクターではサポートされていません。
+ユーザーがモバイル デバイスからオンライン会議を作成できるように、 [MobileOnlineMeetingCommandSurface 拡張ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) は、親要素 **\<MobileFormFactor\>** の下のマニフェストで構成されます。 この拡張ポイントは、他のフォーム ファクターではサポートされていません。
 
 1. コード エディターで、作成した Outlook クイック スタート プロジェクトを開きます。
 
 1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. **VersionOverrides** ノード全体 (オープン タグとクローズ タグを含む) を選択し、次の XML に置き換えます。
+1. ノード全体 **\<VersionOverrides\>** (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えます。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

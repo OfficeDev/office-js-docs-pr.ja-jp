@@ -1,32 +1,32 @@
 ---
-title: 組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
-description: カスタム コマンド グループとタブに組み込Officeボタンをリボンに含めるOfficeします。
+title: 組み込みの Office ボタンをカスタム コントロール グループとタブに統合する
+description: Office リボンのカスタム コマンド グループとタブに組み込みの Office ボタンを含める方法について説明します。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e64e3939ea83c6468b1f8b35ac189ad7d3d373
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 4dc706fcd0b049647847a73f7c40144dba9df0e2
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496727"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659788"
 ---
-# <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>組み込みのコントロール Officeカスタム コントロール グループとタブに統合する
+# <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>組み込みの Office ボタンをカスタム コントロール グループとタブに統合する
 
-アドインのマニフェストでマークアップOfficeを使用して、Office リボンのカスタム コントロール グループに組み込みのコントロール ボタンを挿入できます。 (カスタム アドイン コマンドを組み込みのアドイン グループにOfficeできます)。組み込みのコントロール グループ全体をOfficeリボン タブに挿入することもできます。
+アドインのマニフェストのマークアップを使用して、Office リボンのカスタム コントロール グループに組み込みの Office ボタンを挿入できます。 (組み込みの Office グループにカスタム アドイン コマンドを挿入することはできません。また、組み込みの Office コントロール グループ全体をカスタム リボン タブに挿入することもできます。
 
 > [!NOTE]
-> この記事では、アドイン コマンドの基本的な概念に精通 [している必要があります](add-in-commands.md)。 最近行っていない場合は、確認してください。
+> この記事では、 [アドイン コマンドの基本的な概念](add-in-commands.md)に関する記事を理解していることを前提としています。 最近行っていない場合は、確認してください。
 
 > [!IMPORTANT]
 >
-> - この記事で説明するアドイン機能とマークアップは、この記事 *でのみPowerPoint on the web*。
-> - この記事で説明するマークアップは、要件セット **AddinCommands 1.3** をサポートするプラットフォームでのみ機能します。 後のセクション「 [サポートされていないプラットフォームでの動作」を参照してください](#behavior-on-unsupported-platforms)。
+> - この記事で説明するアドイン機能とマークアップは *、PowerPoint on the webでのみ使用できます*。
+> - この記事で説明するマークアップは、要件セット **AddinCommands 1.3** をサポートするプラットフォームでのみ機能します。 後のセクション「 [サポートされていないプラットフォームでの動作」](#behavior-on-unsupported-platforms)を参照してください。
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>組み込みのコントロール グループをカスタム タブに挿入する
 
-組み込みのコントロール グループOfficeタブに挿入するには、[親 CustomTab](/javascript/api/manifest/customtab#officegroup) 要素に子要素として **OfficeGroup 要素を追加** します。 `id` **OfficeGroup** 要素の属性は、組み込みグループの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
+組み込みの Office コントロール グループをタブに挿入するには、親 **\<CustomTab\>** 要素の子要素として [OfficeGroup](/javascript/api/manifest/customtab#officegroup) 要素を追加します。 要素の **\<OfficeGroup\>** 属性は`id`、組み込みグループの ID に設定されます。 [「コントロールとコントロール グループの ID を検索する](#find-the-ids-of-controls-and-control-groups)」を参照してください。
 
-次のマークアップ例は、Office段落コントロール グループをカスタム タブに追加し、カスタム グループの直後に表示する位置を設定します。
+次のマークアップ例では、Office Paragraph コントロール グループをカスタム タブに追加し、カスタム グループの直後に表示するように配置します。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -40,11 +40,11 @@ ms.locfileid: "64496727"
 </ExtensionPoint>
 ```
 
-## <a name="insert-a-built-in-control-into-a-custom-group"></a>組み込みのコントロールをカスタム グループに挿入する
+## <a name="insert-a-built-in-control-into-a-custom-group"></a>組み込みコントロールをカスタム グループに挿入する
 
-カスタム グループに組み込Officeコントロールを挿入するには、親 Group 要素に子要素として [OfficeControl](/javascript/api/manifest/group#officecontrol) 要素を **追加** します。 `id` **OfficeControl** 要素の属性は、組み込みコントロールの ID に設定されます。 「 [コントロールとコントロール グループの ID を検索する」を参照してください](#find-the-ids-of-controls-and-control-groups)。
+組み込みの Office コントロールをカスタム グループに挿入するには、親 **\<Group\>** 要素の子要素として [OfficeControl](/javascript/api/manifest/group#officecontrol) 要素を追加します。 要素の **\<OfficeControl\>** 属性は`id`、組み込みコントロールの ID に設定されます。 [「コントロールとコントロール グループの ID を検索する](#find-the-ids-of-controls-and-control-groups)」を参照してください。
 
-次のマークアップの例では、Office Superscript コントロールをカスタム グループに追加し、カスタム ボタンの直後に表示する位置を設定します。
+次のマークアップ例では、Office 上付きコントロールをカスタム グループに追加し、カスタム ボタンの直後に表示するように配置します。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -68,12 +68,12 @@ ms.locfileid: "64496727"
 ```
 
 > [!NOTE]
-> ユーザーは、アプリケーションでリボンをOfficeできます。 ユーザーのカスタマイズは、マニフェスト設定を上書きします。 たとえば、ユーザーは任意のグループからボタンを削除し、タブから任意のグループを削除できます。
+> ユーザーは、Office アプリケーションでリボンをカスタマイズできます。 すべてのユーザーのカスタマイズは、マニフェスト設定をオーバーライドします。 たとえば、ユーザーは任意のグループからボタンを削除し、タブから任意のグループを削除できます。
 
 ## <a name="find-the-ids-of-controls-and-control-groups"></a>コントロールとコントロール グループの ID を検索する
 
-サポートされているコントロールとコントロール グループの ID は、repo コントロールのファイルOffice[されます](https://github.com/OfficeDev/office-control-ids)。 そのレポの ReadMe ファイルの指示に従います。
+サポートされているコントロールとコントロール グループの ID は、 [リポジトリの Office コントロール ID](https://github.com/OfficeDev/office-control-ids) 内のファイルにあります。 そのリポジトリの ReadMe ファイルの指示に従います。
 
 ## <a name="behavior-on-unsupported-platforms"></a>サポートされていないプラットフォームでの動作
 
-アドインが要件セット [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしていないプラットフォームにインストールされている場合、この記事で説明するマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしないプラットフォームにアドインがインストールされるのを防ぐには、マニフェストの [要件] セクションで要件セットへの参照を追加します。 手順については、「アドインをホストOfficeバージョンとプラットフォームを指定[する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンス用のデザイン」で説明したように、アドインを設計して **AddinCommands 1.3** がサポートされていない場合にエクスペリエンス [を提供するようにします](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、組み込みのボタンがカスタム グループ内にあると仮定する手順がアドインに含まれている場合は、組み込みボタンが通常の場所にのみ含まれると想定するバージョンを設計できます。
+アドインが [要件セット AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) をサポートしていないプラットフォームにインストールされている場合、この記事で説明されているマークアップは無視され、組み込みの Office コントロール/グループはカスタム グループ/タブに表示されません。 マークアップをサポートしていないプラットフォームにアドインがインストールされないようにするには、マニフェストのセクションで要件セットへの参照を **\<Requirements\>** 追加します。 手順については、「アドインを [ホストできる Office バージョンとプラットフォームを指定する」を参照してください](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 または、「代替エクスペリエンスの設計」で説明されているように、 **AddinCommands 1.3** がサポートされていない場合にエクスペリエンスを持つアドイン [を設計します](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 たとえば、アドインに、組み込みボタンがカスタム グループにあると想定する手順が含まれている場合は、組み込みボタンが通常の場所にあると想定するバージョンを設計できます。

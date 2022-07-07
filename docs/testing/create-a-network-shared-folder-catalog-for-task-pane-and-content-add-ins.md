@@ -1,29 +1,29 @@
 ---
-title: ネットワーク共有からテストするためのサイドロード Office アドイン
-description: ネットワーク共有からテストするためにOffice アドインをサイドロードする方法について説明します。
+title: ネットワーク共有からテストするための Office アドインをサイドロードする
+description: ネットワーク共有からテストするために Office アドインをサイドロードする方法について説明します。
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752884"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659837"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有からテストするためのサイドロード Office アドイン
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有からテストするための Office アドインをサイドロードする
 
-Windows上にあるOffice クライアントでOffice アドインをテストするには、マニフェストをネットワーク ファイル共有に発行します (以下の手順を参照)。 このデプロイ オプションは、ローカル ホストでの開発とテストを完了し、ローカル以外のサーバーまたはクラウド アカウントからアドインをテストする場合に使用することを目的としています。
+Windows 上の Office クライアントで Office アドインをテストするには、マニフェストをネットワーク ファイル共有に発行します (以下の手順を参照)。 このデプロイ オプションは、ローカル ホストでの開発とテストを完了し、ローカル以外のサーバーまたはクラウド アカウントからアドインをテストする場合に使用することを目的としています。
 
 > [!IMPORTANT]
 > 運用アドインでは、ネットワーク共有によるデプロイはサポートされていません。このメソッドには、次の制限事項があります。
 >
-> - アドインは、Windows コンピューターにのみインストールできます。
+> - アドインは Windows コンピューターにのみインストールできます。
 > - 新しいバージョンのアドインでリボンが変更された場合 (カスタム タブやカスタム ボタンを追加するなど) は、各ユーザーがアドインを再インストールする必要があります。
 
 > [!NOTE]
 > アドイン プロジェクトが十分に新しい [Office 用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) バージョンで作成されている場合、アドインは `npm start` を実行すると自動的に Office デスクトップ クライアントにサイドロードします。
 
-この記事は、Word、Excel、PowerPoint、Project アドインのテストにのみ適用され、Windowsでのみ適用されます。 別のプラットフォームでテストする場合や、Outlook アドインをテストする場合は、次のいずれかのトピックを参照してアドインをサイドロードします。
+この記事は、Word、Excel、PowerPoint、および Project アドインのテストにのみ適用され、Windows でのみ適用されます。 別のプラットフォームでテストする場合、または Outlook アドインをテストする場合は、次のいずれかのトピックを参照してアドインをサイドロードします。
 
 - [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
 - [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -115,13 +115,13 @@ Windows上にあるOffice クライアントでOffice アドインをテスト�
 
 ## <a name="sideload-your-add-in"></a>アドインのサイドロード
 
-1. テストするアドインのマニフェスト XML ファイルを共有フォルダー カタログに置きます。 なお、Web アプリケーション自体を Web サーバーに展開します。 必ずマニフェスト ファイルの **SourceLocation** 要素で URL を指定してください。
+1. テストするアドインのマニフェスト XML ファイルを共有フォルダー カタログに置きます。 なお、Web アプリケーション自体を Web サーバーに展開します。 マニフェスト ファイルの要素で **\<SourceLocation\>** URL を指定してください。
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > Visual Studio プロジェクトの場合は、フォルダー内のプロジェクトによってビルドされたマニフェストを`{projectfolder}\bin\Debug\OfficeAppManifests`使用します。
+    > Visual Studio プロジェクトの場合は、フォルダー内のプロジェクトによってビルドされたマニフェストを `{projectfolder}\bin\Debug\OfficeAppManifests` 使用します。
 
 1. Excel、Word、または PowerPoint で、リボンの **[挿入]** タブにある **[個人用アドイン]** を選びます。 Projectで、リボンの [**Project**]タブの [**個人用アドイン**] を選択します。
 
@@ -131,7 +131,7 @@ Windows上にあるOffice クライアントでOffice アドインをテスト�
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-以前にサイドロードされたアドインを削除するには、コンピューター上のOffice キャッシュをクリアします。 Windowsでキャッシュをクリアする方法の詳細については、「Office [キャッシュをクリアする](clear-cache.md#clear-the-office-cache-on-windows)」を参照してください。
+以前にサイドロードされたアドインを削除するには、コンピューター上の Office キャッシュをクリアします。 Windows でキャッシュをクリアする方法の詳細については、「 [Office キャッシュをクリアする」](clear-cache.md#clear-the-office-cache-on-windows)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

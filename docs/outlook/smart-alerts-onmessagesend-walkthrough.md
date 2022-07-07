@@ -4,29 +4,29 @@ description: イベント ベースのアクティブ化を使用して、Outloo
 ms.topic: article
 ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ed1ce7e1c05bec9a09eefd36e935d1037cf80d98
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019613"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660250"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
 
-イベント`OnMessageSend`と`OnAppointmentSend`スマート アラートを利用すると、ユーザーがメッセージまたは予定で **[送信**] を選択した後にロジックを実行Outlookできます。 イベント ハンドラーを使用すると、ユーザーが送信される前にメールや会議の招待を改善する機会をユーザーに提供できます。
+イベント `OnMessageSend` と `OnAppointmentSend` スマート アラートを利用すると、ユーザーが Outlook メッセージまたは予定で **[送信]** を選択した後にロジックを実行できます。 イベント ハンドラーを使用すると、ユーザーが送信される前にメールや会議の招待を改善する機会をユーザーに提供できます。
 
 次のチュートリアルでは、このイベントを使用します `OnMessageSend` 。 このチュートリアルの最後には、メッセージが送信されるたびに実行されるアドインがあり、ユーザーが電子メールで言及したドキュメントまたは画像を追加するのを忘れたかどうかを確認します。
 
 > [!IMPORTANT]
-> イベントと`OnAppointmentSend`イベントは`OnMessageSend`、WindowsのOutlookのMicrosoft 365 サブスクリプションでのみプレビューで利用できます。 詳細については、「 [プレビューする方法」を](autolaunch.md#how-to-preview)参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
+> イベントと`OnAppointmentSend`イベントは`OnMessageSend`、Outlook on Windows の Microsoft 365 サブスクリプションでのみプレビューで利用できます。 詳細については、「 [プレビューする方法」を](autolaunch.md#how-to-preview)参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
 
 ## <a name="prerequisites"></a>前提条件
 
-イベントは `OnMessageSend` 、イベント ベースのアクティブ化機能を使用して使用できます。 この機能を使用するようにアドインを構成する方法については、使用可能なその他のイベントの使用、このイベントのプレビューの構成、アドインのデバッグなどを行う方法については、「[イベント ベースのアクティブ化のためにOutlook アドインを構成する](autolaunch.md)」を参照してください。
+イベントは `OnMessageSend` 、イベント ベースのアクティブ化機能を使用して使用できます。 この機能を使用するようにアドインを構成する方法を理解するには、他の使用可能なイベントの使用、このイベントのプレビューの構成、アドインのデバッグなどを行う方法については、「 [イベント ベースのアクティブ化のために Outlook アドインを構成](autolaunch.md)する」を参照してください。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-[Outlookクイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。これにより、Office アドイン用の Yeoman ジェネレーターを使用してアドイン プロジェクトが作成されます。
+Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -34,7 +34,7 @@ ms.locfileid: "66019613"
 
 1. プロジェクトのルートにある **manifest.xml** ファイルを開きます。
 
-1. **VersionOverrides** ノード全体 (オープン タグとクローズ タグを含む) を選択し、次の XML に置き換えてから、変更を保存します。
+1. ノード全体 **\<VersionOverrides\>** (開いているタグと閉じるタグを含む) を選択し、次の XML に置き換えてから、変更を保存します。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -138,7 +138,7 @@ ms.locfileid: "66019613"
 > [!TIP]
 >
 > - イベントで`OnMessageSend``OnAppointmentSend`使用できる **SendMode** オプションについては、「[使用可能な SendMode オプション](/javascript/api/manifest/launchevent#available-sendmode-options-preview)」を参照してください。
-> - Outlook アドインのマニフェストの詳細については、[アドイン マニフェストのOutlook](manifests.md)を参照してください。
+> - Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
 ## <a name="implement-event-handling"></a>イベント処理を実装する
 
@@ -259,9 +259,9 @@ ms.locfileid: "66019613"
     ```
 
     > [!NOTE]
-    > アドインが自動的にサイドロードされなかった場合は、[テスト用の Sideload Outlook アドインの](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)手順に従ってアドインを手動でサイドロードOutlookします。
+    > アドインが自動的にサイドロードされなかった場合は、 [テスト用の Sideload Outlook アドイン](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) の手順に従って、Outlook でアドインを手動でサイドロードします。
 
-1. WindowsのOutlookで、新しいメッセージを作成し、件名を設定します。 本文に、"ねえ、犬のこの写真を確認してください"などのテキストを追加します。
+1. Outlook on Windows で、新しいメッセージを作成し、件名を設定します。 本文に、"ねえ、犬のこの写真を確認してください"などのテキストを追加します。
 1. メッセージを送信します。 添付ファイルを追加するための推奨事項がダイアログに表示されます。
 
     ![ユーザーに添付ファイルを含めさせるダイアログ。](../images/outlook-win-smart-alert.png)
@@ -324,7 +324,7 @@ event.completed メソッドの [errorMessage プロパティ](/javascript/api/o
 ## <a name="see-also"></a>関連項目
 
 - [Outlook アドインのマニフェスト](manifests.md)
-- [イベント ベースのアクティブ化のためにOutlook アドインを構成する](autolaunch.md)
+- [イベント ベースのアクティブ化のために Outlook アドインを構成する](autolaunch.md)
 - [イベント ベースのアドインをデバッグする方法](debug-autolaunch.md)
-- [イベント ベースのOutlook アドインの AppSource 一覧表示オプション](autolaunch-store-options.md)
-- [Office アドインのコード サンプル: スマート アラートOutlook使用する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+- [イベント ベースの Outlook アドインの AppSource 一覧表示オプション](autolaunch-store-options.md)
+- [Office アドインのコード サンプル: Outlook Smart Alerts を使用する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
