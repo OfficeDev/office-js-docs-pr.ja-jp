@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ba6c01ea05174e9d965032c02c403c1bfe121dac
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744293"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659935"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
@@ -68,7 +68,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>手順 1. Bing Search 用のアドインのマニフェスト ファイルを作成するには
 
-- ローカル ディレクトリに XML ファイルを作成します。この XML ファイルには **OfficeApp** 要素と子要素を記述します。詳細については「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。たとえば、以下の XML を記述したファイルを BingSearch.xml という名前で作成します。
+- ローカル ディレクトリに XML ファイルを作成します。 この XML ファイルには **\<OfficeApp\>** 要素と子要素を記述します。詳細については「[Office アドインの XML マニフェスト](../develop/add-in-manifests.md)」を参照してください。 たとえば、次の XML を含む BingSearch.xml という名前のファイルを作成します。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,18 +99,16 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
     ```
 
 - アドインのマニフェストで必要な要素を次に示します。
-  - **OfficeApp** 要素では、アドインの種類が作業ウィンドウであることを `xsi:type="TaskPaneApp"` 属性で指定します。
-  - **Id** 要素は UUID で、一意である必要があります。
-  - **Version** 要素は、アドインのバージョンです。**ProviderName** 要素は、アドインを提供する企業または開発者の名前です。**DefaultLocale** 要素は、マニフェストで指定する文字列の既定のロケールです。
-  - **DisplayName** 要素は、Project 2013 のリボンの **[ビュー]** タブで **[作業ウィンドウ アドイン]** ドロップダウン リストに表示される名前です。値は最大 32 文字です。
-  - **Description** 要素は、既定のロケールでのアドインの説明です。値は最大 2000 文字です。
+  - **\<OfficeApp\>** 要素では、アドインの種類が作業ウィンドウであることを `xsi:type="TaskPaneApp"` 属性で指定します。
+  - **\<Id\>** 要素は UUID で、一意である必要があります。
+  - **\<Version\>** 要素はアドインのバージョンです。 **\<ProviderName\>** 要素は、アドインを提供する企業または開発者の名前です。 **\<DefaultLocale\>** 要素は、マニフェストで指定する文字列の既定のロケールです。
+  - **\<DisplayName\>** 要素は、Project 2013 のリボンの **[ビュー]** タブで **[作業ウィンドウ アドイン]** ドロップダウン リストに表示される名前です。 値は最大 32 文字です。
+  - **\<Description\>** 要素は、既定のロケールでのアドインの説明です。 値は最大 2000 文字です。
   - **Capabilities** 要素は、1 つまたは複数の **Capability** 子要素を持ち、その中で Office アプリケーションを指定します。
-  - 
-            **DefaultSettings** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **SourceLocation** 要素が含まれています。作業ウィンドウ アドインでは、**RequestedHeight** 要素と **RequestedWidth** 要素は無視されます。
-  - 
-            **IconUrl** 要素は省略可能です。ファイル共有のアイコンまたは Web アプリケーションのアイコンの URL を指定できます。
+  - **\<DefaultSettings\>** 要素には、アドインが使用するファイル共有上の HTML ファイルのパスまたは Web ページの URL を指定する **\<SourceLocation\>** 要素が含まれています。 作業ウィンドウ アドインでは、**\<RequestedHeight\>** 要素と **\<RequestedWidth\>** 要素は無視されます。
+  - **\<IconUrl\>** 要素は省略可能です。 ファイル共有のアイコンまたは Web アプリケーションのアイコンの URL を指定できます。
 
-- (省略可能) 他のロケール用の値を表す **Override** 要素を追加します。たとえば、次のマニフェストでは、**DisplayName**、**Description**、**IconUrl**、および **SourceLocation** に対し、フランス語の値を表す **Override** 要素を指定しています。
+- (省略可能) 他のロケール用の値を表す **\<Override\>** 要素を追加します。 たとえば、次のマニフェストは、**\<DisplayName\>**、**\<Description\>**、**\<IconUrl\>**、および **\<SourceLocation\>** のフランス語の値に **\<Override\>** 要素を提供します。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -148,7 +146,7 @@ Project 2013 SDK のダウンロード ファイルをインストールする�
 
 Project 2013 では、ファイル共有上のスタンドアロン ソリューションとして、またはプライベート アドイン カタログに、アドインをインストールできます。AppSource でアドインをレビューおよび購入することもできます。
 
-ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の **[セキュリティ センター]** ダイアログ ボックスの **[信頼されているアドイン カタログ]** タブを使用します。Project にアドインを表示するには、マニフェスト内の **SourceLocation** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
+ファイル共有の中には、アドイン マニフェストの XML ファイルとサブディレクトリを複数配置することもできます。 マニフェストのディレクトリの場所とカタログを追加または削除するには、Project 2013 の [**トラスト センター**] ダイアログ ボックスの [**信頼されているアドイン カタログ**] タブを使用します。 Project にアドインを表示するには、マニフェスト内の **\<SourceLocation\>** 要素で既存の Web サイトまたは HTML ソース ファイルを指定する必要があります。
 
 > [!NOTE]
 > Windows コンピューターで開発している場合は、Internet Explorer または Microsoft Edge をインストールする必要があります。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。

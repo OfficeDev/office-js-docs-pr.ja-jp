@@ -4,12 +4,12 @@ description: このチュートリアルでは、GitHub Gist を新規メッセ�
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091091"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659704"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -139,13 +139,13 @@ ms.locfileid: "66091091"
 
 **manifest.xml** ファイルで次の更新を行い、アドインに関する基本情報を指定します。
 
-1. **ProviderName** 要素を探し、既定値を会社名に置き換えます。
+1. **\<ProviderName\>** 要素を探し、既定値を会社名に置き換えます。
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. **Description** 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。
+1. **\<Description\>** 要素を探し、既定値をアドインの説明に置き換えて、ファイルを保存します。
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -183,21 +183,21 @@ ms.locfileid: "66091091"
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>MessageReadCommandSurface 拡張点を削除する
 
-**manifest.xml** ファイルを開き、種類が **MessageReadCommandSurface** の **ExtensionPoint** 要素を見つけます。 この **ExtensionPoint** 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
+**manifest.xml** ファイルを開き、種類が **MessageReadCommandSurface** の **\<ExtensionPoint\>** 要素を見つけます。 この **\<ExtensionPoint\>** 要素 (終了タグを含む) を削除することにより、メッセージ閲覧ウィンドウからボタンを削除します。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>MessageComposeCommandSurface 拡張点を追加する
 
 マニフェスト内で `</DesktopFormFactor>` という行を探します。 この行の直前に、次の XML マークアップを挿入します。 このマークアップについて、次の情報にご注意ください。
 
-- `xsi:type="MessageComposeCommandSurface"` の **ExtensionPoint** は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
+- `xsi:type="MessageComposeCommandSurface"` とともに **\<ExtensionPoint\>** は、メッセージ作成ウィンドウに追加するボタンを定義していることを示します。
 
-- `id="TabDefault"` の **OfficeTab** 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。
+- `id="TabDefault"` とともに **\<OfficeTab\>** 要素を使用することによって、ボタンをリボンの既定タブに追加することを示しています。
 
-- **Group** 要素は、**groupLabel** リソースによってラベルが設定された新しいボタンのグループ化を定義します。
+- **\<Group\>** 要素は、**groupLabel** リソースによってラベルが設定された新しいボタンのグループ化を定義します。
 
-- 最初の **Control** 要素には、`xsi:type="ShowTaskPane"` の **Action** 要素が含まれているので、このボタンは作業ウィンドウを開きます。
+- 最初の **\<Control\>** 要素には、`xsi:type="ShowTaskPane"` と **\<Action\>** 要素が含まれているので、このボタンは作業ウィンドウを開きます。
 
-- 2 番目の **Control** 要素には `xsi:type="ExecuteFunction"` の **Action** 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。
+- 2 番目の **\<Control\>** 要素には `xsi:type="ExecuteFunction"` と **\<Action\>** 要素が含まれているので、このボタンは関数ファイルに含まれる JavaScript 関数を呼び出します。
 
 ```xml
 <!-- Message Compose -->
@@ -242,11 +242,11 @@ ms.locfileid: "66091091"
 
 ### <a name="update-resources-in-the-manifest"></a>マニフェスト内のリソースを更新する
 
-前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。 この情報を、マニフェストの **Resources** セクションで指定します。
+前のコードでは、マニフェストが有効になる前に定義する必要のあるラベル、ヒント、URL が参照されています。 この情報を、マニフェストの **\<Resources\>** セクションで指定します。
 
-1. マニフェストファイルで **Resources** 要素を見つけて、要素全体 (その終了タグを含む) を削除します。
+1. マニフェストファイル内の **\<Resources\>** 要素を見つけて、要素全体（その終了タグを含む）を削除します。
 
-1. 同じ場所に、次のマークアップを追加して、削除した **Resources** 要素を置き換えます。
+1. 同じ場所に、次のマークアップを追加して、削除した **\<Resources\>** 要素を置き換えます。
 
     ```xml
     <Resources>
@@ -731,7 +731,7 @@ npm run build
 
 ### <a name="update-the-function-file-html"></a>関数ファイルを更新する (HTML)
 
-UI のないボタンによって呼び出される関数は、対応するフォーム係数のマニフェスト内の **FunctionFile** 要素で指定されたファイルで定義する必要があります。このアドインのマニフェストは、関数ファイルとして `https://localhost:3000/commands.html` を指定します。
+UI のないボタンによって呼び出される関数は、対応するフォーム ファクターのマニフェスト内の **\<FunctionFile\>** 要素で指定されたファイルで定義する必要があります。 このアドインのマニフェストでは、`https://localhost:3000/commands.html` が関数ファイルとして指定されています。
 
 ファイル **./src/commands/commands.html** を開き、内容全体を次のマークアップに置き換えます。
 

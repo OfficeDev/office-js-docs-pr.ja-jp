@@ -3,12 +3,12 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650599"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659970"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
@@ -79,11 +79,11 @@ SSO を使用するには、Microsoft ID プラットフォームにアドイン
 
 新しいマークアップをアドイン マニフェストに追加します。
 
-- **WebApplicationInfo** - 次の要素の親。
-- **ID** - アドインを Microsoft ID プラットフォームに登録したときに受け取ったアプリケーション (クライアント) ID。 詳細情報については、「[Microsoft ID プラットフォームに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
-- **リソース** - アドインの URI。 これは、Microsoft ID プラットフォームを使ってアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの `<Resources>` セクションの URL で使用されている任意のサブドメインを含むドメインと一致し、URI の末尾が `<Id>` 要素内で指定されたクライアント ID で終了している必要があります。
-- **Scopes** - 1 つ以上の **Scope** 要素の親。
-- **スコープ** - アドインに必要なアクセス許可を指定します。 `profile` と `openID` のアクセス許可は常に必要であり、これは唯一必要なアクセス許可である場合があります。 アドインが Microsoft Graph またはその他の Microsoft 365 リソースにアクセスする必要がある場合は、追加の **スコープ** 要素が必要です。 たとえば、Microsoft Graph のアクセス許可の場合は、 `User.Read` と `Mail.Read` のスコープを要求できます。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
+- **\<WebApplicationInfo\>** - 次の要素の親。
+- **\<Id\>** - アドインを Microsoft ID プラットフォームに登録したときに受け取ったアプリケーション (クライアント) ID。 詳細情報については、「[Microsoft ID プラットフォームに SSO を使用する Office アドインを登録する](register-sso-add-in-aad-v2.md)」をご覧ください。
+- **\<Resource\>** - アドインの URI。 これは、Microsoft ID プラットフォームを使ってアドインを登録したときに使用したのと同じ URI (`api:` プロトコルを含む) です。 この URI のドメイン部分は、アドインのマニフェストの **\<Resources\>** セクションの URL で使用されている任意のサブドメインを含むドメインと一致し、URI の末尾が **\<Id\>** 要素内で指定されたクライアント ID で終了している必要があります。
+- **\<Scopes\>** - 1 つ以上の **\<Scope\>** 要素の親。
+- **\<Scope\>** - アドインに必要なアクセス許可を指定します。 `profile` と `openID` のアクセス許可は常に必要であり、これは唯一必要なアクセス許可である場合があります。 アドインが Microsoft Graph またはその他の Microsoft 365 リソースにアクセスする必要がある場合は、追加の **\<Scope\>** 要素が必要です。 たとえば、Microsoft Graph のアクセス許可の場合は、 `User.Read` と `Mail.Read` のスコープを要求できます。 コードで使用している、Microsoft Graph にアクセスするためのライブラリでは、他にもアクセス許可が必要な場合があります。 詳細については、「[Office アドインで Microsoft Graph へ承認](authorize-to-microsoft-graph.md)」を参照してください。
 
 Word、Excel、PowerPoint のアドインでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_0">` セクションの末尾にマークアップを追加します。Outlook アドインでは、`<VersionOverrides ... xsi:type="VersionOverridesV1_1">` セクションの末尾にマークアップを追加します。
 

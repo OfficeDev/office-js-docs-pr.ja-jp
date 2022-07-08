@@ -4,12 +4,12 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090860"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659795"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -97,7 +97,7 @@ vue create my-add-in
    npx office-addin-dev-certs install
    ```
 
-## <a name="explore-the-project"></a>プロジェクトを探究する
+## <a name="explore-the-project"></a>プロジェクトを確認する
 
 Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
 
@@ -112,7 +112,7 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. **manifest.xml** を開き、`<Resources>` タグの中で `<bt:Urls>` タグを検索します。 ID `Taskpane.Url` を持つ `<bt:Url>` タグを検索し、その `DefaultValue` 属性を更新します。 新しい `DefaultValue` は `https://localhost:3000/index.html` です。 更新されたタグ全体が次の行と一致する必要があります。
+1. **manifest.xml** を開き、**\<Resources\>** タグの中で `<bt:Urls>` タグを検索します。 ID `Taskpane.Url` を持つ `<bt:Url>` タグを検索し、その `DefaultValue` 属性を更新します。 新しい `DefaultValue` は `https://localhost:3000/index.html` です。 更新されたタグ全体が次の行と一致する必要があります。
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />

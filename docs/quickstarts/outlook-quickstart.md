@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Outlook 作業ウィンド�
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091098"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660152"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -244,11 +244,11 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。 このファイルは、アドインの設定と機能を定義します。
 
-1. **ProviderName** 要素にはプレースホルダー値があります。これをあなたの名前で置き換えます。
+1. **\<ProviderName\>** 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-1. **DisplayName** 要素の **DefaultValue** 属性にプレースホルダーがあります。 それを `My Office Add-in` に置き換えます。
+1. **\<DisplayName\>** 要素の **DefaultValue** 属性にプレースホルダーがあります。 それを `My Office Add-in` に置き換えます。
 
-1. **Description** 要素の **DefaultValue** 属性にプレースホルダーがあります。`My First Outlook add-in`で置き換えてください。
+1. **\<Description\>** 要素の **DefaultValue** 属性にプレースホルダーがあります。 それを `My First Outlook add-in` に置き換えます。
 
 1. ファイルを保存します。
 

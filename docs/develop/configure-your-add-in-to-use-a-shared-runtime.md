@@ -4,12 +4,12 @@ title: 共有 JavaScript ランタイムを使用するように Office アド�
 ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.localizationpriority: high
-ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
-ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
+ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2022
-ms.locfileid: "64715531"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659844"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -57,10 +57,10 @@ ms.locfileid: "64715531"
     > [!NOTE]
     > Word アドインのマニフェストに `SharedRuntime` 要件セットを追加しないでください。 この時点で既知の問題であるアドインを読み込むと、エラーが発生します。
 
-1. `<VersionOverrides>` セクションを検索して次の `<Runtimes>` セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の `<bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
+1. **\<VersionOverrides\>** セクションを検索して次の **\<Runtimes\>** セクションを追加します。 作業ウィンドウを閉じてもアドイン コードを実行できるように、有効期間は **長く** する必要があります。 `resid` 値は **Taskpane.Url** で、**manifest.xml** ファイルの下部付近の `<bt:Urls>` セクションで指定された **taskpane.html** ファイルの場所を参照します。
 
     > [!IMPORTANT]
-    > `<Runtimes>` セクションは、次の XML で示される正確な順序で `<Host>` 要素の後に入力する必要があります。
+    > **\<Runtimes\>** セクションは、次の XML で示される正確な順序で **\<Host\>** 要素の後に入力する必要があります。
 
    ```xml
    <VersionOverrides ...>
@@ -73,7 +73,7 @@ ms.locfileid: "64715531"
        </Host>
    ```
 
-1. カスタム関数を使用して Excel アドインを生成した場合は、`<Page>` 要素を見つけます。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
+1. カスタム関数を使用して Excel アドインを生成した場合は、**\<Page\>** 要素を見つけます。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 
    ```xml
    <AllFormFactors>
@@ -84,7 +84,7 @@ ms.locfileid: "64715531"
    ...
    ```
 
-1. `<FunctionFile ...>` タグを見つけて、`resid` を **Commands.Url** から **Taskpane.Url** に変更します。 アクション コマンドがない場合は、**FunctionFile** エントリがないため、この手順は省略できます。
+1. **\<FunctionFile\>** タグを見つけて、`resid` を **Commands.Url** から **Taskpane.Url** に変更します。 アクション コマンドがない場合は、**\<FunctionFile\>** エントリがないため、この手順は省略できます。
 
     ```xml
     </GetStarted>

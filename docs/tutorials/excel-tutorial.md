@@ -4,12 +4,12 @@ description: Excel アドインを構築します。このアドインでは、�
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244801"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659718"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -509,7 +509,7 @@ ms.locfileid: "65244801"
 
 1. マニフェスト ファイル **./manifest.xml** を開きます。
 
-1. `<Control>` 要素を見つけます。この要素は、アドインの起動に使用する **[ホーム]** リボンの **[作業ウィンドウを表示]** ボタンを定義します。**[ホーム]** リボンの同じグループに 2 番目のボタンを追加します。終了 `</Control>` タグと終了 `</Group>` タグの間に、次のマークアップを追加します。
+1. **\<Control\>** 要素を見つけます。 この要素では、アドインの起動に使用している **[ホーム]** リボンの **[作業ウィンドウの表示]** ボタンを定義しています。 ここでは、**[ホーム]** リボンの同じグループに 2 つ目のボタンを追加します。 **\</Control\>** 終了タグと **\</Group\>** 終了タグの間に、次のマークアップを追加します。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">

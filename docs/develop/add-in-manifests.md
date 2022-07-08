@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a89207dc575e103ca7b29fa1ce69ca18aba2c0c0
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 09b4d5b2b9fc92c977217df94730b3e6e56cacaa
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090958"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659991"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -122,10 +122,10 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 > [!NOTE]
 > この動作に対する例外は 2 つあります。
 >
-> - これは、アドインのルート ウィンドウに対してのみ適用されます。アドイン ページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**AppDomains** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
-> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **AppDomains** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
+> - これは、アドインのルート ウィンドウに対してのみ適用されます。 アドインページに iframe が埋め込まれている場合、Office デスクトップの場合でも、**\<AppDomains\>** の一覧にあるかどうかにかかわらず、その iframe を任意の URL に転送できます。
+> - [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API でダイアログを開く場合、メソッドに渡される URL はアドインと同じドメインにある必要がありますが、ダイアログはデスクトップ Office であっても **\<AppDomains\>** にリストされているかどうかに関係なく、任意の URL にリダイレクトできます。
 
-次に示す XML マニフェストの例では、**SourceLocation** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。また、この例では、**AppDomains** 要素リスト内の [AppDomain](/javascript/api/manifest/appdomain) 要素の `https://www.northwindtraders.com` ドメインも指定しています。アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップであっても、そのページはアドイン ウィンドウで開きます。
+次に示す XML マニフェストの例では、**\<SourceLocation\>** 要素に指定された `https://www.contoso.com` ドメインでメイン アドイン ページをホストします。 また、この例では、**\<AppDomains\>** 要素リスト内の [AppDomain](/javascript/api/manifest/appdomain) 要素の `https://www.northwindtraders.com` ドメインも指定しています。 アドインが `www.northwindtraders.com` ドメイン内のページに移動すると、Office デスクトップの場合でも、そのページはアドイン ウィンドウで開きます。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
