@@ -3,12 +3,12 @@ title: Office アドインのTeams マニフェスト (プレビュー)
 description: プレビュー JSON マニフェストの概要を確認します。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229639"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689384"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Office アドインのTeams マニフェスト (プレビュー)
 
@@ -51,7 +51,7 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
       "text": "Some text"
   }
   ```
-- 現在の XML マニフェストには、複数の名前を持つ要素に、同じ名前の単数形バージョンの子が含まれている場所が多数あります。 たとえば、カスタム メニューを構成するマークアップには、複数の **Item** 要素の子を含めることができる **Items** 要素が含まれています。 これらの複数の要素に相当する JSON は、その値として配列を持つプロパティです。 配列のメンバーは *匿名* オブジェクトであり、"item" または "item1"、"item2" などの名前のプロパティではありません。次に例を示します。
+- 現在の XML マニフェストには、複数の名前を持つ要素に、同じ名前の単数形バージョンの子が含まれている場所が多数あります。 たとえば、カスタム メニューを構成するマークアップには、複数の **\<Item\>** 要素の子を含めることができる **\<Items\>** 要素が含まれています。 これらの複数の要素に相当する JSON は、その値として配列を持つプロパティです。 配列のメンバーは *匿名* オブジェクトであり、"item" または "item1"、"item2" などの名前のプロパティではありません。次に例を示します。
 
   ```json
   "items": [
@@ -66,9 +66,9 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 #### <a name="top-level-structure"></a>最上位レベルの構造
 
-プレビュー JSON マニフェストのルート レベルは、現在の XML マニフェストの **OfficeApp** 要素とほぼ同じで、匿名オブジェクトです。 
+プレビュー JSON マニフェストのルート レベルは、現在の XML マニフェストの **\<OfficeApp\>** 要素とほぼ同じで、匿名オブジェクトです。 
 
-**OfficeApp** の子は、一般的に 2 つの概念的なカテゴリに分類されます。 **VersionOverrides** 要素は 1 つのカテゴリです。 もう 1 つの子は、 **OfficeApp** の他のすべての子で構成され、これらはまとめて基本マニフェストと呼ばれます。 そのため、プレビュー JSON マニフェストにも同様の除算があります。 最上位レベルの "extension" プロパティがあり、その目的に大まかに対応し、子プロパティは **VersionOverrides** 要素に対応します。 プレビュー JSON マニフェストには、XML マニフェストの基本マニフェストと同じ目的でまとめて機能する 10 を超えるその他の最上位プロパティもあります。 これらの他のプロパティは、JSON マニフェストの基本マニフェストとまとめて考えることができます。 
+**\<OfficeApp\>** の子は、一般的に 2 つの概念的なカテゴリに分類されます。 1 つのカテゴリは、**\<VersionOverrides\>** 要素です。 もう 1 つは、**\<OfficeApp\>** の他のすべての子で構成され、これらはまとめて基本マニフェストと呼ばれます。 そのため、プレビュー JSON マニフェストにも同様の除算があります。 最上位レベルの "extension" プロパティがその目的に大まかに対応し、子プロパティは **\<VersionOverrides\>** 要素に対応します。 プレビュー JSON マニフェストには、XML マニフェストの基本マニフェストと同じ目的でまとめて機能する 10 を超えるその他の最上位プロパティもあります。 これらの他のプロパティは、JSON マニフェストの基本マニフェストとまとめて考えることができます。 
 
 > [!NOTE]
 > 1 つのマニフェストでアドインを他の Microsoft 365 拡張機能の種類と組み合わせることができるようになると、基本マニフェストの概念に収まらない他の最上位レベルのプロパティが存在します。 通常、"configurableTabs"、"bots"、"connectors" など、あらゆる種類の Microsoft 365 拡張機能の種類に対して最上位のプロパティが存在します。 例については、[Teams マニフェストのドキュメント](/microsoftteams/platform/resources/schema/manifest-schema)を参照してください。 この構造により、"extension" プロパティは、Microsoft 365 拡張機能の 1 つの種類として Office アドインを表すことがわかります。
@@ -79,37 +79,37 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
-|"$schema"| マニフェスト スキーマを識別します。 | **OfficeApp** と **VersionOverrides** の属性 | |
-|"id"| アドインの GUID。 | **Id**| |
-|"version"| アドインのバージョンです。 | **バージョン** | |
-|"manifestVersion"| マニフェスト スキーマのバージョンです。 |  **OfficeApp** の属性 | |
-|"name"| アドインのパブリック名。 | **DisplayName** | |
-|"description"| アドインの公開用の説明。  | **説明** | |
+|"$schema"| マニフェスト スキーマを識別します。 | **\<OfficeApp\>** と **\<VersionOverrides\>** の属性 | |
+|"id"| アドインの GUID。 | **\<Id\>**| |
+|"version"| アドインのバージョンです。 | **\<Version\>** | |
+|"manifestVersion"| マニフェスト スキーマのバージョンです。 |  **\<OfficeApp\>** の属性 | |
+|"name"| アドインのパブリック名。 | **\<DisplayName\>** | |
+|"description"| アドインの公開用の説明。  | **\<Description\>** | |
 |"accentColor"||| このプロパティは、現在の XML マニフェストに同等のものはなく、JSON マニフェストのプレビューでは使用されません。 ただし、存在する必要があります。 |
-|"developer"| アドインの開発者を識別します。 | **ProviderName** | |
-|"localizationInfo"| 既定のロケールとその他のサポートされているロケールを構成します。 | **DefaultLocale** と **Override** | |
-|"webApplicationInfo"| Azure Active Directory で既知のアドインの Web アプリを識別します。 | **WebApplicationInfo** | 現在の XML マニフェストでは、 **WebApplicationInfo** 要素は基本マニフェストではなく **VersionOverrides** 内にあります。 |
-|"authorization"| アドインに必要な Microsoft Graphアクセス許可を識別します。 | **WebApplicationInfo** | 現在の XML マニフェストでは、 **WebApplicationInfo** 要素は基本マニフェストではなく **VersionOverrides** 内にあります。 |
+|"developer"| アドインの開発者を識別します。 | **\<ProviderName\>** | |
+|"localizationInfo"| 既定のロケールとその他のサポートされているロケールを構成します。 | **\<DefaultLocale\>** と **\<Override\>** | |
+|"webApplicationInfo"| Azure Active Directory で既知のアドインの Web アプリを識別します。 | **\<WebApplicationInfo\>** | 現在の XML マニフェストでは、**\<WebApplicationInfo\>** 要素は基本マニフェストではなく **\<VersionOverrides\>** 内にあります。 |
+|"authorization"| アドインに必要な Microsoft Graphアクセス許可を識別します。 | **\<WebApplicationInfo\>** | 現在の XML マニフェストでは、**\<WebApplicationInfo\>** 要素は基本マニフェストではなく **\<VersionOverrides\>** 内にあります。 |
 
-**ホスト**、**要件**、**および ExtendedOverrides** 要素は、現在の XML マニフェストの基本マニフェストの一部です。 ただし、これらの要素に関連する概念と目的は、プレビュー JSON マニフェストの "extension" プロパティ内で構成されます。 
+**\<Hosts\>**、**\<Requirements\>**、**\<ExtendedOverrides\>** 要素は、現在の XML マニフェストの基本マニフェストの一部です。 ただし、これらの要素に関連する概念と目的は、プレビュー JSON マニフェストの "extension" プロパティ内で構成されます。 
 
 #### <a name="extension-property"></a>"extension" プロパティ
 
-プレビュー JSON マニフェストの "extension" プロパティは、主に、他の種類の Microsoft 365 拡張機能には関連しないアドインの特性を表します。 たとえば、アドインが拡張するOffice アプリケーション (Excel、PowerPoint、Word、Outlook など) は、Office アプリケーション リボンのカスタマイズと同様に、"extension" プロパティ内で指定されます。 "extension" プロパティの構成目的は、現在の XML マニフェストの **VersionOverrides** 要素の構成と密接に一致します。
+プレビュー JSON マニフェストの "extension" プロパティは、主に、他の種類の Microsoft 365 拡張機能には関連しないアドインの特性を表します。 たとえば、アドインが拡張するOffice アプリケーション (Excel、PowerPoint、Word、Outlook など) は、Office アプリケーション リボンのカスタマイズと同様に、"extension" プロパティ内で指定されます。 "extension" プロパティの構成目的は、現在の XML マニフェストの **\<VersionOverrides\>** 要素の構成と密接に一致します。
 
 > [!NOTE]
-> 現在の XML マニフェストの **VersionOverrides** セクションには、多くの文字列リソースに対する "二重ジャンプ" システムがあります。 URL を含む文字列が指定され、**VersionOverrides** の **Resources** 子に ID が割り当てられます。 文字列を必要とする要素には、**Resources** 要素内の文字列の ID と一致する `resid` 属性があります。 プレビュー JSON マニフェストの "extension" プロパティは、文字列をプロパティ値として直接定義することで、物事を簡略化します。 JSON マニフェストには、**Resources** 要素に相当するものはありません。
+> 現在の XML マニフェストの **\<VersionOverrides\>** セクションには、多くの文字列リソースに対する "二重ジャンプ" システムがあります。 URL を含む文字列が指定され、**\<VersionOverrides\>** の **\<Resources\>** 子に ID が割り当てられます。 文字列を必要とする要素には、**\<Resources\>** 要素内の文字列の ID と一致する `resid` 属性があります。 プレビュー JSON マニフェストの "extension" プロパティは、文字列をプロパティ値として直接定義することで、物事を簡略化します。 JSON マニフェストには、**\<Resources\>** 要素に相当するものはありません。
 
 次の表は、プレビュー JSON マニフェストの "extension" プロパティの一部の高レベルの子プロパティと、現在のマニフェストの XML 要素のマッピングを示しています。 ドット表記は、子プロパティを参照するために使用されます。
 
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | アドインをインストール可能にする必要がある要件セットを識別します。 | **要件** と **セット** | |
-| "requirements.scopes" | アドインをインストールできる Office アプリケーションを識別します。 | **Hosts** |  |
-| "ribbons" | アドインがカスタマイズするリボン。 | **ホスト**、 **ExtensionPoints**、およびさまざまな **\*FormFactor** 要素 | "ribbons" プロパティは、これら 3 つの要素の目的をマージする匿名オブジェクトの配列です。 [「リボン」の表](#ribbons-table)を参照してください。|
-| "alternatives" | 同等の COM アドイン、XLL、またはその両方との下位互換性を指定します。 | **EquivalentAddins** | 背景情報については、[「EquivalentAddins - 参照」](/javascript/api/manifest/equivalentaddins#see-also)を参照してください。 |
-| "runtimes"  | カスタム関数専用アドインやカスタムのリボン ボタンから直接実行される関数など、さまざまな種類の "UI のない" アドインを構成します。 | **Runtimes**。 **FunctionFile**、および **ExtensionPoint** (CustomFunctions 型) |  |
-| "autoRunEvents" | 指定したイベントのイベント ハンドラーを構成します。 | **Event** と **ExtensionPoint** (イベントの種類) |  |
+| "requirements.capabilities" | アドインをインストール可能にする必要がある要件セットを識別します。 | **\<Requirements\>** と **\<Sets\>** | |
+| "requirements.scopes" | アドインをインストールできる Office アプリケーションを識別します。 | **\<Hosts\>** |  |
+| "ribbons" | アドインがカスタマイズするリボン。 | **\<Hosts\>**、**ExtensionPoints**、およびさまざまな **\*FormFactor** 要素 | "ribbons" プロパティは、これら 3 つの要素の目的をマージする匿名オブジェクトの配列です。 [「リボン」の表](#ribbons-table)を参照してください。|
+| "alternatives" | 同等の COM アドイン、XLL、またはその両方との下位互換性を指定します。 | **\<EquivalentAddins\>** | 背景情報については、[「EquivalentAddins - 参照」](/javascript/api/manifest/equivalentaddins#see-also)を参照してください。 |
+| "runtimes"  | カスタム関数専用アドインや[関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)など、UI がほとんどまたはまったくないさまざまな種類のアドインを構成します。 | **\<Runtimes\>**. **\<FunctionFile\>**、および **\<ExtensionPoint\>** (CustomFunctions 型の) |  |
+| "autoRunEvents" | 指定したイベントのイベント ハンドラーを構成します。 | **\<Event\>** および **\<ExtensionPoint\>** (Events 型の) |  |
 
 ##### <a name="ribbons-table"></a>"ribbons" テーブル
 
@@ -118,7 +118,7 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
 | "contexts" | アドインがカスタマイズするコマンド サーフェスを指定します。 | **PrimaryCommandSurface** や **MessageReadCommandSurface** など、さまざまな **\*CommandSurface** 要素 |  |
-| "tabs" | カスタム リボン タブを構成します。 | **CustomTab** | "タブ" の子孫プロパティの名前と階層は、**CustomTab** の子孫と密接に一致します。  |
+| "tabs" | カスタム リボン タブを構成します。 | **\<CustomTab\>** | "tabs" の子孫プロパティの名前と階層は、**\<CustomTab\>** の子孫と密接に一致します。  |
 
 ## <a name="sample-preview-json-manifest"></a>サンプル プレビュー JSON マニフェスト
 
