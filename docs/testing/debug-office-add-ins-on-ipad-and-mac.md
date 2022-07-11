@@ -1,14 +1,14 @@
 ---
 title: Mac で Office アドインをデバッグする
-description: Mac を使用してアドインをデバッグするOffice説明します。
+description: Mac を使用して Office アドインをデバッグする方法について説明します。
 ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b0925e53c4e50a5cddc52173b66d5ad9fbfeaef9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 32d896743932abc7cf8be6bd62a491fc93fe0d1b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746926"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713001"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Mac で Office アドインをデバッグする
 
@@ -18,7 +18,7 @@ ms.locfileid: "63746926"
 
 作業ウィンドウまたはコンテンツ アドインに UI を表示するアドインを使用している場合は、Safari Web インスペクタを使用して Office アドインをデバッグできます。
 
-Mac で Office アドインをデバッグするには、Mac OS High Sierra AND Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 Mac ビルドがない場合はOffice開発者プログラムに参加Microsoft 365[取得できます](https://developer.microsoft.com/office/dev-program)。
+Mac で Office アドインをデバッグできるようにするには、Mac OS High Sierra AND Mac Office バージョン 16.9.1 (ビルド 18012504) 以降が必要です。 Office Mac ビルドがない場合は、 [Microsoft 365 開発者プログラム](https://developer.microsoft.com/office/dev-program)に参加することで入手できます。
 
 最初に端末を開き、該当する Office アプリケーションの `OfficeWebAddinDeveloperExtras` プロパティを以下のように設定します。
 
@@ -31,9 +31,9 @@ Mac で Office アドインをデバッグするには、Mac OS High Sierra AND 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
     > [!IMPORTANT]
-    > Mac App Store ビルドのOfficeフラグはサポート`OfficeWebAddinDeveloperExtras`されていません。
+    > Mac App Store Office のビルドでは、フラグは`OfficeWebAddinDeveloperExtras`サポートされていません。
 
-次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-ipad-and-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。 このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
+次に Office アプリケーションを開き、[アドインをサイドロードします](sideload-an-office-add-in-on-mac.md)。 アドインを右クリックします。コンテキスト メニューに **[要素の検査]** オプションが表示されるはずです。 このオプションを選択するとインスペクタが表示されます。インスペクタでは、ブレークポイントを設定してアドインをデバッグできます。
 
 > [!NOTE]
 > インスペクタとダイアログ フリッカーを使おうとしている場合は、Office を最新バージョンに更新してください。 ちらつきが解決しない場合は、次の回避策を試してください。

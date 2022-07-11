@@ -3,12 +3,12 @@ title: Office アドインでの開発エラーのトラブルシューティン
 description: Office アドインの開発エラーのトラブルシューティング方法について説明します。
 ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 427d35d49339c1130733a3b33aa1bfedc1bd8317
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660075"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712763"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -113,7 +113,8 @@ CDN からではなくローカル コピーから Office JavaScript ライブ�
 ## <a name="see-also"></a>関連項目
 
 - [Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)
-- [iPad または Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-mac.md)  
+- [iPad で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad.md)  
 - [Mac で Office アドインをデバッグする](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Visual Studio Code 用 Microsoft Office アドイン デバッガー拡張機能](debug-with-vs-extension.md)
 - [Office アドインのマニフェストを検証する](troubleshoot-manifest.md)

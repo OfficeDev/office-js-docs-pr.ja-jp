@@ -3,12 +3,12 @@ title: ネットワーク共有からテストするための Office アドイ�
 description: ネットワーク共有からテストするために Office アドインをサイドロードする方法について説明します。
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 87bdeb6cbd33bcd9b1828c7afa0a9f879d4c05e4
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659837"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712777"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>ネットワーク共有からテストするための Office アドインをサイドロードする
 
@@ -26,7 +26,8 @@ Windows 上の Office クライアントで Office アドインをテストす�
 この記事は、Word、Excel、PowerPoint、および Project アドインのテストにのみ適用され、Windows でのみ適用されます。 別のプラットフォームでテストする場合、または Outlook アドインをテストする場合は、次のいずれかのトピックを参照してアドインをサイドロードします。
 
 - [テスト用に Office on the web で Office アドインをサイドロードする](sideload-office-add-ins-for-testing.md)
-- [テスト用に iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [テスト用の Mac 上の Office アドインをサイドロードする](sideload-an-office-add-in-on-mac.md)
+- [iPad でテスト用の Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad.md)
 - [テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 次のビデオでは、共有フォルダー カタログを使用して Office on the web またはデスクトップでアドインをサイドロードする手順について説明します。  

@@ -1,26 +1,26 @@
 ---
 title: Outlook アドインで添付ファイルを取得する
 description: アドインで添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信することができます。
-ms.date: 09/03/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f851eba0eae9373d751b63e37c35db5f5ead3a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 14329134513718ad4025c27abf7621a8ebf4b18f
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484264"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713106"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>サーバーから Outlook アイテムの添付ファイルを取得する
 
-複数の方法でOutlookアイテムの添付ファイルを取得できますが、使用するオプションはシナリオによって異なります。
+Outlook アイテムの添付ファイルは、いくつかの方法で取得できますが、使用するオプションはシナリオによって異なります。
 
-1. リモート サービスに添付ファイル情報を送信します。
+1. 添付ファイル情報をリモート サービスに送信します。
 
-    アドインは添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。 そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
+    アドインは、添付ファイル API を使用して、添付ファイルに関する情報をリモート サービスに送信できます。 そうすれば、サービスは Exchange サーバーに直接アクセスして添付ファイルを取得できるようになります。
 
-1. 要件セット 1.8 から利用できる [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
+1. 要件セット 1.8 から入手できる [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) API を使用します。 サポートされている形式: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
 
-    この API は、EWS/REST が使用できない場合 (たとえば、Exchange サーバーの管理構成のため)、またはアドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、`getAttachmentContentAsync`この API は、添付ファイルがまだ Exchange に同期されていない可能性がある作成シナリオで使用できます。詳細については、「[Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) の作成フォームでアイテムの添付ファイルを管理する」を参照してください。
+    この API は、EWS/REST が使用できない場合 (たとえば、Exchange サーバーの管理者構成など)、アドインが HTML または JavaScript で base64 コンテンツを直接使用する場合に便利です。 また、 `getAttachmentContentAsync` 添付ファイルがまだ Exchange と同期されていない可能性がある作成シナリオでも API を使用できます。詳細については、「 [Outlook の作成フォームでアイテムの添付ファイルを管理](add-and-remove-attachments-to-an-item-in-a-compose-form.md) する」を参照してください。
 
 この記事では、最初のオプションについて詳しく説明します。 リモート サービスに添付ファイル情報を送信するには、次のプロパティと関数を使用します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "64484264"
 
 ## <a name="using-the-attachments-api"></a>添付ファイル API を使用する
 
-添付ファイル API を使用してメールボックスから添付ファイルExchangeするには、次の手順を実行します。
+添付ファイル API を使用して Exchange メールボックスから添付ファイルを取得するには、次の手順を実行します。
 
 1. 添付ファイルを含むメッセージまたは予定が表示されているときは、アドインを表示します。
 
@@ -78,21 +78,19 @@ function attachmentTokenCallback(asyncResult, userContext) {
 // Initialize a context object for the add-in.
 //   Set the fields that are used on the request
 //   object to default values.
- var serviceRequest = {
+ const serviceRequest = {
     attachmentToken: '',
     ewsUrl         : Office.context.mailbox.ewsUrl,
     attachments    : []
  };
 ```
 
-<br/>
-
 `Office.context.mailbox.item.attachments` プロパティには、アイテムの添付ファイルごとに存在する `AttachmentDetails` オブジェクトのコレクションが含まれています。 ほとんどの場合、アドインは `AttachmentDetails` オブジェクトの添付ファイル ID プロパティだけをリモート サービスに渡すことができます。 リモート サービスが添付ファイルについてより詳細な情報を必要とする場合、`AttachmentDetails` オブジェクトの全部あるいは一部を渡すことができます。 次のコードは、`AttachmentDetails` 配列全体を `serviceRequest` オブジェクトに配置し、リモート サービスに要求を送信するメソッドを定義しています。
 
 ```js
 function makeServiceRequest() {
   // Format the attachment details for sending.
-  for (var i = 0; i < mailbox.item.attachments.length; i++) {
+  for (let i = 0; i < mailbox.item.attachments.length; i++) {
     serviceRequest.attachments[i] = JSON.parse(JSON.stringify(mailbox.item.attachments[i]));
   }
 
@@ -103,12 +101,12 @@ function makeServiceRequest() {
     contentType: 'application/json;charset=utf-8'
   }).done(function (response) {
     if (!response.isError) {
-      var names = "<h2>Attachments processed using " +
+      const names = "<h2>Attachments processed using " +
                     serviceRequest.service +
                     ": " +
                     response.attachmentsProcessed +
                     "</h2>";
-      for (i = 0; i < response.attachmentNames.length; i++) {
+      for (let i = 0; i < response.attachmentNames.length; i++) {
         names += response.attachmentNames[i] + "<br />";
       }
       document.getElementById("names").innerHTML = names;
@@ -220,7 +218,6 @@ private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEW
 
 リモート サービスで EWS を使用している場合、Exchange サーバーから添付ファイルを取得するために [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) SOAP 要求を作成する必要があります。 次のコードは、SOAP 要求を提供する文字列を返します。 リモート サービスは、添付ファイル用の添付ファイル ID を文字列に挿入するために `String.Format` メソッドを使用します。
 
-
 ```cs
 private const string GetAttachmentSoapRequest =
 @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -242,8 +239,6 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
   </soap:Body>
 </soap:Envelope>";
 ```
-
-<br/>
 
 最後に、次のメソッドでは、Exchange サーバーから添付ファイルを取得するために EWS の `GetAttachment` 要求を使用するという作業を行っています。 この実装では、各添付ファイルに対して個別の要求を出し、処理された添付ファイルの数を返します。 各応答は、次に定義されているような、それぞれ別々の `ProcessXmlResponse` メソッドで処理されます。
 
@@ -319,8 +314,6 @@ private AttachmentSampleServiceResponse GetAttachmentsFromExchangeServerUsingEWS
   return response;
 }
 ```
-
-<br/>
 
 各 `GetAttachment` 操作からのそれぞれの応答は、`ProcessXmlResponse` メソッドに送信されます。 このメソッドは応答にエラーがないか確認します。 エラーが見つからなかった場合、添付ファイルや添付アイテムを処理します。 `ProcessXmlResponse` メソッドが添付ファイル処理作業の大部分を行います。
 

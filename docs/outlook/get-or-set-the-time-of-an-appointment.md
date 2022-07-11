@@ -1,18 +1,18 @@
 ---
 title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
-ms.date: 07/08/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f7a0956d7e355389c4cbe08a866686288ced66
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 9c98ae89c4c078e77a07724536498c7791db9d05
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484333"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713050"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
-JavaScript API Officeには、ユーザーが作成する予定の開始時刻または終了時刻を取得および設定する非同期メソッド ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) および [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) が提供されています。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用[の Outlook](compose-scenario.md) アドインの作成」で説明されているとおり、Outlook 用のアドイン マニフェストを適切にセットアップして、作成フォームでアドインをアクティブ化してください。
+Office JavaScript API は、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定するための非同期メソッド ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) と [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) を提供します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用の Outlook アドインを作成する」の説明に従って、Outlook がアドイン作成フォームをアクティブ化するために適切 [にアドイン](compose-scenario.md) マニフェストを設定していることを確認します。
 
 [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティおよび [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティは、新規作成フォームと閲覧フォームの両方の予定で利用できます。閲覧フォームでは親オブジェクトから直接プロパティにアクセスでき、それには次を使用します。
 
@@ -38,24 +38,20 @@ item.start.getAsync
 item.end.getAsync
 ```
 
-JavaScript API のほとんどの非同期メソッドと同様に、**getAsync** Office **setAsync** はオプションの入力パラメーターを受け取ります。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
-
+Office JavaScript API のほとんどの非同期メソッドと同様に、 **getAsync** と **setAsync** は省略可能な入力パラメーターを受け取ります。 これらのオプションの入力パラメーターの指定について詳しくは、「 [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)」の「 [オプションのパラメーターを非同期メソッドに渡す](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 ## <a name="get-the-start-or-end-time"></a>開始時刻または終了時刻を取得する
 
 このセクションでは、ユーザーが作成している予定の開始時刻を取得して、その時刻を表示するサンプル コードについて説明します。同じコードを使用して、**start** プロパティを **end** プロパティに置き換えると終了時刻を取得できます。このサンプル コードは、以下に示すアドイン マニフェストのルールによって予定の新規作成フォームでアドインがアクティブになることを想定しています。
 
-
 ```XML
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-
 ```
 
 **item.start.getAsync** または **item.end.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、**AsyncResult.value** プロパティを使用して開始時刻を UTC 形式の [Date](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) オブジェクトとして取得できます。
 
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -89,7 +85,6 @@ function write(message){
 }
 ```
 
-
 ## <a name="set-the-start-or-end-time"></a>開始時刻または終了時刻を設定する
 
 ここでは、ユーザーが作成している予定またはメッセージの開始時刻を設定するサンプル コードについて説明します。同じコードを使用して、**start** プロパティを **end** プロパティに置き換えると終了時刻を設定できます。予定の新規作成フォームに既存の開始時刻がある場合、後で開始時刻を設定すると、以前の予定の期間が保たれるように終了時刻を調整します。予定の新規作成フォームに既存の終了時刻がある場合、後で終了時刻を設定すると、期間と終了時刻の両方が調整されます。予定が終日イベントとして設定されている場合、開始時刻を設定すると、終了時刻を 24 時間後に調整し、新規作成フォームの終日イベントの UI をオフにします。
@@ -98,11 +93,8 @@ function write(message){
 
 **item.start.setAsync** または **item.end.setAsync** を使用する場合は、**dateTime** パラメーターに UTC で _Date_ の値を指定します。クライアントでユーザーによる入力に基づいて日付を取得する場合は、[mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を使用して、値を UTC の **Date** オブジェクトに変換します。オプションのコールバック メソッドと、_asyncContext_ パラメーターでそのコールバック メソッドの引数を指定できます。コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。非同期呼び出しが成功すると、指定した開始時刻または終了時刻文字列が **setAsync** によってプレーン テキストとして挿入され、そのアイテムの既存の開始時刻または終了時刻が上書きされます。
 
-
-
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -116,7 +108,7 @@ Office.initialize = function () {
 
 // Set the start time of the item that the user is composing.
 function setStartTime() {
-    var startDate = new Date("September 27, 2012 12:30:00");
+    const startDate = new Date("September 27, 2012 12:30:00");
     
     item.start.setAsync(
         startDate,
@@ -139,15 +131,13 @@ function write(message){
 }
 ```
 
-
 ## <a name="see-also"></a>関連項目
 
-- [Outlook で新規作成フォームのアイテム データを取得および設定する](get-and-set-item-data-in-a-compose-form.md)    
-- [閲覧または新規作成フォームの Outlook アイテム データを取得および設定する](item-data.md)   
-- [新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)    
+- [Outlook で新規作成フォームのアイテム データを取得および設定する](get-and-set-item-data-in-a-compose-form.md)
+- [閲覧または新規作成フォームの Outlook アイテム データを取得および設定する](item-data.md)
+- [新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)
 - [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する](get-set-or-add-recipients.md)  
-- [Outlook で予定またはメッセージを作成するときに件名を取得または設定する](get-or-set-the-subject.md)   
-- [Outlook で予定またはメッセージを作成するときに本文にデータを挿入する](insert-data-in-the-body.md)   
+- [Outlook で予定またはメッセージを作成するときに件名を取得または設定する](get-or-set-the-subject.md)
+- [Outlook で予定またはメッセージを作成するときに本文にデータを挿入する](insert-data-in-the-body.md)
 - [Outlook で予定を作成するときに場所を取得または設定する](get-or-set-the-location-of-an-appointment.md)
-    

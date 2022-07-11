@@ -2,14 +2,14 @@
 title: Outlook アドインに Append-on-send を実装する
 description: Outlook アドインで追加オン送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659830"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712973"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインに Append-on-send を実装する
 
@@ -137,7 +137,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
     ```js
     function appendDisclaimerOnSend(event) {
-      var appendText =
+      const appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
         *************************************************************
@@ -158,7 +158,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
       event.completed();
     }
     ```
-    
+
 1. 関数のすぐ下に次の行を追加して関数を登録します。
 
     ```js
@@ -167,7 +167,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーがまだ実行されておらず、アドインがサイドロードされると、ローカル Web サーバーが起動します。 
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーがまだ実行されておらず、アドインがサイドロードされると、ローカル Web サーバーが起動します。
 
     ```command&nbsp;line
     npm start
@@ -179,7 +179,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 1. メッセージを送信し、 **受信トレイ** または **送信済みアイテム** フォルダーからメッセージを開き、追加された免責事項を表示します。
 
-    ![Outlook on the webで送信時に免責事項が追加されたメッセージの例のスクリーンショット。](../images/outlook-web-append-disclaimer.png)
+    ![Outlook on the webでの送信時に免責事項が追加されたサンプル メッセージ。](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>関連項目
 

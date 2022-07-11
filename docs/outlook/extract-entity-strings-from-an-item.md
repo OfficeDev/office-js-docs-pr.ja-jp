@@ -1,14 +1,14 @@
 ---
 title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
-ms.date: 10/31/2019
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3270409dcd24cb0cde4f0e7693400e49efb5c868
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c51094adefbc60bad0716e2d65af0f40ed868d66
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484481"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713120"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
@@ -17,28 +17,28 @@ ms.locfileid: "64484481"
 サポートされるエンティティには次のようなものがあります。
 
 - **住所**: 米国の郵送先住所で、少なくとも番地、住所、都市名、州名、郵便番号の各要素の一部を含むもの。
-    
+
 - **連絡先**: 住所、勤務先名など、他のエンティティのコンテキストにおける、個人の連絡先情報。
-    
+
 - **電子メール アドレス**: SMTP 電子メール アドレス。
-    
+
 - **会議提案**: イベントへの言及などの会議提案。予定ではなくメッセージのみが会議提案の抽出をサポートすることに注意してください。
-    
+
 - **電話番号**: 北米の電話番号。
-    
+
 - **タスクの提案**: 通常、実行可能な語句で表現される、タスクの提案。
-    
+
 - **URL**
-    
+
 これらのエンティティの大部分は、大量のデータの機械学習に基づいた自然言語認識を利用しています。このため、認識は非確定的で、結果が Outlook アイテムの特定のコンテキストに左右されることがあります。
 
-ユーザーが予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消しの表示を選択するたびに、Outlook によってエンティティ アドインがアクティブ化されます。初期化時に、このサンプルのエンティティ アドインは、現在のアイテムからサポートされているエンティティのすべてのインスタンスを読み込みます。 
+ユーザーが予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消しの表示を選択するたびに、Outlook によってエンティティ アドインがアクティブ化されます。初期化時に、このサンプルのエンティティ アドインは、現在のアイテムからサポートされているエンティティのすべてのインスタンスを読み込みます。
 
 このアドインにはユーザーがエンティティの種類を選択するためのボタンがあります。ユーザーがエンティティを選択すると、アドインは選択されたエンティティのインスタンスをアドイン ウィンドウに表示します。後続の各セクションでは、エンティティ アドインの XML マニフェスト、HTML ファイル、および JavaScript ファイルの内容を示し、それぞれのエンティティの抽出をサポートするコードについて詳しく説明します。
 
 ## <a name="xml-manifest"></a>XML マニフェスト
 
-エンティティ アドインには、論理 OR 演算で結合された 2 つのアクティブ化ルールがあります。 
+エンティティ アドインには、論理 OR 演算で結合された 2 つのアクティブ化ルールがあります。
 
 ```xml
 <!-- Activate the add-in if the current item in Outlook is an email or appointment item. -->
@@ -94,12 +94,11 @@ xsi:type="MailApp">
 </OfficeApp>
 ```
 
-
 ## <a name="html-implementation"></a>HTML の実装
 
 エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。
 
-すべての Outlook アドインに office.js を含める必要があります。 次の HTML ファイルには、コンテンツ配信ネットワーク (office.js) のバージョン 1.1 が含CDN。
+すべての Outlook アドインに office.js を含める必要があります。 次の HTML ファイルには、コンテンツ配信ネットワーク (CDN) 上のバージョン 1.1 のoffice.jsが含まれています。
 
 ```html
 <!DOCTYPE html>
@@ -140,15 +139,11 @@ xsi:type="MailApp">
 </html>
 ```
 
-
 ## <a name="style-sheet"></a>スタイル シート
-
 
 エンティティ アドインでは、default_entities.css というオプションの CSS ファイルを使用して出力のレイアウトを指定しています。次に、この CSS ファイルの内容を示します。
 
-
 ```CSS
-*
 {
     color: #FFFFFF;
     margin: 0px;
@@ -198,24 +193,22 @@ div#meeting_suggestions
 }
 ```
 
-
 ## <a name="javascript-implementation"></a>JavaScript の実装
 
 残りのセクションでは、このサンプル (default_entities.js ファイル) を使用して、ユーザーが表示中のメッセージまたは予定の件名と本文から一般的なエンティティを抽出する方法について説明します。
 
 ## <a name="extracting-entities-upon-initialization"></a>初期化時のエンティティの抽出
 
-[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを呼び出します。 この `getEntities` メソッドは、サポートされているエンティティの `_MyEntities` インスタンスの配列をグローバル変数に返します。 関連する JavaScript コードを次に示します。
-
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) イベントが発生すると、エンティティ アドインは現在のアイテムの [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを呼び出します。 このメソッドは `getEntities` 、サポートされているエンティティのインスタンスの配列をグローバル変数 `_MyEntities` に返します。 関連する JavaScript コードを次に示します。
 
 ```js
 // Global variables
-var _Item;
-var _MyEntities;
+let _Item;
+let _MyEntities;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
-    var _mailbox = Office.context.mailbox;
+    const _mailbox = Office.context.mailbox;
     // Obtains the current item.
     Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
@@ -227,25 +220,21 @@ Office.initialize = function () {
     // After the DOM is loaded, app-specific code can run.
     });
 }
-
 ```
-
 
 ## <a name="extracting-addresses"></a>住所の抽出
 
-
 ユーザーが **[Get Addresses]** ボタンをクリックすると、`myGetAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [addresses](/javascript/api/outlook/office.entities#outlook-office-entities-addresses-member) プロパティから住所の配列を取得します (住所が抽出されていた場合)。 抽出された各住所は、配列内の文字列として保存されます。 `myGetAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された住所のリストを表示します。 関連する JavaScript コードを次に示します。
-
 
 ```js
 // Gets instances of the Address entity on the item.
 function myGetAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of postal addresses. Each address is a string.
-    var addressesArray = _MyEntities.addresses;
-    for (var i = 0; i < addressesArray.length; i++)
+    const addressesArray = _MyEntities.addresses;
+    for (let i = 0; i < addressesArray.length; i++)
     {
         htmlText += "Address : <span>" + addressesArray[i] + "</span><br/>";
     }
@@ -254,12 +243,9 @@ function myGetAddresses()
 }
 ```
 
-
 ## <a name="extracting-contact-information"></a>連絡先情報の抽出
 
-
-ユーザーが [連絡先情報 **の取得**`myGetContacts`] ボタンをクリックすると、イベント ハンドラーは、抽出された場合、オブジェクトの [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` プロパティから連絡先の配列と情報を取得します。 抽出された各連絡先は、配列に [Contact](/javascript/api/outlook/office.contact) オブジェクトとして格納されます。 `myGetContacts` 各連絡先に関するその他のデータを取得します。 コンテキストは、Outlook&mdash; が電子メール メッセージの最後にアイテム署名から連絡先を抽出できるかどうか、または少なくとも次の情報の一部が連絡先の近くに存在する必要があるかどうかを決定します。
-
+ユーザーが **[連絡先情報の取得** ] ボタンをクリックすると、 `myGetContacts` イベント ハンドラーは、抽出された場合、オブジェクトの [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) プロパティから連絡先の配列とその情報を `_MyEntities` 取得します。 抽出された各連絡先は、配列内の [Contact](/javascript/api/outlook/office.contact) オブジェクトとして格納されます。 `myGetContacts` は、各連絡先に関するその他のデータを取得します。 コンテキストによって、Outlook がアイテム&mdash;から電子メール メッセージの最後に署名を抽出できるかどうか、または連絡先の近くに次の情報の少なくとも一部が存在する必要があるかどうかを判断します。
 
 - [Contact.personName](/javascript/api/outlook/office.contact#outlook-office-contact-personname-member) プロパティから取得される連絡先の名前を表す文字列。
 
@@ -277,18 +263,15 @@ function myGetAddresses()
 
 `myGetContacts` はローカル HTML 文字列を `htmlText` で生成し、各連絡先のデータを表示します。関連する JavaScript コードを次に示します。
 
-
-
-
 ```js
 // Gets instances of the Contact entity on the item.
 function myGetContacts()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of contacts and their information.
-    var contactsArray = _MyEntities.contacts;
-    for (var i = 0; i < contactsArray.length; i++)
+    const contactsArray = _MyEntities.contacts;
+    for (let i = 0; i < contactsArray.length; i++)
     {
         // Gets the name of the person. The name is a string.
         htmlText += "Name : <span>" + contactsArray[i].personName +
@@ -301,8 +284,8 @@ function myGetContacts()
         // Gets an array of phone numbers associated with the 
         // contact. Each phone number is represented by a 
         // PhoneNumber object.
-        var phoneNumbersArray = contactsArray[i].phoneNumbers;
-        for (var j = 0; j < phoneNumbersArray.length; j++)
+        let phoneNumbersArray = contactsArray[i].phoneNumbers;
+        for (let j = 0; j < phoneNumbersArray.length; j++)
         {
             htmlText += "PhoneString : <span>" + 
                 phoneNumbersArray[j].phoneString + "</span><br/>";
@@ -312,24 +295,24 @@ function myGetContacts()
         }
 
         // Gets the URLs associated with the contact.
-        var urlsArray = contactsArray[i].urls;
-        for (var j = 0; j < urlsArray.length; j++)
+        let urlsArray = contactsArray[i].urls;
+        for (let j = 0; j < urlsArray.length; j++)
         {
             htmlText += "Url : <span>" + urlsArray[j] + 
                 "</span><br/>";
         }
 
         // Gets the email addresses of the contact.
-        var emailAddressesArray = contactsArray[i].emailAddresses;
-        for (var j = 0; j < emailAddressesArray.length; j++)
+        let emailAddressesArray = contactsArray[i].emailAddresses;
+        for (let j = 0; j < emailAddressesArray.length; j++)
         {
            htmlText += "E-mail Address : <span>" + 
                emailAddressesArray[j] + "</span><br/>";
         }
 
         // Gets postal addresses of the contact.
-        var addressesArray = contactsArray[i].addresses;
-        for (var j = 0; j < addressesArray.length; j++)
+        let addressesArray = contactsArray[i].addresses;
+        for (let j = 0; j < addressesArray.length; j++)
         {
           htmlText += "Address : <span>" + addressesArray[j] + 
               "</span><br/>";
@@ -342,22 +325,19 @@ function myGetContacts()
 }
 ```
 
-
 ## <a name="extracting-email-addresses"></a>電子メール アドレスの抽出
 
-
 ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。
-
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
 function myGetEmailAddresses() {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of email addresses. Each email address is a 
     // string.
-    var emailAddressesArray = _MyEntities.emailAddresses;
-    for (var i = 0; i < emailAddressesArray.length; i++) {
+    const emailAddressesArray = _MyEntities.emailAddresses;
+    for (let i = 0; i < emailAddressesArray.length; i++) {
         htmlText += "E-mail Address : <span>" + emailAddressesArray[i] + "</span><br/>";
     }
 
@@ -365,18 +345,14 @@ function myGetEmailAddresses() {
 }
 ```
 
-
 ## <a name="extracting-meeting-suggestions"></a>会議提案の抽出
-
 
 ユーザーが **[Get Meeting Suggestions]** ボタンをクリックすると、`myGetMeetingSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [meetingSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-meetingsuggestions-member) プロパティから会議提案の配列を取得します (会議提案が抽出されていた場合)。
 
-
  > [!NOTE]
- > エンティティの種類は、メッセージのみサポートされますが、予定は `MeetingSuggestion` サポートされません。
+ > エンティティの種類は、メッセージのみがサポートされますが、予定はサポート `MeetingSuggestion` されません。
 
 抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
-
 
 - [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member) プロパティから取得される会議提案として識別された文字列。
 
@@ -396,30 +372,27 @@ function myGetEmailAddresses() {
 
 `myGetMeetingSuggestions` はローカル HTML 文字列を `htmlText` で生成し、会議提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
 
-
-
-
 ```js
 // Gets instances of the MeetingSuggestion entity on the 
 // message item.
 function myGetMeetingSuggestions() {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of MeetingSuggestion objects, each array 
     // element containing an instance of a meeting suggestion 
     // entity from the current item.
-    var meetingsArray = _MyEntities.meetingSuggestions;
+    const meetingsArray = _MyEntities.meetingSuggestions;
 
     // Iterates through each instance of a meeting suggestion.
-    for (var i = 0; i < meetingsArray.length; i++) {
+    for (let i = 0; i < meetingsArray.length; i++) {
         // Gets the string that was identified as a meeting suggestion.
         htmlText += "MeetingString : <span>" + meetingsArray[i].meetingString + "</span><br/>";
 
         // Gets an array of attendees for that instance of a 
         // meeting suggestion. Each attendee is represented 
         // by an EmailUser object.
-        var attendeesArray = meetingsArray[i].attendees;
-        for (var j = 0; j < attendeesArray.length; j++) {
+        let attendeesArray = meetingsArray[i].attendees;
+        for (let j = 0; j < attendeesArray.length; j++) {
             htmlText += "Attendee : ( ";
 
             // Gets the displayName property of the attendee.
@@ -451,12 +424,9 @@ function myGetMeetingSuggestions() {
 }
 ```
 
-
 ## <a name="extracting-phone-numbers"></a>電話番号の抽出
 
-
 ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。
-
 
 - [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。
 
@@ -466,19 +436,16 @@ function myGetMeetingSuggestions() {
 
 `myGetPhoneNumbers` はローカル HTML 文字列を `htmlText` で生成し、各電話番号のデータを表示します。関連する JavaScript コードを次に示します。
 
-
-
-
 ```js
 // Gets instances of the phone number entity on the item.
 function myGetPhoneNumbers()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of phone numbers. 
     // Each phone number is a PhoneNumber object.
-    var phoneNumbersArray = _MyEntities.phoneNumbers;
-    for (var i = 0; i < phoneNumbersArray.length; i++)
+    const phoneNumbersArray = _MyEntities.phoneNumbers;
+    for (let i = 0; i < phoneNumbersArray.length; i++)
     {
         htmlText += "Phone Number : ( ";
         // Gets the type of phone number, for example, home, office.
@@ -499,15 +466,11 @@ function myGetPhoneNumbers()
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="extracting-task-suggestions"></a>タスクの提案の抽出
 
-
 ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。
-
 
 - [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member) プロパティから取得されるタスクの提案として最初に識別された文字列。
 
@@ -519,22 +482,19 @@ function myGetPhoneNumbers()
 
 `myGetTaskSuggestions` はローカル HTML 文字列を `htmlText` で生成し、タスクの提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
 
-
-
-
 ```js
 // Gets instances of the task suggestion entity on the item.
 function myGetTaskSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of TaskSuggestion objects, each array element 
     // containing an instance of a task suggestion entity from 
     // the current item.
-    var tasksArray = _MyEntities.taskSuggestions;
+    const tasksArray = _MyEntities.taskSuggestions;
 
     // Iterates through each instance of a task suggestion.
-    for (var i = 0; i < tasksArray.length; i++)
+    for (let i = 0; i < tasksArray.length; i++)
     {
         // Gets the string that was identified as a task suggestion.
         htmlText += "TaskString : <span>" + 
@@ -543,8 +503,8 @@ function myGetTaskSuggestions()
         // Gets an array of assignees for that instance of a task 
         // suggestion. Each assignee is represented by an 
         // EmailUser object.
-        var assigneesArray = tasksArray[i].assignees;
-        for (var j = 0; j < assigneesArray.length; j++)
+        let assigneesArray = tasksArray[i].assignees;
+        for (let j = 0; j < assigneesArray.length; j++)
         {
             htmlText += "Assignee : ( ";
             // Gets the displayName property of the assignee.
@@ -564,40 +524,32 @@ function myGetTaskSuggestions()
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="extracting-urls"></a>URL の抽出
 
-
 ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。
-
 
 ```js
 // Gets instances of the URL entity on the item.
 function myGetUrls()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of URLs. Each URL is a string.
-    var urlArray = _MyEntities.urls;
-    for (var i = 0; i < urlArray.length; i++)
+    const urlArray = _MyEntities.urls;
+    for (let i = 0; i < urlArray.length; i++)
     {
         htmlText += "Url : <span>" + urlArray[i] + "</span><br/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="clearing-displayed-entity-strings"></a>表示されたエンティティ文字列の消去
 
-
 最後に、エンティティ アドインでは表示された文字列を消去する `myClearEntitiesBox` イベント ハンドラーを指定しています。関連するコードを次に示します。
-
 
 ```js
 // Clears the div with id="entities_box".
@@ -607,21 +559,18 @@ function myClearEntitiesBox()
 }
 ```
 
-
 ## <a name="javascript-listing"></a>JavaScript の内容
-
 
 次に、JavaScript の実装の内容全体を示します。
 
-
 ```js
 // Global variables
-var _Item;
-var _MyEntities;
+let _Item;
+let _MyEntities;
 
 // Initializes the add-in.
 Office.initialize = function () {
-    var _mailbox = Office.context.mailbox;
+    const _mailbox = Office.context.mailbox;
     // Obtains the current item.
     _Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
@@ -634,7 +583,6 @@ Office.initialize = function () {
     });
 }
 
-
 // Clears the div with id="entities_box".
 function myClearEntitiesBox()
 {
@@ -644,11 +592,11 @@ function myClearEntitiesBox()
 // Gets instances of the Address entity on the item.
 function myGetAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of postal addresses. Each address is a string.
-    var addressesArray = _MyEntities.addresses;
-    for (var i = 0; i < addressesArray.length; i++)
+    const addressesArray = _MyEntities.addresses;
+    for (let i = 0; i < addressesArray.length; i++)
     {
         htmlText += "Address : <span>" + addressesArray[i] + 
             "</span><br/>";
@@ -657,16 +605,15 @@ function myGetAddresses()
     document.getElementById("entities_box").innerHTML = htmlText;
 }
 
-
 // Gets instances of the EmailAddress entity on the item.
 function myGetEmailAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of email addresses. Each email address is a 
     // string.
-    var emailAddressesArray = _MyEntities.emailAddresses;
-    for (var i = 0; i < emailAddressesArray.length; i++)
+    const emailAddressesArray = _MyEntities.emailAddresses;
+    for (let i = 0; i < emailAddressesArray.length; i++)
     {
         htmlText += "E-mail Address : <span>" + 
             emailAddressesArray[i] + "</span><br/>";
@@ -679,15 +626,15 @@ function myGetEmailAddresses()
 // message item.
 function myGetMeetingSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of MeetingSuggestion objects, each array 
     // element containing an instance of a meeting suggestion 
     // entity from the current item.
-    var meetingsArray = _MyEntities.meetingSuggestions;
+    const meetingsArray = _MyEntities.meetingSuggestions;
 
     // Iterates through each instance of a meeting suggestion.
-    for (var i = 0; i < meetingsArray.length; i++)
+    for (let i = 0; i < meetingsArray.length; i++)
     {
         // Gets the string that was identified as a meeting 
         // suggestion.
@@ -697,8 +644,8 @@ function myGetMeetingSuggestions()
         // Gets an array of attendees for that instance of a 
         // meeting suggestion.
         // Each attendee is represented by an EmailUser object.
-        var attendeesArray = meetingsArray[i].attendees;
-        for (var j = 0; j < attendeesArray.length; j++)
+        let attendeesArray = meetingsArray[i].attendees;
+        for (let j = 0; j < attendeesArray.length; j++)
         {
             htmlText += "Attendee : ( ";
             // Gets the displayName property of the attendee.
@@ -735,16 +682,15 @@ function myGetMeetingSuggestions()
     document.getElementById("entities_box").innerHTML = htmlText;
 }
 
-
 // Gets instances of the phone number entity on the item.
 function myGetPhoneNumbers()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of phone numbers. 
     // Each phone number is a PhoneNumber object.
-    var phoneNumbersArray = _MyEntities.phoneNumbers;
-    for (var i = 0; i < phoneNumbersArray.length; i++)
+    const phoneNumbersArray = _MyEntities.phoneNumbers;
+    for (let i = 0; i < phoneNumbersArray.length; i++)
     {
         htmlText += "Phone Number : ( ";
         // Gets the type of phone number, for example, home, office.
@@ -769,15 +715,15 @@ function myGetPhoneNumbers()
 // Gets instances of the task suggestion entity on the item.
 function myGetTaskSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of TaskSuggestion objects, each array element 
     // containing an instance of a task suggestion entity from the 
     // current item.
-    var tasksArray = _MyEntities.taskSuggestions;
+    const tasksArray = _MyEntities.taskSuggestions;
 
     // Iterates through each instance of a task suggestion.
-    for (var i = 0; i < tasksArray.length; i++)
+    for (let i = 0; i < tasksArray.length; i++)
     {
         // Gets the string that was identified as a task suggestion.
         htmlText += "TaskString : <span>" + 
@@ -786,8 +732,8 @@ function myGetTaskSuggestions()
         // Gets an array of assignees for that instance of a task 
         // suggestion. Each assignee is represented by an 
         // EmailUser object.
-        var assigneesArray = tasksArray[i].assignees;
-        for (var j = 0; j < assigneesArray.length; j++)
+        let assigneesArray = tasksArray[i].assignees;
+        for (let j = 0; j < assigneesArray.length; j++)
         {
             htmlText += "Assignee : ( ";
             // Gets the displayName property of the assignee.
@@ -811,20 +757,18 @@ function myGetTaskSuggestions()
 // Gets instances of the URL entity on the item.
 function myGetUrls()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of URLs. Each URL is a string.
-    var urlArray = _MyEntities.urls;
-    for (var i = 0; i < urlArray.length; i++)
+    const urlArray = _MyEntities.urls;
+    for (let i = 0; i < urlArray.length; i++)
     {
         htmlText += "Url : <span>" + urlArray[i] + "</span><br/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="see-also"></a>関連項目
 

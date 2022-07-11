@@ -1,17 +1,16 @@
-Outlookアドインは、主に Mailbox オブジェクトを介して公開される API [を使用](/javascript/api/outlook/office.mailbox)します。 Outlook アドイン専用のオブジェクトおよびメンバー (たとえば、[Item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) オブジェクトなど) にアクセスするには、次のコード行に示すように、[Context](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) オブジェクトの **mailbox** プロパティを使用して、**Mailbox** オブジェクトにアクセスします。
+Outlook アドインでは、主に [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトにより公開されている API のサブセットを使用します。 [Item](/javascript/api/outlook/office.item) オブジェクトなど、Outlook アドインで特に使用するオブジェクトとメンバーにアクセスするには、次のコード行に示すように、**Context** オブジェクトの [メールボックス](/javascript/api/office/office.context#office-office-context-mailbox-member) プロパティを使用して **Mailbox** オブジェクトにアクセスします。
 
 ```js
 // Access the Item object.
-var item = Office.context.mailbox.item;
-
+const item = Office.context.mailbox.item;
 ```
 
-さらに、Outlookは次のオブジェクトを使用できます。
+さらに、Outlook アドインでは、次のオブジェクトを使用できます。
 
--  **Office** オブジェクト: 初期化に使用します。
+- **Office** オブジェクト: 初期化に使用します。
 
--  **Context** オブジェクト: コンテンツおよび表示言語のプロパティへのアクセスに使用します。
+- **Context** オブジェクト: コンテンツおよび表示言語のプロパティへのアクセスに使用します。
 
--  **RoamingSettings** オブジェクト: アドインがインストールされているユーザーのメールボックスに Outlook アドイン固有のカスタム設定を保存する際に使用します。
+- **RoamingSettings** オブジェクト: アドインがインストールされているユーザーのメールボックスに Outlook アドイン固有のカスタム設定を保存する際に使用します。
 
-JavaScript API のOutlookについては、「Outlook[」を参照してください](../outlook/outlook-add-ins-overview.md)。
+Outlook アドインでの JavaScript の使用については、「[Outlook アドイン](../outlook/outlook-add-ins-overview.md)」を参照してください。

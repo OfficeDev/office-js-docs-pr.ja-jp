@@ -1,33 +1,33 @@
 ---
 title: テスト用に Office on the web で Office アドインをサイドロードする
-description: サイドローディングOfficeして、Office on the webアドインをテストします。
+description: サイドローディングを使用して、Office on the webで Office アドインをテストします。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8095d4a1ba682c5bf002cc04bf548deef93a0101
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 32d80a10ccddab93fc8d41151be6a2842d3732cb
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747125"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713029"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>テスト用に Office on the web で Office アドインをサイドロードする
 
-アドインをサイドロードすると、アドインを最初にアドイン カタログに含めずにアドインをインストールできます。 これは、アドインの表示方法と機能を確認できるので、アドインをテストおよび開発する場合に便利です。
+アドインをサイドロードすると、アドイン カタログに最初に配置せずにアドインをインストールできます。 これは、アドインの表示方法と機能を確認できるため、アドインをテストして開発するときに便利です。
 
-アドインをサイドロードすると、アドインのマニフェストはブラウザーのローカル ストレージに格納されます。そのため、ブラウザーのキャッシュをクリアするか、別のブラウザーに切り替える場合は、アドインを再度サイドロードする必要があります。
+アドインをサイドロードすると、アドインのマニフェストはブラウザーのローカル ストレージに格納されるため、ブラウザーのキャッシュをクリアするか、別のブラウザーに切り替える場合は、アドインをもう一度サイドロードする必要があります。
 
-サイドローディングは、ホスト アプリケーションによって異なります (たとえば、Excel)。
+サイドローディングは、ホスト アプリケーション (Excel など) によって異なります。
 
 > [!NOTE]
-> この記事で説明するサイドローディングは、Excel、OneNote、PowerPoint、および Word でサポートされています。 Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
+> この記事で説明するようにサイドローディングは、Excel、OneNote、PowerPoint、Word でサポートされています。 Outlook アドインをサイドロードするには、「[テストのために Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)」をご参照ください。
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Office on the web で Office アドインをサイドロードする
 
-このプロセスは、**Excel、OneNote****、PowerPoint****、****および Word でのみサポート** されます。 他のホスト アプリケーションについては、次のセクションの手動サイドローディング手順を参照してください。 このプロジェクトの例では、[Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して作成されたプロジェクトを、新しいアドインOffice想定しています。
+このプロセスは、 **Excel**、 **OneNote**、 **PowerPoint**、 **Word** でのみサポートされています。 その他のホスト アプリケーションについては、次のセクションの手動サイドローディング手順を参照してください。 このプロジェクト例では、 [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)で作成されたプロジェクトを使用していることを前提としています。
 
-1. [ファイル[Office on the web] を開きます](https://office.live.com/)。 [作成 **] オプション** を使用して、Word、**Excel、OneNote****、PowerPoint** でドキュメント **を** 作成 **します**。 この新しいドキュメントで、リボン **で [共有** ] を選択し、[リンクのコピー] **を選択** して URL をコピーします。
+1. [Office on the web](https://office.live.com/)を開きます。 **[作成**] オプションを使用して、**Excel**、**OneNote**、**PowerPoint**、または Word でドキュメントを作成 **します**。 この新しいドキュメントで、リボンで **[共有** ] を選択し、[ **リンクのコピー**] を選択して URL をコピーします。
 
-1. yo office プロジェクト ファイルのルート ディレクトリで、 **package.json ファイルを開** きます。 このファイル **の構成** セクション内に、プロパティを作成 `"document"` します。 コピーした URL をプロパティの値として貼り付 `"document"` けます。 たとえば、次のようになります。
+1. office プロジェクト ファイルのルート ディレクトリで、 **package.json** ファイルを開きます。 このファイルの **構成** セクション内で、プロパティを `"document"` 作成します。 コピーした URL をプロパティの値 `"document"` として貼り付けます。 たとえば、次のようになります。
 
     ```json
       "config": {
@@ -37,34 +37,34 @@ ms.locfileid: "63747125"
     ```
 
     > [!TIP]
-    > Yeoman ジェネレーターを使用しないアドインを作成する場合は、次の項目を既存の URL に追加して、ドキュメントの URL にクエリ パラメーターを追加できます。
+    > Yeoman ジェネレーターを使用しないアドインを作成する場合は、既存の URL に次を追加して、ドキュメントの URL にクエリ パラメーターを追加できます。
     >
-    > - など、開発サーバー ポート `&wdaddindevserverport=3000`。
-    > - マニフェスト ファイル名 ( `&wdaddinmanifestfile=manifest1.xml`など)。
-    > - マニフェスト GUID など `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`。
+    > - 開発サーバー のポート (例: `&wdaddindevserverport=3000`.
+    > - マニフェスト ファイル名 (例: `&wdaddinmanifestfile=manifest1.xml`.
+    > - マニフェスト GUID (例: `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
     >
-    > Yeoman ジェネレーターを使用している場合は、Yeoman ツールによってこの情報が自動的に追加されるので、この情報を追加する必要はありません。
-    > ただし、どちらの場合も、localhost からのみマニフェストを読み込み可能です。
+    > Yeoman ジェネレーターを使用している場合は、Yeoman ツールによってこの情報が自動的に追加されるため、この情報を追加する必要はありません。
+    > ただし、どちらの場合も、localhost からのみマニフェストを読み込むことができます。
 
-1. プロジェクトのルート ディレクトリから始まるコマンド ラインで、次のコマンドを実行します。 "{url}" を、Officeまたはアクセス許可を持つ OneDrive ライブラリSharePoint URL に置き換える。
+1. プロジェクトのルート ディレクトリからコマンド ラインで、次のコマンドを実行します。 "{url}" は、OneDrive またはアクセス許可を持つ SharePoint ライブラリ上の Office ドキュメントの URL に置き換えます。
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. このメソッドを初めて使用して、Web 上にアドインをサイドロードすると、開発者モードを有効にしてくださいというダイアログが表示されます。 [今すぐ開発者モードを **有効にする] のチェック ボックスをオンにして、[** OK] を **選択します**。
+1. このメソッドを初めて使用してアドインを Web にサイドロードすると、開発者モードを有効にするように求めるダイアログが表示されます。 [ **今すぐ開発者モードを有効にする]** チェック ボックスをオンにし、[OK] を選択 **します**。
 
-1. 2 番目のダイアログ Office ボックスが表示されます。 [はい] を **選択する必要があります**。
+1. 2 つ目のダイアログ ボックスが表示され、コンピューターから Office アドイン マニフェストを登録するかどうかを確認するメッセージが表示されます。 **[はい**] を選択する必要があります。
 
 1. アドインがインストールされています。 アドイン コマンドの場合は、リボンまたはコンテキスト メニューに表示されます。 作業ウィンドウ アドインの場合は、作業ウィンドウが表示されます。
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手動でOfficeアドインをサイドOffice on the webする
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Office アドインを手動でサイドロードOffice on the web
 
-このメソッドはコマンド ラインを使用し、ホスト アプリケーション内のコマンド (コマンド など) を使用Excel。
+このメソッドはコマンド ラインを使用せず、ホスト アプリケーション (Excel など) 内でのみコマンドを使用して実行できます。
 
-1. [ファイル[Office on the web] を開きます](https://office.com/)。 Word、**Excel、OneNote****、PowerPoint****でドキュメント** を開 **きます**。 [アドイン **]** セクションのリボンの [挿入] タブ **で、[アドイン**] Office **選択します**。
+1. [Office on the web](https://office.com/)を開きます。 **Excel**、**OneNote**、**PowerPoint**、または **Word** でドキュメントを開きます。 [アドイン] セクションのリボンの [ **挿入** ] タブ **で** 、[ **Office アドイン**] を選択します。
 
-1. [アドイン **Office]** ダイアログで、[**MY ADD-INS**] タブを選択し、[自分のアドインの管理] を選択して、[アップロード] をクリック **します**。
+1. **[Office アドイン**] ダイアログで、[**MY ADD-INS**] タブを選択し、[**マイ アドインの管理**] を選択して、[**マイ アドインのアップロード**] を選択します。
 
-    ![右上にOfficeが表示された [アドインの管理] ダイアログが表示され、その下に "アップロード My アドイン" というオプションが表示されます。](../images/office-add-ins-my-account.png)
+    ![[Office アドイン] ダイアログで、右上にドロップダウンが [アドインの管理] と表示され、その下に [自分のアドインのアップロード] オプションが表示されます。](../images/office-add-ins-my-account.png)
 
 1. アドイン マニフェスト ファイルを **参照** して、**[アップロード]** を選択します。
 
@@ -73,21 +73,21 @@ ms.locfileid: "63747125"
 1. アドインがインストールされていることを確認します。たとえば、アドイン コマンドである場合は、リボンまたはコンテキスト メニューのいずれかに表示されます。作業ウィンドウ アドインである場合は、ウィンドウが表示されます。
 
 > [!NOTE]
-> 元の WebView Officeを使用Microsoft Edgeアドインをテストするには、追加の構成手順が必要です。 コマンド プロンプトWindows、次の行を実行します`npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`。 この機能は、Officeベースの Edge WebView2 をChromium場合は必要ありません。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> 元の WebView (EdgeHTML) を使用して Microsoft Edge で Office アドインをテストするには、追加の構成手順が必要です。 Windows コマンド プロンプトで、次の行 `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`を実行します。 これは、Office が Chromium ベースの Edge WebView2 を使用している場合は必要ありません。 詳細については、「[Office アドインによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
-## <a name="sideload-an-office-add-in"></a>アドインをサイドOfficeする
+## <a name="sideload-an-office-add-in"></a>Office アドインをサイドロードする
 
-1. アカウントにサインインMicrosoft 365します。
+1. Microsoft 365 アカウントにサインインします。
 
-1. ツール バーの左側起動ツールで App 起動ツール を開き、[**Excel、PowerPoint**、**または Word**] を選択し、新しいドキュメントを作成します。
+1. ツール バーの左端にあるアプリ 起動ツールを開き、 **Excel**、 **PowerPoint**、または **Word** を選択して、新しいドキュメントを作成します。
 
 1. 手順 3 から 6 は、前のセクション「**Office on the web で Office アドインをサイドロードする**」のものと同じです。
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Visual Studio の使用時にアドインをサイドロードする
 
-アドインの開発にVisual Studio場合、サイドロードするプロセスは、Web への手動サイドローディングに似ています。 アドインの開発に Visual Studio を使用している場合、サイドロードするプロセスは似ています。唯一の違いは、マニフェストの **SourceURL** 要素の値を更新して、アドインが展開されている完全な URL を含める必要がある点です。
+Visual Studio を使用してアドインを開発する場合、サイドロードするプロセスは Web への手動サイドローディングに似ています。 アドインの開発に Visual Studio を使用している場合、サイドロードするプロセスは似ています。唯一の違いは、マニフェストの **SourceURL** 要素の値を更新して、アドインが展開されている完全な URL を含める必要がある点です。
 
 > [!NOTE]
 > アドインは Visual Studio から Office on the web にサイドロードできますが、Visual Studio からはデバッグできません。 デバッグするには、ブラウザー デバッグ ツールを使用する必要があります。 詳細については、「[Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)」を参照してください。
@@ -103,10 +103,11 @@ ms.locfileid: "63747125"
 
 ## <a name="remove-a-sideloaded-add-in"></a>サイドロードされたアドインを削除する
 
-ブラウザーのキャッシュをクリアすると、以前にサイドロードされたアドインを削除できます。 アドインのマニフェストに変更を加えた場合 (たとえば、アイコンのファイル名やアドイン コマンドのテキストを更新する) 場合は、ブラウザーのキャッシュをクリアしてから、更新されたマニフェストを使用してアドインを再読み込みする必要があります。 これにより、Office on the webマニフェストで説明されているとおりにアドインをレンダリングできます。
+ブラウザーのキャッシュをクリアすることで、以前にサイドロードされたアドインを削除できます。 アドインのマニフェストに変更を加えた場合 (たとえば、アイコンのファイル名やアドイン コマンドのテキストを更新するなど)、ブラウザーのキャッシュをクリアしてから、更新されたマニフェストを使用してアドインを再サイドロードする必要がある場合があります。 これにより、更新されたマニフェストで説明されているように、アドインをレンダリングするOffice on the webが可能になります。
 
 ## <a name="see-also"></a>関連項目
 
-- [iPad と Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Mac で Office アドインをサイドロードする](sideload-an-office-add-in-on-mac.md)
+- [iPad で Office アドインをサイドロードする](sideload-an-office-add-in-on-ipad.md)
 - [テスト用に Outlook アドインをサイドロードする](../outlook/sideload-outlook-add-ins-for-testing.md)
 - [Office のキャッシュをクリアする](clear-cache.md)

@@ -1,13 +1,18 @@
 ---
 title: Outlook アドインで件名を取得または設定する
 description: Outlook アドインで、メッセージまたは予定の件名を取得または設定する方法について説明します。
-ms.date: 04/15/2019
+ms.date: 07/08/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: a8f0e3166e142978873d390040c58d263d416e0d
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713092"
 ---
-
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 
-JavaScript API Officeには、ユーザーが作成している予定またはメッセージの件名を取得および設定する非同期メソッド ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) および [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) が提供されています。 これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
+Office JavaScript API は、ユーザーが作成している予定またはメッセージの件名を取得および設定するための非同期メソッド ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) と [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) を提供します。 これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
 
 **subject** プロパティは、予定とメッセージの新規作成フォームと閲覧フォームの両方で読み取りアクセスで利用できます。閲覧フォームでは、次の例に示すとおり、このプロパティに親オブジェクトから直接アクセスできます。
 
@@ -23,27 +28,23 @@ item.subject.getAsync
 
 書き込みアクセスでは、**subject** プロパティは新規作成フォームのみで利用でき、閲覧フォームでは利用できません。
 
-JavaScript API のほとんどの非同期メソッドと同様Office **getAsync** および **setAsync** はオプションの入力パラメーターを受け取ります。 オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
-
+Office JavaScript API のほとんどの非同期メソッドと同様に、 **getAsync** と **setAsync** は省略可能な入力パラメーターを受け取ります。 オプションの入力パラメーターを指定する方法の詳細については、「[Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)」を参照してください。
 
 ## <a name="get-the-subject"></a>件名を取得する
 
 このセクションでは、ユーザーが作成している予定またはメッセージの件名を取得して、その件名を表示するサンプル コードについて説明します。このサンプル コードは、以下に示すように、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
-
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
   <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
 </Rule>
-
 ```
 
 **item.subject.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、[AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティを使用して件名をプレーン テキスト文字列として取得できます。
 
-
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -75,16 +76,14 @@ function write(message){
 }
 ```
 
-
 ## <a name="set-the-subject"></a>件名を設定する
-
 
 このセクションでは、ユーザーが作成している予定またはメッセージの件名を設定するサンプル コードについて説明します。前のサンプルと同様に、このサンプル コードは、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
 
 **item.subject.setAsync** を使用する場合は、データ パラメーターで最大 255 文字の文字列を指定します。オプションで、コールバック メソッドおよび _asyncContext_ パラメーターにそのコールバック メソッドの引数を指定できます。コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。非同期呼び出しが成功すると、**setAsync** はそのアイテムの既存の件名を上書きして、指定された件名の文字列をプレーン テキストとして挿入します。
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -98,8 +97,8 @@ Office.initialize = function () {
 
 // Set the subject of the item that the user is composing.
 function setSubject() {
-    var today = new Date();
-    var subject;
+    const today = new Date();
+    let subject;
 
     // Customize the subject with today's date.
     subject = 'Summary for ' + today.toLocaleDateString();
@@ -125,15 +124,13 @@ function write(message){
 }
 ```
 
-
 ## <a name="see-also"></a>関連項目
 
-- [Outlook で新規作成フォームのアイテム データを取得および設定する](get-and-set-item-data-in-a-compose-form.md)   
-- [閲覧または新規作成フォームの Outlook アイテム データを取得および設定する](item-data.md)    
-- [新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)    
+- [Outlook で新規作成フォームのアイテム データを取得および設定する](get-and-set-item-data-in-a-compose-form.md)
+- [閲覧または新規作成フォームの Outlook アイテム データを取得および設定する](item-data.md)
+- [新規作成フォーム用の Outlook アドインを作成する](compose-scenario.md)
 - [Office アドインにおける非同期プログラミング](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する](get-set-or-add-recipients.md)  
-- [Outlook で予定またはメッセージを作成するときに本文にデータを挿入する](insert-data-in-the-body.md)   
-- [Outlook で予定を作成するときに場所を取得または設定する](get-or-set-the-location-of-an-appointment.md) 
+- [Outlook で予定またはメッセージを作成するときに本文にデータを挿入する](insert-data-in-the-body.md)
+- [Outlook で予定を作成するときに場所を取得または設定する](get-or-set-the-location-of-an-appointment.md)
 - [Outlook で予定を作成するときに時刻を取得または設定する](get-or-set-the-time-of-an-appointment.md)
-    

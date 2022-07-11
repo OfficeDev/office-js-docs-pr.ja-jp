@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで定期的なアイテムを取得して設定する
 description: このトピックでは、Office JavaScript API を使用して、Outlook のアドインでさまざまな定期的なアイテムのプロパティを取得および設定する方法を示します。
-ms.date: 08/18/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c774b9a9b0bb87dd158e18114c18dd745f64fc
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: de6bf8722578729159078396bb2f14a52cb648a3
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244745"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713113"
 ---
 # <a name="get-and-set-recurrence"></a>定期的なアイテムを取得および設定する
 
@@ -25,14 +25,14 @@ ms.locfileid: "65244745"
 
 |定期的なパターン|有効な定期的なアイテムのプロパティ|使用方法|
 |---|---|---|
-|`daily`|-&nbsp;[`interval`][interval link]|*interval* 日に一度、予定が発生する。 例: 予定が **_2 日_** おきに発生する。|
+|`daily`|-&nbsp;[`interval`][間隔リンク]|*interval* 日に一度、予定が発生する。 例: 予定が **_2 日_** おきに発生する。|
 |`weekday`|なし。|予定が平日に毎日発生する。|
-|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_** か月に一度、**_5_** 日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
-|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が **_2_** 週間に一度、**_火曜日_ と _木曜日_** に発生する。|
-|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の **_最初_** の **_木曜日_** に発生する。|
+|`monthly`|-&nbsp;[`interval`][間隔リンク]<br/>-&nbsp;[`dayOfMonth`][][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek リンク]<br/>-&nbsp;[`weekNumber`][][weekNumber link]|- 予定が *interval* か月に一度、*dayOfMonth* 日に発生する。 例: 予定が **_4_** か月に一度、**_5_** 日に発生する。<br/><br/>- 予定が、*interval* か月に一度、第 *weekNumber* 週の *dayOfWeek* 日に発生する。 例: 予定が、**_2_** か月に一度、第 **_3_** **_木曜日_** に発生する。|
+|`weekly`|-&nbsp;[`interval`][間隔リンク]<br/>-&nbsp;[`days`][日のリンク]|予定が *interval* 週間に一度、*days* に発生する。 例: 予定が **_2_** 週間に一度、**_火曜日_ と _木曜日_** に発生する。|
+|`yearly`|-&nbsp;[`interval`][間隔リンク]<br/>-&nbsp;[`dayOfMonth`][][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek リンク]<br/>-&nbsp;[`weekNumber`][][weekNumber link]<br/>-&nbsp;[`month`][月のリンク]|- 予定が、*interval* 年に一度、*month* の *dayOfMonth* 日に発生する。 例: 予定が **_4_** 年に一度、**_9 月_** **_7_** 日に発生する。<br/><br/>- 予定が、*interval* 年に一度、*month* の第 *weekNumber* 週の *dayOfWeek* に発生する。 例: 予定が、**_2_** 年に一度、**_9 月_** の **_最初_** の **_木曜日_** に発生する。|
 
 > [!NOTE]
->  の定期的なパターンで [`firstDayOfWeek`][firstDayOfWeek link]`weekly` プロパティを使用することもできます。 指定された日は定期的なアイテムのダイアログに表示された日にちのリストを開始させます。
+> [`firstDayOfWeek`][firstDayOfWeek link] プロパティを繰り返しの型と共に `weekly` 使用することもできます。 指定された日は定期的なアイテムのダイアログに表示された日にちのリストを開始させます。
 
 ## <a name="access-recurrence"></a>定期的なアイテムにアクセスする
 
@@ -51,18 +51,18 @@ ms.locfileid: "65244745"
 
 ## <a name="set-recurrence-as-the-organizer"></a>定期的なアイテムを開催者として設定する
 
-定期的なパターンを使用するには、定期的な予定の開始日時、終了日時も決定する必要があります。 [`SeriesTime`][SeriesTime link] オブジェクトはその情報を管理するために使用します。
+定期的なパターンを使用するには、定期的な予定の開始日時、終了日時も決定する必要があります。 [`SeriesTime`][SeriesTime link] オブジェクトは、その情報を管理するために使用されます。
 
 予定の開催者は、作成モードでのみ、定期的な予定のパターンを指定できます。 次の例では、2019 年 11 月 2 日から 2019 年 12 月 2 日の期間中に、毎週火曜日と木曜日の、午前 10 時 30 分から午前 11 時 00 分 (米国太平洋標準時) に発生する定期的な予定が設定されています。
 
 ```js
-var seriesTimeObject = new Office.SeriesTime();
+const seriesTimeObject = new Office.SeriesTime();
 seriesTimeObject.setStartDate(2019,10,2);
 seriesTimeObject.setEndDate(2019,11,2);
 seriesTimeObject.setStartTime(10,30);
 seriesTimeObject.setDuration(30);
 
-var pattern = {
+const pattern = {
     "seriesTime": seriesTimeObject,
     "recurrenceType": "weekly",
     "recurrenceProperties": {"interval": 1, "days": ["tue", "thu"]},
@@ -84,7 +84,7 @@ function callback(asyncResult)
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult) {
-  var recurrencePattern = asyncResult.value;
+  const recurrencePattern = asyncResult.value;
   recurrencePattern.seriesTime.setDuration(60);
   Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
     if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
@@ -107,8 +107,8 @@ function callback(asyncResult) {
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult){
-    var context = asyncResult.context;
-    var recurrence = asyncResult.value;
+    const context = asyncResult.context;
+    const recurrence = asyncResult.value;
 
     if (recurrence == null) {
         console.log("Non-recurring meeting");
@@ -121,7 +121,7 @@ function callback(asyncResult){
 次の例では、定期的な予定の繰り返しを取得する `getAsync` コールの結果を表示しています。
 
 > [!NOTE]
-> この例では、`seriesTimeObject` は `recurrence.seriesTime` プロパティを表す JSON のプレースホルダーです。 定期的な予定の日時のプロパティを取得するには、[`SeriesTime`][SeriesTime link] メソッドを使用します。
+> この例では、`seriesTimeObject` は `recurrence.seriesTime` プロパティを表す JSON のプレースホルダーです。 [`SeriesTime`][SeriesTime link] メソッドを使用して、繰り返しの日付と時刻のプロパティを取得する必要があります。
 
 ```json
 {
@@ -144,8 +144,8 @@ function callback(asyncResult){
 outputRecurrence(Office.context.mailbox.item);
 
 function outputRecurrence(item) {
-    var recurrence = item.recurrence;
-    var seriesId = item.seriesId;
+    const recurrence = item.recurrence;
+    const seriesId = item.seriesId;
 
     if (recurrence == null) {
         console.log("Non-recurring item");
@@ -158,7 +158,7 @@ function outputRecurrence(item) {
 次の例では、定期的な予定の `item.recurrence` プロパティの値を示しています。
 
 > [!NOTE]
-> この例では、`seriesTimeObject` は `recurrence.seriesTime` プロパティを表す JSON のプレースホルダーです。 定期的な予定の日時のプロパティを取得するには、[`SeriesTime`][SeriesTime link] メソッドを使用します。
+> この例では、`seriesTimeObject` は `recurrence.seriesTime` プロパティを表す JSON のプレースホルダーです。 [`SeriesTime`][SeriesTime link] メソッドを使用して、繰り返しの日付と時刻のプロパティを取得する必要があります。
 
 ```json
 {
@@ -175,41 +175,29 @@ function outputRecurrence(item) {
 
 ### <a name="get-the-recurrence-details"></a>定期的なアイテムの詳細を取得する
 
-(`getAsync` コールバックまたは `item.recurrence` のいずれかから) 繰り返しオブジェクトを取得した後、特定の定期的なアイテムのプロパティを表示できます。 たとえば、 プロパティの[メソッド][SeriesTime link]`recurrence.seriesTime`を使用して定期的なアイテムの開始日時と終了日時を取得できます。
+(`getAsync` コールバックまたは `item.recurrence` のいずれかから) 繰り返しオブジェクトを取得した後、特定の定期的なアイテムのプロパティを表示できます。 たとえば、プロパティの [methods][SeriesTime link] を使用して、系列の開始日と終了日時を `recurrence.seriesTime` 取得できます。
 
 ```js
 // Get series date and time info
-var seriesTime = recurrence.seriesTime;
-var startTime = recurrence.seriesTime.getStartTime();
-var endTime = recurrence.seriesTime.getEndTime();
-var startDate = recurrence.seriesTime.getStartDate();
-var endDate = recurrence.seriesTime.getEndDate();
-var duration = recurrence.seriesTime.getDuration();
+const seriesTime = recurrence.seriesTime;
+const startTime = recurrence.seriesTime.getStartTime();
+const endTime = recurrence.seriesTime.getEndTime();
+const startDate = recurrence.seriesTime.getStartDate();
+const endDate = recurrence.seriesTime.getEndDate();
+const duration = recurrence.seriesTime.getDuration();
 
 // Get series time zone
-var timeZone = recurrence.recurrenceTimeZone;
+const timeZone = recurrence.recurrenceTimeZone;
 
 // Get recurrence properties
-var recurrenceProperties = recurrence.recurrenceProperties;
+const recurrenceProperties = recurrence.recurrenceProperties;
 
 // Get recurrence type
-var recurrenceType = recurrence.recurrenceType;
+const recurrenceType = recurrence.recurrenceType;
 ```
 
 ## <a name="see-also"></a>関連項目
 
-[RecurrenceChanged イベント](/javascript/api/office/office.eventtype)
-
-[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
-
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
-[days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
-[interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
-[month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
-
-[SeriesTime link]: /javascript/api/outlook/office.seriestime
+- [RecurrenceChanged イベント](/javascript/api/office/office.eventtype)
+- [Recurrence オブジェクト](/javascript/api/outlook/office.recurrence)
+- [SeriesTime オブジェクト](/javascript/api/outlook/office.seriestime)

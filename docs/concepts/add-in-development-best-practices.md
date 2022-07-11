@@ -1,14 +1,14 @@
 ---
 title: Office アドイン開発のベスト プラクティス
-description: 開発時にベスト プラクティスを適用して、Office アドインを作成します。
+description: Office アドインを作成するための開発時にベスト プラクティスを適用します。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: aab262f2f5020e7dc95ee8f716f0de40d2140291
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313206"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712959"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office アドイン開発のベスト プラクティス
 
@@ -21,7 +21,7 @@ ms.locfileid: "65313206"
 - ユーザーがタスクをすばやく効率的に完了するのに役立つアドインを作成します。Office アプリケーションに当てはまるシナリオに絞ります。次に例を示します。
   - コア オーサリング タスクをよりスピーディかつ簡単にし、中断を減らします。
   - Office 内で新しいシナリオを有効にします。
-  - Office アプリケーション内に補完サービスを埋め込みます。
+  - Office アプリケーション内に補完的なサービスを埋め込みます。
   - Office エクスペリエンスを向上させて生産性を高めます。
 - [魅力的な初回実行時エクスペリエンス](#create-an-engaging-first-run-experience)を作成して、ユーザーがアドインの価値をすぐに感じられるようにしてください。
 - [効果的な AppSource リスト](/office/dev/store/create-effective-office-store-listings)を作成します。タイトルと説明から、アドインのメリットが明確にわかるようにします。アドインの内容を伝えるのに、ブランドだけに頼ることはしないでください。
@@ -77,7 +77,7 @@ ms.locfileid: "65313206"
 
 ### <a name="optimize-for-touch"></a>タッチ用に最適化する
 
-- [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) プロパティを使用して、アドインが実行されるOffice アプリケーションがタッチが有効になっているかどうかを検出します。
+- [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) プロパティを使用して、アドインが実行されている Office アプリケーションがタッチが有効になっているかどうかを検出します。
 
   > [!NOTE]
   > このプロパティは、Outlook ではサポートされていません。
@@ -88,10 +88,10 @@ ms.locfileid: "65313206"
 
 - 縦向きと横向きの両方のモードでアドインが機能することを確認します。タッチ デバイスで、アドインの一部がソフトキーボードの後ろに隠れることがあることに注意してください。
 
-- [サイドロード](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)を使用して、アドインを実際のデバイスでテストしてください。
+- [サイドロード](../testing/sideload-an-office-add-in-on-ipad.md)を使用して、アドインを実際のデバイスでテストしてください。
 
 > [!NOTE]
-> [設計要素にFluent UI React](../design/using-office-ui-fabric-react.md)を使用している場合、これらの要素の多くはデザイン システムに組み込まれています。
+> 設計要素に [Fluent UI React](../design/using-office-ui-fabric-react.md)を使用している場合、これらの要素の多くはデザイン システムに組み込まれています。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>アドインのパフォーマンスを最適化して監視する
 
@@ -101,7 +101,7 @@ ms.locfileid: "65313206"
 
 - 長時間実行する操作には、読み込みインジケーターを提供します。
 
-- コンテンツ配信ネットワーク (CDN) を使用して、イメージ、リソース、共通ライブラリをホストします。 可能な限り多くのものを 1 つの場所から読み込みます。
+- コンテンツ配信ネットワーク (CDN) を使用して、イメージ、リソース、および共通ライブラリをホストします。 可能な限り多くのものを 1 つの場所から読み込みます。
 
 - Web ページを最適化するには、標準的な Web の慣習に従います。運用環境では、ライブラリの縮小バージョンのみを使用します。必要なリソースのみを読み込み、リソースが読み込まれる方法を最適化します。
 
@@ -120,7 +120,7 @@ ms.locfileid: "65313206"
 
 - サービスの正常性を監視し、テレメトリを使用して、ユーザーが正常に完了したか監視します。
 
-- アドインとOffice ドキュメント間のデータ交換を最小限に抑えます。 詳細については、「 [ループでの context.sync メソッドの使用を避ける](correlated-objects-pattern.md)」を参照してください。
+- アドインと Office ドキュメントの間のデータ交換を最小限に抑えます。 詳細については、「 [ループでの context.sync メソッドの使用を避ける](correlated-objects-pattern.md)」を参照してください。
 
 ## <a name="market-your-add-in"></a>アドインを売り込む
 
@@ -141,4 +141,4 @@ ms.locfileid: "65313206"
 ## <a name="see-also"></a>関連項目
 
 - [Office アドイン プラットフォームの概要](../overview/office-add-ins.md)
-- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Microsoft 365 開発者プログラムについてご説明します](https://developer.microsoft.com/microsoft-365/dev-program)
