@@ -4,12 +4,12 @@ description: Office JS API と Vue を使用して単純な Excel 作業ウィ�
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3024e759acd787a61992b84f31850ef7f0bfbe3b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659795"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713057"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -97,7 +97,7 @@ vue create my-add-in
    npx office-addin-dev-certs install
    ```
 
-## <a name="explore-the-project"></a>プロジェクトを確認する
+## <a name="explore-the-project"></a>プロジェクトを探究する
 
 Yeoman ジェネレーターで作成したアドイン プロジェクトには、基本的なアドインの作業ウィンドウのサンプル コードが含まれています。 アドイン プロジェクトの主要な構成要素を確認したい場合は、コード エディターでプロジェクトを開き、以下に一覧表示されているファイルを確認します。 アドインを試す準備ができたら、次のセクションに進みます。
 
@@ -214,7 +214,8 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
    - Windows: [Windows で Office アドインをサイドロードする](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web ブラウザー: [Office on the web で Office アドインをサイドロードする](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-   - iPad および Mac: [iPad と Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - iPad: [iPad で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-ipad.md)
+   - Mac: [Mac で Office アドインをサイドロードする](../testing/sideload-an-office-add-in-on-mac.md)
 
 1. Excel でアドイン作業ウィンドウを開きます。 **[ホーム]** タブで、**[作業ウィンドウの表示]** ボタンをクリックします。
 
