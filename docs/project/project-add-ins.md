@@ -5,19 +5,19 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1e7544d3f6957871b0779ae6fe6ab7a0227640f5
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659935"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765287"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 用の作業ウィンドウ アドイン
 
 Project Standard 2013 と Project Professional 2013 (バージョン 15.1 以降) はどちらも作業ウィンドウ アドインに対応しています。Word または Excel 用に開発された一般的な作業ウィンドウ アドインを実行できます。また、カスタム アドインを開発して、Project のセレクションのイベントを処理し、プロジェクトのタスク、リソース、ビュー、およびその他のセルレベルのデータを、SharePoint のリスト、SharePoint アドイン、Web パーツ、Web サービス、およびエンタープライズ アプリケーションに統合することもできます。
 
 > [!NOTE]
-> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
+> [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435)には、Project のアドイン オブジェクト モデルの使用方法と、Project Server 2013 のレポート データ用 OData サービスの使用方法を示すサンプル アドインが含まれています。SDK を展開してインストールしたら、`\Samples\Apps\` サブディレクトリを確認します。
 
 Office アドインの概要については、「[Office アドイン プラットフォームの概要](../overview/office-add-ins.md)」を参照してください。
 
@@ -199,4 +199,4 @@ Project 2013 では、ファイル共有上のスタンドアロン ソリュー
 - [Office アドインを開発する](../develop/develop-overview.md)
 - [テキスト エディターを使用して Project 2013 用の作業ウィンドウ アドインを初めて作成する](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [社内の Project Server OData サービスで REST を使用する Project アドインを作成する](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-- [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435%20)
+- [Project 2013 SDK のダウンロード](https://www.microsoft.com/download/details.aspx?id=30435)
