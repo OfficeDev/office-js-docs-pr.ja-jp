@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 05/26/2022
+ms.date: 07/11/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: a251f13540989aa30c3e213e1572747e08c121c4
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833907"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765273"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -19,17 +19,30 @@ ms.locfileid: "65833907"
 
 この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用してデータ型を操作する方法について説明します。 ここでは、データ型の開発の基本となる主要な概念を紹介します。
 
-## <a name="core-concepts"></a>中心概念
+## <a name="the-valuesasjson-property"></a>`valuesAsJson` プロパティ
 
-データ型の値を操作するには、[`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) プロパティを使用します。 このプロパティは [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) に似ていますが、`Range.values`は文字列、数値、ブール値、エラー値の 4 つの基本型のみを返します。 `Range.valuesAsJson` は、4 つの基本型に関する拡張情報を返します。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+`valuesAsJson` プロパティは、Excel でのデータ型の作成の不可欠な部分です。 このプロパティは、[Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) などの `values` プロパティの拡張です。 `values` と `valuesAsJson` プロパティはどちらもセル内の値にアクセスするに使用しますが、`values` プロパティは、文字列、数値、ブール値、またはエラーの 4 つの基本型の 1 つだけを返します (文字列として)。 一方、`valuesAsJson` は、4 つの基本型に関する拡張情報を返します。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+
+次のオブジェクトは、`valuesAsJson` プロパティを提供します。
+
+- [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
+- [Range](/javascript/api/excel/excel.range)
+- [RangeView](/javascript/api/excel/excel.rangeview)
+- [TableColumn](/javascript/api/excel/excel.tablecolumn)
+- [TableRow](/javascript/api/excel/excel.tablerow)
+
+> [!NOTE]
+> 一部のセル値は、ユーザーのロケールに基づいて変化します。 `valuesAsJsonLocal` プロパティはローカライズのサポートを提供し、`valuesAsJson` などのオブジェクトで利用可能です。
+
+## <a name="cell-values"></a>セルの値
 
 この`valuesAsJson` プロパティは、[CellValue](/javascript/api/excel/excel.cellvalue)型エイリアスを返します。これは、次のデータ型の[共用体](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)です。
 
 - [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
-- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
 - [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
@@ -38,13 +51,17 @@ ms.locfileid: "65833907"
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
 
-[CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) オブジェクトは、他の`*CellValue`型との[交差部分](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types)です。 データ型自体ではありません。 `CellValueExtraProperties` オブジェクトのプロパティは、セル値の上書きに関連する詳細を指定するために、すべてのデータ型で使用されます。
+`CellValue` 型エイリアスは、[CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) オブジェクトも返します。これは、他の `*CellValue` 型との [積集合](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) 部分です。 データ型自体ではありません。 `CellValueExtraProperties` オブジェクトのプロパティは、セル値の上書きに関連する詳細を指定するために、すべてのデータ型で使用されます。
 
 ### <a name="json-schema"></a>JSON スキーマ
 
-各データ型は、その型用に設計された JSON メタデータ スキーマを使用します。 これは、データの [CellValueType](/javascript/api/excel/excel.cellvaluetype) と `basicValue`、`numberFormat`、`address` などのセルに関する追加情報を定義します。 各`CellValueType`は、その型によって使用可能なプロパティがあります。 たとえば、 `webImage` の種類には、[altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) と [属性](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) プロパティが含まれます。 次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
+`valuesAsJson` から返されたセルの値の型は、その型用に設計された JSON メタデータ スキーマを使用します。 各データ型に固有の追加のプロパティと共に、これらの JSON メタデータ スキーマには、共通の `type`、`basicType`、`basicValue` プロパティがあります。
 
-各データ型の JSON メタデータ スキーマには、データ型機能の最小ビルド数要件を満たしていないバージョンの Excel など、計算で互換性のないシナリオが発生した場合に使用される 1 つ以上の読み取り専用プロパティも含まれます。 プロパティ `basicType` は、すべてのデータ型の JSON メタデータの一部であり、常に読み取り専用プロパティです。 `basicType` プロパティは、データ型がサポートされていないか、正しくフォーマットされていない場合のフォールバックとして使用されます。
+`type` はデータの [CellValueType](/javascript/api/excel/excel.cellvaluetype) を定義します。 `basicType` は常に読み取り専用であり、データ型がサポートされていないか、正しくフォーマットされていない場合のフォールバックとして使用されます。 `basicValue` は `values` プロパティで返される値と一致します。 `basicValue` は、データ型機能をサポートしていない以前のバージョンの Excel など、計算で互換性のないシナリオが発生した場合にフォールバックとして使用されます。 `basicValue` は、`ArrayCellValue`、`EntityCellValue`、`LinkedEntityCellValue`、`WebImageCellValue`データ型では読み取り専用です。
+
+すべてのデータ型が共有する 3 つのフィールドに加えて、それぞれの `*CellValue` JSON メタデータ スキーマには、その型に従って使用可能なプロパティがあります。 たとえば、[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 型には `altText` と `attribution`プロパティが含まれますが、[EntityCellValue](/javascript/api/excel/excel.entitycellvalue) 型には `properties` と `text` フィールドが用意されています。
+
+次のセクションでは、書式設定された数値、エンティティ値、および Web 画像データ型の JSON コード サンプルを示します。
 
 ## <a name="formatted-number-values"></a>書式設定された数値
 
