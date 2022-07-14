@@ -3,12 +3,12 @@ title: Office アドインでシングル サインオン (SSO) を有効にす�
 description: 一般的な Microsoft の個人用、職場用、または教育用のアカウントを使用して Office アドインのシングルサインオン (SSO) を有効にする主な手順について説明します。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 6667862adf0a89a2cf34dae9ee4413cf7a0c8036
+ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659970"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "66789102"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Office アドインでシングル サインオン (SSO) を有効にする
 
@@ -59,9 +59,6 @@ Outlook アドインの場合は、推奨されるフォールバック シス�
 
 - [シングル サインオンを使用する Node.js Office アドインを作成する](create-sso-office-add-ins-nodejs.md)
 - [シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)
-
-> [!NOTE]
-> SSO が有効な Node.js Office アドインの作成に Yeoman ジェネレーターを使用することができます。 Yeoman ジェネレーターは、Azure 内で SSO を構成するために必要な手順を自動化し、SSO を使用するために必要なコードを生成することで、SSO が有効なアドインの作成プロセスを簡素化します。 詳細については、「[シングル サインオン (SSO) のクイック スタート](../quickstarts/sso-quickstart.md)」を参照してください。
 
 ### <a name="register-your-add-in-with-the-microsoft-identity-platform"></a>Microsoft ID プラットフォームにアドインを登録する
 
