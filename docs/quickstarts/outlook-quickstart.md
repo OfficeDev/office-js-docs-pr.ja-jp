@@ -1,15 +1,15 @@
 ---
 title: 最初の Outlook アドインをビルドする
 description: Office JS API を使用して単純な Outlook 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 33f5e0f08bbb1472dcefc764941c8b7d6b6d4dbc
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660152"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797513"
 ---
 # <a name="build-your-first-outlook-add-in"></a>最初の Outlook アドインをビルドする
 
@@ -85,7 +85,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -160,7 +160,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 ### <a name="update-the-code"></a>コードを更新する
 
 1. **MessageRead.html** は、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **MessageRead.html** で、**\<body\>** 要素を次のマークアップに置き換えて、ファイルを保存します。
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -275,15 +275,15 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. メッセージ内で、アドインのボタンが表示されているオーバーフロー メニューの省略記号を探します。
 
-    ![省略記号が強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット。](../images/quick-start-button-owa-1.png)
+    ![Outlook on the web のメッセージ ウィンドウ上で強調表示されている省略記号。](../images/quick-start-button-owa-1.png)
 
 1. オーバーフロー メニュー内でアドインのボタンを探します。
 
-    ![アドイン ボタンが強調表示された Outlook on the web のメッセージ ウィンドウのスクリーンショット。](../images/quick-start-button-owa-2.png)
+    ![Outlook on the web のメッセージ ウィンドウ上で強調表示されているアドイン ボタン。](../images/quick-start-button-owa-2.png)
 
 1. ボタンをクリックしてアドインの作業ウィンドウを開きます。
 
-    ![メッセージ プロパティを表示する Outlook on the web のアドインの作業ウィンドウのスクリーンショット。](../images/quick-start-task-pane-owa-1.png)
+    ![Outlook on the web のアドインの作業ウィンドウ上に表示されているメッセージ プロパティ。](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > 作業ウィンドウが読み込まれない場合、同じコンピューター上のブラウザーで作業ウィンドウを開いて確認してください。

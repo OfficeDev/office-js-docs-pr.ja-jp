@@ -311,6 +311,10 @@ items:
             displayName: 'uninstall, sideload'
           - name: ランタイム ログを使用してデバッグする
             href: testing/runtime-logging.md
+          - name: 非共有ランタイムを使用する関数コマンドをデバッグする
+            href: testing/debug-function-command.md
+          - name: initialize メソッドと onReady メソッドをデバッグする
+            href: testing/debug-initialize-onready.md
           - name: エラー
             items:
               - name: アプリケーション固有の API エラー処理
@@ -748,7 +752,7 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: アドインのアクティブ化のトラブルシューティング
                 href: outlook/troubleshoot-outlook-add-in-activation.md
-              - name: UI なしのアドインをデバッグする
+              - name: 関数コマンドをデバッグする
                 href: outlook/debug-ui-less.md
               - name: イベントベースのアクティブ化をデバッグする
                 href: outlook/debug-autolaunch.md

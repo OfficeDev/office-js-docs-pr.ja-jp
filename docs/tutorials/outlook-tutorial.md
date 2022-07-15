@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: メッセージ作成 Outlook アドインのビルド'
 description: このチュートリアルでは、GitHub Gist を新規メッセージの本文に挿入する Outlook アドインをビルドします。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659704"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797653"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -103,7 +103,7 @@ ms.locfileid: "66659704"
 
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** - `Outlook`
 
-    ![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yeoman-prompts-2.png)
+    ![コマンド ライン インターフェイスに表示された Yeoman ジェネレーターのプロンプトと回答。](../images/yeoman-prompts-2.png)
 
     ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -171,7 +171,7 @@ ms.locfileid: "66659704"
 
     すべて正しく設定されていれば、作業ウィンドウが開き、アドインのウェルカム ページが表示されます。
 
-    ![[作業ウィンドウを表示] ボタンのスクリーンショットとサンプルによって追加された作業ウィンドウの Git the gist。](../images/button-and-pane.png)
+    ![[作業ウィンドウを表示] ボタンと、サンプルによって追加された Git the gist 作業ウィンドウ。](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>ボタンを定義する
 
@@ -291,11 +291,11 @@ ms.locfileid: "66659704"
 
 - このアドインを WWindows 上の Outlook 2016 以降で実行している場合は、メッセージ作成ウィンドウのリボンに **[Insert gist]** と **[Insert default gist]**] という 2 つの新しいボタンが表示されます。
 
-    ![アドインのボタンが強調表示された Windows 上の Outlook のリボン オーバーフロー メニューのスクリーンショット。](../images/add-in-buttons-in-windows.png)
+    ![Windows 用 Outlook のリボン オーバーフロー メニュー上で強調表示されているアドインのボタン。](../images/add-in-buttons-in-windows.png)
 
 - Outlook on the webでこのアドインを実行している場合は、メッセージ作成ウィンドウの下部に新しいボタンが表示されます。 このボタンを選択すると、**[Insert gist]** と **[Insert default gist]** のオプションが表示されます。
 
-    ![アドイン ボタンとポップアップ メニューが強調表示された Outlook on the web のメッセージ作成フォームのスクリーンショット。](../images/add-in-buttons-in-owa.png)
+    ![Outlook on the web のメッセージ作成フォーム。アドイン ボタンとポップアップ メニューが強調表示されています。](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>最初の実行エクスペリエンスを実装する
 
@@ -424,14 +424,14 @@ ul {
     jQuery(document).ready(function(){
       if (window.location.search) {
         // Check if warning should be displayed.
-        var warn = getParameterByName('warn');
+        const warn = getParameterByName('warn');
         if (warn) {
           $('.not-configured-warning').show();
         } else {
           // See if the config values were passed.
           // If so, pre-populate the values.
-          var user = getParameterByName('gitHubUserName');
-          var gistId = getParameterByName('defaultGistId');
+          const user = getParameterByName('gitHubUserName');
+          const gistId = getParameterByName('defaultGistId');
 
           $('#github-user').val(user);
           loadGists(user, function(success){
@@ -450,7 +450,7 @@ ul {
       // try to load gists.
       $('#github-user').on('change', function(){
         $('#gist-list').empty();
-        var ghUser = $('#github-user').val();
+        const ghUser = $('#github-user').val();
         if (ghUser.length > 0) {
           loadGists(ghUser);
         }
@@ -460,11 +460,11 @@ ul {
       // values back to the caller as a serialized
       // object.
       $('#settings-done').on('click', function() {
-        var settings = {};
+        const settings = {};
 
         settings.gitHubUserName = $('#github-user').val();
 
-        var selectedGist = $('.ms-ListItem.is-selected');
+        const selectedGist = $('.ms-ListItem.is-selected');
         if (selectedGist) {
           settings.defaultGistId = selectedGist.val();
 
@@ -508,7 +508,7 @@ ul {
       url = window.location.href;
     }
     name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
       results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
@@ -649,7 +649,7 @@ ul {
 
 ```js
 function getUserGists(user, callback) {
-  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+  const requestUrl = 'https://api.github.com/users/' + user + '/gists';
 
   $.ajax({
     url: requestUrl,
@@ -664,10 +664,10 @@ function getUserGists(user, callback) {
 function buildGistList(parent, gists, clickFunc) {
   gists.forEach(function(gist) {
 
-    var listItem = $('<div/>')
+    const listItem = $('<div/>')
       .appendTo(parent);
 
-    var radioItem = $('<input>')
+    const radioItem = $('<input>')
       .addClass('ms-ListItem')
       .addClass('is-selectable')
       .attr('type', 'radio')
@@ -676,19 +676,19 @@ function buildGistList(parent, gists, clickFunc) {
       .val(gist.id)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descPrimary = $('<span/>')
       .addClass('ms-ListItem-primaryText')
       .text(gist.description)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descSecondary = $('<span/>')
       .addClass('ms-ListItem-secondaryText')
       .text(' - ' + buildFileList(gist.files))
       .appendTo(listItem);
 
-    var updated = new Date(gist.updated_at);
+    const updated = new Date(gist.updated_at);
 
-    var desc = $('<span/>')
+    const descTertiary = $('<span/>')
       .addClass('ms-ListItem-tertiaryText')
       .text(' - Last updated ' + updated.toLocaleString())
       .appendTo(listItem);
@@ -699,9 +699,9 @@ function buildGistList(parent, gists, clickFunc) {
 
 function buildFileList(files) {
 
-  var fileList = '';
+  let fileList = '';
 
-  for (var file in files) {
+  for (let file in files) {
     if (files.hasOwnProperty(file)) {
       if (fileList.length > 0) {
         fileList = fileList + ', ';
@@ -768,8 +768,8 @@ HTML ファイルが、まだ存在しない JavaScript ファイル **addin-con
 ファイル **./src/commands/commands.js** を開き、内容全体を次のコードに置き換えます。 アドインがまだ構成されていないことが **insertDefaultGist** 関数で確認された場合、`?warn=1` パラメーターがダイアログ URL に追加されます。 これにより、**./src/settings/dialog.html** で定義されているメッセージ バーが設定ダイアログに表示され、このダイアログが表示されている理由をユーザーに示すことができます。
 
 ```js
-var config;
-var btnEvent;
+let config;
+let btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
 Office.initialize = function () {
@@ -783,7 +783,7 @@ function showError(error) {
   });
 }
 
-var settingsDialog;
+let settingsDialog;
 
 function insertDefaultGist(event) {
 
@@ -821,8 +821,8 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
-    var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+    const url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
+    const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
@@ -858,7 +858,7 @@ HTML 関数ファイルは **addin-config.js** という名前のファイルを
 
 ```js
 function getConfig() {
-  var config = {};
+  const config = {};
 
   config.gitHubUserName = Office.context.roamingSettings.get('gitHubUserName');
   config.defaultGistId = Office.context.roamingSettings.get('defaultGistId');
@@ -886,7 +886,7 @@ function setConfig(config, callback) {
 
 ```js
 function getGist(gistId, callback) {
-  var requestUrl = 'https://api.github.com/gists/' + gistId;
+  const requestUrl = 'https://api.github.com/gists/' + gistId;
 
   $.ajax({
     url: requestUrl,
@@ -901,9 +901,9 @@ function getGist(gistId, callback) {
 function buildBodyContent(gist, callback) {
   // Find the first non-truncated file in the gist
   // and use it.
-  for (var filename in gist.files) {
+  for (let filename in gist.files) {
     if (gist.files.hasOwnProperty(filename)) {
-      var file = gist.files[filename];
+      const file = gist.files[filename];
       if (!file.truncated) {
         // We have a winner.
         switch (file.language) {
@@ -913,13 +913,13 @@ function buildBodyContent(gist, callback) {
             break;
           case 'Markdown':
             // Convert Markdown to HTML.
-            var converter = new showdown.Converter();
-            var html = converter.makeHtml(file.content);
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(file.content);
             callback(html);
             break;
           default:
             // Insert contents as a <code> block.
-            var codeBlock = '<pre><code>';
+            let codeBlock = '<pre><code>';
             codeBlock = codeBlock + file.content;
             codeBlock = codeBlock + '</code></pre>';
             callback(codeBlock);
@@ -940,11 +940,11 @@ function buildBodyContent(gist, callback) {
 
 1. メッセージの作成ウィンドウで、**[Insert default gist]** ボタンを選択します。 GitHub ユーザー名を設定するためのプロンプトから始めて、アドインを構成できるダイアログが表示されます。
 
-    ![アドインを構成するためのダイアログ プロンプトのスクリーンショット。](../images/addin-prompt-configure.png)
+    ![アドインを構成するためのダイアログ プロンプト。](../images/addin-prompt-configure.png)
 
 1. 設定ダイアログで GitHub のユーザー名を入力して、ダイアログの他の部分を **[タブ]** するかクリックします。すると、**変更** イベントが呼び出され、公開 Gist のリストが読み込まれます。既定にする Gist を選択し、**[完了]** を選択します。
 
-    ![アドインの設定ダイアログのスクリーンショット。](../images/addin-settings.png)
+    ![アドインの設定ダイアログ。](../images/addin-settings.png)
 
 1. ここでもう一度、**[既定の Gist の挿入]** ボタンを選択します。今度は、電子メールの本文に挿入された形で Gist の内容が表示されます。
 
@@ -1198,8 +1198,8 @@ ul {
 (function(){
   'use strict';
 
-  var config;
-  var settingsDialog;
+  let config;
+  let settingsDialog;
 
   Office.initialize = function(reason){
 
@@ -1219,7 +1219,7 @@ ul {
       // When insert button is selected, build the content
       // and insert into the body.
       $('#insert-button').on('click', function(){
-        var gistId = $('.ms-ListItem.is-selected').val();
+        const gistId = $('.ms-ListItem.is-selected').val();
         getGist(gistId, function(gist, error) {
           if (gist) {
             buildBodyContent(gist, function (content, error) {
@@ -1243,14 +1243,14 @@ ul {
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('dialog.html').absoluteTo(window.location).toString();
+        let url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
           url = url + '?gitHubUserName=' + config.gitHubUserName + '&defaultGistId=' + config.defaultGistId;
         }
 
-        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+        const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
@@ -1314,7 +1314,7 @@ ul {
 
 1. 作業ウィンドウで、**[Hello World Html]** を選択し、**[Insert]** を選択してメッセージの本文にその Gist を挿入します。
 
-![アドイン作業ウィンドウのスクリーンショットとメッセージ本文に表示される選択した gist コンテンツ。](../images/addin-taskpane.png)
+![アドイン作業ウィンドウと、メッセージ本文に表示される選択した gist コンテンツ。](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -1328,4 +1328,4 @@ ul {
 - [Outlook アドインのマニフェスト](../outlook/manifests.md)
 - [Outlook アドインの設計ガイドライン](../outlook/outlook-addin-design.md)
 - [Outlook のアドイン コマンド](../outlook/add-in-commands-for-outlook.md)
-- [UI レスの Outlook アドインをデバッグする](../outlook/debug-ui-less.md)
+- [Outlook アドインで関数コマンドをデバッグする](../outlook/debug-ui-less.md)

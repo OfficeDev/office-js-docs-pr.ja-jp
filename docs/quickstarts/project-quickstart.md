@@ -1,15 +1,15 @@
 ---
 title: 最初の Project の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Project 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: c2f0e31b5a4c958cd155dfeb6d1648f7a2697c69
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091042"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797478"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>最初の Project の作業ウィンドウ アドインを作成する
 
@@ -31,7 +31,7 @@ ms.locfileid: "66091042"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Project`
 
-![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-project.png)
+![コマンド ライン インターフェイスに表示された Yeoman ジェネレーターのプロンプトと回答。](../images/yo-office-project.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -44,49 +44,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 - プロジェクトのルート ディレクトリにある **./manifest.xml** ファイルで、アドインの機能と設定を定義します。
 - **./src/taskpane/taskpane.html** ファイルには、作業ペイン用のHTMLマークアップが含まれています。
 - **./src/taskpane/taskpane.css** ファイルには、作業ペインのコンテンツに適用されるCSSが含まれています。
-- **./src/taskpane/taskpane.js** ファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。
-
-## <a name="update-the-code"></a>コードを更新する
-
-コード エディターでファイル **./src/taskpane/taskpane.js** を開き、次のコードを `run` 関数内に追加します。 このコードでは、Office JavaScript API を使用して、選択したタスクの `Name`フィールドと `Notes` フィールドを設定します。
-
-```js
-var taskGuid;
-
-// Get the GUID of the selected task
-Office.context.document.getSelectedTaskAsync(
-    function (result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            taskGuid = result.value;
-
-            // Set the specified fields for the selected task.
-            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
-            var fieldValues = ['New task name', 'Notes for the task.'];
-
-            // Set the field value. If the call is successful, set the next field.
-            for (var i = 0; i < targetFields.length; i++) {
-                Office.context.document.setTaskFieldAsync(
-                    taskGuid,
-                    targetFields[i],
-                    fieldValues[i],
-                    function (result) {
-                        if (result.status === Office.AsyncResultStatus.Succeeded) {
-                            i++;
-                        }
-                        else {
-                            var err = result.error;
-                            console.log(err.name + ' ' + err.code + ' ' + err.message);
-                        }
-                    }
-                );
-            }
-        } else {
-            var err = result.error;
-            console.log(err.name + ' ' + err.code + ' ' + err.message);
-        }
-    }
-);
-```
+- **./src/taskpane/taskpane.js** ファイルには、作業ウィンドウと Office クライアント アプリケーションの間のやり取りを容易にする Office JavaScript API コードが含まれています。 このクイック スタートのコードは、選択したプロジェクト タスクの `Name` フィールドと `Notes` フィールドを設定します。
 
 ## <a name="try-it-out"></a>試してみる
 
@@ -114,7 +72,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. 作業ウィンドウの下部で **Run** リンクを選択して、 選択されたタスクの名前を変更し、そのタスクにメモを追加します。
 
-    ![読み込まれた作業ウィンドウ アドインを用いた Project アプリケーションのスクリーンショット。](../images/project-quickstart-addin-1.png)
+    ![Project アプリケーション上に読み込まれた作業ウィンドウ アドイン。](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>次の手順
 

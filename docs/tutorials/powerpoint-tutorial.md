@@ -1,15 +1,15 @@
 ---
 title: PowerPoint アドインのチュートリアル
 description: このチュートリアルでは、画像の挿入、テキストの挿入、スライドのメタデータ取得、およびスライド間の移動のための PowerPoint アドインを作成します。
-ms.date: 05/11/2022
+ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
-ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
+ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "65393933"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797667"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 
@@ -24,7 +24,7 @@ ms.locfileid: "65393933"
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Visual Studio 2019、*バージョン16.10.3 以前*、またはVisual Studio 2022](https://www.visualstudio.com/vs/)、**Office/SharePoint 開発** ワークロードがインストールされていること。 
+- [Visual Studio 2019、*バージョン16.10.3 以前*、またはVisual Studio 2022](https://www.visualstudio.com/vs/)、**Office/SharePoint 開発** ワークロードがインストールされていること。
 
     > [!IMPORTANT]
     > 16.10.3 以降の一部のバージョンの Visual Studio 2019 には、このチュートリアルの完了を妨げるバグがあります。 それ以前のバージョンの Visual Studio 2019 を使用するか、Visual Studio 2022 を使用します。
@@ -37,24 +37,23 @@ ms.locfileid: "65393933"
     > [!NOTE]
     > Office をまだお持ちでない場合は、[Microsoft 365 開発者プログラムに参加](https://developer.microsoft.com/office/dev-program)して、開発中に使用できる 90 日間更新可能な無料の Microsoft 365 サブスクリプションを取得できます。
 
-
 ## <a name="create-your-add-in-project"></a>アドイン プロジェクトの作成
 
 Visual Studio を使用して PowerPoint アドイン プロジェクトを作成するには次の手順を実行します。
 
 1. [**新規プロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン** と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
+1. 検索ボックスを使用して、**アドイン** と入力します。 [**PowerPoint Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに「`HelloWorld`」という名前を付けて、[**作成**] を選択します。
+1. プロジェクトに「`HelloWorld`」という名前を付けて、[**作成**] を選択します。
 
-4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
+1. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を PowerPoint に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+1. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
-     ![Hello World ソリューションの2つのプロジェクトである Hello World と Hello World Web を示す Visual Studio ソリューション エクスプローラー ウィンドウのスクリーンショット。](../images/powerpoint-tutorial-solution-explorer.png)
+     ![Visual Studio ソリューション エクスプローラー ウィンドウ上に表示されている、Hello World ソリューションの 2 つのプロジェクトである Hello World と Hello World Web。](../images/powerpoint-tutorial-solution-explorer.png)
 
-6. 次の NuGet パッケージをインストールする必要があります。 Visual Studio の **NuGet パッケージ マネージャー** を使用してインストールします。 手順については、Visual Studio のヘルプを参照してください。 これらの 2 つ目は、最初のインストール時に自動的にインストールされる場合があります。
+1. 次の NuGet パッケージをインストールする必要があります。 Visual Studio の **NuGet パッケージ マネージャー** を使用してインストールします。 手順については、Visual Studio のヘルプを参照してください。 これらの 2 つ目は、最初のインストール時に自動的にインストールされる場合があります。
 
    - Microsoft.AspNet.WebApi.WebHost
    - Microsoft.AspNet.WebApi.Core
@@ -81,18 +80,18 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     </div>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+1. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```js
     (function () {
         "use strict";
 
-        var messageBanner;
+        let messageBanner;
 
         Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.MessageBanner');
+                const element = document.querySelector('.MessageBanner');
                 messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
@@ -129,18 +128,18 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. ソリューション エクスプローラーを使用して、**Controllers** という名前の新しいフォルダーを **HelloWorldWeb** プロジェクトに追加します。
 
-    ![HelloWorldWeb プロジェクトの Controllers フォルダーを示す Visual Studio ソリューション エクスプローラー ウィンドウのスクリーンショット。](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![Visual Studio ソリューション エクスプローラー ウィンドウ上に強調表示されている、HelloWorldWeb プロジェクトの Controllers フォルダー。](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. **Controllers** フォルダーを右クリックし、**[追加] > [新規スキャフォールディング アイテム...]** を選択します。
+1. **Controllers** フォルダーを右クリックし、**[追加] > [新規スキャフォールディング アイテム...]** を選択します。
 
-3. **[スキャフォールディングを追加]** ダイアログ ウィンドウで、「**Web API 2 Controller - Empty**」を選択し、**[追加]** ボタンを選択します。 
+1. **[スキャフォールディングを追加]** ダイアログ ウィンドウで、「**Web API 2 Controller - Empty**」を選択し、**[追加]** ボタンを選択します。
 
-4. **[コントローラーの追加]** ダイアログ ウィンドウでコントローラー名として「**PhotoController**」と入力し、**[追加]** ボタンを選択します。 Visual Studio によって **PhotoController.cs** ファイルが作成され、表示されます。
+1. **[コントローラーの追加]** ダイアログ ウィンドウでコントローラー名として「**PhotoController**」と入力し、**[追加]** ボタンを選択します。 Visual Studio によって **PhotoController.cs** ファイルが作成され、表示されます。
 
     > [!NOTE]
     > バージョン 16.10.3 以降の Visual Studio 2019 の一部のバージョンでは、スキャフォールディング プロセスが正しく完了しません。 Visual Studio 2022 は影響を受けません。
 
-5. **PhotoController.cs** ファイルの内容全体を、Bing サービスを呼び出す次のコードに置き換え、その日の写真を Base64 でエンコードされた文字列として取得します。 Office JavaScript API を使用してイメージをドキュメントに挿入する場合は、イメージ データを Base64 でエンコードされた文字列として指定する必要があります。
+1. **PhotoController.cs** ファイルの内容全体を、Bing サービスを呼び出す次のコードに置き換え、その日の写真を Base64 でエンコードされた文字列として取得します。 Office JavaScript API を使用してイメージをドキュメントに挿入する場合は、イメージ データを Base64 でエンコードされた文字列として指定する必要があります。
 
     ```csharp
     using System;
@@ -188,7 +187,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     }
     ```
 
-6. **Home.html** ファイルで `TODO1` を次のマークアップに置き換えます。 このマークアップにより、アドインの作業ウィンドウ内に表示される **[イメージの挿入]** ボタンを定義します。
+1. **Home.html** ファイルで `TODO1` を次のマークアップに置き換えます。 このマークアップにより、アドインの作業ウィンドウ内に表示される **[イメージの挿入]** ボタンを定義します。
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -198,13 +197,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     </button>
     ```
 
-7. **Home.js** ファイルで `TODO1` を次のコードに置き換え、**[イメージの挿入]** ボタンのイベント ハンドラーを割り当てます。
+1. **Home.js** ファイルで `TODO1` を次のコードに置き換え、**[イメージの挿入]** ボタンのイベント ハンドラーを割り当てます。
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. **Home.js** ファイルで `TODO2` を次のコードに置き換え、`insertImage`insertImage`insertImageFromBase64String` 関数を定義します。 この関数は Bing Web サービスからイメージをフェッチし、 関数を呼び出してそのイメージをドキュメントに挿入します。
+1. **Home.js** ファイルで `TODO2` を次のコードに置き換え、`insertImage`insertImage`insertImageFromBase64String` 関数を定義します。 この関数は Bing Web サービスからイメージをフェッチし、 関数を呼び出してそのイメージをドキュメントに挿入します。
 
     ```js
     function insertImage() {
@@ -219,7 +218,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     }
     ```
 
-9. **Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。 この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。 注意:
+1. **Home.js** ファイルで `TODO3` を次のコードに置き換え、`insertImageFromBase64String` 関数を定義します。 この関数は Office JavaScript API を使用してイメージをドキュメントに挿入します。 注意:
 
     - `setSelectedDataAsync` 要求の 2 番目のパラメーターとして指定されている `coercionType` オプションは、挿入されるデータの種類を示します。
 
@@ -243,19 +242,19 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンをクリックして、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
-    ![Visual Studio で強調表示された [スタート] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-start.png)
+    ![Visual Studio 上で強調表示されている [スタート] ボタン。](../images/powerpoint-tutorial-start.png)
 
-2. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
+1. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
 
-    ![PowerPoint のホームリボンで強調表示された [作業ウィンドウの表示] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![PowerPoint のホームリボン上で強調表示されている [作業ウィンドウの表示] ボタン。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. 作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。
+1. 作業ウィンドウで、**[イメージの挿入]** ボタンを押してその日の Bing 写真を現在のスライドに追加します。
 
-    ![[画像の挿入] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-insert-image-button.png)
+    ![PowerPoint アドイン上で強調表示されている [画像の挿入] ボタン。](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+1. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
-    ![Visual Studio で強調表示された [停止] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-stop.png)
+    ![Visual Studio 上で強調表示されている [停止] ボタン。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="customize-user-interface-ui-elements"></a>ユーザー インターフェイス (UI) 要素のカスタマイズ
 
@@ -275,25 +274,25 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     </div>
     ```
 
-2. **Home.html** ファイルにおいて、`class="footer"` で **div** を検索し、**div** 全体を削除して作業ウィンドウからフッター セクションを削除します。
+1. **Home.html** ファイルにおいて、`class="footer"` で **div** を検索し、**div** 全体を削除して作業ウィンドウからフッター セクションを削除します。
 
 ### <a name="test-the-add-in"></a>アドインをテストする
 
 1. Visual Studio を使用して、新しく作成した PowerPoint アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
-    ![Visual Studio で強調表示された [スタート] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-start.png)
+    ![Visual Studio 上で強調表示されている [スタート] ボタン。](../images/powerpoint-tutorial-start.png)
 
-2. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
+1. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
 
-    ![PowerPoint ホームリボンで強調表示された [作業ウィンドウの表示] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![PowerPoint のホームリボン上で強調表示されている [作業ウィンドウの表示] ボタン。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. このとき、作業ウィンドウにはヘッダー セクションとタイトルが含まれ、フッター セクションが含まれないことがわかります。
+1. このとき、作業ウィンドウにはヘッダー セクションとタイトルが含まれ、フッター セクションが含まれないことがわかります。
 
-    ![[イメージの挿入] ボタンがある PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![PowerPoint アドイン上に表示されている [イメージの挿入] ボタン。](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+1. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
-    ![Visual Studio で強調表示された [停止] ボタンを表示するスクリーンショット。](../images/powerpoint-tutorial-stop.png)
+    ![Visual Studio 上で強調表示されている [停止] ボタン。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="insert-text"></a>テキストの挿入
 
@@ -310,13 +309,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
         </button>
     ```
 
-2. **Home.js** ファイルで `TODO4` を次のコードに置き換え、**[テキストの挿入]** ボタンのイベント ハンドラーを割り当てます。
+1. **Home.js** ファイルで `TODO4` を次のコードに置き換え、**[テキストの挿入]** ボタンのイベント ハンドラーを割り当てます。
 
     ```js
     $('#insert-text').click(insertText);
     ```
 
-3. **Home.js** ファイルで `TODO5` を次のコードに置き換え、`insertText` 関数を定義します。 この関数は、現在のスライドにテキストを挿入します。
+1. **Home.js** ファイルで `TODO5` を次のコードに置き換え、`insertText` 関数を定義します。 この関数は、現在のスライドにテキストを挿入します。
 
     ```js
     function insertText() {
@@ -333,23 +332,23 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
-    ![Visual Studio で強調表示されている [スタート] ボタンのスクリーンショット。](../images/powerpoint-tutorial-start.png)
+    ![Visual Studio 上で強調表示されている [スタート] ボタン。](../images/powerpoint-tutorial-start.png)
 
-2. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
+1. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
 
-    ![PowerPoint のホームリボンの [作業ウィンドウを表示] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![PowerPoint のホームリボン上に表示されている [作業ウィンドウを表示] ボタン。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. 作業ウィンドウで **[イメージの挿入]** ボタンをクリックしてその日の Bing 写真を現在のスライドに追加し、そのタイトルにテキスト ボックスが含まれるデザインをそのスライドに選択します。
+1. 作業ウィンドウで **[イメージの挿入]** ボタンをクリックしてその日の Bing 写真を現在のスライドに追加し、そのタイトルにテキスト ボックスが含まれるデザインをそのスライドに選択します。
 
-    ![現在のスライドが強調表示され、アドインで [画像の挿入] ボタンが強調表示された PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![PowerPoint 上で選択されているタイトル スライドと、アドイン上で強調表示されている [画像の挿入] ボタン。](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
-4. タイトル スライドのテキスト ボックスにカーソルを置き、作業ウィンドウで **[テキストの挿入]** ボタンをクリックしてテキストをスライドに追加します。
+1. タイトル スライドのテキスト ボックスにカーソルを置き、作業ウィンドウで **[テキストの挿入]** ボタンをクリックしてテキストをスライドに追加します。
 
-    ![アドインで強調表示された [テキストの挿入] ボタンを含む PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-insert-text.png)
+    ![PowerPoint 上で選択されているタイトル スライドと、アドイン上で強調表示されている [テキストの挿入] ボタン。](../images/powerpoint-tutorial-insert-text.png)
 
-5. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+1. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
-    ![[停止] ボタンが強調表示されている Visual Studio のスクリーンショット。](../images/powerpoint-tutorial-stop.png)
+    ![Visual Studio 上で強調表示されている [停止] ボタン。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="get-slide-metadata"></a>スライドのメタデータの取得
 
@@ -366,13 +365,13 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     </button>
     ```
 
-2. **Home.js** ファイルで `TODO6` を次のコードに置き換え、**[Get Slide Metadata]** (スライドのメタデータの取得) ボタンのイベント ハンドラーを割り当てます。
+1. **Home.js** ファイルで `TODO6` を次のコードに置き換え、**[Get Slide Metadata]** (スライドのメタデータの取得) ボタンのイベント ハンドラーを割り当てます。
 
     ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. **Home.js** ファイルで `TODO7` を次のコードに置き換え、`getSlideMetadata`getSlideMetadata 関数を定義します。 この関数は選択したスライドのメタデータを取得し、それをアドインの作業ウィンドウ内のポップアップ ダイアログ ウィンドウに書き込みます。
+1. **Home.js** ファイルで `TODO7` を次のコードに置き換え、`getSlideMetadata`getSlideMetadata 関数を定義します。 この関数は選択したスライドのメタデータを取得し、それをアドインの作業ウィンドウ内のポップアップ ダイアログ ウィンドウに書き込みます。
 
     ```js
     function getSlideMetadata() {
@@ -392,19 +391,19 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
-    ![Visual Studio の [スタート] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-start.png)
+    ![Visual Studio 上に表示されている [スタート] ボタン。](../images/powerpoint-tutorial-start.png)
 
-2. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
+1. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
 
-    ![PowerPoint ホームリボンの [作業ウィンドウを表示] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![PowerPoint のホームリボン上に表示されている [作業ウィンドウを表示] ボタン。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. 作業ウィンドウで **[Get Slide Metadata]** (スライドのメタデータの取得) ボタンを選択し、選択したスライドのメタデータを取得します。 スライドのメタデータは作業ウィンドウの下部にあるポップアップ ダイアログ ウィンドウに書き込まれます。 この例では、JSON メタデータ内の `slides` 配列に、選択したスライドの `id`、`title`、および `index` を指定するオブジェクトが 1 つ含まれます。 スライドのメタデータを取得するときに複数のスライドが選択されている場合、JSON メタデータ内の `slides` 配列には、選択したスライドごとにオブジェクトが 1 つ含まれます。
+1. 作業ウィンドウで **[Get Slide Metadata]** (スライドのメタデータの取得) ボタンを選択し、選択したスライドのメタデータを取得します。 スライドのメタデータは作業ウィンドウの下部にあるポップアップ ダイアログ ウィンドウに書き込まれます。 この例では、JSON メタデータ内の `slides` 配列に、選択したスライドの `id`、`title`、および `index` を指定するオブジェクトが 1 つ含まれます。 スライドのメタデータを取得するときに複数のスライドが選択されている場合、JSON メタデータ内の `slides` 配列には、選択したスライドごとにオブジェクトが 1 つ含まれます。
 
-    ![アドインで [Get Slide Metadata] (スライドのメタデータの取得) ボタンが強調表示された PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![アドイン上で強調表示されている [Get Slide Metadata] (スライドのメタデータの取得) ボタン。](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+1. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
-    ![Visual Studio の [停止] ボタンを強調表示したスクリーンショット。](../images/powerpoint-tutorial-stop.png)
+    ![Visual Studio 上に表示されている [停止] ボタン。 ](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="navigate-between-slides"></a>スライド間の移動
 
@@ -439,7 +438,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     </button>
     ```
 
-2. **Home.js** ファイルで `TODO8` を次のコードに置き換え、4 つのナビゲーション ボタンのイベント ハンドラーを割り当てます。
+1. **Home.js** ファイルで `TODO8` を次のコードに置き換え、4 つのナビゲーション ボタンのイベント ハンドラーを割り当てます。
 
     ```js
     $('#go-to-first-slide').click(goToFirstSlide);
@@ -448,7 +447,7 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. **Home.js** ファイルで `TODO9` を次のコードに置き換え、ナビゲーション関数を定義します。 これらの関数では `goToByIdAsync` 関数を使用して、ドキュメント内のその位置 (最初、最後、前、次) に基づいてスライドを選択します。
+1. **Home.js** ファイルで `TODO9` を次のコードに置き換え、ナビゲーション関数を定義します。 これらの関数では `goToByIdAsync` 関数を使用して、ドキュメント内のその位置 (最初、最後、前、次) に基づいてスライドを選択します。
 
     ```js
     function goToFirstSlide() {
@@ -492,33 +491,33 @@ Visual Studio を使用して PowerPoint アドイン プロジェクトを作�
 
 1. Visual Studio を使用して、アドインをテストします。そのために、**F5** キーを押すか **[開始]** ボタンを選択して、リボンに **[作業ウィンドウの表示]** アドイン ボタンが表示された PowerPoint を起動します。アドインは IIS 上でローカルにホストされます。
 
-    ![Visual Studio ツール バー上で強調表示された [スタート] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-start.png)
+    ![Visual Studio ツール バー上で強調表示された [スタート] ボタン。](../images/powerpoint-tutorial-start.png)
 
-2. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
+1. PowerPoint でリボンの **[作業ウィンドウの表示]** ボタンをクリックし、アドインの作業ウィンドウを開きます。
 
-    ![PowerPoint のホームリボンで強調表示された [作業ウィンドウの表示] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![PowerPoint のホームリボン上で強調表示されている [作業ウィンドウの表示] ボタン。](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. **[ホーム]** タブの **[新しいスライド]** ボタンを使用して、2 つの新しいスライドをドキュメントに追加します。
+1. **[ホーム]** タブの **[新しいスライド]** ボタンを使用して、2 つの新しいスライドをドキュメントに追加します。
 
-4. 作業ウィンドウで **[最初のスライドに移動]** ボタンをクリックします。 ドキュメントの最初のスライドが選択され、表示されます。
+1. 作業ウィンドウで **[最初のスライドに移動]** ボタンをクリックします。 ドキュメントの最初のスライドが選択され、表示されます。
 
-    ![[最初のスライドに移動] ボタンがアドインで強調表示されている PowerPoint のスクリーンショット。](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![アドイン上で強調表示されている [最初のスライドに移動] ボタン。](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. 作業ウィンドウで **[次のスライドに移動]** ボタンをクリックします。 ドキュメントの次のスライドが選択され、表示されます。
+1. 作業ウィンドウで **[次のスライドに移動]** ボタンをクリックします。 ドキュメントの次のスライドが選択され、表示されます。
 
-    ![[次のスライドに移動] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![アドイン上で強調表示されている [次のスライドに移動] ボタン。](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. 作業ウィンドウで **[前のスライドに移動]** ボタンをクリックします。 ドキュメントの前のスライドが選択され、表示されます。
+1. 作業ウィンドウで **[前のスライドに移動]** ボタンをクリックします。 ドキュメントの前のスライドが選択され、表示されます。
 
-    ![[前のスライドに移動] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![アドイン上で強調表示されている [前のスライドに移動] ボタン。](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. 作業ウィンドウで **[最後のスライドに移動]** ボタンをクリックします。 ドキュメントの最後のスライドが選択され、表示されます。
+1. 作業ウィンドウで **[最後のスライドに移動]** ボタンをクリックします。 ドキュメントの最後のスライドが選択され、表示されます。
 
-    ![[最後のスライドに移動] ボタンが強調表示されている PowerPoint アドインのスクリーンショット。](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![アドイン上で強調表示されている [最後のスライドに移動] ボタン。](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
+1. Visual Studio で  **Shift + F5** を押すか **[停止]** ボタンを選択してアドインを停止します。 アドインが停止すると、PowerPoint は自動的に閉じます。
 
-    ![Visual Studio ツール バー上で強調表示された [停止] ボタンを示すスクリーンショット。](../images/powerpoint-tutorial-stop.png)
+    ![Visual Studio ツール バー上で強調表示されている [停止] ボタン。](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="next-steps"></a>次の手順
 

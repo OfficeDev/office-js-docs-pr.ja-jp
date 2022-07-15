@@ -1,15 +1,15 @@
 ---
 title: 最初の Excel の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 11af3d28db9d8b22790eb2e95821d5c9f34d194f
-ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
+ms.openlocfilehash: f4bd32e9e38e72b8cfb42db9476f6c180b151909
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "66789123"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797520"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Excel 作業ウィンドウ アドインを作成する
 
@@ -21,7 +21,7 @@ ms.locfileid: "66789123"
 
 # <a name="yeoman-generator"></a>[Yeoman ジェネレーター](#tab/yeomangenerator)
 
-## <a name="prerequisites"></a>前提条件
+### <a name="prerequisites"></a>前提条件
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "66789123"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-![Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット。](../images/yo-office-excel.png)
+![Office アドイン用 Yeoman Generator のコマンドライン インターフェイス。](../images/yo-office-excel.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -53,17 +53,17 @@ ms.locfileid: "66789123"
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+1. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューを示すスクリーンショット。](../images/excel-quickstart-addin-3b.png)
+    ![Excel のホーム メニュー上で強調表示されている [作業ウィンドウの表示] ボタン。](../images/excel-quickstart-addin-3b.png)
 
-4. ワークシート内で任意のセルの範囲を選択します。
+1. ワークシート内で任意のセルの範囲を選択します。
 
-5. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
+1. 作業ウィンドウの下部で、**[実行]** リンクを選択して、選択範囲の色を黄色に設定します。
 
-    ![アドイン作業ウィンドウが開いており、アドイン作業ウィンドウで [実行] ボタンが強調表示されている Excel のスクリーンショット。](../images/excel-quickstart-addin-3c.png)
+    ![Excel のアドイン作業ウィンドウと、その中に強調表示されている [実行] ボタン。](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>次の手順
 
@@ -79,13 +79,13 @@ ms.locfileid: "66789123"
 
 1. Visual Studio で、[**新しいプロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン** と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
+1. 検索ボックスを使用して、**アドイン** と入力します。 [**Excel Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに **ExcelWebAddIn1** という名前を付け、**[作成]** を選択します。
+1. プロジェクトに **ExcelWebAddIn1** という名前を付け、**[作成]** を選択します。
 
-4. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
+1. **[Office アドインの作成]** ダイアログ ウィンドウで、**[新機能を Excel に追加する]** を選択してから、**[完了]** を選択してプロジェクトを作成します。
 
-5. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+1. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -113,7 +113,7 @@ ms.locfileid: "66789123"
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+1. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -132,7 +132,7 @@ ms.locfileid: "66789123"
 
         async function setColor() {
             await Excel.run(async (context) => {
-                var range = context.workbook.getSelectedRange();
+                const range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
                 await context.sync();
@@ -146,7 +146,7 @@ ms.locfileid: "66789123"
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+1. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
 
     ```css
     #content-header {
@@ -179,13 +179,13 @@ ms.locfileid: "66789123"
 
 1. **ソリューション エクスプローラー** で、**ExcelWebAddIn1** アドイン プロジェクトに移動し、**ExcelWebAddIn1Manifest** ディレクトリを開きます。 このディレクトリには、マニフェスト ファイル **ExcelWebAddIn1.xml** が含まれています。 XML マニフェスト ファイルは、アドインの設定と機能を定義します。 Visual Studio ソリューションによって作成された 2 つのプロジェクトの詳細については、前のセクション「[Visual Studioソリューションの探索](#explore-the-visual-studio-solution)」を参照してください。
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+1. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
 
-3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+1. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
 
-4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
+1. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Excel** に置き換えてください。
 
-5. ファイルを保存します。
+1. ファイルを保存します。
 
     ```xml
     ...
@@ -201,15 +201,15 @@ ms.locfileid: "66789123"
 
 1. Visual Studio を使用して、新しく作成した Excel アドインをテストします。そのために、**F5** キーを押すか [**開始**] ボタンをクリックして、リボンに [**作業ウィンドウの表示**] アドイン ボタンが表示された Excel を起動します。 アドインは IIS 上でローカルにホストされます。 証明書を信頼するように求められた場合は、アドインが Office アプリケーションに接続できるように許可してください。
 
-2. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
+1. Excel で、**[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。
 
-    ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューのスクリーンショット。](../images/excel-quickstart-addin-2a.png)
+    ![Excel のホーム メニュー上で強調表示されている [作業ウィンドウの表示] ボタン。](../images/excel-quickstart-addin-2a.png)
 
-3. ワークシート内で任意のセルの範囲を選択します。
+1. ワークシート内で任意のセルの範囲を選択します。
 
-4. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
+1. 作業ウィンドウで、**[色の設定]** ボタンをクリックして、選択範囲の色を緑に設定します。
 
-    ![アドイン作業ウィンドウを開いた状態の Excel のスクリーンショット。](../images/excel-quickstart-addin-2c.png)
+    ![Excel 上に開かれているアドイン作業ウィンドウ。](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

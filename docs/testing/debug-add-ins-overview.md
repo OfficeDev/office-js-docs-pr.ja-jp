@@ -1,14 +1,14 @@
 ---
 title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける。
-ms.date: 06/15/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229702"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797485"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -32,15 +32,28 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 
 この記事の残りの部分は、クライアント側の JavaScript (TypeScript からトランスパイルされる可能性があります) のデバッグのみに関係しています。
 
+## <a name="special-cases"></a>特殊なケース
+
+一部の特殊なケースでは、プラットフォーム、Office アプリケーション、開発環境の特定の組み合わせについて、デバッグ プロセスが通常と異なる場合があります。 そのような特殊なケースのデバッグを行う場合は、このセクションに示したリンクから適切なガイダンスを見つけてください。 特殊ではない場合は、[一般的なガイダンス](#general-guidance)に進んでください。
+
+- **`Office.initialize` メソッドまたは `Office.onReady` メソッドのデバッグ**: [initialize メソッドと onReady メソッドをデバッグします](debug-initialize-onready.md)。
+- **_非共有_ ランタイム内の Excel カスタム関数のデバッグ**: [非共有ランタイム内のカスタム関数をデバッグします](../excel/custom-functions-debugging.md)。
+- **_非共有_ ランタイム内の [関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)のデバッグ**: 
+    - 開発用 Windows コンピューター上の Outlook アドイン: [Outlook アドイン内の関数コマンドをデバッグします。](../outlook/debug-ui-less.md) 
+    - 開発用 Mac コンピューター上のその他 Office アプリケーション アドインまたは Outlook: [非共有ランタイムを使用する関数コマンドをデバッグします](debug-function-command.md)。
+- **イベント ベースの Outlook アドインのデバッグ**: [イベント ベースの Outlook アドインをデバッグします](../outlook/debug-autolaunch.md)。 
+ 
+## <a name="general-guidance"></a>一般的なガイダンス
+
 クライアント側のコードをデバッグするためのガイダンスを見つけるために、最初の変数は開発用コンピューターのオペレーティング システムです。
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)
 - [Linux または他の Unix バリアント](#debug-on-linux)
 
-## <a name="debug-on-windows"></a>Windows でデバッグする
+### <a name="debug-on-windows"></a>Windows でデバッグする
 
-以下に、Windows でのデバッグに関する一般的なガイダンスを示します。 Excel のカスタム関数と Outlook のイベントベースのアドインをデバッグするための特別な手順があります。 このセクションで後述する「[Windows の特殊なケース](#special-cases-in-windows)」を参照してください。 Windows でのデバッグは、IDE によって異なります。
+以下に、Windows でのデバッグに関する一般的なガイダンスを示します。 Windows でのデバッグ作業は、使用する IDE によって異なります。
 
 - **Visual Studio**: ブラウザーの F12 ツールを使用してデバッグします。 「[Visual Studio で Office アドインをデバッグする](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。
 - **Visual Studio Code**: Visual Studio Code 用の [アドイン デバッガー拡張機能を使用してデバッグします](debug-with-vs-extension.md)。
@@ -55,24 +68,15 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="special-cases-in-windows"></a>Windows の特殊なケース
+### <a name="debug-on-mac"></a>Mac でデバッグする
 
-Windows で共有ランタイムを使用せずにカスタム関数をデバッグするには、「[カスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
-
-Outlook でイベント ベースのアドインをデバッグするには、「[イベント ベースの Outlook アドインをデバッグする](../outlook/debug-autolaunch.md)」を参照してください。 このプロセスには、Visual Studio Code が必要です。
-
-## <a name="debug-on-mac"></a>Mac でデバッグする
-
-以下に、Mac でのデバッグに関する一般的なガイダンスを示します。 Excel で共有ランタイムを使用せずにカスタム関数をデバッグするための特別な手順があります。 このセクションで後述する「[Mac の特殊なケース](#special-cases-in-mac)」を参照してください。
+以下に、Mac でのデバッグに関する一般的なガイダンスを示します。
 
 - Visual Studio Code を使用している場合は、[Visual Studio Code 用のアドイン デバッガー拡張機能](debug-with-vs-extension.md)を使用してデバッグします。
 - その他の IDE の場合は、Safari Web Inspector を使用してください。 手順については、「[Mac Officeアドインのデバッグ](debug-office-add-ins-on-ipad-and-mac.md)」を参照してください。
 
-### <a name="special-cases-in-mac"></a>Mac の特殊なケース
 
-Mac で共有ランタイムを使用せずにカスタム関数をデバッグするには、「[カスタム関数のデバッグ](../excel/custom-functions-debugging.md)」を参照してください。
-
-## <a name="debug-on-linux"></a>Linux でのデバッグ
+### <a name="debug-on-linux"></a>Linux でのデバッグ
 
 Office for Linux のデスクトップ バージョンはないため、テストとデバッグを行うには、[Web 上の Office にアドインをサイドロードする](sideload-office-add-ins-for-testing.md)必要があります。デバッグのガイドは、「[Office on the web でアドインをデバッグする](debug-add-ins-in-office-online.md)」で確認できます。
 
