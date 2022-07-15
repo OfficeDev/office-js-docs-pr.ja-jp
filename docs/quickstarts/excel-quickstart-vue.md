@@ -1,15 +1,15 @@
 ---
 title: Vue を使用して Excel 作業ウィンドウ アドインを構築する
 description: Office JS API と Vue を使用して単純な Excel 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 3024e759acd787a61992b84f31850ef7f0bfbe3b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d172e3b61fa4b8b66cc79b2cd364b3f2f0b37d96
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713057"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797499"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Vue を使用して Excel 作業ウィンドウ アドインを構築する
 
@@ -61,7 +61,7 @@ vue create my-add-in
     - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
     - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `Excel`
 
-    ![プロジェクトの種類がマニフェスト専用に設定されている Yeoman Office アドイン ジェネレーター コマンドライン インターフェイスのスクリーンショット。](../images/yo-office-manifest-only-vue.png)
+    ![プロジェクトの種類がマニフェスト専用に設定されている Office アドイン用の Yeoman ジェネレーター コマンド ライン インターフェイス。](../images/yo-office-manifest-only-vue.png)
 
 完了後、ウィザードは **manifest.xml** ファイルを含む **個人用 Office アドイン** フォルダーを作成します。 マニフェストを使用して、アドインをサイドロードしてテストします。
 
@@ -75,9 +75,9 @@ vue create my-add-in
 1. アプリの HTTPS を有効にします。 Vue プロジェクトのルート フォルダーに次の内容で **vue.config.js** ファイルを作成します。
 
     ```js
-    var fs = require("fs");
-    var path = require("path");
-    var homedir = require('os').homedir()
+    const fs = require("fs");
+    const path = require("path");
+    const homedir = require('os').homedir()
   
     module.exports = {
       devServer: {
@@ -219,13 +219,13 @@ Yeoman ジェネレーターで作成したアドイン プロジェクトには
 
 1. Excel でアドイン作業ウィンドウを開きます。 **[ホーム]** タブで、**[作業ウィンドウの表示]** ボタンをクリックします。
 
-   ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニューのスクリーンショット。](../images/excel-quickstart-addin-2a.png)
+   ![[作業ウィンドウの表示] ボタンが強調表示されている Excel ホーム メニュー。](../images/excel-quickstart-addin-2a.png)
 
 1. ワークシート内で任意のセルの範囲を選択します。
 
 1. 選択範囲の色を緑に設定します。 アドインの作業ウィンドウで **[色の設定]** ボタンを選択します。
 
-   ![アドイン作業ウィンドウを開いた状態の Excel のスクリーンショット。](../images/excel-quickstart-addin-2c.png)
+   ![アドイン作業ウィンドウが Excel で開きます。](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>次の手順
 
