@@ -2,18 +2,18 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 06/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f2dc7e6c2745df9394135b46dbd4d99b6d790a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660082"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797618"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
-イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、アドインは特定のイベントに基づいてタスクを実行できます。特に、すべての項目に適用される操作に対して実行できます。 作業ウィンドウと UI レス機能と統合することもできます。
+イベント ベースのアクティブ化機能がない場合、ユーザーはタスクを完了するためにアドインを明示的に起動する必要があります。 この機能を使用すると、アドインは特定のイベントに基づいてタスクを実行できます。特に、すべての項目に適用される操作に対して実行できます。 作業ウィンドウや関数コマンドと統合することもできます。
 
 このチュートリアルの終わりまでに、新しい項目が作成され、件名が設定されるたびに実行されるアドインが作成されます。
 

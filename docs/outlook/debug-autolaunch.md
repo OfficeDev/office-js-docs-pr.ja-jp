@@ -2,14 +2,14 @@
 title: イベント ベースの Outlook アドインをデバッグする
 description: イベント ベースのアクティブ化を実装する Outlook アドインをデバッグする方法について説明します。
 ms.topic: article
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659683"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797492"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>イベント ベースの Outlook アドインをデバッグする
 
@@ -25,13 +25,13 @@ ms.locfileid: "66659683"
 - [Visual Studio Code をアタッチする](#attach-visual-studio-code)
 - [Debug](#debug)
 
-アドイン プロジェクトを作成するには、いくつかのオプションがあります。 使用しているオプションによっては、手順が異なる場合があります。 この場合、Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成した場合 (たとえば、 [イベント ベースのアクティブ化チュートリアル](autolaunch.md)を実行するなど)、 **yo office** の手順に従い、それ以外の場合は **他** の手順に従います。 Visual Studio Code は、少なくともバージョン 1.56.1 である必要があります。
+Office アドイン用 Yeoman Generator を使用してアドイン プロジェクトを作成した場合 (たとえば、 [イベント ベースのアクティブ化チュートリアル](autolaunch.md)を実行するなど)、この記事全体で **[Create with Yeoman ジェネレーター** ] オプションに従います。 それ以外の場合は、 **その他** の手順に従います。 Visual Studio Code は、少なくともバージョン 1.56.1 である必要があります。
 
 ## <a name="mark-your-add-in-for-debugging"></a>デバッグ用にアドインをマークする
 
 1. レジストリ キーを設定します `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`。 `[Add-in ID]`**\<Id\>** はアドイン マニフェスト内です。
 
-    **yo office**: コマンド ライン ウィンドウで、アドイン フォルダーのルートに移動し、次のコマンドを実行します。
+    **Yeoman ジェネレーターで作成**: コマンド ライン ウィンドウで、アドイン フォルダーのルートに移動し、次のコマンドを実行します。
 
     ```command&nbsp;line
     npm start
@@ -50,7 +50,7 @@ ms.locfileid: "66659683"
 
 ## <a name="configure-visual-studio-code"></a>Visual Studio Code を構成する
 
-### <a name="yo-office"></a>yo office
+### <a name="created-with-yeoman-generator"></a>Yeoman ジェネレーターを使用して作成
 
 1. コマンド ライン ウィンドウに戻り、Visual Studio Code を開きます。
 
@@ -72,7 +72,7 @@ ms.locfileid: "66659683"
     }
     ```
 
-### <a name="other"></a>その他
+### <a name="other"></a>Other
 
 1. **[デバッグ**] という名前の新しいフォルダーを作成します (**デスクトップ** フォルダーなど)。
 1. Visual Studio Code を開きます。

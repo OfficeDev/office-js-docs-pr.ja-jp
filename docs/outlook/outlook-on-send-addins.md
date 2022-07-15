@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cb67a813c876809440b29e029ff899cd34d7e365
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712756"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797611"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -25,12 +25,12 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 次の表は、必要最小限の累積更新プログラム (該当する場合) など、送信時機能でサポートされているクライアントとサーバーの組み合わせを示しています。 除外された組み合わせはサポートされていません。
 
-| Client | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
+| クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|必要|
-|Mac：<br>ビルド 16.47 以降|はい|はい|必要|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
+|Mac：<br>ビルド 16.47 以降|はい|はい|はい|
 |Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|必要|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
 
 > [!NOTE]
 > 送信時機能は、要件セット 1.8 で正式にリリースされました (詳細については [、現在のサーバーとクライアントのサポート](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください)。 ただし、この機能のサポート マトリックスは要件セットのスーパーセットであることに注意してください。
@@ -608,7 +608,7 @@ CC 行に受信者を追加して、送信時にメッセージに件名が含�
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>On-send を使用する Outlook アドインをデバッグする
 
-送信時アドインをデバッグする方法については、「 [UI レス Outlook アドインのデバッグ](debug-ui-less.md)」を参照してください。
+送信時アドインをデバッグする方法については、「 [Outlook アドインで関数コマンドをデバッグ](debug-ui-less.md)する」を参照してください。
 
 > [!TIP]
 > ユーザーがアドインを実行したときにエラー "コールバック関数に到達できません" が表示され、アドインのイベント ハンドラーが動的に定義されている場合は、回避策としてスタブ関数を作成する必要があります。 詳細については、「 [イベント ハンドラーが動的に定義されている](#event-handlers-are-dynamically-defined) 」を参照してください。

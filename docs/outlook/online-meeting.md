@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダーの Outlook アドインを作成する
 description: オンライン会議サービス プロバイダー用に Outlook アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3afc58af0db7725b8e66ddbd557cfd1e75e128
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713043"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797660"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーの Outlook アドインを作成する
 
@@ -231,7 +231,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
         }
     );
 
-    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a function command named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -325,7 +325,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 - オンライン会議サービス プロバイダーにのみ適用されます。
 - 管理者がインストールしたアドインのみが会議の作成画面に表示され、既定の Teams または Skype オプションが置き換えられます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進コード `#919191` を使用するか、 [他の色形式](https://convertingcolors.com/hex-color-919191.html)で同等の色を使用してグレースケールにする必要があります。
-- 予定オーガナイザー (compose) モードでは、UI レス コマンドは 1 つだけサポートされます。
+- Appointment Organizer (compose) モードでは、1 つの関数コマンドのみがサポートされます。
 - アドインは、1 分間のタイムアウト期間内に、予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開かれたアドインがダイアログ ボックスに費やされた時間は、タイムアウト期間から除外されます。
 
 ## <a name="see-also"></a>関連項目
