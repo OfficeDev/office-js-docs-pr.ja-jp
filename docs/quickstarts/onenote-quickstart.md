@@ -1,15 +1,15 @@
 ---
 title: 最初の OneNote の作業ウィンドウ アドインを作成する
 description: Office JS API を使用して単純な OneNote 作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 9b5f4dd941ed8cc107bee04bc67a368520439948
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 294b315c3d5ebc80d908d0bd4f3d4ee36a32b908
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090853"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797632"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>最初の OneNote の作業ウィンドウ アドインを作成する
 
@@ -29,7 +29,7 @@ ms.locfileid: "66090853"
 - **What would you want to name your add-in?: (アドインの名前を何にしますか)** `My Office Add-in`
 - **Which Office client application would you like to support?: (どの Office クライアント アプリケーションをサポートしますか)** `OneNote`
 
-![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答を示すスクリーンショット。](../images/yo-office-onenote.png)
+![コマンド ライン インターフェイスでの Yeoman ジェネレーターのプロンプトと回答。](../images/yo-office-onenote.png)
 
 ウィザードを完了すると、ジェネレーターによってプロジェクトが作成されて、サポートしているノード コンポーネントがインストールされます。
 
@@ -53,13 +53,13 @@ try {
     await OneNote.run(async (context) => {
 
         // Get the current page.
-        var page = context.application.getActivePage();
+        const page = context.application.getActivePage();
 
         // Queue a command to set the page title.
         page.title = "Hello World";
 
         // Queue a command to add an outline to the page.
-        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        const html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
         // Run the queued commands.
@@ -96,7 +96,7 @@ try {
 
     次の図は、コンシューマー ノートブックの **[マイ アドイン]** タブを示しています。
 
-    ![[マイ アドイン] タブを示す [Office アドイン] ダイアログのスクリーンショット。](../images/onenote-office-add-ins-dialog.png)
+    ![[マイ アドイン] タブを示す [Office アドイン] ダイアログ。](../images/onenote-office-add-ins-dialog.png)
 
 1. [アドインのアップロード] ダイアログで、プロジェクト フォルダー内の **manifest.xml** を参照し、**[アップロード]** を選択します。
 
@@ -104,7 +104,7 @@ try {
 
 1. 作業ウィンドウの下部にある [**実行**] リンクをクリックしてページ タイトルを設定し、ページの本文にアウトラインを追加します。
 
-    ![このウォークスルーから作成されたアドインを示すスクリーンショット: OneNote で作業ウィンドウのリボン ボタンと作業ウィンドウを表示します。](../images/onenote-first-add-in-4.png)
+    ![このチュートリアルから構築されたアドインで、OneNote で作業ウィンドウを開くために [タスクウィンドウの表示] リボン ボタンが使用されました。](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>次の手順
 
