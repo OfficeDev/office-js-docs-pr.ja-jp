@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6590967ef79e03cdbeee612199aba7a681b6dcdb
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: ab576f1c47bda85a0a33e527f483d384b264fbf2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713064"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889633"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -197,7 +197,7 @@ Outlook アドインは、メソッドを使用して EWS で使用できる操�
 このメソッドを `makeEwsRequestAsync` 使用すると、現在のユーザーの電子メール アカウント資格情報を使用して要求が認証されます。 このメソッドは `makeEwsRequestAsync` 、要求に認証資格情報を提供する必要がないように、資格情報を管理します。
 
 > [!NOTE]
-> サーバー管理者は [、New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) または [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) コマンドレットを使用して、クライアント アクセス サーバー EWS ディレクトリで _OAuthAuthentication_ パラメーターを **true** に設定して、EWS 要求を行うメソッドを有効にする `makeEwsRequestAsync` 必要があります。
+> サーバー管理者は、メソッドで EWS 要求を行うために、[New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) または [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) コマンドレットを使用して`true`、クライアント アクセス サーバー EWS ディレクトリで `makeEwsRequestAsync` _OAuthAuthentication_ パラメーターを設定する必要があります。
 
 アドインで、メソッドを `ReadWriteMailbox` 使用 `makeEwsRequestAsync` するには、アドイン マニフェストでアクセス許可を指定する必要があります。 アクセス許可の`ReadWriteMailbox`使用については、「[Outlook アドイン](understanding-outlook-add-in-permissions.md)のアクセス許可について」の [ReadWriteMailbox アクセス許可](understanding-outlook-add-in-permissions.md#readwritemailbox-permission)に関するセクションを参照してください。
 

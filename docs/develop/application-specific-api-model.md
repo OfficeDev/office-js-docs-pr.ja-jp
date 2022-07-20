@@ -1,24 +1,24 @@
 ---
 title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
-ms.date: 02/11/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483821"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889339"
 ---
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
-この記事では、API モデルを使用して、アドインを Excel、Word、PowerPoint、およびOneNote。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
+この記事では、Excel、Word、PowerPoint、OneNote でアドインを構築するために API モデルを使用する方法について説明します。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
 
 > [!NOTE]
 > このモデルは、Office 2013 クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)」を参照してください。
 
 > [!TIP]
-> このページの例では、Excel JavaScript API を使用していますが、この概念は OneNote、PowerPoint、Visio、および Word JavaScript API にも適用されます。
+> このページの例では Excel JavaScript API を使用していますが、この概念は OneNote、PowerPoint、Visio、Word JavaScript API にも適用されます。
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Promise ベース API の非同期の性質
 
@@ -54,7 +54,7 @@ Promise ベースの API と共にユーザーが宣言して使用する Office
 たとえば、次のコード スニペットでは、ローカル JavaScript [Excel.Range](/javascript/api/excel/excel.range) オブジェクト、`selectedRange`が Excel ワークブック内の選択範囲を参照することを宣言し、そのオブジェクトでいくつかのプロパティを設定します。 `selectedRange` オブジェクトはプロキシ オブジェクトであるため、設定されたプロパティと、そのオブジェクトに対して呼び出されたメソッドは、ユーザーのアドインが `context.sync()` を呼び出すまで Excel ドキュメントには反映されません。
 
 ```js
-var selectedRange = context.workbook.getSelectedRange();
+const selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -71,7 +71,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-var range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
@@ -96,7 +96,7 @@ worksheet.getRange("A1").set({
 
 ```js
 await Excel.run(async (context) => {
-    var selectedRange = context.workbook.getSelectedRange();
+    const selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
     await context.sync();
     console.log('The selected range is: ' + selectedRange.address);
@@ -117,9 +117,9 @@ Excel JavaScript API では、`sync()` は唯一の非同期操作で、状況�
 
 ```js
 await Excel.run(async (context) => {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    const sheetName = 'Sheet1';
+    const rangeAddress = 'A1:B2';
+    const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
     await context.sync();
@@ -166,7 +166,7 @@ someRange.load("format/font/name")
 次のコードは、Excel ワークブック内のテーブルの総数を取得し、その数をコンソールに記録します。
 
 ```js
-var tableCount = context.workbook.tables.getCount();
+const tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
@@ -184,8 +184,8 @@ console.log (tableCount.value);
 
 ```js
 await Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E2");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:E2");
     range.set({
         format: {
             fill: {
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>一部のプロパティを直接設定できません
 
-書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 プロパティ `zoom` は、次に示すように、 [1 つの PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
+書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 このプロパティは `zoom` 、次に示すように、1 つの [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 前の例では、`zoom` 値: `sheet.pageLayout.zoom.scale = 200;`を直接割り当てることは ***できません***。 このステートメントは、`zoom` が読み込まれないので、エラーを発生させます。 `zoom` が読み込まれるような場合でも、スケール セットは有効化されません。 すべてのコンテキスト操作は `zoom`上、でアドインのプロキシオブジェクトを更新し、ローカルに設定された値を上書きする場合に発生します。
 
-この動作は、[Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 プロパティは `format` 、次に示すようにオブジェクト ナビゲーションを使用して設定できます。
+この動作は、[Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 次に `format` 示すように、オブジェクト ナビゲーションを使用してプロパティを設定できます。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -239,7 +239,7 @@ range.format.font.size = 10;
 
 ```js
 await Excel.run(async (context) => {
-    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
     
     await context.sync();
     
@@ -254,5 +254,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>関連項目
 
-* [共通 JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)
-* [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)
+- [共通 JavaScript API オブジェクト モデル](office-javascript-api-object-model.md)
+- [Office アドインのリソースの制限とパフォーマンスの最適化](../concepts/resource-limits-and-performance-optimization.md)

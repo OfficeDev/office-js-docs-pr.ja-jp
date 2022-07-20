@@ -1,18 +1,18 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
-description: ドキュメントが開いたときに自動的に開くOffice アドインを構成する方法について説明します。
+description: ドキュメントが開いたときに自動的に開く Office アドインを構成する方法について説明します。
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244737"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889493"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
-Office アドインでアドイン コマンドを使用すると、Office アプリ リボンにボタンを追加してOffice UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
+Office アドインでアドイン コマンドを使用すると、Office アプリのリボンにボタンを追加して Office UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
 いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1 要件セット](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)で導入された自動開き作業ウィンドウ機能を使用すると、シナリオで必要になったときに作業ウィンドウを自動的に開くことができます。
 
@@ -73,7 +73,7 @@ Autoopen 機能をトリガーするよう、2 つのうちどちらかの方法
 
 #### <a name="tag-the-document-on-the-client-side"></a>クライアント側でドキュメントにタグを設定する
 
-Office.js の [settings.set](/javascript/api/office/office.settings) メソッドを使用して、**Office.AutoShowTaskpaneWithDocument** を **true** に設定します。次に例を示します。
+次の例に示すように、**office.AutoShowTaskpaneWithDocument** を設定するには`true`、Office.js [settings.set](/javascript/api/office/office.settings) メソッドを使用します。
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -112,7 +112,7 @@ Open XML を使用すると、Autoopen 機能をトリガーするために、�
 |`storeType` 値|`id` 値|`store` 値|`version` 値|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|アドインの AppSource 資産 ID (注を参照)。|AppSource のロケール (たとえば、"en-us")。|AppSource カタログのバージョン (注を参照)。|
-|WOPICatalog (パートナー [WOPI](/microsoft-365/cloud-storage-partner-program/online/) ホスト)| アドインの AppSource 資産 ID (注を参照)。 | "wopicatalog" アプリ ソースで公開され、WOPI ホストにインストールされているアドインには、この値を使用します。 詳細については、「[Office Online との統合](/microsoft-365/cloud-storage-partner-program/online/overview)」を参照してください。 | アドイン マニフェストでのバージョン。|
+|WOPICatalog (パートナー [WOPI](/microsoft-365/cloud-storage-partner-program/online/) ホスト)| アドインの AppSource 資産 ID (注を参照)。 | "wopicatalog" アプリ ソースで公開され、WOPI ホストにインストールされているアドインには、この値を使用します。 詳細については、「 [Office Online との統合](/microsoft-365/cloud-storage-partner-program/online/overview)」を参照してください。 | アドイン マニフェストでのバージョン。|
 |FileSystem (ネットワーク共有)|アドイン マニフェストでのアドインの GUID。|ネットワーク共有のパス。例: "\\\\MyComputer\\MySharedFolder"。|アドイン マニフェストでのバージョン。|
 |EXCatalog (Exchange サーバー経由の展開) |アドイン マニフェストでのアドインの GUID。|"EXCatalog"。 EXCatalog 行は、Microsoft 365 管理センターで一元展開を使用するアドインで使用する行です。|アドイン マニフェストでのバージョン。|
 |Registry (システム レジストリ)|アドイン マニフェストでのアドインの GUID。|"developer"|アドイン マニフェストでのバージョン。|
@@ -139,7 +139,7 @@ webextension マークアップの詳細については、「[[MS-OWEXML] 2.2.5.
 > [!NOTE]
 > ドキュメントとともにアドインを配布する場合は、ユーザーにアドインをインストールするように求めるために、visibility プロパティを 1 に設定する必要があります。これは、Open XML でのみ実行できます。
 
-XML を簡単に記述する方法は、まずアドインを実行し、[クライアント側でドキュメントにタグを付](#tag-the-document-on-the-client-side)けて値を書き込み、次にドキュメントを保存して生成された XML を調べることです。Officeは、適切な属性値を検出して提供します。 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) を使用して C# コードを生成し、生成した XML に基づいてマークアップをプログラムで追加することもできます。
+XML を簡単に記述する方法は、まずアドインを実行し、 [クライアント側でドキュメントにタグを付](#tag-the-document-on-the-client-side) けて値を書き込み、次にドキュメントを保存して生成された XML を調べることです。Office は、適切な属性値を検出して提供します。 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) を使用して C# コードを生成し、生成した XML に基づいてマークアップをプログラムで追加することもできます。
 
 ## <a name="test-and-verify-opening-task-panes"></a>作業ウィンドウ表示のテストと検証
 
@@ -155,9 +155,9 @@ Microsoft 365 管理センターを使用して一元展開を使用して作業
 </we:webextension>
 ```
 
-前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待どおりに機能することを確認します。 Microsoft 365 サブスクリプションをまだ持っていない場合は、Microsoft 365開発者プログラムに参加することで、90 日間の無料の再生可能[なMicrosoft 365](https://developer.microsoft.com/office/dev-program) サブスクリプションを取得できます。
+前の例をテストするには、Microsoft 365 サブスクリプションを使用して一元展開を試し、アドインが期待どおりに機能することを確認します。 Microsoft 365 サブスクリプションをまだお持ちでない場合は、Microsoft 365 開発者プログラムに参加することで、90 日間の無料の更新可能な [Microsoft 365](https://developer.microsoft.com/office/dev-program) サブスクリプションを入手できます。
 
 ## <a name="see-also"></a>関連項目
 
 - Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
-- [Microsoft 365開発者プログラムに参加します。](/office/developer-program/office-365-developer-program)
+- [Microsoft 365 開発者プログラムに参加します。](/office/developer-program/office-365-developer-program)

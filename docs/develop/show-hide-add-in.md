@@ -1,14 +1,14 @@
 ---
 title: Office アドインの作業ウィンドウを表示または非表示にする
 description: アドインの継続的な実行中に、プログラムによってアドインのユーザー インターフェイスを非表示または表示する方法について説明します。
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660131"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889227"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Office アドインの作業ウィンドウを表示または非表示にする
 
@@ -55,7 +55,7 @@ function onCurrentQuarterDeactivated() {
 
 次のシナリオを考慮してください。作業ウィンドウはタブで設計されています。 アドインが最初に起動されると、[ **ホーム** ] タブが開きます。 ユーザーが **[設定]** タブを開き、後で作業ウィンドウのコードが何らかのイベントに応答して呼び出 `hide()` されたとします。 別のイベントに応答して、さらに後のコード呼び出し `showAsTaskpane()` 。 作業ウィンドウが再表示され、[ **設定]** タブは引き続き選択されます。
 
-![[ホーム]、[設定]、[お気に入り]、および [アカウント] という 4 つのタブがある作業ウィンドウのスクリーンショット。](../images/TaskpaneWithTabs.png)
+![[ホーム]、[設定]、[お気に入り]、および [アカウント] という 4 つのタブがある作業ウィンドウ。](../images/TaskpaneWithTabs.png)
 
 さらに、作業ウィンドウに登録されているイベント リスナーは、作業ウィンドウが非表示になっている場合でも引き続き実行されます。
 
@@ -80,7 +80,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 この関数は、ハンドラーの *登録を解除* する別の関数を返します。 単純な堅牢な例を次に示します。
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -97,7 +97,7 @@ removeVisibilityModeHandler();
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.

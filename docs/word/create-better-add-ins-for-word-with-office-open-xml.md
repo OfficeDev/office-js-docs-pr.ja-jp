@@ -1,20 +1,20 @@
 ---
 title: Word アドインで Office Open XML を使用するタイミングと方法を理解する
-description: Word アドインで open XML Office使用するタイミングと方法の概要。
-ms.date: 02/15/2022
+description: Word アドインで Office Open XML をいつどのように使用するかの概要。
+ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: b3a20c18677b6af11de835a996fc8eaf912a7770
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229737"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889549"
 ---
 # <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Word アドインで Office Open XML を使用するタイミングと方法を理解する
 
 **提供元:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-Word で実行するアドインOfficeビルドしている場合、Office JavaScript API (Office.js) には、ドキュメント コンテンツの読み取りと書き込みのための複数の形式が用意されていることが既にわかっている可能性があります。 そのような書式は強制タイプと呼ばれ、プレーン テキスト、表、HTML、Office Open XML が含まれています。
+Word で実行する Office アドインをビルドする場合、Office JavaScript API (Office.js) には、ドキュメント コンテンツの読み取りと書き込みのためのいくつかの形式が既に用意されていることがわかります。 そのような書式は強制タイプと呼ばれ、プレーン テキスト、表、HTML、Office Open XML が含まれています。
 
 それでは、イメージ、書式設定された表、グラフ、あるいは書式設定だけされたテキストをドキュメントに追加する必要があるとき、何を選択しますか。 [WordApi 要件セット](/javascript/api/requirement-sets/word/word-api-requirement-sets)から使用可能な API から始めて、必要なものを提供するかどうかを確認します。 例については、Word の[スクリプト ラボ](https://appsource.microsoft.com/product/office/wa104380862)で[書式設定されたテキスト](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) コード スニペットを挿入するを参照してください。
 
@@ -23,10 +23,10 @@ API がまだ使用できない場合は、HTML を使用して、画像など�
 Office Open XML は、Word 文書 (.docx、.dotx など) が記述される言語であるため、Word 文書にユーザーが追加できるコンテンツであれば、ユーザーにとって適用可能なほぼすべてのタイプの書式設定で、事実上あらゆるタイプのコンテンツを挿入できます。 処理する Office Open XML マークアップを判別するのは、想像しているよりも簡単です。
 
 > [!NOTE]
-> Office Open XML は PowerPoint と Excel (ならびに、Office 2013 以降、Visio) ドキュメントの言語です。 ただし、現在のところは、Word 用に作成された Office アドインでのみ、Office Open XML としてコンテンツを型強制できます。 完全な言語リファレンス ドキュメントを含む open XML のOfficeの詳細については、[こちらも参照](#see-also)してください。
+> Office Open XML は PowerPoint と Excel (ならびに、Office 2013 以降、Visio) ドキュメントの言語です。 ただし、現在のところは、Word 用に作成された Office アドインでのみ、Office Open XML としてコンテンツを型強制できます。 完全な言語リファレンス ドキュメントを含む Office Open XML の詳細については、 [こちらも参照](#see-also) してください。
 
-まず、open XML 強制を使用して挿入できるコンテンツ タイプの一部Office見てみましょう。
-[Word アドインで Open XML を読み込んで書き込む](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)コード サンプルをダウンロードします。これには、次のいずれかの例を Word に挿入するために必要な Office Open XML マークアップとOffice.jsコードが含まれています。
+まず、Office Open XML 強制を使用して挿入できるコンテンツ タイプの一部を見てみましょう。
+次の例のいずれかを Word に挿入するために必要な Office Open XML マークアップとOffice.jsコードを含む、 [Word アドインで Open XML を読み込んで記述](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)するコード サンプルをダウンロードします。
 
 > [!NOTE]
 > この記事では、 **コンテンツ タイプ** と **リッチ コンテンツ** という用語は、Word 文書に挿入できるリッチ コンテンツの種類を指します。
@@ -45,9 +45,9 @@ Office Open XML は、Word 文書 (.docx、.dotx など) が記述される言�
 
 *図 3. 単純なイメージ*
 
-![ロゴの画像。](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
+![サンプル ロゴ。](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
 
-Officeでサポートされているイメージ形式を挿入する場合と同じ方法を使用します。
+Office でサポートされているイメージ形式を挿入する場合と同じ方法を使用します。
 
 *図 4. ピクチャのスタイルと効果を使用して書式設定されたイメージ*
 
@@ -89,39 +89,39 @@ Word では、テキスト ボックス (図参照) 内のテキストに、ま�
 
 ![Word 内の動的な SmartArt 図。](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-Officeには、さまざまな SmartArt ダイアグラム レイアウトが用意されています (Office Open XML を使用して独自のレイアウトを作成できます)。
+Office には、さまざまな SmartArt ダイアグラム レイアウトが用意されています (また、Office Open XML を使用して独自のレイアウトを作成することもできます)。
 
 *図 11. グラフ*
 
 ![Word 内のグラフ。](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Excelグラフを Word 文書にライブ グラフとして挿入できます。つまり、Word 用アドインでも使用できます。
-前の例でわかるように、open XML 強制Office使用して、ユーザーが独自のドキュメントに挿入できるあらゆる種類のコンテンツを本質的に挿入できます。
-必要な open XML マークアップOffice取得するには、2 つの簡単な方法があります。 リッチ コンテンツをそれ以外の空の Word 文書に追加してから、ファイルを Word XML ドキュメント形式で保存するか、 [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッドでテスト アドインを使用してマークアップを取得します。 いずれの方法でも基本的には同じ結果が得られます。
+Word 文書に Excel グラフをライブ グラフとして挿入できます。つまり、Word 用アドインでも使用できます。
+前の例でわかるように、Office Open XML 強制を使用して、ユーザーが独自のドキュメントに挿入できるあらゆる種類のコンテンツを本質的に挿入できます。
+必要な Office Open XML マークアップを取得するには、2 つの簡単な方法があります。 リッチ コンテンツをそれ以外の空の Word 文書に追加してから、ファイルを Word XML ドキュメント形式で保存するか、 [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッドでテスト アドインを使用してマークアップを取得します。 いずれの方法でも基本的には同じ結果が得られます。
 
 > [!NOTE]
-> Office Open XML ドキュメントは、実際にはドキュメントの内容を表すファイルの圧縮パッケージです。 Word XML ドキュメント形式でファイルを保存すると、Office Open XML パッケージ全体が 1 つの XML ファイルにフラット化されます。これは、Office Open XML マークアップを取得するときにも`getSelectedDataAsync`使用できます。
+> Office Open XML ドキュメントは、実際にはドキュメントの内容を表すファイルの圧縮パッケージです。 Word XML ドキュメント形式でファイルを保存すると、Office Open XML パッケージ全体が 1 つの XML ファイルにフラット化されます。これは、Office Open XML マークアップの取得に使用 `getSelectedDataAsync` する場合にも使用できます。
 
 Word から XML 形式にファイルを保存する場合は、[名前を付けて保存] ダイアログ ボックスの [名前を付けて保存] ボックスの一覧に、.xml書式ファイルの 2 つのオプションがあることに注意してください。 Word 2003 オプションではなく、必ず [**Word XML ドキュメント**] を選択してください。
 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) という名前のコード サンプルをダウンロードします。これは、マークアップを取得してテストするためのツールとして使用できます。
 これですべてでしょうか。 そうではありません。 多くのシナリオについては、先ほどのメソッドのいずれかを使用して表示される、完全な、圧縮 Office Open XML 結果を使用できるし、それは機能するでしょう。 良いニュースは、おそらくそのマークアップのほとんどを必要としないということです。
-Open XML マークアップを初めてOfficeする多くのアドイン開発者の 1 人である場合は、最もシンプルなコンテンツに対して取得する大量のマークアップを理解しようとしている場合は、膨大な量に見えますが、そうである必要はありません。
-このトピックでは、Office アドイン開発者コミュニティから聞いたいくつかの一般的なシナリオを使用して、アドインで使用する Office Open XML を簡略化する手法について説明します。 前に示した一部の種類のコンテンツのマークアップと、Office Open XML ペイロードを最小限に抑えるために必要な情報について説明します。 また、作業中の選択範囲でリッチ コンテンツをドキュメントに挿入するために必要なコードと、バインド オブジェクトで Office Open XML を使用して、指定した場所でコンテンツを追加または置換する方法についても説明します。
+Office Open XML マークアップを初めて見る多くのアドイン開発者の 1 人である場合は、最も単純なコンテンツに対して取得する大量のマークアップを理解しようとしている場合は、圧倒されているように見えますが、そうである必要はありません。
+このトピックでは、Office アドイン開発者コミュニティから聞いたいくつかの一般的なシナリオを使用して、アドインで使用するために Office Open XML を簡略化する手法を紹介します。 前に示した一部の種類のコンテンツのマークアップと、Office Open XML ペイロードを最小限に抑えるために必要な情報について説明します。 また、作業中の選択範囲でドキュメントにリッチ コンテンツを挿入するために必要なコードと、Office Open XML をバインド オブジェクトと共に使用して、指定した場所でコンテンツを追加または置き換える方法についても説明します。
 
 ## <a name="explore-the-office-open-xml-document-package"></a>Office Open XML ドキュメント パッケージを調べる
 
-[getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) を使用して、選択したコンテンツに対して Office Open XML を取得する場合 (または Word XML ドキュメント形式でドキュメントを保存する場合)、取得する内容は、選択したコンテンツを記述するマークアップだけではありません。ほとんどの場合、必要のない多くのオプションと設定を含むドキュメント全体です。 事実、作業ウィンドウ アドインを含むドキュメントからそのメソッドを使用すると、取得するマークアップにはその作業ウィンドウ アプリまでもが含まれています。
+[getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) を使用して、選択したコンテンツの Office Open XML を取得する場合 (または Word XML ドキュメント形式でドキュメントを保存する場合) は、選択したコンテンツを記述するマークアップだけではありません。これは、ほぼ確実に必要のない多くのオプションと設定を備えたドキュメント全体です。 事実、作業ウィンドウ アドインを含むドキュメントからそのメソッドを使用すると、取得するマークアップにはその作業ウィンドウ アプリまでもが含まれています。
 
 単純な Word ドキュメント パッケージであっても、実際のコンテンツだけではなく、ドキュメント プロパティ、スタイル、テーマ (書式設定)、Web 設定、フォントなどが含まれています。
 
-たとえば、先ほど図 1 で表示されていたように、直接書式が設定されたテキストの 1 段落だけを挿入するとします。 書式設定されたテキストの Office Open XML を取得`getSelectedDataAsync`すると、大量のマークアップが表示されます。 このマークアップには、図 13 に示すように、ドキュメント全体を表すパッケージ要素が含まれています。これには、いくつかの部分 (一般的にドキュメント パーツと呼ばれるか、パッケージ パーツとして Office Open XML と呼ばれます) が含まれています。 各パーツは、パッケージ内の個別のファイルを表します。
+たとえば、先ほど図 1 で表示されていたように、直接書式が設定されたテキストの 1 段落だけを挿入するとします。 書式設定されたテキスト用に Office Open XML を取得  `getSelectedDataAsync`すると、大量のマークアップが表示されます。 このマークアップには、図 13 に示すように、ドキュメント全体を表すパッケージ要素が含まれています。これには、いくつかの部分 (一般的にドキュメント パーツと呼ばれるか、Office Open XML ではパッケージ パーツと呼ばれます) が含まれています。 各パーツは、パッケージ内の個別のファイルを表します。
 
 > [!TIP]
-> メモ帳などのテキスト エディターで xml マークアップを開くOffice編集します。 Visual Studioで開く場合は、**編集>高度な>書式ドキュメント** (Ctrl + K、Ctrl + D) を使用して、パッケージを簡単に編集できるように書式設定します。 次に図 12 で示すように、ドキュメントの一部またはセクションを折りたたんだり、展開したりして、Office Open XML パッケージのコンテンツをより簡単に確認したり、編集したりすることができます。 各ドキュメントの部分は **pkg:part** タグから始まります。
+> メモ帳などのテキスト エディターで Office Open XML マークアップを編集します。 Visual Studio で開く場合は、 **編集>高度な>文書の書式設定** (Ctrl + K、Ctrl + D) を使用して、簡単に編集できるようにパッケージを書式設定します。 次に図 12 で示すように、ドキュメントの一部またはセクションを折りたたんだり、展開したりして、Office Open XML パッケージのコンテンツをより簡単に確認したり、編集したりすることができます。 各ドキュメントの部分は **pkg:part** タグから始まります。
 
 *図 12. Visual Studio で簡単に編集するためのパッケージ パーツの圧縮と展開*
 
-![Office Visual Studioでパッケージ パーツの XML コード スニペットを開きます。](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+![Visual Studio でパッケージ パーツの Office Open XML コード スニペット。](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
 *図 13. 基本的な Word Office Open XML ドキュメント パッケージに含まれるパーツ*
 
@@ -145,7 +145,7 @@ Open XML マークアップを初めてOfficeする多くのアドイン開発�
 
 - 多くのパーツは、Office Open XML 強制型変換を利用してドキュメントにコンテンツを挿入するときに Set メソッドにより自動的に無視されます。そのため、削除してもかまいません。このようなパーツには、theme1.xml ファイル (ドキュメントの書式設定テーマ)、ドキュメントのプロパティ パーツ (コア、アドイン、サムネイル)、設定ファイル (settings、webSettings、fontTable を含む) が含まれます。
 
-- 図 1 の例では、テキストの書式設定が直接適用されています (つまり、各フォントおよび段落の書式設定が個別に適用されます)。 ただし、先の図 2 のように、スタイルを使用する場合 (たとえば、変換先ドキュメントの見出し 1 スタイルの書式設定をテキストに自動的に適用する場合)、styles.xml パーツとそのリレーションシップ定義が必要になります。 詳細については、「追加の [Office Open XML パーツを使用するオブジェクトを追加する](#add-objects-that-use-additional-office-open-xml-parts)」セクションを参照してください。
+- 図 1 の例では、テキストの書式設定が直接適用されています (つまり、各フォントおよび段落の書式設定が個別に適用されます)。 ただし、先の図 2 のように、スタイルを使用する場合 (たとえば、変換先ドキュメントの見出し 1 スタイルの書式設定をテキストに自動的に適用する場合)、styles.xml パーツとそのリレーションシップ定義が必要になります。 詳細については、「 [追加の Office Open XML パーツを使用するオブジェクトを追加する」](#add-objects-that-use-additional-office-open-xml-parts)セクションを参照してください。
 
 ## <a name="insert-document-content-at-the-selection"></a>選択範囲にドキュメント コンテンツを挿入する
 
@@ -196,17 +196,17 @@ Open XML マークアップを初めてOfficeする多くのアドイン開発�
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>setSelectedDataAsync を使用するための JavaScript
 
-上記の Office Open XML をソリューションからアクセスできる XML ファイルとして保存したら、次の関数を使用して、ドキュメント内の書式設定されたテキスト コンテンツを open XML 強制Office使用して設定します。
+前の Office Open XML をソリューションからアクセスできる XML ファイルとして保存したら、次の関数を使用して、Office Open XML 強制を使用してドキュメント内の書式設定されたテキスト コンテンツを設定します。
 
 この関数では、最後の行を除くすべての行が、関数の最後の [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) メソッド呼び出しで使用するために保存されたマークアップを取得するために使用されていることに注意してください。 `setSelectedDataASync` は、挿入するコンテンツと強制型を指定することだけが必要です。
 
 > [!NOTE]
-> _yourXMLfilename_ をソリューションに保存した XML ファイルの名前とパスで置き換えます。 ソリューションに XML ファイルを含める場所やコード内で XML ファイルを参照する方法がわからない場合は、その例と、ここに示すマークアップと JavaScript の実際の例については、Word アドインのコード サンプル [で Open XML を読み込んで記述](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) する方法を参照してください。
+> *yourXMLfilename* をソリューションに保存した XML ファイルの名前とパスで置き換えます。 ソリューションに XML ファイルを含める場所やコード内で XML ファイルを参照する方法がわからない場合は、その例と、ここに示すマークアップと JavaScript の実際の例については、Word アドインのコード サンプル [で Open XML を読み込んで記述](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) する方法を参照してください。
 
 ```js
 function writeContent() {
-    var myOOXMLRequest = new XMLHttpRequest();
-    var myXML;
+    const myOOXMLRequest = new XMLHttpRequest();
+    let myXML;
     myOOXMLRequest.open('GET', 'yourXMLfilename', false);
     myOOXMLRequest.send();
     if (myOOXMLRequest.status === 200) {
@@ -215,6 +215,7 @@ function writeContent() {
     Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' });
 }
 ```
+
 ## <a name="create-your-own-markup-best-practices"></a>独自のマークアップを作成する: ベスト プラクティス
 
 それでは、先ほどの書式設定テキスト例を挿入するために必要なマークアップについて詳しく見てみましょう。
@@ -318,7 +319,7 @@ Word の共同作成機能 (他の人と同時にドキュメントを編集す�
 1. [Word オプション] ダイアログ ボックスで、[**セキュリティ センター**] を選択し、[**セキュリティ センターの設定**] を選択します。
 1. [セキュリティ センター] ダイアログ ボックスで、[**プライバシー オプション**] を選択し、[**組み込みの精度を向上させるためランダムな番号を保存する**] という設定を無効にします。
 
-既存のドキュメントから RSID タグを削除するには、ドキュメントを open XML で開いて次のショートカットOffice試します。
+既存のドキュメントから RSID タグを削除するには、Office Open XML で開いたドキュメントで次のショートカットを試します。
 
 1. ドキュメントの本文にカーソルを置き、**Ctrl キー + Home キー** を押してドキュメントの先頭に移動します。
 1. キーボードで、**Space キー**、**Del キー**、**Space キー** を押します。次にドキュメントを保存します。
@@ -329,13 +330,13 @@ Word の共同作成機能 (他の人と同時にドキュメントを編集す�
 
 一部のタイプのリッチ コンテンツでは、前の例で見たような、コンテンツ コントロール、Office 描画図形、テキスト ボックス、表 (スタイルが表に適用されない限り) など、.rels および document.xml コンポーネントのみが必要です。実際は、編集済みの同じパッケージ パーツを再利用したり、document.xml の **body** コンテンツを自分のコンテンツのマークアップと交換したりします。
 
-図 5 から図 8 に示した各コンテンツ タイプの例については、Office Open XML マークアップを確認するには、概要セクションで参照されている [Word アドイン コード サンプルで Open XML の読み込みと書き込みを](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)行います。
+図 5 から図 8 に示した各コンテンツ タイプの例については、Office Open XML マークアップを確認するには、概要セクションで参照されている [Word アドイン コード サンプルで Open XML の読み込みと書き込みを](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 行います。
 
 次に進む前に、いくつかのコンテンツ タイプと必要な部分を入れ替える方法について、相違点を確認してください。
 
-### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>Word で drawingML マークアップ (Office グラフィックス) について理解する: フォールバックとは何ですか?
+### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>Word の drawingML マークアップ (Office グラフィックス) を理解する: フォールバックとは何ですか?
 
-図形またはテキスト ボックスのマークアップが予想よりはるかに複雑に見える場合は、その理由があります。 Office 2007 のリリースでは、Office Open XML Formats の導入と、PowerPointとExcelが完全に導入された新しいOffice グラフィックス エンジンの導入が見えました。 2007 リリースでは、Word はそのグラフィックス エンジンの一部のみを組み込み、更新されたExcelグラフ エンジン、SmartArt グラフィックス、高度な画像ツールを採用しました。 図形とテキスト ボックスの場合、Word 2007 では引き続き従来の描画オブジェクト (VML) が使用されています。 2010 年のリリースでは、更新された図形と描画ツールを組み込むために、Word がグラフィックス エンジンで追加の手順を実行しました。
+図形またはテキスト ボックスのマークアップが予想よりはるかに複雑に見える場合は、その理由があります。 Office 2007 のリリースでは、Office Open XML 形式の導入と、PowerPoint と Excel が完全に採用した新しい Office グラフィックス エンジンの導入が見えました。 2007 リリースでは、Word はそのグラフィックス エンジンの一部のみを組み込み、更新された Excel グラフ エンジン、SmartArt グラフィックス、高度な画像ツールを採用しました。 図形とテキスト ボックスの場合、Word 2007 では引き続き従来の描画オブジェクト (VML) が使用されています。 2010 年のリリースでは、更新された図形と描画ツールを組み込むために、Word がグラフィックス エンジンで追加の手順を実行しました。
 
 そのため、Office Open XML 書式の Word ドキュメントを Word 2007 で開いたときにその図形とテキスト ボックスをサポートするために、図形 (テキスト ボックスを含む) にはフォールバック VML マークアップが必要です。
 
@@ -435,7 +436,7 @@ document.xml 本文内に表示される **w:sdt** タグはコンテンツ コ�
 - コントロールにバインドする場合、バインドで複数の段落から構成されるリッチ コンテンツを受け入れるために、コントロールの既定のコンテンツ (**sdtContent** タグの内容) に少なくとも 1 つの完全な段落を含める必要があります。
 
 > [!NOTE]
-> このサンプルの **w:sdt** タグから削除されたドキュメント パーツ属性は、プレースホルダー コンテンツ情報を保存できるパッケージの別個のパーツ (Office Open XML パッケージの用語集ディレクトリに置かれているパーツ) を参照するために、コンテンツ コントロールに表示される場合があります。 ドキュメント パーツは、Office Open XML パッケージ内の XML パーツ (つまりファイル) に使用される用語ですが、sdt プロパティで使用されるドキュメント パーツという用語は、文書パーツやドキュメント プロパティクイック パーツ (組み込みの XML データ バインド コントロールなど) を含む一部のコンテンツ タイプを記述するために使用される Word の用語を指します。 Office Open XML パッケージの用語集ディレクトリの下にパーツが表示される場合、挿入するコンテンツにこれらの機能が含まれるのであれば、そのパーツは維持する必要がある可能性があります。 アドインからバインドするために使用する一般的なコンテンツ コントロールの場合は、必要ありません。 パッケージから用語集パーツを削除する場合、w:sdt タグからもドキュメント パーツ属性を削除する必要があることを覚えておいてください。
+> このサンプルの **w:sdt** タグから削除されたドキュメント パーツ属性は、プレースホルダー コンテンツ情報を保存できるパッケージの別個のパーツ (Office Open XML パッケージの用語集ディレクトリに置かれているパーツ) を参照するために、コンテンツ コントロールに表示される場合があります。 ドキュメント パーツは Office Open XML パッケージ内の XML パーツ (つまりファイル) に使用される用語ですが、sdt プロパティで使用されるドキュメント パーツという用語は、文書パーツやドキュメント プロパティクイック パーツ (組み込みの XML データ バインド コントロールなど) を含む一部のコンテンツ タイプを記述するために使用される Word の用語と同じ用語を指します。 Office Open XML パッケージの用語集ディレクトリの下にパーツが表示される場合、挿入するコンテンツにこれらの機能が含まれるのであれば、そのパーツは維持する必要がある可能性があります。 アドインからバインドするために使用する一般的なコンテンツ コントロールの場合は、必要ありません。 パッケージから用語集パーツを削除する場合、w:sdt タグからもドキュメント パーツ属性を削除する必要があることを覚えておいてください。
 
 次のセクションでは、Word アドインでバインドを作成し、使用する方法について考察します。
 
@@ -459,7 +460,7 @@ Word 文書のアクティブな選択範囲にコンテンツを挿入する方
 
 - すでに説明したように、Word アドインからコントロールにバインドするには、リッチ テキスト コンテンツ コントロールを使用する必要があります。
 
-- コンテンツ コントロールには名前が必要です (これは、[コンテンツ コントロールのプロパティ] ダイアログ ボックスの **[タイトル**] フィールドで、Office Open XML マークアップの **エイリアス** タグに対応します)。 これにより、コードはバインドを配置する場所を識別します。
+- コンテンツ コントロールには名前が必要です (これは、[コンテンツ コントロールのプロパティ] ダイアログ ボックスの **[タイトル** ] フィールドで、Office Open XML マークアップの **エイリアス** タグに対応します)。 これにより、コードはバインドを配置する場所を識別します。
 
 - 複数の名前付きコントロールを用意し、必要に応じてそれらにバインドできます。一意のコンテンツ コントロール名、一意のコンテンツ コントロール ID、一意のバインド ID を使用します。
 
@@ -468,8 +469,8 @@ function addAndBindControl() {
     Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' }, function (result) {
         if (result.status == "failed") {
             if (result.error.message == "The named item does not exist.")
-                var myOOXMLRequest = new XMLHttpRequest();
-                var myXML;
+                const myOOXMLRequest = new XMLHttpRequest();
+                let myXML;
                 myOOXMLRequest.open('GET', '../../Snippets_BindAndPopulate/ContentControl.xml', false);
                 myOOXMLRequest.send();
                 if (myOOXMLRequest.status === 200) {
@@ -507,8 +508,8 @@ In the document part named webExtensions1.xml, you'll see a list of the bindings
 
 ```js
 function populateBinding(filename) {
-  var myOOXMLRequest = new XMLHttpRequest();
-  var myXML;
+  const myOOXMLRequest = new XMLHttpRequest();
+  let myXML;
   myOOXMLRequest.open('GET', filename, false);
   myOOXMLRequest.send();
   if (myOOXMLRequest.status === 200) {
@@ -633,7 +634,7 @@ function populateBinding(filename) {
 
 ### <a name="work-with-images"></a>画像を操作する
 
-イメージのマークアップには、イメージを記述するバイナリ データを含む少なくとも 1 つの部分への参照が含まれています。 複雑なイメージの場合、これは何百ページものマークアップで、編集することはできません。 バイナリパーツに触れる必要がないため、Visual Studioなどの構造化エディターを使用している場合は折りたたむだけで、パッケージの残りの部分を簡単に確認および編集できます。
+イメージのマークアップには、イメージを記述するバイナリ データを含む少なくとも 1 つの部分への参照が含まれています。 複雑なイメージの場合、これは何百ページものマークアップで、編集することはできません。 バイナリパーツに触れる必要がないため、Visual Studio などの構造化エディターを使用している場合は折りたたむだけで、パッケージの残りの部分を簡単に確認および編集できます。
 
 図 3 で前に参照したコード サンプル「 [Word アドインで Open XML を読み込んで書き込む](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)」で使用できる単純な画像のマークアップ例を確認すると、document.xml内の画像のマークアップに、サイズと位置情報、およびバイナリ イメージ データを含む部分へのリレーションシップ参照が含まれていることがわかります。 その参照は、次のように、 **a:blip** タグに含まれています。
 
@@ -641,7 +642,7 @@ function populateBinding(filename) {
 <a:blip r:embed="rId4" cstate="print">
 ```
 
-リレーションシップ参照が明示的に使用され (**r:embed="rID4"** )、およびイメージをレンダリングするために関連する部分が必要であるため、Office Open XML パッケージにバイナリ データを含めない場合は、エラーが発生します。 これは、前述のstyles.xmlとは異なります。リレーションシップが明示的に参照されておらず、リレーションシップがコンテンツ自体の一部ではなく、コンテンツ (書式設定) に属性を提供する部分であるため、省略してもエラーはスローされません。
+リレーションシップ参照が明示的に使用される ( **r:embed="rID4"** ) ため、イメージをレンダリングするために関連する部分が必要であるため、Office Open XML パッケージにバイナリ データを含めない場合は、エラーが発生します。 これは、前述のstyles.xmlとは異なります。リレーションシップが明示的に参照されておらず、リレーションシップがコンテンツ自体の一部ではなく、コンテンツ (書式設定) に属性を提供する部分であるため、省略してもエラーはスローされません。
 
 > [!NOTE]
 > マークアップを確認すると、a:blip タグで使用される追加の名前空間に注目してください。 document.xmlでは、 **xlmns:** a 名前空間 (メインの drawingML 名前空間) が、document.xml パーツの上部ではなく、drawingML 参照の使用の開始時に動的に配置されていることがわかります。 However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
@@ -723,13 +724,13 @@ Word アドインのコード サンプルの [Open XML の読み込みと書き
 ここで終了するか、削除できる最後の行まで見つけるためにコンテンツをさらに深く調査するかにかかわらず、前に参照したコード サンプル [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) をスクラッチ パッドとして使用し、編集したマークアップをすばやくかつ簡単にテストできることを覚えておいてください。
 
 > [!TIP]
-> 開発中に既存のソリューションで Office Open XML スニペットを更新する場合は、ソリューションを再実行する前に一時インターネット ファイルをクリアして、コードで使用されている Office Open XML を更新します。 Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. インターネット オプションにアクセスし、Visual Studio 2019 内からこれらの設定を削除するには、[**デバッグ**] メニューの [**オプション**] を選択します。 次に、[**環境**] で、[**Web ブラウザー**] を選択し、[**Internet Explorer オプション**] を選択します。
+> 開発中に既存のソリューションで Office Open XML スニペットを更新する場合は、ソリューションを再実行する前に一時インターネット ファイルをクリアして、コードで使用されている Office Open XML を更新します。 Markup that's included in your solution in XML files is cached on your computer. You can, of course, clear temporary Internet files from your default web browser. インターネット オプションにアクセスし、Visual Studio 2019 内からこれらの設定を削除するには、[ **デバッグ** ] メニューの [ **オプション**] を選択します。 次に、[**環境**] で、[**Web ブラウザー**] を選択し、[**Internet Explorer オプション**] を選択します。
 
 ## <a name="create-an-add-in-for-both-template-and-standalone-use"></a>テンプレートとスタンドアロンの両方で使用するアドインを作成する
 
-このトピックでは、アドインで開く XML Officeで実行できる操作の例をいくつか紹介しました。Office Open XML 強制型を使用してドキュメントに挿入できる豊富なコンテンツ タイプの例を、選択範囲または指定された (バインドされた) 場所に挿入するための JavaScript メソッドと共に、さまざまな豊富なコンテンツ タイプの例を見てきました。
+このトピックでは、アドインで Office Open XML で実行できる操作の例をいくつか紹介しました。Office Open XML 強制型を使用してドキュメントに挿入できる豊富なコンテンツ タイプの例を、選択範囲または指定された (バインドされた) 場所に挿入するための JavaScript メソッドと共に、さまざまな豊富なコンテンツ タイプの例を見てきました。
 
-そのため、アドインをスタンドアロンで使用する場合 (つまり、Microsoft Storeまたは独自のサーバーの場所から挿入される) と、アドインを操作するように設計された事前に作成されたテンプレートで使用する場合は、他に何を知る必要がありますか? 必要なことはすべて知っているというのが答えかもしれません。
+そのため、アドインをスタンドアロンで使用する場合 (つまり、ストアまたは独自のサーバーの場所から挿入される) と、アドインを操作するように設計された事前に作成されたテンプレートで使用する場合は、他に何を知る必要がありますか? 必要なことはすべて知っているというのが答えかもしれません。
 
 特定のコンテンツ タイプとそれを挿入するためのメソッドのマークアップは、アドインがスタンドアロンに設計されているか、テンプレートを操作するように設計されているかに関係なく同じです。 自分のアドインで作動するように設計されたテンプレートを使用する場合、参照コンテンツがドキュメントにすでに存在するシナリオを構成するコールバックを必ず JavaScript に含めます (セクション「[指定コンテンツ コントロールを追加し、それにバインドする](#add-and-bind-to-a-named-content-control)」のバインド例)。
 
@@ -739,4 +740,4 @@ Word アドインのコード サンプルの [Open XML の読み込みと書き
 
 - [Office の JavaScript API](../reference/javascript-api-for-office.md)
 - Open XML: [Standard ECMA-376: Office Open XML ファイル形式](https://www.ecma-international.org/publications/standards/Ecma-376.htm)に関する完全な言語リファレンスと関連ドキュメント
-- [Office JavaScript API: データ バインディングとカスタム XML パーツの探索](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)
+- [Office JavaScript API の探索: データ バインディングとカスタム XML パーツ](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)

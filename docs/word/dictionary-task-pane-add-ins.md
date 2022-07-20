@@ -1,14 +1,14 @@
 ---
 title: 辞書の作業ウィンドウ アドインを作成する
 description: 辞書作業ウィンドウ アドインを作成する方法について説明します。
-ms.date: 09/26/2019
+ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 7ab542e37236aa4df2404ec14553c51202bcf1a6
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660061"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889535"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>辞書の作業ウィンドウ アドインを作成する
 
@@ -29,22 +29,19 @@ ms.locfileid: "66660061"
 
 ![コンテキスト メニューを定義します。](../images/dictionary-agave-02.jpg)
 
-
 *図 3. スペル チェック ウィンドウと文章校正ウィンドウでの定義の表示*
 
 ![[スペル チェック] ウィンドウと [文章校正] ウィンドウの定義。](../images/dictionary-agave-03.jpg)
-
 
 *図 4. 類義語辞典ウィンドウでの定義の表示*
 
 ![類義語辞典ウィンドウの定義。](../images/dictionary-agave-04.jpg)
 
-
 *図 5. 読み取りモードでの定義*
 
 ![読み取りモードの定義。](../images/dictionary-agave-05.jpg)
 
-辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。 
+辞書の検索機能を持つ作業ウィンドウ アドインを作成するには、次の 2 つの主要なコンポーネントを作成します。
 
 - XML Web サービス。辞書サービスで定義を検索し、辞書アドインが利用および表示できる XML 形式でその定義を返します。
 - 作業ウィンドウ アドイン。ユーザーの現在の選択範囲を辞書の Web サービスに送信し、定義を表示します。必要に応じてその値をドキュメントに挿入することもできます。
@@ -329,7 +326,7 @@ RFC1766 の `language` タグの形式 (たとえば EN-US) で地域言語の�
 
 **解説**
 
-これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。 
+これは、辞書プロバイダーの XML Web サービスの URI です。この URI の末尾に、適切にエスケープされたクエリが付加されます。
 
 **例**
 
@@ -487,27 +484,27 @@ a:hover, a:active
 
 ### <a name="writing-the-javascript-implementation"></a>JavaScript の実装の記述
 
-次の例は、Dictionary.js ファイル内の JavaScript の実装を示しています。アドインの HTML ページから呼び出されるこのコードによって、デモの辞書アドインのプログラミング ロジックが実現されます。 このスクリプトでは、上で説明した XML Web サービスを再利用しています。 例の Web サービスと同じディレクトリにスクリプトを配置することによって、そのサービスから定義が取得されます このスクリプトは、OfficeDefinitions に準拠したパブリック XML Web サービスで使用することもできます。ファイルの冒頭部分にある `xmlServiceURL` 変数を変更し、発音の Bing API キーを、適切に登録されたキーで置き換えます。
+次の例は、アドインの HTML ページから呼び出され、Demo Dictionary アドインのプログラミング ロジックを提供するために呼び出される、Dictionary.js ファイル内の JavaScript 実装を示しています。 このスクリプトは、前に説明した XML Web サービスを再利用します。 サンプル Web サービスと同じディレクトリに配置すると、スクリプトはそのサービスから定義を取得します。 パブリック OfficeDefinitions 準拠の XML Web サービスで使用するには、ファイルの上部にある変数を `xmlServiceURL` 変更し、発音用のBing API キーを適切に登録されたものに置き換えてください。
 
 この実装から呼び出される Office JavaScript API (Office.js) のプライマリ メンバーは次のとおりです。
 
 - アドイン コンテキストの [初期化](/javascript/api/office) 時に `Office` 発生するオブジェクトの初期化イベントで、アドインが操作しているドキュメントを表す [Document](/javascript/api/office/office.document) オブジェクト インスタンスにアクセスできます。
 - オブジェクトの [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) メソッド。これは、ユーザー選択の`Document`変更をリッスンするドキュメントの [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) イベントのイベント ハンドラーを追加する関数で`initialize`呼び出されます。
 - オブジェクトの `Document` [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) メソッド。これは、ユーザーが選択した単語または語句を取得し、プレーン テキストに強制し、非同期コールバック関数を実行するためにイベント ハンドラーが発生したときに`SelectionChanged`関数で`selectedTextCallback`呼び出`tryUpdatingSelectedWord()`されます。
-- メソッドの`selectTextCallback`コールバック引数`getSelectedDataAsync`として渡される非同期 _コールバック_ 関数が実行されると、コールバックが返されるときに、選択したテキストの値が取得されます。 返された`AsyncResult`オブジェクトの value プロパティを使用して、コールバックの _selectedText_ 引数 ([AsyncResult](/javascript/api/office/office.asyncresult) 型) からその [値](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member)を取得します。
+- メソッドの`selectTextCallback`コールバック引数`getSelectedDataAsync`として渡される非同期 *コールバック* 関数が実行されると、コールバックが返されるときに、選択したテキストの値が取得されます。 返された`AsyncResult`オブジェクトの value プロパティを使用して、コールバックの *selectedText* 引数 ([AsyncResult](/javascript/api/office/office.asyncresult) 型) からその [値](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member)を取得します。
 - `selectedTextCallback` 関数の残りのコードでは、XML Web サービスへのクエリで定義を取得します。また、Microsoft Translator API を呼び出して、選択した語句の発音が入った .wav ファイルの URL も取得します。
 - Dictionary.js の残りのコードでは、アドインの HTML の UI に定義のリストと発音のリンクを表示します。
 
 ```js
 // The document the dictionary add-in is interacting with.
-var _doc;
+let _doc;
 // The last looked-up word, which is also the currently displayed word.
-var lastLookup;
+let lastLookup;
 // For demo purposes only!! Get an AppID if you intend to use the Pronunciation service for your feature.
-var appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
+const appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
 
 // The base URL for the OfficeDefinitions-conforming XML web service to query for definitions.
-var xmlServiceUrl = "WebService.asmx/Define?Word=";
+const xmlServiceUrl = "WebService.asmx/Define?Word=";
 
 // Initialize the add-in.
 // The initialize function is required for all add-ins.

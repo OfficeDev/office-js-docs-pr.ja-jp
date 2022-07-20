@@ -1,28 +1,28 @@
 ---
 title: Office アドインのローカライズ
-description: Office JavaScript API を使用して、ロケールを特定し、Office アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりします。
-ms.date: 07/08/2021
+description: Office JavaScript API を使用して、ロケールを決定し、Office アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりします。
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d82b4408f55ee94fe1fe27bfb00b335cb08b85bd
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7f80f48c1c933ac6ef7c2e37fb3efcf3dd7ae073
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483679"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889465"
 ---
 # <a name="localization-for-office-add-ins"></a>Office アドインのローカライズ
 
-Office アドイン に適切なローカライズ方法を任意に選んで実装できます。 JavaScript API と Office アドイン プラットフォームのマニフェスト スキーマには、いくつかの選択肢が用意されています。 Office JavaScript API を使用して、ロケールを特定し、Office アプリケーションのロケールに基づいて文字列を表示したり、データのロケールに基づいてデータを解釈または表示することができます。 マニフェストを使用すると、ロケールに固有なアドイン ファイルの場所と説明的な情報を指定できます。 または、Microsoft Ajax スクリプトを使用して、グローバリゼーションとローカライズをサポートできます。
+Office アドイン に適切なローカライズ方法を任意に選んで実装できます。 JavaScript API と Office アドイン プラットフォームのマニフェスト スキーマには、いくつかの選択肢が用意されています。 Office JavaScript API を使用して、Office アプリケーションのロケールに基づいてロケールと文字列を表示したり、データのロケールに基づいてデータを解釈または表示したりできます。 マニフェストを使用すると、ロケールに固有なアドイン ファイルの場所と説明的な情報を指定できます。 または、Microsoft Ajax スクリプトを使用して、グローバリゼーションとローカライズをサポートできます。
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>ロケール固有文字列を判別するための JavaScript API の使用
 
-JavaScript API Officeには、アプリケーションとデータのロケールと一致する値の表示または解釈をサポートする 2 Officeがあります。
+Office JavaScript API には、Office アプリケーションとデータのロケールと一致する値の表示または解釈をサポートする 2 つのプロパティが用意されています。
 
-- [Context.displayLanguagedisplayLanguage] [は]、アプリケーションのユーザー インターフェイスのロケール (または言語) をOfficeします。 次の使用例は、Officeが en-US ロケールまたは fr-FR ロケールを使用しているか確認し、ロケール固有の案内応答を表示します。
+- [Context.displayLanguage][displayLanguage] は、Office アプリケーションのユーザー インターフェイスのロケール (または言語) を指定します。 次の例では、Office アプリケーションが en-US ロケールまたは fr-FR ロケールを使用しているかどうかを確認し、ロケール固有のあいさつ文を表示します。
 
     ```js
     function sayHelloWithDisplayLanguage() {
-        var myLanguage = Office.context.displayLanguage;
+        const myLanguage = Office.context.displayLanguage;
         switch (myLanguage) {
             case 'en-US':
                 write('Hello!');
@@ -39,15 +39,15 @@ JavaScript API Officeには、アプリケーションとデータのロケー�
     }
     ```
 
-- [Context.contentLanguagecontentLanguage] [は]、データのロケール (または言語) を指定します。 [displayLanguage] `myLanguage` プロパティをチェックする代わりに、最後のコード サンプルを拡張し、[contentLanguage] プロパティの値を割り当て、同じコードの残りの部分を使用して、データのロケールに基づいて案内応答を表示します。
+- [Context.contentLanguage][contentLanguage] は、データのロケール (または言語) を指定します。 [displayLanguage] プロパティをチェックするのではなく、最後のコード サンプルを拡張し、[contentLanguage] プロパティの値を割り当て`myLanguage`、同じコードの残りの部分を使用して、データのロケールに基づいてあいさつ文を表示します。
 
     ```js
-    var myLanguage = Office.context.contentLanguage;
+    const myLanguage = Office.context.contentLanguage;
     ```
 
 ## <a name="control-localization-from-the-manifest"></a>マニフェストでのローカライズの制御
 
-すべてのOfficeは、[DefaultLocale] 要素とそのマニフェスト内のロケールを指定します。 既定では、Office アドイン プラットフォームおよび Office クライアント アプリケーションは、[Description]、[DisplayName]、[IconUrl]、[HighResolutionIconUrl]、[SourceLocation] 要素の値をすべてのローカルに適用します。 必要に応じて、これらの 5 つの要素に対して、追加ロケールごとに [Override] 子要素を指定することで、特定のロケールの特定の値をサポートできます。 [DefaultLocale] `Locale` 要素の値と [Override] 要素の属性の値は[、RFC 3066]"Tags for the Languages" に従って指定されます。 表 1 に、これらの要素のローカライズサポートについて説明します。
+すべての Office アドインは、 [マニフェストで DefaultLocale] 要素とロケールを指定します。 既定では、Office アドイン プラットフォームと Office クライアント アプリケーションは、 [Description]、 [DisplayName]、 [IconUrl]、 [HighResolutionIconUrl]、 [SourceLocation] 要素の値をすべてのロケールに適用します。 必要に応じて、これら 5 つの要素のいずれかに対して、追加のロケールごとに [Override] 子要素を指定することで、特定のロケールの特定の値をサポートできます。 [DefaultLocale] 要素の値と `Locale` [Override] 要素の属性の値は、[RFC 3066] の "言語の識別のためのタグ" に従って指定されます。 表 1 では、これらの要素のローカライズのサポートについて説明します。
 
 *表 1.ローカライズのサポート*
 
@@ -76,14 +76,14 @@ JavaScript API Officeには、アプリケーションとデータのロケー�
 ```
 
 > [!NOTE]
-> `de-de` や `de-at` など、言語ファミリ内の複数の領域用にローカライズを行う必要がある場合は、領域ごとに別々の `Override` 要素を使用することをお勧めします。 言語名を単独で`de`使用する場合、この場合、クライアント アプリケーションとプラットフォームのすべての組み合わせOfficeサポートされていません。
+> `de-de` や `de-at` など、言語ファミリ内の複数の領域用にローカライズを行う必要がある場合は、領域ごとに別々の `Override` 要素を使用することをお勧めします。 この場合、言語名のみを使用することは、 `de`Office クライアント アプリケーションとプラットフォームのすべての組み合わせでサポートされているわけではありません。
 
 このように指定すると、既定ではアドインは `en-us` ロケールを想定します。ほとんどのロケールでは、英語の表示名 "Video player" が表示されます。ただし、クライアント コンピューターのロケールが `fr-fr` の場合は、フランス語の表示名 "Lecteur vidéo" が表示されます。
 
 > [!NOTE]
 > 既定のロケールを含め、1 つの言語につき 1 つの override のみを指定できます。 たとえば、既定のロケールが `en-us` の場合、`en-us` の override も指定することはできません。
 
-次の使用例は、Description 要素のロケールオーバーライドを [適用] します。 最初に、既定 `en-us` のロケールと英語の説明を指定し、ロケールのフランス語の説明を持つ [Override] ステートメントを指定 `fr-fr` します。
+次の例では、 [Description] 要素にロケールオーバーライドを適用します。 最初に既定のロケールと英語の `en-us` 説明を指定し、次にロケールのフランス語の説明を含む [Override] ステートメントを `fr-fr` 指定します。
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -142,11 +142,11 @@ Outlook アドインについては、[SourceLocation] 要素もフォーム フ
 </PhoneSettings>
 ```
 
-## <a name="localize-extended-overrides"></a>拡張オーバーライドのローカライズ
+## <a name="localize-extended-overrides"></a>拡張オーバーライドをローカライズする
 
-Office アドインの一部の機能拡張機能 (キーボード ショートカットなど) は、アドインの XML マニフェストではなく、サーバーでホストされている JSON ファイルで構成されます。 このセクションでは、拡張オーバーライドに精通している必要があります。 「 [Work with extended overrides](extended-overrides.md) of the manifest and [ExtendedOverrides element」を参照](/javascript/api/manifest/extendedoverrides) してください。
+Office アドインの一部の機能拡張機能 (キーボード ショートカットなど) は、アドインの XML マニフェストではなく、サーバーでホストされている JSON ファイルで構成されます。 このセクションでは、拡張オーバーライドについて理解していることを前提としています。 マニフェストと [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 要素[の拡張オーバーライドの操作](extended-overrides.md)に関するチュートリアルを参照してください。
 
-`ResourceUrl` [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 要素の属性を使用して、ローカライズOfficeファイルをポイントします。 次に例を示します。
+`ResourceUrl` [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 要素の属性を使用して、ローカライズされたリソースのファイルを Office にポイントします。 次に例を示します。
 
 ```xml
     ...
@@ -157,10 +157,10 @@ Office アドインの一部の機能拡張機能 (キーボード ショート�
 </OfficeApp>
 ```
 
-拡張オーバーライド ファイルは、文字列の代わりにトークンを使用します。 リソース ファイル内のトークン名の文字列。 次に、アドインの作業ウィンドウを表示する関数 (別の場所で定義) にキーボード ショートカットを割り当てる例を示します。 このマークアップに関する注意:
+拡張オーバーライド ファイルでは、文字列の代わりにトークンが使用されます。 リソース ファイル内のトークン名文字列。 アドインの作業ウィンドウを表示する関数 (他の場所で定義) にキーボード ショートカットを割り当てる例を次に示します。 このマークアップについては、次の点に注意してください。
 
-- この例は、有効ではありません。 (必要な追加プロパティを以下に追加します。
-- トークンの形式は $ **{resource である必要があります。*name-of-resource*}**。
+- この例はあまり有効ではありません。 (次に、必要な追加のプロパティを追加します)。
+- トークンの形式は **${resource である必要があります。*name-of-resource*}**。
 
 ```json
 {
@@ -182,7 +182,7 @@ Office アドインの一部の機能拡張機能 (キーボード ショート�
 }
 ```
 
-リソース ファイル (JSON `resources` 形式) には、ロケールごとにサブプロパティに分割されたトップ レベルのプロパティがあります。 ロケールごとに、拡張オーバーライド ファイルで使用された各トークンに文字列が割り当てられます。 以下に、and の文字列を含む例を `en-us` 示します `fr-fr`。 この例では、キーボード ショートカットは両方のロケールで同じですが、特にアルファベットや書き込みシステムが異なるロケールをローカライズする場合は、必ずしもそうなるとは限らないため、異なるキーボードを使用します。
+リソース ファイル (JSON 形式) には、ロケール別にサブプロパティに分割された最上位の `resources` プロパティがあります。 ロケールごとに、拡張オーバーライド ファイルで使用された各トークンに文字列が割り当てられます。 次に示す例は、文字列と文字列を含む例です`en-us``fr-fr`。 この例では、キーボード ショートカットは両方のロケールで同じですが、特に異なるアルファベットまたは書き込みシステムを持つロケールにローカライズする場合、したがってキーボードが異なる場合は常にそうであるとは限りません。
 
 ```json
 {
@@ -207,7 +207,7 @@ Office アドインの一部の機能拡張機能 (キーボード ショート�
 }
 ```
 
-ファイルに`default`、セクションとピアであるプロパティ`en-us``fr-fr`はありません。 これは、Office ホスト アプリケーションのロケールがリソース ファイル内の *ll-cc* プロパティと一致しない場合に使用される既定の文字列は、拡張オーバーライド ファイル自体で定義する必要があるためです。 拡張オーバーライド ファイルで既定の文字列を直接定義すると、Office アプリケーションのロケールがアドインの既定のロケール (マニフェストで指定されている) と一致する場合、Office がリソース ファイルをダウンロードしません。 次に、リソース トークンを使用する拡張オーバーライド ファイルの前の例の修正バージョンを示します。
+ファイル内に、そのセクションと`fr-fr`ピア`en-us`であるプロパティはありません`default`。 これは、Office ホスト アプリケーションのロケールがリソース ファイル内のどの *ll-cc* プロパティとも一致しない場合に使用される既定の文字列を、 *拡張オーバーライド ファイル自体で定義する必要があるためです*。 拡張オーバーライド ファイルで既定の文字列を直接定義すると、Office アプリケーションのロケールがアドインの既定のロケール (マニフェストで指定されている) と一致するときに、Office がリソース ファイルをダウンロードしません。 リソース トークンを使用する拡張オーバーライド ファイルの前の例の修正されたバージョンを次に示します。
 
 ```json
 {
@@ -241,9 +241,9 @@ Office アドインの一部の機能拡張機能 (キーボード ショート�
 
 ## <a name="match-datetime-format-with-client-locale"></a>日付/時刻の形式のクライアント ロケールへの関連付け
 
-**[displayLanguage]** プロパティを使用して、Office クライアント アプリケーションのユーザー インターフェイスのロケールを取得できます。 次に、日付と時刻の値を、アプリケーションの現在のロケールと一致する形式Officeできます。 その方法の 1 つが、Office アドインがサポートする各ロケールで使用する日付と時刻の表示形式を指定したリソース ファイルを準備するという方法です。 実行時に、アドインはリソース ファイルを使用して、 **[displayLanguage]** プロパティから取得したロケールと適切な日付/時刻形式を一致できます。
+**[displayLanguage]** プロパティを使用して、Office クライアント アプリケーションのユーザー インターフェイスのロケールを取得できます。 その後、Office アプリケーションの現在のロケールと一致する形式で日付と時刻の値を表示できます。 その方法の 1 つが、Office アドインがサポートする各ロケールで使用する日付と時刻の表示形式を指定したリソース ファイルを準備するという方法です。 アドインは、実行時にリソース ファイルを使用し、適切な日付/時刻形式を **[displayLanguage]** プロパティから取得したロケールと一致させることができます。
 
-[contentLanguage] プロパティを使用して、Officeクライアント アプリケーションのデータのロケールを取得できます。 この値に基づいて、日付と時刻の文字列を適切に変換または表示できます。 たとえば、`jp-JP` ロケールでは日付と時刻の値は `yyyy/MM/dd` と表記され、`fr-FR` ロケールでは `dd/MM/yyyy` と表記されます。
+[contentLanguage] プロパティを使用して、Office クライアント アプリケーションのデータのロケールを取得できます。 この値に基づいて、日付と時刻の文字列を適切に変換または表示できます。 たとえば、`jp-JP` ロケールでは日付と時刻の値は `yyyy/MM/dd` と表記され、`fr-FR` ロケールでは `dd/MM/yyyy` と表記されます。
 
 ## <a name="use-ajax-for-globalization-and-localization"></a>グローバリゼーションとローカライズでの Ajax の使用
 
@@ -258,11 +258,11 @@ Visual Studio で Office アドインを作成する場合, .NET Framework と A
 このセクションでは、Office アドイン の説明、表示名、および UI をローカライズする方法の例を示します。
 
 > [!NOTE]
-> 2019 Visual Studioダウンロードするには、「IDE のVisual Studio[を参照してください](https://visualstudio.microsoft.com/vs/)。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
+> Visual Studio 2019 をダウンロードするには、 [Visual Studio IDE ページ](https://visualstudio.microsoft.com/vs/)を参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>表示または編集用の追加言語を使用できるように Office を構成する
 
-提供されているサンプル コードを実行するには、メニューやコマンドの表示、編集と校正、その両方に使用する言語を切り替えてアドインをテストできるよう、追加の言語を使用するコンピューターで Office を構成します。
+提供されているサンプル コードを実行するには、追加の言語を使用するようにコンピューター上で Office を構成し、メニューとコマンドの表示、編集と校正、またはその両方に使用する言語を切り替えてアドインをテストできるようにします。
 
 Office Language Pack を使用して、追加言語をインストールできます。 言語パックの詳細と入手先については、「[Office 2013 の言語オプション](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f)」を参照してください。
 
@@ -270,18 +270,18 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
 
 ### <a name="create-an-office-add-in-project"></a>Office アドイン プロジェクトの作成
 
-2019 年 2019 年Visual Studioアドイン プロジェクトOfficeする必要があります。
+Visual Studio 2019 Office アドイン プロジェクトを作成する必要があります。
 
 > [!NOTE]
-> 2019 年 2019 年にインストールVisual Studio、ダウンロード手順については、「[IDE Visual Studioを](https://visualstudio.microsoft.com/vs/)参照してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 2019 年に以前にインストールVisual Studio場合は、[Visual Studio インストーラー](/visualstudio/install/modify-visual-studio/) を使用して、Office/SharePoint 開発ワークロードがインストールされていることを確認します。
+> Visual Studio 2019 をインストールしていない場合は、 [Visual Studio IDE ページ](https://visualstudio.microsoft.com/vs/) でダウンロード手順を確認してください。 インストール時には、Office/SharePoint 開発ワークロードを選択する必要があります。 Visual Studio 2019 を以前にインストールした場合は、[Visual Studio インストーラーを使用](/visualstudio/install/modify-visual-studio/)して、Office/SharePoint 開発ワークロードが確実にインストールされていることを確認します。
 
 1. [**新規プロジェクトの作成**] を選択します。
 
-2. 検索ボックスを使用して、**アドイン** と入力します。 [**Word Web アドイン**] を選択し、[**次へ**] を選択します。
+1. 検索ボックスを使用して、**アドイン** と入力します。 [**Word Web アドイン**] を選択し、[**次へ**] を選択します。
 
-3. プロジェクトに **WorldReadyAddIn という名前を付け、[作成** ] を **選択します**。
+1. プロジェクトに **WorldReadyAddIn** という名前を付け、[ **作成**] を選択します。
 
-4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+1. ソリューションが Visual Studio によって作成され、2 つのプロジェクトが **ソリューション エクスプローラー** に表示されます。 **Home.html** ファイルが Visual Studio で開きます。
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>アドインに使用されるテキストのローカライズ
 
@@ -295,7 +295,7 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
 
 1. **ソリューション エクスプローラー** で、**WorldReadyAddIn**、**WorldReadyAddInManifest** の順に展開し、**WorldReadyAddIn.xml** を選択します。
 
-2. このWorldReadyAddInManifest.xml [、DisplayName] 要素と [Description] 要素を次のコード ブロックに置き換えます。
+1. WorldReadyAddInManifest.xmlで、 [DisplayName] 要素と [Description] 要素を次のコード ブロックに置き換えます。
 
     > [!NOTE]
     > この例の [DisplayName] 要素および [Description] 要素で使用されているスペイン語にローカライズされた文字列を、別の言語にローカライズされた文字列で置き換えることができます。
@@ -309,13 +309,13 @@ Language Accessory Pack をインストールしたら、UI の表示、ドキ�
     </Description>
     ```
 
-3. たとえば、Office 2013 の表示言語を英語からスペイン語に変更してアドインを実行すると、アドインの表示名と説明がローカライズされたテキストで表示されます。
+1. たとえば、Office 2013 の表示言語を英語からスペイン語に変更してアドインを実行すると、アドインの表示名と説明がローカライズされたテキストで表示されます。
 
-#### <a name="lay-out-the-add-in-ui"></a>アドイン UI のレイアウト
+#### <a name="lay-out-the-add-in-ui"></a>アドイン UI をレイアウトする
 
 1. Visual Studio の **ソリューション エクスプローラー** で、**Home.html** を選択します。
 
-2. Home.html で `<body>` 要素コンテンツを次の HTML に置き換えて、ファイルを保存します。
+1. Home.html で `<body>` 要素コンテンツを次の HTML に置き換えて、ファイルを保存します。
 
     ```html
     <body>
@@ -351,20 +351,20 @@ JavaScript リソース ファイルには、アドイン UI に使用された�
 
 1. Visual Studio の **ソリューション エクスプローラー** で、**WorldReadyAddInWeb** プロジェクトを右クリックして **[追加]** > **[新しい項目]** を選択します。
 
-2. **[新しい項目の追加]** ダイアログ ボックスで **[JavaScript ファイル]** を選択します。
+1. **[新しい項目の追加]** ダイアログ ボックスで **[JavaScript ファイル]** を選択します。
 
-3. ファイル名として「**UIStrings.js**」と入力して、**[追加]** を選択します。
+1. ファイル名として「**UIStrings.js**」と入力して、**[追加]** を選択します。
 
-4. 次のコードを UIStrings.js ファイルに追加して、ファイルを保存します。
+1. 次のコードを UIStrings.js ファイルに追加して、ファイルを保存します。
 
     ```js
     /* Store the locale-specific strings */
 
-    var UIStrings = (function ()
+    const UIStrings = (function ()
     {
         "use strict";
 
-        var UIStrings = {};
+        const UIStrings = {};
 
         // JSON object for English strings
         UIStrings.EN =
@@ -382,7 +382,7 @@ JavaScript リソース ファイルには、アドイン UI に使用された�
 
         UIStrings.getLocaleStrings = function (locale)
         {
-            var text;
+            let text;
 
             // Get the resource strings that match the language.
             switch (locale)
@@ -418,16 +418,16 @@ UIStrings.js リソース ファイルで、アドインの UI のローカラ�
 
 これで、**UIStrings** オブジェクトを使用してアドインの UI の文字列を設定できるようになりました。
 
-Office クライアント アプリケーションのメニューとコマンドに表示する言語に基づいてアドインのローカライズを変更する場合は、**Office.context.displayLanguage** プロパティを使用して、その言語のロケールを取得します。 たとえば、アプリケーション言語でメニューとコマンドの表示にスペイン語を使用する場合、**Office.context.displayLanguage** プロパティは言語コード es-ES を返します。
+Office クライアント アプリケーションのメニューとコマンドで表示するために使用される言語に基づいてアドインのローカライズを変更する場合は、 **Office.context.displayLanguage** プロパティを使用してその言語のロケールを取得します。 たとえば、アプリケーション言語がメニューとコマンドの表示にスペイン語を使用する場合、 **Office.context.displayLanguage** プロパティは言語コード es-ES を返します。
 
-ドキュメント コンテンツの編集に使用されている言語に基づいてアドインのローカライズを変更する場合は、**Office.context.contentLanguage** プロパティを使用して、その言語のロケールを取得します。 たとえば、アプリケーション言語でドキュメント コンテンツの編集にスペイン語を使用する場合、**Office.context.contentLanguage** プロパティは言語コード es-ES を返します。
+ドキュメント コンテンツの編集に使用されている言語に基づいてアドインのローカライズを変更する場合は、 **Office.context.contentLanguage** プロパティを使用してその言語のロケールを取得します。 たとえば、アプリケーション言語でドキュメント コンテンツの編集にスペイン語を使用する場合、 **Office.context.contentLanguage** プロパティは言語コード es-ES を返します。
 
-アプリケーションが使用している言語がわかった後、 **UIStrings** を使用して、アプリケーション言語に一致するローカライズされた文字列のセットを取得できます。
+アプリケーションが使用している言語がわかったら、 **UIStrings を** 使用して、アプリケーション言語と一致するローカライズされた文字列のセットを取得できます。
 
-Home.js ファイルのコードを次のコードで置き換えます。 このコードは、アプリケーションの表示言語またはアプリケーションの編集言語に基づいて、Home.html の UI 要素で使用される文字列を変更する方法を示しています。
+Home.js ファイルのコードを次のコードで置き換えます。 このコードは、アプリケーションの表示言語またはアプリケーションの編集言語に基づいて、Home.htmlの UI 要素で使用される文字列を変更する方法を示しています。
 
 > [!NOTE]
-> 編集で使用した言語にアドインのローカライズを変更して切り替えるには、コード行 `var myLanguage = Office.context.contentLanguage;` をコメント解除し、コード行 `var myLanguage = Office.context.displayLanguage;` をコメント化します。
+> 編集で使用した言語にアドインのローカライズを変更して切り替えるには、コード行 `const myLanguage = Office.context.contentLanguage;` をコメント解除し、コード行 `const myLanguage = Office.context.displayLanguage;` をコメント化します。
 
 ```js
 /// <reference path="../App.js" />
@@ -445,11 +445,11 @@ Home.js ファイルのコードを次のコードで置き換えます。 こ�
             // Get the language setting for editing document content.
             // To test this, uncomment the following line and then comment out the
             // line that uses Office.context.displayLanguage.
-            // var myLanguage = Office.context.contentLanguage;
+            // const myLanguage = Office.context.contentLanguage;
 
             // Get the language setting for UI display in the Office application.
-            var myLanguage = Office.context.displayLanguage;
-            var UIText;
+            const myLanguage = Office.context.displayLanguage;
+            let UIText;
 
             // Get the resource strings that match the language.
             // Use the UIStrings object from the UIStrings.js file
@@ -466,23 +466,23 @@ Home.js ファイルのコードを次のコードで置き換えます。 こ�
 
 ### <a name="test-your-localized-add-in"></a>ローカライズされたアドインのテスト
 
-ローカライズされたアドインをテストするには、Office アプリケーションで表示または編集に使用する言語を変更し、アドインを実行します。
+ローカライズされたアドインをテストするには、Office アプリケーションで表示または編集に使用する言語を変更してから、アドインを実行します。
 
 1. Word で **[ファイル]**、**[オプション]**、**[言語]** の順に選択します。 次の図に、[言語] タブが開かれている **[Word のオプション]** ダイアログ ボックスを示します。
 
     *図 2. Word の [オプション] ダイアログ ボックスの言語オプション*
 
-    ![[Word のオプション] ダイアログ ボックス。](../images/office15-app-how-to-localize-fig04.png)
+    ![[Word オプション] ダイアログ。](../images/office15-app-how-to-localize-fig04.png)
 
-2. **[表示言語の選択]** で表示する言語 (スペイン語など) を選択して、上向き矢印を選択してスペイン語をリストの最初の位置に移動します。 または、編集に使用する言語を変更するには、[編集言語の選択] で、編集に使用する言語 (スペイン語など) を選択し、[既定に設定] を選択 **します**。
+2. **[表示言語の選択]** で表示する言語 (スペイン語など) を選択して、上向き矢印を選択してスペイン語をリストの最初の位置に移動します。 または、編集に使用する言語を変更するには、[ **編集言語の選択]** で、編集に使用する言語 (スペイン語など) を選択し、[ **既定値として設定**] を選択します。
 
 3. **[OK]** をクリックして選択内容を確認し、Word を閉じます。
 
-4. サンプル **アドインを** 実行するにはVisual Studio F5 キーを押します。またはメニュー バーから **[DebugStart** >  **Debuging**] を選択します。
+4. Visual Studio で **F5** キーを押してサンプル アドインを実行するか、メニュー バーから **[デバッグ** > **の開始]** を選択します。
 
 5. Word で **[ホーム]**、**[作業ウィンドウを表示]** の順に選択します。
 
-次の図に示すように、実行すると、アドイン UI 内の文字列がアプリケーションで使用される言語と一致して変更されます。
+実行すると、次の図に示すように、アドイン UI の文字列がアプリケーションで使用される言語と一致するように変更されます。
 
 *図 3. ローカライズされたテキストが表示されたアドインの UI*
 

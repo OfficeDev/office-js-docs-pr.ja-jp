@@ -1,29 +1,22 @@
 ---
 title: Microsoft Office アドイン コミュニティの呼び出し
 description: 毎月の Microsoft Office アドイン コミュニティは、議題、スケジュール、リソースを呼び出します。
-ms.date: 07/11/2022
+ms.date: 07/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a953336dc277d387166dcedffb01f7775e52e9e8
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7a96bc5d5b86164d5e7662708c357821792f9f1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713008"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889619"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office アドイン コミュニティの呼び出し
 
 Microsoft Office アドイン コミュニティ通話は、毎月の通話で、新機能、開発プラクティス、Office アドインの作成に関する追加情報を確認できます。コミュニティの呼び出しは、毎月第 2 水曜日の太平洋時間の午前 8 時に行われます。 予定表の招待は 、次の場所で https://aka.ms/officeaddinscommunitycallダウンロードできます。
 
-## <a name="agenda-for-july-13th-call"></a>7 月 13 日の通話の予定
+## <a name="agenda-for-august-10th-call"></a>8 月 10 日の通話の予定
 
-- コミュニティ エンゲージメントの更新
-- Word API の更新
-- Outlook の更新プログラム
-  - v2.0 REST エンドポイントの使用停止更新
-  - Exchange オンプレミス サーバー上の共有フォルダーのサポート
-  - Item Multiselect 近日公開予定
-- Outlook API の更新
-- SSO サンプルの更新
+8 月の議題は、通話の約 1 週間前に投稿されます。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 

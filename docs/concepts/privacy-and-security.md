@@ -1,14 +1,14 @@
 ---
 title: Office アドインのプライバシーとセキュリティ
 description: Office アドイン プラットフォームのプライバシーとセキュリティの側面について説明します。
-ms.date: 01/26/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659669"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889206"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -133,7 +133,7 @@ Office アドインのセキュリティ モデルをサポートするための
 
 アドイン プラットフォームは、その機能で必要なユーザー データへのアクセス レベルを宣言する、アドインが使用するアクセス許可のモデルを提供します。 それぞれのアクセス許可レベルは、アドインがその機能で使用することが許可されている JavaScript API for Office のサブセットに対応しています。 たとえば、コンテンツアドインと作業ウィンドウ アドインに対する **WriteDocument** アクセス許可では、ユーザーのドキュメントへのアドインの書き込みを許可する [Document.setSelectedDataAsync](/javascript/api/office/office.document) メソッドへのアクセスが許可されますが、ドキュメントからデータを読み取るためのメソッドへのアクセスは許可されません。 このアクセス許可レベルは、ユーザーのドキュメントにデータを挿入するためにユーザーが照会できるアドインなど、ドキュメントに書き込みのみを行う必要があるアドインに適しています。
 
-ベスト プラクティスとしては、_最小限の特権_ の原則に基づいてアクセス許可を要求するべきです。つまり、アドインが正しく機能するために必要な最小限の API サブセットにのみアクセスする許可を要求します。たとえば、ユーザーのドキュメントのデータさえ読み込めばアドインが正しく機能する場合、**ReadDocument** 以外のアクセス許可を要求しません。(ただし、要求したアクセス許可が不十分な場合は、アドイン プラットフォームによってアドインによる一部の API の使用がブロックされ、ランタイム エラーが発生する可能性があることに注意してください)。
+ベスト プラクティスとして、最小特権の原則に基づいてアクセス許可を要求します。 つまり、アドインが正しく機能するために必要な最小限の API サブセットにのみアクセスする許可を要求します。 たとえば、ユーザーのドキュメントのデータさえ読み込めばアドインが正しく機能する場合、**ReadDocument** 以外のアクセス許可を要求しません。 (ただし、要求したアクセス許可が不十分な場合は、アドイン プラットフォームによってアドインによる一部の API の使用がブロックされ、ランタイム エラーが発生する可能性があることに注意してください)。
 
 次の例に示すように、アドインのマニフェストでアクセス許可を指定すれば、エンド ユーザーは、アドインを初めてインストールまたはアクティブにする前に、アドインの要求されたアクセス許可レベルを確認できます。 さらに、 **ReadWriteMailbox** アクセス許可を要求する Outlook アドインには、インストールに明示的な管理者特権が必要です。
 
@@ -172,7 +172,7 @@ Outlook アドインでの JSON/P の例を次に示します。
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 

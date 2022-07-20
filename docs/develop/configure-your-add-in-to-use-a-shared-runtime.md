@@ -1,15 +1,15 @@
 ---
-ms.date: 04/04/2022
 title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
-ms.prod: non-product-specific
 description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
+ms.date: 07/18/2022
+ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659844"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889479"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
 
@@ -150,7 +150,7 @@ ms.locfileid: "66659844"
     ```javascript
     /*global document, Office*/
 
-    var _count = 0;
+    let _count = 0;
 
     Office.onReady(() => {
       document.getElementById("sideload-msg").style.display = "none";

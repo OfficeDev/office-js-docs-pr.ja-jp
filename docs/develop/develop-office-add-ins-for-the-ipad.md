@@ -1,14 +1,14 @@
 ---
 title: iPad アドインの特別な要件
 description: iPad で実行される Office アドインを作成するための要件について説明します。
-ms.date: 09/03/2020
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df8855a987bd44e657f6ddfdec9925a979449a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cc75cc75daec756efcb066f3e3a77f865672e501
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712994"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889304"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>iPad アドインの特別な要件
 
@@ -31,8 +31,8 @@ ms.locfileid: "66712994"
 > [!NOTE]
 > アドインは、実行されているデバイスに基づいて代替 UI を提供できます。 アドインが iPad で実行されているかどうかを検出するには、次の API を使用します。
 >
-> - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
-> - var allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
+> - const isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
+> - const allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
 >
 > iPad では、戻り`true`値`touchEnabled`と`commerceAllowed`戻り値を返します`false`。
 >
@@ -42,10 +42,10 @@ ms.locfileid: "66712994"
 
 iPad で実行されるアドインを開発するための次のベスト プラクティスを適用します。
 
--  **Windows または Mac でアドインを開発してデバッグし、iPad にサイドロードします。**
+- **Windows または Mac でアドインを開発してデバッグし、iPad にサイドロードします。**
 
     アドインは iPad で直接開発することはできませんが、Windows または Mac コンピューターで開発してデバッグし、テスト用に iPad にサイドロードできます。 Office on iOS または Mac で実行されるアドインは、Windows 上の Office で実行されているアドインと同じ API をサポートしているため、アドインのコードはこれらのプラットフォームでも同じように実行される必要があります。 詳細については、「 [テスト用に iPad で Office アドインをテストしてデバッグ](../testing/test-debug-office-add-ins.md) し、 [Office アドインをサイドロードする」を参照](../testing/sideload-an-office-add-in-on-ipad.md)してください。
 
--  **アドインのマニフェストまたはランタイム チェックを使用して API の要件を指定する。**
+- **アドインのマニフェストまたはランタイム チェックを使用して API の要件を指定する。**
 
     アドインのマニフェストで API 要件を指定すると、Office クライアント アプリケーションがそれらの API メンバーをサポートしているかどうかを Office が判断します。 API メンバーがアプリケーションで使用できる場合は、アドインを使用できます。 または、ランタイム チェックを実行して、アドインでメソッドを使用する前に、アプリケーションでメソッドを使用できるかどうかを判断することもできます。 ランタイム チェックでは、アドインがアプリケーションで常に使用できることを確認し、メソッドが使用可能な場合は追加機能を提供します。 詳細については、「 [Office アプリケーションと API 要件の指定](specify-office-hosts-and-api-requirements.md)」を参照してください。

@@ -1,14 +1,14 @@
 ---
 title: Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 description: マニフェストで VersionOverrides を使用して、Excel、PowerPoint、Word のアドイン コマンドを定義します。 UI 要素を作成し、ボタンやリストを追加し、操作を実行するために、アドイン コマンドを使用します。
-ms.date: 07/05/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e14abf670ba0fe205f728461e228623604ed465
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659662"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889510"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のマニフェストにアドイン コマンドを作成する
 
@@ -18,7 +18,6 @@ ms.locfileid: "66659662"
 マニフェストで **[VersionOverrides](/javascript/api/manifest/versionoverrides)** を使用して、Excel、PowerPoint、Word のアドイン コマンドを定義します。 アドイン コマンドは、アクションを実行する指定された UI 要素を使用して、既定の Office ユーザー インターフェイス (UI) をカスタマイズする簡単な方法を提供します。 アドイン コマンドの概要については、「 [Excel、PowerPoint、Word のアドイン コマンド](../design/add-in-commands.md)」を参照してください。
 
 この記事では、マニフェストを編集してアドイン コマンドを定義する方法と [、関数](../design/add-in-commands.md#types-of-add-in-commands)コマンドのコードを作成する方法について説明します。 次の図に、アドイン コマンドを定義するのに使用される要素の階層を示します。 これらの要素は、この記事で詳細に説明します。
-
 
 ![マニフェスト内のアドイン コマンド要素の概要。 ここでの最上位ノードは、子ホストとリソースを含む VersionOverrides です。 [ホスト]、[DesktopFormFactor] の順に選択します。 DesktopFormFactor の下には FunctionFile と ExtensionPoint があります。 ExtensionPoint の下には、CustomTab または OfficeTab と Office メニューがあります。 [CustomTab] または [Office] タブの下には、[グループ] と [コントロール] 、[アクション] の順に選択します。 [Office] メニューの [コントロール] と [アクション] の順に選択します。 リソース (VersionOverrides の子) の下には、イメージ、URL、ShortStrings、LongStrings があります。](../images/version-overrides.png)
 
@@ -172,7 +171,7 @@ ms.locfileid: "66659662"
         // Implement your custom code here. The following code is a simple example.  
         Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
-                var error = asyncResult.error;
+                const error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message.
                 }

@@ -1,14 +1,14 @@
 ---
 title: Office アドインでカスタム コンテキスト タブを作成する
 description: Office アドインにカスタム コンテキスト タブを追加する方法について説明します。
-ms.date: 05/25/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c95d435a033a0bda44808cef75f12bb8d9e196f7
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659921"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889192"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Office アドインでカスタム コンテキスト タブを作成する
 
@@ -92,7 +92,7 @@ ms.locfileid: "66659921"
       "type": "ExecuteFunction",
       "functionName": "writeData"
     }
-   ```
+    ```
 
 1. 配列の唯一のメンバーとして次を `tabs` 追加します。 このマークアップについては、次の点に注意してください。
 
@@ -281,7 +281,7 @@ Office.onReady(async () => {
     await Office.ribbon.requestCreateControls(contextualTab);
 
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(showDataTab);
@@ -476,7 +476,7 @@ function myContextChanges() {
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
-    var displayLanguage = Office.context.displayLanguage;
+    const displayLanguage = Office.context.displayLanguage;
 
         switch (displayLanguage) {
             case 'en-US':
@@ -519,7 +519,7 @@ function GetContextualTabsJsonSupportedLocale () {
 次に、次の例のように、コードは関数を呼び出して `requestCreateControls`、渡されるローカライズされた BLOB を取得します。
 
 ```javascript
-var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+const contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
 ## <a name="best-practices-for-custom-contextual-tabs"></a>カスタム コンテキスト タブのベスト プラクティス

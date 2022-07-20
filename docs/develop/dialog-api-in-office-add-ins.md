@@ -1,14 +1,14 @@
 ---
 title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインでダイアログ ボックスを作成する基本について説明します。
-ms.date: 01/22/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689391"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889486"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -30,7 +30,7 @@ ms.locfileid: "66689391"
 
 次の画像は、ダイアログ ボックスの例を示します。
 
-![Word の前に 3 つのサインイン オプションが表示されたダイアログを示すスクリーンショット。](../images/auth-o-dialog-open.png)
+![Word の前に 3 つのサインイン オプションが表示されたダイアログ。](../images/auth-o-dialog-open.png)
 
 ダイアログ ボックスが常に画面の中央に開くことに注意してください。 ユーザーはダイアログ ボックスの移動とサイズ変更ができます。 ウィンドウは *変更されません*。ユーザーは引き続き Office アプリケーションのドキュメントと作業ウィンドウのページの両方を操作できます (存在する場合)。
 
@@ -47,6 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - URL には HTTP **S** プロトコルを使用します。 これは、読み込まれる最初のページだけでなく、ダイアログ ボックスに読み込まれるすべてのページに対して必須です。
 > - ダイアログ ボックスのドメインはホスト ページのドメインと同じです。ホスト ページは、作業ウィンドウ内のページまたはアドイン コマンドの[関数ファイル](/javascript/api/manifest/functionfile)にすることができます。 ページ、コントローラーのメソッド、または `displayDialogAsync` メソッドに渡されるその他のリソースは、ホスト ページと同じドメインにある必要があります。
 
@@ -97,6 +98,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - この `messageParent` 関数は、ダイアログ ボックスで呼び出すことができる 2 つの Office JS API *の 1 つです* 。
 > - ダイアログ ボックスで呼び出すことができる他の JS API は `Office.context.requirements.isSetSupported`. 詳細については、「 [Office アプリケーションと API 要件の指定](specify-office-hosts-and-api-requirements.md)」を参照してください。 ただし、ダイアログ ボックスでは、この API は 1 回限りの購入 (つまり MSI バージョン) Outlook 2016ではサポートされていません。
 
@@ -111,7 +113,7 @@ if (loginSuccess) {
 ホスト ページは、メッセージを受信するように構成する必要があります。 これを構成するには、`displayDialogAsync` の元の呼び出しにコールバック パラメーターを追加します。 コールバックはハンドラーを `DialogMessageReceived` イベントに割り当てます。 次に例を示します。
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20},
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -131,7 +133,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
 }
 ```
@@ -176,14 +178,14 @@ function processMessage(arg) {
 
 ```js
 if (loginSuccess) {
-    var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};
-    var jsonMessage = JSON.stringify(messageObject);
+    const userProfile = getProfile();
+    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
-    var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};
-    var jsonMessage = JSON.stringify(messageObject);
+    const errorDetails = getError();
+    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -198,7 +200,7 @@ if (loginSuccess) {
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
         dialog.close();
         showUserName(messageFromDialog.profile.name);
@@ -255,7 +257,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 Office ダイアログ API を呼び出してダイアログ ボックスを開くと、 [Dialog](/javascript/api/office/office.dialog) オブジェクトが返されます。 オブジェクトは他のメソッドによって参照されるため、 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) メソッドよりもスコープが大きい変数に割り当てる必要があります。 次に例を示します。
 
 ```javascript
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -277,7 +279,7 @@ function processMessage(arg) {
 
 ```javascript
 function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
+    const messageToDialog = JSON.stringify({
                                name: "My Sheet",
                                position: 2
                            });
@@ -303,7 +305,7 @@ Office.onReady()
 
 ```javascript
 function onMessageFromParent(arg) {
-    var messageFromParent = JSON.parse(arg.message);
+    const messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -338,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>ダイアログ ランタイムへのドメイン間メッセージング
 
-ダイアログまたは親 JavaScript ランタイムは、ダイアログが開いた後、アドインのドメインから離れる可能性があります。 これらのいずれかが発生した場合、コードでダイアログ ランタイムのドメインが指定されていない限り、呼び出し `messageChild` は失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageChild` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットが親ランタイムが現在ホストしているドメインと同じドメインであると見なします。 
+ダイアログまたは親 JavaScript ランタイムは、ダイアログが開いた後、アドインのドメインから離れる可能性があります。 これらのいずれかが発生した場合、コードでダイアログ ランタイムのドメインが指定されていない限り、呼び出し `messageChild` は失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageChild` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットが親ランタイムが現在ホストしているドメインと同じドメインであると見なします。
 
 > [!NOTE]
 > クロスドメイン メッセージの送信に使用するには`messageChild`[、Dialog Origin 1.1 要件セット](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)が必要です。 このパラメーターは `DialogMessageOptions` 、要件セットをサポートしていない古いバージョンの Office では無視されるため、渡してもメソッドの動作は影響を受けません。
@@ -387,8 +389,8 @@ function onMessageFromParent(arg) {
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
+    const messageObject = {messageType: "dialogClosed"};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -397,7 +399,7 @@ function closeButtonClick() {
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {
        dialog.close();
     }

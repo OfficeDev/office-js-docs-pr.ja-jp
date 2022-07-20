@@ -1,22 +1,22 @@
 ---
 title: Excel JavaScript API データ型エンティティ値カード
-description: Excel アドインのデータ型でエンティティ 値カードを使用する方法について説明します。
-ms.date: 05/19/2022
+description: Excel アドインのデータ型でエンティティ値カードを使用する方法について説明します。
+ms.date: 07/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9b2c146826c8247abee6ece105d04a335c41f1
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628168"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889160"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>エンティティ値データ型でカードを使用する (プレビュー)
 
 [!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
-この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して、エンティティ値データ型を持つExcel UI でカード モーダル ウィンドウを作成する方法について説明します。 これらのカードは、関連する画像、製品カテゴリ情報、データ属性など、セルに既に表示されている情報を超えて、エンティティ値に含まれる追加情報を表示できます。
+この記事では、 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して、エンティティ値データ型を含むカード モーダル ウィンドウを Excel UI に作成する方法について説明します。 これらのカードは、関連する画像、製品カテゴリ情報、データ属性など、セルに既に表示されている情報を超えて、エンティティ値に含まれる追加情報を表示できます。
 
 エンティティ値 ( [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)) は、データ型のコンテナーであり、オブジェクト指向プログラミングのオブジェクトに似ています。 この記事では、エンティティ値カードのプロパティ、レイアウト オプション、およびデータ属性機能を使用して、カードとして表示されるエンティティ値を作成する方法について説明します。
 
@@ -49,6 +49,10 @@ const entity: Excel.EntityCellValue = {
             type: Excel.CellValueType.string,
             basicValue: productName || ""
         },
+        "Image": {
+            type: Excel.CellValueType.webImage,
+            address: product.productImage || ""
+        },
         "Quantity Per Unit": {
             type: Excel.CellValueType.string,
             basicValue: product.quantityPerUnit || ""
@@ -69,7 +73,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-次のスクリーンショットは、上記のコード スニペットを使用するエンティティ値カードを示しています。 スクリーンショットは、前のコード スニペットの **製品 ID**、 **製品名**、 **ユニットあたりの数量**、 **単価** の情報を示しています。
+次のスクリーンショットは、上記のコード スニペットを使用するエンティティ値カードを示しています。 スクリーンショットは、前のコード スニペットの **製品 ID**、 **製品名**、 **画像**、 **ユニットあたりの数量**、 **単価** の情報を示しています。
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="カード レイアウト ウィンドウが表示されたエンティティ値データ型を示すスクリーンショット。カードには、製品名、製品 ID、ユニットあたりの数量、単価の情報が表示されます。":::
 
@@ -82,7 +86,7 @@ const entity: Excel.EntityCellValue = {
 
 プロパティ内で `card` 、オブジェクトを [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) 使用して、カードのコンポーネント (例: `title`, `subTitle`、 `sections`.
 
-次のエンティティ値 JSON コード スニペットは、 `card` 入れ子になった `title` オブジェクトとカード内の 3 つの `sections` レイアウトを示しています。 `title`このプロパティには、前の「[Card プロパティ](#card-properties)`"Product Name"`」の記事セクションで対応するデータ型があることに注意してください。 プロパティは `sections` 入れ子になった配列を受け取り、オブジェクトを [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) 使用して各セクションの外観を定義します。
+次のエンティティ値 JSON コード スニペットは、 `card` 入れ子になった `title` オブジェクトと `mainImage` カード内の 3 つの `sections` レイアウトを示しています。 `title`このプロパティには、前の「[Card プロパティ](#card-properties)`"Product Name"`」の記事セクションで対応するデータ型があることに注意してください。 この `mainImage` プロパティには、前のセクションで対応する `"Image"` データ型もあります。 プロパティは `sections` 入れ子になった配列を受け取り、オブジェクトを [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) 使用して各セクションの外観を定義します。
 
 各カード セクション内で、次`title`のような`layout`要素を`properties`指定できます。 キーは `layout` オブジェクトを [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) 使用し、値 `"List"`を受け入れます。 キーは `properties` 文字列の配列を受け入れます。 などの`"Product ID"`値には、前の[「カードプロパティ](#card-properties)」の記事セクションで対応するデータ型があることに`properties`注意してください。 セクションは折りたたみ可能で、エンティティ カードを Excel UI で開いたときに、ブール値を折りたたんだり折りたたんだりしないように定義することもできます。
 
@@ -100,6 +104,9 @@ const entity: Excel.EntityCellValue = {
         card: {
             title: { 
                 property: "Product Name" 
+            },
+            mainImage: { 
+                property: "Image" 
             },
             sections: [
                 {
@@ -126,7 +133,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-次のスクリーンショットは、上記のコード スニペットを使用するエンティティ値カードを示しています。 スクリーンショットは、**Product Name** を`title`使用し、**Pavlova** に設定されているオブジェクトを示しています。 スクリーンショットには 、 `sections`. [ **数量と価格]** セクションは折りたたみ可能で、 **ユニットあたりの数量** と **単価が** 含まれています。 **[追加情報]** フィールドは折りたたみ可能で、カードを開いたときに折りたたまれます。
+次のスクリーンショットは、上記のコード スニペットを使用するエンティティ値カードを示しています。 スクリーンショットは、上部にオブジェクトを`mainImage`示し、その後に **製品名** を`title`使用し、**Tofu** に設定されているオブジェクトを示しています。 スクリーンショットには 、 `sections`. [ **数量と価格]** セクションは折りたたみ可能で、 **ユニットあたりの数量** と **単価が** 含まれています。 **[追加情報]** フィールドは折りたたみ可能で、カードを開いたときに折りたたまれます。
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="カード レイアウト ウィンドウが表示されたエンティティ値データ型を示すスクリーンショット。カードには、カードのタイトルとセクションが表示されます。":::
 

@@ -1,31 +1,31 @@
 ---
-title: サードパーティ cookie をOffice ITP で動作するアドインを開発する
-description: サードパーティ Cookie を使用する場合Office ITP とアドインを使用する方法
-ms.date: 07/8/2021
+title: サード パーティの Cookie を使用する場合に ITP を使用するように Office アドインを開発する
+description: サード パーティの Cookie を使用するときに ITP アドインと Office アドインを操作する方法
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8216e2945acf1b87306bb00b7fb868728a986bc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150054"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889270"
 ---
-# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サードパーティ cookie をOffice ITP で動作するアドインを開発する
+# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サード パーティの Cookie を使用する場合に ITP を使用するように Office アドインを開発する
 
-カスタム アドインOfficeサード パーティ Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント 追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。 サードパーティの Cookie を使用してユーザーを認証したり、設定の保存などの他のシナリオで使用している場合があります。
+Office アドインにサード パーティの Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。 サード パーティの Cookie を使用してユーザーを認証したり、設定の保存などのその他のシナリオに使用したりすることがあります。
 
-アドインとOfficeがサードパーティの Cookie に依存している必要がある場合は、次の手順を使用して ITP を使用します。
+Office アドインと Web サイトがサード パーティの Cookie に依存する必要がある場合は、次の手順に従って ITP を操作します。
 
-1. OAuth [2.0 Authorization](https://tools.ietf.org/html/rfc6749)を設定して、認証ドメイン (Cookie を要求するサード パーティ) が承認トークンを Web サイト   に転送します。 トークンを使用して、サーバーセットの Secure Cookie と HttpOnly Cookie を使用してファースト パーティのログイン [セッションを確立します](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。
-2. サードパーティが[ファーストStorage Cookie](https://webkit.org/blog/8124/introducing-storage-access-api/)へのアクセスを取得するためのアクセス許可を要求するには、Storage Access API   を使用します。 Mac 上の現在OfficeバージョンとOffice on the web API がサポートされています。
+1. [OAuth 2.0 Authorization](https://tools.ietf.org/html/rfc6749) を設定して、認証ドメイン (お客様の場合は Cookie を必要とするサード パーティ) が認証トークンを Web サイトに転送するようにします。 トークンを使用して、サーバー セットの Secure Cookie と [HttpOnly Cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies) を使用してファースト パーティのログイン セッションを確立します。
+1. サードパーティがファースト パーティの Cookie へのアクセスを取得するためのアクセス許可を要求できるように、 [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) を使用します。 現在のバージョンの Office on Mac とOffice on the webの両方がこの API をサポートしています。
     > [!NOTE]
     > 認証以外の目的で Cookie を使用している場合は、シナリオでの使用 `localStorage` を検討してください。
 
-次のコード サンプルは、Access API のStorage示しています。
+次のコード サンプルは、Storage Access API を使用する方法を示しています。
 
 ```javascript
 function displayLoginButton() {
-  var button = createLoginButton();
+  const button = createLoginButton();
   button.addEventListener("click", function(ev) {
     document.requestStorageAccess().then(function() {
       authenticateWithCookies(); 
@@ -50,17 +50,17 @@ if (document.hasStorageAccess) {
 } 
 ```
 
-## <a name="about-itp-and-third-party-cookies"></a>ITP およびサード パーティの Cookie について
+## <a name="about-itp-and-third-party-cookies"></a>ITP とサード パーティの Cookie について
 
-サード パーティ Cookie は、ドメインがトップ レベル のフレームとは異なる iframe に読み込まれる Cookie です。 ITP は複雑な認証シナリオに影響を与える可能性があります。ポップアップ ダイアログを使用して資格情報を入力し、認証フローを完了するためにアドイン iframe によって Cookie アクセスが必要になります。 ITP は、以前にポップアップ ダイアログを使用して認証を行ったサイレント認証シナリオにも影響を与える可能性がありますが、その後アドインを使用して非表示の iframe を介して認証を試みる場合があります。
+サード パーティの Cookie は、ドメインが最上位フレームとは異なる iframe に読み込まれる Cookie です。 ITP は、資格情報の入力にポップアップ ダイアログが使用され、認証フローを完了するためにアドイン iframe によって Cookie アクセスが必要になる複雑な認証シナリオに影響を与える可能性があります。 ITP は、以前にポップアップ ダイアログを使用して認証を行ったサイレント認証シナリオにも影響を及ぼす可能性がありますが、それ以降アドインを使用すると、非表示の iframe を使用して認証が試行されます。
 
-Mac でOfficeを開発する場合、サードパーティの Cookie へのアクセスは MacOS Big Sur SDK によってブロックされます。 これは、WKWebView ITP が Safari ブラウザーで既定で有効にされ、WKWebView によってすべてのサードパーティ Cookie がブロックされるためです。 Officeバージョン 16.44 以降のバージョンは、MacOS Big Sur SDK と統合されています。
+Mac で Office アドインを開発する場合、サードパーティの Cookie へのアクセスは MacOS Big Sur SDK によってブロックされます。 これは、Safari ブラウザーで WKWebView ITP が既定で有効になっており、WKWebView によってすべてのサード パーティ Cookie がブロックされるためです。 Office on Mac バージョン 16.44 以降は、MacOS Big Sur SDK と統合されています。
 
-Safari ブラウザーで、エンド ユーザーは、[基本設定のプライバシー] の[クロスサイト追跡を防止する] チェック ボックスをオンに切り替え  >  、ITP をオフにできます。 ただし、埋め込み WKWebView コントロールの ITP をオフにすることはできません。
+Safari ブラウザーのエンド ユーザーは、[**基本設定** > **のプライバシー**] で [**クロスサイト追跡を禁止** する] チェック ボックスを切り替えて ITP をオフにすることができます。 ただし、埋め込み WKWebView コントロールの ITP をオフにすることはできません。
 
 ## <a name="see-also"></a>関連項目
 
-- [サードパーティの Cookie がブロックされている Safari や他のブラウザーで ITP を処理する](/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [サードパーティの Cookie がブロックされている Safari やその他のブラウザーで ITP を処理する](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [WebKit での追跡防止](https://webkit.org/tracking-prevention/)
-- [Chrome の "Privacy Sandbox"](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
-- [Access API Storage紹介](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)
+- [Chrome の "プライバシー サンドボックス"](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
+- [Storage Access API の概要](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

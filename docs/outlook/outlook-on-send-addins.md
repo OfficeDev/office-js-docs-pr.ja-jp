@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
-ms.date: 07/11/2022
+ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797611"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889605"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -65,6 +65,10 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 - **送信時の追加** 機能 &ndash; 送信ハンドラーで [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) を呼び出すと、エラーが返されます。
 - **AppSource** &ndash; 送信時機能を使用する Outlook アドインは AppSource の検証で失敗するため、[AppSource](https://appsource.microsoft.com) に発行することはできません。 送信時機能を使用するアドインは、管理者が展開する必要があります。
+  
+  > [!IMPORTANT]
+  > [アドインのマニフェストを検証](../testing/troubleshoot-manifest.md)するために実行`npm run validate`すると、"ItemSend イベントを含むメールボックス アドインは無効です。 メールボックス アドイン マニフェストには、VersionOverrides の ItemSend イベントが含まれています。これは許可されていません。 このメッセージは、このバージョンの送信時機能に必要なイベントを `ItemSend` 使用するアドインを AppSource に発行できないために表示されます。 他の検証エラーが見つからない場合でも、アドインをサイドロードして実行することができます。
+
 - **マニフェスト** &ndash; 1 つのアドインに対して 1 つの `ItemSend` イベントのみがサポートされています。 マニフェストに 2 つ以上の `ItemSend` イベントがある場合、マニフェストの検証は失敗します。
 - **パフォーマンス** &ndash; アドインをホストする Web サーバーへの複数回のラウンドトリップは、アドインのパフォーマンスに影響する可能性があります。複数のメッセージ ベースまたは会議ベースの操作が必要なアドインを作成する場合は、パフォーマンスへの影響を考慮してください。
 - **後で送信** (Mac のみ) &ndash; 送信時アドインがある場合、**後で送信** 機能は使用できません。
@@ -98,7 +102,7 @@ Outlook の送信時機能では、送信イベントの種類に対してアド
 
 ### <a name="web-browser---classic-outlook"></a>[Web ブラウザー - クラシック Outlook](#tab/classic)
 
-送信時機能を使用する Outlook on the web (クラシック) のアドインは、*OnSendAddinsEnabled* フラグが **true** に設定された Outlook on the web メールボックス ポリシーが割り当てられているユーザーに対して実行されます。
+*OnSendAddinsEnabled* フラグが設定`true`されているOutlook on the web メールボックス ポリシーが割り当てられているユーザーに対して、送信時機能を使用するOutlook on the web (クラシック) 用アドインが実行されます。
 
 新しいアドインをインストールするには、次の Exchange Online PowerShell コマンドレットを実行します。
 
@@ -128,13 +132,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
     > [!NOTE]
     > 管理者は既存のポリシーを使用できますが、送信時機能は特定のメールボックスの種類でのみサポートされています。 サポートされていないメールボックスは、Outlook on the web では既定で送信がブロックされます。
 
-2. 送信時機能を有効にする
+1. 送信時機能を有効にする
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. ポリシーをユーザーに割り当てます。
+1. ポリシーをユーザーに割り当てます。
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -153,13 +157,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
    > [!NOTE]
    > 管理者は既存のポリシーを使用できますが、送信時機能は特定のメールボックスの種類でのみサポートされています (詳細については、この記事で前述した「[メールボックスの種類の制限事項](#multiple-on-send-add-ins)」を参照してください)。 サポートされていないメールボックスは、Outlook on the web では既定で送信がブロックされます。
 
-2. 送信時機能を有効にする
+1. 送信時機能を有効にする
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. ポリシーをユーザーに割り当てます。
+1. ポリシーをユーザーに割り当てます。
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -218,13 +222,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
     > [!NOTE]
     > 管理者は既存のポリシーを使用できますが、送信時機能は特定のメールボックスの種類でのみサポートされています。 サポートされていないメールボックスは、Outlook on the web では既定で送信がブロックされます。
 
-2. 送信時にコンプライアンスを適用します。
+1. 送信時にコンプライアンスを適用します。
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. ポリシーをユーザーに割り当てます。
+1. ポリシーをユーザーに割り当てます。
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -243,13 +247,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
    > [!NOTE]
    > 管理者は既存のポリシーを使用できますが、送信時機能は特定のメールボックスの種類でのみサポートされています (詳細については、この記事で前述した「[メールボックスの種類の制限事項](#multiple-on-send-add-ins)」を参照してください)。 サポートされていないメールボックスは、Outlook on the web では既定で送信がブロックされます。
 
-2. 送信時にコンプライアンスを適用します。
+1. 送信時にコンプライアンスを適用します。
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. ポリシーをユーザーに割り当てます。
+1. ポリシーをユーザーに割り当てます。
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
