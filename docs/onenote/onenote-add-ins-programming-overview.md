@@ -1,16 +1,16 @@
 ---
 title: OneNote の JavaScript API のプログラミングの概要
 description: Web 上の OneNote アドイン用の OneNote JavaScript API について詳しく説明します。
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 938a9f6a954162c8774cfeea970596b41afb79ee
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496321"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889178"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
@@ -97,7 +97,7 @@ function getSelectionFromPage() {
         Office.CoercionType.Text,
         { valueFormat: "unformatted" },
         function (asyncResult) {
-            var error = asyncResult.error;
+            const error = asyncResult.error;
             if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                 console.log(error.message);
             }
@@ -111,17 +111,18 @@ OneNote アドインは、次の共通 API のみをサポートします。
 | API | メモ |
 |:------|:------|
 | [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Office.CoercionType.Text`Office.CoercionType.Text` と Office.CoercionType.Matrix`Office.CoercionType.Matrix` のみ |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`、`Office.CoercionType.Image` と `Office.CoercionType.Html` のみ | 
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`、`Office.CoercionType.Image` と `Office.CoercionType.Html` のみ |
+| [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | 設定はコンテンツ アドインによってのみサポートされます |
 | 
-  [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | 設定はコンテンツ アドインによってのみサポートされます | 
-| 
-  [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | 設定はコンテンツ アドインによってのみサポートされます | 
+  [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | 設定はコンテンツ アドインによってのみサポートされます |
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 一般に、アプリケーション固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 <a name="om-diagram"></a>
+
 ## <a name="onenote-object-model-diagram"></a>OneNote のオブジェクト モデル図
+
 次の図では、OneNote JavaScript API で現在使用可能なものが示されます。
 
   ![OneNote のオブジェクト モデル図。](../images/onenote-om.png)
