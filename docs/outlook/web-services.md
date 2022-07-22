@@ -3,12 +3,12 @@ title: Outlook アドインから Exchange Web サービス (EWS) を使用す�
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab576f1c47bda85a0a33e527f483d384b264fbf2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889633"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958945"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
@@ -34,11 +34,11 @@ EWS は、Exchange サーバーでの種々の操作をサポートしていま�
 
 - その EWS 操作の SOAP 要求に対する XML ( _data_ パラメーターへの引数)
 
-- コールバック メソッド ( _callback_ 引数)
+- コールバック関数 (  _コールバック_ 引数として)
 
-- そのコールバック メソッドに対するオプションの入力データ ( _userContext_ 引数)
+- そのコールバック関数の任意の入力データ (  _userContext_ 引数として)
 
-EWS SOAP 要求が完了すると、Outlook は 1 つの引数 ( [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクト) でコールバック メソッドを呼び出します。 コールバック メソッドは、EWS 操作の `AsyncResult` XML SOAP 応答を `value` 含むプロパティと、必要に応じてパラメーターとして渡されたデータを `asyncContext` 含むプロパティの 2 つのプロパティに `userContext` アクセスできます。 通常、コールバック メソッドは SOAP 応答内の XML を解析して関連情報を取得し、それに応じてその情報を処理します。
+EWS SOAP 要求が完了すると、Outlook はコールバック関数を 1 つの引数 ( [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクト) で呼び出します。 コールバック関数は、EWS 操作の XML SOAP 応答を`AsyncResult``value`含むプロパティと、必要に応じてパラメーターとして渡されたデータを`asyncContext`含むプロパティという 2 つのプロパティに`userContext`アクセスできます。 通常、コールバック関数は SOAP 応答内の XML を解析して関連情報を取得し、それに応じてその情報を処理します。
 
 ## <a name="tips-for-parsing-ews-responses"></a>EWS 応答を解析するためのヒント
 
@@ -91,7 +91,7 @@ EWS 操作から SOAP 応答を解析する場合は、ブラウザーに依存�
 
 - `getSubjectRequest`&ndash;項目 ID を入力として受け取り、指定した項目を呼び出`GetItem`す SOAP 要求の XML を返します。
 
-- `sendRequest`&ndash;選択した項目の SOAP 要求を取得し、SOAP 要求とコールバック メソッドを渡して、`callback`指定した項目のサブジェクトを取得する`makeEwsRequestAsync`呼び出`getSubjectRequest`し。
+- `sendRequest`&ndash;選択した項目の SOAP 要求を取得し、SOAP 要求とコールバック関数を渡して、`callback`指定した項目のサブジェクトを取得する`makeEwsRequestAsync`呼び出`getSubjectRequest`し。
 
 - `callback` &ndash; 指定のアイテムの件名とその他の情報が含まれている SOAP 応答を処理します。
 
@@ -148,9 +148,9 @@ Outlook アドインは、メソッドを使用して EWS で使用できる操�
 
 1. の  _データ_ パラメーター `makeEwsRequestAsync`の引数として SOAP 要求を含めます。
 
-1. コールバック メソッドを指定し、呼び出します `makeEwsRequestAsync`。
+1. コールバック関数を指定して呼び出します `makeEwsRequestAsync`。
 
-1. コールバック メソッド内で、SOAP 応答内の操作の結果を検証します。
+1. コールバック関数で、SOAP 応答で操作の結果を確認します。
 
 1. 必要に応じて EWS 操作の結果を使用します。
 

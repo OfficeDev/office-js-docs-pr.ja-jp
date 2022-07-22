@@ -3,12 +3,12 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889605"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958973"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
@@ -489,7 +489,7 @@ function validateBody(event) {
 }
 ```
 
-`validateBody` 関数は、指定した形式 (HTML) の現在の本文を取得し、コールバック メソッドでのアクセスにコードが必要とする `ItemSend` イベント オブジェクトを渡します。 `getAsync` メソッドに加え、`Body` オブジェクトは本文を指定したテキストに置き換えるために使用できる `setAsync` メソッドも提供します。
+この関数は `validateBody` 、指定された形式 (HTML) で現在の本文を取得し、コードがコールバック関数でアクセスするイベント オブジェクトを渡 `ItemSend` します。 `getAsync` メソッドに加え、`Body` オブジェクトは本文を指定したテキストに置き換えるために使用できる `setAsync` メソッドも提供します。
 
 > [!NOTE]
 > 詳細については、「[Event オブジェクト](/javascript/api/office/office.addincommands.event)」と「[Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))」を参照してください。

@@ -3,12 +3,12 @@ title: Office アドインのプライバシーとセキュリティ
 description: Office アドイン プラットフォームのプライバシーとセキュリティの側面について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889206"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958724"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
@@ -20,7 +20,7 @@ Office アドインは、アドインのランタイム環境、複数層のア�
 
 - Office クライアント アプリケーションの UI スレッドへの間接アクセスのみが許可されます。
 
-- モーダル操作は許可されません。たとえば、JavaScript `alert``confirm`の呼び出し、`prompt`関数はモーダルであるため許可されません。
+- モーダル操作は許可されません。たとえば、JavaScript `alert``confirm`の呼び出し、`prompt`メソッドはモーダルであるため許可されません。
 
 さらに、ランタイム フレームワークには、Office アドインがユーザーの環境を破損できないようにするための次の利点があります。
 

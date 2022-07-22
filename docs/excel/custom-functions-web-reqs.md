@@ -1,18 +1,18 @@
 ---
 ms.date: 05/02/2022
-description: Excelのカスタム関数を使用して、ブックへの外部データのストリーミングを要求、ストリーミング、キャンセルします。
+description: Excel のカスタム関数を使用して、ブックへの外部データのストリーミングを要求、ストリーミング、キャンセルします。
 title: カスタム関数でデータを受信して​​処理する
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fbe319e79d4cded5fe4b37ce5a654e633996f22a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244850"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958546"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>カスタム関数でデータを受信して​​処理する
 
-カスタム関数がExcelの機能を強化する方法の 1 つは、Web やサーバーなどのブック以外の場所 ([WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API) を介して) からデータを受信することです。 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
+カスタム関数が Excel の機能を向上させる方法の 1 つは、Web やサーバーなどのブック以外の場所 ( [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API) を介して) からデータを受信することです。 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)などの API や、サーバーとの情報のやりとりを要求する HTTP を発行する標準 ウェブ API である `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)を使って外部データを要求することができます。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -22,7 +22,7 @@ ms.locfileid: "65244850"
 
 カスタム関数が外部ソースからデータを取得する場合には、以下のことを実行する必要があります。
 
-1. [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) をExcelに返します。
+1. Excel に [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) を返します。
 2. コールバック関数を `Promise` 使用して、最終的な値を使用して解決します。
 
 ### <a name="fetch-example"></a>Fetch の使用例
@@ -134,7 +134,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>関数を取り消す
 
-Excelは、次の状況で関数の実行を取り消します。
+Excel は、次の状況で関数の実行を取り消します。
 
 - ユーザーが、関数を参照するセルを編集または削除した場合。
 - 関数の引数 (入力) の 1 つが変更されたとき。 この場合、キャンセルに続いて、関数の新しい呼び出しがトリガーされます。
@@ -147,7 +147,7 @@ Excelは、次の状況で関数の実行を取り消します。
 
 ### <a name="use-an-invocation-parameter"></a>呼び出しパラメーターを使用する
 
-`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 このパラメーターは`invocation`、セルに関するコンテキスト (アドレスや内容など) を提供し、使用および`onCanceled`メソッドを使用`setResult`できます。 これらのメソッドでは、関数がストリーミング (`setResult`) またはキャンセルされた (`onCanceled`) 場合に、関数が何を実行するかを定義します。
+`invocation` パラメーターは、既定ではカスタム関数の最後のパラメーターです。 このパラメーターは`invocation`、セルに関するコンテキスト (アドレスや内容など) を提供し、メソッドと`onCanceled`イベントを`setResult`使用して、関数がストリーム (`setResult`) または取り消された`onCanceled` () ときに行う処理を定義できます。
 
 TypeScript を使用している場合、呼び出しハンドラーは型 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) または [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
 

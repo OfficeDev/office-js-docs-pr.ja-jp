@@ -1,14 +1,14 @@
 ---
 title: ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
-description: Word 文書またはスプレッドシートでアクティブな選択範囲にデータを読み書きする方法Excel説明します。
+description: Word 文書または Excel スプレッドシートでアクティブな選択範囲にデータを読み書きする方法について説明します。
 ms.date: 01/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 360701bc43a7fc63f8447ff9a068256d187e2a70
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 220f768352aa3cf8a077f2e37ec812878cbeffba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187316"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958462"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内のアクティブな選択範囲へのデータの読み取りおよび書き込み
 
@@ -41,9 +41,9 @@ function write(message){
 > [!TIP]
 > **データ アクセスにマトリックスを使用する場合と、テーブルの coercionType を使用する場合。** 行と列が追加されたときに選択した表形式データを動的に拡張する必要があり、テーブル ヘッダーを操作する必要がある場合は、(メソッド`"table"`の _coercionType_ パラメーターを指定するか`Office.CoercionType.Table`) テーブル データ型を使用する`getSelectedDataAsync`必要があります。 データ構造内の行と列の追加は、テーブルとマトリックス データの両方でサポートされますが、行と列の追加はテーブル データでのみサポートされます。 行と列を追加する予定がなく、データにヘッダー機能が必要ない場合は、マトリックス データ型を使用する必要があります (メソッドの coercionType パラメーターを指定するか、または`Office.CoercionType.Matrix`メソッド`"matrix"`の _coercionType_ パラメーター`getSelectedDataAsync`を指定します)。
 
-2 番目のパラメーターである _コールバック_ として関数に渡される匿名関数は、操作が `getSelectedDataAsync` 完了すると実行されます。 この関数は、結果および呼び出しのステータスが格納される _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。 呼び出しが失敗した場合、オブジェクトの `AsyncResult` [error](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) プロパティは [Error](/javascript/api/office/office.error) オブジェクトへのアクセスを提供します。 [Error.name](/javascript/api/office/office.error#office-office-error-name-member) プロパティと [Error.message](/javascript/api/office/office.error#office-office-error-message-member) プロパティの値をチェックして、設定の操作が失敗した理由を判断できます。 呼び出しが成功した場合は、ドキュメント内で選択されているテキストが表示されます。
+2 番目のパラメーターである _コールバック_ としてメソッドに渡される匿名関数は、操作が完了すると `getSelectedDataAsync` 実行されます。 この関数は、結果および呼び出しのステータスが格納される _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。 呼び出しが失敗した場合、オブジェクトの `AsyncResult` [error](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) プロパティは [Error](/javascript/api/office/office.error) オブジェクトへのアクセスを提供します。 [Error.name](/javascript/api/office/office.error#office-office-error-name-member) プロパティと [Error.message](/javascript/api/office/office.error#office-office-error-message-member) プロパティの値をチェックして、設定の操作が失敗した理由を判断できます。 呼び出しが成功した場合は、ドキュメント内で選択されているテキストが表示されます。
 
-The [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) property is used in the **if** statement to test whether the call succeeded. [Office。AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) は、使用可能`AsyncResult.status`なプロパティ値の列挙体です。 `Office.AsyncResultStatus.Failed` は文字列 "failed" に評価されます (また、そのリテラル文字列として指定することもできます)。
+The [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) property is used in the **if** statement to test whether the call succeeded. [Office.AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) は、使用可能 `AsyncResult.status` なプロパティ値の列挙体です。 `Office.AsyncResultStatus.Failed` は文字列 "failed" に評価されます (また、そのリテラル文字列として指定することもできます)。
 
 ## <a name="write-data-to-the-selection"></a>選択範囲にデータを書き込む
 
@@ -62,7 +62,7 @@ function write(message){
 }
 ```
 
-_data_ パラメーターに異なるオブジェクト型を渡すと、結果が異なります。 結果は、ドキュメントで現在選択されている内容、アドインをホストしているクライアント アプリケーションOffice、および渡されたデータを現在の選択に強制できるかどうかによって異なります。
+_data_ パラメーターに異なるオブジェクト型を渡すと、結果が異なります。 結果は、ドキュメントで現在選択されている内容、アドインをホストしている Office クライアント アプリケーション、および渡されたデータを現在の選択に強制できるかどうかによって異なります。
 
 The anonymous function passed into the [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) method as the _callback_ parameter is executed when the asynchronous call is completed. メソッドを使用して `setSelectedDataAsync` 選択範囲にデータを書き込むと、コールバックの _asyncResult_ パラメーターは呼び出しの状態にのみアクセスし、呼び出しが失敗した場合 [は Error](/javascript/api/office/office.error) オブジェクトにアクセスできます。
 
@@ -88,9 +88,9 @@ function write(message){
 }
 ```
 
-最初のパラメーター _eventType_ は、サブスクライブするイベントの名前を指定します。 このパラメーターの文字列`"documentSelectionChanged"`を渡すことは、Officeの`Office.EventType.DocumentSelectionChanged`イベントの種類を渡すことと同じです[。EventType](/javascript/api/office/office.eventtype) 列挙体。
+最初のパラメーター _eventType_ は、サブスクライブするイベントの名前を指定します。 このパラメーターの文字列`"documentSelectionChanged"`を渡すことは、[Office.EventType](/javascript/api/office/office.eventtype) 列挙体の`Office.EventType.DocumentSelectionChanged`イベントの種類を渡すことと同じです。
 
-`myHandler()` 2 番目のパラメーターハンドラーとして関数に渡される関数 _は、ドキュメント_ で選択範囲が変更されたときに実行されるイベント ハンドラーです。 この関数は、非同期処理の完了時に、 _DocumentSelectionChangedEventArgs_ オブジェクトへの参照が格納される [eventArgs](/javascript/api/office/office.documentselectionchangedeventargs) という 1 つのパラメーターを使用して呼び出されます。 [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) プロパティを使用すると、このイベントが発生したドキュメントにアクセスできます。
+`myHandler()` 2 番目のパラメーターハンドラーとしてメソッドに渡される関数 _は、ドキュメント_ で選択が変更されたときに実行されるイベント ハンドラーです。 この関数は、非同期処理の完了時に、 _DocumentSelectionChangedEventArgs_ オブジェクトへの参照が格納される [eventArgs](/javascript/api/office/office.documentselectionchangedeventargs) という 1 つのパラメーターを使用して呼び出されます。 [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) プロパティを使用すると、このイベントが発生したドキュメントにアクセスできます。
 
 > [!NOTE]
 > メソッドを再度呼び出し、ハンドラー パラメーターの追加のイベント ハンドラー関数を渡すことで、特定の `addHandlerAsync` イベントに対して複数のイベント _ハンドラー_ を追加できます。 この場合、各イベント ハンドラー関数の名前は一意である必要があります。

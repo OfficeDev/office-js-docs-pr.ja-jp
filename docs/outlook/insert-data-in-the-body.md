@@ -3,12 +3,12 @@ title: Outlook アドインで本文にデータを挿入する
 description: Outlook アドインで、メッセージまたは予定の本文にデータを挿入する方法について説明します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a60401156603e85975d0efad7cb721d6d27666c1
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7319a3bb41d857fcae32ea118a3f3e60197bf751
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712742"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958328"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに本文にデータを挿入する
 
@@ -33,9 +33,9 @@ _CoercionType_ に加えて、Office JavaScript API のほとんどの非同期�
 
 ここでは、作成中のアイテムの本文タイプを **getTypeAsync** を使用して検査してから、**setSelectedDataAsync** を使用して現在のカーソル位置にデータを挿入するサンプル コードを示します。
 
-コールバック メソッドとオプションの入力パラメーターを **getTypeAsync** に渡し、ステータスと結果を _asyncResult_ 出力パラメーターで受け取ることができます。メソッドが成功した場合、アイテム本文のタイプを [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティで受け取ることができます。その値は、"text" または "html" です。
+コールバック関数とオプションの入力パラメーターを **getTypeAsync** に渡し、状態と結果を  _asyncResult_ 出力パラメーターで取得できます。 メソッドが成功した場合は、 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティ ("text" または "html" のいずれか) で項目本文の型を取得できます。
 
-**setSelectedDataAsync** への入力パラメーターとして、データ文字列を渡す必要があります。アイテム本文のタイプに応じて、このデータ文字列はテキスト形式または HTML 形式で指定できます。前述したように、挿入するデータのタイプを _coercionType_ パラメーターで指定できます。また、コールバック メソッドとそのパラメーターをオプションの入力パラメーターとして指定できます。
+**setSelectedDataAsync** に入力パラメーターとしてデータ文字列を渡す必要があります。 アイテム本文のタイプに応じて、このデータ文字列はテキスト形式または HTML 形式で指定できます。 前述したように、挿入するデータのタイプを _coercionType_ パラメーターで指定できます。 また、コールバック関数とそのパラメーターを省略可能な入力パラメーターとして指定することもできます。
 
 ユーザーがアイテム本文にカーソルを置いていない場合、**setSelectedDataAsync** はデータを本文の先頭に挿入します。ユーザーがアイテム本文のテキストを選択した場合、**setSelectedDataAsync** は選択されたテキストを指定されたデータに置き換えます。ユーザーがカーソル位置の変更とアイテムの作成を同時に行う場合、**setSelectedDataAsync** が失敗する可能性があることに注意してください。1 回で挿入できる文字の最大数は、1,000,000 文字です。
 
@@ -53,7 +53,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set data in the body of the composed item.
@@ -127,7 +127,7 @@ function write(message){
 
 - メッセージ本文で HTML データの先頭に HTML データを追加する場合は、最初にメッセージ本文の種類を確認して、テキスト形式のメッセージに HTML データを追加しないようにする必要があります。
 
-- **prependAsync** への入力パラメーターとして、テキスト形式または HTML 形式のデータ文字列、挿入されるデータの形式 (オプション)、コールバック メソッド、およびそのパラメーター (パラメーターがある場合) を指定します。
+- **prependAsync** の入力パラメーターとして、テキストまたは HTML 形式のデータ文字列、および必要に応じて挿入するデータの形式、コールバック関数、およびそのパラメーターのいずれかを指定します。
 
 - 同時に先頭に付加できる文字の最大数は、1,000,000 文字です。
 
@@ -138,7 +138,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Insert data in the top of the body of the composed 

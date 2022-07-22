@@ -3,12 +3,12 @@ title: 共通 JavaScript API オブジェクト モデル
 description: Office JavaScript の一般的な API オブジェクト モデルについて説明します。
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab311c548ec0ff8448f10f3ce64e3cd33ad32b12
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 1b856866c903a61a04bcbb232790649147fdb7fc
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712985"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958623"
 ---
 # <a name="common-javascript-api-object-model"></a>共通 JavaScript API オブジェクト モデル
 
@@ -46,7 +46,7 @@ Excel、PowerPoint、および Word のドキュメント データを操作す�
 
 これらの形式のデータ アクセスはすべて、抽象 `Document` オブジェクトのインスタンスから開始されます。
 
-作業ウィンドウまたはコンテンツ アドインがオブジェクトの`Document`[ドキュメント](/javascript/api/office/office.context#office-office-context-document-member) プロパティを使用して初期化されるときに、オブジェクトのインスタンスに`Context`アクセスできます。 このオブジェクトは `Document` 、Word および Excel ドキュメント間で共有される共通データ アクセス関数を定義し、Word ドキュメントのオブジェクトへの `CustomXmlParts` アクセスも提供します。
+作業ウィンドウまたはコンテンツ アドインがオブジェクトの`Document`[ドキュメント](/javascript/api/office/office.context#office-office-context-document-member) プロパティを使用して初期化されるときに、オブジェクトのインスタンスに`Context`アクセスできます。 このオブジェクトは `Document` 、Word および Excel ドキュメント間で共有される一般的なデータ アクセス方法を定義し、Word ドキュメントのオブジェクトへの `CustomXmlParts` アクセスも提供します。
 
 このオブジェクトは `Document` 、開発者がドキュメントの内容にアクセスするための 4 つの方法をサポートしています。
 
@@ -103,7 +103,7 @@ Office JavaScript API は、さまざまな Office ドキュメント間でシ�
 
 また、バインドを確立すると、ドキュメントまたはスプレッドシートの特定の領域を範囲とする、データおよび選択範囲の変更イベントをサブスクライブできます。つまり、ドキュメントまたはスプレッドシート全体の全般的な変更ではなく、バインドされた領域内で発生する変更のみがアドインに通知されます。
 
-[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドに ID でアクセスするには、[Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) メソッドまたは [Office.select](/javascript/api/office) メソッドを使用します。 [addFromSelectionAsync、addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、[addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1))、[releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)) のいずれかのメソッドを使用[](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))して、新しいバインドを確立したり、既存の`Bindings`バインドを削除したりすることもできます。
+[Bindings](/javascript/api/office/office.bindings) オブジェクトが公開している [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドには、 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) メソッドまたは [Office.select](/javascript/api/office) 関数のいずれかを使用して、ID でアクセスできます。 [addFromSelectionAsync、addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、[addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1))、[releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)) のいずれかのメソッドを使用[](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))して、新しいバインドを確立したり、既存の`Bindings`バインドを削除したりすることもできます。
 
 バインドを`addFromNamedItemAsync`作成するときに _bindingType_ パラメーターで指定するバインド`addFromSelectionAsync``addFromPromptAsync`には、次の 3 種類があります。
 

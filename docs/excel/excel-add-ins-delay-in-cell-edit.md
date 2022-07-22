@@ -1,14 +1,14 @@
 ---
 title: セルの編集中に実行を遅らせる
-description: セルの編集中に Excel.run メソッドの実行を遅らせる方法について説明します。
+description: セルの編集中に Excel.run 関数の実行を遅らせる方法について説明します。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1abcdb382150db486033b32d2521207ab0b7f28f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: c434fddf70c89d49712c96a42db772d67168a1fb
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889220"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958537"
 ---
 # <a name="delay-execution-while-cell-is-being-edited"></a>セルの編集中に実行を遅らせる
 

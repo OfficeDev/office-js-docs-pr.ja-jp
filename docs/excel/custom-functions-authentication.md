@@ -1,14 +1,14 @@
 ---
-ms.date: 06/15/2022
-description: 共有ランタイムを使用しないカスタム関数を使用してユーザーを認証します。
 title: 共有ランタイムのないカスタム関数の認証
+description: 共有ランタイムを使用しないカスタム関数を使用してユーザーを認証します。
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 7ff7b1dca67e9e25f14ef07bd1c088608f254427
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229681"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958426"
 ---
 # <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>共有ランタイムのないカスタム関数の認証
 
@@ -31,7 +31,7 @@ JavaScript 専用ランタイムには、通常データを `localStorage` 格�
 トークンが存在しない場合は、API を `OfficeRuntime.dialog` 使用してユーザーにサインインを求める必要があります。 ユーザーが資格情報を入力した後、結果のアクセス トークンをアイテム `OfficeRuntime.storage`として格納できます。
 
 > [!NOTE]
-> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは若干異なるダイアログ オブジェクトを使用します。 これらはどちらも "Dialog API" と呼ばれますが、[OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) を使用して、[Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) *ではなく* JavaScript 専用ランタイムでユーザーを認証します。
+> JavaScript 専用ランタイムは、作業ウィンドウで使用されるブラウザー エンジン ランタイムのダイアログ オブジェクトとは若干異なるダイアログ オブジェクトを使用します。 どちらも "ダイアログ API" と呼ばれますが、[OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) を使用して、[Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) *ではなく* JavaScript 専用ランタイムでユーザーを認証します。
 
 この基本的な手順を次の図に示します。 点線は、カスタム関数とアドインの作業ウィンドウがアドイン全体の一部であることを示しますが、個別のランタイムを使用します。
 
@@ -73,8 +73,8 @@ function storeValue(key, value) {
  * @customfunction GETTOKEN
  */
 function receiveTokenFromCustomFunction() {
-  var key = "token";
-  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  const key = "token";
+  const tokenSendStatus = document.getElementById('tokenSendStatus');
   OfficeRuntime.storage.getItem(key).then(function (result) {
      tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
      document.getElementById('tokenTextBox2').value = result;
@@ -108,7 +108,7 @@ function getTokenViaDialog(url) {
       // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
-      var intervalId = setInterval(function () {
+      const intervalId = setInterval(function () {
         count++;
         if(_cachedToken) {
           resolve(_cachedToken);
@@ -141,11 +141,11 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 [カスタム関数をデバッグ](custom-functions-debugging.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [カスタム関数の JavaScript 専用ランタイム](custom-functions-runtime.md)
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+- [カスタム関数のための JavaScript 専用ランタイム](custom-functions-runtime.md)
+- [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

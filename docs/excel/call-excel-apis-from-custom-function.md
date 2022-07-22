@@ -1,30 +1,30 @@
 ---
-title: カスタムExcel JavaScript API を呼び出す
-description: カスタム関数Excel呼び出す JavaScript API について説明します。
-ms.date: 08/30/2021
+title: カスタム関数から Excel JavaScript API を呼び出す
+description: カスタム関数から呼び出すことができる Excel JavaScript API について説明します。
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744398"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958419"
 ---
-# <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタムExcel JavaScript API を呼び出す
+# <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタム関数から Excel JavaScript API を呼び出す
 
-カスタムExcel JavaScript API を呼び出して、範囲データを取得し、計算のコンテキストを取得します。 カスタム関数Excel JavaScript API の呼び出しは、次の場合に役立ちます。
+カスタム関数から Excel JavaScript API を呼び出して、範囲データを取得し、計算のためのより多くのコンテキストを取得します。 カスタム関数を使用して Excel JavaScript API を呼び出すと、次の場合に役立ちます。
 
-- カスタム関数は、計算前にデータからExcelする必要があります。 この情報には、ドキュメントのプロパティ、範囲の形式、カスタム XML パーツ、ブック名、その他のExcel情報が含まれます。
-- カスタム関数は、計算後の戻り値のセルの数値形式を設定します。
+- カスタム関数は、計算前に Excel から情報を取得する必要があります。 この情報には、ドキュメントプロパティ、範囲形式、カスタム XML パーツ、ブック名、またはその他の Excel 固有の情報が含まれる場合があります。
+- カスタム関数は、計算後に戻り値のセルの数値形式を設定します。
 
 > [!IMPORTANT]
-> カスタム関数Excel JavaScript API を呼び出す場合は、共有 JavaScript ランタイムを使用する必要があります。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+> カスタム関数から Excel JavaScript API を呼び出すには、共有 JavaScript ランタイムを使用する必要があります。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="code-sample"></a>コード サンプル
 
-カスタム関数Excel JavaScript API を呼び出す場合は、まずコンテキストが必要です。 次のExcel[。コンテキストを取得する RequestContext](/javascript/api/excel/excel.requestcontext) オブジェクト。 次に、ブックで必要な API を呼び出すコンテキストを使用します。
+カスタム関数から Excel JavaScript API を呼び出すには、まずコンテキストが必要です。 [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) オブジェクトを使用してコンテキストを取得します。 次に、コンテキストを使用して、ブックに必要な API を呼び出します。
 
-次のコード サンプルは、ブック内のセル `Excel.RequestContext` から値を取得する方法を示しています。 このサンプルでは、パラメーター`address`は JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) メソッドExcel渡され、文字列として入力する必要があります。 たとえば、Excel UI `=CONTOSO.GETRANGEVALUE("A1")``"A1"` に入力されたカスタム関数は、値を取得するセルのアドレスであるパターンに従う必要があります。
+次のコード サンプルは、ブック内のセルから値を取得する方法 `Excel.RequestContext` を示しています。 このサンプルでは、 `address` パラメーターは Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) メソッドに渡され、文字列として入力する必要があります。 たとえば、Excel UI に入力されたカスタム関数は、`"A1"`値を取得するセルのアドレスであるパターン`=CONTOSO.GETRANGEVALUE("A1")`に従う必要があります。
 
 ```JavaScript
 /**
@@ -34,10 +34,10 @@ ms.locfileid: "63744398"
  **/
 async function getRangeValue(address) {
  // Retrieve the context object. 
- var context = new Excel.RequestContext();
+ const context = new Excel.RequestContext();
  
  // Use the context object to access the cell at the input address. 
- var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+ const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
  range.load("values");
  await context.sync();
  
@@ -46,20 +46,20 @@ async function getRangeValue(address) {
 }
 ```
 
-## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>カスタム関数を使用Excel JavaScript API の呼び出しの制限事項
+## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>カスタム関数を使用して Excel JavaScript API を呼び出す場合の制限事項
 
-JavaScript API の環境Excel変更するカスタム関数から JavaScript API を呼び出Excel。 つまり、カスタム関数は次の操作を行う必要があります。
+Excel の環境を変更するカスタム関数から Excel JavaScript API を呼び出さないでください。 つまり、カスタム関数で次の操作を行う必要はありません。
 
-- スプレッドシートにセルを挿入、削除、または書式設定します。
+- スプレッドシートのセルを挿入、削除、書式設定します。
 - 別のセルの値を変更します。
 - ブックにシートを移動、名前変更、削除、または追加します。
 - 計算モードや画面ビューなど、環境オプションを変更します。
 - ブックに名前を追加します。
 - プロパティを設定するか、ほとんどのメソッドを実行します。
 
-このExcelすると、パフォーマンスが低下し、タイム アウトが発生し、無限ループが発生する可能性があります。 カスタム関数の計算は、予測できない結果Excel再計算が行なっている間は実行できません。
+Excel を変更すると、パフォーマンス、タイムアウト、無限ループが低下する可能性があります。 Excel 再計算が行われている間は、予測できない結果が得られるので、カスタム関数の計算は実行しないでください。
 
-代わりに、リボン ボタンExcel作業ウィンドウのコンテキストから変更を加えます。
+代わりに、リボン ボタンまたは作業ウィンドウのコンテキストから Excel に変更を加えます。
 
 ## <a name="next-steps"></a>次の手順
 
@@ -67,5 +67,5 @@ JavaScript API の環境Excel変更するカスタム関数から JavaScript API
 
 ## <a name="see-also"></a>関連項目
 
-- [カスタム関数と作業ウィンドウのチュートリアルExcelデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Excel カスタム関数と作業ウィンドウのチュートリアルの間でデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

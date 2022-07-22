@@ -3,12 +3,12 @@ title: ループで context.sync メソッドを使用しないでください
 description: ループ内で context.sync を呼び出さないようにするために、分割ループパターンと相関オブジェクト パターンを使用する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8327ad0b6c91a23452cf3efc791876f30408ceb
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 6b0239e05a597949160afbb2604143f3d6626462
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889213"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958700"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>ループで context.sync メソッドを使用しないでください
 
@@ -42,7 +42,7 @@ ms.locfileid: "66889213"
 最も単純なケースでは、コレクション オブジェクトのメンバーにのみ書き込み、そのプロパティを読み取りません。 たとえば、次のコードは、Word 文書内の "the" のすべてのインスタンスを黄色で強調表示しています。
 
 > [!NOTE]
-> 通常は、アプリケーション `run` メソッドの終了 "}" 文字の直前に最終的`context.sync`な文字 (など`Excel.run``Word.run`) を配置することをお勧めします。 これは、まだ同期されていないキューに `run` 入っているコマンドがある場合にのみ、メソッドが最後の操作として非表示の呼び出し `context.sync` を行うためです。 この呼び出しが非表示になっているという事実は混乱する可能性があるため、通常は明示的 `context.sync`な呼び出しを追加することをお勧めします。 ただし、この記事では、呼び出し `context.sync`を最小限に抑えることについて説明しているため、完全に不要な最終処理 `context.sync`を追加する方が混乱します。 そのため、この記事では `run`、.
+> 通常は、アプリケーション`run`関数の終了 "}" 文字の直前に最終的`context.sync`な文字 (など`Excel.run``Word.run`) を配置することをお勧めします。 これは、まだ同期されていないキューに `run` 入っているコマンドがある場合にのみ、関数が最後の操作として非表示の呼び出し `context.sync` を行うためです。 この呼び出しが非表示になっているという事実は混乱する可能性があるため、通常は明示的 `context.sync`な呼び出しを追加することをお勧めします。 ただし、この記事では、呼び出し `context.sync`を最小限に抑えることについて説明しているため、完全に不要な最終処理 `context.sync`を追加する方が混乱します。 そのため、この記事では `run`、.
 
 ```javascript
 await Word.run(async function (context) {

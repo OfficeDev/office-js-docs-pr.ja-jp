@@ -3,12 +3,12 @@ title: Excel JavaScript API を使用してワークシートを操作する
 description: Excel JavaScript API を使用してワークシートで一般的なタスクを実行する方法を示すコード サンプル。
 ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
-ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
+ms.openlocfilehash: b90970c3a168c3d82d0001c0e985583e3d23f8f0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "65076683"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958398"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Excel JavaScript API を使用してワークシートを操作する
 
@@ -349,7 +349,7 @@ async function formulaChangeHandler(event) {
 
 以下の画像は、並べ替えイベントの `address` プロパティによって返される範囲を示しています。 まず、並べ替えの前のサンプル データを次に示します。
 
-![並べ替える前に、Excelのテーブル データ。](../images/excel-sort-event-before.png)
+![並べ替える前に Excel のテーブル データ。](../images/excel-sort-event-before.png)
 
 "**Q1**" ("**B**" の値) に対して上から下への並べ替えを実行すると、次の強調表示された行が返されます `WorksheetRowSortedEventArgs.address`。
 
@@ -405,9 +405,9 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> このセクションでは、`Worksheet` オブジェクトの関数を使用してセルと範囲を検索する方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
+> このセクションでは、オブジェクトのメソッドを使用してセルと範囲を検索する `Worksheet` 方法について説明します。 範囲の取得の詳細については、オブジェクト専用の記事で確認することができます。
 >
-> - オブジェクトを使用して`Range`ワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して範囲を取得する](excel-add-ins-ranges-get.md)」を参照してください。
+> - オブジェクトを使用してワークシート内の範囲を取得する方法を示す例については、「[Excel JavaScript API を使用](excel-add-ins-ranges-get.md)`Range`して範囲を取得する」を参照してください。
 > - `Table` オブジェクトから範囲を取得する方法を示す例については、「[Excel JavaScript API を使用して表を操作する](excel-add-ins-tables.md)」を参照してください。
 > - セルの特性に基づいて複数の副範囲を幅広く検索する方法の例については、「[Excel アドインで複数の範囲を同時に操作する](excel-add-ins-multiple-ranges.md)」を参照してください。
 
@@ -497,12 +497,12 @@ await Excel.run(async (context) => {
 
 ### <a name="detect-changes-to-the-worksheet-protection-state"></a>ワークシート保護状態の変更を検出する
 
-ワークシートの保護状態は、アドインまたはExcel UI を使用して変更できます。 保護状態の変更を検出するには、ワークシート [のイベント](excel-add-ins-events.md#register-an-event-handler) のイベント ハンドラーを [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) 登録します。 イベントのイベント ハンドラーは、 `onProtectionChanged` イベントが [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 発生したときにオブジェクトを受け取ります。
+ワークシートの保護状態は、アドインまたは Excel UI を使用して変更できます。 保護状態の変更を検出するには、ワークシート [のイベント](excel-add-ins-events.md#register-an-event-handler) のイベント ハンドラーを [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) 登録します。 イベントのイベント ハンドラーは、 `onProtectionChanged` イベントが [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 発生したときにオブジェクトを受け取ります。
 
 次のコード サンプルは、イベント ハンドラーを`onProtectionChanged`登録し、オブジェクトを`WorksheetProtectionChangedEventArgs`使用してイベントの`isProtected`プロパティを`worksheetId``source`取得する方法を示しています。
 
 ```js
-// This method registers an event handler for the onProtectionChanged event of a worksheet.
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
@@ -514,7 +514,7 @@ async function run() {
     });
 }
 
-// This method is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {

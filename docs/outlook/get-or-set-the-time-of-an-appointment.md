@@ -3,12 +3,12 @@ title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c98ae89c4c078e77a07724536498c7791db9d05
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 6109932c9a741a65b97095a1cb97dcdfc2306e1c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713050"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958335"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
@@ -48,14 +48,14 @@ Office JavaScript API のほとんどの非同期メソッドと同様に、 **g
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
 ```
 
-**item.start.getAsync** または **item.end.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、**AsyncResult.value** プロパティを使用して開始時刻を UTC 形式の [Date](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) オブジェクトとして取得できます。
+**item.start.getAsync** または **item.end.getAsync** を使用するには、非同期呼び出しの状態と結果をチェックするコールバック関数を指定します。 _asyncContext_ 省略可能なパラメーターを使用して、コールバック関数に必要な引数を指定できます。 You can obtain status, results and any error using the output parameter _asyncResult_ of the callback. If the asynchronous call is successful, you can get the start time as a **Date** object in UTC format using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the start time of the item being composed.
@@ -91,14 +91,14 @@ function write(message){
 
 前の例と同様、このコード サンプルは、予定の新規作成フォームでアドインをアクティブ化するアドインのマニフェストのルールを想定しています。
 
-**item.start.setAsync** または **item.end.setAsync** を使用する場合は、**dateTime** パラメーターに UTC で _Date_ の値を指定します。クライアントでユーザーによる入力に基づいて日付を取得する場合は、[mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を使用して、値を UTC の **Date** オブジェクトに変換します。オプションのコールバック メソッドと、_asyncContext_ パラメーターでそのコールバック メソッドの引数を指定できます。コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。非同期呼び出しが成功すると、指定した開始時刻または終了時刻文字列が **setAsync** によってプレーン テキストとして挿入され、そのアイテムの既存の開始時刻または終了時刻が上書きされます。
+**item.start.setAsync** または **item.end.setAsync** を使用するには、_dateTime_ パラメーターで UTC で **Date** 値を指定します。 クライアントでユーザーによる入力に基づいて日付を取得する場合は、[mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を使用して、値を UTC の **Date** オブジェクトに変換します。 _asyncContext_ パラメーターには、省略可能なコールバック関数とコールバック関数の引数を指定できます。 コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。 非同期呼び出しが成功すると、指定した開始時刻または終了時刻文字列が **setAsync** によってプレーン テキストとして挿入され、そのアイテムの既存の開始時刻または終了時刻が上書きされます。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the start time of the item being composed.

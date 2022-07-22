@@ -3,12 +3,12 @@ title: Office ダイアログ API のベスト プラクティスとルール
 description: 単一ページ アプリケーション (SPA) のベスト プラクティスなど、Office ダイアログ API のルールとベスト プラクティスを提供します。
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe9841d12865c488a86a203026684e0b3570352
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689398"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958679"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office ダイアログ API のベスト プラクティスとルール
 
@@ -57,7 +57,7 @@ Office は、`_host_info` に渡される URL に `displayDialogAsync` という
 
 特定のホスト ページから複数のダイアログを開く必要がないため、コードは別のダイアログを開くために呼び出す前に、開いているダイアログで [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) を呼び出 `displayDialogAsync` す必要があります。 メソッドは `close` 非同期です。 このため、呼び出しの直後に呼び出 `displayDialogAsync` すと、Office が 2 番目の `close`ダイアログを開こうとしたときに、最初のダイアログが完全に閉じなかった可能性があります。 その場合、Office は [12007](dialog-handle-errors-events.md#12007) エラーを返します。"このアドインには既にアクティブなダイアログがあるため、操作は失敗しました。
 
-このメソッドは`close`コールバック パラメーターを受け入れません。また、Promise オブジェクトは返されないため、キーワードまたは`then`メソッドで待機`await`することはできません。 このため、ダイアログを閉じた直後に新しいダイアログを開く必要がある場合は、次の手法をお勧めします。メソッドで新しいダイアログを開くコードをカプセル化し、戻り値の `displayDialogAsync` 呼び出しが返された場合にそれ自体を再帰的に呼び出すようにメソッドを設計します `12007`。 次に例を示します。
+このメソッドは`close`コールバック パラメーターを受け入れません。また、Promise オブジェクトは返されないため、キーワードまたは`then`メソッドで待機`await`することはできません。 このため、ダイアログを閉じた直後に新しいダイアログを開く必要がある場合は、次の手法をお勧めします。コードをカプセル化して関数で新しいダイアログを開き、戻り値の `displayDialogAsync` 呼び出しが返された場合に関数を再帰的に呼び出すように関数を設計します `12007`。 次に例を示します。
 
 ```javascript
 function openFirstDialog() {

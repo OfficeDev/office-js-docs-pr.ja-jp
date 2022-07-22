@@ -3,12 +3,12 @@ title: Outlook アドインで件名を取得または設定する
 description: Outlook アドインで、メッセージまたは予定の件名を取得または設定する方法について説明します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f0e3166e142978873d390040c58d263d416e0d
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713092"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959071"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 
@@ -41,14 +41,14 @@ Office JavaScript API のほとんどの非同期メソッドと同様に、 **g
 </Rule>
 ```
 
-**item.subject.getAsync** を使用する場合は、非同期呼び出しの状態と結果を確認するコールバック メソッドを用意します。_asyncContext_ オプション パラメーターを使用して、コールバック メソッドに必要な引数を指定できます。コールバックの出力パラメーター _asyncResult_ を使用して、状態、結果およびエラーを取得できます。非同期呼び出しに成功すると、[AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティを使用して件名をプレーン テキスト文字列として取得できます。
+**item.subject.getAsync** を使用するには、非同期呼び出しの状態と結果を確認するコールバック関数を指定します。 _asyncContext_ 省略可能なパラメーターを使用して、コールバック関数に必要な引数を指定できます。 You can obtain status, results and any error using the output parameter _asyncResult_ of the callback. If the asynchronous call is successful, you can get the subject as a plain text string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the subject of the item being composed.
@@ -80,14 +80,14 @@ function write(message){
 
 このセクションでは、ユーザーが作成している予定またはメッセージの件名を設定するサンプル コードについて説明します。前のサンプルと同様に、このサンプル コードは、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
 
-**item.subject.setAsync** を使用する場合は、データ パラメーターで最大 255 文字の文字列を指定します。オプションで、コールバック メソッドおよび _asyncContext_ パラメーターにそのコールバック メソッドの引数を指定できます。コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。非同期呼び出しが成功すると、**setAsync** はそのアイテムの既存の件名を上書きして、指定された件名の文字列をプレーン テキストとして挿入します。
+**item.subject.setAsync** を使用するには、データ パラメーターに最大 255 文字の文字列を指定します。 必要に応じて、  _asyncContext_ パラメーターでコールバック関数とコールバック関数の任意の引数を指定できます。 コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。 非同期呼び出しが成功すると、**setAsync** はそのアイテムの既存の件名を上書きして、指定された件名の文字列をプレーン テキストとして挿入します。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the subject of the item being composed.

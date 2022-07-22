@@ -3,12 +3,12 @@ title: Outlook アドインでメタデータを取得および設定する
 description: ローミング設定またはカスタム プロパティを使用して、Outlook アドインでカスタム データを管理します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ae9f2377c40d22b091f994de958b882507938a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b2cbb79288f7e62de8b4baae164ec9747cb83190
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712721"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959050"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Outlook アドインのアドイン メタデータを取得および設定する
 
@@ -63,7 +63,7 @@ Office.initialize = function () {
 
 前の例の続きで、次の JavaScript 関数 `setAddInSetting` は、[RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) メソッドを使用して `cookie` という名前の設定に今日の日付を設定し、[RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) メソッドを使用してすべてのローミング設定をサーバーに保存することによってデータを保存します。
 
-このメソッドは `set` 、設定がまだ存在しない場合に設定を作成し、指定した値に設定を割り当てます。 このメソッドは `saveAsync` 、ローミング設定を非同期的に保存します。 このコード サンプルは、 `saveMyAddInSettingsCallback`コールバック メソッドを `saveAsync` 渡します。非同期呼び出しが完了すると、  `saveMyAddInSettingsCallback` _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
+このメソッドは `set` 、設定がまだ存在しない場合に設定を作成し、指定した値に設定を割り当てます。 このメソッドは `saveAsync` 、ローミング設定を非同期的に保存します。 このコード サンプルは、 `saveMyAddInSettingsCallback`コールバック関数を `saveAsync` 渡します。非同期呼び出しが終了すると、  `saveMyAddInSettingsCallback` _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。 このパラメーターは [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトであり、非同期呼び出しについての結果と詳細情報が格納されています。 オプションの _userContext_ パラメーターを使用すると、非同期呼び出しからコールバック関数に任意の状態情報を渡すことができます。
 
 ```js
 // Set a roaming setting.
@@ -75,7 +75,7 @@ function setAddInSetting() {
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
-// Callback method after saving custom roaming settings.
+// Callback function after saving custom roaming settings.
 function saveMyAddInSettingsCallback(asyncResult) {
   if (asyncResult.status == Office.AsyncResultStatus.Failed) {
     // Handle the failure.
@@ -116,9 +116,9 @@ function removeAddInSetting()
 
 ### <a name="custom-properties-example"></a>カスタム プロパティの例
 
-以下の例では、カスタム プロパティを使用する単純な Outlook アドインのメソッドのセットを示しています。この例を出発点として、カスタム プロパティを使用するアドインを作成できます。
+次の例は、カスタム プロパティを使用する Outlook アドインの関数とメソッドの簡略化されたセットを示しています。 この例を出発点として、カスタム プロパティを使用するアドインを作成できます。
 
-この例には、次のメソッドが含まれています。
+この例には、次の関数とメソッドが含まれます。
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- アドインを初期化し、Exchange Server からカスタム プロパティ バッグを読み込みます。
 

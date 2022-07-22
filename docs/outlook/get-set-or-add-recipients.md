@@ -3,12 +3,12 @@ title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e7c59765d38e32e7552b5fdf67b6085529ccf03b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712784"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958321"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
@@ -45,9 +45,9 @@ JavaScript API for Office のほとんどの非同期メソッドと同様に、
 
 Office JavaScript API では、予定の受信者を表すプロパティ ( **optionalAttendees** と **requiredAttendees**) はメッセージのプロパティ ([bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)、 **cc**、to) とは異なるため、最初 **に** [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティを使用して、構成されるアイテムが予定またはメッセージであるかどうかを識別する必要があります。 作成モードでは、予定とメッセージのこれらのプロパティはすべて [Recipients](/javascript/api/outlook/office.recipients) オブジェクトであるため、非同期メソッドを適用して、 `Recipients.getAsync`対応する受信者を取得できます。
 
-使用 `getAsync`するには、状態、結果、および非同期 `getAsync` 呼び出しによって返されるエラーを確認するコールバック メソッドを指定します。 オプションの _asyncContext_ パラメーターを使用して、コールバック メソッドに引数を指定できます。 The callback method returns an _asyncResult_ output parameter. [AsyncResult](/javascript/api/office/office.asyncresult) パラメーター オブジェクトのプロパティと`error`プロパティを使用`status`して、非同期呼び出しの状態とエラー メッセージ、および実際の受信者を`value`取得するプロパティを確認できます。 受信者は、[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) オブジェクトの配列として表されます。
+使用 `getAsync`するには、状態、結果、および非同期 `getAsync` 呼び出しによって返されるエラーを確認するコールバック関数を指定します。 省略可能な _asyncContext_ パラメーターを使用して、コールバック関数に任意の引数を指定できます。 コールバック関数は _asyncResult_ 出力パラメーターを返します。 [AsyncResult](/javascript/api/office/office.asyncresult) パラメーター オブジェクトのプロパティと`error`プロパティを使用`status`して、非同期呼び出しの状態とエラー メッセージ、および実際の受信者を`value`取得するプロパティを確認できます。 受信者は、[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) オブジェクトの配列として表されます。
 
-メソッドは非同期であるため `getAsync` 、受信者を正常に取得することに依存する後続のアクションがある場合は、非同期呼び出しが正常に完了したときに、対応するコールバック メソッドでのみこのようなアクションを開始するようにコードを整理する必要があることに注意してください。
+メソッドは非同期であるため `getAsync` 、受信者を正常に取得することに依存する後続のアクションがある場合は、非同期呼び出しが正常に完了したときに、対応するコールバック関数でのみこのようなアクションを開始するようにコードを整理する必要があることに注意してください。
 
 > [!IMPORTANT]
 > このメソッドは `getAsync` 、Outlook クライアントによって解決された受信者のみを返します。 解決された受信者には、次の特性があります。
@@ -69,7 +69,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get all the recipients of the composed item.
@@ -163,14 +163,14 @@ function write(message){
 - 辞書の配列。次のコード例に示されているように、それぞれ表示名と電子メール アドレスが含まれています。
 - メソッドによって返されるオブジェクトと同様のオブジェクトの`getAsync`配列`EmailAddressDetails`。
   
-必要に応じて、コールバック メソッドをメソッドの `setAsync` 入力引数として指定して、受信者を正常に設定することに依存するコードが、それが発生した場合にのみ実行されるようにすることができます。 オプションの _asyncContext_ パラメーターを使用してコールバック メソッドの引数を提供することもできます。 コールバック メソッドを使用する場合は、 _asyncResult_ 出力パラメーターにアクセスし、パラメーター オブジェクトの **状態** プロパティと **エラー** プロパティを `AsyncResult` 使用して、非同期呼び出しの状態とエラー メッセージを確認できます。
+必要に応じて、メソッドの入力引数としてコールバック関数を `setAsync` 指定して、受信者を正常に設定することに依存するコードが、それが発生した場合にのみ実行されるようにすることができます。 オプションの _asyncContext_ パラメーターを使用して、コールバック関数の任意の引数を指定することもできます。 コールバック関数を使用する場合は、 _asyncResult_ 出力パラメーターにアクセスし、パラメーター オブジェクトの **状態** プロパティと **エラー** プロパティを `AsyncResult` 使用して、非同期呼び出しの状態とエラー メッセージを確認できます。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set recipients of the composed item.
@@ -273,7 +273,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>受信者を追加する
 
-予定またはメッセージ内の既存の受信者を上書きしない場合は、非同期メソッドを使用 `Recipients.setAsync`して受信者を `Recipients.addAsync` 追加できます。 `addAsync`は、受信者の入力引数が必要であるという点と同様`setAsync`_に機能します_。 オプションで、コールバック メソッドを指定し、asyncContext パラメーターを使用してコールバックの引数を提供できます。 その後、コールバック メソッドの _asyncResult_ 出力パラメーターを使用して、非同期`addAsync`呼び出しの状態、結果、エラーを確認できます。 次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
+予定またはメッセージ内の既存の受信者を上書きしない場合は、非同期メソッドを使用 `Recipients.setAsync`して受信者を `Recipients.addAsync` 追加できます。 `addAsync`は、受信者の入力引数が必要であるという点と同様`setAsync`_に機能します_。 必要に応じて、asyncContext パラメーターを使用してコールバック関数とコールバックの任意の引数を指定できます。 その後、コールバック関数の _asyncResult_ 出力パラメーターを使用して、非同期`addAsync`呼び出しの状態、結果、エラーを確認できます。 次の例は、新規作成されるアイテムが予定かどうかチェックし、その予定に 2 人の必須の出席者を付加します。
 
 ```js
 // Add specified recipients as required attendees of

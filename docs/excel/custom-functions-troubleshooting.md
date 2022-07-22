@@ -1,14 +1,14 @@
 ---
 ms.date: 06/09/2022
-description: Excelカスタム関数に関する一般的な問題のトラブルシューティングを行います。
+description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090888"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958560"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -20,7 +20,7 @@ ms.locfileid: "66090888"
 
 ## <a name="debugging-custom-functions"></a>カスタム関数のデバッグ
 
-共有ランタイムを使用するカスタム関数アドインをデバッグするには、「共有 [JavaScript ランタイムを使用するようにOffice アドインを構成する:デバッグ](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)」を参照してください。
+共有ランタイムを使用するカスタム関数アドインをデバッグするには、「共有 [JavaScript ランタイムを使用するように Office アドインを構成する:デバッグ](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)」を参照してください。
 
 共有ランタイムを使用しないカスタム関数アドインをデバッグするには、「 [カスタム関数のデバッグ](custom-functions-debugging.md)」を参照してください。
 
@@ -63,7 +63,7 @@ Excelがカスタム関数の完了を待っている間、＃BUSY！と表示�
 
 ### <a name="my-functions-wont-load-associate-functions"></a>関数が読み込まれない: 関数を関連付ける
 
-JSON が登録されておらず、独自の JSON メタデータを作成した場合、`#VALUE!` エラーが表示されるか、アドインを読み込めないという通知が表示されます。 これは通常、各カスタム関数を [JSON メタデータ ファイル](custom-functions-json.md)で指定されている `id` プロパティと関連付ける必要があります。 これを行うには、`CustomFunctions.associate()` メソッドを使用します。 通常、このメソッドの呼び出しは、各関数の後またはスクリプト ファイルの最後に行います。 カスタム関数を関連付けないと、カスタム関数は機能しません。
+JSON が登録されておらず、独自の JSON メタデータを作成した場合、`#VALUE!` エラーが表示されるか、アドインを読み込めないという通知が表示されます。 これは通常、各カスタム関数を [JSON メタデータ ファイル](custom-functions-json.md)で指定されている `id` プロパティと関連付ける必要があります。 これは、関数を使用 `CustomFunctions.associate()` して行われます。 通常、この関数呼び出しは、各関数の後、またはスクリプト ファイルの最後に行われます。 カスタム関数を関連付けないと、カスタム関数は機能しません。
 
 次の例では、add 関数の後で、関数の名前 `add` と対応する JSON ID `ADD` を関連付けています。
 
@@ -86,7 +86,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>既知の問題
 
-既知の問題は、[Excel カスタム関数GitHub リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions/issues)で追跡および報告されます。
+既知の問題は、 [Excel Custom Functions GitHub リポジトリ](https://github.com/OfficeDev/Excel-Custom-Functions/issues)で追跡および報告されます。
 
 ## <a name="reporting-feedback"></a>フィードバックの報告
 

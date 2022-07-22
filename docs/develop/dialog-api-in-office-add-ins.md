@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインでダイアログ ボックスを作成する基本について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889486"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958483"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -193,7 +193,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - `loginSuccess` 変数は、ID プロバイダーからの HTTP 応答を読み取ることによって初期化されます。
-> - `getProfile` 関数と `getError` 関数の実装は表示されません。両方の関数はそれぞれ、クエリ パラメーターまたは HTTP 応答の本文からデータを取得します。
+> - 関数と`getError`関数の`getProfile`実装は表示されません。 両方の関数はそれぞれ、クエリ パラメーターまたは HTTP 応答の本文からデータを取得します。
 > - サインインが成功したかどうかに応じて、さまざまな種類の匿名のオブジェクトが送信されます。両方の関数に `messageType` プロパティがありますが、一方には `profile` プロパティ、もう一方には `error` プロパティがあります。
 
 次の例に示すように、ホスト ページのハンドラー コードは分岐に `messageType` プロパティの値を使用します。`showUserName` 関数は上記の例と同じであり、`showNotification` 関数はホスト ページの UI にエラーを表示することに注意してください。
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>ダイアログ ボックスで DialogParentMessageReceived を処理する
 
-ダイアログ ボックスの JavaScript で、[UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) メソッドを使用してイベントのハンドラー`DialogParentMessageReceived`を登録します。 これは通常、次に示すように [、Office.onReady または Office.initialize メソッド](initialize-add-in.md)で行われます。 (より堅牢な例を次に示します)。
+ダイアログ ボックスの JavaScript で、[UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) メソッドを使用してイベントのハンドラー`DialogParentMessageReceived`を登録します。 これは通常、次に示すように [、Office.onReady または Office.initialize 関数](initialize-add-in.md)で行われます。 (より堅牢な例については、この記事の後半で説明します)。
 
 ```javascript
 Office.onReady()
@@ -370,7 +370,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-たとえば、コードで [Office.onReady または Office.initialize メソッド](initialize-add-in.md) を使用して、信頼されたドメインの配列をグローバル変数に格納できます。 その `arg.origin` 後、ハンドラー内のそのリストに対してプロパティをチェックできます。
+たとえば、コードで [Office.onReady 関数または Office.initialize 関数](initialize-add-in.md) を使用して、信頼されたドメインの配列をグローバル変数に格納できます。 その `arg.origin` 後、ハンドラー内のそのリストに対してプロパティをチェックできます。
 
 > [!TIP]
 > パラメーターは `DialogMessageOptions` 、2021 年半ばに必須パラメーターとしてメソッドに追加 `messageChild` されました。 メソッドを使用してクロスドメイン メッセージを送信する以前のアドインは、新しいパラメーターを使用するように更新されるまで機能しなくなりました。 アドインが更新されるまで、 *Office for Windows でのみ*、ユーザーとシステム管理者は、レジストリ設定で信頼されたドメインを指定することで、これらのアドインを引き続き機能 **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains** できます。 これを行うには、拡張子を持つ `.reg` ファイルを作成し、Windows コンピューターに保存してからダブルクリックして実行します。 このようなファイルの内容の例を次に示します。

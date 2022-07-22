@@ -3,12 +3,12 @@ title: Office アドインにおける非同期プログラミング
 description: Office JavaScript ライブラリが Office アドインで非同期プログラミングを使用する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 64965d06544126584d7b17d078f4db9d464b39f0
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889500"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958861"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office アドインにおける非同期プログラミング
 
@@ -191,7 +191,7 @@ function write(message){
 
 コールバック関数を渡し、その関数が戻るのを待ってから実行を続行する代わりに、promise プログラミング パターンを使用すれば、その意図した結果を表す promise オブジェクトがすぐに返されます。ただし、本物の同期プログラミングとは異なり、実際には Office アドインのランタイム環境が要求を完了できるまでは、約束された結果の履行は実際には延期されます。要求が履行されない状況に対処するために *onError* ハンドラーが用意されています。
 
-Office JavaScript API には、既存のバインド オブジェクトを操作するための Promises パターンをサポートする [Office.select](/javascript/api/office#Office_select_expression__callback_) メソッドが用意されています。 メソッドに `Office.select` 返される promise オブジェクトは、 [Binding](/javascript/api/office/office.binding) オブジェクトから直接アクセスできる 4 つのメソッド ( [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1))、 [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1))、 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1))、 [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1))) のみをサポートします。
+Office JavaScript API には、既存のバインド オブジェクトを操作するための Promises パターンをサポートする [Office.select](/javascript/api/office#Office_select_expression__callback_) 関数が用意されています。 関数に `Office.select` 返される promise オブジェクトは、 [Binding](/javascript/api/office/office.binding) オブジェクトから直接アクセスできる 4 つのメソッド ( [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1))、 [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1))、 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1))、 [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1))) のみをサポートします。
 
 バインドを操作するための Promises パターンは、この形式になります。
 
@@ -217,7 +217,7 @@ function write(message){
 
 `Binding`オブジェクトの Promise が満たされた後は、連結されたメソッド呼び出しで、バインドであるかのように再利用できます (アドイン ランタイムは、Promise の実行を非同期的に再試行しません)。 オブジェクト Promise を `Binding` 満たすことができない場合、アドイン ランタイムは、次に非同期メソッドの 1 つが呼び出されるときに、バインド オブジェクトへのアクセスを再試行します。
 
-次のコード例では、メソッドを`select`使用してコレクションから "`cities`" を持つバインドを`id``Bindings`取得し、[addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) メソッドを呼び出して、バインディングの [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントのイベント ハンドラーを追加します。
+次のコード例では、この関数を`select`使用してコレクションから `Bindings` "`cities`" を持つバインドを`id`取得し、[addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) メソッドを呼び出して、バインディングの [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) イベントのイベント ハンドラーを追加します。
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> `Binding`メソッドによって`Office.select`返されるオブジェクト promise は、オブジェクトの 4 つのメソッド`Binding`にのみアクセスできます。 オブジェクトの他のメンバー`Binding`にアクセスする必要がある場合は、代わりにプロパティまたは`Bindings.getByIdAsync``Bindings.getAllAsync`メソッドを`Document.bindings`使用してオブジェクトを`Binding`取得する必要があります。 たとえば、オブジェクトの`Binding`プロパティ (`document`、`id`、またはプロパティ) にアクセスする必要がある場合、または [MatrixBinding オブジェクトまたは](/javascript/api/office/office.matrixbinding) `type` [TableBinding](/javascript/api/office/office.tablebinding) オブジェクトのプロパティにアクセスする必要がある場合は、オブジェクトを取得`Binding`するために、または`getAllAsync`メソッドを`getByIdAsync`使用する必要があります。
+> `Binding`関数によって`Office.select`返されるオブジェクト promise は、オブジェクトの `Binding` 4 つのメソッドにのみアクセスできます。 オブジェクトの他のメンバー`Binding`にアクセスする必要がある場合は、代わりにプロパティまたは`Bindings.getByIdAsync``Bindings.getAllAsync`メソッドを`Document.bindings`使用してオブジェクトを`Binding`取得する必要があります。 たとえば、オブジェクトの`Binding`プロパティ (`document`、`id`、またはプロパティ) にアクセスする必要がある場合、または [MatrixBinding オブジェクトまたは](/javascript/api/office/office.matrixbinding) `type` [TableBinding](/javascript/api/office/office.tablebinding) オブジェクトのプロパティにアクセスする必要がある場合は、オブジェクトを取得`Binding`するために、または`getAllAsync`メソッドを`getByIdAsync`使用する必要があります。
 
 ## <a name="pass-optional-parameters-to-asynchronous-methods"></a>省略可能なパラメーターを非同期メソッドに渡す
 
@@ -363,10 +363,10 @@ function getDocumentFilePath() {
 }
 ```
 
-このメソッドを待機する必要がある場合は、キーワードを使用するか、関数に `await` 渡された `then` 関数として呼び出すことができます。
+この関数を待機する必要がある場合は、キーワードを使用 `await` して呼び出すか、関数に `then` 渡すことができます。
 
 > [!NOTE]
-> この手法は、アプリケーション固有のオブジェクト モデルの 1 つのメソッドの呼び出し内で Common API の 1 つを `run` 呼び出す必要がある場合に特に便利です。 この方法で使用されている上記の関数の例については、 [ サンプル Word-Add-in-JavaScript-MDConversion のファイルHome.js](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)を参照してください。
+> この手法は、アプリケーション固有のオブジェクト モデルで関数の呼び出し内で Common API を呼び出す `run` 必要がある場合に特に便利です。 この方法で使用される関数の `getDocumentFilePath` 例については、 [ サンプルの Word-Add-in-JavaScript-MDConversion のファイルHome.js](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)を参照してください。
 
 TypeScript を使用する例を次に示します。
 

@@ -3,16 +3,16 @@ title: Word アドインで検索オプションを使用してテキストを�
 description: Word アドインで検索オプションを使用する方法について説明します。
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 988349275dc350a342dfcb80e8e999c76de78e7d
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 64ffd3b32329dae98f869abaabcb3218e57a4a34
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229709"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959001"
 ---
 # <a name="use-search-options-in-your-word-add-in-to-find-text"></a>Word アドインで検索オプションを使用してテキストを検索する
 
-アドインは、ドキュメントのテキストに基づいて動作することが必要な場合がよくあります。 検索関数は、各コンテンツ コントロール (これには、[Body](/javascript/api/word/word.body)、[Paragraph](/javascript/api/word/word.paragraph)、[Range](/javascript/api/word/word.range)、[Table](/javascript/api/word/word.table)、[TableRow](/javascript/api/word/word.tablerow)、およびベース [ContentControl](/javascript/api/word/word.contentcontrol) オブジェクトが含まれます) で公開されます。 この関数には、検索しているテキストおよび [SearchOptions](/javascript/api/word/word.searchoptions) オブジェクトを表す文字列 (またはワイルドカード式) を使用します。 これにより、検索テキストと一致する範囲のコレクションが返されます。
+アドインは、ドキュメントのテキストに基づいて動作することが必要な場合がよくあります。 検索メソッドは、すべてのコンテンツ コントロールによって公開されます ( [これには、Body](/javascript/api/word/word.body)、 [Paragraph](/javascript/api/word/word.paragraph)、 [Range](/javascript/api/word/word.range)、 [Table](/javascript/api/word/word.table)、 [TableRow](/javascript/api/word/word.tablerow)、および基本 [ContentControl](/javascript/api/word/word.contentcontrol) オブジェクトが含まれます)。 このメソッドは、検索するテキストと [SearchOptions](/javascript/api/word/word.searchoptions) オブジェクトを表す文字列 (またはワイルドカード式) を取り込みます。 これにより、検索テキストと一致する範囲のコレクションが返されます。
 
 ## <a name="search-options"></a>検索オプション
 

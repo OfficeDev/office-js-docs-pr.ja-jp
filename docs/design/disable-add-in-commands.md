@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c16d82b1c6dacc3e46f2a5170c4b43d1be899191
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889150"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958840"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -124,7 +124,7 @@ const enableButton = async () => {
 
 グラフがアクティブになったときにのみボタンを有効にするシナリオを考えます。 まず、マニフェストのボタンの [Enabled](/javascript/api/manifest/enabled) 要素を `false` に設定します。 例については上記を参照してください。
 
-次に、ハンドラーを割り当てます。 これは通常、ハンドラー (後の手順で作成) をワークシート内のすべてのグラフの **onActivated** および **onDeactivated** イベントに割り当てる以下の例のように、**Office.onReady** メソッドで行います。
+次に、ハンドラーを割り当てます。 これは、ワークシート内のすべてのグラフの **onActivated** イベントと **onDeactivated** イベントにハンドラー (後の手順で作成) を割り当てる次の例のように **、Office.onReady** 関数で一般的に行われます。
 
 ```javascript
 Office.onReady(async () => {

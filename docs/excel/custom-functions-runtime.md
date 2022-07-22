@@ -1,16 +1,16 @@
 ---
 ms.date: 06/15/2022
-description: 共有ランタイムExcel使用しないカスタム関数とその特定の JavaScript ランタイムについて説明します。
-title: カスタム関数の JavaScript 専用ランタイム
+description: 共有ランタイムとその特定の JavaScript ランタイムを使用しない Excel カスタム関数について説明します。
+title: カスタム関数のための JavaScript 専用ランタイム
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0d3298e95ab39f976c3fbfd5c0cc4ecdd1369721
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229667"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958412"
 ---
-# <a name="javascript-only-runtime-for-custom-functions"></a>カスタム関数の JavaScript 専用ランタイム
+# <a name="javascript-only-runtime-for-custom-functions"></a>カスタム関数のための JavaScript 専用ランタイム
 
 共有ランタイムを使用しないカスタム関数では、計算のパフォーマンスを最適化するように設計された JavaScript 専用ランタイムが使用されます。
 
@@ -28,7 +28,7 @@ XmlHttpRequests を作成する場合は、カスタム関数で追加のセキ�
 
 単純な CORS 実装では Cookie を使用できず、単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプ`application/x-www-form-urlencoded`が `Content-Type` 、`text/plain`、または `multipart/form-data`.
 
-## <a name="store-and-access-data"></a>データのMicrosoft Storeとアクセス
+## <a name="store-and-access-data"></a>データを格納してアクセスする
 
 共有ランタイムを使用しないカスタム関数内では、 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) オブジェクトを使用してデータを格納してアクセスできます。 オブジェクトは `Storage` 、JavaScript 専用ランタイムを使用するカスタム関数では使用できない [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) の代替手段を提供する、暗号化されていない永続的なキー値ストレージ システムです。 このオブジェクトは `Storage` 、ドメインごとに 10 MB のデータを提供します。 ドメインは、複数のアドインで共有できます。
 
@@ -51,7 +51,7 @@ XmlHttpRequests を作成する場合は、カスタム関数で追加のセキ�
 
 ### <a name="officeruntimestorage-example"></a>OfficeRuntime.storage の例
 
-次のコード サンプルでは、キーと値`storage`を`OfficeRuntime.storage.setItem`設定する関数を呼び出します。
+次のコード サンプルでは、メソッドを `OfficeRuntime.storage.setItem` 呼び出して、キーと値 `storage`を .
 
 ```js
 function StoreValue(key, value) {
@@ -64,12 +64,12 @@ function StoreValue(key, value) {
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 [カスタム関数をデバッグ](custom-functions-debugging.md)する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 
-* [共有ランタイムのないカスタム関数の認証](custom-functions-authentication.md)
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
-* [カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+- [共有ランタイムのないカスタム関数の認証](custom-functions-authentication.md)
+- [Excel でカスタム関数を作成する](custom-functions-overview.md)
+- [カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

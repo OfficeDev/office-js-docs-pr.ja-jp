@@ -1,22 +1,22 @@
 ---
 title: カスタム関数のエラーを処理して返す
-description: '#NULL! のようなエラーを処理して返す カスタム関数から。'
+description: '#NULL! のようなエラーを処理して返す カスタム関数から取得します。'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c8f2667f47c1c983b135f38ce2c67ad1f31502c9
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: c93c13aac1457e776ba8441565c11a23074a8d97
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496293"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958567"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>カスタム関数のエラーを処理して返す
 
-カスタム関数の実行中に問題が発生した場合は、エラーを返してユーザーに通知します。 正の数値のみなど、特定のパラメーター要件がある場合は、パラメーターをテストし、正しい値でない場合はエラーをスローします。 ブロックを使用して、 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) カスタム関数の実行中に発生するエラーをキャッチできます。
+カスタム関数の実行中に問題が発生した場合は、エラーを返してユーザーに通知します。 正の数値のみなど、特定のパラメーター要件がある場合は、パラメーターをテストし、正しくない場合はエラーをスローします。 また、ブロックを使用して、 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) カスタム関数の実行中に発生するエラーをキャッチすることもできます。
 
 ## <a name="detect-and-throw-an-error"></a>エラーを検出してスローする
 
-カスタム関数が正しい形式で動作していることを確認する必要がある場合について説明します。 次のカスタム関数は、正規表現を使用して郵便番号を確認します。 郵便番号の形式が正しい場合は、別の関数を使用して都市を参照し、値を返します。 書式が無効な場合、関数はセルにエラー `#VALUE!` を返します。
+カスタム関数が機能するように郵便番号パラメーターが正しい形式であることを確認する必要があるケースを見てみましょう。 次のカスタム関数は、正規表現を使用して郵便番号を確認します。 郵便番号の形式が正しい場合は、別の関数を使用して市区町村を検索し、値を返します。 形式が無効な場合、関数はセルにエラーを返 `#VALUE!` します。
 
 ```typescript
 /**
@@ -35,17 +35,17 @@ function getCity(zipCode: string): string {
 
 ## <a name="the-customfunctionserror-object"></a>The CustomFunctions.Error object
 
-[CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) オブジェクトを使用して、セルにエラーを返します。 オブジェクトを作成する場合は、次のいずれかの列挙値を選択して、使用するエラーを `ErrorCode` 指定します。
+[CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) オブジェクトは、セルにエラーを返すために使用されます。 オブジェクトを作成するときは、次 `ErrorCode` のいずれかの列挙値を選択して、使用するエラーを指定します。
 
 |ErrorCode enum value  |Excel のセル値  |説明  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | 関数は 0 で除算を試行しています。 |
-|`invalidName`    | `#NAME?`  | 関数名に入力ミスがあります。 このエラーはカスタム関数入力エラーとしてサポートされますが、カスタム関数出力エラーとしてサポートされません。 |
+|`divisionByZero` | `#DIV/0`  | 関数は 0 で除算しようとしています。 |
+|`invalidName`    | `#NAME?`  | 関数名に入力ミスがあります。 このエラーはカスタム関数入力エラーとしてサポートされていますが、カスタム関数の出力エラーとしてサポートされないことに注意してください。 |
 |`invalidNumber`  | `#NUM!`   | 数式の数値に問題があります。 |
-|`invalidReference` | `#REF!` | この関数は、無効なセルを参照します。 このエラーはカスタム関数入力エラーとしてサポートされますが、カスタム関数出力エラーとしてサポートされません。|
-|`invalidValue`   | `#VALUE!` | 数式の値が正しい型です。 |
+|`invalidReference` | `#REF!` | 関数は無効なセルを参照します。 このエラーはカスタム関数入力エラーとしてサポートされていますが、カスタム関数の出力エラーとしてサポートされないことに注意してください。|
+|`invalidValue`   | `#VALUE!` | 数式の値が間違った型です。 |
 |`notAvailable`   | `#N/A`    | 関数またはサービスは使用できません。 |
-|`nullReference`  | `#NULL!`  | 数式内の範囲は交差しません。 |
+|`nullReference`  | `#NULL!`  | 数式の範囲が交差しません。 |
 
 次のコードサンプルは、無効な番号 (`#NUM!`) に対してエラーを作成して返す方法を示しています。
 
@@ -54,7 +54,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-また、 `#VALUE!` エラー `#N/A` はカスタム エラー メッセージもサポートします。 カスタム エラー メッセージはエラー インジケーター メニューに表示され、エラーのある各セルのエラー フラグにカーソルを合わせるとアクセスされます。 次の例は、エラーを含むカスタム エラー メッセージを返す方法を示 `#VALUE!` しています。
+また、エラーと`#N/A`エラーは`#VALUE!`カスタム エラー メッセージもサポートします。 カスタム エラー メッセージは、エラー インジケーター メニューに表示されます。これは、エラーを含む各セルのエラー フラグの上にマウス ポインターを置いてアクセスします。 次の例は、エラーを含むカスタム エラー メッセージを返す方法を `#VALUE!` 示しています。
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
@@ -64,7 +64,7 @@ throw error;
 
 ### <a name="handle-errors-when-working-with-dynamic-arrays"></a>動的配列を操作するときにエラーを処理する
 
-1 つのエラーを返すだけでなく、カスタム関数は、エラーを含む動的配列を出力できます。 たとえば、カスタム関数は配列を出力できます `[1],[#NUM!],[3]`。 次のコード `#NUM!` サンプルは、3 つのパラメーターをカスタム関数に入力し、入力パラメーターの 1 つをエラーに置き換え、2 次元配列を各入力パラメーターの処理結果で返す方法を示しています。
+カスタム関数は、単一のエラーを返すだけでなく、エラーを含む動的配列を出力することもできます。 たとえば、カスタム関数は配列 `[1],[#NUM!],[3]`を出力できます。 次のコード サンプルは、3 つのパラメーターをカスタム関数に入力し、入力パラメーターの 1 つをエラーに `#NUM!` 置き換え、各入力パラメーターを処理した結果で 2 次元配列を返す方法を示しています。
 
 ```js
 /**
@@ -77,15 +77,15 @@ throw error;
 */
 function returnInvalidNumberError(first, second, third) {
   // Use the `CustomFunctions.Error` object to retrieve an invalid number error.
-  var error = new CustomFunctions.Error(
+  const error = new CustomFunctions.Error(
     CustomFunctions.ErrorCode.invalidNumber, // Corresponds to the #NUM! error in the Excel UI.
   );
 
   // Enter logic that processes the first, second, and third input parameters.
   // Imagine that the second calculation results in an invalid number error. 
-  var firstResult = first;
-  var secondResult =  error;
-  var thirdResult = third;
+  const firstResult = first;
+  const secondResult =  error;
+  const thirdResult = third;
 
   // Return the results of the first and third parameter calculations and a #NUM! error in place of the second result. 
   return [[firstResult], [secondResult], [thirdResult]];
@@ -94,18 +94,18 @@ function returnInvalidNumberError(first, second, third) {
 
 ### <a name="errors-as-custom-function-inputs"></a>カスタム関数入力としてのエラー
 
-カスタム関数は、入力範囲にエラーが含まれている場合でも評価できます。 たとえば、**A6:A7** にエラーが含まれている場合でも、カスタム関数は範囲 **A2:A7** を入力として受け取る場合があります。
+カスタム関数は、入力範囲にエラーが含まれている場合でも評価できます。 たとえば、カスタム関数は **、A6:A7** にエラーが含まれている場合でも、 **A2:A7** の範囲を入力として受け取ることができます。
 
-エラーを含む入力を処理するには、カスタム関数に JSON メタデータ プロパティが設定されている `allowErrorForDataTypeAny` 必要があります `true`。 詳細については [、「カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md#metadata-reference) 」を参照してください。
+エラーを含む入力を処理するには、カスタム関数に JSON メタデータ プロパティ `allowErrorForDataTypeAny` を設定する `true`必要があります。 詳細については、「 [カスタム関数の JSON メタデータを手動で作成](custom-functions-json.md#metadata-reference) する」を参照してください。
 
 > [!IMPORTANT]
-> この `allowErrorForDataTypeAny` プロパティは、手動で作成された [JSON メタデータでのみ使用できます](custom-functions-json.md)。 このプロパティは、自動生成された JSON メタデータ プロセスでは機能しません。
+> このプロパティは `allowErrorForDataTypeAny` 、 [手動で作成された JSON メタデータ](custom-functions-json.md)でのみ使用できます。 このプロパティは、自動生成された JSON メタデータ プロセスでは機能しません。
 
-## <a name="use-trycatch-blocks"></a>ブロックを使用 `try...catch` する
+## <a name="use-trycatch-blocks"></a>ブロックを使用する`try...catch`
 
-一般に、カスタム関数 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) でブロックを使用して、発生する可能性のあるエラーをキャッチします。 コード内の例外を処理しない場合、例外はコードに返Excel。 既定では、Excelエラー`#VALUE!`または例外が返されます。
+一般に、カスタム関数でブロックを使用 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) して、発生する可能性のあるエラーをキャッチします。 コードで例外を処理しない場合は、Excel に返されます。 既定では、未処理の `#VALUE!` エラーまたは例外が Excel から返されます。
 
-次のコードサンプルでは、カスタム関数を使用して REST サービスの呼び出しを行ないます。 たとえば REST サービスがエラーを返したり、ネットワークがダウンした場合には、呼び出しが失敗することもあります。 この場合、カスタム関数は Web 呼び出 `#N/A` しが失敗したと示すために返されます。
+次のコードサンプルでは、カスタム関数を使用して REST サービスの呼び出しを行ないます。 たとえば REST サービスがエラーを返したり、ネットワークがダウンした場合には、呼び出しが失敗することもあります。 この場合、カスタム関数は Web 呼び出しが失敗したことを示すために戻ります `#N/A` 。
 
 ```typescript
 /**

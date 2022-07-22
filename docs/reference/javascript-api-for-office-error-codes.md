@@ -3,12 +3,12 @@ title: Office の一般的な API エラー コード
 description: この記事では、Office Common API の使用中に発生する可能性があるエラー メッセージについて説明します。
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889612"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959064"
 ---
 # <a name="office-common-api-error-codes"></a>Office の一般的な API エラー コード
 

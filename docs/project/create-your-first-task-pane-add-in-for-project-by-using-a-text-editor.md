@@ -3,12 +3,12 @@ title: テキスト エディターを使用して Microsoft Project 用の作�
 description: Office アドイン用 Yeoman ジェネレーターを使用して、Project Standard 2013、Project Professional 2013 以降のバージョンの作業ウィンドウ アドインを作成します。
 ms.date: 07/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4b1c392413c05a190b032ed9e3a0343470b02f
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: 69353b94da05dd0a8cfd6347beb7c5b3f4fd81e0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765294"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959029"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>テキスト エディターを使用して Microsoft Project 用の作業ウィンドウ アドインを初めて作成する
 
@@ -107,7 +107,7 @@ Project の場合、要素には `OfficeApp` 属性値を `xsi:type="TaskPaneApp
 
 1. JSOM_Sample.js という名前の JavaScript ファイルを、JSOMCall.html ファイルと同じディレクトリ内に作成します。
 
-   次のコードは、Office.js ファイル内の関数を使用して、アプリケーションのコンテキストとドキュメント情報を取得します。 オブジェクトは `text` 、HTML ファイル内の `textarea` コントロールの ID です。
+   次のコードは、Office.js ファイル内のメソッドを使用してアプリケーション コンテキストとドキュメント情報を取得します。 オブジェクトは `text` 、HTML ファイル内の `textarea` コントロールの ID です。
 
    **\_projDoc** 変数はオブジェクトで`ProjectDocument`初期化されます。 このコードには、いくつかの簡単なエラー処理関数と、アプリケーション コンテキストと `getContextValues` プロジェクト ドキュメント コンテキストのプロパティを取得する関数が含まれています。 Project の JavaScript オブジェクト モデルの詳細については、「[JavaScript API for Office](../reference/javascript-api-for-office.md)」を参照してください。
 
@@ -124,7 +124,7 @@ Project の場合、要素には `OfficeApp` 属性値を `xsi:type="TaskPaneApp
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -173,25 +173,25 @@ Project の場合、要素には `OfficeApp` 属性値を `xsi:type="TaskPaneApp
 
    Office.debug.js ファイルの関数の詳細については、「 [Office JavaScript API](../reference/javascript-api-for-office.md)」を参照してください。 たとえば、関数は `getDocumentUrl` 、開いているプロジェクトの URL またはファイル パスを取得します。
 
-1. Office.js および Project-15.js 内の非同期関数を呼び出して選択されているデータを取得する JavaScript 関数を追加します。
+1. Office.jsとProject-15.jsで非同期メソッドを呼び出して選択したデータを取得する JavaScript 関数を追加します。
 
-   - たとえば、 `getSelectedDataAsync` 選択したデータの書式設定されていないテキストを取得するOffice.jsの一般的な関数です。 詳細については、[「AsyncResult オブジェクト」](/javascript/api/office/office.asyncresult)を参照してください。
+   - たとえば、 `getSelectedDataAsync` 選択したデータの書式設定されていないテキストを取得するOffice.jsの一般的なメソッドです。 詳細については、「 [Document オブジェクト](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1))」を参照してください。
 
    - Project-15.jsの関数は `getSelectedTaskAsync` 、選択したタスクの GUID を取得します。 同様に `getSelectedResourceAsync` 、この関数は選択したリソースの GUID を取得します。 タスクまたはリソースが選択されていない状態でこれらの関数を呼び出すと、未定義のエラーが発生します。
 
    - この関数は `getTaskAsync` 、タスク名と割り当てられたリソースの名前を取得します。 タスクが同期された SharePoint タスク リスト内にある場合は、 `getTaskAsync` SharePoint の一覧でタスク ID を取得します。それ以外の場合、SharePoint タスク ID は 0 です。
 
      > [!NOTE]
-     > サンプル コードには、デモ用にバグが含まれています。 未定義の場合 `taskGuid` 、関数は `getTaskAsync` エラーオフします。 有効なタスク GUID を取得し、別のタスクを選択した場合、 `getTaskAsync` 関数は関数によって操作された最新のタスクのデータを `getSelectedTaskAsync` 取得します。
+     > サンプル コードには、デモ用にバグが含まれています。 未定義の場合 `taskGuid` 、関数は `getTaskAsync` エラーアウトします。有効なタスク GUID を取得し、別のタスクを選択した場合、 `getTaskAsync` 関数は関数によって操作された最新のタスクのデータを `getSelectedTaskAsync` 取得します。
   
    - `getTaskFields`、`getResourceFields`および`getProjectFields`タスクまたは`getProjectFieldAsync`リソースの指定されたフィールドを取得するために複数回`getResourceFieldAsync`呼び出`getTaskFieldAsync`すローカル関数です。 project-15.debug.js ファイルでは、 `ProjectTaskFields` 列挙体と `ProjectResourceFields` 列挙体に、サポートされているフィールドが表示されます。
 
    - この関数は `getSelectedViewAsync` 、ビューの種類 (project-15.debug.jsの `ProjectViewTypes` 列挙で定義) とビューの名前を取得します。
 
-   - プロジェクトが SharePoint タスクリストと同期されている場合、 `getWSSUrlAsync` 関数は URL とタスクリストの名前を取得します。 プロジェクトが SharePoint タスク リストと同期されていない場合は、関数エラー `getWSSUrlAsync` が発生します。
+   - プロジェクトが SharePoint タスクリストと同期されている場合、 `getWSSUrlAsync` 関数は URL とタスクリストの名前を取得します。 プロジェクトが SharePoint タスクリストと同期されていない場合、関数は `getWSSUrlAsync` エラーになります。
 
      > [!NOTE]
-     > タスクリストの SharePoint URL と名前を取得するには、[ProjectProjectFields](/javascript/api/office/office.projectprojectfields) 列挙体の定数と`WSSList`共`WSSUrl`に関数を使用`getProjectFieldAsync`することをお勧めします。
+     > SharePoint の URL とタスクリストの名前を取得するには、[ProjectProjectFields](/javascript/api/office/office.projectprojectfields) 列挙体の定数と`WSSList`共`WSSUrl`にメソッドを使用`getProjectFieldAsync`することをお勧めします。
 
    次のコードの各関数には、`function (asyncResult)` によって指定されている匿名関数が含まれます。これは、非同期の結果を取得するコールバックです。匿名関数の代わりに、複雑なアドインの保守に役立つ名前付き関数を使用できます。
 
@@ -548,9 +548,9 @@ Project の場合、要素には `OfficeApp` 属性値を `xsi:type="TaskPaneApp
     }
     ```
 
-1. JavaScript イベント ハンドラー コールバックおよび関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。 この関数は `manageEventHandlerAsync` 、 _操作_ パラメーターに応じて、指定されたイベント ハンドラーを追加または削除します。 この操作には、次の操作を指定 `addHandlerAsync` できます `removeHandlerAsync`。
+1. JavaScript イベント ハンドラー コールバックおよび関数を追加して、タスク選択、リソース選択、およびビュー選択の変更に関するイベント ハンドラーの登録と登録解除を行います。 この関数は `manageEventHandlerAsync` 、 *操作* パラメーターに応じて、指定されたイベント ハンドラーを追加または削除します。 この操作には、次の操作を指定 `addHandlerAsync` できます `removeHandlerAsync`。
 
-   関数`manageResourceEventHandler`は`manageTaskEventHandler``manageViewEventHandler`、_docMethod_ パラメーターで指定されているように、イベント ハンドラーを追加または削除できます。
+   関数`manageResourceEventHandler`は`manageTaskEventHandler``manageViewEventHandler`、*docMethod* パラメーターで指定されているように、イベント ハンドラーを追加または削除できます。
 
     ```js
     // Task selection changed event handler.
@@ -759,7 +759,7 @@ Project の場合、要素には `OfficeApp` 属性値を `xsi:type="TaskPaneApp
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. [ **タスク フィールドの取得]** ボタンを選択します。 この関数は `getTaskFields` 、タスク名、インデックス、開始日、期間、優先度、およびタスク ノートに対して関数を複数回呼び出 `getTaskfieldAsync` します。
+1. [ **タスク フィールドの取得]** ボタンを選択します。 この関数は `getTaskFields` 、タスク名、インデックス、開始日、期間、優先度、タスク ノートに対してメソッドを複数回呼び出 `getTaskFieldAsync` します。
 
     - 名前: `T2`
     - ID: `2`

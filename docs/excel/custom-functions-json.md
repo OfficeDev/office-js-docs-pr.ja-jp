@@ -3,12 +3,12 @@ title: Excel でカスタム関数の JSON メタデータを手動で作成す�
 description: Excel でカスタム関数の JSON メタデータを定義し、関数 ID と名前のプロパティを関連付けます。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb3861a7924473b556020fea0ec5916e9291082
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660222"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958581"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>カスタム関数の JSON メタデータを手動で作成する
 
@@ -164,7 +164,7 @@ ms.locfileid: "66660222"
 
 | プロパティ      | データ型 | 必須 | 説明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `description` | string    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
+| `description` | 文字列    | いいえ       | Excel でエンド ユーザーに表示される関数の説明です。 たとえば、「**華氏の値を摂氏に変換する**」です。                                                            |
 | `helpUrl`     | 文字列    | いいえ       | 関数に関する情報を提供する URL です  (作業ウィンドウに表示されます)。たとえば、`http://contoso.com/help/convertcelsiustofahrenheit.html` です。                      |
 | `id`          | string    | はい      | 関数の一意の ID です。 この ID には、英数字とピリオドしか使用できません。また、設定後に変更してはいけません。                                            |
 | `name`        | string    | はい      | Excel でエンド ユーザーに表示される関数の名前です。 Excel では、この関数名の前に、XML マニフェスト ファイルで指定されたカスタム関数名前空間が付けられます。 |
@@ -181,7 +181,7 @@ ms.locfileid: "66660222"
 | `cancelable`      | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、手動での再計算のトリガーや、関数によって参照されているセルの編集など、関数をキャンセルする効果のある操作をユーザーが実行すると、Excel によって `CancelableInvocation` ハンドラーが呼び出されます。 キャンセル可能な関数は通常、1 つの結果を返し、データの要求の取り消しを処理する必要がある非同期関数にのみ使用されます。 関数では、プロパティと`cancelable`プロパティの両方を`stream`使用できません。 |
 | `requiresAddress` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | カスタム関数が呼び出したセルのアドレスにアクセスできる場合 `true`。 `address` [呼び出しパラメーター](custom-functions-parameter-options.md#invocation-parameter)のプロパティには、カスタム関数を呼び出したセルのアドレスが含まれています。 関数では、プロパティと`requiresAddress`プロパティの両方を`stream`使用できません。 |
 | `requiresParameterAddresses` | ブール   | いいえ <br/><br/>既定値は、`false` です。 | カスタム関数が関数の入力パラメーターのアドレスにアクセスできる場合 `true`。 このプロパティは[、結果](#result)オブジェクトのプロパティと`dimensionality`組み合わせて使用する必要`matrix`があり`dimensionality`、. 詳細については、「 [パラメーターのアドレスを検出](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) する」を参照してください。 |
-| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値は `StreamingInvocation.setResult` コールバック メソッドの引数として渡されます。 詳細については、「 [ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。 |
+| `stream`          | ブール   | いいえ<br/><br/>既定値は、`false` です。  | `true` の場合、1 回のみ呼び出されたときにも、関数はセルに繰り返し出力できます。 このオプションは、株価などの急速に変化するデータ ソースに便利です。 この関数には、`return` ステートメントは含めないようにする必要があります。 代わりに、結果の値がコールバック関数の `StreamingInvocation.setResult` 引数として渡されます。 詳細については、「 [ストリーミング関数を作成する](custom-functions-web-reqs.md#make-a-streaming-function)」を参照してください。 |
 | `volatile`        | ブール   | いいえ <br/><br/>既定値は、`false` です。 | 場合 `true`は、数式の依存値が変更されたときだけでなく、Excel が再計算するたびに関数が再計算されます。 関数では、プロパティと`volatile`プロパティの両方を`stream`使用できません。 プロパティと`volatile`プロパティの`stream`両方が設定`true`されている場合、volatile プロパティは無視されます。 |
 
 ### <a name="parameters"></a>parameters
@@ -190,7 +190,7 @@ ms.locfileid: "66660222"
 
 |  プロパティ  |  データ型  |  必須  |  説明  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  いいえ |  パラメーターの説明です。 これは Excel の IntelliSense に表示されます。  |
+|  `description`  |  文字列  |  いいえ |  パラメーターの説明です。 これは Excel の IntelliSense に表示されます。  |
 |  `dimensionality`  |  文字列  |  いいえ  |  `scalar` (配列以外の値) または `matrix` (2 次元配列) である必要があります。  |
 |  `name`  |  string  |  はい  |  パラメーターの名前です。 この名前は、Excel の IntelliSense に表示されます。  |
 |  `type`  |  文字列  |  いいえ  |  パラメーターのデータ型です。 `boolean`には、`number``string``any`前の 3 種類のいずれかを使用できます。 このプロパティが指定されていない場合、データ型の既定値 `any`は . |
@@ -208,7 +208,7 @@ ms.locfileid: "66660222"
 
 ## <a name="associating-function-names-with-json-metadata"></a>関数名を JSON メタデータに関連付ける
 
-関数が正しく機能するには、関数の `id` プロパティを JavaScript 実装に関連付ける必要があります。 関連付けがあることを確認します。それ以外の場合、関数は登録されません。Excel では使用できません。 次のコード サンプルは、メソッドを使用して関連付けを行う方法を `CustomFunctions.associate()` 示しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
+関数が正しく機能するには、関数の `id` プロパティを JavaScript 実装に関連付ける必要があります。 関連付けがあることを確認します。それ以外の場合、関数は登録されません。Excel では使用できません。 次のコード サンプルは、関数を使用して関連付けを行う方法を `CustomFunctions.associate()` 示しています。 このサンプルではカスタム関数 `add` を定義し、それを `id` プロパティ値が **ADD** の、JSON メタデータ ファイル内のオブジェクトに関連付けます。
 
 ```js
 /**

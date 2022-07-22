@@ -3,14 +3,14 @@ ms.date: 07/08/2021
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 ms.localizationpriority: medium
-ms.openlocfilehash: c22a2d52ca0b144eb8ccb8acf88225cca75f0980
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744387"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958602"
 ---
-# <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスのバッチ カスタム関数呼び出し
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスの Batch カスタム関数呼び出し
 
 カスタム関数がリモート サービスを呼び出す場合は、リモート サービスへのネットワークの呼び出し数を減らすバッチ処理のパターンを使用できます。 バッチ処理をしたネットワーク ラウンド トリップのウェブ サービスへのすべての呼び出しを、1 回に減らします。 これは、ワークシートが再計算するときに最適な方法です。
 
@@ -20,9 +20,9 @@ ms.locfileid: "63744387"
 
 ## <a name="view-the-completed-sample"></a>完成したサンプルを表示する
 
-完成したサンプルを表示するには、この記事に従い、コード例を独自のプロジェクトに貼り付けます。 たとえば、TypeScript 用の新しいカスタム関数プロジェクトを作成するには、Office アドインに [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用し、この記事のすべてのコードをプロジェクトに追加します。 コードを実行し、試してみてください。
+完成したサンプルを表示するには、この記事に従って、独自のプロジェクトにコード例を貼り付けます。 たとえば、TypeScript 用の新しいカスタム関数プロジェクトを作成するには、 [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用し、この記事のすべてのコードをプロジェクトに追加します。 コードを実行して試してください。
 
-または、カスタム関数バッチ 処理パターンで完全なサンプル プロジェクト [をダウンロードまたは表示します](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
+または、 [カスタム関数のバッチ処理パターン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)で完全なサンプル プロジェクトをダウンロードまたは表示します。 読み進める前に全体のコードを表示したい場合、 [スクリプト ファイル](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)をご覧ください。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>この記事内でバッチ処理パターンを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "63744387"
 2. バッチの準備ができたときのリモート要求を行う関数です。
 3. バッチ要求に応答するサーバー コードは、すべての操作の結果を計算して値を返します。
 
-次のセクションでは、コードを一度に 1 つの例で作成する方法について説明します。 **functions.ts** ファイルにそれぞれのコード例を追加します。 新しいアドイン ジェネレーターの [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して、新しいカスタムOffice作成をお勧めします。 新しいプロジェクトを作成するには、「[](../quickstarts/excel-custom-functions-quickstart.md)カスタム関数の開発を開始Excel JavaScript の代わりに TypeScript を使用する」を参照してください。
+次のセクションでは、コードを一度に 1 つの例で作成する方法について説明します。 **functions.ts** ファイルにそれぞれのコード例を追加します。 [Office アドイン ジェネレーターの Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して、まったく新しいカスタム関数プロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、「 [Excel カスタム関数の開発を開始](../quickstarts/excel-custom-functions-quickstart.md) し、JavaScript の代わりに TypeScript を使用する」を参照してください。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>カスタム関数の各呼び出しにバッチ処理をする
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>独自のソリューションに`_makeRemoteRequest`を変更します。
 
-`_makeRemoteRequest`関数は、あとで表示されますが、リモート サービスを表すモックの`_fetchFromRemoteService`を呼び出します。 これにより、簡単に学習でき、この記事でコードを実行することができます。 ただし、実際のリモート サービスでこのコードを使用する場合は、次の変更を行う必要があります。
+`_makeRemoteRequest`関数は、あとで表示されますが、リモート サービスを表すモックの`_fetchFromRemoteService`を呼び出します。 これにより、簡単に学習でき、この記事でコードを実行することができます。 ただし、実際のリモート サービスにこのコードを使用する場合は、次の変更を行う必要があります。
 
 - ネットワーク経由でバッチ処理をシリアル化する方法を決定します。 たとえば、JSON の本文に、配列を配置することがあります。
 - `_fetchFromRemoteService`を呼び出す代わりに、バッチ処理を渡すリモート サービスに実際にネットワークの呼び出しをする必要があります。
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>`_fetchFromRemoteService`をライブ リモート サービスに変更する
 
-ライブ リモート サービスで `_fetchFromRemoteService` 実行する関数を変更するには、次の変更を行います。
+ライブ リモート サービスで実行するように関数を変更 `_fetchFromRemoteService` するには、次の変更を行います。
 
 - サーバー プラットフォーム (Node.js またはその他) のマップによっては、クライアント ネットワークがこの関数を呼び出します。 
 - モックの一部としてネットワークの遅延をシミュレートする`pause`関数を削除する。
@@ -221,6 +221,6 @@ function pause(ms: number) {
 
 ## <a name="see-also"></a>関連項目
 
-* [関数の揮発性の値](custom-functions-volatile.md)
-* [Excel でカスタム関数を作成する](custom-functions-overview.md)
-* [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)
+- [関数の揮発性の値](custom-functions-volatile.md)
+- [Excel でカスタム関数を作成する](custom-functions-overview.md)
+- [Excel カスタム関数のチュートリアル](../tutorials/excel-tutorial-create-custom-functions.md)

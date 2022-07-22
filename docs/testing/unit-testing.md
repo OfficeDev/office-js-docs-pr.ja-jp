@@ -1,40 +1,40 @@
 ---
-title: アドインでの単体Officeテスト
-description: JavaScript API を呼び出すテスト コードを単体Office説明します。
+title: Office アドインでの単体テスト
+description: Office JavaScript API を呼び出すコードを単体テストする方法について説明します。
 ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6b0483b23c3f7199a8bd308bf8a4118402ee08
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 21858a68734ca5d07621f3e9c88b147ebac7dde6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746127"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958749"
 ---
-# <a name="unit-testing-in-office-add-ins"></a>アドインでの単体Officeテスト
+# <a name="unit-testing-in-office-add-ins"></a>Office アドインでの単体テスト
 
-単体テストでは、ネットワーク接続やサービス接続を必要とせずに、アドインの機能を確認します (アプリケーションへの接続Officeします。 [Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md) を呼び出していないサーバー側コードとクライアント側コードの単体テストは、Office アドインの場合と Web アプリケーションの場合と同じなので、特別なドキュメントは必要としません。 ただし、JavaScript API を呼び出すクライアント側Officeテストは困難です。 これらの問題を解決するために、単体テストでのモック Office オブジェクトの作成を簡略化するためのライブラリを作成しました。[Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock)。 ライブラリを使用すると、次の方法でテストが容易になります。
+単体テストでは、Office アプリケーションへの接続など、ネットワーク接続やサービス接続を必要とせずにアドインの機能を確認します。 [Office JavaScript API を](../develop/understanding-the-javascript-api-for-office.md)呼び出 *さない* サーバー側コードとクライアント側コードの単体テストは、Office アドインと同じであるため、特別なドキュメントは必要ありません。 ただし、Office JavaScript API を呼び出すクライアント側のコードはテストが困難です。 これらの問題を解決するために、単体テストでのモック Office オブジェクトの作成を簡略化するライブラリを作成しました。 [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock) です。 ライブラリを使用すると、次の方法でテストが簡単になります。
 
-- Office JavaScript API は、Office アプリケーション (Excel、Word など) のコンテキストで webview コントロールで初期化する必要があります。そのため、開発コンピューターで単体テストを実行するプロセスに読み込む必要があります。 Office-Addin-Mock ライブラリをテスト ファイルにインポートすると、テストを実行する node.js プロセス内で Office JavaScript API をモック化できます。
-- アプリケーション[固有の API には](../develop/understanding-the-javascript-api-for-office.md#api-models)、他[](../develop/application-specific-api-model.md#load)の関数[](../develop/application-specific-api-model.md#sync)と互いに対して特定の順序で呼び出す必要がある読み込みメソッドと同期メソッドがあります。 さらに、`load`テスト対象の関数で後でコードで読み取る Office オブジェクトのプロパティに応じて、メソッドを特定のパラメーターで呼び出す必要があります。 ただし、単体テスト フレームワークは`load``sync`本質的にステートレスなので、呼び出されたかどうか、またはどのパラメーターに渡されたのかを記録することはできません`load`。 Office-Addin-Mock ライブラリを使用して作成するモック オブジェクトには、これらのことを追跡する内部状態があります。 これにより、モック オブジェクトは実際のオブジェクトのエラー動作をエミュレートOfficeできます。 たとえば、`load`テスト中の関数が最初に渡されていないプロパティを読み取ろうとすると、テストは、Office に返されるエラーと同様のエラーを返します。
+- Office JavaScript API は、Office アプリケーション (Excel、Word など) のコンテキストで Web ビュー コントロールで初期化する必要があります。そのため、開発用コンピューターで単体テストを実行するプロセスでは読み込めません。 Office-Addin-Mock ライブラリをテスト ファイルにインポートできます。これにより、テストを実行するnode.js プロセス内で Office JavaScript API をモックできます。
+- [アプリケーション固有の API には](../develop/understanding-the-javascript-api-for-office.md#api-models)、他の関数と相互に対して特定の順序で呼び出す必要がある[読み込み](../develop/application-specific-api-model.md#load)メソッドと[同期](../develop/application-specific-api-model.md#sync)メソッドがあります。 さらに、テストする関数の`load`*後* でコードによって読み込まれる Office オブジェクトのプロパティに応じて、特定のパラメーターを使用してメソッドを呼び出す必要があります。 しかし、単体テスト フレームワークは本質的にステートレスであるため、呼び出されたかどうか `load` 、 `sync` または渡されたパラメーターの記録を `load`保持することはできません。 Office-Addin-Mock ライブラリを使用して作成するモック オブジェクトには、これらのことを追跡する内部状態があります。 これにより、モック オブジェクトは実際の Office オブジェクトのエラー動作をエミュレートできます。 たとえば、テスト対象の関数が最初に渡されなかったプロパティの読み取りを `load`試みる場合、テストは Office が返すエラーと同様のエラーを返します。
 
-ライブラリは JavaScript API のOffice依存し、次のような JavaScript 単体テスト フレームワークで使用できます。
+ライブラリは Office JavaScript API に依存せず、次のような JavaScript 単体テスト フレームワークで使用できます。
 
-- [Jest](https://jestjs.io)
-- [Mocha](https://mochajs.org/)
+- [冗談](https://jestjs.io)
+- [モカ](https://mochajs.org/)
 - [ジャスミン](https://jasmine.github.io/)
 
-この記事の例では、Jest フレームワークを使用します。 Mocha フレームワークを使用する例は、[Office-Addin-Mock ホーム ページに表示されます](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples)。
+この記事の例では、Jest フレームワークを使用します。 [Office-Addin-Mock ホーム ページ](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples)には、Mocha フレームワークを使用する例があります。
 
 ## <a name="prerequisites"></a>前提条件
 
-この記事では、テスト ファイルの作成と実行方法など、単体テストとモックの基本的な概念に精通し、単体テスト フレームワークの経験を持っている必要があります。
+この記事では、単体テストとモック作成の基本的な概念 (テスト ファイルの作成と実行方法など) について理解していることと、単体テスト フレームワークに関する経験があることを前提としています。
 
 > [!TIP]
-> Visual Studio を使用している場合は、Visual Studio での JavaScript 単体テストに関する基本的な情報については、Visual Studio の「[JavaScript と TypeScript](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) の単体テスト」の記事を読んでから、この記事に戻することをお勧めします。
+> Visual Studio を使用している場合は、Visual Studio での JavaScript 単体テストに関する基本的な情報については、 [Visual Studio の JavaScript と TypeScript の単体テスト](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) に関する記事を参照してから、この記事に戻ってください。
 
-## <a name="install-the-tool"></a>ツールのインストール
+## <a name="install-the-tool"></a>ツールをインストールする
 
-ライブラリをインストールするには、コマンド プロンプトを開き、アドイン プロジェクトのルートに移動し、次のコマンドを入力します。
+ライブラリをインストールするには、コマンド プロンプトを開き、アドイン プロジェクトのルートに移動して、次のコマンドを入力します。
 
 ```command&nbsp;line
 npm install office-addin-mock --save-dev
@@ -42,19 +42,19 @@ npm install office-addin-mock --save-dev
 
 ## <a name="basic-usage"></a>基本的な使用法
 
-1. プロジェクトには 1 つ以上のテスト ファイルがあります。 (以下の Examples(#examples) のテスト フレームワークの手順とテスト ファイルの例を参照してください。次の例に示`require``import`すように、or キーワードを使用して、Office JavaScript API を呼び出す関数のテストを含むテスト ファイルにライブラリをインポートします。
+1. プロジェクトには 1 つ以上のテスト ファイルが含まれます。 (テスト フレームワークの手順と、以下の例 (#examples) のテスト ファイルの例を参照してください)。次の例に示すように、 `require` Office JavaScript API を呼び出す関数のテストを含むテスト ファイルに、ライブラリをキーワードで `import` インポートします。
 
    ```javascript
    const OfficeAddinMock = require("office-addin-mock");
    ```
 
-1. or キーワードを使用してテストするアドイン関数を含むモジュールを `require` インポート `import` します。 次に、テスト ファイルがアドインのコード ファイルを含むフォルダーのサブフォルダーにあると仮定する例を示します。
+1. またはキーワードを使用してテストするアドイン関数を含むモジュールを`require``import`インポートします。 次に示すのは、テスト ファイルがアドインのコード ファイルを含むフォルダーのサブフォルダーにあることを前提とした例です。
 
    ```javascript
    const myOfficeAddinFeature = require("../my-office-add-in");
    ```
 
-1. 関数をテストするためにモックする必要があるプロパティとサブプロパティを持つデータ オブジェクトを作成します。 [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) プロパティと [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)) メソッドExcelをモックするオブジェクトの例を次に示します。 これは最終的なモック オブジェクトではない。 最終的なモック オブジェクトを作成するために使用される `OfficeMockObject` シード オブジェクトと考えて下さい。
+1. 関数をテストするためにモックする必要があるプロパティとサブプロパティを持つデータ オブジェクトを作成します。 Excel [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) プロパティと [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)) メソッドをモックするオブジェクトの例を次に示します。 これは最終的なモック オブジェクトではありません。 最終的なモック オブジェクトを作成するために使用 `OfficeMockObject` されるシード オブジェクトと考えてください。
 
    ```javascript
    const mockData = {
@@ -69,20 +69,20 @@ npm install office-addin-mock --save-dev
    };
    ```
 
-1. データ オブジェクトをコンストラクターに渡 `OfficeMockObject` します。 返されるオブジェクトについて次の点に注意 `OfficeMockObject` してください。
+1. データ オブジェクトをコンストラクターに `OfficeMockObject` 渡します。 返されるオブジェクトについては、次の点に `OfficeMockObject` 注意してください。
 
-   - これは、 [OfficeExtension.ClientRequestContext オブジェクトの簡略化されたモック](/javascript/api/office/officeextension.clientrequestcontext) です。
-   - モック オブジェクトには、データ オブジェクトのすべてのメンバーが含まれており、and メソッドのモック実装 `load` も `sync` 持っています。
-   - モック オブジェクトは、オブジェクトの重大なエラー動作を模倣 `ClientRequestContext` します。 たとえば、テスト中の Office API `sync`が最初にプロパティを読み込んで呼び出さずにプロパティの読み取りを試みる場合、テストは失敗し、実稼働ランタイムでスローされるエラーと同様のエラーが発生します。"Error, property not loaded"。
+   - これは、 [OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) オブジェクトの簡略化されたモックです。
+   - モック オブジェクトには、データ オブジェクトのすべてのメンバーが含まれており、また、そのモックの実装 `load` と `sync` メソッドもあります。
+   - モック オブジェクトは、オブジェクトの重大なエラー動作を `ClientRequestContext` 模倣します。 たとえば、テスト中の Office API が最初にプロパティを読み込んで呼び出 `sync`さずにプロパティを読み取ろうとした場合、テストは、運用環境ランタイムでスローされるエラーと同様のエラーで失敗します。"エラー、プロパティは読み込まれません" です。
 
    ```javascript
    const contextMock = new OfficeAddinMock.OfficeMockObject(mockData);
    ```
 
     > [!NOTE]
-    > この型の完全なリファレンス `OfficeMockObject` ドキュメントは、[Office-Addin-Mock を参照してください](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference)。
+    > この型の `OfficeMockObject` 完全なリファレンス ドキュメントは [、Office-Addin-Mock にあります](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference)。
 
-1. テスト フレームワークの構文で、関数のテストを追加します。 オブジェクトを `OfficeMockObject` モックするオブジェクトの代り、この場合はオブジェクトを使用 `ClientRequestContext` します。 次の例は Jest で続きます。 このテスト`getSelectedRangeAddress``ClientRequestContext`例では、テスト対象のアドイン関数が呼び出され、オブジェクトをパラメーターとして受け取り、現在選択されている範囲のアドレスを返す目的で使用することを前提とします。 完全な例は、 [この記事の後半です](#mocking-a-clientrequestcontext-object)。
+1. テスト フレームワークの構文で、関数のテストを追加します。 モックする `OfficeMockObject` オブジェクトの代わりにオブジェクト (この場合はオブジェクト) を `ClientRequestContext` 使用します。 Jest の例を次に示します。 このテスト例では、テスト対象のアドイン関数が呼び出 `getSelectedRangeAddress`され、オブジェクトがパラメーターとして受け取られ `ClientRequestContext` 、現在選択されている範囲のアドレスを返すことを想定しています。 完全な例については、 [この記事の後半で説明します](#mocking-a-clientrequestcontext-object)。
 
    ```javascript
    test("getSelectedRangeAddress should return the address of the range", async function () {
@@ -90,7 +90,7 @@ npm install office-addin-mock --save-dev
    });
    ```
 
-1. テスト フレームワークと開発ツールのドキュメントに従ってテストを実行します。 通常、テスト フレームワークを実行するスクリプトを含む **package.json** ファイルがあります。 たとえば、Jest がフレームワークの場合、 **package.json** には次の情報が含まれます。
+1. テスト フレームワークと開発ツールのドキュメントに従ってテストを実行します。 通常、テスト フレームワークを実行するスクリプトを含む **package.json** ファイルがあります。 たとえば、Jest がフレームワークの場合、 **package.json** には次のものが含まれます。
 
    ```json
    "scripts": {
@@ -99,7 +99,7 @@ npm install office-addin-mock --save-dev
    }
    ```
 
-   テストを実行するには、プロジェクトのルートにあるコマンド プロンプトに次を入力します。
+   テストを実行するには、プロジェクトのルートにあるコマンド プロンプトに次のように入力します。
 
    ```command&nbsp;line
    npm test
@@ -107,19 +107,19 @@ npm install office-addin-mock --save-dev
 
 ## <a name="examples"></a>例
 
-このセクションの例では、既定の設定で Jest を使用します。 これらの設定は、CommonJS モジュールをサポートします。 Jest [および node.js](https://jestjs.io/docs/getting-started) ECMAScript モジュールをサポートし、TypeScript をサポートする方法については、Jest のドキュメントを参照してください。 これらの例を実行するには、次の手順を実行します。
+このセクションの例では、既定の設定で Jest を使用します。 これらの設定では、CommonJS モジュールがサポートされています。 Jest と node.jsを構成して ECMAScript モジュールをサポートし、TypeScript をサポートする方法については、 [Jest のドキュメント](https://jestjs.io/docs/getting-started) を参照してください。 これらの例のいずれかを実行するには、次の手順に従います。
 
-1. 適切なOfficeホスト アプリケーション (たとえば、Officeまたは Word) のアドイン プロジェクトExcel作成します。 これを迅速に行う方法の 1 つは、[アドインに Yeoman ジェネレーター Office使用する方法です](../develop/yeoman-generator-overview.md)。
+1. 適切な Office ホスト アプリケーション (Excel や Word など) 用の Office アドイン プロジェクトを作成します。 これを迅速に行う方法の 1 つは、 [Office アドイン用の Yeoman ジェネレーターを使用する方法です](../develop/yeoman-generator-overview.md)。
 1. プロジェクトのルートに [Jest をインストールします](https://jestjs.io/docs/getting-started)。
 1. [office-addin-mock ツールをインストールします](#install-the-tool)。
-1. 例の最初のファイルとまったく同じファイルを作成し、プロジェクトの他のソース ファイル (よく呼ばれる) を含むフォルダーに追加します `\src`。
-1. ソース ファイル フォルダーにサブフォルダーを作成し、適切な名前を指定します `\tests`。
+1. 例の最初のファイルとまったく同じようにファイルを作成し、プロジェクトの他のソース ファイル (多くの場合 `\src`は .
+1. ソース ファイル フォルダーにサブフォルダーを作成し、次のような `\tests`適切な名前を付けます。
 1. 例のテスト ファイルとまったく同じファイルを作成し、サブフォルダーに追加します。
-1. `test` package.json ファイルに **スクリプトを追加** し、「基本使用法」で説明するようにテスト [を実行します](#basic-usage)。
+1. `test` **package.json** ファイルにスクリプトを追加し、[基本的な使用法](#basic-usage)の説明に従ってテストを実行します。
 
-### <a name="mocking-the-office-common-apis"></a>一般的な API Officeをモックする
+### <a name="mocking-the-office-common-apis"></a>Office Common API のモック
 
-この例では、[Office 共通 API (Office](../develop/office-javascript-api-object-model.md)、PowerPoint、Word など) をサポートする任意のホストの Excel アドインPowerPoint想定しています。 アドインには、という名前のファイルの機能の 1 つがあります `my-common-api-add-in-feature.js`。 ファイルの内容を次に示します。 この関数 `addHelloWorldText` は、テキスト "Hello World! ドキュメントで現在選択されているもの。たとえば、次の例を示します。Word の範囲、またはセル内のセル、Excel内のテキスト ボックスPowerPoint。
+この例では、Office [Common API (](../develop/office-javascript-api-object-model.md) Excel、PowerPoint、Word など) をサポートする任意のホストの Office アドインを想定しています。 アドインには、.. という名前のファイル内の機能のいずれかが含まれています `my-common-api-add-in-feature.js`。 ファイルの内容を次に示します。 この関数は`addHelloWorldText`、"Hello World!" というテキストを設定します。 ドキュメントで現在選択されているものに対して。たとえば、Word の範囲、Excel のセル、または PowerPoint のテキスト ボックス。
 
 ```javascript
 const myCommonAPIAddinFeature = {
@@ -133,10 +133,10 @@ const myCommonAPIAddinFeature = {
 module.exports = myCommonAPIAddinFeature;
 ```
 
-名前の付いたテスト `my-common-api-add-in-feature.test.js` ファイルは、アドイン コード ファイルの場所を基準としてサブフォルダーに格納されます。 ファイルの内容を次に示します。 トップ レベルのプロパティは、次の`context`値Office[。Context](/javascript/api/office/office.context) オブジェクトなので、モックされているオブジェクトは、このプロパティの親であるオブジェクト(オブジェクト[Officeします。](/javascript/api/office) このコードについては、次の点に注意してください。
+名前付きの `my-common-api-add-in-feature.test.js` テスト ファイルは、アドイン コード ファイルの場所に対する相対サブフォルダーにあります。 ファイルの内容を次に示します。 最上位レベルのプロパティは `context`[Office.Context](/javascript/api/office/office.context) オブジェクトであるため、モックされているオブジェクトがこのプロパティの親である [Office](/javascript/api/office) オブジェクトであることに注意してください。 このコードについては、次の点に注意してください。
 
-- コンストラクター`OfficeMockObject`は *、* すべての Office `Office` `CoercionType.Text` 列挙型クラスをモック オブジェクトに追加する必要はありません。そのため、アドイン メソッドで参照される値をシード オブジェクトに明示的に追加する必要があります。
-- JavaScript `Office` Officeはノード プロセスに読み込まれないので、アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
+- コンストラクターは`OfficeMockObject`、すべての Office 列挙型クラスをモック `Office` オブジェクトに追加 *するわけではない* の`CoercionType.Text`で、アドイン メソッドで参照される値をシード オブジェクトに明示的に追加する必要があります。
+- Office JavaScript ライブラリはノード プロセスに読み込まれていないため、 `Office` アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -173,9 +173,9 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 });
 ```
 
-### <a name="mocking-the-outlook-apis"></a>API をOutlookする
+### <a name="mocking-the-outlook-apis"></a>Outlook API のモック
 
-厳密に言えば、Outlook API は共通 API モデルの一部ですが、[Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトを中心に構築された特別なアーキテクチャを備え、Outlook の明確な例を示しました。 この例では、ファイルOutlook機能の 1 つを持つオブジェクトを想定しています`my-outlook-add-in-feature.js`。 ファイルの内容を次に示します。 この関数 `addHelloWorldText` は、テキスト "Hello World! を、メッセージ作成ウィンドウで現在選択されているものに設定します。
+厳密に言えば、Outlook API は Common API モデルの一部ですが、 [Mailbox](/javascript/api/outlook/office.mailbox) オブジェクトを中心に構築された特別なアーキテクチャを備えています。そのため、Outlook の明確な例が提供されています。 この例では、Outlook という名前 `my-outlook-add-in-feature.js`のファイル内の機能の 1 つを持つ Outlook を想定しています。 ファイルの内容を次に示します。 この関数は`addHelloWorldText`、"Hello World!" というテキストを設定します。 メッセージ作成ウィンドウで現在選択されているものに対して設定します。
 
 ```javascript
 const myOutlookAddinFeature = {
@@ -188,10 +188,10 @@ const myOutlookAddinFeature = {
 module.exports = myOutlookAddinFeature;
 ```
 
-名前の付いたテスト `my-outlook-add-in-feature.test.js` ファイルは、アドイン コード ファイルの場所を基準としてサブフォルダーに格納されます。 ファイルの内容を次に示します。 トップ レベルのプロパティは、次の`context`値Office[。Context](/javascript/api/office/office.context) オブジェクトなので、モックされているオブジェクトは、このプロパティの親であるオブジェクト(オブジェクト[Officeします。](/javascript/api/office) このコードについては、次の点に注意してください。
+名前付きの `my-outlook-add-in-feature.test.js` テスト ファイルは、アドイン コード ファイルの場所に対する相対サブフォルダーにあります。 ファイルの内容を次に示します。 最上位レベルのプロパティは `context`[Office.Context](/javascript/api/office/office.context) オブジェクトであるため、モックされているオブジェクトがこのプロパティの親である [Office](/javascript/api/office) オブジェクトであることに注意してください。 このコードについては、次の点に注意してください。
 
-- モック `host` オブジェクトのプロパティは、モック ライブラリによって内部的に使用して、アプリケーションのOfficeします。 この機能は、Outlook。 現在のところ、他のアプリケーションの目的Officeしません。
-- JavaScript `Office` Officeはノード プロセスに読み込まれないので、アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
+- モック オブジェクトのプロパティは `host` 、Office アプリケーションを識別するためにモック ライブラリによって内部的に使用されます。 Outlook では必須です。 現在、他の Office アプリケーションでは目的を果たしません。
+- Office JavaScript ライブラリはノード プロセスに読み込まれていないため、 `Office` アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -227,22 +227,22 @@ test("Text of selection in message should be set to 'Hello World'", async functi
 });
 ```
 
-### <a name="mocking-the-office-application-specific-apis"></a>アプリケーション固有の api Officeをモックする
+### <a name="mocking-the-office-application-specific-apis"></a>Office アプリケーション固有の API をモックする
 
-アプリケーション固有の API を使用する関数をテストする場合は、適切な種類のオブジェクトをモック化してください。 次のような 2 つのオプションがあります。
+アプリケーション固有の API を使用する関数をテストする場合は、適切な種類のオブジェクトをモックしていることを確認してください。 次のような 2 つのオプションがあります。
 
-- [OfficeExtension.ClientRequestObject をモックします](/javascript/api/office/officeextension.clientrequestcontext)。 テスト中の関数が次の両方の条件を満たす場合は、この操作を実行します。
+- [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext) をモックします。 これは、テスト対象の関数が次の条件の両方を満たしている場合に行います。
 
-  - ホストを呼び出 *す必要があります*。`run` メソッド ([Excel.run など](/javascript/api/excel#Excel_run_batch_))。
-  - Host オブジェクトの他の直接プロパティやメソッドは *参照* しない。
+  - *ホスト* は呼び出されません。`run` [関数 (Excel.run](/javascript/api/excel#Excel_run_batch_) など)。
+  - *Host* オブジェクトの他の直接プロパティやメソッドは参照しません。
 
-- ホスト オブジェクト *(ファイル* 名や Word など [) をExcel](/javascript/api/excel)[します](/javascript/api/word)。 前のオプションが使用できない場合は、この操作を行います。
+- [Excel](/javascript/api/excel) や [Word](/javascript/api/word) などの *Host* オブジェクトをモックします。 上記のオプションが不可能な場合は、この操作を行います。
 
-両方の種類のテストの例を以下のサブセクションに示します。
+両方の種類のテストの例は、以下のサブセクションにあります。
 
-#### <a name="mocking-a-clientrequestcontext-object"></a>ClientRequestContext オブジェクトのモック
+#### <a name="mocking-a-clientrequestcontext-object"></a>ClientRequestContext オブジェクトをモックする
 
-この例では、ファイルExcel機能の 1 つを持つアドインを想定しています`my-excel-add-in-feature.js`。 ファイルの内容を次に示します。 に渡される `getSelectedRangeAddress` コールバック内で呼び出されるヘルパー メソッドである点に注意してください `Excel.run`。
+この例では、Excel アドインの機能の 1 つがファイルに含 `my-excel-add-in-feature.js`まれているものとします。 ファイルの内容を次に示します。 これは、 `getSelectedRangeAddress` 渡 `Excel.run`されるコールバック内で呼び出されるヘルパー メソッドであることに注意してください。
 
 ```javascript
 const myExcelAddinFeature = {
@@ -260,7 +260,7 @@ const myExcelAddinFeature = {
 module.exports = myExcelAddinFeature;
 ```
 
-名前の付いたテスト `my-excel-add-in-feature.test.js` ファイルは、アドイン コード ファイルの場所を基準としてサブフォルダーに格納されます。 ファイルの内容を次に示します。 トップ レベルのプロパティは、 `workbook`モック `Excel.Workbook`されているオブジェクトが: オブジェクトの親である点に注意 `ClientRequestContext` してください。
+名前付きの `my-excel-add-in-feature.test.js` テスト ファイルは、アドイン コード ファイルの場所に対する相対サブフォルダーにあります。 ファイルの内容を次に示します。 最上位レベルのプロパティは `workbook`、モックされているオブジェクトが : オブジェクトの `Excel.Workbook`親であるため、 `ClientRequestContext` 注意してください。
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -272,7 +272,7 @@ const mockData = {
       range: {
         address: "C2:G3",
       },
-      // Mock the Workbook.getSelectRange method.
+      // Mock the Workbook.getSelectedRange method.
       getSelectedRange: function () {
         return this.range;
       },
@@ -290,9 +290,9 @@ test("getSelectedRangeAddress should return address of selected range", async fu
 });
 ```
 
-#### <a name="mocking-a-host-object"></a>ホスト オブジェクトのモック
+#### <a name="mocking-a-host-object"></a>ホスト オブジェクトをモックする
 
-この例では、 という名前のファイルに 1 つの機能を持つ Word アドインを想定しています `my-word-add-in-feature.js`。 ファイルの内容を次に示します。
+この例では、Word アドインの機能の 1 つがファイルに含 `my-word-add-in-feature.js`まれているものとします。 ファイルの内容を次に示します。
 
 ```javascript
 const myWordAddinFeature = {
@@ -313,12 +313,12 @@ const myWordAddinFeature = {
 module.exports = myWordAddinFeature;
 ```
 
-名前の付いたテスト `my-word-add-in-feature.test.js` ファイルは、アドイン コード ファイルの場所を基準としてサブフォルダーに格納されます。 ファイルの内容を次に示します。 トップ レベル のプロパティは`context``ClientRequestContext``Word`オブジェクトなので、モックされているオブジェクトは、このプロパティの親であるオブジェクトです。 このコードについては、次の点に注意してください。
+名前付きの `my-word-add-in-feature.test.js` テスト ファイルは、アドイン コード ファイルの場所に対する相対サブフォルダーにあります。 ファイルの内容を次に示します。 最上位レベルのプロパティは `context`オブジェクト `ClientRequestContext` であるため、モックされるオブジェクトはオブジェクトというプロパティ `Word` の親になります。 このコードについては、次の点に注意してください。
 
-- コンストラクターが `OfficeMockObject` 最終的なモック オブジェクトを作成すると、 `ClientRequestContext` 子オブジェクトとメソッドが `sync` 確実に `load` 作成されます。
-- コンストラクター`OfficeMockObject`は *モック オブジェクト* に`run``Word`メソッドを追加しないので、シード オブジェクトに明示的に追加する必要があります。
-- コンストラクター `OfficeMockObject` は *、* すべての Word `Word` `InsertLocation.end` 列挙クラスをモック オブジェクトに追加する必要はありません。そのため、アドイン メソッドで参照される値をシード オブジェクトに明示的に追加する必要があります。
-- JavaScript `Word` Officeはノード プロセスに読み込まれないので、アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
+- コンストラクターによって `OfficeMockObject` 最終的なモック オブジェクトが作成されると、子 `ClientRequestContext` オブジェクトに確実に含 `sync` まれるメソッドが `load` 作成されます。
+- コンストラクターは`OfficeMockObject`モック `Word` オブジェクトに関数を`run`追加 *しないため*、シード オブジェクトに明示的に追加する必要があります。
+- コンストラクターは`OfficeMockObject`、すべての Word 列挙型クラスをモック `Word` オブジェクトに追加 *するわけではない* の`InsertLocation.end`で、アドイン メソッドで参照される値をシード オブジェクトに明示的に追加する必要があります。
+- Office JavaScript ライブラリはノード プロセスに読み込まれていないため、 `Word` アドイン コードで参照されるオブジェクトを宣言して初期化する必要があります。
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -345,7 +345,7 @@ const mockData = {
   InsertLocation: {
     end: "end",
   },
-  // Mock the Word.run method.
+  // Mock the Word.run function.
   run: async function(callback) {
     await callback(this.context);
   },
@@ -375,12 +375,12 @@ describe("Insert blue paragraph at end tests", () => {
 ```
 
 > [!NOTE]
-> この型の完全なリファレンス `OfficeMockObject` ドキュメントは、[Office-Addin-Mock を参照してください](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference)。
+> この型の `OfficeMockObject` 完全なリファレンス ドキュメントは [、Office-Addin-Mock にあります](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference)。
 
 ## <a name="see-also"></a>関連項目
 
-- [Office-Addin-Mock npm ページのインストール](https://www.npmjs.com/package/office-addin-mock) ポイント。 
-- オープンソースの repo は[Office-Addin-Mock です](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock)。
-- [Jest](https://jestjs.io)
-- [Mocha](https://mochajs.org/)
+- [Office-Addin-Mock npm ページ](https://www.npmjs.com/package/office-addin-mock) のインストール ポイント。 
+- オープンソースリポジトリは [Office-Addin-Mock です](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock)。
+- [冗談](https://jestjs.io)
+- [モカ](https://mochajs.org/)
 - [ジャスミン](https://jasmine.github.io/)

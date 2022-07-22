@@ -3,12 +3,12 @@ title: Outlook アドインで添付ファイルを追加および削除する
 description: さまざまな添付ファイル API を使用して、ユーザーが作成しているアイテムに添付されているファイルまたは Outlook アイテムを管理します。
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6600fc5926cdecd95e4d232223f11dd9a7b1fc41
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b82a9edb0a3ed43386b63d12f1a87b21b2ab634b
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712833"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958342"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Outlook の作成フォームでアイテムの添付ファイルを管理する
 
@@ -24,9 +24,9 @@ Office JavaScript API には、ユーザーが作成するときにアイテム�
 
 これらは非同期メソッドです。つまり、アクションの完了を待たずに実行を行うことができます。 追加する添付ファイルの元の場所とサイズによっては、非同期呼び出しの完了に時間がかかる場合があります。
 
-アクションの完了に依存するようなタスクがある場合、それらのタスクはコールバック メソッドで実行する必要があります。 このコールバック メソッドは省略可能であり、添付ファイルのアップロードが完了したときに呼び出されます。 コールバック メソッドは、状態、エラー、そして添付ファイル追加によって返される値を提供する出力パラメーターとして、[AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトを使用します。 コールバックがその他のパラメーターを必要とする場合、オプションの `options.asyncContext` パラメーターでそれを指定することができます。 `options.asyncContext` は、コールバック メソッドが予期する任意の種類となることができます。
+完了するアクションに依存するタスクがある場合は、それらのタスクをコールバック関数で実行する必要があります。 このコールバック関数は省略可能であり、添付ファイルのアップロードが完了したときに呼び出されます。 コールバック関数は [、AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトを出力パラメーターとして受け取り、添付ファイルの追加から状態、エラー、および戻り値を提供します。 コールバックがその他のパラメーターを必要とする場合、オプションの `options.asyncContext` パラメーターでそれを指定することができます。 `options.asyncContext` は、コールバック関数が想定する任意の型にすることができます。
 
-たとえば、1 つ以上のキーと値のペアを含む JSON オブジェクトとして定義 `options.asyncContext` できます。 Office アドインの非同期プログラミングの Office アドイン プラットフォームでは、省略可能なパラメーターを非同期メソッドに渡す方法について詳しく説明 [します](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)。次の例は、パラメーターを使用 `asyncContext` してコールバック メソッドに 2 つの引数を渡す方法を示しています。
+たとえば、1 つ以上のキーと値のペアを含む JSON オブジェクトとして定義 `options.asyncContext` できます。 Office アドインの非同期プログラミングの Office アドイン プラットフォームでは、省略可能なパラメーターを非同期メソッドに渡す方法について詳しく説明 [します](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)。次の例では、パラメーターを使用 `asyncContext` してコールバック関数に 2 つの引数を渡す方法を示します。
 
 ```js
 const options = { asyncContext: { var1: 1, var2: 2}};
@@ -34,7 +34,7 @@ const options = { asyncContext: { var1: 1, var2: 2}};
 Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon.png', 'icon.png', options, callback);
 ```
 
-非同期メソッド呼び出しの正常終了またはエラーの確認は、コールバック メソッドにおいて `AsyncResult` オブジェクトの `status` と `error` のプロパティを使用して行うことができます。添付が成功裏に完了した場合、`AsyncResult.value` プロパティを使用して添付ファイル ID を取得することができます。添付ファイル ID は整数で、その後、添付ファイルを削除する場合に使用できます。
+オブジェクトのプロパティを使用して `status` 、コールバック関数で非同期メソッド呼び出しの成功または `error` エラーを `AsyncResult` 確認できます。 添付が正常に完了した場合は、プロパティを `AsyncResult.value` 使用して添付ファイル ID を取得できます。 添付ファイル ID は整数であり、後で添付ファイルを削除するときに使用できます。
 
 > [!NOTE]
 > 添付ファイル ID は同じセッション内でのみ有効であり、セッション間で同じ添付ファイルにマップすることは保証されません。 セッションが終了した場合の例には、ユーザーがアドインを閉じた場合や、ユーザーがインライン フォームで作成を開始し、その後インライン フォームをポップアップして別のウィンドウで続行する場合などがあります。
@@ -43,19 +43,19 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 
 メソッドを使用 `addFileAttachmentAsync` し、ファイルの URI を指定することで、作成フォームのメッセージまたは予定にファイルを添付できます。 メソッドを `addFileAttachmentFromBase64Async` 使用することもできますが、base64 文字列を入力として指定することもできます。 If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
 
-次の JavaScript 例は、picture.png ファイルを web サーバーから取得して新規作成中のメッセージあるいは予定に添付する新規作成アドインです。コールバック メソッドはパラメーターとして `asyncResult` を使用し、結果の状態を確認し、メソッドが成功した場合に添付ファイル ID を取得します。
+次の JavaScript の例は、Web サーバーのファイル picture.png を作成中のメッセージまたは予定に添付する新規作成アドインです。 コールバック関数はパラメーターとして受け取り `asyncResult` 、結果の状態を確認し、メソッドが成功した場合に添付ファイル ID を取得します。
 
 ```js
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add the specified file attachment to the item
         // being composed.
         // When the attachment finishes uploading, the
-        // callback method is invoked and gets the attachment ID.
+        // callback function is invoked and gets the attachment ID.
         // You can optionally pass any object that you would
-        // access in the callback method as an argument to
+        // access in the callback function as an argument to
         // the asyncContext parameter.
         Office.context.mailbox.item.addFileAttachmentAsync(
             `https://webserver/picture.png`,
@@ -90,11 +90,11 @@ function write(message){
 // ID is the EWS ID of the item to be attached.
 function addItemAttachment(itemId) {
     // When the attachment finishes uploading, the
-    // callback method is invoked. Here, the callback
-    // method uses only asyncResult as a parameter,
+    // callback function is invoked. Here, the callback
+    // function uses only asyncResult as a parameter,
     // and if the attaching succeeds, gets the attachment ID.
     // You can optionally pass any other object you wish to
-    // access in the callback method as an argument to
+    // access in the callback function as an argument to
     // the asyncContext parameter.
     Office.context.mailbox.item.addItemAttachmentAsync(
         itemId,
@@ -125,7 +125,7 @@ function addItemAttachment(itemId) {
 
 添付ファイルのコンテンツを取得するには、 [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) メソッドを使用します。 サポートされている形式は、 [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) 列挙型に一覧表示されます。
 
-出力パラメーター オブジェクトを使用して、状態とエラーを確認するコールバック メソッドを指定する `AsyncResult` 必要があります。 省略可能 `asyncContext` なパラメーターを使用して、追加のパラメーターをコールバック メソッドに渡すこともできます。
+出力パラメーター オブジェクトを使用して状態とエラーを確認するコールバック関数を指定する `AsyncResult` 必要があります。 省略可能 `asyncContext` なパラメーターを使用して、追加のパラメーターをコールバック関数に渡すこともできます。
 
 次の JavaScript の例では、添付ファイルを取得し、サポートされている添付ファイル形式ごとに個別の処理を設定できます。
 
@@ -170,18 +170,18 @@ function handleAttachmentsCallback(result) {
 > [!IMPORTANT]
 > 要件セット 1.7 以前を使用している場合は、同じアドインが同じセッションに追加した添付ファイルのみを削除する必要があります。
 
-`addFileAttachmentAsync`、`addItemAttachmentAsync`およびメソッドと`getAttachmentsAsync`同様に、`removeAttachmentAsync`非同期メソッドです。 出力パラメーター オブジェクトを使用して、状態とエラーを確認するコールバック メソッドを指定する `AsyncResult` 必要があります。 省略可能 `asyncContext` なパラメーターを使用して、追加のパラメーターをコールバック メソッドに渡すこともできます。
+`addFileAttachmentAsync`、`addItemAttachmentAsync`およびメソッドと`getAttachmentsAsync`同様に、`removeAttachmentAsync`非同期メソッドです。 出力パラメーター オブジェクトを使用して状態とエラーを確認するコールバック関数を指定する `AsyncResult` 必要があります。 省略可能 `asyncContext` なパラメーターを使用して、追加のパラメーターをコールバック関数に渡すこともできます。
 
 次の JavaScript 関数は、 `removeAttachment`上記の例を引き続き拡張し、構成されている電子メールまたは予定から指定された添付ファイルを削除します。 この関数は、削除する添付ファイルの ID を引数として受け取ります。 添付ファイルの ID は、成功した `addFileAttachmentAsync``addFileAttachmentFromBase64Async`、または`addItemAttachmentAsync`メソッド呼び出しの後に取得し、後続`removeAttachmentAsync`のメソッド呼び出しで使用できます。 また、(要件セット 1.8 で導入された) を呼び出 `getAttachmentsAsync` して、そのアドイン セッションの添付ファイルとその ID を取得することもできます。
 
 ```js
 // Removes the specified attachment from the composed item.
 function removeAttachment(attachmentId) {
-    // When the attachment is removed, the callback method is invoked.
-    // Here, the callback method uses an asyncResult parameter and
+    // When the attachment is removed, the callback function is invoked.
+    // Here, the callback function uses an asyncResult parameter and
     // gets the ID of the removed attachment if the removal succeeds.
     // You can optionally pass any object you wish to access in the
-    // callback method as an argument to the asyncContext parameter.
+    // callback function as an argument to the asyncContext parameter.
     Office.context.mailbox.item.removeAttachmentAsync(
         attachmentId,
         { asyncContext: null },

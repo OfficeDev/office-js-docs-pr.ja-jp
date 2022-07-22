@@ -3,18 +3,18 @@ title: Office アドインの作業ウィンドウを表示または非表示に
 description: アドインの継続的な実行中に、プログラムによってアドインのユーザー インターフェイスを非表示または表示する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889227"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958609"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Office アドインの作業ウィンドウを表示または非表示にする
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-関数を呼び出すことで、Office アドインの作業ウィンドウを `Office.addin.showAsTaskpane()` 表示できます。
+メソッドを呼び出すことで、Office アドインの作業ウィンドウを `Office.addin.showAsTaskpane()` 表示できます。
 
 ```javascript
 function onCurrentQuarter() {
@@ -28,7 +28,7 @@ function onCurrentQuarter() {
 
 前のコードでは、 **CurrentQuarterSales** という名前の Excel ワークシートがあるシナリオを前提としています。 アドインは、このワークシートがアクティブ化されるたびに作業ウィンドウを表示します。 このメソッド `onCurrentQuarter` は、ワークシートに登録されている [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) イベントのハンドラーです。
 
-また、関数を呼び出して作業ウィンドウを非表示に `Office.addin.hide()` することもできます。
+また、メソッドを呼び出して作業ウィンドウを `Office.addin.hide()` 非表示にすることもできます。
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -43,7 +43,7 @@ function onCurrentQuarterDeactivated() {
 呼び出 `Office.addin.showAsTaskpane()`すと、作業ウィンドウのリソース ID (`resid`) 値として割り当てたファイルが作業ウィンドウに表示されます。 この`resid`値は、**manifest.xml** ファイルを開いて要素内`<Action xsi:type="ShowTaskpane">`を **\<SourceLocation\>** 特定することで、割り当てまたは変更できます。
 (詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md) 」を参照してください)。
 
-非同期メソッドであるため `Office.addin.showAsTaskpane()` 、関数が完了するまでコードの実行は続行されます。 使用している JavaScript 構文に応じて、キーワードまたは`then()`メソッドで`await`この完了を待ちます。
+非同期メソッドであるため `Office.addin.showAsTaskpane()` 、メソッドが完了するまでコードの実行は続行されます。 使用している JavaScript 構文に応じて、キーワードまたは`then()`メソッドで`await`この完了を待ちます。
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
 

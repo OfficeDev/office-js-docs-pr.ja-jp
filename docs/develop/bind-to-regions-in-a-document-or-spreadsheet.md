@@ -3,12 +3,12 @@ title: ドキュメントやスプレッドシート内の領域へのバイン�
 description: バインドを使用して、識別子を使用してドキュメントまたはスプレッドシートの特定のリージョンまたは要素に一貫性のあるアクセスを確保する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3516a06c74c23f7b5a72a51bbe5dd5d244e82ea5
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b1624624a5664444f811b20d405fb6aefbd23d91
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889374"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958854"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>ドキュメントやスプレッドシート内の領域へのバインド
 
@@ -20,7 +20,7 @@ ms.locfileid: "66889374"
 
 また、バインドを確立すると、ドキュメントまたはスプレッドシートの特定の領域を範囲とする、データおよび選択範囲の変更イベントをサブスクライブできます。つまり、ドキュメントまたはスプレッドシート全体の全般的な変更ではなく、バインドされた領域内で発生する変更のみがアドインに通知されます。
 
-[Bindings] オブジェクトの [getAllAsync] メソッドを使用すると、ドキュメントまたはスプレッドシートに設定されているすべてのバインドのセットにアクセスできます。個々のバインドには、Bindings.[getByIdAsync] メソッドまたは [Office.select] メソッドを使用して ID でアクセスできます。[Bindings] オブジェクトの [addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync]、または [releaseByIdAsync] メソッドのいずれかを使用して、新しいバインドを設定したり、既存のバインドを削除したりできます。
+[Bindings] オブジェクトが公開している [getAllAsync] メソッドを使用すると、ドキュメントまたはスプレッドシートで確立されている一連のすべてのバインドにアクセスできます。 個々のバインドには、いずれかのバインドを使用してその ID でアクセスできます。[getByIdAsync] メソッドまたは [Office.select] 関数。 [Bindings] オブジェクトの [addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync]、または [releaseByIdAsync] メソッドのいずれかを使用して、新しいバインドを設定したり、既存のバインドを削除したりできます。
 
 ## <a name="binding-types"></a>バインドの種類
 
@@ -66,7 +66,7 @@ function write(message){
 
 2 番目のオプションのパラメーターは、作成している新しいバインドの ID を指定するオブジェクトです。指定しない場合、ID は自動的に生成されます。
 
-最後の _callback_ パラメーターで関数に渡される匿名関数は、バインドの作成が完了したときに実行されます。この関数の単一のパラメーター [ を通じて、呼び出しの状態を示す]AsyncResult`asyncResult` オブジェクトにアクセスできます。`AsyncResult.value` プロパティには、新規作成するバインドとして指定した種類の [Binding] オブジェクトへの参照が格納されます。この [Binding] オブジェクトを使用して、データを取得および設定できます。
+バインドの作成が完了すると、最後の  _コールバック_ パラメーターとしてメソッドに渡される匿名関数が実行されます。 この関数の単一のパラメーター `asyncResult` を通じて、呼び出しの状態を示す [AsyncResult] オブジェクトにアクセスできます。 `AsyncResult.value` プロパティには、新規作成するバインドとして指定した種類の [Binding] オブジェクトへの参照が格納されます。 この [Binding] オブジェクトを使用して、データを取得および設定できます。
 
 ## <a name="add-a-binding-from-a-prompt"></a>プロンプトからバインドを追加する
 
@@ -93,7 +93,7 @@ function write(message){
 
 2 番目のパラメーターは、作成している新しいバインドの ID を含むオブジェクトです。指定しない場合、ID は自動的に生成されます。
 
-3 番目の _コールバック_ パラメーターとして関数に渡される匿名関数は、バインドの作成が完了したときに実行されます。 コールバック関数が実行されると、[AsyncResult] オブジェクトには呼び出しのステータスおよび新しく作成されたバインドが格納されます。
+バインドの作成が完了すると、3 番目の _コールバック_ パラメーターとしてメソッドに渡される匿名関数が実行されます。 コールバック関数が実行されると、[AsyncResult] オブジェクトには呼び出しのステータスおよび新しく作成されたバインドが格納されます。
 
 図 1 は、Excel の組み込み範囲選択プロンプトを示しています。
 
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-パラメーターとして `callback` 関数に渡される匿名関数は、操作の完了時に実行されます。 この関数は、 `asyncResult`ドキュメント内のバインドの配列を含む 1 つのパラメーターで呼び出されます。 配列は反復処理されて、バインドの ID を含む文字列が作成されます。 この文字列がメッセージ ボックスに表示されます。
+パラメーターとして `callback` メソッドに渡される匿名関数は、操作の完了時に実行されます。 この関数は、 `asyncResult`ドキュメント内のバインドの配列を含む 1 つのパラメーターで呼び出されます。 配列は反復処理されて、バインドの ID を含む文字列が作成されます。 この文字列がメッセージ ボックスに表示されます。
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Bindings オブジェクトの getByIdAsync メソッドを使用して ID でバインドを取得する
 
@@ -222,11 +222,11 @@ function write(message){
 
 この例では、最初 `id` のパラメーターは取得するバインドの ID です。
 
-2 番目の _コールバック_ パラメーターとして関数に渡される匿名関数は、操作の完了時に実行されます。 この関数は、呼び出しのステータスおよび ID が "myBinding" であるバインドが格納される _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。
+2 番目の _コールバック_ パラメーターとしてメソッドに渡される匿名関数は、操作の完了時に実行されます。 この関数は、呼び出しのステータスおよび ID が "myBinding" であるバインドが格納される _asyncResult_ という 1 つのパラメーターを使用して呼び出されます。
 
-## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Office オブジェクトの select メソッドを使用して ID でバインドを取得する
+## <a name="get-a-binding-by-id-using-the-select-function-of-the-office-object"></a>Office オブジェクトの select 関数を使用して ID でバインドを取得する
 
-次の例は、[Office.select] メソッドを使用してセレクター文字列に ID を指定することによって、ドキュメント内の [Binding] オブジェクトの promise を取得する方法を示しています。その後、Binding.[getDataAsync] メソッドを呼び出して、指定したバインドからデータを取得します。この例では、前述のメソッドのいずれかを使用して `'myBinding'` という名前のバインドがドキュメントに追加されたと想定しています。
+次の例では、 [Office.select] 関数を使用して、セレクター文字列に ID を指定して、ドキュメント内の [Binding] オブジェクト Promise を取得する方法を示します。 その後、Binding.[getDataAsync] メソッドを呼び出して、指定したバインドからデータを取得します。 この例では、前述のメソッドのいずれかを使用して `'myBinding'` という名前のバインドがドキュメントに追加されたと想定しています。
 
 ```js
 Office.select("bindings#myBinding", function onError(){}).getDataAsync(function (asyncResult) {
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> メソッド Promise が `select` [Binding] オブジェクトを正常に返した場合、そのオブジェクトは、[getDataAsync、setDataAsync]、[addHandlerAsync]、[][removeHandlerAsync] の 4 つのメソッドのみを公開します。 Promise が Binding オブジェクトを返すことができない場合は、コールバックを`onError`使用して [asyncResult.error] オブジェクトにアクセスして詳細を取得できます。メソッドによって`select`返される Binding オブジェクト Promise によって公開される 4 つのメソッド以外の [Binding] オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [Document.bindings プロパティと Bindings] を使用して [getByIdAsync] メソッドを使用します。[Binding オブジェクトを取得する getByIdAsync] メソッド。[]
+> 関数 Promise が `select` [Binding] オブジェクトを正常に返した場合、そのオブジェクトは、[getDataAsync、setDataAsync]、[addHandlerAsync]、[][removeHandlerAsync] の 4 つのメソッドのみを公開します。 Promise が Binding オブジェクトを返すことができない場合は、コールバックを `onError` 使用して [asyncResult.error] オブジェクトにアクセスして詳細を取得できます。 関数によって`select`返される Binding オブジェクト Promise によって公開される 4 つのメソッド以外の [Binding] オブジェクトのメンバーを呼び出す必要がある場合は、代わりに [Document.bindings プロパティと Bindings] を使用して [getByIdAsync] メソッドを使用します。[Binding オブジェクトを取得する getByIdAsync] メソッド。[]
 
 ## <a name="release-a-binding-by-id"></a>ID でバインドを解除する
 
@@ -263,7 +263,7 @@ function write(message){
 
 この例で、最初の `id` パラメーターは解除するバインドの ID です。
 
-2 番目のパラメーターとして関数に渡される匿名関数は、操作の完了時に実行されます。この関数は、呼び出しのステータスが格納される  [asyncResult] という 1 つのパラメーターを使用して呼び出されます。
+2 番目のパラメーターとしてメソッドに渡される匿名関数は、操作が完了したときに実行されるコールバックです。 この関数は、呼び出しのステータスが格納される  [asyncResult] という 1 つのパラメーターを使用して呼び出されます。
 
 ## <a name="read-data-from-a-binding"></a>バインドからデータを読み取る
 
@@ -290,7 +290,7 @@ function write(message){
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。[AsyncResult].value プロパティには、`myBinding` 内のデータが格納されます。その値の型は、バインドの種類により異なります。この例のバインドはテキスト バインドです。そのため、値には文字列が格納されます。マトリックス バインドおよびテーブル バインドを使用して作業する追加の例については、[getDataAsync] メソッドのトピックを参照してください。
+メソッドに渡される匿名関数は、操作が完了したときに実行されるコールバックです。 [AsyncResult].value プロパティには、`myBinding` 内のデータが格納されます。 その値の型は、バインドの種類により異なります。 この例のバインドはテキスト バインドです。 そのため、値には文字列が格納されます。 マトリックス バインドおよびテーブル バインドを使用して作業する追加の例については、[getDataAsync] メソッドのトピックを参照してください。
 
 ## <a name="write-data-to-a-binding"></a>バインドにデータを書き込む
 
@@ -304,7 +304,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 この例では、最初のパラメーターは設定する値です `myBinding`。 これはテキスト バインドのため、値は `string` です。 バインドの種類が異なる場合、異なる型のデータが使用されます。
 
-関数に渡される匿名関数は、操作の完了時に実行されるコールバックです。 この関数は、 `asyncResult`結果の状態を含む 1 つのパラメーターで呼び出されます。
+メソッドに渡される匿名関数は、操作が完了したときに実行されるコールバックです。 この関数は、 `asyncResult`結果の状態を含む 1 つのパラメーターで呼び出されます。
 
 > [!NOTE]
 > Excel 2013 SP1 および Excel on the web の関連するビルドのリリースから、[バインド テーブルでデータの書き込みと更新を行う際に書式設定](../excel/excel-add-ins-tables.md)ができるようになりました。
@@ -331,7 +331,7 @@ function write(message){
 
 [addHandlerAsync] メソッドの最初の _eventType_ パラメーターは、サブスクライブするイベントの名前を指定します。 [Office.EventType] は、使用できるイベントの種類の値の列挙型です。 `Office.EventType.BindingDataChanged` は文字列 "bindingDataChanged" に評価されます。
 
-`dataChanged` 2 番目の _ハンドラー_ パラメーターとして関数に渡される関数は、バインド内のデータが変更されたときに実行されるイベント ハンドラーです。 この関数は、バインドへの参照が格納される _eventArgs_ という 1 つのパラメーターを使用して呼び出されます。 このバインドを使用して、更新されたデータを取得できます。
+`dataChanged` 2 番目の _ハンドラー_ パラメーターとしてメソッドに渡される関数は、バインド内のデータが変更されたときに実行されるイベント ハンドラーです。 この関数は、バインドへの参照が格納される _eventArgs_ という 1 つのパラメーターを使用して呼び出されます。 このバインドを使用して、更新されたデータを取得できます。
 
 同様に、バインドの [SelectionChanged] イベントにイベント ハンドラーを関連付けることによって、バインド内の選択範囲の変更を検出できます。これを行うには、[addHandlerAsync] メソッドの `eventType` パラメーターを `Office.EventType.BindingSelectionChanged` または `"bindingSelectionChanged"` と指定します。
 

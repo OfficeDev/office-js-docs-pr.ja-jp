@@ -3,12 +3,12 @@ title: アドインで予定の場所を取得または設定する
 description: Outlook アドインで予定の場所を取得または設定する方法について説明します。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9b1ce064ff069aa48f6d9c979edc2dfa4fd3a4
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713099"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958987"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
@@ -49,7 +49,7 @@ const locations = [
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add to the location of the item being composed.
@@ -67,7 +67,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -95,7 +95,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -119,14 +119,14 @@ API を `location` 使用して、予定の場所を取得および設定でき�
 
 ここでは、ユーザーが新規作成している予定の配置場所を取得し、それを表示するコード サンプルを示します。
 
-`item.location.getAsync` を使用するためには、非同期呼び出しの状態と結果を確認するコールバック メソッドを提供します。 オプション パラメーターである `asyncContext` を通して、コールバック メソッドに必要な引数を提供できます。 コールバックの出力パラメーター `asyncResult` を使用して、状態、結果、エラーを取得できます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティを使用して、配置場所を文字列として取得することができます。
+使用 `item.location.getAsync`するには、非同期呼び出しの状態と結果を確認するコールバック関数を指定します。 省略可能なパラメーターを使用して、コールバック関数に必要な引数を `asyncContext` 指定できます。 コールバックの出力パラメーター `asyncResult` を使用して、状態、結果、エラーを取得できます。 非同期コールが成功した場合、[AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) プロパティを使用して、配置場所を文字列として取得することができます。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -158,7 +158,7 @@ function write(message){
 
 ここでは、ユーザーが新規作成している予定の配置場所を設定するコード サンプルを示します。
 
-`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 オプションとして、`asyncContext` パラメーターで、コールバック メソッドとそれに必要な引数を提供することができます。 コールバックの出力パラメーターの `asyncResult` 状態、結果、エラー メッセージを確認する必要があります。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
+`item.location.setAsync` を使用するには、data パラメーターに最大 255 文字までの文字列を指定します。 必要に応じて、コールバック関数と、パラメーター内のコールバック関数の任意の引数を `asyncContext` 指定できます。 コールバックの出力パラメーターの `asyncResult` 状態、結果、エラー メッセージを確認する必要があります。 非同期呼び出しが成功した場合、`setAsync` はそのアイテムの既存の配置場所を上書きし、指定した配置場所をプレーンテキストとして挿入します。
 
 > [!NOTE]
 > 区切り記号としてセミコロンを使用して複数の場所を設定できます (例: '会議室 A;会議室 B')
@@ -168,7 +168,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the location of the item being composed.

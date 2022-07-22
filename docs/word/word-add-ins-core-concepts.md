@@ -3,12 +3,12 @@ title: Office アドインの Word JavaScript オブジェクト モデル
 description: Word 固有の JavaScript オブジェクト モデルの主要なコンポーネントについて説明します。
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07055ee2c8b16315b5c4efea5f62a85331e48445
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746103"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958959"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Office アドインの Word JavaScript オブジェクト モデル
 
@@ -44,8 +44,8 @@ Word API について理解するには、ドキュメントの構成要素が�
 
 ## <a name="see-also"></a>関連項目
 
-- [Word JavaScript API の概要](../reference/overview/word-add-ins-reference-overview.md)
-- [最初の Word アドインをビルドする](../quickstarts/word-quickstart.md)
-- [Word アドインのチュートリアル](../tutorials/word-tutorial.md)
-- [Word JavaScript API リファレンス](/javascript/api/word)
-- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Word JavaScript API の概要](../reference/overview/word-add-ins-reference-overview.md)
+* [最初の Word アドインをビルドする](../quickstarts/word-quickstart.md)
+* [Word アドインのチュートリアル](../tutorials/word-tutorial.md)
+* [Word JavaScript API リファレンス](/javascript/api/word)
+* [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
