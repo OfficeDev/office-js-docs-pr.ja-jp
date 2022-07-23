@@ -3,12 +3,12 @@ title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 708b02cabdfafad599171839b29195d49009f37c
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650585"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958363"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 

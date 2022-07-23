@@ -4,12 +4,12 @@ description: このチュートリアルでは、画像の挿入、テキスト�
 ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: add58a3fc15f70b9c395e2f85c5eb5b2bb6e2bd5
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797667"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958882"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>チュートリアル: PowerPoint 作業ウィンドウ アドインを作成する
 

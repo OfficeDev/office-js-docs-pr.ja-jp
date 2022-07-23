@@ -4,12 +4,12 @@ description: Excel アドインを構築します。このアドインでは、�
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 554fa885cb91671f97103425d572d8bf1f3b6437
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659718"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958391"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>チュートリアル: Excel 作業ウィンドウ アドインを作成する
 
@@ -77,7 +77,7 @@ ms.locfileid: "66659718"
 
     - `run()` 関数全体を見つけて削除します。
 
-1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Excel) {` 行を見つけ、その行の直後に次のコードを追加します。次の点に注意してください。
+1. `Office.onReady` 機能の呼び出しで、`if (info.host === Office.HostType.Excel) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
 
     - このコードの最初の部分では、ユーザーの Excel のバージョンが、このチュートリアルのシリーズで使用する API をすべて含んでいるバージョンの Excel.js をサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分の Excel のバージョンでサポートされているアドインの部分を使用できるようになります。
 
@@ -225,7 +225,7 @@ ms.locfileid: "66659718"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `create-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `create-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -276,7 +276,7 @@ ms.locfileid: "66659718"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `filter-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `filter-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -352,7 +352,7 @@ ms.locfileid: "66659718"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `sort-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `sort-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -447,7 +447,7 @@ ms.locfileid: "66659718"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `create-chart` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `create-chart` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -792,7 +792,7 @@ ms.locfileid: "66659718"
 
 1. **popup.js** に、次のコードを追加します。 このコードについては、次の点に注意してください。
 
-   - *Office.js ライブラリ内の API を呼び出すすべてのページでは、まずライブラリが完全に初期化されていることを確認する必要があります。* これを行う最善の方法は `Office.onReady()` メソッドを呼び出すことです。 アドインに独自の初期化タスクがある場合、コードを `Office.onReady()` の呼び出しにチェーンされている `then()` メソッドに含める必要があります。 `Office.onReady()` の呼び出しは、Office.js を呼び出す前に実行する必要があります。そのため、この例で示すように、割り当てはページによって読み込まれるスクリプト ファイル内に入れてあります。
+   - *Office.js ライブラリ内の API を呼び出すすべてのページでは、まずライブラリが完全に初期化されていることを確認する必要があります。* これを行う最善の方法は `Office.onReady()` 機能を呼び出すことです。 アドインに独自の初期化タスクがある場合、コードを `Office.onReady()` の呼び出しにチェーンされている `then()` メソッドに含める必要があります。 `Office.onReady()` の呼び出しは、Office.js を呼び出す前に実行する必要があります。そのため、この例で示すように、割り当てはページによって読み込まれるスクリプト ファイル内に入れてあります。
 
     ```js
     (function () {
@@ -918,7 +918,7 @@ ms.locfileid: "66659718"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `freeze-header` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。後の手順で `openDialog` メソッドを作成します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `freeze-header` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。 `openDialog`メソッドは後の手順で作成します。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

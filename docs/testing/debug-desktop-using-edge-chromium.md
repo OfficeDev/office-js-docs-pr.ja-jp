@@ -3,12 +3,12 @@ title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows �
 description: VS Code で Microsoft Edge WebView2 (Chromium ベース) を使用する Office アドインをデバッグする方法について説明します。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711015"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959078"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
@@ -77,7 +77,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 1. ブレークポイントを使用して行を呼び出すアドインの機能を実行します。 ブレークポイントがヒットし、ローカル変数を検査できます。
 
    > [!NOTE]
-   > `Office.initialize` または `Office.onReady` の呼び出しのブレークポイントは無視されます。 これらのメソッドの詳細については、「 [Office アドインを初期化する](../develop/initialize-add-in.md)」 を参照してください。
+   > `Office.initialize` または `Office.onReady` の呼び出しのブレークポイントは無視されます。 これらの機能の詳細については、「[Office アドインを初期化する](../develop/initialize-add-in.md)」を参照してください。
 
 > [!IMPORTANT]
 > デバッグ セッションを停止する最善の方法は、**Shift キーを押しながら F5 キー** を押すか、メニューから **[実行] > [デバッグの停止]** を選択することです。 この操作では、ノード サーバー ウィンドウを閉じてホスト アプリケーションを閉じようとしますが、ドキュメントを保存するかどうかを確認するプロンプトがホスト アプリケーションに表示されます。 適切な選択を行い、ホスト アプリケーションを閉じます。 ノード ウィンドウまたはホスト アプリケーションを手動で閉じないようにします。 これを行うと、特にデバッグ セッションの停止と開始を繰り返している時に、バグが発生する可能性があります。

@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 666b525dde96c6d281d5acf6d905e592b172bea3
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 0743057c2f562485c3edb5d3bd82266c13b7e13f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889626"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958889"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API の概要
 
@@ -23,10 +23,10 @@ Visio JavaScript API を使うと、*従来* のSharePoint Online で Visio 図�
 
 Visio JavaScript API を使用して、次のことを行えます。
 
-* ページや図形などの Visio 図面の要素を操作する。
-* Visio 図面のキャンバスにビジュアル マークアップを作成する。
-* 図面の中でのマウス イベントのカスタム ハンドラーを記述する。
-* 図形テキスト、図形データ、およびハイパーリンクなどの図面データをソリューションに公開する。
+- ページや図形などの Visio 図面の要素を操作する。
+- Visio 図面のキャンバスにビジュアル マークアップを作成する。
+- 図面の中でのマウス イベントのカスタム ハンドラーを記述する。
+- 図形テキスト、図形データ、およびハイパーリンクなどの図面データをソリューションに公開する。
 
 この記事では、Visio on the web で Visio JavaScript API を使用して SharePoint Online のソリューションをビルドする方法について説明します。また、`EmbeddedSession`EmbeddedSession`RequestContext`、`sync()`RequestContext`Visio.run()`、JavaScript プロキシ オブジェクトなどの API、および `load()`sync()、Visio.run()、load() のメソッドを使用するために知っておくべき主な概念について紹介します。コード例により、これらの概念を適用する方法を示します。
 
@@ -45,7 +45,7 @@ session.init().then(function () {
 
 `Visio.run()` は、Visio オブジェクト モデルに対してアクションを実行するバッチ スクリプトを実行します。 このバッチ コマンドには、JavaScript のローカル プロキシ オブジェクトの定義と、ローカル オブジェクトと Visio オブジェクトの間で状態を同期し、解決される約束を返す `sync()`sync() メソッドが含まれます。 `Visio.run()`Visio.run() で要求をバッチ処理する利点は、約束が解決されるときに、実行中に割り当てられたすべての追跡ページ オブジェクトが自動的に解放されることです。
 
-run メソッドはセッションと RequestContext オブジェクトを取り込み、promise (通常は `context.sync()` の結果) を返します。 バッチ操作は `Visio.run()` の外部で実行することができます。 ただし、このようなシナリオでは、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
+`run` 機能はセッションと RequestContext オブジェクトを取り込み、promise (通常は `context.sync()` の結果) を返します。 バッチ操作は `Visio.run()` の外部で実行することができます。 ただし、このようなシナリオでは、ページ オブジェクトの参照は、手動で追跡および管理する必要があります。
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -97,7 +97,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>例: アクティブ ページですべての図形テキストを印刷する
 
 次の例では、図形の配列オブジェクトから図形テキストの値を印刷する方法を示します。
-`Visio.run()` メソッドには、命令のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
+`Visio.run()` 機能には、命令のバッチが含まれています。 このバッチの一部として、作業中のドキュメントの図形を参照するプロキシ オブジェクトが作成されます。
 
 これらのすべてのコマンドがキューに登録され、`context.sync()` が呼び出されたときに実行されます。 `sync()` メソッドが返す promise は、このメソッドを他の操作とチェーンにするために使用できます。
 
@@ -137,7 +137,7 @@ Visio.run(session, function (context) {
 
 このセクションの例を使用して作業を開始できます。 この例では、プログラムを使用して Visio 図面で選択した形の図形のテキストを表示する方法を表示します。 最初に、SharePoint Online で通常のページを作成するか、既存のページを編集します。 スクリプト エディターの Web パーツをページに追加し、次のコードをコピーして貼り付けます。
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>

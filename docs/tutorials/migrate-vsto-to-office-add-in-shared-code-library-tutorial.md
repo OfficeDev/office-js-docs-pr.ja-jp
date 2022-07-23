@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 ms.localizationpriority: high
-ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746089"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959057"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -88,7 +88,7 @@ VSTO では、コードは `Microsoft.Office.Interop.Excel.Range` などの .NET
 
 通常は、ビジネス ロジック、アルゴリズム、ヘルパー関数、および類似のコードが VSTO アドインの中心部分を構成しています。 このコードは、分析の実行、バックエンド サービスへの接続、計算の実行などのために、UI コードやドキュメント コードとは無関係に動作します。 このコードが共有可能なものであり、JavaScript での書き直しが不要なコードです。
 
-それでは、この VSTO アドインについて調べてみましょう。次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
+それでは、この VSTO アドインについて調べてみましょう。 次のコードでは、それぞれのセクションがドキュメント コード、UI コード、またはアルゴリズム コードとして識別されています。
 
 ```csharp
 // *** UI CODE ***
@@ -308,7 +308,7 @@ Office アドインの作成時に、REST API への呼び出しが実行され�
 
 1. 上記のコードでは、前の手順で **launchSettings.json** ファイルから保存した **sslPort** 番号を入力します。
 
-上記のコードでは、返された文字列を処理することで、復帰改行を `<br>` HTML タグに置換します。 期待どおりの動作を実現するために、VSTO アドインの .NET では完全に動作する戻り値を Office アドイン側で調整しないとならない状況が発生することがあります。 この場合の REST API と共有クラス ライブラリは、文字列を返すこと以外の処理には関与しません。 `showUnicode()` メソッドは、戻り値が正しく表現されるように書式設定する役割を果たします。
+上記のコードでは、返された文字列を処理することで、復帰改行を `<br>` HTML タグに置換します。 期待どおりの動作を実現するために、VSTO アドインの .NET では完全に動作する戻り値を Office アドイン側で調整しないとならない状況が発生することがあります。 この場合の REST API と共有クラス ライブラリは、文字列を返すこと以外の処理には関与しません。 `showUnicode()` 機能は、戻り値が正しく表現されるように書式設定する役割を果たします。
 
 ### <a name="allow-cors-from-the-office-add-in"></a>Office アドインからの CORS を許可する
 

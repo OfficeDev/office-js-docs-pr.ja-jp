@@ -3,12 +3,12 @@ title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797485"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958763"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -36,7 +36,7 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
 
 一部の特殊なケースでは、プラットフォーム、Office アプリケーション、開発環境の特定の組み合わせについて、デバッグ プロセスが通常と異なる場合があります。 そのような特殊なケースのデバッグを行う場合は、このセクションに示したリンクから適切なガイダンスを見つけてください。 特殊ではない場合は、[一般的なガイダンス](#general-guidance)に進んでください。
 
-- **`Office.initialize` メソッドまたは `Office.onReady` メソッドのデバッグ**: [initialize メソッドと onReady メソッドをデバッグします](debug-initialize-onready.md)。
+- **`Office.initialize` 機能または `Office.onReady` 機能のデバッグ**: [initialize 機能と onReady 機能をデバッグします](debug-initialize-onready.md)。
 - **_非共有_ ランタイム内の Excel カスタム関数のデバッグ**: [非共有ランタイム内のカスタム関数をデバッグします](../excel/custom-functions-debugging.md)。
 - **_非共有_ ランタイム内の [関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)のデバッグ**: 
     - 開発用 Windows コンピューター上の Outlook アドイン: [Outlook アドイン内の関数コマンドをデバッグします。](../outlook/debug-ui-less.md) 

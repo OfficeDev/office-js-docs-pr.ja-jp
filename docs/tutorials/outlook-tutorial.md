@@ -4,12 +4,12 @@ description: このチュートリアルでは、GitHub Gist を新規メッセ�
 ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 53b1b30c940ef3b6b1fdaeeecf95e5afb172c472
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797653"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958377"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>チュートリアル: メッセージ作成 Outlook アドインのビルド
 
@@ -413,7 +413,7 @@ ul {
 }
 ```
 
-これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。 **./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。 このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために **messageParent** 関数を使用しています。
+これでダイアログの UI の定義が完了したので、次に実際に動作するためのコードを記述します。 **./src/settings** フォルダーに **dialog.js** という名前のファイルを作成し、次のコードを追加します。 このコードでは、イベントを登録するために jQuery を使用し、ユーザーの選択内容を呼び出し元に送り返すために `messageParent` メソッドを使用しています。
 
 ```js
 (function(){

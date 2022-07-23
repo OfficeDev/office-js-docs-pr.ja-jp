@@ -4,12 +4,12 @@ description: このチュートリアルでは、テキスト範囲、段落、�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1f7950007a9139767cd31901ccf64c9fb1ebdf7c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484024"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958384"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>チュートリアル: Word 作業ウィンドウ アドインを作成する
 
@@ -76,7 +76,7 @@ ms.locfileid: "64484024"
 
     - `run()` 関数全体を見つけて削除します。
 
-1. `Office.onReady` メソッドの呼び出しで、`if (info.host === Office.HostType.Word) {` 行を見つけ、その行の直後に次のコードを追加します。次の点に注意してください。
+1. `Office.onReady` 機能の呼び出しで、`if (info.host === Office.HostType.Word) {` 行を見つけ、その行の直後に次のコードを追加します。 注:
 
     - このコードの最初の部分では、ユーザーの Word のバージョンが、このチュートリアルのすべての段階で使用するすべての API を含んでいる Word.js のバージョンをサポートしているかどうかを調べます。運用アドインでは、未サポートの API を呼び出す UI を非表示または無効化する条件ブロックの本体を使用してください。これにより、ユーザーは、自分が使用している Word のバージョンでサポートされているアドインの部分を使用できるようになります。
     - このコードの 2 番目の部分では、[`insert-paragraph`] ボタンのイベント ハンドラーを追加します。
@@ -183,7 +183,7 @@ ms.locfileid: "64484024"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-paragraph` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-paragraph` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
@@ -227,7 +227,7 @@ ms.locfileid: "64484024"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `apply-style` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `apply-style` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
@@ -273,7 +273,7 @@ ms.locfileid: "64484024"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `apply-custom-style` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `apply-custom-style` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
@@ -345,7 +345,7 @@ ms.locfileid: "64484024"
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `change-font` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `change-font` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
@@ -378,7 +378,7 @@ ms.locfileid: "64484024"
 
 1. `insertTextIntoRange()` 関数内で、`TODO1` を次のコードに置き換えます。次の点に注意してください。
 
-   - このメソッドは、文字列が "クイック実行" の範囲の末尾に省略形 ["(C2R)"] を挿入します。文字列が存在し、ユーザーがそれを選択していることを想定しています。
+   - この機能の目的は、テキストが Click-to-Run という範囲の末尾に (C2R) という省略形を挿入することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
    - `Range.insertText` メソッドの最初のパラメーターは、`Range` オブジェクトに挿入する文字列です。
 
@@ -465,7 +465,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-text-into-range` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-text-into-range` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
@@ -495,7 +495,7 @@ async function insertTextIntoRange() {
 
 1. `insertTextBeforeRange()` 関数内で、`TODO1` を次のコードに置き換えます。次の点に注意してください。
 
-   - このメソッドは、"Microsoft 365" というテキストを持つ範囲の前に、"Office 2019, " というテキストを持つ範囲を追加することを目的としています。文字列が存在し、ユーザーがそれを選択しているという簡略化された想定をしています。
+   - この機能の目的は、Office 365 というテキストから成る範囲の前に Office 2019 というテキストの範囲を追加することです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
    - `Range.insertText` メソッドの最初のパラメーターは、追加する文字列です。
 
@@ -544,7 +544,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-text-outside-range` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-text-outside-range` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
@@ -569,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. `replaceText()` 関数で、`TODO1` を次のコードに置き換えます。このメソッドの目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
+1. `replaceText()` 関数で、`TODO1` を次のコードに置き換えます。 この機能の目的は、several という文字列を many という文字列で置き換えることです。 これは前提を単純化し、文字列は存在しており、ユーザーがその文字列を選択したものとしています。
 
     ```js
     const doc = context.document;
@@ -630,13 +630,13 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. ファイルの一番上の近くにある `Office.onReady` メソッド コールを探し、その行の直前に次のコードを追加します。 このコードは、ファイル **./base64Image.js** で以前に定義した変数をインポートします。
+1. ファイルの一番上の近くにある `Office.onReady` 機能コールを探し、その行の直前に次のコードを追加します。 このコードは、ファイル **./base64Image.js** で以前に定義した変数をインポートします。
 
     ```js
     import { base64Image } from "../../base64Image";
     ```
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `replace-text` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `replace-text` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
@@ -679,7 +679,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-image` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-image` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
@@ -727,7 +727,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-html` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-html` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
@@ -819,7 +819,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `insert-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `insert-table` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
@@ -877,7 +877,7 @@ async function insertTextIntoRange() {
 
 1. ファイル **./src/taskpane/taskpane.js** を開きます。
 
-1. `Office.onReady` メソッドの呼び出し内で、クリック ハンドラーを `create-content-control` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
+1. `Office.onReady` 機能の呼び出し内で、クリック ハンドラーを `create-content-control` ボタンに割り当てる行を見つけ、その行の後に次のコードを追加します。
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;

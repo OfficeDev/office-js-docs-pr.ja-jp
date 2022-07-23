@@ -313,7 +313,7 @@ items:
             href: testing/runtime-logging.md
           - name: 非共有ランタイムを使用する関数コマンドをデバッグする
             href: testing/debug-function-command.md
-          - name: initialize メソッドと onReady メソッドをデバッグする
+          - name: initialize 機能と onReady 機能をデバッグする
             href: testing/debug-initialize-onready.md
           - name: エラー
             items:
