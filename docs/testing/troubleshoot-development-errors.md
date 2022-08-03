@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの開発エラーのトラブルシューティング
 description: Office アドインの開発エラーのトラブルシューティング方法について説明します。
-ms.date: 06/10/2022
+ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712763"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177666"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -72,7 +72,7 @@ myChart.id = "5";
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>アドインは Edge では機能しませんが、他のブラウザーで動作します
 
-[Microsoft Edge の問題のトラブルシューティングに関するページを](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)参照してください。
+[Microsoft Edge の問題のトラブルシューティングに関するページを](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues)参照してください。
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel アドインはエラーをスローしますが、一貫したエラーはスローされません
 

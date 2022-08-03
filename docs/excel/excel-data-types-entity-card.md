@@ -1,16 +1,16 @@
 ---
 title: Excel JavaScript API データ型エンティティ値カード
 description: Excel アドインのデータ型でエンティティ値カードを使用する方法について説明します。
-ms.date: 07/14/2022
+ms.date: 07/28/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889160"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177655"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>エンティティ値データ型でカードを使用する (プレビュー)
 
@@ -76,6 +76,31 @@ const entity: Excel.EntityCellValue = {
 次のスクリーンショットは、上記のコード スニペットを使用するエンティティ値カードを示しています。 スクリーンショットは、前のコード スニペットの **製品 ID**、 **製品名**、 **画像**、 **ユニットあたりの数量**、 **単価** の情報を示しています。
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="カード レイアウト ウィンドウが表示されたエンティティ値データ型を示すスクリーンショット。カードには、製品名、製品 ID、ユニットあたりの数量、単価の情報が表示されます。":::
+
+### <a name="property-metadata"></a>プロパティ メタデータ
+
+エンティティプロパティには、オブジェクトを`propertyMetadata`使用し、[`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata)プロパティ `attribution``excludeFrom`、および `sublabel`. 次のコード スニペットは、前のコード スニペットからプロパティに `"Unit Price"` a `sublabel` を追加する方法を示しています。 この場合、サブラベルは通貨の種類を識別します。
+
+> [!NOTE]
+> フィールドは `propertyMetadata` 、エンティティ プロパティ内で入れ子になっているデータ型でのみ使用できます。
+
+```TypeScript
+// This code snippet is an excerpt from the `properties` field of the 
+// preceding `EntityCellValue` snippet. "Unit Price" is a property of 
+// an entity value.
+        "Unit Price": {
+            type: Excel.CellValueType.formattedNumber,
+            basicValue: product.unitPrice,
+            numberFormat: "$* #,##0.00",
+            propertyMetadata: {
+              sublabel: "USD"
+            }
+        },
+```
+
+次のスクリーンショットは、前のコード スニペットを使用するエンティティ値カードを示し、**単価** プロパティの横に **USD** のプロパティ メタデータ`sublabel`を表示します。
+
+:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="単価の横にあるサブラベル USD を示すスクリーンショット。":::
 
 ## <a name="card-layout"></a>カードレイアウト
 
