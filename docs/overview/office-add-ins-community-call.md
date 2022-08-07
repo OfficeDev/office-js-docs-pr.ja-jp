@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office アドイン コミュニティの呼び出し
 description: 毎月の Microsoft Office アドイン コミュニティは、議題、スケジュール、リソースを呼び出します。
-ms.date: 07/13/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a96bc5d5b86164d5e7662708c357821792f9f1d
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ad3d2c1113295c2e441a31317fc3c5ac9886b5e9
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889619"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274156"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office アドイン コミュニティの呼び出し
 
@@ -16,7 +16,8 @@ Microsoft Office アドイン コミュニティ通話は、毎月の通話で�
 
 ## <a name="agenda-for-august-10th-call"></a>8 月 10 日の通話の予定
 
-8 月の議題は、通話の約 1 週間前に投稿されます。
+- OOXML ライブラリのデモ。
+- Web サイトと Excel アドインを統合します。
 
 ## <a name="previous-calls"></a>以前の呼び出し
 

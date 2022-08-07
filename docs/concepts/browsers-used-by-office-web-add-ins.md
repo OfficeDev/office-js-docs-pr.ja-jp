@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 07/27/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4063720f8866d9538865f4514841d8dc8d0a84c
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177673"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274163"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -20,10 +20,13 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 - アドインが Office on the web、Microsoft 365、または永続的 ("非サブスクリプション" または "ワンタイム 購入" とも呼ばれます) で実行されているかどうか。Office 2013 以降。
 - Office の永続バージョン内で、アドインが "コンシューマー" または "商用" ("ボリューム ライセンス" または "LTSC" とも呼ばれます) で実行されているかどうか。
 
+> [!NOTE]
+> この記事では、[アドインが Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub) で保護 *されていない* ドキュメントで実行されていることを前提としています。 WIP で保護されたドキュメントの場合、この記事の情報にはいくつかの例外があります。 詳細については、「 [WIP で保護されたドキュメント](#wip-protected-documents)」を参照してください。
+
 > [!IMPORTANT]
 > **Office アドインで引き続き使用される Internet Explorer**
 >
-> Office 2019 を使用した永続的なバージョンを含む、プラットフォームと Office バージョンのいくつかの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Webview コントロールを使用してアドインをホストします。 Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
+> Office 2019 を通じた商用永続バージョンを含む一部のプラットフォームと Office バージョンの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Webview コントロールを使用してアドインをホストします。 Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
 >
 > - Internet Explorer でOffice on the webが開かなくなりました。 その結果、[AppSource は](/office/dev/store/submit-to-appsource-via-partner-center)、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。
 > - AppSource は引き続き Internet Explorer を使用するプラットフォームと Office *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
@@ -63,7 +66,7 @@ Office 2016 または Office 2019 がコンシューマーか商用かを判断�
 |Office 2013 | かまいません |かまいません|Internet Explorer 11|
 |Office 2016| 商用 |かまいません|Internet Explorer 11|
 |Office 2019| 商用 |かまいません|Internet Explorer 11|
-|Office 2016 から Office 2019| コンシューマー |いいえ |Microsoft Edge<sup>1、2 と</sup> 元の WebView (EdgeHTML)</br>Edge がインストールされていない場合は、Internet Explorer 11 が使用されます。|
+|Office 2016 から Office 2019| コンシューマー |不要 |Microsoft Edge<sup>1、2 と</sup> 元の WebView (EdgeHTML)</br>Edge がインストールされていない場合は、Internet Explorer 11 が使用されます。|
 |Office 2016 から Office 2019|  コンシューマー |はい<sup>3</sup>|<sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース)|
 |Office 2021| かまいません |はい<sup>3</sup> |<sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース)|
 
@@ -127,6 +130,17 @@ Office アドインでは、元の Microsoft Edge WebView [EdgeHTML](https://en.
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>PDF ファイルのダウンロード中にエラーが発生する
 
 Edge がブラウザーの場合、アドイン内の PDF ファイルとして BLOB を直接ダウンロードすることはできません。 回避策は、PDF ファイルとして BLOB をダウンロードする単純な Web アプリケーションを作成することです。 アドインでメソッドを呼び出 `Office.context.ui.openBrowserWindow(url)` し、Web アプリケーションの URL を渡します。 これにより、Office の外部のブラウザー ウィンドウで Web アプリケーションが開きます。
+
+## <a name="wip-protected-documents"></a>WIP で保護されたドキュメント
+
+[WIP で保護された](/windows/uwp/enterprise/wip-hub)ドキュメントで実行されているアドインは、**WebView2 (Chromium ベース) で Microsoft Edge を** 使用することはありません。 この記事の前半のセクションでは、Windows 上の Office および [Microsoft 365 サブスクリプション](#microsoft-365-subscription-on-windows)[の永続的なバージョン](#perpetual-versions-of-office-on-windows)のセクションで、Microsoft Edge を WebView2 **(Chromium ベース) で Microsoft Edge** の元の **WebView (EdgeHTML)** に置き換えます。後者が表示される場合はどこでもかまいません。
+
+ドキュメントが WIP で保護されているかどうかを確認するには、次の手順に従います。
+
+1. ファイルを開きます。
+1. リボンの [ **ファイル** ] タブを選択します。
+1. **[情報**] を選択します。
+1. **[情報**] ページの左上にあるファイル名のすぐ下に、WIP 対応ドキュメントの概要アイコンの後に **[Managed by Work (....)]** が表示されます。
 
 ## <a name="see-also"></a>関連項目
 
