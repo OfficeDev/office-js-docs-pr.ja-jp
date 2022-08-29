@@ -3,12 +3,12 @@ title: Office アドインでカスタム コンテキスト タブを作成す�
 description: Office アドインにカスタム コンテキスト タブを追加する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 09cd7ad6e9c8f4e8370df430a5b79a70d7bf0dd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958536"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423056"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Office アドインでカスタム コンテキスト タブを作成する
 
@@ -55,7 +55,7 @@ ms.locfileid: "66958536"
 
 ## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
 
-カスタム コンテキスト タブを追加するには、アドインで共有ランタイムを使用する必要があります。 詳細については、「 [共有ランタイムを使用するようにアドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+カスタム コンテキスト タブを追加するには、 [アドインで共有ランタイム](../testing/runtimes.md#shared-runtime)を使用する必要があります。 詳細については、「 [共有ランタイムを使用するようにアドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>タブに表示されるグループとコントロールを定義する
 
@@ -419,7 +419,7 @@ function myContextChanges() {
 
 > [!IMPORTANT]
 >
-> - アクションに a `sourceLocation` を指定すると、作業ウィンドウで共有ランタイムは使用 *されません* 。 新しい JavaScript ランタイムで実行されます。
+> - アクションに a `sourceLocation` を指定すると、作業ウィンドウで共有ランタイムは使用 *されません* 。 新しい別個のランタイムで実行されます。
 > - 共有ランタイムを使用できる作業ウィンドウは複数ないため、プロパティを省略`sourceLocation`できる種類`ShowTaskpane`のアクションは 1 つ以上ありません。
 
 ```json

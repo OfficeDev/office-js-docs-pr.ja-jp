@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダーの Outlook アドインを作成する
 description: オンライン会議サービス プロバイダー用に Outlook アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797660"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320659"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーの Outlook アドインを作成する
 
@@ -326,7 +326,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 - 管理者がインストールしたアドインのみが会議の作成画面に表示され、既定の Teams または Skype オプションが置き換えられます。 ユーザーがインストールしたアドインはアクティブ化されません。
 - アドイン アイコンは、16 進コード `#919191` を使用するか、 [他の色形式](https://convertingcolors.com/hex-color-919191.html)で同等の色を使用してグレースケールにする必要があります。
 - Appointment Organizer (compose) モードでは、1 つの関数コマンドのみがサポートされます。
-- アドインは、1 分間のタイムアウト期間内に、予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開かれたアドインがダイアログ ボックスに費やされた時間は、タイムアウト期間から除外されます。
+- アドインは、1 分間のタイムアウト期間内に、予定フォームの会議の詳細を更新する必要があります。 ただし、認証用に開かれたアドインがダイアログ ボックスで費やされた時間は、タイムアウト期間から除外されます。
 
 ## <a name="see-also"></a>関連項目
 

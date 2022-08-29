@@ -1,14 +1,14 @@
 ---
 title: Outlook コンテキスト アドインのアクティブ化のトラブルシューティング
 description: アドインが想定どおりにアクティブ化されない可能性がある理由。
-ms.date: 06/03/2022
+ms.date: 08/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 40175139f83a026226bf500c7f949ff37e3f21b2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: c0034eccc1143e3af9867702cdf7cefa6f6a8c53
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891936"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318887"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook アドインのアクティブ化のトラブルシューティング
 
@@ -60,7 +60,7 @@ Outlook コンテキスト アドインのアクティブ化は、アドイン �
 
 アドインが無効になっているかどうかを確認するには、次のいずれかの方法を使用します。
 
-- Outlook on the web で、電子メール アカウントに直接サインインし、リボンから [ **アドインの取得** ] を選択します。
+- Outlook on the webで、電子メール アカウントに直接サインインし、リボンから [**アドインの取得**] を選択します。
 
 - Outlook on Windows で、リボンから **[その他のアプリ** ] を選択し、[ **アドインの取得**] を選択します。
 
@@ -68,16 +68,15 @@ Outlook コンテキスト アドインのアクティブ化は、アドイン �
 
 ## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>テストするアイテムが Outlook アドインをサポートしているか? 選択されたアイテムが Exchange 2013 以降のバージョンの Exchange Server で配信されているか?
 
-Outlook アドインが閲覧アドインであり、ユーザーがメッセージ (メール メッセージ、会議出席依頼、返信、キャンセルなど) や予定を表示するときにアクティブ化されるものである場合、これらのアイテムが通常はアドインをサポートしているとしても、選択しているアイテムが次のいずれかの場合は例外があります。 選択したアイテムが[アクティブではない Outlook アドインの一覧](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)にあるかどうかを確認します。
+Outlook アドインが閲覧アドインであり、ユーザーがメッセージ (メール メッセージ、会議出席依頼、返信、キャンセルなど) や予定を表示するときにアクティブ化されるものである場合、これらのアイテムが通常はアドインをサポートしているとしても、選択しているアイテムが次のいずれかの場合は例外があります。 選択したアイテムが、 [Outlook アドインがアクティブ化されない一覧](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)の項目の 1 つであるかどうかを確認します。
 
-また、予定は常にリッチ テキスト形式で保存されるので、[BodyAsHTML](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) の **PropertyName** 値を指定する **ItemHasRegularExpressionMatch** ルールでは、プレーン テキストやリッチ テキスト形式で保存された予定またはメッセージ上でアドインがアクティブ化されません。
+また、予定は常にリッチ テキスト形式で保存されるため、**BodyAsHTML** の **PropertyName** 値を指定する [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ルールでは、プレーンテキストまたはリッチ テキスト形式で保存された予定またはメッセージに対してアドインがアクティブ化されません。
 
-メール アイテムが上記の種類のいずれかでなくても、アイテムが Exchange 2013 以降のバージョンの Exchange Server で配信されたものでない場合、そのアイテムでは、送信者の SMTP アドレスなどの既知のエンティティおよびプロパティが識別できません。これらのエンティティやプロパティに依存するアクティブ化ルールはどれも条件が満たされず、そのアドインはアクティブ化されません。
+メール アイテムが上記の種類の 1 つではない場合でも、少なくとも Exchange 2013 のバージョンのExchange Serverによってアイテムが配信されなかった場合、送信者の SMTP アドレスなどの既知のエンティティとプロパティはアイテムで識別されません。 これらのエンティティまたはプロパティに依存するすべてのアクティブ化ルールは満たされておらず、アドインはアクティブ化されません。
 
-アドインが新規作成アドインであり、ユーザーがメッセージや会議出席依頼を作成するときにアクティブ化されるものである場合、そのアイテムが IRM によって保護されていないことを確認してください。 ただし、いくつかの例外があります。
+Windows 以外の Outlook on client で、ユーザーがメッセージまたは会議出席依頼を作成しているときにアドインがアクティブ化される場合は、アイテムが Information Rights Management (IRM) によって保護されていないことを確認します。
 
-1. アドインは、Microsoft 365 サブスクリプションに関連付けられている Outlook のデジタル署名付きメッセージでライセンス認証を行います。 Windows では、このサポートはビルド 8711.1000 で導入されました。
-1. Windows の Outlook ビルド 13229.10000 から、IRM で保護されたアイテムに対してアドインをアクティブ化できるようになりました。  プレビューでのこのサポートの詳細については、 [Information Rights Management (IRM) によって保護されているアイテムに対するアドインのアクティブ化](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)に関するページを参照してください。
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>アドイン マニフェストが適切にインストールされているか? また Outlook にキャッシュ コピーがあるか?
 
@@ -183,7 +182,7 @@ Office アドイン マニフェスト スキーマ バージョン 1.1 以降�
 
 Outlook リッチ クライアントでは、Outlook on the web とモバイル デバイスで使用されている正規表現エンジンとでは、異なる正規表現エンジンを使用します。Outlook リッチ クライアントでは、Visual Studio の標準テンプレート ライブラリの一部として提供されている C++ 正規表現エンジンを使用します。このエンジンは ECMAScript 5 標準に準拠しています。Outlook on the web およびモバイル デバイスでは、JavaScript の一部である正規表現評価を使用します。これはブラウザーによって提供されるものであり、ECMAScript 5 のスーパーセットをサポートしています。
 
-ほとんどの場合、これらの Outlook クライアントは、アクティブ化ルールで同じ正規表現に対して同じ一致を見つけますが、例外があります。 たとえば、正規表現に定義済みの文字クラスに基づくカスタム文字クラスが含まれている場合、Outlook リッチ クライアントは Outlook on the Web やモバイル デバイスとは異なる結果を返す可能性があります。 たとえば、文字クラス内に短縮形の文字クラス `[\d\w]` が含まれていると、結果にばらつきが生じます。 この場合、異なるアプリケーションで異なる結果を回避するには、代わりに使用 `(\d|\w)` します。
+ほとんどの場合、これらの Outlook クライアントは、アクティブ化ルールで同じ正規表現に対して同じ一致を見つけますが、例外があります。 たとえば、正規表現に定義済みの文字クラスに基づくカスタム文字クラスが含まれている場合、Outlook リッチ クライアントはOutlook on the webやモバイル デバイスとは異なる結果を返す可能性があります。 たとえば、文字クラス内に短縮形の文字クラス `[\d\w]` が含まれていると、結果にばらつきが生じます。 この場合、異なるアプリケーションで異なる結果を回避するには、代わりに使用 `(\d|\w)` します。
 
 正規表現を十分にテストしてください。異なる結果が返された場合は、両方のエンジンでの互換性のために正規表現を書き換えます。Outlook リッチ クライアントの評価結果を確認するには、一致させるテキストのサンプルに対して正規表現を適用させる小さな C++ プログラムを作成します。Visual Studio 上で動作する C++ テスト プログラムは、標準テンプレート ライブラリを使用して、同じ正規表現を実行しているときに Outlook リッチ クライアントの動作をシミュレートします。Outlook on the web またはモバイル デバイスでの評価結果を確認するには、お好きな JavaScript 正規表現テスターを使用してください。
 

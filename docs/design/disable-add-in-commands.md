@@ -3,12 +3,12 @@ title: アドイン コマンドを有効または無効にする
 description: Office Web アドインのカスタム リボン ボタンとメニュー項目の有効または無効の状態を変更する方法について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 502c9247a6c63775c562dab7479e0ca926f14154
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958840"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423049"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>アドイン コマンドを有効または無効にする
 
@@ -36,7 +36,7 @@ Office クライアント アプリケーションが開いたときに、コマ
 
 ## <a name="shared-runtime-required"></a>共有ランタイムが必要
 
-この記事で説明されている API とマニフェストのマークアップでは、アドインのマニフェストで共有ランタイムを使用するよう指定されている必要があります。 これを行うには、次の手順に従います。
+この記事で説明する API とマニフェストマークアップでは、アドインのマニフェストで [共有ランタイム](../testing/runtimes.md#shared-runtime)を使用するように指定する必要があります。 これを行うには、次の手順に従います。
 
 1. マニフェストの [Runtimes](/javascript/api/manifest/runtimes) 要素で、子要素の `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />` を追加します。 (マニフェストに要素がまだ **\<Runtimes\>** ない場合は、セクションの要素の下に最初の **\<Host\>****\<VersionOverrides\>** 子として作成します)。
 2. マニフェストの [Resources.Urls](/javascript/api/manifest/resources) セクションで、子要素の `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />` を追加します。ここでは、`{MyDomain}` はアドインのドメインで、`{path-to-start-page}` はアドインの開始ページのパスになります (例: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`)。

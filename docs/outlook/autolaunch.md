@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797618"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423231"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -18,7 +18,9 @@ ms.locfileid: "66797618"
 このチュートリアルの終わりまでに、新しい項目が作成され、件名が設定されるたびに実行されるアドインが作成されます。
 
 > [!NOTE]
-> この機能のサポートは [、要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、追加のイベントは [要件セット 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) でサポートされるようになりました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+>
+> イベントベースのアクティブ化は、Outlook on iOS または Android ではサポートされていません。
 
 ## <a name="supported-events"></a>サポートされるイベント
 
@@ -38,8 +40,10 @@ ms.locfileid: "66797618"
 |`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnAppointmentRecurrenceChanged`|予定の作成中に繰り返しの詳細を追加、変更、または削除する場合。 日付/時刻が変更されると、 `OnAppointmentTimeChanged` イベントも発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を閉じる場合。 通知を追加したアドインのみが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnMessageSend`|メッセージ アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
-|`OnAppointmentSend`|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
+|`OnMessageSend`|メッセージ アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnAppointmentSend`|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnMessageCompose`|新しいメッセージを作成する (返信、全員に返信、転送を含む) 場合、または下書きを編集する場合。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnAppointmentOrganizer`|新しい予定を作成する場合、または既存の予定を編集する場合。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 
 > [!NOTE]
 > Outlook on Windows の <sup>1</sup> つのイベント ベースアドインを実行するには、Windows 10 バージョン 1903 (ビルド 18362) または Windows Server 2019 バージョン 1903 の最小値が必要です。
@@ -76,7 +80,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -87,7 +91,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -172,7 +176,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -189,10 +193,12 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 </VersionOverrides>
 ```
 
-Windows 上の Outlook では JavaScript ファイルが使用されますが、Outlook on the webと新しい Mac UI では、同じ JavaScript ファイルを参照できる HTML ファイルが使用されます。 Outlook プラットフォームは最終的に Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するため、マニフェストのノードで `Resources` 両方のファイルへの参照を指定する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を `Runtime` 指定し、その `Override` 子要素で HTML によってインライン化または参照される JavaScript ファイルの場所を指定します。
+Windows 上の Outlook では JavaScript ファイルが使用されますが、Outlook on the webと新しい Mac UI では、同じ JavaScript ファイルを参照できる HTML ファイルが使用されます。 Outlook プラットフォームは最終的に Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するため、マニフェストのノードで `Resources` 両方のファイルへの参照を指定する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を **\<Runtime\>** 指定し、その `Override` 子要素で HTML によってインライン化または参照される JavaScript ファイルの場所を指定します。
 
 > [!TIP]
-> Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
+> 
+> - アドインのランタイムについては、「Office アドインの [ランタイム」](../testing/runtimes.md)を参照してください。
+> - Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
 ## <a name="implement-event-handling"></a>イベント処理を実装する
 
@@ -321,8 +327,6 @@ Microsoft 365 管理センターを介してマニフェストをアップロー
 
 ![[カスタム アプリのアップロード] アクションを含む、Microsoft 365 管理センターの [統合アプリ] ページ。](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource とアプリ内 Office ストア: イベント ベースのアドインを展開したり、既存のアドインを更新してイベント ベースのアクティブ化機能を含めたりする機能は、近日中に利用できるようになります。
-
 > [!IMPORTANT]
 > イベント ベースのアドインは、管理者が管理するデプロイのみに制限されます。 現時点では、ユーザーは AppSource またはアプリ内 Office ストアからイベント ベースのアドインを取得できません。 詳細については、 [イベント ベースの Outlook アドインの AppSource リスト オプションを参照してください](autolaunch-store-options.md)。
 
@@ -356,13 +360,21 @@ UI を変更または変更する一部のOffice.js API は、イベント ベ�
 
 ### <a name="requesting-external-data"></a>外部データの要求
 
-外部データを要求するには、 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) などの API を使用するか、サーバーとの対話に HTTP 要求を発行する標準 Web API [である XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) を使用します。
+外部データを要求するには、 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) などの API を使用するか、サーバーとの対話に HTTP 要求を発行する標準 Web API である [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) を使用します。
 
-XmlHttpRequests を作成するときは、 [同じ配信元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) と単純な [CORS](https://www.w3.org/TR/cors/) が必要な場合は、追加のセキュリティ対策を使用する必要があることに注意してください。
+XMLHttpRequest オブジェクトを使用する場合は、 [同じ配信元ポリシー](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) と単純な [CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS) が必要な場合は、追加のセキュリティ対策を使用する必要があることに注意してください。
 
-単純な CORS 実装では Cookie を使用できず、単純なメソッド (GET、HEAD、POST) のみをサポートします。 単純な CORS はフィールド名`Accept`、 `Accept-Language`、`Content-Language`の簡単なヘッダーを受け入れます。 コンテンツ タイプ`application/x-www-form-urlencoded`が `Content-Type` 、`text/plain`、または `multipart/form-data`.
+[単純な CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests) 実装:
 
-完全な CORS サポートは近日公開予定です。
+- Cookie を使用できません。
+- などの単純なメソッド`GET``HEAD`のみをサポートします`POST`。
+- フィールド名、`Accept-Language`またはフィールド名`Accept`を持つ単純なヘッダーを`Content-Language`受け入れます。
+- コンテンツ タイプ`application/x-www-form-urlencoded``text/plain`が `Content-Type`、、または `multipart/form-data`.
+- によって返 `XMLHttpRequest.upload`されたオブジェクトにイベント リスナーを登録することはできません。
+- 要求でオブジェクトを使用 `ReadableStream` することはできません。
+
+> [!NOTE]
+> 完全な CORS サポートは、Outlook on the web、Mac、および Windows で使用できます (バージョン 2201 以降、ビルド 16.0.14813.10000)。
 
 ## <a name="see-also"></a>関連項目
 

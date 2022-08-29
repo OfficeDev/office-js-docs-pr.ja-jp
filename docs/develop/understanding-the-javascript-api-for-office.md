@@ -3,12 +3,12 @@ title: Office JavaScript API について
 description: Office JavaScript API の概要。
 ms.date: 03/18/2020
 ms.localizationpriority: high
-ms.openlocfilehash: dd7eb6cac4f76307d6ec9ecbb30da15057903687
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 66e2c9b68e9514c7172c19de51373e0c4edef7d7
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744197"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422904"
 ---
 # <a name="understanding-the-office-javascript-api"></a>Office JavaScript API について
 
@@ -34,3 +34,4 @@ Office アドインでは、Office JavaScript API を使用することで、ア
 - [DOM とランタイム環境を読み込む](loading-the-dom-and-runtime-environment.md)
 - [Office JavaScript API ライブラリの参照](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Office アドインを初期化する](initialize-add-in.md)
+- [Office アドインのランタイム](../testing/runtimes.md)

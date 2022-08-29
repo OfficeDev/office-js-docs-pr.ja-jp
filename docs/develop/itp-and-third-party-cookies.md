@@ -3,16 +3,16 @@ title: サード パーティの Cookie を使用する場合に ITP を使用�
 description: サード パーティの Cookie を使用するときに ITP アドインと Office アドインを操作する方法
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b01051fa39441fddb2453b0bd95a0629ebf3ef65
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889270"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423091"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>サード パーティの Cookie を使用する場合に ITP を使用するように Office アドインを開発する
 
-Office アドインにサード パーティの Cookie が必要な場合、アドインを読み込んだブラウザー ランタイムによってインテリジェント追跡防止 (ITP) が使用されている場合、これらの Cookie はブロックされます。 サード パーティの Cookie を使用してユーザーを認証したり、設定の保存などのその他のシナリオに使用したりすることがあります。
+Office アドインにサード パーティの Cookie が必要な場合、アドインを読み込んだ [ランタイム](../testing/runtimes.md) がインテリジェント追跡防止 (ITP) を使用している場合、これらの Cookie はブロックされます。 サード パーティの Cookie を使用してユーザーを認証したり、設定の保存などのその他のシナリオに使用したりすることがあります。
 
 Office アドインと Web サイトがサード パーティの Cookie に依存する必要がある場合は、次の手順に従って ITP を操作します。
 

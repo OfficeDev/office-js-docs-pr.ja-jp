@@ -3,12 +3,12 @@ title: カスタム関数から Excel JavaScript API を呼び出す
 description: カスタム関数から呼び出すことができる Excel JavaScript API について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958419"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423189"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタム関数から Excel JavaScript API を呼び出す
 
@@ -18,7 +18,7 @@ ms.locfileid: "66958419"
 - カスタム関数は、計算後に戻り値のセルの数値形式を設定します。
 
 > [!IMPORTANT]
-> カスタム関数から Excel JavaScript API を呼び出すには、共有 JavaScript ランタイムを使用する必要があります。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+> カスタム関数から Excel JavaScript API を呼び出すには、 [共有ランタイム](../testing/runtimes.md#shared-runtime)を使用する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成](../develop/configure-your-add-in-to-use-a-shared-runtime.md) する」を参照してください。
 
 ## <a name="code-sample"></a>コード サンプル
 
@@ -68,4 +68,4 @@ Excel を変更すると、パフォーマンス、タイムアウト、無限�
 ## <a name="see-also"></a>関連項目
 
 - [Excel カスタム関数と作業ウィンドウのチュートリアルの間でデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [共有ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

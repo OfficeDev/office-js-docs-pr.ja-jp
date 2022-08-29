@@ -3,12 +3,12 @@ ms.date: 06/09/2022
 description: Excel カスタム関数に関する一般的な問題のトラブルシューティングを行います。
 title: カスタム関数のトラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: a8d6121631c4d913402742f93598d3340956171c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958560"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423140"
 ---
 # <a name="troubleshoot-custom-functions"></a>カスタム関数のトラブルシューティング
 
@@ -20,7 +20,7 @@ ms.locfileid: "66958560"
 
 ## <a name="debugging-custom-functions"></a>カスタム関数のデバッグ
 
-共有ランタイムを使用するカスタム関数アドインをデバッグするには、「共有 [JavaScript ランタイムを使用するように Office アドインを構成する:デバッグ](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)」を参照してください。
+共有ランタイムを使用するカスタム関数アドインをデバッグするには、「[共有ランタイム](../testing/runtimes.md#shared-runtime)[を使用するように Office アドインを構成する:デバッグ](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)」を参照してください。
 
 共有ランタイムを使用しないカスタム関数アドインをデバッグするには、「 [カスタム関数のデバッグ](custom-functions-debugging.md)」を参照してください。
 

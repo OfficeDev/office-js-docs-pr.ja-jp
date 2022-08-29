@@ -1,18 +1,18 @@
 ---
 title: Office アドインのプライバシーとセキュリティ
 description: Office アドイン プラットフォームのプライバシーとセキュリティの側面について説明します。
-ms.date: 07/18/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 3092503ad8c4afedc253b0c5a2f14369572b17f3
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958724"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422965"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office アドインのプライバシーとセキュリティ
 
-## <a name="understanding-the-add-in-runtime"></a>アドインのランタイムについて
+## <a name="process-security"></a>プロセス セキュリティ
 
 Office アドインは、アドインのランタイム環境、複数層のアクセス許可モデル、およびパフォーマンス ガバナーによって保護されます。 このフレームワークは、次の方法でユーザーのエクスペリエンスを保護します。
 
@@ -31,6 +31,9 @@ Office アドインは、アドインのランタイム環境、複数層のア�
 - アドインのインストールとアンインストールが容易になります。
 
 また、Office アドインによるメモリ、CPU、およびネットワーク リソースの使用が管理可能になり、良好なパフォーマンスと信頼性が確保されます。
+
+> [!NOTE]
+> 一部のシナリオでは、アドインのさまざまな機能が個別のランタイムで実行されます。 わかりやすくするために、この記事では単一の "ランタイム" を使用します。 詳細については、「 [Office アドインのランタイム](../testing/runtimes.md)」を参照してください。 
 
 次のセクションでは、Windows ベースのデバイス、Mac OS X デバイス、および Web ブラウザー上の Office クライアントでのアドインの実行をランタイム アーキテクチャでサポートする方法について簡単に説明します。
 

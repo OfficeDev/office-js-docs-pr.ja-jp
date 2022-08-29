@@ -1,18 +1,18 @@
 ---
 title: Office アドインの作業ウィンドウを表示または非表示にする
 description: アドインの継続的な実行中に、プログラムによってアドインのユーザー インターフェイスを非表示または表示する方法について説明します。
-ms.date: 07/18/2022
+ms.date: 08/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 8122282414fcc9472fc300acd07da354d5a282f0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958609"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422890"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Office アドインの作業ウィンドウを表示または非表示にする
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 メソッドを呼び出すことで、Office アドインの作業ウィンドウを `Office.addin.showAsTaskpane()` 表示できます。
 
@@ -47,7 +47,7 @@ function onCurrentQuarterDeactivated() {
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
 
-メソッドを`showAsTaskpane()``hide()`使用するには、アドインで共有ランタイムを使用する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+メソッドを`showAsTaskpane()``hide()`使用するには、アドインで[共有ランタイム](../testing/runtimes.md#shared-runtime)を使用する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="preservation-of-state-and-event-listeners"></a>状態リスナーとイベント リスナーの保持
 
@@ -69,7 +69,7 @@ function onCurrentQuarterDeactivated() {
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
-    if (args.visibilityMode = "Taskpane"); {
+    if (args.visibilityMode == "Taskpane") {
         // Code that runs whenever the task pane is made visible.
         // For example, an Excel.run() that loads the names of
         // all worksheets and passes them to the task pane UI.
@@ -82,7 +82,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 ```javascript
 const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -99,7 +99,7 @@ removeVisibilityModeHandler();
 // the returned deregister handler to removeVisibilityModeHandler.
 const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -115,5 +115,5 @@ await removeVisibilityModeHandler();
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構成して共有 JavaScript ランタイムを使用する](configure-your-add-in-to-use-a-shared-runtime.md)
+- [共有ランタイムを使用するように Office アドインを構成する](configure-your-add-in-to-use-a-shared-runtime.md)
 - [ドキュメントが開いたら、Office アドインでコードを実行する](run-code-on-document-open.md)

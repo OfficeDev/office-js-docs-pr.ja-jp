@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: VSTO アドインと Office アドインの間でコードを共有する方法に関するチュートリアル。
 title: 'チュートリアル: 共有コード ライブラリを使用して VSTO アドインと Office アドインの間でコードを共有する'
 ms.localizationpriority: high
-ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: c3d73336975b7b544b3eabbf0b83a25df0b2962d
+ms.sourcegitcommit: 41b95d8bfd3ad525908ff165bd6c9318e1f0f792
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959057"
+ms.lasthandoff: 08/17/2022
+ms.locfileid: "67364671"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>チュートリアル: 共有コード ライブラリによる VSTO アドインと Office アドインでのコードの共有
 
@@ -63,10 +63,6 @@ Office アドインは、HTML や JavaScript などの Web テクノロジを使
 1. [Office アドイン用 VSTO アドイン共有ライブラリ](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP ソリューションを自分のコンピューターの作業フォルダーにダウンロードします。
 1. Visual Studio 2019 を起動して、**/start/Cell-Analyzer.sln** ソリューションを開きます。
 1. **[デバッグ]** メニューの **[デバッグ開始]** を選択します。
-1. **ソリューション エクスプローラー** で、**[Cell-Analyzer]** プロジェクトを右クリックして **[プロパティ]** を選択します。
-1. プロパティの **[署名]** カテゴリを選択します。
-1. **[ClickOnce マニフェストに署名する]** を選択してから、**[テスト証明書の作成]** を選択します。
-1. **[テスト証明書の作成]** ダイアログで、パスワードを入力して、確認します。**[OK]** を選択します。
 
 このアドインは、Excel のカスタム作業ウィンドウです。 テキストが含まれる任意のセルを選択してから、**[Show unicode]** ボタンをクリックしてください。 このアドインにより、**[結果]** セクションでテキスト内の各文字とその文字に対応する Unicode 番号のリストが表示されます。
 

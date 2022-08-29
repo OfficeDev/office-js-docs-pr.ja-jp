@@ -3,12 +3,12 @@ title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
 ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274163"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422951"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -145,3 +145,4 @@ Edge がブラウザーの場合、アドイン内の PDF ファイルとして 
 ## <a name="see-also"></a>関連項目
 
 - [Officeアドインを実行するための要件](requirements-for-running-office-add-ins.md)
+- [Office アドインのランタイム](../testing/runtimes.md)

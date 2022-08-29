@@ -1,22 +1,22 @@
 ---
 title: 正規表現アクティブ化ルールを使用してアドインを表示する
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
-ms.date: 07/08/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f145df063f550351941eee5132a7b6b9d3267c04
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713071"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423315"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
-メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは閲覧モードでのみアクティブになります。Outlook ではユーザーがアイテムを作成しているときにはコンテキスト アドインはアクティブになりません。 また、デジタル署名されたアイテムなど、Outlook でアドインがアクティブ化されないシナリオもあります。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
+メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは、読み取りモードでのみアクティブ化されます。 ユーザーがアイテムを作成している場合、Outlook はコンテキスト アドインをアクティブ化しません。 また、デジタル署名されたアイテムなど、Outlook でアドインがアクティブ化されないシナリオもあります。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
 
 アドイン XML マニフェストでは、[ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ルールまたは [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ルールの一部として正規表現を指定することができます。 ルールは [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) 拡張点で指定されます。
 
-Outlook では、クライアント コンピューターのブラウザーで使用する JavaScript インタープリターのルールに基づいて正規表現を評価します。 Outlook では、すべての XML プロセッサでもサポートされているものと同じ特殊文字リストをサポートしています。 次の表は、このような特殊文字を示しています。 これらの文字は、次の表に示すとおり、該当する文字にエスケープ シーケンスを指定すると正規表現で使用できます。
+Outlook では、クライアント コンピューターのブラウザーで使用する JavaScript インタープリターのルールに基づいて正規表現を評価します。 Outlook では、すべての XML プロセッサでもサポートされているものと同じ特殊文字リストをサポートしています。 次の表は、このような特殊文字を示しています。 正規表現でこれらの文字を使用するには、次の表に示すように、対応する文字のエスケープ シーケンスを指定します。
 
 |文字|説明|使用するエスケープ シーケンス|
 |:-----|:-----|:-----|
@@ -34,15 +34,15 @@ Outlook では、クライアント コンピューターのブラウザーで�
 |:-----|:-----|
 |`RegExName`|アドインのコードで参照できるように、正規表現の名前を指定します。|
 |`RegExValue`|アドインを表示するかどうかを判断するために評価する正規表現を指定します。|
-|`PropertyName`|正規表現の評価対象となるプロパティの名前を指定します。 有効な値は `BodyAsHTML`、`BodyAsPlaintext`、`SenderSMTPAddress`、`Subject` です。<br/><br/>`BodyAsHTML` を指定した場合、アイテムの本文が HTML の場合にのみ Outlook は正規表現を適用します。 HTML 以外の場合、Outlook はその正規表現に対して一致を返しません。<br/><br/>`BodyAsPlaintext` を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。<br/><br/>**注:** `Rule` 要素に `Highlight` 属性を指定した場合は、`BodyAsPlaintext` に `PropertyName` 属性を設定する必要があります。|
+|`PropertyName`|正規表現の評価対象となるプロパティの名前を指定します。 有効な値は `BodyAsHTML`、`BodyAsPlaintext`、`SenderSMTPAddress`、`Subject` です。<br/><br/>`BodyAsHTML` を指定した場合、アイテムの本文が HTML の場合にのみ Outlook は正規表現を適用します。 HTML 以外の場合、Outlook はその正規表現に対して一致を返しません。<br/><br/>`BodyAsPlaintext` を指定すると、Outlook はアイテムの本文に対して正規表現を常に適用します。<br/><br/>**大事な：** 要素の **Highlight** 属性を指定する必要がある場合は、**PropertyName** 属性`BodyAsPlaintext`**\<Rule\>** を . |
 |`IgnoreCase`|`RegExName` で指定された正規表現のマッチングで大文字と小文字の違いを無視するかどうかを指定します。|
-| `Highlight` | クライアントが一致するテキストを強調表示にする方法を指定します。 この要素は、`ExtensionPoint` 要素内の `Rule` 要素にのみ適用できます。 `all` または `none` のいずれかになります。 指定のない場合、既定値は `all` に設定されます。<br/><br/>**注:** `Rule` 要素に `Highlight` 属性を指定した場合は、`BodyAsPlaintext` に `PropertyName` 属性を設定する必要があります。 |
+| `Highlight` | クライアントが一致するテキストを強調表示にする方法を指定します。 この要素は、`ExtensionPoint` 要素内の `Rule` 要素にのみ適用できます。 `all` または `none` のいずれかになります。 指定のない場合、既定値は `all` に設定されます。<br/><br/>**大事な：** 要素で **Highlight** 属性を **\<Rule\>** 指定するには、 **PropertyName** 属性 `BodyAsPlaintext`を . |
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>ルールで正規表現を使用する場合のベスト プラクティス
 
 正規表現を使用する場合は、以下に特に注意してください。
 
-- アイテムの本文に `ItemHasRegularExpressionMatch` ルールを指定する場合、正規表現でさらに本文をフィルター処理し、アイテムの本文全体を返さないようにします。 `.*` などの正規表現を使用してアイテムの本文全体を取得しようとしても、期待する結果が返されないことがあります。
+- アイテムの本文にルールを指定する `ItemHasRegularExpressionMatch` 場合、正規表現は本文をさらにフィルター処理する必要があり、アイテムの本文全体を返そうとしないでください。 アイテムの本文全体を取得しようとするなどの `.*` 正規表現を使用しても、期待される結果が返されるとは限りません。
 - あるブラウザーで返されたプレーンテキストの本文は、別のブラウザーではわずかに異なることがあります。 `BodyAsPlaintext` を `PropertyName` 属性として `ItemHasRegularExpressionMatch` ルールを使用する場合は、アドインのサポート対象であるすべてのブラウザーで正規表現をテストします。
 
     さまざまなブラウザーがさまざまな方法で選択したアイテムの本文を取得するため、使用している正規表現が、本文の一部として返される可能性がある微妙な違いをサポートしていることを確認する必要があります。 たとえば、アイテムの本文を取得するために、Internet Explorer 9 などのブラウザーでは DOM の `innerText` プロパティを使用し、Firefox などのその他のブラウザーでは `.textContent()` メソッドを使用します。 また、さまざまなブラウザーが異なる改行を返す場合があります。改行は、Internet Explorer では `\r\n`、Firefox および Chrome では `\n` です。 詳細については、「[W3C DOM の互換性 - HTML](https://quirksmode.org/dom/html/)」(W3C DOM の互換性 - HTML) を参照してください。
@@ -89,7 +89,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 `ItemHasKnownEntity` ルールでは、選択したアイテムの件名または本文でのエンティティの存在に基づいてアドインをアクティブにします。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) タイプはサポートされるエンティティを定義します。 `ItemHasKnownEntity` ルールに正規表現を適用すると、アクティブ化がエンティティの値のサブセット (特定の URL セットまたは、特定の市外局番の電話番号など) に基づく点で、利便性が増します。
 
 > [!NOTE]
-> マニフェストに指定されている既定のロケールに関係なく、Outlook が抽出できるのは英語のエンティティ文字列だけです。 メッセージだけが `MeetingSuggestion` エンティティ タイプをサポートし、予定ではサポートしていません。 **送信済みアイテム** フォルダーのアイテムからはエンティティを抽出できません。また、`ItemHasKnownEntity` ルールを使用して **送信済みアイテム** フォルダーにあるアイテムのにアドインを有効にすることもできません。
+> マニフェストに指定されている既定のロケールに関係なく、Outlook が抽出できるのは英語のエンティティ文字列だけです。 エンティティの種類をサポートするのは `MeetingSuggestion` メッセージのみです。予定ではサポートされません。 **送信済みアイテム** フォルダー内のアイテムからエンティティを抽出したり、ルールを`ItemHasKnownEntity`使用して送信済み **アイテム** フォルダー内のアイテムのアドインをアクティブ化したりすることはできません。
 
 `ItemHasKnownEntity` ルールでは、以下の表にある属性をサポートしています。 `ItemHasKnownEntity` ルールで正規表現の指定が任意の場合、エンティティ フィルターとして正規表現を使用するには、`RegExFilter` 属性と `FilterName` 属性の両方を指定する必要があります。
 
@@ -125,7 +125,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 正規表現が評価されると、配列オブジェクトに入れてアドインに一致が返されます。 `getRegExMatches` については、そのオブジェクトに正規表現の名前の識別子があります。
 
 > [!NOTE]
-> Outlook は、配列内の特定の順序で一致を返すわけではありません。 また、一致がこの配列と同じ順序で返されるとも想定できません。同じメールボックス内の同じアイテムにあるこれらの各クライアントで同じアドインを実行する場合においても同様です。
+> Outlook は、配列内の特定の順序で一致を返しません。 また、同じメールボックス内の同じアイテムでこれらの各クライアントで同じアドインを実行する場合でも、この配列で同じ順序で一致が返されることを想定しないでください。
 
 ### <a name="examples"></a>例
 
@@ -188,5 +188,4 @@ const suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampS
 - [Outlook アドインのアクティブ化ルール](activation-rules.md)
 - [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Outlook アイテム内の文字列を既知のエンティティとして照合する](match-strings-in-an-item-as-well-known-entities.md)
-- 
-  [.NET Framework での正規表現に関するベスト プラクティス](/dotnet/standard/base-types/best-practices)
+- [.NET Framework での正規表現のベスト プラクティス](/dotnet/standard/base-types/best-practices)

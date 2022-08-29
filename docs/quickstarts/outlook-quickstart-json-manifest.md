@@ -4,12 +4,12 @@ description: JSON マニフェストを使用して単純な Outlook 作業ウ�
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091049"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422755"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Teams マニフェスト (プレビュー) を使用して、Outlook アドインをビルドする
 
@@ -177,7 +177,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. メッセージに書き込むには、アドインのアクセス許可を上げる必要があります。 プロパティ `authorization.permissions.resourceSpecific[0].name` までスクロールし、値を `MailboxItem.ReadWrite.User` に変更します。
 
-1. アドイン コマンドが作業ウィンドウを開く代わりにコードを実行する場合、作業ウィンドウ コードが実行される埋め込み Web ビューとは別の JavaScript ランタイムでコードを実行する必要があります。 したがって、マニフェストは追加のランタイムを指定する必要があります。 プロパティ `extension.runtimes` までスクロールし、次のオブジェクトを `runtimes` 配列に追加します。 既に配列にあるオブジェクトの後には、必ずコンマを入れてください。 このマークアップについて、次の点に注意してください。
+1. アドイン コマンドが作業ウィンドウを開く代わりにコードを実行する場合は、作業ウィンドウ コードが実行される埋め込み Web ビューとは別のランタイムでコードを実行する必要があります。 したがって、マニフェストは追加のランタイムを指定する必要があります。 プロパティ `extension.runtimes` までスクロールし、次のオブジェクトを `runtimes` 配列に追加します。 既に配列にあるオブジェクトの後には、必ずコンマを入れてください。 このマークアップについて、次の情報にご注意ください。
 
     - `actions[0].id` プロパティの値は、**commands.ts** ファイルに追加した関数の名前 (この場合は `insertHelloWorld`) と完全に同じである必要があります。 後の手順で、この ID でアイテムを参照します。
 

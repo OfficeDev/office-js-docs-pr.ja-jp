@@ -3,12 +3,12 @@ title: アドイン コマンドの基本概念
 description: Office アドインの一部として、カスタム リボン ボタンやメニュー項目を Office に追加する方法について説明します。
 ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 30a548e9d831952e372d044257f520130882848c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659676"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423063"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint、Word のアドイン コマンド
 
@@ -36,8 +36,8 @@ ms.locfileid: "66659676"
 - **作業ウィンドウ コマンド**: ボタンまたはメニュー項目によって、アドインの作業ウィンドウが開きます。 この種のアドイン コマンドをマニフェスト内のマークアップと共に追加します。 コマンドの "分離コード" は Office に指定されます。
 - **関数コマンド**: ボタンまたはメニュー項目は任意の JavaScript を実行します。 ほとんどの場合、このコードは Office JavaScript ライブラリで API を呼び出しますが、そうする必要はありません。 この種類のアドインでは、通常、ボタンまたはメニュー項目自体以外の UI は表示されません。 関数コマンドについては、次の点に注意してください。
 
-   - トリガーされる関数は [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) メソッドを呼び出してダイアログを表示できます。これは、エラーの表示、進行状況の表示、またはユーザーからの入力を求める適切な方法です。 アドインが共有ランタイムを使用するように構成されている場合、関数は [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) メソッドを呼び出すこともできます。
-   - 関数コマンドを実行する JavaScript ランタイムは、ブラウザーベースの完全なランタイムです。 HTML をレンダリングし、インターネットに呼び出してデータを送信または取得できます。
+   - トリガーされる関数は [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) メソッドを呼び出してダイアログを表示できます。これは、エラーの表示、進行状況の表示、またはユーザーからの入力を求める適切な方法です。 [アドインが共有ランタイム](../testing/runtimes.md#shared-runtime)を使用するように構成されている場合、関数は [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) メソッドを呼び出すこともできます。
+   - 関数コマンドを実行するランタイムは、 [ブラウザーベースの](../testing/runtimes.md#browser-runtime)完全なランタイムです。 HTML をレンダリングし、インターネットに呼び出してデータを送信または取得できます。
 
 ## <a name="command-capabilities"></a>コマンドの機能
 

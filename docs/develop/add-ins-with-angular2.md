@@ -3,12 +3,12 @@ title: Angular で Office アドインを開発する
 description: Angularを使用して、単一ページ アプリケーションとして Office アドインを作成します。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bbac0f94b731b2853e17ed3db785b50ea99ef6e4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958476"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422958"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Angular で Office アドインを開発する
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Office.jsを動的に読み込む場合は、Internet Explorer をサポートする
 
-アドインが実行されている Windows バージョンと Office デスクトップ クライアントに基づいて、アドインが Internet Explorer 11 を使用している可能性があります。 (詳細については、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください)。Angularは、いくつかの`window.history`API ですが、これらの API は Windows デスクトップ クライアントに埋め込まれた IE ランタイムでは機能しません。 これらの API が機能しない場合は、アドインが正常に動作しない可能性があります。たとえば、空白の作業ウィンドウが読み込まれる可能性があります。 これを軽減するために、Office.jsはそれらの API を null 化します。 ただし、Office.jsを動的に読み込む場合は、Office.jsの前に AngularJS が読み込まれる可能性があります。 その場合は、アドインの `window.history` **index.html** ページに次のコードを追加して API を無効にする必要があります。
+アドインが実行されている Windows バージョンと Office デスクトップ クライアントに基づいて、アドインが Internet Explorer 11 を使用している可能性があります。 (詳細については、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください)。Angularは、いくつかの`window.history`API ですが、これらの API は、Windows デスクトップ クライアントで Office アドインを実行するために使用される IE ランタイムでは機能しません。 これらの API が機能しない場合は、アドインが正常に動作しない可能性があります。たとえば、空白の作業ウィンドウが読み込まれる可能性があります。 これを軽減するために、Office.jsはそれらの API を null 化します。 ただし、Office.jsを動的に読み込む場合は、Office.jsの前に AngularJS が読み込まれる可能性があります。 その場合は、アドインの `window.history` **index.html** ページに次のコードを追加して API を無効にする必要があります。
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

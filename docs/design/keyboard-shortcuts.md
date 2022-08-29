@@ -3,12 +3,12 @@ title: Office アドインのカスタム キーボード ショートカット
 description: Office アドインにカスタム キーボード ショートカット (キーの組み合わせとも呼ばれる) を追加する方法について説明します。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 462e5bfdd4e7f825318d6affb631beafc7c08fe5
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659984"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423021"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Office アドインにカスタム キーボード ショートカットを追加する
 
@@ -31,7 +31,7 @@ ms.locfileid: "66659984"
 
 ### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>共有ランタイムを使用するようにアドインを構成する
 
-カスタム キーボード ショートカットを追加するには、アドインで共有ランタイムを使用する必要があります。 詳細については、 [共有ランタイムを使用するようにアドインを構成します](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+カスタム キーボード ショートカットを追加するには、 [アドインで共有ランタイム](../testing/runtimes.md#shared-runtime)を使用する必要があります。 詳細については、 [共有ランタイムを使用するようにアドインを構成します](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>マッピング ファイルをマニフェストにリンクする
 

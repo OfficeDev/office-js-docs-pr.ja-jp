@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインでダイアログ ボックスを作成する基本について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958483"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423105"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 > [!NOTE]
 >
-> - わかりやすくするために、このセクションではメッセージ ターゲットをホスト *ページ* と呼びますが、厳密に言えば、メッセージは作業ウィンドウ (または [関数ファイル](/javascript/api/manifest/functionfile)をホストしているランタイム) の *JavaScript ランタイム* に移動します。 この違いは、クロスドメイン メッセージングの場合にのみ重要です。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
+> - わかりやすくするために、このセクションではメッセージ ターゲットをホスト *ページ* と呼びますが、厳密に言えば、メッセージは作業ウィンドウ (または [関数ファイル](/javascript/api/manifest/functionfile)をホストしているランタイム) の [ランタイム](../testing/runtimes.md)に移動します。 この違いは、クロスドメイン メッセージングの場合にのみ重要です。 詳細については、「[ホスト ランタイムへのクロスドメイン メッセージング](#cross-domain-messaging-to-the-host-runtime)」をご覧ください。
 > - Office JavaScript API ライブラリがページに読み込まれていない限り、ダイアログ ボックスは作業ウィンドウのホスト ページと通信できません。 (Office JavaScript API ライブラリを使用するページと同様に、ページのスクリプトはアドインを初期化する必要があります。 詳細については、「 [Office アドインを初期化する](initialize-add-in.md)」を参照してください。
 
 ダイアログ ボックスのコードでは、 [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) 関数を使用して、ホスト ページに文字列メッセージを送信します。 文字列には、単語、文、XML BLOB、文字列化された JSON など、文字列にシリアル化したり、文字列にキャストしたりできるものを指定できます。 次に例を示します。
@@ -217,7 +217,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>ホスト ランタイムへのクロスドメイン メッセージング
 
-ダイアログまたは親 JavaScript ランタイムは、ダイアログを開いた後、アドインのドメインから移動できます。 これらのいずれかが発生した場合、コードで親ランタイムの `messageParent` ドメインが指定されていない限り、呼び出しは失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageParent` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットがダイアログが現在ホストしているのと同じドメインであると見なします。
+ダイアログが開いたら、ダイアログまたは親ランタイムがアドインのドメインから離れる可能性があります。 これらのいずれかが発生した場合、コードで親ランタイムの `messageParent` ドメインが指定されていない限り、呼び出しは失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageParent` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットがダイアログが現在ホストしているのと同じドメインであると見なします。
 
 > [!NOTE]
 > クロスドメイン メッセージの送信に使用するには`messageParent`[、Dialog Origin 1.1 要件セット](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)が必要です。 このパラメーターは `DialogMessageOptions` 、要件セットをサポートしていない古いバージョンの Office では無視されるため、渡してもメソッドの動作は影響を受けません。
@@ -340,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>ダイアログ ランタイムへのドメイン間メッセージング
 
-ダイアログまたは親 JavaScript ランタイムは、ダイアログが開いた後、アドインのドメインから離れる可能性があります。 これらのいずれかが発生した場合、コードでダイアログ ランタイムのドメインが指定されていない限り、呼び出し `messageChild` は失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageChild` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットが親ランタイムが現在ホストしているドメインと同じドメインであると見なします。
+ダイアログが開いたら、ダイアログまたは親ランタイムがアドインのドメインから離れる可能性があります。 これらのいずれかが発生した場合、コードでダイアログ ランタイムのドメインが指定されていない限り、呼び出し `messageChild` は失敗します。 これを行うには、[DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) パラメーターを .`messageChild` このオブジェクトには、 `targetOrigin` メッセージの送信先となるドメインを指定するプロパティがあります。 パラメーターが使用されていない場合、Office はターゲットが親ランタイムが現在ホストしているドメインと同じドメインであると見なします。
 
 > [!NOTE]
 > クロスドメイン メッセージの送信に使用するには`messageChild`[、Dialog Origin 1.1 要件セット](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)が必要です。 このパラメーターは `DialogMessageOptions` 、要件セットをサポートしていない古いバージョンの Office では無視されるため、渡してもメソッドの動作は影響を受けません。
@@ -357,7 +357,7 @@ dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.c
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-ダイアログをホストしている JavaScript ランタイムはマニフェストのセクションに **\<AppDomains\>** アクセスできないため、 *メッセージ* の発行元のドメインが信頼されているかどうかを判断できるため、ハンドラーを `DialogParentMessageReceived` 使用してこれを決定する必要があります。 ハンドラーに渡されるオブジェクトには、そのプロパティとして `origin` 親で現在ホストされているドメインが含まれています。 プロパティの使用方法の例を次に示します。
+ダイアログをホストしているランタイムはマニフェストのセクションに **\<AppDomains\>** アクセスできないため、 *メッセージ* が信頼されるドメインかどうかを判断するため、ハンドラーを `DialogParentMessageReceived` 使用してこれを決定する必要があります。 ハンドラーに渡されるオブジェクトには、そのプロパティとして `origin` 親で現在ホストされているドメインが含まれています。 プロパティの使用方法の例を次に示します。
 
 ```javascript
 function onMessageFromParent(arg) {
@@ -460,3 +460,7 @@ Office ダイアログ API に関するヒントとヘスと プラクティス�
 - [Office アドイン Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 - [Office アドイン OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 - [Office アドイン UX デザイン パターン コード](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
+** も参照してください**
+
+- [Office アドインのランタイム](../testing/runtimes.md)

@@ -1,14 +1,14 @@
 ---
 title: Office アドイン用語集
 description: Office アドインのドキュメント全体で一般的に使用される用語の用語集。
-ms.date: 06/15/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77bf8a04886e35b3678dfa3054ca166c2aed2512
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660215"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423294"
 ---
 # <a name="office-add-ins-glossary"></a>Office アドインの用語集
 
@@ -74,9 +74,9 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 
 ## <a name="custom-functions-runtime"></a>カスタム関数ランタイム
 
-**カスタム関数ランタイムは、カスタム関数** のみを実行する JavaScript 専用ランタイムです。 UI はなく、Office.js API と対話することはできません。 アドインにカスタム関数しかない場合は、軽量のランタイムを使用することをお勧めします。 カスタム関数が作業ウィンドウまたはOffice.js API と対話する必要がある場合は、共有 JavaScript ランタイムを構成します。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+**カスタム関数ランタイム** は、Office ホストとプラットフォームのいくつかの組み合わせでカスタム関数を実行する [JavaScript 専用ランタイム](../testing/runtimes.md#javascript-only-runtime)です。 UI はなく、Office.js API と対話することはできません。 アドインにカスタム関数しかない場合は、軽量のランタイムを使用することをお勧めします。 カスタム関数が作業ウィンドウまたは Office.js API と対話する必要がある場合は、 [共有ランタイム](../testing/runtimes.md#shared-runtime)を構成します。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成](../develop/configure-your-add-in-to-use-a-shared-runtime.md) する」を参照してください。
 
-JavaScript ランタイム、[共有 JavaScript ランタイム、共有ランタイム](#shared-javascript-runtime-shared-runtime)も参照してください。 [](#javascript-runtime)
+[ランタイム](#runtime)、[共有ランタイム](#shared-runtime)も参照してください。
 
 ## <a name="host"></a>host
 
@@ -84,11 +84,7 @@ JavaScript ランタイム、[共有 JavaScript ランタイム、共有ラン�
 
 [アプリケーション](#application)、[クライアント](#client)、[Office アプリケーション、Office クライアント](#office-application-office-client)も参照してください。
 
-## <a name="javascript-runtime"></a>JavaScript ランタイム
 
-**JavaScript ランタイム** は、アドインが実行されるブラウザー ホスト環境です。 Office on Windows および Office on Mac では、JavaScript ランタイムは、Internet Explorer、Edge Legacy、Edge WebView2、Safari などの埋め込みブラウザー コントロール (または Webview) です。 アドインのさまざまな部分は、個別の JavaScript ランタイムで実行されます。 たとえば、アドイン コマンド、カスタム関数、作業ウィンドウ コードは、通常、共有 JavaScript ランタイムを構成しない限り、個別の JavaScript ランタイムを使用します。 詳細については、「 [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md) 」を参照してください。
-
-[カスタム関数ランタイム](#custom-functions-runtime)、[共有 JavaScript ランタイム、共有ランタイム、](#shared-javascript-runtime-shared-runtime)[Webview](#webview) も参照してください。
 
 ## <a name="office-application-office-client"></a>Office アプリケーション、Office クライアント
 
@@ -116,13 +112,15 @@ JavaScript ランタイム、[共有 JavaScript ランタイム、共有ラン�
 
 ## <a name="runtime"></a>ランタイム
 
-JavaScript [ランタイム](#javascript-runtime)を参照してください。
+**ランタイム** は、アドインが実行されるホスト環境 (JavaScript エンジンと通常は HTML レンダリング エンジンも含む) です。 Office on Windows および Office on Mac では、ランタイムは、Internet Explorer、Edge Legacy、Edge WebView2、Safari などの埋め込みブラウザー コントロール (または Webview) です。 アドインのさまざまな部分は、個別のランタイムで実行されます。 たとえば、アドイン コマンド、カスタム関数、作業ウィンドウ コードは、共有ランタイムを構成しない限り、通常は個別のランタイムを使用 [します](../testing/runtimes.md#shared-runtime)。 詳細については、「 [Office アドインのランタイム](../testing/runtimes.md) と Office アドイン [で使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md) 」を参照してください。
 
-## <a name="shared-javascript-runtime-shared-runtime"></a>共有 JavaScript ランタイム、共有ランタイム
+[カスタム関数ランタイム](#custom-functions-runtime)、[共有ランタイム](#shared-runtime)、[Webview](#webview) も参照してください。
 
-**共有 JavaScript ランタイム** (**共有ランタイム**) を使用すると、作業ウィンドウ、アドイン コマンド、カスタム関数など、アドイン内のすべてのコードを同じ JavaScript ランタイムで実行し、作業ウィンドウが閉じても実行を続行できます。 詳細については、「[共有 JavaScript ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)[」と「Office アドインで共有 JavaScript ランタイムを使用するためのヒント](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/)」を参照してください。
+## <a name="shared-runtime"></a>共有ランタイム
 
-[カスタム関数ランタイム](#custom-functions-runtime)、[JavaScript ランタイム](#javascript-runtime)も参照してください。
+**共有ランタイム** を使用すると、作業ウィンドウ、アドイン コマンド、カスタム関数など、アドイン内のすべてのコードを同じランタイムで実行し、作業ウィンドウが閉じられた場合でも引き続き実行できます。 詳細については、「 [共有ランタイム](../testing/runtimes.md#shared-runtime) 」と [「Office アドインで共有ランタイムを使用するためのヒント](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) 」を参照してください。
+
+[カスタム関数ランタイム](#custom-functions-runtime)、[ランタイム](#runtime)も参照してください。
 
 ## <a name="task-pane"></a>作業ウィンドウ
 
@@ -138,7 +136,7 @@ JavaScript [ランタイム](#javascript-runtime)を参照してください。
 
 ## <a name="custom-functions-only-add-in"></a>カスタム関数専用アドイン
 
-カスタム関数を含むが、作業ウィンドウなどの UI を含まないアドイン。 この種のアドインのカスタム関数は、JavaScript 専用ランタイムで実行されます。 UI を含むカスタム関数では、共有ランタイムまたは JavaScript 専用ランタイムと HTML をサポートするランタイムの組み合わせを使用できます。 UI がある場合は、共有ランタイムを使用することをお勧めします。 
+カスタム関数を含むが、作業ウィンドウなどの UI を含まないアドイン。 この種のアドインのカスタム関数は [、JavaScript 専用ランタイム](../testing/runtimes.md#javascript-only-runtime)で実行されます。 UI を含むカスタム関数では、共有ランタイムまたは JavaScript 専用ランタイムと HTML をサポートするランタイムの組み合わせを使用できます。 UI がある場合は、共有ランタイムを使用することをお勧めします。 
 
 [カスタム関数](#custom-function)、[カスタム関数ランタイム](#custom-functions-runtime)も参照してください。
 

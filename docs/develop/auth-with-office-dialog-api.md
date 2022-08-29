@@ -3,12 +3,12 @@ title: Office ダイアログ API を使用して認証および承認する
 description: Office ダイアログ API を使用して、Google、Facebook、Microsoft 365、および Microsoft ID プラットフォームで保護されている他のサービスにユーザーがサインオンできるようにする方法について説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: feb2859eb518cfd64f4b3682313452b1b452859f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743633"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423133"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Office ダイアログ API を使用して認証および承認する
 
@@ -23,7 +23,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 
 - [モードレス](https://en.wikipedia.org/wiki/Dialog_box)です。
 - これは作業ウィンドウとは完全に異なるブラウザー インスタンスで、次のことを意味します。
-  - 独自の JavaScript ランタイム環境ならびにウィンドウ オブジェクトおよびグローバル変数を持ちます。
+  - 独自のランタイム環境とウィンドウ オブジェクトとグローバル変数があります。
   - 作業ウィンドウと共有される実行環境はありません。
   - 作業ウィンドウと同じセッション ストレージ ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) プロパティ) を共有しません。
 - ダイアログ ボックスで開かれる最初のページは、作業ウィンドウと同じドメイン (該当する場合は、プロトコル、サブドメイン、およびポートを含む) でホストされる必要があります。
@@ -68,7 +68,7 @@ Secure Token Services (STS) とも呼ばれる多くの ID 機関では、ログ
 
 ## <a name="use-authentication-libraries-with-the-dialog-box"></a>ダイアログ ボックスでの認証ライブラリを使用する
 
-Office ダイアログ ボックスと作業ウィンドウは異なるブラウザと JavaScript ランタイム インスタンスで実行されるため、認証と承認が同じウィンドウで行われる場合の使用方法とは異なる方法で認証 / 承認ライブラリを使用する必要があります。 次のセクションでは、これらのライブラリを使用できる方法と使用できない方法について説明します。
+Office ダイアログ ボックスと作業ウィンドウは異なる [ブラウザー ランタイム インスタンス](../testing/runtimes.md#browser-runtime)で実行されるため、認証と承認が同じウィンドウで行われるときに使用される方法とは異なる方法で認証/承認ライブラリを使用する必要があります。 次のセクションでは、これらのライブラリを使用できる方法と使用できない方法について説明します。
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>多くの場合、トークンを格納するのにライブラリの内部キャッシュは使用できません。
 

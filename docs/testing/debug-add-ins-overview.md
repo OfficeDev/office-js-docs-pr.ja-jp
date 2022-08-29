@@ -3,12 +3,12 @@ title: Office アドインをデバッグする
 description: 開発環境向けの Office アドインのデバッグ ガイダンスを見つける。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: f23e55b2d3ceb84e32365ffbbcb9efafedfebcfc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958763"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423273"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Office アドインのデバッグの概要
 
@@ -63,7 +63,7 @@ Office アドインのサーバー側コードのデバッグは、Web アプリ
     - [Edge レガシー用の開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-legacy.md)
     - [Microsoft Edge (Chromium ベース)で開発者ツールを使用してアドインをデバッグする](debug-add-ins-using-devtools-edge-chromium.md)
 
-使用されているブラウザー ランタイムについては、「[Office アドインで使用されるブラウザ](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+使用されているランタイムの詳細については、「[Office アドインで Office アドインとランタイムによって使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)[」](runtimes.md)を参照してください。
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -86,3 +86,7 @@ Office for Linux のデスクトップ バージョンはないため、テス�
 ## <a name="debug-add-ins-in-staging-or-production"></a>ステージングまたは運用でのアドインのデバッグ
 
 既にステージングまたは運用にあるアドインをデバッグするには、アドインの UI からデバッガーをアタッチします。 手順については、「[作業ウィンドウからデバッガーをアタッチする](attach-debugger-from-task-pane.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [Office アドインのランタイム](runtimes.md)

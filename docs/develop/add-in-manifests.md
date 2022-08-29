@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 09b4d5b2b9fc92c977217df94730b3e6e56cacaa
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659991"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422972"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -153,7 +153,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 オプションの [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
 
 - Office リボンやメニューをカスタマイズします。
-- アドインが実行される埋め込みブラウザー ランタイムでの Office の動作をカスタマイズします。
+- アドインが実行される埋め込みランタイムで Office がどのように動作するかをカスタマイズする。
 - アドインが Azure Active Directory やシングル サインオン用 Microsoft Graph と対話する方法を構成します。
 
 子要素 `VersionOverrides` の中には、親要素 `OfficeApp` の値を上書きする値があります。 たとえば、`VersionOverrides` 内の `Hosts` 要素は `OfficeApp` 内の `Hosts` 要素よりも優先されます。

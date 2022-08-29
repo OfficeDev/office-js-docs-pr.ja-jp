@@ -4,12 +4,12 @@ description: Excel でカスタム関数と作業ウィンドウの間でデー�
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b61ac6305586e5de2f53a0950fd6a52a0503eafd
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: b19569ce191f0c7dafc0877984a0f05595380e05
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958729"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422748"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する
 
@@ -33,7 +33,7 @@ ms.locfileid: "66958729"
 
 1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
 1. **manifest.xml** ファイルを開きます。
-1. 次の **\<Requirements\>** セクション XML を置き換えて (または追加して)、[共有ランタイム要件セット](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) を要求します。
+1. 次 **\<Requirements\>** のセクション XML を置換 (または追加) して [、共有ランタイム要件セットを必要とします](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)。
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ ms.locfileid: "66958729"
     ```
 
     > [!NOTE]
-    > アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+    > アドインにマニフェスト内の **\<Runtimes\>** 要素 (共有ランタイムに必要) が含まれており、WebView2 で Microsoft Edge を使用するための条件 (Chromium ベース) が満たされている場合は、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 1. **\<Page\>** 要素を検索します。 次に、ソースの場所を **Functions.Page.Url** から **Taskpane.Url** に変更します。
 
@@ -106,7 +106,7 @@ ms.locfileid: "66958729"
 
 ## <a name="configure-the-webpackconfigjs-file"></a>webpack.config.js ファイルを構成する
 
-**webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを介して共有 JavaScript ランタイムのみを読み込むように変更する必要があります。
+**webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを使用して共有ランタイムのみを読み込むには、それを変更する必要があります。
 
 1. **webpack.config.js** ファイルを開きます。
 1. `plugins:` セクションに移動します。
@@ -147,7 +147,7 @@ ms.locfileid: "66958729"
     ```
 
     > [!NOTE]
-    > **functions.html** ファイルと **commands.html** ファイルを削除することもできます。 **taskpane.html** は、先ほど行った webpack の更新を介して、**functions.js** および **commands.js** コードを共有 JavaScript ランタイムに読み込みます。
+    > **functions.html** ファイルと **commands.html** ファイルを削除することもできます。 **taskpane.html** は、先ほど行った Webpack 更新プログラムを使用して、**functions.js** と **commands.js** コードを共有ランタイムに読み込みます。
 
 1. 変更を保存してプロジェクトを実行します。 エラー無しで読み込み、実行が行われるようにします。
 
@@ -275,4 +275,4 @@ Excel が起動したら、作業ウィンドウのボタンを使用して共�
 
 ## <a name="see-also"></a>関連項目
 
-- [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [共有ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

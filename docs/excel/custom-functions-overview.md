@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 3eb87c0f2a40dd7650582bb564710aefe43ede0f
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 12740615215913b0201426f929dbcb803c866648
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660271"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422762"
 ---
 # <a name="create-custom-functions-in-excel"></a>Excel でカスタム関数を作成する
 
@@ -36,7 +36,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> カスタム関数アドインがカスタム関数のコードの実行に加えて作業ウィンドウまたはリボン ボタンを使用する場合、共有 JavaScript ランタイムを設定する必要があります。 詳細については、「[Office アドインを構成して共有 JavaScript ランタイムを使用する ](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
+> カスタム関数アドインで作業ウィンドウまたはリボン ボタンを使用する場合は、カスタム関数コードの実行に加えて、 [共有ランタイム](../testing/runtimes.md#shared-runtime)を設定する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>コードでカスタム関数を定義する方法
 
@@ -76,7 +76,7 @@ function add(first, second){
 - カスタム関数マニフェストに固有の **\<ExtensionPoint\>** および **\<Resources\>** 要素を使用します。 これらの要素には、JavaScript、JSON、および HTML ファイルの場所に関する情報が含まれています。
 - カスタム関数に使用するランタイムを指定します。別のランタイムを特段必要とする場合を除いて、共有ランタイムは関数と作業ウィンドウの間でデータを共有できるため、共有ランタイムを常に使用することをお勧めします。
 
-[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してファイルを作成する場合、共有ランタイムはこのようなファイルの既定ではないため、それを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「[Excel アドインを構成して、共有されている JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」の手順に従います。
+[Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してファイルを作成する場合は、これらのファイルの既定値ではないため、共有ランタイムを使用するようにマニフェストを調整することをお勧めします。 マニフェストを変更するには、「 [共有ランタイムを使用するように Excel アドインを構成する」の手順に](../develop/configure-your-add-in-to-use-a-shared-runtime.md)従います。
 
 サンプル アドインからフル機能マニフェストを表示するには、[Office アドインのサンプルの Github リポジトリのアドイン サンプルのいずれか](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml)でマニフェストを参照してください。
 
@@ -96,8 +96,9 @@ Excel on the web および Microsoft 365 サブスクリプションに接続さ
 
 ## <a name="see-also"></a>関連項目
 
-* [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
-* [カスタム関数の要件セット](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
-* [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
-* [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
-* [Office アドインを構成して共有 JavaScript ランタイムを使用する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Microsoft 365 開発者プログラムについて](https://developer.microsoft.com/microsoft-365/dev-program)
+- [カスタム関数の要件セット](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
+- [カスタム関数の名前付けのガイドライン](custom-functions-naming.md)
+- [XLL ユーザー定義関数と互換性のある、カスタム関数を作成します。](make-custom-functions-compatible-with-xll-udf.md)
+- [共有ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Office アドインのランタイム](../testing/runtimes.md)

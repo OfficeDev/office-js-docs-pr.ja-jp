@@ -3,12 +3,12 @@ title: Outlook アドイン コマンド
 description: Outlook アドイン コマンドは、ボタンやドロップダウン メニューを追加することにより、リボンから特定のアドイン操作を開始する方法を提供します。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d58f8cd76f965007fdc9621c53fe52ed18dd6dd9
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 80f1e1f4386b41012b2aa777c16225d3f0fd8432
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797688"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423245"
 ---
 # <a name="add-in-commands-for-outlook"></a>Outlook のアドイン コマンド
 
@@ -64,7 +64,7 @@ Outlook on the web では、アドイン名はオーバーフロー メニュー
 - **関数コマンド**: ボタンまたはメニュー項目は任意の JavaScript を実行します。 ほとんどの場合、このコードは Office JavaScript ライブラリで API を呼び出しますが、そうする必要はありません。 この種類のアドインでは、通常、ボタンまたはメニュー項目自体以外の UI は表示されません。 関数コマンドについては、次の点に注意してください。
 
    - トリガーされる関数は [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) メソッドを呼び出してダイアログを表示できます。これは、エラーの表示、進行状況の表示、またはユーザーからの入力を求める適切な方法です。
-   - 関数コマンドを実行する JavaScript ランタイムは、ブラウザーベースの完全なランタイムです。 HTML をレンダリングし、インターネットに呼び出してデータを送信または取得できます。
+   - 関数コマンドを実行するランタイムは、 [ブラウザーベースの](../testing/runtimes.md#browser-runtime)完全なランタイムです。 HTML をレンダリングし、インターネットに呼び出してデータを送信または取得できます。
 
 ### <a name="run-a-function-command"></a>関数コマンドを実行する
 

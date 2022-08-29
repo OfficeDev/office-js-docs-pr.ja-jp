@@ -3,12 +3,12 @@ title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
 ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091028"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423266"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
@@ -79,7 +79,7 @@ ms.locfileid: "66091028"
 | [ASP.NET を使用したシングル サインオン (SSO) Office アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは ASP.NET で作成されています。 |
 | [Node.js を使用したシングル サインオン (SSO) Office アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは Node.js で作成されています。|
 
-## <a name="shared-javascript-runtime"></a>共有 JavaScript ランタイム
+## <a name="shared-runtime"></a>共有ランタイム
 
 | 名前                | 説明         |
 |:--------------------|:--------------------|

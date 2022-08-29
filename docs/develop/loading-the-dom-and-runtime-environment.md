@@ -3,16 +3,16 @@ title: DOM とランタイム環境を読み込む
 description: DOM と Office アドインのランタイム環境を読み込みます。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: be93b261c8beacdb7b4e8cd08448abf06b14607e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 707b6f6f743767571cf0ab7f465ddf84f117a63b
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958686"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423077"
 ---
-# <a name="loading-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
+# <a name="load-the-dom-and-runtime-environment"></a>DOM とランタイム環境を読み込む
 
-アドインでは、DOM と Office アドイン両方のランタイム環境が、独自のカスタム ロジックを実行する前に読み込まれていることを確認する必要があります。
+独自のカスタム ロジックを実行する前に、アドインは DOM と Office アドインの [両方のランタイム](../testing/runtimes.md) 環境を確実に読み込む必要があります。
 
 ## <a name="startup-of-a-content-or-task-pane-add-in"></a>コンテンツまたは作業ウィンドウ アドインの起動
 
@@ -62,3 +62,4 @@ ms.locfileid: "66958686"
 
 - [Office JavaScript API について](understanding-the-javascript-api-for-office.md)
 - [Office アドインを初期化する](initialize-add-in.md)
+- [Office アドインのランタイム](../testing/runtimes.md)

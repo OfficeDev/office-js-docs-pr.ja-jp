@@ -1,2 +1,2 @@
 > [!NOTE]
-> この記事では、共有ランタイムOfficeアドインが構成されている必要があります。 詳細については、「共有ランタイム[を使用Officeアドインを構成する」を参照してください](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+> この記事では、 [共有ランタイム](../testing/runtimes.md#shared-runtime)を使用するように Office アドインを構成する必要があります。 詳細については、「 [共有ランタイムを使用するように Office アドインを構成する](../develop/configure-your-add-in-to-use-a-shared-runtime.md)」を参照してください。

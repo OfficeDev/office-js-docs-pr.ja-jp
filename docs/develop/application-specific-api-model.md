@@ -3,12 +3,12 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889339"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422944"
 ---
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>要求コンテキスト
 
-Office アプリケーションとユーザーのアドインは、2 つの異なるプロセスで実行されます。 それらは異なるランタイム環境を使用するため、アドインは、ワークシート、範囲、グラフ、表など、Office のオブジェクトにユーザーのアドインを接続するために `RequestContext` オブジェクトが必要です。 この `RequestContext` オブジェクトは、`*.run`を呼び出す際に引数として提供されます。
+Office アプリケーションとアドインは、さまざまなプロセスで実行されます。 それらは異なるランタイム環境を使用するため、アドインは、ワークシート、範囲、グラフ、表など、Office のオブジェクトにユーザーのアドインを接続するために `RequestContext` オブジェクトが必要です。 この `RequestContext` オブジェクトは、`*.run`を呼び出す際に引数として提供されます。
 
 ## <a name="proxy-objects"></a>プロキシ オブジェクト
 

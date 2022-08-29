@@ -17,4 +17,4 @@ Office JavaScript API には、2 つの異なるモデルがあります。
 - **共通 API** を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。 この API モデルでは [コールバック](https://developer.mozilla.org/docs/Glossary/Callback_function) が使用され、Office アプリケーションに送信する各要求で 1 つの操作のみを指定できます。 共通 API は Office 2013 で導入されました。Office 2013 以降の操作に使用できます。 Outlook、PowerPoint、Project を操作するための API を含む、共通 API オブジェクト モデルの詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 
 > [!NOTE]
->共有ランタイムのないカスタム関数は、計算の実行に優先順位を付ける JavaScript 専用ランタイムで実行されます。 これらの関数は、少し異なるプログラミング モデルを使用します。
+>[共有ランタイム](../testing/runtimes.md#shared-runtime)のないカスタム関数は、計算の実行に優先順位を付ける [JavaScript 専用ランタイム](../testing/runtimes.md#javascript-only-runtime)で実行されます。 これらの関数は、少し異なるプログラミング モデルを使用します。

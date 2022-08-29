@@ -1,21 +1,21 @@
 ---
-title: 共有 JavaScript ランタイムを使用するように Office アドインを構成する
-description: 共有 JavaScript ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
+title: 共有ランタイムを使用するように Office アドインを構成する
+description: 共有ランタイムを使用して、追加のリボン、作業ウィンドウ、およびカスタム関数機能をサポートするように Office アドインを構成します。
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: e6b10cc2d342d95a8542146ecbd95d750322421f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889479"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422937"
 ---
-# <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>共有 JavaScript ランタイムを使用するように Office アドインを構成する
+# <a name="configure-your-office-add-in-to-use-a-shared-runtime"></a>共有ランタイムを使用するように Office アドインを構成する
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-単一の共有 JavaScript ランタイム (共有ランタイムとも呼ばれる) ですべてのコードを実行するように Office アドインを構成できます。 これにより、アドイン間での調整が容易になり、アドインのすべての部分から DOM や CORS にアクセスできます。 また、ドキュメントを開いたときにコードを実行したり、リボン ボタンを有効または無効にするなどの追加機能も有効にできます。 共有 JavaScript ランタイムが使用できるようにアドインを構成するには、この記事の手順に従います。
+Office アドインを構成して、そのすべてのコードを 1 つの [共有ランタイム](../testing/runtimes.md#shared-runtime)で実行できます。 これにより、アドイン間での調整が容易になり、アドインのすべての部分から DOM や CORS にアクセスできます。 また、ドキュメントを開いたときにコードを実行したり、リボン ボタンを有効または無効にするなどの追加機能も有効にできます。 共有ランタイムが使用できるようにアドインを構成するには、この記事の手順に従います。
 
 ## <a name="create-the-add-in-project"></a>アドイン プロジェクトの作成
 
@@ -97,7 +97,7 @@ ms.locfileid: "66889479"
 
 ## <a name="configure-the-webpackconfigjs-file"></a>webpack.config.js ファイルを構成する
 
-**webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを介して共有 JavaScript ランタイムのみを読み込むように変更する必要があります。
+**webpack.config.js** は、複数のランタイム ローダーをビルドします。 **taskpane.html** ファイルを使用して共有ランタイムのみを読み込むには、それを変更する必要があります。
 
 1. Visual Studio Code を起動し、生成したアドイン プロジェクトを開きます。
 1. **webpack.config.js** ファイルを開きます。
@@ -138,14 +138,14 @@ ms.locfileid: "66889479"
    ```
 
 > [!NOTE]
-> プロジェクトに **functions.html** ファイルまたは **commands.html** ファイルがある場合は、それらを削除できます。 **taskpane.html** は、先ほど行った webpack の更新を介して、**functions.js** および **commands.js** コードを共有 JavaScript ランタイムに読み込みます。
+> プロジェクトに **functions.html** ファイルまたは **commands.html** ファイルがある場合は、それらを削除できます。 **taskpane.html** は、先ほど行った Webpack 更新プログラムを使用して、**functions.js** と **commands.js** コードを共有ランタイムに読み込みます。
 
 ## <a name="test-your-office-add-in-changes"></a>Office アドインの変更をテストする
 
-共有 JavaScript ランタイムが正しく使用されていることを確認するには、次の手順を実行します。
+次の手順を使用して、共有ランタイムを正しく使用していることを確認できます。
 
 1. **taskpane.js** ファイルを開きます。
-1. ファイルのすべての内容を次のコードで置き換えます。 これにより、作業ウィンドウが開かれた回数が表示されます。 onVisibilityModeChanged イベントの追加は、共有 JavaScript ランタイムでのみサポートされます。
+1. ファイルのすべての内容を次のコードで置き換えます。 これにより、作業ウィンドウが開かれた回数が表示されます。 onVisibilityModeChanged イベントの追加は、共有ランタイムでのみサポートされます。
 
     ```javascript
     /*global document, Office*/
@@ -180,7 +180,7 @@ ms.locfileid: "66889479"
 
 ## <a name="runtime-lifetime"></a>ランタイムの有効期間
 
-`Runtime` 要素を追加する場合は、`long` または `short` の値を使用して有効期間も指定します。この値を `long` に設定すると、ドキュメントが開いたときにアドインを起動したり、作業ウィンドウを閉じた後にコードを実行し続けたり、カスタム関数から CORS と DOM を使用したりするなどの機能を利用できます。
+要素を **\<Runtime\>** 追加する場合は、値 `long` または `short`. この値を `long` に設定すると、ドキュメントを開くとアドインを起動したり、作業ウィンドウを閉じた後にコードを継続して実行したり、カスタム関数から CORS および DOM を使用したりできます。
 
 > [!NOTE]
 > 既定の有効期間の値は `short` ですが、Excel、PowerPoint、および Word アドインでは `long` を使うことをお勧めします。この例でランタイムを `short` に設定した場合、いずれかのリボン ボタンを押したときにアドインが起動しますが、リボン ハンドラーの実行が完了するとアドインが終了することがあります。 同様に、作業ウィンドウを開くとアドインが起動します。ただし、作業ウィンドウを閉じると、アドインが終了する場合があります。
@@ -192,13 +192,13 @@ ms.locfileid: "66889479"
 ```
 
 > [!NOTE]
-> アドインにマニフェストの `Runtimes` 要素 (共有ランタイムに必要) が含まれており、WebView2 (Chromium ベース) で Microsoft Edge の使用条件が満たされている場合、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+> アドインにマニフェスト内の **\<Runtimes\>** 要素 (共有ランタイムに必要) が含まれており、WebView2 で Microsoft Edge を使用するための条件 (Chromium ベース) が満たされている場合は、その WebView2 コントロールが使用されます。 使用条件が満たされていない場合は、Windows または Microsoft 365 のバージョンに関係なく、Internet Explorer 11 が使用されます。 詳細については、「[ランタイム](/javascript/api/manifest/runtimes)」および「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
-## <a name="about-the-shared-javascript-runtime"></a>共有 JavaScript ランタイムについて
+## <a name="about-the-shared-runtime"></a>共有ランタイムについて
 
-Windows または Mac で、アドインは、リボン ボタン、カスタム関数、作業ウィンドウのコードを別の JavaScript ランタイム環境で実行します。 これにより、グローバル データを簡単に共有できない、カスタム関数からすべての CORS 機能にアクセスできないなどの制限が発生します。
+Windows または Mac では、アドインはリボン ボタン、カスタム関数、作業ウィンドウのコードを個別のランタイム環境で実行します。 これにより、グローバル データを簡単に共有できない、カスタム関数からすべての CORS 機能にアクセスできないなどの制限が発生します。
 
-ただし、Office アドインを構成すれば、同じ JavaScript ランタイム (共有ランタイムとも呼ばれる) でコードを共有できるようになります。 これにより、アドイン間での調整が容易になり、アドインのすべての部分から、作業ウィンドウの DOM や CORS にアクセスできます。
+ただし、同じランタイム (共有ランタイムとも呼ばれます) でコードを共有するように Office アドインを構成できます。 これにより、アドイン間での調整が容易になり、アドインのすべての部分から、作業ウィンドウの DOM や CORS にアクセスできます。
 
 共有ランタイムを構成すると、次のシナリオが可能になります。
 
@@ -212,7 +212,7 @@ Windows または Mac で、アドインは、リボン ボタン、カスタム
   - カスタム関数で CORS がすべてサポートされます。
   - カスタム関数で、Office.js API を呼び出して、スプレッドシート ドキュメントのデータを読み取ることができます。
 
-Windows 上の Office の場合、共有ランタイムは、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、使用条件が満たされている場合、WebView2 (Chromium ベース) で Microsoft Edge を使用します。それ以外の場合は、Internet Explorer 11 を使用します。 また、アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。 次の図は、カスタム関数、リボン UI、作業ウィンドウのコードがすべて同じ JavaScript ランタイム内でどのように実行されるかを示しています。
+Windows 上の Office の場合、共有ランタイムは、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、使用条件が満たされている場合、WebView2 (Chromium ベース) で Microsoft Edge を使用します。それ以外の場合は、Internet Explorer 11 を使用します。 また、アドインのリボンに表示するボタンはすべて、同じ共有ランタイムで実行されます。 次の図は、カスタム関数、リボン UI、作業ウィンドウ コードがすべて同じランタイムで実行される方法を示しています。
 
 ![Excel の共有ブラウザー ランタイムで実行されているカスタム関数、作業ウィンドウ、およびリボン ボタンの図。](../images/custom-functions-in-browser-runtime.png)
 
@@ -233,3 +233,4 @@ Windows 上の Office の場合、共有ランタイムは、「[Office アド�
 - [ドキュメントが開いたら、Office アドインでコードを実行する](run-code-on-document-open.md)
 - [Office アドインの作業ウィンドウを表示または非表示にする](show-hide-add-in.md)
 - [チュートリアル: Excel カスタム関数と作業ウィンドウの間でデータとイベントを共有する](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Office アドインのランタイム](../testing/runtimes.md)

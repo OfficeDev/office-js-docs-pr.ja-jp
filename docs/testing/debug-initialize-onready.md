@@ -1,16 +1,16 @@
 ---
-title: initialize 関数と onReady 関数をデバッグする
+title: initialize 機能と onReady 機能をデバッグする
 description: Office.initialize 関数と Office.onReady 関数をデバッグする方法について説明します。
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d26c0f2686477f74fbe65550b7d35cc69e7be71
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4dca551d8a016e7aad16cfdc02590f0a51455852
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958847"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423252"
 ---
-# <a name="debug-the-initialize-and-onready-functions"></a>initialize 関数と onReady 関数をデバッグする
+# <a name="debug-the-initialize-and-onready-functions"></a>initialize 機能と onReady 機能をデバッグする
 
 > [!NOTE]
 > この記事では、 [Office アドインの初期化について](../develop/initialize-add-in.md)理解していることを前提としています。
@@ -26,3 +26,7 @@ ms.locfileid: "66958847"
 
 > [!TIP]
 > 詳細については、「[Office on the webでのアドインのデバッグ](debug-add-ins-in-office-online.md)」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [Office アドインのランタイム](runtimes.md)

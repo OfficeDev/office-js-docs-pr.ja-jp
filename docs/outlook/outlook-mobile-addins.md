@@ -1,30 +1,30 @@
 ---
 title: Outlook Mobile の Outlook のアドイン
-description: Outlookモバイル アドインは、すべてのMicrosoft 365ビジネス アカウントとOutlook.com アカウントでサポートされています。
-ms.date: 04/14/2022
+description: Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウントと Outlook.com アカウントでサポートされています。
+ms.date: 04/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ceddbe4947a4818c90a517712bc8fa58376f72a
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: dfa314ad91646e2ed4de47cae1bcbb8cfb1f121a
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963485"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318803"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Outlook Mobile のアドイン
 
 現時点で、アドインは他の Outlook エンドポイントで利用できるものと同じ API を使用して Outlook Mobile で動作します。Outlook 用のアドインを作成済みの場合、簡単に Outlook Mobile で動作するようにできます。
 
-Outlookモバイル アドインは、すべてのMicrosoft 365ビジネス アカウントとOutlook.com アカウントでサポートされています。 ただし、現在、Gmail アカウントではサポートを利用できません。
+Outlook モバイル アドインは、すべての Microsoft 365 ビジネス アカウントと Outlook.com アカウントでサポートされています。 ただし、現在、Gmail アカウントではサポートを利用できません。
 
 **Outlook on iOS の作業ウィンドウの例**
 
-![iOS 上のOutlookの作業ウィンドウのスクリーンショット。](../images/outlook-mobile-addin-taskpane.png)
+![Outlook on iOS の作業ウィンドウのスクリーンショット。](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Outlook on Android の作業ウィンドウの例**
 
-![Android のOutlookの作業ウィンドウのスクリーンショット。](../images/outlook-mobile-addin-taskpane-android.png)
+![Android 上の Outlook の作業ウィンドウのスクリーンショット。](../images/outlook-mobile-addin-taskpane-android.png)
 
 ## <a name="whats-different-on-mobile"></a>モバイルにおける違い
 
@@ -32,7 +32,9 @@ Outlookモバイル アドインは、すべてのMicrosoft 365ビジネス ア�
   - アドインは [UI ガイドライン](outlook-addin-design.md)に準拠 **していなければなりません**。
   - アドインのシナリオは、[モバイルに対して適切](#what-makes-a-good-scenario-for-mobile-add-ins)である **必要** があります。
 
-- 一般に、現時点では、メッセージ読み取りモードのみがサポートされています。 つまり、マニフェストの `MobileMessageReadCommandSurface` モバイル セクションで宣言する必要がある唯一の [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) です。 ただし、予定オーガナイザー モードは、 [MobileOnlineMeetingCommandSurface 拡張ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)を宣言するオンライン会議プロバイダー統合アドインでサポートされています。 このシナリオの詳細については、[オンライン会議プロバイダーのモバイル アドイン](online-meeting.md)Outlook作成に関する記事を参照してください。
+- 一般に、現時点では、メッセージ読み取りモードのみがサポートされています。 つまり、マニフェストの `MobileMessageReadCommandSurface` モバイル セクションで宣言する必要がある唯一の [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) です。 ただし、いくつかの例外があります。
+  1. 予定開催者モードは、 [MobileOnlineMeetingCommandSurface 拡張ポイント](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)を宣言するオンライン会議プロバイダー統合アドインでサポートされています。 このシナリオの詳細については、 [オンライン会議プロバイダーの Outlook モバイル アドインの作成](online-meeting.md) に関する記事を参照してください。
+  1. 予定出席者モードは、メモと顧客関係管理 (CRM) アプリケーションのプロバイダーによって作成された統合アドインでサポートされます。 このようなアドインは、代わりに [MobileLogEventAppointmentAttendee 拡張ポイント](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee)を宣言する必要があります。 このシナリオの詳細については、 [Outlook モバイル アドインの外部アプリケーションに対する予定ノートのログ](mobile-log-appointments.md) 記録に関する記事を参照してください。
 
 - [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API はモバイルではサポートされていません。モバイル アプリは REST API を使用して、サーバーと通信します。アプリのバックエンドで Exchange サーバーと接続する必要がある場合、コールバック トークンを使用して REST API 呼び出しを行うことができます。詳しくは、「[Outlook アドインからの Outlook REST API の使用](use-rest-api.md)」をご覧ください。
 
@@ -62,14 +64,14 @@ Outlook Mobile に対して適切なシナリオの例を次に示します。
 
 ## <a name="testing-your-add-ins-on-mobile"></a>モバイル上でのアドインのテスト
 
-Outlook Mobile でアドインをテストするには、まず、Web、Windows、または Mac 上のMicrosoft 365またはOutlook.com アカウントに[アドインをサイドロード](sideload-outlook-add-ins-for-testing.md)します。 マニフェストが適切に書式設定されて含まれている`MobileFormFactor`か、モバイル上のOutlook クライアントに読み込まれないことを確認します。
+Outlook Mobile でアドインをテストするには、まずアドインを Microsoft 365 または Web、Windows、または Mac 上の Outlook.com アカウントに [サイドロード](sideload-outlook-add-ins-for-testing.md) します。 マニフェストが適切に書式設定されて含まれている `MobileFormFactor` か、モバイル上の Outlook クライアントに読み込まれないことを確認します。
 
 アドインが動作することを確認したら、携帯電話やタブレットなど、別のサイズの画面でテストします。コンストラストやフォント サイズ、色、さらには VoiceOver (iOS) または TalkBack (Android) などのスクリーン リーダーが使用できることなど、アクセシビリティのガイドラインに従っていることも確認してください。
 
 使い慣れているツールがない可能性があるため、モバイルでのトラブルシューティングは難しい場合があります。 ただし、iOS でのトラブルシューティングの 1 つのオプションは、Fiddler を使用することです ( [iOS デバイスでの使用に関するこのチュートリアルを](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)参照してください)。
 
 > [!NOTE]
-> iPhoneおよび Android スマートフォンの最新のOutlook on the webは、Outlook アドインのテストに必要な、または使用できなくなりました。さらに、アドインは、Android、iOS、およびオンプレミスのExchange アカウントを持つ最新のモバイル Web のOutlookではサポートされていません。 一部の iOS デバイスでは、従来のOutlook on the webでオンプレミス Exchange アカウントを使用する場合でもアドインがサポートされます。 サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)」を参照してください。
+> iPhone および Android スマートフォンの最新のOutlook on the webは、Outlook アドインのテストに必要または利用できなくなりました。さらに、アドインは、Outlook on Android、iOS、およびオンプレミスの Exchange アカウントを使用した最新のモバイル Web ではサポートされていません。 一部の iOS デバイスでは、従来のOutlook on the webでオンプレミスの Exchange アカウントを使用する場合でもアドインがサポートされます。 サポートされているブラウザーの詳細については、「[Office アドインを実行するための要件](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 

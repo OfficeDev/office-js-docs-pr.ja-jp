@@ -2,14 +2,14 @@
 title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
 description: イベント ベースのアクティブ化を使用して、Outlook アドインで送信中のイベントを処理する方法について説明します。
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 08/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660250"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320652"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
 
@@ -18,7 +18,7 @@ ms.locfileid: "66660250"
 次のチュートリアルでは、このイベントを使用します `OnMessageSend` 。 このチュートリアルの最後には、メッセージが送信されるたびに実行されるアドインがあり、ユーザーが電子メールで言及したドキュメントまたは画像を追加するのを忘れたかどうかを確認します。
 
 > [!IMPORTANT]
-> イベントと`OnAppointmentSend`イベントは`OnMessageSend`、Outlook on Windows の Microsoft 365 サブスクリプションでのみプレビューで利用できます。 詳細については、「 [プレビューする方法」を](autolaunch.md#how-to-preview)参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
+> このイベントと`OnAppointmentSend`イベントは`OnMessageSend`、Outlook on Windows および Web の Microsoft 365 サブスクリプションでのみプレビューで利用できます。 詳細については、「 [プレビューする方法」を](autolaunch.md#how-to-preview)参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -26,7 +26,7 @@ ms.locfileid: "66660250"
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
+Office アドイン[用 Yeoman Generator](../develop/yeoman-generator-overview.md) を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -40,7 +40,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.11">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -51,7 +51,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -118,7 +118,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -224,6 +224,16 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
+
+## <a name="update-the-commands-html-file"></a>コマンド HTML ファイルを更新する
+
+1. **./src/commands** フォルダーで、**commands.html** を開きます。
+
+1. 終了 **ヘッド** タグ (`</head>`) の直前に、イベント処理 JavaScript コードのスクリプト エントリを追加します。
+
+   ```js
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
+   ```
 
 1. 変更内容を保存します。
 

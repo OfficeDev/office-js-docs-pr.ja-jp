@@ -1,18 +1,18 @@
 ---
 title: Outlook アドインにモバイル サポートを追加する
-description: Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
-ms.date: 07/16/2021
+description: 必要に応じて、アドイン マニフェストを更新し、モバイル シナリオのコードを変更する方法など、Outlook Mobile のサポートを追加する方法について説明します。
+ms.date: 04/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496972"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318880"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
-Outlook Mobile でアドイン コマンドを使用すると、ユーザーは Outlook on the web、Windows、および Mac で既に持っているのと同じ機能 (いくつかの制限[があります) に](#code-considerations)アクセスできます。 Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
+Outlook Mobile でアドイン コマンドを使用すると、ユーザーは、Outlook on the web、Windows、Mac で既に持っているのと同じ機能 (いくつかの[制限](#code-considerations)あり) にアクセスできます。 Outlook Mobile のサポートを追加するには、アドイン マニフェストを更新する必要があります。さらに、モバイル シナリオのコードを変更することが必要な場合もあります。
 
 ## <a name="updating-the-manifest"></a>マニフェストを更新する
 
@@ -20,7 +20,7 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 この要素には、モバイル クライアントにアドインを読み込むためのすべての情報が含まれています。これにより、モバイル エクスペリエンスに対して完全に異なる UI 要素と JavaScript ファイルを定義することができます。
 
-次の使用例は、要素内の 1 つの作業ウィンドウ ボタンを示 `MobileFormFactor` しています。
+次の例は、要素内の 1 つの作業ウィンドウ ボタンを `MobileFormFactor` 示しています。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -72,7 +72,7 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドは、Outlook Mobile ではサポートされていません。可能な場合には、アドインは優先的に Office.js API から情報を取得します。Office.js API によって表示されていない情報がアドインで必要な場合、[Outlook REST APIs](/outlook/rest/) を使用してユーザーのメールボックスにアクセスする必要があります。
 
-メールボックス要件セット 1.5 では、REST API と互換性のあるアクセス トークンを要求できる新しいバージョンの [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) と、ユーザーの REST API エンドポイントの検索に使用できる新しい [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) プロパティが導入されました。
+メールボックス要件セット 1.5 には、REST API と互換性のあるアクセス トークンを要求できる新しいバージョンの [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) と、ユーザーの REST API エンドポイントを検索するために使用できる新しい [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) プロパティが導入されました。
 
 ### <a name="pinch-zoom"></a>ピンチによるズーム
 
@@ -84,11 +84,14 @@ Outlook Mobile では、作業ウィンドウが画面全体を占めるので�
 
 ### <a name="compose-mode-and-appointments"></a>作成モードと予定
 
-現在、モバイル のアドインは、Outlook読み取り時にのみアクティブ化をサポートしています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、オンライン会議プロバイダー統合アドインは、予定オーガナイザー モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「オンライン会議プロバイダー Outlookモバイル アドインを作成する[」を参照してください](online-meeting.md#available-apis)。
+現在、Outlook Mobile のアドインでは、メッセージを読み取るときにのみアクティブ化がサポートされています。 メッセージを作成するときや、予定を表示または作成するときには、アドインはアクティブ化されません。 ただし、次の 2 つの例外があります。
+
+1. オンライン会議プロバイダー統合アドインは、予定開催者モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「 [オンライン会議プロバイダー用の Outlook モバイル アドインを作成する」](online-meeting.md#available-apis)を参照してください。
+1. 予定のメモやその他の詳細を顧客関係管理 (CRM) またはメモ作成サービスに記録するアドインは、予定出席者モードでアクティブ化できます。 この例外 (使用可能な API を含む) の詳細については、「 [Outlook モバイル アドインの外部アプリケーションへの予定ノートのログ記録](mobile-log-appointments.md#available-apis)」を参照してください。
 
 ### <a name="unsupported-apis"></a>サポートされていない API
 
-要件セット 1.6 以降で導入された API は、モバイル デバイスOutlookされません。 以前の要件セットの次の API もサポートされていません。
+要件セット 1.6 以降で導入された API は、Outlook Mobile ではサポートされていません。 以前の要件セットの次の API もサポートされていません。
 
 - [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)

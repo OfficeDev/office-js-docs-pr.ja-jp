@@ -1,19 +1,19 @@
 ---
-title: 非共有ランタイムを使用して関数コマンドをデバッグする
+title: 非共有ランタイムを使用する関数コマンドをデバッグする
 description: 関数コマンドをデバッグする方法について説明します。
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 943d7ed8ccfedd961eac3fe941c8ef357964ed37
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: d2be148c05f88837610b8563c2e61618d1c37775
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797712"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423203"
 ---
-# <a name="debug-a-function-command-with-a-non-shared-runtime"></a>非共有ランタイムを使用して関数コマンドをデバッグする
+# <a name="debug-a-function-command-with-a-non-shared-runtime"></a>非共有ランタイムを使用する関数コマンドをデバッグする
 
 > [!IMPORTANT]
-> [アドインが共有ランタイムを使用するように構成されている](../develop/configure-your-add-in-to-use-a-shared-runtime.md)場合は、作業ウィンドウの背後にあるコードと同様に、関数コマンドの背後にあるコードをデバッグします。 [Office アドインのデバッグに](debug-add-ins-overview.md)関する記事を参照し、共有ランタイムを使用するアドインの関数コマンドは、その記事で説明されているように特別なケース *ではありません*。 
+> [アドインが共有ランタイムを使用するように構成されている](../develop/configure-your-add-in-to-use-a-shared-runtime.md)場合は、作業ウィンドウの背後にあるコードと同様に、関数コマンドの背後にあるコードをデバッグします。 [Office アドインのデバッグに](debug-add-ins-overview.md)関する記事を参照し、[共有ランタイム](runtimes.md#shared-runtime)を使用するアドインの関数コマンドは、その記事で説明されているように特別なケース *ではありません*。 
 
 > [!NOTE]
 > この記事では、 [関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)について理解していることを前提としています。
@@ -31,3 +31,7 @@ ms.locfileid: "66797712"
 ## <a name="debug-function-commands-in-outlook-add-ins-on-windows"></a>Windows 上の Outlook アドインで関数コマンドをデバッグする
 
 開発用コンピューターが Windows の場合は、Outlook デスクトップで関数コマンドをデバッグする方法があります。 [Outlook アドインのデバッグ関数コマンドに関する](../outlook/debug-ui-less.md)説明を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [Office アドインのランタイム](runtimes.md)
