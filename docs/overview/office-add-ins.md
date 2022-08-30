@@ -7,7 +7,7 @@ ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ms.openlocfilehash: 8216abbce1147280c722b2ac8450379e2425172b
 ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/06/2022
 ms.locfileid: "65244857"
