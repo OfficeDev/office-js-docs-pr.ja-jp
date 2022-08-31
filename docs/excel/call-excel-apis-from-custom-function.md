@@ -1,14 +1,14 @@
 ---
 title: カスタム関数から Excel JavaScript API を呼び出す
 description: カスタム関数から呼び出すことができる Excel JavaScript API について説明します。
-ms.date: 07/18/2022
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d1cbf6d07e4ede5b8309e899828f8f1d8ad1fa0
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423189"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464833"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>カスタム関数から Excel JavaScript API を呼び出す
 
@@ -48,18 +48,16 @@ async function getRangeValue(address) {
 
 ## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>カスタム関数を使用して Excel JavaScript API を呼び出す場合の制限事項
 
-Excel の環境を変更するカスタム関数から Excel JavaScript API を呼び出さないでください。 つまり、カスタム関数で次の操作を行う必要はありません。
+カスタム関数アドインは Excel JavaScript API を呼び出すことができますが、呼び出す API については注意が必要です。 カスタム関数を実行しているセルの外側のセルを変更するカスタム関数から Excel JavaScript API を呼び出さないでください。 他のセルまたは Excel 環境を変更すると、Excel アプリケーションのパフォーマンス、タイムアウト、無限ループが低下する可能性があります。 つまり、カスタム関数では次の操作を行わないでください。
 
 - スプレッドシートのセルを挿入、削除、書式設定します。
 - 別のセルの値を変更します。
 - ブックにシートを移動、名前変更、削除、または追加します。
-- 計算モードや画面ビューなど、環境オプションを変更します。
 - ブックに名前を追加します。
-- プロパティを設定するか、ほとんどのメソッドを実行します。
+- プロパティを設定します。
+- 計算モードや画面ビューなど、Excel 環境オプションを変更します。
 
-Excel を変更すると、パフォーマンス、タイムアウト、無限ループが低下する可能性があります。 Excel 再計算が行われている間は、予測できない結果が得られるので、カスタム関数の計算は実行しないでください。
-
-代わりに、リボン ボタンまたは作業ウィンドウのコンテキストから Excel に変更を加えます。
+カスタム関数アドインは、カスタム関数を実行しているセルの外部のセルから情報を読み取ることができますが、他のセルへの書き込み操作を実行しないでください。 代わりに、リボン ボタンまたは作業ウィンドウのコンテキストから、他のセルまたは Excel 環境に変更を加えます。 また、このシナリオでは予測できない結果が作成されるため、Excel 再計算が行われている間はカスタム関数の計算を実行しないでください。
 
 ## <a name="next-steps"></a>次の手順
 

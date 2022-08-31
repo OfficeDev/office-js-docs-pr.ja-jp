@@ -3,12 +3,12 @@ title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows �
 description: VS Code で Microsoft Edge WebView2 (Chromium ベース) を使用する Office アドインをデバッグする方法について説明します。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 58c676ada092ff31737da4b257bbd6e5e158c0dc
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 314799922b8d3687d8a24e93c49143cd3aa37e06
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423301"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464819"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
@@ -37,7 +37,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 
 1. 最初の手順は、プロジェクトとその作成方法によって異なります。
 
-   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、[Office アドイン用の Yeoman ジェネレーターを使用します](../develop/yeoman-generator-overview.md)。これを行うには、「[Outlook アドインのクイック スタート](../quickstarts/outlook-quickstart.md)」など、クイック スタート ガイドのいずれかを使用します。 
+   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、 [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用します。これを行うには、 [Outlook アドインクイック スタート](../quickstarts/outlook-quickstart.md)などのクイック スタート ガイドのいずれかを使用します。
    - Yo Office で作成された既存のプロジェクトをデバッグする場合は、スキップして次の手順に進みます。
    - Yo Office で作成されていない既存のプロジェクトをデバッグする場合は、「[付録 A](#appendix-a)」の手順を実行し、この手順の次の手順に戻ります。
 

@@ -3,29 +3,29 @@ title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f7bfee127b69b965720ddc84c676c9f78de5bc
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136463"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464826"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
 この記事では、Office on the webを使用してアドインをデバッグする方法について説明します。次の手法を使用します。
 
-- mac や Linux で開発している場合など、WindowsまたはOfficeデスクトップ クライアント&mdash;を実行していないコンピューター上でアドインをデバッグする場合。
-- ide でデバッグできない場合や望まない場合は、別のデバッグ プロセスとして、Visual StudioコードやVisual Studio コードなどです。
+- Windows や Office デスクトップ クライアント&mdash;を実行していないコンピューターでアドインをデバッグする場合 (Mac または Linux で開発している場合など)。
+- Visual Studio や Visual Studio Code などの IDE でデバッグできない場合、またはデバッグしない場合は、別のデバッグ プロセスとして使用します。
 
-この記事では、デバッグする必要があるアドイン プロジェクトがあることを前提としています。 Web 上でデバッグを練習するだけの場合は、Word のクイック スタートなど、特定のOffice アプリケーションのクイック スタートのいずれかを使用して新しいプロジェクト[を](../quickstarts/word-quickstart.md)作成します。
+この記事では、デバッグする必要があるアドイン プロジェクトがあることを前提としています。 Web 上でデバッグを行うだけの場合は、Word のクイック スタートなど、特定の Office アプリケーションのクイック スタートのいずれかを使用して新しいプロジェクト [を](../quickstarts/word-quickstart.md)作成します。
 
 ## <a name="debug-your-add-in"></a>アドインのデバッグ
 
 Word on the web を使用してアドインをデバッグするには: 
 
-1. localhost でプロジェクトを実行し、Office on the web内のドキュメントにサイドロードします。 サイドローディングの詳細については、「[Web 上のアドインOfficeサイドロード](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)する」を参照してください。
+1. localhost でプロジェクトを実行し、Office on the web内のドキュメントにサイドロードします。 サイドローディングの詳細な手順については、「 [Web 上の Office アドインをサイドロードする」を](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)参照してください。
 
-2. ブラウザーの開発者ツールを開きます。 これは通常、F12 キーを押すことによって行われます。 デバッガー ツールを開き、それを使用してブレークポイントを設定し、変数を監視します。 ブラウザーのツールの使用に関する詳細なヘルプについては、次のいずれかを参照してください。  
+2. ブラウザーの開発者ツールを開きます。 これは通常、F12 キーを押すことによって行われます。 デバッガー ツールを開き、それを使用してブレークポイントを設定し、変数を監視します。 ブラウザーのツールの使用に関する詳細なヘルプについては、次のいずれかを参照してください。
 
    - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
    - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)

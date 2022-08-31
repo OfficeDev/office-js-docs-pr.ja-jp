@@ -3,12 +3,12 @@ title: シングル サインオンを使用する ASP.NET Office アドイン�
 description: シングル サインオン (SSO) を使用するために、ASP.NET バックエンドを使用して Office アドインを作成 (または変換) する方法のステップ バイ ステップ ガイド。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: e3ec0982aef53e729a20f58c6be3ddb4d9389849
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958833"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464812"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する ASP.NET Office アドインを作成する
 
@@ -351,7 +351,7 @@ ms.locfileid: "66958833"
     }
     ```
 
-1. `TODO 6` を以下のように置き換えます。
+1. 次に置き換えます `TODO 6` 。
 
     ```javascript
     if (exceptionMessage) {
@@ -373,7 +373,7 @@ ms.locfileid: "66958833"
     }
     ```
 
-1. `TODO 8` を以下のように置き換えます。
+1. 次に置き換えます `TODO 8` 。
 
     ```javascript
     else {
@@ -533,7 +533,7 @@ ms.locfileid: "66958833"
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. `TODO 3`を以下のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `TODO 3` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
     - `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` メソッドは、最初にメモリ内の MSAL キャッシュで一致するアクセス トークンを探します。 それが見つからなかった場合にのみ、Azure AD V2 エンドポイントで代理フローを開始します。
     - `MsalServiceException` 以外の種類の例外は、意図的にキャッチしていないため、`500 Server Error` メッセージとしてクライアントに伝達されます。

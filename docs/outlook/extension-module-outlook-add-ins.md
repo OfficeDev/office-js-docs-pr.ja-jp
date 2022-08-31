@@ -1,18 +1,21 @@
 ---
 title: Outlook のモジュール拡張機能アドイン
 description: Outlook の内部で実行することで、ユーザーが Outlook から簡単にビジネスの情報や生産性ツールにアクセスできるようにするアプリケーションを作成します。
-ms.date: 05/27/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6715a98cca70fbf5e7a2caae2fa2d37e35479d19
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d234f4e1aad77b3cc30d0e9bc9450ec79af958aa
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59154165"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464805"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Outlook のモジュール拡張機能アドイン
 
 モジュール拡張機能アドインは、Outlook のナビゲーション バーのメール、タスク、および予定表の横に表示されます。 モジュール拡張機能は、メールと予定の情報のみ使用することに限定されていません。 Outlook の内部で実行することで、ユーザーが Outlook から簡単にビジネスの情報や生産性ツールにアクセスできるようにするアプリケーションを作成できます。
+
+> [!TIP]
+> モジュール拡張機能は [Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) ではサポートされていませんが、 [Outlook で開く個人用タブ](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab)を作成することで、ユーザーに非常によく似たエクスペリエンスを作成できます。 Outlook アドインの Teams マニフェストの早期プレビュー期間では、Outlook アドインと個人用タブを同じマニフェストに組み合わせてユニットとしてインストールすることはできません。 これに取り組んでいますが、それまでは、アドインと個人用タブ用に個別のアプリを作成する必要があります。両方とも同じドメイン上のファイルを使用できます。
 
 > [!NOTE]
 > モジュール拡張機能は、Windows 用 Outlook 2016 以降でのみサポートされています。  
@@ -31,7 +34,9 @@ ms.locfileid: "59154165"
 
 ![Outlook にモジュール拡張機能が複数読み込まれている場合の拡張ナビゲーション バーを示します。](../images/outlook-module-navigationbar-more.png)
 
-拡張機能をクリックすると、組み込みのモジュールは Outlook によってカスタム モジュールに置き換えられ、そのアドインはユーザーが対話的に操作できるようになります。 アドインでは Outlook JavaScript API のすべての機能を使用できます。また、Outlook のリボンにコマンド ボタンを作成することで、アドインの内容を対話的に操作できます。 以下のスクリーンショットは、Outlook のナビゲーション バーに統合され、アドインの内容を更新するリボン コマンドを有するアドインを示しています。
+拡張機能をクリックすると、組み込みのモジュールは Outlook によってカスタム モジュールに置き換えられ、そのアドインはユーザーが対話的に操作できるようになります。 アドインでは、Outlook JavaScript API の一部の機能を使用できます。 メッセージや予定など、特定の Outlook アイテムを論理的に想定する API は、モジュール拡張機能では機能しません。 モジュールには、アドインのページと対話する関数コマンドを Outlook リボンに含めることもできます。 これを容易にするために、関数コマンドは [Office.onReady または Office.initialize メソッド](../develop/initialize-add-in.md) と [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) メソッドを呼び出します。 モジュール拡張機能の Outlook アドインの構成方法については、 [Outlook モジュール拡張機能の課金時間のサンプル](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)を参照してください。
+
+次のスクリーンショットは、Outlook ナビゲーション バーに統合され、アドインのページを更新するリボン コマンドを含むアドインを示しています。
 
 ![モジュール拡張機能のユーザー インターフェイスを表示します。](../images/outlook-module-extension.png)
 
