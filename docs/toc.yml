@@ -337,6 +337,8 @@ items:
             href: develop/usability-testing.md
           - name: アドインのマニフェストを検証する
             href: testing/troubleshoot-manifest.md
+          - name: Office アドインのランタイム
+            href: testing/runtimes.md
       - name: 公開
         items:
           - name: Office アドインを発行する
@@ -638,6 +640,8 @@ items:
             href: outlook/outlook-mobile-addins.md
           - name: オンライン ミーティング アドインの作成
             href: outlook/online-meeting.md
+          - name: モバイルで予定のメモを記録する
+            href: outlook/mobile-log-appointments.md
           - name: 送信時アドイン
             href: outlook/outlook-on-send-addins.md
           - name: 送信時に追加
