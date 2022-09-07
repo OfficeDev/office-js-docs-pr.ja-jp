@@ -1,14 +1,14 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用するNode.js ベースのアドインを作成する方法について説明します。
-ms.date: 07/01/2022
+ms.date: 08/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 470d6480308ed2695822aefd12e0b39b4abba32e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4e7ded29d9d2f021516348e2edbe847b6447e006
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958469"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616050"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
@@ -144,7 +144,7 @@ ms.locfileid: "66958469"
    CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
    DIRECTORY_ID=478aa78e-20ba-4c0d-9ffe-c4f62e5de3d5
    NODE_ENV=development
-SERVER_SOURCE=https://localhost:44355   
+   SERVER_SOURCE=https://localhost:44355
 
 1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
@@ -180,288 +180,255 @@ SERVER_SOURCE=https://localhost:44355
 
     サンプル コードの重要な部分は、クライアント要求です。 クライアント要求は、中間層サーバーで REST API を呼び出すための要求に関する情報を追跡するオブジェクトです。 クライアント要求の状態は、次のシナリオで追跡または更新する必要があるため、必要です。
 
-    - SSO は、追加の同意が必要なため、REST API 呼び出しが失敗した場合に再試行します。 サンプル コードは、更新された認証オプションを使用して呼び出 `getAccessToken` し、必要なユーザーの同意を取得し、REST API を再度呼び出します。 目標は、REST API に追加の同意が必要なシナリオでは失敗しないことです。
     - SSO が失敗し、フォールバック認証が必要です。 アクセス トークンは、ポップアップ ダイアログ ボックスで MSAL を使用して取得されます。 目標は、このシナリオでは失敗せず、代替認証アプローチに正常にフォールバックすることです。
 
     クライアント要求オブジェクトは、次のデータを追跡します。
 
-    - `authOptions` - SSO [の認証構成パラメーター](/javascript/api/office/office.authoptions)。
     - `authSSO` - SSO を使用する場合は true、それ以外の場合は false。
-    - `accessToken` - 中間層サーバーへのアクセス トークン。 このトークンを取得する方法は、フォールバック認証とは SSO では異なります。
-    - `url` - 中間層サーバーで呼び出す REST API の URL。
-    - `callbackHandler` - REST API 呼び出しの結果を渡す関数。
+    - `verb` - GET や POST などの REST API 動詞。
+    - `accessToken`- ASP.NET Core サーバーへのアクセス トークン。
+    - `url`- ASP.NET Core サーバーで呼び出す REST API の URL。
+    - `callbackRESTApiHandler` - REST API 呼び出しの結果を渡す関数。
     - `callbackFunction` - 準備ができたらクライアント要求を渡す関数。
 
 1. クライアント要求オブジェクトを初期化するには、関数で次の `createRequest` コードに置き換えます `TODO 1` 。
 
-   ```javascript
-   const clientRequest = {
-     authOptions: {
-       allowSignInPrompt: true,
-       allowConsentPrompt: true,
-       forMSGraphAccess: true,
-     },
-     authSSO: authSSO,
-     accessToken: null,
-     url: url,
-     callbackRESTApiHandler: restApiCallback,
-     callbackFunction: callbackFunction,
-   };
-   ```
+    ```javascript
+    const clientRequest = {
+      authSSO: authSSO,
+      verb: verb,
+      accessToken: null,
+      url: url,
+      callbackRESTApiHandler: restApiCallback,
+        callbackFunction: callbackFunction,
+    };
+    ```
 
-1. `TODO 2`を以下のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `TODO 2` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - SSO が使用されているかどうかを確認します。 SSO のアクセス トークンを取得する方法は、フォールバック認証の場合とは異なります。
-   - SSO がアクセス トークンを返す場合は、関数を呼び出します `callbackfunction` 。 フォールバック認証では、ユーザーが MSAL 経由でサインインした後、最終的にコールバック関数を呼び `dialogFallback`出します。
+    - SSO が使用されているかどうかを確認します。 SSO のアクセス トークンを取得する方法は、フォールバック認証の場合とは異なります。
+    - SSO がアクセス トークンを返す場合は、関数を呼び出します `callbackfunction` 。 フォールバック認証では、ユーザーが MSAL 経由でサインインした後、最終的にコールバック関数を呼び `dialogFallback`出します。
 
-   ```javascript
-   // Get access token.
+    ```javascript
+    // Get access token.
 
-   if (authSSO) {
-     try {
-       // Get access token from Office SSO.
-       clientRequest.accessToken = await getAccessTokenFromSSO(
-         clientRequest.authOptions
-       );
-       callbackFunction(clientRequest);
-     } catch {
-       // Use fallback authentication if SSO failed to get access token.
-       switchToFallbackAuth(clientRequest);
-     }
+    if (authSSO) {
+    try {
+      // Get access token from Office SSO.
+      clientRequest.accessToken = await Office.auth.getAccessToken({
+        allowSignInPrompt: true,
+        allowConsentPrompt: true,
+        forMSGraphAccess: true,
+      });
+      callbackFunction(clientRequest);
+    } catch (error) {
+      // handle the SSO error which will inform us if we need to switch to fallback auth.
+      let fallbackRequired = handleSSOErrors(error);
+      if (fallbackRequired) switchToFallbackAuth(clientRequest);
+    }
    } else {
-     // Use fallback authentication to get access token.
+     // Use fallback auth to get access token.
      dialogFallback(clientRequest);
    }
-   ```
+    ```
 
 1. `getFileNameList` 関数で、`TODO 3` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - この関数 `getFileNameList` は、ユーザーが作業ウィンドウの **[OneDrive ファイル名の取得** ] ボタンを選択したときに呼び出されます。
-   - REST API の URL など、呼び出しに関する情報を追跡するクライアント要求を作成します。
-   - REST API から結果が返されると、関数に `handleGetFileNameResponse` 渡されます。 このコールバックはパラメーター `createRequest` として渡され、追跡されます `clientRequest.callbackRESTApiHandler`。
-   - 次の手順を実行し、REST API を呼び出 `callWebServer` すために、クライアント要求を使用してコードが呼び出されます。
+    - この関数 `getFileNameList` は、ユーザーが作業ウィンドウの **[OneDrive ファイル名の取得** ] ボタンを選択したときに呼び出されます。
+    - REST API の URL など、呼び出しに関する情報を追跡するクライアント要求を作成します。
+    - REST API から結果が返されると、関数に `handleGetFileNameResponse` 渡されます。 このコールバックはパラメーター `createRequest` として渡され、追跡されます `clientRequest.callbackRESTApiHandler`。
+    - 次の手順を実行し、REST API を呼び出 `callWebServer` すために、クライアント要求を使用してコードが呼び出されます。
 
-   ```javascript
-   createRequest(
-     "/getuserfilenames",
-     handleGetFileNameResponse,
-     async (clientRequest) => {
-       await callWebServer(clientRequest);
-     }
-   );
-   ```
+    ```javascript
+    createRequest(
+      "GET",
+      "/getuserfilenames",
+      handleGetFileNameResponse,
+      async (clientRequest) => {
+        await callWebServer(clientRequest);
+      }
+    );
+    ```
 
 1. `handleGetFileNameResponse` 関数で、`TODO 4` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - このコードは、ドキュメントにファイル名を書き込む応答 (ファイル名の一覧を含む) `writeFileNamesToOfficeDocument` を渡します。
-   - コードはエラーをチェックします。 ファイル名が書き込まれている場合は成功メッセージが表示され、それ以外の場合はエラーが表示されます。
+    - このコードは、ドキュメントにファイル名を書き込む応答 (ファイル名の一覧を含む) `writeFileNamesToOfficeDocument` を渡します。
+    - コードはエラーをチェックします。 ファイル名が書き込まれている場合は成功メッセージが表示され、それ以外の場合はエラーが表示されます。
 
-   ```javascript
-   if (response != null) {
-     try {
-       await writeFileNamesToOfficeDocument(response);
-       showMessage("Your OneDrive filenames are added to the document.");
-     } catch (error) {
-       // The error from writeFileNamesToOfficeDocument will begin
-       // "Unable to add filenames to document."
-       showMessage(error);
-     }
-   } else
-     showMessage("A null response was returned to handleGetFileNameResponse.");
-   ```
+    ```javascript
+    if (response !== null) {
+      try {
+        await writeFileNamesToOfficeDocument(response);
+        showMessage("Your OneDrive filenames are added to the document.");
+      } catch (error) {
+        // The error from writeFileNamesToOfficeDocument will begin
+        // "Unable to add filenames to document."
+        showMessage(error);
+      }
+    } else
+    showMessage("A null response was returned to handleGetFileNameResponse.");
+    ```
 
-### <a name="get-the-sso-access-token"></a>SSO アクセス トークンを取得する
+1. `handleSSOErrors` 関数で、`TODO 5` を次のコードに置き換えます。 これらのエラーの詳細については、「[Office アドインの SSO のトラブルシューティング (Troubleshoot SSO in Office Add-ins)](troubleshoot-sso-in-office-add-ins.md)」を参照してください。
 
-1. `getAccessTokenFromSSO` 関数で、`TODO 5` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+    ```javascript
+    let fallbackRequired = false;
 
-   - Office からアクセス トークンを取得するために呼び出 `Office.auth.getAccessToken` されます。
-   - エラーが発生した場合は、関数を呼び出します `handleSSOErrors` 。 エラーを処理できない場合は、呼び出し元にエラーがスローされます。 これは、フォールバック認証に切り替える呼び出し元への指示です。
-
-   ```javascript
-   try {
-     // The access token returned from getAccessToken only has permissions to your middle-tier server APIs,
-     // and it contains the identity claims of the signed-in user.
-
-     const accessToken = await Office.auth.getAccessToken(authOptions);
-     return accessToken;
-   } catch (error) {
-     let fallbackRequired = handleSSOErrors(error);
-     if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
-     return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
-   }
-   ```
-
-1. `handleSSOErrors` 関数で、`TODO 6` を次のコードに置き換えます。 これらのエラーの詳細については、「[Office アドインの SSO のトラブルシューティング (Troubleshoot SSO in Office Add-ins)](troubleshoot-sso-in-office-add-ins.md)」を参照してください。
-
-   ```javascript
-   let fallbackRequired = false;
    switch (err.code) {
-   case 13001:
-     // No one is signed into Office. If the add-in cannot be effectively used when no one
-     // is logged into Office, then the first call of getAccessToken should pass the
-     // `allowSignInPrompt: true` option. Since this sample does that, you should not see
-     // this error.
-     showMessage(
-       "No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to log in, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13002:
-     // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
-     // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-     showMessage(
-       "You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13006:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
-     );
-     break;
-   case 13008:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office is still working on the last operation. When it completes, try this operation again."
-     );
-     break;
-   case 13010:
-     // Only seen in Office on the web.
+     case 13001:
+       // No one is signed into Office. If the add-in cannot be effectively used when no one
+       // is logged into Office, then the first call of getAccessToken should pass the
+       // `allowSignInPrompt: true` option. Since this sample does that, you should not see
+       // this error.
+       showMessage(
+         "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13002:
+       // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
+       // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
+       showMessage(
+         "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13006:
+       // Only seen in Office on the web.
+       showMessage(
+         "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
+       );
+       break;
+     case 13008:
+       // Only seen in Office on the web.
+       showMessage(
+        "Office is still working on the last operation. When it completes, try this operation again."
+       );
+       break;
+     case 13010:
+       // Only seen in Office on the web.
        showMessage(
          "Follow the instructions to change your browser's zone configuration."
        );
        break;
-   ```
+    ```
 
-1. `TODO 7`を以下のコードに置き換えます。 これらのエラーの詳細については、「 [Office アドインでの SSO のトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)」を参照してください。処理できないエラーについては、 `true` 呼び出し元に返されます。 これは、呼び出し元がフォールバック認証として MSAL を使用するように切り替える必要があることを示します。
+1. `TODO 6`を以下のコードに置き換えます。 これらのエラーの詳細については、「 [Office アドインでの SSO のトラブルシューティング](troubleshoot-sso-in-office-add-ins.md)」を参照してください。処理できないエラーについては、 `true` 呼び出し元に返されます。 これは、呼び出し元がフォールバック認証として MSAL を使用するように切り替える必要があることを示します。
 
-   ```javascript
+    ```javascript
      default:
-       // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
-       // to non-SSO sign-in.
-       fallbackRequired = true;
-       break;
-   }
-   return fallbackRequired;
-   ```
+      // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
+      // to non-SSO sign-in.
+      fallbackRequired = true;
+      break;
+    }
+    return fallbackRequired;
+    ```
 
 ### <a name="call-the-rest-api-on-the-middle-tier-server"></a>中間層サーバーで REST API を呼び出す
 
-1. `callWebServer` 関数で、`TODO 8` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `callWebServer` 関数で、`TODO 7` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - 実際の AJAX 呼び出しは、関数によって `ajaxCallToRESTApi` 行われます。
-   - 中間層サーバーから現在のトークンの有効期限が切れたことを示すエラーが返された場合、この関数は新しいアクセス トークンの取得を試みます。
-   - AJAX 呼び出しを正常に完了できない場合は、 `switchToFallbackAuth` Office SSO の代わりに MSAL 認証を使用するように呼び出されます。
+    - 実際の AJAX 呼び出しは、関数によって `ajaxCallToRESTApi` 行われます。
+    - 中間層サーバーから現在のトークンの有効期限が切れたことを示すエラーが返された場合、この関数は新しいアクセス トークンの取得を試みます。
+    - AJAX 呼び出しを正常に完了できない場合は、 `switchToFallbackAuth` Office SSO の代わりに MSAL 認証を使用するように呼び出されます。
 
-   ```javascript
-   try {
-     await ajaxCallToRESTApi(clientRequest);
-   } catch (error) {
-     if (error.statusText === "Internal Server Error") {
-       const retryCall = handleWebServerErrors(error, clientRequest);
-       if (retryCall && clientRequest.authSSO) {
-         try {
-           clientRequest.accessToken = await getAccessTokenFromSSO(
-             clientRequest.authOptions
-           );
-           await ajaxCallToRESTApi(clientRequest);
-         } catch {
-           // If still an error go to fallback.
-           switchToFallbackAuth(clientRequest);
-           return;
-         }
-       }
-     } else {
-       console.log(JSON.stringify(error)); // Log any errors.
-       showMessage(error.responseText);
-     }
-   }
-   ```
+    ```javascript
+    try {
+    const data = await $.ajax({
+      type: clientRequest.verb,
+      url: clientRequest.url,
+      headers: { Authorization: "Bearer " + clientRequest.accessToken },
+      cache: false,
+    });
+    clientRequest.callbackRESTApiHandler(data);
 
-1. `ajaxCallToRESTApi` 関数で、`TODO 9` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+    } catch (error) {
+     // TODO 8: Check for expired SSO token and refresh if needed.
 
-   - この関数は、呼び出し元が処理するエラーを明示的に再スローします。
+    // TODO 9: Check for Microsoft Graph and other errors.
 
-   ```javascript
-   try {
-     await $.ajax({
-       type: "GET",
-       url: clientRequest.url,
-       headers: { Authorization: "Bearer " + clientRequest.accessToken },
-       cache: false,
-       success: function (data) {
-         result = data;
-         // Send result to the callback handler.
-         clientRequest.callbackRESTApiHandler(result);
-       },
-     });
-   } catch (error) {
-     // This function explicitly requires the caller to handle any errors
-     throw error;
-   }
-   ```
+    }
+    ```
 
-1. `handleWebServerErrors` 関数で、`TODO 10` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `TODO 8` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - このエラーは中間層サーバーによって返されます。これはエラーの種類を示し、ここでの処理を容易にします。
-   - **Microsoft Graph** エラーの場合は、作業ウィンドウにメッセージを表示します。
-   - **AADSTS500133** エラーの場合は、呼び出し元がトークンの有効期限が切れていることを認識し、新しいトークンを取得するように true を返します。
-   - その他のすべてのメッセージについては、作業ウィンドウにメッセージを表示します。
+    - サーバーは、有効期限が切れたトークンを識別すると、"TokenExpiredError" 型のエラーを返します。
+    - try...catch は Office.auth.getAccessToken を呼び出して、新しい有効期限で更新されたトークンを取得します。
+    - コードは、サーバー API の呼び出しを再試行します。
 
-   ```javascript
-   let retryCall = false;
-   // Our middle-tier server returns a type to help handle the known cases.
-   switch (err.responseJSON.type) {
-     case "Microsoft Graph":
-       // An error occurred when the middle-tier server called Microsoft Graph.
-       showMessage(
-         "Error from Microsoft Graph: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       break;
-     case "Missing access_as_user":
-       // The access_as_user scope was missing.
-       showMessage("Error: Access token is missing the access_as_user scope.");
-       retryCall = false;
-       break;
-     case "AADSTS500133": // expired token
-       // On rare occasions the access token could expire after it was sent to the middle-tier server.
-       // Microsoft identity platform will respond with
-       // "The provided value for the 'assertion' is not valid. The assertion has expired."
-       // Return true to indicate to caller they should refresh the token.
-       retryCall = true;
-       break;
-     default:
-       showMessage(
-         "Unknown error from web server: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
-   }
-   return retryCall;
-   ```
+    ```javascript
+    // Check for expired SSO token. Refresh and retry the call if it expired.
+    if (
+      error.responseJSON &&
+      authSSO === true &&
+      error.responseJSON.type === "TokenExpiredError"
+    ) {
+      try {
+        const accessToken = await Office.auth.getAccessToken({
+          allowSignInPrompt: true,
+          allowConsentPrompt: true,
+          forMSGraphAccess: true,
+        });
+        const data = await $.ajax({
+          type: clientRequest.verb,
+          url: clientRequest.url,
+          headers: { Authorization: "Bearer " + accessToken },
+          cache: false,
+        });
+        clientRequest.callbackRESTApiHandler(data);
+      } catch (error) {
+        showMessage(error.responseText);
+        switchToFallbackAuth(clientRequest);
+        return;
+      }
+    }
+    ```
+
+1. `TODO 9` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+
+    - **Microsoft Graph** エラーの場合は、作業ウィンドウにメッセージを表示します。
+    - その他のすべてのメッセージについては、作業ウィンドウにメッセージを表示します。
+
+    ```javascript
+    // Check for a Microsoft Graph API call error. which is returned as bad request (403)
+    if (error.status === 403) {
+      if (error.responseJSON && error.responseJSON.type === "Microsoft Graph") {
+        showMessage(error.responseJSON.errorDetails);
+      } else {
+        showMessage(error);
+      }
+      return;
+    }
+
+    // For all other error scenarios, display the message and use fallback auth.
+    showMessage("Unknown error from web server: " + JSON.stringify(error));
+    if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
+    ```
 
 フォールバック認証では、MSAL ライブラリを使用してユーザーにサインインします。 アドイン自体は SPA であり、SPA アプリの登録を使用して中間層サーバーにアクセスします。
 
-1. `switchToFallbackAuth` 関数で、`TODO 11` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `switchToFallbackAuth` 関数で、`TODO 10` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - グローバル `authSSO` を false に設定し、認証に MSAL を使用する新しいクライアント要求を作成します。新しい要求には、中間層サーバーへの MSAL アクセス トークンがあります。
-   - 要求が作成されると、引き続き中間層サーバーの呼び出 `callWebServer` しが正常に試行されます。
+    - グローバル `authSSO` を false に設定し、認証に MSAL を使用する新しいクライアント要求を作成します。新しい要求には、中間層サーバーへの MSAL アクセス トークンがあります。
+    - 要求が作成されると、引き続き中間層サーバーの呼び出 `callWebServer` しが正常に試行されます。
 
-   ```javascript
-   showMessage("Switching from SSO to fallback auth.");
-   authSSO = false;
-   // Create a new request for fallback auth.
-   createRequest(
-     clientRequest.url,
-     clientRequest.callbackRESTApiHandler,
-     async (fallbackRequest) => {
-       // Hand off to call using fallback auth.
-       await callWebServer(fallbackRequest);
-     }
-   );
-   ```
+    ```javascript
+    // Guard against accidental call to this function when fallback is already in use.
+
+    if (authSSO === false) return;
+
+    showMessage("Switching from SSO to fallback auth.");
+    authSSO = false;
+    // Create a new request for fallback auth.
+    createRequest(
+      clientRequest.verb,
+      clientRequest.url,
+      clientRequest.callbackRESTApiHandler,
+      async (fallbackRequest) => {
+        // Hand off to call using fallback auth.
+        await callWebServer(fallbackRequest);
+      }
+    );
+    ```
 
 ## <a name="code-the-middle-tier-server"></a>中間層サーバーをコーディングする
 
@@ -469,90 +436,101 @@ SERVER_SOURCE=https://localhost:44355
 
 ### <a name="create-the-route-and-implement-on-behalf-of-flow"></a>ルートを作成し、On-Behalf-Of フローを実装する
 
-1. ファイル `routes\getFilesRoute.js` を開き、次のコードに置き換えます `TODO 12` 。 このコードについては、以下の点に注意してください。
+1. ファイル `routes\getFilesRoute.js` を開き、次のコードに置き換えます `TODO 11` 。 このコードについては、以下の点に注意してください。
 
-   - 呼び出します `authHelper.validateJwt`。 これにより、アクセス トークンが有効になり、改ざんされていないことを確認できます。
-   - 詳細については、「 [トークンの検証](/azure/active-directory/develop/access-tokens#validating-tokens)」を参照してください。
+    - 呼び出します `authHelper.validateJwt`。 これにより、アクセス トークンが有効になり、改ざんされていないことを確認できます。
+    - 詳細については、「 [トークンの検証](/azure/active-directory/develop/access-tokens#validating-tokens)」を参照してください。
 
-   ```javascript
-   router.get(
+    ```javascript
+    router.get(
      "/getuserfilenames",
      authHelper.validateJwt,
      async function (req, res) {
-       // TODO 13: Exchange the access token for a Microsoft Graph token
+       // TODO 12: Exchange the access token for a Microsoft Graph token
        //          by using the OBO flow.
      }
-   );
-   ```
+    );
+    ```
 
-1. `TODO 13`を以下のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `TODO 12` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - 必要な最小限のスコープのみを要求します (例: `files.read`.
-   - MSAL を `authHelper` 使用して、次の呼び出しで OBO フローを実行します `acquireTokenOnBehalfOf`。
+    - 必要な最小限のスコープのみを要求します (例: `files.read`.
+    - MSAL を `authHelper` 使用して、次の呼び出しで OBO フローを実行します `acquireTokenOnBehalfOf`。
 
-   ```javascript
-   try {
-     const authHeader = req.headers.authorization;
-     let oboRequest = {
-       oboAssertion: authHeader.split(" ")[1],
-       scopes: ["files.read"],
-     };
+    ```javascript
+    try {
+      const authHeader = req.headers.authorization;
+      let oboRequest = {
+        oboAssertion: authHeader.split(" ")[1],
+        scopes: ["files.read"],
+      };
 
-     // The Scope claim tells you what permissions the client application has in the service.
-     // In this case we look for a scope value of access_as_user, or full access to the service as the user.
-     const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
-     const accessAsUserScope = tokenScopes.find(
-       (scope) => scope === "access_as_user"
-     );
-     if (!accessAsUserScope) {
-       res.status(401).send({ type: "Missing access_as_user" });
-       return;
-     }
-     const cca = authHelper.getConfidentialClientApplication();
-     const response = await cca.acquireTokenOnBehalfOf(oboRequest);
-     // TODO 14: Call Microsoft Graph to get list of filenames.
-   } catch (err) {
-     // TODO 15: Handle any errors.
-   }
-   ```
+      // The Scope claim tells you what permissions the client application has in the service.
+      // In this case we look for a scope value of access_as_user, or full access to the service as the user.
+      const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
+      const accessAsUserScope = tokenScopes.find(
+        (scope) => scope === "access_as_user"
+      );
+      if (!accessAsUserScope) {
+        res.status(401).send({ type: "Missing access_as_user" });
+        return;
+      }
+      const cca = authHelper.getConfidentialClientApplication();
+      const response = await cca.acquireTokenOnBehalfOf(oboRequest);
+      // TODO 13: Call Microsoft Graph to get list of filenames.
+    } catch (err) {
+      // TODO 14: Handle any errors.
+    }
+    ```
 
-1. `TODO 14`を以下のコードに置き換えます。 このコードについては、以下の点に注意してください。
+1. `TODO 13` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-   - Microsoft Graph API呼び出しの URL を作成し、関数を使用して呼び出しを`getGraphData`行います。
-   - HTTP 500 応答と詳細を送信してエラーを返します。
-   - 成功すると、ファイル名リストを含む JSON がクライアントに返されます。
+    - Microsoft Graph API呼び出しの URL を作成し、関数を使用して呼び出しを`getGraphData`行います。
+    - HTTP 500 応答と詳細を送信してエラーを返します。
+    - 成功すると、ファイル名リストを含む JSON がクライアントに返されます。
 
-   ```javascript
-   // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
-   // and only the top 10 folder or file names.
-   const rootUrl = "/me/drive/root/children";
+    ```javascript
+    // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
+    // and only the top 10 folder or file names.
+    const rootUrl = "/me/drive/root/children";
 
-   // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
-   // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
-   // sanitized so that it cannot be used in a Response header injection attack.
-   const params = "?$select=name&$top=10";
+    // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
+    // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
+    // sanitized so that it cannot be used in a Response header injection attack.
+    const params = "?$select=name&$top=10";
 
-   const graphData = await getGraphData(response.accessToken, rootUrl, params);
+    const graphData = await getGraphData(
+      response.accessToken,
+      rootUrl,
+      params
+    );
 
-   // If Microsoft Graph returns an error, such as invalid or expired token,
-   // there will be a code property in the returned object set to a HTTP status (e.g. 401).
-   // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
-   if (graphData.code) {
-     res.status(500).send({ type: "Microsoft Graph", errorDetails: graphData });
-   } else {
-     // MS Graph data includes OData metadata and eTags that we don't need.
-     // Send only what is actually needed to the client: the item names.
-     const itemNames = [];
-     const oneDriveItems = graphData["value"];
-     for (let item of oneDriveItems) {
-       itemNames.push(item["name"]);
-     }
+    // If Microsoft Graph returns an error, such as invalid or expired token,
+    // there will be a code property in the returned object set to a HTTP status (e.g. 401).
+    // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
+    if (graphData.code) {
+      res
+        .status(403)
+        .send({
+          type: "Microsoft Graph",
+          errorDetails:
+            "An error occurred while calling the Microsoft Graph API.\n" +
+            graphData,
+        });
+    } else {
+      // MS Graph data includes OData metadata and eTags that we don't need.
+      // Send only what is actually needed to the client: the item names.
+      const itemNames = [];
+      const oneDriveItems = graphData["value"];
+      for (let item of oneDriveItems) {
+        itemNames.push(item["name"]);
+      }
 
-     res.status(200).send(itemNames);
-   }
-   ```
+      res.status(200).send(itemNames);
+    }
+    ```
 
-1. `TODO 15`を以下のコードに置き換えます。 このコードでは、クライアントが新しいトークンを要求して再度呼び出すことができるため、トークンの有効期限が切れているかどうかを具体的に確認します。
+1. `TODO 14` を次のコードに置き換えます。 このコードでは、クライアントが新しいトークンを要求して再度呼び出すことができるため、トークンの有効期限が切れているかどうかを具体的に確認します。
 
    ```javascript
    // On rare occasions the SSO access token is unexpired when Office validates it,
@@ -560,9 +538,9 @@ SERVER_SOURCE=https://localhost:44355
    // with "The provided value for the 'assertion' is not valid. The assertion has expired."
    // Construct an error message to return to the client so it can refresh the SSO token.
    if (err.errorMessage.indexOf("AADSTS500133") !== -1) {
-     res.status(500).send({ type: "AADSTS500133", errorDetails: err });
+     res.status(401).send({ type: "TokenExpiredError", errorDetails: err });
    } else {
-     res.status(500).send({ type: "Unknown", errorDetails: err });
+     res.status(403).send({ type: "Unknown", errorDetails: err });
    }
    ```
 
@@ -589,9 +567,9 @@ SERVER_SOURCE=https://localhost:44355
 
 ## <a name="security-notes"></a>セキュリティ に関する注意事項
 
-* ルートでは`/getuserfilenames``getFilesroute.js`、リテラル文字列を使用して Microsoft Graph の呼び出しを作成します。 文字列の一部がユーザー入力から取得されるように呼び出しを変更する場合は、応答ヘッダーインジェクション攻撃で使用できないように入力をサニタイズします。
+- ルートでは`/getuserfilenames``getFilesroute.js`、リテラル文字列を使用して Microsoft Graph の呼び出しを作成します。 文字列の一部がユーザー入力から取得されるように呼び出しを変更する場合は、応答ヘッダーインジェクション攻撃で使用できないように入力をサニタイズします。
 
-* `app.js`次のコンテンツ セキュリティ ポリシーは、スクリプト用に用意されています。 アドインのセキュリティ ニーズに応じて、追加の制限を指定することもできます。
+- `app.js`次のコンテンツ セキュリティ ポリシーは、スクリプト用に用意されています。 アドインのセキュリティ ニーズに応じて、追加の制限を指定することもできます。
 
     `"Content-Security-Policy": "script-src https://appsforoffice.microsoft.com https://ajax.aspnetcdn.com https://alcdn.msauth.net " +  process.env.SERVER_SOURCE,`
 

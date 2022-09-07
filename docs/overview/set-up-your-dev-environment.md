@@ -1,32 +1,32 @@
 ---
 title: 開発環境をセットアップする
 description: Office アドインをビルドするように開発環境を設定します。
-ms.date: 05/27/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 01b9fe0aff2696a521266bb3175ea0f61d891aa4
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 4e03ea7f55786107354f9d5a92e0cb30ffb559ec
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833886"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616006"
 ---
 # <a name="set-up-your-development-environment"></a>開発環境をセットアップする
 
-このガイドは、クイック スタートまたはチュートリアルに従ってOfficeアドインを作成できるようにツールを設定するのに役立ちます。 既にインストールされている場合は、このExcel Reactクイック スタートなどのクイック スタートを開始する準備[が整](../quickstarts/excel-quickstart-react.md)います。
+このガイドは、クイック スタートまたはチュートリアルに従って Office アドインを作成できるようにツールを設定するのに役立ちます。 既にインストールされている場合は、この [Excel Reactクイック スタートなどのクイック スタート](../quickstarts/excel-quickstart-react.md)を開始する準備が整います。
 
-## <a name="get-microsoft-365"></a>Microsoft 365を取得する
+## <a name="get-microsoft-365"></a>Microsoft 365 を入手する
 
-Microsoft 365 アカウントが必要です。 Microsoft 365開発者プログラムに参加することで、すべてのOffice アプリを含む 90 日間の無料の再生可能[なMicrosoft 365 サブスクリプションを](https://developer.microsoft.com/office/dev-program)取得できます。
+Microsoft 365 アカウントが必要です。 Microsoft 365 開発者プログラムに参加することで、すべての Office アプリを含む 90 日間の無料の更新可能な [Microsoft 365](https://developer.microsoft.com/office/dev-program) サブスクリプションを入手できます。
 
 ## <a name="install-the-environment"></a>環境をインストールする
 
 選択できる開発環境は 2 種類あります。 2 つの環境で作成される Office アドイン プロジェクトのスキャフォールディングは異なるため、複数のユーザーがアドイン プロジェクトで作業する場合は、すべて同じ環境を使用する必要があります。 
 
-- **Node.js環境**: 推奨されます。 この環境では、ツールがインストールされ、コマンド ラインで実行されます。 アドインの Web アプリケーションパーツのサーバー側は JavaScript または TypeScript で記述され、Node.js ランタイムでホストされます。 この環境には、Officeリンターや WebPack と呼ばれるバンドルャー/タスク ランナーなど、多くの便利なアドイン開発ツールがあります。 プロジェクトの作成とスキャフォールディング ツール (Yo Office) は頻繁に更新されます。
-- **Visual Studio環境**: 開発用コンピューターがWindowsで、.NET ベースの言語とフレームワーク (ASP.NET など) を使用してアドインのサーバー側を開発する場合にのみ、この環境を選択します。 Visual Studioのアドイン プロジェクト テンプレートは、Node.js環境のテンプレートほど頻繁に更新されません。 組み込みのVisual Studio デバッガーではクライアント側コードをデバッグできませんが、ブラウザーの開発ツールを使用してクライアント側コードをデバッグできます。 詳細については、「**Visual Studio環境**」タブを参照してください。
+- **Node.js環境**: 推奨されます。 この環境では、ツールがインストールされ、コマンド ラインで実行されます。 アドインの Web アプリケーションパーツのサーバー側は JavaScript または TypeScript で記述され、Node.js ランタイムでホストされます。 この環境には、Office リンターや WebPack というバンドルャー/タスクランナーなど、多くの便利なアドイン開発ツールがあります。 プロジェクトの作成とスキャフォールディング ツールである Yo Office は頻繁に更新されます。
+- **Visual Studio 環境**: 開発用コンピューターが Windows であり、.NET ベースの言語とフレームワーク (ASP.NET など) を使用してアドインのサーバー側を開発する場合にのみ、この環境を選択します。 Visual Studio のアドイン プロジェクト テンプレートは、Node.js環境のテンプレートほど頻繁に更新されません。 組み込みの Visual Studio デバッガーではクライアント側コードをデバッグできませんが、ブラウザーの開発ツールを使用してクライアント側コードをデバッグできます。 **Visual Studio 環境** タブで後ほど詳しく説明します。
 
 > [!NOTE]
-> Visual Studio for Macには、Office アドイン用のプロジェクト スキャフォールディング テンプレートが含まれていないため、開発用コンピューターが Mac の場合は、Node.js環境で作業する必要があります。
+> Visual Studio for Mac Office アドイン用のプロジェクト スキャフォールディング テンプレートは含まれていないため、開発用コンピューターが Mac の場合は、Node.js環境で作業する必要があります。
 
 選択した環境のタブを選択します。 
 
@@ -42,13 +42,13 @@ Microsoft 365 アカウントが必要です。 Microsoft 365開発者プログ�
 
 このガイドでは、コマンド ライン ツールの使用方法を理解していることを前提としています。
 
-### <a name="install-nodejs-and-npm"></a>Node.jsとnpmをインストールする
+### <a name="install-nodejs-and-npm"></a>Node.jsと npm をインストールする
 
-Node.jsは、最新のOffice アドインの開発に使用する JavaScript ランタイムです。
+Node.jsは、最新の Office アドインの開発に使用する JavaScript ランタイムです。
 
 [web サイトから最新の推奨バージョンをダウンロードして、Node.jsをインストールします](https://nodejs.org)。 オペレーティング システムのインストール手順に従います。
 
-npmは、Office アドインの開発に使用されるパッケージをダウンロードするオープンソース ソフトウェア レジストリです。通常、Node.jsをインストールすると自動的にインストールされます。 npmが既にインストールされていて、インストールされているバージョンが表示されているかどうかを確認するには、コマンド ラインで次のコマンドを実行します。
+npm は、Office アドインの開発に使用されるパッケージをダウンロードするオープンソースソフトウェア レジストリです。通常、Node.jsをインストールすると自動的にインストールされます。 npm が既にインストールされていて、インストールされているバージョンが表示されているかどうかを確認するには、コマンド ラインで次のコマンドを実行します。
 
 ```command&nbsp;line
 npm -v
@@ -61,34 +61,34 @@ npm install npm -g
 ```
 
 > [!TIP]
-> Node バージョン マネージャーを使用して、複数のバージョンのNode.jsとnpmを切り替えることができますが、これは厳密には必要ありません。 これを行う方法の詳細については、[npmの手順を参照してください](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+> Node バージョン マネージャーを使用して、複数のバージョンのNode.jsと npm を切り替えることができますが、これは厳密には必要ありません。 これを行う方法の詳細については、 [npm の手順を参照してください](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ### <a name="install-a-code-editor"></a>コード エディターのインストール
 
 以下のような Web パーツを構築するのにクライアント側の開発をサポートしている任意のコード エディター、または IDE を使用することができます。
 
-- [Visual Studio コード](https://code.visualstudio.com/) (推奨)
+- [Visual Studio Code](https://code.visualstudio.com/) (推奨)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-### <a name="install-the-yeoman-generator-mdash-yo-office"></a>Yeoman ジェネレーター &mdash; Yo Officeをインストールする
+### <a name="install-the-yeoman-generator-mdash-yo-office"></a>Yeoman ジェネレーター &mdash; Yo Office をインストールする
 
-プロジェクトの作成とスキャフォールディング ツールは、[Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)です。これは、**Yo Office** と呼ばれます。 [Yeoman](https://github.com/yeoman/yo) と Yo Officeの最新バージョンをインストールする必要があります。 これらのツールをグローバルにインストールするには、コマンド プロンプトを使用して次のコマンドを実行します。
+プロジェクトの作成とスキャフォールディング ツールは、 [Office アドイン用の Yeoman ジェネレーターです](../develop/yeoman-generator-overview.md)。これは、 **Yo Office** と呼ばれます。 [Yeoman](https://github.com/yeoman/yo) と Yo Office の最新バージョンをインストールする必要があります。 以上のツールをグローバルにインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
   ```command&nbsp;line
   npm install -g yo generator-office
   ```
 
-### <a name="install-and-use-the-office-javascript-linter"></a>Office JavaScript の linter をインストールして使用する
+### <a name="install-and-use-the-office-javascript-linter"></a>Office JavaScript リンターをインストールして使用する
 
-Microsoft では、Office JavaScript ライブラリを使用する際に一般的なエラーをキャッチするのに役立つ JavaScript リンターを提供しています。 リンターをインストールするには、次の 2 つのコマンドを実行します ([Node.jsとnpmをインストール](#install-nodejs-and-npm)した後)。
+Microsoft では、Office JavaScript ライブラリを使用するときに一般的なエラーをキャッチするのに役立つ JavaScript リンターを提供しています。 リンターをインストールするには、次の 2 つのコマンドを実行します ( [Node.jsと npm をインストール](#install-nodejs-and-npm)した後)。
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-Office アドイン ツール[用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してOffice アドイン プロジェクトを作成する場合は、残りのセットアップが自動的に行われます。 Visual Studio Code などのエディターのターミナルで、またはコマンド プロンプトで、次のコマンドを使用してリンターを実行します。 リンターによって見つかった問題はターミナルまたはプロンプトに表示され、Visual Studio Code などのリンター メッセージをサポートするエディターを使用している場合にもコードに直接表示されます。 (Yeoman ジェネレーターのインストールの詳細については、「[Office アドインの Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)」を参照してください)。
+Office アドインツール [用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md) を使用して Office アドイン プロジェクトを作成する場合は、残りのセットアップが自動的に行われます。 Visual Studio Code などのエディターのターミナルで、またはコマンド プロンプトで、次のコマンドを使用してリンターを実行します。 リンターによって見つかった問題は、ターミナルまたはプロンプトに表示され、Visual Studio Code などのリンター メッセージをサポートするエディターを使用している場合にも、コードに直接表示されます。 (Yeoman ジェネレーターのインストールの詳細については、「 [Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)」を参照してください)。
 
 ```command&nbsp;line
 npm run lint
@@ -115,29 +115,29 @@ npm run lint
    "lint": "office-addin-lint check",
    ```
 
-1. Visual Studio Code などのエディターのターミナルで、またはコマンド プロンプトで、次のコマンドを使用してリンターを実行します。 リンターによって見つかった問題はターミナルまたはプロンプトに表示され、Visual Studio Code などのリンター メッセージをサポートするエディターを使用している場合にもコードに直接表示されます。
+1. Visual Studio Code などのエディターのターミナルで、またはコマンド プロンプトで、次のコマンドを使用してリンターを実行します。 リンターによって見つかった問題は、ターミナルまたはプロンプトに表示され、Visual Studio Code などのリンター メッセージをサポートするエディターを使用している場合にも、コードに直接表示されます。
 
    ```command&nbsp;line
    npm run lint
    ```
 
-# <a name="visual-studio-environment"></a>[Visual Studio環境](#tab/visualstudio)
+# <a name="visual-studio-environment"></a>[Visual Studio 環境](#tab/visualstudio)
 
 ### <a name="install-visual-studio"></a>Visual Studio のインストール
 
-Visual Studio 2017 (Windows) 以降がインストールされていない場合は、[Visual Studio ダウンロード](https://visualstudio.microsoft.com/downloads/)から最新バージョンをインストールします。 インストーラーからワークロードの指定を求められた場合は、Office **/SharePoint開発** ワークロードを必ず含めます。 必要になる可能性があるその他のワークロードは、.NET、**JavaScript、TypeScript 言語のサポート** (アドインのクライアント側をコーディングするための)、および ASP.NET 関連のワークロード **用の Web 開発ツール** です。
+Visual Studio 2017 (Windows 用) 以降がインストールされていない場合は、 [Visual Studio ダウンロード](https://visualstudio.microsoft.com/downloads/)から最新バージョンをインストールします。 インストーラーからワークロードの指定を求められた場合は、 **Office/SharePoint 開発** ワークロードを必ず含めます。 必要になる可能性があるその他のワークロードは、.NET、**JavaScript、TypeScript 言語のサポート** (アドインのクライアント側をコーディングするための)、および ASP.NET 関連のワークロード **用の Web 開発ツール** です。
 
 > [!TIP]
-> 2022 年夏の時点で、Visual Studioと共にインストールされるOffice アドイン マニフェストの XML スキーマは最新バージョンではありません。 これは、アドインが使用するアドイン機能によっては、アドインに影響を与える可能性があります。 そのため、マニフェストの XML スキーマを更新する必要がある場合があります。 詳細については、「[Visual Studio プロジェクトのマニフェスト スキーマ検証エラー](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)」を参照してください。
+> 2022 年 6 月現在、Visual Studio と共にインストールされている Office アドイン マニフェストの XML スキーマは最新バージョンではありません。 これは、アドインが使用するアドイン機能によっては、アドインに影響を与える可能性があります。 そのため、マニフェストの XML スキーマを更新する必要がある場合があります。 詳細については、「 [Visual Studio プロジェクトのマニフェスト スキーマ検証エラー](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)」を参照してください。
 
 > [!NOTE]
-> Visual Studio環境を使用している場合のクライアント側コードのデバッグの詳細については、「[Visual StudioでのアドインのデバッグOffice](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。 Visual Studioで作成した Web アプリケーションと同じように、サーバー側のコードをデバッグします。 [クライアント側またはサーバー側を](../testing/debug-add-ins-overview.md#server-side-or-client-side)参照してください。
+> Visual Studio 環境を使用している場合のクライアント側コードのデバッグについては、「 [Visual Studio での Office アドインのデバッグ](../develop/debug-office-add-ins-in-visual-studio.md)」を参照してください。 Visual Studio で作成した Web アプリケーションと同じように、サーバー側のコードをデバッグします。 [クライアント側またはサーバー側を](../testing/debug-add-ins-overview.md#server-side-or-client-side)参照してください。
 
 ---
 
 ## <a name="install-script-lab"></a>Script Labをインストールする
 
-Script Labは、Office JavaScript ライブラリ API を呼び出すコードをすばやくプロトタイプ作成するためのツールです。 Script Lab自体はOffice アドインであり、[appSource からScript Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1)にインストールできます。 Excel、PowerPoint、Word 用のバージョンと、Outlook用の別のバージョンがあります。 Script Labを使用する方法の詳細については、「[Script Labを使用した JavaScript API Office探索](explore-with-script-lab.md)する」を参照してください。
+Script Labは、Office JavaScript ライブラリ API を呼び出すコードをすばやくプロトタイプ作成するためのツールです。 Script Lab自体は Office アドインであり、AppSource から[インストール](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1)Script Lab。 Excel、PowerPoint、Word のバージョンと、Outlook 用の別のバージョンがあります。 Script Labを使用する方法については、「Script Labを[使用して Office JavaScript API を探索](explore-with-script-lab.md)する」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 

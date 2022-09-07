@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 07/11/2022
+ms.date: 09/01/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4efb3f29ee3791b78c45db01ca53f8c48c17b752
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464777"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616022"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
 
@@ -21,10 +21,11 @@ ms.locfileid: "67464777"
 
 ## <a name="the-valuesasjson-property"></a>`valuesAsJson` プロパティ
 
-`valuesAsJson` プロパティは、Excel でのデータ型の作成の不可欠な部分です。 このプロパティは、[Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) などの `values` プロパティの拡張です。 `values` と `valuesAsJson` プロパティはどちらもセル内の値にアクセスするに使用しますが、`values` プロパティは、文字列、数値、ブール値、またはエラーの 4 つの基本型の 1 つだけを返します (文字列として)。 一方、`valuesAsJson` は、4 つの基本型に関する拡張情報を返します。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
+`valuesAsJson`プロパティ ([NamedItem](/javascript/api/excel/excel.nameditem) の場合は単数形`valueAsJson`) は、Excel でのデータ型の作成に不可欠です。 このプロパティは、[Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member) などの `values` プロパティの拡張です。 `values` と `valuesAsJson` プロパティはどちらもセル内の値にアクセスするに使用しますが、`values` プロパティは、文字列、数値、ブール値、またはエラーの 4 つの基本型の 1 つだけを返します (文字列として)。 一方、`valuesAsJson` は、4 つの基本型に関する拡張情報を返します。このプロパティは、書式設定された数値、エンティティ、Web イメージなどのデータ型を返すことができます。
 
 次のオブジェクトは、`valuesAsJson` プロパティを提供します。
 
+- [NamedItem](/javascript/api/excel/excel.nameditem) (as `valueAsJson`)
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 - [Range](/javascript/api/excel/excel.range)
 - [RangeView](/javascript/api/excel/excel.rangeview)

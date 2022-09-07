@@ -1,14 +1,14 @@
 ---
 title: Office の一般的な API エラー コード
 description: この記事では、Office Common API の使用中に発生する可能性があるエラー メッセージについて説明します。
-ms.date: 02/08/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959064"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615994"
 ---
 # <a name="office-common-api-error-codes"></a>Office の一般的な API エラー コード
 
@@ -93,6 +93,7 @@ ms.locfileid: "66959064"
 |12006|||ダイアログ ボックスが閉じられました。通常は、ユーザーが **X** ボタンを選択したためです。 ダイアログ内でスローされ、ホスト ページの `DialogEventReceived` イベントをトリガーします。|
 |12007|||ダイアログ ボックスは、このホスト ウィンドウで既に開いています。 作業ウィンドウなどのホスト ウィンドウで、一度に開けるダイアログ ボックスは 1 つだけです。 `displayDialogAsync` の呼び出しによってスローされます。|
 |12009|||ダイアログ ボックスを無視するようにユーザーが選択しました。 このエラーは、ダイアログの表示をアドインに許可しないようにユーザーが選択すると、Office のオンライン バージョンで発生することがあります。 `displayDialogAsync` の呼び出しによってスローされます。|
+|12011|||ユーザーのブラウザーは、ポップアップをブロックする方法で構成されます。 このエラーは、ブラウザーが Safari で、ポップアップをブロックするように構成されているか、ブラウザーが Edge Legacy で、アドイン ドメインがダイアログが開こうとしているドメインとは別のセキュリティ ゾーンにある場合、Office on the webで発生する可能性があります。 `displayDialogAsync` の呼び出しによってスローされます。|
 |13nnn|||[getAccessToken からのエラーの原因と処理に関する](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken)ページを参照してください。|
 
 ## <a name="binding-creation-error-conditions"></a>バインディングの作成エラーの条件

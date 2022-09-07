@@ -1,48 +1,48 @@
 ---
 title: インターネット ヘッダーの取得と設定
-description: アドイン内のメッセージのインターネット ヘッダーを取得Outlookする方法。
-ms.date: 04/28/2020
+description: Outlook アドインでメッセージのインターネット ヘッダーを取得および設定する方法。
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ddbb555f8901e1b244fb3e30682d73c21928963e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1f8e4af70b24a96b8d00acc7ea4101acf53e2b71
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483999"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616029"
 ---
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>アドイン内のメッセージのインターネット ヘッダーを取得Outlook設定する
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Outlook アドインでメッセージのインターネット ヘッダーを取得および設定する
 
 ## <a name="background"></a>背景
 
-アドインの開発Outlook一般的な要件は、アドインに関連付けられたカスタム プロパティを異なるレベルに格納する方法です。 現時点では、カスタム プロパティはアイテムまたはメールボックス レベルで格納されます。
+Outlook アドイン開発の一般的な要件は、アドインに関連付けられているカスタム プロパティをさまざまなレベルで格納することです。 現時点では、カスタム プロパティはアイテムまたはメールボックス レベルで格納されます。
 
-- アイテム レベル - 特定のアイテムに適用されるプロパティの場合は、 [CustomProperties オブジェクトを使用](/javascript/api/outlook/office.customproperties) します。 たとえば、電子メールを送信したユーザーに関連付けられた顧客コードを保存します。
-- メールボックス レベル - ユーザーのメールボックス内のすべてのメール アイテムに適用されるプロパティの場合は、 [RoamingSettings オブジェクトを使用](/javascript/api/outlook/office.roamingsettings) します。 たとえば、ユーザーの好みを保存して、特定のスケールで温度を表示します。
+- アイテム レベル - 特定のアイテムに適用されるプロパティの場合は、 [CustomProperties オブジェクトを](/javascript/api/outlook/office.customproperties) 使用します。 たとえば、電子メールを送信したユーザーに関連付けられている顧客コードを格納します。
+- メールボックス レベル - ユーザーのメールボックス内のすべてのメール アイテムに適用されるプロパティについては、 [RoamingSettings オブジェクトを](/javascript/api/outlook/office.roamingsettings) 使用します。 たとえば、ユーザーの好みを保存して、特定のスケールの温度を表示します。
 
-両方の種類のプロパティは、アイテムが Exchange サーバーを離れる後は保持されないので、電子メール受信者はアイテムに設定されたプロパティを取得できません。 したがって、開発者は、これらの設定や他の MIME プロパティにアクセスして、読み取りシナリオの向上を可能にしません。
+両方の種類のプロパティは、アイテムが Exchange サーバーを離れた後は保持されないため、電子メール受信者はアイテムに設定されたプロパティを取得できません。 そのため、開発者はこれらの設定やその他の多目的インターネット メール拡張機能 (MIME) プロパティにアクセスして、読み取りシナリオを改善することはできません。
 
-EWS 要求を介してインターネット ヘッダーを設定する方法は用意されているが、EWS 要求を行うシナリオによっては機能しない場合があります。 たとえば、デスクトップ上の作成モードOutlookアイテム ID は onin キャッシュ モードで `saveAsync` 同期されません。
+Exchange Web Services (EWS) 要求を使用してインターネット ヘッダーを設定する方法がありますが、一部のシナリオでは EWS 要求を行うことはできません。 たとえば、Outlook デスクトップの作成モードでは、アイテム ID はキャッシュ モードでは同期 `saveAsync` されません。
 
 > [!TIP]
-> これらの[オプションの使用の詳細については、「Get and set add-in metadata for an Outlook](metadata-for-an-outlook-add-in.md)アドイン」を参照してください。
+> これらのオプションの使用の詳細については、「 [Outlook アドインのアドイン メタデータを取得して設定する](metadata-for-an-outlook-add-in.md)」を参照してください。
 
 ## <a name="purpose-of-the-internet-headers-api"></a>インターネット ヘッダー API の目的
 
-要件セット [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) で導入されたインターネット ヘッダー API を使用すると、開発者は次の機能を使用できます。
+[要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) で導入されたインターネット ヘッダー API を使用すると、開発者は次の機能を利用できます。
 
-- すべてのクライアントに送信された後に保持される電子メールExchangeスタンプします。
-- メールがメール読み取りシナリオですべてのクライアントに渡Exchange後に保持された電子メールに関する情報を読み取る。
+- すべてのクライアント間で Exchange を離れた後に保持される電子メールに関する情報をスタンプします。
+- メール読み取りシナリオですべてのクライアントで Exchange を離れた後に保持された電子メールに関する情報を読み取ります。
 - メールの MIME ヘッダー全体にアクセスします。
 
-![インターネット ヘッダーの図。 テキスト: ユーザー 1 は電子メールを送信します。 ユーザーが電子メールを作成している間、アドインはカスタム インターネット ヘッダーを管理します。 ユーザー 2 は電子メールを受信します。 アドインは受信したメールからインターネット ヘッダーを取得し、カスタム ヘッダーを解析して使用します。](../images/outlook-internet-headers.png)
+![インターネット ヘッダーの図。 テキスト: ユーザー 1 は電子メールを送信します。 アドインは、ユーザーが電子メールを作成している間に、カスタム インターネット ヘッダーを管理します。 ユーザー 2 は電子メールを受信します。 アドインは、受信した電子メールからインターネット ヘッダーを取得し、カスタム ヘッダーを解析して使用します。](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>メッセージの作成中にインターネット ヘッダーを設定する
 
-[item.internetHeaders プロパティを](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member)使用して、現在のメッセージに配置するカスタム インターネット ヘッダーを作成モードで管理してみてください。
+[item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) プロパティを使用して、現在のメッセージに配置するカスタム インターネット ヘッダーを作成モードで管理します。
 
-### <a name="set-get-and-remove-custom-headers-example"></a>カスタム ヘッダーの設定、取得、および削除の例
+### <a name="set-get-and-remove-custom-internet-headers-example"></a>カスタム インターネット ヘッダーの設定、取得、および削除の例
 
-次の例は、カスタム ヘッダーを設定、取得、および削除する方法を示しています。
+次の例は、カスタム インターネット ヘッダーを設定、取得、削除する方法を示しています。
 
 ```js
 // Set custom internet headers.
@@ -107,11 +107,11 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## <a name="get-internet-headers-while-reading-a-message"></a>メッセージの読み取り中にインターネット ヘッダーを取得する
 
-[item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) を呼び出して、現在のメッセージのインターネット ヘッダーを読み取りモードで取得してみてください。
+[item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) を呼び出して、読み取りモードで現在のメッセージのインターネット ヘッダーを取得します。
 
-### <a name="get-sender-preferences-from-current-mime-headers-example"></a>現在の MIME ヘッダーから送信者の基本設定を取得する例
+### <a name="get-sender-preferences-from-current-mime-headers-example"></a>現在の MIME ヘッダーから送信者の設定を取得する例
 
-前のセクションの例を基に、次のコードは、現在のメールの MIME ヘッダーから送信者の設定を取得する方法を示しています。
+前のセクションの例を基に、次のコードは、現在の電子メールの MIME ヘッダーから送信者の設定を取得する方法を示しています。
 
 ```js
 Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
@@ -132,16 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> このサンプルは、単純なケースに対して機能します。 より複雑な情報の取得 (たとえば、 [RFC 2822](https://tools.ietf.org/html/rfc2822) で説明されている複数インスタンスヘッダーや折りたたまれた値など) については、適切な MIME 解析ライブラリを使用してみてください。
+> このサンプルは、単純なケースに適しています。 より複雑な情報の取得 (RFC [2822](https://tools.ietf.org/html/rfc2822) で説明されている複数インスタンス ヘッダーや折りたたまれた値など) については、適切な MIME 解析ライブラリを使用してみてください。
 
 ## <a name="recommended-practices"></a>推奨プラクティス
 
-現在、インターネット ヘッダーはユーザーのメールボックス上の有限のリソースです。 クォータが使い果たされた場合、そのメールボックスにこれ以上インターネット ヘッダーを作成することはできません。これにより、この機能に依存するクライアントからの予期しない動作が発生する可能性があります。
+現在、インターネット ヘッダーは、ユーザーのメールボックス上の有限のリソースです。 クォータが使い果たされると、そのメールボックスにインターネット ヘッダーをこれ以上作成できないため、これに依存するクライアントが予期しない動作を実行する可能性があります。
 
-アドインでインターネット ヘッダーを作成する場合は、次のガイドラインを適用します。
+アドインでインターネット ヘッダーを作成するときは、次のガイドラインを適用します。
 
-- 必要なヘッダーの最小数を作成します。
-- ヘッダーに名前を付け、後で値を再利用して更新できます。 そのため、ヘッダーの名前付けは変数の方法 (たとえば、ユーザー入力、タイムスタンプなどに基づく) で避けます。
+- 必要なヘッダーの最小数を作成します。 ヘッダー クォータは、メッセージに適用されるヘッダーの合計サイズに基づきます。 Exchange Onlineでは、ヘッダーの制限は 256 KB に制限されますが、Exchange オンプレミス環境では、組織の管理者によって制限が決定されます。 ヘッダーの制限の詳細については、「[Exchange Online メッセージの制限とメッセージの制限](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#message-limits)[のExchange Server](/exchange/mail-flow/message-size-limits)」を参照してください。
+- 後で値を再利用および更新できるように、ヘッダーに名前を付けます。 そのため、ヘッダーに変数の名前を付けないでください (たとえば、ユーザー入力、タイムスタンプなどに基づいて)。
 
 ## <a name="see-also"></a>関連項目
 
