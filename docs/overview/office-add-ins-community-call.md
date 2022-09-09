@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office アドイン コミュニティの呼び出し
 description: 毎月の Microsoft Office アドイン コミュニティは、議題、スケジュール、リソースを呼び出します。
-ms.date: 08/11/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: d7b33a4d1ce69641b6750f15963f4e4695574512
+ms.sourcegitcommit: 2ea81c2bf181c185de9c1508ab8e618f3e396708
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318873"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "67633744"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office アドイン コミュニティの呼び出し
 
@@ -22,6 +22,8 @@ Microsoft Office アドイン コミュニティ通話は、毎月の通話で�
 
 以前のコミュニティの呼び出しを見逃しましたか? 次のブログ リソースを確認して、ディスカッションに取り組んでください。
 
+- [2022 年 8 月 10 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
+- [2022 年 7 月 13 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
 - [2022 年 6 月 8 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
 - [2022 年 5 月 11 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
 - [2022 年 4 月 13 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-04-13/)
