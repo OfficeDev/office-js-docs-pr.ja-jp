@@ -3,12 +3,12 @@ title: Office on the web でアドインをデバッグする
 description: Office on the web を使用してアドインをテストおよびデバッグする方法。
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: b365be937058f818a97dd7a73176a56f76b36098
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464826"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674626"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Office on the web でアドインをデバッグする
 
@@ -23,7 +23,7 @@ ms.locfileid: "67464826"
 
 Word on the web を使用してアドインをデバッグするには: 
 
-1. localhost でプロジェクトを実行し、Office on the web内のドキュメントにサイドロードします。 サイドローディングの詳細な手順については、「 [Web 上の Office アドインをサイドロードする」を](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)参照してください。
+1. localhost でプロジェクトを実行し、Office on the web内のドキュメントにサイドロードします。 サイドローディングの詳細な手順については、「 [Web 上の Office アドインを手動でサイドロードする」を](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web)参照してください。
 
 2. ブラウザーの開発者ツールを開きます。 これは通常、F12 キーを押すことによって行われます。 デバッガー ツールを開き、それを使用してブレークポイントを設定し、変数を監視します。 ブラウザーのツールの使用に関する詳細なヘルプについては、次のいずれかを参照してください。
 

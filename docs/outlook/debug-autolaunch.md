@@ -2,18 +2,18 @@
 title: イベント ベースの Outlook アドインをデバッグする
 description: イベント ベースのアクティブ化を実装する Outlook アドインをデバッグする方法について説明します。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 9b6a1d9a013b7c8e22632bdd04fb74e06c804a01
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797492"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674696"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>イベント ベースの Outlook アドインをデバッグする
 
-この記事では、アドインに [イベント ベースのアクティブ化](autolaunch.md) を実装する際のデバッグ ガイダンスを提供します。 イベント ベースのアクティブ化機能は [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、プレビューで追加のイベントが利用可能になりました。 詳細については、「 [サポートされているイベント](autolaunch.md#supported-events)」を参照してください。
+この記事では、アドインに [イベント ベースのアクティブ化](autolaunch.md) を実装する際のデバッグ ガイダンスを提供します。 イベント ベースのアクティブ化機能は [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、後続の要件セットで追加のイベントを使用できるようになりました。 詳細については、「 [サポートされているイベント](autolaunch.md#supported-events)」を参照してください。
 
 > [!IMPORTANT]
 > このデバッグ機能は、Microsoft 365 サブスクリプションを使用する Outlook on Windows でのみサポートされます。
@@ -43,10 +43,10 @@ Office アドイン用 Yeoman Generator を使用してアドイン プロジェ
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Outlook デスクトップを起動します (既に開いている場合は Outlook を再起動します)。
-1. 新しいメッセージまたは予定を作成します。 次のダイアログが表示されます。 ダイアログをまだ操作 *しないでください* 。
+1. Outlook を起動するか、既に開いている場合は再起動します。
+1. 新しいメッセージまたは予定を作成します。 [デバッグ イベント ベースのハンドラー] ダイアログ ボックスが表示されます。 ダイアログをまだ操作 *しないでください* 。
 
-    ![[デバッグ イベント ベースのハンドラー] ダイアログのスクリーンショット。](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Windows の [デバッグ イベント ベースのハンドラー] ダイアログ。](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Visual Studio Code を構成する
 
@@ -72,18 +72,18 @@ Office アドイン用 Yeoman Generator を使用してアドイン プロジェ
     }
     ```
 
-### <a name="other"></a>Other
+### <a name="other"></a>その他
 
 1. **[デバッグ**] という名前の新しいフォルダーを作成します (**デスクトップ** フォルダーなど)。
 1. Visual Studio Code を開きます。
 1. **[ファイル** > **を開くフォルダー] に** 移動し、作成したフォルダーに移動し、[**フォルダーの選択] を選択します**。
-1. アクティビティ バーで、[ **デバッグ** ] 項目 (Ctrl + Shift + D) を選択します。
+1. アクティビティ バーで、[ **実行とデバッグ** ] (Ctrl + Shift + D) を選択します。
 
-    ![アクティビティ バーの [デバッグ] アイコンのスクリーンショット。](../images/vs-code-debug.png)
+    ![アクティビティ バーの [実行とデバッグ] アイコン。](../images/vs-code-debug.png)
 
 1. **launch.json ファイルの作成リンクを選択します**。
 
-    ![Visual Studio Code で launch.json ファイルを作成するためのリンクのスクリーンショット。](../images/vs-code-create-launch.json.png)
+    ![Visual Studio Code で launch.json ファイルを作成するための [実行とデバッグ] オプションの下にあるリンク。](../images/vs-code-create-launch.json.png)
 
 1. [ **環境の選択]** ドロップダウンで、[ **エッジ: 起動** ] を選択して launch.json ファイルを作成します。
 1. 構成の一覧に次の抜粋を追加します。 変更内容を保存します。
@@ -113,9 +113,9 @@ Office アドイン用 Yeoman Generator を使用してアドイン プロジェ
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. デバッガーを停止するbundle.jsにブレークポイントを配置します。
-1. **[デバッグ**] ドロップダウンで、[**Direct Debuging**] という名前を選択し、[**実行**] を選択します。
+1. **[デバッグ**] ドロップダウンで [**ダイレクト デバッグ**] を選択し、[**デバッグの開始**] アイコンを選択します。
 
-    ![Visual Studio Code Debug ドロップダウンの構成オプションから直接デバッグを選択するスクリーンショット。](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Visual Studio Code Debug ドロップダウンの構成オプションから選択されたダイレクト デバッグ オプション。](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>デバッグ
 

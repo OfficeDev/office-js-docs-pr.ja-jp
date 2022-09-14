@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで共有フォルダーと共有メールボックスのシナリオを有効にする
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 委任アクセス) と共有メールボックス。
-ms.date: 07/11/2022
+ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a01c81dcc1bcae4fa92e2d659c1aa40af4cdac5
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: bae8a0f8cd63eed5feea7460e57ecfc212a06d61
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765280"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674667"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Outlook アドインで共有フォルダーと共有メールボックスのシナリオを有効にする
 
@@ -20,13 +20,13 @@ ms.locfileid: "66765280"
 
 | Client | Exchange Online | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2013 オンプレミス |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|必要|プレビュー段階\*|プレビュー段階\*|プレビュー段階\*|
-|Mac：<br>ビルド 16.47 以降|はい|はい|はい|必要|
+|Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい\*|はい\*|はい\*|
+|Mac：<br>ビルド 16.47 以降|はい|はい|はい|はい|
 |Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|いいえ|いいえ|いいえ|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|不要|不要|不要|
 
 > [!NOTE]
-> \* オンプレミス Exchange 環境でのこの機能のサポートは、現在、バージョン 2205 (ビルド 15228.10000) からプレビュー段階にあります。
+> \* オンプレミス Exchange 環境でのこの機能のサポートは、現在のチャネルのバージョン 2206 (ビルド 15330.20000) と月次エンタープライズ チャネルのバージョン 2207 (ビルド 15427.20000) 以降で利用できます。
 
 > [!IMPORTANT]
 > この機能のサポートは [、要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) で導入されました (詳細については、 [クライアントとプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)を参照してください)。 ただし、この機能のサポート マトリックスは要件セットのスーパーセットであることに注意してください。
@@ -43,7 +43,7 @@ ms.locfileid: "66765280"
 
 #### <a name="shared-mailboxes-preview"></a>共有メールボックス (プレビュー)
 
-Exchange サーバー管理者は、アクセスする一連のユーザーの共有メールボックスを作成および管理できます。 [Exchange Online](/exchange/collaboration-exo/shared-mailboxes)および[オンプレミスの Exchange 環境 (プレビュー段階)](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) がサポートされています。
+Exchange サーバー管理者は、アクセスする一連のユーザーの共有メールボックスを作成および管理できます。 [Exchange Online](/exchange/collaboration-exo/shared-mailboxes)および[オンプレミスの Exchange 環境](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes)がサポートされています。
 
 "automapping" と呼ばれるExchange Server機能は既定でオンになっています。つまり、Outlook を閉じて再度開いた後、その後、共有メールボックスがユーザーの Outlook アプリ[に自動的に表示](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)されます。 ただし、管理者が自動マッピングをオフにした場合は、「Outlook で共有メールボックスを [開いて使用](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)する」の「Outlook に共有メールボックスを追加する」セクションで説明されている手動の手順に従う必要があります。
 

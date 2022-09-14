@@ -2,18 +2,18 @@
 title: イベント ベースの Outlook アドインの AppSource 一覧表示オプション
 description: イベント ベースのアクティブ化を実装する Outlook アドインで使用できる AppSource リスト オプションについて説明します。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d2c2e9960d2aef2d32ede6e20eb5f1db125a6c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: cf99959b31bae665df250941abf88405906acb5c
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797681"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674746"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>イベント ベースの Outlook アドインの AppSource 一覧表示オプション
 
-現時点では、エンド ユーザーがイベント ベースの機能にアクセスするには、組織の管理者がアドインを展開する必要があります。 エンド ユーザーが AppSource から直接アドインを取得した場合、イベント ベースのアクティブ化を制限しています。 たとえば、Contoso アドインにノードの下`LaunchEvents`に少なくとも 1 つ定義`LaunchEvent Type`されている拡張ポイントが含まれている`LaunchEvent`場合、アドインの自動呼び出しは、組織の管理者によってエンド ユーザーに対してアドインがインストールされた場合にのみ行われます。それ以外の場合、アドインの自動呼び出しはブロックされます。 アドイン マニフェストの例から次の抜粋を参照してください。
+エンド ユーザーがイベント ベースの機能にアクセスするには、組織の管理者がアドインを展開する必要があります。 エンド ユーザーが [AppSource](https://appsource.microsoft.com) から直接アドインを取得した場合、イベント ベースのアクティブ化は制限されます。 たとえば、Contoso アドインにノードの下`LaunchEvents`に少なくとも 1 つ定義`LaunchEvent Type`されている拡張ポイントが含まれている`LaunchEvent`場合、アドインの自動呼び出しは、組織の管理者によってエンド ユーザーに対してアドインがインストールされた場合にのみ行われます。それ以外の場合、アドインの自動呼び出しはブロックされます。 アドイン マニフェストの例から次の抜粋を参照してください。
 
 ```xml
 ...
@@ -32,11 +32,13 @@ ms.locfileid: "66797681"
 > [!NOTE]
 > エンド ユーザーはフライト コードを使用してアドインをインストールできますが、アドインにはイベント ベースのアクティブ化は含まれません。
 
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
 ## <a name="specify-a-flight-code"></a>フライト コードを指定する
 
-アドインに必要なフライト コードを指定するには、アドインを発行するときに、その情報を **Notes の認定用** に共有します。 _**重要**:_ フライト コードでは大文字と小文字が区別されます。
+アドインのフライト コードを指定するには、アドインを発行するときに、 **証明書のノート** のコードを共有します。 **重要**: フライト コードでは大文字と小文字が区別されます。
 
-![発行プロセス中の[Notes for Certification] 画面のフライト コードの要求例を示すスクリーンショット。](../images/outlook-publish-notes-for-certification-1.png)
+![発行プロセス中の[Notes for Certification] 画面のフライト コードに対するサンプル要求。](../images/outlook-publish-notes-for-certification.png)
 
 ## <a name="deploy-add-in-with-flight-code"></a>フライト コードを使用してアドインをデプロイする
 
@@ -61,7 +63,7 @@ ms.locfileid: "66797681"
 
 更新されたアドインが承認されると、以前にアドインを展開した組織の管理者は、管理センターの **[統合アプリ** ] セクションに更新メッセージを受け取ります。 このメッセージは、イベント ベースのアクティブ化の変更について管理者に通知します。 管理者が変更を受け入れた後、更新プログラムはエンド ユーザーに展開されます。
 
-![[統合アプリ] 画面のアプリ更新通知のスクリーンショット。](../images/outlook-deploy-update-notification.png)
+![[統合アプリ] 画面のアプリ更新通知。](../images/outlook-deploy-update-notification.png)
 
 アドインを自分でインストールしたエンド ユーザーの場合、アドインが更新された後でも、イベント ベースのアクティブ化機能は機能しません。
 
@@ -69,13 +71,13 @@ ms.locfileid: "66797681"
 
 **統合アプリ** 画面からイベント ベースのアドインが展開されるたびに、管理者は展開ウィザードでアドインのイベント ベースのアクティブ化機能に関する詳細を取得します。 詳細は、[アプリの **アクセス許可と機能] セクションに** 表示されます。 管理者には、アドインが自動的にアクティブ化できるすべてのイベントが表示されます。
 
-![新しいアプリをデプロイするときの [アクセス許可要求を受け入れる] 画面のスクリーンショット。](../images/outlook-deploy-accept-permissions-requests.png)
+![新しいアプリをデプロイするときに、[アクセス許可要求を受け入れる] 画面。](../images/outlook-deploy-accept-permissions-requests.png)
 
 同様に、既存のアドインがイベント ベースの機能に更新されると、管理者はアドインに "Update Pending" 状態を表示します。 更新されたアドインは、アドインが自動的にアクティブ化できる一連のイベントを含め、[ **アプリのアクセス許可と機能]** セクションに記載されている変更に管理者が同意した場合にのみ展開されます。
 
 アドインに新規 `LaunchEvent Type` を追加するたびに、管理者は管理者ポータルに更新フローを表示し、追加のイベントに同意する必要があります。
 
-![更新されたアプリをデプロイするときの "更新" フローのスクリーンショット。](../images/outlook-deploy-update-flow.png)
+![更新されたアプリをデプロイするときの "更新" フロー。](../images/outlook-deploy-update-flow.png)
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,20 +1,23 @@
 ---
 title: ドキュメントで作業ウィンドウを自動的に開く
 description: ドキュメントが開いたときに自動的に開く Office アドインを構成する方法について説明します。
-ms.date: 09/14/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ea5981fc8469d391ff03c1d3eefd70c57e41d4cb
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889493"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674631"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>ドキュメントで作業ウィンドウを自動的に開く
 
 Office アドインでアドイン コマンドを使用すると、Office アプリのリボンにボタンを追加して Office UI を拡張できます。 ユーザーがコマンド ボタンをクリックすると、アクション (作業ウィンドウを開くなど) が実行されます。
 
 いくつかのシナリオでは、ドキュメントを開いたときに、ユーザーの明示的な操作なしで、自動的に作業ウィンドウを開くことが必要になります。 [AddInCommands 1.1 要件セット](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)で導入された自動開き作業ウィンドウ機能を使用すると、シナリオで必要になったときに作業ウィンドウを自動的に開くことができます。
+
+> [!NOTE]
+> アドインのインストール時にすぐに開く作業ウィンドウを構成するには、「アドインがインストール [されたときに作業ウィンドウを自動的に開](automatically-open-on-installation.md)く」を参照してください。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>Autoopen 機能と作業ウィンドウの挿入の相違点
 
@@ -160,4 +163,5 @@ Microsoft 365 管理センターを使用して一元展開を使用して作業
 ## <a name="see-also"></a>関連項目
 
 - Autoopen 機能の使用方法を示すサンプルについては、「[Office-Add-in-Commands-Samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)」を参照してください。
+- [アドインがインストールされたときに作業ウィンドウを自動的に開く](automatically-open-on-installation.md)
 - [Microsoft 365 開発者プログラムに参加します。](/office/developer-program/office-365-developer-program)

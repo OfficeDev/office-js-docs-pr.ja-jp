@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423231"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674756"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -18,16 +18,13 @@ ms.locfileid: "67423231"
 このチュートリアルの終わりまでに、新しい項目が作成され、件名が設定されるたびに実行されるアドインが作成されます。
 
 > [!NOTE]
-> この機能のサポートは [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、追加のイベントは [要件セット 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) でサポートされるようになりました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
+> この機能のサポートは [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、後続の要件セットで追加のイベントを使用できるようになりました。 イベントの最小要件セットと、それをサポートするクライアントとプラットフォームの詳細については、「[Exchange サーバーと Outlook クライアントでサポートされているサポートされるイベントと要件セット」](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)を参照してください。[](#supported-events)
 >
 > イベントベースのアクティブ化は、Outlook on iOS または Android ではサポートされていません。
 
 ## <a name="supported-events"></a>サポートされるイベント
 
 次の表に、現在使用可能なイベントと、各イベントでサポートされているクライアントを示します。 イベントが発生すると、ハンドラーは、イベントの種類に固有の詳細を含む可能性があるオブジェクトを受け取ります `event` 。 **[説明]** 列には、該当する場合に関連するオブジェクトへのリンクが含まれます。
-
-> [!IMPORTANT]
-> プレビュー段階のイベントは、次の表に示すように、Microsoft 365 サブスクリプションとサポートされているクライアントの限定セットでのみ使用できます。 クライアント構成の詳細については、この記事で [プレビューする方法に関する記事を](#how-to-preview) 参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
 
 |イベント|説明|最小要件セットとサポートされているクライアント|
 |---|---|---|
@@ -40,31 +37,17 @@ ms.locfileid: "67423231"
 |`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnAppointmentRecurrenceChanged`|予定の作成中に繰り返しの詳細を追加、変更、または削除する場合。 日付/時刻が変更されると、 `OnAppointmentTimeChanged` イベントも発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を閉じる場合。 通知を追加したアドインのみが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnMessageSend`|メッセージ アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentSend`|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnMessageCompose`|新しいメッセージを作成する (返信、全員に返信、転送を含む) 場合、または下書きを編集する場合。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentOrganizer`|新しい予定を作成する場合、または既存の予定を編集する場合。|[プレビュー](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnMessageSend`|メッセージ アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnAppointmentSend`|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnMessageCompose`|新しいメッセージを作成する (返信、全員に返信、転送を含む) 場合、または下書きを編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnAppointmentOrganizer`|新しい予定を作成する場合、または既存の予定を編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 
 > [!NOTE]
 > Outlook on Windows の <sup>1</sup> つのイベント ベースアドインを実行するには、Windows 10 バージョン 1903 (ビルド 18362) または Windows Server 2019 バージョン 1903 の最小値が必要です。
 
-### <a name="how-to-preview"></a>プレビューする方法
-
-プレビュー段階のイベントを試してみることをお勧めします。 GitHub を通じてフィードバックを提供することで、お客様のシナリオと改善方法をお知らせください (このページの最後にある **フィードバック** セクションを参照してください)。
-
-利用可能な場合は、次のイベントをプレビューします。
-
-- Outlook on the webの場合:
-  - [Microsoft 365 テナントで対象となるリリースを構成します。](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
-  - CDN の **ベータ** ライブラリを参照します (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). TypeScript コンパイルおよび IntelliSense の [型定義ファイル](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)は CDN で見つかり、[DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) にあります。 これらの型は、`npm install --save-dev @types/office-js-preview` を使用してインストールできます。
-- 新しい Mac UI 上の Outlook の場合:
-  - 最小必要なビルドは 16.54 (21101001) です。 [Office Insider プログラム](https://insider.office.com/join/Mac)に参加し、Office ベータ ビルドにアクセスするための **ベータ チャネル** を選択します。
-- Outlook on Windows の場合:
-  - 必要な最小ビルドは 16.0.14511.10000 です。 [Office Insider プログラム](https://insider.office.com/join/windows)に参加し、Office ベータ ビルドにアクセスするための **ベータ チャネル** を選択します。
-
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) を完了します。
+[Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -140,10 +123,10 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
-              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
+              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
               
-              <!-- Other available events (currently released) -->
+              <!-- Other available events -->
               <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
@@ -152,12 +135,10 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
-              -->
-
-              <!-- Other available events (currently in preview) -->
-              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              <LaunchEvent Type="OnMessageCompose" FunctionName="onMessageComposeHandler" />
+              <LaunchEvent Type="OnAppointmentOrganizer" FunctionName="onAppointmentOrganizerHandler" />
               -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
@@ -218,10 +199,10 @@ Windows 上の Outlook では JavaScript ファイルが使用されますが、
     * See LICENSE in the project root for license information.
     */
 
-    function onMessageComposeHandler(event) {
+    function onNewMessageComposeHandler(event) {
       setSubject(event);
     }
-    function onAppointmentComposeHandler(event) {
+    function onNewAppointmentComposeHandler(event) {
       setSubject(event);
     }
     function setSubject(event) {
@@ -242,8 +223,8 @@ Windows 上の Outlook では JavaScript ファイルが使用されますが、
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
-    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. 変更内容を保存します。
@@ -255,7 +236,7 @@ Windows 上の Outlook では JavaScript ファイルが使用されますが、
 
 1. **./src/commands** フォルダーで、**commands.html** を開きます。
 
-1. 終了 **ヘッド** タグ (`<\head>`) の直前に、イベント処理 JavaScript コードを含めるスクリプト エントリを追加します。
+1. 終了 **ヘッド** タグ (`</head>`) の直前に、イベント処理 JavaScript コードを含めるスクリプト エントリを追加します。
 
     ```html
     <script type="text/javascript" src="../launchevent/launchevent.js"></script>
@@ -289,6 +270,7 @@ Windows 上の Outlook では JavaScript ファイルが使用されますが、
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
@@ -325,10 +307,12 @@ Windows では、この機能でランタイム ログを使用することも�
 
 Microsoft 365 管理センターを介してマニフェストをアップロードすることで、イベント ベースのアドインをデプロイできます。 管理ポータルで、ナビゲーション ウィンドウの **[設定]** セクションを展開し、[ **統合アプリ**] を選択します。 **[統合アプリ**] ページで、[**カスタム アプリのアップロード**] アクションを選択します。
 
-![[カスタム アプリのアップロード] アクションを含む、Microsoft 365 管理センターの [統合アプリ] ページ。](../images/outlook-deploy-event-based-add-ins.png)
+![[カスタム アプリのアップロード] アクションが強調表示されたMicrosoft 365 管理センターの [統合アプリ] ページ。](../images/outlook-deploy-event-based-add-ins.png)
 
 > [!IMPORTANT]
-> イベント ベースのアドインは、管理者が管理するデプロイのみに制限されます。 現時点では、ユーザーは AppSource またはアプリ内 Office ストアからイベント ベースのアドインを取得できません。 詳細については、 [イベント ベースの Outlook アドインの AppSource リスト オプションを参照してください](autolaunch-store-options.md)。
+> イベント ベースのアドインは、管理者が管理するデプロイのみに制限されます。 ユーザーは、AppSource またはアプリ内 Office ストアからイベント ベースのアドインをアクティブ化できません。 詳細については、 [イベント ベースの Outlook アドインの AppSource リスト オプションに関するページを](autolaunch-store-options.md)参照してください。
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 

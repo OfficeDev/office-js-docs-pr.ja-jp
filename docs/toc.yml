@@ -93,6 +93,9 @@ items:
               - name: ドキュメントで作業ウィンドウを自動的に開く
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: アドインのインストール時に作業ウィンドウを自動的に開く
+                href: develop/automatically-open-on-installation.md
+                displayName: manifest
               - name: 共有ランタイムを使用するようにアドインを構成する
                 href: develop/configure-your-add-in-to-use-a-shared-runtime.md
               - name: 開いているドキュメントにコードを実行する
@@ -626,7 +629,7 @@ items:
             href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
             displayName: Outlook
           - name: API リファレンス - 最新リリース
-            href: reference/outlook-api-reference-1-11.md
+            href: reference/outlook-api-reference-latest.md
             displayName: Outlook
           - name: Outlook アドインの設計ガイドライン
             href: outlook/outlook-addin-design.md
