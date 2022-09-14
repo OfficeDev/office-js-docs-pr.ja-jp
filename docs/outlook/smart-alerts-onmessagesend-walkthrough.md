@@ -1,32 +1,32 @@
 ---
-title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
+title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 description: イベント ベースのアクティブ化を使用して、Outlook アドインで送信中のイベントを処理する方法について説明します。
 ms.topic: article
-ms.date: 08/10/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: cabe56d247a009886939f1738b5f135724c40f1d
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320652"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674639"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する (プレビュー)
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 
 イベント `OnMessageSend` と `OnAppointmentSend` スマート アラートを利用すると、ユーザーが Outlook メッセージまたは予定で **[送信]** を選択した後にロジックを実行できます。 イベント ハンドラーを使用すると、ユーザーが送信される前にメールや会議の招待を改善する機会をユーザーに提供できます。
 
 次のチュートリアルでは、このイベントを使用します `OnMessageSend` 。 このチュートリアルの最後には、メッセージが送信されるたびに実行されるアドインがあり、ユーザーが電子メールで言及したドキュメントまたは画像を追加するのを忘れたかどうかを確認します。
 
-> [!IMPORTANT]
-> このイベントと`OnAppointmentSend`イベントは`OnMessageSend`、Outlook on Windows および Web の Microsoft 365 サブスクリプションでのみプレビューで利用できます。 詳細については、「 [プレビューする方法」を](autolaunch.md#how-to-preview)参照してください。 プレビュー イベントは、運用環境のアドインでは使用しないでください。
+> [!NOTE]
+> 要件`OnMessageSend`[セット 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) で導入されたイベントと`OnAppointmentSend`イベント。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
-イベントは `OnMessageSend` 、イベント ベースのアクティブ化機能を使用して使用できます。 この機能を使用するようにアドインを構成する方法を理解するには、他の使用可能なイベントの使用、このイベントのプレビューの構成、アドインのデバッグなどを行う方法については、「 [イベント ベースのアクティブ化のために Outlook アドインを構成](autolaunch.md)する」を参照してください。
+イベントは `OnMessageSend` 、イベント ベースのアクティブ化機能を使用して使用できます。 この機能を使用するようにアドインを構成する方法については、「イベント [ベースのアクティブ化のために Outlook](autolaunch.md) アドインを構成する」を参照してください。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
-Office アドイン[用 Yeoman Generator](../develop/yeoman-generator-overview.md) を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
+Office アドイン[用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -40,7 +40,7 @@ Office アドイン[用 Yeoman Generator](../develop/yeoman-generator-overview.m
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.11">
+      <bt:Sets DefaultMinVersion="1.12">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -137,7 +137,7 @@ Office アドイン[用 Yeoman Generator](../develop/yeoman-generator-overview.m
 
 > [!TIP]
 >
-> - イベントで`OnMessageSend``OnAppointmentSend`使用できる **SendMode** オプションについては、「[使用可能な SendMode オプション](/javascript/api/manifest/launchevent#available-sendmode-options-preview)」を参照してください。
+> - イベントで`OnMessageSend``OnAppointmentSend`使用できる **SendMode** オプションについては、「[使用可能な SendMode オプション」を](/javascript/api/manifest/launchevent#available-sendmode-options)参照してください。
 > - Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
 ## <a name="implement-event-handling"></a>イベント処理を実装する
@@ -278,9 +278,16 @@ Office アドイン[用 Yeoman Generator](../develop/yeoman-generator-overview.m
 
 1. 添付ファイルを追加してから、メッセージをもう一度送信します。 今回は警告は表示されません。
 
+## <a name="deploy-to-users"></a>ユーザーにデプロイする
+
+他のイベント ベースのアドインと同様に、スマート アラート機能を使用するアドインは、組織の管理者が展開する必要があります。 Microsoft 365 管理センターを使用してアドインを展開する方法のガイダンスについては、「[イベント ベースのアクティブ化のために Outlook アドインを構成](autolaunch.md#deploy-to-users)する」の「**ユーザーに展開** する」セクションを参照してください。
+
+> [!IMPORTANT]
+> スマート アラート機能を使用するアドインは、マニフェストの [SendMode プロパティ](/javascript/api/manifest/launchevent#available-sendmode-options)が  または`PromptUser`オプションに設定されている場合にのみ AppSource に`SoftBlock`発行できます。 アドインの **SendMode** プロパティが設定 `Block`されている場合は、AppSource の検証に失敗するため、組織の管理者のみが展開できます。 イベント ベースのアドインを AppSource に発行する方法の詳細については、イベント [ベースの Outlook アドインの AppSource 一覧表示オプションに関](autolaunch-store-options.md)するページを参照してください。
+
 ## <a name="smart-alerts-feature-behavior-and-scenarios"></a>スマート アラート機能の動作とシナリオ
 
-**SendMode** オプションの説明と、使用するタイミングに関する推奨事項については、「[使用可能な SendMode オプション](/javascript/api/manifest/launchevent)」を参照してください。 次に、特定のシナリオに対する機能の動作について説明します。
+**SendMode** オプションの説明と、使用するタイミングに関する推奨事項については、「[使用可能な SendMode オプション](/javascript/api/manifest/launchevent#available-sendmode-options)」を参照してください。 次に、特定のシナリオに対する機能の動作について説明します。
 
 ### <a name="add-in-is-unavailable"></a>アドインは使用できません
 
@@ -328,7 +335,7 @@ event.completed メソッドの [errorMessage プロパティ](/javascript/api/o
 
 - ダイアログのタイトル バー。 アドインの名前は常にそこに表示されます。
 - メッセージの形式。 たとえば、テキストのフォント サイズと色を変更したり、箇条書きを挿入したりすることはできません。
-- ダイアログ オプション。 たとえば、[ **送信] オプション** と **[送信しない** ] オプションは固定され、選択した [SendMode オプション](/javascript/api/manifest/launchevent) に依存します。
+- ダイアログ オプション。 たとえば、[ **送信] オプション** と **[送信しない** ] オプションは固定され、選択した [SendMode オプション](/javascript/api/manifest/launchevent#available-sendmode-options) に依存します。
 - イベント ベースのアクティブ化処理と進行状況の情報ダイアログ。 たとえば、タイムアウトと実行時間の長い操作ダイアログに表示されるテキストとオプションは変更できません。
 
 ## <a name="see-also"></a>関連項目
