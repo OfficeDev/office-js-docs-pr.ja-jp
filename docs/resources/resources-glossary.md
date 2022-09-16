@@ -3,12 +3,12 @@ title: Office アドイン用語集
 description: Office アドインのドキュメント全体で一般的に使用される用語の用語集。
 ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
+ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423294"
+ms.lasthandoff: 09/16/2022
+ms.locfileid: "67735324"
 ---
 # <a name="office-add-ins-glossary"></a>Office アドインの用語集
 
@@ -78,13 +78,17 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 
 [ランタイム](#runtime)、[共有ランタイム](#shared-runtime)も参照してください。
 
+## <a name="custom-functions-only-add-in"></a>カスタム関数専用アドイン
+
+カスタム関数を含むが、作業ウィンドウなどの UI を含まないアドイン。 この種のアドインのカスタム関数は [、JavaScript 専用ランタイム](../testing/runtimes.md#javascript-only-runtime)で実行されます。 UI を含むカスタム関数では、共有ランタイムまたは JavaScript 専用ランタイムと HTML をサポートするランタイムの組み合わせを使用できます。 UI がある場合は、共有ランタイムを使用することをお勧めします。
+
+[カスタム関数](#custom-function)、[カスタム関数ランタイム](#custom-functions-runtime)も参照してください。
+
 ## <a name="host"></a>host
 
 **\<Host\>** 通常、Office アプリケーションを参照します。 Office アドインをサポートする Office アプリケーションまたはホストは、Excel、OneNote、Outlook、PowerPoint、Project、Word です。
 
 [アプリケーション](#application)、[クライアント](#client)、[Office アプリケーション、Office クライアント](#office-application-office-client)も参照してください。
-
-
 
 ## <a name="office-application-office-client"></a>Office アプリケーション、Office クライアント
 
@@ -133,12 +137,6 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 **チュートリアル** は、ユーザーが製品や手順の使用を学ぶのに役立つ教育支援です。 Office アドインコンテキストでは、チュートリアルでは、Excel などの特定のアプリケーションの完全なアドイン開発プロセスをアドイン開発者に説明します。 これには、次の 20 以上の手順が含まれており、 [クイック スタート](#quick-start)よりも時間の投資が大きくなります。
 
 [クイック スタート](#quick-start)も参照してください。
-
-## <a name="custom-functions-only-add-in"></a>カスタム関数専用アドイン
-
-カスタム関数を含むが、作業ウィンドウなどの UI を含まないアドイン。 この種のアドインのカスタム関数は [、JavaScript 専用ランタイム](../testing/runtimes.md#javascript-only-runtime)で実行されます。 UI を含むカスタム関数では、共有ランタイムまたは JavaScript 専用ランタイムと HTML をサポートするランタイムの組み合わせを使用できます。 UI がある場合は、共有ランタイムを使用することをお勧めします。 
-
-[カスタム関数](#custom-function)、[カスタム関数ランタイム](#custom-functions-runtime)も参照してください。
 
 ## <a name="web-add-in"></a>Web アドイン
 
