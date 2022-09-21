@@ -1,14 +1,14 @@
 ---
 title: Office アドインのコード サンプル
 description: 独自のアドインの学習や作成に役立つ Office アドインのコード サンプルの一覧。
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
-ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 25a2312d26578c25c0ed2a3098df0d43008f9ac4
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423266"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857565"
 ---
 # <a name="office-add-in-code-samples"></a>Office アドインのコード サンプル
 
@@ -23,21 +23,19 @@ ms.locfileid: "67423266"
 - [PowerPoint "Hello world" アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
-<br>
-
----
-
----
-
 ## <a name="blazor-webassembly"></a>Blazor WebAssembly
 
+開発の背景が VSTO アドインを構築している場合、次のサンプルでは、.NET Blazor WebAssembly を使用して Office Web アドインをビルドする方法を示します。 コードの多くは、C# と Visual Studio で保持できます。
+
 - [Blazor WebAssembly Excel アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Blazor WebAssembly Outlook アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
 - [Blazor WebAssembly Word アドインを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 
 | 名前                | 説明         |
 |:--------------------|:--------------------|
+| [データ型エクスプローラー](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (プレビュー) | ブック内のデータ型を作成して探索できる Excel アドインをビルドします。 データ型を使用すると、アドイン開発者は、書式設定された数値、Web イメージ、エンティティ値などの複雑なデータ構造をオブジェクトとして整理できます。 |
 | [Teams で開く](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Microsoft Teams で、定義したデータを含む新しい Excel スプレッドシートを作成します。|
 | [外部の Excel ファイルを挿入し、JSON データで設定する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | 現在開いている Excel ブックに、外部の Excel ファイルの既存のテンプレートを挿入します。 次に、JSON Web サービスのデータをテンプレートに設定します。 |
 | [リボンのカスタム コンテキスト タブを作成する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Office UI のリボンでカスタム コンテクスト タブを作成します。 このサンプルでは、テーブルを作成し、ユーザーがテーブル内にフォーカスを移動させると、カスタム タブが表示されます。 ユーザーがテーブルの外に移動すると、カスタム タブは非表示になります。 |
@@ -62,12 +60,6 @@ ms.locfileid: "67423266"
 | [Word アドインを使用して、Word 文書の OOXML コンテンツを取得、編集、および設定する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | このサンプルは、Word 文書の OOXML コンテンツを取得、編集、および設定する方法を示しています。 サンプル アドインは、独自のコンテンツ用に Office Open XML を取得し、独自に編集した Office Open XML スニペットをテストするため、スクラッチ パッドを提供します。|
 | [Word アドインに Open XML を読み込んで書き込む](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | このサンプル アドインは、setSelectedDataAsync メソッドと ooxml 型変換を使用して、さまざまな種類のリッチ コンテンツ タイプを Word 文書に追加する方法を示します。 また、このアドインでは、サンプル コンテンツ タイプごとに Office Open XML マークアップをページ上に表示することもできます。 |
 
-<br>
-
----
-
----
-
 ## <a name="authentication-authorization-and-single-sign-on-sso"></a>認証、承認、シングル サインオン (SSO)
 
 | 名前                | 説明         |
@@ -78,6 +70,12 @@ ms.locfileid: "67423266"
 | [Microsoft Graph への Outlook アドイン認証](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。 | Microsoft Graph に接続して OneDrive for Business に保存されているブックにアクセスし、新しいメール メッセージを作成する Outlook アドインを作成します。 |
 | [ASP.NET を使用したシングル サインオン (SSO) Office アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは ASP.NET で作成されています。 |
 | [Node.js を使用したシングル サインオン (SSO) Office アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Office.js で `getAccessToken` API を使用して、アドインが Microsoft Graph データにアクセスできるようにします。このサンプルは Node.js で作成されています。|
+
+## <a name="office"></a>事業所
+
+| 名前                | 説明         |
+|:--------------------|:--------------------|
+| [Office アドインにカスタム設定を保存する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | Office アドイン内にカスタム設定を保存します。 アドインは、Office プロパティ バッグ、ブラウザー Cookie、Web ストレージ (localStorage と sessionStorage) 用の JavaScript API を使用するか、ドキュメント内の非表示の div にデータを格納することによって、キーと値のペアとしてデータを格納します。 |
 
 ## <a name="shared-runtime"></a>共有ランタイム
 

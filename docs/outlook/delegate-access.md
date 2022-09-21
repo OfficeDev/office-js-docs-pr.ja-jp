@@ -3,12 +3,12 @@ title: Outlook アドインで共有フォルダーと共有メールボック�
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 委任アクセス) と共有メールボックス。
 ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bae8a0f8cd63eed5feea7460e57ecfc212a06d61
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 1c6884c18e4cb9916fcec20e6b732b0d20918e2f
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674667"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857558"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Outlook アドインで共有フォルダーと共有メールボックスのシナリオを有効にする
 
@@ -23,7 +23,7 @@ ms.locfileid: "67674667"
 |Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい\*|はい\*|はい\*|
 |Mac：<br>ビルド 16.47 以降|はい|はい|はい|はい|
 |Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|不要|不要|不要|
+|Web ブラウザー:<br>クラシック Outlook UI|該当なし|いいえ|いいえ|いいえ|
 
 > [!NOTE]
 > \* オンプレミス Exchange 環境でのこの機能のサポートは、現在のチャネルのバージョン 2206 (ビルド 15330.20000) と月次エンタープライズ チャネルのバージョン 2207 (ビルド 15427.20000) 以降で利用できます。
@@ -214,7 +214,7 @@ if (item.getSharedPropertiesAsync) {
   // Perform operation for shared item.
 } else {
   // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
-  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+  // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
 
   // Perform operation for non-shared item.
 }

@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 09/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 17f6815728beeb722f79db4ddc3c61e0f8e96f59
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674756"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857579"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -177,7 +177,7 @@ ms.locfileid: "67674756"
 Windows 上の Outlook では JavaScript ファイルが使用されますが、Outlook on the webと新しい Mac UI では、同じ JavaScript ファイルを参照できる HTML ファイルが使用されます。 Outlook プラットフォームは最終的に Outlook クライアントに基づいて HTML または JavaScript を使用するかどうかを決定するため、マニフェストのノードで `Resources` 両方のファイルへの参照を指定する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を **\<Runtime\>** 指定し、その `Override` 子要素で HTML によってインライン化または参照される JavaScript ファイルの場所を指定します。
 
 > [!TIP]
-> 
+>
 > - アドインのランタイムについては、「Office アドインの [ランタイム」](../testing/runtimes.md)を参照してください。
 > - Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
@@ -316,7 +316,7 @@ Microsoft 365 管理センターを介してマニフェストをアップロー
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>イベント ベースのアクティブ化の動作と制限事項
 
-アドインの起動イベント ハンドラーは、実行時間が短く、軽量であり、可能な限り非インバシブであることが予想されます。 アクティブ化後、アドインは約 300 秒以内にタイムアウトし、イベント ベースのアドインの実行に許容される最大時間です。アドインで起動イベントの処理が完了したことを知らせるには、メソッドを呼び出 `event.completed` すハンドラーを関連付けておく必要があります。 (ステートメントの後に `event.completed` 含まれるコードは、実行が保証されないことに注意してください)。アドインが処理するイベントがトリガーされるたびに、アドインが再アクティブ化され、関連付けられているイベント ハンドラーが実行され、タイムアウト ウィンドウがリセットされます。 アドインはタイムアウト後に終了するか、ユーザーが作成ウィンドウを閉じたり、アイテムを送信したりします。
+アドインの起動イベント ハンドラーは、実行時間が短く、軽量であり、可能な限り非インバシブであることが予想されます。 アクティブ化後、アドインは約 300 秒以内にタイムアウトし、イベント ベースのアドインの実行に許容される最大時間です。アドインが起動イベントの処理を完了したことを通知するには、関連付けられているイベント ハンドラーでメソッドを `event.completed` 呼び出す必要があります。 (ステートメントの後に `event.completed` 含まれるコードは、実行が保証されないことに注意してください)。アドインが処理するイベントがトリガーされるたびに、アドインが再アクティブ化され、関連付けられているイベント ハンドラーが実行され、タイムアウト ウィンドウがリセットされます。 アドインはタイムアウト後に終了するか、ユーザーが作成ウィンドウを閉じたり、アイテムを送信したりします。
 
 ユーザーが同じイベントにサブスクライブした複数のアドインがある場合、Outlook プラットフォームは特定の順序でアドインを起動します。 現在、アクティブに実行できるイベント ベースのアドインは 5 つだけです。
 

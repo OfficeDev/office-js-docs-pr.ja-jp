@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Office アドイン ドキュメント
 
-Office アドインのドキュメント リポジトリへようこそ。 このリポジトリでは、Office JavaScript API の概念、クイック スタート、チュートリアル、およびハウツー ガイドのドキュメント ソース ファイルを見つけることができます。 最適なエクスペリエンスを得るには、[Microsoft Docs サイトで](https://docs.microsoft.com/office/dev/add-ins)このコンテンツを表示することをお勧めします。
+Office アドインのドキュメント リポジトリへようこそ。 このリポジトリでは、Office JavaScript API の概念、クイック スタート、チュートリアル、およびハウツー ガイドのドキュメント ソース ファイルを見つけることができます。 最適なエクスペリエンスを得るには、[Microsoft Docs サイトで](https://learn.microsoft.com/office/dev/add-ins)このコンテンツを表示することをお勧めします。
 
 > **注**: Office JavaScript API リファレンス ドキュメントのソース ファイルは [、office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) リポジトリにあります。
 

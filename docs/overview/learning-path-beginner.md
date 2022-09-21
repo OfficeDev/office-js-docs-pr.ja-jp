@@ -4,12 +4,12 @@ description: Office アドインの学習リソースを使用する初心者向
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: beafa972129133955ddebef9ebaaeae6dda101b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 097be9f7aa1563dc513da9cb27eeb7daa344aa41
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152914"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857543"
 ---
 # <a name="beginners-guide"></a>初心者ガイド
 
@@ -45,7 +45,7 @@ ms.locfileid: "59152914"
 
 ## <a name="step-4-understand-the-javascript-library"></a>手順 4: JavaScript ライブラリを理解する
 
-最初に、Microsoft Learn「[Office JavaScript API について理解する](/learn/modules/understand-office-javascript-apis/index)」のこのチュートリアルで、Microsoft Learn ライブラリの全体像を把握します。
+まず、Microsoft Learn トレーニング: Office JavaScript API について理解するチュートリアルを使用して [、Office JavaScript ライブラリの全体像を確認します](/training/modules/understand-office-javascript-apis/index)。
 
 次に、API を実行して調査するサンドボックスである [Script Lab ツール](explore-with-script-lab.md)を使用して、Office JavaScript API を学習します。
 

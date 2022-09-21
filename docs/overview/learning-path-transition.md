@@ -4,12 +4,12 @@ description: 熟練した VSTO アドイン開発者に向けた Office Web ア�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152909"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857523"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO アドイン開発者向けガイド
 
@@ -50,7 +50,7 @@ Office Web アドインのオブジェクト モデルは Excel、Word、その�
 
 ## <a name="step-4-understand-the-javascript-library"></a>手順 4: JavaScript ライブラリを理解する
 
-Microsoft Learn「[Office JavaScript API について理解する](/learn/modules/intro-office-add-ins/3-apis)」のこのチュートリアルで、Office JavaScript ライブラリの全体像を把握します。
+Microsoft Learn トレーニング: Office JavaScript API について理解するチュートリアルを使用して [、Office JavaScript ライブラリの全体像を確認します](/training/modules/intro-office-add-ins/3-apis)。
 
 次に、API を実行して調査するためのサンドボックスである [Script Lab ツール](explore-with-script-lab.md)を使用して、Office JavaScript API を学習します。
 

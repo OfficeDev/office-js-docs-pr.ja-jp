@@ -3,12 +3,12 @@ title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
 ms.date: 09/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8630cc6c075d80546e019ba41f57d46d97eb0f13
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: b460dbd150ec4806c562cf0fb2bc6e920beaa4c5
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616005"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857551"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
@@ -102,7 +102,7 @@ function getCurrentItem(accessToken) {
 
   // Construct the REST URL to the current item.
   // Details for formatting the URL can be found at
-  // https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
+  // https://learn.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
   const getMessageUrl = Office.context.mailbox.restUrl +
     '/v2.0/me/messages/' + itemId;
 
