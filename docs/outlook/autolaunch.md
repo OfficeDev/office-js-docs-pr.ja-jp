@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 09/16/2022
+ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17f6815728beeb722f79db4ddc3c61e0f8e96f59
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: c544f9c10a6fec30d26a994f8e29a48c0d02aa49
+ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857579"
+ms.lasthandoff: 09/23/2022
+ms.locfileid: "67990428"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -30,13 +30,13 @@ ms.locfileid: "67857579"
 |---|---|---|
 |`OnNewMessageCompose`|新しいメッセージを作成する場合 (返信、全員への返信、転送を含む)、編集時には行われません (下書きなど)。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI |
 |`OnNewAppointmentOrganizer`|新しい予定を作成するが、既存の予定を編集する場合は作成しません。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI |
-|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentRecurrenceChanged`|予定の作成中に繰り返しの詳細を追加、変更、または削除する場合。 日付/時刻が変更されると、 `OnAppointmentTimeChanged` イベントも発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を閉じる場合。 通知を追加したアドインのみが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnMessageAttachmentsChanged`|メッセージの作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentAttachmentsChanged`|予定の作成中に添付ファイルを追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnMessageRecipientsChanged`|メッセージの作成中に受信者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentAttendeesChanged`|予定の作成中に出席者を追加または削除する場合。<br><br>イベント固有のデータ オブジェクト: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentTimeChanged`|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentRecurrenceChanged`|予定の作成中に繰り返しの詳細を追加、変更、または削除する場合。 日付/時刻が変更されると、 `OnAppointmentTimeChanged` イベントも発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnInfoBarDismissClicked`|メッセージまたは予定アイテムの作成中に通知を閉じる場合。 通知を追加したアドインのみが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
 |`OnMessageSend`|メッセージ アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnAppointmentSend`|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアル](smart-alerts-onmessagesend-walkthrough.md)を参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 |`OnMessageCompose`|新しいメッセージを作成する (返信、全員に返信、転送を含む) 場合、または下書きを編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
