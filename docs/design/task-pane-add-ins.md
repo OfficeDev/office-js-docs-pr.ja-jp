@@ -3,16 +3,16 @@ title: Office アドインの作業ウィンドウ
 description: 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 640c39e993a69b0204a5f3447abc1935d0922fd4
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: d911101a7df1f1ad8aa01b8e0006bd93d994a193
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404696"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092918"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office アドインの作業ウィンドウ
 
-作業ウィンドウは、通常 Word、PowerPoint、Excel、Outlook 内のウィンドウの右側に表示されるインターフェイスのサーフェスです。作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。機能を直接ドキュメントに埋め込む必要がない場合は、作業ウィンドウを使用します。
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 *図 1. 一般的な作業ウィンドウのレイアウト*
 
@@ -22,14 +22,14 @@ ms.locfileid: "64404696"
 
 |するべきこと|してはいけないこと|
 |:-----|:--------|
-|<ul><li>タイトルにアドインの名前を含めます。</li></ul>|<ul><li>タイトルには会社名を追加しません。</li></ul>|
-|<ul><li>タイトルには短くわかりやすい名前を使用します。</li></ul>|<ul><li>アドインのタイトルには、"アドイン"、"for Word"、"for Office" などの文字列を追加しません。</li></ul>|
-|<ul><li>アドインの上部に CommandBar や Pivot などのナビゲーション要素やコマンド要素を含めます。</li></ul>||
-|<ul><li>アドインを Outlook 内で使用する場合を除き、アドインの下部に BrandBar などのブランド化の要素を含めます。</li></ul>||
+|タイトルにアドインの名前を含めます。|タイトルには会社名を追加しません。|
+|タイトルには短くわかりやすい名前を使用します。|アドインのタイトルに、"アドイン"、"for Word"、"for Office" などの文字列を追加しないでください。|
+|アドインの上部に CommandBar や Pivot などのナビゲーション要素やコマンド要素を含めます。|*なし。*|
+|アドインを Outlook 内で使用する場合を除き、アドインの下部に BrandBar などのブランド化の要素を含めます。|*なし。*|
 
 ## <a name="variants"></a>バリアント
 
-次の図は、1366x768 解像度のリボンOffice アプリ作業ウィンドウのサイズを示しています。 Excel では、数式バーを収容するための縦のスペースが必要です。  
+次の図は、Office アプリ リボンが 1366x768 解像度の作業ウィンドウのさまざまなサイズを示しています。 Excel では、数式バーを収容するための縦のスペースが必要です。  
 
 *図 2. Office 2016 デスクトップ作業ウィンドウのサイズ*
 
@@ -42,30 +42,30 @@ ms.locfileid: "64404696"
 
 <br/>
 
-*図 3.Office作業ウィンドウのサイズ*
+*図 3.Office 作業ウィンドウのサイズ*
 
 ![作業ウィンドウのサイズを 1366x768 解像度で表示する図。](../images/office-365-taskpane-sizes.png)
 
 - Excel - 350x378 ピクセル
 - PowerPoint - 348x391 ピクセル
 - Word - 329x445 ピクセル
-- Outlook (web 上) - 320x570 ピクセル
+- Outlook (Web 上) - 320 x 570 ピクセル
 
 ## <a name="personality-menu"></a>パーソナル メニュー
 
-パーソナル メニューは、アドインの右上付近にあるナビゲーション要素やコマンド要素の妨げになる可能性があります。 Windows と Mac でのパーソナル メニューの現在のサイズを次に示します。 (この機能では、パーソナリティ メニュー Outlook)。
+パーソナル メニューは、アドインの右上付近にあるナビゲーション要素やコマンド要素の妨げになる可能性があります。 Windows と Mac でのパーソナル メニューの現在のサイズを次に示します。 (Outlook では、パーソナリティ メニューはサポートされていません。)
 
 Windows の場合、パーソナル メニューは 12x32 ピクセルを測定します (図を参照)。
 
 *図 4. Windows のパーソナル メニュー*
 
-![デスクトップ上のパーソナリティ メニューをWindows図。](../images/personality-menu-win.png)
+![Windows デスクトップの [パーソナリティ] メニューを示す図。](../images/personality-menu-win.png)
 
 Mac の場合、パーソナル メニューは 26x26 ピクセルを測定しますが、右から 8 ピクセル内側、上から 6 ピクセルの位置にフロートします。これにより、スペースは 34x32 ピクセルに増加します (図を参照)。
 
 *図 5. Mac のパーソナル メニュー*
 
-![Mac デスクトップのパーソナリティ メニューを示す図。](../images/personality-menu-mac.png)
+![Mac デスクトップの [パーソナリティ] メニューを示す図。](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>実装
 

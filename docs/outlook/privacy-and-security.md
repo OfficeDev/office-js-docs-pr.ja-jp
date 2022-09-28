@@ -3,12 +3,12 @@ title: Outlook アドインに関するプライバシー、アクセス許可�
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
 ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318894"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092876"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -26,7 +26,7 @@ ms.locfileid: "67318894"
 
 ## <a name="permissions-model"></a>アクセス許可モデル
 
-お客様のアドインのセキュリティの認知度がアドインの導入に影響する可能性があるため、Outlook アドインのセキュリティは階層化されたアクセス許可モデルに依存します。Outlook アドインは、アドインがお客様のメールボックス データに対して実行可能なアクセスとアクションを特定した上で、必要なアクセス許可レベルを開示します。
+Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
 マニフェスト スキーマのバージョン 1.1 には、4 つのレベルのアクセス許可が含まれています。
 
@@ -68,7 +68,7 @@ ms.locfileid: "67318894"
 - ブラウザー: アドインの可用性とストアへのアクセスは影響を受けないため、ユーザーは [アドイン （管理者が展開したものを含む） を引き続き管理](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) できます。
 
   > [!NOTE]
-  > \* Windows の場合、この操作/動作のサポートはバージョン 2008 (ビルド 13127.20296) から利用できます。 バージョンに応じた詳細については、[Microsoft 365](/officeupdates/update-history-office365-proplus-by-date)更新履歴ペーのページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
+  > \* Windows の場合、このエクスペリエンス/動作のサポートはバージョン 2008 (ビルド 13127.20296) から入手できます。 バージョンに応じた詳細については、[Microsoft 365](/officeupdates/update-history-office365-proplus-by-date)更新履歴ペーのページと、[Office クライアントのバージョンを見つけてチャネルを更新する方法](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)を参照してください。
 
 アドインの全般的な動作については、「[Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md#optional-connected-experiences)」を参照してください。
 
@@ -80,11 +80,11 @@ ms.locfileid: "67318894"
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
-- AppSource からアドインをインストールする前に、エンド ユーザーは、そのアドインが自分のデータに対して実行可能なアクセスとアクションを確認して、先に進むことを明示的に確認する必要があります。Outlook アドインは、ユーザーまたは管理者による手動検証なしでクライアント コンピューター上に自動的にインストールされることはありません。
+- Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
 - **制限付き** のアクセス許可を付与すると、Outlook アドインは現在のアイテムのみに限定されたアクセスが可能になります。 **アイテムの読み取り** アクセス許可を付与すると、Outlook アドインは現在のアイテムに対してのみ、送信者と受信者の名前や電子メール アドレスなどの個人を特定できる情報にアクセスできます。
 
-- エンド ユーザーは、自分だけが使用する Outlook アドインをインストールできます。組織に影響を与える Outlook アドインは管理者がインストールします。
+- An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
 
 - エンド ユーザーは、ユーザーのセキュリティ リスクを最小限に抑えながら、ユーザーにとって魅力的な状況依存のシナリオを実現する Outlook アドインをインストールできます。
 
@@ -102,7 +102,7 @@ ms.locfileid: "67318894"
 
   - CPU 使用率  
 
-  ガバナンスはサービス拒否攻撃を阻止し、アドインのパフォーマンスを適度なレベルに維持します。エンド ユーザーには、このようなガバナンス制御に基づいて、Outlook リッチ クライアントが該当の Outlook アドインを無効にしたという通知がビジネス バーに表示されます。
+  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about Outlook add-ins that the Outlook rich client has disabled based on such governance control.
 
 - エンド ユーザーは、いつでも Exchange 管理センターで、インストールした Outlook アドインから要求されたアクセス許可を確認したり、Outlook アドインを無効にしたり、その後で有効にしたりできます。
 
@@ -153,7 +153,7 @@ ms.locfileid: "67318894"
 
 ### <a name="resource-usage-tuning"></a>リソース使用量の調整
 
-パフォーマンスの良くないアドインがホストのサービスを拒否する事態を減らすため、開発者はアクティブ化におけるリソース使用量の限度を意識し、開発ワークフローにパフォーマンスの調整を組み込む必要があります。また、「 [Outlook アドインのアクティブ化と JavaScript API の制限](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)」に記載するとおり、アクティブ化ルールの設計ガイドラインに従うことをお勧めします。Outlook アドインを Outlook リッチ クライアント上で実行する予定がある場合、開発者はアドインがリソース使用量の制限内で動作することを確認する必要があります。
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
 
 ### <a name="other-measures-to-promote-user-security"></a>ユーザーのセキュリティを高めるその他の方法
 

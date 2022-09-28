@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Office アドイン ドキュメント
 
-Office アドインのドキュメント リポジトリへようこそ。 このリポジトリでは、Office JavaScript API の概念、クイック スタート、チュートリアル、およびハウツー ガイドのドキュメント ソース ファイルを見つけることができます。 最適なエクスペリエンスを得るには、[Microsoft Docs サイトで](https://learn.microsoft.com/office/dev/add-ins)このコンテンツを表示することをお勧めします。
+Office アドインのドキュメント リポジトリへようこそ。 このリポジトリでは、Office JavaScript API の概念、クイック スタート、チュートリアル、およびハウツー ガイドのドキュメント ソース ファイルを見つけることができます。 最適なエクスペリエンスを得るには、Microsoft Learn に関する [Office アドインのドキュメント](https://learn.microsoft.com/office/dev/add-ins) を参照することをお勧めします。
 
 > **注**: Office JavaScript API リファレンス ドキュメントのソース ファイルは [、office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) リポジトリにあります。
 
@@ -19,7 +19,7 @@ Office アドインのドキュメント リポジトリへようこそ。 こ�
 - 問題を再現する手順。
 - コンソールの出力メッセージとエラー メッセージ。
 
-また、フォーク、修正、提案される変更のプル リクエストもお願いしています。詳細については、「[このドキュメントに投稿する](Contributing.md)」を参照してください。
+We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
 
 問題が Office アドインのドキュメントに関連していない場合は、代わりに次のいずれかのチャネルに投稿してください。
 
@@ -42,4 +42,4 @@ Microsoft 365 プラットフォームのソリューションを構築するた
 Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 
-このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

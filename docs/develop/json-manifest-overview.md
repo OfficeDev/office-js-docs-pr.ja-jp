@@ -3,12 +3,12 @@ title: Office アドインのTeams マニフェスト (プレビュー)
 description: プレビュー JSON マニフェストの概要を確認します。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
-ms.translationtype: HT
+ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689384"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092883"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Office アドインのTeams マニフェスト (プレビュー)
 
@@ -79,19 +79,19 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
-|"$schema"| マニフェスト スキーマを識別します。 | **\<OfficeApp\>** と **\<VersionOverrides\>** の属性 | |
-|"id"| アドインの GUID。 | **\<Id\>**| |
-|"version"| アドインのバージョンです。 | **\<Version\>** | |
-|"manifestVersion"| マニフェスト スキーマのバージョンです。 |  **\<OfficeApp\>** の属性 | |
-|"name"| アドインのパブリック名。 | **\<DisplayName\>** | |
-|"description"| アドインの公開用の説明。  | **\<Description\>** | |
-|"accentColor"||| このプロパティは、現在の XML マニフェストに同等のものはなく、JSON マニフェストのプレビューでは使用されません。 ただし、存在する必要があります。 |
-|"developer"| アドインの開発者を識別します。 | **\<ProviderName\>** | |
-|"localizationInfo"| 既定のロケールとその他のサポートされているロケールを構成します。 | **\<DefaultLocale\>** と **\<Override\>** | |
+|"$schema"| マニフェスト スキーマを識別します。 | **\<OfficeApp\>** と **\<VersionOverrides\>** の属性 |*なし。* |
+|"id"| アドインの GUID。 | **\<Id\>**|*なし。* |
+|"version"| アドインのバージョンです。 | **\<Version\>** |*なし。* |
+|"manifestVersion"| マニフェスト スキーマのバージョンです。 |  **\<OfficeApp\>** の属性 |*なし。* |
+|"name"| アドインのパブリック名。 | **\<DisplayName\>** |*なし。* |
+|"description"| アドインの公開用の説明。  | **\<Description\>** |*なし。* |
+|"accentColor"|*なし。* |*なし。* | このプロパティは、現在の XML マニフェストに同等のものはなく、JSON マニフェストのプレビューでは使用されません。 ただし、存在する必要があります。 |
+|"developer"| アドインの開発者を識別します。 | **\<ProviderName\>** |*なし。* |
+|"localizationInfo"| 既定のロケールとその他のサポートされているロケールを構成します。 | **\<DefaultLocale\>** と **\<Override\>** |*なし。* |
 |"webApplicationInfo"| Azure Active Directory で既知のアドインの Web アプリを識別します。 | **\<WebApplicationInfo\>** | 現在の XML マニフェストでは、**\<WebApplicationInfo\>** 要素は基本マニフェストではなく **\<VersionOverrides\>** 内にあります。 |
 |"authorization"| アドインに必要な Microsoft Graphアクセス許可を識別します。 | **\<WebApplicationInfo\>** | 現在の XML マニフェストでは、**\<WebApplicationInfo\>** 要素は基本マニフェストではなく **\<VersionOverrides\>** 内にあります。 |
 
-**\<Hosts\>**、**\<Requirements\>**、**\<ExtendedOverrides\>** 要素は、現在の XML マニフェストの基本マニフェストの一部です。 ただし、これらの要素に関連する概念と目的は、プレビュー JSON マニフェストの "extension" プロパティ内で構成されます。 
+**\<Hosts\>**、**\<Requirements\>**、**\<ExtendedOverrides\>** 要素は、現在の XML マニフェストの基本マニフェストの一部です。 ただし、これらの要素に関連する概念と目的は、プレビュー JSON マニフェストの "extension" プロパティ内で構成されます。
 
 #### <a name="extension-property"></a>"extension" プロパティ
 
@@ -104,12 +104,12 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | アドインをインストール可能にする必要がある要件セットを識別します。 | **\<Requirements\>** と **\<Sets\>** | |
-| "requirements.scopes" | アドインをインストールできる Office アプリケーションを識別します。 | **\<Hosts\>** |  |
+| "requirements.capabilities" | アドインをインストール可能にする必要がある要件セットを識別します。 | **\<Requirements\>** と **\<Sets\>** |*なし。* |
+| "requirements.scopes" | アドインをインストールできる Office アプリケーションを識別します。 | **\<Hosts\>** |*なし。* |
 | "ribbons" | アドインがカスタマイズするリボン。 | **\<Hosts\>**、**ExtensionPoints**、およびさまざまな **\*FormFactor** 要素 | "ribbons" プロパティは、これら 3 つの要素の目的をマージする匿名オブジェクトの配列です。 [「リボン」の表](#ribbons-table)を参照してください。|
 | "alternatives" | 同等の COM アドイン、XLL、またはその両方との下位互換性を指定します。 | **\<EquivalentAddins\>** | 背景情報については、[「EquivalentAddins - 参照」](/javascript/api/manifest/equivalentaddins#see-also)を参照してください。 |
-| "runtimes"  | カスタム関数専用アドインや[関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)など、UI がほとんどまたはまったくないさまざまな種類のアドインを構成します。 | **\<Runtimes\>**. **\<FunctionFile\>**、および **\<ExtensionPoint\>** (CustomFunctions 型の) |  |
-| "autoRunEvents" | 指定したイベントのイベント ハンドラーを構成します。 | **\<Event\>** および **\<ExtensionPoint\>** (Events 型の) |  |
+| "runtimes"  | カスタム関数専用アドインや[関数コマンド](../design/add-in-commands.md#types-of-add-in-commands)など、UI がほとんどまたはまったくないさまざまな種類のアドインを構成します。 | **\<Runtimes\>**. **\<FunctionFile\>**、および **\<ExtensionPoint\>** (CustomFunctions 型の) |*なし。* |
+| "autoRunEvents" | 指定したイベントのイベント ハンドラーを構成します。 | **\<Event\>** および **\<ExtensionPoint\>** (Events 型の) |*なし。* |
 
 ##### <a name="ribbons-table"></a>"ribbons" テーブル
 
@@ -117,7 +117,7 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 
 |JSON プロパティ|用途|XML 要素|コメント|
 |:-----|:-----|:-----|:-----|
-| "contexts" | アドインがカスタマイズするコマンド サーフェスを指定します。 | **PrimaryCommandSurface** や **MessageReadCommandSurface** など、さまざまな **\*CommandSurface** 要素 |  |
+| "contexts" | アドインがカスタマイズするコマンド サーフェスを指定します。 | **PrimaryCommandSurface** や **MessageReadCommandSurface** など、さまざまな **\*CommandSurface** 要素 |*なし。* |
 | "tabs" | カスタム リボン タブを構成します。 | **\<CustomTab\>** | "tabs" の子孫プロパティの名前と階層は、**\<CustomTab\>** の子孫と密接に一致します。  |
 
 ## <a name="sample-preview-json-manifest"></a>サンプル プレビュー JSON マニフェスト

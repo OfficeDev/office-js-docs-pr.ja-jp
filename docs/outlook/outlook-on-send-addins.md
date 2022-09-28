@@ -3,16 +3,16 @@ title: Outlook アドインの送信時機能
 description: アイテムを処理する方法、またはユーザーが特定のアクションを実行しないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f4507fdf442e55cfa6e1b3310f6009f9c6a0b85d
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958973"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093002"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook アドインの送信時機能
 
-Outlook アドインの送信時機能は、メッセージまたは会議アイテムを処理する方法、またはユーザーが特定のアクションを実行できないようにする方法を提供し、送信時にアドインが特定のプロパティを設定できるようにします。たとえば、送信時機能を使用すると次のことが可能です。
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
 
 - ユーザーが機密情報を送信したり、件名を空白にしたままにしないようにする。  
 - 特定の受信者をメッセージの CC 行または会議の任意の受信者行に追加する。
@@ -25,12 +25,12 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
 
 次の表は、必要最小限の累積更新プログラム (該当する場合) など、送信時機能でサポートされているクライアントとサーバーの組み合わせを示しています。 除外された組み合わせはサポートされていません。
 
-| クライアント | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
+| Client | Exchange Online | Exchange 2016 オンプレミス<br>(累積的な更新プログラム 6 以降) | Exchange 2019 オンプレミス<br>(累積的な更新プログラム 1 以降) |
 |---|:---:|:---:|:---:|
 |Windows:<br>バージョン 1910 (ビルド 12130.20272) 以降|はい|はい|はい|
 |Mac：<br>ビルド 16.47 以降|はい|はい|はい|
-|Web ブラウザー:<br>最新の Outlook UI|あり|該当なし|該当なし|
-|Web ブラウザー:<br>クラシック Outlook UI|該当なし|はい|はい|
+|Web ブラウザー:<br>最新の Outlook UI|はい|該当なし|該当なし|
+|Web ブラウザー:<br>クラシック Outlook UI|対象外|あり|はい|
 
 > [!NOTE]
 > 送信時機能は、要件セット 1.8 で正式にリリースされました (詳細については [、現在のサーバーとクライアントのサポート](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください)。 ただし、この機能のサポート マトリックスは要件セットのスーパーセットであることに注意してください。
@@ -70,7 +70,7 @@ Outlook アドインの送信時機能は、メッセージまたは会議アイ
   > [アドインのマニフェストを検証](../testing/troubleshoot-manifest.md)するために実行`npm run validate`すると、"ItemSend イベントを含むメールボックス アドインは無効です。 メールボックス アドイン マニフェストには、VersionOverrides の ItemSend イベントが含まれています。これは許可されていません。 このメッセージは、このバージョンの送信時機能に必要なイベントを `ItemSend` 使用するアドインを AppSource に発行できないために表示されます。 他の検証エラーが見つからない場合でも、アドインをサイドロードして実行することができます。
 
 - **マニフェスト** &ndash; 1 つのアドインに対して 1 つの `ItemSend` イベントのみがサポートされています。 マニフェストに 2 つ以上の `ItemSend` イベントがある場合、マニフェストの検証は失敗します。
-- **パフォーマンス** &ndash; アドインをホストする Web サーバーへの複数回のラウンドトリップは、アドインのパフォーマンスに影響する可能性があります。複数のメッセージ ベースまたは会議ベースの操作が必要なアドインを作成する場合は、パフォーマンスへの影響を考慮してください。
+- **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **後で送信** (Mac のみ) &ndash; 送信時アドインがある場合、**後で送信** 機能は使用できません。
 
 また、イベントの完了後にアイテムを閉じるのが自動的に行われるので、送信時イベント ハンドラーを呼び出 `item.close()` すのはお勧めしません。
@@ -357,8 +357,8 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |シナリオ|メールボックス 1 の送信時機能|メールボックス 2 の送信時機能|Outlook web のセッション (クラシック)|結果|サポートの有無|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|有効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
-|2|無効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|現在サポートされていません。回避策として、シナリオ 3 を使用します。|
+|1|有効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|Not currently supported. As a workaround, use scenario 3.|
+|2|無効|有効|新しいセッション|メールボックス 1 は、メールボックス 2 からのメッセージまたは会議アイテムを送信できません。|Not currently supported. As a workaround, use scenario 3.|
 |3|有効|有効|同じセッション|メールボックス 1 に割り当てられている送信時アドインが送信時に実行されます。|サポートされています。|
 |4|有効|無効|新しいセッション|送信時アドインは実行されません。メッセージまたは会議アイテムは送信されます。|サポートされています。|
 
@@ -608,7 +608,7 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-CC 行に受信者を追加して、送信時にメッセージに件名が含まれていることを確認する方法、および使用可能な API を表示する方法の詳細については、「[Outlook-Add-in-On-Send サンプル](https://github.com/OfficeDev/Outlook-Add-in-On-Send)」を参照してください。コードには詳細なコメントが付けられています。
+To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>On-send を使用する Outlook アドインをデバッグする
 

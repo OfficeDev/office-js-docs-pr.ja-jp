@@ -3,16 +3,16 @@ title: Office アドインのリソースの制限とパフォーマンスの最
 description: CPU やメモリなど、Office アドイン プラットフォームのリソース制限について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bec9579db1461f16d36d97646c4fce418c2e11
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8465eb654795b538182e01d33b2fc57ddb35eaa0
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889199"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092904"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office アドインのリソースの制限とパフォーマンスの最適化
 
-ユーザーのベスト エクスペリエンスを実現するために、Office アドイン実行時の CPU コア、メモリの使用量、信頼性、および Outlook アドインの正規表現の評価の応答時間を一定以内に保つ必要があります。これらの実行時のリソース使用量の制限は、Windows と OS X 用の Office クライアントに適用され、モバイルアプリやブラウザーでは適用されません。
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
 
 また、デスクトップやモバイル デバイス上のアドインについても、アドインの設計と実装でリソース使用量を最適化することによって、そのパフォーマンスを最適化できます。
 
@@ -38,14 +38,14 @@ ms.locfileid: "66889199"
 
 ### <a name="outlook-add-ins"></a>Outlook アドイン
 
-Outlook アドインが前述の CPU コア使用率、メモリ使用量、またはクラッシュ許容度のしきい値を超えると、そのアドインは Outlook で無効化されます。Exchange 管理センターにはそのアプリの無効状態が表示されます。
+If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
 > Outlook on the web やモバイル端末ではなく、Outlook リッチ クライアントによってのみ、リソース使用量をモニターする場合でも、リッチ クライアントが Outlook アドインを無効化すると、このアドインは Outlook on the web やモバイル端末でも無効化されます。
 
 CPU コア、メモリ、および信頼性ルールに加えて、Outlook アドインは、アクティブ化に関する次の規則を遵守する必要があります。
 
-- **正規表現の応答時間**: Outlook で Outlook アドインのマニフェスト内のすべての正規表現を評価する時間の既定のしきい値は 1,000 ミリ秒。このしきい値を超えると、Outlook は後で評価を再試行します。
+- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
     管理者は、Windows レジストリでグループ ポリシーまたはアプリケーション固有の設定として **OutlookActivationAlertThreshold** 設定を使用して、この 1,000 ミリ秒の既定のしきい値を調節できます。
 
@@ -69,7 +69,7 @@ Excel アドインをビルドする場合は、ブックを操作するとき�
 コンテンツまたは作業ウィンドウ アドインが、CPU コアまたはメモリ使用量の前のしきい値を超えた場合、またはクラッシュに対する許容範囲の制限を超えると、対応する Office アプリケーションにユーザーに対する警告が表示されます。 この時点で、ユーザーは次のどちらかの処理を実行できます。
 
 - アドインを再起動します。
-- しきい値を超えたというそれ以降の警告をキャンセルします。理想的な対処としては、ユーザーはそのアドインをドキュメントから削除する必要があります。そのアドインの使用を続行すると、さらにパフォーマンスと安定性の問題が発生する可能性があります。  
+- Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
 ## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>テレメトリ ログでリソース使用状況の問題を確認する
 
@@ -77,23 +77,23 @@ Office には、Office アドインでのリソースの使用に関する問題
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-それぞれのアドインについてテレメトリ ログで追跡されるイベントごとに、そのイベントの発生日付/時刻、イベント ID、重大度、および短い説明的なタイトル、そのアドインのフレンドリ名と ID、イベントをログに記録したアプリケーションが記入されています。テレメトリ ログをリフレッシュすれば、現在の追跡済みイベントを確認できます。次の表は、テレメトリ ログで追跡された Outlook アドインの例を示しています。
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**日付/時刻**|**イベント ID**|**重大度**|**タイトル**|**ファイル**|**ID**|**アプリケーション**|
+|日付/時刻|イベント ID|重要度|タイトル|File|ID|アプリケーション|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7 ||アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7 ||アドインのマニフェストが正常にダウンロードされました|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2012 5:57:10 PM|7 |*該当なし*|アドインのマニフェストが正常にダウンロードされました|重要人物|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:01 PM|7 |*該当なし*|アドインのマニフェストが正常にダウンロードされました|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 次の表は、通常、Office アドインについてテレメトリ ログで追跡されるイベントを示しています。
 
-|**イベント ID**|**タイトル**|**重大度**|**説明**|
+|イベント ID|タイトル|重要度|説明|
 |:-----|:-----|:-----|:-----|
-|7 |アドインのマニフェストが正常にダウンロードされました||Office アドインのマニフェストが正常に読み込まれ、Office アプリケーションによって読み取られました。|
+|7 |アドインのマニフェストが正常にダウンロードされました|*該当なし*|Office アドインのマニフェストが正常に読み込まれ、Office アプリケーションによって読み取られました。|
 |8 |アドインのマニフェストがダウンロードされませんでした|重大|Office アプリケーションは、SharePoint カタログ、企業カタログ、または AppSource から Office アドインのマニフェスト ファイルを読み込めませんでした。|
 |9 |アドインのマークアップを解析できませんでした|重大|Office アプリケーションは Office アドイン マニフェストを読み込みましたが、アプリの HTML マークアップを読み取ることができませんでした。|
 |10|アドインの CPU 使用率が高すぎます|重大|Office アドインは、限定された時間内に CPU リソースの 90% 超を使用しました。|
-|15|アドインは文字列検索のタイムアウトのため無効になっています||Outlook アドインは電子メールの件名とメッセージを検索して、それらを正規表現で表示するかどうかを決定します。**[File]** 列に記された Outlook アドインは、正規表現での一致を試みている最中に繰り返しタイムアウトしたため、Outlook によって無効にされました。|
-|18 |アドインは正常に終了しました||Office アプリケーションは、Office アドインを正常に閉じることができました。|
+|15|アドインは文字列検索のタイムアウトのため無効になっています|*該当なし*|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|18 |アドインは正常に終了しました|*該当なし*|Office アプリケーションは、Office アドインを正常に閉じることができました。|
 |19|アドインで実行時エラーが発生しました|重大|Office アドインに、エラーの原因となる問題がありました。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
 |20|アドインでライセンスを確認できませんでした|重大|Office アドインのライセンス情報を確認できないか、有効期限が切れている可能性があります。 詳細については、エラーが発生したコンピューター上で Windows イベント ビューアーを使用して **Microsoft Office Alerts** ログを確認してください。|
 
@@ -105,7 +105,7 @@ CPU 使用率、メモリ使用量、クラッシュ許容度、UI の応答性�
 
 - 制限のないデータセットからの大量のデータをアドインで読み取る必要があるシナリオでは、テーブルからデータを読み取る場合にページ付けを適用したり、またはより小さいサイズの読み取り操作に分割して 1 回の操作で処理するデータ量を小さくし、1 回の操作ですべてのデータを読み取ることがないようにします。 これを行うには、グローバル オブジェクトの [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) メソッドを使用して、入力と出力の期間を制限します。 It also handles the data in defined chunks instead of randomly unbounded data. もう 1 つのオプションは、 [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) を使用して Promise を処理することです。
 
-- アドインで CPU 使用率の高いアルゴリズムを使用して大量のデータを処理する場合は、Web Workers を使用してバックグラウンドで時間のかかるタスクを実行しつつ、フォアグラウンドで別のスクリプト (ユーザー インターフェイスへの進行状況の表示など) を実行できます。Web Workers は、ユーザー アクティビティをブロックせず、HTML ページの応答性を維持します。Web Workers の例については、「[ウェブ ワーカーの基本](https://www.html5rocks.com/tutorials/workers/basics/)」を参照してください。Web Workers API の詳細については、「[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)」を参照してください。
+- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use web workers to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/). See [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for more information about the Web Workers API.
 
 - アドインで CPU 使用率の高いアルゴリズムを使用しているが、データの入出力を小さなセットに分割できる場合は、Web サービスの作成を検討します。データを Web サービスに渡して CPU の負荷をオフロードし、非同期コールバックを待機します。
 

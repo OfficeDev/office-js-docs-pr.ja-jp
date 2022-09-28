@@ -3,12 +3,12 @@ title: イベント ベースのアクティブ化を使用する Outlook アド
 description: イベント ベースのアクティブ化アドインで作業するときに SSO を有効にする方法について説明します。
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9a162e0ebe43c400f1b526d321cf049675047a6b
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423119"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092932"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>イベント ベースのアクティブ化を使用する Outlook アドインでシングル サインオン (SSO) を有効にする
 

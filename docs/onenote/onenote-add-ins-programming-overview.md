@@ -5,16 +5,16 @@ ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: d44a01cf0f676057ca072cff74e2e80057f645f4
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889178"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092911"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote の JavaScript API のプログラミングの概要
 
-OneNote では、OneNote on the web アドインの JavaScript API が導入されています。OneNote オブジェクトを操作する作業ウィンドウ アドイン、コンテンツ アドイン、アドイン コマンドを作成し、Web サービスや他の Web ベースのリソースに接続できます。
+OneNote introduces a JavaScript API for OneNote add-ins on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -22,9 +22,9 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 アドインは、2 つの基本コンポーネントで構成されます。
 
-- Web ページと必要な任意の JavaScript、CSS、他のファイルを含む **Web アプリケーション**。これらのファイルは、Web サーバーか、Microsoft Azure などの Web ホスティング サービスでホストされます。OneNote on the web では、Web アプリケーションはブラウザー コントロールや iFrame で表示されます。
+- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a browser control or iframe.
 
-- アドインの Web ページの URL とアドインの任意のアクセス要件、設定、機能を指定する **XML マニフェスト**。このファイルは、クライアントに保存されます。OneNote アドインは、他の Office アドインと同じ [マニフェスト](../develop/add-in-manifests.md)形式を使います。
+- An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 
 ### <a name="office-add-in--manifest--webpage"></a>Office アドイン = マニフェスト + Web ページ
 
@@ -32,25 +32,25 @@ OneNote では、OneNote on the web アドインの JavaScript API が導入さ�
 
 ## <a name="using-the-javascript-api"></a>JavaScript API の使用
 
-アドインは、Office アプリケーションのランタイム コンテキストを使って、JavaScript API にアクセスします。API には次の 2 つの階層があります:
+Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
 - `Application` オブジェクトを通じてアクセスされる、OneNote 固有の操作のための **アプリケーション固有の API**。
 - `Document` オブジェクトを通じてアクセスされ、Office アプリケーション全体で共有される **共通 API**。
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>*アプリケーション* オブジェクトを使ったアプリケーション固有の API へのアクセス
 
-`Application` オブジェクトを使って、**ノートブック**、**セクション**、**ページ** などの OneNote オブジェクトにアクセスします。アプリケーション固有の API を使うと、プロキシ オブジェクトでバッチ操作を実行できます。
+Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
 
 1. コンテキストからアプリケーション インスタンスを取得します。
 
-2. 操作する OneNote オブジェクトを表すプロキシを作成します。プロキシ オブジェクトのプロパティの読み取りや書き込みを行い、メソッドを呼び出すことにより、プロキシ オブジェクトを同期的に操作します。
+2. Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods.
 
-3. プロキシで`load`を呼び出し、パラメーターで指定されたプロパティ値を設定します。この呼び出しは、コマンドのキューに追加されます。
+3. Call `load` on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands.
 
    > [!NOTE]
    > API へのメソッドの呼び出し (`context.application.getActiveSection().pages;` など) も、キューに追加されます。
 
-4. キューに置かれたすべてのコマンドをキューに置かれた順序で実行するには、`context.sync` を呼び出します。これにより、実行中のスクリプトと実際のオブジェクトの間の状態が同期されます。また、読み込まれた OneNote オブジェクトのプロパティを取得して、スクリプトで使います。追加のアクションのチェーン処理には、返された約束オブジェクトを使うことができます。
+4. Call `context.sync` to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
 例:
 
@@ -83,7 +83,7 @@ OneNote JavaScript API の `load`/`sync` パターンとその他の一般的な
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API の要件セット
 
-要件セットは、API メンバーの名前付きグループです。Office アドインでは、マニフェストで指定されている要件セットを使用するか、ランタイム チェックを使用して、Office アプリケーションがアドインに必要な API をサポートしているかどうかを判断します。OneNote JavaScript API 要件セットの詳細については、「[OneNote JavaScript API の要件セット](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)」を参照してください。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>*ドキュメント* オブジェクトを使った共通 API へのアクセス
 
@@ -115,7 +115,7 @@ OneNote アドインは、次の共通 API のみをサポートします。
 | [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | 設定はコンテンツ アドインによってのみサポートされます |
 | 
   [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | 設定はコンテンツ アドインによってのみサポートされます |
-| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
+| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*なし。*|
 
 一般に、アプリケーション固有の API でサポートされていない操作を行う場合は、共通 API を使用します。 共通 API の使用の詳細については、「[共通 JavaScript API オブジェクト モデル](../develop/office-javascript-api-object-model.md)」を参照してください。
 

@@ -4,12 +4,12 @@ description: イベント ベースのアクティブ化のために Outlook ア
 ms.topic: article
 ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c544f9c10a6fec30d26a994f8e29a48c0d02aa49
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: 0e38f7e9c9d9f06ec7f427b12c04b30d6abf0112
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990428"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093009"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -43,7 +43,7 @@ ms.locfileid: "67990428"
 |`OnAppointmentOrganizer`|新しい予定を作成する場合、または既存の予定を編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
 
 > [!NOTE]
-> Outlook on Windows の <sup>1</sup> つのイベント ベースアドインを実行するには、Windows 10 バージョン 1903 (ビルド 18362) または Windows Server 2019 バージョン 1903 の最小値が必要です。
+> Outlook on Windows の <sup>1</sup> つのイベント ベースのアドインを実行するには、少なくとも Windows 10 バージョン 1903 (ビルド 18362) または Windows Server 2019 バージョン 1903 が必要です。
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 
