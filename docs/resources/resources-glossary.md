@@ -1,14 +1,14 @@
 ---
 title: Office アドイン用語集
 description: Office アドインのドキュメント全体で一般的に使用される用語の用語集。
-ms.date: 08/19/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
-ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
+ms.openlocfilehash: ef8df6e344698f7d67ebe7afe1759e13630b385d
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2022
-ms.locfileid: "67735324"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234915"
 ---
 # <a name="office-add-ins-glossary"></a>Office アドインの用語集
 
@@ -96,6 +96,14 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 
 [アプリケーション](#application)、[クライアント](#client)、[ホスト](#host)も参照してください。
 
+## <a name="perpetual"></a>永久
+
+**永続** とは、ボリューム ライセンス契約または小売チャネルを通じて利用可能な Office のバージョンを指します。
+
+その他の Microsoft コンテンツでは、この概念を表すために **サブスクリプション以外** の用語を使用する場合があります。
+
+関連項目: [リテール、リテール永続](#retail-retail-perpetual)、 [ボリューム ライセンス、ボリューム ライセンス付きパーペチュアル、ボリューム ライセンス](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## <a name="platform"></a>platform
 
 **プラットフォーム** とは、通常、Office アプリケーションを実行しているオペレーティング システムを指します。 Office アドインをサポートするプラットフォームには、Windows、Mac、iPad、Web ブラウザーが含まれます。
@@ -109,6 +117,14 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 ## <a name="requirement-set"></a>要件セット
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
+
+## <a name="retail-retail-perpetual"></a>リテール、リテール永続
+
+**リテール** とは、リテール チャネルを通じて利用できる永続的なバージョンの Office を指します。 これには、Microsoft 365 サブスクリプションまたはボリューム ライセンス契約によって提供されるバージョンは含まれません。
+
+その他の Microsoft コンテンツでは、この概念を表すために **、1 回限りの購入** または **コンシューマー** という用語を使用する場合があります。
+
+「[永続」](#perpetual)も参照してください。
 
 ## <a name="ribbon-ribbon-button"></a>リボン、リボン ボタン
 
@@ -126,6 +142,10 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 
 [カスタム関数ランタイム](#custom-functions-runtime)、[ランタイム](#runtime)も参照してください。
 
+## <a name="subscription"></a>サブスクリプション
+
+**サブスクリプション** とは、Microsoft 365 サブスクリプションで使用できる Office のバージョンを指します。
+
 ## <a name="task-pane"></a>作業ウィンドウ
 
 作業ウィンドウは、通常、Excel、Outlook、PowerPoint、Word 内のウィンドウの右側に表示されるインターフェイス サーフェイスまたは Web ビューです。 作業ウィンドウにより、ユーザーはコードを実行してドキュメントや電子メールを修正したり、データ ソースからデータを表示したりするインターフェイス コントロールにアクセスできます。 ドキュメントに直接機能を埋め込む必要がない場合や埋め込めない場合は、作業ウィンドウを使用します。 詳細については、「 [Office アドインの作業ウィンドウ](../design/task-pane-add-ins.md) 」を参照してください。
@@ -137,6 +157,14 @@ Outlook、UI、認証に関連する一般的な API など、他の一般的な
 **チュートリアル** は、ユーザーが製品や手順の使用を学ぶのに役立つ教育支援です。 Office アドインコンテキストでは、チュートリアルでは、Excel などの特定のアプリケーションの完全なアドイン開発プロセスをアドイン開発者に説明します。 これには、次の 20 以上の手順が含まれており、 [クイック スタート](#quick-start)よりも時間の投資が大きくなります。
 
 [クイック スタート](#quick-start)も参照してください。
+
+## <a name="volume-licensed-volume-licensed-perpetual-volume-licensing"></a>ボリューム ライセンス、ボリューム ライセンスの永続、ボリューム ライセンス
+
+**ボリューム ライセンスとは** 、Microsoft と会社間のボリューム ライセンス契約を通じて利用可能な永続的なバージョンの Office を指します。
+
+その他の Microsoft コンテンツでは、この概念を表すために **商用** という用語を使用する場合があります。
+
+「[永続」](#perpetual)も参照してください。
 
 ## <a name="web-add-in"></a>Web アドイン
 

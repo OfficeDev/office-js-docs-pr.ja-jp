@@ -25,6 +25,8 @@ items:
             href: quickstarts/project-quickstart.md
           - name: Word アドイン
             href: quickstarts/word-quickstart.md
+          - name: シングル サインオン (SSO)
+            href: quickstarts/sso-quickstart.md
       - name: Script Lab を使用して Office JS API を探索する
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -134,6 +136,8 @@ items:
                 items:
                   - name: Office アドインで SSO を有効にする
                     href: develop/sso-in-office-add-ins.md
+                  - name: クイック スタート
+                    href: quickstarts/sso-quickstart.md
                   - name: Microsoft ID プラットフォームに登録する
                     href: develop/register-sso-add-in-aad-v2.md
                   - name: 管理者の同意を付与する
@@ -889,6 +893,9 @@ items:
         displayName: Excel
       - name: Script LabスニペットをYo Officeにコピーする
         href: overview/create-an-office-add-in-from-script-lab.md
+      - name: カスタム関数のリモート呼び出しのバッチ処理
+        href: excel/custom-functions-batching.md
+        displayName: 'Excel, Custom Functions'
   - name: リソース
     items:
       - name: 用語集

@@ -1,14 +1,14 @@
 ---
-ms.date: 07/08/2021
+ms.date: 09/09/2022
 description: バッチ処理カスタム関数を組み合わせてリモート サービスへのネットワーク呼び出しを減らします。
 title: リモート サービスのためのバッチ処理カスタム関数の呼び出し
 ms.localizationpriority: medium
-ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f779351789350bbc591b1b5d7a975ff9f70cda26
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958602"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234922"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>リモート サービスの Batch カスタム関数呼び出し
 
@@ -28,11 +28,11 @@ ms.locfileid: "66958602"
 
 カスタム関数にバッチ処理を設定するには、次の 3 つの主要なセクションのコードを記述する必要があります。
 
-1. バッチに新しい操作を追加するプッシュ操作の呼び出しのたびに、Excel はカスタム関数を呼び出します。
-2. バッチの準備ができたときのリモート要求を行う関数です。
-3. バッチ要求に応答するサーバー コードは、すべての操作の結果を計算して値を返します。
+1. Excel がカスタム関数を呼び出すたびに、呼び出しのバッチに新しい操作を追加する [プッシュ操作](#add-the-_pushoperation-function) 。
+2. バッチの準備ができたら [リモート要求を行う関数](#make-the-remote-request) 。
+3. [バッチ要求に応答し](#process-the-batch-call-on-the-remote-service)、すべての操作結果を計算し、値を返すサーバー コード。
 
-次のセクションでは、コードを一度に 1 つの例で作成する方法について説明します。 **functions.ts** ファイルにそれぞれのコード例を追加します。 [Office アドイン ジェネレーターの Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して、まったく新しいカスタム関数プロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、「 [Excel カスタム関数の開発を開始](../quickstarts/excel-custom-functions-quickstart.md) し、JavaScript の代わりに TypeScript を使用する」を参照してください。
+次のセクションでは、コードを一度に 1 つの例で作成する方法について説明します。 [Office アドイン ジェネレーターの Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用して、まったく新しいカスタム関数プロジェクトを作成することをお勧めします。 新しいプロジェクトを作成するには、「 [Excel カスタム関数の開発を開始](../quickstarts/excel-custom-functions-quickstart.md)する」を参照してください。 TypeScript または JavaScript を使用できます。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>カスタム関数の各呼び出しにバッチ処理をする
 
@@ -40,53 +40,51 @@ ms.locfileid: "66958602"
 
 次のコードでは、カスタム関数は除算を実行しますが、実際の計算を実行するにはリモート サービスに依存しています。 リモート サービスにその操作と別の操作を一緒にバッチ処理し、`_pushOperation`を呼び出します。 その名称は **div2** 操作といいます。 リモート サービスが同じスキーム (詳細については、この後のリモート サービスで) を使用する限り、任意の名前付けスキームを操作に使用することができます。 また、操作を実行する必要があるリモートサービスの引数が渡されます。
 
-### <a name="add-the-div2-custom-function-to-functionsts"></a>functions.ts に div2 カスタム関数を追加する
+### <a name="add-the-div2-custom-function"></a>div2 カスタム関数を追加する
 
-```typescript
+**functions.js** または **functions.ts** ファイルに次のコードを追加します (JavaScript または TypeScript を使用したかどうかによって異なります)。
+
+```javascript
 /**
- * @CustomFunction
  * Divides two numbers using batching
+ * @CustomFunction
  * @param dividend The number being divided
  * @param divisor The number the dividend is divided by
  * @returns The result of dividing the two numbers
  */
-function div2(dividend: number, divisor: number) {
-  return _pushOperation(
-    "div2",
-    [dividend, divisor]
-  );
+function div2(dividend, divisor) {
+  return _pushOperation("div2", [dividend, divisor]);
 }
 ```
 
-次に、1 つのネットワークの呼び出しに渡されるすべての操作が格納されるバッチの配列を定義します。 次のコードでは、配列内で各バッチのエントリを記述するインターフェイスを定義する方法を表示します。 どの文字列名のどの操作を実行するのか、インターフェイスが操作を定義します。 たとえば、 `multiply` と `divide`という名前の 2 つのカスタム関数がある場合、バッチのエントリ内で操作名として再利用できます。 `args` は、Excel からカスタム関数に渡された引数が保持されます。 最後に、`resolve` または `reject`はリモート サービスが返した情報を保持している promise を格納します。
+### <a name="add-global-variables-for-tracking-batch-requests"></a>バッチ要求を追跡するためのグローバル変数を追加する
 
-```typescript
-interface IBatchEntry {
-  operation: string;
-  args: any[];
-  resolve: (data: any) => void;
-  reject: (error: Error) => void;
-}
-```
+次に、 **functions.js** または **functions.ts** ファイルに 2 つのグローバル変数を追加します。 `_isBatchedRequestScheduled` は、後でリモート サービスへのバッチ呼び出しのタイミングを設定するために重要です。
 
-次に、前のインターフェイスを使用するバッチの配列を作成します。 バッチが予定されているかどうかを追跡するため、`_isBatchedRequestSchedule` 変数を作成します。 リモート サービスへのバッチの呼び出しのタイミングは、後で重要になります。
-
-```typescript
-const _batch: IBatchEntry[] = [];
+```javascript
+let _batch = [];
 let _isBatchedRequestScheduled = false;
 ```
 
-最後に、Excel がカスタム関数を呼び出すと、バッチ配列への操作をプッシュする必要があります。 次のコードでは、カスタム関数から新しい操作を追加する方法を示します。 新しいバッチ エントリを作成し、処理を解決または拒否するための新しい promise を作成し、そしてバッチ配列にエントリをプッシュします。
+### <a name="add-the-_pushoperation-function"></a>関数を追加する`_pushOperation`
+
+Excel がカスタム関数を呼び出すときは、バッチ配列に操作をプッシュする必要があります。 次の **_pushOperation** 関数コードは、カスタム関数から新しい操作を追加する方法を示しています。 新しいバッチ エントリを作成し、処理を解決または拒否するための新しい promise を作成し、そしてバッチ配列にエントリをプッシュします。
 
 このコードは、バッチがスケジュールされているかどうかも確認します。 この例では、それぞれのバッチはすべて100 ミリ秒ごとに実行するようスケジュールされています。 必要に応じて、この値を調整することができます。 高い値は、リモート サービスに送信される大きなバッチで発生し、ユーザーが結果を確認するまでの応答時間が長くなります。 小さい値は、より多くのバッチがリモート サービスに送信されますが、ユーザーの応答時間は短くなる傾向があります。
 
-### <a name="add-the-_pushoperation-function-to-functionsts"></a>functions.ts に `_pushOperation` 関数を追加する
+この関数は、実行する操作の文字列名を含む **invocationEntry** オブジェクトを作成します。 たとえば、 `multiply` と `divide`という名前の 2 つのカスタム関数がある場合、バッチのエントリ内で操作名として再利用できます。 `args` は、Excel からカスタム関数に渡された引数を保持します。 最後に、または`reject`メソッドは、`resolve`リモート サービスが返す情報を保持する Promise を格納します。
 
-```typescript
-function _pushOperation(op: string, args: any[]) {
+**functions.js** または **functions.ts** ファイルに次のコードを追加します。
+
+```javascript
+// This function encloses your custom functions as individual entries,
+// which have some additional properties so you can keep track of whether or not
+// a request has been resolved or rejected.
+function _pushOperation(op, args) {
   // Create an entry for your custom function.
-  const invocationEntry: IBatchEntry = {
-    operation: op, // e.g. sum
+  console.log("pushOperation");
+  const invocationEntry = {
+    operation: op, // e.g., sum
     args: args,
     resolve: undefined,
     reject: undefined,
@@ -103,8 +101,9 @@ function _pushOperation(op: string, args: any[]) {
   _batch.push(invocationEntry);
 
   // If a remote request hasn't been scheduled yet,
-  // schedule it after a certain timeout, e.g. 100 ms.
+  // schedule it after a certain timeout, e.g., 100 ms.
   if (!_isBatchedRequestScheduled) {
+    console.log("schedule remote request");
     _isBatchedRequestScheduled = true;
     setTimeout(_makeRemoteRequest, 100);
   }
@@ -118,13 +117,19 @@ function _pushOperation(op: string, args: any[]) {
 
 `_makeRemoteRequest`関数の目的は、操作のバッチをリモート サービスに渡し、それから各カスタム関数に結果を返します。 まず、バッチ配列のコピーを作成します。 これにより、concurrent カスタム関数は、Excel からすぐに新しい配列にバッチ処理を呼び出すことができます。 そのコピーは、それから promise 情報が含まれていない単純な配列になります。 機能しない場合は、リモート サービスにその promise を渡しても意味をなしません。 リモート サービスが何を返すかによって、`_makeRemoteRequest` は拒否するか、またはそれぞれの promise を解決します。
 
-### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>次の`_makeRemoteRequest`メソッドを functions.ts に追加します。
+**functions.js** または **functions.ts** ファイルに次のコードを追加します。
 
-```typescript
+```javascript
+// This is a private helper function, used only within your custom function add-in.
+// You wouldn't call _makeRemoteRequest in Excel, for example.
+// This function makes a request for remote processing of the whole batch,
+// and matches the response batch to the request batch.
 function _makeRemoteRequest() {
   // Copy the shared batch and allow the building of a new batch while you are waiting for a response.
   // Note the use of "splice" rather than "slice", which will modify the original _batch array
   // to empty it out.
+  try{
+  console.log("makeRemoteRequest");
   const batchCopy = _batch.splice(0, _batch.length);
   _isBatchedRequestScheduled = false;
 
@@ -132,21 +137,31 @@ function _makeRemoteRequest() {
   const requestBatch = batchCopy.map((item) => {
     return { operation: item.operation, args: item.args };
   });
-
+  console.log("makeRemoteRequest2");
   // Make the remote request.
   _fetchFromRemoteService(requestBatch)
     .then((responseBatch) => {
+      console.log("responseBatch in fetchFromRemoteService");
       // Match each value from the response batch to its corresponding invocation entry from the request batch,
       // and resolve the invocation promise with its corresponding response value.
       responseBatch.forEach((response, index) => {
         if (response.error) {
           batchCopy[index].reject(new Error(response.error));
+          console.log("rejecting promise");
         } else {
+          console.log("fulfilling promise");
           console.log(response);
+
           batchCopy[index].resolve(response.result);
         }
       });
     });
+    console.log("makeRemoteRequest3");
+  } catch (error) {
+    console.log("error name:" + error.name);
+    console.log("error message:" + error.message);
+    console.log(error);
+  }
 }
 ```
 
@@ -159,18 +174,23 @@ function _makeRemoteRequest() {
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>リモート サービスでバッチの呼び出しを処理します。
 
-最後の手順では、リモート サービスでバッチの呼び出しを処理をします。 つぎのコード サンプルは、`_fetchFromRemoteService`関数を表しています。 この関数は、それぞれの操作を展開せずに指定した操作を実行し、それから結果を返します。 この記事の学習の目的は、 `_fetchFromRemoteService`関数がリモート サービスを web アドインで実行し、リモート サービスをモックするように設計されています。 **functions.ts** ファイルにこのコードを追加することができ、実際のリモート サービスを設定しなくても、この記事内のすべてのコードを学習し実行することができます。
+最後の手順では、リモート サービスでバッチの呼び出しを処理をします。 つぎのコード サンプルは、`_fetchFromRemoteService`関数を表しています。 この関数は、それぞれの操作を展開せずに指定した操作を実行し、それから結果を返します。 この記事の学習の目的は、 `_fetchFromRemoteService`関数がリモート サービスを web アドインで実行し、リモート サービスをモックするように設計されています。 このコードを **functions.js** または **functions.ts ファイルに** 追加すると、実際のリモート サービスを設定しなくても、この記事のすべてのコードを調査して実行できます。
 
-### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>次の `_fetchFromRemoteService` 関数を functions.ts に追加します。
+**functions.js** または **functions.ts** ファイルに次のコードを追加します。
 
-```typescript
-async function _fetchFromRemoteService(
-  requestBatch: Array<{ operation: string, args: any[] }>
-): Promise<IServerResponse[]> {
-  // Simulate a slow network request to the server;
+```javascript
+// This function simulates the work of a remote service. Because each service
+// differs, you will need to modify this function appropriately to work with the service you are using. 
+// This function takes a batch of argument sets and returns a promise that may contain a batch of values.
+// NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
+//       to ensure only the correct callers can access it.
+async function _fetchFromRemoteService(requestBatch) {
+  // Simulate a slow network request to the server.
+  console.log("_fetchFromRemoteService");
   await pause(1000);
-
-  return requestBatch.map((request): IServerResponse => {
+  console.log("postpause");
+  return requestBatch.map((request) => {
+    console.log("requestBatch server side");
     const { operation, args } = request;
 
     try {
@@ -181,10 +201,10 @@ async function _fetchFromRemoteService(
         };
       } else if (operation === "mul2") {
         // Multiply the arguments for the given entry.
-        const myresult = args[0] * args[1];
-        console.log(myresult);
+        const myResult = args[0] * args[1];
+        console.log(myResult);
         return {
-          result: myresult
+          result: myResult
         };
       } else {
         return {
@@ -199,7 +219,8 @@ async function _fetchFromRemoteService(
   });
 }
 
-function pause(ms: number) {
+function pause(ms) {
+  console.log("pause");
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 ```

@@ -1,14 +1,14 @@
 ---
 title: アプリケーション固有の JavaScript API でのエラー処理
 description: Excel、Word、PowerPoint、およびその他のアプリケーション固有の JavaScript API エラー処理ロジックについて説明し、ランタイム エラーを考慮します。
-ms.date: 07/05/2022
+ms.date: 09/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: f26c38e7582fbb372deae8b160b8a284d8ce4ce9
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092995"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234894"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>アプリケーション固有の JavaScript API でのエラー処理
 
@@ -63,7 +63,7 @@ Office JavaScript API 要求が正常に実行されない場合、API は次の
 > [!NOTE]
 > 上の表に、アプリケーション固有の API の使用中に発生する可能性があるエラー メッセージを示します。 Common API を使用している場合は、関連するエラー メッセージの詳細については、 [Office Common API のエラー コード](../reference/javascript-api-for-office-error-codes.md) を参照してください。
 
-|エラー コード | エラー メッセージ | 備考 |
+|エラー コード | エラー メッセージ | メモ |
 |:----------|:--------------|:------|
 |`AccessDenied` |要求された操作を実行できません。|*なし。* |
 |`ActivityLimitReached`|アクティビティの制限に達しました。|*なし。* |
@@ -95,11 +95,12 @@ Office JavaScript API 要求が正常に実行されない場合、API は次の
 
 ### <a name="excel-specific-error-codes-and-messages"></a>Excel 固有のエラー コードとメッセージ
 
-|エラー コード | エラー メッセージ | 備考 |
+|エラー コード | エラー メッセージ | メモ |
 |:----------|:--------------|:------|
 |`EmptyChartSeries`|グラフ系列が空であるため、試行された操作は失敗しました。|*なし。* |
 |`FilteredRangeConflict`|試行された操作により、フィルター処理された範囲との競合が発生します。|*なし。* |
 |`FormulaLengthExceedsLimit`|適用された数式のバイトコードが最大長制限を超えています。 32 ビット コンピューターの Office の場合、バイトコードの長さの制限は 16384 文字です。 64 ビット コンピューターでは、バイトコードの長さの制限は 32768 文字です。| このエラーは、Excel on the webとデスクトップの両方で発生します。|
+|`GeneralException`|*各種。*|データ型 API は、動的エラー メッセージを含むエラーを返します `GeneralException` 。 これらのメッセージは、エラーの原因となるセルと、エラーの原因となっている問題 ("セル A1 に必須のプロパティ `type`がありません" など) を参照します。|
 |`InactiveWorkbook`|複数のブックが開かれているため、この API によって呼び出されるブックにフォーカスが失われるため、操作は失敗しました。|*なし。* |
 |`MergedRangeConflict`|操作を完了できません。 テーブルは、別のテーブル、ピボットテーブル レポート、クエリ結果、マージされたセル、または XML マップと重複することはできません。|*なし。* |
 |`NonBlankCellOffSheet`|ワークシートの末尾に空でないセルをプッシュするため、Microsoft Excel では新しいセルを挿入できません。 これらの空でないセルは空に見えますが、空白の値、一部の書式設定、または数式があります。 挿入する行または列を十分に削除して、挿入する内容に余裕を持たせた後、もう一度やり直してください。|*なし。* |
