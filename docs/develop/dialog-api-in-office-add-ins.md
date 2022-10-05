@@ -3,12 +3,12 @@ title: Office アドインで Office ダイアログ API を使用する
 description: Office アドインでダイアログ ボックスを作成する基本について説明します。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 947b08575d100c639a440c1ca25d45199b4507ad
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423105"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466958"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Office アドインで Office ダイアログ API を使用する
 
@@ -64,7 +64,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 これを実行するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。 使用するその他の `displayDialogAsync`サンプルについては、「 [サンプル](#samples)」を参照してください。
 
-全画面表示で効率的に操作するには、両方の値を 100% に設定します。(最大有効値は 99.5% であり、最大有効値にしても、ウィンドウは移動とサイズ変更が可能です。)
+Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
 > [!NOTE]
 > ホスト ウィンドウから開くことができるのは、1 つのダイアログ ボックスのみです。 別のダイアログ ボックスを開こうとすると、エラーが発生します。 たとえば、ユーザーが作業ウィンドウからダイアログ ボックスを開いた場合、作業ウィンドウの別のページから 2 番目のダイアログ ボックスを開くできません。 ただし、[アドイン コマンド](../design/add-in-commands.md)からダイアログ ボックスを開く場合は、選択するたびにコマンドによって新しい (ただし非表示の) HTML ファイルが開かれます。 これにより、新しい (非表示) ホスト ウィンドウが作成されるため、これらの各ウィンドウは独自のダイアログ ボックスを起動できます。 詳細については、「[displayDialogAsync のエラー](dialog-handle-errors-events.md#errors-from-displaydialogasync)」を参照してください。
@@ -100,7 +100,7 @@ if (loginSuccess) {
 > [!IMPORTANT]
 >
 > - この `messageParent` 関数は、ダイアログ ボックスで呼び出すことができる 2 つの Office JS API *の 1 つです* 。
-> - ダイアログ ボックスで呼び出すことができる他の JS API は `Office.context.requirements.isSetSupported`. 詳細については、「 [Office アプリケーションと API 要件の指定](specify-office-hosts-and-api-requirements.md)」を参照してください。 ただし、ダイアログ ボックスでは、この API は 1 回限りの購入 (つまり MSI バージョン) Outlook 2016ではサポートされていません。
+> - ダイアログ ボックスで呼び出すことができる他の JS API は `Office.context.requirements.isSetSupported`. 詳細については、「 [Office アプリケーションと API 要件の指定](specify-office-hosts-and-api-requirements.md)」を参照してください。 ただし、ダイアログ ボックスでは、この API はボリューム ライセンスの永続Outlook 2016 (つまり MSI バージョン) ではサポートされていません。
 
 次の例では、`googleProfile` は文字列に変換されたバージョンのユーザーの Google プロファイルです。
 
@@ -126,7 +126,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 >
 > - Office は [AsyncResult](/javascript/api/office/office.asyncresult) オブジェクトをコールバックに渡します。 Office はダイアログ ボックスを開こうとした結果を表します。 ただし、ダイアログ ボックスでのイベントの結果は表しません。 この違いの詳細については、「[エラーとイベントの処理](dialog-handle-errors-events.md)」を参照してください。
 > - `asyncResult` の `value` プロパティは [Dialog](/javascript/api/office/office.dialog) オブジェクトに設置されます。このオブジェクトはダイアログ ボックスの実行コンテキストではなく、ホスト ページに存在します。
-> - `processMessage` はイベントを処理する関数です。任意の名前を指定できます。
+> - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - `dialog` 変数は、`processMessage` でも参照されるため、コールバックよりも広い範囲で宣言されます。
 
 `DialogMessageReceived` イベントのハンドラーの簡単な例を次に示します。
@@ -159,7 +159,7 @@ function processMessage(arg) {
 
 これらの手法を使用するサンプル アドインについては、「[Office アドイン ダイアログ API の例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)」を参照してください。
 
-メッセージを受信した後、アドインで作業ウィンドウの別のページを開く必要がある場合は、ハンドラーの最後の行として `window.location.replace` メソッド (または `window.location.href`) を使用できます。次に例を示します。
+If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
 ```js
 function processMessage(arg) {
@@ -194,9 +194,9 @@ if (loginSuccess) {
 >
 > - `loginSuccess` 変数は、ID プロバイダーからの HTTP 応答を読み取ることによって初期化されます。
 > - 関数と`getError`関数の`getProfile`実装は表示されません。 両方の関数はそれぞれ、クエリ パラメーターまたは HTTP 応答の本文からデータを取得します。
-> - サインインが成功したかどうかに応じて、さまざまな種類の匿名のオブジェクトが送信されます。両方の関数に `messageType` プロパティがありますが、一方には `profile` プロパティ、もう一方には `error` プロパティがあります。
+> - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
-次の例に示すように、ホスト ページのハンドラー コードは分岐に `messageType` プロパティの値を使用します。`showUserName` 関数は上記の例と同じであり、`showNotification` 関数はホスト ページの UI にエラーを表示することに注意してください。
+The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
 ```js
 function processMessage(arg) {
@@ -385,7 +385,7 @@ function onMessageFromParent(arg) {
 
 ## <a name="close-the-dialog-box"></a>ダイアログ ボックスを閉じる
 
-ダイアログ ボックスを閉じるボタンをダイアログ ボックス内に実装できます。これを実行するには、ボタンのクリック イベント ハンドラーは `messageParent` を使用して、ボタンがクリックされたことをホスト ページに通知する必要があります。次に例を示します。
+You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
 ```js
 function closeButtonClick() {

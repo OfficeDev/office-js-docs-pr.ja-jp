@@ -3,20 +3,20 @@ title: Office アドインの新しいスタイル アイコンのガイドラ�
 description: Office アドインで Fresh スタイル アイコンを使用するためのガイドライン。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 261f684648e8fb57a3aa291b785b33e511f83865
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: bd2cb372b79bef7f8c81deb778862f6bfd91d742
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092946"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467007"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Office アドインの新しいスタイル アイコンのガイドライン
 
-Office 2013+ (非サブスクリプション) バージョンの Office では、Microsoft の Fresh スタイルのアイコンが使用されます。 アイコンが Microsoft 365 の Monoline スタイルと一致することを望む場合は、 [Office アドインの Monoline スタイル アイコンガイドラインに関するページ](add-in-icons-monoline.md)を参照してください。
+Office 2013+ (永続) バージョンの Office では、Microsoft の Fresh スタイルのアイコンが使用されます。 アイコンが Microsoft 365 の Monoline スタイルと一致することを望む場合は、 [Office アドインの Monoline スタイル アイコンガイドラインに関するページ](add-in-icons-monoline.md)を参照してください。
 
 ## <a name="office-fresh-visual-style"></a>Office Fresh のビジュアル スタイル
 
-Fresh アイコンには、重要なコミュニケーション要素のみが含まれます。 遠近法、グラデーション、および光源など、重要でない要素が削除されています。 アイコンが簡略化されたことで、コマンドやコントロールの解析をより高速に行うことができるようになっています。 このスタイルに従って、Office 非サブスクリプション クライアントに最適です。
+Fresh アイコンには、重要なコミュニケーション要素のみが含まれます。 遠近法、グラデーション、および光源など、重要でない要素が削除されています。 アイコンが簡略化されたことで、コマンドやコントロールの解析をより高速に行うことができるようになっています。 このスタイルに従って、Office 永続クライアントに最適です。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 

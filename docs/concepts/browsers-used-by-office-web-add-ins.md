@@ -1,14 +1,14 @@
 ---
 title: Office アドインによって使用されるブラウザー
 description: Office アドインによって使用されるブラウザーをオペレーティング システムおよび Office バージョンが決定する方法を指定します。
-ms.date: 08/04/2022
+ms.date: 09/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: bd4f20c969acf07423e15269b361469ea17eee39
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422951"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466944"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office アドインによって使用されるブラウザー
 
@@ -17,8 +17,8 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 どのブラウザが使用されているかは、以下によります。
 
 - コンピューターのオペレーティング システム。
-- アドインが Office on the web、Microsoft 365、または永続的 ("非サブスクリプション" または "ワンタイム 購入" とも呼ばれます) で実行されているかどうか。Office 2013 以降。
-- Office の永続バージョン内で、アドインが "コンシューマー" または "商用" ("ボリューム ライセンス" または "LTSC" とも呼ばれます) で実行されているかどうか。
+- アドインがOffice on the web、Microsoft 365 サブスクリプションからダウンロードした Office、または永続的な Office 2013 以降で実行されているかどうか。
+- Windows 上の Office の永続バージョン内で、アドインが "リテール" または "ボリューム ライセンス" のバリエーションで実行されているかどうか。
 
 > [!NOTE]
 > この記事では、[アドインが Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub) で保護 *されていない* ドキュメントで実行されていることを前提としています。 WIP で保護されたドキュメントの場合、この記事の情報にはいくつかの例外があります。 詳細については、「 [WIP で保護されたドキュメント](#wip-protected-documents)」を参照してください。
@@ -26,10 +26,10 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 > [!IMPORTANT]
 > **Office アドインで引き続き使用される Internet Explorer**
 >
-> Office 2019 を通じた商用永続バージョンを含む一部のプラットフォームと Office バージョンの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Webview コントロールを使用してアドインをホストします。 Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
+> Office 2019 を通じてボリューム ライセンスの永続バージョンを含む、プラットフォームと Office バージョンのいくつかの組み合わせでは、この記事で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。 Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
 >
 > - Internet Explorer でOffice on the webが開かなくなりました。 その結果、[AppSource は](/office/dev/store/submit-to-appsource-via-partner-center)、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。
-> - AppSource は引き続き Internet Explorer を使用するプラットフォームと Office *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
+> - AppSource は引き続き、Internet Explorer を使用するプラットフォームと Office *デスクトップ* バージョンの組み合わせをテストします。 ただし、アドインが Internet Explorer をサポートしていない場合にのみ警告が表示されます。アドインは AppSource によって拒否されません。
 > - [Script Lab ツール](../overview/explore-with-script-lab.md)は Internet Explorer をサポートしなくなりました。
 >
 > Internet Explorer のサポートとアドインでの正常なエラー メッセージの構成の詳細については、 [Internet Explorer 11 のサポート](../develop/support-ie-11.md)に関するページを参照してください。
@@ -50,25 +50,24 @@ Office アドインは、Office on the webで実行するときに iFrame を使
 
 ## <a name="perpetual-versions-of-office-on-windows"></a>Windows 上の Office の永続バージョン
 
-Windows 上の Office の永続バージョンの場合、使用されるブラウザーは、Office バージョン、ライセンスがコンシューマーか商用か、および Edge WebView2 (Chromium ベース) がインストールされているかどうかによって決まります。 Windows のバージョンは関係ありませんが、Office Web アドインは Windows 7 より前のバージョンではサポートされておらず、Office 2021は Windows 10 より前のバージョンではサポートされていません。
+Windows 上の Office の永続的なバージョンの場合、使用されるブラウザーは、Office バージョン、ライセンスがリテールライセンスかボリューム ライセンスか、および Edge WebView2 (Chromium ベース) がインストールされているかどうかによって決まります。 Windows のバージョンは関係ありませんが、Office Web アドインは Windows 7 より前のバージョンではサポートされておらず、Office 2021は Windows 10 より前のバージョンではサポートされていません。
 
-Office 2016 または Office 2019 がコンシューマーか商用かを判断するには、Office バージョンとビルド番号の形式を使用します。 (Office 2013 とOffice 2021の場合、商用とコンシューマーの区別は重要ではありません)。
+Office 2016 または Office 2019 が小売またはボリューム ライセンスのどちらであるかを判断するには、Office バージョンとビルド番号の形式を使用します。 (Office 2013 とOffice 2021の場合、ボリューム ライセンスとリテールの区別は関係ありません。
 
-- **コンシューマー**: Office 2016 と 2019 の両方の形式は`YYMM (xxxxx.xxxxxx)`、5 桁の 2 つのブロックで終わる形式です。たとえば、 `2206 (Build 15330.20264`
-- **商用**: 
+- **小売**: Office 2016 と 2019 の両方の形式は`YYMM (xxxxx.xxxxxx)`、5 桁の 2 つのブロックで終わる形式です。たとえば、 `2206 (Build 15330.20264`
+- **ボリューム ライセンス**:
+  - Office 2016 の場合、形式は `16.0.xxxx.xxxxx`*4* 桁の 2 つのブロックで終わる形式です。たとえば、 `16.0.5197.1000`.
+  - Office 2019 の場合、形式は `1808 (xxxxx.xxxxxx)`*5* 桁の 2 つのブロックで終わる形式です。たとえば、 `1808 (Build 10388.20027)`. 年と月は常に `1808`です。
 
-    - Office 2016 の場合、形式は `16.0.xxxx.xxxxx`*4* 桁の 2 つのブロックで終わる形式です。たとえば、 `16.0.5197.1000`.
-    - Office 2019 の場合、形式は `1808 (xxxxx.xxxxxx)`*5* 桁の 2 つのブロックで終わる形式です。たとえば、 `1808 (Build 10388.20027)`. 年と月は常に `1808`です。
-
-|Office のバージョン
-|コンシューマーとコマーシャル|Edge WebView2 (Chromium ベース) がインストールされていますか?|ブラウザー|
-|:-----|:-----|:-----|:-----|:-----|
-|Office 2013 | かまいません |かまいません|Internet Explorer 11|
-|Office 2016| 商用 |かまいません|Internet Explorer 11|
-|Office 2019| 商用 |かまいません|Internet Explorer 11|
-|Office 2016 から Office 2019| コンシューマー |不要 |Microsoft Edge<sup>1、2 と</sup> 元の WebView (EdgeHTML)</br>Edge がインストールされていない場合は、Internet Explorer 11 が使用されます。|
-|Office 2016 から Office 2019|  コンシューマー |はい<sup>3</sup>|<sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース)|
-|Office 2021| かまいません |はい<sup>3</sup> |<sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース)|
+| Office のバージョン
+ | リテールとボリューム ライセンス | Edge WebView2 (Chromium ベース) がインストールされていますか? | ブラウザー |
+|:-----|:-----|:-----|:-----|
+| Office 2013 | かまいません | かまいません | Internet Explorer 11 |
+| Office 2016 | ボリューム ライセンス | かまいません | Internet Explorer 11 |
+| Office 2019 | ボリューム ライセンス | かまいません | Internet Explorer 11 |
+| Office 2016 から Office 2019 | 小売 | いいえ | Microsoft Edge<sup>1、2 と</sup> 元の WebView (EdgeHTML)</br>Edge がインストールされていない場合は、Internet Explorer 11 が使用されます。 |
+| Office 2016 から Office 2019 | 小売 | はい<sup>3</sup> | <sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース) |
+| Office 2021 | かまいません | はい<sup>3</sup> | <sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース) |
 
 <sup>1</sup> Microsoft Edge を使用すると、Windows ナレーター ("スクリーン リーダー" とも呼ばれます) が作業ウィンドウに開いたページでタグを読み取ります `<title>` 。 Internet Explorer 11 では、ナレーターは作業ウィンドウのタイトル バーを読み取ります。これは、アドインのマニフェストの値から **\<DisplayName\>** 取得されます。
 
@@ -76,7 +75,7 @@ Office 2016 または Office 2019 がコンシューマーか商用かを判断�
 
 <sup>3</sup> Windows 11より前の Windows バージョンでは、Office が埋め込むことができるように WebView2 コントロールをインストールする必要があります。 永続的なOffice 2021以降でインストールされますが、Microsoft Edge では自動的にインストールされません。 以前のバージョンの永続 Office をお持ちの場合は、 [Microsoft Edge WebView2 /Embed Web content ... でコントロールをインストールする手順を使用します。Microsoft Edge WebView2 を使用](https://developer.microsoft.com/microsoft-edge/webview2/)します。
 
-## <a name="microsoft-365-subscription-on-windows"></a>Windows 上の Microsoft 365 サブスクリプション
+## <a name="microsoft-365-subscription-office-on-windows"></a>Windows 上の Microsoft 365 サブスクリプション Office
 
 Windows 上のサブスクリプション Office の場合、使用されるブラウザーは、オペレーティング システム、Office バージョン、および Edge WebView2 (Chromium ベース) がインストールされているかどうかによって決まります。
 
@@ -84,10 +83,10 @@ Windows 上のサブスクリプション Office の場合、使用されるブ�
 |Edge WebView2 (Chromium ベース) がインストールされていますか?|ブラウザー|
 |:-----|:-----|:-----|:-----|
 |Windows 7 | Microsoft 365| かまいません | Internet Explorer 11|
-|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | 不要| Internet Explorer 11|
+|Windows 8.1、<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | いいえ| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| かまいません|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13530.20424 <sup>2</sup>| かまいません|Microsoft Edge<sup>1、3 と</sup> 元の WebView (EdgeHTML)|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| 不要 |Microsoft Edge<sup>1、3 と</sup> 元の WebView (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>ウィンドウ 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| いいえ |Microsoft Edge<sup>1、3 と</sup> 元の WebView (EdgeHTML)|
 |Windows 8.1<br>Windows 10、<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| はい<sup>4</sup>|  <sup>WebView2</sup> を使用した Microsoft Edge 1 (Chromium ベース) |
 
 <sup>1</sup> Microsoft Edge を使用すると、Windows ナレーター ("スクリーン リーダー" とも呼ばれます) が作業ウィンドウに開いたページでタグを読み取ります `<title>` 。 Internet Explorer 11 では、ナレーターは作業ウィンドウのタイトル バーを読み取ります。これは、アドインのマニフェストの値から **\<DisplayName\>** 取得されます。
@@ -133,7 +132,7 @@ Edge がブラウザーの場合、アドイン内の PDF ファイルとして 
 
 ## <a name="wip-protected-documents"></a>WIP で保護されたドキュメント
 
-[WIP で保護された](/windows/uwp/enterprise/wip-hub)ドキュメントで実行されているアドインは、**WebView2 (Chromium ベース) で Microsoft Edge を** 使用することはありません。 この記事の前半のセクションでは、Windows 上の Office および [Microsoft 365 サブスクリプション](#microsoft-365-subscription-on-windows)[の永続的なバージョン](#perpetual-versions-of-office-on-windows)のセクションで、Microsoft Edge を WebView2 **(Chromium ベース) で Microsoft Edge** の元の **WebView (EdgeHTML)** に置き換えます。後者が表示される場合はどこでもかまいません。
+[WIP で保護された](/windows/uwp/enterprise/wip-hub)ドキュメントで実行されているアドインは、**WebView2 (Chromium ベース) で Microsoft Edge を** 使用することはありません。 この記事の前半のセクションでは、Windows [版 Office](#perpetual-versions-of-office-on-windows) および [Windows 版 Microsoft 365 サブスクリプション Office](#microsoft-365-subscription-office-on-windows) のセクションで、**Microsoft Edge を WebView2 (Chromium ベース) の元の WebView (EdgeHTML)** に置 **き** 換えます。
 
 ドキュメントが WIP で保護されているかどうかを確認するには、次の手順に従います。
 

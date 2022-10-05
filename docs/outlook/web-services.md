@@ -1,34 +1,34 @@
 ---
 title: Outlook アドインから Exchange Web サービス (EWS) を使用する
 description: Outlook アドインが Exchange Web サービスに情報を要求する方法の例を示します。
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 94fff26fc7f9c16e2e385d6c44c128e4b03f968e
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958945"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467014"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Outlook アドインから Web サービスを呼び出す
 
-アドインは、Exchange Server 2013 が実行されているコンピューター、アドインの UI のソースの場所を提供するサーバー上で利用できる Web サービス、またはインターネット上で利用できる Web サービスから Exchange Web サービス (EWS) を使用できます。この記事では、Outlook アドインからどのように EWS の情報を要求できるかを示す例を説明します。
+Your add-in can use Exchange Web Services (EWS) from a computer that is running Exchange Server 2013, a web service that is available on the server that provides the source location for the add-in's UI, or a web service that is available on the Internet. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
-Web サービスを呼び出す方法は、Web サービスは配置された場所によって異なります。表 1 は、場所により異なる Web サービスを呼び出すさまざまな方法を示しています。
+The way that you call a web service varies based on where the web service is located. Table 1 lists the different ways that you can call a web service based on location.
 
 **表 1.Outlook アドインから web サービスを呼び出す方法**
 
 |**Web サービスの場所**|**Web サービスを呼び出す方法**|
 |:-----|:-----|
-|クライアント メールボックスをホストする Exchange サーバー|[mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して、アドインがサポートしている EWS 操作を呼び出します。また、メールボックスをホストしている Exchange サーバーも EWS を公開します。|
-|アドインの UI のソースの場所を提供する Web サーバー|標準の JavaScript の手法を使用して Web サービスを呼び出します。UI フレーム内の JavaScript コードは、UI を提供する Web サーバーのコンテキストで実行されます。そのため、クロスサイト スクリプト エラーを発生させることなく、そのサーバーで Web サービスを呼び出すことができます。|
-|上記以外の場所|UI のソースの場所を提供する Web サーバー上で、Web サービスのプロキシを作成します。プロキシを作成しないと、クロスサイト スクリプト エラーによってアドインを実行できなくなります。プロキシを作成する方法の 1 つは JSON/P を使用することです。詳細については、「 [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)」を参照してください。|
+|クライアント メールボックスをホストする Exchange サーバー|Use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to call EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
+|アドインの UI のソースの場所を提供する Web サーバー|Call the web service by using standard JavaScript techniques. The JavaScript code in the UI frame runs in the context of the web server that provides the UI. Therefore, it can call web services on that server without causing a cross-site scripting error.|
+|上記以外の場所|Create a proxy for the web service on the web server that provides the source location for the UI. If you do not provide a proxy, cross-site scripting errors will prevent your add-in from running. One way to provide a proxy is by using JSON/P. For more information, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>makeEwsRequestAsync メソッドを使用して EWS 操作にアクセスする
 
 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して、ユーザーのメールボックスをホストしている Exchange サーバーに EWS 要求を行うことができます。
 
-EWS は、Exchange サーバーでの種々の操作をサポートしています。たとえば、アイテム レベルの操作としては、アイテムのコピー、検索、更新、または送信などがあり、フォルダー レベルの操作としては、フォルダーの作成、取得、または更新などがあります。EWS 操作を実行するには、その操作の XML SOAP 要求を作成します。操作が終了すると、その操作に関係するデータが含まれた XML SOAP 応答を受信します。EWS SOAP の要求と応答は、Messages.xsd ファイルで定義されているスキーマに従います。Messages.xsd ファイルは、他の EWS スキーマ ファイルと同様、EWS をホストしている IIS 仮想ディレクトリに配置されています。
+EWS supports different operations on an Exchange server; for example, item-level operations to copy, find, update, or send an item, and folder-level operations to create, get, or update a folder. To perform an EWS operation, create an XML SOAP request for that operation. When the operation finishes, you get an XML SOAP response that contains data that is relevant to the operation. EWS SOAP requests and responses follow the schema defined in the Messages.xsd file. Like other EWS schema files, the Message.xsd file is located in the IIS virtual directory that hosts EWS.
 
 メソッドを `makeEwsRequestAsync` 使用して EWS 操作を開始するには、次を指定します。
 
@@ -154,7 +154,7 @@ Outlook アドインは、メソッドを使用して EWS で使用できる操�
 
 1. 必要に応じて EWS 操作の結果を使用します。
 
-次の表は、アドインがサポートしている EWS 操作を示しています。SOAP の要求と応答の例を表示するには、各操作のリンクを選択します。EWS 操作の詳細については、「 [Exchange での EWS の操作](/exchange/client-developer/web-service-reference/ews-operations-in-exchange)」を参照してください。
+The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
 **表 2サポートされている EWS 操作**
 
@@ -199,7 +199,12 @@ Outlook アドインは、メソッドを使用して EWS で使用できる操�
 > [!NOTE]
 > サーバー管理者は、メソッドで EWS 要求を行うために、[New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) または [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) コマンドレットを使用して`true`、クライアント アクセス サーバー EWS ディレクトリで `makeEwsRequestAsync` _OAuthAuthentication_ パラメーターを設定する必要があります。
 
-アドインで、メソッドを `ReadWriteMailbox` 使用 `makeEwsRequestAsync` するには、アドイン マニフェストでアクセス許可を指定する必要があります。 アクセス許可の`ReadWriteMailbox`使用については、「[Outlook アドイン](understanding-outlook-add-in-permissions.md)のアクセス許可について」の [ReadWriteMailbox アクセス許可](understanding-outlook-add-in-permissions.md#readwritemailbox-permission)に関するセクションを参照してください。
+このメソッドを `makeEwsRequestAsync` 使用するには、アドインでマニフェストの **読み取り/書き込みメールボックス** のアクセス許可を要求する必要があります。 マークアップは、マニフェストの種類によって異なります。
+
+- **XML マニフェスト**: 要素を **\<Permissions\>** **ReadWriteMailbox** に設定します。
+- **Teams マニフェスト (プレビュー)**: "authorization.permissions.resourceSpecific" 配列内のオブジェクトの "name" プロパティを "Mailbox.ReadWrite.User" に設定します。
+
+**読み取り/書き込みメールボックス** のアクセス許可の使用については、「[メールボックスの読み取り/書き込みアクセス許可](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

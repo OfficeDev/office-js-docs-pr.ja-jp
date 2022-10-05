@@ -1,25 +1,25 @@
 ---
 title: 新規作成フォーム用の Outlook アドインを作成する
 description: 新規作成フォーム用の Outlook アドインのシナリオと機能について説明します。
-ms.date: 02/09/2021
+ms.date: 10/03/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: ef81b21eaa0bc63a5bf38757cb188e8850ade443
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484002"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467252"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>新規作成フォーム用の Outlook アドインを作成する
 
-Office アドイン マニフェストのスキーマのバージョン 1.1 と Office.js の v1.1 から、新規作成フォームでアクティブ化される Outlook アドインである、新規作成アドインを作成できるようになりました。閲覧アドイン (ユーザーがメッセージや予定を表示するとき閲覧モードでアクティブ化される Outlook アドイン) とは対照的に、新規作成アドインは以下のユーザー シナリオで使用できます。
+作成アドインを作成できます。これは、作成フォームでアクティブ化された Outlook アドインです。 読み取りアドイン (ユーザーがメッセージまたは予定を表示しているときに読み取りモードでアクティブ化される Outlook アドイン) とは対照的に、次のユーザー シナリオでは作成アドインを使用できます。
 
 - 新しいメッセージ、会議出席依頼または予定を新規作成フォームで作成している。
 
 - 既存の予定またはユーザーが開催者になっている会議アイテムを表示または編集している。
 
    > [!NOTE]
-   > ユーザーが Outlook 2013 および Exchange 2013 の RTM リリースを使用していて、ユーザー別の会議アイテムを表示している場合は、使用可能な閲覧アドインを検索できます。Office 2013 SP1 リリース以降では、同じシナリオにおいて作成アドインのみをアクティブ化して使用できるような変更が行われています。
+   > If the user is on the RTM release of Outlook 2013 and Exchange 2013 and is viewing a meeting item organized by the user, the user can find read add-ins available. Starting in the Office 2013 SP1 release, there's a change such that in the same scenario, only compose add-ins can activate and be available.
 
 - インライン応答メッセージを作成しているか、別の新規作成フォームでメッセージに返信している。
 
@@ -29,7 +29,7 @@ Office アドイン マニフェストのスキーマのバージョン 1.1 と 
 
 - 会議出席依頼や会議アイテムを転送するか、それらに返信している。
 
-これらの新規作成シナリオのそれぞれで、アドインによって定義されているアドイン コマンド ボタンが表示されます。アドイン コマンドが実装されていない古いアドインの場合は、ユーザーはリボンの **[Office アドイン]** を選択してアドイン選択ウィンドウを開いてから、新規作成アドインを選択して開始することができます。次の図は、新規作成フォームのアドイン コマンドを示しています。
+In each of these compose scenarios, any add-in command buttons defined by the add-in are shown. For older add-ins that do not implement add-in commands, users can choose **Office Add-ins** in the ribbon to open the add-in selection pane, and then choose and start a compose add-in. The following figure shows add-in commands in a compose form.
 
 ![アドイン コマンドが含まれた Outlook 作成フォームが表示されています。](../images/compose-form-commands.png)
 

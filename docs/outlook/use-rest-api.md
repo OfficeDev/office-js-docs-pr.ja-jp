@@ -1,18 +1,18 @@
 ---
 title: Outlook アドインからの Outlook REST API の使用
 description: Outlook アドインから Outlook REST API を使用して、アクセス トークンを取得する方法について説明します。
-ms.date: 09/02/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b460dbd150ec4806c562cf0fb2bc6e920beaa4c5
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 9f62b2514f05341531a826c29e18c593a590fca0
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857551"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467217"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Outlook アドインからの Outlook REST API の使用
 
-[Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 名前空間は、メッセージや予定の多くの共通フィールドへのアクセスを提供します。ただし、シナリオによっては、名前空間によって公開されないデータにアドインがアクセスする必要が生じる可能性があります。たとえば、アドインは外部アプリによって設定されるカスタム プロパティを使用する場合があります。あるいは、同じ送信者からのメッセージをユーザーのメールボックスから検索する必要があります。これらのシナリオでは、[Outlook REST API](/outlook/rest) を使用して情報を取得する方法が推奨されています。
+The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
 
 > [!IMPORTANT]
 > **Outlook REST API は非推奨です**
@@ -25,15 +25,16 @@ ms.locfileid: "67857551"
 
 ## <a name="get-an-access-token"></a>アクセス トークンを取得する
 
-Outlook REST API では、`Authorization` ヘッダーにベアラー トークンが必要です。通常、アプリは OAuth2 フローを使用してトークンを取得します。ただし、アドインは、メールボックス要件セット 1.5 で導入されている新しい [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用することにより、OAuth2 を実装せずにトークンを取得できます。
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
 
 `isRest` オプションを `true` に設定することにより、REST API と互換性があるトークンを要求できます。
 
 ### <a name="add-in-permissions-and-token-scope"></a>アドインのアクセス許可とトークンの範囲
 
-REST API を経由してアドインが必要とするアクセスのレベルを考慮することが重要です。ほとんどの場合、`getCallbackTokenAsync` によって返されるトークンは、現在の項目への読み取り専用のアクセスのみを提供します。このことは、アドインがそのマニフェストに `ReadWriteItem` アクセス許可レベルを指定する場合にも当てはまります。
+REST API を経由してアドインが必要とするアクセスのレベルを考慮することが重要です。 ほとんどの場合、`getCallbackTokenAsync` によって返されるトークンは、現在の項目への読み取り専用のアクセスのみを提供します。 これは、アドインがマニフェストで [読み取り/書き込み項目のアクセス許可](understanding-outlook-add-in-permissions.md#readwrite-item-permission) レベルを指定している場合でも当てはまります。
 
-現在の項目またはユーザーのメールボックス内のその他の項目への書き込みアクセスがアドインに必要な場合、アドインがそのマニフェストに `ReadWriteMailbox` アクセス許可レベルを指定する必要があります。その場合、返されるトークンに、ユーザーのメッセージ、イベント、および連絡先に対する読み取り/書き込みアクセス権限が含まれます。
+アドインでユーザーのメールボックス内の現在のアイテムまたはその他のアイテムへの書き込みアクセス権が必要な場合は、アドインで [読み取り/書き込みメールボックスのアクセス許可](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission)を指定する必要があります。
+そのマニフェストのレベル。 その場合、返されるトークンに、ユーザーのメッセージ、イベント、および連絡先に対する読み取り/書き込みアクセス権限が含まれます。
 
 ### <a name="example"></a>例
 
@@ -79,7 +80,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>REST API URL を取得する
 
-REST API を呼び出すためにアドインで必要な情報の最終部分は、API 要求の送信に使用するホスト名です。この情報は [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) プロパティにあります。
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property.
 
 ### <a name="example"></a>例
 

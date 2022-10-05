@@ -4,12 +4,12 @@ description: Office JS API を使用して単純な Word 作業ウィンドウ �
 ms.date: 06/10/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: cf16287aa7bc52b9a716ca07db3b86a9ec5ff22c
-ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
-ms.translationtype: HT
+ms.openlocfilehash: b0d60a9b86847a968efa82eaf556af107f21f390
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "66789116"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467266"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>最初の Word の作業ウィンドウ アドインを作成する
 
@@ -84,7 +84,7 @@ ms.locfileid: "66789116"
 
 ### <a name="next-steps"></a>次の手順
 
-おめでとうございます! これで Word 作業ウィンドウ アドインを作成できました。次に、Word アドインの機能の詳細説明と、より複雑なアドインを作成する方法について、「[Word アドインのチュートリアル](../tutorials/word-tutorial.md)」をご覧ください。
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -100,7 +100,7 @@ ms.locfileid: "66789116"
 
 3. プロジェクトに名前を付けて、[**作成**] を選択します。
 
-4. Visual Studio によってソリューションとその 2 つのプロジェクトが作成され、**ソリューション エクスプローラー** に表示されます。**Home.html** ファイルが Visual Studio で開かれます。
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Visual Studio ソリューションについて理解する
 
@@ -108,7 +108,7 @@ ms.locfileid: "66789116"
 
 ### <a name="update-the-code"></a>コードを更新する
 
-1. **Home.html** では、アドインの作業ウィンドウにレンダリングされる HTML を指定します。 **Home.html** で、`<body>` 要素を次のマークアップに置き換えて、ファイルを保存します。
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -134,7 +134,7 @@ ms.locfileid: "66789116"
     </body>
     ```
 
-2. Web アプリケーション プロジェクトのルートにあるファイル **Home.js** を開きます。 このファイルは、アドイン用のスクリプトを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -234,7 +234,7 @@ ms.locfileid: "66789116"
     })();
     ```
 
-3. Web アプリケーション プロジェクトのルートにあるファイル **Home.css** を開きます。 このファイルは、アドイン用のユーザー設定のスタイルを指定します。 すべての内容を次のコードに置き換え、ファイルを保存します。
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -265,13 +265,13 @@ ms.locfileid: "66789116"
 
 ### <a name="update-the-manifest"></a>マニフェストを更新する
 
-1. アドイン プロジェクト内の XML マニフェスト ファイルを開きます。このファイルは、アドインの設定と機能を定義します。
+1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. `ProviderName` 要素にはプレースホルダー値が含まれています。 それを自分の名前に置き換えます。
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. `DefaultValue` 要素の `DisplayName` 属性にはプレースホルダー値が含まれています。 これは、**My Office Add-in** に置き換えてください。
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. `DefaultValue` 要素の `Description` 属性にはプレースホルダー値が含まれています。 これは、**A task pane add-in for Word** に置き換えてください。
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. ファイルを保存します。
 
@@ -287,9 +287,9 @@ ms.locfileid: "66789116"
 
 ### <a name="try-it-out"></a>試してみる
 
-1. Visual Studio を使用して、**F5** キーを押すか、**[デバッグ]** > **[デバッグの開始]** を選択して、新しく作成した Word アドインをテストし、リボンに表示された **[作業ウィンドウのアドインを表示する]** ボタンを使用して Word を起動します。 アドインは IIS でローカルにホストされます。
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Microsoft 365 バージョンではなく、パッケージ版の Office を使用している場合、カスタム ボタンはサポートされていません。 代わりに、作業ウィンドウがそのまま開きます)。
+2. Word で **[ホーム]** タブを選択し、リボンの **[作業ウィンドウの表示]** ボタンをクリックして、アドインの作業ウィンドウを開きます。 (Microsoft 365 バージョンまたはリテール永続バージョンではなく、ボリューム ライセンスの永続バージョンの Office を使用している場合、カスタム ボタンはサポートされません。 代わりに、作業ウィンドウがそのまま開きます)。
 
     ![[作業ウィンドウの表示] ボタンが強調表示されている Word アプリケーションのスクリーンショット。](../images/word-quickstart-addin-0.png)
 

@@ -3,27 +3,27 @@ title: Internet Explorer 11 をサポート
 description: アドインで Internet Explorer 11 および ES5 Javascript をサポートする方法について説明します。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 6d78083a23a660fc5d16ff1ad6e654ce02a58d25
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136426"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466888"
 ---
 # <a name="support-internet-explorer-11"></a>Internet Explorer 11 をサポート
 
 > [!IMPORTANT]
 > **Office アドインで引き続き使用される Internet Explorer**
 >
-> Office 2019 までの 1 回限りの購入バージョンなど、一部のプラットフォームとOffice バージョンの組み合わせでは、Office アドイン[で使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
+> Office 2019 を通じて 1 回限りの購入バージョンを含む一部のプラットフォームと Office バージョンの組み合わせでは、Office [アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、Internet Explorer 11 に付属する Web ビュー コントロールを引き続き使用してアドインをホストします。Internet Explorer Webview でアドインを起動したときにアドインのユーザーに正常なエラー メッセージを提供することで、少なくとも最小限の方法でこれらの組み合わせを引き続きサポートすることをお勧めします (ただし、必要ありません)。 次の点に注意してください。
 >
 > - Internet Explorer でOffice on the webが開かなくなりました。 その結果、[AppSource は](/office/dev/store/submit-to-appsource-via-partner-center)、ブラウザーとして Internet Explorer を使用してOffice on the webでアドインをテストしなくなりました。
-> - AppSource は引き続き Internet Explorer を使用するプラットフォームとOffice *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
+> - AppSource は引き続き Internet Explorer を使用するプラットフォームと Office *デスクトップ* バージョンの組み合わせをテストしますが、アドインが Internet Explorer をサポートしていない場合にのみ警告が発行されます。アドインは AppSource によって拒否されません。
 > - [Script Lab ツール](../overview/explore-with-script-lab.md)は Internet Explorer をサポートしなくなりました。
 
-Office アドインは、Office on the webで実行するときに IFrame 内に表示される Web アプリケーションです。 Office アドインは、Mac 上のWindowsまたはOfficeでOfficeで実行するときに、埋め込みブラウザー コントロールを使用して表示されます。 埋め込みブラウザー コントロールは、オペレーティング システムまたはユーザーのコンピューターにインストールされているブラウザーによって提供されます。
+Office アドインは、Office on the webで実行するときに IFrame 内に表示される Web アプリケーションです。 Office アドインは、Office on Windows または Office on the Mac で実行するときに、埋め込みブラウザー コントロールを使用して表示されます。 埋め込みブラウザー コントロールは、オペレーティング システムまたはユーザーのコンピューターにインストールされているブラウザーによって提供されます。
 
-以前のバージョンのWindowsとOfficeをサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 IE11 ベースのブラウザー コントロールを使用するWindowsとOfficeの組み合わせについては、「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
+以前のバージョンの Windows と Office をサポートする予定の場合、アドインは Internet Explorer 11 (IE11) に基づく埋め込み可能なブラウザー コントロールで動作する必要があります。 Ie11 ベースのブラウザー コントロールを使用する Windows と Office の組み合わせについては、「 [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
 > [!IMPORTANT]
 > Internet Explorer 11 では、メディア、レコーディング、場所などの一部の HTML5 機能はサポートされていません。 アドインが Internet Explorer 11 をサポートする必要がある場合は、これらのサポートされていない機能を回避するためにアドインを設計するか、アドインで Internet Explorer がいつ使用されているかを検出し、サポートされていない機能を使用しない代替エクスペリエンスを提供する必要があります。 詳細については、「 [Internet Explorer でアドインが実行されているかどうかを実行時に判断](#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)する」を参照してください。
@@ -41,10 +41,10 @@ TypeScript または最新の JavaScript でコードを記述し、ビルド時
 - [バベル](https://babeljs.io/)
 - [Tsc](https://www.typescriptlang.org/index.html)
 
-アドイン プロジェクトでの transpiler のインストールと構成については、どちらかのドキュメントを参照してください。 [Grunt](https://gruntjs.com/) や [WebPack](https://webpack.js.org/) などのタスク ランナーを使用して、トランスパイルを自動化することをお勧めします。 tsc を使用するサンプル アドインについては、「[Microsoft Graph ReactアドインOffice](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)参照してください。 バベルを使用するサンプルについては、「[オフライン Storage アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin)」を参照してください。
+アドイン プロジェクトでの transpiler のインストールと構成については、どちらかのドキュメントを参照してください。 [Grunt](https://gruntjs.com/) や [WebPack](https://webpack.js.org/) などのタスク ランナーを使用して、トランスパイルを自動化することをお勧めします。 tsc を使用するサンプル アドインについては、「[Office アドイン Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)」を参照してください。 バベルを使用するサンプルについては、「 [オフライン ストレージ アドイン](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin)」を参照してください。
 
 > [!NOTE]
-> Visual Studio (Visual Studio コードではない) を使用している場合は、おそらく tsc を使用するのが最も簡単です。 nuget パッケージを使用して、サポートをインストールできます。 詳細については、[Visual Studio 2019 の JavaScript と TypeScript を参照してください](/visualstudio/javascript/javascript-in-vs-2019)。 Visual Studioでバベルを使用するには、ビルド スクリプトを作成するか、[WebPack タスク](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ランナーや [NPM](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner) タスク ランナーなどのツールを使用してVisual Studioでタスク ランナー エクスプローラーを使用します。
+> Visual Studio Code ではなく Visual Studio を使用している場合は、おそらく tsc が最も簡単に使用できます。 nuget パッケージを使用して、サポートをインストールできます。 詳細については、 [Visual Studio 2019 の JavaScript と TypeScript に関するページを参照してください](/visualstudio/javascript/javascript-in-vs-2019)。 Visual Studio でバベルを使用するには、ビルド スクリプトを作成するか、 [WebPack タスク](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ランナーや [NPM](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner) タスク ランナーなどのツールを使用して Visual Studio のタスク ランナー エクスプローラーを使用します。
 
 ### <a name="use-a-polyfill"></a>ポリフィルを使用する
 
@@ -52,7 +52,7 @@ TypeScript または最新の JavaScript でコードを記述し、ビルド時
 
 ポリフィル ライブラリを使用するには、他の JavaScript ファイルまたはモジュールと同様に読み込みます。 たとえば、アドインのホーム ページ HTML ファイル (たとえば`<script src="/js/core-js.js"></script>`) でタグを使用`<script>``import`したり、JavaScript ファイル内のステートメント (たとえば、 `import 'core-js';` JavaScript エンジンにこのような `startsWith`メソッドが表示されると、最初にその名前のメソッドが言語に組み込まれているかどうかを確認します。 存在する場合は、ネイティブ メソッドを呼び出します。 メソッドが組み込まれていない場合にのみ、エンジンは読み込まれたすべてのファイルを検索します。 そのため、ネイティブ バージョンをサポートするブラウザーでは、ポリフィルされたバージョンは使用されません。
 
-core-js ライブラリ全体をインポートすると、すべての core-js 機能がインポートされます。 また、Office アドインで必要なポリフィルのみをインポートすることもできます。 これを行う方法については、 [CommonJS API を](https://github.com/zloirock/core-js#commonjs-api)参照してください。 core-js ライブラリには、必要なほとんどのポリフィルがあります。 core-js ドキュメントの [「Missing Polyfills](https://github.com/zloirock/core-js#missing-polyfills) 」セクションで詳しく説明されている例外がいくつかあります。 たとえば、サポートされていません `fetch`が、 [フェッチ](https://github.com/github/fetch) ポリフィルを使用できます。
+core-js ライブラリ全体をインポートすると、すべての core-js 機能がインポートされます。 Office アドインで必要なポリフィルのみをインポートすることもできます。 これを行う方法については、 [CommonJS API を](https://github.com/zloirock/core-js#commonjs-api)参照してください。 core-js ライブラリには、必要なほとんどのポリフィルがあります。 core-js ドキュメントの [「Missing Polyfills](https://github.com/zloirock/core-js#missing-polyfills) 」セクションで詳しく説明されている例外がいくつかあります。 たとえば、サポートされていません `fetch`が、 [フェッチ](https://github.com/github/fetch) ポリフィルを使用できます。
 
 core.jsを使用するサンプル アドインについては、「 [Word アドイン Angular2 StyleChecker」を](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)参照してください。
 
@@ -72,8 +72,8 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
     //     features that are not supported in IE.
     //  2. Enable the add-in to gracefully fail by putting a message in the UI that
     //     says something similar to: 
-    //      "This add-in won't run in your version of Office. Please upgrade to 
-    //      either one-time purchase Office 2021 or to a Microsoft 365 account."          
+    //      "This add-in won't run in your version of Office. Please upgrade 
+    //      either to perpetual Office 2021 or to a Microsoft 365 account."          
 
 }
 ```

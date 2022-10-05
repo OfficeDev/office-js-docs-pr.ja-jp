@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの API
 description: Outlook アドインの API を参照して、Outlook アドインにアクセス許可を宣言する方法について説明します。
-ms.date: 07/26/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bd0bcdd3dfac6def9443b09d9797bfd0667c3b3d
-ms.sourcegitcommit: 15714ef1118083032e640413ede69a162c43daed
+ms.openlocfilehash: 69043646add5e32502efb0d2a5b1259667e564d9
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "67037816"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467077"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook アドインの API
 
@@ -24,7 +24,7 @@ Outlook アドインで API を使用するには、Office.js ライブラリの
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-新しい API が追加されても、Office.js への URL は同じままになります。URL 内のバージョンは、既存の API の動作を分割する場合にのみ変更されます。
+As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
 > [!IMPORTANT]
 > 任意の Office クライアント アプリケーション用のアドインを開発する場合は、ページのセクション内 `<head>` から Office JavaScript API を参照します。 これにより、あらゆる body 要素の前に API が完全に初期化されます。
@@ -33,9 +33,9 @@ Outlook アドインで API を使用するには、Office.js ライブラリの
 
 すべての Outlook API は [、メールボックス要件セット](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)に属しています。 `Mailbox` の要件セットにはバージョンがあり、リリースされる新しい API の各セットは、新しいバージョンのセットに属しています。 最新の API セットがリリースされても、すべての Outlook クライアントがそれをサポートするわけではありませんが、ある Outlook クライアントが 1 つの要件セットのサポートを宣言した場合、その要件セットの中のすべての API がサポートされます。
 
-どの Outlook クライアントにアドインを表示するかを制御するには、最小の要件セットのバージョンをマニフェストで指定します。たとえば、要件セットのバージョン 1.3 を指定すると、最小バージョンの 1.3 をサポートしていない Outlook クライアントにはアドインが表示されなくなります。
+To control which Outlook clients the add-in appears in, specify a minimum requirement set version in the manifest. For example, if you specify requirement set version 1.3, the add-in will not show up in any Outlook client that doesn't support a minimum version of 1.3.
 
-要件セットを指定しても、そのバージョンの API にアドインを限定することにはなりません。要件セット v1.1 を指定しているアドインが、v1.3 をサポートする Outlook クライアントで実行されると、そのアドインは v1.3 の API を使用できます。要件セットでは、どの Outlook クライアントにアドインを表示するかのみを制御します。
+Specifying a requirement set doesn't limit your add-in to the APIs in that version. If the add-in specifies requirement set v1.1 but is running in an Outlook client that supports v1.3, the add-in can still use v1.3 APIs. The requirement set only controls which Outlook clients the add-in appears in.
 
 マニフェストで指定した要件セットよりも上位の要件セットの API が使用できるかどうかを確認する場合は、標準の JavaScript を使用できます。
 
@@ -57,26 +57,9 @@ if (item.somePropertyOrFunction) {
 
 ## <a name="permissions"></a>アクセス許可
 
-アドインには、そのアドインが必要とする API を使用するための適切なアクセス許可が必要になります。 一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。 アクセス許可はマニフェストで宣言されます。 マークアップは、マニフェストの種類によって異なります。
+アドインには、そのアドインが必要とする API を使用するための適切なアクセス許可が必要になります。 一般的には、アドインに必要な最低限のアクセス許可を指定する必要があります。
 
-- **XML マニフェスト**: 要素を使用します **\<Permissions\>** 。
-- **Teams マニフェスト (プレビュー)**: "authorization.permissions.resourceSpecific" プロパティを使用します。 
-
-アクセス許可には、4 つのレベルがあります。 詳細については、「[Outlook アドインのアクセス許可モデルを理解する](understanding-outlook-add-in-permissions.md)」を参照してください。
-
-<br/>
-
-|権限レベル</br>XML マニフェスト名|権限レベル</br>Teams マニフェスト名|説明|
-|:-----|:-----|:-----|
-| **制限付き** | **MailboxItem.Restricted.User** | エンティティは使用できますが、正規表現は使用できません。 |
-| **ReadItem** | **MailboxItem.Read.User** | **制限付き** で許可されているものに加えて、以下のものが許可されます。<ul><li>正規表現</li><li>Outlook アドイン API の読み取りアクセス</li><li>アイテムのプロパティとコールバック トークンの取得</li></ul> |
-| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | **ReadItem** で許可される内容に加えて、次のことが可能です。<ul><li>`makeEwsRequestAsync` を除いた、完全な Outlook アドイン API のアクセス</li><li>アイテムのプロパティの設定</li></ul> |
-| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | **ReadWriteItem** で許可される内容に加えて、次のことが可能です。<ul><li>アイテムやフォルダーの作成、読み取り、書き込み</li><li>アイテムの送信</li><li>[makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) の呼び出し</li></ul> |
-
-> [!NOTE]
-> 追加の送信機能を使用するアドインに必要な補助アクセス許可があります。 XML マニフェストでは、 [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 要素でアクセス許可を指定します。 詳細については、「 [Outlook アドインに追加の送信を実装](append-on-send.md)する」を参照してください。 Teams マニフェスト (プレビュー) では、"authorization.permissions.resourceSpecific" 配列の追加オブジェクトに **Mailbox.AppendOnSend.User** という名前でこのアクセス許可を指定します。
-
-詳細については、「[Outlook アドインのマニフェスト](manifests.md)」を参照してください。 セキュリティの問題については、「 [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)」を参照してください。
+アクセス許可には 4 つのレベルがあります。 **制限付き**、 **読み取りアイテム**、 **読み取り/書き込みアイテム**、 **および読み取り/書き込みメールボックス**。 詳細については、以下をご覧ください。 詳細については、「[Outlook アドインのアクセス許可モデルを理解する](understanding-outlook-add-in-permissions.md)」を参照してください。
 
 ## <a name="mailbox-object"></a>Mailbox オブジェクト
 
@@ -86,4 +69,5 @@ if (item.somePropertyOrFunction) {
 
 - [Outlook アドインのマニフェスト](manifests.md)
 - [Outlook API 要件セットについて](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
+- [Outlook アドインのアクセス許可について](understanding-outlook-add-in-permissions.md)。
 - [Office アドインのプライバシーとセキュリティ](../concepts/privacy-and-security.md)

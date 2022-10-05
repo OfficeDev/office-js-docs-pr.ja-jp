@@ -3,12 +3,12 @@ title: Office アドインのTeams マニフェスト (プレビュー)
 description: プレビュー JSON マニフェストの概要を確認します。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: c0b9b2432d29a1a02fb23fad506a05dfe4f41430
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092883"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466902"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Office アドインのTeams マニフェスト (プレビュー)
 
@@ -19,11 +19,11 @@ Microsoft は、Microsoft 365開発者プラットフォームについて多く
 これらの目標に向けた重要な第一歩を踏み出しました。これにより、Teams JSON マニフェストのバージョンを使用して、Windows でのみ実行される Outlook アドインを作成できます。
 
 > [!NOTE]
-> 新しいマニフェストはプレビューに使用でき、フィードバックに基づいて変更される可能性があります。 経験豊富なアドイン開発者には、それを試してみることをお勧めします。 プレビュー マニフェストは、運用環境のアドインでは使用しないでください。 
+> 新しいマニフェストはプレビューに使用でき、フィードバックに基づいて変更される可能性があります。 経験豊富なアドイン開発者には、それを試してみることをお勧めします。 プレビュー マニフェストは、運用環境のアドインでは使用しないでください。
 
 早期プレビュー期間中は、次の制限事項が適用されます。
 
-- Teams マニフェストのプレビュー バージョンでは、Outlook アドインのみがサポートされ、Windows のサブスクリプション Office でのみサポートされます。 Excel、PowerPoint、Word へのサポートの拡張に取り組んでいます。
+- Teams マニフェストのプレビュー バージョンでは、Outlook アドインのみがサポートされ、Windows 上の Microsoft 365 サブスクリプション Office でのみサポートされます。 Excel、PowerPoint、Word へのサポートの拡張に取り組んでいます。
 - アドインと Teams アプリ (Teams 個人用タブ、その他のMicrosoft 365拡張機能の種類など) を組み合わせてサイドロードすることは、まだできません。 今後数か月間、これらのシナリオをサポートするためにプレビューを拡張し続け、マニフェストをプレビュー形式に更新するための追加ツールを提供します。
 
 > [!TIP]

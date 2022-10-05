@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインで共有フォルダーと共有メールボックスのシナリオを有効にする
 description: 共有フォルダー (a.k.a) のアドイン サポートを構成する方法について説明します。 委任アクセス) と共有メールボックス。
-ms.date: 09/12/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 707be0fb71931b80314750b435dca18d23247a23
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092925"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467168"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Outlook アドインで共有フォルダーと共有メールボックスのシナリオを有効にする
 
@@ -58,7 +58,7 @@ Exchange サーバー管理者は、アクセスする一連のユーザーの�
 
 #### <a name="shared-mailboxes"></a>共有メールボックス
 
-Outlook アドインの共有メールボックスシナリオは、現在、最新のOutlook on the webではサポートされていません。
+Outlook アドインの共有メールボックスシナリオは、現在、最新のOutlook желедеではサポートされていません。
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -113,11 +113,18 @@ Outlook アドインの共有メールボックスシナリオは、現在、最
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、親`DesktopFormFactor`要素の下のマニフェストで [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 要素を設定する`true`必要があります。 現時点では、他のフォーム ファクターはサポートされていません。
+アドインで共有フォルダーと共有メールボックスのシナリオを有効にするには、マニフェストで必要なアクセス許可を有効にする必要があります。
 
-デリゲートからの REST 呼び出しをサポートするには、マニフェスト`ReadWriteMailbox`の [[アクセス許可]](/javascript/api/manifest/permissions) ノードを [ .
+まず、代理人からの REST 呼び出しをサポートするために、アドインは **読み取り/書き込みメールボックス** のアクセス許可を要求する必要があります。 マークアップは、マニフェストの種類によって異なります。
 
-次の例は、マニフェストの `SupportsSharedFolders` セクションに設定 `true` されている要素を示しています。
+- **XML マニフェスト**: 要素を **\<Permissions\>** **ReadWriteMailbox** に設定します。
+- **Teams マニフェスト (プレビュー)**: "authorization.permissions.resourceSpecific" 配列内のオブジェクトの "name" プロパティを "Mailbox.ReadWrite.User" に設定します。
+
+次に、共有フォルダーのサポートを有効にします。 マークアップは、マニフェストの種類によって異なります。
+
+# <a name="xml-manifest"></a>[XML マニフェスト](#tab/xmlmanifest)
+
+親要素の下のマニフェストで [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 要素を `true` 設定します `DesktopFormFactor`。 現時点では、他のフォーム ファクターはサポートされていません。
 
 ```XML
 ...
@@ -143,6 +150,26 @@ Outlook アドインの共有メールボックスシナリオは、現在、最
 </VersionOverrides>
 ...
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
+
+"authorization.permissions.resourceSpecific" 配列にオブジェクトを追加し、その "name" プロパティを "Mailbox.SharedFolder" に設定します。
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "Mailbox.SharedFolder",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
+---
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>代理人または共有メールボックス ユーザーとして操作を実行する
 
@@ -226,7 +253,7 @@ if (item.getSharedPropertiesAsync) {
 
 ### <a name="message-compose-mode"></a>メッセージ作成モード
 
-メッセージ作成モードでは、次の条件が満たされない限り、Outlook on the webまたは Windows では [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) はサポートされません。
+メッセージ作成モードでは、次の条件が満たされない限り、Outlook желедеまたは Windows では [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) はサポートされません。
 
 a. **アクセスの委任/共有フォルダー**
 
@@ -244,7 +271,12 @@ b. **共有メールボックス (Outlook on Windows にのみ適用)**
 
 ### <a name="rest-and-ews"></a>REST と EWS
 
-アドインは REST を使用でき、所有者のメールボックスまたは共有メールボックスへの REST アクセスを有効にするには `ReadWriteMailbox` 、アドインのアクセス許可を設定する必要があります(該当する場合)。 EWS はサポートされていません。
+アドインは REST を使用できます。 所有者のメールボックスまたは共有メールボックスへの REST アクセスを有効にするには、アドインがマニフェストで **読み取り/書き込みメールボックス** のアクセス許可を要求する必要があります。 マークアップは、マニフェストの種類によって異なります。
+
+- **XML マニフェスト**: 要素を **\<Permissions\>** **ReadWriteMailbox** に設定します。
+- **Teams マニフェスト (プレビュー)**: "authorization.permissions.resourceSpecific" 配列内のオブジェクトの "name" プロパティを "Mailbox.ReadWrite.User" に設定します。
+
+EWS はサポートされていません。
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>アドレス一覧から非表示になっているユーザーまたは共有メールボックス
 

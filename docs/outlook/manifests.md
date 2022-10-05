@@ -3,19 +3,19 @@ title: Outlook アドイン マニフェスト
 description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660285"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466979"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
-Outlook アドインは XML アドイン マニフェストと Web ページの 2 つのコンポーネントで構成されています。これらは Office アドイン (office.js) の JavaScript ライブラリでサポートされます。マニフェストは、アドインが Outlook クライアント間でどのように統合されるかを説明します。次に例を示します。
+An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
 
  > [!NOTE]
- > 次のサンプルの URL 値はすべて "https://appdemo.contoso.com" で始まります。この値はプレースホルダーであり、有効な実際のマニフェストでは、この部分には有効な HTTPS Web URL が入ります。
+ > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -227,7 +227,7 @@ Outlook アドインは XML アドイン マニフェストと Web ページの 
 
 ## <a name="schema-versions"></a>スキーマのバージョン
 
-すべての Outlook クライアントで最新の機能がサポートされているわけではありません。一部の Outlook ユーザーは前のバージョンの Outlook を使用していることがあります。スキーマのバージョンにより、開発者は下位互換性のあるアドインを作成することができます。その際、使用可能な場合には最新の機能を使用しますが、前のバージョンも引き続き機能します。
+Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
 マニフェスト内の **\<VersionOverrides\>** 要素はこの例です。 **\<VersionOverrides\>** 内で定義されたすべての要素は、マニフェストの他の部分にある同じ要素をオーバーライドします。 つまり、Outlook は、可能な場合は常に、**\<VersionOverrides\>** セクションにあるものを使用してアドインをセットアップします。 ただし、Outlook のバージョンが特定のバージョンの **\<VersionOverrides\>** をサポートしていない場合、Outlook はこれを無視して、マニフェストの残りの部分の情報のみを使用します。 
 
@@ -238,15 +238,15 @@ Outlook アドインは XML アドイン マニフェストと Web ページの 
 
 |バージョン|説明|
 |:-----|:-----|
-|v1.0|Office JavaScript API バージョン 1.0 をサポートします。Outlook アドインであれば、閲覧フォームがサポートされることになります。 |
+|v1.0|Supports version 1.0 of the Office JavaScript API. For Outlook add-ins, this supports read form. |
 |v1.1|JavaScript API for Office のバージョン 1.1 と **\<VersionOverrides\>** をサポートします。 Outlook アドインで、新規作成フォームもサポートされることになります。|
 |**\<VersionOverrides\>** 1.0|JavaScript API for Office の最新バージョンをサポートします。 アドイン コマンドをサポートします。|
-|**\<VersionOverrides\>** 1.1|Office JavaScript API の最新バージョンをサポートします。これは、アドイン コマンドをサポートし、[ピン留め可能な作業ウィンドウ](pinnable-taskpane.md)やモバイル アドインなどの、より新しい機能のサポートを追加します。|
+|**\<VersionOverrides\>** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
 
 この記事では、v1.1 マニフェストの要件を取り上げます。 アドイン マニフェストで **\<VersionOverrides\>** 要素を使用するとしても、**\<VersionOverrides\>** をサポートしない以前のクライアントでアドインが機能できるように 1.1 マニフェスト要素を組み込むことは重要です。
 
 > [!NOTE]
-> Outlook では、マニフェストの検証にスキーマを使用します。スキーマは、マニフェスト内の要素が特定の順序に従うことを要求します。要求されている順序に従わない要素が含まれていると、アドインをサイドロードするときにエラーが発生することがあります。[XML スキーマ定義 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) をダウンロードすると、要求されている順序に要素を並べてマニフェストを作成するのに役立ちます。
+> Outlook uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. You can download the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to help create your manifest with elements in the required order.
 
 ## <a name="root-element"></a>ルート要素
 
@@ -268,9 +268,9 @@ Outlook アドイン マニフェストのルート要素は **\<OfficeApp\>** �
 
 ## <a name="version"></a>バージョン
 
-これは、特定のアドインのバージョンです。開発者がマニフェストの一部を更新する場合、バージョンの番号も増やす必要があります。このようにすることで、新しいマニフェストがインストールされると、既存のマニフェストが上書きされ、ユーザーは新機能を使用できるようになります。このアドインがストアに送信されている場合は、新しいマニフェストをもう一度送信して検証する必要があります。承認されると、数時間以内に、このアドインのユーザーは更新された新しいマニフェストを自動的に使用できるようになります。
+This is the version of the specific add-in. If a developer updates something in the manifest, the version must be incremented as well. This way, when the new manifest is installed, it will overwrite the existing one and the user will get the new functionality. If this add-in was submitted to the store, the new manifest will have to be re-submitted and re-validated. Then, users of this add-in will get the new updated manifest automatically in a few hours, after it is approved.
 
-アドインに必要なアクセス許可が変更された場合、ユーザーは、アップグレードを行いアドインに再同意するように求められます。管理者が組織全体にこのアドインをインストール済みである場合、管理者がまず再同意する必要があります。それまでの間、ユーザーには引き続き古い機能が表示されます。
+If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will continue to see old functionality in the meantime.
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
@@ -379,7 +379,7 @@ Outlook アドインでは、次のように **\<Hosts\>** 要素を指定しま
 |Outlook クライアント|定義されたドメイン<br>AppDomainsで?|ブラウザーの動作|
 |---|---|---|
 |すべてのクライアント|はい|リンクがアドインの作業ウィンドウで開きます。|
-|Windows 用 Outlook 2016 (1 回限りの購入)<br>Windows 用 Outlook 2013|いいえ|リンクが Internet Explorer 11 で開きます。|
+|- Windows 上のOutlook 2016 (ボリューム ライセンス永続)<br>- Windows 上の Outlook 2013 (永続)|いいえ|リンクが Internet Explorer 11 で開きます。|
 |その他のクライアント|いいえ|リンクがユーザーの既定のブラウザーで開きます。|
 
 詳細については、「[アドイン ウィンドウで開くドメインの指定](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window)」を参照してください。
@@ -422,13 +422,13 @@ Outlook アドインでは、次のように **\<Hosts\>** 要素を指定しま
 
 ## <a name="next-steps-add-in-commands"></a>次の手順: アドイン コマンド
 
-基本のマニフェストを定義したら、 アドインのアドイン コマンドを定義します。アドイン コマンドは、リボン内にボタンを表示して、ユーザーがアドインを簡単かつ直感的な方法でアクティブ化できるようにします。詳細は、「[Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 アドイン コマンドを定義するアドインの例については、[command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo) をご覧ください。
 
 ## <a name="next-steps-add-mobile-support"></a>次の手順：モバイル サポートの追加
 
-オプションで、アドインは Outlook モバイルのサポートを追加できます。Outlook モバイルは、Windows と Mac において、Outlook と同じ方法でアドイン コマンドをサポートします。詳しくは、「[Outlook Mobile 用のアドイン コマンドのサポートを追加する](add-mobile-support.md)」をご覧ください。
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
 ## <a name="see-also"></a>関連項目
 

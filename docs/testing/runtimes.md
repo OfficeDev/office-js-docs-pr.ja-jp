@@ -1,37 +1,34 @@
 ---
 title: Office アドインのランタイム
 description: Office アドインで使用されるランタイムについて説明します。
-ms.date: 08/29/2022
+ms.date: 09/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d28f6db028d2f4c7036db51ccc5dbcc2144bdf3
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: c20845e6df6adfa2fa382f10e8c7f5de786aeab8
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616043"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467231"
 ---
 # <a name="runtimes-in-office-add-ins"></a>Office アドインのランタイム
 
-Office アドインは、Office に埋め込まれたランタイムで実行されます。 解釈される言語として、JavaScript は JavaScript エンジンで実行する必要があります。 シングルスレッドの同期言語である JavaScript には、同時実行のための固有の容量がありません。ただし、最新の JavaScript エンジンでは、ホスト オペレーティング システムから同時操作 (ネットワーク通信を含む) を要求し、応答として OS からデータを受信できます。 この種のエンジンにより、JavaScript は *効果的に* 非同期になります。 この記事では、この種のエンジンをランタイムと呼 *びます*。 [Node.js](https://nodejs.org) ブラウザーと最新のブラウザーは、このようなランタイムの例です。 
+Office アドインは、Office に埋め込まれたランタイムで実行されます。 解釈される言語として、JavaScript は JavaScript ランタイムで実行する必要があります。 [Node.js](https://nodejs.org) ブラウザーと最新のブラウザーは、このようなランタイムの例です。 
 
 ## <a name="types-of-runtimes"></a>ランタイムの種類
 
 Office アドインで使用されるランタイムには、次の 2 種類があります。
 
-- **JavaScript 専用ランタイム**: [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [Full CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、およびクライアント側のデータストレージのサポートを補完する JavaScript エンジン。 ( [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage) や Cookie はサポートされていません)。) 
+- **JavaScript 専用ランタイム**: [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [Full CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、およびクライアント側のデータストレージのサポートを補完する JavaScript エンジン。 [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)や Cookie はサポートされていません。
 - **ブラウザー ランタイム**: JavaScript 専用ランタイムのすべての機能が含まれており、 [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)、HTML を [レンダリングするレンダリング エンジン](https://developer.mozilla.org/docs/Glossary/Rendering_engine) 、Cookie のサポートが追加されます。
 
 これらの型の詳細については、この記事の後半で [JavaScript 専用ランタイム](#javascript-only-runtime) と [ブラウザー ランタイムを参照してください](#browser-runtime)。
 
 次の表は、アドインで使用されるランタイムの種類ごとに考えられる機能を示しています。 
 
-> [!NOTE]
-> 使用するランタイムの種類の選択は、Microsoft がいつでも変更できる実装の詳細です。 Office JavaScript ライブラリでは、特定の機能に対して常に同じ種類のランタイムが使用されるとは限りません。また、アドイン アーキテクチャでもこれを想定しないでください。
-
 | ランタイムの種類 | アドイン機能 |
 |:-----|:-----|
 | JavaScript のみ | Excel [カスタム関数](../excel/custom-functions-overview.md)</br>(ランタイムが[共有](#shared-runtime)されている場合、またはアドインがOffice on the webで実行されている場合を除く)</br></br>[Outlook イベント ベースのタスク](../outlook/autolaunch.md)</br>(アドインが Outlook on Windows で実行されている場合のみ)|
-| ブラウザー | [作業ウィンドウ](../design/task-pane-add-ins.md)</br></br>[ダイアログ](../develop/dialog-api-in-office-add-ins.md)</br></br>[function コマンド](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [カスタム関数](../excel/custom-functions-overview.md)</br>(ランタイムが[共有](#shared-runtime)されている場合、またはアドインがOffice on the webで実行されている場合)</br></br>[Outlook イベント ベースのタスク](../outlook/autolaunch.md)</br>(アドインが Outlook on Mac または Outlook on the webで実行されている場合)|
+| ブラウザー | [作業ウィンドウ](../design/task-pane-add-ins.md)</br></br>[ダイアログ](../develop/dialog-api-in-office-add-ins.md)</br></br>[function コマンド](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [カスタム関数](../excel/custom-functions-overview.md)</br>(ランタイムが[共有](#shared-runtime)されている場合、またはアドインがOffice on the webで実行されている場合)</br></br>[Outlook イベント ベースのタスク](../outlook/autolaunch.md)</br>(アドインが Outlook on Mac または Outlook желедеで実行されている場合)|
 
 次の表は、アドインのさまざまな可能な機能に使用されるランタイムの種類によって編成された同じ情報を示しています。
 
@@ -118,7 +115,7 @@ Excel、PowerPoint、および Word アドインの場合、ダイアログを�
 
 ## <a name="javascript-only-runtime"></a>JavaScript 専用ランタイム
 
-Office アドインで使用される JavaScript 専用ランタイムは、[React Native用に](https://reactnative.dev/)最初に作成されたオープンソース ランタイムの変更です。 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、[Full CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、[OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) のサポートを補完する JavaScript エンジンが含まれています。 レンダリング エンジンがなく、Cookie や [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)はサポートされていません。
+Office アドインで使用される JavaScript 専用ランタイムは、[React Native用に](https://reactnative.dev/)最初に作成されたオープンソース ランタイムの変更です。 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、[Full CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、[OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) のサポートを補完する JavaScript エンジンが含まれています。 レンダリング エンジンがなく、Cookie や [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)はサポートされていません。 
 
 この種類のランタイムは、カスタム関数が [ランタイムを共有](#shared-runtime)している場合を *除き*、Office on Windows の Outlook イベント ベースのタスクと Excel カスタム関数でのみ使用されます。 
 
@@ -135,7 +132,7 @@ JavaScript ランタイムでは、ブラウザー ランタイムよりも少�
 
 Office アドインは、Office が実行されているプラットフォーム (Web、Mac、または Windows) と、Windows と Office のバージョンとビルドに応じて、異なるブラウザーの種類のランタイムを使用します。 たとえば、ユーザーが FireFox ブラウザーでOffice on the webを実行している場合、Firefox ランタイムが使用されます。 ユーザーが Office on Mac を実行している場合は、Safari ランタイムが使用されます。 ユーザーが Windows で Office を実行している場合は、Windows と Office のバージョンに応じて、Edge または Internet Explorer がランタイムを提供します。 詳細については、 [Office アドインで使用されるブラウザーを参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。
 
-これらのランタイムはすべて HTML レンダリング エンジンを含み、 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [フル CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、 [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)、Cookie のサポートを提供します。 
+これらのランタイムはすべて HTML レンダリング エンジンを含み、 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [フル CORS (クロスオリジン リソース共有)](https://developer.mozilla.org/docs/Web/HTTP/CORS)、 [ローカル ストレージ](https://developer.mozilla.org/docs/Web/API/Window/localStorage)、Cookie のサポートを提供します。
 
 ブラウザーランタイムの有効期間は、実装する機能と、それが共有されているかどうかによって異なります。
 

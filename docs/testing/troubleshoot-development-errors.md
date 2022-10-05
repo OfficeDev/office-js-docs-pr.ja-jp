@@ -1,14 +1,14 @@
 ---
 title: Office アドインでの開発エラーのトラブルシューティング
 description: Office アドインの開発エラーのトラブルシューティング方法について説明します。
-ms.date: 07/28/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9271322bd37fece80decb527891a2f2faadce654
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423196"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467180"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Office アドインでの開発エラーのトラブルシューティング
 
@@ -90,8 +90,11 @@ myChart.id = "5";
 
 1. Visual Studio でプロジェクトを開きます。
 1. **ソリューション エクスプローラー** で、manifest.xml ファイルを開きます。 マニフェストは通常、ソリューションの下の最初のプロジェクトにあります。
-1. [ **ビュー** > **のプロパティ] ウィンドウ** (F4) を選択します。
-1. **[プロパティ] ウィンドウ** で省略記号 (...) を選択して **、XML スキーマ エディターを** 開きます。 ここでは、プロジェクトが使用するすべてのスキーマ ファイルの正確なフォルダーの場所を確認できます。
+1. **[ビュー** > **のプロパティ] ウィンドウ** を選択します (F4)。
+1. [ **プロパティ** ] ウィンドウに **XML ドキュメント** のプロパティが表示されるように、manifest.xmlでカーソルの選択を設定します。
+1. **[プロパティ**] ウィンドウで [**スキーマ**] プロパティを選択し、省略記号 (...) を選択して **XML スキーマ** エディターを開きます。 ここでは、プロジェクトが使用するすべてのスキーマ ファイルの正確なフォルダーの場所を確認できます。
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="XML ドキュメントのプロパティを示すプロパティ ウィンドウ。":::
 
 ### <a name="update-the-xsd-files"></a>XSD ファイルを更新する
 

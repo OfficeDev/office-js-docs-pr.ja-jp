@@ -1,18 +1,20 @@
 ---
 title: 正規表現アクティブ化ルールを使用してアドインを表示する
 description: Outlook コンテキスト アドインで正規表現アクティブ化ルールを使用する方法について説明します。
-ms.date: 08/19/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: ed2fbbfcf7bf55e04f4ec6f225e29fb43ec99639
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423315"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467091"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>正規表現アクティブ化ルールを使用して Outlook アドインを表示する
 
 メッセージの特定のフィールドで一致がある場合に[コンテキスト アドイン](contextual-outlook-add-ins.md)をアクティブ化するように正規表現ルールを指定します。 コンテキスト アドインは、読み取りモードでのみアクティブ化されます。 ユーザーがアイテムを作成している場合、Outlook はコンテキスト アドインをアクティブ化しません。 また、デジタル署名されたアイテムなど、Outlook でアドインがアクティブ化されないシナリオもあります。 詳細については、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 アドイン XML マニフェストでは、[ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ルールまたは [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ルールの一部として正規表現を指定することができます。 ルールは [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) 拡張点で指定されます。
 
@@ -144,7 +146,7 @@ Outlook では、クライアント コンピューターのブラウザーで�
 const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
 
-このオブジェクトには、複数の一致が配列要素として格納されます。次のコード例は、 `reg1` という名前の正規表現に一致するものを反復処理して、HTML として表示する文字列を作成する方法を示しています。
+Multiple matches are stored as array elements in that object. The following code example shows how to iterate over the matches for a regular expression named  `reg1` to build a string to display as HTML.
 
 ```js
 function initDialer()

@@ -5,38 +5,38 @@ ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0503a0cfae39e58c11fefc6cc87a239d7ecdbc05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: fd17728f840188fbedfdeba7d3ee8f97852d702a
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318813"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467259"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook アドインの概要
 
-Outlook アドインは、Web ベースのプラットフォームを使用してサードパーティ企業によって Outlook に組み込まれた統合機能です。Outlook アドインには次の 3 つの主な側面があります。
+Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
 
 - Windows と Mac 用のデスクトップ Outlook、Web 版 (Microsoft 365 と Outlook.com)、モバイル版すべてで機能する同じアドインとビジネス ロジック。
 - Outlook アドインは、マニフェスト (アドインが Outlook に統合する方法 (ボタンや作業ウィンドウなど) を説明する)、および JavaScript/HTML のコード (アドインの UI とビジネス ロジックを構成する) で構成される。
 - Outlook アドインは、[AppSource](https://appsource.microsoft.com) から入手するか、エンドユーザーまたは管理者が[サイドロード](sideload-outlook-add-ins-for-testing.md)することができます。
 
-Outlook アドインは、Windows で実行する Outlook に固有の古い統合である COM アドインや VSTO アドインとは異なります。COM アドインとは異なり、Outlook アドインには、ユーザーのデバイスや Outlook クライアントに物理的にインストールされたコードがありません。Outlook アドインの場合、Outlook はマニフェストを読み取り、指定された UI コントロールをフックして、JavaScript と HTML を読み込みます。Web コンポーネントは全て、サンドボックス内のブラウザーのコンテキストで実行されます。
+Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser in a sandbox.
 
-アドインをサポートする Outlook アイテムには、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消し、予定などがあります。それぞれの Outlook アドインでは、メール アドインが使用できるコンテキストを定義します。これにはアイテムの種類、およびユーザーがアイテムの読み取り (または作成) を行っているかどうかなどがあります。
+The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>拡張点
 
-拡張点は、アドインが Outlook と統合する方法です。これを行う方法は以下のとおりです。
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done.
 
-- アドインは、メッセージと予定のコマンド サーフェスに表示されるボタンを宣言できます。詳細は、「 [Outlook のアドイン コマンド](add-in-commands-for-outlook.md)」をご覧ください。
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **リボン上の [コマンド] ボタンがあるアドイン**
 
     ![アドイン関数コマンド。](../images/uiless-command-shape.png)
 
-- アドインは、メッセージおよび予定内の正規表現に一致するものや検出されたエンティティのリンクをオフにすることができます。 詳細は、「 [コンテキスト Outlook アドイン](contextual-outlook-add-ins.md)」をご覧ください。
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **強調表示されたエンティティ (アドレス) 用のコンテキスト アドイン**
 
@@ -56,7 +56,7 @@ Outlook アドインは、ユーザーがメッセージまたは予定を作成
 
 - .msg または .eml ファイルがファイル システムから開かれた場合。
 
-- 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス\*内、[アーカイブ メールボックス](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox)内、パブリック フォルダー内。
+- 共有メールボックス\*の[グループ メールボックス](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)内、別のユーザーのメールボックス\*内、[アーカイブ メールボックス](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox)内、パブリック フォルダー内。
 
   > [!IMPORTANT]
   > \* [要件セット 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) では、代理アクセス シナリオ (別のユーザーのメールボックスで共有されるフォルダなど) のサポートが導入されました。 共有メールボックスのサポートは、Windowsお よび Mac の Outlook でプレビューになりました。 詳細については、「 [共有フォルダーと共有メールボックスを有効にするシナリオ](delegate-access.md)」を参照してください。
