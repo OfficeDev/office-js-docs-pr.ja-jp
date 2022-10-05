@@ -55,6 +55,8 @@ items:
           - name: Office アドインによって使用されるブラウザー
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Office アドインのランタイム
+            href: testing/runtimes.md
           - name: Internet Explorer 11 をサポート
             href: develop/support-ie-11.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
@@ -344,8 +346,6 @@ items:
             href: develop/usability-testing.md
           - name: アドインのマニフェストを検証する
             href: testing/troubleshoot-manifest.md
-          - name: Office アドインのランタイム
-            href: testing/runtimes.md
       - name: 公開
         items:
           - name: Office アドインを発行する
