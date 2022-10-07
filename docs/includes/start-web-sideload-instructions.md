@@ -8,4 +8,6 @@ npm run start:web -- --document {url}
 - `npm run start:web -- --document https://1drv.ms/x/s!jkcH7spkM4EGgcZUgqthk4IK3NOypVw?e=Z6G1qp`
 - `npm run start:web -- --document https://contoso-my.sharepoint-df.com/:t:/p/user/EQda453DNTpFnl1bFPhOVR0BwlrzetbXvnaRYii2lDr_oQ?e=RSccmNP`
 
+[!include[Mac command line note](mac-command-line.md)]
+
 アドインがドキュメントにサイドロードされない場合は、「アドインを手動でサイドロードしてOffice on the webする」の手順に従って[手動でサイドロード](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web)します。
