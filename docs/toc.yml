@@ -421,17 +421,17 @@ items:
             href: excel/excel-add-ins-comments.md
             displayName: Excel
           - name: データ型
-            displayName: preview
+            displayName: Excel
             items:
               - name: 概要
                 href: excel/excel-data-types-overview.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: 概念
                 href: excel/excel-data-types-concepts.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: エンティティ値カード
                 href: excel/excel-data-types-entity-card.md
-                displayName: 'Excel, preview'
+                displayName: Excel
           - name: データの入力規則
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -548,7 +548,7 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: データ型
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions, preview'
+            displayName: 'Excel, Custom Functions'
           - name: Excel JavaScript API を呼び出す
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
