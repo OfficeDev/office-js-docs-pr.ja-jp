@@ -1,14 +1,14 @@
 ---
 title: Outlook on Mac での Outlook アドインのサポートを比較する
 description: Outlook on Mac のアドイン サポートと他の Outlook クライアントの比較方法について説明します。
-ms.date: 09/21/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f991865921583561e4c2db2132fad3ceba3625
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: c38e546575446254d54ad13e5d75d997ca6cd6d8
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990414"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546446"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Outlook on Mac での Outlook アドインのサポートと他の Outlook クライアントの比較
 
@@ -20,7 +20,7 @@ Outlook アドインは、クライアントごとに JavaScript をカスタマ
 
 | 分野 | Outlook on the web、Windows、モバイル デバイス | Outlook on Mac |
 |:-----|:-----|:-----|
-| サポート対象バージョンの office.js および Office アドインのマニフェスト スキーマ | Office.js および スキーマ v1.1 のすべての API。 | Office.js および スキーマ v1.1 のすべての API。<br><br>**注**: Outlook on Mac では、ビルド 16.35.308 以降でのみ会議の保存がサポートされます。 それ以外の `saveAsync` 場合、作成モードで会議から呼び出されると、メソッドは失敗します。 回避策については、「[Office JS API を使用して Outlook for Mac で会議を下書きとして保存できない](https://support.microsoft.com/help/4505745)」を参照してください。 |
+| サポートされているバージョンのoffice.js| Office.js内のすべての API。 | Office.js内のすべての API。<br><br>**注**: Outlook on Mac では、ビルド 16.35.308 以降でのみ会議の保存がサポートされます。 それ以外の `saveAsync` 場合、作成モードで会議から呼び出されると、メソッドは失敗します。 回避策については、「[Office JS API を使用して Outlook for Mac で会議を下書きとして保存できない](https://support.microsoft.com/help/4505745)」を参照してください。 |
 | 定期的な予定系列のインスタンス | <ul><li>定期的な系列のマスター予定または予定インスタンスのアイテム ID および他のプロパティを取得できます。</li><li>[mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) を使用して、定期的な系列のインスタンスまたはマスターを表示できます。</li></ul> | <ul><li>マスター予定のアイテム ID と他のプロパティを取得できますが、定期的な系列のインスタンスのアイテム ID とプロパティは取得できません。</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | 予定出席者の受信者の種類 | [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) を使用して、出席者の受信者の種類を特定できます。 | `EmailAddressDetails.recipientType` は予定出席者には `undefined` を返します。 |
 | クライアント アプリケーションのバージョン文字列 | [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) によって返されるバージョン文字列の形式は、クライアントの実際の種類によって異なります。 以下に例を示します。<ul><li>Outlook on Windows: `15.0.4454.1002`</li><li>Outlook on the web:`15.0.918.2`</li></ul> |Outlook on Mac で返される `Diagnostics.hostVersion` バージョン文字列の例を次に示します。 `15.0 (140325)` |

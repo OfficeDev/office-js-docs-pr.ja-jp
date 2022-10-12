@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインでの Exchange の ID トークンの内部
 description: Outlook アドインから生成される Exchange のユーザー ID トークンの内容について説明します。
-ms.date: 10/31/2019
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7d586203395521deb14e18a3ae52b01459224b75
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484052"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546432"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Exchange の ID トークンの内部
 
@@ -42,7 +42,7 @@ Exchange では ID トークンに、JSON Web トークン (JWT) 形式を使用
 
 ## <a name="identity-token-payload"></a>ID トークンのペイロード
 
-ペイロードには、電子メール アカウントの識別と、トークンを送信した Exchange サーバーの識別を行う認証クレームが含まれます。以下に、ペイロード セクションの例を示します。
+The payload contains the authentication claims that identify the email account and identify the Exchange server that sent the token. The following example shows what the payload section looks like.
 
 ```JSON
 { 
@@ -66,10 +66,10 @@ ID トークンのペイロードのパーツを、次の表に示します。
 
 | クレーム | 説明 |
 |:-----|:-----|
-| `aud` | トークンを要求したアドインの URL。 トークンは、クライアントのブラウザー内で実行されているアドインから送信された場合にのみ有効です。 アドインが Office アドイン マニフェスト スキーマ v1.1 を使用する場合、この URL はフォーム タイプ `ItemRead` または `ItemEdit` (アドイン マニフェスト内で [FormSettings](/javascript/api/manifest/formsettings) 要素の一部として最初に出現する方) の下にある、最初の `SourceLocation` 要素に指定された URL になります。 |
-| `iss` | トークンを発行した Exchange サーバーの一意の識別子です。この Exchange サーバーから発行されるトークンはすべて同じ識別子になります。 |
-| `nbf` | トークンの有効期間の開始日時です。この値は 1970 年 1 月 1 日を起点とする秒数です。 |
-| `exp` | トークンの有効期間の終了日時です。この値も 1970 年 1 月 1 日を起点とする秒数です。 |
+| `aud` | トークンを要求したアドインの URL。 トークンは、クライアントのブラウザー内で実行されているアドインから送信された場合にのみ有効です。 アドインの URL はマニフェストで指定されます。 マークアップはマニフェストの種類によって異なります。</br></br>**XML マニフェスト:** アドインが Office アドイン マニフェスト スキーマ v1.1 を使用している場合、この URL は最初 **\<SourceLocation\>** の要素で指定された URL、フォームの種類 `ItemRead` 、または `ItemEdit`アドイン マニフェストの [FormSettings](/javascript/api/manifest/formsettings) 要素の一部として最初に発生する URL です。</br></br>**Teams マニフェスト (プレビュー):** URL は "extensions.audienceClaimUrl" プロパティで指定されます。 |
+| `iss` | トークンを発行した Exchange サーバーの一意の識別子です。 この Exchange サーバーから発行されるトークンはすべて同じ識別子になります。 |
+| `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
+| `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
 | `appctxsender` | アプリケーション コンテキストを送信した Exchange サーバーの一意の識別子。 |
 | `isbrowserhostedapp` | アドインがブラウザーでホストされるかどうかを指定します。 |
 | `appctx` | トークンのアプリケーション コンテキスト。 |
@@ -84,7 +84,7 @@ appctx クレーム内の情報は、アカウントの一意の識別子と、�
 
 ## <a name="identity-token-signature"></a>ID トークンの署名
 
-この署名は、ヘッダーおよびペイロード セクションに対して、ヘッダーで指定されたアルゴリズムを使用したハッシュ処理を行うと共に、ペイロード内で指定された場所にあるサーバー上の自己署名された X509 証明書を使用することで作成されます。Web サービスは、この署名を検証して、ID トークンがその送信元として想定されるサーバーから発行されたものであることを確認できます。
+The signature is created by hashing the header and payload sections with the algorithm specified in the header and using the self-signed X509 certificate located on the server at the location specified in the payload. Your web service can validate this signature to help make sure that the identity token comes from the server that you expect to send it.
 
 ## <a name="see-also"></a>関連項目
 

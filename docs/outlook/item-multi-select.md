@@ -4,12 +4,12 @@ description: 複数のメッセージが選択されているときに Outlook �
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 335ee2303bfff9c5a4193e863c626e11133fa8fb
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541287"
+ms.locfileid: "68546439"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>複数のメッセージで Outlook アドインをアクティブ化する (プレビュー)
 
@@ -33,7 +33,7 @@ Office アドイン[用 Yeoman ジェネレーター](../develop/yeoman-generato
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-選択した複数のメッセージでアドインをアクティブにするには、[SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect) 子要素を要素に追加し、その値`true`を **\<Action\>** . アイテムの複数選択は現時点ではメッセージのみをサポートするため、要素の **\<ExtensionPoint\>**`xsi:type`属性値を設定するか、または`MessageComposeCommandSurface`に設定する`MessageReadCommandSurface`必要があります。
+選択した複数のメッセージでアドインをアクティブにするには、[SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect-preview) 子要素を要素に追加し、その値`true`を **\<Action\>** . アイテムの複数選択は現時点ではメッセージのみをサポートするため、要素の **\<ExtensionPoint\>**`xsi:type`属性値を設定するか、または`MessageComposeCommandSurface`に設定する`MessageReadCommandSurface`必要があります。
 
 1. 優先するコード エディターで、作成した Outlook クイック スタート プロジェクトを開きます。
 
@@ -163,7 +163,7 @@ Office アドイン[用 Yeoman ジェネレーター](../develop/yeoman-generato
 
 ## <a name="retrieve-the-subject-line-of-selected-messages"></a>選択したメッセージの件名行を取得する
 
-イベント ハンドラーを登録したので、 [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getSelectedItemsAsync-member(1)) メソッドを呼び出して、選択したメッセージの件名を取得し、作業ウィンドウに記録します。 このメソッドは `getSelectedItemsAsync` 、アイテム ID、アイテムの種類 (`Message` 現時点でサポートされている唯一の型)、アイテム モード (`Read` または `Compose`) など、他のメッセージ プロパティを取得するためにも使用できます。
+イベント ハンドラーを登録したので、 [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getselecteditemsasync-member(1)) メソッドを呼び出して、選択したメッセージの件名を取得し、作業ウィンドウに記録します。 このメソッドは `getSelectedItemsAsync` 、アイテム ID、アイテムの種類 (`Message` 現時点でサポートされている唯一の型)、アイテム モード (`Read` または `Compose`) など、他のメッセージ プロパティを取得するためにも使用できます。
 
 1. **taskpane.js** 関数に`run`移動し、次のコードを挿入します。
 
