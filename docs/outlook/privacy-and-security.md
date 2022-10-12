@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 description: Outlook アドインで、プライバシー、アクセス許可、セキュリティを管理する方法について説明します。
-ms.date: 08/09/2022
+ms.date: 10/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 560c9bbdfcde849b66d86e9c000d78f094b3e561
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092876"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541257"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook アドインに関するプライバシー、アクセス許可、セキュリティ
 
@@ -28,16 +28,9 @@ ms.locfileid: "68092876"
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-マニフェスト スキーマのバージョン 1.1 には、4 つのレベルのアクセス許可が含まれています。
+アクセス許可には、4 つのレベルがあります。
 
-**表 1.アドインのアクセス許可レベル**
-
-|**アクセス許可レベル**|**Outlook アドインのマニフェストの値**|
-|:-----|:-----|
-|Restricted|Restricted|
-|アイテムの読み取り|ReadItem|
-|アイテムの読み取り/書き込み|ReadWriteItem|
-|メールボックスの読み取り/書き込み|ReadWriteMailbox|
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 アクセス許可の 4 つのレベルは累積的です。**メールボックス読み取り/書き込み** アクセス許可には **アイテム読み取り/書き込み**、**アイテム読み取り**、および **制限付き** が含まれており、**アイテム読み取り/書き込み** には **アイテム読み取り** と **制限付き** が含まれており、また **アイテム読み取り** アクセス許可には **制限付き** が含まれています。
 
@@ -116,18 +109,34 @@ Because customers' perception of add-in security can affect add-in adoption, Out
 
 - 開発者は、Outlook アドインがアクティブ化される方法、およびメール アドインがアイテムの特定のプロパティを読み書きする必要性や、アイテムを作成および送信する必要性に基づいて、Outlook アドインの適切なレベルのアクセス許可を要求します。
 
-- 開発者は、Outlook アドインのマニフェストの [Permissions](/javascript/api/manifest/permissions) 要素を使用して、**Restricted**、**ReadItem**、**ReadWriteItem** または **ReadWriteMailbox** の値を必要に応じて割り当ててアクセス許可を要求します。
+- 前述のように、開発者はマニフェストでアクセス許可を要求します。
 
-  > [!NOTE]
-  > **ReadWriteItem** のアクセス許可は、マニフェスト スキーマ v1.1 以降で利用できます。
-
-  次の例では、**アイテムの読み取り** のアクセス許可を要求しています。
+  次の例では、XML マニフェストで **読み取り項目** のアクセス許可を要求します。
 
   ```XML
-    <Permissions>ReadItem</Permissions>
+  <Permissions>ReadItem</Permissions>
   ```
 
+  次の例では、Teams マニフェスト (プレビュー) で **アイテムの読み取り** アクセス許可を要求します。
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
 - 開発者は、Outlook アドインが特定の種類の Outlook アイテム (予定またはメッセージ) またはアイテムの件名または本文に存在する特定の抽出されたエンティティ (電話番号、住所、URL) でアクティブ化された場合、 **制限付** きアクセス許可を要求できます。 たとえば、次のルールは、現在のメッセージの件名または本文に電話番号、郵送先住所、URL の 3 つのエンティティのうち 1 つ以上のエンティティが見つかった場合に Outlook アドインをアクティブ化します。
+
+> [!NOTE]
+> この例に示すように、ライセンス認証規則は、 [Office アドインの Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用するアドインではサポートされていません。
 
   ```XML
     <Permissions>Restricted</Permissions>

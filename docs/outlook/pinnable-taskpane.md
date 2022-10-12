@@ -1,20 +1,20 @@
 ---
 title: Outlook アドインにピン留め可能な作業ウィンドウを実装する
 description: アドイン コマンド用の作業ウィンドウ UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作に対応した UI を提供できようになります。
-ms.date: 07/07/2020
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 834d43a6046ddaa63a7c8899cfd5b07d0ea80ef6
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797464"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541123"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Outlook にピン留め可能な作業ウィンドウを実装する
 
-アドイン コマンド用の[作業ウィンドウ](add-in-commands-for-outlook.md#launch-a-task-pane) UX シェイプは、開いたメッセージまたは会議出席依頼の右側に縦方向の作業ウィンドウを開きます。アドインは、このウィンドウを使用することで、より詳細な対話式操作 (複数フィールドの入力など) に対応した UI を提供できようになります。この作業ウィンドウは、メッセージの一覧を表示しているときに、閲覧ウィンドウに表示できます。これにより、メッセージのすばやい処理が可能になります。
+The [task pane](add-in-commands-for-outlook.md#launch-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-ただし、既定では、ユーザーが新しいメッセージを選択すると、閲覧ウィンドウ内で開いていたメッセージのアドイン作業ウィンドウは自動的に閉じられます。頻繁に使用されるアドインの場合、ユーザーはそのウィンドウを開いたままにして、メッセージごとにアドインを有効化する手間がなくなることを望むでしょう。ピン留め可能な作業ウィンドウでは、これに該当するオプションをユーザーに提供できます。
+However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
 > ピン留め可能な作業ウィンドウ機能は [要件セット 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5) で導入されましたが、現時点では、次を使用して Microsoft 365 サブスクライバーのみが使用できます。
@@ -29,14 +29,16 @@ ms.locfileid: "66797464"
 > - 予定および会議
 > - Outlook.com
 
+> [!TIP]
+> Outlook アドインを [AppSource](https://appsource.microsoft.com) に[発行](../publish/publish.md)する予定で、ピン留め可能な作業ウィンドウ用に構成されている場合、[AppSource の検証](/legal/marketplace/certification-policies)に合格するためにアドイン コンテンツは静的ではなく、メールボックスで開いているか選択されているメッセージに関連するデータを明確に表示する必要があります。
+
 ## <a name="support-task-pane-pinning"></a>作業ウィンドウのピン留めをサポートする
 
-ピン留めのサポートを追加する際の最初の手順は、アドインの[マニフェスト](manifests.md)で実行します。この手順は、作業ウィンドウのボタンについて記述する [SupportsPinning](/javascript/api/manifest/action#supportspinning) 要素を `Action` 要素に追加することで実行します。
+ピン留めのサポートを追加する際の最初の手順は、アドインのマニフェストで実行します。 マークアップは、マニフェストの種類によって異なります。
 
-`SupportsPinning` 要素は、VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 のどちらの場合も [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素を含める必要があります。
+# <a name="xml-manifest"></a>[XML マニフェスト](#tab/xmlmanifest)
 
-> [!NOTE]
-> Outlook アドインを [AppSource](https://appsource.microsoft.com) に [発行](../publish/publish.md)する予定であれば、**SupportsPinning** 要素を使う場合、[AppSource 検証](/legal/marketplace/certification-policies)に合格するためには、アドインのコンテンツを静的にすることはできません。また、メールボックスで開かれているか選択されているメッセージに関連するデータを、そのコンテンツで明確に表示する必要があります。
+作業ウィンドウ ボタンを記述する要素に **\<Action\>** [SupportsPinning](/javascript/api/manifest/action#supportspinning) 要素を追加します。 次に例を示します。
 
 ```xml
 <!-- Task pane button -->
@@ -58,6 +60,26 @@ ms.locfileid: "66797464"
 </Control>
 ```
 
+この要素は **\<SupportsPinning\>** VersionOverrides v1.1 スキーマで定義されているため、v1.0 と v1.1 の両方に [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素を含める必要があります。
+
+# <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
+
+作業ウィンドウを開くボタンまたはメニュー項目を定義する `true`"actions" 配列内のオブジェクトに 、"ピン留め可能" プロパティを追加します。 次に例を示します。
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
+---
+
 完全な例については、[command-demo のサンプル マニフェスト](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml)の `msgReadOpenPaneButton` コントロールをご覧ください。
 
 ## <a name="handling-ui-updates-based-on-currently-selected-message"></a>現在選択されているメッセージに基づいた UI の更新を処理する
@@ -66,7 +88,7 @@ ms.locfileid: "66797464"
 
 ### <a name="implement-the-event-handler"></a>イベント ハンドラを実装する
 
-イベント ハンドラは、オブジェクト リテラルの単一パラメーターを受け入れる必要があります。このオブジェクトの `type` プロパティは、`Office.EventType.ItemChanged` に設定されます。イベントが呼び出されたときには、既に、`Office.context.mailbox.item` オブジェクトは現在選択されているアイテムを反映するように更新されています。
+The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
 
 ```js
 function itemChanged(eventArgs) {
@@ -89,7 +111,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>イベント ハンドラーを登録する
 
-[Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドを使用して、`Office.EventType.ItemChanged` イベント用のイベント ハンドラを登録します。これは、作業ウィンドウの `Office.initialize` 関数で実行する必要があります。
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {

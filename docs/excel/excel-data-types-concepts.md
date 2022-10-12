@@ -1,21 +1,19 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 09/01/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616022"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541151"
 ---
-# <a name="excel-data-types-core-concepts-preview"></a>Excel データ型の主要概念 (プレビュー)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="excel-data-types-core-concepts"></a>Excel データ型の主要概念
 
 この記事では、[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用してデータ型を操作する方法について説明します。 ここでは、データ型の開発の基本となる主要な概念を紹介します。
 
@@ -116,7 +114,7 @@ const myEntity: Excel.EntityCellValue = {
 
 ## <a name="web-image-values"></a>Web 画像の値
 
-[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) オブジェクトは、[エンティティ](#entity-values)の一部として、または範囲内の独立した値として画像を格納する機能を作成します。このオブジェクトには、`address`、`altText`、`relatedImagesAddress` など、多くのプロパティが用意されています。
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
 `basicType` および `basicValue` プロパティは、データ型機能を使用するための最小互換性要件が満たされていない場合に、計算が Web 画像データ型を読み取る方法を定義します。 そのシナリオでは、この Web 画像データ型は **#VALUE!** として表示されます。 Excel UI のエラー。
 

@@ -1,18 +1,21 @@
 ---
 title: Outlook アイテムからエンティティ文字列を抽出する
 description: Outlook アドイン内の Outlook アイテムからエンティティを抽出する方法について説明します。
-ms.date: 07/07/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5540873be2969e15cea1a5773bb9fba850d9a1
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 512999272c720f5b87480c49d60c649bc6a886ad
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958994"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541276"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Outlook アイテムからエンティティ文字列を抽出する
 
-この記事では、選択した Outlook アイテムの件名と本文に含まれる、サポートされる既知のエンティティの文字列インスタンスを抽出する **[エンティティの表示]** Outlook アドインを作成する方法について説明します。対象のアイテムは、予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しです。
+This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
+
+> [!NOTE]
+> この記事で説明する Outlook アドイン機能では、Office アドイン [の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用するアドインではサポートされていないアクティブ化規則を使用します。
 
 サポートされるエンティティには次のようなものがあります。
 
@@ -22,7 +25,7 @@ ms.locfileid: "66958994"
 
 - **電子メール アドレス**: SMTP 電子メール アドレス。
 
-- **会議提案**: イベントへの言及などの会議提案。予定ではなくメッセージのみが会議提案の抽出をサポートすることに注意してください。
+- **Meeting suggestion**: A meeting suggestion, such as a reference to an event. Note that only messages but not appointments support extracting meeting suggestions.
 
 - **電話番号**: 北米の電話番号。
 
@@ -30,11 +33,11 @@ ms.locfileid: "66958994"
 
 - **URL**
 
-これらのエンティティの大部分は、大量のデータの機械学習に基づいた自然言語認識を利用しています。このため、認識は非確定的で、結果が Outlook アイテムの特定のコンテキストに左右されることがあります。
+Most of these entities rely on natural language recognition, which is based on machine learning of large amounts of data. This recognition is nondeterministic and sometimes depends on the context in the Outlook item.
 
-ユーザーが予定、メール メッセージ、会議出席依頼、会議出席依頼の返信、会議の取り消しの表示を選択するたびに、Outlook によってエンティティ アドインがアクティブ化されます。初期化時に、このサンプルのエンティティ アドインは、現在のアイテムからサポートされているエンティティのすべてのインスタンスを読み込みます。
+Outlook activates the entities add-in whenever the user selects an appointment, email message, or meeting request, response, or cancellation for viewing. During initialization, the sample entities add-in reads all instances of the supported entities from the current item.
 
-このアドインにはユーザーがエンティティの種類を選択するためのボタンがあります。ユーザーがエンティティを選択すると、アドインは選択されたエンティティのインスタンスをアドイン ウィンドウに表示します。後続の各セクションでは、エンティティ アドインの XML マニフェスト、HTML ファイル、および JavaScript ファイルの内容を示し、それぞれのエンティティの抽出をサポートするコードについて詳しく説明します。
+The add-in provides buttons for the user to choose a type of entity. When the user selects an entity, the add-in displays instances of the selected entity in the add-in pane. The following sections list the XML manifest, and HTML and JavaScript files of the entities add-in, and highlight the code that supports the respective entity extraction.
 
 ## <a name="xml-manifest"></a>XML マニフェスト
 
@@ -50,7 +53,7 @@ ms.locfileid: "66958994"
 
 これらのルールでは、閲覧ウィンドウまたは閲覧インスペクターの現在選択されているアイテムが予定またはメッセージ (電子メール メッセージ、会議出席依頼、会議出席依頼の返信、または会議の取り消しなど) であるときに、Outlook でこのアドインをアクティブ化することを指定しています。
 
-エンティティ アドインのマニフェストを次に示します。このマニフェストは、Office アドイン マニフェストのスキーマ バージョン 1.1 を使用します。
+The following is the manifest of the entities add-in. It uses version 1.1 of the schema for Office Add-ins manifests.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +99,7 @@ xsi:type="MailApp">
 
 ## <a name="html-implementation"></a>HTML の実装
 
-エンティティ アドインの HTML ファイルでは、ユーザーがエンティティの種類を選択するためのボタンと、表示されたエンティティのインスタンスを消去するためのボタンを指定しています。このファイルでは、後の「[JavaScript の実装](#javascript-implementation)」で説明する default_entities.js という JavaScript ファイルを指定しています。JavaScript ファイルには、それぞれのボタンに対するイベント ハンドラーが含まれています。
+The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.
 
 すべての Outlook アドインに office.js を含める必要があります。 次の HTML ファイルには、コンテンツ配信ネットワーク (CDN) 上のバージョン 1.1 のoffice.jsが含まれています。
 
@@ -141,7 +144,7 @@ xsi:type="MailApp">
 
 ## <a name="style-sheet"></a>スタイル シート
 
-エンティティ アドインでは、default_entities.css というオプションの CSS ファイルを使用して出力のレイアウトを指定しています。次に、この CSS ファイルの内容を示します。
+The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.
 
 ```CSS
 {
@@ -251,17 +254,17 @@ function myGetAddresses()
 
 - [Contact.businessName](/javascript/api/outlook/office.contact#outlook-office-contact-businessname-member) プロパティから取得される連絡先に関連付けられた会社名を表す文字列。
 
-- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) プロパティから取得される、連絡先に関連付けられた電話番号の配列。各電話番号は [PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトによって表されます。
+- The array of telephone numbers associated with the contact from the [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) property. Each telephone number is represented by a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object.
 
 - 電話番号配列内の **PhoneNumber** メンバーごとの、[PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member) プロパティから取得される電話番号を表す文字列。
 
-- [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) プロパティから取得される連絡先に関連付けられた URL の配列。各 URL は配列メンバーの文字列として表されます。
+- The array of URLs associated with the contact from the [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) property. Each URL is represented as a string in an array member.
 
-- [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) プロパティから取得される、連絡先に関連付けられた電子メール アドレスの配列。各電子メール アドレスは配列メンバーの文字列として表されます。
+- The array of email addresses associated with the contact from the [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) property. Each email address is represented as a string in an array member.
 
-- [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) プロパティから取得される、連絡先に関連付けられた郵送先住所の配列。各郵送先住所は配列メンバーの文字列として表されます。
+- The array of postal addresses associated with the contact from the [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) property. Each postal address is represented as a string in an array member.
 
-`myGetContacts` はローカル HTML 文字列を `htmlText` で生成し、各連絡先のデータを表示します。関連する JavaScript コードを次に示します。
+`myGetContacts` forms a local HTML string in `htmlText` to display the data for each contact. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the Contact entity on the item.
@@ -327,7 +330,7 @@ function myGetContacts()
 
 ## <a name="extracting-email-addresses"></a>電子メール アドレスの抽出
 
-ユーザーが **[Get Email Addresses]** ボタンをクリックすると、`myGetEmailAddresses` イベント ハンドラーが `_MyEntities` オブジェクトの [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) プロパティから SMTP 電子メール アドレスの配列を取得します (メール アドレスが抽出されていた場合)。抽出された各電子メール アドレスは、文字列として配列に格納されます。`myGetEmailAddresses` はローカル HTML 文字列を `htmlText` で生成し、抽出された電子メール アドレスの一覧を表示します。関連する JavaScript コードを次に示します。
+When the user clicks the **Get Email Addresses** button, the `myGetEmailAddresses` event handler obtains an array of SMTP email addresses from the [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) property of the `_MyEntities` object, if any was extracted. Each extracted email address is stored as a string in the array. `myGetEmailAddresses` forms a local HTML string in `htmlText` to display the list of extracted email addresses. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
@@ -352,11 +355,11 @@ function myGetEmailAddresses() {
  > [!NOTE]
  > エンティティの種類は、メッセージのみがサポートされますが、予定はサポート `MeetingSuggestion` されません。
 
-抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。`myGetMeetingSuggestions` は、各会議提案に関する次の詳細なデータを取得します。
+抽出された各会議提案は、[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) オブジェクトとして配列に格納されます。 は、各会議提案に関する次の詳細なデータを取得します。
 
 - [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member) プロパティから取得される会議提案として識別された文字列。
 
-- [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) プロパティから取得される、会議の出席者の配列。各出席者は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
+- The array of meeting attendees from the [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) property. Each attendee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - 出席者ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) プロパティから取得される名前。
 
@@ -370,7 +373,7 @@ function myGetEmailAddresses() {
 
 - [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-end-member) プロパティから取得される会議提案の終了時刻を表す文字列。
 
-`myGetMeetingSuggestions` はローカル HTML 文字列を `htmlText` で生成し、会議提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
+`myGetMeetingSuggestions` forms a local HTML string in `htmlText` to display the data for each of the meeting suggestions. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the MeetingSuggestion entity on the 
@@ -426,7 +429,7 @@ function myGetMeetingSuggestions() {
 
 ## <a name="extracting-phone-numbers"></a>電話番号の抽出
 
-ユーザーが **[Get Phone Numbers]** ボタンをクリックすると、`myGetPhoneNumbers` イベント ハンドラーが `_MyEntities` オブジェクトの [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) プロパティから電話番号の配列を取得します (電話番号が抽出されていた場合)。抽出された各電話番号は、[PhoneNumber](/javascript/api/outlook/office.phonenumber) オブジェクトとして配列に格納されます。`myGetPhoneNumbers` は、各電話番号に関する次の詳細なデータを取得します。
+When the user clicks the **Get Phone Numbers** button, the `myGetPhoneNumbers` event handler obtains an array of phone numbers from the [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) property of the `_MyEntities` object, if any was extracted. Each extracted phone number is stored as a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object in the array. `myGetPhoneNumbers` obtains further data about each phone number:
 
 - [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member) プロパティから取得される電話番号の種類 (自宅の電話番号など) を表す文字列。
 
@@ -434,7 +437,7 @@ function myGetMeetingSuggestions() {
 
 - [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-originalphonestring-member) プロパティから取得される電話番号として最初に識別された文字列。
 
-`myGetPhoneNumbers` はローカル HTML 文字列を `htmlText` で生成し、各電話番号のデータを表示します。関連する JavaScript コードを次に示します。
+`myGetPhoneNumbers` forms a local HTML string in `htmlText` to display the data for each of the phone numbers. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the phone number entity on the item.
@@ -470,17 +473,17 @@ function myGetPhoneNumbers()
 
 ## <a name="extracting-task-suggestions"></a>タスクの提案の抽出
 
-ユーザーが **[Get Task Suggestions]** ボタンをクリックすると、`myGetTaskSuggestions` イベント ハンドラーが `_MyEntities` オブジェクトの [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) プロパティからタスクの提案の配列を取得します (タスクの提案が抽出されていた場合)。抽出された各タスクの提案は、[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) オブジェクトとして配列に格納されます。`myGetTaskSuggestions` は、各タスクの提案に関する次の詳細なデータを取得します。
+When the user clicks the **Get Task Suggestions** button, the `myGetTaskSuggestions` event handler obtains an array of task suggestions from the [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) property of the `_MyEntities` object, if any was extracted. Each extracted task suggestion is stored as a [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object in the array. `myGetTaskSuggestions` obtains further data about each task suggestion:
 
 - [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member) プロパティから取得されるタスクの提案として最初に識別された文字列。
 
-- [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) プロパティから取得される、タスクの割り当て先の配列。各割り当て先は [EmailUser](/javascript/api/outlook/office.emailuser) オブジェクトによって表されます。
+- The array of task assignees from the [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) property. Each assignee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - 割り当て先ごとの、[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) プロパティから取得される名前。
 
 - 割り当て先ごとの、[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member) プロパティから取得される SMTP アドレス。
 
-`myGetTaskSuggestions` はローカル HTML 文字列を `htmlText` で生成し、タスクの提案ごとのデータを表示します。関連する JavaScript コードを次に示します。
+`myGetTaskSuggestions` forms a local HTML string in `htmlText` to display the data for each task suggestion. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the task suggestion entity on the item.
@@ -528,7 +531,7 @@ function myGetTaskSuggestions()
 
 ## <a name="extracting-urls"></a>URL の抽出
 
-ユーザーが **[Get URLs]** ボタンをクリックすると、`myGetUrls` イベント ハンドラーが `_MyEntities` オブジェクトの [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) プロパティから URL の配列を取得します (URL が抽出されていた場合)。抽出された各 URL は、文字列として配列に格納されます。`myGetUrls` はローカル HTML 文字列を `htmlText` で生成し、抽出された URL の一覧を表示します。
+When the user clicks the **Get URLs** button, the `myGetUrls` event handler obtains an array of URLs from the [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) property of the `_MyEntities` object, if any was extracted. Each extracted URL is stored as a string in the array. `myGetUrls` forms a local HTML string in `htmlText` to display the list of extracted URLs.
 
 ```js
 // Gets instances of the URL entity on the item.
@@ -549,7 +552,7 @@ function myGetUrls()
 
 ## <a name="clearing-displayed-entity-strings"></a>表示されたエンティティ文字列の消去
 
-最後に、エンティティ アドインでは表示された文字列を消去する `myClearEntitiesBox` イベント ハンドラーを指定しています。関連するコードを次に示します。
+Lastly, the entities add-in specifies a  `myClearEntitiesBox` event handler which clears any displayed strings. The following is the related code.
 
 ```js
 // Clears the div with id="entities_box".

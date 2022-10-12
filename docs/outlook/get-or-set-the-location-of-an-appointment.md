@@ -1,14 +1,14 @@
 ---
 title: アドインで予定の場所を取得または設定する
 description: Outlook アドインで予定の場所を取得または設定する方法について説明します。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bf03e0e470bb5aea811c09bb7b88cc5a915a7a13
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958987"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541240"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに場所を取得または設定する
 
@@ -28,7 +28,7 @@ Office JavaScript API には、ユーザーが作成している予定の場所�
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | 開催者/Compose |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | 開催者/Compose |
 
-アドインの作成にのみ使用できるメソッドを使用するには、アドイン マニフェストを構成してアドインのオーガナイザー/作成モードをアクティブにします。 詳細については、「 [作成フォーム用の Outlook アドインの作成](compose-scenario.md) 」を参照してください。
+アドインの作成にのみ使用できるメソッドを使用するには、アドインのオーガナイザー/作成モードをアクティブ化するようにアドイン XML マニフェストを構成します。 詳細については、「 [作成フォーム用の Outlook アドインの作成](compose-scenario.md) 」を参照してください。 Office アドイン [の Teams マニフェスト (プレビュー) を](../develop/json-manifest-overview.md)使用するアドインでは、アクティブ化ルールはサポートされていません。
 
 ## <a name="use-the-enhancedlocation-api"></a>API を使用する`enhancedLocation`
 

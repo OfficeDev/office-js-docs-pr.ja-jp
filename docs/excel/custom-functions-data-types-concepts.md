@@ -1,20 +1,18 @@
 ---
 title: カスタム関数とデータ型
 description: カスタム関数と Office アドインで Excel データ型を使用します。
-ms.date: 12/27/2021
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 361be486ee45cae87b5cd66e2099dc939418a491
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422874"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540992"
 ---
-# <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Excel のカスタム関数でデータ型を使用する (プレビュー)
-
-[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
+# <a name="use-data-types-with-custom-functions-in-excel"></a>Excel でカスタム関数でデータ型を使用する
 
 データ型は Excel JavaScript API を拡張して、元の 4 つのセル値タイプ (文字列、数値、ブール値、エラー) 以外のデータ型もサポートします。 データ型には、Web イメージ、書式設定された数値、エンティティ値、エンティティ値内の配列のサポートが含まれます。
 
@@ -37,7 +35,7 @@ Excel アドインでのデータ型の使用の詳細については、「[Exce
 
 カスタム関数プロジェクトには、JSON メタデータ ファイルが含まれています。 この JSON メタデータ ファイルは、データ型 API で使用される JSON スキーマとは異なります。 データ型とカスタム関数の統合を使用するには、カスタム関数の JSON メタデータ ファイルを手動で更新して、プロパティ `allowCustomDataForDataTypeAny` を含める必要があります。 このプロパティを `true` に設定します。
 
-手動の JSON 作成プロセスの詳細については、「[カスタム関数の JSON メタデータを手動で作成する](custom-functions-json.md)」を参照してください。このプロパティの詳細については、「[allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview)」を参照してください。
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
 ### <a name="script-lab-option"></a>Script Lab オプション
 

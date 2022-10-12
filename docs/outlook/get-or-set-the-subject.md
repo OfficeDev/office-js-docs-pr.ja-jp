@@ -1,20 +1,20 @@
 ---
 title: Outlook アドインで件名を取得または設定する
 description: Outlook アドインで、メッセージまたは予定の件名を取得または設定する方法について説明します。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 79e38a310bf62eae55ef020c2f6c978ace824255
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959071"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541130"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Outlook で予定またはメッセージを作成するときに件名を取得または設定する
 
-Office JavaScript API は、ユーザーが作成している予定またはメッセージの件名を取得および設定するための非同期メソッド ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) と [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) を提供します。 これらのメソッドを使用する場合は、新規作成フォームでアドインをアクティブ化するようにアドイン マニフェストが Outlook 用に適切にセット アップされていることを確認してください。
+Office JavaScript API は、ユーザーが作成している予定またはメッセージの件名を取得および設定するための非同期メソッド ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) と [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) を提供します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、アドイン [の作成フォームをアクティブ化](compose-scenario.md)するために、Outlook 用にアドイン XML マニフェストを適切に設定していることを確認します。 Office アドイン [の Teams マニフェスト (プレビュー) を](../develop/json-manifest-overview.md)使用するアドインでは、アクティブ化ルールはサポートされていません。
 
-**subject** プロパティは、予定とメッセージの新規作成フォームと閲覧フォームの両方で読み取りアクセスで利用できます。閲覧フォームでは、次の例に示すとおり、このプロパティに親オブジェクトから直接アクセスできます。
+The **subject** property is available for read access in both compose and read forms of appointments and messages. In a read form, you can access the property directly from the parent object, as in:
 
 ```js
 item.subject
@@ -32,7 +32,7 @@ Office JavaScript API のほとんどの非同期メソッドと同様に、 **g
 
 ## <a name="get-the-subject"></a>件名を取得する
 
-このセクションでは、ユーザーが作成している予定またはメッセージの件名を取得して、その件名を表示するサンプル コードについて説明します。このサンプル コードは、以下に示すように、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
+このセクションでは、ユーザーが作成している予定またはメッセージの件名を取得して、その件名を表示するサンプル コードについて説明します。 このサンプル コードは、以下に示すように、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。 Office アドイン [の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用するアドインでは、アクティブ化規則はサポートされていません。
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -78,7 +78,7 @@ function write(message){
 
 ## <a name="set-the-subject"></a>件名を設定する
 
-このセクションでは、ユーザーが作成している予定またはメッセージの件名を設定するサンプル コードについて説明します。前のサンプルと同様に、このサンプル コードは、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。
+このセクションでは、ユーザーが作成している予定またはメッセージの件名を設定するサンプル コードについて説明します。 前のサンプルと同様に、このサンプル コードは、アドイン マニフェストのルールが、予定またはメッセージの新規作成フォームでアドインをアクティブにすることを想定しています。 Office アドイン [の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用するアドインでは、アクティブ化規則はサポートされていません。
 
 **item.subject.setAsync** を使用するには、データ パラメーターに最大 255 文字の文字列を指定します。 必要に応じて、  _asyncContext_ パラメーターでコールバック関数とコールバック関数の任意の引数を指定できます。 コールバックの _asyncResult_ 出力パラメーターで、状態、結果およびエラー メッセージを確認する必要があります。 非同期呼び出しが成功すると、**setAsync** はそのアイテムの既存の件名を上書きして、指定された件名の文字列をプレーン テキストとして挿入します。
 

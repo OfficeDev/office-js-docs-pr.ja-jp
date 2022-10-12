@@ -6,14 +6,14 @@ metadata:
   description: Outlook アドイン向けの学習用リソース。
   ms.prod: outlook
   ms.topic: landing-page
-  ms.date: 06/30/2022
+  ms.date: 10/10/2022
   ms.localizationpriority: high
-  ms.openlocfilehash: d675d9c5a32c1e341d36e7c54f93dd3b3beaff85
-  ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+  ms.openlocfilehash: 3904d3b952003926fef3a09da6a928d2d0192646
+  ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/06/2022
-  ms.locfileid: "66660292"
+  ms.lasthandoff: 10/12/2022
+  ms.locfileid: "68541262"
 landingContent:
 - title: Outlook アドインについて
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
     links:
     - text: 最初の Outlook アドインをビルドする
       url: ../quickstarts/outlook-quickstart.md
+    - text: Teams マニフェストを使用して初めての Outlook アドインをビルドする (プレビュー)
+      url: ../quickstarts/outlook-quickstart-json-manifest.md
     - text: Script Lab を使用して Office JavaScript API を探索する
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
@@ -33,6 +35,10 @@ landingContent:
       url: apis.md
     - text: メールボックス要件セットを移動して使用する
       url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+    - text: イベント ベースのアドインをビルドする
+      url: autolaunch.md
+    - text: Microsoft Graph を使用してアドインの機能を拡張する
+      url: /graph/overview
     - text: Outlook アドインをテストしてデバッグする
       url: ../testing/test-debug-office-add-ins.md
     - text: Outlook アドインを展開して発行する

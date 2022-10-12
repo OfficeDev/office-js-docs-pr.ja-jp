@@ -1,22 +1,22 @@
 ---
 title: Outlook アドインで受信者を取得または変更する
 description: Outlook アドインで、メッセージまたは予定の受信者を取得、設定、追加する方法について説明します。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: de47d2ee238ffe55ab0b5ee460096717557e4dba
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958321"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541269"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Outlook の予定またはメッセージを作成するときに受信者を取得、設定、追加する
 
-Office JavaScript API は、非同期メソッド ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))、 [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))、 [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) を提供し、それぞれ、予定またはメッセージの作成形式で受信者を取得、設定、または追加します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用の Outlook アドインを作成する」の説明に従って、Outlook がアドイン作成フォームをアクティブ化するために適切 [にアドイン](compose-scenario.md) マニフェストを設定していることを確認します。
+Office JavaScript API は、非同期メソッド ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))、 [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))、 [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) を提供し、それぞれ、予定またはメッセージの作成形式で受信者を取得、設定、または追加します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用の Outlook アドインを作成する」の説明に従って、Outlook がアドイン作成フォームをアクティブ化するために適切 [にアドイン](compose-scenario.md) マニフェストを設定していることを確認します。 Office アドイン [の Teams マニフェスト (プレビュー) を](../develop/json-manifest-overview.md)使用するアドインでは、アクティブ化ルールはサポートされていません。
 
-予定やメッセージ内の受信者を表すプロパティの一部は、新規作成フォームと閲覧フォームで読み取りアクセスで使用できます。この種のプロパティには、予定の [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) と [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)、メッセージの [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) と [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) が含まれます。
+Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for appointments, and [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and  [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for messages.
 
-閲覧フォームでは、次に示すように親オブジェクトから直接プロパティにアクセスできます:
+閲覧フォームでは、次に示すように親オブジェクトから直接プロパティにアクセスできます。
 
 ```js
 item.cc
@@ -34,7 +34,7 @@ JavaScript API for Office のほとんどの非同期メソッドと同様に、
 
 ## <a name="get-recipients"></a>受信者を取得する
 
-このセクションでは、新規作成する予定やメッセージの受信者を取得し、その受信者の電子メール アドレスを表示するコード例を示します。下記のように、このコード例は、予定やメッセージ用の新規作成フォームでアドインをアクティブ化するルールがアドイン マニフェスト内にあることを前提にしています。
+This section shows a code sample that gets the recipients of the appointment or message that is being composed, and displays the email addresses of the recipients. The code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">

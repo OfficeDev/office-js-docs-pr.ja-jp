@@ -1,20 +1,18 @@
 ---
 title: Excel JavaScript API データ型エンティティ値カード
 description: Excel アドインのデータ型でエンティティ値カードを使用する方法について説明します。
-ms.date: 07/28/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177655"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540985"
 ---
-# <a name="use-cards-with-entity-value-data-types-preview"></a>エンティティ値データ型でカードを使用する (プレビュー)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="use-cards-with-entity-value-data-types"></a>エンティティ値データ型でカードを使用する
 
 この記事では、 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) を使用して、エンティティ値データ型を含むカード モーダル ウィンドウを Excel UI に作成する方法について説明します。 これらのカードは、関連する画像、製品カテゴリ情報、データ属性など、セルに既に表示されている情報を超えて、エンティティ値に含まれる追加情報を表示できます。
 

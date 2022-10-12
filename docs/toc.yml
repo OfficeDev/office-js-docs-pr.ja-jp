@@ -643,6 +643,11 @@ items:
             href: outlook/contextual-outlook-add-ins.md
           - name: モジュール拡張機能アドイン
             href: outlook/extension-module-outlook-add-ins.md
+          - name: 項目の複数選択
+            href: outlook/item-multi-select.md
+            displayName: preview
+          - name: ピン留め可能な作業ウィンドウ
+            href: outlook/pinnable-taskpane.md
           - name: Outlook Mobile のアドイン
             href: outlook/outlook-mobile-addins.md
           - name: オンライン ミーティング アドインの作成
@@ -666,8 +671,6 @@ items:
               - name: AppSource オプション
                 href: outlook/autolaunch-store-options.md
                 displayName: event-based activation
-          - name: ピン留め可能な作業ウィンドウ
-            href: outlook/pinnable-taskpane.md
           - name: 共有フォルダーと共有メールボックス
             href: outlook/delegate-access.md
             displayName: delegate access
