@@ -1,20 +1,20 @@
 ---
 title: Outlook アドインで予定の時刻を取得または設定する
 description: Outlook アドインで予定の開始時間と終了時間を取得または設定する方法について説明します。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6109932c9a741a65b97095a1cb97dcdfc2306e1c
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: c7aa40fda15c613aca869af8b277d4deb6fbf833
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958335"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541234"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Outlook で予定を作成するときに時刻を取得または設定する
 
-Office JavaScript API は、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定するための非同期メソッド ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) と [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) を提供します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用の Outlook アドインを作成する」の説明に従って、Outlook がアドイン作成フォームをアクティブ化するために適切 [にアドイン](compose-scenario.md) マニフェストを設定していることを確認します。
+Office JavaScript API は、ユーザーが作成している予定の開始時刻または終了時刻を取得および設定するための非同期メソッド ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) と [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) を提供します。 これらの非同期メソッドは、アドインを作成する場合にのみ使用できます。これらのメソッドを使用するには、「作成フォーム用の Outlook アドインを作成する」の説明に従って、アドインの作成フォームをアクティブ化するために、Outlook に適したアドイン XML マニフェストを設定していることを確認 [します](compose-scenario.md)。 Office アドイン [の Teams マニフェスト (プレビュー) を](../develop/json-manifest-overview.md)使用するアドインでは、アクティブ化ルールはサポートされていません。
 
-[start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティおよび [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) プロパティは、新規作成フォームと閲覧フォームの両方の予定で利用できます。閲覧フォームでは親オブジェクトから直接プロパティにアクセスでき、それには次を使用します。
+The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In a read form, you can access the properties directly from the parent object, as in:
 
 ```js
 item.start
@@ -42,7 +42,7 @@ Office JavaScript API のほとんどの非同期メソッドと同様に、 **g
 
 ## <a name="get-the-start-or-end-time"></a>開始時刻または終了時刻を取得する
 
-このセクションでは、ユーザーが作成している予定の開始時刻を取得して、その時刻を表示するサンプル コードについて説明します。同じコードを使用して、**start** プロパティを **end** プロパティに置き換えると終了時刻を取得できます。このサンプル コードは、以下に示すアドイン マニフェストのルールによって予定の新規作成フォームでアドインがアクティブになることを想定しています。
+This section shows a code sample that gets the start time of the appointment that the user is composing and displays the time. You can use the same code and replace the **start** property by the **end** property to get the end time. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment, as shown below.
 
 ```XML
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
@@ -87,7 +87,7 @@ function write(message){
 
 ## <a name="set-the-start-or-end-time"></a>開始時刻または終了時刻を設定する
 
-ここでは、ユーザーが作成している予定またはメッセージの開始時刻を設定するサンプル コードについて説明します。同じコードを使用して、**start** プロパティを **end** プロパティに置き換えると終了時刻を設定できます。予定の新規作成フォームに既存の開始時刻がある場合、後で開始時刻を設定すると、以前の予定の期間が保たれるように終了時刻を調整します。予定の新規作成フォームに既存の終了時刻がある場合、後で終了時刻を設定すると、期間と終了時刻の両方が調整されます。予定が終日イベントとして設定されている場合、開始時刻を設定すると、終了時刻を 24 時間後に調整し、新規作成フォームの終日イベントの UI をオフにします。
+This section shows a code sample that sets the start time of the appointment or message that the user is composing. You can use the same code and replace the **start** property by the **end** property to set the end time. Note that if the appointment compose form already has an existing start time, setting the start time subsequently will adjust the end time to maintain any previous duration for the appointment. If the appointment compose form already has an existing end time, setting the end time subsequently will adjust both the duration and end time. If the appointment has been set as an all-day event, setting the start time will adjust the end time to 24 hours later, and uncheck the UI for the all-day event in the compose form.
 
 前の例と同様、このコード サンプルは、予定の新規作成フォームでアドインをアクティブ化するアドインのマニフェストのルールを想定しています。
 
