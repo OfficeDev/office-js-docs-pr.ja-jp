@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 のテスト
 description: Internet Explorer 11 で Office アドインをテストします。
-ms.date: 05/01/2022
+ms.date: 10/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab904a3b086990cb9b10e2f266ddacafb4cba94
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 887d71e8e054a39c474ef300aeeb588933499ed8
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423329"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574164"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Internet Explorer 11 で Office アドインをテストする
 
@@ -47,6 +47,8 @@ Internet Explorer Webview を切り替えるには、2 つの方法がありま�
 
 - プロジェクトは Visual Studio と IIS で開発されました。 node.jsベースではありません。
 - テストで絶対に堅牢になりたいと考えています。
+- 開発用コンピューターで Microsoft 365 のベータ チャネルを使用することはできません。
+- Mac で開発中です。 
 - 何らかの理由でコマンド ライン ツールが機能しない場合。
 
 ### <a name="switch-via-the-command-line"></a>コマンド ラインを使用して切り替える

@@ -1,6 +1,11 @@
-プロジェクトが node.js ベース (つまり、Visual Studio およびインターネット インフォメーション サーバー (IIS Office) で開発されていない) 場合は、Windows バージョンと Office バージョンを組み合わせて使用している場合でも、Windows でエッジ レガシまたは Internet Explorer を使用してアドインを実行できます。 Windows バージョンと Office バージョンのさまざまな組み合わせで使用されるブラウザーの詳細については、「Office アドインで使用されるブラウザー」を[参照してください](../concepts/browsers-used-by-office-web-add-ins.md)。
+プロジェクトがnode.js ベースの場合 (Visual Studio とインターネット インフォメーション サーバー (IIS) では開発されていません)、通常は最新のブラウザーを使用する Windows バージョンと Office バージョンの組み合わせがある場合でも、Office on Windows で Edge レガシまたは Internet Explorer を使用してアドインを実行するように強制できます。 Windows バージョンと Office バージョンのさまざまな組み合わせによって使用されるブラウザーの詳細については、「 [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」を参照してください。
 
-1. プロジェクトが [Yeoman](../develop/yeoman-generator-overview.md) ジェネレーターを使用して Office アドイン ツールで作成されていない場合は、office-addin-dev-settings ツールをインストールする必要があります。 コマンド プロンプトで次のコマンドを実行します。
+> [!NOTE]
+> ブラウザーの変更を強制するために使用されるツールは、Microsoft 365 のベータ 版サブスクリプション チャネルでのみサポートされています。 [Office Insider プログラム](https://insider.office.com/join/windows)に参加し、**ベータ チャネル** オプションを選択して Office Beta ビルドにアクセスします。 「 [Office について: 使用している Office のバージョン](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)」も参照してください。
+>
+> 厳密には、ベータ チャネルを `webview` 必要とするのは、このツールの切り替えです ( **手順 2** を参照)。 このツールには、この要件を持たない他のスイッチがあります。
+
+1. [プロジェクトが Office アドイン用 Yeoman ジェネレーターツールで](../develop/yeoman-generator-overview.md)作成 *されていない* 場合は、office-addin-dev-settings ツールをインストールする必要があります。 コマンド プロンプトで次のコマンドを実行します。
 
     ```command&nbsp;line
     npm install office-addin-dev-settings --save-dev
@@ -8,7 +13,7 @@
 
     [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
-1. プロジェクトのルートにあるコマンド プロンプトOfficeコマンドで使用するブラウザーを指定します。 プロジェクト `<path-to-manifest>` のルートにある場合は、マニフェストファイル名の相対パスに置き換える。 どちらかまたは `<webview>` で置き換 `ie` える `edge-legacy`。
+1. プロジェクトのルートにあるコマンド プロンプトで、Office で次のコマンドで使用するブラウザーを指定します。 相対パスに置き換えます `<path-to-manifest>` 。これは、プロジェクトのルートにある場合はマニフェスト ファイル名に過ぎません。 いずれか`ie`に置き換えるか`<webview>`、または `edge-legacy`.
 
     ```command&nbsp;line
     npx office-addin-dev-settings webview <path-to-manifest> <webview>
@@ -20,9 +25,9 @@
     npx office-addin-dev-settings webview manifest.xml ie
     ```
 
-    Webview の種類が IE (またはエッジ レガシ) に設定されているというメッセージがコマンド ラインに表示されます。
+    コマンド ラインに、Webview の種類が IE (または Edge レガシ) に設定されているというメッセージが表示されます。
 
-1. 完了したら、Office Windows と Office バージョンの組み合わせに既定のブラウザーを使用して次のコマンドを使用して再開Officeを設定します。
+1. 完了したら、次のコマンドを使用して、Windows バージョンと Office バージョンの組み合わせに対して既定のブラウザーの使用を再開するように Office を設定します。
 
     ```command&nbsp;line
     npx office-addin-dev-settings webview <path-to-manifest> default
