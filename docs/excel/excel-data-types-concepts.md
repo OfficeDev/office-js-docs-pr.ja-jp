@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API データ型の主要概念
 description: Office アドインで Excel データ型を使用するための主要概念について説明します。
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 65a69838500733f8be08a15a99baa167a946b82a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541151"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607451"
 ---
 # <a name="excel-data-types-core-concepts"></a>Excel データ型の主要概念
 
@@ -79,6 +79,8 @@ const myDate: Excel.FormattedNumberCellValue = {
 };
 ```
 
+[Script Lab](../overview/explore-with-script-lab.md)を開き、**サンプル** ライブラリの [データ型の書式設定された数値スニペットを確認して、書式設定された数値](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml)の実験を開始します。
+
 ## <a name="entity-values"></a>エンティティの値:
 
 エンティティ値は、オブジェクト指向プログラミングのオブジェクトと同様に、データ型のコンテナーです。 エンティティは、エンティティ値のプロパティとして配列もサポートします。 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) オブジェクトを使用すると、アドインは `type`、`text`、`properties`などのプロパティを定義できます。 `properties` プロパティを使用すると、エンティティ値で追加のデータ型を定義および格納できます。
@@ -108,6 +110,8 @@ const myEntity: Excel.EntityCellValue = {
 
 エンティティ値には、エンティティのカードを作成する `layouts` プロパティも用意されています。 カードは、Excel UI のモーダル ウィンドウとして表示され、セルに表示される内容を超えて、エンティティ値に含まれる追加情報を表示できます。 詳細については、「[エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)」を参照してください。
 
+エンティティ データ型を調べるには、まず Excel で [Script Lab](../overview/explore-with-script-lab.md)し、[データ型: **サンプル** ライブラリの [テーブル スニペット内のデータからエンティティ カードを作成する]](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) を開きます。 [データ型: 参照を含むエンティティ値](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml)と[データ型: エンティティ値属性のプロパティ](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) スニペットでは、エンティティの特徴を詳しく確認できます。
+
 ### <a name="linked-entities"></a>リンクされたエンティティ
 
 リンクされたエンティティ値 または [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) オブジェクトは、エンティティ値の種類です。 これらのオブジェクトは外部サービスによって提供されるデータを統合し、このデータを通常のエンティティ値のように [エンティティ カード](excel-data-types-entity-card.md) として表示できます。 Excel UI で使用できる [株価と地理データ型](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) はリンクされたエンティティ値です。
@@ -129,6 +133,8 @@ const myImage: Excel.WebImageCellValue = {
     basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
+
+[Script Lab](../overview/explore-with-script-lab.md)を開き、**サンプル** ライブラリで [[データの種類: Web イメージ](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml)] スニペットを選択して、Web イメージ データ型を試します。
 
 ## <a name="improved-error-support"></a>エラー サポートの改善
 
@@ -153,9 +159,18 @@ const myImage: Excel.WebImageCellValue = {
 
 各エラー オブジェクトは、`errorSubType` プロパティを使用して列挙型にアクセスでき、この列挙型にはエラーに関する追加のデータが含まれています。 たとえば、`BlockedErrorCellValue` エラー オブジェクトは、[BlockedErrorCellValueSubType](/javascript/api/excel/excel.blockederrorcellvaluesubtype) 列挙型にアクセスできます。 `BlockedErrorCellValueSubType`enum は、エラーの原因に関する追加データを提供します。
 
+データ型のエラー オブジェクトの詳細については、「データ型: Script Lab **サンプル** ライブラリで [エラー値を設定する](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml)」[スニペットを参照](../overview/explore-with-script-lab.md)してください。
+
+## <a name="next-steps"></a>次の手順
+
+エンティティ データ型で Excel アドインの可能性を 2 次元グリッドを超えて拡張する方法については、「 [エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md) 」の記事を参照してください。
+
+[OfficeDev/Office アドイン サンプル](https://github.com/OfficeDev/Office-Add-in-samples) リポジトリ[の Excel サンプルのデータ型の作成と探索](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)を使用して、ブック内のデータ型を作成および編集するアドインをビルドしてサイドロードすることで、データ型についてより深く実験します。
+
 ## <a name="see-also"></a>関連項目
 
 - [Excel アドインのデータ型の概要](excel-data-types-overview.md)
 - [エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)
-- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel でデータ型を作成して探索する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [カスタム関数とデータ型](custom-functions-data-types-concepts.md)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

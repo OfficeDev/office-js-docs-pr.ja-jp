@@ -1,18 +1,22 @@
 ---
 title: Outlook アドイン マニフェスト
-description: このマニフェストでは、 Outlook アドインが Outlook クラインアント間でどのように統合されるかを、例を交えて説明します。
-ms.date: 05/27/2020
+description: Outlook アドインで使用できる 2 種類のマニフェストの概要を確認します。
+ms.date: 10/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: a22b5180fee6b4f9f0663eff54b57510016202a2
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466979"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607556"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook アドイン マニフェスト
 
-An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
+Outlook アドインは、アドイン マニフェストと、Office アドイン用 JavaScript ライブラリでサポートされている Web アプリ (office.js) の 2 つのコンポーネントで構成されます。 マニフェストには、アドインが Outlook クライアントと統合する方法が記述されます。
+
+マニフェストには、XML と JSON の 2 つの形式があります。 JSON マニフェストについては、 [Office アドインの Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を参照してください。 この記事では、XML マニフェストについて説明します。
+
+XML マニフェストの例を次に示します。
 
  > [!NOTE]
  > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
@@ -418,7 +422,6 @@ Outlook アドインでは、次のように **\<Hosts\>** 要素を指定しま
 - 添付ファイルが存在すること
 
 アクティブ化ルールの詳細とサンプルについては、「[Outlook アドインのアクティブ化ルール](activation-rules.md)」を参照してください。
-
 
 ## <a name="next-steps-add-in-commands"></a>次の手順: アドイン コマンド
 

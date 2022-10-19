@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインにモバイル サポートを追加する
 description: 必要に応じて、アドイン マニフェストを更新し、モバイル シナリオのコードを変更する方法など、Outlook Mobile のサポートを追加する方法について説明します。
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: c84b4aeb04cd2c8b3c2f0a7afa9fd1631c22afc5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318880"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607546"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Outlook Mobile のアドイン コマンドのサポートを追加する
 
@@ -16,9 +16,11 @@ Outlook Mobile でアドイン コマンドを使用すると、ユーザーは�
 
 ## <a name="updating-the-manifest"></a>マニフェストを更新する
 
-Outlook Mobile でアドイン コマンドを有効にするための最初の手順は、アドイン マニフェストでの定義です。[VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 スキーマは、モバイル用に新しいフォーム ファクター [MobileFormFactor](/javascript/api/manifest/mobileformfactor) を定義します。
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
-この要素には、モバイル クライアントにアドインを読み込むためのすべての情報が含まれています。これにより、モバイル エクスペリエンスに対して完全に異なる UI 要素と JavaScript ファイルを定義することができます。
+The first step to enabling add-in commands in Outlook Mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+
+This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
 
 次の例は、要素内の 1 つの作業ウィンドウ ボタンを `MobileFormFactor` 示しています。
 
@@ -59,10 +61,10 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 これは、[DesktopFormFactor](/javascript/api/manifest/desktopformfactor) 要素に表示される要素と非常によく似ていますが、いくつかの注目すべき違いがあります。
 
 - [OfficeTab](/javascript/api/manifest/officetab) 要素は使用されません。
-- [ExtensionPoint](/javascript/api/manifest/extensionpoint) 要素に含まれる子要素は 1 つでなければなりません。アドインがボタンを 1 つのみ追加する場合、子要素は [Control](/javascript/api/manifest/control) 要素になります。アドインがボタンを複数追加する場合、子要素は複数の `Control` 要素を含む [Group](/javascript/api/manifest/group) 要素になります。
+- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If the add-in only adds one button, the child element should be a [Control](/javascript/api/manifest/control) element. If the add-in adds more than one button, the child element should be a [Group](/javascript/api/manifest/group) element that contains multiple `Control` elements.
 - `Control` 要素に相当する `Menu` の種類はありません。
 - [Supertip](/javascript/api/manifest/supertip) 要素は使用されません。
-- アイコンの必須サイズが異なります。モバイル アドインは少なくとも 25x25、32x32 および 48x48 ピクセルのアイコンをサポートする必要があります。
+- The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons.
 
 ## <a name="code-considerations"></a>コードに関する考慮事項
 
@@ -70,17 +72,17 @@ Outlook Mobile でアドイン コマンドを有効にするための最初の�
 
 ### <a name="use-rest-instead-of-exchange-web-services"></a>Exchange Web サービスの代わりに REST を使用する
 
-[Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) メソッドは、Outlook Mobile ではサポートされていません。可能な場合には、アドインは優先的に Office.js API から情報を取得します。Office.js API によって表示されていない情報がアドインで必要な場合、[Outlook REST APIs](/outlook/rest/) を使用してユーザーのメールボックスにアクセスする必要があります。
+The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method is not supported in Outlook Mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](/outlook/rest/) to access the user's mailbox.
 
 メールボックス要件セット 1.5 には、REST API と互換性のあるアクセス トークンを要求できる新しいバージョンの [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) と、ユーザーの REST API エンドポイントを検索するために使用できる新しい [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) プロパティが導入されました。
 
 ### <a name="pinch-zoom"></a>ピンチによるズーム
 
-既定で、ユーザーは "ピンチによるズーム" ジェスチャを使用して作業ウィンドウで拡大することができます。ご使用のシナリオでこれが該当しない場合は、HTML でピンチによるズームを無効にしてください。
+By default users can use the "pinch zoom" gesture to zoom in on task panes. If this does not make sense for your scenario, be sure to disable pinch zoom in your HTML.
 
 ### <a name="close-task-panes"></a>作業ウィンドウを閉じる
 
-Outlook Mobile では、作業ウィンドウが画面全体を占めるので、既定ではユーザーが作業ウィンドウを閉じてメッセージに戻る必要があります。シナリオが完成したら、[Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) メソッドを使用して作業ウィンドウを閉じることを検討してください。
+In Outlook Mobile, task panes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) method to close the task pane when your scenario is complete.
 
 ### <a name="compose-mode-and-appointments"></a>作成モードと予定
 

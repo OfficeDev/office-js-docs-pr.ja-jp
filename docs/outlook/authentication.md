@@ -1,14 +1,14 @@
 ---
 title: Outlook アドインの認証オプション
 description: Outlook アドインは、特定のシナリオに応じて、さまざまな認証メソッドを提供します。
-ms.date: 09/03/2021
+ms.date: 10/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: d8ae8971c4095e5314885514226cd8f52728fb07
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958363"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607528"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook アドインの認証オプション
 
@@ -19,7 +19,8 @@ Outlook アドインは、アドインをホストするサーバー、内部ネ
 シングル サインオン アクセス トークンは、アドインがアクセス トークンを認証および取得して [Microsoft Graph API](/graph/overview) を呼び出すための、シームレスな方法を提供します。 ユーザーが資格情報を入力する必要がないため、この機能は摩擦を低減します。
 
 > [!NOTE]
-> 現在、シングル サインオン API は Word、Excel、Outlook、PowerPoint でサポートされています。シングル サインオン API の現在のサポート状態に関する詳細は、「[IdentityAPI の要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)」を参照してください。Outlook アドインで作業している場合は、Microsoft 365 テナントで先進認証を有効にしてください。この方法の詳細については、「[Exchange Online: テナントで先進認証を有効にする方法](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)」を参照してください。
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 アドインが次の場合は、SSO アクセス トークンの使用を検討してください。
 
@@ -29,6 +30,9 @@ Outlook アドインは、アドインをホストするサーバー、内部ネ
   - ユーザーが制御する Microsoft 以外のサービス
 
 SSO 認証方法は、Azure Active Directory が提供する [OAuth2 On-Behalf-Of フロー](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)を使用します。 それには、アドインを[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)に登録し、必要な Microsoft Graph スコープをマニフェストで指定する必要があります。
+
+> [!NOTE]
+> アドインが Office アドインの [Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用している場合、マニフェストの構成がいくつかありますが、Microsoft Graph スコープは指定されていません。 Teams マニフェストを使用する SSO 対応アドインはサイドロードできますが、現時点では他の方法では展開できません。
 
 この方法を使用すると、アドインはサーバーのバックエンド API にスコープされたアクセス トークンを取得できます。 アドインはこれを `Authorization` ヘッダーのベアラー トークンとして使用して、API へのコールバックを認証します。 その時点で、サーバーでは次の操作を実行できます。
 
@@ -61,7 +65,7 @@ Exchange のユーザー ID トークンは、アドインがユーザーの ID 
 
 ## <a name="callback-tokens"></a>コールバック トークン
 
-コールバック トークンは、[Exchange Web サービス (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) または [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api) を使用して、サーバーのバックエンドからユーザーのメールボックスへのアクセスを提供します。アドインが次に当てはまる場合は、コールバック トークンの使用を検討してください。
+Callback tokens provide access to the user's mailbox from your server back-end, either using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), or the [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Consider using callback tokens if your add-in:
 
 - サーバーのバックエンドからユーザーのメールボックスにアクセスする必要がある。
 

@@ -2,14 +2,14 @@
 title: オンライン会議プロバイダーの Outlook アドインを作成する
 description: オンライン会議サービス プロバイダー用に Outlook アドインを設定する方法について説明します。
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: f422107d69dd3cdcc9a01feaee0b97dcd7e5e1f3
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320659"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607577"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>オンライン会議プロバイダーの Outlook アドインを作成する
 
@@ -24,9 +24,22 @@ ms.locfileid: "67320659"
 
 Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) を完了します。
 
+> [!NOTE]
+> [Office アドインの Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用する場合は、[Outlook クイック スタートで Teams マニフェスト (プレビュー)](../quickstarts/outlook-quickstart-json-manifest.md) を使用して代替クイック スタートを完了しますが、[**試してみる**] セクションの後のすべてのセクションをスキップします。
+
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
-ユーザーがアドインを使用してオンライン会議を作成できるようにするには、マニフェストでノードを構成する **\<VersionOverrides\>** 必要があります。 Outlook on the web、Windows、Mac でのみサポートされるアドインを作成する場合は、ガイダンスとして **[Windows]、[Mac]、[Web**] タブを選択します。 ただし、アドインが Outlook on Android と iOS でもサポートされる場合は、[ **モバイル** ] タブを選択します。
+ユーザーがアドインを使用してオンライン会議を作成できるようにするには、マニフェストを構成する必要があります。 マークアップは、次の 2 つの変数によって異なります。
+
+- ターゲット プラットフォームの種類。モバイルまたは非モバイルのいずれか。
+- マニフェストの種類。 [Office アドインの XML マニフェストまたは Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md)。
+
+アドインで XML マニフェストが使用され、アドインがOutlook on the web、Windows、Mac でのみサポートされる場合は、ガイダンスとして **[Windows]、[Mac]、[Web**] タブを選択します。 ただし、アドインが Outlook on Android と iOS でもサポートされる場合は、[ **モバイル** ] タブを選択します。
+
+アドインで Teams マニフェスト (プレビュー) が使用されている場合は、 **Teams マニフェスト (開発者プレビュー)** タブを選択します。
+
+> [!NOTE]
+> Teams マニフェスト (プレビュー) は現在、Outlook on Windows でのみサポートされています。 モバイル プラットフォームを含む他のプラットフォームへのサポートの提供に取り組んでいます。
 
 # <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
 
@@ -194,6 +207,137 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
+
+1. **manifest.json** ファイルを開きます。
+
+1. "authorization.permissions.resourceSpecific" 配列内の *最初* のオブジェクトを見つけ、その "name" プロパティを "MailboxItem.ReadWrite.User" に設定します。 完了したら、次のようになります。
+
+    ```json
+    {
+        "name": "MailboxItem.ReadWrite.User",
+        "type": "Delegated"
+    }
+    ```
+
+1. "validDomains" 配列で、URL を ""https://contoso.com に変更します。これは架空のオンライン会議プロバイダーの URL です。 完了したら、配列は次のようになります。
+
+    ```json
+    "validDomains": [
+        "https://contoso.com"
+    ],
+    ```
+
+1. 次のオブジェクトを "extensions.runtimes" 配列に追加します。 このコードについては、次の点に注意してください。
+
+   - メールボックス要件セットの "minVersion" は "1.3" に設定されているため、この機能がサポートされていないプラットフォームおよび Office バージョンではランタイムが起動されません。
+   - ランタイムの "id" は、わかりやすい名前 "online_meeting_runtime" に設定されます。
+   - "code.page" プロパティは、関数コマンドを読み込む UI レス HTML ファイルの URL に設定されます。
+   - "lifetime" プロパティは "short" に設定されています。これは、関数コマンド ボタンが選択されたときにランタイムが起動し、関数が完了したときにシャットダウンされることを意味します。 (まれに、ハンドラーが完了する前にランタイムがシャットダウンされる場合があります。 [「Office アドインのランタイム](../testing/runtimes.md)」を参照してください)。
+   - "insertContosoMeeting" という名前の関数を実行するアクションがあります。 この関数は、後の手順で作成します。
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "online_meeting_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://contoso.com/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertContosoMeeting",
+                "type": "executeFunction",
+                "displayName": "insertContosoMeeting"
+            }
+        ]
+    }
+    ```
+
+1. "extensions.ribbons" 配列を次のように置き換えます。 このマークアップについて、次の情報にご注意ください。
+
+   - メールボックス要件セットの "minVersion" は "1.3" に設定されているため、リボンのカスタマイズは、この機能がサポートされていないプラットフォームおよび Office バージョンでは表示されません。
+   - "contexts" 配列は、リボンが会議の詳細開催者ウィンドウでのみ使用できることを指定します。
+   - 既定のリボン タブ (会議の詳細開催者ウィンドウの) には、 **Contoso 会議** というラベルの付いたカスタム コントロール グループが表示されます。
+   - グループには、[ **Contoso 会議の追加]** というラベルの付いたボタンが表示されます。
+   - ボタンの "actionId" が "insertContosoMeeting" に設定されています。これは、前の手順で作成したアクションの "id" と一致します。
+
+    ```json
+    "ribbons": [
+      {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "scopes": [
+                "mail"
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "contexts": [
+            "meetingDetailsOrganizer"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "id": "apptComposeGroup",
+                        "label": "Contoso meeting",
+                        "controls": [
+                            {
+                                "id": "insertMeetingButton",
+                                "type": "button",
+                                "label": "Add a Contoso meeting",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "file": "icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "file": "icon-32.png"
+                                    },
+                                    {
+                                        "size": 64,
+                                        "file": "icon-64_02.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "file": "icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Add a Contoso meeting",
+                                    "description": "Add a Contoso meeting to this appointment."
+                                },
+                                "actionId": "insertContosoMeeting",
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+    ```
 
 ---
 

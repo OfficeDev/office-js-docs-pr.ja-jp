@@ -364,6 +364,8 @@ items:
             href: /legal/marketplace/certification-policies
           - name: SharePoint アプリ カタログにアドインを発行する
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+          - name: 政府機関のクラウドにデプロイするためのガイダンス
+            href: publish/government-cloud-guidance.md
           - name: Office アドインを保持する
             href: publish/maintain-breaking-changes.md
   - name: Excel

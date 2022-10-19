@@ -1,16 +1,16 @@
 ---
 title: Excel JavaScript API データ型エンティティ値カード
 description: Excel アドインのデータ型でエンティティ値カードを使用する方法について説明します。
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 1cb6c49e0e8cb07afb4b7c78a360be6c2391437a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540985"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607570"
 ---
 # <a name="use-cards-with-entity-value-data-types"></a>エンティティ値データ型でカードを使用する
 
@@ -32,7 +32,7 @@ entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-ex
 次のコード スニペットは、複数のデータ型が入れ子になっているエンティティ値の JSON を示 `properties`しています。
 
 > [!NOTE]
-> 完全なコード サンプルでこの JSON を使用する方法については、 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) リポジトリを参照してください。
+> 完全なサンプルでこの JSON コード スニペットを試すには、Excel [でScript Lab](../overview/explore-with-script-lab.md)を開き、[[データ型: サンプル ライブラリのテーブル内のデータからエンティティ カードを作成する]](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) を選択します。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -114,7 +114,7 @@ const entity: Excel.EntityCellValue = {
 各カード セクション内で、次`title`のような`layout`要素を`properties`指定できます。 キーは `layout` オブジェクトを [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) 使用し、値 `"List"`を受け入れます。 キーは `properties` 文字列の配列を受け入れます。 などの`"Product ID"`値には、前の[「カードプロパティ](#card-properties)」の記事セクションで対応するデータ型があることに`properties`注意してください。 セクションは折りたたみ可能で、エンティティ カードを Excel UI で開いたときに、ブール値を折りたたんだり折りたたんだりしないように定義することもできます。
 
 > [!NOTE]
-> 完全なコード サンプルでこの JSON を使用する方法については、 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) リポジトリを参照してください。
+> 完全なサンプルでこの JSON コード スニペットを試すには、Excel [でScript Lab](../overview/explore-with-script-lab.md)を開き、[[データ型: サンプル ライブラリのテーブル内のデータからエンティティ カードを作成する]](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) を選択します。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -169,7 +169,7 @@ const entity: Excel.EntityCellValue = {
 次の JSON コード スニペットは、プロパティを使用してエンティティの `provider` データ プロバイダー属性を指定するエンティティ値を示しています。
 
 > [!NOTE]
-> 完全なコード サンプルでこの JSON を使用する方法については、 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) リポジトリを参照してください。
+> 完全なサンプルでこの JSON コード スニペットを試すには、Excel [でScript Lab](../overview/explore-with-script-lab.md)を開き、**サンプル** ライブラリで [[データ型: エンティティ値属性] プロパティ](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml)を選択します。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -193,8 +193,13 @@ const entity: Excel.EntityCellValue = {
 
 :::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="カード レイアウト ウィンドウが表示されたエンティティ値データ型を示すスクリーンショット。カードには、左下隅にデータ プロバイダーの属性が表示されます。":::
 
+## <a name="next-steps"></a>次の手順
+
+[OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) リポジトリ[の Excel サンプルでデータ型の作成と探索](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)を試してください。 このサンプルでは、ブック内のデータ型を作成および編集するアドインをビルドしてからサイドロードする方法について説明します。
+
 ## <a name="see-also"></a>関連項目
 
 - [Excel アドインのデータ型の概要](excel-data-types-overview.md)
 - [Excel データ型の主要概念](excel-data-types-concepts.md)
+- [Excel でデータ型を作成して探索する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

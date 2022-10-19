@@ -1,17 +1,17 @@
 ---
 title: Excel アドインのデータ型の概要
 description: Excel JavaScript API のデータ型を使用すると、Office アドイン開発者は、書式設定された数値、Web イメージ、エンティティ、エンティティ内の配列、および拡張エラーをデータ型として操作できます。
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2d19eacc23d64f472f32363fc93155b6e023ba04
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 92f541d3b1296de5545bfb0016448f49043abcba
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540978"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607437"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins"></a>Excel アドインのデータ型の概要
 
@@ -23,6 +23,9 @@ ms.locfileid: "68540978"
 
 データ型 API を使用する方法については、 [Excel データ型のコア概念](excel-data-types-concepts.md) に関する記事を参照してください。
 
+> [!NOTE]
+> データ型の実験をすぐに開始するには、Excel [にScript Lab](../overview/explore-with-script-lab.md)をインストールし、**サンプル** ライブラリの **データ型** のセクションを確認します。 [また、OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) リポジトリでScript Labサンプルを調べることができます。
+
 ## <a name="data-types-and-custom-functions"></a>データ型とカスタム関数
 
 データ型は、カスタム関数の機能を強化します。 カスタム関数は、カスタム関数への入力とカスタム関数の出力の両方としてデータ型を受け取り、カスタム関数は Excel JavaScript API と同じ JSON スキーマをデータ型に使用します。 このデータ型の JSON スキーマは、カスタム関数により計算および評価がされるときに維持されます。 データ型とカスタム関数の統合の詳細については、「[カスタム関数とデータ型](custom-functions-data-types-concepts.md)」を参照してください。
@@ -31,5 +34,6 @@ ms.locfileid: "68540978"
 
 - [Excel データ型の主要概念](excel-data-types-concepts.md)
 - [エンティティ値データ型でカードを使用する](excel-data-types-entity-card.md)
-- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)
 - [カスタム関数とデータ型](custom-functions-data-types-concepts.md)
+- [Excel でデータ型を作成して探索する](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
+- [Excel JavaScript API リファレンス](../reference/overview/excel-add-ins-reference-overview.md)

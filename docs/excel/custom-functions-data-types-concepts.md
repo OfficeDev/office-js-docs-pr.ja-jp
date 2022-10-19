@@ -1,20 +1,20 @@
 ---
 title: カスタム関数とデータ型
 description: カスタム関数と Office アドインで Excel データ型を使用します。
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
-ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.localizationpriority: medium
+ms.openlocfilehash: 6ea2287dbf83a5acc45f64c6f5071e504e66bbce
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540992"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607430"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel"></a>Excel でカスタム関数でデータ型を使用する
 
-データ型は Excel JavaScript API を拡張して、元の 4 つのセル値タイプ (文字列、数値、ブール値、エラー) 以外のデータ型もサポートします。 データ型には、Web イメージ、書式設定された数値、エンティティ値、エンティティ値内の配列のサポートが含まれます。
+データ型は Excel JavaScript API を拡張して、元の 4 つのセル値タイプ (文字列、数値、ブール値、エラー) 以外のデータ型もサポートします。 データ型には、Web イメージ、書式設定された数値、エンティティ、エンティティ内の配列のサポートが含まれます。
 
 これらのデータ型はカスタム関数の能力を強化します。というのは、カスタム関数が入力値と出力値の両方としてデータ型を受け入れるからです。 カスタム関数を使用してデータ型を生成することも、既存のデータ型を関数引数として計算に取り込んだりすることもできます。 データ型の JSON スキーマが設定されると、このスキーマは計算全体で維持されます。
 
@@ -29,23 +29,9 @@ Excel アドインでのデータ型の使用の詳細については、「[Exce
 
 ## <a name="enable-data-types-for-custom-functions"></a>カスタム関数のデータ型を有効にする
 
-この機能を使用するには、JSON メタデータを手動で更新する必要があります。 より一時的なテストの場合は、JSON メタデータを手動で更新する代わりに、Script Lab の設定をカスタマイズできます。 以下のセクションでは、これらの手順の概要を説明します。
-
-### <a name="manually-update-json-metadata"></a>JSON メタデータを手動で更新する
-
 カスタム関数プロジェクトには、JSON メタデータ ファイルが含まれています。 この JSON メタデータ ファイルは、データ型 API で使用される JSON スキーマとは異なります。 データ型とカスタム関数の統合を使用するには、カスタム関数の JSON メタデータ ファイルを手動で更新して、プロパティ `allowCustomDataForDataTypeAny` を含める必要があります。 このプロパティを `true` に設定します。
 
-For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
-
-### <a name="script-lab-option"></a>Script Lab オプション
-
-前のセクションで説明した手動の JSON メタデータの更新に加えて、データ型とのカスタム関数の統合を Script Lab でのテストに使用できます。 Script Lab の詳細については、「[Script Lab を使用して Office JavaScript API を探索する](../overview/explore-with-script-lab.md)」を参照してください。 Script Lab でこの機能をテストするには、次の手順を使用して設定を更新します。
-
-1. Script Lab の **[コード]** 作業ウィンドウを開きます。
-1. 右下の **[設定]** ボタンを選択します。
-1. **[ユーザー設定]** タブに移動し、`allowCustomDataForDataTypeAny: true` と入力します。
-
-![Script Lab でカスタム関数のデータ型を有効にする手順を示すスクリーンショット。](../images/custom-functions-script-lab-data-type.png)
+手動 JSON メタデータ作成プロセスの詳細については、「 [カスタム関数の JSON メタデータを手動で作成する」を](custom-functions-json.md)参照してください。 このプロパティの追加の詳細については、[allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) を参照してください。
 
 ## <a name="output-a-formatted-number-value"></a>書式設定された数値を出力する
 
@@ -92,6 +78,10 @@ function getEntityAttribute(value, attribute) {
     }
 }
 ```
+
+## <a name="next-steps"></a>次の手順
+
+カスタム関数とデータ型を試すには、Excel [にScript Lab](../overview/explore-with-script-lab.md)をインストールし、**サンプル** ライブラリの [データ型: カスタム関数](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/16-custom-functions/data-types-custom-functions.yaml)スニペットを試します。
 
 ## <a name="see-also"></a>関連項目
 
