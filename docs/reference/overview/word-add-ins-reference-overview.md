@@ -15,7 +15,7 @@ ms.locfileid: "66229723"
 
 Word アドインは、次の 2 つの JavaScript オブジェクト モデルを含む Office JavaScript API を使用して、Word のオブジェクトを操作します。
 
-* **Word JavaScript API**: Word には [アプリ家0ション固有 API](../../develop/application-specific-api-model.md) があり、Office 2016 で導入された [Word JavaScript API](/javascript/api/word) には、Word 文書のオブジェクトとメタデータへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。
+* **Word JavaScript API**: Word には [アプリケーション固有の API](../../develop/application-specific-api-model.md) があり、Office 2016 で導入された [Word JavaScript API](/javascript/api/word) には、Word 文書のオブジェクトとメタデータへのアクセスに使用できる、厳密に型指定されたオブジェクトが用意されています。
 
 * **共通 API**: Office 2013 で導入された [共通 API](/javascript/api/office) を使用すると、複数の種類の Office アプリケーション間で共通の UI、ダイアログ、クライアント設定などの機能にアクセスすることができます。
 
