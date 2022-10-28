@@ -2,14 +2,14 @@
 title: イベント ベースのアクティブ化のために Outlook アドインを構成する
 description: イベント ベースのアクティブ化のために Outlook アドインを構成する方法について説明します。
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ce2821ed5d226ff2c6a2b3c718d5711689523ac6
-ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
+ms.openlocfilehash: b5ae744350389ed222284808a67a9b7c30211136
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2022
-ms.locfileid: "68664680"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767176"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>イベント ベースのアクティブ化のために Outlook アドインを構成する
 
@@ -21,6 +21,9 @@ ms.locfileid: "68664680"
 > この機能のサポートは [要件セット 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) で導入され、追加のイベントが後続の要件セットで使用できるようになりました。 イベントの最小要件セットと、それをサポートするクライアントとプラットフォームの詳細については、「[Exchange サーバーと Outlook クライアントでサポートされる](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)[サポートされるイベント](#supported-events)と要件セット」を参照してください。
 >
 > iOS または Android 上の Outlook では、イベント ベースのアクティブ化はサポートされていません。
+
+> [!IMPORTANT]
+> イベント ベースのアクティブ化は、 [Office アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) ではまだサポートされていません。 私たちはすぐにそのサポートを提供することに取り組んでいます。
 
 ## <a name="supported-events"></a>サポートされるイベント
 
@@ -37,10 +40,10 @@ ms.locfileid: "68664680"
 |`OnAppointmentTimeChanged`|appointmentTimeChanged|予定の作成中に日付/時刻を変更する場合。<br><br>イベント固有のデータ オブジェクト: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
 |`OnAppointmentRecurrenceChanged`|appointmentRecurrenceChanged|予定の作成中に繰り返しの詳細を追加、変更、または削除する場合。 日付/時刻が変更されると、 `OnAppointmentTimeChanged` イベントも発生します。<br><br>イベント固有のデータ オブジェクト: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
 |`OnInfoBarDismissClicked`|infoBarDismissClicked|メッセージまたは予定アイテムの作成中に通知を閉じる場合。 通知を追加したアドインのみが通知されます。<br><br>イベント固有のデータ オブジェクト: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
-|`OnMessageSend`|messageSending|メッセージ 項目の送信時。 詳細については、 [スマート アラートのチュートリアルを](smart-alerts-onmessagesend-walkthrough.md)参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentSend`|appointmentSending|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアルを](smart-alerts-onmessagesend-walkthrough.md)参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnMessageCompose`|messageComposeOpened|新しいメッセージの作成 (返信、全員への返信、転送を含む) または下書きを編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
-|`OnAppointmentOrganizer`|appointmentOrganizerOpened|新しい予定を作成するか、既存の予定を編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー|
+|`OnMessageSend`|messageSending|メッセージ 項目の送信時。 詳細については、 [スマート アラートのチュートリアルを](smart-alerts-onmessagesend-walkthrough.md)参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentSend`|appointmentSending|予定アイテムを送信する場合。 詳細については、 [スマート アラートのチュートリアルを](smart-alerts-onmessagesend-walkthrough.md)参照してください。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnMessageCompose`|messageComposeOpened|新しいメッセージの作成 (返信、全員への返信、転送を含む) または下書きを編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
+|`OnAppointmentOrganizer`|appointmentOrganizerOpened|新しい予定を作成するか、既存の予定を編集する場合。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web ブラウザー<br>- 新しい Mac UI|
 
 > [!NOTE]
 > Outlook on Windows の <sup>1 つの</sup>イベント ベースのアドインを実行するには、少なくとも Windows 10 バージョン 1903 (ビルド 18362) または Windows Server 2019 バージョン 1903 が必要です。
@@ -48,9 +51,6 @@ ms.locfileid: "68664680"
 ## <a name="set-up-your-environment"></a>環境を設定する
 
 [Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
-
-> [!NOTE]
-> [Office アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用する場合は、[Outlook クイック スタートで Teams マニフェスト (プレビュー)](../quickstarts/outlook-quickstart-json-manifest.md) を使用して代替クイック スタートを完了しますが、[**試してみる**] セクションの後にすべてのセクションをスキップします。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -184,6 +184,9 @@ ms.locfileid: "68664680"
 Outlook on Windows では JavaScript ファイルが使用されますが、Outlook on the webと新しい Mac UI では、同じ JavaScript ファイルを参照できる HTML ファイルが使用されます。 Outlook プラットフォームは最終的に Outlook クライアントに基づいて HTML と JavaScript のどちらを使用するかを決定するため、マニフェストのノードで `Resources` これらの両方のファイルへの参照を指定する必要があります。 そのため、イベント処理を構成するには、要素内の HTML の場所を **\<Runtime\>** 指定し、その `Override` 子要素で、HTML によってインライン化または参照される JavaScript ファイルの場所を指定します。
 
 # <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> イベント ベースのアクティブ化は、 [Office アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) ではまだサポートされていません。 このタブは、今後使用するために使用されます。
 
 1. **manifest.json** ファイルを開きます。
 

@@ -1,19 +1,19 @@
 ---
-title: Outlook アドインに Append-on-send を実装する
-description: Outlook アドインで追加オン送信機能を実装する方法について説明します。
+title: Outlook アドインに追加送信を実装する
+description: Outlook アドインに追加送信機能を実装する方法について説明します。
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: c8239634b6c9ca281255caf89276fb1b454efc84
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541144"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767162"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインに Append-on-send を実装する
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Outlook アドインに追加送信を実装する
 
-このチュートリアルの終わりまでに、メッセージの送信時に免責事項を挿入できる Outlook アドインが作成されます。
+このチュートリアルの終わりまでに、メッセージの送信時に免責事項を挿入できる Outlook アドインが用意されています。
 
 > [!NOTE]
 > この機能のサポートは、要件セット 1.9 で導入されました。 この要件セットをサポートする [クライアントおよびプラットフォーム](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) を参照してください。
@@ -22,18 +22,15 @@ ms.locfileid: "68541144"
 
 Office アドイン用 Yeoman ジェネレーターを使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) を完了します。
 
-> [!NOTE]
-> [Office アドインの Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用する場合は、[Outlook クイック スタートで Teams マニフェスト (プレビュー)](../quickstarts/outlook-quickstart-json-manifest.md) を使用して代替クイック スタートを完了しますが、[**試してみる**] セクションの後のすべてのセクションをスキップします。
-
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
 マニフェストを構成するには、使用しているマニフェストの種類のタブを開きます。
 
 # <a name="xml-manifest"></a>[XML マニフェスト](#tab/xmlmanifest)
 
-アドインで追加の送信機能を有効にするには、[ExtendedPermissions](/javascript/api/manifest/extendedpermissions) のコレクションにアクセス許可を含める`AppendOnSend`必要があります。
+アドインで追加オン送信機能を有効にするには、[ExtendedPermissions](/javascript/api/manifest/extendedpermissions) のコレクションにアクセス許可を含める`AppendOnSend`必要があります。
 
-このシナリオでは、[アクションの実行] ボタンを`action`選択して関数を実行する代わりに、関数を`appendOnSend`実行します。
+このシナリオでは、[**アクションの実行**] ボタンを選択して関数を実行`action`する代わりに、関数を`appendOnSend`実行します。
 
 1. コード エディターで、クイック スタート プロジェクトを開きます。
 
@@ -128,14 +125,17 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 # <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
 
+> [!IMPORTANT]
+> Office [アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) では、送信時の追加はまだサポートされていません。 このタブは、今後使用するために使用されます。
+
 1. manifest.json ファイルを開きます。
 
-1. 次のオブジェクトを "extensions.runtimes" 配列に追加します。 このコードについては、次の点に注意してください。
+1. "extensions.runtimes" 配列に次のオブジェクトを追加します。 このコードについては、次の点に注意してください。
 
-   - メールボックス要件セットの "minVersion" は "1.9" に設定されているため、この機能がサポートされていないプラットフォームおよび Office バージョンにはアドインをインストールできません。 
+   - メールボックス要件セットの "minVersion" は "1.9" に設定されているため、この機能がサポートされていないプラットフォームと Office バージョンにアドインをインストールすることはできません。 
    - ランタイムの "id" は、わかりやすい名前 "function_command_runtime" に設定されます。
    - "code.page" プロパティは、関数コマンドを読み込む UI レス HTML ファイルの URL に設定されます。
-   - "有効期間" プロパティは "short" に設定されています。これは、関数コマンド ボタンが選択されたときにランタイムが起動し、関数が完了したときにシャットダウンすることを意味します。 (まれに、ハンドラーが完了する前にランタイムがシャットダウンされる場合があります。 [「Office アドインのランタイム](../testing/runtimes.md)」を参照してください)。
+   - "lifetime" プロパティは "short" に設定されています。これは、関数コマンド ボタンが選択されたときにランタイムが起動し、関数が完了するとシャットダウンすることを意味します。 (まれに、ハンドラーが完了する前にランタイムがシャットダウンする場合があります。 [「Office アドインのランタイム」を](../testing/runtimes.md)参照してください)。
    - "appendDisclaimerOnSend" という名前の関数を実行するアクションがあります。 この関数は、後の手順で作成します。
 
     ```json
@@ -167,7 +167,7 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
     }
     ```
 
-1. "authorization.permissions.resourceSpecific" 配列に、次のオブジェクトを追加します。 配列内の他のオブジェクトとコンマで区切っていることを確認します。
+1. "authorization.permissions.resourceSpecific" 配列に、次のオブジェクトを追加します。 配列内の他のオブジェクトからコンマで区切っていることを確認します。
 
     ```json
     {
@@ -181,16 +181,16 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 > [!TIP]
 > Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
-## <a name="implement-append-on-send-handling"></a>append-on-send 処理を実装する
+## <a name="implement-append-on-send-handling"></a>送信時の追加処理を実装する
 
 次に、送信イベントに追加を実装します。
 
 > [!IMPORTANT]
-> アドインで [On-send イベント処理も実装 `ItemSend`](outlook-on-send-addins.md)されている場合は、送信ハンドラーで呼び出すと `AppendOnSendAsync` 、このシナリオはサポートされていないため、エラーが返されます。
+> アドインで を[使用して`ItemSend`送信時イベント処理](outlook-on-send-addins.md)も実装している場合、このシナリオはサポートされていないため、送信時ハンドラーで を呼び出すと`AppendOnSendAsync`エラーが返されます。
 
-このシナリオでは、ユーザーが送信したときにアイテムに免責事項を追加することを実装します。
+このシナリオでは、ユーザーが送信するときに、免責事項をアイテムに追加するを実装します。
 
-1. 同じクイック スタート プロジェクトから、コード エディターで **ファイル ./src/commands/commands.js** を開きます。
+1. 同じクイック スタート プロジェクトから、コード エディターで **./src/commands/commands.js** ファイルを開きます。
 
 1. 関数の後に `action` 、次の JavaScript 関数を挿入します。
 
@@ -226,19 +226,19 @@ Office アドイン用 Yeoman ジェネレーターを使用してアドイン �
 
 ## <a name="try-it-out"></a>試してみる
 
-1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーがまだ実行されておらず、アドインがサイドロードされると、ローカル Web サーバーが起動します。
+1. プロジェクトのルート ディレクトリから次のコマンドを実行します。 このコマンドを実行すると、ローカル Web サーバーがまだ実行されていない場合に起動し、アドインがサイドロードされます。
 
     ```command&nbsp;line
     npm start
     ```
 
-1. 新しいメッセージを作成し、 **To 行に** 自分を追加します。
+1. 新しいメッセージを作成し、[ **To** ] 行に自分を追加します。
 
-1. リボンまたはオーバーフロー メニューから、[ **アクションの実行**] を選択します。
+1. リボンまたはオーバーフロー メニューで、[ **アクションの実行**] を選択します。
 
 1. メッセージを送信し、 **受信トレイ** または **送信済みアイテム** フォルダーからメッセージを開き、追加された免責事項を表示します。
 
-    ![Outlook on the webでの送信時に免責事項が追加されたサンプル メッセージ。](../images/outlook-web-append-disclaimer.png)
+    ![Outlook on the webの送信時に免責事項が追加されたサンプル メッセージ。](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>関連項目
 

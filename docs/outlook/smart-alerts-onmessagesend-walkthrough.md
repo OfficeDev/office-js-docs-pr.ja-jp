@@ -2,14 +2,14 @@
 title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 description: イベント ベースのアクティブ化を使用して、Outlook アドインで送信時イベントを処理する方法について説明します。
 ms.topic: article
-ms.date: 10/19/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f047323be0752023eee0c357f0a2e90627c0b896
-ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
+ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2022
-ms.locfileid: "68664652"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767169"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 
@@ -27,9 +27,6 @@ ms.locfileid: "68664652"
 ## <a name="set-up-your-environment"></a>環境を設定する
 
 [Office アドイン用 Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用してアドイン プロジェクトを作成する [Outlook クイック スタート](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)を完了します。
-
-> [!NOTE]
-> [Office アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) を使用する場合は、[Outlook クイック スタートで Teams マニフェスト (プレビュー)](../quickstarts/outlook-quickstart-json-manifest.md) を使用して代替クイック スタートを完了しますが、[**試してみる**] セクションの後にすべてのセクションをスキップします。
 
 ## <a name="configure-the-manifest"></a>マニフェストを構成する
 
@@ -148,6 +145,9 @@ ms.locfileid: "68664652"
 > - Outlook アドインのマニフェストの詳細については、「 [Outlook アドイン マニフェスト](manifests.md)」を参照してください。
 
 # <a name="teams-manifest-developer-preview"></a>[Teams マニフェスト (開発者プレビュー)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> スマート アラートは、 [Office アドイン用の Teams マニフェスト (プレビュー)](../develop/json-manifest-overview.md) ではまだサポートされていません。 このタブは、今後使用するために使用されます。
 
 1. **manifest.json** ファイルを開きます。
 
@@ -431,10 +431,13 @@ event.completed メソッドの [errorMessage プロパティ](/javascript/api/o
 
 スマート アラートと [送信時機能](outlook-on-send-addins.md) を使用すると、送信前にメッセージや会議出席依頼を改善する機会がユーザーに提供されますが、スマート アラートは、ユーザーにさらなるアクションを求める柔軟性を高める新しい機能です。 2 つの機能の主な違いを次の表に示します。
 
+> [!IMPORTANT]
+> スマート アラートは、Teams マニフェスト (プレビュー) ではまだサポートされていません。 そのサポートの提供に間もなく取り組んでいます。
+
 |属性|スマート アラート|送信中|
 |-----|-----|-----|
 |**サポートされる最小要件セット**|[メールボックス 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**サポートされている Outlook クライアント**|-Windows<br>- Web ブラウザー (モダン UI)|-Windows<br>- Web ブラウザー (クラシックおよびモダン UI)<br>- Mac (クラシックおよび新しい UI) |
+|**サポートされている Outlook クライアント**|-Windows<br>- Web ブラウザー (モダン UI)<br>- Mac (新しい UI)|-Windows<br>- Web ブラウザー (クラシックおよびモダン UI)<br>- Mac (クラシックおよび新しい UI) |
 |**サポートされるイベント**|**XML マニフェスト**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams マニフェスト (プレビュー)**<br>- "messageSending"<br>- "appointmentSending"|**XML マニフェスト**<br>- `ItemSend`<br><br>**Teams マニフェスト (プレビュー)**<br>- サポートされていません|
 |**マニフェスト拡張プロパティ**|**XML マニフェスト**<br>- `LaunchEvent`<br><br>**Teams マニフェスト (プレビュー)**<br>- "autoRunEvents"|**XML マニフェスト**<br>- `Events`<br><br>**Teams マニフェスト (プレビュー)**<br>- サポートされていません|
 |**サポートされている送信モード オプション**|- ユーザーにプロンプトを表示する<br>- ソフト ブロック<br>- ブロック (アドインが Teams マニフェスト (プレビュー) を使用している場合はサポートされません)|ブロック|
