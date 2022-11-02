@@ -4,12 +4,12 @@ description: スニペットを Script Lab から Yo Office プロジェクト�
 ms.topic: how-to
 ms.date: 04/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 038d25610e5ef5cc3e4cdbedb2d2a184294c673e
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
-ms.translationtype: HT
+ms.openlocfilehash: 725ce9b44c55b46e6d0ab0c085973947fcf88201
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863299"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810149"
 ---
 # <a name="create-a-standalone-office-add-in-from-your-script-lab-code"></a>Script Lab コードからスタンドアロンの Office アドインを作成する
 
@@ -58,7 +58,7 @@ Script Lab の既存のスニペットを使用して、Yo Office で生成さ�
 
 1. VS Code で、**/src/taskpane/taskpane.ts** ファイルを開きます。 JavaScript プロジェクトを使用している場合、ファイル名は **taskpane.js** です。
 1. Script Lab で、**[スクリプト]** タブを選択します。
-1. **[スクリプト]** タブのすべてのコードをクリップボードにコピーします。 **taskpane.ts** (または JavaScript の場合は **taskpane.js**) の内容全体を、コピーしたコードに置き換えます。
+1. **[スクリプト]** タブのすべてのコードをクリップボードにコピーします。 **taskpane.ts** (または JavaScript の **場合はtaskpane.js**) の内容全体をコピーしたコードに置き換えます。
 
 ### <a name="copy-task-pane-html"></a>作業ウィンドウ HTML をコピーする
 
@@ -174,7 +174,7 @@ Script Lab は、`Office.onReady` の初期化を自動的に処理します。 
 1. Script Lab 作業ウィンドウで、**[サンプル]** を選択してから、**[基本カスタム関数]** サンプルを選択します。
 1. **/src/functions/functions.ts** ファイルを開きます。 JavaScript プロジェクトを使用している場合、ファイル名は **functions.js** です。
 1. Script Lab で、**[スクリプト]** タブを選択します。
-1. **[スクリプト]** タブのすべてのコードをクリップボードにコピーします。 コピーしたコードと共に、**functions.ts** (または JavaScript の場合は **functions.js**) の上部にコードを貼り付けます。
+1. **[スクリプト]** タブのすべてのコードをクリップボードにコピーします。 コピーしたコードと共に **functions.ts** (または JavaScript の **場合はfunctions.js** ) の上部にコードを貼り付けます。
 1. ファイルを保存します。
 
 ## <a name="test-the-standalone-add-in"></a>スタンドアロン アドインをテストする

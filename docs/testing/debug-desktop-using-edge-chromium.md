@@ -3,12 +3,12 @@ title: Visual Studio Code と Microsoft Edge WebView2 を使用して Windows �
 description: VS Code で Microsoft Edge WebView2 (Chromium ベース) を使用する Office アドインをデバッグする方法について説明します。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 314799922b8d3687d8a24e93c49143cd3aa37e06
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: b84c468f2a31317921217e4b11b537af53fe471c
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464819"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810051"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Visual Studio Code と Microsoft Edge WebView2 を使用して Windows でアドインをデバッグする (Chromium ベース)
 
@@ -29,7 +29,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (バージョン 10 以上)](https://nodejs.org/)
 - Windows 10, 11
-- [Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)で説明されているように、プラットフォームとOfficeアプリケーションの組み合わせが、WebView2 (Chromium ベース) で Microsoft Edge をサポートしています。Microsoft 365 のバージョンが 2101 より前の場合は、WebView2 をインストールする必要があります。 [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) でのインストール方法はこちらをご覧ください。
+- 「[Office アドインで使用されるブラウザー](../concepts/browsers-used-by-office-web-add-ins.md)」で説明されているように、Microsoft Edge と WebView2 (Chromium ベース) をサポートするプラットフォームと Office アプリケーションの組み合わせ。Microsoft 365 サブスクリプションの Office のバージョンがバージョン 2101 より前の場合は、WebView2 をインストールする必要があります。 [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) でのインストール方法はこちらをご覧ください。
 
 ## <a name="use-the-visual-studio-code-debugger"></a>Visual Studio Code デバッガーを使用する
 
@@ -37,15 +37,15 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 
 1. 最初の手順は、プロジェクトとその作成方法によって異なります。
 
-   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、 [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用します。これを行うには、 [Outlook アドインクイック スタート](../quickstarts/outlook-quickstart.md)などのクイック スタート ガイドのいずれかを使用します。
+   - Visual Studio Code でデバッグを試すプロジェクトを作成する場合は、 [Office アドイン用の Yeoman ジェネレーター](../develop/yeoman-generator-overview.md)を使用します。これを行うには、 [Outlook アドインクイック スタートなどのクイック スタート](../quickstarts/outlook-quickstart.md) ガイドのいずれかを使用します。
    - Yo Office で作成された既存のプロジェクトをデバッグする場合は、スキップして次の手順に進みます。
    - Yo Office で作成されていない既存のプロジェクトをデバッグする場合は、「[付録 A](#appendix-a)」の手順を実行し、この手順の次の手順に戻ります。
 
 1. VS Code を開始し、プロジェクトを開きます。 
 
-1. **[表示] > [実行]** を選択するか、**Ctrl + Shift + D** キーを入力してデバッグ ビューに切り替えます。
+1. [View **Run]\**(**実行の表示** > \) を選択するか **、Ctrl + Shift + D キー** を押してデバッグ ビューに切り替えます。
 
-1. **[実行とデバッグ]** オプションから、ホスト アプリケーションの Edge Chromium オプション (**Outlook デスクトップ (Edge Chromium)** など) を選択します。 **F5** キーを選択するか、メニューから **[実行]、[デバッグの開始]** の順に選択してデバッグを開始します。 この操作により、アドインをホストするローカル サーバーがノード ウィンドウで自動的に起動され、Excel や Word などのホスト アプリケーションが自動的に開きます。 これには数秒かかる場合があります。
+1. **[実行とデバッグ]** オプションから、ホスト アプリケーションの Edge Chromium オプション (**Outlook デスクトップ (Edge Chromium)** など) を選択します。 **F5 キー** を押すか、メニューから **[デバッグの開始** > ] を選択してデバッグを開始します。 この操作により、アドインをホストするローカル サーバーがノード ウィンドウで自動的に起動され、Excel や Word などのホスト アプリケーションが自動的に開きます。 これには数秒かかる場合があります。
 
    > [!TIP]
    > Yo Officeで作成されたプロジェクトを使用していない場合は、レジストリ キーを調整するように求められる場合があります。 プロジェクトのルート フォルダーで、コマンド ラインを使用して以下を実行します。
@@ -60,7 +60,7 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
    > ![構成済みのデバッグの種類のエッジがサポートされていないというエラー。](../images/configured-debug-type-error.jpg)
    >
    > 「[付録 B](#appendix-b)」のタスクを完了し、この手順を再開します。
-   
+
 1. ホスト アプリケーションで、アドインを使用する準備ができました。 **[作業ウィンドウの表示]** を選択するか、その他のアドイン コマンドを実行します。 次のようなテキストを含むダイアログ ボックスが表示されます。
 
    > WebView は読み込み時に停止します。
@@ -80,28 +80,28 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
    > `Office.initialize` または `Office.onReady` の呼び出しのブレークポイントは無視されます。 これらの機能の詳細については、「[Office アドインを初期化する](../develop/initialize-add-in.md)」を参照してください。
 
 > [!IMPORTANT]
-> デバッグ セッションを停止する最善の方法は、**Shift キーを押しながら F5 キー** を押すか、メニューから **[実行] > [デバッグの停止]** を選択することです。 この操作では、ノード サーバー ウィンドウを閉じてホスト アプリケーションを閉じようとしますが、ドキュメントを保存するかどうかを確認するプロンプトがホスト アプリケーションに表示されます。 適切な選択を行い、ホスト アプリケーションを閉じます。 ノード ウィンドウまたはホスト アプリケーションを手動で閉じないようにします。 これを行うと、特にデバッグ セッションの停止と開始を繰り返している時に、バグが発生する可能性があります。
+> デバッグ セッションを停止する最善の方法は、**Shift + F5** キーを押すか、メニューから [**デバッグの停止****の実行** > ] を選択することです。 この操作では、ノード サーバー ウィンドウを閉じてホスト アプリケーションを閉じようとしますが、ドキュメントを保存するかどうかを確認するプロンプトがホスト アプリケーションに表示されます。 適切な選択を行い、ホスト アプリケーションを閉じます。 ノード ウィンドウまたはホスト アプリケーションを手動で閉じないようにします。 これを行うと、特にデバッグ セッションの停止と開始を繰り返している時に、バグが発生する可能性があります。
 >
 > デバッグが動作を停止する場合、たとえば、ブレークポイントが無視される場合などは、デバッグを停止します。 その後、必要に応じて、すべてのホスト アプリケーション ウィンドウとノード ウィンドウを閉じます。 最後に、Visual Studio Code を閉じて、もう一度開きます。
 
 ### <a name="appendix-a"></a>付録 A
 
-プロジェクトが Yo Office で作成されていない場合は、Visual Studio Code のデバッグ構成を作成する必要があります。 
+プロジェクトが Yo Office で作成されていない場合は、Visual Studio Code のデバッグ構成を作成する必要があります。
 
-1. プロジェクトの `\.vscode` フォルダーに `launch.json` という名前のファイルがまだ存在しない場合は作成します。 
+1. プロジェクトの `\.vscode` フォルダーに `launch.json` という名前のファイルがまだ存在しない場合は作成します。
 1. ファイルに `configurations` 配列があることを確認します。 `launch.json` の簡単な例を次に示します。
 
    ```json
    {
-     // other properities may be here.
+     // Other properties may be here.
    
      "configurations": [
    
-       // configuration objects may be here.
+       // Configuration objects may be here.
    
      ]
    
-     //other properies may be here.
+     // Other properties may be here.
    }
    ```
 
@@ -127,11 +127,11 @@ Windows で実行されている Office アドインは、Edge Chromium WebView2
 ### <a name="appendix-b"></a>付録 B
 
 1. エラー ダイアログ ボックスで、**[キャンセル]** ボタンを選択 します。
-1. デバッグが自動的に停止しない場合は、**Shift + F5** キーを選択するか、メニューから **[実行] > [デバッグの停止]** を選択します。 
+1. デバッグが自動的に停止しない場合は、**Shift + F5 キー** を押すか、メニューから [**デバッグの停止****の実行** > ] を選択します。
 1. ローカル サーバーが実行されているノード ウィンドウを閉じます (自動的に閉じられない場合)。
 1. Office アプリケーションを閉じます (自動的に閉じられない場合)。
 1. プロジェクトで `\.vscode\launch.json` ファイルを開きます。 
-1. `configurations` 配列には、いくつかの構成オブジェクトがあります。名前のパターンが `$HOST$ Desktop (Edge Chromium)` であるものを見つけます。ここで、$HOST$ はアドインが実行される Office アプリケーションです。たとえば、`Outlook Desktop (Edge Chromium)` や `Word Desktop (Edge Chromium)` などです。 
+1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
 1. `"type"` プロパティの値を `"edge"` から `"pwa-msedge"` に変更します。
 1. `"useWebView"` プロパティの値を文字列 `"advanced"` からブール値 `true` に変更します (`true` は引用符で囲まないことに注意してください)。
 1. ファイルを保存します。

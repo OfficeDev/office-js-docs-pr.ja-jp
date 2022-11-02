@@ -3,19 +3,19 @@ title: ランタイム ログを使用してアドインをデバッグする
 description: ランタイム ログを使用してアドインをデバッグする方法を説明します。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: b89212b859274d4ac52ecb92be4ac995d3a8790b
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423308"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810044"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>ランタイム ログを使用してアドインをデバッグする
 
 ランタイム ログを使用して、アドインのマニフェストやいくつかのインストール エラーをデバッグできます。 この機能は、リソース ID の不一致のような XSD スキーマ検証では検出されないマニフェストの問題を識別して修正するのに役立ちます。 ランタイム ログは、アドイン コマンドと Excel カスタム関数を実装するアドインのデバッグに特に有効です。
 
 > [!NOTE]
-> 現在、ランタイム ログ機能は、Office 2016 以降のデスクトップで使用できます。
+> ランタイム ログ機能は現在、デスクトップで Office 2016 以降で使用できます。
 
 > [!IMPORTANT]
 > ランタイムのログはパフォーマンスに影響します。 アドイン マニフェストに関する問題をデバッグする必要がある場合にのみ有効にしてください。
@@ -71,11 +71,11 @@ ms.locfileid: "67423308"
 
 レジストリは次の図のようになります。 この機能を無効にするには、`RuntimeLogging` キーをレジストリから削除します。
 
-![RuntimeLogging レジストリ キーを使用したレジストリ エディターのスクリーンショット。](../images/runtime-logging-registry.png)
+![RuntimeLogging レジストリ キーを持つレジストリ エディターのスクリーンショット。](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac でのランタイム ログ
 
-1. Office 2016 デスクトップのビルド **16.27** (19071500) 以降を実行していることを確認します。
+1. Office 2016 デスクトップ ビルド **16.27.19071500** 以降を実行していることを確認します。
 
 2. **ターミナル** を開き、`defaults`コマンドを使用してランタイム ログの優先度を設定します。
 
@@ -92,7 +92,7 @@ ms.locfileid: "67423308"
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-次の例では、Word のランタイム ログを有効にし、ログ ファイルを開きます。
+次の例では、Word のランタイム ログを有効にしてから、ログ ファイルを開きます。
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -125,17 +125,17 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 
 2. 何も起こらず、アドインが表示されない (アドイン ダイアログ ボックスにも表示されない) 場合は、ログ ファイルを開きます。
 
-3. ログ ファイルでアドインの ID を検索します。ID はマニフェストで定義します。ログ ファイルでは、この ID には `SolutionId` というラベルが付いています。
+3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
 ## <a name="known-issues-with-runtime-logging"></a>ランタイムのログに関する既知の問題
 
-混乱を招くメッセージまたは正しく分類されていないメッセージがログ ファイルに書き込まれることがあります。たとえば次のような場合です。
+You might see messages in the log file that are confusing or that are classified incorrectly. For example:
 
 - メッセージ "`Medium Current host not in add-in's host list`" に続く "`Unexpected Parsed manifest targeting different host`" は、誤ってエラーとして分類されています。
 
 - SolutionId が含まれていないメッセージ "`Unexpected Add-in is missing required manifest fields    DisplayName`" は、多くの場合、エラーはデバッグ対象のアドインと関係ありません。
 
-- `Monitorable` メッセージは、システムの観点からのエラーと予想されます。場合によっては、スキップされたがマニフェスト失敗の原因にはならなかったスペル ミスのある要素のような、マニフェストの問題を示していることがあります。
+- Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.
 
 ## <a name="see-also"></a>関連項目
 

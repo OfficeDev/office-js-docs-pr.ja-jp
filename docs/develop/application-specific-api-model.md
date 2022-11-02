@@ -3,19 +3,19 @@ title: アプリケーション固有の API モデルの使用
 description: Excel、OneNote、および Word アドインの Promise ベースの API モデルについて説明します。
 ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: d24b435318e1f462cd05ba25dbdd7f9a6018715f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092890"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810177"
 ---
 # <a name="application-specific-api-model"></a>アプリケーション固有の API モデル
 
-この記事では、Excel、Word、PowerPoint、OneNote でアドインを構築するために API モデルを使用する方法について説明します。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
+この記事では、API モデルを使用して Excel、Word、PowerPoint、OneNote でアドインを構築する方法について説明します。 この説明では、Promise ベースの API の使用に基本的な主要な概念を説明します。
 
 > [!NOTE]
-> このモデルは、Office 2013 クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)」を参照してください。
+> このモデルは、Office 2013 および Outlook クライアントではサポートされていません。 これらの Office バージョンを使用しながら、[共通のAPIモデル](office-javascript-api-object-model.md) を使用します。 フル プラットフォーム可用性のノートについては、「[Office アドイン用 Office クライアント アプリケーションとプラットフォームの可用性](/javascript/api/requirement-sets)」を参照してください。
 
 > [!TIP]
 > このページの例では Excel JavaScript API を使用していますが、この概念は OneNote、PowerPoint、Visio、Word JavaScript API にも適用されます。
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>一部のプロパティを直接設定できません
 
-書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 このプロパティは `zoom` 、次に示すように、1 つの [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
+書き込み可能であるにもかかわらず、一部のプロパティを設定できません。 これらのプロパティは、1 つのオブジェクトとして設定する必要がある親プロパティの一部です。 これは、親プロパティが特定の論理関係を持つサブプロパティに依存しているからです。 これらの親プロパティは、オブジェクトの個々のサブプロパティを設定するのではなく、オブジェクト全体を設定するためにオブジェクト リテラル表記を使用して設定する必要があります。 その 1 つの例は、[PageLayout](/javascript/api/excel/excel.pagelayout)にあります。 プロパティは `zoom` 、次に示すように、単一 [の PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) オブジェクトで設定する必要があります。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 前の例では、`zoom` 値: `sheet.pageLayout.zoom.scale = 200;`を直接割り当てることは ***できません***。 このステートメントは、`zoom` が読み込まれないので、エラーを発生させます。 `zoom` が読み込まれるような場合でも、スケール セットは有効化されません。 すべてのコンテキスト操作は `zoom`上、でアドインのプロキシオブジェクトを更新し、ローカルに設定された値を上書きする場合に発生します。
 
-この動作は、[Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 次に `format` 示すように、オブジェクト ナビゲーションを使用してプロパティを設定できます。
+この動作は、[Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member)など、[ナビゲーション プロパティ](application-specific-api-model.md#scalar-and-navigation-properties) とは異なります。 の `format` プロパティは、次に示すように、オブジェクト ナビゲーションを使用して設定できます。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

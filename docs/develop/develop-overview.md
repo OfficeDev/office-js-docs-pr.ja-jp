@@ -3,12 +3,12 @@ title: Office アドインを開発する
 description: Office アドイン開発の概要を説明します。
 ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
-ms.translationtype: HT
+ms.openlocfilehash: 82573d90f9fa22cb524da01226995e861c258b81
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752877"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810023"
 ---
 # <a name="develop-office-add-ins"></a>Office アドインを開発する
 
@@ -23,7 +23,7 @@ ms.locfileid: "65752877"
 
 ### <a name="yeoman-generator"></a>Yeoman ジェネレーター
 
-Office アドイン用の Yeoman ジェネレーターを使用することで、Visual Studio Code やその他のエディターで管理することができる、Node.js Office アドイン プロジェクトを作成できます。このジェネレーターは、次のいずれに対しても Office アドインを作成できます。
+The Yeoman generator for Office Add-ins can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
 
 - Excel
 - OneNote
@@ -49,7 +49,7 @@ Office アドインは、2 つの部分から構成されます。
 
 - 作業ウィンドウ、コンテンツ アドイン、ダイアログ ボックスなど、アドインの UI と機能を定義する Web アプリケーション。
 
-Web アプリケーションでは、Office JavaScript API を使用することで、アドインが実行されている Office ドキュメント内のコンテンツを操作します。アドインは、外部 Web サービスの呼び出しやユーザー認証の要求など、Web アプリケーションが一般的に行うその他の機能も実行することができます。
+The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
 ### <a name="define-an-add-ins-settings-and-capabilities"></a>アドインの設定と機能を定義する
 
@@ -83,7 +83,7 @@ Office アドインでは、Office JavaScript API を使用することで、ア
 
 #### <a name="explore-apis-with-script-lab"></a>Script Lab を使用して API を調べる
 
-Script Lab は、Excel や Word などの Office プログラムでの作業中に Office JavaScript API を調査し、コード スニペットを実行できるようにするアドインです。 これは、[AppSource](https://appsource.microsoft.com/product/office/WA104380862) から無料で利用でき、アドインで必要な機能のプロトタイプを作成したり検証したりする場合に、開発ツールキットに含めておくと便利なツールです。 Script Lab では、組み込みのサンプルのライブラリにアクセスして、簡単に API を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。
+Script Lab は、Excel や Word などの Office プログラムでの作業中に Office JavaScript API を調査し、コード スニペットを実行できるようにするアドインです。 これは、AppSource から無料で利用でき、アドインで必要な機能のプロトタイプを作成したり検証したりする場合に、開発ツールキットに含めておくと便利なツールです。 Script Lab では、組み込みのサンプルのライブラリにアクセスして、簡単に API を試すことができます。また、独自のコードの開始点としてサンプルを使用することもできます。
 
 次の 1 分間のビデオで、Script Lab の実際の動作をご覧ください。
 
@@ -107,7 +107,7 @@ Office UI の拡張とアドインのUXのデザインに関する詳細につ�
 
 ## <a name="next-steps"></a>次の手順
 
-この記事では、Office アドインの異なる作成方法を説明し、アドインが Office UI を拡張する方法を紹介し、API セットを説明し、Office JavaScript API の探索やアドイン機能のプロトタイプ作成をするための有益なツールとして Script Lab を紹介しました。初歩的な情報の説明は以上になります。Office アドインにの行程を先に進むには、 次の手順を実行してください。
+This article has outlined the different ways to create Office Add-ins, introduced the ways that an add-in can extend the Office UI, described the API sets, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
 
 ### <a name="create-an-office-add-in"></a>Office アドインを作成する
 

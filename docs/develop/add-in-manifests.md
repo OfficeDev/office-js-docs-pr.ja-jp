@@ -3,12 +3,12 @@ title: Office アドインの XML マニフェスト
 description: Office アドインのマニフェストとその使用方法の概要について説明します。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 60368d74cad0d1b8c0562888613d960f52b21a74
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422972"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810226"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office アドインの XML マニフェスト
 
@@ -44,7 +44,7 @@ XML マニフェスト ファイルを使用すると、Office アドインで�
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office アドインの種類ごとの必要な要素
 
-| 要素                                                                                      | コンテンツ    | 作業ウィンドウ    | Outlook      |
+| 要素                                                                                      | コンテンツ    | 作業ウィンドウ    | メール<br>(Outlook)      |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | 必須   | 必須     | 必須     |
 | [Id][]                                                                                       | 必須   | 必須     | 必須     |
@@ -107,7 +107,7 @@ _\*\* SupportUrl は、AppSource 経由で配布されたアドインに対し�
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>AppSource に提出するためのベスト プラクティス
 
-アドイン ID が有効で、一意の GUID であることを確認してください。Web 上で、一意の GUID を作成するために使用できるさまざまな GUID ジェネレーター ツールを利用できます。
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 AppSource に提出するアドインには、[SupportUrl](/javascript/api/manifest/supporturl) 要素も含める必要があります。 詳細については、「[AppSource に提出されたアプリとアドインの検証ポリシー](/legal/marketplace/certification-policies)」をご覧ください。
 
@@ -115,7 +115,7 @@ AppSource に提出するアドインには、[SupportUrl](/javascript/api/manif
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>アドイン ウィンドウで開くドメインの指定
 
-Office on the web で実行している場合、作業ウィンドウは任意の URL に移動できます。ただし、デスクトップ プラットフォームでは、アドインがスタート ページ (マニフェスト ファイルの [SourceLocation](/javascript/api/manifest/sourcelocation) 要素で指定されるページ) をホストするドメインとは異なるドメインの URL に移動しようとすると、移動先の URL は Office アプリケーションのアドイン ウィンドウとは別の新しいブラウザー ウィンドウで開かれます。
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 このデスクトップの Office の動作を変更するには、マニフェスト ファイルの [AppDomains](/javascript/api/manifest/appdomains) 要素で指定するドメインの一覧で、アドイン ウィンドウで開く各ドメインを指定します。 アドインがこの一覧にあるドメインの URL に移動しようとすると、Office on the web とデスクトップの Office の両方の作業ウィンドウで開きます。 この一覧にない URL に移動しようとすると、その URL はデスクトップの Office 新しいブラウザー ウィンドウ (アドイン ウィンドウとは別のウィンドウ) で開きます。
 
@@ -153,12 +153,12 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 オプションの [VersionOverrides](/javascript/api/manifest/versionoverrides) 要素は特筆すべきものです。 追加のアドイン機能を有効にする子マークアップが含まれます。 その一部を次に示します。
 
 - Office リボンやメニューをカスタマイズします。
-- アドインが実行される埋め込みランタイムで Office がどのように動作するかをカスタマイズする。
+- アドインを実行する埋め込みランタイムでの Office の動作をカスタマイズする。
 - アドインが Azure Active Directory やシングル サインオン用 Microsoft Graph と対話する方法を構成します。
 
 子要素 `VersionOverrides` の中には、親要素 `OfficeApp` の値を上書きする値があります。 たとえば、`VersionOverrides` 内の `Hosts` 要素は `OfficeApp` 内の `Hosts` 要素よりも優先されます。
 
-`VersionOverrides` 要素には独自のスキーマがあり、実際にはアドインの種類や使用する機能に応じて 4 つのスキーマがあります。スキーマは以下のとおりです。
+The `VersionOverrides` element has its own schema, actually four of them, depending on the type of add-in and the features it uses. The schemas are:
 
 - [作業ウィンドウ 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [コンテンツ 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
@@ -205,7 +205,7 @@ Office on the web で実行している場合、作業ウィンドウは任意�
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>マニフェスト v1.1 XML ファイルの例とスキーマ
 
-後続の各セクションでは、コンテンツ アドイン、作業ウィンドウ アドイン、および Outlook アドインのマニフェスト v1.1 XML ファイルの例を示します。
+次のセクションでは、コンテンツ、作業ウィンドウ、メール (Outlook) アドイン用のマニフェスト v1.1 XML ファイルの例を示します。
 
 # <a name="task-pane"></a>[作業ウィンドウ](#tab/tabid-1)
 

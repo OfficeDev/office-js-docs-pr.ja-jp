@@ -4,12 +4,12 @@ description: JSON マニフェストを使用して単純な Outlook 作業ウ�
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 407c4ccd4249008c203c760a01d8579989a12e4c
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: fcb553e10649c6cdcf430267e72f67ece8a5cb3f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68467224"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810058"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Teams マニフェスト (プレビュー) を使用して、Outlook アドインをビルドする
 
@@ -18,7 +18,7 @@ ms.locfileid: "68467224"
 > [!NOTE]
 > 新しいマニフェストはプレビューに使用でき、フィードバックに基づいて変更される可能性があります。 経験豊富なアドイン開発者には、それを試してみることをお勧めします。 プレビュー マニフェストは、運用環境のアドインでは使用しないでください。
 
-プレビューは、Windows 上の Microsoft 365 サブスクリプション Office でのみサポートされます。
+プレビューは、Microsoft 365 サブスクリプションからダウンロードされ、Windows にインストールされている Office でのみサポートされています。
 
 > [!TIP]
 > XML マニフェストを使用して Outlook アドインを構築する場合は、「[最初の Outlook アドインの構築](outlook-quickstart.md)」を参照してください。
@@ -177,7 +177,7 @@ Yeomanジェネレーターで作成したアドインプロジェクトには�
 
 1. メッセージに書き込むには、アドインのアクセス許可を上げる必要があります。 プロパティ `authorization.permissions.resourceSpecific[0].name` までスクロールし、値を `MailboxItem.ReadWrite.User` に変更します。
 
-1. アドイン コマンドが作業ウィンドウを開く代わりにコードを実行する場合は、作業ウィンドウ コードが実行される埋め込み Web ビューとは別のランタイムでコードを実行する必要があります。 したがって、マニフェストは追加のランタイムを指定する必要があります。 プロパティ `extension.runtimes` までスクロールし、次のオブジェクトを `runtimes` 配列に追加します。 既に配列にあるオブジェクトの後には、必ずコンマを入れてください。 このマークアップについて、次の情報にご注意ください。
+1. アドイン コマンドは、作業ウィンドウを開く代わりにコードを実行する場合、作業ウィンドウ コードが実行される埋め込み Web ビューとは別のランタイムでコードを実行する必要があります。 したがって、マニフェストは追加のランタイムを指定する必要があります。 プロパティ `extension.runtimes` までスクロールし、次のオブジェクトを `runtimes` 配列に追加します。 既に配列にあるオブジェクトの後には、必ずコンマを入れてください。 このマークアップについて、次の情報にご注意ください。
 
     - `actions[0].id` プロパティの値は、**commands.ts** ファイルに追加した関数の名前 (この場合は `insertHelloWorld`) と完全に同じである必要があります。 後の手順で、この ID でアイテムを参照します。
 

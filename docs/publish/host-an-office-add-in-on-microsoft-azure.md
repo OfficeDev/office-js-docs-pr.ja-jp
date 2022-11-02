@@ -3,12 +3,12 @@ title: Microsoft Azure で Office アドインをホストする | Microsoft Doc
 description: アドイン Web アプリを Azure に展開して、Office クライアント アプリケーションでテストのためにアドインをサイドロードする方法について説明します。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: af2079c4e6df38e64347ec0a67d441298758c41e
-ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
+ms.openlocfilehash: d80dafeab272f1649d9487f284e44e41cf34c1ef
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "60356374"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810030"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Microsoft Azure で Office アドインをホストする
 
@@ -46,7 +46,7 @@ ms.locfileid: "60356374"
 5. **[ファイル共有]** で、ドロップダウンの矢印をクリックして、**[すべてのユーザー]** > **[追加]** > **[共有]** をクリックします。
 
 > [!NOTE]
-> このチュートリアルでは、信頼できるカタログとしてローカルのファイル共有を使用します。アドインの XML マニフェスト ファイルは、この場所に保存することになります。現実のシナリオでは、[SharePoint カタログに XML マニフェスト ファイルを展開](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)するか、[AppSource にアドインを発行](/office/dev/store/submit-to-appsource-via-partner-center)することもできます。
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center).
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>手順 2: 信頼できるアドイン カタログにファイル共有を追加する
 
@@ -59,7 +59,7 @@ ms.locfileid: "60356374"
 
 3. **[Word オプション]** ダイアログ ボックスで、**[セキュリティ センター]** をクリックして、**[セキュリティ センターの設定]** をクリックします。
 
-4. **[セキュリティ センター]** ダイアログ ボックスで、**[信頼できるアドイン カタログ]** をクリックします。**[カタログの URL]** として、前の手順で作成したファイル共有の汎用名前付け規則 (UNC) パス (たとえば、\\\YourMachineName\AddinManifests) を入力して、**[カタログの追加]** をクリックします。 
+4. In the **Trust Center** dialog box, choose **Trusted Add-in Catalogs**. Enter the universal naming convention (UNC) path for the file share you created earlier as the **Catalog URL** (for example, \\\YourMachineName\AddinManifests), and then choose **Add catalog**. 
 
 5. **[メニューに表示する]** チェック ボックスをオンにします。
 
@@ -79,10 +79,10 @@ Azure ポータルを使用して Web アプリケーションを作成するに
 3. [**App Service**] ページで、[**追加**] を選択します。 この情報を提供してください:
 
       - このサイトの作成に使用する **[サブスクリプション]** を選択します。
-      
-      - サイトの **[リソース グループ]** を選択します。新しいグループを作成する場合は、そのグループに名前を指定する必要もあります。
-      
-      - サイトの一意の **[アプリ名]** を入力します。Azure は、サイト名が azureweb apps.net ドメイン全体で一意であることを確認します。
+
+      - サイトの **[リソース グループ]** を選択します。 新しいグループを作成する場合は、そのグループに名前を指定する必要もあります。
+
+      - サイトの一意の **[アプリ名]** を入力します。 Azure は、サイト名が azureweb apps.net ドメイン全体で一意であることを確認します。
 
       - コードを使用して発行するか、Docker コンテナを使用して発行するかを選択します。
 
@@ -113,13 +113,13 @@ Azure ポータルを使用して Web アプリケーションを作成するに
 
 4. プロジェクト タイプとして **Word Web アドイン** を選択し、[**次へ**] を選択して規定の設定を使用します。
 
-Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel など、別の Office アプリケーション用のアドインを作成するには、手順を繰り返し、目的の Office アプリケーションでプロジェクトの種類を選択します。
+Visual Studio は、Web プロジェクトに変更を加えることなくそのまま発行できる、基本的な Word アドインを作成します。 Excel などの別の Office アプリケーションのアドインを作成するには、手順を繰り返し、目的の Office アプリケーションでプロジェクトの種類を選択します。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>手順 5: Azure に Office アドイン Web アプリを発行する
 
 1. アドイン プロジェクトを Visual Studio で開いた状態で、**ソリューション エクスプローラー** でソリューション ノードを展開し、**App Service** を選択します。
 
-2. Web プロジェクトを右クリックして、**[発行]** をクリックします。Web プロジェクトには Office アドイン Web アプリのファイルが含まれているため、このプロジェクトを Azure に発行することになります。
+2. Right-click the web project and then choose **Publish**. The web project contains Office Add-in web app files so this is the project that you publish to Azure.
 
 3. **[発行]** タブで、次の操作を実行します。
 
@@ -129,17 +129,17 @@ Visual Studio は、Web プロジェクトに変更を加えることなくそ�
 
       - **[発行]** をクリックします。
 
-4. Visual Studio により、Office アドインの Web プロジェクトが Azure Web アプリに発行されます。Visual Studio による Web プロジェクトの発行が完了すると、ブラウザーが開いて、「App Service アプリが作成されました」というテキストを示す Web ページが表示されます。これは、Web アプリの現在の既定のページです。
+4. Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your App Service app has been created." This is the current default page for the web app.
 
-5. ルート URL (例:) をコピーします。この記事の後半でアドイン マニフェスト ファイルを編集するときに必要 `https://YourDomain.azurewebsites.net` になります。
+5. ルート URL (例: `https://YourDomain.azurewebsites.net`) をコピーします。この記事の後半でアドイン マニフェスト ファイルを編集するときに必要になります。
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>手順 6: アドインの XML マニフェスト ファイルを編集して展開する
 
 1. Visual Studio の **[ソリューション エクスプローラー]** でサンプルの Office アドインを開いて、ソリューションを展開し、両方のプロジェクトが表示されるようにします。
 
-2. Office アドイン プロジェクト (たとえば、WordWebAddIn) を展開し、マニフェスト フォルダーを右クリックして **[開く]** をクリックします。アドインの XML マニフェスト ファイルが開きます。
+2. Office アドイン プロジェクト (たとえば、WordWebAddIn) を展開し、マニフェスト フォルダーを右クリックして **[開く]** をクリックします。 アドインの XML マニフェスト ファイルが開きます。
 
-3. XML マニフェスト ファイルで、"~remoteAppUrl" というインスタンスをすべて検索して、Azure のアドイン Web アプリのルート URL に置換します。 これは、アドイン Web アプリを Azure に発行した後に以前にコピーした URL です (例: `https://YourDomain.azurewebsites.net` )。
+3. XML マニフェスト ファイルで、"~remoteAppUrl" というインスタンスをすべて検索して、Azure のアドイン Web アプリのルート URL に置換します。 これは、アドイン Web アプリを Azure に発行した後にコピーした URL です (例: `https://YourDomain.azurewebsites.net`)。
 
 4. [**ファイル**] をクリックして、[**すべてを保存**] をクリックします。 次に、アドイン XML マニフェスト ファイル (WordWebAddIn.xml など) をコピーします。
 
@@ -151,13 +151,13 @@ Visual Studio は、Web プロジェクトに変更を加えることなくそ�
 
 2. リボンで、**[挿入]** > **[個人用アドイン]** をクリックします。
 
-3. **[Office アドイン]** ダイアログ ボックスで、**[共有フォルダー]** をクリックします。Word により、信頼できるアドイン カタログとしてリストしたフォルダー (「[手順 2: 信頼できるアドイン カタログにファイル共有を追加する](../publish/host-an-office-add-in-on-microsoft-azure.md#step-2-add-the-file-share-to-the-trusted-add-ins-catalog)」で指定したもの) がスキャンされ、アドインがダイアログ ボックスに表示されます。サンプル アドインのアイコンが表示されます。
+3. In the **Office Add-ins** dialog box, choose **SHARED FOLDER**. Word scans the folder that you listed as a trusted add-ins catalog (in [Step 2: Add the file share to the Trusted Add-ins catalog](../publish/host-an-office-add-in-on-microsoft-azure.md#step-2-add-the-file-share-to-the-trusted-add-ins-catalog)) and shows the add-ins in the dialog box. You should see an icon for your sample add-in.
 
-4. アドインを選択して、**[追加]** をクリックします。リボンに、そのアドインの **[作業ウィンドウの表示]** ボタンが追加されます。
+4. Choose the icon for your add-in and then choose **Add**. A **Show Taskpane** button for your add-in is added to the ribbon.
 
-5. **[ホーム]** タブのリボンで、**[作業ウィンドウの表示]** ボタンをクリックします。現在のドキュメントの右側の作業ウィンドウ内でアドインが開きます。
+5. On the ribbon of the **Home** tab, choose the **Show Taskpane** button. The add-in opens in a task pane to the right of the current document.
 
-6. アドインが動作していることを確認するために、ドキュメント内のテキストを選択して、作業ウィンド内の **[Highlight!]** ボタンをクリックします。
+6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane.
 
 ## <a name="see-also"></a>関連項目
 

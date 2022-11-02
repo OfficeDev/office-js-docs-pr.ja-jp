@@ -3,18 +3,18 @@ title: Office アドインにおける認証と承認の概要
 description: Office アドインでの認証と承認のしくみについて説明します。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
-ms.translationtype: HT
+ms.openlocfilehash: c93e4c36155f582a56f42f5aeb6c567b61df0e1d
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496755"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810324"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office アドインにおける認証と承認の概要
 
 Office アドインでは、既定で匿名アクセスが許可されますが、ユーザーに対して、アドインを使用するために Microsoft アカウント、Microsoft 365 Education または職場アカウント、その他の一般的なアカウントでサインインすることを要求できます。 これによりユーザーの確認がアドインで可能になることから、このタスクはユーザー認証と呼ばれています。
 
-アドインは、Microsoft Graph データ (Microsoft 365 プロファイル、OneDrive ファイル、SharePoint データなど) または Google、Facebook、LinkedIn、SalesForce、GitHub などの他の外部ソースのデータにアクセスすることにユーザーの同意を得ることもできます。このタスクは、ユーザーではなく、承認されている *アドイン* であるため、アドイン (またはアプリ) 承認と呼ばれます。
+Your add-in can also get the user's consent to access their Microsoft Graph data (such as their Microsoft 365 profile, OneDrive files, and SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized, not the user.
 
 ## <a name="key-resources-for-authentication-and-authorization"></a>認証と承認のための主要なリソース
 
@@ -102,7 +102,7 @@ function getOneDriveFileNames() {
 
 アドインは、認証プロバイダーとして [Microsoft ID プラットフォーム](/azure/active-directory/develop)を使用してユーザーをサインインすることができます。 ユーザーをサインインしたら、Microsoft ID プラットフォームを使用して、Microsoft が管理する [Microsoft Graph](/graph) またはその他のサービスに対してアドインを承認できます。 Office を介した SSO が利用できない場合は、この方法を代替サインイン方法として使用します。 また、SSO が使用可能な場合でも、ユーザーをアドインに個別にサインインさせるシナリオもあります。たとえば、現在 Office にサインインしている ID とは異なる ID でアドインにサインインするオプションをユーザーに与える場合などです。
 
-Microsoft ID プラットフォームでは、サインイン ページを iframe で開くことが許可されていないことに注意してください。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 これは、Office ダイアログ API で開かれるダイアログ ボックスを使用して、サインイン ページを開く必要があることを意味します。 このことは、認証ヘルパー ライブラリの使用方法に影響します。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
+Microsoft ID プラットフォームでは、サインイン ページを iframe で開くことが許可されていないことに注意してください。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウは iframe です。 これは、Office ダイアログ API で開かれるダイアログ ボックスを使用して、サインイン ページを開く必要があることを意味します。 このことは、認証ヘルパー ライブラリの使用方法に影響します。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
 
 Microsoft ID プラットフォームを使用した認証の実装の詳細については、「[Microsoft ID プラットフォーム (v2.0) の概要](/azure/active-directory/develop/v2-overview)」を参照してください。 ドキュメントには、多くのチュートリアルとガイドのほか、関連するサンプルとライブラリへのリンクが含まれています。 「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」の説明にあるように、Office ダイアログ ボックスで実行するサンプル内のコードを調整する必要がある場合があります。
 
@@ -115,7 +115,7 @@ Microsoft ID プラットフォームから Microsoft Graph へのアクセス �
 大手のオンライン サービス (Google、Facebook、LinkedIn、SalesForce、GitHub など) では、開発者は、ユーザーが自分のアカウントに別のアプリケーションからアクセスできるようにすることが可能です。 これにより、開発者はこれらのサービスを Office アドインに含めることができます。 アドインでこれを実行する方法の概要については、「[Authorize external services in your Office Add-in (Office アドインで外部サービスを承認する)](auth-external-add-ins.md)」を参照してください。
 
 > [!IMPORTANT]
-> コーディングを開始する前に、データ ソースのサインイン ページを iframe で開くことが許可されているかどうか確認してください。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウとして iFrame が使用されます。 データ ソースのサインイン ページを iframe で開くことが許可されていない場合は、Office ダイアログ API で開かれるダイアログ ボックスでサインイン ページを開く必要があります。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
+> コーディングを開始する前に、データ ソースのサインイン ページを iframe で開くことが許可されているかどうか確認してください。 Office アドインが *Office on the web* で実行されている場合、作業ウィンドウは iframe です。 データ ソースのサインイン ページを iframe で開くことが許可されていない場合は、Office ダイアログ API で開かれるダイアログ ボックスでサインイン ページを開く必要があります。 詳細については、「[Office ダイアログ API を使用して認証および承認する](auth-with-office-dialog-api.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

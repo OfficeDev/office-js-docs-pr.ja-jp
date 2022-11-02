@@ -4,18 +4,18 @@ description: 熟練した VSTO アドイン開発者に向けた Office Web ア�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: bc27177c67028e57030c9baed6b416d0c57c77d1
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857523"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810128"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO アドイン開発者向けガイド
 
-Windows で動作する Office アプリケーション用の VSTO アドインを作成しました。そしてここからは、Office を Windows、Mac、オンライン バージョンの Office スイートで動作するように拡張するための新しい方法である Office Web アドインについて説明します。
+そのため、Windows で実行される Office アプリケーション用の VSTO アドインをいくつか作成しました。次に、Windows、Mac、および Office スイートの Web ブラウザー バージョンで実行される Office を拡張する新しい方法を検討しています: Office Web アドイン。
 
-Office Web アドインのオブジェクト モデルは Excel、Word、その他の Office アプリケーションのオブジェクト モデルと似たようなパターンをたどるので、それらのオブジェクト モデルへの理解が大きな助けとなるでしょう。ただし、いくつか課題があります。
+Your understanding of the object models for the Excel, Word, and the other Office applications will be a huge help because the object models in Office Web Add-ins follow similar patterns. But there are going to be some challenges:
 
 - C# や Visual Basic .NET ではなく、別の言語 (JavaScript または TypeScript のいずれか) を使用して作業することになります。 (後述するように、既存のコードの一部を Web アドインで再利用する方法もあります)。
 - Office Web アドインは、VSTO アドインとは別に展開されます。
@@ -50,7 +50,7 @@ Office Web アドインのオブジェクト モデルは Excel、Word、その�
 
 ## <a name="step-4-understand-the-javascript-library"></a>手順 4: JavaScript ライブラリを理解する
 
-Microsoft Learn トレーニング: Office JavaScript API について理解するチュートリアルを使用して [、Office JavaScript ライブラリの全体像を確認します](/training/modules/intro-office-add-ins/3-apis)。
+このチュートリアルでは、Office JavaScript ライブラリの全体像を Microsoft Learn トレーニングの「 [Office JavaScript API について」を参照してください](/training/modules/intro-office-add-ins/3-apis)。
 
 次に、API を実行して調査するためのサンドボックスである [Script Lab ツール](explore-with-script-lab.md)を使用して、Office JavaScript API を学習します。
 
