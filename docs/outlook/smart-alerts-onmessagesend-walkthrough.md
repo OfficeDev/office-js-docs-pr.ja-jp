@@ -2,14 +2,14 @@
 title: Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 description: イベント ベースのアクティブ化を使用して、Outlook アドインで送信時イベントを処理する方法について説明します。
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 11/2/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
-ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
+ms.openlocfilehash: 408c3684d325a9cbdd4a3f6e489db636ff52e028
+ms.sourcegitcommit: 9c65c19298bf749836e3db1b7cf5e8c1387a2bf2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2022
-ms.locfileid: "68767169"
+ms.lasthandoff: 11/04/2022
+ms.locfileid: "68842090"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Outlook アドインでスマート アラートと OnMessageSend イベントと OnAppointmentSend イベントを使用する
 
@@ -23,6 +23,18 @@ ms.locfileid: "68767169"
 ## <a name="prerequisites"></a>前提条件
 
 イベントは `OnMessageSend` 、イベント ベースのアクティブ化機能を使用して使用できます。 この機能を使用するようにアドインを構成する方法、他の使用可能なイベントを使用する方法、アドインをデバッグする方法については、「 [イベントベースのアクティブ化のために Outlook アドインを構成する](autolaunch.md)」を参照してください。
+
+### <a name="supported-clients-and-platforms"></a>サポートされているクライアントとプラットフォーム
+
+次の表に、スマート アラート機能でサポートされているクライアントとサーバーの組み合わせの一覧を示します。該当する場合は、累積的な更新プログラムExchange Server最低限必要です。 除外された組み合わせはサポートされていません。
+
+|Client|Exchange Online|Exchange 2019 オンプレミス (累積的な更新プログラム 12 以降)|Exchange 2016 オンプレミス (累積的な更新プログラム 22 以降) |
+|-----|-----|-----|-----|
+|**Windows**<br>バージョン 2206 (ビルド 15330.20196) 以降|はい|はい|はい|
+|**Mac**<br>バージョン 16.65.827.0 以降|はい|該当なし|該当なし|
+|**Web ブラウザー (モダン UI)**|はい|該当なし|該当なし|
+|**iOS**|該当なし|該当なし|該当なし|
+|**Android**|該当なし|該当なし|該当なし|
 
 ## <a name="set-up-your-environment"></a>環境を設定する
 

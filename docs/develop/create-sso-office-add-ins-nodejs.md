@@ -1,22 +1,22 @@
 ---
 title: シングル サインオンを使用する Node.js Office アドインを作成する
 description: Office シングル サインオンを使用するNode.js ベースのアドインを作成する方法について説明します。
-ms.date: 08/31/2022
+ms.date: 10/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e7ded29d9d2f021516348e2edbe847b6447e006
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: 35128da43b3f27a58df5e188a5001bfa8aba4a4c
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616050"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68841729"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>シングル サインオンを使用する Node.js Office アドインを作成する
 
-ユーザーは、このサインイン プロセスを利用してユーザーを承認する Office および Office Web アドインにサインインできます。こうして承認されたユーザーは、アドインと Microsoft Graph への 2 度目のサインオンの必要がなくなります。概要については、「[Office アドインで SSO を有効化する](sso-in-office-add-ins.md)」を参照してください。
+Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
-この記事では、アドインでシングル サインオン (SSO) を有効にするプロセスについて説明します。 作成するサンプル アドインには 2 つの部分があります。Microsoft Excel に読み込む作業ウィンドウと、作業ウィンドウの Microsoft Graph への呼び出しを処理する中間層サーバー。 中間層サーバーは、Node.jsと Express で構築され、単一の REST API を公開します。これは、 `/getuserfilenames`ユーザーの OneDrive フォルダー内の最初の 10 個のファイル名の一覧を返します。 作業ウィンドウでは、このメソッドを `getAccessToken()` 使用して、サインインしているユーザーのアクセス トークンを中間層サーバーに取得します。 中間層サーバーでは、On-Behalf-Of フロー (OBO) を使用して、Microsoft Graph にアクセスできる新しいサーバーとアクセス トークンを交換します。 このパターンを拡張して、任意の Microsoft Graph データにアクセスできます。 作業ウィンドウは、Microsoft Graph サービスが必要な場合、常に中間層 REST API を呼び出します (アクセス トークンを渡します)。 中間層では、OBO を使用して取得したトークンを使用して Microsoft Graph サービスを呼び出し、結果を作業ウィンドウに返します。
+この記事では、アドインでシングル サインオン (SSO) を有効にするプロセスについて説明します。 作成するサンプル アドインには 2 つの部分があります。Microsoft Excel に読み込まれる作業ウィンドウと、作業ウィンドウの Microsoft Graph への呼び出しを処理する中間層サーバー。 中間層サーバーは、Node.jsと Express を使用して構築され、 `/getuserfilenames`ユーザーの OneDrive フォルダー内の最初の 10 個のファイル名の一覧を返す 1 つの REST API を公開します。 作業ウィンドウでは、 メソッドを `getAccessToken()` 使用して、中間層サーバーにサインインしているユーザーのアクセス トークンを取得します。 中間層サーバーは、On-Behalf-Of フロー (OBO) を使用して、Microsoft Graph にアクセスできる新しいサーバーのアクセス トークンを交換します。 このパターンを拡張して、任意の Microsoft Graph データにアクセスできます。 作業ウィンドウは、Microsoft Graph サービスが必要な場合に、常に中間層 REST API を呼び出します (アクセス トークンを渡します)。 中間層は、OBO によって取得されたトークンを使用して Microsoft Graph サービスを呼び出し、結果を作業ウィンドウに返します。
 
-この記事は、Node.jsと Express を使用するアドインで動作します。 ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)」を参照してください。
+この記事では、Node.js と Express を使用するアドインを使用します。 ASP.NET ベースのアドインに関する同様の記事については、「[シングル サインオンを使用する ASP.NET Office アドインを作成する](create-sso-office-add-ins-aspnet.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -26,9 +26,9 @@ ms.locfileid: "67616050"
 
 - コード エディター - Visual Studio Code をお勧めします
 
-- Microsoft 365 サブスクリプションのOneDrive for Businessに格納されている少なくともいくつかのファイルとフォルダー
+- Microsoft 365 サブスクリプションのOneDrive for Businessに保存されている少なくともいくつかのファイルとフォルダー
 
-- [IdentityAPI 1.3 要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)をサポートする Microsoft 365 のビルド。 90 日間の再生可能なMicrosoft 365 E5開発者サブスクリプションを提供する無料の開発者[サンドボックス](https://developer.microsoft.com/microsoft-365/dev-program#Subscription)を入手できます。 開発者サンドボックスには、この記事の後の手順でアプリの登録に使用できる Microsoft Azure サブスクリプションが含まれています。 必要に応じて、アプリの登録に別の Microsoft Azure サブスクリプションを使用できます。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得します。
+- [IdentityAPI 1.3 要件セット](/javascript/api/requirement-sets/common/identity-api-requirement-sets)をサポートする Microsoft 365 のビルド。 更新可能な 90 日間の[Microsoft 365 E5開発者](https://developer.microsoft.com/microsoft-365/dev-program#Subscription)サブスクリプションを提供する無料の開発者サンドボックスを入手できます。 開発者サンドボックスには、この記事の後の手順でアプリの登録に使用できる Microsoft Azure サブスクリプションが含まれています。 必要に応じて、アプリの登録に別の Microsoft Azure サブスクリプションを使用できます。 [Microsoft Azure](https://account.windowsazure.com/SignUp) で試用版サブスクリプションを取得します。
 
 ## <a name="set-up-the-starter-project"></a>スタート プロジェクトをセットアップする
 
@@ -38,92 +38,23 @@ ms.locfileid: "67616050"
    > サンプルには 2 つのバージョンがあります。
    >
    > - **Begin** フォルダーはスターター プロジェクトです。 SSO や承認に直接関連しない UI などの側面は、既に完了しています。 この記事で後述する各セクションでは、これを完成させるための手順を順に説明します。
-   > - **Complete** フォルダーには、この記事のすべてのコーディング手順が完了した同じサンプルが含まれています。 完成したバージョンを使用するには、この記事の手順に従いますが、"Begin" を "Complete" に置き換え、セクション「 **クライアント側のコード** 化」と「 **中間層サーバー側のコード** 化」をスキップします。
+   > - **Complete** フォルダーには、この記事のすべてのコーディング手順が完了した同じサンプルが含まれています。 完成したバージョンを使用するには、この記事の手順に従うだけですが、"Begin" を "Complete" に置き換え、「 **クライアント側のコーディング** 」と「 **中間層サーバー側のコーディング** 」のセクションをスキップします。
 
-1. **[開始]** フォルダーでコマンド プロンプトを開きます。
+1. **[開始**] フォルダーでコマンド プロンプトを開きます。
 
 1. コンソールで `npm install` を入力して、package.json ファイルに項目化されているすべての依存関係をインストールします。
 
 1. コマンド`npm run install-dev-certs`を実行します。 証明書をインストールするプロンプトに対して **はい** を選択します。
 
-## <a name="register-the-add-in-with-microsoft-identity-platform"></a>アドインをMicrosoft ID プラットフォームに登録する
+以降のアプリ登録手順のプレースホルダーには、次の値を使用します。
 
-中間層サーバーを表すアプリ登録を Azure で作成する必要があります。 これにより、JavaScript でクライアント コードに適切なアクセス トークンを発行できるように、認証のサポートが有効になります。 この登録では、クライアントでの SSO と、Microsoft 認証ライブラリ (MSAL) を使用したフォールバック認証の両方がサポートされます。
+| プレースホルダー           | 値                                 |
+|-----------------------|---------------------------------------|
+| `<add-in-name>`       | **Office-Add-in-NodeJS-SSO**          |
+| `<redirect-platform>` | **シングルページ アプリケーション (SPA)**     |
+| `<redirect-uri>`      | `https://localhost:44355/dialog.html` |
 
-1. アプリを登録するには、[Azure portal - アプリの登録](https://go.microsoft.com/fwlink/?linkid=2083908) ページに移動してアプリを登録します。
-
-1. **_管理者_** 資格情報を使用して Microsoft 365 テナントにサインインします。 たとえば、MyName@contoso.onmicrosoft.com です。
-
-1. **[新規登録]** を選択します。 **[アプリケーションを登録]** ページで、次のように値を設定します。
-
-   - `Office-Add-in-NodeJS-SSO` に **[名前]** を設定します。
-   - **サポートされているアカウントの種類** を **、任意の組織ディレクトリ (任意の Azure AD ディレクトリ - マルチテナント) および個人用 Microsoft アカウント (Skype、Xbox など) のアカウント** に設定します。
-   - [**リダイレクト URI**] セクションで、リダイレクト URI の値`https://localhost:44355/dialog.html`が . の **単一ページ アプリケーション (SPA)** にプラットフォームを設定します。
-   - **[登録]** を選択します。
-
-   > [!NOTE]
-   > SPA アプリケーションの種類は、クライアントがフォールバック認証に MSAL を使用する場合にのみ使用されます。
-
-1. **Office-Add-in-NodeJS-SSO** ページで、**アプリケーション (クライアント) ID** と **ディレクトリ (テナント) ID** の値をコピーして保存します。 以降の手順では、それらの両方を使用します。
-
-   > [!NOTE]
-   > この **アプリケーション (クライアント) ID** は、Office クライアント アプリケーション (PowerPoint、Word、Excel など) などの他のアプリケーションがアプリケーションへの承認されたアクセスを求める場合の "対象ユーザー" の値です。 また、Microsoft Graph への承認されたアクセスを求めるアプリケーションの "クライアント ID" でもあります。
-
-1. 左端のサイドバーで、[**管理**] で [**認証**] を選択します。 [ **暗黙的な付与とハイブリッド フロー** ] セクションで、 **Access トークン** と **ID トークン** の両方のチェック ボックスをオンにします。 このサンプルでは、SSO を使用できない場合にフォールバック認証に Microsoft 認証ライブラリ (MSAL) を使用します。
-
-1. **[保存]** を選択します。
-
-1. [ **管理**] で、[ **証明書&シークレット** ] を選択し、[ **新しいクライアント シークレット**] を選択します。 [**説明**] に値を入力してから、[**有効期限**] の適切なオプションを選択し、[**追加**] を選択します。
-
-   Web アプリケーションは、クライアント シークレット **値** を使用して、トークンを要求するときにその ID を証明します。 _後の手順で使用するためにこの値を記録します。この値は 1 回だけ表示されます。_
-
-1. 左端のサイドバーで、[**管理**] で [**API の公開**] を選択します。 [ **設定** ] リンクを選択します。 これにより、"api://$App ID GUID$" という形式でアプリケーション ID URI が生成されます。ここで、$App ID GUID$ は **アプリケーション (クライアント) ID です**。
-
-1. 生成された ID で、二重スラッシュと GUID の間に挿入 `localhost:44355/` (末尾にスラッシュ "/" が追加されていることに注意してください)。 完了したら、ID 全体にフォーム `api://localhost:44355/$App ID GUID$`が含まれている必要があります 。たとえば、次のようになります `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。 次に、**[保存]** を選択します。
-
-1. **[Scope の追加]** ボタンをクリックします。 開いたパネルで、**[スコープ名]** として `access_as_user` を入力します。
-
-1. **[同意できるのはだれですか?]** を **[管理者とユーザー]** に設定します。
-
-1. 管理者とユーザーの同意プロンプトを構成するためのフィールドに、Office クライアント アプリケーションが現在のユーザーと同じ権限でアドインの Web API を使用できるようにするスコープに適 `access_as_user` した値を入力します。 提案:
-
-   - **管理同意表示名**: Office はユーザーとして機能できます。
-   - **管理者の同意の説明**: 現在のユーザーと同じ権限で Office がアドインの Web API を呼び出すことを可能にします。
-   - **ユーザーの同意表示名**: Office は、ユーザーの役割を果たすことができます。
-   - **ユーザーの同意の説明**: Office が、自分と同じ権限を持つアドインの Web API を呼び出すようにします。
-
-1. **[状態]** が **[有効]** に設定されていることを確認してください。
-
-1. **[スコープの追加]** を選択します。
-
-   > [!NOTE]
-   > テキストフィールドのすぐ下に表示される **[スコープ名]** のドメイン部分は、以前に設定したアプリケーション ID URI に自動的に一致し、末尾に`/access_as_user`が追加されます。たとえば、`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`です。
-
-1. [ **承認されたクライアント アプリケーション** ] セクションで、[ **クライアント アプリケーションの追加]** ボタンを選択し、開いたパネルで [クライアント ID] を `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`[ **承認されたスコープ** ] チェック ボックスをオンにします `api://localhost:44355/$app-id-guid$/access_as_user`。
-
-1. **[アプリケーションの追加]** を選択します。
-
-   > [!NOTE]
-   > この ID は `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` 、すべての Microsoft Office アプリケーション エンドポイントを事前に承認します。 また、Windows および Mac 上の Office で Microsoft アカウント (MSA) をサポートする場合にも必要です。 または、何らかの理由で一部のプラットフォームで Office への承認を拒否する場合は、次の ID の適切なサブセットを入力することもできます。 承認を保留するプラットフォームの ID は残しておきます。 これらのプラットフォーム上のアドインのユーザーは、Web API を呼び出すことはできませんが、アドイン内の他の機能は引き続き機能します。
-   >
-   > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-   > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
-   > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
-
-1. 左端のサイドバーで、[**管理**] で **[API アクセス許可**] を選択し、[**アクセス許可の追加]** を選択します。 開いたパネルで、**[Microsoft Graph]** を選択してから **[委任されたアクセス許可]** を選択します。
-
-1. アドインに必要な権限を検索するには、**[アクセス許可を選択]** の検索ボックスを使用します。 以下を選択します。 アドイン自体で実際に必要なのは 1 つ目だけです。ただし、 `profile` Office アプリケーションが中間層サーバーにアクセスするためにユーザー ID を持つアクセス トークンを取得するには、アクセス許可と `openid` アクセス許可が必要です。
-
-   - **Files.Read**
-   - **profile**
-   - **openid**
-
-   > [!NOTE]
-   > `User.Read` アクセス許可は既定でリストされています。 必要のないアクセス許可を要求しないことをお勧めします。そのため、アドインで実際に必要ない場合は、このアクセス許可のチェック ボックスをオフにすることをお勧めします。
-
-1. 表示される各アクセス許可のチェック ボックスをオンにします。 アドインに必要なアクセス許可を選択したら、パネルの下部にある **[アクセス許可を追加する]** ボタンをクリックします。
-
-1. 同じページで、**[[テナント名]に管理者の同意を与える]** ボタンを選択し、表示される確認に対して **[はい]** を選択します。
+[!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
 ## <a name="configure-the-add-in"></a>アドインを構成する
 
@@ -134,7 +65,7 @@ ms.locfileid: "67616050"
    | 名前              | 値                                                            |
    | ----------------- | ---------------------------------------------------------------- |
    | **CLIENT_ID**     | アプリ登録の概要ページからの **アプリケーション (クライアント) ID**。 |
-   | **CLIENT_SECRET** | **[証明書] & [シークレット]** ページから保存された **クライアント** シークレット。       |
+   | **CLIENT_SECRET** | **[証明書] & [シークレット**] ページから保存された **クライアント** シークレット。       |
    | **DIRECTORY_ID**  | アプリ登録の概要ページからの **ディレクトリ (テナント) ID**。   |
 
    値は引用符で囲ま **ない** でください。 完了すると、ファイルは以下のようになります。
@@ -160,10 +91,10 @@ ms.locfileid: "67616050"
    </WebApplicationInfo>
    ```
 
-1. マークアップ内の _両方の場所にある_ プレースホルダー "$app-id-guid$" を **、Office-Add-in-NodeJS-SSO** アプリ登録の作成時にコピーした **アプリケーション ID** に置き換えます。 "$" 記号は ID の一部ではないため、含めないでください。 これは、. のCLIENT_IDに使用した ID と同じです。ENV ファイル。
+1. マークアップ内の _両方の場所にある_ プレースホルダー "$app-id-guid$" を、**Office-Add-in-NodeJS-SSO** アプリ登録の作成時にコピーした **アプリケーション ID** に置き換えます。 "$" 記号は ID の一部ではないため、含めないでください。 これは、 のCLIENT_IDに使用した ID と同じです。ENV ファイル。
 
    > [!NOTE]
-   > 値は **\<Resource\>** 、アドインを登録したときに設定した **アプリケーション ID URI** です。 この **\<Scopes\>** セクションは、アドインが AppSource から販売されている場合にのみ、同意ダイアログ ボックスを生成するために使用されます。
+   > 値は **\<Resource\>** 、アドインを登録したときに設定した **アプリケーション ID URI** です。 セクションは **\<Scopes\>** 、アドインが AppSource を通じて販売されている場合にのみ、同意ダイアログ ボックスを生成するために使用されます。
 
 1. `\public\javascripts\fallback-msal\authConfig.js` ファイルを開きます。 プレースホルダー "$app-id-guid$" を、前に作成した **Office-Add-in-NodeJS-SSO** アプリ登録から保存したアプリケーション ID に置き換えます。
 
@@ -178,9 +109,9 @@ ms.locfileid: "67616050"
    > [!NOTE]
    > 名前が示すように、ssoAuthES6.js は JavaScript ES6 構文を使用します。これは、これは、`async`と`await`の使用こそが SSO API の本質的なシンプルさを最もよく示すためです。 localhost サーバーが起動されると、このファイルは ES5 構文に変換され、サンプルで Internet Explorer 11 がサポートされます。
 
-    サンプル コードの重要な部分は、クライアント要求です。 クライアント要求は、中間層サーバーで REST API を呼び出すための要求に関する情報を追跡するオブジェクトです。 クライアント要求の状態は、次のシナリオで追跡または更新する必要があるため、必要です。
+    サンプル コードの重要な部分は、クライアント要求です。 クライアント要求は、中間層サーバーで REST API を呼び出すための要求に関する情報を追跡するオブジェクトです。 これは、次のシナリオを通じてクライアント要求の状態を追跡または更新する必要があるため、必要です。
 
-    - SSO が失敗し、フォールバック認証が必要です。 アクセス トークンは、ポップアップ ダイアログ ボックスで MSAL を使用して取得されます。 目標は、このシナリオでは失敗せず、代替認証アプローチに正常にフォールバックすることです。
+    - SSO が失敗し、フォールバック認証が必要です。 アクセス トークンは、ポップアップ ダイアログ ボックスで MSAL を介して取得されます。 目標は、このシナリオで失敗せず、代替認証アプローチに適切にフォールバックすることです。
 
     クライアント要求オブジェクトは、次のデータを追跡します。
 
@@ -189,9 +120,9 @@ ms.locfileid: "67616050"
     - `accessToken`- ASP.NET Core サーバーへのアクセス トークン。
     - `url`- ASP.NET Core サーバーで呼び出す REST API の URL。
     - `callbackRESTApiHandler` - REST API 呼び出しの結果を渡す関数。
-    - `callbackFunction` - 準備ができたらクライアント要求を渡す関数。
+    - `callbackFunction` - 準備ができたときにクライアント要求を渡す関数。
 
-1. クライアント要求オブジェクトを初期化するには、関数で次の `createRequest` コードに置き換えます `TODO 1` 。
+1. クライアント要求オブジェクトを初期化するには、 関数で `createRequest` を次のコードに置き換えます `TODO 1` 。
 
     ```javascript
     const clientRequest = {
@@ -206,8 +137,8 @@ ms.locfileid: "67616050"
 
 1. `TODO 2` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - SSO が使用されているかどうかを確認します。 SSO のアクセス トークンを取得する方法は、フォールバック認証の場合とは異なります。
-    - SSO がアクセス トークンを返す場合は、関数を呼び出します `callbackfunction` 。 フォールバック認証では、ユーザーが MSAL 経由でサインインした後、最終的にコールバック関数を呼び `dialogFallback`出します。
+    - SSO が使用されているかどうかを確認します。 アクセス トークンを取得する方法は、SSO の場合とフォールバック認証の場合とは異なります。
+    - SSO がアクセス トークンを返す場合は、 関数を `callbackfunction` 呼び出します。 フォールバック認証では を呼び出 `dialogFallback`します。これは、最終的にユーザーが MSAL 経由でサインインした後にコールバック関数を呼び出します。
 
     ```javascript
     // Get access token.
@@ -234,10 +165,10 @@ ms.locfileid: "67616050"
 
 1. `getFileNameList` 関数で、`TODO 3` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - この関数 `getFileNameList` は、ユーザーが作業ウィンドウの **[OneDrive ファイル名の取得** ] ボタンを選択したときに呼び出されます。
-    - REST API の URL など、呼び出しに関する情報を追跡するクライアント要求を作成します。
-    - REST API から結果が返されると、関数に `handleGetFileNameResponse` 渡されます。 このコールバックはパラメーター `createRequest` として渡され、追跡されます `clientRequest.callbackRESTApiHandler`。
-    - 次の手順を実行し、REST API を呼び出 `callWebServer` すために、クライアント要求を使用してコードが呼び出されます。
+    - この関数 `getFileNameList` は、ユーザーが作業ウィンドウで [ **OneDrive ファイル名の取得** ] ボタンを選択すると呼び出されます。
+    - REST API の URL など、呼び出しに関する情報を追跡するクライアント要求が作成されます。
+    - REST API が結果を返すと、関数に `handleGetFileNameResponse` 渡されます。 このコールバックは にパラメーター `createRequest` として渡され、 で `clientRequest.callbackRESTApiHandler`追跡されます。
+    - このコードは、クライアント要求を呼び出 `callWebServer` して次の手順を実行し、REST API を呼び出します。
 
     ```javascript
     createRequest(
@@ -252,7 +183,7 @@ ms.locfileid: "67616050"
 
 1. `handleGetFileNameResponse` 関数で、`TODO 4` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - このコードは、ドキュメントにファイル名を書き込む応答 (ファイル名の一覧を含む) `writeFileNamesToOfficeDocument` を渡します。
+    - コードは、ドキュメントにファイル名を書き込む応答 (ファイル名の一覧を含む) `writeFileNamesToOfficeDocument` を渡します。
     - コードはエラーをチェックします。 ファイル名が書き込まれている場合は成功メッセージが表示され、それ以外の場合はエラーが表示されます。
 
     ```javascript
@@ -327,9 +258,9 @@ ms.locfileid: "67616050"
 
 1. `callWebServer` 関数で、`TODO 7` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - 実際の AJAX 呼び出しは、関数によって `ajaxCallToRESTApi` 行われます。
+    - 実際の AJAX 呼び出しは、 関数によって `ajaxCallToRESTApi` 行われます。
     - 中間層サーバーから現在のトークンの有効期限が切れたことを示すエラーが返された場合、この関数は新しいアクセス トークンの取得を試みます。
-    - AJAX 呼び出しを正常に完了できない場合は、 `switchToFallbackAuth` Office SSO の代わりに MSAL 認証を使用するように呼び出されます。
+    - AJAX 呼び出しが正常に完了できない場合は、 `switchToFallbackAuth` Office SSO ではなく MSAL 認証を使用するように呼び出されます。
 
     ```javascript
     try {
@@ -351,9 +282,9 @@ ms.locfileid: "67616050"
 
 1. `TODO 8` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - サーバーは、有効期限が切れたトークンを識別すると、"TokenExpiredError" 型のエラーを返します。
+    - サーバーは、期限切れのトークンを識別すると、"TokenExpiredError" 型のエラーを返します。
     - try...catch は Office.auth.getAccessToken を呼び出して、新しい有効期限で更新されたトークンを取得します。
-    - コードは、サーバー API の呼び出しを再試行します。
+    - このコードでは、サーバー API の呼び出しが再試行されます。
 
     ```javascript
     // Check for expired SSO token. Refresh and retry the call if it expired.
@@ -386,7 +317,7 @@ ms.locfileid: "67616050"
 1. `TODO 9` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
     - **Microsoft Graph** エラーの場合は、作業ウィンドウにメッセージを表示します。
-    - その他のすべてのメッセージについては、作業ウィンドウにメッセージを表示します。
+    - その他のすべてのメッセージの場合は、作業ウィンドウにメッセージを表示します。
 
     ```javascript
     // Check for a Microsoft Graph API call error. which is returned as bad request (403)
@@ -409,7 +340,7 @@ ms.locfileid: "67616050"
 1. `switchToFallbackAuth` 関数で、`TODO 10` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
     - グローバル `authSSO` を false に設定し、認証に MSAL を使用する新しいクライアント要求を作成します。新しい要求には、中間層サーバーへの MSAL アクセス トークンがあります。
-    - 要求が作成されると、引き続き中間層サーバーの呼び出 `callWebServer` しが正常に試行されます。
+    - 要求が作成されたら、 を呼び出 `callWebServer` して、引き続き中間層サーバーを正常に呼び出そうとします。
 
     ```javascript
     // Guard against accidental call to this function when fallback is already in use.
@@ -432,13 +363,13 @@ ms.locfileid: "67616050"
 
 ## <a name="code-the-middle-tier-server"></a>中間層サーバーをコーディングする
 
-中間層サーバーは、クライアントが呼び出す REST API を提供します。 たとえば、REST API `/getuserfilenames` は、ユーザーの OneDrive フォルダーからファイル名の一覧を取得します。 各 REST API 呼び出しでは、正しいクライアントがデータにアクセスしていることを確認するために、クライアントによるアクセス トークンが必要です。 アクセス トークンは、On-Behalf-Of フロー (OBO) を介して Microsoft Graph トークンと交換されます。 新しい Microsoft Graph トークンは、後続の API 呼び出しのために MSAL ライブラリによってキャッシュされます。 中間層サーバーの外部に送信されることはありません。 詳細については、「[中間層アクセス トークン要求](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)」を参照してください。
+中間層サーバーは、クライアントが呼び出す REST API を提供します。 たとえば、REST API `/getuserfilenames` は、ユーザーの OneDrive フォルダーからファイル名の一覧を取得します。 各 REST API 呼び出しでは、正しいクライアントがデータにアクセスしていることを確認するために、クライアントによるアクセス トークンが必要です。 アクセス トークンは、On-Behalf-Of フロー (OBO) を介して Microsoft Graph トークンと交換されます。 新しい Microsoft Graph トークンは、後続の API 呼び出しのために MSAL ライブラリによってキャッシュされます。 中間層サーバーの外部に送信されることはありません。 詳細については、「[中間層のアクセス トークン要求](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)」を参照してください。
 
 ### <a name="create-the-route-and-implement-on-behalf-of-flow"></a>ルートを作成し、On-Behalf-Of フローを実装する
 
 1. ファイル `routes\getFilesRoute.js` を開き、次のコードに置き換えます `TODO 11` 。 このコードについては、以下の点に注意してください。
 
-    - 呼び出します `authHelper.validateJwt`。 これにより、アクセス トークンが有効になり、改ざんされていないことを確認できます。
+    - を呼び出します `authHelper.validateJwt`。 これにより、アクセス トークンが有効であり、改ざんされていないことが保証されます。
     - 詳細については、「 [トークンの検証](/azure/active-directory/develop/access-tokens#validating-tokens)」を参照してください。
 
     ```javascript
@@ -454,8 +385,8 @@ ms.locfileid: "67616050"
 
 1. `TODO 12` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - 必要な最小限のスコープのみを要求します (例: `files.read`.
-    - MSAL を `authHelper` 使用して、次の呼び出しで OBO フローを実行します `acquireTokenOnBehalfOf`。
+    - 必要な最小スコープ (など `files.read`) のみが要求されます。
+    - MSAL `authHelper` を使用して への呼び出し `acquireTokenOnBehalfOf`で OBO フローを実行します。
 
     ```javascript
     try {
@@ -485,7 +416,7 @@ ms.locfileid: "67616050"
 
 1. `TODO 13` を次のコードに置き換えます。 このコードについては、以下の点に注意してください。
 
-    - Microsoft Graph API呼び出しの URL を作成し、関数を使用して呼び出しを`getGraphData`行います。
+    - Microsoft Graph API 呼び出しの URL を構築し、関数を介して呼び出しを`getGraphData`行います。
     - HTTP 500 応答と詳細を送信してエラーを返します。
     - 成功すると、ファイル名リストを含む JSON がクライアントに返されます。
 
@@ -530,7 +461,7 @@ ms.locfileid: "67616050"
     }
     ```
 
-1. `TODO 14` を次のコードに置き換えます。 このコードでは、クライアントが新しいトークンを要求して再度呼び出すことができるため、トークンの有効期限が切れているかどうかを具体的に確認します。
+1. `TODO 14` を次のコードに置き換えます。 このコードでは、クライアントが新しいトークンを要求して再度呼び出すことができるため、トークンの有効期限が切れたかどうかを特に確認します。
 
    ```javascript
    // On rare occasions the SSO access token is unexpired when Office validates it,
@@ -544,7 +475,7 @@ ms.locfileid: "67616050"
    }
    ```
 
-このサンプルでは、MSAL によるフォールバック認証と Office による SSO 認証の両方を処理する必要があります。 サンプルは最初に SSO を試し `authSSO` 、サンプルで SSO を使用しているかフォールバック認証に切り替えた場合は、ファイルの先頭にあるブール値が追跡されます。
+このサンプルでは、MSAL によるフォールバック認証と Office 経由の SSO 認証の両方を処理する必要があります。 サンプルでは最初に SSO を試し、サンプルが SSO を `authSSO` 使用している場合、またはフォールバック認証に切り替えた場合は、ファイルの上部にあるブール値が追跡されます。
 
 ## <a name="run-the-project"></a>プロジェクトを実行する
 
@@ -552,7 +483,7 @@ ms.locfileid: "67616050"
 
 1. `\Begin`フォルダーのルートでコマンド プロンプトを開きます。
 
-1. コマンド `npm install` を実行して、すべてのパッケージの依存関係をインストールします。
+1. コマンドを実行して、すべてのパッケージの依存関係をインストールします `npm install` 。
 
 1. コマンド `npm start` を実行して中間層サーバーを起動します。
 
@@ -560,17 +491,17 @@ ms.locfileid: "67616050"
 
 1. Office アプリケーションの **[ホーム]** リボンで **[アドインの表示]** ボタン (**SSO Node.js** グループ内) を選択して、作業ウィンドウ アドインを開きます。
 
-1. **[OneDrive ファイル名の取得]** ボタンをクリックします。 Microsoft 365 Educationまたは職場のアカウント、または Microsoft アカウントで Office にログインしていて、SSO が想定どおりに動作している場合は、OneDrive for Businessの最初の 10 個のファイル名とフォルダー名がドキュメントに挿入されます。 (初回には 15 秒かかる場合があります)。ログインしていない場合、または SSO をサポートしていないシナリオの場合、または SSO が何らかの理由で機能していない場合は、サインインを求めるメッセージが表示されます。 サインインすると、ファイル名とフォルダー名が表示されます。
+1. **[OneDrive ファイル名の取得]** ボタンをクリックします。 Microsoft 365 Educationまたは職場アカウント、または Microsoft アカウントを使用して Office にログインしていて、SSO が正常に動作している場合は、OneDrive for Business内の最初の 10 個のファイルとフォルダー名がドキュメントに挿入されます。 (初回は 15 秒ほどかかる場合があります。ログインしていない場合、または SSO をサポートしていないシナリオや、何らかの理由で SSO が機能しない場合は、サインインするように求められます。 サインインすると、ファイル名とフォルダー名が表示されます。
 
 > [!NOTE]
 > 以前に別の ID で Office にサインインしており、その時点で開いていた一部の Office アプリケーションがまだ開いている場合、Office が ID を変更したかのように見えても、確実に ID を変更できていない場合があります。 これが発生すると、Microsoft Graph の呼び出しが失敗するか、以前の ID のデータが返される場合があります。 これを防ぐには、必ず _他のすべての Office アプリケーションを閉じて_ から、**[OneDrive ファイル名の取得]** を押してください。
 
-## <a name="security-notes"></a>セキュリティ に関する注意事項
+## <a name="security-notes"></a>セキュリティに関する注意事項
 
-- ルートでは`/getuserfilenames``getFilesroute.js`、リテラル文字列を使用して Microsoft Graph の呼び出しを作成します。 文字列の一部がユーザー入力から取得されるように呼び出しを変更する場合は、応答ヘッダーインジェクション攻撃で使用できないように入力をサニタイズします。
+- の`getFilesroute.js`ルートでは`/getuserfilenames`、リテラル文字列を使用して Microsoft Graph の呼び出しを作成します。 文字列の任意の部分がユーザー入力から取得されるように呼び出しを変更する場合は、応答ヘッダーインジェクション攻撃で使用できないように入力をサニタイズします。
 
-- `app.js`次のコンテンツ セキュリティ ポリシーは、スクリプト用に用意されています。 アドインのセキュリティ ニーズに応じて、追加の制限を指定することもできます。
+- 次のコンテンツ では `app.js` 、スクリプトに対してセキュリティ ポリシーが適用されます。 アドインのセキュリティニーズに応じて、追加の制限を指定することもできます。
 
     `"Content-Security-Policy": "script-src https://appsforoffice.microsoft.com https://ajax.aspnetcdn.com https://alcdn.msauth.net " +  process.env.SERVER_SOURCE,`
 
-[Microsoft ID プラットフォームのドキュメント](/azure/active-directory/develop/)では、常にセキュリティのベスト プラクティスに従ってください。
+[Microsoft ID プラットフォームドキュメント](/azure/active-directory/develop/)のセキュリティのベスト プラクティスに常に従ってください。
